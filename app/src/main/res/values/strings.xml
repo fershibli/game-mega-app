@@ -143,4 +143,16 @@
     <string name="crossword_down">Down</string>
     <string name="crossword_prev">Previous word</string>
     <string name="crossword_next">Next word</string>
+
+    <!-- Backgammon -->
+    <string name="backgammon_roll">Roll dice</string>
+    <string name="backgammon_done">Done</string>
+    <string name="backgammon_roll_prompt">Your turn: roll the dice</string>
+    <string name="backgammon_pick_checker">Tap a checker to move (yellow)</string>
+    <string name="backgammon_pick_target">Tap where it goes (green)</string>
+    <string name="backgammon_done_prompt">All moves made. Tap Done.</string>
+    <string name="backgammon_no_moves">No move is possible. Tap Done.</string>
+    <string name="backgammon_off">Borne off: you %1$d · computer %2$d</string>
+    <string name="backgammon_gammon">A gammon: the loser had not borne off any checker (double win).</string>
+    <string name="backgammon_backgammon">A backgammon: the loser still had a checker on the bar or in the winner\'s home (triple win).</string>
 </resources>
