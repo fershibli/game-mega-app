@@ -103,4 +103,15 @@
     <string name="about_version">Version %1$s</string>
     <string name="about_open_project">Open the project page</string>
     <string name="reset_settings">Restore default settings</string>
+
+    <!-- Sudoku -->
+    <string name="sudoku_notes">Notes</string>
+    <string name="sudoku_notes_on">Notes mode: numbers become small reminders</string>
+    <string name="sudoku_tap_cell">Tap a square, then a number</string>
+
+    <!-- Solitaire -->
+    <string name="solitaire_moves">Moves: %1$d</string>
+    <string name="solitaire_passes">Deck turns left: %1$d</string>
+    <string name="solitaire_finish">Finish</string>
+    <string name="solitaire_no_hint">No obvious move. Try the deck.</string>
 </resources>

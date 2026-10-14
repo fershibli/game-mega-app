@@ -3,6 +3,14 @@ package io.github.fershibli.megagames
 import android.graphics.Bitmap
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.test.onAllNodesWithText
+import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.GameHost
+import io.github.fershibli.megagames.core.GameId
+import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.ui.components.TopBar
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -43,10 +51,33 @@ class ScreenshotTest {
             }
         }
         rule.waitForIdle()
+        save(name)
+    }
+
+    private fun gameShot(name: String, game: GameId, difficulty: Difficulty = Difficulty.EASY, settings: Settings = Settings()) {
+        rule.setContent {
+            MegaGamesTheme(settings) {
+                Column(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
+                    TopBar(stringResource(game.title), {})
+                    Box(Modifier.weight(1f)) { GameContent(game, GameHost(game, difficulty, null, null) {}) }
+                }
+            }
+        }
+        rule.waitUntil(60_000) { rule.onAllNodesWithText("Preparing", substring = true).fetchSemanticsNodes().isEmpty() }
+        rule.waitForIdle()
+        save(name)
+    }
+
+    private fun save(name: String) {
         val dir = File(System.getProperty("screenshotDir") ?: "build/screenshots").apply { mkdirs() }
         val bitmap = rule.onRoot().captureToImage().asAndroidBitmap()
         File(dir, "$name.png").outputStream().use { bitmap.compress(Bitmap.CompressFormat.PNG, 100, it) }
     }
 
     @Test fun home() = shot("home") { HomeScreen({}, {}) }
+    @Test fun sudoku() = gameShot("game_sudoku", GameId.SUDOKU)
+    @Test fun solitaire() = gameShot("game_solitaire", GameId.SOLITAIRE)
+    @Test fun solitaireColorblind() = gameShot("game_solitaire_colorblind", GameId.SOLITAIRE, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
+    @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
+
 }
