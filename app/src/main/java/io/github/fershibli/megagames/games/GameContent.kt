@@ -3,6 +3,8 @@ package io.github.fershibli.megagames.games
 import androidx.compose.runtime.Composable
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
+import io.github.fershibli.megagames.games.mahjong.MahjongGame
+import io.github.fershibli.megagames.games.reversi.ReversiGame
 import io.github.fershibli.megagames.games.solitaire.SolitaireGame
 import io.github.fershibli.megagames.games.sudoku.SudokuGame
 
@@ -12,6 +14,8 @@ fun GameContent(game: GameId, host: GameHost) {
     when (game) {
         GameId.SUDOKU -> SudokuGame(host)
         GameId.SOLITAIRE -> SolitaireGame(host)
+        GameId.REVERSI -> ReversiGame(host)
+        GameId.MAHJONG -> MahjongGame(host)
         else -> androidx.compose.material3.Text(game.key)
     }
 }

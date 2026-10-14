@@ -114,4 +114,16 @@
     <string name="solitaire_passes">Deck turns left: %1$d</string>
     <string name="solitaire_finish">Finish</string>
     <string name="solitaire_no_hint">No obvious move. Try the deck.</string>
+
+    <!-- Reversi -->
+    <string name="reversi_tie">It\'s a tie!</string>
+    <string name="reversi_ai_passed">The computer had no move. Your turn again.</string>
+    <string name="reversi_you_passed">You had no move. The computer plays again.</string>
+
+    <!-- Mahjong -->
+    <string name="mahjong_status">Tiles: %1$d · Pairs you can take: %2$d</string>
+    <string name="mahjong_stuck">No pairs left. Use Shuffle!</string>
+    <string name="mahjong_shuffle">Shuffle</string>
+    <string name="mahjong_shuffle_count">Shuffle (%1$d)</string>
+    <string name="reversi_score">● You: %1$d   ○ Computer: %2$d</string>
 </resources>
