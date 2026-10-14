@@ -151,7 +151,7 @@ private fun PipesScreen(state: MutableState<PipesState>, host: GameHost) {
     }
 }
 
-private fun DrawScope.drawPipe(mask: Int, c: Offset, cell: Float, color: Color, p: Palette, isSource: Boolean, wet: Boolean) {
+internal fun DrawScope.drawPipe(mask: Int, c: Offset, cell: Float, color: Color, p: Palette, isSource: Boolean, wet: Boolean) {
     val half = cell / 2
     val width = cell * 0.24f
     val ends = listOf(Pipes.N to Offset(0f, -half), Pipes.E to Offset(half, 0f), Pipes.S to Offset(0f, half), Pipes.W to Offset(-half, 0f))

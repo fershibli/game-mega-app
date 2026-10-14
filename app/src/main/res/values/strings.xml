@@ -155,4 +155,31 @@
     <string name="backgammon_off">Borne off: you %1$d · computer %2$d</string>
     <string name="backgammon_gammon">A gammon: the loser had not borne off any checker (double win).</string>
     <string name="backgammon_backgammon">A backgammon: the loser still had a checker on the bar or in the winner\'s home (triple win).</string>
+
+    <!-- Buraco -->
+    <string name="buraco_draw">Draw a card</string>
+    <string name="buraco_take_pile">Take the pile (%1$d)</string>
+    <string name="buraco_discard">Discard</string>
+    <string name="buraco_meld">New sequence</string>
+    <string name="buraco_prompt_draw">Your turn: draw a card from the deck or take the discard pile</string>
+    <string name="buraco_prompt_play">Select 3 or more cards for a new sequence, or one card to discard</string>
+    <string name="buraco_prompt_add">Tap one of your sequences to add the selected cards</string>
+    <string name="buraco_err_invalid">These cards do not make a sequence of the same suit (only one wild 2 per sequence).</string>
+    <string name="buraco_err_keep">Keep at least one card to discard at the end of your turn.</string>
+    <string name="buraco_err_canasta">To go out you need a clean canasta: 7 or more cards with no wild 2.</string>
+    <string name="buraco_err_select_one">Select exactly one card to discard.</string>
+    <string name="buraco_computer">Computer</string>
+    <string name="buraco_cards">%1$d cards</string>
+    <string name="buraco_morto">Morto</string>
+    <string name="buraco_morto_taken">picked up the morto</string>
+    <string name="buraco_deck">Deck</string>
+    <string name="buraco_pile">Pile</string>
+    <string name="buraco_your_sequences">Your sequences</string>
+    <string name="buraco_your_hand">Your hand</string>
+    <string name="buraco_clean">Clean canasta</string>
+    <string name="buraco_dirty">Dirty canasta</string>
+    <string name="buraco_points">Points — you: %1$d · computer: %2$d</string>
+    <string name="buraco_went_out_you">You went out (+100).</string>
+    <string name="buraco_went_out_ai">The computer went out (+100).</string>
+    <string name="buraco_deck_over">The deck ran out.</string>
 </resources>

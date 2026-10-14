@@ -92,6 +92,7 @@ class ScreenshotTest {
     @Test fun crosswordChinese() = gameShot("game_crossword_zh", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE))
     @Test fun backgammon() = gameShot("game_backgammon", GameId.BACKGAMMON)
     @Test fun backgammonDark() = gameShot("game_backgammon_dark", GameId.BACKGAMMON, settings = Settings(darkMode = true))
+    @Test fun buraco() = gameShot("game_buraco", GameId.BURACO)
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
 
 }

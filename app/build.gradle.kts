@@ -36,6 +36,7 @@ android {
                 it.maxHeapSize = "3g"
                 // Screenshots are only rendered on request: ./gradlew screenshots
                 it.systemProperty("screenshots", project.findProperty("screenshots") ?: "false")
+                it.systemProperty("benchmarks", project.findProperty("benchmarks") ?: "false")
                 it.systemProperty("screenshotDir", rootProject.layout.projectDirectory.dir("docs/screenshots").asFile.absolutePath)
             }
         }

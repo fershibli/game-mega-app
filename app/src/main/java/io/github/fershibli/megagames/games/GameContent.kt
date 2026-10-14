@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.backgammon.BackgammonGame
+import io.github.fershibli.megagames.games.buraco.BuracoGame
 import io.github.fershibli.megagames.games.connect.ConnectGame
 import io.github.fershibli.megagames.games.crossword.CrosswordGame
 import io.github.fershibli.megagames.games.dots.DotsGame
@@ -26,6 +27,6 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.DOTS -> DotsGame(host)
         GameId.CROSSWORD -> CrosswordGame(host)
         GameId.BACKGAMMON -> BackgammonGame(host)
-        else -> androidx.compose.material3.Text(game.key)
+        GameId.BURACO -> BuracoGame(host)
     }
 }
