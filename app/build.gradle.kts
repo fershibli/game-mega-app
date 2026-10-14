@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
@@ -16,8 +18,37 @@ android {
         versionName = "1.0.0"
     }
 
+    // Only ship the five languages the app is translated into (libraries bring dozens more).
+    androidResources {
+        localeFilters += listOf("en", "pt", "es", "fr", "zh")
+    }
+
+    // Release signing: from keystore.properties (local, never committed) or from environment
+    // variables (CI). Without either, the release APK is simply left unsigned.
+    val keystoreFile = rootProject.file("keystore.properties")
+    val signing = Properties().apply { if (keystoreFile.exists()) keystoreFile.inputStream().use { load(it) } }
+    fun secret(key: String, env: String): String? = signing.getProperty(key) ?: System.getenv(env)
+    val storePath = secret("storeFile", "MEGAGAMES_KEYSTORE_FILE")
+    signingConfigs {
+        if (storePath != null) {
+            create("release") {
+                storeFile = rootProject.file(storePath)
+                storePassword = secret("storePassword", "MEGAGAMES_KEYSTORE_PASSWORD")
+                keyAlias = secret("keyAlias", "MEGAGAMES_KEY_ALIAS")
+                keyPassword = secret("keyPassword", "MEGAGAMES_KEY_PASSWORD")
+            }
+        }
+    }
+
+    // No Google-encrypted dependency blob in the APK: anyone can inspect exactly what ships.
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
     buildTypes {
         release {
+            signingConfigs.findByName("release")?.let { signingConfig = it }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
