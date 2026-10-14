@@ -136,6 +136,8 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
         if (next.won) host.finish(GameOutcome(true, null))
     }
 
+    // A game saved right at the winning move still ends properly when it is restored.
+    LaunchedEffect(Unit) { if (state.value.won) host.finish(GameOutcome(true, null)) }
     LaunchedEffect(flash) { if (flash != null) { delay(700); flash = null } }
     LaunchedEffect(refused) { if (refused != null) { delay(500); refused = null } }
     LaunchedEffect(autoFinishing) {
