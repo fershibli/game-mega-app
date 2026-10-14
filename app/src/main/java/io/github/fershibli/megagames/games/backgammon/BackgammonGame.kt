@@ -25,7 +25,7 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.rememberTextMeasurer
@@ -118,7 +118,7 @@ private class BoardGeometry(val width: Float, val height: Float) {
 @Composable
 private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHost) {
     val s = state.value
-    val context = LocalContext.current
+    val context = LocalResources.current
     var selected by remember { mutableIntStateOf(-1) }
     var noMoves by remember { mutableIntStateOf(0) }
 

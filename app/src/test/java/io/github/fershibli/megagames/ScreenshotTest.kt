@@ -84,6 +84,10 @@ class ScreenshotTest {
     @Test fun homeHighContrast() = shot("home_high_contrast", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST)) { HomeScreen({}, {}) }
     @Test fun homeColorblindDark() = shot("home_colorblind_dark", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true)) { HomeScreen({}, {}) }
     @Test fun homeOneHand() = shot("home_one_hand", Settings(oneHand = true)) { HomeScreen({}, {}) }
+    @Test fun homeChinese() = shot("home_zh", Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE)) { HomeScreen({}, {}) }
+    @Test fun buracoPt() = gameShot("game_buraco_pt", GameId.BURACO, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun sudokuFrLeftHanded() = gameShot("game_sudoku_fr_left", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.FRENCH, leftHanded = true))
+    @Test fun solitaireBigText() = gameShot("game_solitaire_big_text", GameId.SOLITAIRE, settings = Settings(fontScale = 1.4f, pieceScale = 1.4f))
     @Test fun difficulty() = shot("difficulty") { DifficultyScreen(GameId.MAHJONG, Difficulty.MEDIUM, {}, {}, {}) }
     @Test fun settings() = shot("settings") { SettingsScreen(Settings(), {}, {}, null) }
     @Test fun settingsInGamePt() = shot("settings_in_game_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {

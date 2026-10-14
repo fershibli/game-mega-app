@@ -5,6 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -38,6 +40,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
@@ -85,9 +88,13 @@ fun BigButton(
                 if (text.isNotEmpty()) Spacer(Modifier.width(10.dp))
             }
             if (text.isNotEmpty()) {
-                Text(
-                    text, color = fg.copy(alpha = alpha), style = if (bigText) MaterialTheme.typography.headlineMedium else MaterialTheme.typography.labelLarge,
-                    textAlign = TextAlign.Center, maxLines = 2, overflow = TextOverflow.Ellipsis,
+                val style = if (bigText) MaterialTheme.typography.headlineMedium else MaterialTheme.typography.labelLarge
+                // Text shrinks to fit narrow buttons instead of breaking a word in the middle.
+                BasicText(
+                    text,
+                    style = style.copy(color = fg.copy(alpha = alpha), textAlign = TextAlign.Center),
+                    maxLines = if (' ' in text.trim()) 2 else 1,
+                    autoSize = TextAutoSize.StepBased(minFontSize = 11.sp, maxFontSize = style.fontSize, stepSize = 1.sp),
                 )
             }
         }

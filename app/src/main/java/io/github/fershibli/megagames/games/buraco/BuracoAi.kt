@@ -78,7 +78,10 @@ object BuracoAi {
         val out = ArrayList<List<Card>>()
         for ((_, cards) in hand.filter { it.rank != 2 }.groupBy { it.suit }) {
             val byRank = HashMap<Int, Card>()
-            cards.forEach { c -> byRank.putIfAbsent(c.rank, c); if (c.rank == 1) byRank.putIfAbsent(14, c) }
+            cards.forEach { c ->
+                if (c.rank !in byRank) byRank[c.rank] = c
+                if (c.rank == 1 && 14 !in byRank) byRank[14] = c
+            }
             var r = 1
             while (r <= 14) {
                 if (byRank[r] == null) { r++; continue }

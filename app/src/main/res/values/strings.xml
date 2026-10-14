@@ -169,7 +169,6 @@
     <string name="buraco_err_canasta">To go out you need a clean canasta: 7 or more cards with no wild 2.</string>
     <string name="buraco_err_select_one">Select exactly one card to discard.</string>
     <string name="buraco_computer">Computer</string>
-    <string name="buraco_cards">%1$d cards</string>
     <string name="buraco_morto">Morto</string>
     <string name="buraco_morto_taken">picked up the morto</string>
     <string name="buraco_deck">Deck</string>
@@ -182,4 +181,8 @@
     <string name="buraco_went_out_you">You went out (+100).</string>
     <string name="buraco_went_out_ai">The computer went out (+100).</string>
     <string name="buraco_deck_over">The deck ran out.</string>
+    <plurals name="buraco_cards">
+        <item quantity="one">%1$d card</item>
+        <item quantity="other">%1$d cards</item>
+    </plurals>
 </resources>

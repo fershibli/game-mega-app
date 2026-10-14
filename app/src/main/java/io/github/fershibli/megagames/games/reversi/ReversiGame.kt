@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -23,7 +24,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
@@ -81,8 +82,8 @@ private fun advance(s: ReversiState, pos: Int, side: Int): ReversiState? {
 private fun ReversiScreen(state: MutableState<ReversiState>, host: GameHost) {
     val s = state.value
     val history = remember { mutableStateListOf<ReversiState>() }
-    var hint by remember { mutableStateOf(-1) }
-    val context = LocalContext.current
+    var hint by remember { mutableIntStateOf(-1) }
+    val context = LocalResources.current
     val board = s.board.toIntArray()
     val mine = Reversi.count(board, Reversi.PLAYER)
     val theirs = Reversi.count(board, Reversi.AI)

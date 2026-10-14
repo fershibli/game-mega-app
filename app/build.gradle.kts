@@ -42,6 +42,18 @@ android {
         }
     }
 
+    // All languages must stay in the app: the language can be changed inside the app.
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    lint {
+        warningsAsErrors = true
+        abortOnError = true
+    }
+
     buildFeatures {
         compose = true
         buildConfig = true

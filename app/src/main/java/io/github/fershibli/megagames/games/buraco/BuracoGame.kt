@@ -35,7 +35,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalResources
+import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -81,7 +82,7 @@ private fun sortHand(hand: List<Card>) = hand.sortedWith(compareBy({ if (it.rank
 @Composable
 private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
     val s = state.value
-    val context = LocalContext.current
+    val context = LocalResources.current
     var selected by remember { mutableStateOf<Set<Card>>(emptySet()) }
     var error by remember { mutableStateOf<BuracoError?>(null) }
     var afterDraw by remember { mutableStateOf<BuracoState?>(null) }
@@ -179,7 +180,7 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
             verticalArrangement = Arrangement.spacedBy(10.dp),
         ) {
             // Opponent
-            SectionLabel(stringResource(R.string.buraco_computer) + " · " + stringResource(R.string.buraco_cards, s.hands[COMPUTER].size) +
+            SectionLabel(stringResource(R.string.buraco_computer) + " · " + pluralStringResource(R.plurals.buraco_cards, s.hands[COMPUTER].size, s.hands[COMPUTER].size) +
                 if (s.tookMorto[COMPUTER]) " · " + stringResource(R.string.buraco_morto_taken) else "")
             MeldArea(s.melds[COMPUTER], meldCard, french, onClick = null)
 
