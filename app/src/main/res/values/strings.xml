@@ -126,4 +126,15 @@
     <string name="mahjong_shuffle">Shuffle</string>
     <string name="mahjong_shuffle_count">Shuffle (%1$d)</string>
     <string name="reversi_score">● You: %1$d   ○ Computer: %2$d</string>
+
+    <!-- Pipes -->
+    <string name="pipes_status">Pieces with water: %1$d of %2$d</string>
+
+    <!-- Connect -->
+    <string name="connect_status">Connected: %1$d of %2$d · Board filled: %3$d%%</string>
+    <string name="connect_fill">All connected! Now fill every square.</string>
+    <string name="connect_clear">Clear</string>
+
+    <!-- Dots -->
+    <string name="dots_moves">Moves: %1$d</string>
 </resources>
