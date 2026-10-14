@@ -97,7 +97,7 @@ Android solo instala APK firmados, y las actualizaciones deben firmarse con la *
    | `MEGAGAMES_KEY_ALIAS` | `megagames` |
    | `MEGAGAMES_KEY_PASSWORD` | contraseña de la clave |
 
-   Con estos secretos, el [pipeline de despliegue](#versionado-y-despliegue) firma cada APK con la clave real. Sin ellos, el APK se sigue publicando, firmado con una clave de depuración temporal y señalado así en las notas de la versión.
+   Con estos secretos, el [pipeline de despliegue](#versionado-y-despliegue) firma cada APK con la clave real. Sin ellos, las versiones candidatas (`stag`) se siguen publicando, firmadas con una clave de depuración temporal y señaladas así en las notas de la versión, pero una versión estable (`main`) no se publica: la ejecución falla antes de crear la etiqueta, y basta con añadir los secretos y volver a ejecutarla.
 
 ## Versionado y despliegue
 

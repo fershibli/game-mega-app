@@ -97,7 +97,7 @@ Android n’installe que des APK signés, et les mises à jour doivent être sig
    | `MEGAGAMES_KEY_ALIAS` | `megagames` |
    | `MEGAGAMES_KEY_PASSWORD` | mot de passe de la clé |
 
-   Avec ces secrets, le [pipeline de déploiement](#versionnage-et-déploiement) signe chaque APK avec la vraie clé. Sans eux, l’APK est quand même publié, signé avec une clé de débogage temporaire et signalé comme tel dans les notes de version.
+   Avec ces secrets, le [pipeline de déploiement](#versionnage-et-déploiement) signe chaque APK avec la vraie clé. Sans eux, les versions candidates (`stag`) sont quand même publiées, signées avec une clé de débogage temporaire et signalées comme telles dans les notes de version, mais une version stable (`main`) n’est pas publiée : l’exécution échoue avant de créer l’étiquette, et il suffit d’ajouter les secrets puis de la relancer.
 
 ## Versionnage et déploiement
 

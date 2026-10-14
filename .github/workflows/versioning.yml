@@ -46,7 +46,7 @@ jobs:
       prerelease: ${{ steps.next.outputs.prerelease }}
       notes: ${{ steps.next.outputs.notes }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # full history and tags are needed to find the last version
 
@@ -162,6 +162,17 @@ jobs:
             echo "RELEASE_NOTES_EOF"
           } >> "$GITHUB_OUTPUT"
           { echo "### Next version: \`v$version\`"; echo; echo "$notes"; } >> "$GITHUB_STEP_SUMMARY"
+
+      # Checked before tagging, so a missing key leaves no orphan tag: add the secrets and re-run.
+      - name: Require the release key for stable versions
+        if: steps.next.outputs.release == 'true' && steps.next.outputs.prerelease != 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.MEGAGAMES_KEYSTORE_BASE64 }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "::error::Stable versions must be signed with the release key, but the signing secrets are not set. See docs/en/building.md#signed-releases"
+            exit 1
+          fi
 
       - name: Create and push the tag
         if: steps.next.outputs.release == 'true'
