@@ -1,0 +1,149 @@
+# Dictionnaire des mots croisés — français. Format : RÉPONSE|définition.
+POMME|Fruit rouge ou vert
+PAIN|La baguette en est un
+CHAISE|Meuble pour s'asseoir
+TABLE|Meuble où l'on mange
+MAISON|Lieu où vit la famille
+JARDIN|Lieu plein de fleurs et de légumes
+FENÊTRE|Ouverture vitrée dans le mur
+MÉDECIN|Soigne les malades
+INFIRMIÈRE|Aide le médecin à soigner
+PIANO|Instrument à touches noires et blanches
+GUITARE|Instrument à six cordes
+ÉTÉ|Saison la plus chaude
+HIVER|Saison la plus froide
+PRINTEMPS|Saison des fleurs
+AUTOMNE|Saison où tombent les feuilles
+DIMANCHE|Jour de repos
+CAFÉ|Boisson chaude du matin
+SUCRE|Rend le café doux
+SEL|Assaisonnement blanc venu de la mer
+FROMAGE|Fait avec du lait ; la France en a des centaines
+BEURRE|Se tartine sur le pain
+MIEL|Produit sucré des abeilles
+ORANGE|Agrume qui est aussi une couleur
+BANANE|Fruit jaune et allongé
+RAISIN|Petit fruit qui donne le vin
+CITRON|Agrume jaune et acide
+TOMATE|Fruit rouge de la salade
+CAROTTE|Légume orange du lapin
+OIGNON|Fait pleurer quand on le coupe
+RIZ|Céréale très mangée en Asie
+SOUPE|Plat chaud mangé à la cuillère
+GÂTEAU|Dessert d'anniversaire
+CHIEN|Meilleur ami de l'homme
+CHAT|Animal qui ronronne
+CHEVAL|Animal que l'on peut monter
+VACHE|Animal de ferme qui donne du lait
+MOUTON|Animal qui donne de la laine
+POULE|Oiseau qui pond des œufs
+CANARD|Oiseau qui fait coin-coin
+LAPIN|Animal aux longues oreilles
+TIGRE|Grand félin rayé
+LION|Roi de la savane
+ÉLÉPHANT|Grand animal avec une trompe
+GIRAFE|Animal au très long cou
+SINGE|Animal qui grimpe aux arbres
+OISEAU|Animal à plumes qui vole
+POISSON|Animal qui nage
+TORTUE|Animal lent avec une carapace
+OURS|Grand animal poilu
+HIBOU|Oiseau de nuit
+ABEILLE|Insecte qui fait le miel
+PAPILLON|Insecte aux ailes colorées
+SOLEIL|Étoile qui éclaire le jour
+LUNE|Brille dans le ciel la nuit
+ÉTOILE|Scintille dans le ciel
+NUAGE|Blanc et cotonneux dans le ciel
+PLUIE|Eau qui tombe des nuages
+NEIGE|Blanche et froide en hiver
+RIVIÈRE|Cours d'eau
+MER|Grande étendue d'eau salée
+PLAGE|Lieu de sable au bord de la mer
+MONTAGNE|Terre très haute
+ÎLE|Terre entourée d'eau
+FORÊT|Lieu plein d'arbres
+FLEUR|Rose ou marguerite, par exemple
+ARBRE|A un tronc, des branches et des feuilles
+ROSE|Fleur symbole de l'amour
+ROUGE|Couleur de la fraise
+BLEU|Couleur du ciel
+VERT|Couleur de l'herbe
+JAUNE|Couleur du soleil
+BLANC|Couleur du lait
+NOIR|Couleur de la nuit
+MÈRE|Femme qui a des enfants
+PÈRE|Homme qui a des enfants
+SŒUR|Fille de vos parents
+FRÈRE|Fils de vos parents
+GRAND-MÈRE|Mère de votre mère ou de votre père
+PETIT-FILS|Fils de votre enfant
+BÉBÉ|Tout petit enfant
+AMI|Personne chère en qui l'on a confiance
+FAMILLE|Parents, enfants, grands-parents...
+CŒUR|Organe qui pompe le sang
+MAIN|Elle a cinq doigts
+YEUX|Servent à voir
+NEZ|Sert à sentir
+OREILLE|Sert à entendre
+BOUCHE|Sert à manger et à parler
+SOURIRE|Expression de joie
+LIVRE|A des pages à lire
+LETTRE|S'écrit et s'envoie par la poste
+JOURNAL|Nouvelles imprimées du jour
+TÉLÉPHONE|Appareil pour appeler
+HORLOGE|Indique l'heure
+CLÉ|Ouvre la serrure
+PORTE|On l'ouvre pour entrer
+LIT|Meuble pour dormir
+CUILLÈRE|Couvert pour la soupe
+FOURCHETTE|Couvert à dents
+COUTEAU|Couvert pour couper
+TASSE|Pour boire le thé
+BOUTEILLE|Contient de l'eau ou du vin
+TRAIN|Roule sur des rails
+AVION|Vole avec des passagers
+BATEAU|Navigue sur l'eau
+VOITURE|Véhicule à quatre roues
+VÉLO|Deux roues et des pédales
+MUSIQUE|Chansons et mélodies
+DANSE|Bouger en rythme
+CHANSON|Musique avec des paroles
+ÉGLISE|Lieu de prière chrétien
+ÉCOLE|Où les enfants apprennent
+MARCHÉ|Où l'on achète fruits et légumes
+HÔPITAL|Où l'on soigne les malades
+ANNIVERSAIRE|Fêté chaque année avec un gâteau
+NOËL|Fête du 25 décembre
+CADEAU|Offert avec amour
+BOUGIE|Bâton de cire qui éclaire
+ŒUF|Pondu par la poule
+LAIT|Boisson blanche de la vache
+EAU|Boisson transparente et essentielle
+JUS|Boisson de fruits
+VIN|Boisson faite de raisin
+CHAPEAU|Se porte sur la tête
+CHAUSSURE|Se porte au pied
+ROBE|Vêtement féminin d'une seule pièce
+MANTEAU|Vêtement chaud pour l'hiver
+PARAPLUIE|Protège de la pluie
+LUNETTES|Aident à mieux voir
+HEUREUX|Plein de joie
+AMOUR|Sentiment de grande tendresse
+PAIX|Le contraire de la guerre
+RÊVE|Ce que l'on voit en dormant
+NUIT|Quand il fait noir
+MATIN|Début de la journée
+CROISSANT|Viennoiserie du petit-déjeuner
+BAGUETTE|Pain long et croustillant
+CUISINE|Pièce où l'on prépare les repas
+RECETTE|Instructions pour préparer un plat
+CASSEROLE|Ustensile pour faire cuire
+CRÊPE|Galette fine de la Chandeleur
+DOMINO|Jeu de pièces à points
+CARTES|On les mélange pour jouer à la belote
+NIÈCE|Fille de votre frère ou de votre sœur
+OREILLER|Coussin pour la tête au lit
+COUVERTURE|Tient chaud au lit
+TABLIER|Se porte en cuisine pour rester propre
+PÉTANQUE|Jeu de boules du sud de la France

@@ -107,6 +107,7 @@ fun FloatingGear(onSettings: () -> Unit) {
     if (!s.oneHand) return
     val p = LocalPalette.current
     val density = LocalDensity.current
+    val label = stringResource(R.string.settings)
     var tucked by remember { mutableStateOf(false) }
     var interaction by remember { mutableIntStateOf(0) }
     var dragY by remember { mutableFloatStateOf(0f) }
@@ -140,7 +141,7 @@ fun FloatingGear(onSettings: () -> Unit) {
                 .clickable(role = Role.Button) {
                     if (tucked) interaction++ else onSettings()
                 }
-                .semantics { contentDescription = "Settings" },
+                .semantics { contentDescription = label },
             contentAlignment = Alignment.Center,
         ) {
             IconView(AppIcon.GEAR, p.onPrimary, size = 34.dp)

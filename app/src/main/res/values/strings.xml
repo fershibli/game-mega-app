@@ -103,4 +103,86 @@
     <string name="about_version">Version %1$s</string>
     <string name="about_open_project">Open the project page</string>
     <string name="reset_settings">Restore default settings</string>
+
+    <!-- Sudoku -->
+    <string name="sudoku_notes">Notes</string>
+    <string name="sudoku_notes_on">Notes mode: numbers become small reminders</string>
+    <string name="sudoku_tap_cell">Tap a square, then a number</string>
+
+    <!-- Solitaire -->
+    <string name="solitaire_moves">Moves: %1$d</string>
+    <string name="solitaire_passes">Deck turns left: %1$d</string>
+    <string name="solitaire_finish">Finish</string>
+    <string name="solitaire_no_hint">No obvious move. Try the deck.</string>
+
+    <!-- Reversi -->
+    <string name="reversi_tie">It\'s a tie!</string>
+    <string name="reversi_ai_passed">The computer had no move. Your turn again.</string>
+    <string name="reversi_you_passed">You had no move. The computer plays again.</string>
+
+    <!-- Mahjong -->
+    <string name="mahjong_status">Tiles: %1$d · Pairs you can take: %2$d</string>
+    <string name="mahjong_stuck">No pairs left. Use Shuffle!</string>
+    <string name="mahjong_shuffle">Shuffle</string>
+    <string name="mahjong_shuffle_count">Shuffle (%1$d)</string>
+    <string name="reversi_score">● You: %1$d   ○ Computer: %2$d</string>
+
+    <!-- Pipes -->
+    <string name="pipes_status">Pieces with water: %1$d of %2$d</string>
+
+    <!-- Connect -->
+    <string name="connect_status">Connected: %1$d of %2$d · Board filled: %3$d%%</string>
+    <string name="connect_fill">All connected! Now fill every square.</string>
+    <string name="connect_clear">Clear</string>
+
+    <!-- Dots -->
+    <string name="dots_moves">Moves: %1$d</string>
+
+    <!-- Crossword -->
+    <string name="crossword_across">Across</string>
+    <string name="crossword_down">Down</string>
+    <string name="crossword_prev">Previous word</string>
+    <string name="crossword_next">Next word</string>
+
+    <!-- Backgammon -->
+    <string name="backgammon_roll">Roll dice</string>
+    <string name="backgammon_done">Done</string>
+    <string name="backgammon_roll_prompt">Your turn: roll the dice</string>
+    <string name="backgammon_pick_checker">Tap a checker to move (yellow)</string>
+    <string name="backgammon_pick_target">Tap where it goes (green)</string>
+    <string name="backgammon_done_prompt">All moves made. Tap Done.</string>
+    <string name="backgammon_no_moves">No move is possible. Tap Done.</string>
+    <string name="backgammon_off">Borne off: you %1$d · computer %2$d</string>
+    <string name="backgammon_gammon">A gammon: the loser had not borne off any checker (double win).</string>
+    <string name="backgammon_backgammon">A backgammon: the loser still had a checker on the bar or in the winner\'s home (triple win).</string>
+
+    <!-- Buraco -->
+    <string name="buraco_draw">Draw a card</string>
+    <string name="buraco_take_pile">Take the pile (%1$d)</string>
+    <string name="buraco_discard">Discard</string>
+    <string name="buraco_meld">New sequence</string>
+    <string name="buraco_prompt_draw">Your turn: draw a card from the deck or take the discard pile</string>
+    <string name="buraco_prompt_play">Select 3 or more cards for a new sequence, or one card to discard</string>
+    <string name="buraco_prompt_add">Tap one of your sequences to add the selected cards</string>
+    <string name="buraco_err_invalid">These cards do not make a sequence of the same suit (only one wild 2 per sequence).</string>
+    <string name="buraco_err_keep">Keep at least one card to discard at the end of your turn.</string>
+    <string name="buraco_err_canasta">To go out you need a clean canasta: 7 or more cards with no wild 2.</string>
+    <string name="buraco_err_select_one">Select exactly one card to discard.</string>
+    <string name="buraco_computer">Computer</string>
+    <string name="buraco_morto">Morto</string>
+    <string name="buraco_morto_taken">picked up the morto</string>
+    <string name="buraco_deck">Deck</string>
+    <string name="buraco_pile">Pile</string>
+    <string name="buraco_your_sequences">Your sequences</string>
+    <string name="buraco_your_hand">Your hand</string>
+    <string name="buraco_clean">Clean canasta</string>
+    <string name="buraco_dirty">Dirty canasta</string>
+    <string name="buraco_points">Points — you: %1$d · computer: %2$d</string>
+    <string name="buraco_went_out_you">You went out (+100).</string>
+    <string name="buraco_went_out_ai">The computer went out (+100).</string>
+    <string name="buraco_deck_over">The deck ran out.</string>
+    <plurals name="buraco_cards">
+        <item quantity="one">%1$d card</item>
+        <item quantity="other">%1$d cards</item>
+    </plurals>
 </resources>

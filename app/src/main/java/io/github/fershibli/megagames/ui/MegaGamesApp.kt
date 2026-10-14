@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,8 +35,14 @@ sealed interface Screen {
 }
 
 @Composable
-fun MegaGamesApp(settingsStore: SettingsStore, saveStore: SaveStore, offerResume: Boolean) {
+fun MegaGamesApp(
+    settingsStore: SettingsStore,
+    saveStore: SaveStore,
+    offerResume: Boolean,
+    onDarkMode: (Boolean) -> Unit = {},
+) {
     var settings by remember { mutableStateOf(settingsStore.load()) }
+    LaunchedEffect(settings.darkMode) { onDarkMode(settings.darkMode) }
     val updateSettings: (Settings) -> Unit = {
         settings = it
         settingsStore.save(it)
