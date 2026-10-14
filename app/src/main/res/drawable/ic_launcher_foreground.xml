@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- App icon: a card, a die, a sudoku grid and reversi discs. Drawn as a vector (no bitmaps). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- shadows -->
+    <path android:fillColor="#33000000" android:pathData="M25,24h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <path android:fillColor="#33000000" android:pathData="M59,24h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <path android:fillColor="#33000000" android:pathData="M25,58h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <path android:fillColor="#33000000" android:pathData="M59,58h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <!-- card with heart -->
+    <path android:fillColor="#FFFEFA" android:pathData="M24,22h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <path android:fillColor="#C62828" android:pathData="M37,48C31,43 27,40 28,35C29,31 34,30 37,34C40,30 45,31 46,35C47,40 43,43 37,48z" />
+    <!-- die -->
+    <path android:fillColor="#FBF5E6" android:pathData="M58,22h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <path android:fillColor="#2A2724" android:pathData="M60,30a3.5,3.5 0 1,0 7,0a3.5,3.5 0 1,0 -7,0z M67.5,38a3.5,3.5 0 1,0 7,0a3.5,3.5 0 1,0 -7,0z M75,46a3.5,3.5 0 1,0 7,0a3.5,3.5 0 1,0 -7,0z" />
+    <!-- sudoku grid -->
+    <path android:fillColor="#FFFDF8" android:pathData="M24,56h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <path android:fillColor="#4A443D" android:pathData="M31.5,57h1.5v30h-1.5z M41.5,57h1.5v30h-1.5z M22,65.5h30v1.5h-30z M22,75.5h30v1.5h-30z" />
+    <path android:fillColor="#FFE08A" android:pathData="M33,67h8.5v8.5h-8.5z" />
+    <!-- reversi -->
+    <path android:fillColor="#2F6B4F" android:pathData="M58,56h26a3,3 0 0 1 3,3v26a3,3 0 0 1 -3,3h-26a3,3 0 0 1 -3,-3v-26a3,3 0 0 1 3,-3z" />
+    <path android:fillColor="#1F1F1F" android:pathData="M59,65a7,7 0 1,0 14,0a7,7 0 1,0 -14,0z" />
+    <path android:fillColor="#F7F1E3" android:pathData="M69,79a7,7 0 1,0 14,0a7,7 0 1,0 -14,0z" />
+</vector>

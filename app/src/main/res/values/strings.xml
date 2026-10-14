@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Mega Games</string>
+
+    <!-- Navigation -->
+    <string name="choose_game">Choose your game</string>
+    <string name="choose_difficulty">Choose the difficulty</string>
+    <string name="confirm">Confirm</string>
+    <string name="back">Back</string>
+    <string name="settings">Settings</string>
+    <string name="close">Close</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="loading">Preparing the game…</string>
+    <string name="decrease">Decrease</string>
+    <string name="increase">Increase</string>
+    <string name="zoom_reset">Reset zoom</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty_easy">Easy</string>
+    <string name="difficulty_medium">Medium</string>
+    <string name="difficulty_hard">Hard</string>
+
+    <!-- Games -->
+    <string name="game_sudoku">Sudoku</string>
+    <string name="game_solitaire">Solitaire</string>
+    <string name="game_buraco">Buraco</string>
+    <string name="game_backgammon">Backgammon</string>
+    <string name="game_mahjong">Mahjong</string>
+    <string name="game_reversi">Reversi</string>
+    <string name="game_crossword">Crossword</string>
+    <string name="game_pipes">Pipes</string>
+    <string name="game_connect">Connect</string>
+    <string name="game_dots">Dots</string>
+
+    <string name="howto_sudoku">Fill the grid so that every row, every column and every 3×3 box has the numbers 1 to 9 exactly once.</string>
+    <string name="howto_solitaire">Klondike. Build four piles from Ace to King, one per suit. Tap a card to move it to the best place.</string>
+    <string name="howto_buraco">Make sequences of the same suit with your cards against the computer. Twos are wild. Seven cards make a canasta.</string>
+    <string name="howto_backgammon">Roll the dice and move all your light checkers home, then bear them off before the computer does.</string>
+    <string name="howto_mahjong">Remove pairs of matching tiles. A tile can be taken when nothing is on top of it and its left or right side is free.</string>
+    <string name="howto_reversi">Place a disc so that you trap the computer\'s discs between two of yours: they turn to your color. Most discs wins.</string>
+    <string name="howto_crossword">Read the clue and fill in the word. Tap a square to choose a word, tap again to change direction.</string>
+    <string name="howto_pipes">Tap the pieces to turn them until every pipe is connected to the water source with no open ends.</string>
+    <string name="howto_connect">Draw a line between dots of the same color. Lines cannot cross. Try to fill the whole board.</string>
+    <string name="howto_dots">Drag across neighboring dots of the same color to clear them. Close a square to clear every dot of that color.</string>
+
+    <!-- In-game common -->
+    <string name="resume">Back to game</string>
+    <string name="new_game">New game</string>
+    <string name="main_menu">Main menu</string>
+    <string name="leave_game_title">Leave this game?</string>
+    <string name="leave_game_message">If you go back to the main menu, this game will be abandoned and cannot be continued.</string>
+    <string name="leave_game_yes">Yes, leave the game</string>
+    <string name="new_game_title">Start a new game?</string>
+    <string name="new_game_message">The current game will be lost.</string>
+    <string name="resume_title">Welcome back!</string>
+    <string name="resume_message">You have a game of %1$s in progress. Do you want to continue where you left off or go back to the main menu?</string>
+    <string name="resume_continue">Continue playing</string>
+    <string name="win_title">Congratulations!</string>
+    <string name="win_message">You won! 🎉</string>
+    <string name="lose_title">Game over</string>
+    <string name="lose_message">Not this time. How about another try?</string>
+    <string name="play_again">Play again</string>
+    <string name="undo">Undo</string>
+    <string name="hint">Hint</string>
+    <string name="your_turn">Your turn</string>
+    <string name="computer_turn">Computer is thinking…</string>
+    <string name="score_line">You: %1$d · Computer: %2$d</string>
+
+    <!-- Settings -->
+    <string name="settings_scroll_hint">Scroll to see all options ↓</string>
+    <string name="section_language">Language</string>
+    <string name="language_system">Same as the phone</string>
+    <string name="section_size">Size</string>
+    <string name="text_size">Text size</string>
+    <string name="piece_size">Piece and button size</string>
+    <string name="section_colors">Colors</string>
+    <string name="color_normal">Normal</string>
+    <string name="color_normal_desc">Soft colors with medium contrast.</string>
+    <string name="color_high_contrast">High contrast</string>
+    <string name="color_high_contrast_desc">Strong colors and thick outlines, easier to see.</string>
+    <string name="color_colorblind">Color blind friendly</string>
+    <string name="color_colorblind_desc">Colors that stay distinct for color blindness, plus shapes on pieces.</string>
+    <string name="dark_mode">Dark mode</string>
+    <string name="dark_mode_desc">Dark background, gentler at night. Each color mode has its own dark version.</string>
+    <string name="section_controls">Controls</string>
+    <string name="pinch_zoom">Pinch to zoom</string>
+    <string name="pinch_zoom_desc">Use two fingers to zoom in and out and to move around the board.</string>
+    <string name="left_handed">Left-handed mode</string>
+    <string name="left_handed_desc">Puts the main buttons on the left side of the screen.</string>
+    <string name="one_hand">One-hand mode</string>
+    <string name="one_hand_desc">The gear becomes a floating button near your thumb, and zoom works with one finger.</string>
+    <string name="one_hand_zoom">One-finger zoom</string>
+    <string name="onehand_doubletap">Double tap</string>
+    <string name="onehand_doubletap_desc">Double tap to zoom in (each double tap zooms more, then goes back). Double tap and drag to move.</string>
+    <string name="onehand_rotate">Press and rotate</string>
+    <string name="onehand_rotate_desc">Touch and hold, then draw circles: clockwise zooms in, counter-clockwise zooms out. Double tap and drag to move.</string>
+    <string name="default_difficulty">Default difficulty</string>
+    <string name="section_about">About</string>
+    <string name="about_text">Mega Games is free and open source. It has no ads, no accounts and no in-app purchases.</string>
+    <string name="about_privacy">Privacy: the app does not use the internet and collects no data. Your settings and your current game stay only on this phone.</string>
+    <string name="about_ai">Code, artwork and texts were created with the help of Claude, the AI assistant made by Anthropic.</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_open_project">Open the project page</string>
+    <string name="reset_settings">Restore default settings</string>
+</resources>

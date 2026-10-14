@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 and older: back up settings and the current game (stays inside the user's own Google backup). -->
+<full-backup-content>
+    <include domain="sharedpref" path="settings.xml" />
+    <include domain="file" path="current_game.json" />
+</full-backup-content>
