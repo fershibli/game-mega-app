@@ -97,7 +97,7 @@ Android only installs signed APKs, and updates must be signed with the **same ke
    | `MEGAGAMES_KEY_ALIAS` | `megagames` |
    | `MEGAGAMES_KEY_PASSWORD` | key password |
 
-   With these secrets the [deploy pipeline](#versioning-and-deploy) signs every APK with the real key. Without them it still publishes the APK, signed with a temporary debug key and marked as such in the release notes.
+   With these secrets the [deploy pipeline](#versioning-and-deploy) signs every APK with the real key. Without them it still publishes release candidates (`stag`), signed with a temporary debug key and marked as such in the release notes, but it refuses to publish a stable version (`main`): the run fails before creating the tag, so you can add the secrets and simply re-run it.
 
 ## Versioning and deploy
 
