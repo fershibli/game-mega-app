@@ -11,4 +11,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - Home screen with endless two-column picture grid; difficulty scroll wheel with the default preselected.
 - Settings: language (EN, PT-BR, ES, FR, ZH), text size, piece/button size, Normal / High-contrast / Color-blind palettes each with a dark mode, pinch zoom, left-handed mode, one-hand mode (floating gear, double-tap or press-and-rotate zoom), default difficulty.
 - Automatic save with "continue where you left off?" on the next start.
-- Documentation in five languages, CI, signed release workflow, Dependabot.
+- Documentation in five languages, CI, Dependabot.
+- Automatic semantic versioning from Conventional Commits (`versioning.yml`) and an APK deploy pipeline (`deploy.yml`) that tests, signs, verifies and publishes each release.
+
+> From now on, the notes of every version are generated automatically from the commits and published on the [GitHub Releases](https://github.com/fershibli/game-mega-app/releases) page.

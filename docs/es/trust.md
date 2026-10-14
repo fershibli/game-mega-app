@@ -108,7 +108,8 @@ Ejecuta tú mismo las mismas comprobaciones: ver [building.md](building.md).
 - `distributionSha256Sum` fija la distribución exacta de Gradle en [`gradle-wrapper.properties`](../../gradle/wrapper/gradle-wrapper.properties).
 - Las dependencias solo vienen del repositorio Maven de Google y de Maven Central (`repositoriesMode = FAIL_ON_PROJECT_REPOS`).
 - [Dependabot](../../.github/dependabot.yml) propone cada mes actualizaciones de dependencias y de GitHub Actions.
-- Los workflows de CI funcionan con permisos de solo lectura; solo el workflow de versiones puede escribir, y únicamente para crear la versión.
+- El CI funciona con permisos de solo lectura; solo los workflows de versionado y despliegue pueden escribir, y únicamente para subir la etiqueta de versión y publicar la Release.
+- Cada APK publicado se verifica en el pipeline antes de subirlo: firma (`apksigner`), número de versión y ausencia de permisos (`aapt2`).
 - Las claves de firma están en los secretos cifrados de GitHub y nunca se suben al repositorio (`*.jks` y `keystore.properties` están en `.gitignore`).
 
 ## Ayuda de IA, con transparencia

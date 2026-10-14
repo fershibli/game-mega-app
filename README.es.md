@@ -9,6 +9,7 @@ Sudoku · Solitario · Buraco · Backgammon · Mahjong · Reversi · Crucigrama 
 🌐 [English](README.md) · [Português](README.pt-BR.md) · **Español** · [Français](README.fr.md) · [中文](README.zh-CN.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
 ![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-green)
 ![Android 6.0+](https://img.shields.io/badge/Android-6.0%2B-3DDC84)
 ![APK unos 1,3 MB](https://img.shields.io/badge/APK-~1%2C3%20MB-blue)

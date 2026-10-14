@@ -10,10 +10,11 @@
 4. [截图](#截图)
 5. [AI 基准测试](#ai-基准测试)
 6. [签名发布](#签名发布)
-7. [如何贡献](#如何贡献)
-8. [添加填字词语](#添加填字词语)
-9. [添加或改进翻译](#添加或改进翻译)
-10. [添加新游戏](#添加新游戏)
+7. [版本管理与部署](#版本管理与部署)
+8. [如何贡献](#如何贡献)
+9. [添加填字词语](#添加填字词语)
+10. [添加或改进翻译](#添加或改进翻译)
+11. [添加新游戏](#添加新游戏)
 
 ## 环境要求
 
@@ -96,13 +97,40 @@ README 中的所有图片都由真实代码渲染：
    | `MEGAGAMES_KEY_ALIAS` | `megagames` |
    | `MEGAGAMES_KEY_PASSWORD` | 密钥密码 |
 
-   在 `app/build.gradle.kts` 中提高 `versionCode` 和 `versionName`，更新 [CHANGELOG.md](../../CHANGELOG.md)，然后：
+   配置这些 Secrets 后，[部署流水线](#版本管理与部署) 会用正式密钥为每个 APK 签名。没有它们时，APK 仍然会发布，但使用临时调试密钥签名，并在版本说明中明确标注。
 
-   ```bash
-   git tag v1.0.0 && git push origin v1.0.0
-   ```
+## 版本管理与部署
 
-   [发布工作流](../../.github/workflows/release.yml) 会测试、构建、签名，并发布 `MegaGames-v1.0.0.apk` 和 `SHA256SUMS.txt`。
+版本号遵循[语义化版本](https://semver.org/lang/zh-CN/)（`主版本.次版本.修订号`），由我们自己编写的工作流 [`versioning.yml`](../../.github/workflows/versioning.yml)（纯 bash，不使用第三方发布工具）根据 [Conventional Commits 约定式提交](https://www.conventionalcommits.org/zh-hans/)**自动**计算。随后它会调用 [`deploy.yml`](../../.github/workflows/deploy.yml) 来构建并发布 APK。
+
+| 提交信息 | 效果 | 示例 |
+|---|---|---|
+| `feat!: …` / `fix!: …`，或正文中有 `BREAKING CHANGE:` | **主版本** | 1.4.2 → 2.0.0 |
+| `feat: …` / `feat(sudoku): …` | **次版本** | 1.4.2 → 1.5.0 |
+| `fix:`、`perf:`、`revert:`、`refactor:`、`build:` | **修订号** | 1.4.2 → 1.4.3 |
+| `docs:`、`chore:`、`ci:`、`test:`、`style:` 或无前缀 | 不发布新版本 | — |
+
+第一个版本是 `1.0.0`。分支：
+
+| 推送到 | 结果 |
+|---|---|
+| `main`（或 `master`） | 正式版 `v1.5.0`，标记为 *Latest* |
+| `stag` | 候选版 `v1.5.0-rc.1`、`-rc.2`……标记为 *Pre-release*（只有出现可发布的提交时才生成新的 rc） |
+
+每次发布时：
+
+1. `versioning.yml` 读取上一个正式版标签之后的提交，决定版本升级幅度，生成分组的版本说明（不兼容变更、新功能、修复、性能、其他），并推送带注释的标签 `vX.Y.Z`。
+2. `deploy.yml` 检出这个标签，运行测试和 Lint，用 `-PappVersion=X.Y.Z` 构建正式版 APK，签名并**验证**（签名、`versionName`、没有申请任何权限），然后在 GitHub 发布 Release，附带 `MegaGames-vX.Y.Z.apk`、`SHA256SUMS.txt` 和版本说明。
+
+安卓的 `versionCode` 由版本号推导，保证始终递增：`主版本×1,000,000 + 次版本×10,000 + 修订号×100 + n`，其中 `n` 是 rc 序号，正式版为 99（因此 `1.5.0-rc.2` < `1.5.0`）。次版本和修订号必须小于 100。
+
+其他发布方式：
+
+- **Actions → Semantic versioning → Run workflow**，选择 `patch`、`minor` 或 `major` 强制发布。
+- **Actions → Deploy APK → Run workflow**，填入版本号来（重新）构建指定版本。
+- 手动推送标签：`git tag v1.2.3 && git push origin v1.2.3`（版本说明由 GitHub 自动生成）。
+
+本地运行 `./gradlew assembleRelease -PappVersion=1.2.3` 即可构建该版本；不加 `-PappVersion` 时版本为 `1.0.0`。
 
 ## 如何贡献
 
@@ -119,6 +147,7 @@ README 中的所有图片都由真实代码渲染：
 - **保持小巧和私密**：不增加权限，不联网，不做统计，不加图片（用代码绘制），没有充分理由不增加依赖。
 - **引擎是纯 Kotlin** 并带测试；界面只负责绘制状态和调用引擎。
 - 所有可见文字都放进 `strings.xml`，并且**五种语言都要有**（`TranslationsTest` 会强制检查）。
+- 提交信息请使用[约定式提交](https://www.conventionalcommits.org/zh-hans/)（`feat: …`、`fix: …`、`docs: …`）：它们决定下一个版本号（见[版本管理与部署](#版本管理与部署)）。
 - 代码注释和命名使用英语；遵循现有风格（`.editorconfig`、Kotlin 官方风格）。
 
 ## 添加填字词语

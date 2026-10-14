@@ -6,6 +6,19 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
 }
 
+// Semantic version of the app. CI passes it with -PappVersion=X.Y.Z (or X.Y.Z-rc.N for test
+// builds); local builds use the default. The versionCode is derived from it so every release is
+// always higher than the previous one: MAJOR*1_000_000 + MINOR*10_000 + PATCH*100 + (rc number, or 99).
+val appVersion: String = (findProperty("appVersion") as String?)?.removePrefix("v") ?: "1.0.0"
+val appVersionCode: Int = run {
+    val match = Regex("""^(\d+)\.(\d+)\.(\d+)(?:-rc\.(\d+))?$""").matchEntire(appVersion)
+        ?: error("appVersion must look like 1.2.3 or 1.2.3-rc.4, got '$appVersion'")
+    val (major, minor, patch, rc) = match.destructured
+    require(minor.toInt() < 100 && patch.toInt() < 100) { "minor and patch must be below 100" }
+    val suffix = if (rc.isEmpty()) 99 else rc.toInt().also { require(it in 1..98) { "rc number must be 1..98" } }
+    major.toInt() * 1_000_000 + minor.toInt() * 10_000 + patch.toInt() * 100 + suffix
+}
+
 android {
     namespace = "io.github.fershibli.megagames"
     compileSdk = 37
@@ -14,8 +27,8 @@ android {
         applicationId = "io.github.fershibli.megagames"
         minSdk = 23
         targetSdk = 37
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = appVersionCode
+        versionName = appVersion
     }
 
     // Only ship the five languages the app is translated into (libraries bring dozens more).
@@ -48,7 +61,10 @@ android {
 
     buildTypes {
         release {
+            // Real key when configured; otherwise, only if explicitly asked (CI test builds), the
+            // debug key so the APK can still be installed.
             signingConfigs.findByName("release")?.let { signingConfig = it }
+                ?: run { if (findProperty("signWithDebugKey") == "true") signingConfig = signingConfigs.getByName("debug") }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")

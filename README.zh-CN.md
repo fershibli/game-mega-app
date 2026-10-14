@@ -9,6 +9,7 @@
 🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · **中文**
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
 ![许可证：MIT](https://img.shields.io/badge/license-MIT-green)
 ![Android 6.0+](https://img.shields.io/badge/Android-6.0%2B-3DDC84)
 ![APK 约 1.3 MB](https://img.shields.io/badge/APK-~1.3%20MB-blue)

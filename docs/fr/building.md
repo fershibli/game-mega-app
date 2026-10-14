@@ -10,10 +10,11 @@
 4. [Captures d’écran](#captures-décran)
 5. [Benchmarks de l’IA](#benchmarks-de-lia)
 6. [Versions signées](#versions-signées)
-7. [Contribuer](#contribuer)
-8. [Ajouter des mots aux mots croisés](#ajouter-des-mots-aux-mots-croisés)
-9. [Ajouter ou améliorer une traduction](#ajouter-ou-améliorer-une-traduction)
-10. [Ajouter un jeu](#ajouter-un-jeu)
+7. [Versionnage et déploiement](#versionnage-et-déploiement)
+8. [Contribuer](#contribuer)
+9. [Ajouter des mots aux mots croisés](#ajouter-des-mots-aux-mots-croisés)
+10. [Ajouter ou améliorer une traduction](#ajouter-ou-améliorer-une-traduction)
+11. [Ajouter un jeu](#ajouter-un-jeu)
 
 ## Prérequis
 
@@ -96,13 +97,40 @@ Android n’installe que des APK signés, et les mises à jour doivent être sig
    | `MEGAGAMES_KEY_ALIAS` | `megagames` |
    | `MEGAGAMES_KEY_PASSWORD` | mot de passe de la clé |
 
-   Augmentez `versionCode` et `versionName` dans `app/build.gradle.kts`, mettez à jour le [CHANGELOG.md](../../CHANGELOG.md), puis :
+   Avec ces secrets, le [pipeline de déploiement](#versionnage-et-déploiement) signe chaque APK avec la vraie clé. Sans eux, l’APK est quand même publié, signé avec une clé de débogage temporaire et signalé comme tel dans les notes de version.
 
-   ```bash
-   git tag v1.0.0 && git push origin v1.0.0
-   ```
+## Versionnage et déploiement
 
-   Le [workflow de publication](../../.github/workflows/release.yml) teste, compile, signe et publie `MegaGames-v1.0.0.apk` avec `SHA256SUMS.txt`.
+Les versions suivent la [gestion sémantique de version](https://semver.org/lang/fr/) (`MAJEUR.MINEUR.CORRECTIF`) et sont calculées **automatiquement** à partir des [Conventional Commits](https://www.conventionalcommits.org/fr/) par notre propre workflow, [`versioning.yml`](../../.github/workflows/versioning.yml) (bash pur, sans outil de publication tiers). Il appelle ensuite [`deploy.yml`](../../.github/workflows/deploy.yml), qui génère et publie l’APK.
+
+| Message de commit | Effet | Exemple |
+|---|---|---|
+| `feat!: …` / `fix!: …` ou `BREAKING CHANGE:` dans le corps | **MAJEUR** | 1.4.2 → 2.0.0 |
+| `feat: …` / `feat(sudoku): …` | **MINEUR** | 1.4.2 → 1.5.0 |
+| `fix:`, `perf:`, `revert:`, `refactor:`, `build:` | **CORRECTIF** | 1.4.2 → 1.4.3 |
+| `docs:`, `chore:`, `ci:`, `test:`, `style:` ou sans préfixe | pas de nouvelle version | — |
+
+La première version est `1.0.0`. Branches :
+
+| Push sur | Résultat |
+|---|---|
+| `main` (ou `master`) | version stable `v1.5.0`, marquée *Latest* |
+| `stag` | version candidate `v1.5.0-rc.1`, `-rc.2`… marquée *Pre-release* (une nouvelle rc seulement si quelque chose de publiable est arrivé) |
+
+À chaque version :
+
+1. `versioning.yml` lit les commits depuis la dernière étiquette stable, choisit l’incrément, rédige des notes regroupées (changements incompatibles, nouveautés, corrections, performances, autres) et pousse une étiquette annotée `vX.Y.Z`.
+2. `deploy.yml` récupère cette étiquette, lance les tests et lint, compile l’APK final avec `-PappVersion=X.Y.Z`, le signe, le **vérifie** (signature, `versionName`, aucune autorisation demandée) et publie une Release GitHub avec `MegaGames-vX.Y.Z.apk`, `SHA256SUMS.txt` et les notes.
+
+Le `versionCode` Android est dérivé de la version pour toujours augmenter : `MAJEUR×1 000 000 + MINEUR×10 000 + CORRECTIF×100 + n`, où `n` est le numéro de la rc, ou 99 pour la version finale (ainsi `1.5.0-rc.2` < `1.5.0`). MINEUR et CORRECTIF doivent rester inférieurs à 100.
+
+Autres façons de déployer :
+
+- **Actions → Semantic versioning → Run workflow** et choisissez `patch`, `minor` ou `major` pour forcer une version.
+- **Actions → Deploy APK → Run workflow** avec un numéro de version pour (re)générer une version précise.
+- Poussez une étiquette à la main : `git tag v1.2.3 && git push origin v1.2.3` (GitHub génère alors les notes).
+
+En local, `./gradlew assembleRelease -PappVersion=1.2.3` compile cette version ; sans `-PappVersion`, la version est `1.0.0`.
 
 ## Contribuer
 
@@ -119,6 +147,7 @@ Principes :
 - **Rester petite et respectueuse** : aucune nouvelle autorisation, pas de réseau, pas de statistiques, pas d’images (dessinez en code), pas de nouvelle dépendance sans une très bonne raison.
 - **Les moteurs sont en Kotlin pur** avec des tests ; l’interface ne fait que dessiner l’état et appeler le moteur.
 - Chaque texte visible va dans `strings.xml` **dans les cinq langues** (`TranslationsTest` l’impose).
+- Rédigez les messages de commit en [Conventional Commits](https://www.conventionalcommits.org/fr/) (`feat: …`, `fix: …`, `docs: …`) : ils décident de la prochaine version (voir [Versionnage et déploiement](#versionnage-et-déploiement)).
 - Commentaires et noms dans le code en anglais ; suivez le style existant (`.editorconfig`, style officiel Kotlin).
 
 ## Ajouter des mots aux mots croisés

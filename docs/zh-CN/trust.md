@@ -108,7 +108,8 @@ aapt2 dump permissions MegaGames-v1.0.0.apk
 - `distributionSha256Sum` 在 [`gradle-wrapper.properties`](../../gradle/wrapper/gradle-wrapper.properties) 中固定了确切的 Gradle 发行版。
 - 依赖只来自 Google 的 Maven 仓库和 Maven Central（`repositoriesMode = FAIL_ON_PROJECT_REPOS`）。
 - [Dependabot](../../.github/dependabot.yml) 每月提出依赖和 GitHub Actions 的更新。
-- CI 工作流只有只读权限；只有发布工作流可以写入，而且只用于创建版本。
+- CI 只有只读权限；只有版本管理和部署工作流可以写入，而且只用于推送版本标签和发布 Release。
+- 每个发布的 APK 在上传前都会在流水线中验证：签名（`apksigner`）、版本号，以及没有申请任何权限（`aapt2`）。
 - 签名密钥保存在 GitHub 加密的 Secrets 中，从不提交到仓库（`*.jks` 和 `keystore.properties` 已在 `.gitignore` 中）。
 
 ## 坦诚说明 AI 的参与
