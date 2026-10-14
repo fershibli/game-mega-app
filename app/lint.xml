@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Lint configuration. Every ignored check has a reason. -->
+<lint>
+    <!-- Portrait is a deliberate accessibility choice (stable layout, controls always near the thumb). -->
+    <issue id="LockedOrientationActivity" severity="ignore" />
+    <issue id="DiscouragedApi" severity="ignore" />
+    <!-- We avoid the androidx.core-ktx dependency to keep the app small; the plain APIs are equivalent. -->
+    <issue id="UseKtx" severity="ignore" />
+    <!-- The in-app language switch needs every language in the APK; language splits are disabled in app/build.gradle.kts. -->
+    <issue id="AppBundleLocaleChanges" severity="ignore" />
+    <!-- localeConfig simply has no effect before Android 13. -->
+    <issue id="UnusedAttribute" severity="ignore" />
+</lint>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Français (apostrophes typographiques ’ pour éviter l’échappement Android) -->
+<resources>
+    <string name="choose_game">Choisissez votre jeu</string>
+    <string name="choose_difficulty">Choisissez la difficulté</string>
+    <string name="confirm">Confirmer</string>
+    <string name="back">Retour</string>
+    <string name="settings">Réglages</string>
+    <string name="close">Fermer</string>
+    <string name="done">Terminé</string>
+    <string name="cancel">Annuler</string>
+    <string name="loading">Préparation du jeu…</string>
+    <string name="decrease">Diminuer</string>
+    <string name="increase">Augmenter</string>
+    <string name="zoom_reset">Revenir à la taille normale</string>
+
+    <string name="difficulty_easy">Facile</string>
+    <string name="difficulty_medium">Moyen</string>
+    <string name="difficulty_hard">Difficile</string>
+
+    <string name="game_sudoku">Sudoku</string>
+    <string name="game_solitaire">Solitaire</string>
+    <string name="game_buraco">Buraco</string>
+    <string name="game_backgammon">Backgammon</string>
+    <string name="game_mahjong">Mahjong</string>
+    <string name="game_reversi">Reversi</string>
+    <string name="game_crossword">Mots croisés</string>
+    <string name="game_pipes">Tuyaux</string>
+    <string name="game_connect">Relie les couleurs</string>
+    <string name="game_dots">Points</string>
+
+    <string name="howto_sudoku">Remplissez la grille pour que chaque ligne, chaque colonne et chaque carré 3×3 contienne les chiffres de 1 à 9 une seule fois.</string>
+    <string name="howto_solitaire">Solitaire classique (Klondike). Formez quatre piles de l’As au Roi, une par couleur. Touchez une carte pour la déplacer au meilleur endroit.</string>
+    <string name="howto_buraco">Formez des suites de la même couleur contre l’ordinateur. Les 2 sont des jokers. Sept cartes forment une canasta.</string>
+    <string name="howto_backgammon">Lancez les dés, ramenez tous vos pions clairs dans votre jan intérieur, puis sortez-les avant l’ordinateur.</string>
+    <string name="howto_mahjong">Retirez des paires de tuiles identiques. Une tuile est libre si rien n’est posé dessus et si son côté gauche ou droit est dégagé.</string>
+    <string name="howto_reversi">Posez un pion pour encadrer des pions de l’ordinateur entre deux des vôtres : ils changent de couleur. Celui qui a le plus de pions gagne.</string>
+    <string name="howto_crossword">Lisez la définition et écrivez le mot. Touchez une case pour choisir le mot ; touchez-la de nouveau pour changer de sens.</string>
+    <string name="howto_pipes">Touchez les pièces pour les tourner jusqu’à ce que tous les tuyaux soient reliés à la source d’eau, sans bout ouvert.</string>
+    <string name="howto_connect">Reliez les points de la même couleur par une ligne. Les lignes ne peuvent pas se croiser. Essayez de remplir tout le plateau.</string>
+    <string name="howto_dots">Glissez le doigt sur des points voisins de la même couleur pour les effacer. Fermez un carré pour effacer tous les points de cette couleur.</string>
+
+    <string name="resume">Retour au jeu</string>
+    <string name="new_game">Nouvelle partie</string>
+    <string name="main_menu">Menu principal</string>
+    <string name="leave_game_title">Quitter cette partie ?</string>
+    <string name="leave_game_message">Si vous revenez au menu principal, cette partie sera abandonnée et ne pourra pas être reprise.</string>
+    <string name="leave_game_yes">Oui, quitter la partie</string>
+    <string name="new_game_title">Commencer une nouvelle partie ?</string>
+    <string name="new_game_message">La partie en cours sera perdue.</string>
+    <string name="resume_title">Bon retour !</string>
+    <string name="resume_message">Vous avez une partie de %1$s en cours. Voulez-vous reprendre là où vous vous étiez arrêté ou revenir au menu principal ?</string>
+    <string name="resume_continue">Continuer la partie</string>
+    <string name="win_title">Bravo !</string>
+    <string name="win_message">Vous avez gagné ! 🎉</string>
+    <string name="lose_title">Partie terminée</string>
+    <string name="lose_message">Pas cette fois. On réessaie ?</string>
+    <string name="play_again">Rejouer</string>
+    <string name="undo">Annuler</string>
+    <string name="hint">Indice</string>
+    <string name="your_turn">À vous de jouer</string>
+    <string name="computer_turn">L’ordinateur réfléchit…</string>
+    <string name="score_line">Vous : %1$d · Ordinateur : %2$d</string>
+
+    <string name="settings_scroll_hint">Faites défiler pour voir toutes les options ↓</string>
+    <string name="section_language">Langue</string>
+    <string name="language_system">Comme le téléphone</string>
+    <string name="section_size">Taille</string>
+    <string name="text_size">Taille du texte</string>
+    <string name="piece_size">Taille des pièces et des boutons</string>
+    <string name="section_colors">Couleurs</string>
+    <string name="color_normal">Normal</string>
+    <string name="color_normal_desc">Couleurs douces avec un contraste moyen.</string>
+    <string name="color_high_contrast">Contraste élevé</string>
+    <string name="color_high_contrast_desc">Couleurs vives et contours épais, plus faciles à voir.</string>
+    <string name="color_colorblind">Adapté au daltonisme</string>
+    <string name="color_colorblind_desc">Couleurs qui restent distinctes en cas de daltonisme, avec des formes dessinées sur les pièces.</string>
+    <string name="dark_mode">Mode sombre</string>
+    <string name="dark_mode_desc">Fond sombre, plus doux le soir. Chaque mode de couleur a sa propre version sombre.</string>
+    <string name="section_controls">Commandes</string>
+    <string name="pinch_zoom">Zoom à deux doigts</string>
+    <string name="pinch_zoom_desc">Utilisez deux doigts pour agrandir, réduire et déplacer le plateau.</string>
+    <string name="left_handed">Mode gaucher</string>
+    <string name="left_handed_desc">Place les boutons principaux sur le côté gauche de l’écran.</string>
+    <string name="one_hand">Mode une main</string>
+    <string name="one_hand_desc">La roue dentée devient un bouton flottant près du pouce, et le zoom fonctionne avec un seul doigt.</string>
+    <string name="one_hand_zoom">Zoom à un doigt</string>
+    <string name="onehand_doubletap">Double toucher</string>
+    <string name="onehand_doubletap_desc">Touchez deux fois pour agrandir (chaque double toucher agrandit davantage, puis revient). Touchez deux fois et glissez pour vous déplacer.</string>
+    <string name="onehand_rotate">Appuyer et tourner</string>
+    <string name="onehand_rotate_desc">Gardez le doigt appuyé, puis faites des cercles : dans le sens des aiguilles d’une montre pour agrandir, dans l’autre sens pour réduire. Touchez deux fois et glissez pour vous déplacer.</string>
+    <string name="default_difficulty">Difficulté par défaut</string>
+    <string name="section_about">À propos</string>
+    <string name="about_text">Mega Games est gratuit et open source. Pas de publicité, pas de compte, pas d’achats intégrés.</string>
+    <string name="about_privacy">Confidentialité : l’application n’utilise pas Internet et ne collecte aucune donnée. Vos réglages et la partie en cours restent uniquement sur ce téléphone.</string>
+    <string name="about_ai">Le code, les illustrations et les textes ont été créés avec l’aide de Claude, l’assistant d’IA d’Anthropic.</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_open_project">Ouvrir la page du projet</string>
+    <string name="reset_settings">Rétablir les réglages par défaut</string>
+
+    <string name="sudoku_notes">Notes</string>
+    <string name="sudoku_notes_on">Mode notes : les chiffres deviennent de petits pense-bêtes</string>
+    <string name="sudoku_tap_cell">Touchez une case, puis un chiffre</string>
+
+    <string name="solitaire_moves">Coups : %1$d</string>
+    <string name="solitaire_passes">Tours de talon restants : %1$d</string>
+    <string name="solitaire_finish">Terminer</string>
+    <string name="solitaire_no_hint">Pas de coup évident. Essayez le talon.</string>
+
+    <string name="reversi_tie">Égalité !</string>
+    <string name="reversi_ai_passed">L’ordinateur n’avait aucun coup. À vous de nouveau.</string>
+    <string name="reversi_you_passed">Vous n’aviez aucun coup. L’ordinateur rejoue.</string>
+    <string name="reversi_score">● Vous : %1$d   ○ Ordinateur : %2$d</string>
+
+    <string name="mahjong_status">Tuiles : %1$d · Paires disponibles : %2$d</string>
+    <string name="mahjong_stuck">Plus de paires. Utilisez Mélanger !</string>
+    <string name="mahjong_shuffle">Mélanger</string>
+    <string name="mahjong_shuffle_count">Mélanger (%1$d)</string>
+
+    <string name="pipes_status">Pièces avec de l’eau : %1$d sur %2$d</string>
+
+    <string name="connect_status">Reliées : %1$d sur %2$d · Plateau rempli : %3$d %%</string>
+    <string name="connect_fill">Tout est relié ! Remplissez maintenant toutes les cases.</string>
+    <string name="connect_clear">Effacer</string>
+
+    <string name="dots_moves">Coups : %1$d</string>
+
+    <string name="crossword_across">Horizontal</string>
+    <string name="crossword_down">Vertical</string>
+    <string name="crossword_prev">Mot précédent</string>
+    <string name="crossword_next">Mot suivant</string>
+
+    <string name="backgammon_roll">Lancer les dés</string>
+    <string name="backgammon_done">Terminé</string>
+    <string name="backgammon_roll_prompt">À vous : lancez les dés</string>
+    <string name="backgammon_pick_checker">Touchez un pion à déplacer (jaune)</string>
+    <string name="backgammon_pick_target">Touchez sa destination (vert)</string>
+    <string name="backgammon_done_prompt">Tous les coups sont joués. Touchez Terminé.</string>
+    <string name="backgammon_no_moves">Aucun coup possible. Touchez Terminé.</string>
+    <string name="backgammon_off">Pions sortis : vous %1$d · ordinateur %2$d</string>
+    <string name="backgammon_gammon">Gammon : le perdant n’avait sorti aucun pion (victoire double).</string>
+    <string name="backgammon_backgammon">Backgammon : le perdant avait encore un pion sur la barre ou dans le jan du gagnant (victoire triple).</string>
+
+    <string name="buraco_draw">Piocher</string>
+    <string name="buraco_take_pile">Prendre la défausse (%1$d)</string>
+    <string name="buraco_discard">Défausser</string>
+    <string name="buraco_meld">Nouvelle suite</string>
+    <string name="buraco_prompt_draw">À vous : piochez une carte ou prenez toute la défausse</string>
+    <string name="buraco_prompt_play">Sélectionnez 3 cartes ou plus pour poser une suite, ou une carte à défausser</string>
+    <string name="buraco_prompt_add">Touchez une de vos suites pour y ajouter les cartes sélectionnées</string>
+    <string name="buraco_err_invalid">Ces cartes ne forment pas une suite de la même couleur (un seul joker par suite).</string>
+    <string name="buraco_err_keep">Gardez au moins une carte à défausser en fin de tour.</string>
+    <string name="buraco_err_canasta">Pour terminer, il faut une canasta propre : 7 cartes ou plus sans joker.</string>
+    <string name="buraco_err_select_one">Sélectionnez une seule carte à défausser.</string>
+    <string name="buraco_computer">Ordinateur</string>
+    <string name="buraco_morto">Mort</string>
+    <string name="buraco_morto_taken">a pris le mort</string>
+    <string name="buraco_deck">Pioche</string>
+    <string name="buraco_pile">Défausse</string>
+    <string name="buraco_your_sequences">Vos suites</string>
+    <string name="buraco_your_hand">Votre main</string>
+    <string name="buraco_clean">Canasta propre</string>
+    <string name="buraco_dirty">Canasta sale</string>
+    <string name="buraco_points">Points — vous : %1$d · ordinateur : %2$d</string>
+    <string name="buraco_went_out_you">Vous avez terminé (+100).</string>
+    <string name="buraco_went_out_ai">L’ordinateur a terminé (+100).</string>
+    <string name="buraco_deck_over">La pioche est épuisée.</string>
+    <plurals name="buraco_cards">
+        <item quantity="one">%1$d carte</item>
+        <item quantity="many">%1$d cartes</item>
+        <item quantity="other">%1$d cartes</item>
+    </plurals>
+</resources>
