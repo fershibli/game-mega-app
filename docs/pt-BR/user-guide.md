@@ -216,9 +216,9 @@ Os acentos são ignorados como nas revistas de palavras cruzadas (Ç = C, É = E
 
 | Nível | Grade | Como digitar | Erros em vermelho |
 |---|---|---|---|
-| Fácil | 9×9 (8×8 em chinês), ~7 palavras | banco de letras (letras da palavra + 2 a mais) | sim |
-| Médio | 11×11, ~11 palavras | teclado completo (chinês: banco com 5 a mais) | sim |
-| Difícil | 13×13, ~16 palavras | teclado completo (chinês: banco com 8 a mais) | não |
+| Fácil | 9×9 (8×8 em chinês), ~7 palavras (~6 em chinês) | banco de letras (letras da palavra + 2 a mais) | sim |
+| Médio | 11×11 (10×10 em chinês), ~11 palavras (~9) | teclado completo (chinês: banco com 5 a mais) | sim |
+| Difícil | 13×13 (12×12 em chinês), ~16 palavras (~12) | teclado completo (chinês: banco com 8 a mais) | não |
 
 O francês usa teclado AZERTY; os outros, QWERTY.
 

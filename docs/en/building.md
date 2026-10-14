@@ -53,6 +53,8 @@ Every image in the README is rendered from the real code:
 # PNG files are written to docs/screenshots/
 ```
 
+Then shrink them before committing: `python3 scripts/optimize_screenshots.py` (needs Pillow).
+
 To add one, add a `@Test` to `app/src/test/.../ScreenshotTest.kt` using `shot(...)` or `gameShot(...)`.
 
 ## AI benchmarks

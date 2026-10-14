@@ -216,9 +216,9 @@ Accents are ignored as in printed crosswords (Ç = C, É = E…); Spanish keeps 
 
 | Level | Grid | Input | Errors in red |
 |---|---|---|---|
-| Easy | 9×9 (8×8 Chinese), ~7 words | letter bank (word letters + 2 extra) | yes |
-| Medium | 11×11, ~11 words | full keyboard (Chinese: bank with 5 extra) | yes |
-| Hard | 13×13, ~16 words | full keyboard (Chinese: bank with 8 extra) | no |
+| Easy | 9×9 (8×8 in Chinese), ~7 words (~6 in Chinese) | letter bank (word letters + 2 extra) | yes |
+| Medium | 11×11 (10×10 in Chinese), ~11 words (~9) | full keyboard (Chinese: bank with 5 extra) | yes |
+| Hard | 13×13 (12×12 in Chinese), ~16 words (~12) | full keyboard (Chinese: bank with 8 extra) | no |
 
 French uses an AZERTY keyboard, the others QWERTY.
 

@@ -216,9 +216,9 @@ Las tildes se ignoran, como en los crucigramas impresos (É = E…); el español
 
 | Nivel | Cuadrícula | Cómo se escribe | Errores en rojo |
 |---|---|---|---|
-| Fácil | 9×9 (8×8 en chino), ~7 palabras | banco de letras (las de la palabra + 2 más) | sí |
-| Medio | 11×11, ~11 palabras | teclado completo (chino: banco con 5 más) | sí |
-| Difícil | 13×13, ~16 palabras | teclado completo (chino: banco con 8 más) | no |
+| Fácil | 9×9 (8×8 en chino), ~7 palabras (~6 en chino) | banco de letras (las de la palabra + 2 más) | sí |
+| Medio | 11×11 (10×10 en chino), ~11 palabras (~9) | teclado completo (chino: banco con 5 más) | sí |
+| Difícil | 13×13 (12×12 en chino), ~16 palabras (~12) | teclado completo (chino: banco con 8 más) | no |
 
 El teclado español incluye la Ñ; el francés usa AZERTY y los demás QWERTY.
 

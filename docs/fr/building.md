@@ -53,6 +53,8 @@ Toutes les images du README sont dessinées à partir du vrai code :
 # les PNG sont écrits dans docs/screenshots/
 ```
 
+Réduisez-les ensuite avant le commit : `python3 scripts/optimize_screenshots.py` (nécessite Pillow).
+
 Pour en ajouter une, ajoutez un `@Test` dans `app/src/test/.../ScreenshotTest.kt` avec `shot(...)` ou `gameShot(...)`.
 
 ## Benchmarks de l’IA

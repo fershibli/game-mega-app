@@ -216,9 +216,9 @@ Les accents sont ignorés comme dans les grilles imprimées (É = E, Ç = C, Œ 
 
 | Niveau | Grille | Saisie | Erreurs en rouge |
 |---|---|---|---|
-| Facile | 9×9 (8×8 en chinois), ~7 mots | réserve de lettres (celles du mot + 2) | oui |
-| Moyen | 11×11, ~11 mots | clavier complet AZERTY (chinois : réserve + 5) | oui |
-| Difficile | 13×13, ~16 mots | clavier complet AZERTY (chinois : réserve + 8) | non |
+| Facile | 9×9 (8×8 en chinois), ~7 mots (~6 en chinois) | réserve de lettres (celles du mot + 2) | oui |
+| Moyen | 11×11 (10×10 en chinois), ~11 mots (~9) | clavier complet AZERTY (chinois : réserve + 5) | oui |
+| Difficile | 13×13 (12×12 en chinois), ~16 mots (~12) | clavier complet AZERTY (chinois : réserve + 8) | non |
 
 ### Tuyaux
 
