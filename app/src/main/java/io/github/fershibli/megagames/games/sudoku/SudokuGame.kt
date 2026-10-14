@@ -118,7 +118,7 @@ private fun SudokuScreen(state: MutableState<SudokuState>, host: GameHost) {
                         BigButton(
                             v.toString(), { place(v) }, Modifier.weight(1f).height(keyHeight),
                             style = if (s.notesMode) ButtonStyle.SECONDARY else ButtonStyle.PRIMARY,
-                            enabled = counts[v] < 9, compact = true,
+                            enabled = counts[v] < 9, compact = true, bigText = true,
                         )
                     }
                     if (row.last == 9) {

@@ -1,0 +1,164 @@
+# Dicionário das palavras cruzadas — português do Brasil. Formato: RESPOSTA|dica.
+MAÇÃ|Fruta vermelha ou verde
+PÃO|Feito de farinha e assado no forno
+CADEIRA|Móvel para sentar
+MESA|Móvel onde fazemos as refeições
+CASA|Lugar onde a família mora
+JARDIM|Lugar com flores e plantas
+JANELA|Abertura na parede com vidro
+MÉDICO|Profissional que cuida dos doentes
+ENFERMEIRA|Ajuda o médico a cuidar dos pacientes
+PROFESSOR|Ensina na escola
+PIANO|Instrumento de teclas pretas e brancas
+VIOLÃO|Instrumento de cordas das serenatas
+VERÃO|Estação mais quente do ano
+INVERNO|Estação mais fria do ano
+PRIMAVERA|Estação das flores
+OUTONO|Estação em que as folhas caem
+DOMINGO|Dia de descanso da semana
+CAFÉ|Bebida quente do café da manhã
+AÇÚCAR|Deixa o café doce
+SAL|Tempero branco que vem do mar
+QUEIJO|Feito de leite; o rato adora
+MANTEIGA|Passa-se no pão quentinho
+MEL|Alimento doce feito pelas abelhas
+LARANJA|Fruta cítrica e também uma cor
+BANANA|Fruta amarela e comprida
+UVA|Fruta pequena usada para fazer vinho
+LIMÃO|Fruta azeda da caipirinha
+TOMATE|Vermelho, vai na salada e no molho
+BATATA|Vira purê ou batata frita
+CENOURA|Legume laranja que o coelho adora
+CEBOLA|Faz chorar quando cortamos
+ARROZ|Grão que acompanha o feijão
+FEIJÃO|Grão preto da feijoada
+SOPA|Comida quente tomada de colher
+BOLO|Doce de aniversário
+CACHORRO|Melhor amigo do homem
+GATO|Bichinho que mia
+CAVALO|Animal que se pode montar
+VACA|Animal da fazenda que dá leite
+OVELHA|Animal que dá lã
+GALINHA|Ave que bota ovos
+PATO|Ave que faz quá-quá
+COELHO|Orelhudo que vive pulando
+TIGRE|Felino grande e listrado
+LEÃO|Rei da selva
+ELEFANTE|Animal grande com tromba
+GIRAFA|Animal de pescoço comprido
+MACACO|Animal que sobe em árvores
+PÁSSARO|Animal com penas que voa
+PEIXE|Animal que nada e tem guelras
+TARTARUGA|Animal lento com casco
+URSO|Animal grande e peludo
+CORUJA|Ave da noite
+ABELHA|Inseto que faz mel
+BORBOLETA|Inseto de asas coloridas
+SOL|Estrela que ilumina o dia
+LUA|Brilha no céu à noite
+ESTRELA|Pisca no céu à noite
+NUVEM|Branca e fofa no céu
+CHUVA|Água que cai das nuvens
+RIO|Água que corre até o mar
+MAR|Grande extensão de água salgada
+PRAIA|Lugar de areia à beira-mar
+MONTANHA|Terra muito alta
+ILHA|Terra cercada de água
+FLORESTA|Lugar cheio de árvores
+FLOR|Rosa ou margarida, por exemplo
+ÁRVORE|Tem tronco, galhos e folhas
+ROSA|Flor símbolo do amor
+GRAMA|Planta verde do gramado
+VERMELHO|Cor do morango
+AZUL|Cor do céu
+VERDE|Cor da grama
+AMARELO|Cor do sol
+BRANCO|Cor do leite
+PRETO|Cor da noite
+MÃE|Mulher que tem filhos
+PAI|Homem que tem filhos
+IRMÃ|Filha dos seus pais
+IRMÃO|Filho dos seus pais
+AVÓ|Mãe da sua mãe ou do seu pai
+NETO|Filho do seu filho
+BEBÊ|Criança bem pequena
+AMIGO|Pessoa querida em quem confiamos
+FAMÍLIA|Pais, filhos, avós...
+CORAÇÃO|Órgão que bombeia o sangue
+MÃO|Tem cinco dedos
+OLHO|Usamos para enxergar
+NARIZ|Usamos para sentir cheiros
+ORELHA|Usamos para ouvir
+BOCA|Usamos para comer e falar
+SORRISO|Expressão de alegria no rosto
+LIVRO|Tem páginas para ler
+CARTA|Escrevemos e mandamos pelo correio
+JORNAL|Notícias impressas do dia
+TELEFONE|Aparelho para ligar para as pessoas
+RELÓGIO|Mostra as horas
+CHAVE|Abre a fechadura
+PORTA|Abrimos para entrar
+CAMA|Móvel para dormir
+COLHER|Talher da sopa
+GARFO|Talher com dentes
+FACA|Talher para cortar
+XÍCARA|Onde tomamos café ou chá
+GARRAFA|Guarda água ou vinho
+TREM|Anda sobre trilhos
+AVIÃO|Voa levando passageiros
+NAVIO|Barco grande no oceano
+CARRO|Veículo de quatro rodas
+BICICLETA|Duas rodas e pedais
+MÚSICA|Canções e melodias
+DANÇA|Mexer o corpo com a música
+IGREJA|Lugar de oração dos cristãos
+ESCOLA|Onde as crianças aprendem
+FEIRA|Onde compramos frutas e verduras
+HOSPITAL|Onde os doentes são tratados
+ANIVERSÁRIO|Comemorado uma vez por ano com bolo
+NATAL|Festa do dia 25 de dezembro
+PRESENTE|Dado com carinho em datas especiais
+VELA|Bastão de cera que ilumina
+PIZZA|Prato italiano com queijo e tomate
+MACARRÃO|Espaguete, por exemplo
+OVO|A galinha bota
+LEITE|Bebida branca que vem da vaca
+ÁGUA|Bebida transparente e essencial
+SUCO|Bebida feita de frutas
+VINHO|Bebida feita de uva
+CHAPÉU|Usado na cabeça
+SAPATO|Usado nos pés
+VESTIDO|Roupa feminina de uma peça
+CASACO|Agasalho para o frio
+GUARDA-CHUVA|Protege da chuva
+ÓCULOS|Ajudam a enxergar melhor
+FELIZ|Cheio de alegria
+AMOR|Sentimento de carinho profundo
+PAZ|O contrário de guerra
+SONHO|O que vemos enquanto dormimos
+NOITE|Quando fica escuro
+MANHÃ|Começo do dia
+SAUDADE|Falta que sentimos de alguém querido
+FUTEBOL|Esporte mais popular do Brasil
+CARNAVAL|Festa brasileira com samba e fantasia
+TERÇO|Usado para rezar o rosário
+NOVELA|Programa de TV contado em capítulos
+CROCHÊ|Trabalho manual feito com agulha e linha
+TRICÔ|Feito com duas agulhas e lã
+RECEITA|Instruções para fazer um prato
+PANELA|Usada para cozinhar no fogão
+FOGÃO|Onde cozinhamos
+GELADEIRA|Mantém a comida fresca
+TAPIOCA|Feita com goma de mandioca
+PAMONHA|Feita de milho verde, enrolada na palha
+BRIGADEIRO|Docinho de chocolate das festas
+CUSCUZ|Prato de flocos de milho
+QUINTAL|Espaço atrás ou ao lado da casa
+VARANDA|Lugar para tomar fresco na casa
+DOMINÓ|Jogo de pedras com pontinhos
+BARALHO|Conjunto de cartas para jogar buraco
+NETA|Filha do seu filho
+SOBRINHO|Filho do seu irmão
+TRAVESSEIRO|Onde apoiamos a cabeça para dormir
+COBERTOR|Esquenta na cama
+AVENTAL|Usado na cozinha para não sujar a roupa

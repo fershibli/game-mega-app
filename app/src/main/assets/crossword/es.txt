@@ -1,0 +1,154 @@
+# Diccionario del crucigrama — español. Formato: RESPUESTA|pista.
+MANZANA|Fruta roja o verde
+PAN|Se hace con harina y se hornea
+SILLA|Mueble para sentarse
+MESA|Mueble donde comemos
+CASA|Lugar donde vive la familia
+JARDÍN|Lugar con flores y plantas
+VENTANA|Abertura en la pared con cristal
+MÉDICO|Cuida a los enfermos
+ENFERMERA|Ayuda al médico con los pacientes
+MAESTRO|Enseña en la escuela
+PIANO|Instrumento de teclas blancas y negras
+GUITARRA|Instrumento de cuerdas muy español
+VERANO|La estación más calurosa
+INVIERNO|La estación más fría
+PRIMAVERA|Estación de las flores
+OTOÑO|Estación en que caen las hojas
+DOMINGO|Día de descanso
+CAFÉ|Bebida caliente de la mañana
+AZÚCAR|Endulza el café
+SAL|Condimento blanco que viene del mar
+QUESO|Se hace con leche; al ratón le encanta
+MANTEQUILLA|Se unta en el pan tostado
+MIEL|Alimento dulce de las abejas
+NARANJA|Fruta cítrica que también es un color
+PLÁTANO|Fruta amarilla y alargada
+UVA|Fruta pequeña para hacer vino
+LIMÓN|Fruta ácida y amarilla
+TOMATE|Fruto rojo de la ensalada
+PATATA|Ingrediente de la tortilla española
+ZANAHORIA|Hortaliza naranja que come el conejo
+CEBOLLA|Hace llorar al cortarla
+ARROZ|Grano de la paella
+SOPA|Comida caliente que se toma con cuchara
+PASTEL|Dulce de cumpleaños
+PERRO|El mejor amigo del hombre
+GATO|Mascota que maúlla
+CABALLO|Animal que se puede montar
+VACA|Animal de granja que da leche
+OVEJA|Animal que da lana
+GALLINA|Ave que pone huevos
+PATO|Ave que hace cua-cua
+CONEJO|Animal de orejas largas que salta
+TIGRE|Felino grande con rayas
+LEÓN|Rey de la selva
+ELEFANTE|Animal grande con trompa
+JIRAFA|Animal de cuello muy largo
+MONO|Animal que trepa a los árboles
+PÁJARO|Animal con plumas que vuela
+PEZ|Animal que nada en el agua
+TORTUGA|Animal lento con caparazón
+OSO|Animal grande y peludo
+BÚHO|Ave de la noche
+ABEJA|Insecto que hace miel
+MARIPOSA|Insecto de alas de colores
+SOL|Estrella que ilumina el día
+LUNA|Brilla en el cielo de noche
+ESTRELLA|Brilla en el cielo nocturno
+NUBE|Blanca y esponjosa en el cielo
+LLUVIA|Agua que cae de las nubes
+NIEVE|Blanca y fría, cae en invierno
+RÍO|Agua que corre hacia el mar
+MAR|Gran extensión de agua salada
+PLAYA|Lugar con arena junto al mar
+MONTAÑA|Tierra muy alta
+ISLA|Tierra rodeada de agua
+BOSQUE|Lugar lleno de árboles
+FLOR|Rosa o margarita, por ejemplo
+ÁRBOL|Tiene tronco, ramas y hojas
+ROSA|Flor símbolo del amor
+ROJO|Color de la fresa
+AZUL|Color del cielo
+VERDE|Color de la hierba
+AMARILLO|Color del sol
+BLANCO|Color de la leche
+NEGRO|Color de la noche
+MADRE|Mujer que tiene hijos
+PADRE|Hombre que tiene hijos
+HERMANA|Hija de tus padres
+HERMANO|Hijo de tus padres
+ABUELA|Madre de tu madre o de tu padre
+NIETO|Hijo de tu hijo
+BEBÉ|Niño muy pequeño
+AMIGO|Persona querida en quien confías
+FAMILIA|Padres, hijos, abuelos...
+CORAZÓN|Órgano que bombea la sangre
+MANO|Tiene cinco dedos
+OJO|Sirve para ver
+NARIZ|Sirve para oler
+OREJA|Sirve para oír
+BOCA|Sirve para comer y hablar
+SONRISA|Gesto de alegría
+LIBRO|Tiene páginas para leer
+CARTA|Se escribe y se envía por correo
+PERIÓDICO|Noticias impresas del día
+TELÉFONO|Aparato para llamar
+RELOJ|Marca la hora
+LLAVE|Abre la cerradura
+PUERTA|Se abre para entrar
+CAMA|Mueble para dormir
+CUCHARA|Cubierto para la sopa
+TENEDOR|Cubierto con dientes
+CUCHILLO|Cubierto para cortar
+TAZA|Donde se toma el café
+BOTELLA|Guarda agua o vino
+TREN|Viaja sobre rieles
+AVIÓN|Vuela con pasajeros
+BARCO|Navega por el mar
+COCHE|Vehículo de cuatro ruedas
+BICICLETA|Dos ruedas y pedales
+MÚSICA|Canciones y melodías
+BAILE|Moverse con la música
+CANCIÓN|Música con letra
+IGLESIA|Lugar de oración cristiano
+ESCUELA|Donde aprenden los niños
+MERCADO|Donde se compra fruta y verdura
+HOSPITAL|Donde atienden a los enfermos
+CUMPLEAÑOS|Se celebra cada año con pastel
+NAVIDAD|Fiesta del 25 de diciembre
+REGALO|Se da con cariño
+VELA|De cera, da luz
+HUEVO|Lo pone la gallina
+LECHE|Bebida blanca de la vaca
+AGUA|Bebida transparente y esencial
+ZUMO|Bebida hecha de fruta
+VINO|Bebida hecha de uvas
+SOMBRERO|Se lleva en la cabeza
+ZAPATO|Se lleva en el pie
+VESTIDO|Prenda femenina de una pieza
+ABRIGO|Prenda para el frío
+PARAGUAS|Protege de la lluvia
+GAFAS|Ayudan a ver mejor
+FELIZ|Lleno de alegría
+AMOR|Sentimiento de gran cariño
+PAZ|Lo contrario de la guerra
+SUEÑO|Lo que vemos al dormir
+NOCHE|Cuando está oscuro
+MAÑANA|Primera parte del día
+FÚTBOL|Deporte del balón y la portería
+TORTILLA|Plato español de huevo y patata
+SIESTA|Descanso después de comer
+COCINA|Parte de la casa donde se cocina
+OLLA|Recipiente para cocinar
+NEVERA|Mantiene fríos los alimentos
+RECETA|Instrucciones para preparar un plato
+PAELLA|Plato valenciano de arroz
+CHURROS|Se mojan en chocolate caliente
+DOMINÓ|Juego de fichas con puntos
+BARAJA|Conjunto de cartas para jugar
+NIETA|Hija de tu hijo
+SOBRINO|Hijo de tu hermano
+ALMOHADA|Donde apoyas la cabeza al dormir
+MANTA|Abriga en la cama
+DELANTAL|Se usa en la cocina para no mancharse

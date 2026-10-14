@@ -87,6 +87,9 @@ class ScreenshotTest {
     @Test fun connectColorblind() = gameShot("game_connect_colorblind", GameId.CONNECT, Difficulty.MEDIUM, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
     @Test fun dots() = gameShot("game_dots", GameId.DOTS)
     @Test fun dotsHighContrastDark() = gameShot("game_dots_hc_dark", GameId.DOTS, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST, darkMode = true))
+    @Test fun crosswordEasy() = gameShot("game_crossword_easy", GameId.CROSSWORD)
+    @Test fun crosswordHard() = gameShot("game_crossword_hard", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun crosswordChinese() = gameShot("game_crossword_zh", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE))
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
 
 }

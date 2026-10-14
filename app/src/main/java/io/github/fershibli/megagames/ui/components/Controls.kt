@@ -57,6 +57,7 @@ fun BigButton(
     style: ButtonStyle = ButtonStyle.PRIMARY,
     enabled: Boolean = true,
     compact: Boolean = false,
+    bigText: Boolean = false,
 ) {
     val p = LocalPalette.current
     val (bg, fg) = when (style) {
@@ -85,11 +86,30 @@ fun BigButton(
             }
             if (text.isNotEmpty()) {
                 Text(
-                    text, color = fg.copy(alpha = alpha), style = MaterialTheme.typography.labelLarge,
+                    text, color = fg.copy(alpha = alpha), style = if (bigText) MaterialTheme.typography.headlineMedium else MaterialTheme.typography.labelLarge,
                     textAlign = TextAlign.Center, maxLines = 2, overflow = TextOverflow.Ellipsis,
                 )
             }
         }
+    }
+}
+
+/** Keyboard key: big letter, no inner padding so even "W" fits on narrow phones. */
+@Composable
+fun KeyButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    val p = LocalPalette.current
+    val shape = RoundedCornerShape(12.dp)
+    Box(
+        modifier
+            .defaultMinSize(minHeight = 48.dp)
+            .shadow(2.dp, shape)
+            .clip(shape)
+            .background(Brush.verticalGradient(listOf(lerp(p.primary, Color.White, 0.12f), p.primary)))
+            .then(if (p.strongOutlines) Modifier.border(2.dp, p.outline, shape) else Modifier)
+            .clickable(role = Role.Button, onClick = onClick),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(label, color = p.onPrimary, style = MaterialTheme.typography.titleLarge, maxLines = 1, softWrap = false)
     }
 }
 

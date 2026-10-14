@@ -137,4 +137,10 @@
 
     <!-- Dots -->
     <string name="dots_moves">Moves: %1$d</string>
+
+    <!-- Crossword -->
+    <string name="crossword_across">Across</string>
+    <string name="crossword_down">Down</string>
+    <string name="crossword_prev">Previous word</string>
+    <string name="crossword_next">Next word</string>
 </resources>
