@@ -19,7 +19,12 @@ import androidx.compose.ui.test.captureToImage
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onRoot
 import io.github.fershibli.megagames.core.Settings
+import io.github.fershibli.megagames.core.SaveStore
+import io.github.fershibli.megagames.ui.screens.DifficultyScreen
+import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.HomeScreen
+import io.github.fershibli.megagames.ui.screens.InGameActions
+import io.github.fershibli.megagames.ui.screens.SettingsScreen
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 import org.junit.Assume
@@ -75,6 +80,19 @@ class ScreenshotTest {
     }
 
     @Test fun home() = shot("home") { HomeScreen({}, {}) }
+    @Test fun homeDark() = shot("home_dark", Settings(darkMode = true)) { HomeScreen({}, {}) }
+    @Test fun homeHighContrast() = shot("home_high_contrast", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST)) { HomeScreen({}, {}) }
+    @Test fun homeColorblindDark() = shot("home_colorblind_dark", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true)) { HomeScreen({}, {}) }
+    @Test fun homeOneHand() = shot("home_one_hand", Settings(oneHand = true)) { HomeScreen({}, {}) }
+    @Test fun difficulty() = shot("difficulty") { DifficultyScreen(GameId.MAHJONG, Difficulty.MEDIUM, {}, {}, {}) }
+    @Test fun settings() = shot("settings") { SettingsScreen(Settings(), {}, {}, null) }
+    @Test fun settingsInGamePt() = shot("settings_in_game_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {}, InGameActions({}, {}, {}))
+    }
+    @Test fun resumeDialog() = shot("resume_dialog") {
+        val store = SaveStore(org.robolectric.RuntimeEnvironment.getApplication())
+        GameScreen(GameId.SUDOKU, Difficulty.EASY, null, store, Settings(), {}, askResume = true, onResumeAnswered = {}, onExit = {})
+    }
     @Test fun sudoku() = gameShot("game_sudoku", GameId.SUDOKU)
     @Test fun solitaire() = gameShot("game_solitaire", GameId.SOLITAIRE)
     @Test fun solitaireColorblind() = gameShot("game_solitaire_colorblind", GameId.SOLITAIRE, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
