@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.key
 import androidx.compose.runtime.mutableIntStateOf
@@ -27,6 +28,7 @@ import io.github.fershibli.megagames.games.GameContent
 import io.github.fershibli.megagames.ui.components.BigDialog
 import io.github.fershibli.megagames.ui.components.FloatingGear
 import io.github.fershibli.megagames.ui.components.TopBar
+import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
 
 /**
  * Hosts one game: top bar with the gear, the game itself, the in-game settings (which can
@@ -63,7 +65,9 @@ fun GameScreen(
         Column(Modifier.fillMaxSize()) {
             TopBar(stringResource(game.title), onSettings = { showSettings = true })
             Box(Modifier.weight(1f).fillMaxWidth()) {
-                key(session) { GameContent(game, host) }
+                CompositionLocalProvider(LocalUpdateSettings provides onSettingsChange) {
+                    key(session) { GameContent(game, host) }
+                }
             }
         }
         FloatingGear { showSettings = true }

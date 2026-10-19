@@ -7,10 +7,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.click
 import androidx.compose.ui.test.doubleClick
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -20,15 +22,24 @@ import androidx.compose.ui.test.pinch
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.core.SavedGame
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.SettingsStore
+import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.games.backgammon.BackgammonState
+import io.github.fershibli.megagames.games.backgammon.BgMove
+import io.github.fershibli.megagames.games.backgammon.BgPosition
+import io.github.fershibli.megagames.games.backgammon.HUMAN
+import io.github.fershibli.megagames.games.sudoku.SudokuState
+import io.github.fershibli.megagames.games.sudoku.newSudoku
 import io.github.fershibli.megagames.ui.MegaGamesApp
 import io.github.fershibli.megagames.ui.components.ZoomState
 import io.github.fershibli.megagames.ui.components.ZoomableBoard
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
+import kotlin.random.Random
 import kotlinx.serialization.json.JsonPrimitive
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -70,7 +81,7 @@ class AppFlowTest {
     @Test
     fun settingsArePersisted() {
         val store = SettingsStore(app)
-        val s = Settings(darkMode = true, leftHanded = true, fontScale = 1.3f, defaultDifficulty = Difficulty.HARD)
+        val s = Settings(darkMode = true, leftHanded = true, fontScale = 1.3f, defaultDifficulty = Difficulty.HARD, backgammonUpright = true)
         store.save(s)
         assertEquals(s, SettingsStore(app).load())
     }
@@ -169,4 +180,78 @@ class AppFlowTest {
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
         assertTrue(saves.load() != null)
     }
+
+    @Test
+    fun sudokuKeepsEveryNumberWhileMovingBetweenCells() {
+        // Regression: the board's tap handler kept the state from its first tap, so selecting a
+        // cell later brought back that old state and erased the numbers placed since then.
+        val store = SaveStore(app).apply { clear() }
+        val puzzle = newSudoku(Difficulty.EASY, Random(7))
+        val empty = (0 until 81).filter { puzzle.givens[it] == 0 }.take(4)
+        val host = GameHost(GameId.SUDOKU, Difficulty.EASY, AppJson.encodeToJsonElement(SudokuState.serializer(), puzzle), store) {}
+        rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.SUDOKU, host) } }
+        rule.waitForIdle()
+        for (cell in empty) {
+            rule.onNodeWithTag("sudoku-board").performTouchInput {
+                val side = width / 9f
+                click(Offset((cell % 9 + 0.5f) * side, (cell / 9 + 0.5f) * side))
+            }
+            rule.waitForIdle()
+            rule.onAllNodesWithText(puzzle.solution[cell].toString()).onFirst().performClick()
+            rule.waitForIdle()
+        }
+        // Finally select a given cell, which must not change any value.
+        val given = (0 until 81).first { puzzle.givens[it] != 0 }
+        rule.onNodeWithTag("sudoku-board").performTouchInput {
+            val side = width / 9f
+            click(Offset((given % 9 + 0.5f) * side, (given / 9 + 0.5f) * side))
+        }
+        rule.waitForIdle()
+        var saved: SudokuState? = null
+        for (attempt in 0 until 50) {
+            Thread.sleep(20)
+            saved = store.load()?.let { AppJson.decodeFromJsonElement(SudokuState.serializer(), it.state) }
+            if (saved?.selected == given) break
+        }
+        assertEquals(given, saved?.selected)
+        assertEquals(empty.map { puzzle.solution[it] }, empty.map { saved?.values?.get(it) })
+        store.clear()
+    }
+
+
+    @Test
+    fun backgammonSidewaysBoardIsTheTraditionalOneAndTapsHitThePointsDrawn() {
+        // Default board: horizontal, points 13-24 along the top (24 at the right), 12-1 along the
+        // bottom (1 at the right, your home), bar in the middle and tray on the right.
+        val store = SaveStore(app).apply { clear() }
+        val start = BackgammonState(BgPosition.initial(), HUMAN, listOf(6, 5), BgPosition.initial())
+        val host = GameHost(GameId.BACKGAMMON, Difficulty.EASY, AppJson.encodeToJsonElement(BackgammonState.serializer(), start), store) {}
+        rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.BACKGAMMON, host) } }
+        rule.waitForIdle()
+        fun tapPoint(point: Int) = rule.onNodeWithTag("backgammon-board").performTouchInput {
+            assertTrue("board should be wider than tall", width > height)
+            val frame = height * 0.025f
+            val bar = width * 0.09f
+            val step = (width - 2 * frame - width * 0.075f - bar) / 12f
+            val column = if (point >= 13) point - 13 else 12 - point // 0 = leftmost
+            val x = frame + column * step + (if (column >= 6) bar else 0f) + step / 2
+            val y = if (point >= 13) height * 0.2f else height * 0.8f
+            click(Offset(x, y))
+        }
+        tapPoint(24) // top right: its only destination is 18 (19 is the computer's), so it moves at once
+        rule.waitForIdle()
+        tapPoint(13) // top left: selects the checker
+        rule.waitForIdle()
+        tapPoint(8) // bottom row: moves it there with the 5
+        rule.waitForIdle()
+        var saved: BackgammonState? = null
+        for (attempt in 0 until 50) {
+            Thread.sleep(20)
+            saved = store.load()?.let { AppJson.decodeFromJsonElement(BackgammonState.serializer(), it.state) }
+            if (saved?.played?.size == 2) break
+        }
+        assertEquals(listOf(BgMove(24, 18, 6), BgMove(13, 8, 5)), saved?.played)
+        store.clear()
+    }
+
 }

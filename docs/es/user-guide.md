@@ -172,9 +172,9 @@ Buraco brasileño para dos: tú contra el ordenador.
 
 ### Backgammon
 
-**Objetivo:** mover tus 15 fichas claras por el tablero hasta tu casa (puntos 1–6, abajo a la izquierda) y sacarlas todas antes que el ordenador (fichas oscuras).
+**Objetivo:** mover tus 15 fichas claras por el tablero hasta tu casa (puntos 1–6, abajo a la derecha) y sacarlas todas antes que el ordenador (fichas oscuras).
 
-El tablero se dibuja **de pie** para que las fichas sean grandes: los puntos 12→1 bajan por la columna izquierda, 13→24 por la derecha, la **barra** cruza el centro y la **bandeja** de fichas sacadas está abajo (la tuya a la izquierda).
+El tablero es el tradicional, **horizontal**: puntos 13→24 arriba, 12→1 abajo (tu casa abajo a la derecha), la **barra** en el centro y la **bandeja** de fichas sacadas a la derecha (la tuya abajo). Pellizca para ampliar y moverte por el tablero. **Girar** pone el tablero de pie, llenando la pantalla con fichas más grandes: los puntos 12→1 bajan entonces por la columna izquierda (tu casa abajo a la izquierda), 13→24 por la derecha, la barra cruza el centro y la bandeja queda abajo. La aplicación recuerda tu elección.
 
 **Cómo se juega:** toca **Tirar los dados**. Las fichas que pueden moverse se iluminan en **amarillo**; toca una y sus destinos posibles se iluminan en **verde**; toca el destino. Si una ficha solo tiene un destino posible, se mueve directamente. Cuando hayas usado todos los dados, toca **Listo**. **Deshacer** reinicia tu turno. Para sacar una ficha, toca la bandeja.
 

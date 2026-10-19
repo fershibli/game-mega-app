@@ -132,6 +132,7 @@
 
     <string name="backgammon_roll">Jogar os dados</string>
     <string name="backgammon_done">Pronto</string>
+    <string name="backgammon_rotate">Girar</string>
     <string name="backgammon_roll_prompt">Sua vez: jogue os dados</string>
     <string name="backgammon_pick_checker">Toque numa pedra para mover (amarelo)</string>
     <string name="backgammon_pick_target">Toque onde ela vai (verde)</string>

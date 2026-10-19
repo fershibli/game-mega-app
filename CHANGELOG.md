@@ -11,7 +11,11 @@ All notable changes to this project are documented here. The format follows [Kee
 - Home screen with endless two-column picture grid; difficulty scroll wheel with the default preselected.
 - Settings: language (EN, PT-BR, ES, FR, ZH), text size, piece/button size, Normal / High-contrast / Color-blind palettes each with a dark mode, pinch zoom, left-handed mode, one-hand mode (floating gear, double-tap or press-and-rotate zoom), default difficulty.
 - Automatic save with "continue where you left off?" on the next start.
+- Backgammon on the traditional horizontal board, with pinch zoom to get closer; a Rotate button stands it up (bigger checkers) and the choice is remembered.
 - Documentation in five languages, CI, Dependabot.
 - Automatic semantic versioning from Conventional Commits (`versioning.yml`) and an APK deploy pipeline (`deploy.yml`) that tests, signs, verifies and publishes each release.
+
+### Fixed
+- Sudoku: after the first tap on the board, selecting another cell could erase the numbers placed since then.
 
 > From now on, the notes of every version are generated automatically from the commits and published on the [GitHub Releases](https://github.com/fershibli/game-mega-app/releases) page.

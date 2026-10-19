@@ -10,4 +10,10 @@
     <issue id="AppBundleLocaleChanges" severity="ignore" />
     <!-- localeConfig simply has no effect before Android 13. -->
     <issue id="UnusedAttribute" severity="ignore" />
+    <!-- "A newer version is available" checks look up the latest releases online, so the same commit
+         would start failing CI whenever Gradle, the Android plugin or a library ships a new version.
+         Updates are proposed by Dependabot instead (.github/dependabot.yml). -->
+    <issue id="AndroidGradlePluginVersion" severity="ignore" />
+    <issue id="GradleDependency" severity="ignore" />
+    <issue id="NewerVersionAvailable" severity="ignore" />
 </lint>

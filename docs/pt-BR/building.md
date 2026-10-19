@@ -97,7 +97,7 @@ O Android só instala APKs assinados, e as atualizações precisam ser assinadas
    | `MEGAGAMES_KEY_ALIAS` | `megagames` |
    | `MEGAGAMES_KEY_PASSWORD` | senha da chave |
 
-   Com esses segredos, o [pipeline de deploy](#versionamento-e-deploy) assina todo APK com a chave verdadeira. Sem eles, o APK continua sendo publicado, assinado com uma chave de depuração temporária e identificado assim nas notas da versão.
+   Com esses segredos, o [pipeline de deploy](#versionamento-e-deploy) assina todo APK com a chave verdadeira. Sem eles, as versões candidatas (`stag`) continuam sendo publicadas, assinadas com uma chave de depuração temporária e identificadas assim nas notas da versão, mas uma versão estável (`main`) não é publicada: a execução falha antes de criar a tag, e basta adicionar os segredos e executá-la de novo.
 
 ## Versionamento e deploy
 

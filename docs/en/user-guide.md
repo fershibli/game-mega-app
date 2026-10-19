@@ -172,9 +172,9 @@ Brazilian Buraco for two: you against the computer.
 
 ### Backgammon
 
-**Goal:** move your 15 light checkers around the board into your home (points 1–6, bottom left) and bear them all off before the computer (dark checkers).
+**Goal:** move your 15 light checkers around the board into your home (points 1–6, bottom right) and bear them all off before the computer (dark checkers).
 
-The board is drawn **standing up** so the checkers are big: points 12→1 run down the left column, 13→24 down the right column, the **bar** crosses the middle and the **tray** for borne-off checkers is at the bottom (yours on the left).
+The board is the traditional **horizontal** one: points 13→24 along the top, 12→1 along the bottom (your home at the bottom right), the **bar** down the middle and the **tray** for borne-off checkers on the right (yours at the bottom). Pinch to zoom in and move around it. **Rotate** stands the board up instead, filling the screen with bigger checkers: points 12→1 then run down the left column (your home at the bottom left), 13→24 down the right column, the bar crosses the middle and the tray is at the bottom. The app remembers your choice.
 
 **Playing:** tap **Roll dice**. Checkers that can move glow **yellow**; tap one and its possible destinations glow **green**; tap a destination. If a checker has only one possible destination it moves straight away. When all dice are used, tap **Done**. **Undo** resets your turn. To bear off, tap the tray.
 

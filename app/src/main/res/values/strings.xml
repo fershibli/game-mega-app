@@ -147,6 +147,7 @@
     <!-- Backgammon -->
     <string name="backgammon_roll">Roll dice</string>
     <string name="backgammon_done">Done</string>
+    <string name="backgammon_rotate">Rotate</string>
     <string name="backgammon_roll_prompt">Your turn: roll the dice</string>
     <string name="backgammon_pick_checker">Tap a checker to move (yellow)</string>
     <string name="backgammon_pick_target">Tap where it goes (green)</string>

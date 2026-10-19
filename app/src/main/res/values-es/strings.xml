@@ -132,6 +132,7 @@
 
     <string name="backgammon_roll">Tirar los dados</string>
     <string name="backgammon_done">Listo</string>
+    <string name="backgammon_rotate">Girar</string>
     <string name="backgammon_roll_prompt">Tu turno: tira los dados</string>
     <string name="backgammon_pick_checker">Toca una ficha para moverla (amarillo)</string>
     <string name="backgammon_pick_target">Toca adónde va (verde)</string>

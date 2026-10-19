@@ -26,7 +26,7 @@ import kotlin.math.min
 import kotlin.math.sin
 
 /** Icons are drawn in code (no icon font, no image files) to keep the app tiny. */
-enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV }
+enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE }
 
 @Composable
 fun IconView(icon: AppIcon, tint: Color, modifier: Modifier = Modifier, size: Dp = 28.dp, description: String? = null) {
@@ -130,6 +130,22 @@ fun DrawScope.drawAppIcon(icon: AppIcon, tint: Color) {
         AppIcon.DICE -> {
             drawRoundRect(tint, Offset(s * 0.1f, s * 0.1f), Size(s * 0.8f, s * 0.8f), CornerRadius(s * 0.16f), style = Stroke(s * 0.08f))
             listOf(Offset(0.3f, 0.3f), Offset(0.5f, 0.5f), Offset(0.7f, 0.7f)).forEach { drawCircle(tint, s * 0.08f, Offset(it.x * s, it.y * s)) }
+        }
+        AppIcon.ROTATE -> {
+            // A board standing up, a quarter-turn arrow, and the same board lying down.
+            drawRoundRect(tint, Offset(s * 0.08f, s * 0.08f), Size(s * 0.3f, s * 0.46f), CornerRadius(s * 0.05f), style = Stroke(s * 0.07f))
+            drawRoundRect(tint, Offset(s * 0.46f, s * 0.62f), Size(s * 0.46f, s * 0.3f), CornerRadius(s * 0.05f), style = Stroke(s * 0.07f))
+            val radius = s * 0.34f
+            val pivot = Offset(s * 0.36f, s * 0.47f)
+            drawArc(tint, 285f, 75f, false, pivot - Offset(radius, radius), Size(radius * 2, radius * 2), style = stroke)
+            val tip = pivot + Offset(radius, 0f)
+            val head = Path().apply {
+                moveTo(tip.x, tip.y + s * 0.13f)
+                lineTo(tip.x - s * 0.13f, tip.y - s * 0.02f)
+                lineTo(tip.x + s * 0.13f, tip.y - s * 0.02f)
+                close()
+            }
+            drawPath(head, tint)
         }
         AppIcon.PLUS -> {
             drawLine(tint, Offset(s * 0.5f, s * 0.15f), Offset(s * 0.5f, s * 0.85f), stroke.width, StrokeCap.Round)

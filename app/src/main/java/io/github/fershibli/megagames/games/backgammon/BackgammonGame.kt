@@ -24,8 +24,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalResources
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.rememberTextMeasurer
@@ -47,12 +50,14 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
+import io.github.fershibli.megagames.ui.theme.LocalSettings
+import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
 import io.github.fershibli.megagames.ui.theme.Palette
+import kotlin.random.Random
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
-import kotlin.random.Random
 
 @Serializable
 data class BackgammonState(
@@ -82,12 +87,22 @@ fun BackgammonGame(host: GameHost) {
 }
 
 /**
- * Board geometry shared by drawing and touch handling. The board is drawn "standing up" for a
- * phone held upright: the 24 points run down the screen in two columns, so the checkers are much
- * bigger than on a sideways board. Your home (points 1-6) is at the bottom left, near your thumb,
- * the tray for borne-off checkers runs along the bottom and the bar across the middle.
+ * Board geometry shared by drawing and touch handling, always described "standing up": the 24
+ * points run down two columns, your home (points 1-6) at the bottom left, the tray for borne-off
+ * checkers along the bottom and the bar across the middle.
+ *
+ * When [sideways] is true (the default) that board is turned a quarter turn counter-clockwise on
+ * screen, which gives the traditional horizontal board: points 1-12 along the bottom with your
+ * home at the bottom right, 13-24 along the top, the bar down the middle and the tray on the
+ * right. The checkers are smaller, so it is meant to be used with pinch zoom. Standing up, the
+ * board fills the screen and the checkers are bigger.
+ *
+ * [width] and [height] are the board's own (standing) size; [canvasHeight] is the height of the
+ * area it is drawn in.
  */
-private class BoardGeometry(val width: Float, val height: Float) {
+private class BoardGeometry(canvasWidth: Float, private val canvasHeight: Float, val sideways: Boolean) {
+    val width = if (sideways) canvasHeight else canvasWidth
+    val height = if (sideways) canvasWidth else canvasHeight
     val frame = width * 0.025f
     val tray = height * 0.075f
     val bar = height * 0.09f
@@ -107,7 +122,11 @@ private class BoardGeometry(val width: Float, val height: Float) {
         return if (left) Rect(inner.left, y, inner.left + halfW, y + ph) else Rect(inner.left + halfW, y, inner.right, y + ph)
     }
 
-    fun hit(o: Offset): Int? {
+    /** Screen position -> position on the standing board (the inverse of [orient]). */
+    fun toBoard(o: Offset) = if (sideways) Offset(canvasHeight - o.y, o.x) else o
+
+    fun hit(screen: Offset): Int? {
+        val o = toBoard(screen)
         if (trayRect.contains(o)) return 0
         if (barRect.contains(o)) return 25
         for (p in 1..24) if (pointRect(p).contains(o)) return p
@@ -119,6 +138,9 @@ private class BoardGeometry(val width: Float, val height: Float) {
 private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHost) {
     val s = state.value
     val context = LocalResources.current
+    val settings = LocalSettings.current
+    val updateSettings = LocalUpdateSettings.current
+    val sideways = !settings.backgammonUpright
     var selected by remember { mutableIntStateOf(-1) }
     var noMoves by remember { mutableIntStateOf(0) }
 
@@ -225,13 +247,18 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
         controls = {
             ActionBar {
                 when {
-                    s.turn == HUMAN && s.roll.isEmpty() -> BigButton(stringResource(R.string.backgammon_roll), ::roll, icon = AppIcon.DICE)
-                    else -> BigButton(stringResource(R.string.backgammon_done), ::endTurn, icon = AppIcon.CHECK, enabled = turnComplete)
+                    s.turn == HUMAN && s.roll.isEmpty() -> BigButton(stringResource(R.string.backgammon_roll), ::roll, icon = AppIcon.DICE, compact = true)
+                    else -> BigButton(stringResource(R.string.backgammon_done), ::endTurn, icon = AppIcon.CHECK, enabled = turnComplete, compact = true)
                 }
                 BigButton(stringResource(R.string.undo), {
                     s.turnStart?.let { state.value = s.copy(position = it, played = emptyList()) }
                     selected = -1
-                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = s.turn == HUMAN && s.played.isNotEmpty())
+                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = s.turn == HUMAN && s.played.isNotEmpty(), compact = true)
+                BigButton(
+                    stringResource(R.string.backgammon_rotate),
+                    { updateSettings(settings.copy(backgammonUpright = !settings.backgammonUpright)) },
+                    icon = AppIcon.ROTATE, style = ButtonStyle.SECONDARY, compact = true,
+                )
             }
         },
     ) {
@@ -240,47 +267,69 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
         val targets = nextMoves.filter { it.from == selected }.map { it.to }.toSet()
         val sources = nextMoves.map { it.from }.toSet()
         BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
-            val h = maxHeight
-            val w = minOf(maxWidth, h * 0.8f)
+            // Same proportions either way: 4 wide by 5 tall standing, 5 wide by 4 tall sideways.
+            val (w, h) = if (sideways) {
+                minOf(maxWidth, maxHeight * 1.25f).let { it to it * 0.8f }
+            } else {
+                minOf(maxWidth, maxHeight * 0.8f) to maxHeight
+            }
             Canvas(
                 Modifier
                     .size(w, h)
-                    .pointerInput(s, selected, nextMoves) {
-                        detectTapGestures { o -> tap(BoardGeometry(size.width.toFloat(), size.height.toFloat()).hit(o)) }
+                    .testTag("backgammon-board")
+                    .pointerInput(s, selected, nextMoves, sideways) {
+                        detectTapGestures { o -> tap(BoardGeometry(size.width.toFloat(), size.height.toFloat(), sideways).hit(o)) }
                     },
             ) {
-                val g = BoardGeometry(size.width, size.height)
-                drawBoard(g, p, measurer)
-                // Highlights
-                for (t in targets) {
-                    val r = if (t == 0) g.trayRect else g.pointRect(t)
-                    drawRoundRect(p.hint.copy(alpha = 0.45f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
-                }
-                if (s.turn == HUMAN && selected < 0) for (src in sources) {
-                    if (src == 25) continue
-                    val r = g.pointRect(src)
-                    drawRoundRect(p.highlight.copy(alpha = 0.35f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
-                }
-                drawCheckers(g, shownPosition, p, measurer, selected)
-                val lastAi = if (aiShown > 0) s.aiMoves[aiShown - 1] else null
-                if (lastAi != null && lastAi.to != 0) {
-                    val abs = 25 - lastAi.to
-                    val r = g.pointRect(abs)
-                    drawRoundRect(p.danger, r.topLeft, r.size, CornerRadius(g.ph * 0.2f), style = Stroke(g.ph * 0.08f))
-                }
-                if (s.roll.isNotEmpty()) {
-                    val dice = Backgammon.diceList(s.roll[0], s.roll[1])
-                    val used = if (s.turn == HUMAN) usedDice else s.aiMoves.take(aiShown).map { it.die }
-                    val remaining = dice.toMutableList().also { list -> used.forEach { list.remove(it) } }
-                    drawDice(g, s.roll, dice, remaining, s.turn == AI, p)
+                val g = BoardGeometry(size.width, size.height, sideways)
+                orient(g) {
+                    drawBoard(g, p, measurer)
+                    // Highlights
+                    for (t in targets) {
+                        val r = if (t == 0) g.trayRect else g.pointRect(t)
+                        drawRoundRect(p.hint.copy(alpha = 0.45f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
+                    }
+                    if (s.turn == HUMAN && selected < 0) for (src in sources) {
+                        if (src == 25) continue
+                        val r = g.pointRect(src)
+                        drawRoundRect(p.highlight.copy(alpha = 0.35f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
+                    }
+                    drawCheckers(g, shownPosition, p, measurer, selected)
+                    val lastAi = if (aiShown > 0) s.aiMoves[aiShown - 1] else null
+                    if (lastAi != null && lastAi.to != 0) {
+                        val abs = 25 - lastAi.to
+                        val r = g.pointRect(abs)
+                        drawRoundRect(p.danger, r.topLeft, r.size, CornerRadius(g.ph * 0.2f), style = Stroke(g.ph * 0.08f))
+                    }
+                    if (s.roll.isNotEmpty()) {
+                        val dice = Backgammon.diceList(s.roll[0], s.roll[1])
+                        val used = if (s.turn == HUMAN) usedDice else s.aiMoves.take(aiShown).map { it.die }
+                        val remaining = dice.toMutableList().also { list -> used.forEach { list.remove(it) } }
+                        drawDice(g, s.roll, dice, remaining, s.turn == AI, p)
+                    }
                 }
             }
         }
     }
 }
 
+/** Turns the standing board into the sideways one on screen (see [BoardGeometry]). */
+private inline fun DrawScope.orient(g: BoardGeometry, block: DrawScope.() -> Unit) {
+    if (!g.sideways) return block()
+    withTransform({
+        translate(0f, size.height)
+        rotate(-90f, Offset.Zero)
+    }, block)
+}
+
+/** Draws [block] upright around [pivot] even on the sideways board: text, dice and the light on the checkers. */
+private inline fun DrawScope.upright(g: BoardGeometry, pivot: Offset, block: DrawScope.() -> Unit) {
+    if (g.sideways) rotate(90f, pivot, block) else block()
+}
+
 private fun DrawScope.drawBoard(g: BoardGeometry, p: Palette, measurer: TextMeasurer) {
-    drawRoundRect(Brush.linearGradient(listOf(p.wood.lighter(0.15f), p.woodDark)), Offset.Zero, size, CornerRadius(g.frame * 1.5f))
+    val board = Size(g.width, g.height)
+    drawRoundRect(Brush.linearGradient(listOf(p.wood.lighter(0.15f), p.woodDark), Offset.Zero, Offset(g.width, g.height)), Offset.Zero, board, CornerRadius(g.frame * 1.5f))
     drawRect(Color.Black.copy(alpha = 0.3f), g.inner.topLeft + Offset(g.frame * 0.3f, g.frame * 0.3f), g.inner.size)
     val felt = if (p.isDark) p.felt.darker(0.1f) else p.felt.lighter(0.05f)
     drawRect(Brush.horizontalGradient(listOf(felt.lighter(0.06f), felt.darker(0.08f), felt.lighter(0.06f)), g.inner.left, g.inner.right), g.inner.topLeft, g.inner.size)
@@ -296,7 +345,8 @@ private fun DrawScope.drawBoard(g: BoardGeometry, p: Palette, measurer: TextMeas
         drawPath(tri, Brush.linearGradient(listOf(color.lighter(0.12f), color.darker(0.12f)), Offset(0f, r.top), Offset(0f, r.bottom)))
         drawPath(tri, color.darker(0.35f), style = Stroke(1.5f))
         val labelX = if (left) r.left + g.triangle + g.ph * 0.35f else r.right - g.triangle - g.ph * 0.35f
-        text(measurer, pt.toString(), Offset(labelX, r.center.y), Color.White.copy(alpha = 0.6f), pxToSp(g.ph * 0.3f), bold = false)
+        val label = Offset(labelX, r.center.y)
+        upright(g, label) { text(measurer, pt.toString(), label, Color.White.copy(alpha = 0.6f), pxToSp(g.ph * 0.3f), bold = false) }
     }
     drawLine(Color.Black.copy(alpha = 0.25f), Offset(g.inner.center.x, g.inner.top), Offset(g.inner.center.x, g.inner.bottom), 2f)
     // Bar and tray
@@ -313,11 +363,11 @@ private fun DrawScope.drawCheckers(g: BoardGeometry, pos: BgPosition, p: Palette
         val step = if (count <= maxVisible) r * 2 else (room - r * 2) / (count - 1)
         for (k in 0 until count) {
             val c = Offset(baseX + dir * (r + k * minOf(step, r * 2)), y)
-            glossyDisc(c, r, color, rim = if (highlightTop && k == count - 1) p.highlight else rim)
+            upright(g, c) { glossyDisc(c, r, color, rim = if (highlightTop && k == count - 1) p.highlight else rim) }
         }
         if (count > maxVisible) {
             val c = Offset(baseX + dir * (r + (count - 1) * minOf(step, r * 2)), y)
-            text(measurer, count.toString(), c, if (color.luminance() > 0.5f) Color.Black else Color.White, pxToSp(r * 0.9f))
+            upright(g, c) { text(measurer, count.toString(), c, if (color.luminance() > 0.5f) Color.Black else Color.White, pxToSp(r * 0.9f)) }
         }
     }
     val human = p.checkerPlayer
@@ -360,7 +410,6 @@ private fun DrawScope.drawDice(g: BoardGeometry, roll: List<Int>, all: List<Int>
         val tl = Offset(left + i * side * 1.25f, cy - side / 2)
         val face = if (ai) Color(0xFF3A2A22) else Color(0xFFFBF7EE)
         val pip = if (ai) Color.White else Color(0xFF222222)
-        raisedBlock(tl, Size(side, side), if (used) face.darker(0.35f) else face, face.darker(0.25f), face.darker(0.45f), side * 0.08f, side * 0.18f)
         val o = side * 0.25f
         val c = tl + Offset(side / 2, side / 2)
         val spots = when (v) {
@@ -371,6 +420,9 @@ private fun DrawScope.drawDice(g: BoardGeometry, roll: List<Int>, all: List<Int>
             5 -> listOf(Offset(-o, -o), Offset(o, -o), Offset.Zero, Offset(-o, o), Offset(o, o))
             else -> listOf(Offset(-o, -o), Offset(o, -o), Offset(-o, 0f), Offset(o, 0f), Offset(-o, o), Offset(o, o))
         }
-        spots.forEach { drawCircle(if (used) pip.copy(alpha = 0.4f) else pip, side * 0.09f, c + it) }
+        upright(g, c) {
+            raisedBlock(tl, Size(side, side), if (used) face.darker(0.35f) else face, face.darker(0.25f), face.darker(0.45f), side * 0.08f, side * 0.18f)
+            spots.forEach { drawCircle(if (used) pip.copy(alpha = 0.4f) else pip, side * 0.09f, c + it) }
+        }
     }
 }

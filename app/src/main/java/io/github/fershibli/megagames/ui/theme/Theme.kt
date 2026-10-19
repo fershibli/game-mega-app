@@ -28,6 +28,9 @@ import java.util.Locale
 val LocalPalette = staticCompositionLocalOf { NormalLight }
 val LocalSettings = staticCompositionLocalOf { Settings() }
 
+/** Changes and saves the settings from inside a game (for example the Backgammon board orientation). */
+val LocalUpdateSettings = staticCompositionLocalOf<(Settings) -> Unit> { {} }
+
 /** Language actually in use (never [AppLanguage.SYSTEM]). Used by content such as crosswords. */
 val LocalGameLanguage = staticCompositionLocalOf { AppLanguage.ENGLISH }
 
