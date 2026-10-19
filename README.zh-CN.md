@@ -6,7 +6,7 @@
 
 数独 · 纸牌接龙 · 巴西拉米（Buraco）· 双陆棋 · 麻将连连看 · 黑白棋 · 填字游戏 · 接水管 · 颜色连线 · 点点消除
 
-🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · **中文**
+🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · **中文**
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@
 - **真正的电脑对手**：专门为双陆棋、巴西拉米和黑白棋编写的策略。
 - **所有游戏都支持双指缩放**，单手模式下还能用一根手指缩放。
 - **自动保存**：应用意外关闭后，再次打开会询问是否从中断的地方继续。
-- **5 种语言**：英语、巴西葡萄牙语、西班牙语、法语和简体中文——界面和填字游戏的词库都已翻译。
+- **9 种语言**：英语、巴西葡萄牙语、西班牙语、法语、意大利语、德语、俄语、日语和简体中文——界面和填字游戏的词库都已翻译。
 - **小巧轻便**：约 **1.3 MB**，原生 Kotlin + Jetpack Compose，没有游戏引擎，也没有图片——所有画面都由代码绘制。
 
 ## 游戏介绍
@@ -113,6 +113,10 @@
 | Português | [guia](docs/pt-BR/user-guide.md) | [confiança](docs/pt-BR/trust.md) | [técnico](docs/pt-BR/technical.md) | [compilar](docs/pt-BR/building.md) |
 | Español | [guía](docs/es/user-guide.md) | [confianza](docs/es/trust.md) | [técnico](docs/es/technical.md) | [compilar](docs/es/building.md) |
 | Français | [guide](docs/fr/user-guide.md) | [confiance](docs/fr/trust.md) | [technique](docs/fr/technical.md) | [compiler](docs/fr/building.md) |
+| Italiano | [guida](docs/it/user-guide.md) | [fiducia](docs/it/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
+| Deutsch | [Anleitung](docs/de/user-guide.md) | [Vertrauen](docs/de/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
+| Русский | [руководство](docs/ru/user-guide.md) | [доверие](docs/ru/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
+| 日本語 | [使い方](docs/ja/user-guide.md) | [信頼](docs/ja/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
 
 完整索引：[docs/README.md](docs/README.md)。
@@ -130,7 +134,7 @@ cd game-mega-app
 
 ## 在 AI 帮助下完成
 
-本仓库中的一切——代码、美术（每张牌、每块麻将、每个棋盘和图标都由代码绘制）以及这五种语言的文档——都是在 **Anthropic** 公司的 AI 助手 **Claude** 的帮助下，在维护者的指导下完成的。设计决策写在 [docs/zh-CN/technical.md](docs/zh-CN/technical.md) 中；完整的测试套件让任何人都不必盲目相信这些代码。
+本仓库中的一切——代码、美术（每张牌、每块麻将、每个棋盘和图标都由代码绘制）以及这九种语言的文档——都是在 **Anthropic** 公司的 AI 助手 **Claude** 的帮助下，在维护者的指导下完成的。设计决策写在 [docs/zh-CN/technical.md](docs/zh-CN/technical.md) 中；完整的测试套件让任何人都不必盲目相信这些代码。
 
 ## 许可证
 

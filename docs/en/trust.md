@@ -1,6 +1,6 @@
 # Trust, privacy and security
 
-🌐 **English** · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · [中文](../zh-CN/trust.md)
+🌐 **English** · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · [中文](../zh-CN/trust.md)
 
 Mili Games is meant to be installed on the phones of people who may not be able to judge an app themselves. This page explains what the app does and does not do, and — more importantly — **how anyone can verify it** without trusting the author.
 
@@ -77,7 +77,7 @@ Every push and pull request runs [CI](../../.github/workflows/ci.yml) on GitHub 
    - rules of every game (legal moves, scoring, bearing off, Buraco sequences and wild cards…);
    - generators: every Sudoku has a unique solution, every Mahjong deal is solvable, every Pipes and Connect puzzle has a full solution, crosswords never clash;
    - computer opponents finish their games quickly and never lose or duplicate a card or checker;
-   - all five languages translate every text and keep the same placeholders;
+   - all nine languages translate every text and keep the same placeholders;
    - autosave round-trip, corrupted-save handling, settings persistence;
    - the real UI: pinch zoom on/off, one-hand double-tap and press-and-rotate zoom, choosing a game, leaving it from Settings, and the "continue?" prompt after a restart.
 3. **Android Lint** with *warnings treated as errors*.

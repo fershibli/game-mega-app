@@ -1,0 +1,179 @@
+# Dizionario del cruciverba — italiano. Formato: RISPOSTA|definizione. Parole di tutti i giorni, definizioni semplici.
+PANE|Si fa con farina, acqua e lievito
+PASTA|Spaghetti, penne o fusilli
+PIZZA|Margherita o capricciosa, cotta nel forno
+RISO|Chicco bianco del risotto
+MELA|Frutto rosso o verde, una al giorno toglie il medico di torno
+PERA|Frutto dolce a forma di goccia
+ARANCIA|Agrume da cui si fa la spremuta
+LIMONE|Agrume giallo e aspro
+UVA|Frutto in grappoli da cui si fa il vino
+FRAGOLA|Piccolo frutto rosso di primavera
+CILIEGIA|Frutto rosso piccolo, con il nocciolo
+BANANA|Frutto giallo e lungo
+FORMAGGIO|Si fa con il latte, come il parmigiano
+LATTE|Bevanda bianca della colazione
+BURRO|Si spalma sul pane, fatto con la panna
+UOVO|Lo depone la gallina
+SALE|Si mette nell’acqua della pasta
+OLIO|Quello d’oliva condisce l’insalata
+ACETO|Condimento aspro per l’insalata
+ZUCCHERO|Rende dolce il caffè
+CAFFÈ|Si beve in tazzina, ristretto o lungo
+TÈ|Bevanda calda con le foglie in infusione
+VINO|Bevanda fatta con l’uva
+ACQUA|Si beve quando si ha sete
+MIELE|Lo producono le api
+TORTA|Dolce con le candeline per il compleanno
+BISCOTTO|Si inzuppa nel latte a colazione
+GELATO|Dolce freddo in cono o in coppetta
+MINESTRA|Piatto caldo che si mangia con il cucchiaio
+INSALATA|Foglie verdi condite con olio e sale
+POMODORO|Rosso, serve per il sugo
+CAROTA|Ortaggio arancione amato dai conigli
+PATATA|Tubero per fare il purè
+CIPOLLA|Fa piangere quando si taglia
+AGLIO|Ha gli spicchi e un odore forte
+BASILICO|Erba profumata del pesto
+CASA|Edificio dove vive la famiglia
+PORTA|Si apre per entrare in una stanza
+FINESTRA|Si apre per far entrare aria e luce
+TETTO|Copre la casa dall’alto
+SEDIA|Mobile per sedersi
+TAVOLO|Mobile su cui si mangia
+LETTO|Mobile su cui si dorme
+CUSCINO|Ci si appoggia la testa per dormire
+DIVANO|Ci si siede comodi davanti alla televisione
+ARMADIO|Mobile dove si appendono i vestiti
+CUCINA|Stanza dove si preparano i pasti
+BAGNO|Stanza con la doccia e il lavandino
+SCALA|Ha i gradini per salire
+CHIAVE|Serve ad aprire la serratura
+LAMPADA|Fa luce sul comodino
+SPECCHIO|Ci si guarda la mattina per pettinarsi
+TAPPETO|Si stende sul pavimento
+PENTOLA|Ci si cuoce la pasta
+PIATTO|Ci si mette il cibo a tavola
+BICCHIERE|Ci si versa l’acqua per bere
+FORCHETTA|Posata con i rebbi
+COLTELLO|Posata che taglia
+TAZZA|Ci si beve il latte a colazione
+FORNO|Ci si cuociono pane e torte
+MADRE|La mamma
+PADRE|Il papà
+NONNA|La mamma della mamma o del papà
+NONNO|Il papà della mamma o del papà
+FIGLIO|Il bambino di una coppia
+SORELLA|Figlia degli stessi genitori
+FRATELLO|Figlio degli stessi genitori
+ZIA|La sorella della mamma o del papà
+NIPOTE|Figlio del figlio, per i nonni
+SPOSA|Indossa l’abito bianco al matrimonio
+AMICO|Persona a cui si vuole bene
+BAMBINO|Un piccolo che va all’asilo
+SOLE|Stella che ci dà luce e calore
+LUNA|Brilla nel cielo di notte
+STELLA|Brilla nel cielo e forma le costellazioni
+CIELO|Azzurro di giorno, buio di notte
+MARE|Distesa d’acqua salata
+LAGO|Specchio d’acqua circondato da terra
+FIUME|Scorre verso il mare
+MONTE|Si scala per arrivare in cima
+ALBERO|Ha tronco, rami e foglie
+FIORE|La rosa e la margherita
+ROSA|Fiore con le spine
+FOGLIA|Cade dagli alberi in autunno
+ERBA|Verde tappeto del prato
+SASSO|Piccola pietra
+SABBIA|Copre la spiaggia
+ISOLA|Terra circondata dal mare
+BOSCO|Luogo pieno di alberi
+PRATO|Distesa d’erba verde
+NEVE|Bianca e fredda, cade d’inverno
+PIOGGIA|Acqua che cade dalle nuvole
+VENTO|Fa volare gli aquiloni
+NUVOLA|Bianca o grigia, nel cielo
+ESTATE|La stagione più calda
+INVERNO|La stagione più fredda
+AUTUNNO|Stagione in cui cadono le foglie
+CALDO|Il contrario di freddo
+FREDDO|Il contrario di caldo
+GATTO|Animale domestico che fa le fusa
+CANE|Il migliore amico dell’uomo
+CAVALLO|Animale che si cavalca
+MUCCA|Ci dà il latte
+PECORA|Ci dà la lana
+GALLINA|Depone le uova nel pollaio
+ASINO|Animale con le orecchie lunghe che raglia
+TOPO|Piccolo roditore che piace al gatto
+LEONE|Il re della foresta
+TIGRE|Grande felino a strisce
+ORSO|Grande animale che ama il miele
+PESCE|Nuota nel mare e nei fiumi
+UCCELLO|Ha le ali e le piume
+APE|Insetto che fa il miele
+RANA|Salta e gracida nello stagno
+ANATRA|Uccello che nuota e fa qua qua
+CONIGLIO|Ha le orecchie lunghe e mangia carote
+MEDICO|Cura i malati
+MAESTRA|Insegna ai bambini a scuola
+CUOCO|Prepara i piatti al ristorante
+POSTINO|Porta le lettere
+PITTORE|Dipinge i quadri
+SARTO|Cuce i vestiti su misura
+FORNAIO|Fa il pane
+PIANO|Strumento con i tasti bianchi e neri
+CHITARRA|Strumento a sei corde
+VIOLINO|Strumento che si suona con l’archetto
+TAMBURO|Strumento che si suona con le bacchette
+CANTO|Lo si fa con la voce
+NOTA|Do, re, mi, fa, sol, la, si
+OPERA|Spettacolo cantato, come la Traviata
+TESTA|Parte del corpo dove crescono i capelli
+MANO|Ha cinque dita
+PIEDE|Ci si mette la scarpa
+OCCHIO|Serve per vedere
+NASO|Serve per sentire gli odori
+BOCCA|Serve per mangiare e parlare
+ORECCHIO|Serve per sentire i suoni
+CUORE|Batte nel petto
+DENTE|Si lava con lo spazzolino
+BRACCIO|Va dalla spalla alla mano
+GAMBA|Serve per camminare
+CITTÀ|Roma, Milano o Napoli
+STRADA|Ci passano le automobili
+PIAZZA|Spazio aperto al centro del paese
+CHIESA|Ha il campanile
+NEGOZIO|Ci si fa la spesa
+TRENO|Viaggia sui binari
+AUTO|Ha quattro ruote e il volante
+PONTE|Passa sopra il fiume
+PARCO|Giardino pubblico
+MERCATO|Bancarelle di frutta e verdura
+GIOIA|Grande felicità
+AMORE|Sentimento tra innamorati
+PAURA|La si prova davanti a un pericolo
+RISATA|Si fa quando qualcosa è molto divertente
+SORRISO|Si fa con le labbra quando si è contenti
+CALMA|Il contrario di agitazione
+SPERANZA|Si dice che sia l’ultima a morire
+ORA|Un giorno ne ha ventiquattro
+ANNO|Ha dodici mesi
+SERA|Viene dopo il pomeriggio
+NOTTE|Si dorme quando è buio
+ROSSO|Il colore del pomodoro
+VERDE|Il colore dell’erba
+GIALLO|Il colore del limone
+NERO|Il colore del carbone
+BIANCO|Il colore del latte
+LIBRO|Ha pagine da leggere
+LETTERA|Si spedisce nella busta
+OROLOGIO|Segna l’ora
+OMBRELLO|Ripara dalla pioggia
+CAPPELLO|Si mette in testa
+SCARPA|Si mette al piede
+CARTA|Si usa per scrivere o per giocare a scopa
+TRENTA|Dieci più venti
+SETTE|I giorni della settimana
+REGALO|Si riceve a Natale o al compleanno
+NATALE|Festa del venticinque dicembre

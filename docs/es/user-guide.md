@@ -1,6 +1,6 @@
 # Mili Games — Guía de uso
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · **Español** · [Français](../fr/user-guide.md) · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · **Español** · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
 
 Esta guía está escrita para quienes juegan y para los familiares que les preparan el teléfono.
 
@@ -74,7 +74,7 @@ Todos los tableros se pueden ampliar.
 
 | Ajuste | Qué hace |
 |---|---|
-| **Idioma** | English, Português, Español, Français, 中文, o "El mismo del teléfono". Cambia toda la aplicación, también las palabras del crucigrama. |
+| **Idioma** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, o "El mismo del teléfono". Cambia toda la aplicación, también las palabras del crucigrama. |
 | **Tamaño del texto** | Del 80 % al 160 % del tamaño normal. |
 | **Tamaño de piezas y botones** | Del 80 % al 160 %. Agranda teclados numéricos, teclados de letras, las cartas de tu mano y otros controles. Los tableros siempre ocupan la pantalla; usa el zoom para agrandarlos más. |
 | **Colores** | *Normal* (suave, contraste medio) · *Alto contraste* (colores fuertes, bordes gruesos) · *Para daltonismo* (colores que se siguen distinguiendo, con formas dibujadas en las piezas y baraja de cuatro colores). |
@@ -212,15 +212,15 @@ En cada partida se **genera un crucigrama nuevo** a partir de un diccionario de 
 
 **Cómo se juega:** toca una casilla para elegir su palabra; vuelve a tocar la misma casilla para cambiar entre horizontal y vertical. La pista aparece abajo, entre ◀ y ▶ (palabra anterior / siguiente). Escribe con las letras de abajo: tras cada letra el cursor avanza. La goma borra una letra. **Pista** rellena la casilla seleccionada.
 
-Las tildes se ignoran, como en los crucigramas impresos (É = E…); el español conserva la Ñ. En chino, cada casilla lleva un carácter.
+Las tildes se ignoran, como en los crucigramas impresos (É = E…); el español conserva la Ñ, el alemán escribe Ä Ö Ü ß como AE OE UE SS y el ruso escribe Ё como Е. En chino, cada casilla lleva un carácter; en japonés, un katakana, con los kana pequeños escritos en tamaño normal (ッ → ツ).
 
 | Nivel | Cuadrícula | Cómo se escribe | Errores en rojo |
 |---|---|---|---|
-| Fácil | 9×9 (8×8 en chino), ~7 palabras (~6 en chino) | banco de letras (las de la palabra + 2 más) | sí |
-| Medio | 11×11 (10×10 en chino), ~11 palabras (~9) | teclado completo (chino: banco con 5 más) | sí |
-| Difícil | 13×13 (12×12 en chino), ~16 palabras (~12) | teclado completo (chino: banco con 8 más) | no |
+| Fácil | 9×9 (8×8 en chino y japonés), ~7 palabras (~6) | banco de letras (las de la palabra + 2 más) | sí |
+| Medio | 11×11 (10×10), ~11 palabras (~9) | teclado completo con la distribución del idioma (chino y japonés: banco con 5 más) | sí |
+| Difícil | 13×13 (12×12), ~16 palabras (~12) | teclado completo (chino y japonés: banco con 8 más) | no |
 
-El teclado español incluye la Ñ; el francés usa AZERTY y los demás QWERTY.
+El teclado español incluye la Ñ; el francés usa AZERTY, el alemán QWERTZ, el ruso ЙЦУКЕН y los demás QWERTY.
 
 ### Tuberías
 

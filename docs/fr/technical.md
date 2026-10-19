@@ -149,7 +149,7 @@ Moyen et Difficile sont proches quand deux ordinateurs jouent au Backgammon ou a
 - Les textes de l’interface sont dans `res/values/strings.xml` (anglais) et dans `values-pt`, `values-es`, `values-fr`, `values-zh`.
 - Le changement de langue dans l’application enveloppe l’arbre Compose dans un contexte créé avec `createConfigurationContext` : cela fonctionne sur toutes les versions d’Android sans AppCompat. Sur Android 13+, les langues apparaissent aussi dans les réglages de langue par application du système (`locales_config.xml`).
 - Seules ces cinq langues sont empaquetées (`localeFilters`), et le découpage par langue est désactivé pour les app bundles : changer de langue ne nécessite jamais de téléchargement.
-- Les dictionnaires des mots croisés sont en texte brut : `RÉPONSE|définition`. Les réponses sont normalisées (majuscules, sans accents, Ñ conservé en espagnol, Œ → OE) ; en chinois, chaque caractère occupe une case.
+- Les dictionnaires des mots croisés sont en texte brut : `RÉPONSE|définition`. Les réponses sont normalisées (majuscules, sans accents, Ñ conservé en espagnol et Й en russe, Œ → OE, Ä Ö Ü ß allemands → AE OE UE SS, Ё russe → Е ; le japonais passe en katakana, petits kana en taille normale) ; en chinois et en japonais, chaque caractère occupe une case.
 
 ## Tests
 

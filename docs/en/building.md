@@ -146,7 +146,7 @@ Dictionaries are plain text in `app/src/main/assets/crossword/<lang>.txt`, one e
 ANSWER|A short, friendly clue
 ```
 
-- Everyday words, 2–13 letters (Chinese: 2–4 characters), no proper names that need specific knowledge.
+- Everyday words, 2–13 letters (Chinese: 2–4 characters; Japanese: 2–6 kana, in katakana), no proper names that need specific knowledge.
 - Clues should be gentle and unambiguous — think of someone in their eighties.
 - Accents are fine in answers; they are removed automatically (Spanish keeps Ñ).
 - Lines starting with `#` are comments. `CrosswordTest` checks every dictionary still has at least 120 usable words.

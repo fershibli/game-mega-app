@@ -1,0 +1,288 @@
+# Kreuzworträtsel-Wörterbuch — Deutsch. Format: ANTWORT|Hinweis. Alltagswörter, freundliche Hinweise. Ä/Ö/Ü/ß werden zu AE/OE/UE/SS.
+APFEL|Rotes oder grünes Obst
+BROT|Wird beim Bäcker gebacken und mit Butter bestrichen
+BUTTER|Gelbes Fett, das man aufs Brot streicht
+KÄSE|Wird aus Milch gemacht, zum Beispiel Gouda
+BIRNE|Gelbgrünes Obst; auch etwas, das in der Lampe leuchtet
+TOMATE|Rotes Gemüse für Salat und Soße
+KARTOFFEL|Knolle für Püree, Klöße und Pommes
+SALAT|Grünes Blattgemüse, mit Essig und Öl angemacht
+SUPPE|Warme Speise, die man mit dem Löffel isst
+KUCHEN|Süßes Gebäck zum Kaffee am Nachmittag
+TORTE|Feiner Kuchen mit Sahne oder Creme
+HONIG|Süß und golden, von den Bienen
+ZUCKER|Macht den Kaffee süß
+SALZ|Weiße Würze, auch aus dem Meer
+PFEFFER|Scharfes Gewürz, steht oft neben dem Salz
+MILCH|Weißes Getränk von der Kuh
+KAFFEE|Schwarzes Heißgetränk am Morgen
+TEE|Heißgetränk aus Blättern, zum Beispiel Kamille
+WASSER|Klares Getränk aus der Leitung
+NUDELN|Spaghetti gehören dazu
+REIS|Kleine weiße Körner, eine Beilage aus Asien
+SPIEGELEI|Gebratenes Ei mit gelbem Dotter in der Mitte
+WURST|Vom Metzger, aufs Brot oder vom Grill
+SCHINKEN|Gekochtes oder geräuchertes Fleisch vom Schwein
+ZITRONE|Saure gelbe Frucht
+ORANGE|Süße Zitrusfrucht, auch Apfelsine genannt
+BANANE|Lange gelbe Frucht, die man schält
+KIRSCHE|Kleine rote Frucht mit einem Stein
+ERDBEERE|Rote Frucht im Frühsommer, lecker mit Sahne
+TRAUBE|Aus ihr wird Wein gemacht
+MÖHRE|Orangefarbenes Gemüse, Hasen mögen es
+GURKE|Grünes Gemüse, oft sauer eingelegt
+ZWIEBEL|Beim Schneiden muss man oft weinen
+SENF|Gelbe, scharfe Paste zur Bratwurst
+SAHNE|Wird steif geschlagen und kommt auf den Kuchen
+BREZEL|Gebäck mit einer Schlinge, typisch für Bayern
+MARMELADE|Süßer Aufstrich aus Früchten
+SAFT|Getränk aus gepresstem Obst
+WEIN|Getränk aus Trauben, rot oder weiß
+BIER|Getränk aus Hopfen und Malz
+MEHL|Weißes Pulver zum Backen, aus Getreide
+NUSS|Hartschalige Frucht, die Eichhörnchen sammeln
+SPINAT|Grünes Blattgemüse, das Popeye stark macht
+ROSINE|Getrocknete Weintraube
+PILZ|Wächst nach dem Regen im Wald, zum Beispiel der Champignon
+TISCH|Möbelstück, an dem man isst
+STUHL|Darauf sitzt man am Tisch
+BETT|Darin schläft man
+SOFA|Gemütliches Polstermöbel im Wohnzimmer
+SESSEL|Bequemer Sitz mit Armlehnen für eine Person
+LAMPE|Spendet Licht, wenn es dunkel ist
+FENSTER|Durch es scheint die Sonne ins Zimmer
+TÜR|Man öffnet sie, um ins Zimmer zu kommen
+TREPPE|Führt nach oben ins nächste Stockwerk
+KÜCHE|Raum, in dem gekocht wird
+GARTEN|Hinter dem Haus, mit Blumen und Gemüsebeet
+TELLER|Darauf liegt das Essen
+TASSE|Daraus trinkt man Kaffee oder Tee
+LÖFFEL|Besteck für die Suppe
+GABEL|Besteck mit Zinken
+MESSER|Damit schneidet man das Brot
+TOPF|Darin kocht man Suppe
+PFANNE|Darin brät man Spiegeleier
+SCHRANK|Darin hängt die Kleidung
+SPIEGEL|Darin sieht man sich selbst
+TEPPICH|Liegt weich auf dem Boden
+KISSEN|Weich, für den Kopf im Bett
+DECKE|Wärmt im Bett; auch oben im Zimmer
+VORHANG|Hängt vor dem Fenster
+SCHLÜSSEL|Damit schließt man die Haustür auf
+UHR|Zeigt die Zeit an
+KERZE|Brennt mit kleiner Flamme, zum Beispiel im Advent
+HAUS|Gebäude, in dem man wohnt
+DACH|Oben auf dem Haus, schützt vor Regen
+OFEN|Darin wird Kuchen gebacken
+REGAL|Darauf stehen Bücher
+BESEN|Damit kehrt man den Boden
+SEIFE|Damit wäscht man sich die Hände
+HANDTUCH|Damit trocknet man sich nach dem Waschen ab
+BRILLE|Hilft beim Lesen und sitzt auf der Nase
+ZEITUNG|Wird morgens gelesen, voller Nachrichten
+BRIEF|Kommt mit der Post in einem Umschlag
+TELEFON|Damit ruft man die Familie an
+RADIO|Gerät für Musik und Nachrichten
+NADEL|Zum Nähen, mit einem Öhr
+SCHERE|Damit schneidet man Papier
+KORB|Geflochten, zum Einkaufen oder Pilzesammeln
+MUTTER|Mama
+VATER|Papa
+OMA|Mutter von Mutter oder Vater, liebevoll gesagt
+OPA|Großvater, liebevoll gesagt
+ENKEL|Kind deines Kindes
+TANTE|Schwester von Mutter oder Vater
+ONKEL|Bruder von Mutter oder Vater
+BRUDER|Ein Junge mit denselben Eltern wie du
+SCHWESTER|Ein Mädchen mit denselben Eltern wie du
+TOCHTER|Ein Mädchen ist das für seine Eltern
+SOHN|Ein Junge ist das für seine Eltern
+NICHTE|Tochter von Bruder oder Schwester
+NEFFE|Sohn von Bruder oder Schwester
+HOCHZEIT|Fest, bei dem ein Paar heiratet
+FAMILIE|Eltern, Kinder und Großeltern zusammen
+BABY|Neugeborenes Kind
+SONNE|Scheint am Tag und wärmt
+MOND|Leuchtet nachts am Himmel
+STERN|Funkelt nachts am Himmel
+HIMMEL|Ist blau, wenn das Wetter schön ist
+WOLKE|Weiß und flauschig am Himmel
+REGEN|Wasser, das vom Himmel fällt
+SCHNEE|Weiß und kalt, fällt im Winter
+WIND|Bewegte Luft, lässt Drachen steigen
+NEBEL|Grauer Dunst am Morgen, man sieht wenig
+GEWITTER|Wetter mit Blitz und Donner
+REGENBOGEN|Bunt am Himmel, wenn Sonne und Schauer zusammenkommen
+BLITZ|Heller Strahl bei einem Gewitter
+DONNER|Lautes Grollen nach dem Blitz
+HAGEL|Kleine Eiskörner, die vom Himmel fallen
+FROST|Wenn es unter null Grad kalt ist
+HITZE|Sehr warmes Sommerwetter
+STURM|Sehr starker Wind
+SCHIRM|Schützt vor Regen
+FRÜHLING|Jahreszeit, in der die Blumen erwachen
+SOMMER|Die wärmste Jahreszeit
+HERBST|Jahreszeit, in der die Blätter fallen
+WINTER|Kalte Jahreszeit mit Schnee
+BAUM|Hat Stamm, Äste und Blätter
+BLUME|Wächst im Garten und duftet
+ROSE|Blume mit Dornen, Zeichen der Liebe
+TULPE|Frühlingsblume, bekannt aus Holland
+WALD|Viele Bäume zusammen
+WIESE|Grüne Fläche mit Gras und Blumen
+BERG|Hoch, mit einem Gipfel
+MEER|Großes salziges Wasser
+SEE|Wasser mitten im Land, zum Baden
+FLUSS|Fließt zum Meer, zum Beispiel der Rhein
+STRAND|Sand am Meer
+INSEL|Land, das ganz von Wasser umgeben ist
+STEIN|Hart und grau, liegt am Weg
+SAND|Kleine Körner am Strand
+ERDE|Unser Planet; auch der Boden im Blumentopf
+GRAS|Wächst auf der Wiese, Kühe fressen es
+BLATT|Wächst am Baum und wird im Herbst bunt
+EICHE|Kräftiger Laubbaum, dessen Früchte Wildschweine mögen
+TANNE|Nadelbaum, der zu Weihnachten geschmückt wird
+HUND|Bellt und ist der beste Freund des Menschen
+KATZE|Miaut und schnurrt
+PFERD|Man kann auf ihm reiten
+KUH|Gibt Milch und muht
+SCHWEIN|Grunzt und hat eine rosa Haut
+SCHAF|Gibt Wolle
+ZIEGE|Meckert und hat Hörner
+ESEL|Grauer Verwandter des Pferdes, ruft „I-A“
+HUHN|Legt Eier
+ENTE|Schwimmt auf dem Teich und quakt
+GANS|Wird oft zu Sankt Martin gebraten
+HASE|Hat lange Ohren und bringt zu Ostern die Eier
+MAUS|Kleines Nagetier, das Katzen jagen
+VOGEL|Hat Federn und kann fliegen
+FISCH|Lebt im Wasser und hat Flossen
+BIENE|Macht Honig
+LÖWE|König der Tiere
+BÄR|Großes Tier, das gern Honig nascht
+ELEFANT|Großes graues Tier mit Rüssel
+AFFE|Klettert und isst gern Bananen
+STORCH|Bringt der Sage nach die Babys
+SCHWAN|Weißer Vogel mit langem Hals
+IGEL|Kleines Tier mit Stacheln
+EULE|Vogel, der nachts wach ist
+SCHNECKE|Trägt ihr Haus auf dem Rücken
+TAUBE|Grauer Vogel in der Stadt
+RABE|Großer schwarzer Vogel
+FUCHS|Schlaues rotes Tier im Wald
+REH|Scheues Tier im Wald, Bambi ist eines
+HAMSTER|Kleines Haustier mit dicken Backen
+KÄFER|Krabbeltier mit Panzer, manchmal mit roten Punkten
+FROSCH|Quakt am Teich und springt
+ARZT|Hilft, wenn man krank ist
+BÄCKER|Backt Brot und Brötchen
+LEHRER|Unterrichtet in der Schule
+KOCH|Bereitet im Restaurant das Essen zu
+MALER|Streicht Wände oder malt Bilder
+BAUER|Arbeitet auf dem Feld und im Stall
+FRISEUR|Schneidet die Haare
+POLIZIST|Sorgt für Ordnung und trägt eine Uniform
+GÄRTNER|Kümmert sich um Pflanzen und Blumen
+PILOT|Fliegt ein Flugzeug
+SCHNEIDER|Näht Kleider nach Maß
+METZGER|Verkauft Fleisch und Wurst
+RICHTER|Spricht im Gericht das Urteil
+KELLNER|Bringt im Restaurant das Essen an den Tisch
+FÖRSTER|Kümmert sich um den Wald
+SÄNGER|Singt Lieder auf der Bühne
+TISCHLER|Baut Möbel aus Holz
+LIED|Etwas, das man singt
+KLAVIER|Instrument mit schwarzen und weißen Tasten
+GEIGE|Streichinstrument, das man unter das Kinn hält
+TROMMEL|Instrument, auf das man schlägt
+GITARRE|Instrument mit sechs Saiten
+FLÖTE|Blasinstrument, zum Beispiel aus Holz
+ORGEL|Großes Instrument in der Kirche
+CHOR|Gruppe, die gemeinsam singt
+TANZ|Walzer oder Tango
+WALZER|Tanz im Dreivierteltakt
+NOTE|Zeichen für einen Ton, steht auf fünf Linien
+HARFE|Instrument mit vielen Saiten, die man zupft
+KONZERT|Musik live vor Publikum
+TROMPETE|Glänzendes Blasinstrument aus Blech
+OPER|Bühnenstück mit Gesang, zum Beispiel „Die Zauberflöte“
+HAND|Hat fünf Finger
+FUSS|Steckt im Schuh
+KOPF|Sitzt oben auf dem Hals
+NASE|Damit riecht man
+OHR|Damit hört man
+AUGE|Damit sieht man
+MUND|Damit spricht und isst man
+HERZ|Schlägt in der Brust
+ARM|Verbindet Schulter und Hand
+BEIN|Damit geht man
+KNIE|Gelenk in der Mitte des Beins
+ZAHN|Weiß, im Mund, zum Beißen
+HAAR|Wächst auf dem Kopf
+FINGER|Fünf an jeder Hand
+RÜCKEN|Die hintere Seite des Körpers
+SCHULTER|Darauf trägt man den Rucksack
+BAUCH|Knurrt, wenn man Hunger hat
+STIRN|Liegt über den Augen
+ZEHE|Fünf an jedem Fuß
+HALS|Verbindet Kopf und Körper
+STADT|Größer als ein Dorf
+DORF|Kleiner Ort auf dem Land
+KIRCHE|Hat einen Turm mit Glocken
+SCHULE|Dort lernen Kinder lesen und schreiben
+MARKT|Platz mit Ständen für Obst und Gemüse
+BAHNHOF|Hier fahren die Züge ab
+STRASSE|Darauf fahren die Autos
+BRÜCKE|Führt über einen Fluss
+PARK|Grüne Anlage in der Stadt zum Spazierengehen
+RATHAUS|Dort arbeitet der Bürgermeister
+KINO|Dort sieht man Filme auf großer Leinwand
+THEATER|Dort spielen Schauspieler auf der Bühne
+MUSEUM|Dort werden Kunst und alte Dinge ausgestellt
+APOTHEKE|Dort bekommt man Medikamente
+BANK|Dort hebt man Geld ab; auch ein Sitz im Park
+POST|Dort gibt man Briefe und Pakete auf
+HOTEL|Dort übernachtet man auf Reisen
+BUS|Fährt von Haltestelle zu Haltestelle
+ZUG|Fährt auf Schienen
+AUTO|Hat vier Räder und einen Motor
+FAHRRAD|Hat zwei Räder und Pedale
+AMPEL|Zeigt Rot, Gelb und Grün
+TURM|Hohes, schmales Bauwerk
+HAFEN|Dort legen die Schiffe an
+SCHIFF|Fährt über das Meer
+ROT|Farbe der Tomate
+BLAU|Farbe des Himmels
+GRÜN|Farbe des Grases
+GELB|Farbe der Zitrone
+WEISS|Farbe des Schnees
+SCHWARZ|Farbe der Nacht
+MORGEN|Anfang des Tages
+ABEND|Wenn die Sonne untergeht
+NACHT|Zeit zum Schlafen, wenn es dunkel ist
+WOCHE|Hat sieben Tage
+MONAT|Der Januar ist einer
+JAHR|Hat zwölf Monate
+SONNTAG|Ruhetag nach dem Samstag
+FERIEN|Schulfreie Zeit
+URLAUB|Freie Zeit zum Verreisen
+GEBURTSTAG|Tag, an dem man Kerzen auf dem Kuchen ausbläst
+OSTERN|Fest mit bunten Eiern
+GESCHENK|Bekommt man zum Geburtstag
+BUCH|Hat viele Seiten zum Lesen
+BALL|Rund, zum Spielen und Werfen
+KARTE|Beim Solitär spielt man damit
+WÜRFEL|Hat sechs Seiten mit Punkten
+RÄTSEL|Eine knifflige Aufgabe zum Lösen
+FOTO|Bild aus der Kamera
+MANTEL|Warmes Kleidungsstück für den Winter
+HUT|Kopfbedeckung mit Krempe
+SCHAL|Wärmt im Winter den Hals
+SCHUH|Zieht man an den Fuß
+KLEID|Frauen tragen es, gern im Sommer
+HEMD|Hat Knöpfe und einen Kragen
+STRUMPF|Trägt man im Schuh
+HOSE|Hat zwei Beine
+TASCHE|Darin trägt man seine Sachen mit
+GELD|Damit bezahlt man

@@ -23,6 +23,19 @@ class CrosswordTest {
     }
 
     @Test
+    fun normalizationFollowsGermanRussianAndJapaneseCrosswords() {
+        assertEquals("KAESE", Crossword.normalize("Käse", AppLanguage.GERMAN).joinToString(""))
+        assertEquals("STRASSE", Crossword.normalize("Straße", AppLanguage.GERMAN).joinToString(""))
+        assertEquals(listOf("Е", "Л", "К", "А"), Crossword.normalize("ёлка", AppLanguage.RUSSIAN))
+        assertEquals("ЧАЙ", Crossword.normalize("чай", AppLanguage.RUSSIAN).joinToString(""))
+        assertEquals("CITTA", Crossword.normalize("città", AppLanguage.ITALIAN).joinToString(""))
+        // Hiragana becomes katakana, small kana are written full size and ー keeps its square.
+        assertEquals(listOf("キ", "ツ", "テ"), Crossword.normalize("きって", AppLanguage.JAPANESE))
+        assertEquals(listOf("シ", "ヤ", "ツ"), Crossword.normalize("シャツ", AppLanguage.JAPANESE))
+        assertEquals(listOf("ケ", "ー", "キ"), Crossword.normalize("ケーキ", AppLanguage.JAPANESE))
+    }
+
+    @Test
     fun everyDictionaryIsLargeAndClean() {
         for (lang in AppLanguage.entries.filter { it != AppLanguage.SYSTEM }) {
             val words = dictionary(lang)
@@ -34,10 +47,9 @@ class CrosswordTest {
     @Test
     fun generatedGridsAreConsistent() {
         for (lang in AppLanguage.entries.filter { it != AppLanguage.SYSTEM }) for (d in Difficulty.entries) for (seed in 1..3) {
-            val chinese = lang == AppLanguage.CHINESE
-            val size = Crossword.sizeFor(d, chinese)
-            val words = Crossword.generate(dictionary(lang), size, Crossword.targetWords(d, chinese), Random(seed))
-            assertTrue("$lang $d seed $seed: only ${words.size} words", words.size >= Crossword.targetWords(d, chinese) - 2)
+            val size = Crossword.sizeFor(d, lang.syllabic)
+            val words = Crossword.generate(dictionary(lang), size, Crossword.targetWords(d, lang.syllabic), Random(seed))
+            assertTrue("$lang $d seed $seed: only ${words.size} words", words.size >= Crossword.targetWords(d, lang.syllabic) - 2)
             val grid = HashMap<Int, String>()
             for (w in words) {
                 w.cells(size).forEachIndexed { k, c ->

@@ -146,7 +146,7 @@ Os dicionários são texto puro em `app/src/main/assets/crossword/<idioma>.txt`,
 RESPOSTA|Uma dica curta e simpática
 ```
 
-- Palavras do dia a dia, de 2 a 13 letras (chinês: 2 a 4 caracteres), sem nomes próprios que exijam conhecimento específico.
+- Palavras do dia a dia, de 2 a 13 letras (chinês: 2 a 4 caracteres; japonês: 2 a 6 kana, em katakana), sem nomes próprios que exijam conhecimento específico.
 - As dicas devem ser gentis e sem ambiguidade — pense em alguém de oitenta anos.
 - Pode usar acentos nas respostas; eles são removidos automaticamente (o espanhol mantém o Ñ).
 - Linhas que começam com `#` são comentários. O `CrosswordTest` confere se cada dicionário continua com pelo menos 120 palavras utilizáveis.

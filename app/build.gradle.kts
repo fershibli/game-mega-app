@@ -31,9 +31,9 @@ android {
         versionName = appVersion
     }
 
-    // Only ship the five languages the app is translated into (libraries bring dozens more).
+    // Only ship the languages the app is translated into (libraries bring dozens more).
     androidResources {
-        localeFilters += listOf("en", "pt", "es", "fr", "zh")
+        localeFilters += listOf("en", "pt", "es", "fr", "it", "de", "ru", "ja", "zh")
     }
 
     // Release signing: from keystore.properties (local, never committed) or from environment

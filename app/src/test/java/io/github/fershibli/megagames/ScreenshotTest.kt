@@ -1,11 +1,12 @@
 package io.github.fershibli.megagames
 
+import androidx.compose.ui.test.SemanticsMatcher
+import androidx.compose.ui.semantics.SemanticsProperties
 import android.graphics.Bitmap
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.test.onAllNodesWithText
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
@@ -68,7 +69,8 @@ class ScreenshotTest {
                 }
             }
         }
-        rule.waitUntil(60_000) { rule.onAllNodesWithText("Preparing", substring = true).fetchSemanticsNodes().isEmpty() }
+        // Wait until the puzzle is generated (the loading spinner is gone), whatever the language.
+        rule.waitUntil(60_000) { rule.onAllNodes(SemanticsMatcher.keyIsDefined(SemanticsProperties.ProgressBarRangeInfo)).fetchSemanticsNodes().isEmpty() }
         rule.waitForIdle()
         save(name)
     }
@@ -85,6 +87,7 @@ class ScreenshotTest {
     @Test fun homeColorblindDark() = shot("home_colorblind_dark", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true)) { HomeScreen({}, {}) }
     @Test fun homeOneHand() = shot("home_one_hand", Settings(oneHand = true)) { HomeScreen({}, {}) }
     @Test fun homeChinese() = shot("home_zh", Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE)) { HomeScreen({}, {}) }
+    @Test fun homeJapanese() = shot("home_ja", Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE)) { HomeScreen({}, {}) }
     @Test fun buracoPt() = gameShot("game_buraco_pt", GameId.BURACO, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun sudokuFrLeftHanded() = gameShot("game_sudoku_fr_left", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.FRENCH, leftHanded = true))
     @Test fun solitaireBigText() = gameShot("game_solitaire_big_text", GameId.SOLITAIRE, settings = Settings(fontScale = 1.4f, pieceScale = 1.4f))
@@ -113,6 +116,9 @@ class ScreenshotTest {
     @Test fun crosswordEasy() = gameShot("game_crossword_easy", GameId.CROSSWORD)
     @Test fun crosswordHard() = gameShot("game_crossword_hard", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun crosswordChinese() = gameShot("game_crossword_zh", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE))
+    @Test fun crosswordJapanese() = gameShot("game_crossword_ja", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))
+    @Test fun crosswordRussian() = gameShot("game_crossword_ru", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.RUSSIAN))
+    @Test fun crosswordGerman() = gameShot("game_crossword_de", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.GERMAN))
     @Test fun backgammon() = gameShot("game_backgammon", GameId.BACKGAMMON)
     @Test fun backgammonDark() = gameShot("game_backgammon_dark", GameId.BACKGAMMON, settings = Settings(darkMode = true))
     @Test fun backgammonUpright() = gameShot("game_backgammon_upright", GameId.BACKGAMMON, settings = Settings(backgammonUpright = true))

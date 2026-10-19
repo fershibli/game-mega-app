@@ -14,7 +14,14 @@ enum class AppLanguage(val tag: String?, val nativeName: String) {
     PORTUGUESE("pt-BR", "Português"),
     SPANISH("es", "Español"),
     FRENCH("fr", "Français"),
+    ITALIAN("it", "Italiano"),
+    GERMAN("de", "Deutsch"),
+    RUSSIAN("ru", "Русский"),
+    JAPANESE("ja", "日本語"),
     CHINESE("zh-CN", "中文（简体）");
+
+    /** Crossword answers are short syllable or character strings rather than spelled words. */
+    val syllabic: Boolean get() = this == CHINESE || this == JAPANESE
 
     /** Resolves [SYSTEM] to one of the supported languages (English when unsupported). */
     fun resolve(system: Locale = Locale.getDefault()): AppLanguage {
@@ -23,6 +30,10 @@ enum class AppLanguage(val tag: String?, val nativeName: String) {
             "pt" -> PORTUGUESE
             "es" -> SPANISH
             "fr" -> FRENCH
+            "it" -> ITALIAN
+            "de" -> GERMAN
+            "ru" -> RUSSIAN
+            "ja" -> JAPANESE
             "zh" -> CHINESE
             else -> ENGLISH
         }

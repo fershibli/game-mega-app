@@ -146,7 +146,7 @@ Les dictionnaires sont en texte brut dans `app/src/main/assets/crossword/<langue
 RÉPONSE|Une définition courte et bienveillante
 ```
 
-- Des mots du quotidien de 2 à 13 lettres (chinois : 2 à 4 caractères), sans noms propres demandant des connaissances particulières.
+- Des mots du quotidien de 2 à 13 lettres (chinois : 2 à 4 caractères ; japonais : 2 à 6 kana, en katakana), sans noms propres demandant des connaissances particulières.
 - Les définitions doivent être bienveillantes et sans ambiguïté — pensez à une personne de quatre-vingts ans.
 - Les accents sont permis dans les réponses ; ils sont retirés automatiquement (l’espagnol garde le Ñ).
 - Les lignes commençant par `#` sont des commentaires. `CrosswordTest` vérifie que chaque dictionnaire garde au moins 120 mots utilisables.
