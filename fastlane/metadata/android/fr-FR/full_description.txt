@@ -1,0 +1,32 @@
+Dix jeux classiques dans une petite application, pensée pour que les seniors jouent confortablement : grandes pièces, contraste net, zoom sur tous les plateaux et boutons à portée du pouce.
+
+JEUX
+• Sudoku
+• Solitaire
+• Buraco (contre l’ordinateur)
+• Backgammon (contre l’ordinateur)
+• Mahjong
+• Reversi (contre l’ordinateur)
+• Mots croisés
+• Tuyaux
+• Relie les couleurs
+• Points
+
+Chaque jeu propose Facile, Moyen et Difficile. Les grilles sont créées sur le téléphone : elles ne se répètent jamais et ont toutes une solution.
+
+AGRÉABLE POUR LES YEUX ET LES MAINS
+• Pincez pour zoomer et vous déplacer sur n’importe quel plateau (ou double-touchez / appuyez et tournez d’une seule main)
+• Texte et pièces plus grands, de 80 % à 160 %
+• Couleurs normales, à contraste élevé et adaptées au daltonisme, chacune avec un mode sombre
+• Mode gaucher et mode une main
+• Pas de chronomètre, pas de pression
+
+VOTRE PARTIE EST TOUJOURS SAUVEGARDÉE
+Application fermée par erreur ? Elle vous propose de reprendre là où vous en étiez.
+
+PRIVÉ ET GRATUIT
+• Sans publicité, sans achat et sans compte
+• Aucun accès à Internet et aucune donnée collectée
+• Code source ouvert : chacun peut le lire et le vérifier
+
+Disponible en français, anglais, portugais, espagnol et chinois.

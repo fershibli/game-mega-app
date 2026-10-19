@@ -5,6 +5,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -38,6 +40,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
@@ -57,6 +60,7 @@ fun BigButton(
     style: ButtonStyle = ButtonStyle.PRIMARY,
     enabled: Boolean = true,
     compact: Boolean = false,
+    bigText: Boolean = false,
 ) {
     val p = LocalPalette.current
     val (bg, fg) = when (style) {
@@ -84,12 +88,35 @@ fun BigButton(
                 if (text.isNotEmpty()) Spacer(Modifier.width(10.dp))
             }
             if (text.isNotEmpty()) {
-                Text(
-                    text, color = fg.copy(alpha = alpha), style = MaterialTheme.typography.labelLarge,
-                    textAlign = TextAlign.Center, maxLines = 2, overflow = TextOverflow.Ellipsis,
+                val style = if (bigText) MaterialTheme.typography.headlineMedium else MaterialTheme.typography.labelLarge
+                // Text shrinks to fit narrow buttons instead of breaking a word in the middle.
+                BasicText(
+                    text,
+                    style = style.copy(color = fg.copy(alpha = alpha), textAlign = TextAlign.Center),
+                    maxLines = if (' ' in text.trim()) 2 else 1,
+                    autoSize = TextAutoSize.StepBased(minFontSize = 11.sp, maxFontSize = style.fontSize, stepSize = 1.sp),
                 )
             }
         }
+    }
+}
+
+/** Keyboard key: big letter, no inner padding so even "W" fits on narrow phones. */
+@Composable
+fun KeyButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    val p = LocalPalette.current
+    val shape = RoundedCornerShape(12.dp)
+    Box(
+        modifier
+            .defaultMinSize(minHeight = 48.dp)
+            .shadow(2.dp, shape)
+            .clip(shape)
+            .background(Brush.verticalGradient(listOf(lerp(p.primary, Color.White, 0.12f), p.primary)))
+            .then(if (p.strongOutlines) Modifier.border(2.dp, p.outline, shape) else Modifier)
+            .clickable(role = Role.Button, onClick = onClick),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(label, color = p.onPrimary, style = MaterialTheme.typography.titleLarge, maxLines = 1, softWrap = false)
     }
 }
 

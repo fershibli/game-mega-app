@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 简体中文 -->
+<resources>
+    <string name="choose_game">选择游戏</string>
+    <string name="choose_difficulty">选择难度</string>
+    <string name="confirm">确定</string>
+    <string name="back">返回</string>
+    <string name="settings">设置</string>
+    <string name="close">关闭</string>
+    <string name="done">完成</string>
+    <string name="cancel">取消</string>
+    <string name="loading">正在准备游戏…</string>
+    <string name="decrease">减小</string>
+    <string name="increase">增大</string>
+    <string name="zoom_reset">恢复正常大小</string>
+
+    <string name="difficulty_easy">简单</string>
+    <string name="difficulty_medium">中等</string>
+    <string name="difficulty_hard">困难</string>
+
+    <string name="game_sudoku">数独</string>
+    <string name="game_solitaire">纸牌接龙</string>
+    <string name="game_buraco">巴西拉米（Buraco）</string>
+    <string name="game_backgammon">双陆棋</string>
+    <string name="game_mahjong">麻将连连看</string>
+    <string name="game_reversi">黑白棋</string>
+    <string name="game_crossword">填字游戏</string>
+    <string name="game_pipes">接水管</string>
+    <string name="game_connect">颜色连线</string>
+    <string name="game_dots">点点消除</string>
+
+    <string name="howto_sudoku">填满方格，让每一行、每一列和每个3×3宫格里都有1到9，且不重复。</string>
+    <string name="howto_solitaire">经典接龙（克朗代克）。按花色从A到K叠成四堆。点一下牌，它会自动移到最合适的位置。</string>
+    <string name="howto_buraco">和电脑比赛，用同花色的牌组成顺子。所有的2都是百搭牌。七张牌组成一个“卡纳斯塔”。</string>
+    <string name="howto_backgammon">掷骰子，把你所有的浅色棋子走回自己的内盘，然后比电脑先把它们全部移出棋盘。</string>
+    <string name="howto_mahjong">消去相同的两张牌。一张牌上面没有别的牌、而且左边或右边空着，才能被选中。</string>
+    <string name="howto_reversi">落子时把电脑的棋子夹在你的两颗棋子之间，它们就会变成你的颜色。最后棋子多的一方获胜。</string>
+    <string name="howto_crossword">看提示，填出词语。点一个格子选择词语，再点一次可以切换横向或纵向。</string>
+    <string name="howto_pipes">点击管子让它旋转，直到所有管子都和水源连通，而且没有开口。</string>
+    <string name="howto_connect">用线把相同颜色的点连起来。线不能交叉。尽量铺满整个棋盘。</string>
+    <string name="howto_dots">手指划过相邻的同色圆点就能消除它们。连成一个方框可以消除该颜色的全部圆点。</string>
+
+    <string name="resume">返回游戏</string>
+    <string name="new_game">新游戏</string>
+    <string name="main_menu">主菜单</string>
+    <string name="leave_game_title">要离开这局游戏吗？</string>
+    <string name="leave_game_message">回到主菜单后，这局游戏将被放弃，不能再继续。</string>
+    <string name="leave_game_yes">是的，离开游戏</string>
+    <string name="new_game_title">开始新游戏吗？</string>
+    <string name="new_game_message">当前这局游戏会丢失。</string>
+    <string name="resume_title">欢迎回来！</string>
+    <string name="resume_message">你有一局“%1$s”还没玩完。要接着玩，还是回到主菜单？</string>
+    <string name="resume_continue">继续游戏</string>
+    <string name="win_title">恭喜！</string>
+    <string name="win_message">你赢了！🎉</string>
+    <string name="lose_title">游戏结束</string>
+    <string name="lose_message">这次没成功，再试一次吧？</string>
+    <string name="play_again">再玩一次</string>
+    <string name="undo">撤销</string>
+    <string name="hint">提示</string>
+    <string name="your_turn">轮到你了</string>
+    <string name="computer_turn">电脑正在思考…</string>
+    <string name="score_line">你：%1$d · 电脑：%2$d</string>
+
+    <string name="settings_scroll_hint">向下滑动查看所有选项 ↓</string>
+    <string name="section_language">语言</string>
+    <string name="language_system">跟随手机</string>
+    <string name="section_size">大小</string>
+    <string name="text_size">文字大小</string>
+    <string name="piece_size">棋子和按钮大小</string>
+    <string name="section_colors">颜色</string>
+    <string name="color_normal">普通</string>
+    <string name="color_normal_desc">柔和的颜色，中等对比度。</string>
+    <string name="color_high_contrast">高对比度</string>
+    <string name="color_high_contrast_desc">颜色鲜明、轮廓粗，更容易看清。</string>
+    <string name="color_colorblind">色盲友好</string>
+    <string name="color_colorblind_desc">色盲人士也能区分的颜色，棋子上还会画出形状。</string>
+    <string name="dark_mode">深色模式</string>
+    <string name="dark_mode_desc">深色背景，晚上看更舒服。每种颜色模式都有自己的深色版本。</string>
+    <string name="section_controls">操作</string>
+    <string name="pinch_zoom">双指缩放</string>
+    <string name="pinch_zoom_desc">用两根手指放大、缩小和移动棋盘。</string>
+    <string name="left_handed">左手模式</string>
+    <string name="left_handed_desc">把主要按钮放到屏幕左边。</string>
+    <string name="one_hand">单手模式</string>
+    <string name="one_hand_desc">齿轮变成拇指旁边的悬浮按钮，一根手指就能缩放。</string>
+    <string name="one_hand_zoom">单指缩放</string>
+    <string name="onehand_doubletap">双击</string>
+    <string name="onehand_doubletap_desc">双击放大（每次双击放大一些，然后恢复）。双击后拖动可以移动画面。</string>
+    <string name="onehand_rotate">按住旋转</string>
+    <string name="onehand_rotate_desc">按住不放，然后画圈：顺时针放大，逆时针缩小。双击后拖动可以移动画面。</string>
+    <string name="default_difficulty">默认难度</string>
+    <string name="section_about">关于</string>
+    <string name="about_text">Mega Games 免费、开源。没有广告，不用注册，也没有应用内购买。</string>
+    <string name="about_privacy">隐私：本应用不联网，不收集任何数据。你的设置和当前游戏只保存在这部手机上。</string>
+    <string name="about_ai">代码、美术和文字都是在 Anthropic 公司的 AI 助手 Claude 的帮助下完成的。</string>
+    <string name="about_version">版本 %1$s</string>
+    <string name="about_open_project">打开项目主页</string>
+    <string name="reset_settings">恢复默认设置</string>
+
+    <string name="sudoku_notes">笔记</string>
+    <string name="sudoku_notes_on">笔记模式：数字会作为小提示记下来</string>
+    <string name="sudoku_tap_cell">先点格子，再点数字</string>
+
+    <string name="solitaire_moves">步数：%1$d</string>
+    <string name="solitaire_passes">剩余翻牌次数：%1$d</string>
+    <string name="solitaire_finish">自动完成</string>
+    <string name="solitaire_no_hint">没有明显的走法，试试翻牌堆。</string>
+
+    <string name="reversi_tie">平局！</string>
+    <string name="reversi_ai_passed">电脑无处可下，还是你下。</string>
+    <string name="reversi_you_passed">你无处可下，电脑再下一次。</string>
+    <string name="reversi_score">● 你：%1$d   ○ 电脑：%2$d</string>
+
+    <string name="mahjong_status">剩余牌：%1$d · 可消对数：%2$d</string>
+    <string name="mahjong_stuck">没有可以消的牌了，请用“洗牌”！</string>
+    <string name="mahjong_shuffle">洗牌</string>
+    <string name="mahjong_shuffle_count">洗牌（%1$d）</string>
+
+    <string name="pipes_status">通水的管子：%1$d / %2$d</string>
+
+    <string name="connect_status">已连接：%1$d / %2$d · 铺满：%3$d%%</string>
+    <string name="connect_fill">全部连好了！现在把每个格子都填满。</string>
+    <string name="connect_clear">清空</string>
+
+    <string name="dots_moves">剩余步数：%1$d</string>
+
+    <string name="crossword_across">横向</string>
+    <string name="crossword_down">纵向</string>
+    <string name="crossword_prev">上一个词</string>
+    <string name="crossword_next">下一个词</string>
+
+    <string name="backgammon_roll">掷骰子</string>
+    <string name="backgammon_done">完成</string>
+    <string name="backgammon_rotate">旋转</string>
+    <string name="backgammon_roll_prompt">轮到你：掷骰子</string>
+    <string name="backgammon_pick_checker">点一个要走的棋子（黄色）</string>
+    <string name="backgammon_pick_target">点它要去的位置（绿色）</string>
+    <string name="backgammon_done_prompt">已经走完，点“完成”。</string>
+    <string name="backgammon_no_moves">没有可走的步，点“完成”。</string>
+    <string name="backgammon_off">已移出：你 %1$d · 电脑 %2$d</string>
+    <string name="backgammon_gammon">全胜（Gammon）：输家一个棋子都没有移出（双倍胜利）。</string>
+    <string name="backgammon_backgammon">大全胜（Backgammon）：输家还有棋子在中间栏或赢家的内盘（三倍胜利）。</string>
+
+    <string name="buraco_draw">摸一张牌</string>
+    <string name="buraco_take_pile">拿走弃牌堆（%1$d）</string>
+    <string name="buraco_discard">弃牌</string>
+    <string name="buraco_meld">放出新顺子</string>
+    <string name="buraco_prompt_draw">轮到你：从牌堆摸一张，或拿走整个弃牌堆</string>
+    <string name="buraco_prompt_play">选3张以上的牌放出顺子，或选1张牌弃掉</string>
+    <string name="buraco_prompt_add">点你的一组顺子，把选中的牌加上去</string>
+    <string name="buraco_err_invalid">这些牌不能组成同花色的顺子（每组只能有一张百搭牌）。</string>
+    <string name="buraco_err_keep">请至少留一张牌，回合结束时要弃牌。</string>
+    <string name="buraco_err_canasta">要出完牌，必须先有一组“干净的卡纳斯塔”：7张以上且没有百搭牌。</string>
+    <string name="buraco_err_select_one">请只选一张牌来弃掉。</string>
+    <string name="buraco_computer">电脑</string>
+    <string name="buraco_morto">备用牌（Morto）</string>
+    <string name="buraco_morto_taken">已拿备用牌</string>
+    <string name="buraco_deck">牌堆</string>
+    <string name="buraco_pile">弃牌堆</string>
+    <string name="buraco_your_sequences">你的顺子</string>
+    <string name="buraco_your_hand">你的手牌</string>
+    <string name="buraco_clean">干净的卡纳斯塔</string>
+    <string name="buraco_dirty">带百搭的卡纳斯塔</string>
+    <string name="buraco_points">得分 — 你：%1$d · 电脑：%2$d</string>
+    <string name="buraco_went_out_you">你出完了牌（+100）。</string>
+    <string name="buraco_went_out_ai">电脑出完了牌（+100）。</string>
+    <string name="buraco_deck_over">牌堆用完了。</string>
+    <plurals name="buraco_cards">
+        <item quantity="other">%1$d 张牌</item>
+    </plurals>
+</resources>

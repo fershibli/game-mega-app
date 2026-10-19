@@ -1,0 +1,60 @@
+# Builds, tests and lints every push and pull request, and publishes the APKs as artifacts
+# together with their SHA-256 checksums so anyone can verify what CI produced.
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+
+      # Makes sure gradle-wrapper.jar is the official one published by Gradle.
+      - uses: gradle/actions/wrapper-validation@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Unit tests, UI tests (Robolectric) and lint
+        run: ./gradlew --no-daemon testDebugUnitTest lintDebug
+
+      - name: Build APKs
+        run: ./gradlew --no-daemon assembleDebug assembleRelease
+
+      - name: Checksums
+        run: |
+          cd app/build/outputs/apk
+          sha256sum debug/*.apk release/*.apk | tee SHA256SUMS.txt
+          ls -la debug release
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: apks
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: reports
+          path: |
+            app/build/reports/tests/
+            app/build/reports/lint-results-debug.html

@@ -53,6 +53,8 @@ data class Settings(
     val oneHand: Boolean = false,
     val oneHandZoom: OneHandZoom = OneHandZoom.DOUBLE_TAP,
     val defaultDifficulty: Difficulty = Difficulty.EASY,
+    /** Backgammon board standing up (bigger checkers) instead of the traditional horizontal one. */
+    val backgammonUpright: Boolean = false,
 ) {
     companion object {
         const val SCALE_MIN = 0.8f
@@ -79,6 +81,7 @@ class SettingsStore(context: Context) {
             oneHand = prefs.getBoolean("oneHand", d.oneHand),
             oneHandZoom = enumOr(prefs.getString("oneHandZoom", null), d.oneHandZoom),
             defaultDifficulty = enumOr(prefs.getString("defaultDifficulty", null), d.defaultDifficulty),
+            backgammonUpright = prefs.getBoolean("backgammonUpright", d.backgammonUpright),
         )
     }
 
@@ -94,6 +97,7 @@ class SettingsStore(context: Context) {
             .putBoolean("oneHand", s.oneHand)
             .putString("oneHandZoom", s.oneHandZoom.name)
             .putString("defaultDifficulty", s.defaultDifficulty.name)
+            .putBoolean("backgammonUpright", s.backgammonUpright)
             .apply()
     }
 

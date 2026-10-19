@@ -1,0 +1,233 @@
+# Deploy: tests the code, builds the release APK (to install on a phone) and AAB (for Google Play),
+# signs them, verifies them and publishes them as a GitHub Release with SHA-256 checksums.
+# When the PLAY_SERVICE_ACCOUNT_JSON secret exists, the AAB is also uploaded to Google Play
+# (see docs/en/google-play.md).
+#
+# It runs:
+#   - automatically, called by versioning.yml after it creates a new version tag;
+#   - when a person pushes a tag like v1.2.3 or v1.2.3-rc.1;
+#   - manually ("Run workflow"), giving a version number.
+#
+# Signing: with the release key stored in the repository secrets
+#   MEGAGAMES_KEYSTORE_BASE64, MEGAGAMES_KEYSTORE_PASSWORD, MEGAGAMES_KEY_ALIAS, MEGAGAMES_KEY_PASSWORD
+# (created and kept up to date by signing-key.yml, see docs/en/google-play.md). Without them a release candidate is still built and published, signed
+# with a temporary debug key and clearly marked as such: it installs fine, but a later version signed
+# with the real key will need the old one to be uninstalled first. A stable version is never
+# published without the release key: the job fails instead.
+name: Deploy APK
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: "Version without the leading v, e.g. 1.2.3 or 1.2.3-rc.1"
+        type: string
+        required: true
+      prerelease:
+        type: boolean
+        default: false
+      notes:
+        description: "Release notes (markdown)"
+        type: string
+        default: ""
+      ref:
+        description: "Git ref to build (the version tag)"
+        type: string
+        default: ""
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to publish, e.g. 1.2.3 or 1.2.3-rc.1 (the tag is created on this commit)"
+        type: string
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-${{ inputs.version || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  apk:
+    name: Build, sign and publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+
+      - name: Resolve the version
+        id: v
+        env:
+          RAW: ${{ inputs.version || github.ref_name }}
+          NOTES: ${{ inputs.notes }}
+        run: |
+          set -euo pipefail
+          version=${RAW#v}
+          if ! [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?$ ]]; then
+            echo "::error::'$RAW' is not a valid version (expected 1.2.3 or 1.2.3-rc.4)"; exit 1
+          fi
+          prerelease=false
+          [[ "$version" == *-rc.* ]] && prerelease=true
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "prerelease=$prerelease" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "${NOTES:-## Mega Games v$version}" > "$RUNNER_TEMP/notes.md"
+          # Tags pushed by hand have no notes: GitHub then generates them from the commits.
+          if [ -z "$NOTES" ]; then echo "generate_notes=true" >> "$GITHUB_OUTPUT"; else echo "generate_notes=false" >> "$GITHUB_OUTPUT"; fi
+          echo "Deploying v$version (pre-release: $prerelease)"
+
+      - uses: gradle/actions/wrapper-validation@v6
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Prepare the signing key
+        id: sign
+        env:
+          KEYSTORE_BASE64: ${{ secrets.MEGAGAMES_KEYSTORE_BASE64 }}
+          PRERELEASE: ${{ steps.v.outputs.prerelease }}
+        run: |
+          set -euo pipefail
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/release.jks"
+            echo "MEGAGAMES_KEYSTORE_FILE=$RUNNER_TEMP/release.jks" >> "$GITHUB_ENV"
+            echo "mode=release" >> "$GITHUB_OUTPUT"
+          elif [ "$PRERELEASE" != true ]; then
+            # Phones only accept updates signed with the same key, so a stable APK signed with the
+            # debug key would force everyone to uninstall (and lose their saved game) later.
+            echo "::error::Stable versions must be signed with the release key, but the signing secrets are not set. Run the Signing key workflow: docs/en/google-play.md#1-signing-key"
+            exit 1
+          else
+            echo "::warning::Release signing secrets are not set: the APK will be signed with a temporary debug key. Run the Signing key workflow: docs/en/google-play.md#1-signing-key"
+            echo "mode=debug" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Test, lint and build the release APK
+        env:
+          MEGAGAMES_KEYSTORE_PASSWORD: ${{ secrets.MEGAGAMES_KEYSTORE_PASSWORD }}
+          MEGAGAMES_KEY_ALIAS: ${{ secrets.MEGAGAMES_KEY_ALIAS }}
+          MEGAGAMES_KEY_PASSWORD: ${{ secrets.MEGAGAMES_KEY_PASSWORD }}
+          VERSION: ${{ steps.v.outputs.version }}
+          SIGN_MODE: ${{ steps.sign.outputs.mode }}
+        run: |
+          set -euo pipefail
+          extra=""
+          [ "$SIGN_MODE" = debug ] && extra="-PsignWithDebugKey=true"
+          ./gradlew --no-daemon testDebugUnitTest lintDebug assembleRelease bundleRelease -PappVersion="$VERSION" $extra
+
+      - name: Verify the APK and AAB (signature, version, permissions)
+        id: apk
+        env:
+          VERSION: ${{ steps.v.outputs.version }}
+        run: |
+          set -euo pipefail
+          apk=app/build/outputs/apk/release/app-release.apk
+          [ -f "$apk" ] || { echo "::error::Signed APK not found"; ls -R app/build/outputs/apk; exit 1; }
+          tools=$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n1)
+          "$tools/apksigner" verify --print-certs "$apk" | tee "$RUNNER_TEMP/certs.txt"
+          badging=$("$tools/aapt2" dump badging "$apk")
+          echo "$badging" | grep -E "^package:"
+          echo "$badging" | grep -q "versionName='$VERSION'" || { echo "::error::versionName is not $VERSION"; exit 1; }
+          # The app must not request any real permission (only AndroidX's internal signature permission).
+          if "$tools/aapt2" dump permissions "$apk" | grep "uses-permission" | grep -v "DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"; then
+            echo "::error::The APK requests a permission"; exit 1
+          fi
+          echo "package=$(echo "$badging" | sed -n "s/^package: name='\([^']*\)'.*/\1/p")" >> "$GITHUB_OUTPUT"
+          aab=app/build/outputs/bundle/release/app-release.aab
+          [ -f "$aab" ] || { echo "::error::AAB not found"; exit 1; }
+          jarsigner -verify -certs "$aab" | tee "$RUNNER_TEMP/aab-verify.txt" | tail -n 3
+          grep -q "jar verified" "$RUNNER_TEMP/aab-verify.txt" || { echo "::error::The AAB is not signed"; exit 1; }
+          mkdir -p dist
+          cp "$apk" "dist/MegaGames-v$VERSION.apk"
+          cp "$aab" "dist/MegaGames-v$VERSION.aab"
+          (cd dist && sha256sum -- *.apk *.aab | tee SHA256SUMS.txt)
+          echo "size=$(du -k "dist/MegaGames-v$VERSION.apk" | cut -f1)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(sha256sum "dist/MegaGames-v$VERSION.apk" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+
+      - name: Finish the release notes
+        env:
+          VERSION: ${{ steps.v.outputs.version }}
+          SIGN_MODE: ${{ steps.sign.outputs.mode }}
+          SHA: ${{ steps.apk.outputs.sha }}
+          SIZE: ${{ steps.apk.outputs.size }}
+        run: |
+          set -euo pipefail
+          {
+            echo
+            echo "### 📲 Install"
+            echo "Download **MegaGames-v$VERSION.apk** on your Android phone (6.0 or newer) and open it. Details: [user guide](https://github.com/$GITHUB_REPOSITORY/blob/v$VERSION/docs/en/user-guide.md#installing)."
+            echo
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Size | ${SIZE} KB |"
+            echo "| SHA-256 | \`$SHA\` |"
+            echo "| Permissions | none |"
+            echo
+            echo "\`MegaGames-v$VERSION.aab\` is the same app packaged for Google Play; phones install the \`.apk\`."
+            if [ "$SIGN_MODE" = debug ]; then
+              echo
+              echo "> ⚠️ This APK is signed with a **temporary debug key** because the release key is not configured yet. It installs normally, but updating later to a version signed with the real key requires uninstalling this one first."
+            fi
+          } >> "$RUNNER_TEMP/notes.md"
+
+      - name: Publish the GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.v.outputs.version }}
+          PRERELEASE: ${{ steps.v.outputs.prerelease }}
+          GENERATE_NOTES: ${{ steps.v.outputs.generate_notes }}
+        run: |
+          set -euo pipefail
+          tag="v$VERSION"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag exists: replacing its files"
+            gh release upload "$tag" dist/* --clobber
+            gh release edit "$tag" --notes-file "$RUNNER_TEMP/notes.md"
+          else
+            flags=(--title "Mega Games $tag" --notes-file "$RUNNER_TEMP/notes.md" --target "$(git rev-parse HEAD)")
+            if [ "$PRERELEASE" = true ]; then flags+=(--prerelease); else flags+=(--latest); fi
+            if [ "$GENERATE_NOTES" = true ]; then flags+=(--generate-notes); fi
+            gh release create "$tag" dist/* "${flags[@]}"
+          fi
+          {
+            echo "### ✅ Published $tag"
+            echo "- APK: \`MegaGames-$tag.apk\` ($(du -k dist/*.apk | cut -f1) KB)"
+            echo "- Release: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/$tag"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: MegaGames-v${{ steps.v.outputs.version }}
+          path: dist/
+
+      # Optional: only when the Google Play service account is configured, and never with the debug key.
+      # Release candidates go to the testing track (closed testing "alpha" by default); stable versions
+      # go to production once the repository variable PLAY_PRODUCTION is "true" (after Google grants
+      # production access), otherwise to the testing track too. While the app has never been reviewed,
+      # Google only accepts draft releases: keep PLAY_RELEASE_STATUS unset ("draft") until then.
+      - name: Upload the AAB to Google Play
+        env:
+          PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          SIGN_MODE: ${{ steps.sign.outputs.mode }}
+          PRERELEASE: ${{ steps.v.outputs.prerelease }}
+          PACKAGE_NAME: ${{ steps.apk.outputs.package }}
+          VERSION: ${{ steps.v.outputs.version }}
+          TESTING_TRACK: ${{ vars.PLAY_TESTING_TRACK || 'alpha' }}
+          PRODUCTION: ${{ vars.PLAY_PRODUCTION }}
+          STATUS: ${{ vars.PLAY_RELEASE_STATUS || 'draft' }}
+        run: |
+          set -euo pipefail
+          if [ -z "$PLAY_SERVICE_ACCOUNT_JSON" ]; then echo "Google Play upload not configured (no PLAY_SERVICE_ACCOUNT_JSON): skipped."; exit 0; fi
+          if [ "$SIGN_MODE" != release ]; then echo "::warning::Not uploading to Google Play: the AAB is signed with the debug key."; exit 0; fi
+          track=$TESTING_TRACK
+          if [ "$PRERELEASE" != true ] && [ "$PRODUCTION" = true ]; then track=production; fi
+          AAB="dist/MegaGames-v$VERSION.aab" TRACK="$track" ./scripts/play-upload.sh
+          echo "- Google Play: uploaded to the **$track** track ($STATUS)" >> "$GITHUB_STEP_SUMMARY"

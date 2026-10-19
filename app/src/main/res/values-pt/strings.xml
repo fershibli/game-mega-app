@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Português do Brasil -->
+<resources>
+    <string name="choose_game">Escolha seu jogo</string>
+    <string name="choose_difficulty">Escolha a dificuldade</string>
+    <string name="confirm">Confirmar</string>
+    <string name="back">Voltar</string>
+    <string name="settings">Configurações</string>
+    <string name="close">Fechar</string>
+    <string name="done">Pronto</string>
+    <string name="cancel">Cancelar</string>
+    <string name="loading">Preparando o jogo…</string>
+    <string name="decrease">Diminuir</string>
+    <string name="increase">Aumentar</string>
+    <string name="zoom_reset">Voltar ao tamanho normal</string>
+
+    <string name="difficulty_easy">Fácil</string>
+    <string name="difficulty_medium">Médio</string>
+    <string name="difficulty_hard">Difícil</string>
+
+    <string name="game_sudoku">Sudoku</string>
+    <string name="game_solitaire">Paciência</string>
+    <string name="game_buraco">Buraco</string>
+    <string name="game_backgammon">Gamão</string>
+    <string name="game_mahjong">Mahjong</string>
+    <string name="game_reversi">Reversi</string>
+    <string name="game_crossword">Palavras cruzadas</string>
+    <string name="game_pipes">Encanamento</string>
+    <string name="game_connect">Ligue as cores</string>
+    <string name="game_dots">Pontinhos</string>
+
+    <string name="howto_sudoku">Preencha a grade para que cada linha, cada coluna e cada quadrado 3×3 tenha os números de 1 a 9, sem repetir.</string>
+    <string name="howto_solitaire">Paciência clássica (Klondike). Monte quatro pilhas do Ás ao Rei, uma de cada naipe. Toque numa carta para movê-la para o melhor lugar.</string>
+    <string name="howto_buraco">Forme sequências do mesmo naipe contra o computador. O 2 é curinga. Sete cartas formam uma canastra.</string>
+    <string name="howto_backgammon">Jogue os dados e leve todas as suas pedras claras para casa; depois retire-as do tabuleiro antes do computador.</string>
+    <string name="howto_mahjong">Retire pares de peças iguais. Uma peça pode sair quando não há nada em cima dela e o lado esquerdo ou direito está livre.</string>
+    <string name="howto_reversi">Coloque uma pedra de forma a prender as pedras do computador entre duas suas: elas viram para a sua cor. Ganha quem tiver mais pedras.</string>
+    <string name="howto_crossword">Leia a dica e preencha a palavra. Toque num quadradinho para escolher a palavra; toque de novo para mudar a direção.</string>
+    <string name="howto_pipes">Toque nas peças para girá-las até que todos os canos estejam ligados à fonte de água, sem pontas abertas.</string>
+    <string name="howto_connect">Ligue as bolinhas da mesma cor com uma linha. As linhas não podem se cruzar. Tente preencher o tabuleiro inteiro.</string>
+    <string name="howto_dots">Arraste o dedo por bolinhas vizinhas da mesma cor para eliminá-las. Feche um quadrado para eliminar todas daquela cor.</string>
+
+    <string name="resume">Voltar ao jogo</string>
+    <string name="new_game">Novo jogo</string>
+    <string name="main_menu">Menu principal</string>
+    <string name="leave_game_title">Sair deste jogo?</string>
+    <string name="leave_game_message">Se você voltar ao menu principal, este jogo será abandonado e não poderá ser continuado.</string>
+    <string name="leave_game_yes">Sim, sair do jogo</string>
+    <string name="new_game_title">Começar um novo jogo?</string>
+    <string name="new_game_message">O jogo atual será perdido.</string>
+    <string name="resume_title">Que bom te ver de novo!</string>
+    <string name="resume_message">Você tem uma partida de %1$s em andamento. Quer continuar de onde parou ou voltar para o menu principal?</string>
+    <string name="resume_continue">Continuar jogando</string>
+    <string name="win_title">Parabéns!</string>
+    <string name="win_message">Você venceu! 🎉</string>
+    <string name="lose_title">Fim de jogo</string>
+    <string name="lose_message">Não foi dessa vez. Que tal tentar de novo?</string>
+    <string name="play_again">Jogar de novo</string>
+    <string name="undo">Desfazer</string>
+    <string name="hint">Dica</string>
+    <string name="your_turn">Sua vez</string>
+    <string name="computer_turn">O computador está pensando…</string>
+    <string name="score_line">Você: %1$d · Computador: %2$d</string>
+
+    <string name="settings_scroll_hint">Role para ver todas as opções ↓</string>
+    <string name="section_language">Idioma</string>
+    <string name="language_system">Igual ao do celular</string>
+    <string name="section_size">Tamanho</string>
+    <string name="text_size">Tamanho do texto</string>
+    <string name="piece_size">Tamanho das peças e botões</string>
+    <string name="section_colors">Cores</string>
+    <string name="color_normal">Normal</string>
+    <string name="color_normal_desc">Cores suaves com contraste médio.</string>
+    <string name="color_high_contrast">Alto contraste</string>
+    <string name="color_high_contrast_desc">Cores fortes e contornos grossos, mais fáceis de ver.</string>
+    <string name="color_colorblind">Para daltônicos</string>
+    <string name="color_colorblind_desc">Cores que continuam diferentes para quem tem daltonismo, e formas desenhadas nas peças.</string>
+    <string name="dark_mode">Modo escuro</string>
+    <string name="dark_mode_desc">Fundo escuro, mais confortável à noite. Cada modo de cor tem a sua versão escura.</string>
+    <string name="section_controls">Controles</string>
+    <string name="pinch_zoom">Zoom com pinça</string>
+    <string name="pinch_zoom_desc">Use dois dedos para aproximar, afastar e mover o tabuleiro.</string>
+    <string name="left_handed">Modo canhoto</string>
+    <string name="left_handed_desc">Coloca os botões principais do lado esquerdo da tela.</string>
+    <string name="one_hand">Modo uma mão</string>
+    <string name="one_hand_desc">A engrenagem vira um botão flutuante perto do polegar, e o zoom funciona com um dedo só.</string>
+    <string name="one_hand_zoom">Zoom com um dedo</string>
+    <string name="onehand_doubletap">Toque duplo</string>
+    <string name="onehand_doubletap_desc">Toque duas vezes para aproximar (cada toque duplo aproxima mais, depois volta). Toque duas vezes e arraste para mover.</string>
+    <string name="onehand_rotate">Pressionar e girar</string>
+    <string name="onehand_rotate_desc">Encoste e segure, depois faça círculos: sentido horário aproxima, anti-horário afasta. Toque duas vezes e arraste para mover.</string>
+    <string name="default_difficulty">Dificuldade padrão</string>
+    <string name="section_about">Sobre</string>
+    <string name="about_text">Mega Games é gratuito e de código aberto. Não tem anúncios, não pede cadastro e não tem compras dentro do app.</string>
+    <string name="about_privacy">Privacidade: o app não usa a internet e não coleta nenhum dado. Suas configurações e o jogo em andamento ficam só neste celular.</string>
+    <string name="about_ai">Código, arte e textos foram criados com a ajuda do Claude, o assistente de IA da Anthropic.</string>
+    <string name="about_version">Versão %1$s</string>
+    <string name="about_open_project">Abrir a página do projeto</string>
+    <string name="reset_settings">Restaurar configurações padrão</string>
+
+    <string name="sudoku_notes">Notas</string>
+    <string name="sudoku_notes_on">Modo notas: os números viram lembretes pequenos</string>
+    <string name="sudoku_tap_cell">Toque num quadradinho e depois num número</string>
+
+    <string name="solitaire_moves">Jogadas: %1$d</string>
+    <string name="solitaire_passes">Voltas no monte restantes: %1$d</string>
+    <string name="solitaire_finish">Terminar</string>
+    <string name="solitaire_no_hint">Nenhuma jogada óbvia. Tente o monte.</string>
+
+    <string name="reversi_tie">Empate!</string>
+    <string name="reversi_ai_passed">O computador não tinha jogada. Sua vez de novo.</string>
+    <string name="reversi_you_passed">Você não tinha jogada. O computador joga de novo.</string>
+    <string name="reversi_score">● Você: %1$d   ○ Computador: %2$d</string>
+
+    <string name="mahjong_status">Peças: %1$d · Pares disponíveis: %2$d</string>
+    <string name="mahjong_stuck">Acabaram os pares. Use Embaralhar!</string>
+    <string name="mahjong_shuffle">Embaralhar</string>
+    <string name="mahjong_shuffle_count">Embaralhar (%1$d)</string>
+
+    <string name="pipes_status">Peças com água: %1$d de %2$d</string>
+
+    <string name="connect_status">Ligadas: %1$d de %2$d · Tabuleiro preenchido: %3$d%%</string>
+    <string name="connect_fill">Tudo ligado! Agora preencha todos os quadradinhos.</string>
+    <string name="connect_clear">Limpar</string>
+
+    <string name="dots_moves">Jogadas: %1$d</string>
+
+    <string name="crossword_across">Horizontal</string>
+    <string name="crossword_down">Vertical</string>
+    <string name="crossword_prev">Palavra anterior</string>
+    <string name="crossword_next">Próxima palavra</string>
+
+    <string name="backgammon_roll">Jogar os dados</string>
+    <string name="backgammon_done">Pronto</string>
+    <string name="backgammon_rotate">Girar</string>
+    <string name="backgammon_roll_prompt">Sua vez: jogue os dados</string>
+    <string name="backgammon_pick_checker">Toque numa pedra para mover (amarelo)</string>
+    <string name="backgammon_pick_target">Toque onde ela vai (verde)</string>
+    <string name="backgammon_done_prompt">Todas as jogadas feitas. Toque em Pronto.</string>
+    <string name="backgammon_no_moves">Nenhuma jogada possível. Toque em Pronto.</string>
+    <string name="backgammon_off">Pedras retiradas: você %1$d · computador %2$d</string>
+    <string name="backgammon_gammon">Gamão: o perdedor não tinha retirado nenhuma pedra (vitória dupla).</string>
+    <string name="backgammon_backgammon">Gamão duplo (backgammon): o perdedor ainda tinha pedra na barra ou na casa do vencedor (vitória tripla).</string>
+
+    <string name="buraco_draw">Comprar carta</string>
+    <string name="buraco_take_pile">Pegar o lixo (%1$d)</string>
+    <string name="buraco_discard">Descartar</string>
+    <string name="buraco_meld">Novo jogo na mesa</string>
+    <string name="buraco_prompt_draw">Sua vez: compre uma carta do monte ou pegue o lixo</string>
+    <string name="buraco_prompt_play">Selecione 3 ou mais cartas para baixar um jogo, ou uma carta para descartar</string>
+    <string name="buraco_prompt_add">Toque num dos seus jogos para encaixar as cartas selecionadas</string>
+    <string name="buraco_err_invalid">Essas cartas não formam uma sequência do mesmo naipe (só um curinga por jogo).</string>
+    <string name="buraco_err_keep">Guarde pelo menos uma carta para descartar no fim da sua vez.</string>
+    <string name="buraco_err_canasta">Para bater é preciso ter uma canastra limpa: 7 cartas ou mais, sem curinga.</string>
+    <string name="buraco_err_select_one">Selecione apenas uma carta para descartar.</string>
+    <string name="buraco_computer">Computador</string>
+    <string name="buraco_morto">Morto</string>
+    <string name="buraco_morto_taken">já pegou o morto</string>
+    <string name="buraco_deck">Monte</string>
+    <string name="buraco_pile">Lixo</string>
+    <string name="buraco_your_sequences">Seus jogos</string>
+    <string name="buraco_your_hand">Sua mão</string>
+    <string name="buraco_clean">Canastra limpa</string>
+    <string name="buraco_dirty">Canastra suja</string>
+    <string name="buraco_points">Pontos — você: %1$d · computador: %2$d</string>
+    <string name="buraco_went_out_you">Você bateu (+100).</string>
+    <string name="buraco_went_out_ai">O computador bateu (+100).</string>
+    <string name="buraco_deck_over">O monte acabou.</string>
+    <plurals name="buraco_cards">
+        <item quantity="one">%1$d carta</item>
+        <item quantity="many">%1$d cartas</item>
+        <item quantity="other">%1$d cartas</item>
+    </plurals>
+</resources>

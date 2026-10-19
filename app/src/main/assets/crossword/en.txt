@@ -1,0 +1,165 @@
+# Crossword dictionary — English. Format: ANSWER|clue. Everyday words, gentle clues.
+APPLE|Red or green fruit that keeps the doctor away
+BREAD|Baked from flour, water and yeast
+CHAIR|You sit on it
+TABLE|Furniture where meals are served
+HOUSE|Building where a family lives
+GARDEN|Where flowers and vegetables grow
+WINDOW|Glass opening in a wall
+DOCTOR|Person who treats the sick
+NURSE|Helps the doctor care for patients
+TEACHER|Works in a school classroom
+PIANO|Instrument with black and white keys
+GUITAR|String instrument played around a campfire
+SUMMER|The hottest season
+WINTER|The coldest season
+SPRING|Season when flowers bloom
+AUTUMN|Season when leaves fall
+MONDAY|First working day of the week
+SUNDAY|Day of rest at the end of the weekend
+COFFEE|Hot morning drink made from roasted beans
+TEA|Drink served at five o'clock in England
+SUGAR|Makes coffee sweet
+SALT|White seasoning from the sea
+CHEESE|Made from milk; mice love it
+BUTTER|Yellow spread for toast
+HONEY|Sweet food made by bees
+ORANGE|Citrus fruit that is also a color
+BANANA|Long yellow fruit
+GRAPE|Small fruit used to make wine
+LEMON|Sour yellow citrus fruit
+CHERRY|Small red fruit on top of a sundae
+TOMATO|Red fruit used in salads and sauces
+POTATO|Vegetable for fries and mash
+CARROT|Orange vegetable that rabbits love
+ONION|Makes you cry when you cut it
+RICE|Grain eaten every day in Asia
+SOUP|Hot meal eaten with a spoon
+CAKE|Sweet dessert for birthdays
+COOKIE|Small sweet baked treat
+DOG|Man's best friend
+CAT|Pet that purrs
+HORSE|Animal you can ride
+COW|Farm animal that gives milk
+SHEEP|Farm animal that gives wool
+CHICKEN|Farm bird that lays eggs
+DUCK|Bird that says quack
+RABBIT|Hopping animal with long ears
+TIGER|Big striped cat
+LION|King of the jungle
+ELEPHANT|Large animal with a trunk
+GIRAFFE|Animal with a very long neck
+MONKEY|Animal that climbs trees and eats bananas
+BIRD|Animal with feathers that flies
+FISH|Animal that swims and has gills
+TURTLE|Slow animal with a shell
+BEAR|Big furry animal that sleeps all winter
+OWL|Night bird that hoots
+BEE|Insect that makes honey
+BUTTERFLY|Insect with colorful wings
+SUN|Star that lights our day
+MOON|Shines in the sky at night
+STAR|Twinkles in the night sky
+CLOUD|White and fluffy in the sky
+RAIN|Water falling from the clouds
+SNOW|White and cold, falls in winter
+RIVER|Water that flows to the sea
+OCEAN|Very large body of salt water
+BEACH|Sandy place by the sea
+MOUNTAIN|Very high land
+ISLAND|Land surrounded by water
+FOREST|Large area full of trees
+FLOWER|A rose or a daisy, for example
+TREE|Has a trunk, branches and leaves
+ROSE|Flower that means love
+GRASS|Green plants on a lawn
+RED|Color of strawberries
+BLUE|Color of the sky
+GREEN|Color of grass
+YELLOW|Color of the sun
+WHITE|Color of milk and snow
+BLACK|Color of the night
+MOTHER|Woman who has children
+FATHER|Man who has children
+SISTER|Your parents' daughter
+BROTHER|Your parents' son
+GRANDMA|Your mother's or father's mother
+GRANDSON|Your son's or daughter's boy
+BABY|Very young child
+FRIEND|Person you like and trust
+FAMILY|Parents, children, grandparents...
+HEART|Organ that pumps blood
+HAND|It has five fingers
+EYES|You see with them
+NOSE|You smell with it
+EAR|You hear with it
+MOUTH|You eat and speak with it
+SMILE|Happy expression on your face
+BOOK|Has pages to read
+LETTER|You write it and send it by mail
+NEWSPAPER|Daily printed news
+PHONE|Device to call people
+CLOCK|Tells you the time
+KEY|Opens a lock
+DOOR|Open it to enter a room
+BED|Furniture for sleeping
+LAMP|Gives light in a room
+SPOON|Cutlery for soup
+FORK|Cutlery with prongs
+KNIFE|Cutlery for cutting
+CUP|You drink tea from it
+BOTTLE|Holds water or wine
+TRAIN|Travels on rails
+PLANE|Carries passengers through the sky
+SHIP|Big boat on the ocean
+CAR|Vehicle with four wheels
+BICYCLE|Two wheels and pedals
+MUSIC|Songs and melodies
+DANCE|Moving to the music
+SONG|Music with words to sing
+CHURCH|Place of Christian worship
+SCHOOL|Where children learn
+MARKET|Where you buy fruit and vegetables
+HOSPITAL|Where sick people are treated
+BIRTHDAY|Celebrated once a year with a cake
+HOLIDAY|Day off for rest or celebration
+CHRISTMAS|Holiday on December 25
+GIFT|Present given with love
+CANDLE|Wax stick that gives light
+PIZZA|Italian dish with cheese and tomato
+PASTA|Spaghetti or macaroni
+EGG|Laid by a hen
+MILK|White drink from cows
+WATER|Clear drink you need every day
+JUICE|Drink made from fruit
+WINE|Drink made from grapes
+HAT|Worn on your head
+SHOE|Worn on your foot
+DRESS|One-piece outfit for a woman
+COAT|Warm jacket for cold weather
+UMBRELLA|Keeps you dry in the rain
+GLASSES|Help you see better
+HAPPY|Full of joy
+LOVE|Strong feeling of affection
+PEACE|The opposite of war
+DREAM|What you see while sleeping
+NIGHT|Time when it is dark
+MORNING|Early part of the day
+GOLF|Sport with clubs and eighteen holes
+TENNIS|Sport with rackets and a net
+KITCHEN|Room where meals are cooked
+RECIPE|Instructions to cook a dish
+OVEN|Hot box for baking
+GARLIC|Strong smelling bulb used in cooking
+PEPPER|Black spice next to the salt
+KNITTING|Making a scarf with two needles and wool
+PUZZLE|Game of fitting pieces together
+CARDS|Deck used for solitaire
+CHESS|Board game with kings and queens
+PHOTO|Picture taken with a camera
+PARK|Public garden for a walk
+SEA|Large salty water by the beach
+SHELL|Found on the beach, home of a snail
+APRON|Worn in the kitchen to stay clean
+PILLOW|Soft rest for your head in bed
+BLANKET|Keeps you warm in bed

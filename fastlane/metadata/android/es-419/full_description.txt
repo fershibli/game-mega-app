@@ -1,0 +1,32 @@
+Diez juegos clásicos en una app pequeña, pensada para que las personas mayores jueguen con comodidad: piezas grandes, buen contraste, zoom en todos los tableros y botones al alcance del pulgar.
+
+JUEGOS
+• Sudoku
+• Solitario
+• Buraco (contra la computadora)
+• Backgammon (contra la computadora)
+• Mahjong
+• Reversi (contra la computadora)
+• Crucigrama
+• Tuberías
+• Une los colores
+• Puntos
+
+Cada juego tiene Fácil, Medio y Difícil. Los desafíos se crean en el propio teléfono, así que nunca se repiten, y todos tienen solución.
+
+CÓMODO PARA LA VISTA Y LAS MANOS
+• Pellizca para ampliar y moverte por cualquier tablero (o toca dos veces / mantén y gira con una sola mano)
+• Texto y piezas más grandes, del 80 % al 160 %
+• Colores normales, de alto contraste y aptos para daltónicos, cada uno con modo oscuro
+• Modo zurdo y modo una mano
+• Sin reloj y sin prisa
+
+TU PARTIDA SIEMPRE SE GUARDA
+¿Cerraste la app sin querer? Te pregunta si quieres seguir donde te quedaste.
+
+PRIVADO Y GRATIS
+• Sin anuncios, sin compras y sin cuenta
+• No usa internet y no recoge ningún dato
+• Código abierto: cualquiera puede leerlo y comprobarlo
+
+Disponible en español, portugués, inglés, francés y chino.

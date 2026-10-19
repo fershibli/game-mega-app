@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: gradle
+    directory: "/"
+    target-branch: stag
+    schedule:
+      interval: monthly
+    groups:
+      androidx:
+        patterns: ["androidx.*", "com.android.*"]
+      kotlin:
+        patterns: ["org.jetbrains.*"]
+  - package-ecosystem: github-actions
+    directory: "/"
+    target-branch: stag
+    schedule:
+      interval: monthly
