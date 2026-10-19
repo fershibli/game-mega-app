@@ -19,7 +19,7 @@ class TranslationsTest {
     fun allLanguagesAreComplete() {
         val english = load("values")
         assertTrue(english.size > 100)
-        for (lang in listOf("pt", "es", "fr", "zh")) {
+        for (lang in listOf("pt", "es", "fr", "it", "de", "ru", "ja", "zh")) {
             val translated = load("values-$lang")
             assertEquals("missing or extra keys in $lang", english.keys, translated.keys)
             for ((key, text) in english) {
@@ -32,7 +32,7 @@ class TranslationsTest {
 
     @Test
     fun noUnescapedApostrophes() {
-        for (dir in listOf("values", "values-pt", "values-es", "values-fr", "values-zh")) {
+        for (dir in listOf("values", "values-pt", "values-es", "values-fr", "values-it", "values-de", "values-ru", "values-ja", "values-zh")) {
             for ((key, text) in load(dir)) {
                 assertTrue("unescaped ' in $dir/$key", !Regex("""(?<!\\)'""").containsMatchIn(text))
             }

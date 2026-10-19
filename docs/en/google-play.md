@@ -43,7 +43,7 @@ Google announced in October 2026 that apps built in Google AI Studio can be publ
 | Field | Value |
 |---|---|
 | App name | `Mili Games` |
-| Default language | your choice (texts are ready for en-US, pt-BR, es-419, fr-FR, zh-CN) |
+| Default language | your choice (texts are ready for en-US, pt-BR, es-419, fr-FR, it-IT, de-DE, ru-RU, ja-JP, zh-CN) |
 | App or game | Game |
 | Free or paid | Free |
 

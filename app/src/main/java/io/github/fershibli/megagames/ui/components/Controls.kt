@@ -14,6 +14,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -194,7 +199,13 @@ fun BigDialog(
         title = { Text(title, style = MaterialTheme.typography.headlineSmall, color = p.text) },
         text = if (message == null) null else ({ Text(message, style = MaterialTheme.typography.bodyLarge, color = p.text) }),
         confirmButton = {
-            Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+            // Long lists (such as the languages) scroll instead of running off small screens.
+            val windowHeight = LocalWindowInfo.current.containerSize.height
+            val maxHeight = if (windowHeight > 0) with(LocalDensity.current) { (windowHeight * 0.6f).toDp() } else Dp.Unspecified
+            Column(
+                Modifier.fillMaxWidth().heightIn(max = maxHeight).verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
                 buttons.forEachIndexed { i, (label, action) ->
                     BigButton(label, action, Modifier.fillMaxWidth(), style = if (i == primaryIndex) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY)
                 }
@@ -216,7 +227,8 @@ fun StatusPill(text: String, modifier: Modifier = Modifier, emphasized: Boolean 
         Text(
             text, Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
             color = if (emphasized) p.onPrimary else p.text, style = MaterialTheme.typography.titleMedium,
-            textAlign = TextAlign.Center, maxLines = 2,
+            // Three lines so longer languages keep the whole instruction; an ellipsis is the last resort.
+            textAlign = TextAlign.Center, maxLines = 3, overflow = TextOverflow.Ellipsis,
         )
     }
 }

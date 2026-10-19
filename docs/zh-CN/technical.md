@@ -149,7 +149,7 @@ app/src/test/                     单元测试、界面流程、翻译、截图�
 - 界面文字在 `res/values/strings.xml`（英语）以及 `values-pt`、`values-es`、`values-fr`、`values-zh` 中。
 - 应用内切换语言时，会用 `createConfigurationContext` 创建的上下文包裹整个 Compose 树，因此不依赖 AppCompat，在所有安卓版本上都可用。在 Android 13+ 上，这些语言也会出现在系统的“按应用设置语言”中（`locales_config.xml`）。
 - 只打包这五种语言（`localeFilters`），并关闭了应用包（App Bundle）的按语言拆分，所以切换语言永远不需要下载。
-- 填字词库是纯文本：`答案|提示`。答案会被规范化（大写、去掉重音符号、西班牙语保留 Ñ、Œ → OE）；中文每个汉字占一格。
+- 填字词库是纯文本：`答案|提示`。答案会被规范化（大写、去掉重音符号、西班牙语保留 Ñ、俄语保留 Й、Œ → OE、德语 Ä Ö Ü ß → AE OE UE SS、俄语 Ё → Е；日语转为片假名，小写假名按正常大小书写）；中文和日语每个字占一格。
 
 ## 测试
 

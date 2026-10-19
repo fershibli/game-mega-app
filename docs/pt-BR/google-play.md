@@ -43,7 +43,7 @@ Em outubro de 2026 o Google anunciou que apps criados no Google AI Studio podem 
 | Campo | Valor |
 |---|---|
 | Nome do app | `Mili Games` |
-| Idioma padrão | à sua escolha (os textos estão prontos para en-US, pt-BR, es-419, fr-FR e zh-CN) |
+| Idioma padrão | à sua escolha (os textos estão prontos para en-US, pt-BR, es-419, fr-FR, it-IT, de-DE, ru-RU, ja-JP e zh-CN) |
 | App ou jogo | Jogo |
 | Gratuito ou pago | Gratuito |
 

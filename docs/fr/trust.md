@@ -1,6 +1,6 @@
 # Confiance, vie privée et sécurité
 
-🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · **Français** · [中文](../zh-CN/trust.md)
+🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · **Français** · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · [中文](../zh-CN/trust.md)
 
 Mili Games est conçue pour être installée sur le téléphone de personnes qui ne peuvent pas toujours juger une application elles-mêmes. Cette page explique ce que fait l’application et ce qu’elle ne fait pas — et surtout **comment chacun peut le vérifier** sans avoir à faire confiance à l’auteur.
 
@@ -77,7 +77,7 @@ Chaque push et chaque pull request lancent la [CI](../../.github/workflows/ci.ym
    - les règles de tous les jeux (coups valides, décompte, sortie des pions, suites et jokers du Buraco…) ;
    - les générateurs : chaque Sudoku a une solution unique, chaque donne de Mahjong a une solution, chaque grille de Tuyaux et de Relie les couleurs a une solution complète, les mots croisés ne se contredisent jamais ;
    - les adversaires de l’ordinateur terminent rapidement leurs parties et ne perdent ni ne dupliquent jamais une carte ou un pion ;
-   - les cinq langues traduisent tous les textes et conservent les mêmes marqueurs ;
+   - les neuf langues traduisent tous les textes et conservent les mêmes marqueurs ;
    - enregistrement et relecture de la partie, fichier de sauvegarde corrompu, persistance des réglages ;
    - l’interface réelle : zoom à deux doigts activé/désactivé, zoom à une main par double toucher et par appuyer-tourner, choix d’un jeu, sortie par les Réglages et question « continuer ? » après un redémarrage.
 3. **Android Lint** avec *les avertissements traités comme des erreurs*.

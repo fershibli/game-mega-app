@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation -->
+    <string name="choose_game">ゲームを選ぶ</string>
+    <string name="choose_difficulty">むずかしさを選ぶ</string>
+    <string name="confirm">決定</string>
+    <string name="back">戻る</string>
+    <string name="settings">設定</string>
+    <string name="close">閉じる</string>
+    <string name="done">完了</string>
+    <string name="cancel">キャンセル</string>
+    <string name="loading">ゲームを準備しています…</string>
+    <string name="decrease">小さく</string>
+    <string name="increase">大きく</string>
+    <string name="zoom_reset">拡大をもとに戻す</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty_easy">かんたん</string>
+    <string name="difficulty_medium">ふつう</string>
+    <string name="difficulty_hard">むずかしい</string>
+
+    <!-- Games -->
+    <string name="game_sudoku">数独</string>
+    <string name="game_solitaire">ソリティア</string>
+    <string name="game_buraco">ブラコ</string>
+    <string name="game_backgammon">バックギャモン</string>
+    <string name="game_mahjong">麻雀ソリティア</string>
+    <string name="game_reversi">リバーシ</string>
+    <string name="game_crossword">クロスワード</string>
+    <string name="game_pipes">パイプつなぎ</string>
+    <string name="game_connect">色つなぎ</string>
+    <string name="game_dots">ドットつなぎ</string>
+
+    <string name="howto_sudoku">どの行にも、どの列にも、どの3×3のブロックにも、1から9の数字が1つずつ入るようにマスをうめます。</string>
+    <string name="howto_solitaire">定番のソリティア（クロンダイク）。マークごとにAからKまで4つの山を作ります。カードをタップすると、いちばんよい場所に動きます。</string>
+    <string name="howto_buraco">コンピューターを相手に、同じマークの続き札を作ります。2はジョーカーとして使えます。7枚以上つながるとカナスタになります。</string>
+    <string name="howto_backgammon">サイコロをふって、明るい色の駒をすべて自分の陣地に集め、コンピューターより先に全部の駒を上がらせます（盤の外に出します）。</string>
+    <string name="howto_mahjong">同じ牌を2枚ずつ取りのぞきます。上に何も重なっておらず、左か右があいている牌だけ取れます。</string>
+    <string name="howto_reversi">コンピューターの石を自分の石ではさむように置くと、はさんだ石が自分の色に変わります。最後に石の多いほうが勝ちです。</string>
+    <string name="howto_crossword">カギを読んで言葉を入れます。マスをタップすると言葉を選べます。同じマスをもう一度タップすると、タテとヨコが切りかわります。</string>
+    <string name="howto_pipes">部品をタップして回し、まん中の水の出どころから、すべてのパイプに水が通るようにします。あいたままの口がないようにしましょう。</string>
+    <string name="howto_connect">同じ色の点どうしを線でつなぎます。線は交差できません。盤面をすべてうめてみましょう。</string>
+    <string name="howto_dots">となり合った同じ色の点をなぞって消します。四角形を作ると、その色の点がすべて消えます。</string>
+
+    <!-- In-game common -->
+    <string name="resume">ゲームに戻る</string>
+    <string name="new_game">新しいゲーム</string>
+    <string name="main_menu">メインメニュー</string>
+    <string name="leave_game_title">このゲームをやめますか？</string>
+    <string name="leave_game_message">メインメニューに戻ると、このゲームは終了となり、続きから遊ぶことはできません。</string>
+    <string name="leave_game_yes">はい、やめます</string>
+    <string name="new_game_title">新しいゲームを始めますか？</string>
+    <string name="new_game_message">今のゲームは消えてしまいます。</string>
+    <string name="resume_title">おかえりなさい！</string>
+    <string name="resume_message">%1$sのゲームが途中です。続きから遊びますか？ それともメインメニューに戻りますか？</string>
+    <string name="resume_continue">続きから遊ぶ</string>
+    <string name="win_title">おめでとうございます！</string>
+    <string name="win_message">あなたの勝ちです！ 🎉</string>
+    <string name="lose_title">ゲーム終了</string>
+    <string name="lose_message">今回は残念でした。もう一度やってみませんか？</string>
+    <string name="play_again">もう一度遊ぶ</string>
+    <string name="undo">一手戻す</string>
+    <string name="hint">ヒント</string>
+    <string name="your_turn">あなたの番です</string>
+    <string name="computer_turn">コンピューターが考えています…</string>
+    <string name="score_line">あなた：%1$d · コンピューター：%2$d</string>
+
+    <!-- Settings -->
+    <string name="settings_scroll_hint">スクロールするとすべての項目が見られます ↓</string>
+    <string name="section_language">言語</string>
+    <string name="language_system">スマホと同じ</string>
+    <string name="section_size">大きさ</string>
+    <string name="text_size">文字の大きさ</string>
+    <string name="piece_size">駒とボタンの大きさ</string>
+    <string name="section_colors">色</string>
+    <string name="color_normal">ふつう</string>
+    <string name="color_normal_desc">コントラストが中くらいの、やさしい色。</string>
+    <string name="color_high_contrast">ハイコントラスト</string>
+    <string name="color_high_contrast_desc">はっきりした色と太いふちどりで見やすくします。</string>
+    <string name="color_colorblind">色覚サポート</string>
+    <string name="color_colorblind_desc">色の見え方にかかわらず見分けやすい色を使い、駒には形の目印をつけます。</string>
+    <string name="dark_mode">ダークモード</string>
+    <string name="dark_mode_desc">暗い背景で、夜も目にやさしい表示です。どの色モードにも専用のダーク版があります。</string>
+    <string name="section_controls">操作</string>
+    <string name="pinch_zoom">2本指で拡大</string>
+    <string name="pinch_zoom_desc">2本の指で拡大・縮小し、盤面を動かせます。</string>
+    <string name="left_handed">左利きモード</string>
+    <string name="left_handed_desc">おもなボタンを画面の左側に置きます。</string>
+    <string name="one_hand">片手モード</string>
+    <string name="one_hand_desc">歯車が親指の近くに浮かぶボタンになり、1本の指で拡大できます。</string>
+    <string name="one_hand_zoom">1本指での拡大</string>
+    <string name="onehand_doubletap">ダブルタップ</string>
+    <string name="onehand_doubletap_desc">2回タップすると拡大します（ダブルタップのたびに大きくなり、最後はもとに戻ります）。2回タップしてそのままなぞると移動します。</string>
+    <string name="onehand_rotate">押して回す</string>
+    <string name="onehand_rotate_desc">長押ししてから、指で円をえがきます。時計回りで拡大、反時計回りで縮小します。2回タップしてそのままなぞると移動します。</string>
+    <string name="default_difficulty">いつものむずかしさ</string>
+    <string name="section_about">このアプリについて</string>
+    <string name="about_text">Mili Gamesは無料のオープンソースアプリです。広告、アカウント、アプリ内課金はありません。</string>
+    <string name="about_privacy">プライバシー：このアプリはインターネットを使わず、データも集めません。設定と遊んでいるゲームは、このスマホの中にだけ保存されます。</string>
+    <string name="about_ai">プログラム、絵、文章は、Anthropic社のAIアシスタント「Claude」の助けを借りて作りました。</string>
+    <string name="about_version">バージョン %1$s</string>
+    <string name="about_open_project">プロジェクトのページを開く</string>
+    <string name="mission_button">Mili Gamesを作ったわけ</string>
+    <string name="mission_title">Mili Gamesを作ったわけ</string>
+    <string name="mission_why">高齢の方をはじめ、弱い立場にある人たちは、まぎらわしい広告だらけのゲームにねらわれがちです。そうした広告は、まちがえてタップさせ、知らないうちに別のアプリを入れさせ、お金を使わせるように作られています。</string>
+    <string name="mission_promise">Mili Gamesはその反対、落ち着いて遊べる場所をめざして作りました。だから今もこれからもずっと無料です。広告なし、課金なし、アカウントなし、データ収集なし。インターネットにさえつながりません。</string>
+    <string name="mission_ai">このアプリは、Anthropic社のAIアシスタント「Claude」の助けを借りて作りました。でも、ゲームの中にAIチャットや言語モデルは入っていません。コンピューターの相手は、昔ながらのルールと計算で、インターネットを使わずにあなたのスマホの中で動いています。</string>
+    <string name="mission_open">ソースコードは公開されているので、だれでもこのことを確かめられます。</string>
+    <string name="mission_source">ソースコードと説明書を見る</string>
+    <string name="reset_settings">設定を最初の状態に戻す</string>
+
+    <!-- Sudoku -->
+    <string name="sudoku_notes">メモ</string>
+    <string name="sudoku_notes_on">メモモード：数字が小さな覚え書きになります</string>
+    <string name="sudoku_tap_cell">マスをタップしてから数字をタップ</string>
+
+    <!-- Solitaire -->
+    <string name="solitaire_moves">手数：%1$d</string>
+    <string name="solitaire_passes">山札をめくれる残り回数：%1$d</string>
+    <string name="solitaire_finish">自動で仕上げる</string>
+    <string name="solitaire_no_hint">よい手がありません。山札をめくりましょう。</string>
+
+    <!-- Reversi -->
+    <string name="reversi_tie">引き分けです！</string>
+    <string name="reversi_ai_passed">コンピューターはパスです。あなたの番です。</string>
+    <string name="reversi_you_passed">置ける場所がないのでパスです。コンピューターの番です。</string>
+
+    <!-- Mahjong -->
+    <string name="mahjong_status">牌：%1$d · 取れるペア：%2$d</string>
+    <string name="mahjong_stuck">ペアがありません。シャッフルしましょう！</string>
+    <string name="mahjong_shuffle">シャッフル</string>
+    <string name="mahjong_shuffle_count">シャッフル（%1$d）</string>
+    <string name="reversi_score">● あなた：%1$d   ○ コンピューター：%2$d</string>
+
+    <!-- Pipes -->
+    <string name="pipes_status">水が通った部品：%1$d／%2$d</string>
+
+    <!-- Connect -->
+    <string name="connect_status">つないだ数：%1$d／%2$d · うまった割合：%3$d%%</string>
+    <string name="connect_fill">全部つながりました！ 次はマスをうめましょう。</string>
+    <string name="connect_clear">消す</string>
+
+    <!-- Dots -->
+    <string name="dots_moves">手数：%1$d</string>
+
+    <!-- Crossword -->
+    <string name="crossword_across">ヨコ</string>
+    <string name="crossword_down">タテ</string>
+    <string name="crossword_prev">前の言葉</string>
+    <string name="crossword_next">次の言葉</string>
+
+    <!-- Backgammon -->
+    <string name="backgammon_roll">サイコロをふる</string>
+    <string name="backgammon_done">完了</string>
+    <string name="backgammon_rotate">回転</string>
+    <string name="backgammon_roll_prompt">あなたの番：サイコロをふってください</string>
+    <string name="backgammon_pick_checker">動かす駒をタップ（黄色）</string>
+    <string name="backgammon_pick_target">動かす先をタップ（緑）</string>
+    <string name="backgammon_done_prompt">すべて動かしました。「完了」をタップ。</string>
+    <string name="backgammon_no_moves">動かせる手がありません。「完了」をタップ。</string>
+    <string name="backgammon_off">上がり：あなた %1$d · コンピューター %2$d</string>
+    <string name="backgammon_gammon">ギャモン：負けた側は駒を1つも上がらせていませんでした（2倍の勝ち）。</string>
+    <string name="backgammon_backgammon">バックギャモン：負けた側の駒がまだバーか勝った側の陣地に残っていました（3倍の勝ち）。</string>
+
+    <!-- Buraco -->
+    <string name="buraco_draw">カードを引く</string>
+    <string name="buraco_take_pile">捨て札を取る（%1$d）</string>
+    <string name="buraco_discard">捨てる</string>
+    <string name="buraco_meld">新しい組</string>
+    <string name="buraco_prompt_draw">あなたの番：山札から引くか、捨て札を取ります</string>
+    <string name="buraco_prompt_play">新しい組にするカードを3枚以上選ぶか、捨てるカードを1枚選んでください</string>
+    <string name="buraco_prompt_add">自分の組をタップすると、選んだカードをつけ足せます</string>
+    <string name="buraco_err_invalid">このカードでは同じマークの続き札になりません（ジョーカーの2は1組に1枚まで）。</string>
+    <string name="buraco_err_keep">番の最後に捨てるカードを、少なくとも1枚残してください。</string>
+    <string name="buraco_err_canasta">上がるには、ジョーカーの2を使わない7枚以上のきれいなカナスタが必要です。</string>
+    <string name="buraco_err_select_one">捨てるカードを1枚だけ選んでください。</string>
+    <string name="buraco_computer">コンピューター</string>
+    <string name="buraco_morto">予備の手札</string>
+    <string name="buraco_morto_taken">予備の手札を取りました</string>
+    <string name="buraco_deck">山札</string>
+    <string name="buraco_pile">捨て札</string>
+    <string name="buraco_your_sequences">あなたの組</string>
+    <string name="buraco_your_hand">あなたの手札</string>
+    <string name="buraco_clean">きれいなカナスタ</string>
+    <string name="buraco_dirty">ジョーカー入りカナスタ</string>
+    <string name="buraco_points">得点 — あなた：%1$d · コンピューター：%2$d</string>
+    <string name="buraco_went_out_you">あなたが上がりました（+100）。</string>
+    <string name="buraco_went_out_ai">コンピューターが上がりました（+100）。</string>
+    <string name="buraco_deck_over">山札がなくなりました。</string>
+    <plurals name="buraco_cards">
+        <item quantity="other">%1$d枚</item>
+    </plurals>
+</resources>

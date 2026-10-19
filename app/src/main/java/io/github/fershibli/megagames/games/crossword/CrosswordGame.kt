@@ -78,6 +78,10 @@ fun dictionaryFile(lang: AppLanguage) = "crossword/" + when (lang) {
     AppLanguage.PORTUGUESE -> "pt"
     AppLanguage.SPANISH -> "es"
     AppLanguage.FRENCH -> "fr"
+    AppLanguage.ITALIAN -> "it"
+    AppLanguage.GERMAN -> "de"
+    AppLanguage.RUSSIAN -> "ru"
+    AppLanguage.JAPANESE -> "ja"
     AppLanguage.CHINESE -> "zh"
     else -> "en"
 } + ".txt"
@@ -85,9 +89,8 @@ fun dictionaryFile(lang: AppLanguage) = "crossword/" + when (lang) {
 fun newCrossword(context: Context, language: AppLanguage, difficulty: Difficulty, random: Random = Random.Default): CrosswordState {
     val text = context.assets.open(dictionaryFile(language)).bufferedReader().use { it.readText() }
     val entries = Crossword.parse(text, language)
-    val chinese = language == AppLanguage.CHINESE
-    val size = Crossword.sizeFor(difficulty, chinese)
-    val words = Crossword.generate(entries, size, Crossword.targetWords(difficulty, chinese), random)
+    val size = Crossword.sizeFor(difficulty, language.syllabic)
+    val words = Crossword.generate(entries, size, Crossword.targetWords(difficulty, language.syllabic), random)
     val alphabet = entries.flatMap { it.letters }.distinct()
     val first = words.first()
     return CrosswordState(size, language, words, List(size * size) { "" }, first.cell(0, size), first.across, alphabet)
@@ -103,14 +106,16 @@ fun CrosswordGame(host: GameHost) {
 private val QWERTY = listOf("QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM")
 private val QWERTY_ES = listOf("QWERTYUIOP", "ASDFGHJKLÑ", "ZXCVBNM")
 private val AZERTY = listOf("AZERTYUIOP", "QSDFGHJKLM", "WXCVBN")
+private val QWERTZ = listOf("QWERTZUIOP", "ASDFGHJKL", "YXCVBNM")
+private val JCUKEN = listOf("ЙЦУКЕНГШЩЗХ", "ФЫВАПРОЛДЖЭ", "ЯЧСМИТЬБЮЪ")
 
 @Composable
 private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost) {
     val s = state.value
     val solution = remember(s.words) { s.solution() }
     val showErrors = host.difficulty != Difficulty.HARD
-    val chinese = s.language == AppLanguage.CHINESE
-    val useBank = chinese || host.difficulty == Difficulty.EASY
+    val syllabic = s.language.syllabic
+    val useBank = syllabic || host.difficulty == Difficulty.EASY
     val word = s.currentWord()
     val solved = solution.all { (cell, letter) -> s.entries[cell] == letter }
     val scale = LocalSettings.current.pieceScale
@@ -187,6 +192,8 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
                 val rows = when (s.language) {
                     AppLanguage.FRENCH -> AZERTY
                     AppLanguage.SPANISH -> QWERTY_ES
+                    AppLanguage.GERMAN -> QWERTZ
+                    AppLanguage.RUSSIAN -> JCUKEN
                     else -> QWERTY
                 }
                 Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
@@ -248,7 +255,7 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
                     val typed = s.entries[i]
                     if (typed.isNotEmpty()) {
                         val wrong = showErrors && typed != letter
-                        text(measurer, typed, tl + Offset(cell / 2, cell * 0.56f), if (wrong) p.danger else p.text, pxToSp(cell * (if (chinese) 0.56f else 0.6f)))
+                        text(measurer, typed, tl + Offset(cell / 2, cell * 0.56f), if (wrong) p.danger else p.text, pxToSp(cell * (if (syllabic) 0.56f else 0.6f)))
                     }
                 }
             }

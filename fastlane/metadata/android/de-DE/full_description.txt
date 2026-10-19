@@ -1,0 +1,39 @@
+Zehn klassische Spiele in einer kleinen App, so gestaltet, dass ältere Menschen bequem spielen können: große Spielsteine, klarer Kontrast, Zoom auf jedem Spielfeld und Tasten in Reichweite des Daumens.
+
+SPIELE
+• Sudoku
+• Solitär (Klondike)
+• Buraco (gegen den Computer)
+• Backgammon (gegen den Computer)
+• Mahjong-Solitär
+• Reversi (gegen den Computer)
+• Kreuzworträtsel
+• Rohre
+• Farben verbinden
+• Punkte
+
+Jedes Spiel gibt es in Leicht, Mittel und Schwer. Die Rätsel werden auf dem Telefon erzeugt, sie wiederholen sich also nie, und jedes davon ist lösbar.
+
+SCHONEND FÜR AUGEN UND HÄNDE
+• Mit zwei Fingern zoomen und jedes Spielfeld verschieben (oder mit einer Hand: doppeltippen bzw. drücken und kreisen)
+• Größere Schrift und größere Spielsteine, von 80 % bis 160 %
+• Normale Farben, hoher Kontrast und Farben für Farbenblinde, jeweils mit dunklem Modus
+• Linkshänder-Modus und Einhand-Modus
+• Keine Zeitbegrenzung und keine Eile
+
+DEIN SPIEL WIRD IMMER GESPEICHERT
+App aus Versehen geschlossen? Sie fragt, ob du dort weiterspielen möchtest, wo du aufgehört hast.
+
+PRIVAT UND KOSTENLOS
+• Keine Werbung, keine Käufe, kein Konto
+• Keine Internet-Berechtigung und keine gesammelten Daten
+• Quelloffen: Jeder kann den Code lesen und prüfen
+
+WARUM ES DIE APP GIBT
+Viele ältere und schutzbedürftige Menschen werden gezielt mit Spielen voller irreführender Werbung angesprochen, die sie dazu bringen, ungewollt Apps zu installieren und Geld auszugeben. Mili Games ist das Gegenteil: Es ist kostenlos und ohne Werbung und bleibt es für immer.
+
+Entwickelt mit Hilfe von Claude, dem KI-Assistenten von Anthropic. In der App selbst läuft kein KI-Chat und kein Sprachmodell.
+
+Quellcode und Dokumentation: https://github.com/fershibli/game-mega-app
+
+Verfügbar auf Englisch, Portugiesisch, Spanisch, Französisch, Italienisch, Deutsch, Russisch, Japanisch und Chinesisch.

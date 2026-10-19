@@ -1,6 +1,6 @@
 # Mili Games — Guia do usuário
 
-🌐 [English](../en/user-guide.md) · **Português** · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · **Português** · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
 
 Este guia é para quem joga e para os familiares que preparam o celular para eles.
 
@@ -74,7 +74,7 @@ Todo tabuleiro pode ser ampliado.
 
 | Opção | O que faz |
 |---|---|
-| **Idioma** | English, Português, Español, Français, 中文, ou "Igual ao do celular". Muda o app inteiro, inclusive as palavras cruzadas. |
+| **Idioma** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, ou "Igual ao do celular". Muda o app inteiro, inclusive as palavras cruzadas. |
 | **Tamanho do texto** | De 80 % a 160 % do tamanho normal. |
 | **Tamanho das peças e botões** | De 80 % a 160 %. Aumenta teclados numéricos, teclados de letras, as cartas da sua mão e outros controles. Os tabuleiros sempre ocupam a tela; use o zoom para ampliá-los mais. |
 | **Cores** | *Normal* (suave, contraste médio) · *Alto contraste* (cores fortes, contornos grossos) · *Para daltônicos* (cores que continuam diferentes, com formas desenhadas nas peças e baralho de quatro cores). |
@@ -212,15 +212,15 @@ Uma **cruzadinha nova é gerada** a cada partida, a partir de um dicionário de 
 
 **Como jogar:** toque num quadradinho para escolher a palavra; toque de novo no mesmo para trocar entre horizontal e vertical. A dica aparece embaixo, entre ◀ e ▶ (palavra anterior / próxima). Digite com as letras embaixo: depois de cada letra o cursor avança. A borracha apaga uma letra. **Dica** preenche o quadradinho selecionado.
 
-Os acentos são ignorados como nas revistas de palavras cruzadas (Ç = C, É = E…); o espanhol mantém o Ñ. Em chinês, cada quadradinho tem um caractere.
+Os acentos são ignorados como nas revistas de palavras cruzadas (Ç = C, É = E…); o espanhol mantém o Ñ, o alemão escreve Ä Ö Ü ß como AE OE UE SS e o russo escreve Ё como Е. Em chinês, cada quadradinho tem um caractere; em japonês, um katakana, com os kana pequenos escritos em tamanho normal (ッ → ツ).
 
 | Nível | Grade | Como digitar | Erros em vermelho |
 |---|---|---|---|
-| Fácil | 9×9 (8×8 em chinês), ~7 palavras (~6 em chinês) | banco de letras (letras da palavra + 2 a mais) | sim |
-| Médio | 11×11 (10×10 em chinês), ~11 palavras (~9) | teclado completo (chinês: banco com 5 a mais) | sim |
-| Difícil | 13×13 (12×12 em chinês), ~16 palavras (~12) | teclado completo (chinês: banco com 8 a mais) | não |
+| Fácil | 9×9 (8×8 em chinês e japonês), ~7 palavras (~6) | banco de letras (letras da palavra + 2 a mais) | sim |
+| Médio | 11×11 (10×10), ~11 palavras (~9) | teclado completo no layout do idioma (chinês e japonês: banco com 5 a mais) | sim |
+| Difícil | 13×13 (12×12), ~16 palavras (~12) | teclado completo (chinês e japonês: banco com 8 a mais) | não |
 
-O francês usa teclado AZERTY; os outros, QWERTY.
+O francês usa teclado AZERTY, o alemão QWERTZ, o russo ЙЦУКЕН e os outros, QWERTY.
 
 ### Encanamento
 

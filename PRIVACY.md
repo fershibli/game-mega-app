@@ -1,6 +1,6 @@
 # Privacy policy — Mili Games
 
-🌐 [English](#english) · [Português](#português) · [Español](#español) · [Français](#français) · [中文](#中文)
+🌐 [English](#english) · [Português](#português) · [Español](#español) · [Français](#français) · [Italiano](#italiano) · [Deutsch](#deutsch) · [Русский](#русский) · [日本語](#日本語) · [中文](#中文)
 
 Last updated: 2026-10-19 · Contact: open an issue at <https://github.com/fershibli/game-mega-app/issues>
 
@@ -51,6 +51,54 @@ Mili Games (`io.github.fershibli.miligames`) **ne collecte, ne stocke sur aucun 
 - **Enfants.** L’application ne collecte rien de personne, enfants compris.
 
 Le code source est public, chacun peut donc le vérifier : voir [docs/fr/trust.md](docs/fr/trust.md). Si cette politique change, la nouvelle version sera publiée ici avant que l’application ne change.
+
+## Italiano
+
+Mili Games (`io.github.fershibli.miligames`) **non raccoglie, non conserva su nessun server, non condivide e non vende nessun dato personale**.
+
+- **Niente internet.** L’app non chiede l’autorizzazione `INTERNET`, quindi Android non le permette di collegarsi a niente. Non ha pubblicità, statistiche, segnalazione dei crash, account né acquisti, e non chiede nessuna autorizzazione Android.
+- **Che cosa resta sul tuo telefono.** Le tue impostazioni e la partita in corso sono salvate nella memoria privata dell’app, così puoi continuare più tardi. La partita salvata viene eliminata quando finisce o viene abbandonata, e tutto viene eliminato quando disinstalli l’app.
+- **Backup di Android.** Se hai attivato il backup di Android, Android può includere questi due file nel *tuo* backup Google, così un telefono nuovo mantiene le tue impostazioni. Lo sviluppatore non ha accesso a questo backup.
+- **“Apri la pagina del progetto”.** Il pulsante in Impostazioni → Informazioni chiede ad Android di aprire la pagina GitHub del progetto nel tuo browser; l’app in sé continua a non fare nessuna connessione.
+- **Bambini.** L’app non raccoglie niente da nessuno, nemmeno dai bambini.
+
+Il codice sorgente è pubblico, quindi chiunque può verificare queste affermazioni: vedi [docs/it/trust.md](docs/it/trust.md). Se questa informativa dovesse cambiare, la nuova versione sarà pubblicata qui prima che cambi l’app.
+
+## Deutsch
+
+Mili Games (`io.github.fershibli.miligames`) **sammelt keine personenbezogenen Daten, speichert sie auf keinem Server, gibt sie nicht weiter und verkauft sie nicht**.
+
+- **Kein Internetzugang.** Die App fordert die Berechtigung `INTERNET` nicht an, deshalb lässt Android sie keinerlei Verbindung aufbauen. Sie hat keine Werbung, keine Statistiken, keine Absturzberichte, keine Konten und keine Käufe und fordert keine einzige Android-Berechtigung an.
+- **Was auf deinem Telefon bleibt.** Deine Einstellungen und das laufende Spiel werden im privaten Speicher der App gesichert, damit du später weiterspielen kannst. Das gespeicherte Spiel wird gelöscht, wenn das Spiel endet oder abgebrochen wird, und alles wird gelöscht, wenn du die App deinstallierst.
+- **Android-Sicherung.** Wenn du die Sicherung von Android selbst eingeschaltet hast, kann Android diese beiden Dateien in *deine* Google-Sicherung aufnehmen, damit ein neues Telefon deine Einstellungen behält. Der Entwickler hat keinen Zugriff auf diese Sicherung.
+- **„Projektseite öffnen“.** Die Taste unter Einstellungen → Über bittet Android, die GitHub-Seite des Projekts in deinem Browser zu öffnen; die App selbst baut weiterhin keine Verbindung auf.
+- **Kinder.** Die App sammelt von niemandem etwas, auch nicht von Kindern.
+
+Der Quellcode ist öffentlich, daher kann jeder diese Aussagen überprüfen: siehe [docs/de/trust.md](docs/de/trust.md). Sollte sich diese Richtlinie jemals ändern, wird die neue Fassung hier veröffentlicht, bevor sich die App ändert.
+
+## Русский
+
+Mili Games (`io.github.fershibli.miligames`) **не собирает, не хранит ни на каком сервере, не передаёт и не продаёт никакие персональные данные**.
+
+- **Без интернета.** Приложение не запрашивает разрешение `INTERNET`, поэтому Android не позволяет ему ни с чем соединяться. В нём нет рекламы, аналитики, отчётов о сбоях, учётных записей и покупок, и оно не запрашивает никаких разрешений Android.
+- **Что остаётся на вашем телефоне.** Ваши настройки и текущая партия хранятся в закрытой памяти приложения, чтобы вы могли продолжить позже. Сохранённая партия удаляется, когда игра закончена или прервана, а при удалении приложения удаляется всё.
+- **Резервное копирование Android.** Если вы включили встроенное резервное копирование Android, система может включить эти два файла в *вашу* резервную копию Google, чтобы на новом телефоне сохранились ваши настройки. У разработчика нет доступа к этой резервной копии.
+- **«Открыть страницу проекта».** Эта кнопка в разделе Настройки → О приложении просит Android открыть страницу проекта на GitHub в вашем браузере; само приложение по-прежнему ни с чем не соединяется.
+- **Дети.** Приложение ничего не собирает ни у кого, в том числе у детей.
+
+Исходный код открыт, поэтому любой может проверить эти утверждения: см. [docs/ru/trust.md](docs/ru/trust.md). Если эта политика когда-нибудь изменится, новая версия будет опубликована здесь до того, как изменится приложение.
+
+## 日本語
+
+Mili Games（`io.github.fershibli.miligames`）は、**個人のデータを集めることも、サーバーに保存することも、だれかと共有したり売ったりすることも一切ありません**。
+
+- **インターネットを使いません。** このアプリは `INTERNET` の権限を求めていないため、Android がどこへの接続もさせません。広告、利用状況の分析、エラー報告、アカウント、課金はなく、Android の権限も1つも求めません。
+- **スマホの中に残るもの。** 設定と遊んでいる途中のゲームは、あとで続きから遊べるように、アプリ専用の場所に保存されます。保存したゲームは、ゲームが終わったとき、またはやめたときに消えます。アプリをアンインストールすると、すべて消えます。
+- **Android のバックアップ。** Android のバックアップをオンにしている場合は、新しいスマホでも設定が引きつがれるように、Android がこの2つのファイルを *あなた自身の* Google のバックアップにふくめることがあります。開発者がそのバックアップを見ることはできません。
+- **「プロジェクトのページを開く」。** 設定 → このアプリについて にあるこのボタンは、ブラウザでプロジェクトの GitHub ページを開くよう Android にお願いするだけです。アプリ自体は、そのときも一切通信しません。
+- **子ども。** このアプリは、子どもをふくめ、だれからも何も集めません。
+
+ソースコードは公開されているので、ここに書いたことはだれでも確かめられます：[docs/ja/trust.md](docs/ja/trust.md) をご覧ください。このポリシーを変えることがあれば、アプリを変える前に、新しい内容をここに公開します。
 
 ## 中文
 

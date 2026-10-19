@@ -149,7 +149,7 @@ Medio y Difícil quedan cerca cuando dos ordenadores juegan al Backgammon o al B
 - Los textos de la interfaz están en `res/values/strings.xml` (inglés) y en `values-pt`, `values-es`, `values-fr`, `values-zh`.
 - El cambio de idioma dentro de la aplicación envuelve el árbol de Compose en un contexto creado con `createConfigurationContext`, así que funciona en todas las versiones de Android sin AppCompat. En Android 13+ los idiomas también aparecen en los ajustes de idioma por aplicación del sistema (`locales_config.xml`).
 - Solo se empaquetan estos cinco idiomas (`localeFilters`), y la división por idioma está desactivada en los app bundles, así que cambiar de idioma nunca necesita descargas.
-- Los diccionarios del crucigrama son texto plano: `RESPUESTA|pista`. Las respuestas se normalizan (mayúsculas, sin tildes, Ñ conservada en español, Œ → OE); en chino, cada carácter es una casilla.
+- Los diccionarios del crucigrama son texto plano: `RESPUESTA|pista`. Las respuestas se normalizan (mayúsculas, sin tildes, Ñ conservada en español y Й en ruso, Œ → OE, Ä Ö Ü ß del alemán → AE OE UE SS, Ё del ruso → Е; el japonés pasa a katakana, con los kana pequeños en tamaño normal); en chino y japonés, cada carácter es una casilla.
 
 ## Pruebas
 

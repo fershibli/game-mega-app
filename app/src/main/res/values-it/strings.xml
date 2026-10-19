@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation -->
+    <string name="choose_game">Scegli il gioco</string>
+    <string name="choose_difficulty">Scegli la difficoltà</string>
+    <string name="confirm">Conferma</string>
+    <string name="back">Indietro</string>
+    <string name="settings">Impostazioni</string>
+    <string name="close">Chiudi</string>
+    <string name="done">Fatto</string>
+    <string name="cancel">Annulla</string>
+    <string name="loading">Preparo la partita…</string>
+    <string name="decrease">Riduci</string>
+    <string name="increase">Aumenta</string>
+    <string name="zoom_reset">Ripristina lo zoom</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty_easy">Facile</string>
+    <string name="difficulty_medium">Medio</string>
+    <string name="difficulty_hard">Difficile</string>
+
+    <!-- Games -->
+    <string name="game_sudoku">Sudoku</string>
+    <string name="game_solitaire">Solitario</string>
+    <string name="game_buraco">Buraco</string>
+    <string name="game_backgammon">Backgammon</string>
+    <string name="game_mahjong">Mahjong</string>
+    <string name="game_reversi">Reversi</string>
+    <string name="game_crossword">Cruciverba</string>
+    <string name="game_pipes">Tubi</string>
+    <string name="game_connect">Unisci i colori</string>
+    <string name="game_dots">Puntini</string>
+
+    <string name="howto_sudoku">Riempi la griglia in modo che ogni riga, ogni colonna e ogni riquadro 3×3 contenga i numeri da 1 a 9 una sola volta.</string>
+    <string name="howto_solitaire">Solitario classico (Klondike). Forma quattro pile dall’Asso al Re, una per seme. Tocca una carta per spostarla nel posto migliore.</string>
+    <string name="howto_buraco">Forma scale dello stesso seme contro il computer. I 2 sono jolly. Una scala di 7 o più carte è una canasta.</string>
+    <string name="howto_backgammon">Lancia i dadi, porta tutte le tue pedine chiare nella tua casa e poi portale fuori prima del computer.</string>
+    <string name="howto_mahjong">Togli coppie di tessere uguali. Una tessera si può prendere quando non ha niente sopra e ha libero il lato sinistro o destro.</string>
+    <string name="howto_reversi">Metti una pedina in modo da chiudere le pedine del computer tra due delle tue: diventano del tuo colore. Vince chi ne ha di più.</string>
+    <string name="howto_crossword">Leggi la definizione e scrivi la parola. Tocca una casella per scegliere una parola, toccala di nuovo per cambiare direzione.</string>
+    <string name="howto_pipes">Tocca i pezzi per girarli finché ogni tubo è collegato alla fonte d’acqua, senza estremità aperte.</string>
+    <string name="howto_connect">Traccia una linea tra i puntini dello stesso colore. Le linee non possono incrociarsi. Cerca di riempire tutto il tabellone.</string>
+    <string name="howto_dots">Trascina il dito sui puntini vicini dello stesso colore per eliminarli. Chiudi un quadrato per eliminare tutti i puntini di quel colore.</string>
+
+    <!-- In-game common -->
+    <string name="resume">Torna alla partita</string>
+    <string name="new_game">Nuova partita</string>
+    <string name="main_menu">Menu principale</string>
+    <string name="leave_game_title">Uscire da questa partita?</string>
+    <string name="leave_game_message">Se torni al menu principale, questa partita verrà abbandonata e non potrà essere ripresa.</string>
+    <string name="leave_game_yes">Sì, esci dalla partita</string>
+    <string name="new_game_title">Iniziare una nuova partita?</string>
+    <string name="new_game_message">La partita in corso andrà persa.</string>
+    <string name="resume_title">Che bello rivederti!</string>
+    <string name="resume_message">Hai una partita in corso: %1$s. Vuoi continuare da dove avevi interrotto o tornare al menu principale?</string>
+    <string name="resume_continue">Continua a giocare</string>
+    <string name="win_title">Complimenti!</string>
+    <string name="win_message">Hai vinto! 🎉</string>
+    <string name="lose_title">Partita finita</string>
+    <string name="lose_message">Stavolta no. Riproviamo?</string>
+    <string name="play_again">Gioca ancora</string>
+    <string name="undo">Annulla mossa</string>
+    <string name="hint">Suggerimento</string>
+    <string name="your_turn">Tocca a te</string>
+    <string name="computer_turn">Il computer sta pensando…</string>
+    <string name="score_line">Tu: %1$d · Computer: %2$d</string>
+
+    <!-- Settings -->
+    <string name="settings_scroll_hint">Scorri per vedere tutte le opzioni ↓</string>
+    <string name="section_language">Lingua</string>
+    <string name="language_system">Come il telefono</string>
+    <string name="section_size">Dimensioni</string>
+    <string name="text_size">Dimensione del testo</string>
+    <string name="piece_size">Dimensione di pezzi e pulsanti</string>
+    <string name="section_colors">Colori</string>
+    <string name="color_normal">Normale</string>
+    <string name="color_normal_desc">Colori tenui con contrasto medio.</string>
+    <string name="color_high_contrast">Alto contrasto</string>
+    <string name="color_high_contrast_desc">Colori forti e bordi spessi, più facili da vedere.</string>
+    <string name="color_colorblind">Adatto ai daltonici</string>
+    <string name="color_colorblind_desc">Colori ben distinguibili anche per chi è daltonico, con forme disegnate sui pezzi.</string>
+    <string name="dark_mode">Modalità scura</string>
+    <string name="dark_mode_desc">Sfondo scuro, più riposante di sera. Ogni modalità di colore ha la sua versione scura.</string>
+    <string name="section_controls">Comandi</string>
+    <string name="pinch_zoom">Zoom con due dita</string>
+    <string name="pinch_zoom_desc">Usa due dita per ingrandire, rimpicciolire e spostarti sul tabellone.</string>
+    <string name="left_handed">Modalità mancini</string>
+    <string name="left_handed_desc">Mette i pulsanti principali sul lato sinistro dello schermo.</string>
+    <string name="one_hand">Modalità una mano</string>
+    <string name="one_hand_desc">L’ingranaggio diventa un pulsante mobile vicino al pollice e lo zoom funziona con un dito solo.</string>
+    <string name="one_hand_zoom">Zoom con un dito</string>
+    <string name="onehand_doubletap">Doppio tocco</string>
+    <string name="onehand_doubletap_desc">Tocca due volte per ingrandire (ogni doppio tocco ingrandisce di più, poi torna indietro). Tocca due volte e trascina per spostarti.</string>
+    <string name="onehand_rotate">Premi e gira</string>
+    <string name="onehand_rotate_desc">Tieni premuto e disegna dei cerchi: in senso orario ingrandisci, in senso antiorario rimpicciolisci. Tocca due volte e trascina per spostarti.</string>
+    <string name="default_difficulty">Difficoltà predefinita</string>
+    <string name="section_about">Informazioni</string>
+    <string name="about_text">Mili Games è gratuito e open source. Non ha pubblicità, account né acquisti nell’app.</string>
+    <string name="about_privacy">Privacy: l’app non usa internet e non raccoglie dati. Le tue impostazioni e la partita in corso restano solo su questo telefono.</string>
+    <string name="about_ai">Codice, grafica e testi sono stati creati con l’aiuto di Claude, l’assistente di intelligenza artificiale di Anthropic.</string>
+    <string name="about_version">Versione %1$s</string>
+    <string name="about_open_project">Apri la pagina del progetto</string>
+    <string name="mission_button">Perché esiste Mili Games</string>
+    <string name="mission_title">Perché esiste Mili Games</string>
+    <string name="mission_why">Molte persone anziane, e altre persone vulnerabili, sono prese di mira da giochi pieni di pubblicità ingannevole, fatta apposta per farle toccare per sbaglio, installare altre app senza volerlo e spendere soldi.</string>
+    <string name="mission_promise">Mili Games è nato per essere l’opposto: un posto tranquillo dove giocare. Per questo è, e sarà sempre, gratuito: niente pubblicità, niente acquisti, niente account e nessun dato raccolto. Non ha nemmeno accesso a internet.</string>
+    <string name="mission_ai">L’app è stata costruita con l’aiuto di Claude, un assistente di intelligenza artificiale creato da Anthropic. Ma nel gioco non c’è nessuna chat con l’IA né alcun modello linguistico: il computer avversario usa solo regole e calcoli classici, che funzionano sul tuo telefono senza internet.</string>
+    <string name="mission_open">Il codice sorgente è aperto, così chiunque può verificare tutto questo.</string>
+    <string name="mission_source">Vedi il codice sorgente e la documentazione</string>
+    <string name="reset_settings">Ripristina le impostazioni predefinite</string>
+
+    <!-- Sudoku -->
+    <string name="sudoku_notes">Note</string>
+    <string name="sudoku_notes_on">Modalità note: i numeri diventano piccoli promemoria</string>
+    <string name="sudoku_tap_cell">Tocca una casella, poi un numero</string>
+
+    <!-- Solitaire -->
+    <string name="solitaire_moves">Mosse: %1$d</string>
+    <string name="solitaire_passes">Giri del mazzo rimasti: %1$d</string>
+    <string name="solitaire_finish">Completa</string>
+    <string name="solitaire_no_hint">Nessuna mossa utile. Pesca dal mazzo.</string>
+
+    <!-- Reversi -->
+    <string name="reversi_tie">Pareggio!</string>
+    <string name="reversi_ai_passed">Il computer non può muovere. Tocca di nuovo a te.</string>
+    <string name="reversi_you_passed">Non hai mosse possibili. Il computer gioca di nuovo.</string>
+
+    <!-- Mahjong -->
+    <string name="mahjong_status">Tessere: %1$d · Coppie possibili: %2$d</string>
+    <string name="mahjong_stuck">Non ci sono più coppie. Usa Mescola!</string>
+    <string name="mahjong_shuffle">Mescola</string>
+    <string name="mahjong_shuffle_count">Mescola (%1$d)</string>
+    <string name="reversi_score">● Tu: %1$d   ○ Computer: %2$d</string>
+
+    <!-- Pipes -->
+    <string name="pipes_status">Pezzi con l’acqua: %1$d su %2$d</string>
+
+    <!-- Connect -->
+    <string name="connect_status">Collegati: %1$d su %2$d · Tabellone riempito: %3$d%%</string>
+    <string name="connect_fill">Tutto collegato! Ora riempi ogni casella.</string>
+    <string name="connect_clear">Cancella</string>
+
+    <!-- Dots -->
+    <string name="dots_moves">Mosse: %1$d</string>
+
+    <!-- Crossword -->
+    <string name="crossword_across">Orizzontale</string>
+    <string name="crossword_down">Verticale</string>
+    <string name="crossword_prev">Parola precedente</string>
+    <string name="crossword_next">Parola successiva</string>
+
+    <!-- Backgammon -->
+    <string name="backgammon_roll">Lancia i dadi</string>
+    <string name="backgammon_done">Fatto</string>
+    <string name="backgammon_rotate">Ruota</string>
+    <string name="backgammon_roll_prompt">Tocca a te: lancia i dadi</string>
+    <string name="backgammon_pick_checker">Tocca una pedina da muovere (gialla)</string>
+    <string name="backgammon_pick_target">Tocca dove spostarla (verde)</string>
+    <string name="backgammon_done_prompt">Hai fatto tutte le mosse. Tocca Fatto.</string>
+    <string name="backgammon_no_moves">Nessuna mossa possibile. Tocca Fatto.</string>
+    <string name="backgammon_off">Pedine uscite: tu %1$d · computer %2$d</string>
+    <string name="backgammon_gammon">Un gammon: chi ha perso non aveva portato fuori nessuna pedina (vittoria doppia).</string>
+    <string name="backgammon_backgammon">Un backgammon: chi ha perso aveva ancora una pedina sulla barra o nella casa del vincitore (vittoria tripla).</string>
+
+    <!-- Buraco -->
+    <string name="buraco_draw">Pesca una carta</string>
+    <string name="buraco_take_pile">Prendi gli scarti (%1$d)</string>
+    <string name="buraco_discard">Scarta</string>
+    <string name="buraco_meld">Nuova scala</string>
+    <string name="buraco_prompt_draw">Tocca a te: pesca una carta dal mazzo o prendi gli scarti</string>
+    <string name="buraco_prompt_play">Seleziona 3 o più carte per una nuova scala, oppure una carta da scartare</string>
+    <string name="buraco_prompt_add">Tocca una tua scala per aggiungere le carte</string>
+    <string name="buraco_err_invalid">Queste carte non formano una scala dello stesso seme (al massimo un 2 jolly per scala).</string>
+    <string name="buraco_err_keep">Tieni almeno una carta da scartare alla fine del turno.</string>
+    <string name="buraco_err_canasta">Per chiudere ti serve una canasta pulita: 7 o più carte senza 2 jolly.</string>
+    <string name="buraco_err_select_one">Seleziona una sola carta da scartare.</string>
+    <string name="buraco_computer">Computer</string>
+    <string name="buraco_morto">Pozzetto</string>
+    <string name="buraco_morto_taken">pozzetto preso</string>
+    <string name="buraco_deck">Mazzo</string>
+    <string name="buraco_pile">Scarti</string>
+    <string name="buraco_your_sequences">Le tue scale</string>
+    <string name="buraco_your_hand">La tua mano</string>
+    <string name="buraco_clean">Canasta pulita</string>
+    <string name="buraco_dirty">Canasta sporca</string>
+    <string name="buraco_points">Punti — tu: %1$d · computer: %2$d</string>
+    <string name="buraco_went_out_you">Hai chiuso (+100).</string>
+    <string name="buraco_went_out_ai">Il computer ha chiuso (+100).</string>
+    <string name="buraco_deck_over">Il mazzo è finito.</string>
+    <plurals name="buraco_cards">
+        <item quantity="one">%1$d carta</item>
+        <item quantity="many">%1$d di carte</item>
+        <item quantity="other">%1$d carte</item>
+    </plurals>
+</resources>

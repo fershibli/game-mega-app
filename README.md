@@ -6,7 +6,7 @@
 
 Sudoku · Solitaire · Buraco · Backgammon · Mahjong · Reversi · Crossword · Pipes · Connect · Dots
 
-🌐 **English** · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [中文](README.zh-CN.md)
+🌐 **English** · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@ Sudoku · Solitaire · Buraco · Backgammon · Mahjong · Reversi · Crossword �
 - **Real computer opponents** written specifically for Backgammon, Buraco and Reversi.
 - **Pinch to zoom on every game**, plus one-finger zoom for one-hand mode.
 - **Automatic save**: close the app by accident and it offers to pick up exactly where you left off.
-- **5 languages**: English, Portuguese (Brazil), Spanish, French and Simplified Chinese — the interface *and* the crossword dictionaries.
+- **9 languages**: English, Portuguese (Brazil), Spanish, French, Italian, German, Russian, Japanese and Simplified Chinese — the interface *and* the crossword dictionaries.
 - **Tiny and light**: about **1.3 MB**, native Kotlin + Jetpack Compose, no game engine, no images — all art is vector-drawn in code.
 
 ## The games
@@ -113,6 +113,10 @@ All screenshots are generated automatically from the real code (see [Building](d
 | Português | [guia](docs/pt-BR/user-guide.md) | [confiança](docs/pt-BR/trust.md) | [técnico](docs/pt-BR/technical.md) | [compilar](docs/pt-BR/building.md) |
 | Español | [guía](docs/es/user-guide.md) | [confianza](docs/es/trust.md) | [técnico](docs/es/technical.md) | [compilar](docs/es/building.md) |
 | Français | [guide](docs/fr/user-guide.md) | [confiance](docs/fr/trust.md) | [technique](docs/fr/technical.md) | [compiler](docs/fr/building.md) |
+| Italiano | [guida](docs/it/user-guide.md) | [fiducia](docs/it/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
+| Deutsch | [Anleitung](docs/de/user-guide.md) | [Vertrauen](docs/de/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
+| Русский | [руководство](docs/ru/user-guide.md) | [доверие](docs/ru/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
+| 日本語 | [使い方](docs/ja/user-guide.md) | [信頼](docs/ja/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
 
 Full index: [docs/README.md](docs/README.md).
@@ -130,7 +134,7 @@ Needs JDK 17+ and the Android SDK (API 37). See [docs/en/building.md](docs/en/bu
 
 ## Made with AI assistance
 
-Everything in this repository — the code, the artwork (every card, tile, board and icon is drawn in code) and this documentation in five languages — was created with the assistance of **Claude**, the AI assistant made by **Anthropic**, under the direction of the maintainer. The design choices are explained in [docs/en/technical.md](docs/en/technical.md), and the test suite exists so that nobody has to take the code on faith.
+Everything in this repository — the code, the artwork (every card, tile, board and icon is drawn in code) and this documentation in nine languages — was created with the assistance of **Claude**, the AI assistant made by **Anthropic**, under the direction of the maintainer. The design choices are explained in [docs/en/technical.md](docs/en/technical.md), and the test suite exists so that nobody has to take the code on faith.
 
 ## License
 

@@ -36,4 +36,4 @@ Made with the help of Claude, the AI assistant by Anthropic. No AI chat or langu
 
 Source code and documentation: https://github.com/fershibli/game-mega-app
 
-Available in English, Portuguese, Spanish, French and Chinese.
+Available in English, Portuguese, Spanish, French, Italian, German, Russian, Japanese and Chinese.

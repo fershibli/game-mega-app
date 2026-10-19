@@ -149,7 +149,7 @@ Médio e Difícil ficam próximos quando dois computadores jogam Gamão ou Burac
 - Os textos da interface ficam em `res/values/strings.xml` (inglês) e em `values-pt`, `values-es`, `values-fr`, `values-zh`.
 - A troca de idioma dentro do app envolve a árvore do Compose num contexto criado com `createConfigurationContext`, então funciona em qualquer versão do Android sem AppCompat. No Android 13+ os idiomas também aparecem nas configurações de idioma por app do sistema (`locales_config.xml`).
 - Só esses cinco idiomas são empacotados (`localeFilters`), e a divisão por idioma está desativada para app bundles, então trocar de idioma nunca exige download.
-- Os dicionários das palavras cruzadas são texto puro: `RESPOSTA|dica`. As respostas são normalizadas (maiúsculas, sem acentos, Ñ mantido no espanhol, Œ → OE); em chinês, cada caractere é uma casa.
+- Os dicionários das palavras cruzadas são texto puro: `RESPOSTA|dica`. As respostas são normalizadas (maiúsculas, sem acentos, Ñ mantido no espanhol e Й no russo, Œ → OE, Ä Ö Ü ß do alemão → AE OE UE SS, Ё do russo → Е; o japonês vira katakana, com kana pequenos em tamanho normal); em chinês e japonês, cada caractere é uma casa.
 
 ## Testes
 

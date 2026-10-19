@@ -146,7 +146,7 @@ Los diccionarios son texto plano en `app/src/main/assets/crossword/<idioma>.txt`
 RESPUESTA|Una pista corta y amable
 ```
 
-- Palabras cotidianas de 2 a 13 letras (chino: 2 a 4 caracteres), sin nombres propios que exijan conocimientos específicos.
+- Palabras cotidianas de 2 a 13 letras (chino: 2 a 4 caracteres; japonés: 2 a 6 kana, en katakana), sin nombres propios que exijan conocimientos específicos.
 - Las pistas deben ser amables y sin ambigüedad: piensa en alguien de ochenta años.
 - Se pueden usar tildes en las respuestas; se quitan automáticamente (el español conserva la Ñ).
 - Las líneas que empiezan por `#` son comentarios. `CrosswordTest` comprueba que cada diccionario siga teniendo al menos 120 palabras utilizables.

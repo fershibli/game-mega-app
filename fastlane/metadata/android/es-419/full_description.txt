@@ -36,4 +36,4 @@ Hecho con la ayuda de Claude, el asistente de IA de Anthropic. Ningún chat de I
 
 Código fuente y documentación: https://github.com/fershibli/game-mega-app
 
-Disponible en español, portugués, inglés, francés y chino.
+Disponible en español, portugués, inglés, francés, italiano, alemán, ruso, japonés y chino.

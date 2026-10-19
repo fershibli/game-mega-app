@@ -1,12 +1,12 @@
 # Documentation index
 
-| | English | Português (Brasil) | Español | Français | 中文（简体） |
-|---|---|---|---|---|---|
-| **Overview** | [README](../README.md) | [README](../README.pt-BR.md) | [README](../README.es.md) | [README](../README.fr.md) | [README](../README.zh-CN.md) |
-| **User guide** — install, navigation, settings, accessibility, rules of every game, FAQ | [user-guide](en/user-guide.md) | [guia do usuário](pt-BR/user-guide.md) | [guía de uso](es/user-guide.md) | [guide d’utilisation](fr/user-guide.md) | [用户指南](zh-CN/user-guide.md) |
-| **Trust, privacy & security** — permissions, data, dependencies, verification | [trust](en/trust.md) | [confiança](pt-BR/trust.md) | [confianza](es/trust.md) | [confiance](fr/trust.md) | [信任与隐私](zh-CN/trust.md) |
-| **Technical design** — architecture, generators, computer opponents, tests | [technical](en/technical.md) | [técnico](pt-BR/technical.md) | [técnico](es/technical.md) | [technique](fr/technical.md) | [技术设计](zh-CN/technical.md) |
-| **Building & contributing** — build, test, release, translations, words | [building](en/building.md) | [compilar](pt-BR/building.md) | [compilar](es/building.md) | [compiler](fr/building.md) | [构建](zh-CN/building.md) |
-| **Google Play** — signing key, store listing, Play Console answers, closed test | [google-play](en/google-play.md) | [google-play](pt-BR/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) |
+|  | English | Português (Brasil) | Español | Français | Italiano | Deutsch | Русский | 日本語 | 中文（简体） |
+|---|---|---|---|---|---|---|---|---|---|
+| **Overview** | [README](../README.md) | [README](../README.pt-BR.md) | [README](../README.es.md) | [README](../README.fr.md) | [README](../README.it.md) | [README](../README.de.md) | [README](../README.ru.md) | [README](../README.ja.md) | [README](../README.zh-CN.md) |
+| **User guide** — install, navigation, settings, accessibility, rules of every game, FAQ | [user-guide](en/user-guide.md) | [guia do usuário](pt-BR/user-guide.md) | [guía de uso](es/user-guide.md) | [guide d’utilisation](fr/user-guide.md) | [guida](it/user-guide.md) | [Anleitung](de/user-guide.md) | [руководство](ru/user-guide.md) | [使い方](ja/user-guide.md) | [用户指南](zh-CN/user-guide.md) |
+| **Trust, privacy & security** — permissions, data, dependencies, verification | [trust](en/trust.md) | [confiança](pt-BR/trust.md) | [confianza](es/trust.md) | [confiance](fr/trust.md) | [fiducia](it/trust.md) | [Vertrauen](de/trust.md) | [доверие](ru/trust.md) | [信頼](ja/trust.md) | [信任与隐私](zh-CN/trust.md) |
+| **Technical design** — architecture, generators, computer opponents, tests | [technical](en/technical.md) | [técnico](pt-BR/technical.md) | [técnico](es/technical.md) | [technique](fr/technical.md) | [technical (EN)](en/technical.md) | [technical (EN)](en/technical.md) | [technical (EN)](en/technical.md) | [technical (EN)](en/technical.md) | [技术设计](zh-CN/technical.md) |
+| **Building & contributing** — build, test, release, translations, words | [building](en/building.md) | [compilar](pt-BR/building.md) | [compilar](es/building.md) | [compiler](fr/building.md) | [building (EN)](en/building.md) | [building (EN)](en/building.md) | [building (EN)](en/building.md) | [building (EN)](en/building.md) | [构建](zh-CN/building.md) |
+| **Google Play** — signing key, store listing, Play Console answers, closed test | [google-play](en/google-play.md) | [google-play](pt-BR/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) | [google-play (EN)](en/google-play.md) |
 
 Also: [LICENSE](../LICENSE) (MIT) · [PRIVACY.md](../PRIVACY.md) · [SECURITY.md](../SECURITY.md) · [CONTRIBUTING.md](../CONTRIBUTING.md) · [CHANGELOG.md](../CHANGELOG.md) · [screenshots](screenshots/)

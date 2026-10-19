@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation -->
+    <string name="choose_game">Выберите игру</string>
+    <string name="choose_difficulty">Выберите сложность</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="back">Назад</string>
+    <string name="settings">Настройки</string>
+    <string name="close">Закрыть</string>
+    <string name="done">Готово</string>
+    <string name="cancel">Отмена</string>
+    <string name="loading">Готовим игру…</string>
+    <string name="decrease">Уменьшить</string>
+    <string name="increase">Увеличить</string>
+    <string name="zoom_reset">Сбросить масштаб</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty_easy">Легко</string>
+    <string name="difficulty_medium">Средне</string>
+    <string name="difficulty_hard">Сложно</string>
+
+    <!-- Games -->
+    <string name="game_sudoku">Судоку</string>
+    <string name="game_solitaire">Пасьянс «Косынка»</string>
+    <string name="game_buraco">Бурако</string>
+    <string name="game_backgammon">Нарды</string>
+    <string name="game_mahjong">Маджонг</string>
+    <string name="game_reversi">Реверси</string>
+    <string name="game_crossword">Кроссворд</string>
+    <string name="game_pipes">Трубы</string>
+    <string name="game_connect">Соедини цвета</string>
+    <string name="game_dots">Точки</string>
+
+    <string name="howto_sudoku">Заполните сетку так, чтобы в каждой строке, каждом столбце и каждом квадрате 3×3 числа от 1 до 9 встречались ровно один раз.</string>
+    <string name="howto_solitaire">Классическая «Косынка» (Клондайк). Соберите четыре стопки от туза до короля, по одной на каждую масть. Коснитесь карты, и она перейдёт на лучшее место.</string>
+    <string name="howto_buraco">Выкладывайте последовательности одной масти против компьютера. Двойки — джокеры. Семь карт составляют канасту.</string>
+    <string name="howto_backgammon">Короткие нарды (бэкгаммон). Бросайте кубики, приведите все свои светлые шашки домой, а затем выбросите их с доски раньше компьютера.</string>
+    <string name="howto_mahjong">Убирайте пары одинаковых костей. Кость можно взять, если на ней ничего не лежит и свободна её левая или правая сторона.</string>
+    <string name="howto_reversi">Ставьте фишку так, чтобы зажать фишки компьютера между двумя своими: они перекрасятся в ваш цвет. Побеждает тот, у кого больше фишек.</string>
+    <string name="howto_crossword">Прочитайте вопрос и впишите слово. Коснитесь клетки, чтобы выбрать слово, и ещё раз, чтобы сменить направление.</string>
+    <string name="howto_pipes">Касайтесь деталей, чтобы поворачивать их, пока каждая труба не будет соединена с источником воды без открытых концов.</string>
+    <string name="howto_connect">Проведите линию между точками одного цвета. Линии не могут пересекаться. Постарайтесь заполнить всё поле.</string>
+    <string name="howto_dots">Проведите пальцем по соседним точкам одного цвета, чтобы убрать их. Замкните квадрат, чтобы убрать все точки этого цвета.</string>
+
+    <!-- In-game common -->
+    <string name="resume">Вернуться к игре</string>
+    <string name="new_game">Новая игра</string>
+    <string name="main_menu">Главное меню</string>
+    <string name="leave_game_title">Выйти из этой игры?</string>
+    <string name="leave_game_message">Если вернуться в главное меню, эта партия будет прервана, и продолжить её будет нельзя.</string>
+    <string name="leave_game_yes">Да, выйти из игры</string>
+    <string name="new_game_title">Начать новую игру?</string>
+    <string name="new_game_message">Текущая партия будет потеряна.</string>
+    <string name="resume_title">С возвращением!</string>
+    <string name="resume_message">У вас есть незаконченная партия: %1$s. Продолжить с того места, где вы остановились, или вернуться в главное меню?</string>
+    <string name="resume_continue">Продолжить игру</string>
+    <string name="win_title">Поздравляем!</string>
+    <string name="win_message">Вы победили! 🎉</string>
+    <string name="lose_title">Игра окончена</string>
+    <string name="lose_message">В этот раз не получилось. Попробуем ещё раз?</string>
+    <string name="play_again">Играть ещё</string>
+    <string name="undo">Отменить ход</string>
+    <string name="hint">Подсказка</string>
+    <string name="your_turn">Ваш ход</string>
+    <string name="computer_turn">Компьютер думает…</string>
+    <string name="score_line">Вы: %1$d · Компьютер: %2$d</string>
+
+    <!-- Settings -->
+    <string name="settings_scroll_hint">Прокрутите, чтобы увидеть все настройки ↓</string>
+    <string name="section_language">Язык</string>
+    <string name="language_system">Как в телефоне</string>
+    <string name="section_size">Размер</string>
+    <string name="text_size">Размер текста</string>
+    <string name="piece_size">Размер фишек и кнопок</string>
+    <string name="section_colors">Цвета</string>
+    <string name="color_normal">Обычные</string>
+    <string name="color_normal_desc">Мягкие цвета со средней контрастностью.</string>
+    <string name="color_high_contrast">Высокий контраст</string>
+    <string name="color_high_contrast_desc">Яркие цвета и толстые контуры, их легче разглядеть.</string>
+    <string name="color_colorblind">Для дальтоников</string>
+    <string name="color_colorblind_desc">Цвета, которые различимы при дальтонизме, и фигуры на фишках.</string>
+    <string name="dark_mode">Тёмная тема</string>
+    <string name="dark_mode_desc">Тёмный фон, мягче для глаз вечером. У каждого цветового режима есть своя тёмная версия.</string>
+    <string name="section_controls">Управление</string>
+    <string name="pinch_zoom">Масштаб двумя пальцами</string>
+    <string name="pinch_zoom_desc">Двумя пальцами можно увеличивать, уменьшать и перемещать поле.</string>
+    <string name="left_handed">Режим для левшей</string>
+    <string name="left_handed_desc">Основные кнопки располагаются в левой части экрана.</string>
+    <string name="one_hand">Режим одной руки</string>
+    <string name="one_hand_desc">Шестерёнка становится плавающей кнопкой рядом с большим пальцем, а масштаб меняется одним пальцем.</string>
+    <string name="one_hand_zoom">Масштаб одним пальцем</string>
+    <string name="onehand_doubletap">Двойное касание</string>
+    <string name="onehand_doubletap_desc">Коснитесь дважды, чтобы увеличить (каждое следующее двойное касание увеличивает сильнее, а потом возвращает обычный размер). Коснитесь дважды и ведите пальцем, чтобы двигать поле.</string>
+    <string name="onehand_rotate">Нажать и вращать</string>
+    <string name="onehand_rotate_desc">Нажмите и удерживайте, затем рисуйте круги: по часовой стрелке — увеличить, против часовой — уменьшить. Коснитесь дважды и ведите пальцем, чтобы двигать поле.</string>
+    <string name="default_difficulty">Сложность по умолчанию</string>
+    <string name="section_about">О приложении</string>
+    <string name="about_text">Mili Games — бесплатное приложение с открытым исходным кодом. В нём нет рекламы, учётных записей и покупок.</string>
+    <string name="about_privacy">Конфиденциальность: приложение не пользуется интернетом и не собирает данные. Ваши настройки и текущая партия хранятся только на этом телефоне.</string>
+    <string name="about_ai">Код, рисунки и тексты созданы с помощью Claude — ИИ-ассистента компании Anthropic.</string>
+    <string name="about_version">Версия %1$s</string>
+    <string name="about_open_project">Открыть страницу проекта</string>
+    <string name="mission_button">Зачем существует Mili Games</string>
+    <string name="mission_title">Зачем существует Mili Games</string>
+    <string name="mission_why">Многие пожилые и другие уязвимые люди становятся мишенью игр, полных обманчивой рекламы. Такая реклама устроена так, чтобы на неё нажимали по ошибке, сами того не желая, устанавливали новые приложения и тратили деньги.</string>
+    <string name="mission_promise">Mili Games создавалось как полная противоположность: спокойное место для игры. Поэтому приложение бесплатно и всегда будет бесплатным: без рекламы, без покупок, без учётной записи и без сбора данных. У него даже нет доступа к интернету.</string>
+    <string name="mission_ai">Приложение создано с помощью Claude — ИИ-ассистента компании Anthropic. Но внутри игры нет ни чата с ИИ, ни языковой модели: соперник-компьютер — это классические правила и расчёты, которые выполняются на вашем телефоне без интернета.</string>
+    <string name="mission_open">Исходный код открыт, поэтому любой может всё это проверить.</string>
+    <string name="mission_source">Исходный код и документация</string>
+    <string name="reset_settings">Вернуть настройки по умолчанию</string>
+
+    <!-- Sudoku -->
+    <string name="sudoku_notes">Заметки</string>
+    <string name="sudoku_notes_on">Режим заметок: числа пишутся мелко</string>
+    <string name="sudoku_tap_cell">Коснитесь клетки, затем числа</string>
+
+    <!-- Solitaire -->
+    <string name="solitaire_moves">Ходы: %1$d</string>
+    <string name="solitaire_passes">Осталось проходов колоды: %1$d</string>
+    <string name="solitaire_finish">Завершить</string>
+    <string name="solitaire_no_hint">Явного хода нет. Откройте карту из колоды.</string>
+
+    <!-- Reversi -->
+    <string name="reversi_tie">Ничья!</string>
+    <string name="reversi_ai_passed">Компьютеру некуда ходить. Снова ваш ход.</string>
+    <string name="reversi_you_passed">Вам некуда ходить. Компьютер ходит снова.</string>
+
+    <!-- Mahjong -->
+    <string name="mahjong_status">Костей: %1$d · Доступных пар: %2$d</string>
+    <string name="mahjong_stuck">Пар больше нет. Нажмите «Перемешать»!</string>
+    <string name="mahjong_shuffle">Перемешать</string>
+    <string name="mahjong_shuffle_count">Перемешать (%1$d)</string>
+    <string name="reversi_score">● Вы: %1$d   ○ Компьютер: %2$d</string>
+
+    <!-- Pipes -->
+    <string name="pipes_status">Деталей с водой: %1$d из %2$d</string>
+
+    <!-- Connect -->
+    <string name="connect_status">Соединено: %1$d из %2$d · Поле заполнено: %3$d%%</string>
+    <string name="connect_fill">Всё соединено! Теперь заполните все клетки.</string>
+    <string name="connect_clear">Очистить</string>
+
+    <!-- Dots -->
+    <string name="dots_moves">Ходы: %1$d</string>
+
+    <!-- Crossword -->
+    <string name="crossword_across">По горизонтали</string>
+    <string name="crossword_down">По вертикали</string>
+    <string name="crossword_prev">Предыдущее слово</string>
+    <string name="crossword_next">Следующее слово</string>
+
+    <!-- Backgammon -->
+    <string name="backgammon_roll">Бросить кубики</string>
+    <string name="backgammon_done">Готово</string>
+    <string name="backgammon_rotate">Повернуть</string>
+    <string name="backgammon_roll_prompt">Ваш ход: бросьте кубики</string>
+    <string name="backgammon_pick_checker">Коснитесь шашки для хода (жёлтые)</string>
+    <string name="backgammon_pick_target">Коснитесь, куда её поставить (зелёное)</string>
+    <string name="backgammon_done_prompt">Все ходы сделаны. Нажмите «Готово».</string>
+    <string name="backgammon_no_moves">Ходов нет. Нажмите «Готово».</string>
+    <string name="backgammon_off">Выброшено: вы %1$d · компьютер %2$d</string>
+    <string name="backgammon_gammon">Марс: проигравший не успел выбросить ни одной шашки (двойная победа).</string>
+    <string name="backgammon_backgammon">Кокс: у проигравшего ещё оставалась шашка на баре или в доме победителя (тройная победа).</string>
+
+    <!-- Buraco -->
+    <string name="buraco_draw">Взять карту</string>
+    <string name="buraco_take_pile">Взять сброс (%1$d)</string>
+    <string name="buraco_discard">Сбросить</string>
+    <string name="buraco_meld">Новая комбинация</string>
+    <string name="buraco_prompt_draw">Ваш ход: возьмите карту из колоды или заберите сброс</string>
+    <string name="buraco_prompt_play">Выберите 3 и больше карт для новой комбинации или одну карту для сброса</string>
+    <string name="buraco_prompt_add">Коснитесь своей комбинации, чтобы добавить карты</string>
+    <string name="buraco_err_invalid">Эти карты не образуют последовательность одной масти (не больше одной двойки-джокера в комбинации).</string>
+    <string name="buraco_err_keep">Оставьте хотя бы одну карту, чтобы сбросить её в конце хода.</string>
+    <string name="buraco_err_canasta">Чтобы выйти, нужна чистая канаста: 7 и больше карт без двойки-джокера.</string>
+    <string name="buraco_err_select_one">Выберите ровно одну карту для сброса.</string>
+    <string name="buraco_computer">Компьютер</string>
+    <string name="buraco_morto">Прикуп</string>
+    <string name="buraco_morto_taken">прикуп взят</string>
+    <string name="buraco_deck">Колода</string>
+    <string name="buraco_pile">Сброс</string>
+    <string name="buraco_your_sequences">Ваши комбинации</string>
+    <string name="buraco_your_hand">Ваши карты</string>
+    <string name="buraco_clean">Чистая канаста</string>
+    <string name="buraco_dirty">Грязная канаста</string>
+    <string name="buraco_points">Очки — вы: %1$d · компьютер: %2$d</string>
+    <string name="buraco_went_out_you">Вы вышли (+100).</string>
+    <string name="buraco_went_out_ai">Компьютер вышел (+100).</string>
+    <string name="buraco_deck_over">Колода закончилась.</string>
+    <plurals name="buraco_cards">
+        <item quantity="one">%1$d карта</item>
+        <item quantity="few">%1$d карты</item>
+        <item quantity="many">%1$d карт</item>
+        <item quantity="other">%1$d карты</item>
+    </plurals>
+</resources>

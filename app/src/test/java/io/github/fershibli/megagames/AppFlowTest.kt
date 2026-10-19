@@ -1,5 +1,9 @@
 package io.github.fershibli.megagames
 
+import io.github.fershibli.megagames.core.AppLanguage
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
@@ -256,6 +260,18 @@ class AppFlowTest {
         store.clear()
     }
 
+
+    @Test
+    fun everyLanguageCanBePickedEvenAtTheEndOfTheList() {
+        var settings by mutableStateOf(Settings(language = AppLanguage.ENGLISH))
+        rule.setContent { MegaGamesTheme(settings) { SettingsScreen(settings, { settings = it }, {}, null) } }
+        rule.onNodeWithText("English").performScrollTo().performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("日本語").performScrollTo().performClick()
+        rule.waitForIdle()
+        assertEquals(AppLanguage.JAPANESE, settings.language)
+        assertTrue(rule.onAllNodesWithText("言語").fetchSemanticsNodes().isNotEmpty())
+    }
 
     @Test
     fun settingsEndWithWhyMiliGamesExists() {

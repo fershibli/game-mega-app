@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation -->
+    <string name="choose_game">Wähle ein Spiel</string>
+    <string name="choose_difficulty">Wähle den Schwierigkeitsgrad</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="back">Zurück</string>
+    <string name="settings">Einstellungen</string>
+    <string name="close">Schließen</string>
+    <string name="done">Fertig</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="loading">Das Spiel wird vorbereitet…</string>
+    <string name="decrease">Verkleinern</string>
+    <string name="increase">Vergrößern</string>
+    <string name="zoom_reset">Zoom zurücksetzen</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty_easy">Leicht</string>
+    <string name="difficulty_medium">Mittel</string>
+    <string name="difficulty_hard">Schwer</string>
+
+    <!-- Games -->
+    <string name="game_sudoku">Sudoku</string>
+    <string name="game_solitaire">Solitär</string>
+    <string name="game_buraco">Buraco</string>
+    <string name="game_backgammon">Backgammon</string>
+    <string name="game_mahjong">Mahjong</string>
+    <string name="game_reversi">Reversi</string>
+    <string name="game_crossword">Kreuzworträtsel</string>
+    <string name="game_pipes">Rohre</string>
+    <string name="game_connect">Farben verbinden</string>
+    <string name="game_dots">Punkte</string>
+
+    <string name="howto_sudoku">Fülle das Gitter so, dass jede Zeile, jede Spalte und jedes 3×3-Kästchen die Zahlen 1 bis 9 genau einmal enthält.</string>
+    <string name="howto_solitaire">Klassisches Solitär (Klondike). Bilde vier Stapel vom Ass bis zum König, einen für jede Farbe. Tippe eine Karte an, und sie wandert an die beste Stelle.</string>
+    <string name="howto_buraco">Spiele gegen den Computer und lege Folgen derselben Farbe aus. Die Zweien sind Joker. Eine Folge aus sieben Karten ist eine Canasta.</string>
+    <string name="howto_backgammon">Würfle, ziehe alle deine hellen Steine in dein Heimfeld und würfle sie dann vor dem Computer hinaus.</string>
+    <string name="howto_mahjong">Entferne Paare gleicher Steine. Ein Stein darf genommen werden, wenn nichts auf ihm liegt und seine linke oder rechte Seite frei ist.</string>
+    <string name="howto_reversi">Setze einen Stein so, dass du Steine des Computers zwischen zwei deiner Steine einschließt: Sie nehmen deine Farbe an. Wer am Ende die meisten Steine hat, gewinnt.</string>
+    <string name="howto_crossword">Lies die Frage und trage das Wort ein. Tippe auf ein Feld, um ein Wort zu wählen, und noch einmal, um die Richtung zu wechseln.</string>
+    <string name="howto_pipes">Tippe die Teile an, um sie zu drehen, bis jedes Rohr mit der Wasserquelle verbunden ist und kein Ende offen bleibt.</string>
+    <string name="howto_connect">Ziehe eine Linie zwischen Punkten derselben Farbe. Linien dürfen sich nicht kreuzen. Versuche, das ganze Feld zu füllen.</string>
+    <string name="howto_dots">Wische über benachbarte Punkte derselben Farbe, um sie zu entfernen. Schließe ein Quadrat, um alle Punkte dieser Farbe zu entfernen.</string>
+
+    <!-- In-game common -->
+    <string name="resume">Zurück zum Spiel</string>
+    <string name="new_game">Neues Spiel</string>
+    <string name="main_menu">Hauptmenü</string>
+    <string name="leave_game_title">Dieses Spiel verlassen?</string>
+    <string name="leave_game_message">Wenn du zum Hauptmenü gehst, wird dieses Spiel abgebrochen und kann nicht fortgesetzt werden.</string>
+    <string name="leave_game_yes">Ja, Spiel verlassen</string>
+    <string name="new_game_title">Neues Spiel beginnen?</string>
+    <string name="new_game_message">Das laufende Spiel geht verloren.</string>
+    <string name="resume_title">Willkommen zurück!</string>
+    <string name="resume_message">Eine Partie %1$s ist noch nicht beendet. Möchtest du dort weiterspielen, wo du aufgehört hast, oder zum Hauptmenü zurückkehren?</string>
+    <string name="resume_continue">Weiterspielen</string>
+    <string name="win_title">Herzlichen Glückwunsch!</string>
+    <string name="win_message">Du hast gewonnen! 🎉</string>
+    <string name="lose_title">Spiel vorbei</string>
+    <string name="lose_message">Diesmal hat es nicht geklappt. Noch ein Versuch?</string>
+    <string name="play_again">Noch einmal spielen</string>
+    <string name="undo">Rückgängig</string>
+    <string name="hint">Tipp</string>
+    <string name="your_turn">Du bist dran</string>
+    <string name="computer_turn">Der Computer denkt nach…</string>
+    <string name="score_line">Du: %1$d · Computer: %2$d</string>
+
+    <!-- Settings -->
+    <string name="settings_scroll_hint">Scrolle, um alle Optionen zu sehen ↓</string>
+    <string name="section_language">Sprache</string>
+    <string name="language_system">Sprache des Telefons</string>
+    <string name="section_size">Größe</string>
+    <string name="text_size">Textgröße</string>
+    <string name="piece_size">Größe von Spielsteinen und Tasten</string>
+    <string name="section_colors">Farben</string>
+    <string name="color_normal">Normal</string>
+    <string name="color_normal_desc">Sanfte Farben mit mittlerem Kontrast.</string>
+    <string name="color_high_contrast">Hoher Kontrast</string>
+    <string name="color_high_contrast_desc">Kräftige Farben und dicke Umrisse, leichter zu erkennen.</string>
+    <string name="color_colorblind">Für Farbenblinde</string>
+    <string name="color_colorblind_desc">Farben, die bei Farbenblindheit unterscheidbar bleiben, dazu Formen auf den Spielsteinen.</string>
+    <string name="dark_mode">Dunkler Modus</string>
+    <string name="dark_mode_desc">Dunkler Hintergrund, angenehmer am Abend. Jeder Farbmodus hat seine eigene dunkle Version.</string>
+    <string name="section_controls">Bedienung</string>
+    <string name="pinch_zoom">Mit zwei Fingern zoomen</string>
+    <string name="pinch_zoom_desc">Mit zwei Fingern das Spielfeld vergrößern, verkleinern und verschieben.</string>
+    <string name="left_handed">Linkshänder-Modus</string>
+    <string name="left_handed_desc">Legt die wichtigsten Tasten auf die linke Seite des Bildschirms.</string>
+    <string name="one_hand">Einhand-Modus</string>
+    <string name="one_hand_desc">Das Zahnrad wird zu einer schwebenden Taste nahe am Daumen, und der Zoom funktioniert mit einem Finger.</string>
+    <string name="one_hand_zoom">Zoom mit einem Finger</string>
+    <string name="onehand_doubletap">Doppeltippen</string>
+    <string name="onehand_doubletap_desc">Zweimal tippen zum Vergrößern (jedes Doppeltippen vergrößert weiter, danach geht es zurück zur normalen Größe). Zweimal tippen und ziehen zum Verschieben.</string>
+    <string name="onehand_rotate">Drücken und kreisen</string>
+    <string name="onehand_rotate_desc">Gedrückt halten und Kreise zeichnen: im Uhrzeigersinn vergrößern, gegen den Uhrzeigersinn verkleinern. Zweimal tippen und ziehen zum Verschieben.</string>
+    <string name="default_difficulty">Standard-Schwierigkeit</string>
+    <string name="section_about">Über</string>
+    <string name="about_text">Mili Games ist kostenlos und quelloffen. Es gibt keine Werbung, keine Konten und keine In-App-Käufe.</string>
+    <string name="about_privacy">Datenschutz: Die App nutzt kein Internet und sammelt keine Daten. Deine Einstellungen und dein laufendes Spiel bleiben nur auf diesem Telefon.</string>
+    <string name="about_ai">Code, Grafiken und Texte wurden mit Hilfe von Claude erstellt, dem KI-Assistenten von Anthropic.</string>
+    <string name="about_version">Version %1$s</string>
+    <string name="about_open_project">Projektseite öffnen</string>
+    <string name="mission_button">Warum es Mili Games gibt</string>
+    <string name="mission_title">Warum es Mili Games gibt</string>
+    <string name="mission_why">Viele ältere und andere schutzbedürftige Menschen werden gezielt mit Spielen voller irreführender Werbung angesprochen. Diese Werbung soll sie dazu bringen, aus Versehen darauf zu tippen, ungewollt weitere Apps zu installieren und Geld auszugeben.</string>
+    <string name="mission_promise">Mili Games soll das Gegenteil sein: ein ruhiger Ort zum Spielen. Deshalb ist es kostenlos und bleibt es für immer – ohne Werbung, ohne Käufe, ohne Konto und ohne gesammelte Daten. Es hat nicht einmal Zugang zum Internet.</string>
+    <string name="mission_ai">Die App wurde mit Hilfe von Claude entwickelt, einem KI-Assistenten von Anthropic. Im Spiel selbst gibt es aber keinen KI-Chat und kein Sprachmodell: Die Computergegner beruhen auf klassischen Regeln und Berechnungen, die ohne Internet auf deinem Telefon laufen.</string>
+    <string name="mission_open">Der Quellcode ist offen, damit jeder all das nachprüfen kann.</string>
+    <string name="mission_source">Quellcode und Dokumentation ansehen</string>
+    <string name="reset_settings">Standardeinstellungen wiederherstellen</string>
+
+    <!-- Sudoku -->
+    <string name="sudoku_notes">Notizen</string>
+    <string name="sudoku_notes_on">Notizmodus: Zahlen werden zu kleinen Merkhilfen</string>
+    <string name="sudoku_tap_cell">Tippe auf ein Feld, dann auf eine Zahl</string>
+
+    <!-- Solitaire -->
+    <string name="solitaire_moves">Züge: %1$d</string>
+    <string name="solitaire_passes">Verbleibende Durchgänge: %1$d</string>
+    <string name="solitaire_finish">Zu Ende spielen</string>
+    <string name="solitaire_no_hint">Kein klarer Zug. Versuch es mit dem Stapel.</string>
+
+    <!-- Reversi -->
+    <string name="reversi_tie">Unentschieden!</string>
+    <string name="reversi_ai_passed">Der Computer muss passen. Du bist wieder dran.</string>
+    <string name="reversi_you_passed">Du musst passen. Der Computer ist wieder dran.</string>
+
+    <!-- Mahjong -->
+    <string name="mahjong_status">Steine: %1$d · Mögliche Paare: %2$d</string>
+    <string name="mahjong_stuck">Keine Paare mehr. Tippe auf Mischen!</string>
+    <string name="mahjong_shuffle">Mischen</string>
+    <string name="mahjong_shuffle_count">Mischen (%1$d)</string>
+    <string name="reversi_score">● Du: %1$d   ○ Computer: %2$d</string>
+
+    <!-- Pipes -->
+    <string name="pipes_status">Teile mit Wasser: %1$d von %2$d</string>
+
+    <!-- Connect -->
+    <string name="connect_status">Verbunden: %1$d von %2$d · Feld gefüllt: %3$d%%</string>
+    <string name="connect_fill">Alles verbunden! Jetzt jedes Feld füllen.</string>
+    <string name="connect_clear">Löschen</string>
+
+    <!-- Dots -->
+    <string name="dots_moves">Züge: %1$d</string>
+
+    <!-- Crossword -->
+    <string name="crossword_across">Waagerecht</string>
+    <string name="crossword_down">Senkrecht</string>
+    <string name="crossword_prev">Vorheriges Wort</string>
+    <string name="crossword_next">Nächstes Wort</string>
+
+    <!-- Backgammon -->
+    <string name="backgammon_roll">Würfeln</string>
+    <string name="backgammon_done">Fertig</string>
+    <string name="backgammon_rotate">Drehen</string>
+    <string name="backgammon_roll_prompt">Du bist dran: Würfle!</string>
+    <string name="backgammon_pick_checker">Tippe einen Stein zum Ziehen an (gelb)</string>
+    <string name="backgammon_pick_target">Tippe an, wohin er ziehen soll (grün)</string>
+    <string name="backgammon_done_prompt">Alle Züge gemacht. Tippe auf Fertig.</string>
+    <string name="backgammon_no_moves">Kein Zug möglich. Tippe auf Fertig.</string>
+    <string name="backgammon_off">Hinausgewürfelt: du %1$d · Computer %2$d</string>
+    <string name="backgammon_gammon">Ein Gammon: Der Verlierer hatte noch keinen Stein hinausgewürfelt (doppelter Sieg).</string>
+    <string name="backgammon_backgammon">Ein Backgammon: Der Verlierer hatte noch einen Stein auf der Bar oder im Heimfeld des Siegers (dreifacher Sieg).</string>
+
+    <!-- Buraco -->
+    <string name="buraco_draw">Karte ziehen</string>
+    <string name="buraco_take_pile">Ablagestapel nehmen (%1$d)</string>
+    <string name="buraco_discard">Ablegen</string>
+    <string name="buraco_meld">Neue Folge</string>
+    <string name="buraco_prompt_draw">Du bist dran: Karte vom Stapel ziehen oder Ablagestapel nehmen</string>
+    <string name="buraco_prompt_play">Wähle 3 oder mehr Karten für eine neue Folge oder eine Karte zum Ablegen</string>
+    <string name="buraco_prompt_add">Tippe auf eine deiner Folgen, um die Karten anzulegen</string>
+    <string name="buraco_err_invalid">Diese Karten ergeben keine Folge derselben Farbe (höchstens eine Joker-Zwei pro Folge).</string>
+    <string name="buraco_err_keep">Behalte mindestens eine Karte, die du am Ende des Zugs ablegen kannst.</string>
+    <string name="buraco_err_canasta">Zum Ausmachen brauchst du eine reine Canasta: 7 oder mehr Karten ohne Joker-Zwei.</string>
+    <string name="buraco_err_select_one">Wähle genau eine Karte zum Ablegen.</string>
+    <string name="buraco_computer">Computer</string>
+    <string name="buraco_morto">Reservestapel</string>
+    <string name="buraco_morto_taken">Reservestapel genommen</string>
+    <string name="buraco_deck">Stapel</string>
+    <string name="buraco_pile">Ablage</string>
+    <string name="buraco_your_sequences">Deine Folgen</string>
+    <string name="buraco_your_hand">Deine Hand</string>
+    <string name="buraco_clean">Reine Canasta</string>
+    <string name="buraco_dirty">Gemischte Canasta</string>
+    <string name="buraco_points">Punkte — du: %1$d · Computer: %2$d</string>
+    <string name="buraco_went_out_you">Du hast ausgemacht (+100).</string>
+    <string name="buraco_went_out_ai">Der Computer hat ausgemacht (+100).</string>
+    <string name="buraco_deck_over">Der Stapel ist leer.</string>
+    <plurals name="buraco_cards">
+        <item quantity="one">%1$d Karte</item>
+        <item quantity="other">%1$d Karten</item>
+    </plurals>
+</resources>

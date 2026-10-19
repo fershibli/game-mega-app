@@ -1,6 +1,6 @@
 # Mili Games — Guide d’utilisation
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · **Français** · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · **Français** · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
 
 Ce guide s’adresse aux joueurs et aux proches qui préparent le téléphone pour eux.
 
@@ -74,7 +74,7 @@ Tous les plateaux peuvent être agrandis.
 
 | Réglage | Effet |
 |---|---|
-| **Langue** | English, Português, Español, Français, 中文, ou « Comme le téléphone ». Change toute l’application, y compris les mots croisés. |
+| **Langue** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, ou « Comme le téléphone ». Change toute l’application, y compris les mots croisés. |
 | **Taille du texte** | De 80 % à 160 % de la taille normale. |
 | **Taille des pièces et des boutons** | De 80 % à 160 %. Agrandit pavés numériques, claviers, cartes en main et autres commandes. Les plateaux occupent toujours l’écran ; utilisez le zoom pour les agrandir davantage. |
 | **Couleurs** | *Normal* (doux, contraste moyen) · *Contraste élevé* (couleurs vives, contours épais) · *Adapté au daltonisme* (couleurs qui restent distinctes, formes dessinées sur les pièces, jeu de cartes à quatre couleurs). |
@@ -212,13 +212,13 @@ Une **nouvelle grille est générée** à chaque partie à partir d’un diction
 
 **Jouer :** touchez une case pour choisir son mot ; touchez à nouveau la même case pour passer d’horizontal à vertical. La définition s’affiche en bas, entre ◀ et ▶ (mot précédent / suivant). Écrivez avec les lettres du bas : après chaque lettre le curseur avance. La gomme efface une lettre. **Indice** remplit la case choisie.
 
-Les accents sont ignorés comme dans les grilles imprimées (É = E, Ç = C, Œ = OE…) ; l’espagnol garde le Ñ. En chinois, chaque case contient un caractère.
+Les accents sont ignorés comme dans les grilles imprimées (É = E, Ç = C, Œ = OE…) ; l’espagnol garde le Ñ, l’allemand écrit Ä Ö Ü ß en AE OE UE SS et le russe écrit Ё en Е. En chinois, chaque case contient un caractère ; en japonais, un katakana, les petits kana étant écrits en taille normale (ッ → ツ).
 
 | Niveau | Grille | Saisie | Erreurs en rouge |
 |---|---|---|---|
-| Facile | 9×9 (8×8 en chinois), ~7 mots (~6 en chinois) | réserve de lettres (celles du mot + 2) | oui |
-| Moyen | 11×11 (10×10 en chinois), ~11 mots (~9) | clavier complet AZERTY (chinois : réserve + 5) | oui |
-| Difficile | 13×13 (12×12 en chinois), ~16 mots (~12) | clavier complet AZERTY (chinois : réserve + 8) | non |
+| Facile | 9×9 (8×8 en chinois et en japonais), ~7 mots (~6) | réserve de lettres (celles du mot + 2) | oui |
+| Moyen | 11×11 (10×10), ~11 mots (~9) | clavier complet dans la disposition de la langue (AZERTY en français ; chinois et japonais : réserve + 5) | oui |
+| Difficile | 13×13 (12×12), ~16 mots (~12) | clavier complet (chinois et japonais : réserve + 8) | non |
 
 ### Tuyaux
 

@@ -24,10 +24,13 @@ data class PlacedWord(
 
 object Crossword {
     /**
-     * Turns a dictionary word into crossword letters: upper case, accents removed (as in printed
-     * crosswords), spaces and hyphens dropped. Spanish Ñ is kept as its own letter; Œ becomes OE.
+     * Turns a dictionary word into crossword letters, following each language's printed crosswords:
+     * upper case, accents removed, spaces and hyphens dropped. Spanish Ñ and Russian Й stay letters
+     * of their own, Œ becomes OE, German Ä Ö Ü ß become AE OE UE SS and Russian Ё becomes Е.
+     * Japanese answers become katakana, one kana per square, with small kana written full size.
      */
     fun normalize(word: String, language: AppLanguage): List<String> {
+        if (language == AppLanguage.JAPANESE) return kana(word)
         if (language == AppLanguage.CHINESE) {
             val out = ArrayList<String>()
             var i = 0
@@ -38,14 +41,35 @@ object Crossword {
             }
             return out
         }
-        val upper = word.uppercase().replace("Œ", "OE").replace("Æ", "AE")
+        var upper = word.uppercase().replace("Œ", "OE").replace("Æ", "AE")
+        if (language == AppLanguage.GERMAN) upper = upper.replace("Ä", "AE").replace("Ö", "OE").replace("Ü", "UE").replace("ẞ", "SS").replace("ß", "SS")
         val out = ArrayList<String>()
         for (ch in upper) {
             if (ch == 'Ñ' && language == AppLanguage.SPANISH) { out += "Ñ"; continue }
+            if (language == AppLanguage.RUSSIAN) {
+                when (ch) {
+                    'Ё' -> out += "Е"
+                    in 'А'..'Я' -> out += ch.toString()
+                }
+                continue
+            }
             val base = Normalizer.normalize(ch.toString(), Normalizer.Form.NFD).replace(Regex("\\p{M}+"), "")
             base.filter { it in 'A'..'Z' }.forEach { out += it.toString() }
         }
         return out
+    }
+
+    private const val SMALL_KANA = "ァィゥェォッャュョヮヵヶ"
+    private const val FULL_KANA = "アイウエオツヤユヨワカケ"
+
+    private fun kana(word: String): List<String> = word.mapNotNull { ch ->
+        // Hiragana and katakana sit 0x60 apart in Unicode.
+        val k = if (ch in 'ぁ'..'ゖ') ch + 0x60 else ch
+        when {
+            k in SMALL_KANA -> FULL_KANA[SMALL_KANA.indexOf(k)].toString()
+            k in 'ア'..'ヺ' || k == 'ー' -> k.toString()
+            else -> null
+        }
     }
 
     /** Parses lines of "ANSWER|clue". Blank lines and lines starting with # are ignored. */
@@ -60,17 +84,17 @@ object Crossword {
         .distinctBy { it.letters }
         .toList()
 
-    fun sizeFor(d: Difficulty, chinese: Boolean) = when (d) {
-        Difficulty.EASY -> if (chinese) 8 else 9
-        Difficulty.MEDIUM -> if (chinese) 10 else 11
-        Difficulty.HARD -> if (chinese) 12 else 13
+    fun sizeFor(d: Difficulty, syllabic: Boolean) = when (d) {
+        Difficulty.EASY -> if (syllabic) 8 else 9
+        Difficulty.MEDIUM -> if (syllabic) 10 else 11
+        Difficulty.HARD -> if (syllabic) 12 else 13
     }
 
-    /** Chinese words are only 2-4 characters long and cross less often, so fewer are asked. */
-    fun targetWords(d: Difficulty, chinese: Boolean = false) = when (d) {
-        Difficulty.EASY -> if (chinese) 6 else 7
-        Difficulty.MEDIUM -> if (chinese) 9 else 11
-        Difficulty.HARD -> if (chinese) 12 else 16
+    /** Chinese and Japanese words are only a few squares long and cross less often, so fewer are asked. */
+    fun targetWords(d: Difficulty, syllabic: Boolean = false) = when (d) {
+        Difficulty.EASY -> if (syllabic) 6 else 7
+        Difficulty.MEDIUM -> if (syllabic) 9 else 11
+        Difficulty.HARD -> if (syllabic) 12 else 16
     }
 
     private class Grid(val size: Int) {

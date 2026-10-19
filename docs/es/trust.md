@@ -1,6 +1,6 @@
 # Confianza, privacidad y seguridad
 
-🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · **Español** · [Français](../fr/trust.md) · [中文](../zh-CN/trust.md)
+🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · **Español** · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · [中文](../zh-CN/trust.md)
 
 Mili Games está pensada para instalarse en los teléfonos de personas que quizá no puedan valorar una aplicación por sí mismas. Esta página explica qué hace y qué no hace la aplicación y, sobre todo, **cómo cualquiera puede comprobarlo** sin tener que fiarse del autor.
 
@@ -77,7 +77,7 @@ Cada push y pull request ejecuta el [CI](../../.github/workflows/ci.yml) en GitH
    - las reglas de todos los juegos (jugadas válidas, puntuación, sacar fichas, escaleras y comodines del Buraco…);
    - los generadores: todo Sudoku tiene solución única, todo reparto de Mahjong tiene solución, todo Tuberías y todo Une los colores tienen solución completa, los crucigramas nunca se contradicen;
    - los rivales del ordenador terminan sus partidas rápido y nunca pierden ni duplican una carta o ficha;
-   - los cinco idiomas traducen todos los textos y conservan los mismos marcadores;
+   - los nueve idiomas traducen todos los textos y conservan los mismos marcadores;
    - guardar y recuperar la partida, archivo de guardado dañado, persistencia de los ajustes;
    - la interfaz real: zoom con dos dedos activado/desactivado, zoom de una mano por doble toque y por mantener y girar, elegir un juego, salir de él desde Ajustes y la pregunta "¿continuar?" tras volver a abrir.
 3. **Android Lint** tratando *las advertencias como errores*.
