@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Mega Games requests NO permissions at all: no internet, no storage, no location, no contacts.
+  Mili Games requests NO permissions at all: no internet, no storage, no location, no contacts.
   Settings and the autosave live in the app's private storage only.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">

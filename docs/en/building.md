@@ -77,7 +77,7 @@ The [deploy pipeline](#versioning-and-deploy) signs every APK and AAB with that 
 **Locally**: with the key file (from a backup), create `keystore.properties` in the project root (it is git-ignored):
 
 ```properties
-storeFile=megagames-release.p12
+storeFile=miligames-release.p12
 storePassword=...
 keyAlias=megagames
 keyPassword=...
@@ -108,7 +108,7 @@ The first release is `1.0.0`. Branches:
 What happens on each release:
 
 1. `versioning.yml` reads the commits since the last stable tag, picks the bump, writes grouped release notes (breaking changes, features, fixes, performance, others) and pushes an annotated tag `vX.Y.Z`.
-2. `deploy.yml` checks out that tag, runs the tests and lint, builds the release APK with `-PappVersion=X.Y.Z`, signs it, **verifies** it (signature, `versionName`, no permissions requested), and publishes a GitHub Release with `MegaGames-vX.Y.Z.apk`, `SHA256SUMS.txt` and the notes.
+2. `deploy.yml` checks out that tag, runs the tests and lint, builds the release APK with `-PappVersion=X.Y.Z`, signs it, **verifies** it (signature, `versionName`, no permissions requested), and publishes a GitHub Release with `MiliGames-vX.Y.Z.apk`, `SHA256SUMS.txt` and the notes.
 
 The Android `versionCode` is derived from the version so it always increases: `MAJOR×1,000,000 + MINOR×10,000 + PATCH×100 + n` where `n` is the rc number, or 99 for the final release (so `1.5.0-rc.2` < `1.5.0`). Minor and patch must stay below 100.
 

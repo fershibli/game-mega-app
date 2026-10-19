@@ -76,7 +76,7 @@ jobs:
           [[ "$version" == *-rc.* ]] && prerelease=true
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "prerelease=$prerelease" >> "$GITHUB_OUTPUT"
-          printf '%s\n' "${NOTES:-## Mega Games v$version}" > "$RUNNER_TEMP/notes.md"
+          printf '%s\n' "${NOTES:-## Mili Games v$version}" > "$RUNNER_TEMP/notes.md"
           # Tags pushed by hand have no notes: GitHub then generates them from the commits.
           if [ -z "$NOTES" ]; then echo "generate_notes=true" >> "$GITHUB_OUTPUT"; else echo "generate_notes=false" >> "$GITHUB_OUTPUT"; fi
           echo "Deploying v$version (pre-release: $prerelease)"
@@ -146,11 +146,11 @@ jobs:
           jarsigner -verify -certs "$aab" | tee "$RUNNER_TEMP/aab-verify.txt" | tail -n 3
           grep -q "jar verified" "$RUNNER_TEMP/aab-verify.txt" || { echo "::error::The AAB is not signed"; exit 1; }
           mkdir -p dist
-          cp "$apk" "dist/MegaGames-v$VERSION.apk"
-          cp "$aab" "dist/MegaGames-v$VERSION.aab"
+          cp "$apk" "dist/MiliGames-v$VERSION.apk"
+          cp "$aab" "dist/MiliGames-v$VERSION.aab"
           (cd dist && sha256sum -- *.apk *.aab | tee SHA256SUMS.txt)
-          echo "size=$(du -k "dist/MegaGames-v$VERSION.apk" | cut -f1)" >> "$GITHUB_OUTPUT"
-          echo "sha=$(sha256sum "dist/MegaGames-v$VERSION.apk" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          echo "size=$(du -k "dist/MiliGames-v$VERSION.apk" | cut -f1)" >> "$GITHUB_OUTPUT"
+          echo "sha=$(sha256sum "dist/MiliGames-v$VERSION.apk" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
 
       - name: Finish the release notes
         env:
@@ -163,7 +163,7 @@ jobs:
           {
             echo
             echo "### 📲 Install"
-            echo "Download **MegaGames-v$VERSION.apk** on your Android phone (6.0 or newer) and open it. Details: [user guide](https://github.com/$GITHUB_REPOSITORY/blob/v$VERSION/docs/en/user-guide.md#installing)."
+            echo "Download **MiliGames-v$VERSION.apk** on your Android phone (6.0 or newer) and open it. Details: [user guide](https://github.com/$GITHUB_REPOSITORY/blob/v$VERSION/docs/en/user-guide.md#installing)."
             echo
             echo "| | |"
             echo "|---|---|"
@@ -171,7 +171,7 @@ jobs:
             echo "| SHA-256 | \`$SHA\` |"
             echo "| Permissions | none |"
             echo
-            echo "\`MegaGames-v$VERSION.aab\` is the same app packaged for Google Play; phones install the \`.apk\`."
+            echo "\`MiliGames-v$VERSION.aab\` is the same app packaged for Google Play; phones install the \`.apk\`."
             if [ "$SIGN_MODE" = debug ]; then
               echo
               echo "> ⚠️ This APK is signed with a **temporary debug key** because the release key is not configured yet. It installs normally, but updating later to a version signed with the real key requires uninstalling this one first."
@@ -192,20 +192,20 @@ jobs:
             gh release upload "$tag" dist/* --clobber
             gh release edit "$tag" --notes-file "$RUNNER_TEMP/notes.md"
           else
-            flags=(--title "Mega Games $tag" --notes-file "$RUNNER_TEMP/notes.md" --target "$(git rev-parse HEAD)")
+            flags=(--title "Mili Games $tag" --notes-file "$RUNNER_TEMP/notes.md" --target "$(git rev-parse HEAD)")
             if [ "$PRERELEASE" = true ]; then flags+=(--prerelease); else flags+=(--latest); fi
             if [ "$GENERATE_NOTES" = true ]; then flags+=(--generate-notes); fi
             gh release create "$tag" dist/* "${flags[@]}"
           fi
           {
             echo "### ✅ Published $tag"
-            echo "- APK: \`MegaGames-$tag.apk\` ($(du -k dist/*.apk | cut -f1) KB)"
+            echo "- APK: \`MiliGames-$tag.apk\` ($(du -k dist/*.apk | cut -f1) KB)"
             echo "- Release: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/releases/tag/$tag"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@v7
         with:
-          name: MegaGames-v${{ steps.v.outputs.version }}
+          name: MiliGames-v${{ steps.v.outputs.version }}
           path: dist/
 
       # Optional: only when the Google Play service account is configured, and never with the debug key.
@@ -228,9 +228,9 @@ jobs:
           if [ "$SIGN_MODE" != release ]; then echo "::warning::Not uploading to Google Play: the AAB is signed with the debug key."; exit 0; fi
           # Read from the APK here: a step output that happens to contain a secret value may be dropped.
           tools=$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n1)
-          PACKAGE_NAME=$("$tools/aapt2" dump badging "dist/MegaGames-v$VERSION.apk" | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
+          PACKAGE_NAME=$("$tools/aapt2" dump badging "dist/MiliGames-v$VERSION.apk" | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
           export PACKAGE_NAME
           track=$TESTING_TRACK
           if [ "$PRERELEASE" != true ] && [ "$PRODUCTION" = true ]; then track=production; fi
-          AAB="dist/MegaGames-v$VERSION.aab" TRACK="$track" ./scripts/play-upload.sh
+          AAB="dist/MiliGames-v$VERSION.aab" TRACK="$track" ./scripts/play-upload.sh
           echo "- Google Play: uploaded to the **$track** track ($STATUS)" >> "$GITHUB_STEP_SUMMARY"

@@ -91,7 +91,7 @@
     <string name="onehand_rotate_desc">按住不放，然后画圈：顺时针放大，逆时针缩小。双击后拖动可以移动画面。</string>
     <string name="default_difficulty">默认难度</string>
     <string name="section_about">关于</string>
-    <string name="about_text">Mega Games 免费、开源。没有广告，不用注册，也没有应用内购买。</string>
+    <string name="about_text">Mili Games 免费、开源。没有广告，不用注册，也没有应用内购买。</string>
     <string name="about_privacy">隐私：本应用不联网，不收集任何数据。你的设置和当前游戏只保存在这部手机上。</string>
     <string name="about_ai">代码、美术和文字都是在 Anthropic 公司的 AI 助手 Claude 的帮助下完成的。</string>
     <string name="about_version">版本 %1$s</string>

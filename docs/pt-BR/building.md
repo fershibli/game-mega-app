@@ -77,7 +77,7 @@ O [pipeline de deploy](#versionamento-e-deploy) assina todo APK e AAB com essa c
 **Localmente**: com o arquivo da chave (de um backup), crie `keystore.properties` na raiz do projeto (ele é ignorado pelo git):
 
 ```properties
-storeFile=megagames-release.p12
+storeFile=miligames-release.p12
 storePassword=...
 keyAlias=megagames
 keyPassword=...
@@ -108,7 +108,7 @@ A primeira versão é `1.0.0`. Branches:
 O que acontece em cada versão:
 
 1. O `versioning.yml` lê os commits desde a última tag estável, escolhe o incremento, monta as notas agrupadas (mudanças incompatíveis, novidades, correções, desempenho, outras) e envia uma tag anotada `vX.Y.Z`.
-2. O `deploy.yml` faz checkout dessa tag, roda os testes e o lint, compila o APK final com `-PappVersion=X.Y.Z`, assina, **verifica** (assinatura, `versionName`, nenhuma permissão pedida) e publica uma Release no GitHub com `MegaGames-vX.Y.Z.apk`, `SHA256SUMS.txt` e as notas.
+2. O `deploy.yml` faz checkout dessa tag, roda os testes e o lint, compila o APK final com `-PappVersion=X.Y.Z`, assina, **verifica** (assinatura, `versionName`, nenhuma permissão pedida) e publica uma Release no GitHub com `MiliGames-vX.Y.Z.apk`, `SHA256SUMS.txt` e as notas.
 
 O `versionCode` do Android é derivado da versão para sempre crescer: `MAIOR×1.000.000 + MENOR×10.000 + CORREÇÃO×100 + n`, em que `n` é o número da rc, ou 99 na versão final (assim `1.5.0-rc.2` < `1.5.0`). MENOR e CORREÇÃO devem ficar abaixo de 100.
 

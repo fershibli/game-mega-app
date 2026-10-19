@@ -1,4 +1,4 @@
-# Privacy policy — Mega Games
+# Privacy policy — Mili Games
 
 🌐 [English](#english) · [Português](#português) · [Español](#español) · [Français](#français) · [中文](#中文)
 
@@ -6,7 +6,7 @@ Last updated: 2026-10-19 · Contact: open an issue at <https://github.com/fershi
 
 ## English
 
-Mega Games (`io.github.fershibli.megagames`) **does not collect, store on any server, share or sell any personal data**.
+Mili Games (`io.github.fershibli.miligames`) **does not collect, store on any server, share or sell any personal data**.
 
 - **No internet access.** The app does not request the `INTERNET` permission, so Android does not let it connect to anything. It has no ads, analytics, crash reporting, accounts or purchases, and requests no Android permission.
 - **What stays on your phone.** Your settings and the game in progress are saved in the app's private storage so you can continue later. The saved game is deleted when the game ends or is abandoned, and everything is deleted when you uninstall the app.
@@ -18,7 +18,7 @@ The source code is public, so anyone can check these statements: see [docs/en/tr
 
 ## Português
 
-O Mega Games (`io.github.fershibli.megagames`) **não coleta, não guarda em servidor, não compartilha e não vende nenhum dado pessoal**.
+O Mili Games (`io.github.fershibli.miligames`) **não coleta, não guarda em servidor, não compartilha e não vende nenhum dado pessoal**.
 
 - **Sem internet.** O app não pede a permissão `INTERNET`, então o Android não deixa ele se conectar a nada. Não tem anúncios, estatísticas, relatórios de falha, contas nem compras, e não pede nenhuma permissão do Android.
 - **O que fica no seu celular.** Suas configurações e o jogo em andamento ficam no armazenamento privado do app para você continuar depois. O jogo salvo é apagado quando a partida termina ou é abandonada, e tudo é apagado ao desinstalar o app.
@@ -30,7 +30,7 @@ O código é público, então qualquer pessoa pode conferir: veja [docs/pt-BR/tr
 
 ## Español
 
-Mega Games (`io.github.fershibli.megagames`) **no recoge, no guarda en ningún servidor, no comparte ni vende ningún dato personal**.
+Mili Games (`io.github.fershibli.miligames`) **no recoge, no guarda en ningún servidor, no comparte ni vende ningún dato personal**.
 
 - **Sin internet.** La app no pide el permiso `INTERNET`, así que Android no le deja conectarse a nada. No tiene anuncios, estadísticas, informes de errores, cuentas ni compras, y no pide ningún permiso de Android.
 - **Lo que queda en tu teléfono.** Tus ajustes y la partida en curso se guardan en el almacenamiento privado de la app para que puedas seguir después. La partida guardada se borra cuando termina o se abandona, y todo se borra al desinstalar la app.
@@ -42,7 +42,7 @@ El código es público, así que cualquiera puede comprobarlo: consulta [docs/es
 
 ## Français
 
-Mega Games (`io.github.fershibli.megagames`) **ne collecte, ne stocke sur aucun serveur, ne partage ni ne vend aucune donnée personnelle**.
+Mili Games (`io.github.fershibli.miligames`) **ne collecte, ne stocke sur aucun serveur, ne partage ni ne vend aucune donnée personnelle**.
 
 - **Pas d’internet.** L’application ne demande pas l’autorisation `INTERNET` : Android ne la laisse se connecter à rien. Pas de publicité, de statistiques, de rapports de plantage, de compte ni d’achat, et aucune autorisation Android demandée.
 - **Ce qui reste sur votre téléphone.** Vos réglages et la partie en cours sont enregistrés dans le stockage privé de l’application pour reprendre plus tard. La partie enregistrée est supprimée quand elle se termine ou est abandonnée, et tout est supprimé à la désinstallation.
@@ -54,7 +54,7 @@ Le code source est public, chacun peut donc le vérifier : voir [docs/fr/trust.m
 
 ## 中文
 
-Mega Games（`io.github.fershibli.megagames`）**不收集、不在任何服务器上存储、不分享也不出售任何个人数据**。
+Mili Games（`io.github.fershibli.miligames`）**不收集、不在任何服务器上存储、不分享也不出售任何个人数据**。
 
 - **不联网。** 应用没有申请 `INTERNET` 权限，安卓根本不允许它建立任何连接。没有广告、统计、崩溃上报、账号或购买，也不申请任何安卓权限。
 - **留在你手机上的内容。** 你的设置和正在进行的游戏保存在应用的私有存储中，方便之后继续。游戏结束或放弃时会删除存档，卸载应用时所有内容都会删除。

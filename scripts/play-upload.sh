@@ -4,7 +4,7 @@
 #
 # Environment:
 #   PLAY_SERVICE_ACCOUNT_JSON  key of a Google Cloud service account invited in Play Console
-#   PACKAGE_NAME               e.g. io.github.fershibli.megagames
+#   PACKAGE_NAME               e.g. io.github.fershibli.miligames
 #   AAB                        path of the .aab to upload
 #   TRACK                      internal | alpha | beta | production | <custom closed track>
 #   STATUS                     draft | completed (Google only accepts draft before the first review)

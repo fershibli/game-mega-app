@@ -77,7 +77,7 @@ README 中的所有图片都由真实代码渲染：
 **本地签名**：拿到密钥文件（来自备份）后，在项目根目录创建 `keystore.properties`（已被 git 忽略）：
 
 ```properties
-storeFile=megagames-release.p12
+storeFile=miligames-release.p12
 storePassword=...
 keyAlias=megagames
 keyPassword=...
@@ -108,7 +108,7 @@ keyPassword=...
 每次发布时：
 
 1. `versioning.yml` 读取上一个正式版标签之后的提交，决定版本升级幅度，生成分组的版本说明（不兼容变更、新功能、修复、性能、其他），并推送带注释的标签 `vX.Y.Z`。
-2. `deploy.yml` 检出这个标签，运行测试和 Lint，用 `-PappVersion=X.Y.Z` 构建正式版 APK，签名并**验证**（签名、`versionName`、没有申请任何权限），然后在 GitHub 发布 Release，附带 `MegaGames-vX.Y.Z.apk`、`SHA256SUMS.txt` 和版本说明。
+2. `deploy.yml` 检出这个标签，运行测试和 Lint，用 `-PappVersion=X.Y.Z` 构建正式版 APK，签名并**验证**（签名、`versionName`、没有申请任何权限），然后在 GitHub 发布 Release，附带 `MiliGames-vX.Y.Z.apk`、`SHA256SUMS.txt` 和版本说明。
 
 安卓的 `versionCode` 由版本号推导，保证始终递增：`主版本×1,000,000 + 次版本×10,000 + 修订号×100 + n`，其中 `n` 是 rc 序号，正式版为 99（因此 `1.5.0-rc.2` < `1.5.0`）。次版本和修订号必须小于 100。
 

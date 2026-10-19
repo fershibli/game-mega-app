@@ -2,7 +2,7 @@
 
 🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · **中文**
 
-Mega Games 的用户可能无法自己判断一个应用是否可靠。本页说明这个应用做什么、不做什么——更重要的是，**任何人都可以自己验证**，不需要相信作者。
+Mili Games 的用户可能无法自己判断一个应用是否可靠。本页说明这个应用做什么、不做什么——更重要的是，**任何人都可以自己验证**，不需要相信作者。
 
 ## 目录
 
@@ -44,7 +44,7 @@ Mega Games 的用户可能无法自己判断一个应用是否可靠。本页说
 [清单文件](../../app/src/main/AndroidManifest.xml)**没有**声明任何 `<uses-permission>`。可以用 Android SDK 在任意 APK 上确认：
 
 ```bash
-aapt2 dump permissions MegaGames-v1.0.0.apk
+aapt2 dump permissions MiliGames-v1.0.0.apk
 ```
 
 你会看到唯一一条以 `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION` 结尾的条目。它不是用户权限，而是 AndroidX 库自动添加的签名级私有权限，用来防止其他应用调用本应用的内部广播接收器。它不会授予任何人任何东西。
@@ -87,18 +87,18 @@ aapt2 dump permissions MegaGames-v1.0.0.apk
 
 ## 验证下载的 APK
 
-1. 从同一个[版本](https://github.com/fershibli/game-mega-app/releases)下载 `MegaGames-vX.Y.Z.apk` 和 `SHA256SUMS.txt`。
+1. 从同一个[版本](https://github.com/fershibli/game-mega-app/releases)下载 `MiliGames-vX.Y.Z.apk` 和 `SHA256SUMS.txt`。
 2. 计算校验和并对比：
 
    ```bash
-   sha256sum MegaGames-vX.Y.Z.apk      # Linux / macOS：shasum -a 256
-   certutil -hashfile MegaGames-vX.Y.Z.apk SHA256   # Windows
+   sha256sum MiliGames-vX.Y.Z.apk      # Linux / macOS：shasum -a 256
+   certutil -hashfile MiliGames-vX.Y.Z.apk SHA256   # Windows
    ```
 
 3. 确认各版本的签名证书相同（安卓也会拒绝用不同密钥签名的更新）：
 
    ```bash
-   apksigner verify --print-certs MegaGames-vX.Y.Z.apk
+   apksigner verify --print-certs MiliGames-vX.Y.Z.apk
    ```
 
 4. 如需完全确认，可以从对应标签的源代码自行构建并比较内容（`unzip -l`、`aapt2 dump badging`）。

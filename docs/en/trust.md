@@ -2,7 +2,7 @@
 
 🌐 **English** · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · [中文](../zh-CN/trust.md)
 
-Mega Games is meant to be installed on the phones of people who may not be able to judge an app themselves. This page explains what the app does and does not do, and — more importantly — **how anyone can verify it** without trusting the author.
+Mili Games is meant to be installed on the phones of people who may not be able to judge an app themselves. This page explains what the app does and does not do, and — more importantly — **how anyone can verify it** without trusting the author.
 
 ## Contents
 
@@ -44,7 +44,7 @@ The "Open the project page" button in Settings → About simply asks Android to 
 The [manifest](../../app/src/main/AndroidManifest.xml) declares **no** `<uses-permission>`. You can confirm this on any APK with the Android SDK:
 
 ```bash
-aapt2 dump permissions MegaGames-v1.0.0.apk
+aapt2 dump permissions MiliGames-v1.0.0.apk
 ```
 
 You will see a single entry ending in `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`. This is not a user permission: it is a private, signature-level permission that the AndroidX library adds automatically to protect the app's own internal broadcast receivers from other apps. It grants nothing to anyone.
@@ -87,18 +87,18 @@ Run the same checks yourself: see [building.md](building.md).
 
 ## Verifying a downloaded APK
 
-1. Download `MegaGames-vX.Y.Z.apk` and `SHA256SUMS.txt` from the same [release](https://github.com/fershibli/game-mega-app/releases).
+1. Download `MiliGames-vX.Y.Z.apk` and `SHA256SUMS.txt` from the same [release](https://github.com/fershibli/game-mega-app/releases).
 2. Compute the checksum and compare:
 
    ```bash
-   sha256sum MegaGames-vX.Y.Z.apk      # Linux / macOS: shasum -a 256
-   certutil -hashfile MegaGames-vX.Y.Z.apk SHA256   # Windows
+   sha256sum MiliGames-vX.Y.Z.apk      # Linux / macOS: shasum -a 256
+   certutil -hashfile MiliGames-vX.Y.Z.apk SHA256   # Windows
    ```
 
 3. Check the signing certificate stays the same across versions (Android also refuses to update an app signed with a different key):
 
    ```bash
-   apksigner verify --print-certs MegaGames-vX.Y.Z.apk
+   apksigner verify --print-certs MiliGames-vX.Y.Z.apk
    ```
 
 4. For full assurance, build it yourself from the tagged source and compare the contents (`unzip -l`, `aapt2 dump badging`).
