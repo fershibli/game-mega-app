@@ -132,6 +132,7 @@
 
     <string name="backgammon_roll">掷骰子</string>
     <string name="backgammon_done">完成</string>
+    <string name="backgammon_rotate">旋转</string>
     <string name="backgammon_roll_prompt">轮到你：掷骰子</string>
     <string name="backgammon_pick_checker">点一个要走的棋子（黄色）</string>
     <string name="backgammon_pick_target">点它要去的位置（绿色）</string>

@@ -29,6 +29,10 @@ import io.github.fershibli.megagames.core.SavedGame
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.SettingsStore
 import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.games.backgammon.BackgammonState
+import io.github.fershibli.megagames.games.backgammon.BgMove
+import io.github.fershibli.megagames.games.backgammon.BgPosition
+import io.github.fershibli.megagames.games.backgammon.HUMAN
 import io.github.fershibli.megagames.games.sudoku.SudokuState
 import io.github.fershibli.megagames.games.sudoku.newSudoku
 import io.github.fershibli.megagames.ui.MegaGamesApp
@@ -77,7 +81,7 @@ class AppFlowTest {
     @Test
     fun settingsArePersisted() {
         val store = SettingsStore(app)
-        val s = Settings(darkMode = true, leftHanded = true, fontScale = 1.3f, defaultDifficulty = Difficulty.HARD)
+        val s = Settings(darkMode = true, leftHanded = true, fontScale = 1.3f, defaultDifficulty = Difficulty.HARD, backgammonUpright = true)
         store.save(s)
         assertEquals(s, SettingsStore(app).load())
     }
@@ -214,5 +218,40 @@ class AppFlowTest {
         store.clear()
     }
 
+
+    @Test
+    fun backgammonSidewaysBoardIsTheTraditionalOneAndTapsHitThePointsDrawn() {
+        // Default board: horizontal, points 13-24 along the top (24 at the right), 12-1 along the
+        // bottom (1 at the right, your home), bar in the middle and tray on the right.
+        val store = SaveStore(app).apply { clear() }
+        val start = BackgammonState(BgPosition.initial(), HUMAN, listOf(6, 5), BgPosition.initial())
+        val host = GameHost(GameId.BACKGAMMON, Difficulty.EASY, AppJson.encodeToJsonElement(BackgammonState.serializer(), start), store) {}
+        rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.BACKGAMMON, host) } }
+        rule.waitForIdle()
+        fun tapPoint(point: Int) = rule.onNodeWithTag("backgammon-board").performTouchInput {
+            assertTrue("board should be wider than tall", width > height)
+            val frame = height * 0.025f
+            val bar = width * 0.09f
+            val step = (width - 2 * frame - width * 0.075f - bar) / 12f
+            val column = if (point >= 13) point - 13 else 12 - point // 0 = leftmost
+            val x = frame + column * step + (if (column >= 6) bar else 0f) + step / 2
+            val y = if (point >= 13) height * 0.2f else height * 0.8f
+            click(Offset(x, y))
+        }
+        tapPoint(24) // top right: its only destination is 18 (19 is the computer's), so it moves at once
+        rule.waitForIdle()
+        tapPoint(13) // top left: selects the checker
+        rule.waitForIdle()
+        tapPoint(8) // bottom row: moves it there with the 5
+        rule.waitForIdle()
+        var saved: BackgammonState? = null
+        for (attempt in 0 until 50) {
+            Thread.sleep(20)
+            saved = store.load()?.let { AppJson.decodeFromJsonElement(BackgammonState.serializer(), it.state) }
+            if (saved?.played?.size == 2) break
+        }
+        assertEquals(listOf(BgMove(24, 18, 6), BgMove(13, 8, 5)), saved?.played)
+        store.clear()
+    }
 
 }

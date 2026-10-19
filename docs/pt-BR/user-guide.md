@@ -172,9 +172,9 @@ Buraco brasileiro para dois: você contra o computador.
 
 ### Gamão
 
-**Objetivo:** levar suas 15 pedras claras pelo tabuleiro até a sua casa (pontos 1–6, embaixo à esquerda) e retirá-las todas antes do computador (pedras escuras).
+**Objetivo:** levar suas 15 pedras claras pelo tabuleiro até a sua casa (pontos 1–6, embaixo à direita) e retirá-las todas antes do computador (pedras escuras).
 
-O tabuleiro é desenhado **em pé** para as pedras ficarem grandes: os pontos 12→1 descem pela coluna da esquerda, 13→24 pela da direita, a **barra** atravessa o meio e a **bandeja** das pedras retiradas fica embaixo (a sua à esquerda).
+O tabuleiro é o tradicional, **deitado**: pontos 13→24 em cima, 12→1 embaixo (a sua casa embaixo à direita), a **barra** no meio e a **bandeja** das pedras retiradas à direita (a sua embaixo). Use a pinça para ampliar e navegar pelo tabuleiro. **Girar** deixa o tabuleiro em pé, ocupando a tela com pedras maiores: aí os pontos 12→1 descem pela coluna da esquerda (a sua casa embaixo à esquerda), 13→24 pela da direita, a barra atravessa o meio e a bandeja fica embaixo. O app lembra a sua escolha.
 
 **Como jogar:** toque em **Jogar os dados**. As pedras que podem andar ficam **amarelas**; toque numa e os destinos possíveis ficam **verdes**; toque no destino. Se a pedra só tem um destino possível, ela anda na hora. Quando usar todos os dados, toque em **Pronto**. **Desfazer** recomeça a sua vez. Para retirar uma pedra, toque na bandeja.
 

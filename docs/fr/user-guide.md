@@ -172,9 +172,9 @@ Le Buraco brésilien à deux : vous contre l’ordinateur.
 
 ### Backgammon
 
-**But :** faire le tour du plateau avec vos 15 pions clairs jusqu’à votre jan intérieur (cases 1–6, en bas à gauche) puis les sortir tous avant l’ordinateur (pions foncés).
+**But :** faire le tour du plateau avec vos 15 pions clairs jusqu’à votre jan intérieur (cases 1–6, en bas à droite) puis les sortir tous avant l’ordinateur (pions foncés).
 
-Le plateau est dessiné **debout** pour que les pions soient grands : les cases 12→1 descendent la colonne de gauche, 13→24 celle de droite, la **barre** traverse le milieu et le **plateau de sortie** est en bas (le vôtre à gauche).
+Le plateau est le plateau traditionnel, **horizontal** : cases 13→24 en haut, 12→1 en bas (votre jan intérieur en bas à droite), la **barre** au milieu et le **plateau de sortie** à droite (le vôtre en bas). Pincez pour zoomer et vous déplacer sur le plateau. **Pivoter** met le plateau debout, sur tout l’écran et avec des pions plus grands : les cases 12→1 descendent alors la colonne de gauche (votre jan intérieur en bas à gauche), 13→24 celle de droite, la barre traverse le milieu et le plateau de sortie est en bas. L’application retient votre choix.
 
 **Jouer :** touchez **Lancer les dés**. Les pions qui peuvent bouger s’allument en **jaune** ; touchez-en un et ses destinations possibles s’allument en **vert** ; touchez la destination. Si un pion n’a qu’une destination possible, il y va directement. Quand tous les dés sont utilisés, touchez **Terminé**. **Annuler** recommence votre tour. Pour sortir un pion, touchez le plateau de sortie.
 

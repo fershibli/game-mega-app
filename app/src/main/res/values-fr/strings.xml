@@ -132,6 +132,7 @@
 
     <string name="backgammon_roll">Lancer les dés</string>
     <string name="backgammon_done">Terminé</string>
+    <string name="backgammon_rotate">Pivoter</string>
     <string name="backgammon_roll_prompt">À vous : lancez les dés</string>
     <string name="backgammon_pick_checker">Touchez un pion à déplacer (jaune)</string>
     <string name="backgammon_pick_target">Touchez sa destination (vert)</string>
