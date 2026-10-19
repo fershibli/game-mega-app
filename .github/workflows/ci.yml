@@ -24,7 +24,7 @@ jobs:
       # Makes sure gradle-wrapper.jar is the official one published by Gradle.
       - uses: gradle/actions/wrapper-validation@v6
 
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: 21
