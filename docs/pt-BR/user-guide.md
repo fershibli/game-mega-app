@@ -85,7 +85,7 @@ Todo tabuleiro pode ser ampliado.
 | ↳ *Toque duplo* | Toque duas vezes para ampliar: 2×, depois 3×, depois volta ao normal. Toque duas vezes **e arraste** para se mover. |
 | ↳ *Pressionar e girar* | Encoste e segure até o celular vibrar, depois faça círculos: no sentido horário amplia, no anti-horário diminui. Toque duas vezes e arraste para se mover; toque duas vezes para voltar ao normal. |
 | **Dificuldade padrão** | O nível que já vem marcado na roleta de dificuldade. |
-| **Sobre** | Versão, aviso de privacidade, link para este projeto e **Restaurar configurações padrão**. |
+| **Sobre** | Versão, aviso de privacidade, link para este projeto, **Restaurar configurações padrão** e, no finalzinho, **Por que o Mili Games existe**: por que o app é e sempre será gratuito e sem propaganda, como ele foi feito (com a ajuda do Claude, sem nenhuma IA dentro do app) e um link para o código-fonte. |
 
 A lista de configurações começa mais para baixo na tela, e qualquer opção pode ser rolada para perto do polegar.
 

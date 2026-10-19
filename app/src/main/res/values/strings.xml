@@ -102,6 +102,13 @@
     <string name="about_ai">Code, artwork and texts were created with the help of Claude, the AI assistant made by Anthropic.</string>
     <string name="about_version">Version %1$s</string>
     <string name="about_open_project">Open the project page</string>
+    <string name="mission_button">Why Mili Games exists</string>
+    <string name="mission_title">Why Mili Games exists</string>
+    <string name="mission_why">Many older people, and other vulnerable people, are targeted by games full of misleading ads, built to make them tap by mistake, install more apps without meaning to and spend money.</string>
+    <string name="mission_promise">Mili Games was made to be the opposite: a calm place to play. That is why it is, and always will be, free: no ads, no purchases, no account and no data collected. It does not even have access to the internet.</string>
+    <string name="mission_ai">The app was built with the help of Claude, an AI assistant made by Anthropic. But there is no AI chat or language model inside the game: the computer opponents are classic rules and calculations that run on your phone, without internet.</string>
+    <string name="mission_open">The source code is open, so anyone can check all of this.</string>
+    <string name="mission_source">See the source code and documentation</string>
     <string name="reset_settings">Restore default settings</string>
 
     <!-- Sudoku -->

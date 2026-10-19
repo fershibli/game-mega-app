@@ -85,7 +85,7 @@ Tous les plateaux peuvent être agrandis.
 | ↳ *Double toucher* | Touchez deux fois pour agrandir : 2×, puis 3×, puis retour à la normale. Touchez deux fois **et glissez** pour vous déplacer. |
 | ↳ *Appuyer et tourner* | Gardez le doigt appuyé jusqu’à la vibration, puis faites des cercles : dans le sens des aiguilles d’une montre pour agrandir, dans l’autre sens pour réduire. Touchez deux fois et glissez pour vous déplacer ; touchez deux fois pour revenir à la normale. |
 | **Difficulté par défaut** | Le niveau présélectionné sur la roue de difficulté. |
-| **À propos** | Version, déclaration de confidentialité, lien vers ce projet et **Rétablir les réglages par défaut**. |
+| **À propos** | Version, déclaration de confidentialité, lien vers ce projet, **Rétablir les réglages par défaut** et, tout en bas, **Pourquoi Mili Games existe** : pourquoi l’application est et restera gratuite et sans publicité, comment elle a été faite (avec l’aide de Claude, sans aucune IA dans l’application) et un lien vers le code source. |
 
 La liste des réglages commence assez bas sur l’écran, et chaque option peut être amenée près du pouce en faisant défiler.
 

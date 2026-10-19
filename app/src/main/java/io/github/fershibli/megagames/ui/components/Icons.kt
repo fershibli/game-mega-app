@@ -26,7 +26,7 @@ import kotlin.math.min
 import kotlin.math.sin
 
 /** Icons are drawn in code (no icon font, no image files) to keep the app tiny. */
-enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE }
+enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO }
 
 @Composable
 fun IconView(icon: AppIcon, tint: Color, modifier: Modifier = Modifier, size: Dp = 28.dp, description: String? = null) {
@@ -77,6 +77,11 @@ fun DrawScope.drawAppIcon(icon: AppIcon, tint: Color) {
             drawCircle(tint, s * 0.27f, Offset(c.x, s * 0.38f))
             drawRoundRect(tint, Offset(s * 0.36f, s * 0.6f), Size(s * 0.28f, s * 0.14f), CornerRadius(s * 0.04f))
             drawRoundRect(tint, Offset(s * 0.39f, s * 0.78f), Size(s * 0.22f, s * 0.1f), CornerRadius(s * 0.05f))
+        }
+        AppIcon.INFO -> {
+            drawCircle(tint, s * 0.42f, c, style = Stroke(s * 0.08f))
+            drawCircle(tint, s * 0.07f, Offset(c.x, s * 0.3f))
+            drawRoundRect(tint, Offset(c.x - s * 0.055f, s * 0.43f), Size(s * 0.11f, s * 0.32f), CornerRadius(s * 0.05f))
         }
         AppIcon.CLOSE -> {
             drawLine(tint, Offset(s * 0.2f, s * 0.2f), Offset(s * 0.8f, s * 0.8f), stroke.width, StrokeCap.Round)

@@ -75,7 +75,7 @@ Google announced in October 2026 that apps built in Google AI Studio can be publ
 | Feature graphic (1024×500) | `en-US/images/featureGraphic.jpg` |
 | Phone screenshots | `<language>/images/phoneScreenshots/` |
 
-Category: *Board*. Contact e-mail: required by Google, shown publicly.
+Category: *Board*. Contact details: the e-mail is required by Google and shown publicly; in **Website**, put `https://github.com/fershibli/game-mega-app` so anyone can reach the source code and the documentation.
 
 To redraw the graphics after a UI change: `./gradlew :app:testDebugUnitTest -PplayAssets=true --tests '*PlayAssetsTest*' && python3 scripts/optimize_screenshots.py`.
 

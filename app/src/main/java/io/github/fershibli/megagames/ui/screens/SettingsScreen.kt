@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames.ui.screens
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.BorderStroke
@@ -25,6 +26,7 @@ import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
@@ -69,6 +71,36 @@ class InGameActions(val onResume: () -> Unit, val onNewGame: () -> Unit, val onM
 
 const val PROJECT_URL = "https://github.com/fershibli/game-mega-app"
 
+/** Opens the project page (source code and documentation) in the browser. The app itself never connects. */
+private fun openProject(context: Context) {
+    runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PROJECT_URL)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
+}
+
+/** "Why Mili Games exists": the promise (free, no ads, ever) and how the app was made. */
+@Composable
+internal fun MissionDialog(onClose: () -> Unit) {
+    val p = LocalPalette.current
+    val context = LocalContext.current
+    AlertDialog(
+        onDismissRequest = onClose,
+        containerColor = p.surface,
+        title = { Text(stringResource(R.string.mission_title), style = MaterialTheme.typography.headlineSmall, color = p.text) },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                for (id in listOf(R.string.mission_why, R.string.mission_promise, R.string.mission_ai, R.string.mission_open)) {
+                    Text(stringResource(id), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                }
+            }
+        },
+        confirmButton = {
+            Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                BigButton(stringResource(R.string.close), onClose, Modifier.fillMaxWidth())
+                BigButton(stringResource(R.string.mission_source), { openProject(context) }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
+            }
+        },
+    )
+}
+
 /**
  * Settings. The list starts below a tall header so that the first options are already in the
  * lower half of the screen, and every other option can be scrolled down towards the thumb.
@@ -85,6 +117,7 @@ fun SettingsScreen(
     var confirmExit by remember { mutableStateOf(false) }
     var confirmNew by remember { mutableStateOf(false) }
     var pickLanguage by remember { mutableStateOf(false) }
+    var showMission by remember { mutableStateOf(false) }
 
     Column(Modifier.fillMaxSize().background(p.background)) {
         Box(Modifier.fillMaxWidth().height(68.dp).background(p.surface).padding(horizontal = 8.dp)) {
@@ -170,10 +203,9 @@ fun SettingsScreen(
                     Text(stringResource(R.string.about_ai), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
                     Text(stringResource(R.string.about_version, BuildConfig.VERSION_NAME), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
                     val context = LocalContext.current
-                    BigButton(stringResource(R.string.about_open_project), {
-                        runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(PROJECT_URL)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
-                    }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
+                    BigButton(stringResource(R.string.about_open_project), { openProject(context) }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
                     BigButton(stringResource(R.string.reset_settings), { onChange(Settings()) }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
+                    BigButton(stringResource(R.string.mission_button), { showMission = true }, Modifier.fillMaxWidth(), icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
                 }
                 Spacer(Modifier.height(24.dp))
             }
@@ -190,6 +222,8 @@ fun SettingsScreen(
             }
         }
     }
+
+    if (showMission) MissionDialog(onClose = { showMission = false })
 
     if (pickLanguage) {
         BigDialog(

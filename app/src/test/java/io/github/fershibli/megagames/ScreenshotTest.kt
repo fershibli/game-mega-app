@@ -93,6 +93,7 @@ class ScreenshotTest {
     @Test fun settingsInGamePt() = shot("settings_in_game_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {}, InGameActions({}, {}, {}))
     }
+    @Test fun missionPt() = shot("mission_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { io.github.fershibli.megagames.ui.screens.MissionDialog {} }
     @Test fun resumeDialog() = shot("resume_dialog") {
         val store = SaveStore(org.robolectric.RuntimeEnvironment.getApplication())
         GameScreen(GameId.SUDOKU, Difficulty.EASY, null, store, Settings(), {}, askResume = true, onResumeAnswered = {}, onExit = {})

@@ -17,6 +17,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.test.pinch
 import androidx.compose.ui.unit.dp
@@ -38,6 +39,7 @@ import io.github.fershibli.megagames.games.sudoku.newSudoku
 import io.github.fershibli.megagames.ui.MegaGamesApp
 import io.github.fershibli.megagames.ui.components.ZoomState
 import io.github.fershibli.megagames.ui.components.ZoomableBoard
+import io.github.fershibli.megagames.ui.screens.SettingsScreen
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 import kotlin.random.Random
 import kotlinx.serialization.json.JsonPrimitive
@@ -252,6 +254,16 @@ class AppFlowTest {
         }
         assertEquals(listOf(BgMove(24, 18, 6), BgMove(13, 8, 5)), saved?.played)
         store.clear()
+    }
+
+
+    @Test
+    fun settingsEndWithWhyMiliGamesExists() {
+        rule.setContent { MegaGamesTheme(Settings()) { SettingsScreen(Settings(), {}, {}, null) } }
+        rule.onNodeWithText("Why Mili Games exists").performScrollTo().performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("there is no AI chat or language model inside the game", substring = true).assertIsDisplayed()
+        rule.onNodeWithText("See the source code and documentation").assertIsDisplayed()
     }
 
 }

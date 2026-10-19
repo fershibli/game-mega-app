@@ -75,7 +75,7 @@ Em outubro de 2026 o Google anunciou que apps criados no Google AI Studio podem 
 | Imagem de destaque (1024×500) | `en-US/images/featureGraphic.jpg` |
 | Capturas de tela do celular | `<idioma>/images/phoneScreenshots/` |
 
-Categoria: *Tabuleiro*. E-mail de contato: obrigatório pelo Google e exibido publicamente.
+Categoria: *Tabuleiro*. Dados de contato: o e-mail é obrigatório pelo Google e exibido publicamente; em **Site**, coloque `https://github.com/fershibli/game-mega-app` para qualquer pessoa chegar ao código-fonte e à documentação.
 
 Para redesenhar as imagens depois de mudar a interface: `./gradlew :app:testDebugUnitTest -PplayAssets=true --tests '*PlayAssetsTest*' && python3 scripts/optimize_screenshots.py`.
 
