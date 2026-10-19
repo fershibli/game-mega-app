@@ -1,6 +1,6 @@
 # 信頼・プライバシー・セキュリティ
 
-🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · **日本語** · [中文](../zh-CN/trust.md)
+🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · **日本語** · [中文](../zh-CN/trust.md) · [العربية](../ar/trust.md)
 
 Mili Games は、アプリのよしあしをご自分で判断するのがむずかしい方のスマホに入れていただくことを考えて作りました。このページでは、アプリがすること・しないことを説明します。そして何より、作者を信じなくても **だれでも確かめられる方法** をご紹介します。
 

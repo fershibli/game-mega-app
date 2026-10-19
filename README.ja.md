@@ -6,7 +6,7 @@
 
 数独 · ソリティア · ブラコ · バックギャモン · 麻雀ソリティア · リバーシ · クロスワード · パイプつなぎ · 色つなぎ · ドットつなぎ
 
-🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · **日本語** · [中文](README.zh-CN.md)
+🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · **日本語** · [中文](README.zh-CN.md) · [العربية](README.ar.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@
 - バックギャモン、ブラコ、リバーシには、それぞれ専用に作った**本格的なコンピューターの相手**がいます。
 - **すべてのゲームで2本指の拡大**ができます。片手モードでは1本指でも拡大できます。
 - **自動で保存**：うっかりアプリを閉じてしまっても、やめたところからそのまま続けられます。
-- **9つの言語**：英語、ポルトガル語（ブラジル）、スペイン語、フランス語、イタリア語、ドイツ語、ロシア語、日本語、中国語（簡体字）。画面の表示だけでなく、クロスワードの辞書もそれぞれの言語で用意しています。
+- **10の言語**：英語、ポルトガル語（ブラジル）、スペイン語、フランス語、イタリア語、ドイツ語、ロシア語、日本語、中国語（簡体字）、アラビア語。画面の表示だけでなく、クロスワードの辞書もそれぞれの言語で用意しています。
 - **小さくて軽い**：約 **1.3 MB**。Kotlin と Jetpack Compose で作ったネイティブアプリで、ゲームエンジンも画像ファイルも使っていません。絵はすべてプログラムでえがいています。
 
 ## ゲームの紹介
@@ -118,6 +118,7 @@ Android 6.0 以降が必要です。絵つきの手順はこちら：[使い方�
 | Русский | [руководство](docs/ru/user-guide.md) | [доверие](docs/ru/trust.md) | [technical（英語）](docs/en/technical.md) | [building（英語）](docs/en/building.md) |
 | 日本語 | [使い方ガイド](docs/ja/user-guide.md) | [信頼とプライバシー](docs/ja/trust.md) | [technical（英語）](docs/en/technical.md) | [building（英語）](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
+| العربية | [دليل الاستخدام](docs/ar/user-guide.md) | [الثقة والخصوصية](docs/ar/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 
 すべての一覧：[docs/README.md](docs/README.md)
 
@@ -134,7 +135,7 @@ JDK 17 以降と Android SDK（API 37）が必要です。[docs/en/building.md](
 
 ## AIの助けを借りて作りました
 
-このリポジトリにあるものはすべて、つまりプログラム、絵（カード、牌、盤、アイコンはすべてプログラムでえがいています）、そして9つの言語で書かれたこの説明書は、管理者の指示のもと、**Anthropic** 社の AI アシスタント **Claude** の助けを借りて作りました。設計の考え方は [docs/en/technical.md](docs/en/technical.md)（英語）で説明しています。また、プログラムをただ信じてもらうのではなく確かめてもらえるように、テストを用意しています。
+このリポジトリにあるものはすべて、つまりプログラム、絵（カード、牌、盤、アイコンはすべてプログラムでえがいています）、そして10の言語で書かれたこの説明書は、管理者の指示のもと、**Anthropic** 社の AI アシスタント **Claude** の助けを借りて作りました。設計の考え方は [docs/en/technical.md](docs/en/technical.md)（英語）で説明しています。また、プログラムをただ信じてもらうのではなく確かめてもらえるように、テストを用意しています。
 
 ## ライセンス
 

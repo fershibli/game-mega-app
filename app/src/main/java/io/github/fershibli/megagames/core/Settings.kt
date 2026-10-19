@@ -18,10 +18,17 @@ enum class AppLanguage(val tag: String?, val nativeName: String) {
     GERMAN("de", "Deutsch"),
     RUSSIAN("ru", "Русский"),
     JAPANESE("ja", "日本語"),
-    CHINESE("zh-CN", "中文（简体）");
+    CHINESE("zh-CN", "中文（简体）"),
+    ARABIC("ar", "العربية");
 
     /** Crossword answers are short syllable or character strings rather than spelled words. */
     val syllabic: Boolean get() = this == CHINESE || this == JAPANESE
+
+    /** Screens read right to left (game boards keep their own layout). */
+    val rightToLeft: Boolean get() = this == ARABIC
+
+    /** Crossword letters are always picked from a bank of buttons instead of a full keyboard. */
+    val letterBank: Boolean get() = syllabic || this == ARABIC
 
     /** Resolves [SYSTEM] to one of the supported languages (English when unsupported). */
     fun resolve(system: Locale = Locale.getDefault()): AppLanguage {
@@ -34,6 +41,7 @@ enum class AppLanguage(val tag: String?, val nativeName: String) {
             "de" -> GERMAN
             "ru" -> RUSSIAN
             "ja" -> JAPANESE
+            "ar" -> ARABIC
             "zh" -> CHINESE
             else -> ENGLISH
         }

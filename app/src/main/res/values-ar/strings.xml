@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Navigation -->
+    <string name="choose_game">اختر لعبتك</string>
+    <string name="choose_difficulty">اختر مستوى الصعوبة</string>
+    <string name="confirm">تأكيد</string>
+    <string name="back">رجوع</string>
+    <string name="settings">الإعدادات</string>
+    <string name="close">إغلاق</string>
+    <string name="done">تم</string>
+    <string name="cancel">إلغاء</string>
+    <string name="loading">جارٍ تجهيز اللعبة…</string>
+    <string name="decrease">تقليل</string>
+    <string name="increase">زيادة</string>
+    <string name="zoom_reset">إلغاء التكبير</string>
+
+    <!-- Difficulty -->
+    <string name="difficulty_easy">سهل</string>
+    <string name="difficulty_medium">متوسط</string>
+    <string name="difficulty_hard">صعب</string>
+
+    <!-- Games -->
+    <string name="game_sudoku">سودوكو</string>
+    <string name="game_solitaire">سوليتير</string>
+    <string name="game_buraco">بوراكو</string>
+    <string name="game_backgammon">طاولة الزهر</string>
+    <string name="game_mahjong">ماهجونغ</string>
+    <string name="game_reversi">ريفيرسي</string>
+    <string name="game_crossword">الكلمات المتقاطعة</string>
+    <string name="game_pipes">الأنابيب</string>
+    <string name="game_connect">صِل الألوان</string>
+    <string name="game_dots">النقاط</string>
+
+    <string name="howto_sudoku">املأ الشبكة بحيث يحتوي كل صف وكل عمود وكل مربع 3×3 على الأرقام من 1 إلى 9، كل رقم مرة واحدة فقط.</string>
+    <string name="howto_solitaire">لعبة كلوندايك. كوّن أربع كومات من الآس إلى الملك، كومة لكل شكل. اضغط على ورقة لتنتقل إلى أفضل مكان.</string>
+    <string name="howto_buraco">كوّن متتاليات من الشكل نفسه بأوراقك في مواجهة الكمبيوتر. كل ورقة 2 تعمل جوكر. سبع أوراق تصنع كاناستا.</string>
+    <string name="howto_backgammon">ارمِ النرد وانقل كل قطعك الفاتحة إلى بيتك، ثم أخرجها من اللوحة قبل الكمبيوتر.</string>
+    <string name="howto_mahjong">أزل أزواج القطع المتطابقة. يمكنك أخذ القطعة إذا لم يكن فوقها شيء وكان جانبها الأيمن أو الأيسر حرًّا.</string>
+    <string name="howto_reversi">ضع قرصًا بحيث تحصر أقراص الكمبيوتر بين قرصين من أقراصك، فتتحول إلى لونك. يفوز صاحب الأقراص الأكثر.</string>
+    <string name="howto_crossword">اقرأ التلميح واكتب الكلمة. اضغط على مربع لاختيار كلمة، واضغط عليه مرة أخرى لتغيير الاتجاه.</string>
+    <string name="howto_pipes">اضغط على القطع لتدويرها حتى تتصل كل الأنابيب بمصدر الماء دون أي طرف مفتوح.</string>
+    <string name="howto_connect">ارسم خطًّا بين النقاط التي لها اللون نفسه. لا يجوز أن تتقاطع الخطوط. حاول أن تملأ اللوحة كلها.</string>
+    <string name="howto_dots">اسحب إصبعك على النقاط المتجاورة التي لها اللون نفسه لإزالتها. أغلق مربعًا لتزيل كل نقاط ذلك اللون.</string>
+
+    <!-- In-game common -->
+    <string name="resume">العودة إلى اللعبة</string>
+    <string name="new_game">لعبة جديدة</string>
+    <string name="main_menu">القائمة الرئيسية</string>
+    <string name="leave_game_title">هل تريد مغادرة هذه اللعبة؟</string>
+    <string name="leave_game_message">إذا عدت إلى القائمة الرئيسية، فستُترك هذه اللعبة ولن تستطيع إكمالها.</string>
+    <string name="leave_game_yes">نعم، غادر اللعبة</string>
+    <string name="new_game_title">هل تبدأ لعبة جديدة؟</string>
+    <string name="new_game_message">ستضيع اللعبة الحالية.</string>
+    <string name="resume_title">أهلًا بعودتك!</string>
+    <string name="resume_message">لديك لعبة %1$s لم تنتهِ بعد. هل تريد المتابعة من حيث توقفت أم العودة إلى القائمة الرئيسية؟</string>
+    <string name="resume_continue">متابعة اللعب</string>
+    <string name="win_title">تهانينا!</string>
+    <string name="win_message">لقد فزت! 🎉</string>
+    <string name="lose_title">انتهت اللعبة</string>
+    <string name="lose_message">لم يحالفك الحظ هذه المرة. ما رأيك في محاولة أخرى؟</string>
+    <string name="play_again">العب مرة أخرى</string>
+    <string name="undo">تراجع</string>
+    <string name="hint">تلميح</string>
+    <string name="your_turn">دورك</string>
+    <string name="computer_turn">الكمبيوتر يفكر…</string>
+    <string name="score_line">أنت: %1$d · الكمبيوتر: %2$d</string>
+
+    <!-- Settings -->
+    <string name="settings_scroll_hint">مرّر لترى كل الخيارات ↓</string>
+    <string name="section_language">اللغة</string>
+    <string name="language_system">مثل لغة الهاتف</string>
+    <string name="section_size">الحجم</string>
+    <string name="text_size">حجم النص</string>
+    <string name="piece_size">حجم القطع والأزرار</string>
+    <string name="section_colors">الألوان</string>
+    <string name="color_normal">عادي</string>
+    <string name="color_normal_desc">ألوان هادئة بتباين متوسط.</string>
+    <string name="color_high_contrast">تباين عالٍ</string>
+    <string name="color_high_contrast_desc">ألوان قوية وحواف سميكة، أسهل في الرؤية.</string>
+    <string name="color_colorblind">مناسب لعمى الألوان</string>
+    <string name="color_colorblind_desc">ألوان تبقى واضحة الفرق لمن لديهم عمى الألوان، مع أشكال مرسومة على القطع.</string>
+    <string name="dark_mode">الوضع الداكن</string>
+    <string name="dark_mode_desc">خلفية داكنة، أريح للعين في الليل. لكل وضع ألوان نسخته الداكنة.</string>
+    <string name="section_controls">التحكم</string>
+    <string name="pinch_zoom">التكبير بإصبعين</string>
+    <string name="pinch_zoom_desc">استخدم إصبعين للتكبير والتصغير وللتنقل في اللوحة.</string>
+    <string name="left_handed">وضع اليد اليسرى</string>
+    <string name="left_handed_desc">يضع الأزرار الرئيسية على الجانب الأيسر من الشاشة.</string>
+    <string name="one_hand">وضع اليد الواحدة</string>
+    <string name="one_hand_desc">يصبح الترس زرًّا عائمًا قرب إبهامك، ويعمل التكبير بإصبع واحد.</string>
+    <string name="one_hand_zoom">التكبير بإصبع واحد</string>
+    <string name="onehand_doubletap">النقر مرتين</string>
+    <string name="onehand_doubletap_desc">انقر مرتين للتكبير (كل نقرتين تكبّران أكثر، ثم تعود اللوحة إلى حجمها). انقر مرتين واسحب للتحريك.</string>
+    <string name="onehand_rotate">اضغط وأدِر</string>
+    <string name="onehand_rotate_desc">المس الشاشة مع الاستمرار، ثم ارسم دوائر: مع عقارب الساعة للتكبير، وعكسها للتصغير. انقر مرتين واسحب للتحريك.</string>
+    <string name="default_difficulty">الصعوبة الافتراضية</string>
+    <string name="section_about">حول التطبيق</string>
+    <string name="about_text">تطبيق Mili Games مجاني ومفتوح المصدر. لا إعلانات فيه، ولا حسابات، ولا مشتريات داخل التطبيق.</string>
+    <string name="about_privacy">الخصوصية: التطبيق لا يستخدم الإنترنت ولا يجمع أي بيانات. تبقى إعداداتك ولعبتك الحالية على هذا الهاتف فقط.</string>
+    <string name="about_ai">صُنعت البرمجة والرسوم والنصوص بمساعدة Claude، مساعد الذكاء الاصطناعي من شركة Anthropic.</string>
+    <string name="about_version">الإصدار %1$s</string>
+    <string name="about_open_project">افتح صفحة المشروع</string>
+    <string name="mission_button">لماذا وُجد Mili Games</string>
+    <string name="mission_title">لماذا وُجد Mili Games</string>
+    <string name="mission_why">كثير من كبار السن، وغيرهم من الأشخاص الأكثر عرضة للخطر، تستهدفهم ألعاب مليئة بإعلانات مضللة، صُممت لتجعلهم يضغطون عن طريق الخطأ، ويثبّتون تطبيقات أخرى دون قصد، وينفقون المال.</string>
+    <string name="mission_promise">صُنع Mili Games ليكون العكس تمامًا: مكانًا هادئًا للعب. لهذا هو مجاني، وسيبقى مجانيًا دائمًا: لا إعلانات، ولا مشتريات، ولا حساب، ولا جمع لأي بيانات. بل إنه لا يستطيع الوصول إلى الإنترنت أصلًا.</string>
+    <string name="mission_ai">بُني التطبيق بمساعدة Claude، وهو مساعد ذكاء اصطناعي من شركة Anthropic. لكن لا توجد داخل اللعبة أي محادثة مع ذكاء اصطناعي ولا أي نموذج لغوي: منافسو الكمبيوتر قواعد وحسابات تقليدية تعمل على هاتفك، دون إنترنت.</string>
+    <string name="mission_open">الشيفرة المصدرية مفتوحة، لذلك يستطيع أي شخص أن يتحقق من كل هذا.</string>
+    <string name="mission_source">اطّلع على الشيفرة المصدرية والتوثيق</string>
+    <string name="reset_settings">استعادة الإعدادات الافتراضية</string>
+
+    <!-- Sudoku -->
+    <string name="sudoku_notes">ملاحظات</string>
+    <string name="sudoku_notes_on">وضع الملاحظات: تصبح الأرقام تذكيرات صغيرة</string>
+    <string name="sudoku_tap_cell">اضغط على مربع، ثم على رقم</string>
+
+    <!-- Solitaire -->
+    <string name="solitaire_moves">الحركات: %1$d</string>
+    <string name="solitaire_passes">دورات الرزمة المتبقية: %1$d</string>
+    <string name="solitaire_finish">إنهاء</string>
+    <string name="solitaire_no_hint">لا توجد حركة واضحة. جرّب الرزمة.</string>
+
+    <!-- Reversi -->
+    <string name="reversi_tie">تعادل!</string>
+    <string name="reversi_ai_passed">لم تكن لدى الكمبيوتر حركة. الدور لك مرة أخرى.</string>
+    <string name="reversi_you_passed">لم تكن لديك حركة. الكمبيوتر يلعب مرة أخرى.</string>
+
+    <!-- Mahjong -->
+    <string name="mahjong_status">القطع: %1$d · الأزواج المتاحة: %2$d</string>
+    <string name="mahjong_stuck">لا توجد أزواج. استخدم الخلط!</string>
+    <string name="mahjong_shuffle">خلط</string>
+    <string name="mahjong_shuffle_count">خلط (%1$d)</string>
+    <string name="reversi_score">● أنت: %1$d   ○ الكمبيوتر: %2$d</string>
+
+    <!-- Pipes -->
+    <string name="pipes_status">قطع وصلها الماء: %1$d من %2$d</string>
+
+    <!-- Connect -->
+    <string name="connect_status">المتصل: %1$d من %2$d · امتلاء اللوحة: %3$d%%</string>
+    <string name="connect_fill">كلها متصلة! املأ الآن كل المربعات.</string>
+    <string name="connect_clear">مسح</string>
+
+    <!-- Dots -->
+    <string name="dots_moves">الحركات: %1$d</string>
+
+    <!-- Crossword -->
+    <string name="crossword_across">أفقي</string>
+    <string name="crossword_down">عمودي</string>
+    <string name="crossword_prev">الكلمة السابقة</string>
+    <string name="crossword_next">الكلمة التالية</string>
+
+    <!-- Backgammon -->
+    <string name="backgammon_roll">ارمِ النرد</string>
+    <string name="backgammon_done">تم</string>
+    <string name="backgammon_rotate">تدوير</string>
+    <string name="backgammon_roll_prompt">دورك: ارمِ النرد</string>
+    <string name="backgammon_pick_checker">اضغط على قطعة لتحريكها (الصفراء)</string>
+    <string name="backgammon_pick_target">اضغط على مكانها الجديد (الأخضر)</string>
+    <string name="backgammon_done_prompt">انتهت كل الحركات. اضغط على تم.</string>
+    <string name="backgammon_no_moves">لا توجد حركة ممكنة. اضغط على تم.</string>
+    <string name="backgammon_off">القطع المُخرجة: أنت %1$d · الكمبيوتر %2$d</string>
+    <string name="backgammon_gammon">فوز «غامون»: الخاسر لم يُخرج أي قطعة (فوز مضاعف).</string>
+    <string name="backgammon_backgammon">فوز «باكغامون»: الخاسر ما زالت لديه قطعة على الحاجز أو في بيت الفائز (فوز ثلاثي).</string>
+
+    <!-- Buraco -->
+    <string name="buraco_draw">اسحب ورقة</string>
+    <string name="buraco_take_pile">خذ الكومة (%1$d)</string>
+    <string name="buraco_discard">ارمِ ورقة</string>
+    <string name="buraco_meld">متتالية جديدة</string>
+    <string name="buraco_prompt_draw">دورك: اسحب ورقة من الرزمة أو خذ كومة الأوراق المرمية</string>
+    <string name="buraco_prompt_play">اختر 3 أوراق أو أكثر لمتتالية جديدة، أو ورقة واحدة لترميها</string>
+    <string name="buraco_prompt_add">اضغط على إحدى متتالياتك لتضيف إليها الأوراق المختارة</string>
+    <string name="buraco_err_invalid">هذه الأوراق لا تصنع متتالية من الشكل نفسه (ورقة 2 جوكر واحدة فقط في كل متتالية).</string>
+    <string name="buraco_err_keep">احتفظ بورقة واحدة على الأقل لترميها في نهاية دورك.</string>
+    <string name="buraco_err_canasta">لتُنهي أوراقك تحتاج إلى كاناستا نظيفة: 7 أوراق أو أكثر بلا جوكر.</string>
+    <string name="buraco_err_select_one">اختر ورقة واحدة فقط لترميها.</string>
+    <string name="buraco_computer">الكمبيوتر</string>
+    <string name="buraco_morto">الاحتياط</string>
+    <string name="buraco_morto_taken">أخذ الاحتياط</string>
+    <string name="buraco_deck">الرزمة</string>
+    <string name="buraco_pile">الكومة</string>
+    <string name="buraco_your_sequences">متتالياتك</string>
+    <string name="buraco_your_hand">أوراقك</string>
+    <string name="buraco_clean">كاناستا نظيفة</string>
+    <string name="buraco_dirty">كاناستا بجوكر</string>
+    <string name="buraco_points">النقاط: أنت %1$d · الكمبيوتر %2$d</string>
+    <string name="buraco_went_out_you">أنهيت أوراقك (+100).</string>
+    <string name="buraco_went_out_ai">أنهى الكمبيوتر أوراقه (+100).</string>
+    <string name="buraco_deck_over">نفدت الرزمة.</string>
+    <plurals name="buraco_cards">
+        <item quantity="zero">%1$d ورقة</item>
+        <item quantity="one">%1$d ورقة</item>
+        <item quantity="two">%1$d ورقتان</item>
+        <item quantity="few">%1$d أوراق</item>
+        <item quantity="many">%1$d ورقة</item>
+        <item quantity="other">%1$d ورقة</item>
+    </plurals>
+</resources>

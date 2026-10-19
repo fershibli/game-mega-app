@@ -116,6 +116,7 @@ class PlayAssetsTest {
     @Test fun screenshotsGerman() = screenshots("de-DE", AppLanguage.GERMAN)
     @Test fun screenshotsRussian() = screenshots("ru-RU", AppLanguage.RUSSIAN)
     @Test fun screenshotsJapanese() = screenshots("ja-JP", AppLanguage.JAPANESE)
+    @Test fun screenshotsArabic() = screenshots("ar", AppLanguage.ARABIC)
     @Test fun screenshotsChinese() = screenshots("zh-CN", AppLanguage.CHINESE)
 
     /** 512x512, full square: Google Play rounds the corners itself. */

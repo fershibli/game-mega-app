@@ -1,6 +1,6 @@
 # Mili Games — Anleitung
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · **Deutsch** · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · **Deutsch** · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md) · [العربية](../ar/user-guide.md)
 
 Diese Anleitung ist für alle, die spielen, und für die Angehörigen, die ihnen das Telefon einrichten.
 
@@ -74,7 +74,7 @@ Jedes Spielfeld lässt sich vergrößern.
 
 | Einstellung | Was sie bewirkt |
 |---|---|
-| **Sprache** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文 oder „Sprache des Telefons“. Ändert die ganze App, auch die Wörter im Kreuzworträtsel. |
+| **Sprache** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, العربية oder „Sprache des Telefons“. Ändert die ganze App, auch die Wörter im Kreuzworträtsel. |
 | **Textgröße** | 80 % bis 160 % der normalen Größe. |
 | **Größe von Spielsteinen und Tasten** | 80 % bis 160 %. Vergrößert Zahlenfelder, Tastaturen, die Karten in deiner Hand und andere Bedienelemente. Spielfelder füllen immer den Bildschirm aus; mit dem Zoom kannst du sie noch weiter vergrößern. |
 | **Farben** | *Normal* (sanft, mittlerer Kontrast) · *Hoher Kontrast* (kräftige Farben, dicke Umrisse) · *Für Farbenblinde* (Farben, die unterscheidbar bleiben, mit Formen auf den Spielsteinen und Karten in vier Farben). |

@@ -1,6 +1,6 @@
 # Mili Games — Guide d’utilisation
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · **Français** · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · **Français** · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md) · [العربية](../ar/user-guide.md)
 
 Ce guide s’adresse aux joueurs et aux proches qui préparent le téléphone pour eux.
 
@@ -74,7 +74,7 @@ Tous les plateaux peuvent être agrandis.
 
 | Réglage | Effet |
 |---|---|
-| **Langue** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, ou « Comme le téléphone ». Change toute l’application, y compris les mots croisés. |
+| **Langue** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, العربية, ou « Comme le téléphone ». Change toute l’application, y compris les mots croisés. |
 | **Taille du texte** | De 80 % à 160 % de la taille normale. |
 | **Taille des pièces et des boutons** | De 80 % à 160 %. Agrandit pavés numériques, claviers, cartes en main et autres commandes. Les plateaux occupent toujours l’écran ; utilisez le zoom pour les agrandir davantage. |
 | **Couleurs** | *Normal* (doux, contraste moyen) · *Contraste élevé* (couleurs vives, contours épais) · *Adapté au daltonisme* (couleurs qui restent distinctes, formes dessinées sur les pièces, jeu de cartes à quatre couleurs). |

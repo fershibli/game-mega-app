@@ -1,6 +1,6 @@
 # Mili Games — Guía de uso
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · **Español** · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · **Español** · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md) · [العربية](../ar/user-guide.md)
 
 Esta guía está escrita para quienes juegan y para los familiares que les preparan el teléfono.
 
@@ -74,7 +74,7 @@ Todos los tableros se pueden ampliar.
 
 | Ajuste | Qué hace |
 |---|---|
-| **Idioma** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, o "El mismo del teléfono". Cambia toda la aplicación, también las palabras del crucigrama. |
+| **Idioma** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, العربية, o "El mismo del teléfono". Cambia toda la aplicación, también las palabras del crucigrama. |
 | **Tamaño del texto** | Del 80 % al 160 % del tamaño normal. |
 | **Tamaño de piezas y botones** | Del 80 % al 160 %. Agranda teclados numéricos, teclados de letras, las cartas de tu mano y otros controles. Los tableros siempre ocupan la pantalla; usa el zoom para agrandarlos más. |
 | **Colores** | *Normal* (suave, contraste medio) · *Alto contraste* (colores fuertes, bordes gruesos) · *Para daltonismo* (colores que se siguen distinguiendo, con formas dibujadas en las piezas y baraja de cuatro colores). |

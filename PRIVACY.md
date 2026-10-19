@@ -1,6 +1,6 @@
 # Privacy policy — Mili Games
 
-🌐 [English](#english) · [Português](#português) · [Español](#español) · [Français](#français) · [Italiano](#italiano) · [Deutsch](#deutsch) · [Русский](#русский) · [日本語](#日本語) · [中文](#中文)
+🌐 [English](#english) · [Português](#português) · [Español](#español) · [Français](#français) · [Italiano](#italiano) · [Deutsch](#deutsch) · [Русский](#русский) · [日本語](#日本語) · [中文](#中文) · [العربية](#العربية)
 
 Last updated: 2026-10-19 · Contact: open an issue at <https://github.com/fershibli/game-mega-app/issues>
 

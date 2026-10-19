@@ -87,6 +87,10 @@ class ScreenshotTest {
     @Test fun homeColorblindDark() = shot("home_colorblind_dark", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true)) { HomeScreen({}, {}) }
     @Test fun homeOneHand() = shot("home_one_hand", Settings(oneHand = true)) { HomeScreen({}, {}) }
     @Test fun homeChinese() = shot("home_zh", Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE)) { HomeScreen({}, {}) }
+    @Test fun homeArabic() = shot("home_ar", Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC)) { HomeScreen({}, {}) }
+    @Test fun settingsArabic() = shot("settings_ar", Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC)) { SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC), {}, {}, null) }
+    @Test fun sudokuArabic() = gameShot("game_sudoku_ar", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
+    @Test fun crosswordArabic() = gameShot("game_crossword_ar", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
     @Test fun homeJapanese() = shot("home_ja", Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE)) { HomeScreen({}, {}) }
     @Test fun buracoPt() = gameShot("game_buraco_pt", GameId.BURACO, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun sudokuFrLeftHanded() = gameShot("game_sudoku_fr_left", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.FRENCH, leftHanded = true))

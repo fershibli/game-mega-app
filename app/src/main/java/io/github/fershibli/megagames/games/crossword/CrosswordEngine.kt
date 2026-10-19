@@ -28,9 +28,11 @@ object Crossword {
      * upper case, accents removed, spaces and hyphens dropped. Spanish Ñ and Russian Й stay letters
      * of their own, Œ becomes OE, German Ä Ö Ü ß become AE OE UE SS and Russian Ё becomes Е.
      * Japanese answers become katakana, one kana per square, with small kana written full size.
+     * Arabic keeps one letter per square without harakat.
      */
     fun normalize(word: String, language: AppLanguage): List<String> {
         if (language == AppLanguage.JAPANESE) return kana(word)
+        if (language == AppLanguage.ARABIC) return arabic(word)
         if (language == AppLanguage.CHINESE) {
             val out = ArrayList<String>()
             var i = 0
@@ -57,6 +59,19 @@ object Crossword {
             base.filter { it in 'A'..'Z' }.forEach { out += it.toString() }
         }
         return out
+    }
+
+    /**
+     * Arabic: one letter per square, short vowels and other harakat dropped, and alef with hamza
+     * or madda written as a plain alef, as in printed Arabic crosswords.
+     */
+    private fun arabic(word: String): List<String> = word.mapNotNull { ch ->
+        when (ch) {
+            'أ', 'إ', 'آ', 'ٱ' -> "ا"
+            'ـ' -> null // tatweel, a stretching stroke rather than a letter
+            in 'ء'..'ي' -> ch.toString()
+            else -> null
+        }
     }
 
     private const val SMALL_KANA = "ァィゥェォッャュョヮヵヶ"

@@ -6,7 +6,7 @@
 
 Судоку · Пасьянс «Косынка» · Бурако · Нарды · Маджонг · Реверси · Кроссворд · Трубы · Соедини цвета · Точки
 
-🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · **Русский** · [日本語](README.ja.md) · [中文](README.zh-CN.md)
+🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · **Русский** · [日本語](README.ja.md) · [中文](README.zh-CN.md) · [العربية](README.ar.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@
 - **Настоящие соперники-компьютеры**, написанные специально для Нард, Бурако и Реверси.
 - **Масштаб двумя пальцами в каждой игре**, а в режиме одной руки — масштаб одним пальцем.
 - **Автоматическое сохранение**: если вы случайно закрыли приложение, оно предложит продолжить ровно с того места, где вы остановились.
-- **9 языков**: английский, португальский, испанский, французский, итальянский, немецкий, русский, японский и китайский — и интерфейс, *и* слова для кроссворда.
+- **10 языков**: английский, португальский, испанский, французский, итальянский, немецкий, русский, японский, китайский и арабский — и интерфейс, *и* слова для кроссворда.
 - **Маленькое и лёгкое**: около **1,3 МБ**, написано на Kotlin + Jetpack Compose, без игрового движка и без файлов с картинками — все рисунки нарисованы прямо в коде.
 
 ## Игры
@@ -118,6 +118,7 @@
 | Русский | [руководство](docs/ru/user-guide.md) | [доверие](docs/ru/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 日本語 | [使い方](docs/ja/user-guide.md) | [信頼](docs/ja/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
+| العربية | [دليل الاستخدام](docs/ar/user-guide.md) | [الثقة والخصوصية](docs/ar/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 
 Полный указатель: [docs/README.md](docs/README.md). Публикация в Google Play: [google-play.md](docs/en/google-play.md) (на английском).
 
@@ -134,7 +135,7 @@ cd game-mega-app
 
 ## Создано с помощью ИИ
 
-Всё в этом репозитории — код, рисунки (каждая карта, кость, доска и значок нарисованы в коде) и эта документация на девяти языках — создано с помощью **Claude**, ИИ-ассистента компании **Anthropic**, под руководством автора проекта. Почему всё устроено именно так, объясняется в [docs/en/technical.md](docs/en/technical.md) (на английском), а набор тестов существует для того, чтобы никому не приходилось верить коду на слово.
+Всё в этом репозитории — код, рисунки (каждая карта, кость, доска и значок нарисованы в коде) и эта документация на десяти языках — создано с помощью **Claude**, ИИ-ассистента компании **Anthropic**, под руководством автора проекта. Почему всё устроено именно так, объясняется в [docs/en/technical.md](docs/en/technical.md) (на английском), а набор тестов существует для того, чтобы никому не приходилось верить коду на слово.
 
 ## Лицензия
 

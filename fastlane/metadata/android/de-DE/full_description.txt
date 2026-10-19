@@ -36,4 +36,4 @@ Entwickelt mit Hilfe von Claude, dem KI-Assistenten von Anthropic. In der App se
 
 Quellcode und Dokumentation: https://github.com/fershibli/game-mega-app
 
-Verfügbar auf Englisch, Portugiesisch, Spanisch, Französisch, Italienisch, Deutsch, Russisch, Japanisch und Chinesisch.
+Verfügbar auf Englisch, Portugiesisch, Spanisch, Französisch, Italienisch, Deutsch, Russisch, Japanisch, Chinesisch und Arabisch.

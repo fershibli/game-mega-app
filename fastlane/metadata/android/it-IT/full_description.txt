@@ -36,4 +36,4 @@ Creato con l’aiuto di Claude, l’assistente di intelligenza artificiale di An
 
 Codice sorgente e documentazione: https://github.com/fershibli/game-mega-app
 
-Disponibile in inglese, portoghese, spagnolo, francese, italiano, tedesco, russo, giapponese e cinese.
+Disponibile in inglese, portoghese, spagnolo, francese, italiano, tedesco, russo, giapponese, cinese e arabo.
