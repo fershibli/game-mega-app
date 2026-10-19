@@ -42,7 +42,7 @@ Em outubro de 2026 o Google anunciou que apps criados no Google AI Studio podem 
 
 | Campo | Valor |
 |---|---|
-| Nome do app | `Mega Games` |
+| Nome do app | `Mili Games` |
 | Idioma padrão | à sua escolha (os textos estão prontos para en-US, pt-BR, es-419, fr-FR e zh-CN) |
 | App ou jogo | Jogo |
 | Gratuito ou pago | Gratuito |
@@ -85,14 +85,14 @@ Por padrão a Play reassina os apps com uma chave gerada pelo Google. Aí o APK 
 
 1. No Play Console, ao criar a primeira versão, abra as opções de assinatura do app e escolha usar **a sua própria chave**, *Exportar e enviar uma chave de um keystore Java*. Baixe `encryption_public_key.pem` e abra-o num editor de texto.
 2. Execute [Signing key](https://github.com/fershibli/game-mega-app/actions/workflows/signing-key.yml) com a ação `export-for-play`, colando o conteúdo do arquivo em `play_encryption_key`.
-3. Baixe o artefato `megagames-play-signing-key`, descompacte-o uma vez e envie o `megagames-play-signing-key.zip` de dentro no Play Console. Ele vem criptografado para o Google: só a Google Play consegue lê-lo.
+3. Baixe o artefato `miligames-play-signing-key`, descompacte-o uma vez e envie o `miligames-play-signing-key.zip` de dentro no Play Console. Ele vem criptografado para o Google: só a Google Play consegue lê-lo.
 
 ## 7. Teste fechado: 12 testadores por 14 dias
 
 Contas pessoais criadas depois de novembro de 2023 precisam [fazer um teste fechado](https://support.google.com/googleplay/android-developer/answer/14151465) com **pelo menos 12 testadores inscritos por 14 dias seguidos** antes de publicar para todos.
 
 1. *Testar e lançar → Teste fechado* → a faixa padrão *Alpha* → **Criar versão**.
-2. Envie o `MegaGames-vX.Y.Z.aab` da [última versão no GitHub](https://github.com/fershibli/game-mega-app/releases) (o primeiro pacote precisa ser enviado à mão).
+2. Envie o `MiliGames-vX.Y.Z.aab` da [última versão no GitHub](https://github.com/fershibli/game-mega-app/releases) (o primeiro pacote precisa ser enviado à mão).
 3. *Testadores*: crie uma lista de e-mails com 12 ou mais contas Google (família e amigos com Android), copie o link de participação e envie para eles. Cada um precisa abrir o link, aceitar e instalar o app.
 4. Envie a versão para revisão. Depois de 14 dias com 12 ou mais testadores, vá em *Painel → Solicitar acesso à produção* e responda às perguntas sobre o teste.
 
@@ -119,4 +119,4 @@ Nunca há envio com a chave de debug.
 
 Desde 30 de setembro de 2026, o Android no Brasil, Indonésia, Singapura e Tailândia exige que os apps das lojas participantes (inclusive a Google Play) sejam registrados por um desenvolvedor verificado; quem publica na Play é verificado pelo Play Console. Por enquanto isso não vale para APKs instalados diretamente (como os das versões do GitHub), mas o Google pretende estender a regra a todos os apps em 2027 ([detalhes](https://developer.android.com/developer-verification)).
 
-Para manter o APK do GitHub instalável pela família sem pagar nada, uma [conta de distribuição limitada](https://developer.android.com/developer-verification/guides/limited-distribution), gratuita, registra o pacote `io.github.fershibli.megagames` para até 20 aparelhos, sem documento e sem taxa.
+Para manter o APK do GitHub instalável pela família sem pagar nada, uma [conta de distribuição limitada](https://developer.android.com/developer-verification/guides/limited-distribution), gratuita, registra o pacote `io.github.fershibli.miligames` para até 20 aparelhos, sem documento e sem taxa.

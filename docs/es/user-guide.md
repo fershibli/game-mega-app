@@ -1,4 +1,4 @@
-# Mega Games — Guía de uso
+# Mili Games — Guía de uso
 
 🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · **Español** · [Français](../fr/user-guide.md) · [中文](../zh-CN/user-guide.md)
 
@@ -21,17 +21,17 @@ Esta guía está escrita para quienes juegan y para los familiares que les prepa
 
 ## Instalación
 
-Mega Games no está en una tienda de aplicaciones; se instala desde su página de GitHub. Es seguro siempre que lo descargues de la página oficial indicada abajo.
+Mili Games no está en una tienda de aplicaciones; se instala desde su página de GitHub. Es seguro siempre que lo descargues de la página oficial indicada abajo.
 
 1. En el teléfono Android, abre el navegador y entra en **https://github.com/fershibli/game-mega-app/releases**.
-2. En la versión más reciente, toca **`MegaGames-vX.Y.Z.apk`** para descargarlo.
+2. En la versión más reciente, toca **`MiliGames-vX.Y.Z.apk`** para descargarlo.
 3. Abre el archivo descargado (desde la notificación o desde la aplicación *Archivos / Descargas*).
 4. Puede que Android diga que el navegador "no tiene permiso para instalar aplicaciones desconocidas". Toca **Ajustes**, activa **Permitir de esta fuente**, vuelve y toca **Instalar**.
-5. Listo: el icono de **Mega Games** (una carta, un dado, un sudoku y dos fichas) aparece junto a tus otras aplicaciones.
+5. Listo: el icono de **Mili Games** (una carta, un dado, un sudoku y dos fichas) aparece junto a tus otras aplicaciones.
 
 **Para actualizar:** descarga el APK más nuevo e instálalo encima del anterior. Los ajustes se conservan.
 
-**Comprobación opcional:** cada versión incluye un `SHA256SUMS.txt`. Un familiar que sepa de informática puede compararlo con el archivo (`sha256sum MegaGames-*.apk`) para asegurarse de que no se ha modificado.
+**Comprobación opcional:** cada versión incluye un `SHA256SUMS.txt`. Un familiar que sepa de informática puede compararlo con el archivo (`sha256sum MiliGames-*.apk`) para asegurarse de que no se ha modificado.
 
 Requisitos: Android 6.0 o posterior, unos 5 MB libres. La aplicación nunca necesita internet.
 

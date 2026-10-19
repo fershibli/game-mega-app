@@ -2,7 +2,12 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/) and versions follow [Semantic Versioning](https://semver.org/).
 
-## [1.0.0] - Unreleased
+## [2.0.0] - Unreleased
+
+### Changed
+- The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
+
+## [1.0.0] - 2026-10-19
 
 ### Added
 - Ten games with Easy / Medium / Hard: Sudoku, Solitaire (Klondike), Buraco, Backgammon, Mahjong solitaire, Reversi, Crossword, Pipes, Connect and Dots.

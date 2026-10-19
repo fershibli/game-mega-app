@@ -139,7 +139,7 @@ class PlayAssetsTest {
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Column(Modifier.weight(1f)) {
-                        Text("Mega Games", color = Color.White, fontSize = 44.sp, fontWeight = FontWeight.Bold, lineHeight = 46.sp)
+                        Text("Mili Games", color = Color.White, fontSize = 44.sp, fontWeight = FontWeight.Bold, lineHeight = 46.sp)
                     }
                     Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                         for (row in GameId.entries.chunked(3).take(2)) {

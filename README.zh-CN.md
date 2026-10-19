@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mega Games
+# Mili Games
 
 **十款经典游戏，装在一个小巧、注重隐私的安卓应用里——专为老年人设计。**
 
@@ -75,7 +75,7 @@
 
 ## 安装
 
-1. 在安卓手机上打开 **[Releases](https://github.com/fershibli/game-mega-app/releases)**，下载最新的 `MegaGames-vX.Y.Z.apk`。
+1. 在安卓手机上打开 **[Releases](https://github.com/fershibli/game-mega-app/releases)**，下载最新的 `MiliGames-vX.Y.Z.apk`。
 2. 打开这个文件。如果系统提示，请允许浏览器或文件管理器“安装未知应用”。
 3. 可选：把文件的 SHA-256 与同一版本中的 `SHA256SUMS.txt` 对比。
 

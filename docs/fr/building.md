@@ -77,7 +77,7 @@ Le [pipeline de déploiement](#versionnage-et-déploiement) signe chaque APK et 
 **En local** : avec le fichier de la clé (issu d’une sauvegarde), créez `keystore.properties` à la racine du projet (ignoré par git) :
 
 ```properties
-storeFile=megagames-release.p12
+storeFile=miligames-release.p12
 storePassword=...
 keyAlias=megagames
 keyPassword=...
@@ -108,7 +108,7 @@ La première version est `1.0.0`. Branches :
 À chaque version :
 
 1. `versioning.yml` lit les commits depuis la dernière étiquette stable, choisit l’incrément, rédige des notes regroupées (changements incompatibles, nouveautés, corrections, performances, autres) et pousse une étiquette annotée `vX.Y.Z`.
-2. `deploy.yml` récupère cette étiquette, lance les tests et lint, compile l’APK final avec `-PappVersion=X.Y.Z`, le signe, le **vérifie** (signature, `versionName`, aucune autorisation demandée) et publie une Release GitHub avec `MegaGames-vX.Y.Z.apk`, `SHA256SUMS.txt` et les notes.
+2. `deploy.yml` récupère cette étiquette, lance les tests et lint, compile l’APK final avec `-PappVersion=X.Y.Z`, le signe, le **vérifie** (signature, `versionName`, aucune autorisation demandée) et publie une Release GitHub avec `MiliGames-vX.Y.Z.apk`, `SHA256SUMS.txt` et les notes.
 
 Le `versionCode` Android est dérivé de la version pour toujours augmenter : `MAJEUR×1 000 000 + MINEUR×10 000 + CORRECTIF×100 + n`, où `n` est le numéro de la rc, ou 99 pour la version finale (ainsi `1.5.0-rc.2` < `1.5.0`). MINEUR et CORRECTIF doivent rester inférieurs à 100.
 

@@ -24,7 +24,7 @@ android {
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "io.github.fershibli.megagames"
+        applicationId = "io.github.fershibli.miligames"
         minSdk = 23
         targetSdk = 37
         versionCode = appVersionCode

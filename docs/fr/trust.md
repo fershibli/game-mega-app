@@ -2,7 +2,7 @@
 
 🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · **Français** · [中文](../zh-CN/trust.md)
 
-Mega Games est conçue pour être installée sur le téléphone de personnes qui ne peuvent pas toujours juger une application elles-mêmes. Cette page explique ce que fait l’application et ce qu’elle ne fait pas — et surtout **comment chacun peut le vérifier** sans avoir à faire confiance à l’auteur.
+Mili Games est conçue pour être installée sur le téléphone de personnes qui ne peuvent pas toujours juger une application elles-mêmes. Cette page explique ce que fait l’application et ce qu’elle ne fait pas — et surtout **comment chacun peut le vérifier** sans avoir à faire confiance à l’auteur.
 
 ## Sommaire
 
@@ -44,7 +44,7 @@ Le bouton « Ouvrir la page du projet » (Réglages → À propos) demande simpl
 Le [manifeste](../../app/src/main/AndroidManifest.xml) ne déclare **aucun** `<uses-permission>`. Vous pouvez le vérifier sur n’importe quel APK avec le SDK Android :
 
 ```bash
-aapt2 dump permissions MegaGames-v1.0.0.apk
+aapt2 dump permissions MiliGames-v1.0.0.apk
 ```
 
 Une seule entrée apparaît, se terminant par `DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION`. Ce n’est pas une autorisation utilisateur : c’est une autorisation privée, au niveau de la signature, que la bibliothèque AndroidX ajoute automatiquement pour protéger les récepteurs internes de l’application contre les autres applications. Elle n’accorde rien à personne.
@@ -87,18 +87,18 @@ Lancez vous-même les mêmes vérifications : voir [building.md](building.md).
 
 ## Vérifier un APK téléchargé
 
-1. Téléchargez `MegaGames-vX.Y.Z.apk` et `SHA256SUMS.txt` depuis la même [version](https://github.com/fershibli/game-mega-app/releases).
+1. Téléchargez `MiliGames-vX.Y.Z.apk` et `SHA256SUMS.txt` depuis la même [version](https://github.com/fershibli/game-mega-app/releases).
 2. Calculez la somme de contrôle et comparez :
 
    ```bash
-   sha256sum MegaGames-vX.Y.Z.apk      # Linux / macOS : shasum -a 256
-   certutil -hashfile MegaGames-vX.Y.Z.apk SHA256   # Windows
+   sha256sum MiliGames-vX.Y.Z.apk      # Linux / macOS : shasum -a 256
+   certutil -hashfile MiliGames-vX.Y.Z.apk SHA256   # Windows
    ```
 
 3. Vérifiez que le certificat de signature reste le même d’une version à l’autre (Android refuse d’ailleurs de mettre à jour une application signée avec une autre clé) :
 
    ```bash
-   apksigner verify --print-certs MegaGames-vX.Y.Z.apk
+   apksigner verify --print-certs MiliGames-vX.Y.Z.apk
    ```
 
 4. Pour une garantie totale, compilez-la vous-même à partir du code de l’étiquette et comparez le contenu (`unzip -l`, `aapt2 dump badging`).

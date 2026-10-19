@@ -8,9 +8,10 @@
 #   - password changed    -> re-encrypts the SAME key with the new password;
 #   - nothing changed     -> does nothing.
 # It writes the secrets used by deploy.yml: MEGAGAMES_KEYSTORE_BASE64, MEGAGAMES_KEYSTORE_PASSWORD,
-# MEGAGAMES_KEY_PASSWORD. The key alias is "megagames" and is not a secret (GitHub hides every secret
-# value in the logs, so a secret "megagames" would hide the package name everywhere); an old
-# MEGAGAMES_KEY_ALIAS secret with that value is deleted.
+# MEGAGAMES_KEY_PASSWORD. The key alias is "megagames" (the app's first name, kept because the key
+# cannot change) and is not a secret: GitHub hides every secret value in the logs, so a secret
+# "megagames" would hide that word everywhere. An old MEGAGAMES_KEY_ALIAS secret with that value is
+# deleted.
 #
 # GitHub has no event for "a secret changed", so the check runs every hour (only on the default
 # branch) and can be started at any time with "Run workflow". Writing secrets needs a fine-grained
@@ -96,7 +97,7 @@ jobs:
           if [ -z "$KEYSTORE_BASE64" ]; then
             keytool -genkeypair -keystore "$ks" -storetype PKCS12 -alias "$alias" \
               -keyalg RSA -keysize 4096 -validity 36500 \
-              -dname "CN=Mega Games, O=$GITHUB_REPOSITORY_OWNER" \
+              -dname "CN=Mili Games, O=$GITHUB_REPOSITORY_OWNER" \
               -storepass:env NEW_PASS -keypass:env NEW_PASS
             change=created
           else
@@ -160,12 +161,12 @@ jobs:
           # Artifacts of a public repository can be downloaded by any signed-in GitHub user, so the
           # key (already protected by its password) is encrypted again with 600 000 PBKDF2 rounds.
           openssl enc -aes-256-cbc -pbkdf2 -iter 600000 -salt -pass env:NEW_PASS \
-            -in "$RUNNER_TEMP/release.p12" -out backup/megagames-release.p12.enc
+            -in "$RUNNER_TEMP/release.p12" -out backup/miligames-release.p12.enc
           {
             echo "### Backup"
-            echo "Download the **megagames-key-backup** artifact below (kept for 1 day), then:"
+            echo "Download the **miligames-key-backup** artifact below (kept for 1 day), then:"
             echo '```'
-            echo "openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 -in megagames-release.p12.enc -out megagames-release.p12"
+            echo "openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 -in miligames-release.p12.enc -out miligames-release.p12"
             echo '```'
             echo "Keep the file and the password in a password manager."
           } >> "$GITHUB_STEP_SUMMARY"
@@ -173,7 +174,7 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: inputs.action == 'backup'
         with:
-          name: megagames-key-backup
+          name: miligames-key-backup
           path: backup/
           retention-days: 1
 
@@ -201,18 +202,18 @@ jobs:
             || { echo "::error::pepk.jar changed upstream. Check the version linked from Play Console and update PEPK_SHA256."; exit 1; }
           mkdir -p play
           java -jar "$RUNNER_TEMP/pepk.jar" --keystore="$RUNNER_TEMP/release.p12" --alias="$KEY_ALIAS" \
-            --keystore-pass="$NEW_PASS" --output=play/megagames-play-signing-key.zip \
+            --keystore-pass="$NEW_PASS" --output=play/miligames-play-signing-key.zip \
             --include-cert --rsa-aes-encryption --encryption-key-path="$RUNNER_TEMP/play.pem"
           {
             echo "### Key for Google Play"
-            echo "Download the **megagames-play-signing-key** artifact, unzip it once and upload the inner"
-            echo "**megagames-play-signing-key.zip** in Play Console (App signing → Export and upload a key from Java keystore)."
+            echo "Download the **miligames-play-signing-key** artifact, unzip it once and upload the inner"
+            echo "**miligames-play-signing-key.zip** in Play Console (App signing → Export and upload a key from Java keystore)."
             echo "It is encrypted for Google, so only Google Play can read it."
           } >> "$GITHUB_STEP_SUMMARY"
 
       - uses: actions/upload-artifact@v7
         if: inputs.action == 'export-for-play'
         with:
-          name: megagames-play-signing-key
+          name: miligames-play-signing-key
           path: play/
           retention-days: 7

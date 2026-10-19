@@ -1,4 +1,4 @@
-# Mega Games 用户指南
+# Mili Games 用户指南
 
 🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · **中文**
 
@@ -21,17 +21,17 @@
 
 ## 安装
 
-Mega Games 没有上架应用商店，而是从 GitHub 页面安装。只要从下面的官方页面下载就是安全的。
+Mili Games 没有上架应用商店，而是从 GitHub 页面安装。只要从下面的官方页面下载就是安全的。
 
 1. 在安卓手机上打开浏览器，访问 **https://github.com/fershibli/game-mega-app/releases**。
-2. 在最新版本下，点 **`MegaGames-vX.Y.Z.apk`** 下载。
+2. 在最新版本下，点 **`MiliGames-vX.Y.Z.apk`** 下载。
 3. 打开下载的文件（从通知栏，或从“文件 / 下载”应用）。
 4. 系统可能提示浏览器“不允许安装未知应用”。点 **设置**，打开 **允许此来源**，返回后点 **安装**。
-5. 完成：**Mega Games** 的图标（一张牌、一个骰子、一个数独格和两颗棋子）会出现在其他应用旁边。
+5. 完成：**Mili Games** 的图标（一张牌、一个骰子、一个数独格和两颗棋子）会出现在其他应用旁边。
 
 **更新：** 下载新版 APK，直接覆盖安装。设置会保留。
 
-**可选验证：** 每个版本都有一个 `SHA256SUMS.txt`。懂电脑的家人可以用它和文件对比（`sha256sum MegaGames-*.apk`），确认文件没有被改动过。
+**可选验证：** 每个版本都有一个 `SHA256SUMS.txt`。懂电脑的家人可以用它和文件对比（`sha256sum MiliGames-*.apk`），确认文件没有被改动过。
 
 要求：Android 6.0 或更高版本，约 5 MB 可用空间。应用永远不需要联网。
 

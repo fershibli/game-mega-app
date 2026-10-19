@@ -91,7 +91,7 @@
     <string name="onehand_rotate_desc">Mantén el dedo y luego dibuja círculos: en sentido horario acerca, en sentido antihorario aleja. Toca dos veces y arrastra para moverte.</string>
     <string name="default_difficulty">Dificultad predeterminada</string>
     <string name="section_about">Acerca de</string>
-    <string name="about_text">Mega Games es gratuito y de código abierto. No tiene anuncios, ni cuentas, ni compras dentro de la aplicación.</string>
+    <string name="about_text">Mili Games es gratuito y de código abierto. No tiene anuncios, ni cuentas, ni compras dentro de la aplicación.</string>
     <string name="about_privacy">Privacidad: la aplicación no usa internet y no recoge ningún dato. Tus ajustes y tu partida actual se quedan solo en este teléfono.</string>
     <string name="about_ai">El código, el arte y los textos se crearon con la ayuda de Claude, el asistente de IA de Anthropic.</string>
     <string name="about_version">Versión %1$s</string>

@@ -1,4 +1,4 @@
-# Mega Games — Guide d’utilisation
+# Mili Games — Guide d’utilisation
 
 🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · **Français** · [中文](../zh-CN/user-guide.md)
 
@@ -21,17 +21,17 @@ Ce guide s’adresse aux joueurs et aux proches qui préparent le téléphone po
 
 ## Installation
 
-Mega Games n’est pas dans une boutique d’applications ; on l’installe depuis sa page GitHub. C’est sûr, à condition de le télécharger depuis la page officielle ci-dessous.
+Mili Games n’est pas dans une boutique d’applications ; on l’installe depuis sa page GitHub. C’est sûr, à condition de le télécharger depuis la page officielle ci-dessous.
 
 1. Sur le téléphone Android, ouvrez le navigateur et allez sur **https://github.com/fershibli/game-mega-app/releases**.
-2. Dans la version la plus récente, touchez **`MegaGames-vX.Y.Z.apk`** pour le télécharger.
+2. Dans la version la plus récente, touchez **`MiliGames-vX.Y.Z.apk`** pour le télécharger.
 3. Ouvrez le fichier téléchargé (depuis la notification ou l’application *Fichiers / Téléchargements*).
 4. Android peut indiquer que le navigateur « n’est pas autorisé à installer des applications inconnues ». Touchez **Paramètres**, activez **Autoriser cette source**, revenez et touchez **Installer**.
-5. C’est prêt : l’icône **Mega Games** (une carte, un dé, une grille de sudoku et deux pions) apparaît avec vos autres applications.
+5. C’est prêt : l’icône **Mili Games** (une carte, un dé, une grille de sudoku et deux pions) apparaît avec vos autres applications.
 
 **Mettre à jour :** téléchargez le nouvel APK et installez-le par-dessus l’ancien. Les réglages sont conservés.
 
-**Vérification facultative :** chaque version contient un `SHA256SUMS.txt`. Un proche à l’aise avec l’informatique peut le comparer au fichier (`sha256sum MegaGames-*.apk`) pour s’assurer qu’il n’a pas été modifié.
+**Vérification facultative :** chaque version contient un `SHA256SUMS.txt`. Un proche à l’aise avec l’informatique peut le comparer au fichier (`sha256sum MiliGames-*.apk`) pour s’assurer qu’il n’a pas été modifié.
 
 Configuration requise : Android 6.0 ou plus récent, environ 5 Mo libres. L’application n’a jamais besoin d’Internet.
 

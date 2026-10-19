@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Mega Games</string>
+    <string name="app_name" translatable="false">Mili Games</string>
 
     <!-- Navigation -->
     <string name="choose_game">Choose your game</string>
@@ -97,7 +97,7 @@
     <string name="onehand_rotate_desc">Touch and hold, then draw circles: clockwise zooms in, counter-clockwise zooms out. Double tap and drag to move.</string>
     <string name="default_difficulty">Default difficulty</string>
     <string name="section_about">About</string>
-    <string name="about_text">Mega Games is free and open source. It has no ads, no accounts and no in-app purchases.</string>
+    <string name="about_text">Mili Games is free and open source. It has no ads, no accounts and no in-app purchases.</string>
     <string name="about_privacy">Privacy: the app does not use the internet and collects no data. Your settings and your current game stay only on this phone.</string>
     <string name="about_ai">Code, artwork and texts were created with the help of Claude, the AI assistant made by Anthropic.</string>
     <string name="about_version">Version %1$s</string>

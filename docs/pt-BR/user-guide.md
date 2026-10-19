@@ -1,4 +1,4 @@
-# Mega Games — Guia do usuário
+# Mili Games — Guia do usuário
 
 🌐 [English](../en/user-guide.md) · **Português** · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [中文](../zh-CN/user-guide.md)
 
@@ -21,17 +21,17 @@ Este guia é para quem joga e para os familiares que preparam o celular para ele
 
 ## Instalação
 
-O Mega Games não está numa loja de apps; ele é instalado a partir da página no GitHub. É seguro, desde que você baixe da página oficial abaixo.
+O Mili Games não está numa loja de apps; ele é instalado a partir da página no GitHub. É seguro, desde que você baixe da página oficial abaixo.
 
 1. No celular Android, abra o navegador e entre em **https://github.com/fershibli/game-mega-app/releases**.
-2. Na versão mais nova, toque em **`MegaGames-vX.Y.Z.apk`** para baixar.
+2. Na versão mais nova, toque em **`MiliGames-vX.Y.Z.apk`** para baixar.
 3. Abra o arquivo baixado (pela notificação ou pelo app *Arquivos / Downloads*).
 4. O Android pode avisar que o navegador "não tem permissão para instalar apps desconhecidos". Toque em **Configurações**, ative **Permitir desta fonte**, volte e toque em **Instalar**.
-5. Pronto: o ícone do **Mega Games** (uma carta, um dado, um sudoku e duas pedrinhas) aparece junto com os outros apps.
+5. Pronto: o ícone do **Mili Games** (uma carta, um dado, um sudoku e duas pedrinhas) aparece junto com os outros apps.
 
 **Para atualizar:** baixe o APK mais novo e instale por cima do antigo. As configurações são mantidas.
 
-**Verificação opcional:** cada versão tem um `SHA256SUMS.txt`. Um parente que entenda de computador pode comparar com o arquivo (`sha256sum MegaGames-*.apk`) para ter certeza de que ele não foi alterado.
+**Verificação opcional:** cada versão tem um `SHA256SUMS.txt`. Um parente que entenda de computador pode comparar com o arquivo (`sha256sum MiliGames-*.apk`) para ter certeza de que ele não foi alterado.
 
 Requisitos: Android 6.0 ou mais novo, cerca de 5 MB livres. O app nunca precisa de internet.
 

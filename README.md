@@ -1,6 +1,6 @@
 <div align="center">
 
-# Mega Games
+# Mili Games
 
 **Ten classic games in one tiny, private Android app — designed for older adults.**
 
@@ -75,7 +75,7 @@ More: **[Accessibility section of the user guide](docs/en/user-guide.md#accessib
 
 ## Install
 
-1. Open **[Releases](https://github.com/fershibli/game-mega-app/releases)** on your Android phone and download the latest `MegaGames-vX.Y.Z.apk`.
+1. Open **[Releases](https://github.com/fershibli/game-mega-app/releases)** on your Android phone and download the latest `MiliGames-vX.Y.Z.apk`.
 2. Open the file. If Android asks, allow your browser/files app to "install unknown apps".
 3. Optional: compare the file's SHA-256 with `SHA256SUMS.txt` in the same release.
 

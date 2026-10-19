@@ -2,7 +2,7 @@
 
 🌐 English · Português · Español · Français · 中文 (below)
 
-Mega Games has no network access, no accounts and stores no personal data, so the attack surface is small. Still, if you find a vulnerability (for example a crafted save file that crashes the app or a problem in the build/release pipeline):
+Mili Games has no network access, no accounts and stores no personal data, so the attack surface is small. Still, if you find a vulnerability (for example a crafted save file that crashes the app or a problem in the build/release pipeline):
 
 - **Please report it privately** through GitHub: *Security → Report a vulnerability* on https://github.com/fershibli/game-mega-app/security/advisories/new
 - Do not open a public issue for security problems.
