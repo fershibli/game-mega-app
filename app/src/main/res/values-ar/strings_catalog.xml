@@ -6,4 +6,11 @@
     <string name="category_calm_action">حركة هادئة</string>
     <string name="category_pastimes">تسلية</string>
     <string name="choose_variant">بأي قواعد تلعب؟</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">قائمة الألعاب</string>
+    <string name="show_categories">التجميع حسب النوع</string>
+    <string name="show_categories_desc">تظهر الألعاب في مجموعات: ألعاب الورق وألعاب اللوحة والألغاز… أوقفه لعرض قائمة واحدة.</string>
+    <string name="recent_first">الأحدث لعبًا أولًا</string>
+    <string name="recent_first_desc">اللعبة التي تفتحها تنتقل إلى أول مجموعتها، وتنتقل مجموعتها إلى أول القائمة. يبقى الباقي بترتيبه، فتبقى ألعابك المفضلة في الأعلى.</string>
 </resources>

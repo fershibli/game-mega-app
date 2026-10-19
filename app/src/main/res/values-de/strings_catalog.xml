@@ -6,4 +6,11 @@
     <string name="category_calm_action">Ruhige Action</string>
     <string name="category_pastimes">Zeitvertreib</string>
     <string name="choose_variant">Nach welchen Regeln spielst du?</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">Spieleliste</string>
+    <string name="show_categories">Nach Kategorien gruppieren</string>
+    <string name="show_categories_desc">Die Spiele erscheinen in Gruppen: Karten, Brettspiele, Rätsel… Ausschalten für eine einzige Liste.</string>
+    <string name="recent_first">Zuletzt gespielte zuerst</string>
+    <string name="recent_first_desc">Das Spiel, das du öffnest, rückt an den Anfang seiner Gruppe, und die Gruppe an den Anfang der Liste. Der Rest behält seine Reihenfolge, so bleiben deine Lieblingsspiele oben.</string>
 </resources>

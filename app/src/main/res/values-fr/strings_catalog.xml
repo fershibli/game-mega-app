@@ -6,4 +6,11 @@
     <string name="category_calm_action">Action tranquille</string>
     <string name="category_pastimes">Passe-temps</string>
     <string name="choose_variant">Avec quelles règles jouez-vous ?</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">Liste des jeux</string>
+    <string name="show_categories">Regrouper par catégorie</string>
+    <string name="show_categories_desc">Les jeux sont rangés en groupes : cartes, jeux de plateau, casse-tête… Désactivez pour une seule liste.</string>
+    <string name="recent_first">Derniers joués en premier</string>
+    <string name="recent_first_desc">Le jeu que vous ouvrez remonte en tête de son groupe, et son groupe remonte en tête de la liste. Le reste garde son ordre : vos jeux préférés restent en haut.</string>
 </resources>

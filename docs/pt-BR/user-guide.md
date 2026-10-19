@@ -85,6 +85,8 @@ Todo tabuleiro pode ser ampliado.
 | ↳ *Toque duplo* | Toque duas vezes para ampliar: 2×, depois 3×, depois volta ao normal. Toque duas vezes **e arraste** para se mover. |
 | ↳ *Pressionar e girar* | Encoste e segure até o celular vibrar, depois faça círculos: no sentido horário amplia, no anti-horário diminui. Toque duas vezes e arraste para se mover; toque duas vezes para voltar ao normal. |
 | **Dificuldade padrão** | O nível que já vem marcado na roleta de dificuldade. |
+| **Separar por categoria** | Ligado: os jogos aparecem em grupos (cartas, tabuleiro, quebra-cabeças…). Desligado: uma lista única. |
+| **Últimos jogados primeiro** | Ligado: o jogo que você abre sobe para o começo do grupo dele, e o grupo sobe para o começo da lista; o resto mantém a ordem, então os preferidos ficam lá em cima. Os dois jeitos de ver guardam a própria ordem, então trocar não perde nada. Desligado: a ordem de sempre. |
 | **Sobre** | Versão, aviso de privacidade, link para este projeto, **Restaurar configurações padrão** e, no finalzinho, **Por que o Mili Games existe**: por que o app é e sempre será gratuito e sem propaganda, como ele foi feito (com a ajuda do Claude, sem nenhuma IA dentro do app) e um link para o código-fonte. |
 
 A lista de configurações começa mais para baixo na tela, e qualquer opção pode ser rolada para perto do polegar.

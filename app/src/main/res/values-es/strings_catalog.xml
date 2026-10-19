@@ -6,4 +6,11 @@
     <string name="category_calm_action">Acción tranquila</string>
     <string name="category_pastimes">Pasatiempos</string>
     <string name="choose_variant">¿Con qué reglas juegas?</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">Lista de juegos</string>
+    <string name="show_categories">Agrupar por categoría</string>
+    <string name="show_categories_desc">Los juegos se muestran en grupos: cartas, juegos de mesa, rompecabezas… Desactívalo para ver una sola lista.</string>
+    <string name="recent_first">Últimos jugados primero</string>
+    <string name="recent_first_desc">El juego que abres sube al principio de su grupo, y su grupo sube al principio de la lista. El resto mantiene su orden, así tus favoritos quedan arriba.</string>
 </resources>

@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames.ui
 
+import io.github.fershibli.megagames.ui.screens.HomeOrder
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -64,6 +65,7 @@ fun MegaGamesApp(
     var askResume by rememberSaveable { mutableStateOf(initial is Screen.Playing) }
 
     fun start(game: GameId, difficulty: Difficulty, variant: GameVariant?) {
+        choiceStore.recordPlayed(game)
         saveStore.clear()
         screen = Screen.Playing(game, difficulty, variant, null)
     }
@@ -84,6 +86,8 @@ fun MegaGamesApp(
                 Screen.Home -> HomeScreen(
                     onGame = { if (it.variants.isNotEmpty()) screen = Screen.ChooseVariant(it) else afterVariant(it, null) },
                     onSettings = { screen = Screen.Settings },
+                    // Read every time the home screen shows, so the game just played is already first.
+                    order = HomeOrder.of(settings, choiceStore),
                 )
                 Screen.Settings -> {
                     BackHandler { screen = Screen.Home }

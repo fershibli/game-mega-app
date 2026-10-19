@@ -77,6 +77,10 @@ data class Settings(
     val defaultDifficulty: Difficulty = Difficulty.EASY,
     /** Backgammon board standing up (bigger checkers) instead of the traditional horizontal one. */
     val backgammonUpright: Boolean = false,
+    /** Home screen: the games and the category played last come first. */
+    val recentFirst: Boolean = true,
+    /** Home screen: games grouped under category headings, or one single list. */
+    val showCategories: Boolean = true,
 ) {
     companion object {
         const val SCALE_MIN = 0.8f
@@ -104,6 +108,8 @@ class SettingsStore(context: Context) {
             oneHandZoom = enumOr(prefs.getString("oneHandZoom", null), d.oneHandZoom),
             defaultDifficulty = enumOr(prefs.getString("defaultDifficulty", null), d.defaultDifficulty),
             backgammonUpright = prefs.getBoolean("backgammonUpright", d.backgammonUpright),
+            recentFirst = prefs.getBoolean("recentFirst", d.recentFirst),
+            showCategories = prefs.getBoolean("showCategories", d.showCategories),
         )
     }
 
@@ -120,6 +126,8 @@ class SettingsStore(context: Context) {
             .putString("oneHandZoom", s.oneHandZoom.name)
             .putString("defaultDifficulty", s.defaultDifficulty.name)
             .putBoolean("backgammonUpright", s.backgammonUpright)
+            .putBoolean("recentFirst", s.recentFirst)
+            .putBoolean("showCategories", s.showCategories)
             .apply()
     }
 
@@ -128,11 +136,49 @@ class SettingsStore(context: Context) {
 }
 
 /**
- * Choices remembered between games that are not settings, such as the rules last picked for each
- * game, so the next time they come preselected and one tap starts the game.
+ * Choices remembered between games that are not settings: the rules last picked for each game
+ * (preselected next time, so one tap starts the game) and the order of the home screen.
  */
 class ChoiceStore(context: Context) {
     private val prefs: SharedPreferences = context.getSharedPreferences("choices", Context.MODE_PRIVATE)
+
+    /**
+     * Moves [game] to the front of its category, its category to the front of the home screen and
+     * the game to the front of the single list. Both layouts are always kept up to date, so turning
+     * the categories on or off never loses the order. Everything else keeps its relative order, so
+     * the games played most often stay near the top.
+     */
+    fun recordPlayed(game: GameId) {
+        val games = gamesIn(game.category)
+        val categories = categories()
+        val all = allGames()
+        prefs.edit()
+            .putString("order.${game.category.name}", (listOf(game) + (games - game)).joinToString(",") { it.key })
+            .putString("order.categories", (listOf(game.category) + (categories - game.category)).joinToString(",") { it.name })
+            .putString("order.all", (listOf(game) + (all - game)).joinToString(",") { it.key })
+            .apply()
+    }
+
+    /** Every game in one list, most recently played first; the others follow in the usual order. */
+    fun allGames(): List<GameId> {
+        val saved = prefs.getString("order.all", null).orEmpty().split(",").mapNotNull { GameId.fromKey(it) }
+        return saved + (catalogOrder() - saved.toSet())
+    }
+
+    /** Categories, most recently played first; the ones never played keep their usual order. */
+    fun categories(): List<GameCategory> {
+        val saved = prefs.getString("order.categories", null).orEmpty().split(",")
+            .mapNotNull { name -> GameCategory.entries.firstOrNull { it.name == name } }
+        return saved + (GameCategory.entries - saved.toSet())
+    }
+
+    /** Games of [category], most recently played first; games never played (or new) follow in their usual order. */
+    fun gamesIn(category: GameCategory): List<GameId> {
+        val all = GameId.entries.filter { it.category == category }
+        val saved = prefs.getString("order.${category.name}", null).orEmpty().split(",")
+            .mapNotNull { GameId.fromKey(it) }.filter { it in all }
+        return saved + (all - saved.toSet())
+    }
 
     fun lastVariant(game: GameId): String? = prefs.getString("variant.${game.key}", null)
 
@@ -140,6 +186,9 @@ class ChoiceStore(context: Context) {
         prefs.edit().putString("variant.${game.key}", variant.key).apply()
     }
 }
+
+/** The usual order of the games: category by category, as listed in [GameId]. */
+fun catalogOrder(): List<GameId> = GameCategory.entries.flatMap { c -> GameId.entries.filter { it.category == c } }
 
 /** The [ChoiceStore] of this app. */
 @Composable

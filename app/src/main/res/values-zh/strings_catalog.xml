@@ -6,4 +6,11 @@
     <string name="category_calm_action">轻松动作</string>
     <string name="category_pastimes">休闲</string>
     <string name="choose_variant">你按哪种规则玩？</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">游戏列表</string>
+    <string name="show_categories">按类别分组</string>
+    <string name="show_categories_desc">游戏按类别分组显示：纸牌、棋类、益智……关闭后显示为一个列表。</string>
+    <string name="recent_first">最近玩的在前</string>
+    <string name="recent_first_desc">你打开的游戏会移到所在分类的最前面，这个分类也会移到列表最前面。其余顺序不变，所以常玩的游戏会留在上面。</string>
 </resources>
