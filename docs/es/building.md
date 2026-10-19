@@ -68,36 +68,24 @@ Enfrenta a los rivales del ordenador entre sí (Buraco, Backgammon, Reversi) y m
 
 ## Versiones firmadas
 
-Android solo instala APK firmados, y las actualizaciones deben firmarse con la **misma clave**. Guarda bien la clave: si se pierde, quienes usen la aplicación tendrán que desinstalarla para instalar una versión nueva.
+Android solo instala APK firmados, y las actualizaciones deben firmarse con la **misma clave**. Si la clave se pierde, quienes usen la aplicación tendrán que desinstalarla para instalar una nueva versión.
 
-1. **Crea la clave una sola vez** (guarda el archivo y las contraseñas en un gestor de contraseñas):
+**En GitHub (recomendado)**: el workflow [`signing-key.yml`](../../.github/workflows/signing-key.yml) crea la clave, la guarda en los secretos del repositorio y la vuelve a cifrar cada vez que cambias la contraseña en el secreto `MEGAGAMES_SIGNING_PASSWORD`. Nunca sustituye una clave existente y puede hacer una copia de seguridad cifrada. Configuración (un token y dos clics): [google-play.md → Signing key](../en/google-play.md#1-signing-key) (en inglés).
 
-   ```bash
-   keytool -genkeypair -v -keystore megagames-release.jks -alias megagames \
-     -keyalg RSA -keysize 4096 -validity 36500
-   ```
+El [pipeline de despliegue](#versionado-y-despliegue) firma cada APK y AAB con esa clave. Sin ella, las versiones candidatas (`stag`) se siguen publicando, firmadas con una clave de depuración temporal y señaladas así en las notas de la versión, pero una versión estable (`main`) nunca se publica: la ejecución falla antes de crear la etiqueta, y basta con crear la clave y volver a ejecutarla.
 
-2. **Firma local**: crea `keystore.properties` en la raíz del proyecto (git lo ignora):
+**En local**: con el archivo de la clave (de una copia de seguridad), crea `keystore.properties` en la raíz del proyecto (git lo ignora):
 
-   ```properties
-   storeFile=megagames-release.jks
-   storePassword=...
-   keyAlias=megagames
-   keyPassword=...
-   ```
+```properties
+storeFile=megagames-release.p12
+storePassword=...
+keyAlias=megagames
+keyPassword=...
+```
 
-   Después `./gradlew assembleRelease` genera `app/build/outputs/apk/release/app-release.apk`.
+Después, `./gradlew assembleRelease bundleRelease` genera `app/build/outputs/apk/release/app-release.apk` y `app/build/outputs/bundle/release/app-release.aab`.
 
-3. **Versiones desde GitHub**: crea cuatro secretos en el repositorio (*Settings → Secrets and variables → Actions*):
-
-   | Secreto | Valor |
-   |---|---|
-   | `MEGAGAMES_KEYSTORE_BASE64` | salida de `base64 -w0 megagames-release.jks` |
-   | `MEGAGAMES_KEYSTORE_PASSWORD` | contraseña del almacén |
-   | `MEGAGAMES_KEY_ALIAS` | `megagames` |
-   | `MEGAGAMES_KEY_PASSWORD` | contraseña de la clave |
-
-   Con estos secretos, el [pipeline de despliegue](#versionado-y-despliegue) firma cada APK con la clave real. Sin ellos, las versiones candidatas (`stag`) se siguen publicando, firmadas con una clave de depuración temporal y señaladas así en las notas de la versión, pero una versión estable (`main`) no se publica: la ejecución falla antes de crear la etiqueta, y basta con añadir los secretos y volver a ejecutarla.
+**Google Play**: guía paso a paso, con las respuestas de cada formulario de Play Console: [google-play.md](../en/google-play.md) (en inglés).
 
 ## Versionado y despliegue
 

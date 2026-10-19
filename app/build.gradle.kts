@@ -85,6 +85,9 @@ android {
                 it.systemProperty("screenshots", project.findProperty("screenshots") ?: "false")
                 it.systemProperty("benchmarks", project.findProperty("benchmarks") ?: "false")
                 it.systemProperty("screenshotDir", rootProject.layout.projectDirectory.dir("docs/screenshots").asFile.absolutePath)
+                // Google Play graphics, also on request: ./gradlew :app:testDebugUnitTest -PplayAssets=true --tests '*PlayAssetsTest*'
+                it.systemProperty("playAssets", project.findProperty("playAssets") ?: "false")
+                it.systemProperty("playAssetsDir", rootProject.layout.projectDirectory.dir("fastlane/metadata/android").asFile.absolutePath)
             }
         }
     }

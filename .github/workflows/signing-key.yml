@@ -1,0 +1,216 @@
+# Signing key: creates the app's release key and keeps its password in sync with the
+# MEGAGAMES_SIGNING_PASSWORD secret, so nobody ever has to run keytool by hand.
+#
+# Android only installs an update when it is signed with the SAME key as the installed app, so this
+# workflow never replaces an existing key. What it does:
+#   - no key yet          -> creates one (RSA 4096, valid 100 years). If MEGAGAMES_SIGNING_PASSWORD
+#                            is empty it starts with a random temporary password and stores it there;
+#   - password changed    -> re-encrypts the SAME key with the new password;
+#   - nothing changed     -> does nothing.
+# It writes the secrets used by deploy.yml: MEGAGAMES_KEYSTORE_BASE64, MEGAGAMES_KEYSTORE_PASSWORD,
+# MEGAGAMES_KEY_PASSWORD and MEGAGAMES_KEY_ALIAS.
+#
+# GitHub has no event for "a secret changed", so the check runs every hour (only on the default
+# branch) and can be started at any time with "Run workflow". Writing secrets needs a fine-grained
+# token with "Secrets: Read and write" on this repository, stored as MEGAGAMES_SECRETS_TOKEN.
+#
+# "Run workflow" also offers:
+#   - backup:          the key encrypted with your password, as an artifact kept for 1 day;
+#   - export-for-play: the key encrypted for Google Play (pepk), to use the same key on the Play
+#                      Store. Paste the content of Play Console's encryption_public_key.pem.
+# See docs/en/google-play.md.
+name: Signing key
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "sync = create or update the key; backup = download it; export-for-play = encrypt it for Google Play"
+        type: choice
+        options: [sync, backup, export-for-play]
+        default: sync
+      play_encryption_key:
+        description: "export-for-play only: content of encryption_public_key.pem from Play Console"
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: signing-key
+  cancel-in-progress: false
+
+env:
+  # Google's pepk tool, pinned by checksum. If Google publishes a new version this check fails on
+  # purpose: compare with the jar linked from Play Console and update the hash.
+  PEPK_URL: https://www.gstatic.com/play-apps-publisher-rapid/signing-tool/prod/pepk.jar
+  PEPK_SHA256: aaccc0774b240aa5304bdad2a49865e92f229ca73209ecb6eaafe75dc858e24e
+
+jobs:
+  key:
+    name: Create or update the release key
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Sync the key with MEGAGAMES_SIGNING_PASSWORD
+        id: sync
+        env:
+          GH_TOKEN: ${{ secrets.MEGAGAMES_SECRETS_TOKEN }}
+          SIGNING_PASSWORD: ${{ secrets.MEGAGAMES_SIGNING_PASSWORD }}
+          KEYSTORE_BASE64: ${{ secrets.MEGAGAMES_KEYSTORE_BASE64 }}
+          CURRENT: ${{ secrets.MEGAGAMES_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.MEGAGAMES_KEY_ALIAS }}
+        run: |
+          set -euo pipefail
+          die() { echo "::error::$*"; exit 1; }
+          if [ -z "$GH_TOKEN" ]; then
+            msg="MEGAGAMES_SECRETS_TOKEN is not set, so the key cannot be created or updated. See docs/en/google-play.md#1-signing-key"
+            # Before the setup is done the hourly check stays quiet instead of failing every hour.
+            if [ "$GITHUB_EVENT_NAME" = schedule ]; then echo "::notice::$msg"; exit 0; fi
+            die "$msg"
+          fi
+          put() { printf '%s' "$2" | gh secret set "$1" --repo "$GITHUB_REPOSITORY"; }
+          alias=${KEY_ALIAS:-megagames}
+          ks="$RUNNER_TEMP/release.p12"
+
+          wanted=$SIGNING_PASSWORD
+          generated=false
+          if [ -z "$wanted" ]; then
+            if [ -n "$KEYSTORE_BASE64" ] && [ -n "$CURRENT" ]; then
+              wanted=$CURRENT
+            else
+              wanted=$(openssl rand -base64 48 | tr -dc 'A-Za-z0-9' | head -c 32)
+              generated=true
+            fi
+          fi
+          echo "::add-mask::$wanted"
+          [ "${#wanted}" -ge 16 ] || die "MEGAGAMES_SIGNING_PASSWORD must have at least 16 characters."
+          export NEW_PASS="$wanted" OLD_PASS="$CURRENT"
+          opens() { keytool -list -keystore "$ks" -storetype PKCS12 -storepass:env "$1" >/dev/null 2>&1; }
+
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            keytool -genkeypair -keystore "$ks" -storetype PKCS12 -alias "$alias" \
+              -keyalg RSA -keysize 4096 -validity 36500 \
+              -dname "CN=Mega Games, O=$GITHUB_REPOSITORY_OWNER" \
+              -storepass:env NEW_PASS -keypass:env NEW_PASS
+            change=created
+          else
+            printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$ks"
+            if opens NEW_PASS; then
+              if [ "$CURRENT" = "$wanted" ]; then change=none; else change=passwords; fi
+            elif [ -n "$CURRENT" ] && opens OLD_PASS; then
+              keytool -storepasswd -keystore "$ks" -storetype PKCS12 -storepass:env OLD_PASS -new:env NEW_PASS
+              opens NEW_PASS || die "Re-encrypting the key failed; nothing was changed."
+              change=re-encrypted
+            else
+              # Never replace an existing key: phones would refuse every future update.
+              die "The stored key opens neither with MEGAGAMES_SIGNING_PASSWORD nor with MEGAGAMES_KEYSTORE_PASSWORD. Put the previous password back in MEGAGAMES_SIGNING_PASSWORD, or restore the key from a backup. The key was NOT replaced."
+            fi
+          fi
+
+          # Prove the key can sign before storing anything.
+          (cd "$RUNNER_TEMP" && printf 'ok' > probe.txt && zip -q probe.jar probe.txt)
+          jarsigner -keystore "$ks" -storetype PKCS12 -storepass:env NEW_PASS "$RUNNER_TEMP/probe.jar" "$alias" >/dev/null \
+            || die "The key cannot sign; nothing was changed."
+
+          if [ "$change" != none ]; then
+            [ "$change" = passwords ] || put MEGAGAMES_KEYSTORE_BASE64 "$(base64 -w0 "$ks")"
+            put MEGAGAMES_KEYSTORE_PASSWORD "$wanted"
+            put MEGAGAMES_KEY_PASSWORD "$wanted"
+            put MEGAGAMES_KEY_ALIAS "$alias"
+            if [ "$generated" = true ]; then put MEGAGAMES_SIGNING_PASSWORD "$wanted"; fi
+          fi
+
+          fingerprint=$(keytool -list -v -keystore "$ks" -storetype PKCS12 -storepass:env NEW_PASS -alias "$alias" | sed -n 's/^[[:space:]]*SHA256: //p')
+          {
+            echo "### Release key: $change"
+            echo
+            case "$change" in
+              created) echo "A new key was created$([ "$generated" = true ] && echo " with a random temporary password (stored in MEGAGAMES_SIGNING_PASSWORD; replace it with your own whenever you like)")." ;;
+              re-encrypted) echo "The same key now uses the new password from MEGAGAMES_SIGNING_PASSWORD." ;;
+              passwords) echo "The deploy secrets were updated to the current password." ;;
+              none) echo "Nothing changed." ;;
+            esac
+            echo
+            echo "Certificate SHA-256: \`$fingerprint\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "Release key: $change ($fingerprint)"
+          echo "alias=$alias" >> "$GITHUB_OUTPUT"
+          echo "generated=$generated" >> "$GITHUB_OUTPUT"
+          # For the backup and export steps below (the runner is discarded at the end of the job).
+          (umask 077 && printf '%s' "$wanted" > "$RUNNER_TEMP/key-pass")
+
+      - name: Backup (encrypted with your password)
+        if: inputs.action == 'backup'
+        env:
+          GENERATED: ${{ steps.sync.outputs.generated }}
+        run: |
+          set -euo pipefail
+          NEW_PASS=$(cat "$RUNNER_TEMP/key-pass"); export NEW_PASS
+          if [ "$GENERATED" = true ] || [ "${#NEW_PASS}" -lt 20 ]; then
+            echo "::error::Set your own password (20 characters or more) in MEGAGAMES_SIGNING_PASSWORD and run 'sync' first: only you must be able to open the backup."
+            exit 1
+          fi
+          mkdir -p backup
+          # Artifacts of a public repository can be downloaded by any signed-in GitHub user, so the
+          # key (already protected by its password) is encrypted again with 600 000 PBKDF2 rounds.
+          openssl enc -aes-256-cbc -pbkdf2 -iter 600000 -salt -pass env:NEW_PASS \
+            -in "$RUNNER_TEMP/release.p12" -out backup/megagames-release.p12.enc
+          {
+            echo "### Backup"
+            echo "Download the **megagames-key-backup** artifact below (kept for 1 day), then:"
+            echo '```'
+            echo "openssl enc -d -aes-256-cbc -pbkdf2 -iter 600000 -in megagames-release.p12.enc -out megagames-release.p12"
+            echo '```'
+            echo "Keep the file and the password in a password manager."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v7
+        if: inputs.action == 'backup'
+        with:
+          name: megagames-key-backup
+          path: backup/
+          retention-days: 1
+
+      - uses: actions/setup-java@v5
+        if: inputs.action == 'export-for-play'
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Export the key for Google Play (pepk)
+        if: inputs.action == 'export-for-play'
+        env:
+          PLAY_KEY: ${{ inputs.play_encryption_key }}
+          KEY_ALIAS: ${{ steps.sync.outputs.alias }}
+        run: |
+          set -euo pipefail
+          NEW_PASS=$(cat "$RUNNER_TEMP/key-pass")
+          [ -n "$PLAY_KEY" ] || { echo "::error::Paste the content of encryption_public_key.pem (Play Console) in play_encryption_key."; exit 1; }
+          # The form field is one line, so rebuild the PEM from its base64 body.
+          body=$(printf '%s' "$PLAY_KEY" | sed -e 's/-----[A-Z ]*-----//g' | tr -d ' \r\n\t')
+          { echo "-----BEGIN PUBLIC KEY-----"; printf '%s\n' "$body" | fold -w 64; echo "-----END PUBLIC KEY-----"; } > "$RUNNER_TEMP/play.pem"
+          openssl pkey -pubin -in "$RUNNER_TEMP/play.pem" -noout || { echo "::error::play_encryption_key is not a valid public key."; exit 1; }
+          curl -fsSL -o "$RUNNER_TEMP/pepk.jar" "$PEPK_URL"
+          echo "$PEPK_SHA256  $RUNNER_TEMP/pepk.jar" | sha256sum -c - \
+            || { echo "::error::pepk.jar changed upstream. Check the version linked from Play Console and update PEPK_SHA256."; exit 1; }
+          mkdir -p play
+          java -jar "$RUNNER_TEMP/pepk.jar" --keystore="$RUNNER_TEMP/release.p12" --alias="$KEY_ALIAS" \
+            --keystore-pass="$NEW_PASS" --output=play/megagames-play-signing-key.zip \
+            --include-cert --rsa-aes-encryption --encryption-key-path="$RUNNER_TEMP/play.pem"
+          {
+            echo "### Key for Google Play"
+            echo "Download the **megagames-play-signing-key** artifact, unzip it once and upload the inner"
+            echo "**megagames-play-signing-key.zip** in Play Console (App signing → Export and upload a key from Java keystore)."
+            echo "It is encrypted for Google, so only Google Play can read it."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@v7
+        if: inputs.action == 'export-for-play'
+        with:
+          name: megagames-play-signing-key
+          path: play/
+          retention-days: 7

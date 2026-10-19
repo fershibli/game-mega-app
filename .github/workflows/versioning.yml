@@ -170,7 +170,7 @@ jobs:
           KEYSTORE_BASE64: ${{ secrets.MEGAGAMES_KEYSTORE_BASE64 }}
         run: |
           if [ -z "$KEYSTORE_BASE64" ]; then
-            echo "::error::Stable versions must be signed with the release key, but the signing secrets are not set. See docs/en/building.md#signed-releases"
+            echo "::error::Stable versions must be signed with the release key, but the signing secrets are not set. Run the Signing key workflow: docs/en/google-play.md#1-signing-key"
             exit 1
           fi
 

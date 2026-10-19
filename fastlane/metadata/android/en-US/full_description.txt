@@ -1,0 +1,32 @@
+Ten classic games in one small app, designed so older adults can play comfortably: big pieces, clear contrast, zoom on every board and buttons within reach of the thumb.
+
+GAMES
+• Sudoku
+• Solitaire (Klondike)
+• Buraco (with a computer opponent)
+• Backgammon (with a computer opponent)
+• Mahjong solitaire
+• Reversi (with a computer opponent)
+• Crossword
+• Pipes
+• Connect the colors
+• Dots
+
+Every game has Easy, Medium and Hard. Puzzles are generated on the phone, so they never repeat, and every one of them can be solved.
+
+EASY ON THE EYES AND HANDS
+• Pinch to zoom and move around any board (or double-tap / press and turn with one hand)
+• Bigger text and bigger pieces, from 80 % to 160 %
+• Normal, high-contrast and color-blind friendly colors, each with a dark mode
+• Left-handed mode and one-hand mode
+• No timers and no rush
+
+YOUR GAME IS ALWAYS SAVED
+Close the app by accident? It asks if you want to continue where you left off.
+
+PRIVATE AND FREE
+• No ads, no purchases, no account
+• No internet permission and no data collected
+• Open source: anyone can read the code and check it
+
+Available in English, Portuguese, Spanish, French and Chinese.

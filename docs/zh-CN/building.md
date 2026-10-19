@@ -68,36 +68,24 @@ README 中的所有图片都由真实代码渲染：
 
 ## 签名发布
 
-安卓只安装已签名的 APK，而且更新必须使用**同一把密钥**签名。请妥善保管密钥：一旦丢失，用户必须卸载后才能安装新版本。
+安卓只安装已签名的 APK，而且更新必须使用**同一把密钥**签名。密钥一旦丢失，用户必须卸载后才能安装新版本。
 
-1. **只需创建一次密钥**（把文件和密码保存在密码管理器中）：
+**在 GitHub 上（推荐）**：[`signing-key.yml`](../../.github/workflows/signing-key.yml) 工作流会创建密钥并保存在仓库的 Secrets 中；每当你修改 `MEGAGAMES_SIGNING_PASSWORD` 中的密码，它会用新密码重新加密同一把密钥。它从不替换已有的密钥，还可以生成加密备份。设置方法（一个令牌、点两下）：[google-play.md → Signing key](../en/google-play.md#1-signing-key)（英文）。
 
-   ```bash
-   keytool -genkeypair -v -keystore megagames-release.jks -alias megagames \
-     -keyalg RSA -keysize 4096 -validity 36500
-   ```
+[部署流水线](#版本管理与部署) 用这把密钥为每个 APK 和 AAB 签名。没有它时，候选版（`stag`）仍然会发布，但使用临时调试密钥签名，并在版本说明中明确标注；正式版（`main`）则不会发布：流水线会在创建标签之前失败，创建密钥后重新运行即可。
 
-2. **本地签名**：在项目根目录创建 `keystore.properties`（已被 git 忽略）：
+**本地签名**：拿到密钥文件（来自备份）后，在项目根目录创建 `keystore.properties`（已被 git 忽略）：
 
-   ```properties
-   storeFile=megagames-release.jks
-   storePassword=...
-   keyAlias=megagames
-   keyPassword=...
-   ```
+```properties
+storeFile=megagames-release.p12
+storePassword=...
+keyAlias=megagames
+keyPassword=...
+```
 
-   然后 `./gradlew assembleRelease` 会生成 `app/build/outputs/apk/release/app-release.apk`。
+然后 `./gradlew assembleRelease bundleRelease` 会生成 `app/build/outputs/apk/release/app-release.apk` 和 `app/build/outputs/bundle/release/app-release.aab`。
 
-3. **通过 GitHub 发布**：在仓库中添加四个 Secrets（*Settings → Secrets and variables → Actions*）：
-
-   | Secret | 值 |
-   |---|---|
-   | `MEGAGAMES_KEYSTORE_BASE64` | `base64 -w0 megagames-release.jks` 的输出 |
-   | `MEGAGAMES_KEYSTORE_PASSWORD` | 密钥库密码 |
-   | `MEGAGAMES_KEY_ALIAS` | `megagames` |
-   | `MEGAGAMES_KEY_PASSWORD` | 密钥密码 |
-
-   配置这些 Secrets 后，[部署流水线](#版本管理与部署) 会用正式密钥为每个 APK 签名。没有它们时，候选版（`stag`）仍然会发布，但使用临时调试密钥签名，并在版本说明中明确标注；正式版（`main`）则不会发布：流水线会在创建标签之前失败，添加 Secrets 后重新运行即可。
+**Google Play**：包含 Play Console 每个表单答案的分步指南：[google-play.md](../en/google-play.md)（英文）。
 
 ## 版本管理与部署
 

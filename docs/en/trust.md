@@ -108,7 +108,7 @@ Run the same checks yourself: see [building.md](building.md).
 - `distributionSha256Sum` pins the exact Gradle distribution in [`gradle-wrapper.properties`](../../gradle/wrapper/gradle-wrapper.properties).
 - Dependencies come only from Google's Maven repository and Maven Central (`repositoriesMode = FAIL_ON_PROJECT_REPOS`).
 - [Dependabot](../../.github/dependabot.yml) proposes dependency and GitHub Actions updates every month.
-- CI runs with read-only permissions; only the versioning and deploy workflows can write, and only to push the version tag and publish the release.
+- CI runs with read-only permissions; only the versioning and deploy workflows can write, and only to push the version tag and publish the release. The signing key workflow writes only the signing secrets, with a token limited to this repository's secrets.
 - Every published APK is verified in the pipeline before upload: signature (`apksigner`), version name, and that it requests no permissions (`aapt2`).
 - Release signing keys live in GitHub encrypted secrets and are never committed (`*.jks`, `keystore.properties` are git-ignored).
 
