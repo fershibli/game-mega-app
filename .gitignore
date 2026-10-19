@@ -10,4 +10,6 @@
 .cxx/
 *.keystore
 *.jks
+*.p12
+*.p12.enc
 keystore.properties
