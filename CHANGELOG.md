@@ -14,4 +14,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - Documentation in five languages, CI, Dependabot.
 - Automatic semantic versioning from Conventional Commits (`versioning.yml`) and an APK deploy pipeline (`deploy.yml`) that tests, signs, verifies and publishes each release.
 
+### Fixed
+- Sudoku: after the first tap on the board, selecting another cell could erase the numbers placed since then.
+
 > From now on, the notes of every version are generated automatically from the commits and published on the [GitHub Releases](https://github.com/fershibli/game-mega-app/releases) page.

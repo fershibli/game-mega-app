@@ -12,13 +12,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
@@ -135,7 +138,7 @@ private fun SudokuScreen(state: MutableState<SudokuState>, host: GameHost) {
     ) {
         BoxWithConstraints(Modifier.fillMaxSize().padding(8.dp), contentAlignment = Alignment.Center) {
             val side = minOf(maxWidth, maxHeight)
-            SudokuBoard(s, showErrors, Modifier.size(side)) { state.value = s.copy(selected = it) }
+            SudokuBoard(s, showErrors, Modifier.size(side).testTag("sudoku-board")) { state.value = state.value.copy(selected = it) }
         }
     }
 }
@@ -145,13 +148,16 @@ private fun SudokuBoard(s: SudokuState, showErrors: Boolean, modifier: Modifier,
     val p = LocalPalette.current
     val measurer = rememberTextMeasurer()
     val conflicts = remember(s.values) { SudokuEngine.conflicts(s.values) }
+    // The tap detector below lives as long as the board, so it must always call the latest
+    // callback: a stale one would bring back the state of the first tap and erase new numbers.
+    val select by rememberUpdatedState(onSelect)
     Canvas(
         modifier.pointerInput(Unit) {
             detectTapGestures { pos ->
                 val cell = size.width / 9f
                 val c = (pos.x / cell).toInt().coerceIn(0, 8)
                 val r = (pos.y / cell).toInt().coerceIn(0, 8)
-                onSelect(r * 9 + c)
+                select(r * 9 + c)
             }
         },
     ) {

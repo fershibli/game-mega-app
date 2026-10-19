@@ -7,10 +7,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.click
 import androidx.compose.ui.test.doubleClick
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -20,15 +22,20 @@ import androidx.compose.ui.test.pinch
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.core.SavedGame
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.SettingsStore
+import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.games.sudoku.SudokuState
+import io.github.fershibli.megagames.games.sudoku.newSudoku
 import io.github.fershibli.megagames.ui.MegaGamesApp
 import io.github.fershibli.megagames.ui.components.ZoomState
 import io.github.fershibli.megagames.ui.components.ZoomableBoard
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
+import kotlin.random.Random
 import kotlinx.serialization.json.JsonPrimitive
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -169,4 +176,43 @@ class AppFlowTest {
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
         assertTrue(saves.load() != null)
     }
+
+    @Test
+    fun sudokuKeepsEveryNumberWhileMovingBetweenCells() {
+        // Regression: the board's tap handler kept the state from its first tap, so selecting a
+        // cell later brought back that old state and erased the numbers placed since then.
+        val store = SaveStore(app).apply { clear() }
+        val puzzle = newSudoku(Difficulty.EASY, Random(7))
+        val empty = (0 until 81).filter { puzzle.givens[it] == 0 }.take(4)
+        val host = GameHost(GameId.SUDOKU, Difficulty.EASY, AppJson.encodeToJsonElement(SudokuState.serializer(), puzzle), store) {}
+        rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.SUDOKU, host) } }
+        rule.waitForIdle()
+        for (cell in empty) {
+            rule.onNodeWithTag("sudoku-board").performTouchInput {
+                val side = width / 9f
+                click(Offset((cell % 9 + 0.5f) * side, (cell / 9 + 0.5f) * side))
+            }
+            rule.waitForIdle()
+            rule.onAllNodesWithText(puzzle.solution[cell].toString()).onFirst().performClick()
+            rule.waitForIdle()
+        }
+        // Finally select a given cell, which must not change any value.
+        val given = (0 until 81).first { puzzle.givens[it] != 0 }
+        rule.onNodeWithTag("sudoku-board").performTouchInput {
+            val side = width / 9f
+            click(Offset((given % 9 + 0.5f) * side, (given / 9 + 0.5f) * side))
+        }
+        rule.waitForIdle()
+        var saved: SudokuState? = null
+        for (attempt in 0 until 50) {
+            Thread.sleep(20)
+            saved = store.load()?.let { AppJson.decodeFromJsonElement(SudokuState.serializer(), it.state) }
+            if (saved?.selected == given) break
+        }
+        assertEquals(given, saved?.selected)
+        assertEquals(empty.map { puzzle.solution[it] }, empty.map { saved?.values?.get(it) })
+        store.clear()
+    }
+
+
 }
