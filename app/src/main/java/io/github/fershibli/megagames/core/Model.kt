@@ -10,21 +10,47 @@ enum class Difficulty(@StringRes val label: Int) {
     HARD(R.string.difficulty_hard),
 }
 
+/** Groups shown on the home screen, in this order. */
+enum class GameCategory(@StringRes val label: Int) {
+    CARDS(R.string.category_cards),
+    BOARD(R.string.category_board),
+    PUZZLES(R.string.category_puzzles),
+    CALM_ACTION(R.string.category_calm_action),
+    PASTIMES(R.string.category_pastimes),
+}
+
+/**
+ * A set of rules a game can be played with (regional rules of checkers, cacheta, truco...).
+ * The [key] is persisted in save files and in the remembered choice, so it must never change.
+ */
+data class GameVariant(val key: String, @StringRes val name: Int, @StringRes val description: Int)
+
 /**
  * Every game shipped in the app. The [key] is persisted in save files, so it must never change
- * once released.
+ * once released. A game with [variants] asks which rules to use before the difficulty (the last
+ * choice comes preselected); a game without [hasDifficulty] (a pet, a farm) starts right away.
  */
-enum class GameId(val key: String, @StringRes val title: Int, @StringRes val howTo: Int) {
-    SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku),
-    SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire),
-    BURACO("buraco", R.string.game_buraco, R.string.howto_buraco),
-    BACKGAMMON("backgammon", R.string.game_backgammon, R.string.howto_backgammon),
-    MAHJONG("mahjong", R.string.game_mahjong, R.string.howto_mahjong),
-    REVERSI("reversi", R.string.game_reversi, R.string.howto_reversi),
-    CROSSWORD("crossword", R.string.game_crossword, R.string.howto_crossword),
-    PIPES("pipes", R.string.game_pipes, R.string.howto_pipes),
-    CONNECT("connect", R.string.game_connect, R.string.howto_connect),
-    DOTS("dots", R.string.game_dots, R.string.howto_dots);
+enum class GameId(
+    val key: String,
+    @StringRes val title: Int,
+    @StringRes val howTo: Int,
+    val category: GameCategory,
+    val variants: List<GameVariant> = emptyList(),
+    val hasDifficulty: Boolean = true,
+) {
+    SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku, GameCategory.PUZZLES),
+    SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire, GameCategory.CARDS),
+    BURACO("buraco", R.string.game_buraco, R.string.howto_buraco, GameCategory.CARDS),
+    BACKGAMMON("backgammon", R.string.game_backgammon, R.string.howto_backgammon, GameCategory.BOARD),
+    MAHJONG("mahjong", R.string.game_mahjong, R.string.howto_mahjong, GameCategory.PUZZLES),
+    REVERSI("reversi", R.string.game_reversi, R.string.howto_reversi, GameCategory.BOARD),
+    CROSSWORD("crossword", R.string.game_crossword, R.string.howto_crossword, GameCategory.PUZZLES),
+    PIPES("pipes", R.string.game_pipes, R.string.howto_pipes, GameCategory.PUZZLES),
+    CONNECT("connect", R.string.game_connect, R.string.howto_connect, GameCategory.PUZZLES),
+    DOTS("dots", R.string.game_dots, R.string.howto_dots, GameCategory.PUZZLES),
+    ;
+
+    fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()
 
     companion object {
         fun fromKey(key: String): GameId? = entries.firstOrNull { it.key == key }

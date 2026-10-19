@@ -1,5 +1,12 @@
 package io.github.fershibli.megagames.ui.screens
 
+import io.github.fershibli.megagames.core.GameCategory
+import androidx.compose.ui.semantics.heading
+import androidx.compose.runtime.remember
+import androidx.compose.material3.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -34,14 +41,21 @@ import io.github.fershibli.megagames.ui.theme.LocalPalette
 private const val CYCLES = 1000
 
 /**
- * Game chooser: two columns of square, text-free thumbnails that scroll endlessly in both
- * directions (the list wraps around). Each thumbnail still has a spoken name for TalkBack.
+ * Game chooser: two columns of square, text-free thumbnails grouped under category headings
+ * (cards, board games, puzzles...), scrolling endlessly in both directions (the list wraps
+ * around). Each thumbnail still has a spoken name for TalkBack.
  */
 @Composable
 fun HomeScreen(onGame: (GameId) -> Unit, onSettings: () -> Unit) {
-    val games = GameId.entries
+    // Each category heading followed by its games; categories without games are left out.
+    val entries: List<Any> = remember {
+        GameCategory.entries.flatMap { category ->
+            val games = GameId.entries.filter { it.category == category }
+            if (games.isEmpty()) emptyList() else listOf(category) + games
+        }
+    }
     val p = LocalPalette.current
-    val state = rememberLazyGridState(initialFirstVisibleItemIndex = games.size * CYCLES / 2)
+    val state = rememberLazyGridState(initialFirstVisibleItemIndex = entries.size * CYCLES / 2)
     Box(Modifier.fillMaxSize()) {
         Column(Modifier.fillMaxSize()) {
             TopBar(stringResource(R.string.choose_game), onSettings)
@@ -53,8 +67,21 @@ fun HomeScreen(onGame: (GameId) -> Unit, onSettings: () -> Unit) {
                 verticalArrangement = Arrangement.spacedBy(14.dp),
                 modifier = Modifier.fillMaxSize(),
             ) {
-                items(count = games.size * CYCLES, key = { it }) { index ->
-                    val game = games[index % games.size]
+                items(
+                    count = entries.size * CYCLES,
+                    key = { it },
+                    span = { if (entries[it % entries.size] is GameCategory) GridItemSpan(maxLineSpan) else GridItemSpan(1) },
+                ) { index ->
+                    val entry = entries[index % entries.size]
+                    if (entry is GameCategory) {
+                        Text(
+                            stringResource(entry.label),
+                            Modifier.fillMaxWidth().padding(start = 6.dp, end = 6.dp, top = 10.dp).semantics { heading() },
+                            style = MaterialTheme.typography.headlineSmall, color = p.text,
+                        )
+                        return@items
+                    }
+                    val game = entry as GameId
                     val name = stringResource(game.title)
                     val shape = RoundedCornerShape(22.dp)
                     Box(

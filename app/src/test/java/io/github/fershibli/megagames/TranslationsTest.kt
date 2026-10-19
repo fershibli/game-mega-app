@@ -10,8 +10,11 @@ class TranslationsTest {
     private val stringRegex = Regex("""<string name="([^"]+)"( translatable="false")?>(.*?)</string>""", RegexOption.DOT_MATCHES_ALL)
     private val placeholder = Regex("""%\d\$[ds]""")
 
+    /** Every string of a resource folder: strings.xml plus the per-game strings_*.xml files. */
     private fun load(dir: String): Map<String, String> =
-        stringRegex.findAll(File("src/main/res/$dir/strings.xml").readText())
+        File("src/main/res/$dir").listFiles { f -> f.name.startsWith("strings") && f.name.endsWith(".xml") }.orEmpty()
+            .sortedBy { it.name }
+            .flatMap { file -> stringRegex.findAll(file.readText()).toList() }
             .filter { it.groupValues[2].isEmpty() }
             .associate { it.groupValues[1] to it.groupValues[3] }
 

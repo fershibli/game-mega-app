@@ -21,6 +21,8 @@ data class SavedGame(
     val difficulty: Difficulty,
     val state: JsonElement,
     val formatVersion: Int = FORMAT_VERSION,
+    /** [GameVariant.key] of the rules being played, for games that have variants. */
+    val variant: String? = null,
 ) {
     companion object {
         const val FORMAT_VERSION = 1
@@ -71,12 +73,16 @@ class SaveStore(context: Context) {
     }
 }
 
-/** Handle given to every game: restore its state, autosave it and report the end of the game. */
+/**
+ * Handle given to every game: restore its state, autosave it and report the end of the game.
+ * [variant] is the set of rules chosen before the game, for games that have variants.
+ */
 class GameHost(
     val game: GameId,
     val difficulty: Difficulty,
     private val restored: JsonElement?,
     private val store: SaveStore?,
+    val variant: GameVariant? = game.variant(null),
     private val onFinish: (GameOutcome) -> Unit,
 ) {
     @Volatile var finished = false
@@ -88,7 +94,7 @@ class GameHost(
     fun <T> save(serializer: KSerializer<T>, value: T) {
         if (finished) return
         val element = runCatching { AppJson.encodeToJsonElement(serializer, value) }.getOrNull() ?: return
-        store?.save(SavedGame(game.key, difficulty, element))
+        store?.save(SavedGame(game.key, difficulty, element, variant = variant?.key))
     }
 
     fun finish(outcome: GameOutcome) {

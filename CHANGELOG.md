@@ -5,6 +5,9 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- Home screen grouped by category (cards, board games, puzzles, calm action, pastimes), ready for many more games.
+- A rules screen for games with regional variants, shown before the difficulty; the rules picked last time come preselected.
+- Lasting storage for pastime games (a pet, a farm), kept apart from the game in progress and included in Android's own backup.
 - Settings → **Why Mili Games exists** (at the very end): why the app is and always will be free and ad-free, how it was made (with the help of Claude, with no AI inside the app) and a button to the source code and documentation. The same text is in the store descriptions.
 - Four new languages: **Italian, German, Russian and Japanese** — the interface, crossword dictionaries (with QWERTZ and ЙЦУКЕН keyboards; Japanese in katakana with a kana bank), store listings, README, user guide, trust page and privacy policy.
 

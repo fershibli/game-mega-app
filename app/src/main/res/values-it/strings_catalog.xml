@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">Carte</string>
+    <string name="category_board">Giochi da tavolo</string>
+    <string name="category_puzzles">Rompicapo</string>
+    <string name="category_calm_action">Azione tranquilla</string>
+    <string name="category_pastimes">Passatempi</string>
+    <string name="choose_variant">Con quali regole giochi?</string>
+</resources>

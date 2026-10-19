@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">Карты</string>
+    <string name="category_board">Настольные игры</string>
+    <string name="category_puzzles">Головоломки</string>
+    <string name="category_calm_action">Спокойные игры с движением</string>
+    <string name="category_pastimes">Досуг</string>
+    <string name="choose_variant">По каким правилам вы играете?</string>
+</resources>

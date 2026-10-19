@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">Cartes</string>
+    <string name="category_board">Jeux de plateau</string>
+    <string name="category_puzzles">Casse-tête</string>
+    <string name="category_calm_action">Action tranquille</string>
+    <string name="category_pastimes">Passe-temps</string>
+    <string name="choose_variant">Avec quelles règles jouez-vous ?</string>
+</resources>

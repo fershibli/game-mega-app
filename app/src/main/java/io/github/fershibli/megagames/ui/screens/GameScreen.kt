@@ -21,6 +21,7 @@ import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameOutcome
+import io.github.fershibli.megagames.core.GameVariant
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.core.SavedGame
 import io.github.fershibli.megagames.core.Settings
@@ -45,12 +46,13 @@ fun GameScreen(
     askResume: Boolean,
     onResumeAnswered: (keepPlaying: Boolean) -> Unit,
     onExit: () -> Unit,
+    variant: GameVariant? = game.variant(saved?.variant),
 ) {
     var session by rememberSaveable { mutableIntStateOf(0) }
     var showSettings by remember { mutableStateOf(false) }
     var outcome by remember { mutableStateOf<GameOutcome?>(null) }
     val host = remember(session) {
-        GameHost(game, difficulty, if (session == 0) saved?.state else null, saveStore) { outcome = it }
+        GameHost(game, difficulty, if (session == 0) saved?.state else null, saveStore, variant) { outcome = it }
     }
     val newGame: () -> Unit = {
         saveStore.clear()

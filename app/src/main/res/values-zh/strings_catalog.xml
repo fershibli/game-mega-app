@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">纸牌</string>
+    <string name="category_board">棋类</string>
+    <string name="category_puzzles">益智</string>
+    <string name="category_calm_action">轻松动作</string>
+    <string name="category_pastimes">休闲</string>
+    <string name="choose_variant">你按哪种规则玩？</string>
+</resources>

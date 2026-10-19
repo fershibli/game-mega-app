@@ -14,7 +14,8 @@ Mili Games is meant to be installed on the phones of people who may not be able 
 6. [Verifying a downloaded APK](#verifying-a-downloaded-apk)
 7. [Supply-chain protections](#supply-chain-protections)
 8. [AI assistance, honestly](#ai-assistance-honestly)
-9. [Reporting a security problem](#reporting-a-security-problem)
+9. [Game names and pictures](#game-names-and-pictures)
+10. [Reporting a security problem](#reporting-a-security-problem)
 
 ## Summary
 
@@ -115,6 +116,12 @@ Run the same checks yourself: see [building.md](building.md).
 ## AI assistance, honestly
 
 The code, the artwork and the documentation were created with the assistance of **Claude**, Anthropic's AI assistant, under the maintainer's direction. AI-written code can contain mistakes like any other code, which is why this project relies on things you can check rather than on promises: readable source, a broad test suite, lint, reproducible builds and published checksums. If you spot a problem, please report it.
+
+## Game names and pictures
+
+The rules of a game cannot be owned: Brazilian copyright law says so explicitly (Law 9,610/98, art. 8, II: "schemes, plans or rules for playing games" are not protected), and so do the law of the United States and the Berne Convention that most countries follow. What can be owned are **names** (trademarks, registered country by country), **artwork, characters and texts** (copyright, practically everywhere) and the **look of a specific commercial game**.
+
+So Mili Games only uses generic, descriptive names and pictures drawn in its own code, never the name, characters, artwork or look of a commercial game. When a game is too close to a protected product to be told apart, it stays out. A complaint to the store takes down the whole app, not one game, and the app's purpose matters more than any single game.
 
 ## Reporting a security problem
 

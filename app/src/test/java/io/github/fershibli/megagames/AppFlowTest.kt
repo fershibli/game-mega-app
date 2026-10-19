@@ -1,5 +1,11 @@
 package io.github.fershibli.megagames
 
+import io.github.fershibli.megagames.R
+import kotlinx.serialization.builtins.serializer
+import io.github.fershibli.megagames.ui.screens.VariantScreen
+import io.github.fershibli.megagames.core.WorldStore
+import io.github.fershibli.megagames.core.ChoiceStore
+import io.github.fershibli.megagames.core.GameVariant
 import io.github.fershibli.megagames.core.AppLanguage
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
@@ -260,6 +266,45 @@ class AppFlowTest {
         store.clear()
     }
 
+
+    @Test
+    fun rulesScreenPreselectsTheLastChoiceAndConfirmsWithOneTap() {
+        val rules = listOf(
+            GameVariant("a", R.string.difficulty_easy, R.string.color_normal_desc),
+            GameVariant("b", R.string.difficulty_hard, R.string.color_high_contrast_desc),
+        )
+        var confirmed: GameVariant? = null
+        rule.setContent {
+            MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) {
+                VariantScreen(GameId.SUDOKU, rules[1], { confirmed = it }, {}, {}, variants = rules)
+            }
+        }
+        rule.onNodeWithText("Confirm").performClick()
+        assertEquals(rules[1], confirmed)
+        rule.onNodeWithText("Easy").performClick()
+        rule.onNodeWithText("Confirm").performClick()
+        assertEquals(rules[0], confirmed)
+    }
+
+    @Test
+    fun theLastRulesAreRememberedPerGame() {
+        val store = ChoiceStore(RuntimeEnvironment.getApplication())
+        assertEquals(null, store.lastVariant(GameId.SUDOKU))
+        store.rememberVariant(GameId.SUDOKU, GameVariant("brazilian", R.string.difficulty_easy, R.string.color_normal_desc))
+        assertEquals("brazilian", ChoiceStore(RuntimeEnvironment.getApplication()).lastVariant(GameId.SUDOKU))
+        assertEquals(null, store.lastVariant(GameId.REVERSI))
+    }
+
+    @Test
+    fun worldsSurviveAndAreKeptApartFromTheCurrentGame() {
+        val app = RuntimeEnvironment.getApplication()
+        val worlds = WorldStore(app)
+        worlds.save("pet", Int.serializer(), 7)
+        worlds.flush()
+        SaveStore(app).clear()
+        assertEquals(7, WorldStore(app).load("pet", Int.serializer()))
+        assertEquals(null, worlds.load("farm", Int.serializer()))
+    }
 
     @Test
     fun everyLanguageCanBePickedEvenAtTheEndOfTheList() {

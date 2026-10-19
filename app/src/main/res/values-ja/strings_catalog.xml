@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">トランプ</string>
+    <string name="category_board">ボードゲーム</string>
+    <string name="category_puzzles">パズル</string>
+    <string name="category_calm_action">のんびりアクション</string>
+    <string name="category_pastimes">おたのしみ</string>
+    <string name="choose_variant">どのルールで遊びますか？</string>
+</resources>

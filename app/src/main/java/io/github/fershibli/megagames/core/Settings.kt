@@ -3,7 +3,10 @@ package io.github.fershibli.megagames.core
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.annotation.StringRes
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
 import io.github.fershibli.megagames.R
 import java.util.Locale
 
@@ -114,4 +117,25 @@ class SettingsStore(context: Context) {
 
     private inline fun <reified E : Enum<E>> enumOr(name: String?, fallback: E): E =
         name?.let { n -> enumValues<E>().firstOrNull { it.name == n } } ?: fallback
+}
+
+/**
+ * Choices remembered between games that are not settings, such as the rules last picked for each
+ * game, so the next time they come preselected and one tap starts the game.
+ */
+class ChoiceStore(context: Context) {
+    private val prefs: SharedPreferences = context.getSharedPreferences("choices", Context.MODE_PRIVATE)
+
+    fun lastVariant(game: GameId): String? = prefs.getString("variant.${game.key}", null)
+
+    fun rememberVariant(game: GameId, variant: GameVariant) {
+        prefs.edit().putString("variant.${game.key}", variant.key).apply()
+    }
+}
+
+/** The [ChoiceStore] of this app. */
+@Composable
+fun rememberChoiceStore(): ChoiceStore {
+    val context = LocalContext.current.applicationContext
+    return remember(context) { ChoiceStore(context) }
 }

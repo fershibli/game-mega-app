@@ -14,7 +14,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.ChoiceStore
+import io.github.fershibli.megagames.core.rememberChoiceStore
 import io.github.fershibli.megagames.core.GameId
+import io.github.fershibli.megagames.core.GameVariant
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.core.SavedGame
 import io.github.fershibli.megagames.core.Settings
@@ -23,6 +26,7 @@ import io.github.fershibli.megagames.ui.screens.DifficultyScreen
 import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.HomeScreen
 import io.github.fershibli.megagames.ui.screens.SettingsScreen
+import io.github.fershibli.megagames.ui.screens.VariantScreen
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 
@@ -30,8 +34,9 @@ import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 sealed interface Screen {
     data object Home : Screen
     data object Settings : Screen
-    data class ChooseDifficulty(val game: GameId) : Screen
-    data class Playing(val game: GameId, val difficulty: Difficulty, val saved: SavedGame?) : Screen
+    data class ChooseVariant(val game: GameId) : Screen
+    data class ChooseDifficulty(val game: GameId, val variant: GameVariant?) : Screen
+    data class Playing(val game: GameId, val difficulty: Difficulty, val variant: GameVariant?, val saved: SavedGame?) : Screen
 }
 
 @Composable
@@ -40,6 +45,7 @@ fun MegaGamesApp(
     saveStore: SaveStore,
     offerResume: Boolean,
     onDarkMode: (Boolean) -> Unit = {},
+    choiceStore: ChoiceStore = rememberChoiceStore(),
 ) {
     var settings by remember { mutableStateOf(settingsStore.load()) }
     LaunchedEffect(settings.darkMode) { onDarkMode(settings.darkMode) }
@@ -52,10 +58,20 @@ fun MegaGamesApp(
     val initial = remember {
         val saved = if (offerResume) saveStore.load() else null
         val game = saved?.let { GameId.fromKey(it.game) }
-        if (saved != null && game != null) Screen.Playing(game, saved.difficulty, saved) else Screen.Home
+        if (saved != null && game != null) Screen.Playing(game, saved.difficulty, game.variant(saved.variant), saved) else Screen.Home
     }
     var screen by remember { mutableStateOf(initial) }
     var askResume by rememberSaveable { mutableStateOf(initial is Screen.Playing) }
+
+    fun start(game: GameId, difficulty: Difficulty, variant: GameVariant?) {
+        saveStore.clear()
+        screen = Screen.Playing(game, difficulty, variant, null)
+    }
+
+    // Rules first (when the game has variants), then the difficulty (when it has one).
+    fun afterVariant(game: GameId, variant: GameVariant?) {
+        if (game.hasDifficulty) screen = Screen.ChooseDifficulty(game, variant) else start(game, settings.defaultDifficulty, variant)
+    }
 
     MegaGamesTheme(settings) {
         Box(
@@ -66,29 +82,41 @@ fun MegaGamesApp(
         ) {
             when (val s = screen) {
                 Screen.Home -> HomeScreen(
-                    onGame = { screen = Screen.ChooseDifficulty(it) },
+                    onGame = { if (it.variants.isNotEmpty()) screen = Screen.ChooseVariant(it) else afterVariant(it, null) },
                     onSettings = { screen = Screen.Settings },
                 )
                 Screen.Settings -> {
                     BackHandler { screen = Screen.Home }
                     SettingsScreen(settings, updateSettings, onClose = { screen = Screen.Home }, inGame = null)
                 }
-                is Screen.ChooseDifficulty -> {
+                is Screen.ChooseVariant -> {
                     BackHandler { screen = Screen.Home }
+                    VariantScreen(
+                        game = s.game,
+                        initial = s.game.variant(choiceStore.lastVariant(s.game))!!,
+                        onConfirm = {
+                            choiceStore.rememberVariant(s.game, it)
+                            afterVariant(s.game, it)
+                        },
+                        onBack = { screen = Screen.Home },
+                        onSettings = { screen = Screen.Settings },
+                    )
+                }
+                is Screen.ChooseDifficulty -> {
+                    val back = { screen = if (s.game.variants.isNotEmpty()) Screen.ChooseVariant(s.game) else Screen.Home }
+                    BackHandler { back() }
                     DifficultyScreen(
                         game = s.game,
                         initial = settings.defaultDifficulty,
-                        onConfirm = {
-                            saveStore.clear()
-                            screen = Screen.Playing(s.game, it, null)
-                        },
-                        onBack = { screen = Screen.Home },
+                        onConfirm = { start(s.game, it, s.variant) },
+                        onBack = back,
                         onSettings = { screen = Screen.Settings },
                     )
                 }
                 is Screen.Playing -> GameScreen(
                     game = s.game,
                     difficulty = s.difficulty,
+                    variant = s.variant,
                     saved = s.saved,
                     saveStore = saveStore,
                     settings = settings,

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Home screen categories -->
+    <string name="category_cards">Cards</string>
+    <string name="category_board">Board games</string>
+    <string name="category_puzzles">Puzzles</string>
+    <string name="category_calm_action">Calm action</string>
+    <string name="category_pastimes">Pastimes</string>
+
+    <!-- Rules (variants) screen -->
+    <string name="choose_variant">Which rules do you play?</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">Karten</string>
+    <string name="category_board">Brettspiele</string>
+    <string name="category_puzzles">Rätsel</string>
+    <string name="category_calm_action">Ruhige Action</string>
+    <string name="category_pastimes">Zeitvertreib</string>
+    <string name="choose_variant">Nach welchen Regeln spielst du?</string>
+</resources>
