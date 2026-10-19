@@ -8,7 +8,9 @@
 #   - password changed    -> re-encrypts the SAME key with the new password;
 #   - nothing changed     -> does nothing.
 # It writes the secrets used by deploy.yml: MEGAGAMES_KEYSTORE_BASE64, MEGAGAMES_KEYSTORE_PASSWORD,
-# MEGAGAMES_KEY_PASSWORD and MEGAGAMES_KEY_ALIAS.
+# MEGAGAMES_KEY_PASSWORD. The key alias is "megagames" and is not a secret (GitHub hides every secret
+# value in the logs, so a secret "megagames" would hide the package name everywhere); an old
+# MEGAGAMES_KEY_ALIAS secret with that value is deleted.
 #
 # GitHub has no event for "a secret changed", so the check runs every hour (only on the default
 # branch) and can be started at any time with "Run workflow". Writing secrets needs a fine-grained
@@ -120,9 +122,10 @@ jobs:
             [ "$change" = passwords ] || put MEGAGAMES_KEYSTORE_BASE64 "$(base64 -w0 "$ks")"
             put MEGAGAMES_KEYSTORE_PASSWORD "$wanted"
             put MEGAGAMES_KEY_PASSWORD "$wanted"
-            put MEGAGAMES_KEY_ALIAS "$alias"
             if [ "$generated" = true ]; then put MEGAGAMES_SIGNING_PASSWORD "$wanted"; fi
           fi
+
+          if [ "$KEY_ALIAS" = megagames ]; then gh secret delete MEGAGAMES_KEY_ALIAS --repo "$GITHUB_REPOSITORY"; fi
 
           fingerprint=$(keytool -list -v -keystore "$ks" -storetype PKCS12 -storepass:env NEW_PASS -alias "$alias" | sed -n 's/^[[:space:]]*SHA256: //p')
           {
@@ -138,10 +141,9 @@ jobs:
             echo "Certificate SHA-256: \`$fingerprint\`"
           } >> "$GITHUB_STEP_SUMMARY"
           echo "Release key: $change ($fingerprint)"
-          echo "alias=$alias" >> "$GITHUB_OUTPUT"
           echo "generated=$generated" >> "$GITHUB_OUTPUT"
           # For the backup and export steps below (the runner is discarded at the end of the job).
-          (umask 077 && printf '%s' "$wanted" > "$RUNNER_TEMP/key-pass")
+          (umask 077 && printf '%s' "$wanted" > "$RUNNER_TEMP/key-pass" && printf '%s' "$alias" > "$RUNNER_TEMP/key-alias")
 
       - name: Backup (encrypted with your password)
         if: inputs.action == 'backup'
@@ -185,10 +187,10 @@ jobs:
         if: inputs.action == 'export-for-play'
         env:
           PLAY_KEY: ${{ inputs.play_encryption_key }}
-          KEY_ALIAS: ${{ steps.sync.outputs.alias }}
         run: |
           set -euo pipefail
           NEW_PASS=$(cat "$RUNNER_TEMP/key-pass")
+          KEY_ALIAS=$(cat "$RUNNER_TEMP/key-alias")
           [ -n "$PLAY_KEY" ] || { echo "::error::Paste the content of encryption_public_key.pem (Play Console) in play_encryption_key."; exit 1; }
           # The form field is one line, so rebuild the PEM from its base64 body.
           body=$(printf '%s' "$PLAY_KEY" | sed -e 's/-----[A-Z ]*-----//g' | tr -d ' \r\n\t')

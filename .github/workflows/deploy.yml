@@ -9,8 +9,9 @@
 #   - manually ("Run workflow"), giving a version number.
 #
 # Signing: with the release key stored in the repository secrets
-#   MEGAGAMES_KEYSTORE_BASE64, MEGAGAMES_KEYSTORE_PASSWORD, MEGAGAMES_KEY_ALIAS, MEGAGAMES_KEY_PASSWORD
-# (created and kept up to date by signing-key.yml, see docs/en/google-play.md). Without them a release candidate is still built and published, signed
+#   MEGAGAMES_KEYSTORE_BASE64, MEGAGAMES_KEYSTORE_PASSWORD, MEGAGAMES_KEY_PASSWORD
+# (plus MEGAGAMES_KEY_ALIAS only for an alias other than "megagames"), created and kept up to date
+# by signing-key.yml (see docs/en/google-play.md). Without them a release candidate is still built and published, signed
 # with a temporary debug key and clearly marked as such: it installs fine, but a later version signed
 # with the real key will need the old one to be uninstalled first. A stable version is never
 # published without the release key: the job fails instead.
@@ -113,7 +114,7 @@ jobs:
       - name: Test, lint and build the release APK
         env:
           MEGAGAMES_KEYSTORE_PASSWORD: ${{ secrets.MEGAGAMES_KEYSTORE_PASSWORD }}
-          MEGAGAMES_KEY_ALIAS: ${{ secrets.MEGAGAMES_KEY_ALIAS }}
+          MEGAGAMES_KEY_ALIAS: ${{ secrets.MEGAGAMES_KEY_ALIAS || 'megagames' }}
           MEGAGAMES_KEY_PASSWORD: ${{ secrets.MEGAGAMES_KEY_PASSWORD }}
           VERSION: ${{ steps.v.outputs.version }}
           SIGN_MODE: ${{ steps.sign.outputs.mode }}
@@ -140,7 +141,6 @@ jobs:
           if "$tools/aapt2" dump permissions "$apk" | grep "uses-permission" | grep -v "DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"; then
             echo "::error::The APK requests a permission"; exit 1
           fi
-          echo "package=$(echo "$badging" | sed -n "s/^package: name='\([^']*\)'.*/\1/p")" >> "$GITHUB_OUTPUT"
           aab=app/build/outputs/bundle/release/app-release.aab
           [ -f "$aab" ] || { echo "::error::AAB not found"; exit 1; }
           jarsigner -verify -certs "$aab" | tee "$RUNNER_TEMP/aab-verify.txt" | tail -n 3
@@ -218,7 +218,6 @@ jobs:
           PLAY_SERVICE_ACCOUNT_JSON: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
           SIGN_MODE: ${{ steps.sign.outputs.mode }}
           PRERELEASE: ${{ steps.v.outputs.prerelease }}
-          PACKAGE_NAME: ${{ steps.apk.outputs.package }}
           VERSION: ${{ steps.v.outputs.version }}
           TESTING_TRACK: ${{ vars.PLAY_TESTING_TRACK || 'alpha' }}
           PRODUCTION: ${{ vars.PLAY_PRODUCTION }}
@@ -227,6 +226,10 @@ jobs:
           set -euo pipefail
           if [ -z "$PLAY_SERVICE_ACCOUNT_JSON" ]; then echo "Google Play upload not configured (no PLAY_SERVICE_ACCOUNT_JSON): skipped."; exit 0; fi
           if [ "$SIGN_MODE" != release ]; then echo "::warning::Not uploading to Google Play: the AAB is signed with the debug key."; exit 0; fi
+          # Read from the APK here: a step output that happens to contain a secret value may be dropped.
+          tools=$(find "$ANDROID_HOME/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n1)
+          PACKAGE_NAME=$("$tools/aapt2" dump badging "dist/MegaGames-v$VERSION.apk" | sed -n "s/^package: name='\([^']*\)'.*/\1/p")
+          export PACKAGE_NAME
           track=$TESTING_TRACK
           if [ "$PRERELEASE" != true ] && [ "$PRODUCTION" = true ]; then track=production; fi
           AAB="dist/MegaGames-v$VERSION.aab" TRACK="$track" ./scripts/play-upload.sh
