@@ -37,6 +37,28 @@ jobs:
       - name: Build APKs
         run: ./gradlew --no-daemon assembleDebug assembleRelease
 
+      # The app should stay far lighter than the usual card and puzzle apps (20-60 MB): every
+      # picture is drawn in code. A warning shows up past 10 MB and the build fails past 20 MB,
+      # time to think about compressing assets before it reaches phones with little space.
+      - name: APK size budget
+        run: |
+          warn=$((10 * 1024 * 1024)); limit=$((20 * 1024 * 1024))
+          echo "| APK | Size |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          status=0
+          for apk in app/build/outputs/apk/release/*.apk; do
+            size=$(stat -c %s "$apk")
+            echo "| $(basename "$apk") | $((size / 1024)) KB |" >> "$GITHUB_STEP_SUMMARY"
+            echo "$(basename "$apk"): $((size / 1024)) KB"
+            if [ "$size" -gt "$limit" ]; then
+              echo "::error file=$apk::The release APK is $((size / 1024)) KB, over the 20 MB budget."
+              status=1
+            elif [ "$size" -gt "$warn" ]; then
+              echo "::warning file=$apk::The release APK is $((size / 1024)) KB, over the 10 MB warning line."
+            fi
+          done
+          exit $status
+
       - name: Checksums
         run: |
           cd app/build/outputs/apk

@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.ui.components
 
+import androidx.compose.foundation.layout.absoluteOffset
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -89,7 +91,7 @@ fun TopBar(title: String, onSettings: () -> Unit, modifier: Modifier = Modifier)
         if (!s.oneHand) {
             RoundIconButton(
                 AppIcon.GEAR, stringResource(R.string.settings), onSettings,
-                Modifier.align(if (s.leftHanded) Alignment.CenterStart else Alignment.CenterEnd),
+                Modifier.align(if (s.leftHanded) AbsoluteAlignment.CenterLeft else AbsoluteAlignment.CenterRight),
             )
         }
     }
@@ -124,9 +126,9 @@ fun FloatingGear(onSettings: () -> Unit) {
         val shift = (bubblePx * 0.55f * tuck).roundToInt() * (if (s.leftHanded) -1 else 1)
         Box(
             Modifier
-                .align(if (s.leftHanded) Alignment.BottomStart else Alignment.BottomEnd)
+                .align(if (s.leftHanded) AbsoluteAlignment.BottomLeft else AbsoluteAlignment.BottomRight)
                 .padding(bottom = 140.dp, start = 10.dp, end = 10.dp)
-                .offset { IntOffset(shift, dragY.roundToInt()) }
+                .absoluteOffset { IntOffset(shift, dragY.roundToInt()) }
                 .size(bubble)
                 .alpha(1f - 0.35f * tuck)
                 .shadow(8.dp, CircleShape)

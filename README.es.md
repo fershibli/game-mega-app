@@ -6,7 +6,7 @@
 
 Sudoku · Solitario · Buraco · Backgammon · Mahjong · Reversi · Crucigrama · Tuberías · Une los colores · Puntos
 
-🌐 [English](README.md) · [Português](README.pt-BR.md) · **Español** · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md)
+🌐 [English](README.md) · [Português](README.pt-BR.md) · **Español** · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md) · [العربية](README.ar.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@ Sudoku · Solitario · Buraco · Backgammon · Mahjong · Reversi · Crucigrama 
 - **Rivales de verdad**: el ordenador juega con estrategias escritas especialmente para Backgammon, Buraco y Reversi.
 - **Zoom con dos dedos en todos los juegos**, y zoom con un dedo en el modo una mano.
 - **Guardado automático**: si la aplicación se cierra sin querer, ofrece seguir justo donde lo dejaste.
-- **9 idiomas**: inglés, portugués de Brasil, español, francés, italiano, alemán, ruso, japonés y chino simplificado, tanto la interfaz *como* los diccionarios del crucigrama.
+- **10 idiomas**: inglés, portugués de Brasil, español, francés, italiano, alemán, ruso, japonés, chino simplificado y árabe, tanto la interfaz *como* los diccionarios del crucigrama.
 - **Pequeña y ligera**: unos **1,3 MB**, Kotlin nativo + Jetpack Compose, sin motor de juego y sin imágenes: todo el arte se dibuja con código.
 
 ## Los juegos
@@ -118,6 +118,7 @@ Todas las capturas se generan automáticamente desde el código real (ver [Compi
 | Русский | [руководство](docs/ru/user-guide.md) | [доверие](docs/ru/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 日本語 | [使い方](docs/ja/user-guide.md) | [信頼](docs/ja/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
+| العربية | [دليل الاستخدام](docs/ar/user-guide.md) | [الثقة والخصوصية](docs/ar/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 
 Índice completo: [docs/README.md](docs/README.md).
 
@@ -134,7 +135,7 @@ Necesita JDK 17+ y el Android SDK (API 37). Ver [docs/es/building.md](docs/es/bu
 
 ## Hecha con ayuda de IA
 
-Todo lo que hay en este repositorio —el código, el arte (cada carta, ficha, tablero e icono está dibujado con código) y esta documentación en nueve idiomas— se creó con la ayuda de **Claude**, el asistente de IA de **Anthropic**, bajo la dirección del responsable del proyecto. Las decisiones de diseño se explican en [docs/es/technical.md](docs/es/technical.md), y las pruebas existen para que nadie tenga que fiarse del código a ciegas.
+Todo lo que hay en este repositorio —el código, el arte (cada carta, ficha, tablero e icono está dibujado con código) y esta documentación en diez idiomas— se creó con la ayuda de **Claude**, el asistente de IA de **Anthropic**, bajo la dirección del responsable del proyecto. Las decisiones de diseño se explican en [docs/es/technical.md](docs/es/technical.md), y las pruebas existen para que nadie tenga que fiarse del código a ciegas.
 
 ## Licencia
 

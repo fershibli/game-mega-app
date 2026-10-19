@@ -1,6 +1,6 @@
 # Mili Games 使い方ガイド
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · **日本語** · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · **日本語** · [中文](../zh-CN/user-guide.md) · [العربية](../ar/user-guide.md)
 
 このガイドは、遊ぶ方と、その方のためにスマホを準備するご家族に向けて書いています。
 
@@ -74,7 +74,7 @@ Mili Games はアプリストアにはなく、GitHub のページからイン�
 
 | 設定 | できること |
 |---|---|
-| **言語** | English、Português、Español、Français、Italiano、Deutsch、Русский、日本語、中文、または「スマホと同じ」。クロスワードの言葉もふくめて、アプリ全体の言語が変わります。 |
+| **言語** | English、Português、Español、Français、Italiano、Deutsch、Русский、日本語、中文、العربية、または「スマホと同じ」。クロスワードの言葉もふくめて、アプリ全体の言語が変わります。 |
 | **文字の大きさ** | ふつうの大きさの 80 %〜160 %。 |
 | **駒とボタンの大きさ** | 80 %〜160 %。数字ボタン、キーボード、手札のカードなどのボタンが大きくなります。盤面はいつも画面いっぱいに表示されます。もっと大きくしたいときは拡大を使ってください。 |
 | **色** | *ふつう*（やさしい色、中くらいのコントラスト）· *ハイコントラスト*（はっきりした色、太いふちどり）· *色覚サポート*（見分けやすい色、駒に形の目印、4色のトランプ）。 |

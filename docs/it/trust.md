@@ -1,6 +1,6 @@
 # Fiducia, privacy e sicurezza
 
-🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · **Italiano** · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · [中文](../zh-CN/trust.md)
+🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · **Italiano** · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · [中文](../zh-CN/trust.md) · [العربية](../ar/trust.md)
 
 Mili Games è pensato per essere installato sui telefoni di persone che forse non sono in grado di valutare un’app da sole. Questa pagina spiega che cosa fa l’app e che cosa non fa e, soprattutto, **come chiunque può verificarlo** senza doversi fidare dell’autore.
 

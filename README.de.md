@@ -6,7 +6,7 @@
 
 Sudoku · Solitär · Buraco · Backgammon · Mahjong · Reversi · Kreuzworträtsel · Rohre · Farben verbinden · Punkte
 
-🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Deutsch** · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md)
+🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Deutsch** · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md) · [العربية](README.ar.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@ Sudoku · Solitär · Buraco · Backgammon · Mahjong · Reversi · Kreuzworträ
 - **Echte Computergegner**, eigens für Backgammon, Buraco und Reversi geschrieben.
 - **Zoomen mit zwei Fingern in jedem Spiel**, dazu Zoom mit einem Finger im Einhand-Modus.
 - **Automatisches Speichern**: Wird die App aus Versehen geschlossen, bietet sie an, genau dort weiterzuspielen, wo du aufgehört hast.
-- **9 Sprachen**: Englisch, Portugiesisch, Spanisch, Französisch, Italienisch, Deutsch, Russisch, Japanisch und Chinesisch — die Oberfläche *und* die Wörter im Kreuzworträtsel.
+- **10 Sprachen**: Englisch, Portugiesisch, Spanisch, Französisch, Italienisch, Deutsch, Russisch, Japanisch, Chinesisch und Arabisch — die Oberfläche *und* die Wörter im Kreuzworträtsel.
 - **Klein und leicht**: etwa **1,3 MB**, natives Kotlin + Jetpack Compose, keine Spiele-Engine, keine Bilddateien — alle Grafiken werden im Code gezeichnet.
 
 ## Die Spiele
@@ -118,6 +118,7 @@ Alle Bildschirmfotos werden automatisch aus dem echten Code erzeugt (siehe [Buil
 | Русский | [руководство](docs/ru/user-guide.md) | [доверие](docs/ru/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 日本語 | [使い方](docs/ja/user-guide.md) | [信頼](docs/ja/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
+| العربية | [دليل الاستخدام](docs/ar/user-guide.md) | [الثقة والخصوصية](docs/ar/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 
 Vollständige Übersicht: [docs/README.md](docs/README.md).
 
@@ -134,7 +135,7 @@ Benötigt JDK 17+ und das Android SDK (API 37). Siehe [docs/en/building.md](docs
 
 ## Mit Hilfe von KI entstanden
 
-Alles in diesem Repository — der Code, die Grafiken (jede Karte, jeder Stein, jedes Spielbrett und jedes Symbol wird im Code gezeichnet) und diese Dokumentation in neun Sprachen — wurde mit Hilfe von **Claude** erstellt, dem KI-Assistenten von **Anthropic**, unter der Leitung des Maintainers. Die Entwurfsentscheidungen sind in [docs/en/technical.md](docs/en/technical.md) erklärt (auf Englisch), und die Testsuite gibt es, damit niemand dem Code blind vertrauen muss.
+Alles in diesem Repository — der Code, die Grafiken (jede Karte, jeder Stein, jedes Spielbrett und jedes Symbol wird im Code gezeichnet) und diese Dokumentation in zehn Sprachen — wurde mit Hilfe von **Claude** erstellt, dem KI-Assistenten von **Anthropic**, unter der Leitung des Maintainers. Die Entwurfsentscheidungen sind in [docs/en/technical.md](docs/en/technical.md) erklärt (auf Englisch), und die Testsuite gibt es, damit niemand dem Code blind vertrauen muss.
 
 ## Lizenz
 

@@ -6,7 +6,7 @@
 
 Sudoku · Paciência · Buraco · Gamão · Mahjong · Reversi · Palavras cruzadas · Encanamento · Ligue as cores · Pontinhos
 
-🌐 [English](README.md) · **Português** · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md)
+🌐 [English](README.md) · **Português** · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md) · [العربية](README.ar.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@ Sudoku · Paciência · Buraco · Gamão · Mahjong · Reversi · Palavras cruza
 - **Adversários de verdade no computador**, escritos especialmente para Gamão, Buraco e Reversi.
 - **Zoom com pinça em todos os jogos**, e zoom com um dedo no modo uma mão.
 - **Salvamento automático**: se o app fechar sem querer, ele oferece continuar exatamente de onde parou.
-- **9 idiomas**: inglês, português do Brasil, espanhol, francês, italiano, alemão, russo, japonês e chinês simplificado — a interface *e* os dicionários das palavras cruzadas.
+- **10 idiomas**: inglês, português do Brasil, espanhol, francês, italiano, alemão, russo, japonês, chinês simplificado e árabe — a interface *e* os dicionários das palavras cruzadas.
 - **Pequeno e leve**: cerca de **1,3 MB**, Kotlin nativo + Jetpack Compose, sem motor de jogo e sem imagens — toda a arte é desenhada em código.
 
 ## Os jogos
@@ -118,6 +118,7 @@ Todas as imagens são geradas automaticamente a partir do código real (veja [Co
 | Русский | [руководство](docs/ru/user-guide.md) | [доверие](docs/ru/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 日本語 | [使い方](docs/ja/user-guide.md) | [信頼](docs/ja/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
+| العربية | [دليل الاستخدام](docs/ar/user-guide.md) | [الثقة والخصوصية](docs/ar/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 
 Índice completo: [docs/README.md](docs/README.md).
 
@@ -134,7 +135,7 @@ Precisa de JDK 17+ e do Android SDK (API 37). Veja [docs/pt-BR/building.md](docs
 
 ## Feito com ajuda de IA
 
-Tudo neste repositório — o código, a arte (cada carta, peça, tabuleiro e ícone é desenhado em código) e esta documentação em nove idiomas — foi criado com a ajuda do **Claude**, o assistente de IA da **Anthropic**, sob a direção do mantenedor. As decisões de projeto estão explicadas em [docs/pt-BR/technical.md](docs/pt-BR/technical.md), e a bateria de testes existe justamente para que ninguém precise confiar no código "de olhos fechados".
+Tudo neste repositório — o código, a arte (cada carta, peça, tabuleiro e ícone é desenhado em código) e esta documentação em dez idiomas — foi criado com a ajuda do **Claude**, o assistente de IA da **Anthropic**, sob a direção do mantenedor. As decisões de projeto estão explicadas em [docs/pt-BR/technical.md](docs/pt-BR/technical.md), e a bateria de testes existe justamente para que ninguém precise confiar no código "de olhos fechados".
 
 ## Licença
 

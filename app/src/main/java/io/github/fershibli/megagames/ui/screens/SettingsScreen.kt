@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames.ui.screens
 
+import androidx.compose.ui.AbsoluteAlignment
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -127,7 +128,7 @@ fun SettingsScreen(
             )
             RoundIconButton(
                 AppIcon.CLOSE, stringResource(R.string.close), inGame?.onResume ?: onClose,
-                Modifier.align(if (left) Alignment.CenterStart else Alignment.CenterEnd),
+                Modifier.align(if (left) AbsoluteAlignment.CenterLeft else AbsoluteAlignment.CenterRight),
             )
         }
         BoxWithConstraints(Modifier.weight(1f).fillMaxWidth()) {

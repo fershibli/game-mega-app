@@ -1,6 +1,6 @@
 # Mili Games — User guide
 
-🌐 **English** · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
+🌐 **English** · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md) · [العربية](../ar/user-guide.md)
 
 This guide is written for players and for the family members who set the phone up for them.
 
@@ -74,7 +74,7 @@ Every game board can be enlarged.
 
 | Setting | What it does |
 |---|---|
-| **Language** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, or "Same as the phone". Changes the whole app, including the crossword words. |
+| **Language** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, العربية, or "Same as the phone". Changes the whole app, including the crossword words. |
 | **Text size** | 80 % to 160 % of the normal size. |
 | **Piece and button size** | 80 % to 160 %. Enlarges number pads, keyboards, cards in your hand and other controls. Boards always fill the screen; use zoom to enlarge them further. |
 | **Colors** | *Normal* (soft, medium contrast) · *High contrast* (strong colors, thick outlines) · *Color blind friendly* (colors that stay distinct, with shapes drawn on pieces and a four-color card deck). |
@@ -212,13 +212,13 @@ A **new crossword is generated** for every game from a dictionary of everyday wo
 
 **Playing:** tap a square to choose its word; tap the same square again to switch between across and down. The clue is shown at the bottom between ◀ and ▶ (previous / next word). Type with the letters below: after each letter the cursor moves on. The eraser clears a letter. **Hint** fills in the selected square.
 
-Accents are ignored as in printed crosswords (Ç = C, É = E…); Spanish keeps Ñ, German writes Ä Ö Ü ß as AE OE UE SS and Russian writes Ё as Е. In Chinese each square holds one character; in Japanese one katakana, with small kana written full size (ッ → ツ).
+Accents are ignored as in printed crosswords (Ç = C, É = E…); Spanish keeps Ñ, German writes Ä Ö Ü ß as AE OE UE SS and Russian writes Ё as Е. In Chinese each square holds one character; in Japanese one katakana, with small kana written full size (ッ → ツ); in Arabic one letter without harakat (أ إ آ written as ا), and across words read right to left.
 
 | Level | Grid | Input | Errors in red |
 |---|---|---|---|
 | Easy | 9×9 (8×8 in Chinese and Japanese), ~7 words (~6) | letter bank (word letters + 2 extra) | yes |
-| Medium | 11×11 (10×10), ~11 words (~9) | full keyboard in the language's layout (Chinese and Japanese: bank with 5 extra) | yes |
-| Hard | 13×13 (12×12), ~16 words (~12) | full keyboard (Chinese and Japanese: bank with 8 extra) | no |
+| Medium | 11×11 (10×10), ~11 words (~9) | full keyboard in the language's layout (Chinese, Japanese and Arabic: bank with 5 extra) | yes |
+| Hard | 13×13 (12×12), ~16 words (~12) | full keyboard (Chinese, Japanese and Arabic: bank with 8 extra) | no |
 
 French uses an AZERTY keyboard, German QWERTZ, Russian ЙЦУКЕН and the others QWERTY.
 

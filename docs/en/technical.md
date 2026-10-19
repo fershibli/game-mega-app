@@ -149,7 +149,7 @@ Medium and Hard are close when two computers play Backgammon or Buraco — both 
 - UI strings live in `res/values/strings.xml` (English) and `values-pt`, `values-es`, `values-fr`, `values-zh`.
 - The in-app language override wraps the Compose tree in a context created with `createConfigurationContext`, so it works on every Android version without AppCompat. Android 13+ also lists the languages in the system's per-app language settings (`locales_config.xml`).
 - Only these five languages are packaged (`localeFilters`), and language splits are disabled for app bundles so switching never needs a download.
-- Crossword dictionaries are plain text: `ANSWER|clue`. Answers are normalized (upper case, accents removed, Spanish Ñ and Russian Й kept, Œ → OE, German Ä Ö Ü ß → AE OE UE SS, Russian Ё → Е; Japanese becomes katakana with small kana written full size); in Chinese and Japanese every character is one square.
+- Crossword dictionaries are plain text: `ANSWER|clue`. Answers are normalized (upper case, accents removed, Spanish Ñ and Russian Й kept, Œ → OE, German Ä Ö Ü ß → AE OE UE SS, Russian Ё → Е; Japanese becomes katakana with small kana written full size); Arabic drops harakat and writes أ إ آ as ا, and its grid is shown mirrored so across words read right to left; in Chinese and Japanese every character is one square.
 
 ## Testing
 

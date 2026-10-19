@@ -1,6 +1,6 @@
 # Mili Games — Guida per l’utente
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · **Italiano** · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md)
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · **Italiano** · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · [中文](../zh-CN/user-guide.md) · [العربية](../ar/user-guide.md)
 
 Questa guida è scritta per chi gioca e per i familiari che preparano il telefono per loro.
 
@@ -74,7 +74,7 @@ Ogni tabellone si può ingrandire.
 
 | Impostazione | Che cosa fa |
 |---|---|
-| **Lingua** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, oppure **Come il telefono**. Cambia tutta l’app, comprese le parole dei cruciverba. |
+| **Lingua** | English, Português, Español, Français, Italiano, Deutsch, Русский, 日本語, 中文, العربية, oppure **Come il telefono**. Cambia tutta l’app, comprese le parole dei cruciverba. |
 | **Dimensione del testo** | Dall’80 % al 160 % della dimensione normale. |
 | **Dimensione di pezzi e pulsanti** | Dall’80 % al 160 %. Ingrandisce tastierini numerici, tastiere, carte in mano e gli altri comandi. I tabelloni occupano sempre tutto lo schermo; per ingrandirli ancora usa lo zoom. |
 | **Colori** | *Normale* (colori tenui, contrasto medio) · *Alto contrasto* (colori forti, bordi spessi) · *Adatto ai daltonici* (colori che restano distinguibili, con forme disegnate sui pezzi e carte in quattro colori). |

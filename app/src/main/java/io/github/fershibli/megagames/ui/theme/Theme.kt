@@ -37,7 +37,8 @@ val LocalGameLanguage = staticCompositionLocalOf { AppLanguage.ENGLISH }
 /** Returns a context whose resources use [language] instead of the phone language. */
 fun Context.localized(language: AppLanguage): Context {
     val tag = language.tag ?: return this
-    val locale = Locale.forLanguageTag(tag)
+    // Arabic keeps Western digits, the same ones drawn on the boards and cards.
+    val locale = if (language == AppLanguage.ARABIC) Locale.forLanguageTag("$tag-u-nu-latn") else Locale.forLanguageTag(tag)
     val config = Configuration(resources.configuration)
     config.setLocale(locale)
     return createConfigurationContext(config)
@@ -88,7 +89,7 @@ fun MegaGamesTheme(settings: Settings, content: @Composable () -> Unit) {
         LocalContext provides context,
         LocalResources provides context.resources,
         LocalConfiguration provides configuration,
-        LocalLayoutDirection provides LayoutDirection.Ltr,
+        LocalLayoutDirection provides if (language.resolve().rightToLeft) LayoutDirection.Rtl else LayoutDirection.Ltr,
         LocalDensity provides scaledDensity,
         LocalPalette provides palette,
         LocalSettings provides settings,

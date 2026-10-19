@@ -36,6 +36,14 @@ class CrosswordTest {
     }
 
     @Test
+    fun arabicKeepsOneLetterPerSquareWithoutHarakat() {
+        assertEquals(listOf("ك", "ت", "ا", "ب"), Crossword.normalize("كِتَاب", AppLanguage.ARABIC))
+        assertEquals(listOf("ا", "س", "د"), Crossword.normalize("أسد", AppLanguage.ARABIC))
+        assertEquals(listOf("م", "د", "ر", "س", "ة"), Crossword.normalize("مدرســة", AppLanguage.ARABIC))
+        assertEquals(listOf("س", "ؤ", "ا", "ل"), Crossword.normalize("سؤال", AppLanguage.ARABIC))
+    }
+
+    @Test
     fun everyDictionaryIsLargeAndClean() {
         for (lang in AppLanguage.entries.filter { it != AppLanguage.SYSTEM }) {
             val words = dictionary(lang)
