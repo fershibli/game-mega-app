@@ -1,5 +1,9 @@
 package io.github.fershibli.megagames.ui.components
 
+import androidx.compose.ui.AbsoluteAlignment
+import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.platform.LocalLayoutDirection
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
@@ -121,22 +125,26 @@ fun ZoomableBoard(
                 zoomGestures(state, twoFinger, oneHand, oneHandMode, haptics)
             },
     ) {
-        Box(
-            Modifier
-                .fillMaxSize()
-                .graphicsLayer {
-                    transformOrigin = TransformOrigin(0f, 0f)
-                    scaleX = state.scale
-                    scaleY = state.scale
-                    translationX = state.offset.x
-                    translationY = state.offset.y
-                },
-            content = content,
-        )
+        // Boards are drawn and touched in left-to-right coordinates, even when the screens read
+        // right to left (Arabic): only the text around them follows the language.
+        CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
+            Box(
+                Modifier
+                    .fillMaxSize()
+                    .graphicsLayer {
+                        transformOrigin = TransformOrigin(0f, 0f)
+                        scaleX = state.scale
+                        scaleY = state.scale
+                        translationX = state.offset.x
+                        translationY = state.offset.y
+                    },
+                content = content,
+            )
+        }
         if (state.isZoomed) {
             RoundIconButton(
                 AppIcon.ZOOM_RESET, stringResource(R.string.zoom_reset), { state.reset() },
-                Modifier.align(if (settings.leftHanded) Alignment.BottomStart else Alignment.BottomEnd).padding(8.dp),
+                Modifier.align(if (settings.leftHanded) AbsoluteAlignment.BottomLeft else AbsoluteAlignment.BottomRight).padding(8.dp),
                 size = 48.dp, filled = true,
             )
         }

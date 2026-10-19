@@ -83,6 +83,7 @@ fun dictionaryFile(lang: AppLanguage) = "crossword/" + when (lang) {
     AppLanguage.RUSSIAN -> "ru"
     AppLanguage.JAPANESE -> "ja"
     AppLanguage.CHINESE -> "zh"
+    AppLanguage.ARABIC -> "ar"
     else -> "en"
 } + ".txt"
 
@@ -115,7 +116,10 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
     val solution = remember(s.words) { s.solution() }
     val showErrors = host.difficulty != Difficulty.HARD
     val syllabic = s.language.syllabic
-    val useBank = syllabic || host.difficulty == Difficulty.EASY
+    val useBank = s.language.letterBank || host.difficulty == Difficulty.EASY
+    // Arabic crosswords read right to left: the grid is shown mirrored, so every across word
+    // starts on the right.
+    val rtl = s.language.rightToLeft
     val word = s.currentWord()
     val solved = solution.all { (cell, letter) -> s.entries[cell] == letter }
     val scale = LocalSettings.current.pieceScale
@@ -223,6 +227,7 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
         val minC = solution.keys.minOf { it % s.size }
         val rows = solution.keys.maxOf { it / s.size } - minR + 1
         val cols = solution.keys.maxOf { it % s.size } - minC + 1
+        fun shownCol(c: Int) = if (rtl) cols - 1 - (c - minC) else c - minC
         BoxWithConstraints(Modifier.fillMaxSize().padding(8.dp), contentAlignment = Alignment.Center) {
             val cellDp = minOf(maxWidth / cols, maxHeight / rows)
             Canvas(
@@ -231,7 +236,8 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
                     .pointerInput(s) {
                         detectTapGestures { pos ->
                             val cell = size.width / cols.toFloat()
-                            val c = minC + (pos.x / cell).toInt().coerceIn(0, cols - 1)
+                            val k = (pos.x / cell).toInt().coerceIn(0, cols - 1)
+                            val c = minC + if (rtl) cols - 1 - k else k
                             val r = minR + (pos.y / cell).toInt().coerceIn(0, rows - 1)
                             val i = r * s.size + c
                             if (i !in solution) return@detectTapGestures
@@ -241,7 +247,7 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
             ) {
                 val cell = size.width / cols
                 for ((i, letter) in solution) {
-                    val tl = Offset((i % s.size - minC) * cell, (i / s.size - minR) * cell)
+                    val tl = Offset(shownCol(i % s.size) * cell, (i / s.size - minR) * cell)
                     val bg = when {
                         i == s.selected -> p.highlight
                         i in wordCells -> p.highlight.copy(alpha = 0.4f)
@@ -251,7 +257,7 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
                     drawRect(androidx.compose.ui.graphics.Color.Black.copy(alpha = 0.15f), tl + Offset(cell * 0.05f, cell * 0.07f), Size(cell, cell))
                     drawRect(bg, tl, Size(cell, cell))
                     drawRect(p.boardLine, tl, Size(cell, cell), style = Stroke(if (p.strongOutlines) 3f else 1.5f))
-                    starts[i]?.let { n -> text(measurer, n.toString(), tl + Offset(cell * 0.2f, cell * 0.18f), p.textMuted, pxToSp(cell * 0.22f), bold = false) }
+                    starts[i]?.let { n -> text(measurer, n.toString(), tl + Offset(cell * (if (rtl) 0.8f else 0.2f), cell * 0.18f), p.textMuted, pxToSp(cell * 0.22f), bold = false) }
                     val typed = s.entries[i]
                     if (typed.isNotEmpty()) {
                         val wrong = showErrors && typed != letter

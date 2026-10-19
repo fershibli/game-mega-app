@@ -1,5 +1,8 @@
 package io.github.fershibli.megagames.ui.components
 
+import androidx.compose.ui.graphics.drawscope.scale
+import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
@@ -28,10 +31,14 @@ import kotlin.math.sin
 /** Icons are drawn in code (no icon font, no image files) to keep the app tiny. */
 enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO }
 
+private val DIRECTIONAL = setOf(AppIcon.BACK, AppIcon.NEXT, AppIcon.PREV, AppIcon.ERASE)
+
 @Composable
 fun IconView(icon: AppIcon, tint: Color, modifier: Modifier = Modifier, size: Dp = 28.dp, description: String? = null) {
     val m = if (description != null) modifier.semantics { contentDescription = description } else modifier
-    Canvas(m.size(size)) { drawAppIcon(icon, tint) }
+    // Arrows point the way the text reads.
+    val mirror = icon in DIRECTIONAL && LocalLayoutDirection.current == LayoutDirection.Rtl
+    Canvas(m.size(size)) { scale(if (mirror) -1f else 1f, 1f) { drawAppIcon(icon, tint) } }
 }
 
 fun DrawScope.drawAppIcon(icon: AppIcon, tint: Color) {

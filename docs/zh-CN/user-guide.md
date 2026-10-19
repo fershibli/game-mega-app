@@ -1,6 +1,6 @@
 # Mili Games 用户指南
 
-🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · **中文**
+🌐 [English](../en/user-guide.md) · [Português](../pt-BR/user-guide.md) · [Español](../es/user-guide.md) · [Français](../fr/user-guide.md) · [Italiano](../it/user-guide.md) · [Deutsch](../de/user-guide.md) · [Русский](../ru/user-guide.md) · [日本語](../ja/user-guide.md) · **中文** · [العربية](../ar/user-guide.md)
 
 本指南写给玩家，也写给帮他们设置手机的家人。
 
@@ -74,7 +74,7 @@ Mili Games 没有上架应用商店，而是从 GitHub 页面安装。只要从�
 
 | 设置 | 作用 |
 |---|---|
-| **语言** | English、Português、Español、Français、Italiano、Deutsch、Русский、日本語、中文，或“跟随手机”。会改变整个应用，包括填字游戏的词语。 |
+| **语言** | English、Português、Español、Français、Italiano、Deutsch、Русский、日本語、中文、العربية，或“跟随手机”。会改变整个应用，包括填字游戏的词语。 |
 | **文字大小** | 正常大小的 80% 到 160%。 |
 | **棋子和按钮大小** | 80% 到 160%。放大数字键盘、字母键盘、手中的牌和其他按钮。棋盘总是铺满屏幕；想看得更大请用缩放。 |
 | **颜色** | *普通*（柔和，中等对比度）·*高对比度*（颜色鲜明，轮廓粗）·*色盲友好*（颜色始终容易区分，棋子上画有形状，扑克牌使用四种花色颜色）。 |

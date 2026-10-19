@@ -154,7 +154,10 @@ fun RoundIconButton(
     }
 }
 
-/** Equal-width action bar. Main action first; mirrored automatically for handedness. */
+/**
+ * Equal-width action bar. Main action first; mirrored automatically for handedness. The order
+ * follows the hand, not the reading direction, so it is the same in right-to-left languages.
+ */
 @Composable
 fun ActionBar(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
     val left = LocalSettings.current.leftHanded
@@ -167,7 +170,7 @@ fun ActionBar(modifier: Modifier = Modifier, content: @Composable () -> Unit) {
         layout(constraints.maxWidth, height) {
             placeables.forEachIndexed { i, pl ->
                 val slot = if (left) i else n - 1 - i
-                pl.placeRelative(slot * (each + gap), (height - pl.height) / 2)
+                pl.place(slot * (each + gap), (height - pl.height) / 2)
             }
         }
     }

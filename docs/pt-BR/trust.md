@@ -1,6 +1,6 @@
 # Confiança, privacidade e segurança
 
-🌐 [English](../en/trust.md) · **Português** · [Español](../es/trust.md) · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · [中文](../zh-CN/trust.md)
+🌐 [English](../en/trust.md) · **Português** · [Español](../es/trust.md) · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · [中文](../zh-CN/trust.md) · [العربية](../ar/trust.md)
 
 O Mili Games foi feito para ser instalado no celular de pessoas que talvez não consigam avaliar um app sozinhas. Esta página explica o que o app faz e o que não faz — e, mais importante, **como qualquer pessoa pode conferir** sem precisar confiar no autor.
 
@@ -78,7 +78,7 @@ Todo push e pull request roda o [CI](../../.github/workflows/ci.yml) no GitHub A
    - as regras de todos os jogos (jogadas válidas, pontuação, retirada de pedras, jogos e curingas do Buraco…);
    - os geradores: todo Sudoku tem solução única, toda distribuição do Mahjong tem solução, todo Encanamento e todo Ligue as cores têm solução completa, as palavras cruzadas nunca se contradizem;
    - os adversários do computador terminam as partidas rápido e nunca perdem nem duplicam uma carta ou pedra;
-   - os nove idiomas traduzem todos os textos e mantêm os mesmos marcadores;
+   - os dez idiomas traduzem todos os textos e mantêm os mesmos marcadores;
    - salvar e recarregar a partida, arquivo de salvamento corrompido, persistência das configurações;
    - a interface de verdade: zoom com pinça ligado/desligado, zoom de uma mão por toque duplo e por pressionar e girar, escolher um jogo, sair dele pelas Configurações e a pergunta "continuar?" depois de reabrir.
 3. **Android Lint** tratando *avisos como erros*.

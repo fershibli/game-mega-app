@@ -6,6 +6,11 @@ import io.github.fershibli.megagames.ui.screens.VariantScreen
 import io.github.fershibli.megagames.core.WorldStore
 import io.github.fershibli.megagames.core.ChoiceStore
 import io.github.fershibli.megagames.core.GameVariant
+import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.getBoundsInRoot
+import io.github.fershibli.megagames.ui.theme.localized
+import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.platform.LocalLayoutDirection
 import io.github.fershibli.megagames.core.AppLanguage
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.getValue
@@ -304,6 +309,33 @@ class AppFlowTest {
         SaveStore(app).clear()
         assertEquals(7, WorldStore(app).load("pet", Int.serializer()))
         assertEquals(null, worlds.load("farm", Int.serializer()))
+    }
+
+    @Test
+    fun arabicScreensReadRightToLeftButBoardsAndThumbSideDoNot() {
+        var screen: LayoutDirection? = null
+        var board: LayoutDirection? = null
+        rule.setContent {
+            MegaGamesTheme(Settings(language = AppLanguage.ARABIC)) {
+                screen = LocalLayoutDirection.current
+                ZoomableBoard { board = LocalLayoutDirection.current }
+            }
+        }
+        rule.waitForIdle()
+        assertEquals(LayoutDirection.Rtl, screen)
+        assertEquals(LayoutDirection.Ltr, board)
+    }
+
+    @Test
+    fun inArabicTheCloseButtonStaysOnTheThumbSide() {
+        val close = RuntimeEnvironment.getApplication().localized(AppLanguage.ARABIC).getString(R.string.close)
+        var settings by mutableStateOf(Settings(language = AppLanguage.ARABIC))
+        rule.setContent { MegaGamesTheme(settings) { SettingsScreen(settings, { settings = it }, {}, null) } }
+        val width = rule.onRoot().getBoundsInRoot().right
+        assertTrue(rule.onNodeWithContentDescription(close).getBoundsInRoot().left > width / 2)
+        settings = settings.copy(leftHanded = true)
+        rule.waitForIdle()
+        assertTrue(rule.onNodeWithContentDescription(close).getBoundsInRoot().right < width / 2)
     }
 
     @Test

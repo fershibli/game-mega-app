@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">ألعاب الورق</string>
+    <string name="category_board">ألعاب اللوحة</string>
+    <string name="category_puzzles">ألغاز</string>
+    <string name="category_calm_action">حركة هادئة</string>
+    <string name="category_pastimes">تسلية</string>
+    <string name="choose_variant">بأي قواعد تلعب؟</string>
+</resources>

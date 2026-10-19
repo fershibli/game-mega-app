@@ -1,6 +1,6 @@
 # 信任、隐私与安全
 
-🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · **中文**
+🌐 [English](../en/trust.md) · [Português](../pt-BR/trust.md) · [Español](../es/trust.md) · [Français](../fr/trust.md) · [Italiano](../it/trust.md) · [Deutsch](../de/trust.md) · [Русский](../ru/trust.md) · [日本語](../ja/trust.md) · **中文** · [العربية](../ar/trust.md)
 
 Mili Games 的用户可能无法自己判断一个应用是否可靠。本页说明这个应用做什么、不做什么——更重要的是，**任何人都可以自己验证**，不需要相信作者。
 
@@ -77,7 +77,7 @@ aapt2 dump permissions MiliGames-v1.0.0.apk
    - 所有游戏的规则（合法走法、计分、双陆棋移出、巴西拉米的顺子和百搭牌……）；
    - 题目生成：每道数独都有唯一解，每局麻将都能消完，每道接水管和颜色连线都有完整解，填字游戏绝不冲突；
    - 电脑对手能快速下完一局，且从不丢失或复制任何一张牌或一颗棋子；
-   - 九种语言翻译了所有文字，并保留相同的占位符；
+   - 十种语言翻译了所有文字，并保留相同的占位符；
    - 游戏的保存与读取、损坏的存档、设置的持久化；
    - 真实界面：双指缩放的开/关、单手双击缩放和按住旋转缩放、选择游戏、从设置中离开游戏，以及重新打开后的“继续吗？”提示。
 3. **Android Lint**，*警告视为错误*。

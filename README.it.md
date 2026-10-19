@@ -6,7 +6,7 @@
 
 Sudoku · Solitario · Buraco · Backgammon · Mahjong · Reversi · Cruciverba · Tubi · Unisci i colori · Puntini
 
-🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · **Italiano** · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md)
+🌐 [English](README.md) · [Português](README.pt-BR.md) · [Español](README.es.md) · [Français](README.fr.md) · **Italiano** · [Deutsch](README.de.md) · [Русский](README.ru.md) · [日本語](README.ja.md) · [中文](README.zh-CN.md) · [العربية](README.ar.md)
 
 [![CI](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml/badge.svg)](https://github.com/fershibli/game-mega-app/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/fershibli/game-mega-app?include_prereleases&sort=semver)](https://github.com/fershibli/game-mega-app/releases)
@@ -42,7 +42,7 @@ Sudoku · Solitario · Buraco · Backgammon · Mahjong · Reversi · Cruciverba 
 - **Veri avversari al computer**, scritti apposta per Backgammon, Buraco e Reversi.
 - **Zoom con due dita in ogni gioco**, più lo zoom con un dito solo nella modalità una mano.
 - **Salvataggio automatico**: se chiudi l’app per sbaglio, ti propone di riprendere esattamente da dove avevi lasciato.
-- **9 lingue**: inglese, portoghese (Brasile), spagnolo, francese, italiano, tedesco, russo, giapponese e cinese semplificato. Sono tradotti sia l’app *sia* i dizionari dei cruciverba.
+- **10 lingue**: inglese, portoghese (Brasile), spagnolo, francese, italiano, tedesco, russo, giapponese, cinese semplificato e arabo. Sono tradotti sia l’app *sia* i dizionari dei cruciverba.
 - **Piccola e leggera**: circa **1,3 MB**, scritta in Kotlin nativo con Jetpack Compose, senza motore di gioco e senza immagini: tutta la grafica è disegnata dal codice.
 
 ## I giochi
@@ -115,6 +115,7 @@ Tutte le schermate sono generate automaticamente dal codice reale (vedi [Buildin
 | Français | [guide](docs/fr/user-guide.md) | [confiance](docs/fr/trust.md) | [technique](docs/fr/technical.md) | [compiler](docs/fr/building.md) |
 | Italiano | [guida](docs/it/user-guide.md) | [fiducia](docs/it/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 | 中文 | [用户指南](docs/zh-CN/user-guide.md) | [信任与隐私](docs/zh-CN/trust.md) | [技术设计](docs/zh-CN/technical.md) | [构建与贡献](docs/zh-CN/building.md) |
+| العربية | [دليل الاستخدام](docs/ar/user-guide.md) | [الثقة والخصوصية](docs/ar/trust.md) | [technical (EN)](docs/en/technical.md) | [building (EN)](docs/en/building.md) |
 
 La pubblicazione su Google Play è descritta in [google-play.md](docs/en/google-play.md) (in inglese). Indice completo: [docs/README.md](docs/README.md).
 
