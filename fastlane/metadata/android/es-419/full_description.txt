@@ -29,4 +29,11 @@ PRIVADO Y GRATIS
 • No usa internet y no recoge ningún dato
 • Código abierto: cualquiera puede leerlo y comprobarlo
 
+POR QUÉ EXISTE
+Muchas personas mayores y vulnerables son blanco de juegos llenos de anuncios engañosos que las llevan a instalar apps y gastar dinero sin querer. Mili Games es lo contrario: es, y siempre será, gratis y sin anuncios.
+
+Hecho con la ayuda de Claude, el asistente de IA de Anthropic. Ningún chat de IA ni modelo de lenguaje funciona dentro de la app.
+
+Código fuente y documentación: https://github.com/fershibli/game-mega-app
+
 Disponible en español, portugués, inglés, francés y chino.

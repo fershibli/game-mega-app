@@ -96,6 +96,13 @@
     <string name="about_ai">代码、美术和文字都是在 Anthropic 公司的 AI 助手 Claude 的帮助下完成的。</string>
     <string name="about_version">版本 %1$s</string>
     <string name="about_open_project">打开项目主页</string>
+    <string name="mission_button">为什么会有 Mili Games</string>
+    <string name="mission_title">为什么会有 Mili Games</string>
+    <string name="mission_why">很多老年人和其他容易受到伤害的人，常常成为充斥误导性广告的游戏的目标：这些广告让人不小心点到、在不知情时安装其他应用，甚至花钱。</string>
+    <string name="mission_promise">Mili Games 就是要反其道而行：做一个安安静静玩游戏的地方。所以它现在免费，将来也永远免费：没有广告、没有购买、不用注册，也不收集任何数据。它甚至无法连接互联网。</string>
+    <string name="mission_ai">这个应用是在 Anthropic 公司的 AI 助手 Claude 的帮助下开发的。但游戏里没有任何 AI 聊天或语言模型：电脑对手只是经典的规则和计算，在你的手机上运行，不需要联网。</string>
+    <string name="mission_open">源代码是公开的，任何人都可以核实以上内容。</string>
+    <string name="mission_source">查看源代码和文档</string>
     <string name="reset_settings">恢复默认设置</string>
 
     <string name="sudoku_notes">笔记</string>

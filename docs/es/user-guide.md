@@ -85,7 +85,7 @@ Todos los tableros se pueden ampliar.
 | ↳ *Doble toque* | Toca dos veces para acercar: 2×, luego 3×, luego vuelve a lo normal. Toca dos veces **y arrastra** para moverte. |
 | ↳ *Mantener y girar* | Mantén el dedo hasta que el teléfono vibre y dibuja círculos: en sentido horario acerca, en sentido antihorario aleja. Toca dos veces y arrastra para moverte; toca dos veces para volver a lo normal. |
 | **Dificultad predeterminada** | El nivel que aparece ya marcado en la rueda de dificultad. |
-| **Acerca de** | Versión, aviso de privacidad, enlace a este proyecto y **Restablecer ajustes predeterminados**. |
+| **Acerca de** | Versión, aviso de privacidad, enlace a este proyecto, **Restablecer ajustes predeterminados** y, al final del todo, **Por qué existe Mili Games**: por qué la app es y será siempre gratis y sin anuncios, cómo se hizo (con la ayuda de Claude, sin ninguna IA dentro de la app) y un enlace al código fuente. |
 
 La lista de ajustes empieza bastante abajo en la pantalla, y cualquier opción se puede desplazar hacia el pulgar.
 

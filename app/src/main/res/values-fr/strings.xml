@@ -96,6 +96,13 @@
     <string name="about_ai">Le code, les illustrations et les textes ont été créés avec l’aide de Claude, l’assistant d’IA d’Anthropic.</string>
     <string name="about_version">Version %1$s</string>
     <string name="about_open_project">Ouvrir la page du projet</string>
+    <string name="mission_button">Pourquoi Mili Games existe</string>
+    <string name="mission_title">Pourquoi Mili Games existe</string>
+    <string name="mission_why">Beaucoup de personnes âgées, et d’autres personnes vulnérables, sont la cible de jeux remplis de publicités trompeuses, conçues pour les faire toucher par erreur, installer d’autres applications sans le vouloir et dépenser de l’argent.</string>
+    <string name="mission_promise">Mili Games a été fait pour être tout le contraire : un endroit calme pour jouer. C’est pourquoi il est, et restera toujours, gratuit : sans publicité, sans achat, sans compte et sans collecte de données. Il n’a même pas accès à Internet.</string>
+    <string name="mission_ai">L’application a été développée avec l’aide de Claude, un assistant d’intelligence artificielle créé par Anthropic. Mais il n’y a ni chat d’IA ni modèle de langage dans le jeu : les adversaires de l’ordinateur sont des règles et des calculs classiques qui tournent sur votre téléphone, sans Internet.</string>
+    <string name="mission_open">Le code source est ouvert : chacun peut vérifier tout cela.</string>
+    <string name="mission_source">Voir le code source et la documentation</string>
     <string name="reset_settings">Rétablir les réglages par défaut</string>
 
     <string name="sudoku_notes">Notes</string>
