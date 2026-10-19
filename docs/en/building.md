@@ -68,36 +68,24 @@ Plays the computer opponents against each other (Buraco, Backgammon, Reversi) an
 
 ## Signed releases
 
-Android only installs signed APKs, and updates must be signed with the **same key**. Keep the key safe: if it is lost, users must uninstall to install a new version.
+Android only installs signed APKs, and updates must be signed with the **same key**. If the key is lost, users must uninstall to install a new version.
 
-1. **Create a key once** (keep the file and the passwords in a password manager):
+**On GitHub (recommended)**: the [`signing-key.yml`](../../.github/workflows/signing-key.yml) workflow creates the key, stores it in the repository secrets and re-encrypts it whenever you change the password in the `MEGAGAMES_SIGNING_PASSWORD` secret. It never replaces an existing key, and it can make an encrypted backup. Setup (one token, two clicks): [google-play.md → Signing key](google-play.md#1-signing-key).
 
-   ```bash
-   keytool -genkeypair -v -keystore megagames-release.jks -alias megagames \
-     -keyalg RSA -keysize 4096 -validity 36500
-   ```
+The [deploy pipeline](#versioning-and-deploy) signs every APK and AAB with that key. Without it, release candidates (`stag`) are still published, signed with a temporary debug key and marked as such in the release notes, but a stable version (`main`) is never published: the run fails before creating the tag, so you can create the key and simply re-run it.
 
-2. **Local signing**: create `keystore.properties` in the project root (it is git-ignored):
+**Locally**: with the key file (from a backup), create `keystore.properties` in the project root (it is git-ignored):
 
-   ```properties
-   storeFile=megagames-release.jks
-   storePassword=...
-   keyAlias=megagames
-   keyPassword=...
-   ```
+```properties
+storeFile=megagames-release.p12
+storePassword=...
+keyAlias=megagames
+keyPassword=...
+```
 
-   Then `./gradlew assembleRelease` produces `app/build/outputs/apk/release/app-release.apk`.
+Then `./gradlew assembleRelease bundleRelease` produces `app/build/outputs/apk/release/app-release.apk` and `app/build/outputs/bundle/release/app-release.aab`.
 
-3. **Releases from GitHub**: add four repository secrets (*Settings → Secrets and variables → Actions*):
-
-   | Secret | Value |
-   |---|---|
-   | `MEGAGAMES_KEYSTORE_BASE64` | output of `base64 -w0 megagames-release.jks` |
-   | `MEGAGAMES_KEYSTORE_PASSWORD` | store password |
-   | `MEGAGAMES_KEY_ALIAS` | `megagames` |
-   | `MEGAGAMES_KEY_PASSWORD` | key password |
-
-   With these secrets the [deploy pipeline](#versioning-and-deploy) signs every APK with the real key. Without them it still publishes release candidates (`stag`), signed with a temporary debug key and marked as such in the release notes, but it refuses to publish a stable version (`main`): the run fails before creating the tag, so you can add the secrets and simply re-run it.
+**Google Play**: step-by-step guide, with the answers to every Play Console form: [google-play.md](google-play.md).
 
 ## Versioning and deploy
 

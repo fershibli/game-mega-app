@@ -14,6 +14,8 @@ All notable changes to this project are documented here. The format follows [Kee
 - Backgammon on the traditional horizontal board, with pinch zoom to get closer; a Rotate button stands it up (bigger checkers) and the choice is remembered.
 - Documentation in five languages, CI, Dependabot.
 - Automatic semantic versioning from Conventional Commits (`versioning.yml`) and an APK deploy pipeline (`deploy.yml`) that tests, signs, verifies and publishes each release.
+- Google Play: AAB in every release, optional upload to Play (`scripts/play-upload.sh`), store listing texts and graphics in five languages (`fastlane/metadata/android`), privacy policy (`PRIVACY.md`) and a step-by-step guide (`docs/en/google-play.md`).
+- `signing-key.yml`: creates the release key, keeps it in the repository secrets, re-encrypts it when `MEGAGAMES_SIGNING_PASSWORD` changes, makes encrypted backups and exports it for Google Play.
 
 ### Fixed
 - Sudoku: after the first tap on the board, selecting another cell could erase the numbers placed since then.
