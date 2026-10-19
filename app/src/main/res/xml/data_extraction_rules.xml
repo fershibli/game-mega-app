@@ -4,9 +4,13 @@
     <cloud-backup>
         <include domain="sharedpref" path="settings.xml" />
         <include domain="file" path="current_game.json" />
+        <include domain="file" path="worlds/" />
+        <include domain="sharedpref" path="choices.xml" />
     </cloud-backup>
     <device-transfer>
         <include domain="sharedpref" path="settings.xml" />
         <include domain="file" path="current_game.json" />
+        <include domain="file" path="worlds/" />
+        <include domain="sharedpref" path="choices.xml" />
     </device-transfer>
 </data-extraction-rules>

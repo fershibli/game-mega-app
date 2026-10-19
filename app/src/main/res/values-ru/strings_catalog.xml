@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">Карты</string>
+    <string name="category_board">Настольные игры</string>
+    <string name="category_puzzles">Головоломки</string>
+    <string name="category_calm_action">Спокойные игры с движением</string>
+    <string name="category_pastimes">Досуг</string>
+    <string name="choose_variant">По каким правилам вы играете?</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">Список игр</string>
+    <string name="show_categories">Группировать по категориям</string>
+    <string name="show_categories_desc">Игры разделены на группы: карты, настольные игры, головоломки… Выключите, чтобы видеть один общий список.</string>
+    <string name="recent_first">Недавние сначала</string>
+    <string name="recent_first_desc">Игра, которую вы открываете, поднимается в начало своей группы, а группа — в начало списка. Остальные сохраняют порядок, поэтому любимые игры остаются наверху.</string>
+</resources>

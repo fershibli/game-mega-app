@@ -85,6 +85,8 @@ Every game board can be enlarged.
 | ↳ *Double tap* | Double tap to zoom in: 2×, then 3×, then back to normal. Double tap **and drag** to move around. |
 | ↳ *Press and rotate* | Touch and hold until the phone vibrates, then draw circles: clockwise zooms in, counter-clockwise zooms out. Double tap and drag to move; double tap to reset. |
 | **Default difficulty** | The level pre-selected on the difficulty wheel. |
+| **Group by category** | On: games appear under headings (cards, board games, puzzles…). Off: one single list. |
+| **Recently played first** | On: the game you open moves to the top of its group, and its group to the top of the list; the rest keeps its order, so favorites stay near the top. Both layouts keep their own order, so switching never loses it. Off: the usual order. |
 | **About** | Version, privacy statement, a link to this project, **Restore default settings** and, at the very end, **Why Mili Games exists**: why the app is free and ad-free forever, how it was made (with the help of Claude, with no AI inside the app) and a link to the source code. |
 
 The settings list starts low on the screen, and you can scroll any option down towards your thumb.

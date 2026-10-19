@@ -134,7 +134,7 @@ Guidelines:
 - **Accessibility first**: touch targets ≥ 56 dp, main actions in the lower half of the screen and mirrored for left-handed mode (`ActionBar`), never color alone (use `drawSymbol` in accessible palettes), no timers or time pressure.
 - **Stay tiny and private**: no new permissions, no network, no analytics, no image assets (draw in code), no new dependency without a strong reason.
 - **Engines are pure Kotlin** with unit tests; the UI only draws state and calls the engine.
-- Every user-visible text goes to `strings.xml` **in all five languages** (`TranslationsTest` enforces it).
+- Every user-visible text goes to `strings.xml` (or the game's own `strings_<key>.xml`) **in all ten languages** (`TranslationsTest` enforces it).
 - Write commit messages as [Conventional Commits](https://www.conventionalcommits.org) (`feat: …`, `fix: …`, `docs: …`): they decide the next version (see [Versioning and deploy](#versioning-and-deploy)).
 - Code comments and identifiers in English; follow the existing style (`.editorconfig`, Kotlin official style).
 
@@ -161,8 +161,14 @@ ANSWER|A short, friendly clue
 
 ## Adding a game
 
-1. Add an entry to `GameId` (its `key` is stored in save files: never change it later) with title and how-to strings.
-2. Create `games/<name>/` with a pure-Kotlin engine (`@Serializable` state) and unit tests.
-3. Write the screen with `LoadGame(host, State.serializer(), create = { ... })` and `GameLayout(status, controls) { board }`; call `host.finish(GameOutcome(...))` at the end.
-4. Route it in `GameContent.kt` and draw its thumbnail in `ui/art/Thumbnails.kt`.
-5. Add a screenshot test and document the rules in all five user guides.
+Each game lives in its own files, so several games can be developed in parallel branches and only a few one-line additions meet in shared files.
+
+1. **Register it** with one line in `GameId` (`core/Model.kt`): a `key` that is stored in save files and must never change, title and how-to strings, a `GameCategory` (cards, board games, puzzles, calm action, pastimes) and, when it has regional rules, its `variants`. A `GameVariant` has a stable `key`, a name and a one-line description; the rules screen shows them before the difficulty and preselects the last choice. Set `hasDifficulty = false` for games without levels (a pet, a farm).
+2. **Engine** in `games/<name>/`: pure Kotlin, a `@Serializable` state and unit tests. Computer opponents run on the phone, without network, and must answer in well under a second on a slow phone (`AiBenchmarkTest` style).
+3. **Screen**: `LoadGame(host, State.serializer(), create = { ... })` and `GameLayout(status, controls) { board }`; read the rules from `host.variant` and the level from `host.difficulty`; call `host.finish(GameOutcome(...))` at the end. Boards are drawn in left-to-right coordinates even in Arabic: draw everything in code (no image files) and keep touch targets big.
+4. **Lasting worlds** (a pet, a farm) keep their state with `rememberWorldStore()` instead of the autosave, which only holds the one game in progress and is erased when another game starts. Never punish absence: no deaths, no withering, no notifications.
+5. **Route** it in `GameContent.kt` and draw its text-free thumbnail in `ui/art/Thumbnails.kt` (one line each; the drawing itself goes in the game's own file).
+6. **Texts** go to `res/values*/strings_<key>.xml`, one file per game, **in all ten languages** (`TranslationsTest` checks every key and placeholder in every language).
+7. **Rules for players** go to `docs/<lang>/games/<key>.md` in the ten languages.
+8. **Tests**: engine tests, at least one UI test that plays a few moves by tapping the board like a person would, and a screenshot in `ScreenshotTest`. `CatalogTest` already opens every game with every set of rules.
+9. **Names and looks**: only generic, descriptive names, and pictures of our own. Game rules are free to use, but names, characters, artwork and the look of a commercial game are not (see [Trust](trust.md)). When in doubt, leave it out: a single complaint can take the whole app off the store.

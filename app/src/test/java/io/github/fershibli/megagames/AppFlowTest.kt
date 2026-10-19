@@ -1,6 +1,14 @@
 package io.github.fershibli.megagames
 
+import io.github.fershibli.megagames.ui.screens.HomeScreen
+import io.github.fershibli.megagames.ui.screens.HomeOrder
+import io.github.fershibli.megagames.core.GameCategory
 import io.github.fershibli.megagames.R
+import kotlinx.serialization.builtins.serializer
+import io.github.fershibli.megagames.ui.screens.VariantScreen
+import io.github.fershibli.megagames.core.WorldStore
+import io.github.fershibli.megagames.core.ChoiceStore
+import io.github.fershibli.megagames.core.GameVariant
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.getBoundsInRoot
 import io.github.fershibli.megagames.ui.theme.localized
@@ -266,6 +274,107 @@ class AppFlowTest {
         store.clear()
     }
 
+
+    @Test
+    fun rulesScreenPreselectsTheLastChoiceAndConfirmsWithOneTap() {
+        val rules = listOf(
+            GameVariant("a", R.string.difficulty_easy, R.string.color_normal_desc),
+            GameVariant("b", R.string.difficulty_hard, R.string.color_high_contrast_desc),
+        )
+        var confirmed: GameVariant? = null
+        rule.setContent {
+            MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) {
+                VariantScreen(GameId.SUDOKU, rules[1], { confirmed = it }, {}, {}, variants = rules)
+            }
+        }
+        rule.onNodeWithText("Confirm").performClick()
+        assertEquals(rules[1], confirmed)
+        rule.onNodeWithText("Easy").performClick()
+        rule.onNodeWithText("Confirm").performClick()
+        assertEquals(rules[0], confirmed)
+    }
+
+    @Test
+    fun theGameJustPlayedMovesToTheFrontWithoutResettingTheRest() {
+        val store = ChoiceStore(RuntimeEnvironment.getApplication())
+        assertEquals(GameCategory.entries, store.categories())
+        store.recordPlayed(GameId.CONNECT)
+        store.recordPlayed(GameId.DOTS)
+        assertEquals(GameCategory.PUZZLES, store.categories().first())
+        assertEquals(listOf(GameId.DOTS, GameId.CONNECT, GameId.SUDOKU), store.gamesIn(GameCategory.PUZZLES).take(3))
+        store.recordPlayed(GameId.BURACO)
+        assertEquals(listOf(GameCategory.CARDS, GameCategory.PUZZLES, GameCategory.BOARD), store.categories().take(3))
+        assertEquals(listOf(GameId.BURACO, GameId.SOLITAIRE), store.gamesIn(GameCategory.CARDS))
+        // The puzzles keep the order they had.
+        assertEquals(listOf(GameId.DOTS, GameId.CONNECT, GameId.SUDOKU), ChoiceStore(RuntimeEnvironment.getApplication()).gamesIn(GameCategory.PUZZLES).take(3))
+        // The single list is kept up to date at the same time.
+        assertEquals(listOf(GameId.BURACO, GameId.DOTS, GameId.CONNECT, GameId.SOLITAIRE), store.allGames().take(4))
+        assertEquals(GameId.entries.toSet(), store.allGames().toSet())
+    }
+
+    @Test
+    fun withoutCategoriesTheHomeIsOneListInTheSameRecentOrder() {
+        val store = ChoiceStore(RuntimeEnvironment.getApplication())
+        store.recordPlayed(GameId.REVERSI)
+        store.recordPlayed(GameId.DOTS)
+        var settings by mutableStateOf(Settings(language = AppLanguage.ENGLISH, showCategories = false))
+        rule.setContent { MegaGamesTheme(settings) { HomeScreen({}, {}, HomeOrder.of(settings, store)) } }
+        assertEquals(0, rule.onAllNodesWithText("Puzzles").fetchSemanticsNodes().size)
+        val dots = rule.onAllNodesWithContentDescription("Dots").onFirst().getBoundsInRoot()
+        val reversi = rule.onAllNodesWithContentDescription("Reversi").onFirst().getBoundsInRoot()
+        assertTrue(dots.top <= reversi.top && dots.left < reversi.left)
+        // Back to categories: their own order was kept too.
+        settings = settings.copy(showCategories = true)
+        rule.waitForIdle()
+        assertTrue(rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top < rule.onAllNodesWithText("Board games").onFirst().getBoundsInRoot().top)
+    }
+
+    @Test
+    fun homeShowsTheLastPlayedFirstUnlessTurnedOff() {
+        val store = ChoiceStore(RuntimeEnvironment.getApplication())
+        store.recordPlayed(GameId.DOTS)
+        var order by mutableStateOf(HomeOrder.recent(store))
+        rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { HomeScreen({}, {}, order) } }
+        val puzzles = rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot()
+        val dots = rule.onAllNodesWithContentDescription("Dots").onFirst().getBoundsInRoot()
+        val sudoku = rule.onAllNodesWithContentDescription("Sudoku").onFirst().getBoundsInRoot()
+        assertTrue(puzzles.top < dots.top)
+        assertTrue(dots.top <= sudoku.top && dots.left < sudoku.left)
+        order = HomeOrder.Default
+        rule.waitForIdle()
+        assertEquals(1, rule.onAllNodesWithText("Cards").fetchSemanticsNodes().size.coerceAtMost(1))
+        assertTrue(rule.onAllNodesWithText("Cards").onFirst().getBoundsInRoot().top < rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top)
+    }
+
+    @Test
+    fun homeOrderSettingsAreRemembered() {
+        val app = RuntimeEnvironment.getApplication()
+        assertTrue(SettingsStore(app).load().recentFirst)
+        assertTrue(SettingsStore(app).load().showCategories)
+        SettingsStore(app).save(Settings(recentFirst = false, showCategories = false))
+        assertEquals(false, SettingsStore(app).load().recentFirst)
+        assertEquals(false, SettingsStore(app).load().showCategories)
+    }
+
+    @Test
+    fun theLastRulesAreRememberedPerGame() {
+        val store = ChoiceStore(RuntimeEnvironment.getApplication())
+        assertEquals(null, store.lastVariant(GameId.SUDOKU))
+        store.rememberVariant(GameId.SUDOKU, GameVariant("brazilian", R.string.difficulty_easy, R.string.color_normal_desc))
+        assertEquals("brazilian", ChoiceStore(RuntimeEnvironment.getApplication()).lastVariant(GameId.SUDOKU))
+        assertEquals(null, store.lastVariant(GameId.REVERSI))
+    }
+
+    @Test
+    fun worldsSurviveAndAreKeptApartFromTheCurrentGame() {
+        val app = RuntimeEnvironment.getApplication()
+        val worlds = WorldStore(app)
+        worlds.save("pet", Int.serializer(), 7)
+        worlds.flush()
+        SaveStore(app).clear()
+        assertEquals(7, WorldStore(app).load("pet", Int.serializer()))
+        assertEquals(null, worlds.load("farm", Int.serializer()))
+    }
 
     @Test
     fun arabicScreensReadRightToLeftButBoardsAndThumbSideDoNot() {

@@ -198,6 +198,15 @@ fun SettingsScreen(
                     }
                 }
 
+                Section(stringResource(R.string.section_game_list)) {
+                    ToggleRow(stringResource(R.string.show_categories), stringResource(R.string.show_categories_desc), settings.showCategories) {
+                        onChange(settings.copy(showCategories = it))
+                    }
+                    ToggleRow(stringResource(R.string.recent_first), stringResource(R.string.recent_first_desc), settings.recentFirst) {
+                        onChange(settings.copy(recentFirst = it))
+                    }
+                }
+
                 Section(stringResource(R.string.section_about)) {
                     Text(stringResource(R.string.about_text), style = MaterialTheme.typography.bodyLarge, color = p.text)
                     Text(stringResource(R.string.about_privacy), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)

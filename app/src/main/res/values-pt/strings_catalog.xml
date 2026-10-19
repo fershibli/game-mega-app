@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">Cartas</string>
+    <string name="category_board">Tabuleiro</string>
+    <string name="category_puzzles">Quebra-cabeças</string>
+    <string name="category_calm_action">Ação tranquila</string>
+    <string name="category_pastimes">Passatempos</string>
+    <string name="choose_variant">Com quais regras você joga?</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">Lista de jogos</string>
+    <string name="show_categories">Separar por categoria</string>
+    <string name="show_categories_desc">Os jogos aparecem em grupos: cartas, tabuleiro, quebra-cabeças… Desligue para ver uma lista única.</string>
+    <string name="recent_first">Últimos jogados primeiro</string>
+    <string name="recent_first_desc">O jogo que você abre sobe para o começo do grupo dele, e o grupo sobe para o começo da lista. O resto mantém a ordem, então os seus preferidos ficam lá em cima.</string>
+</resources>

@@ -14,7 +14,8 @@ O Mili Games foi feito para ser instalado no celular de pessoas que talvez não 
 6. [Conferindo um APK baixado](#conferindo-um-apk-baixado)
 7. [Proteções da cadeia de suprimentos](#proteções-da-cadeia-de-suprimentos)
 8. [Ajuda de IA, com transparência](#ajuda-de-ia-com-transparência)
-9. [Relatando um problema de segurança](#relatando-um-problema-de-segurança)
+9. [Nomes e imagens dos jogos](#nomes-e-imagens-dos-jogos)
+10. [Relatando um problema de segurança](#relatando-um-problema-de-segurança)
 
 ## Resumo
 
@@ -115,6 +116,12 @@ Rode as mesmas verificações você mesmo: veja [building.md](building.md).
 ## Ajuda de IA, com transparência
 
 O código, a arte e a documentação foram criados com a ajuda do **Claude**, o assistente de IA da Anthropic, sob a direção do mantenedor. Código escrito com IA pode ter erros como qualquer outro código; por isso este projeto se apoia em coisas que você pode conferir, e não em promessas: código legível, uma bateria ampla de testes, lint, compilações reproduzíveis e checksums publicados. Se encontrar um problema, por favor avise.
+
+## Nomes e imagens dos jogos
+
+As regras de um jogo não têm dono: a lei brasileira de direitos autorais diz isso expressamente (Lei 9.610/98, art. 8º, II: não são protegidos "os esquemas, planos ou regras para realizar atos mentais, jogos ou negócios"), e o mesmo vale nos Estados Unidos e na Convenção de Berna, seguida pela maioria dos países. O que tem dono são os **nomes** (marcas, registradas país a país), a **arte, os personagens e os textos** (direito autoral, praticamente no mundo todo) e o **visual de um jogo comercial específico**.
+
+Por isso o Mili Games só usa nomes genéricos e descritivos e imagens desenhadas no próprio código, nunca o nome, os personagens, a arte ou o visual de um jogo comercial. Quando um jogo é parecido demais com um produto protegido para ser diferenciado, ele fica de fora. Uma reclamação à loja derruba o app inteiro, não um jogo, e o propósito do app vale mais do que qualquer jogo.
 
 ## Relatando um problema de segurança
 

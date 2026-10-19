@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="category_cards">トランプ</string>
+    <string name="category_board">ボードゲーム</string>
+    <string name="category_puzzles">パズル</string>
+    <string name="category_calm_action">のんびりアクション</string>
+    <string name="category_pastimes">おたのしみ</string>
+    <string name="choose_variant">どのルールで遊びますか？</string>
+
+    <!-- Settings: order of the home screen -->
+    <string name="section_game_list">ゲームの並び</string>
+    <string name="show_categories">種類ごとに分ける</string>
+    <string name="show_categories_desc">ゲームを種類ごと（トランプ、ボードゲーム、パズル…）に分けて表示します。オフにすると一つの一覧になります。</string>
+    <string name="recent_first">最近遊んだ順</string>
+    <string name="recent_first_desc">開いたゲームはそのグループの先頭に、グループは一覧の先頭に移ります。ほかの並びは変わらないので、よく遊ぶゲームが上のほうに残ります。</string>
+</resources>

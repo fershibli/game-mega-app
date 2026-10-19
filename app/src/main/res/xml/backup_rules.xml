@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Android 11 and older: back up settings and the current game (stays inside the user's own Google backup). -->
+<!-- Android 11 and older: back up settings, chosen rules, the current game and the pet/farm worlds (stays inside the user's own Google backup). -->
 <full-backup-content>
     <include domain="sharedpref" path="settings.xml" />
     <include domain="file" path="current_game.json" />
+    <include domain="file" path="worlds/" />
+    <include domain="sharedpref" path="choices.xml" />
 </full-backup-content>
