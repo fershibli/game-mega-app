@@ -166,3 +166,5 @@ RÉPONSE|Une définition courte et bienveillante
 3. Écrivez l’écran avec `LoadGame(host, State.serializer(), create = { ... })` et `GameLayout(status, controls) { plateau }` ; appelez `host.finish(GameOutcome(...))` à la fin.
 4. Branchez-le dans `GameContent.kt` et dessinez sa vignette dans `ui/art/Thumbnails.kt`.
 5. Ajoutez un test de capture d’écran et documentez les règles dans les cinq guides d’utilisation.
+
+Quand une pull request vers `stag` est fusionnée, le workflow **Sync open PRs** (`sync-prs.yml`) fusionne `stag` dans chaque autre pull request ouverte qui a désormais un conflit. Si les conflits ne touchent que les listes de jeux (`GameId`, `GameContent.kt`, `Thumbnails.kt`, `ScreenshotTest.kt` et le changelog), il garde les deux côtés (`scripts/merge_game_lists.py`), vérifie que tout compile, pousse la fusion et lance la CI. Tout autre conflit est listé dans le résumé de l’exécution pour qu’une personne le règle.

@@ -1,0 +1,82 @@
+# Keeps the open pull requests to stag mergeable when stag moves.
+#
+# Almost every game pull request adds one line to the same few lists (the GameId enum, the
+# GameContent and thumbnail `when`s, the screenshot tests and the changelog). After one is
+# merged the others conflict on lines that simply all belong. This job merges stag into each
+# open pull request branch of this repository that has a conflict. When the conflicts are only
+# in those lists it keeps both sides (scripts/merge_game_lists.py), checks that the app and its
+# tests still compile, pushes the merge and starts CI on it. Any other conflict, or a merge that
+# does not compile, is left for a person and listed in the run summary.
+name: Sync open PRs
+
+on:
+  push:
+    branches: [stag]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+  actions: write
+
+# One sync at a time; a newer stag push waits and then sees every merge so far.
+concurrency:
+  group: sync-open-prs
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - uses: gradle/actions/setup-gradle@v6
+
+      - name: Merge stag into conflicting pull requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          echo "| Pull request | Result |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|" >> "$GITHUB_STEP_SUMMARY"
+          # The resolver is taken from stag: older pull request branches don't have it.
+          cp scripts/merge_game_lists.py "$RUNNER_TEMP/"
+          gh pr list --base stag --state open --limit 100 --json number,headRefName,isCrossRepository \
+            --jq '.[] | select(.isCrossRepository | not) | "\(.number) \(.headRefName)"' > "$RUNNER_TEMP/prs.txt"
+          while read -r number branch; do
+            git checkout -q -B "$branch" "origin/$branch"
+            if git merge-tree --write-tree origin/stag HEAD > /dev/null; then
+              result="no conflict"
+            else
+              git merge -q --no-edit origin/stag > /dev/null || true
+              conflicts=$(git diff --name-only --diff-filter=U)
+              if python3 "$RUNNER_TEMP/merge_game_lists.py" $conflicts; then
+                git add -- $conflicts
+                git commit -q --no-edit
+                if ./gradlew --no-daemon -q compileDebugUnitTestKotlin < /dev/null; then
+                  git push -q origin "HEAD:$branch"
+                  # Pushes made with this job's token start no workflow by themselves.
+                  gh workflow run ci.yml --ref "$branch" < /dev/null
+                  result="merged stag, kept both sides of the game lists, CI started"
+                else
+                  result="⚠️ merged, but it does not compile: needs a person"
+                fi
+              else
+                git merge --abort
+                result="⚠️ conflicts outside the game lists ($(echo $conflicts)): needs a person"
+              fi
+            fi
+            git reset -q --hard
+            git checkout -q --detach origin/stag
+            echo "| #$number \`$branch\` | $result |" >> "$GITHUB_STEP_SUMMARY"
+            echo "#$number $branch: $result"
+          done < "$RUNNER_TEMP/prs.txt"
