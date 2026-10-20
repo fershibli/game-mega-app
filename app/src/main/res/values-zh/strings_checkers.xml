@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">西洋跳棋</string>
+    <string name="howto_checkers">在深色格子上斜向移动棋子，跳过电脑的棋子即可吃掉它。走到对面底线就升为王棋。吃光对方的棋子或让对方无路可走就赢了。</string>
+    <string name="checkers_variant_brazilian">巴西跳棋</string>
+    <string name="checkers_variant_brazilian_desc">8×8。普通棋子也能向后吃，王棋可走多格，必须吃最多的子。</string>
+    <string name="checkers_variant_international">国际跳棋</string>
+    <string name="checkers_variant_international_desc">10×10棋盘，每方20枚棋子。规则与巴西跳棋相同。</string>
+    <string name="checkers_variant_english">英式跳棋</string>
+    <string name="checkers_variant_english_desc">8×8，也叫美式跳棋。普通棋子只能向前，王棋每次走一格，深色先走。</string>
+    <string name="checkers_variant_italian">意大利跳棋</string>
+    <string name="checkers_variant_italian_desc">8×8。普通棋子不能吃王棋，王棋每次走一格，必须吃最多的子。</string>
+    <string name="checkers_variant_russian">俄罗斯跳棋</string>
+    <string name="checkers_variant_russian_desc">8×8。王棋可走多格，吃子路线可自由选择，吃子途中升王的棋子会以王棋身份继续吃。</string>
+    <string name="checkers_score">你: %1$d · 电脑: %2$d</string>
+    <string name="checkers_pick_piece">轮到你了：点一枚你的棋子</string>
+    <string name="checkers_pick_target">现在点一个高亮的格子</string>
+    <string name="checkers_must_capture">必须吃子！能吃子的棋子已标出。</string>
+    <string name="checkers_continue">继续吃子：点下一个格子</string>
+    <string name="checkers_draw">和棋：双方各走25步都只动王棋且没有吃子。</string>
+    <string name="checkers_ai_no_pieces">电脑的棋子被吃光了。</string>
+    <string name="checkers_ai_no_moves">电脑无路可走。</string>
+    <string name="checkers_you_no_pieces">你的棋子被吃光了。</string>
+    <string name="checkers_you_no_moves">你无路可走。</string>
+</resources>

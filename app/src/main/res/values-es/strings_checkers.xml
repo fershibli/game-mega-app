@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">Damas</string>
+    <string name="howto_checkers">Mueve tus fichas en diagonal por las casillas oscuras y salta sobre las fichas del ordenador para capturarlas. Llega al otro lado para coronar una dama. Gana quien capture todas las fichas o deje al otro sin jugadas.</string>
+    <string name="checkers_variant_brazilian">Damas brasileñas</string>
+    <string name="checkers_variant_brazilian_desc">8×8. Los peones también capturan hacia atrás, la dama vuela y hay que capturar el mayor número de fichas.</string>
+    <string name="checkers_variant_international">Damas internacionales</string>
+    <string name="checkers_variant_international_desc">Tablero de 10×10 con 20 fichas cada uno. Mismas reglas que las damas brasileñas.</string>
+    <string name="checkers_variant_english">Damas inglesas</string>
+    <string name="checkers_variant_english_desc">8×8, también llamadas damas americanas. Los peones solo avanzan, la dama mueve una casilla y empiezan las oscuras.</string>
+    <string name="checkers_variant_italian">Damas italianas</string>
+    <string name="checkers_variant_italian_desc">8×8. Los peones no pueden capturar damas, la dama mueve una casilla y hay que capturar el mayor número de fichas.</string>
+    <string name="checkers_variant_russian">Damas rusas</string>
+    <string name="checkers_variant_russian_desc">8×8. La dama vuela, puedes elegir cualquier captura, y el peón que corona en medio de una captura sigue como dama.</string>
+    <string name="checkers_score">Tú: %1$d · Ordenador: %2$d</string>
+    <string name="checkers_pick_piece">Tu turno: toca una de tus fichas</string>
+    <string name="checkers_pick_target">Ahora toca una casilla marcada</string>
+    <string name="checkers_must_capture">¡Captura obligatoria! Las fichas que pueden capturar están marcadas.</string>
+    <string name="checkers_continue">Sigue capturando: toca la siguiente casilla</string>
+    <string name="checkers_draw">Tablas: 25 jugadas por bando solo con damas y sin capturas.</string>
+    <string name="checkers_ai_no_pieces">El ordenador se quedó sin fichas.</string>
+    <string name="checkers_ai_no_moves">El ordenador no puede mover.</string>
+    <string name="checkers_you_no_pieces">Te quedaste sin fichas.</string>
+    <string name="checkers_you_no_moves">No te quedan jugadas.</string>
+</resources>
