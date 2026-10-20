@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">Cacheta</string>
+    <string name="howto_cacheta">Roba y descarta hasta que todas tus cartas formen escaleras y tríos; entonces pulsa ¡Bater! antes que el ordenador.</string>
+    <string name="cacheta_variant_classic">Clásica</string>
+    <string name="cacheta_variant_classic_desc">Dos barajas, 9 cartas cada uno, sin comodines.</string>
+    <string name="cacheta_variant_wild">Con comodín</string>
+    <string name="cacheta_variant_wild_desc">Una carta vuelta (la vira) hace comodín a la siguiente carta de su palo.</string>
+    <string name="cacheta_variant_pife">Pife</string>
+    <string name="cacheta_variant_pife_desc">Sin comodín, la escalera puede dar la vuelta (K-A-2) y puedes coger cualquier descarte para bater.</string>
+    <string name="cacheta_how_many">¿Cuántos jugadores del ordenador?</string>
+    <string name="cacheta_computer">Ordenador %1$d</string>
+    <string name="cacheta_playing">El ordenador %1$d está jugando…</string>
+    <string name="cacheta_deck">Mazo (%1$d)</string>
+    <string name="cacheta_pile">Descarte</string>
+    <string name="cacheta_vira">Vira</string>
+    <string name="cacheta_wild">Comodín</string>
+    <string name="cacheta_draw">Robar</string>
+    <string name="cacheta_take">Coger descarte</string>
+    <string name="cacheta_discard">Descartar</string>
+    <string name="cacheta_go_out">¡Bater!</string>
+    <string name="cacheta_sort_suit">Por palo</string>
+    <string name="cacheta_sort_rank">Por número</string>
+    <string name="cacheta_skip">No, gracias</string>
+    <string name="cacheta_prompt_draw">Tu turno: roba del mazo o coge el descarte</string>
+    <string name="cacheta_prompt_discard">Toca una carta y pulsa Descartar</string>
+    <string name="cacheta_prompt_go_out">¡Todas tus cartas encajan! Pulsa ¡Bater!</string>
+    <string name="cacheta_offer">¡Puedes bater con el %1$s descartado! ¿Lo coges?</string>
+    <string name="cacheta_err_taken">No puedes descartar la carta que acabas de coger del descarte.</string>
+    <string name="cacheta_won">¡Has batido!</string>
+    <string name="cacheta_won_ten">¡Has batido con las 10 cartas!</string>
+    <string name="cacheta_lost">El ordenador %1$d ha batido.</string>
+    <string name="cacheta_deck_over">Se acabaron las cartas: nadie batió.</string>
+    <string name="cacheta_your_hand">Tu mano</string>
+    <string name="cacheta_groups_note">barra verde = ya en un grupo</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="one">%1$d ordenador</item>
+        <item quantity="many">%1$d ordenadores</item>
+        <item quantity="other">%1$d ordenadores</item>
+    </plurals>
+</resources>

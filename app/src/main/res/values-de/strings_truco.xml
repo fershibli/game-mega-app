@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_truco">Truco</string>
+    <string name="howto_truco">Gewinne zwei von drei Stichen mit den stärksten Karten. Rufe Truco!, um die Punkte zu erhöhen. Wer zuerst 12 hat, gewinnt.</string>
+    <string name="truco_variant_paulista">Paulista</string>
+    <string name="truco_variant_paulista_desc">40 Karten; die aufgedeckte Karte (Vira) bestimmt die Manilhas, die stärksten Karten.</string>
+    <string name="truco_variant_mineiro">Mineiro</string>
+    <string name="truco_variant_mineiro_desc">40 Karten; feste Manilhas 4♣, 7♥, A♠, 7♦, keine Vira.</string>
+    <string name="truco_how_many">Wie möchtest du spielen?</string>
+    <string name="truco_one_vs_one">Du gegen den Computer</string>
+    <string name="truco_two_vs_two">Du und ein Partner gegen zwei Computer</string>
+    <string name="truco_us">Wir</string>
+    <string name="truco_them">Sie</string>
+    <string name="truco_worth">Wert %1$d</string>
+    <string name="truco_vira">Vira</string>
+    <string name="truco_manilha">Manilha: %1$s</string>
+    <string name="truco_manilhas_fixed">Manilhas: 4♣ 7♥ A♠ 7♦</string>
+    <string name="truco_call_truco">Truco!</string>
+    <string name="truco_call_seis">Seis!</string>
+    <string name="truco_call_nove">Nove!</string>
+    <string name="truco_call_doze">Doze!</string>
+    <string name="truco_shout_accept">Angenommen!</string>
+    <string name="truco_shout_run">Ich passe!</string>
+    <string name="truco_shout_play_eleven">Wir spielen!</string>
+    <string name="truco_shout_run_eleven">Wir passen!</string>
+    <string name="truco_accept">Annehmen</string>
+    <string name="truco_run">Passen</string>
+    <string name="truco_play_card">Karte spielen</string>
+    <string name="truco_next_hand">Nächstes Spiel</string>
+    <string name="truco_eleven_play">Spielen (3 Punkte)</string>
+    <string name="truco_eleven_run">Passen (sie bekommen 1)</string>
+    <string name="truco_prompt_play">Du bist dran: tippe auf eine Karte</string>
+    <string name="truco_prompt_again">Tippe die Karte noch einmal an (oder Karte spielen)</string>
+    <string name="truco_prompt_answer">Sie rufen %1$s Annehmen (%2$d Punkte), passen (sie bekommen %3$d) oder erhöhen?</string>
+    <string name="truco_prompt_eleven">Elferhand: sieh dir deine Karten an. Um 3 Punkte spielen oder passen?</string>
+    <string name="truco_waiting_answer">Warte auf die Antwort…</string>
+    <string name="truco_partner_turn">Dein Partner ist am Zug…</string>
+    <string name="truco_trick_us">Dieser Stich gehört uns</string>
+    <string name="truco_trick_them">Dieser Stich geht an sie</string>
+    <string name="truco_trick_tie">Unentschiedener Stich</string>
+    <string name="truco_hand_won">Wir gewinnen das Spiel: +%1$d</string>
+    <string name="truco_hand_lost">Sie gewinnen das Spiel: +%1$d</string>
+    <string name="truco_hand_tied">Unentschieden: niemand punktet</string>
+    <string name="truco_final">Endstand: wir %1$d × %2$d sie</string>
+    <string name="truco_partner">Partner</string>
+    <string name="truco_computer">Computer</string>
+</resources>
