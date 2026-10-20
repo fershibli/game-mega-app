@@ -50,6 +50,9 @@ enum class GameId(
     DOTS("dots", R.string.game_dots, R.string.howto_dots, GameCategory.PUZZLES),
     CHECKERS("checkers", R.string.game_checkers, R.string.howto_checkers, GameCategory.BOARD, io.github.fershibli.megagames.games.checkers.CheckersRules.VARIANTS),
     CHESS("chess", R.string.game_chess, R.string.howto_chess, GameCategory.BOARD, listOf(GameVariant("standard", R.string.chess_variant_standard, R.string.chess_variant_standard_desc), GameVariant("famous", R.string.chess_variant_famous, R.string.chess_variant_famous_desc))),
+    PEGS("pegs", R.string.game_pegs, R.string.howto_pegs, GameCategory.PUZZLES, listOf(GameVariant("english", R.string.pegs_variant_english, R.string.pegs_variant_english_desc), GameVariant("french", R.string.pegs_variant_french, R.string.pegs_variant_french_desc))),
+    MEMORY("memory", R.string.game_memory, R.string.howto_memory, GameCategory.PUZZLES, listOf(GameVariant("cards", R.string.memory_variant_cards, R.string.memory_variant_cards_desc), GameVariant("fruits", R.string.memory_variant_fruits, R.string.memory_variant_fruits_desc), GameVariant("symbols", R.string.memory_variant_symbols, R.string.memory_variant_symbols_desc), GameVariant("animals", R.string.memory_variant_animals, R.string.memory_variant_animals_desc))),
+    SEQUENCE("sequence", R.string.game_sequence, R.string.howto_sequence, GameCategory.PUZZLES),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

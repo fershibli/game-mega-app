@@ -19,6 +19,9 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.cards.Card
 import io.github.fershibli.megagames.games.cards.Suit
+import io.github.fershibli.megagames.games.memory.memoryThumbnail
+import io.github.fershibli.megagames.games.pegs.pegsThumbnail
+import io.github.fershibli.megagames.games.sequence.sequenceThumbnail
 import io.github.fershibli.megagames.games.pipes.Pipes
 import io.github.fershibli.megagames.games.pipes.drawPipe
 import io.github.fershibli.megagames.ui.theme.LocalPalette
@@ -46,6 +49,9 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.DOTS -> dots(p)
             GameId.CHECKERS -> io.github.fershibli.megagames.games.checkers.checkersThumbnail(this, p)
             GameId.CHESS -> io.github.fershibli.megagames.games.chess.chessThumbnail(this, p)
+            GameId.PEGS -> pegsThumbnail(p)
+            GameId.MEMORY -> memoryThumbnail(p)
+            GameId.SEQUENCE -> sequenceThumbnail(p)
         }
     }
 }

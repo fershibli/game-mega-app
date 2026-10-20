@@ -130,5 +130,25 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun pegs() = gameShot("game_pegs", GameId.PEGS)
+    @Test fun memoryFruits() = memoryShot("game_memory_fruits", "fruits", Difficulty.HARD)
+    @Test fun memoryAnimalsDark() = memoryShot("game_memory_animals_dark", "animals", Difficulty.MEDIUM, Settings(darkMode = true))
+    @Test fun memoryCardsColorblind() = memoryShot("game_memory_cards_colorblind", "cards", Difficulty.EASY, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
+    @Test fun sequence() = gameShot("game_sequence", GameId.SEQUENCE)
+
+    /** A memory game halfway through: some pairs found and a miss on show. */
+    private fun memoryShot(name: String, variant: String, difficulty: Difficulty, settings: Settings = Settings()) {
+        val start = io.github.fershibli.megagames.games.memory.Memory.newGame(variant, difficulty, kotlin.random.Random(5))
+        val byPair = start.faces.indices.groupBy { start.faces[it] / 2 }.values.toList()
+        val found = byPair.take(start.pairs / 2).flatten().toSet()
+        val state = start.copy(matched = start.faces.indices.map { it in found }, open = listOf(byPair[start.pairs / 2][0], byPair[start.pairs - 1][0]), moves = start.pairs)
+        val saved = io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.memory.MemoryState.serializer(), state)
+        shot(name, settings) {
+            Column(Modifier.fillMaxSize()) {
+                TopBar(stringResource(GameId.MEMORY.title), {})
+                Box(Modifier.weight(1f)) { GameContent(GameId.MEMORY, GameHost(GameId.MEMORY, difficulty, saved, null, GameId.MEMORY.variant(variant)) {}) }
+            }
+        }
+    }
 
 }
