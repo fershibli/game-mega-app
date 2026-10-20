@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">Cacheta</string>
+    <string name="howto_cacheta">Ziehe und wirf ab, bis alle deine Karten Folgen und Drillinge bilden, und drücke dann vor den Computern auf Bater!.</string>
+    <string name="cacheta_variant_classic">Klassisch</string>
+    <string name="cacheta_variant_classic_desc">Zwei Kartenspiele, je 9 Karten, ohne Joker.</string>
+    <string name="cacheta_variant_wild">Mit Joker</string>
+    <string name="cacheta_variant_wild_desc">Eine aufgedeckte Karte (die Vira) macht die nächste Karte ihrer Farbe zum Joker.</string>
+    <string name="cacheta_variant_pife">Pife</string>
+    <string name="cacheta_variant_pife_desc">Ohne Joker, Folgen dürfen herumgehen (K-A-2) und du darfst jede abgeworfene Karte nehmen, um zu bater.</string>
+    <string name="cacheta_how_many">Wie viele Computergegner?</string>
+    <string name="cacheta_computer">Computer %1$d</string>
+    <string name="cacheta_playing">Computer %1$d ist am Zug…</string>
+    <string name="cacheta_deck">Stapel (%1$d)</string>
+    <string name="cacheta_pile">Ablage</string>
+    <string name="cacheta_vira">Vira</string>
+    <string name="cacheta_wild">Joker</string>
+    <string name="cacheta_draw">Ziehen</string>
+    <string name="cacheta_take">Ablage nehmen</string>
+    <string name="cacheta_discard">Abwerfen</string>
+    <string name="cacheta_go_out">Bater!</string>
+    <string name="cacheta_sort_suit">Nach Farbe</string>
+    <string name="cacheta_sort_rank">Nach Wert</string>
+    <string name="cacheta_skip">Nein, danke</string>
+    <string name="cacheta_prompt_draw">Du bist dran: ziehe vom Stapel oder nimm die Ablage</string>
+    <string name="cacheta_prompt_discard">Tippe auf eine Karte und dann auf Abwerfen</string>
+    <string name="cacheta_prompt_go_out">Alle Karten passen! Drücke Bater!</string>
+    <string name="cacheta_offer">Mit der abgeworfenen %1$s kannst du bater! Nehmen?</string>
+    <string name="cacheta_err_taken">Die gerade aus der Ablage genommene Karte darfst du nicht gleich wieder abwerfen.</string>
+    <string name="cacheta_won">Du hast gebatet!</string>
+    <string name="cacheta_won_ten">Du hast mit allen 10 Karten gebatet!</string>
+    <string name="cacheta_lost">Computer %1$d hat gebatet.</string>
+    <string name="cacheta_deck_over">Die Karten sind aus: niemand hat gebatet.</string>
+    <string name="cacheta_your_hand">Deine Hand</string>
+    <string name="cacheta_groups_note">grüner Balken = schon in einer Gruppe</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="one">%1$d Computer</item>
+        <item quantity="other">%1$d Computer</item>
+    </plurals>
+</resources>

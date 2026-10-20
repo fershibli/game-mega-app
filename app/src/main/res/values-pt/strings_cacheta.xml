@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">Cacheta</string>
+    <string name="howto_cacheta">Compre e descarte até que todas as suas cartas formem sequências e trincas; aí aperte Bater! antes dos computadores.</string>
+    <string name="cacheta_variant_classic">Clássica</string>
+    <string name="cacheta_variant_classic_desc">Dois baralhos, 9 cartas para cada um, sem curinga.</string>
+    <string name="cacheta_variant_wild">Com curinga</string>
+    <string name="cacheta_variant_wild_desc">Uma carta virada (a vira) faz da carta seguinte do mesmo naipe o curinga.</string>
+    <string name="cacheta_variant_pife">Pife</string>
+    <string name="cacheta_variant_pife_desc">Sem curinga, a sequência pode dar a volta (K-A-2) e você pode furar a vez para bater com o descarte.</string>
+    <string name="cacheta_how_many">Quantos computadores na mesa?</string>
+    <string name="cacheta_computer">Computador %1$d</string>
+    <string name="cacheta_playing">O computador %1$d está jogando…</string>
+    <string name="cacheta_deck">Monte (%1$d)</string>
+    <string name="cacheta_pile">Lixo</string>
+    <string name="cacheta_vira">Vira</string>
+    <string name="cacheta_wild">Curinga</string>
+    <string name="cacheta_draw">Comprar</string>
+    <string name="cacheta_take">Pegar do lixo</string>
+    <string name="cacheta_discard">Descartar</string>
+    <string name="cacheta_go_out">Bater!</string>
+    <string name="cacheta_sort_suit">Por naipe</string>
+    <string name="cacheta_sort_rank">Por número</string>
+    <string name="cacheta_skip">Não, obrigado</string>
+    <string name="cacheta_prompt_draw">Sua vez: compre do monte ou pegue a carta do lixo</string>
+    <string name="cacheta_prompt_discard">Toque numa carta e aperte Descartar</string>
+    <string name="cacheta_prompt_go_out">Todas as cartas combinam! Aperte Bater!</string>
+    <string name="cacheta_offer">Dá para bater com o %1$s descartado! Quer furar a vez?</string>
+    <string name="cacheta_err_taken">Não pode descartar a carta que acabou de pegar do lixo.</string>
+    <string name="cacheta_won">Você bateu!</string>
+    <string name="cacheta_won_ten">Você bateu com as 10 cartas!</string>
+    <string name="cacheta_lost">O computador %1$d bateu.</string>
+    <string name="cacheta_deck_over">As cartas acabaram: ninguém bateu.</string>
+    <string name="cacheta_your_hand">Sua mão</string>
+    <string name="cacheta_groups_note">barra verde = já combinadas</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="one">%1$d computador</item>
+        <item quantity="many">%1$d computadores</item>
+        <item quantity="other">%1$d computadores</item>
+    </plurals>
+</resources>
