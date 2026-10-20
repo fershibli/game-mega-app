@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pet friend -->
+    <string name="game_pet">Mascotita</string>
+    <string name="howto_pet">Cuida de un amiguito: dale de comer, hazle mimos, báñalo y jugad juntos. Nunca se enferma y siempre se alegra de verte.</string>
+    <string name="pet_species_cat">Gato</string>
+    <string name="pet_species_dog">Perro</string>
+    <string name="pet_species_bunny">Conejo</string>
+    <string name="pet_species_chick">Pollito</string>
+    <string name="pet_species_panda">Panda</string>
+    <string name="pet_species_frog">Rana</string>
+    <string name="pet_species_fox">Zorro</string>
+    <string name="pet_species_penguin">Pingüino</string>
+    <string name="pet_species_hamster">Hámster</string>
+    <string name="pet_species_turtle">Tortuga</string>
+    <string name="pet_food_apple">Manzana</string>
+    <string name="pet_food_carrot">Zanahoria</string>
+    <string name="pet_food_fish">Pescado</string>
+    <string name="pet_food_cookie">Galleta</string>
+    <string name="pet_wear_none">Nada</string>
+    <string name="pet_wear_bow">Lazo</string>
+    <string name="pet_wear_hat">Sombrero</string>
+    <string name="pet_wear_flower">Flor</string>
+    <string name="pet_wear_scarf">Bufanda</string>
+    <string name="pet_need_happiness">Alegría</string>
+    <string name="pet_need_fullness">Comida</string>
+    <string name="pet_need_energy">Energía</string>
+    <string name="pet_need_cleanliness">Limpieza</string>
+    <string name="pet_need_value">%1$s: %2$d %%</string>
+    <string name="pet_percent">%1$d %%</string>
+    <string name="pet_feed">Comer</string>
+    <string name="pet_cuddle">Mimos</string>
+    <string name="pet_kiss">Beso</string>
+    <string name="pet_wave">Saludar</string>
+    <string name="pet_bath">Baño</string>
+    <string name="pet_sleep">Dormir</string>
+    <string name="pet_wake">Despertar</string>
+    <string name="pet_walk">Pasear</string>
+    <string name="pet_play">Jugar</string>
+    <string name="pet_dress">Vestir</string>
+    <string name="pet_friends">Amigos y adopción</string>
+    <string name="pet_rps">Piedra, papel o tijera</string>
+    <string name="pet_ttt">Tres en raya</string>
+    <string name="pet_ball">Pelota</string>
+    <string name="pet_rock">Piedra</string>
+    <string name="pet_paper">Papel</string>
+    <string name="pet_scissors">Tijera</string>
+    <string name="pet_rps_pick">¡Elige uno!</string>
+    <string name="pet_rps_shake">Piedra… papel… tijera…</string>
+    <string name="pet_rps_score">Tú %1$d · %2$s %3$d</string>
+    <string name="pet_you_win">¡Ganaste!</string>
+    <string name="pet_pet_wins">¡Gana %1$s!</string>
+    <string name="pet_tie">¡Empate!</string>
+    <string name="pet_thinking">%1$s está pensando…</string>
+    <string name="pet_msg_hello">¡%1$s se alegra de verte!</string>
+    <string name="pet_msg_hungry">%1$s tiene un poco de hambre.</string>
+    <string name="pet_msg_sleepy">%1$s tiene un poco de sueño.</string>
+    <string name="pet_msg_dirty">A %1$s le encantaría un baño.</string>
+    <string name="pet_msg_lonely">A %1$s le encantarían unos mimos.</string>
+    <string name="pet_msg_yum">¡Ñam! A %1$s le gustó.</string>
+    <string name="pet_msg_favorite">¡Ñam! ¡Es lo que más le gusta a %1$s!</string>
+    <string name="pet_msg_cuddle">Acaricia también a %1$s con el dedo.</string>
+    <string name="pet_msg_petted">¡A %1$s le encantan tus mimos!</string>
+    <string name="pet_msg_kiss">¡%1$s te devuelve el beso!</string>
+    <string name="pet_msg_wave">¡%1$s te saluda!</string>
+    <string name="pet_msg_bath">¡Chap! %1$s está bien limpito.</string>
+    <string name="pet_msg_sleeping">Shh… %1$s está durmiendo.</string>
+    <string name="pet_msg_woke">%1$s ha descansado bien.</string>
+    <string name="pet_msg_walk">¡%1$s disfruta del paseo!</string>
+    <string name="pet_msg_ball">¡A %1$s le encanta la pelota!</string>
+    <string name="pet_msg_dress">¡%1$s está precioso!</string>
+    <string name="pet_scene">%1$s (%2$s)</string>
+    <string name="pet_choose_title">Elige a tu nuevo amigo</string>
+    <string name="pet_your_friends">Tus amigos</string>
+    <string name="pet_name_title">Elige un nombre</string>
+    <string name="pet_name_hint">O escribe un nombre</string>
+    <string name="pet_adopt">Adoptar</string>
+    <string name="pet_switch_title">¿Cambiar de amigo?</string>
+    <string name="pet_switch_message">%1$s te esperará en el jardín. Puedes traer de vuelta a %1$s cuando quieras desde Amigos.</string>
+    <string name="pet_switch_yes">Sí, cambiar</string>
+    <string-array name="pet_names">
+        <item>Canela</item>
+        <item>Chispa</item>
+        <item>Luna</item>
+        <item>Bolita</item>
+        <item>Copito</item>
+        <item>Pelusa</item>
+    </string-array>
+</resources>
