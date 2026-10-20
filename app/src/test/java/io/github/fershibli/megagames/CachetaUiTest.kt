@@ -40,7 +40,7 @@ class CachetaUiTest {
     private val app get() = RuntimeEnvironment.getApplication()
 
     private fun host(state: CachetaState, store: SaveStore?, variant: String = state.variant, onFinish: (GameOutcome) -> Unit = {}) =
-        GameHost(GameId.CACHETA, Difficulty.EASY, AppJson.encodeToJsonElement(CachetaState.serializer(), state), store, GameId.CACHETA.variant(variant), onFinish)
+        GameHost(GameId.CACHETA, Difficulty.EASY, AppJson.encodeToJsonElement(CachetaState.serializer(), state), store, GameId.CACHETA.variant(variant), onFinish = onFinish)
 
     private fun awaitSaved(store: SaveStore, done: (CachetaState) -> Boolean): CachetaState? {
         var saved: CachetaState? = null
