@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames
 
+import io.github.fershibli.megagames.R
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.semantics.SemanticsProperties
 import android.graphics.Bitmap
@@ -96,6 +97,17 @@ class ScreenshotTest {
     @Test fun sudokuFrLeftHanded() = gameShot("game_sudoku_fr_left", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.FRENCH, leftHanded = true))
     @Test fun solitaireBigText() = gameShot("game_solitaire_big_text", GameId.SOLITAIRE, settings = Settings(fontScale = 1.4f, pieceScale = 1.4f))
     @Test fun difficulty() = shot("difficulty") { DifficultyScreen(GameId.MAHJONG, Difficulty.MEDIUM, {}, {}, {}) }
+    @Test fun takeTurnsPt() = shot("take_turns_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        DifficultyScreen(GameId.REVERSI, Difficulty.EASY, {}, {}, {}, onTogether = {}, initialTogether = true)
+    }
+    @Test fun handoffPt() = shot("handoff_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        val handoff = androidx.compose.runtime.remember { io.github.fershibli.megagames.ui.components.Handoff().apply { passTo(io.github.fershibli.megagames.ui.components.Seat("Jogador 2", androidx.compose.ui.graphics.Color(0xFFD9534F))) } }
+        io.github.fershibli.megagames.ui.components.HandoffOverlay(handoff) {}
+    }
+    @Test fun tablePt() = shot("table_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        val tables = listOf(io.github.fershibli.megagames.core.TableSize(2), io.github.fershibli.megagames.core.TableSize(4, R.string.reversi_dark))
+        io.github.fershibli.megagames.ui.screens.TableScreen(GameId.BURACO, false, tables[1], {}, {}, {}, tables)
+    }
     @Test fun settings() = shot("settings") { SettingsScreen(Settings(), {}, {}, null) }
     @Test fun settingsInGamePt() = shot("settings_in_game_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {}, InGameActions({}, {}, {}))

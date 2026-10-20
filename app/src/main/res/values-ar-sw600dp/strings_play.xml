@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tablets: the take-turns option names the tablet instead of the phone. -->
+<resources>
+    <string name="take_turns">بالتناوب على هذا الجهاز اللوحي</string>
+    <string name="take_turns_desc">يلعب كل شخص في دوره ثم يمرر الجهاز اللوحي. لا أحد يلعب ضد الحاسوب.</string>
+</resources>

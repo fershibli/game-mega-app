@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames.ui.screens
 
+import io.github.fershibli.megagames.core.PlaySetup
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -47,12 +48,15 @@ fun GameScreen(
     onResumeAnswered: (keepPlaying: Boolean) -> Unit,
     onExit: () -> Unit,
     variant: GameVariant? = game.variant(saved?.variant),
+    setup: PlaySetup = saved?.setup ?: PlaySetup(),
 ) {
+    // Pastimes (no difficulty: a pet, a farm) keep their own lasting world: no autosave, no "new game".
+    val lasting = !game.hasDifficulty
     var session by rememberSaveable { mutableIntStateOf(0) }
     var showSettings by remember { mutableStateOf(false) }
     var outcome by remember { mutableStateOf<GameOutcome?>(null) }
     val host = remember(session) {
-        GameHost(game, difficulty, if (session == 0) saved?.state else null, saveStore, variant) { outcome = it }
+        GameHost(game, difficulty, if (session == 0) saved?.state else null, saveStore.takeUnless { lasting }, variant, setup) { outcome = it }
     }
     val newGame: () -> Unit = {
         saveStore.clear()
@@ -76,7 +80,7 @@ fun GameScreen(
         if (showSettings) {
             SettingsScreen(
                 settings, onSettingsChange, onClose = { showSettings = false },
-                inGame = InGameActions(onResume = { showSettings = false }, onNewGame = newGame, onMainMenu = onExit),
+                inGame = InGameActions(onResume = { showSettings = false }, onNewGame = newGame.takeUnless { lasting }, onMainMenu = onExit),
             )
         }
     }
@@ -96,8 +100,9 @@ fun GameScreen(
 
     outcome?.let { result ->
         BigDialog(
-            title = stringResource(if (result.won) R.string.win_title else R.string.lose_title),
-            message = listOfNotNull(stringResource(if (result.won) R.string.win_message else R.string.lose_message), result.detail).joinToString("\n\n"),
+            title = stringResource(if (result.shared) R.string.game_end else if (result.won) R.string.win_title else R.string.lose_title),
+            message = if (result.shared) result.detail.orEmpty()
+            else listOfNotNull(stringResource(if (result.won) R.string.win_message else R.string.lose_message), result.detail).joinToString("\n\n"),
             onDismiss = {},
             dismissible = false,
             buttons = listOf(

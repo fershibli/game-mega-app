@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tablets: the take-turns option names the tablet instead of the phone. -->
+<resources>
+    <string name="take_turns">Chacun son tour sur cette tablette</string>
+    <string name="take_turns_desc">Chaque personne joue à son tour en se passant la tablette. Personne ne joue contre l’ordinateur.</string>
+</resources>

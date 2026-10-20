@@ -5,6 +5,9 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Take turns on this phone** ("Revezando celular"): games that can be played by several people offer it at the end of the difficulty wheel, now titled "How do you want to play?", with a picture of two hands holding the phone and a line that explains it. Between turns a cover hides the player's private things and asks to pass the phone to the next player; a tap dims the scene, switches to the next player's view and, after a short pause, shows their side. Reversi is the first game with it. On tablets it says "tablet".
+- **How many at the table?**: games with several table sizes ask before starting, with the last choice preselected.
+- Settings → **Pace and movement**: waiting time (quick, normal, calm) between moves and before messages go away, and animations (off, gentle, full). Every game follows them.
 - Home screen grouped by category (cards, board games, puzzles, calm action, pastimes), ready for many more games. Settings → Game list: **Group by category** (or one single list) and **Recently played first** (the game you open moves to the top of its group and its group to the top; both layouts keep their own order).
 - A rules screen for games with regional variants, shown before the difficulty; the rules picked last time come preselected.
 - Lasting storage for pastime games (a pet, a farm), kept apart from the game in progress and included in Android's own backup.
@@ -14,6 +17,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - Four new languages: **Italian, German, Russian and Japanese** — the interface, crossword dictionaries (with QWERTZ and ЙЦУКЕН keyboards; Japanese in katakana with a kana bank), store listings, README, user guide, trust page and privacy policy.
 
 ### Changed
+- Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".
 - The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
 
 ## [1.0.0] - 2026-10-19
