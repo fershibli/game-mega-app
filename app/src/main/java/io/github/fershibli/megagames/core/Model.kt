@@ -50,6 +50,8 @@ enum class GameId(
     DOTS("dots", R.string.game_dots, R.string.howto_dots, GameCategory.PUZZLES),
     CHECKERS("checkers", R.string.game_checkers, R.string.howto_checkers, GameCategory.BOARD, io.github.fershibli.megagames.games.checkers.CheckersRules.VARIANTS),
     CHESS("chess", R.string.game_chess, R.string.howto_chess, GameCategory.BOARD, listOf(GameVariant("standard", R.string.chess_variant_standard, R.string.chess_variant_standard_desc), GameVariant("famous", R.string.chess_variant_famous, R.string.chess_variant_famous_desc))),
+    CACHETA("cacheta", R.string.game_cacheta, R.string.howto_cacheta, GameCategory.CARDS, listOf(GameVariant("classic", R.string.cacheta_variant_classic, R.string.cacheta_variant_classic_desc), GameVariant("wild", R.string.cacheta_variant_wild, R.string.cacheta_variant_wild_desc), GameVariant("pife", R.string.cacheta_variant_pife, R.string.cacheta_variant_pife_desc))),
+    TRUCO("truco", R.string.game_truco, R.string.howto_truco, GameCategory.CARDS, listOf(GameVariant("paulista", R.string.truco_variant_paulista, R.string.truco_variant_paulista_desc), GameVariant("mineiro", R.string.truco_variant_mineiro, R.string.truco_variant_mineiro_desc))),
     XIANGQI("xiangqi", R.string.game_xiangqi, R.string.howto_xiangqi, GameCategory.BOARD),
     JANGGI("janggi", R.string.game_janggi, R.string.howto_janggi, GameCategory.BOARD),
     SHOGI("shogi", R.string.game_shogi, R.string.howto_shogi, GameCategory.BOARD, listOf(GameVariant("standard", R.string.shogi_variant_standard, R.string.shogi_variant_standard_desc), GameVariant("mini", R.string.shogi_variant_mini, R.string.shogi_variant_mini_desc))),

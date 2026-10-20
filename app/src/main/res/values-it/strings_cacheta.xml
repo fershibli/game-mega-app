@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">Cacheta</string>
+    <string name="howto_cacheta">Pesca e scarta finché tutte le tue carte formano scale e tris, poi premi Bater! prima dei computer.</string>
+    <string name="cacheta_variant_classic">Classica</string>
+    <string name="cacheta_variant_classic_desc">Due mazzi, 9 carte a testa, senza jolly.</string>
+    <string name="cacheta_variant_wild">Con jolly</string>
+    <string name="cacheta_variant_wild_desc">Una carta scoperta (la vira) rende jolly la carta seguente dello stesso seme.</string>
+    <string name="cacheta_variant_pife">Pife</string>
+    <string name="cacheta_variant_pife_desc">Senza jolly, le scale possono girare (K-A-2) e puoi prendere ogni scarto per bater.</string>
+    <string name="cacheta_how_many">Quanti avversari del computer?</string>
+    <string name="cacheta_computer">Computer %1$d</string>
+    <string name="cacheta_playing">Il computer %1$d sta giocando…</string>
+    <string name="cacheta_deck">Mazzo (%1$d)</string>
+    <string name="cacheta_pile">Scarti</string>
+    <string name="cacheta_vira">Vira</string>
+    <string name="cacheta_wild">Jolly</string>
+    <string name="cacheta_draw">Pesca</string>
+    <string name="cacheta_take">Prendi scarto</string>
+    <string name="cacheta_discard">Scarta</string>
+    <string name="cacheta_go_out">Bater!</string>
+    <string name="cacheta_sort_suit">Per seme</string>
+    <string name="cacheta_sort_rank">Per numero</string>
+    <string name="cacheta_skip">No, grazie</string>
+    <string name="cacheta_prompt_draw">Tocca a te: pesca dal mazzo o prendi lo scarto</string>
+    <string name="cacheta_prompt_discard">Tocca una carta, poi premi Scarta</string>
+    <string name="cacheta_prompt_go_out">Tutte le carte combinano! Premi Bater!</string>
+    <string name="cacheta_offer">Puoi bater con il %1$s scartato! Lo prendi?</string>
+    <string name="cacheta_err_taken">Non puoi scartare la carta appena presa dagli scarti.</string>
+    <string name="cacheta_won">Hai battuto!</string>
+    <string name="cacheta_won_ten">Hai battuto con tutte e 10 le carte!</string>
+    <string name="cacheta_lost">Il computer %1$d ha battuto.</string>
+    <string name="cacheta_deck_over">Carte finite: nessuno ha battuto.</string>
+    <string name="cacheta_your_hand">La tua mano</string>
+    <string name="cacheta_groups_note">barra verde = già in gruppo</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="one">%1$d computer</item>
+        <item quantity="many">%1$d computer</item>
+        <item quantity="other">%1$d computer</item>
+    </plurals>
+</resources>
