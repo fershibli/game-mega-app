@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_truco">特鲁科（Truco）</string>
+    <string name="howto_truco">用最大的牌赢下三墩中的两墩。喊“Truco!”可以加分。先到12分的一方获胜。</string>
+    <string name="truco_variant_paulista">圣保罗式</string>
+    <string name="truco_variant_paulista_desc">40张牌；翻开的牌（vira）决定最大的牌“manilha”。</string>
+    <string name="truco_variant_mineiro">米纳斯式</string>
+    <string name="truco_variant_mineiro_desc">40张牌；固定的manilha：4♣、7♥、A♠、7♦，不翻牌。</string>
+    <string name="truco_how_many">你想怎么玩？</string>
+    <string name="truco_one_vs_one">你对电脑</string>
+    <string name="truco_two_vs_two">你和搭档对两个电脑</string>
+    <string name="truco_us">我方</string>
+    <string name="truco_them">对方</string>
+    <string name="truco_worth">本局%1$d分</string>
+    <string name="truco_vira">翻牌</string>
+    <string name="truco_manilha">Manilha：%1$s</string>
+    <string name="truco_manilhas_fixed">Manilha：4♣ 7♥ A♠ 7♦</string>
+    <string name="truco_call_truco">Truco!</string>
+    <string name="truco_call_seis">Seis!</string>
+    <string name="truco_call_nove">Nove!</string>
+    <string name="truco_call_doze">Doze!</string>
+    <string name="truco_shout_accept">我接！</string>
+    <string name="truco_shout_run">我不跟！</string>
+    <string name="truco_shout_play_eleven">我们打！</string>
+    <string name="truco_shout_run_eleven">我们放弃！</string>
+    <string name="truco_accept">接受</string>
+    <string name="truco_run">不跟</string>
+    <string name="truco_play_card">出牌</string>
+    <string name="truco_next_hand">下一局</string>
+    <string name="truco_eleven_play">打（3分）</string>
+    <string name="truco_eleven_run">放弃（对方得1分）</string>
+    <string name="truco_prompt_play">轮到你：点一张牌选中它</string>
+    <string name="truco_prompt_again">再点一次这张牌（或按“出牌”）就会出牌</string>
+    <string name="truco_prompt_answer">对方喊%1$s 接受（%2$d分）、不跟（对方得%3$d分）还是加注？</string>
+    <string name="truco_prompt_eleven">十一分局：看看你的牌。打（3分）还是放弃？</string>
+    <string name="truco_waiting_answer">等待对方回应…</string>
+    <string name="truco_partner_turn">你的搭档正在出牌…</string>
+    <string name="truco_trick_us">这一墩我方赢</string>
+    <string name="truco_trick_them">这一墩对方赢</string>
+    <string name="truco_trick_tie">这一墩打平</string>
+    <string name="truco_hand_won">本局我方赢：+%1$d</string>
+    <string name="truco_hand_lost">本局对方赢：+%1$d</string>
+    <string name="truco_hand_tied">平局：双方都不得分</string>
+    <string name="truco_final">最终比分：我方 %1$d × %2$d 对方</string>
+    <string name="truco_partner">搭档</string>
+    <string name="truco_computer">电脑</string>
+</resources>

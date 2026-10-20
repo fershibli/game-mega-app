@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_truco">Truco</string>
+    <string name="howto_truco">Win two of three tricks with the strongest cards. Shout Truco! to raise the points. First side to 12 wins.</string>
+    <string name="truco_variant_paulista">Paulista</string>
+    <string name="truco_variant_paulista_desc">40 cards; the turned card (vira) chooses the manilhas, the strongest cards.</string>
+    <string name="truco_variant_mineiro">Mineiro</string>
+    <string name="truco_variant_mineiro_desc">40 cards; fixed manilhas 4♣, 7♥, A♠, 7♦ and no vira.</string>
+    <string name="truco_how_many">How do you want to play?</string>
+    <string name="truco_one_vs_one">You against the computer</string>
+    <string name="truco_two_vs_two">You and a partner against two computers</string>
+    <string name="truco_us">Us</string>
+    <string name="truco_them">Them</string>
+    <string name="truco_worth">Worth %1$d</string>
+    <string name="truco_vira">Vira</string>
+    <string name="truco_manilha">Manilha: %1$s</string>
+    <string name="truco_manilhas_fixed">Manilhas: 4♣ 7♥ A♠ 7♦</string>
+    <string name="truco_call_truco">Truco!</string>
+    <string name="truco_call_seis">Seis!</string>
+    <string name="truco_call_nove">Nove!</string>
+    <string name="truco_call_doze">Doze!</string>
+    <string name="truco_shout_accept">Accepted!</string>
+    <string name="truco_shout_run">I run!</string>
+    <string name="truco_shout_play_eleven">We play!</string>
+    <string name="truco_shout_run_eleven">We pass!</string>
+    <string name="truco_accept">Accept</string>
+    <string name="truco_run">Run</string>
+    <string name="truco_play_card">Play card</string>
+    <string name="truco_next_hand">Next hand</string>
+    <string name="truco_eleven_play">Play (worth 3)</string>
+    <string name="truco_eleven_run">Run (they get 1)</string>
+    <string name="truco_prompt_play">Your turn: tap a card to choose it</string>
+    <string name="truco_prompt_again">Tap the card again (or Play card) to play it</string>
+    <string name="truco_prompt_answer">They shout %1$s Accept (worth %2$d), run (they get %3$d) or raise?</string>
+    <string name="truco_prompt_eleven">Hand of eleven: look at your cards. Play for 3 points or run?</string>
+    <string name="truco_waiting_answer">Waiting for the answer…</string>
+    <string name="truco_partner_turn">Your partner is playing…</string>
+    <string name="truco_trick_us">Our side wins this trick</string>
+    <string name="truco_trick_them">They win this trick</string>
+    <string name="truco_trick_tie">Tied trick</string>
+    <string name="truco_hand_won">Our side won the hand: +%1$d</string>
+    <string name="truco_hand_lost">They won the hand: +%1$d</string>
+    <string name="truco_hand_tied">Tied hand: nobody scores</string>
+    <string name="truco_final">Final score — us: %1$d, them: %2$d</string>
+    <string name="truco_partner">Partner</string>
+    <string name="truco_computer">Computer</string>
+</resources>
