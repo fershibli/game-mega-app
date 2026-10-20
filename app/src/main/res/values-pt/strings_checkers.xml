@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">Damas</string>
+    <string name="howto_checkers">Mova suas peças na diagonal pelas casas escuras e salte sobre as peças do computador para capturá-las. Chegue ao outro lado para virar dama. Ganha quem tomar todas as peças ou deixar o outro sem jogadas.</string>
+    <string name="checkers_variant_brazilian">Damas brasileiras</string>
+    <string name="checkers_variant_brazilian_desc">8×8. Peças comuns capturam para trás, a dama anda longe e é obrigatório tomar o maior número de peças.</string>
+    <string name="checkers_variant_international">Damas internacionais</string>
+    <string name="checkers_variant_international_desc">Tabuleiro 10×10 com 20 peças cada. Mesmas regras das damas brasileiras.</string>
+    <string name="checkers_variant_english">Damas inglesas</string>
+    <string name="checkers_variant_english_desc">8×8, também chamadas de damas americanas. Peças só vão para a frente, a dama anda uma casa, as escuras começam.</string>
+    <string name="checkers_variant_italian">Damas italianas</string>
+    <string name="checkers_variant_italian_desc">8×8. Peças comuns não capturam damas, a dama anda uma casa e é obrigatório tomar o maior número de peças.</string>
+    <string name="checkers_variant_russian">Damas russas</string>
+    <string name="checkers_variant_russian_desc">8×8. A dama anda longe, você escolhe qualquer captura, e a peça que vira dama no meio da captura continua como dama.</string>
+    <string name="checkers_score">Você: %1$d · Computador: %2$d</string>
+    <string name="checkers_pick_piece">Sua vez: toque em uma das suas peças</string>
+    <string name="checkers_pick_target">Agora toque em uma casa destacada</string>
+    <string name="checkers_must_capture">Captura obrigatória! As peças que podem capturar estão marcadas.</string>
+    <string name="checkers_continue">Continue capturando: toque na próxima casa</string>
+    <string name="checkers_draw">Empate: 25 lances de cada lado só com damas e sem capturas.</string>
+    <string name="checkers_ai_no_pieces">O computador ficou sem peças.</string>
+    <string name="checkers_ai_no_moves">O computador não tem jogadas.</string>
+    <string name="checkers_you_no_pieces">Você ficou sem peças.</string>
+    <string name="checkers_you_no_moves">Você não tem jogadas.</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">الداما</string>
+    <string name="howto_checkers">حرّك قطعك قطريًا على المربعات الداكنة واقفز فوق قطع الحاسوب لتأسرها. إذا وصلت إلى الطرف الآخر تصبح القطعة ملكًا. تفوز إذا أسرت كل قطعه أو تركته بلا حركة.</string>
+    <string name="checkers_variant_brazilian">الداما البرازيلية</string>
+    <string name="checkers_variant_brazilian_desc">8×8. القطع العادية تأسر للخلف أيضًا، والملك يتحرك بعيدًا، ويجب أسر أكبر عدد من القطع.</string>
+    <string name="checkers_variant_international">الداما الدولية</string>
+    <string name="checkers_variant_international_desc">رقعة 10×10 ولكل لاعب 20 قطعة. القواعد نفسها كالداما البرازيلية.</string>
+    <string name="checkers_variant_english">الداما الإنجليزية</string>
+    <string name="checkers_variant_english_desc">8×8، وتسمى أيضًا الداما الأمريكية. القطع تتقدم للأمام فقط، والملك يتحرك مربعًا واحدًا، والداكن يبدأ.</string>
+    <string name="checkers_variant_italian">الداما الإيطالية</string>
+    <string name="checkers_variant_italian_desc">8×8. القطع العادية لا تأسر الملوك، والملك يتحرك مربعًا واحدًا، ويجب أسر أكبر عدد من القطع.</string>
+    <string name="checkers_variant_russian">الداما الروسية</string>
+    <string name="checkers_variant_russian_desc">8×8. الملك يتحرك بعيدًا، ويمكنك اختيار أي أسر، والقطعة التي تصبح ملكًا أثناء الأسر تكمل كملك.</string>
+    <string name="checkers_score">أنت: %1$d · الحاسوب: %2$d</string>
+    <string name="checkers_pick_piece">دورك: المس إحدى قطعك</string>
+    <string name="checkers_pick_target">الآن المس مربعًا مميزًا</string>
+    <string name="checkers_must_capture">الأسر إلزامي! القطع التي يمكنها الأسر مميزة.</string>
+    <string name="checkers_continue">تابع الأسر: المس المربع التالي</string>
+    <string name="checkers_draw">تعادل: 25 نقلة لكل طرف بالملوك فقط ودون أي أسر.</string>
+    <string name="checkers_ai_no_pieces">لم يبقَ للحاسوب أي قطعة.</string>
+    <string name="checkers_ai_no_moves">لا يستطيع الحاسوب التحرك.</string>
+    <string name="checkers_you_no_pieces">لم تبقَ لك أي قطعة.</string>
+    <string name="checkers_you_no_moves">لا تستطيع التحرك.</string>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">Dames</string>
+    <string name="howto_checkers">Déplacez vos pions en diagonale sur les cases foncées et sautez par-dessus les pions de l’ordinateur pour les prendre. Atteignez l’autre bord pour obtenir une dame. Prenez toutes ses pièces ou bloquez-le pour gagner.</string>
+    <string name="checkers_variant_brazilian">Dames brésiliennes</string>
+    <string name="checkers_variant_brazilian_desc">8×8. Les pions prennent aussi en arrière, les dames vont loin et il faut prendre le plus de pièces.</string>
+    <string name="checkers_variant_international">Dames internationales</string>
+    <string name="checkers_variant_international_desc">Damier de 10×10 avec 20 pions chacun. Mêmes règles que les dames brésiliennes.</string>
+    <string name="checkers_variant_english">Dames anglaises</string>
+    <string name="checkers_variant_english_desc">8×8, aussi appelées dames américaines. Les pions vont seulement en avant, la dame avance d’une case, les foncés commencent.</string>
+    <string name="checkers_variant_italian">Dames italiennes</string>
+    <string name="checkers_variant_italian_desc">8×8. Les pions ne prennent pas les dames, la dame avance d’une case et il faut prendre le plus de pièces.</string>
+    <string name="checkers_variant_russian">Dames russes</string>
+    <string name="checkers_variant_russian_desc">8×8. La dame va loin, on choisit librement sa prise, et un pion promu pendant une prise continue comme dame.</string>
+    <string name="checkers_score">Vous : %1$d · Ordinateur : %2$d</string>
+    <string name="checkers_pick_piece">À vous : touchez un de vos pions</string>
+    <string name="checkers_pick_target">Touchez maintenant une case en surbrillance</string>
+    <string name="checkers_must_capture">Prise obligatoire ! Les pions qui peuvent prendre sont marqués.</string>
+    <string name="checkers_continue">Continuez la prise : touchez la case suivante</string>
+    <string name="checkers_draw">Partie nulle : 25 coups chacun avec seulement des dames et aucune prise.</string>
+    <string name="checkers_ai_no_pieces">L’ordinateur n’a plus de pièces.</string>
+    <string name="checkers_ai_no_moves">L’ordinateur ne peut plus jouer.</string>
+    <string name="checkers_you_no_pieces">Vous n’avez plus de pièces.</string>
+    <string name="checkers_you_no_moves">Vous ne pouvez plus jouer.</string>
+</resources>

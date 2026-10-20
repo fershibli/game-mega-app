@@ -5,6 +5,8 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Checkers** with five sets of rules (Brazilian, International 10×10, English, Italian, Russian): mandatory and majority captures, flying kings where they apply, multi-captures by tapping the final square, a draw after long king-only endgames, Undo and Hint, and a computer opponent on three levels.
+- **Chess** against the computer with every rule (castling, en passant, promotion, all the draws), Undo and Hint, plus **Famous games**: seven historic games, from the Immortal Game (1851) to Kasparov–Topalov (1999), replayed move by move with their story.
 - Home screen grouped by category (cards, board games, puzzles, calm action, pastimes), ready for many more games. Settings → Game list: **Group by category** (or one single list) and **Recently played first** (the game you open moves to the top of its group and its group to the top; both layouts keep their own order).
 - A rules screen for games with regional variants, shown before the difficulty; the rules picked last time come preselected.
 - Lasting storage for pastime games (a pet, a farm), kept apart from the game in progress and included in Android's own backup.

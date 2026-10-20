@@ -128,5 +128,7 @@ class ScreenshotTest {
     @Test fun backgammonUpright() = gameShot("game_backgammon_upright", GameId.BACKGAMMON, settings = Settings(backgammonUpright = true))
     @Test fun buraco() = gameShot("game_buraco", GameId.BURACO)
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
+    @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
+    @Test fun chess() = gameShot("game_chess", GameId.CHESS)
 
 }

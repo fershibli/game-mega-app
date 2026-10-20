@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">チェッカー</string>
+    <string name="howto_checkers">黒いマスを斜めに進み、コンピューターの駒を飛び越えて取ります。相手の端まで進むとキングになります。相手の駒をすべて取るか、動けなくすれば勝ちです。</string>
+    <string name="checkers_variant_brazilian">ブラジル式チェッカー</string>
+    <string name="checkers_variant_brazilian_desc">8×8。駒は後ろにも取れ、キングは遠くまで動けます。一番多く取れる手が必須です。</string>
+    <string name="checkers_variant_international">国際ドラフツ</string>
+    <string name="checkers_variant_international_desc">10×10の盤でそれぞれ20個の駒。ルールはブラジル式と同じです。</string>
+    <string name="checkers_variant_english">英国式チェッカー</string>
+    <string name="checkers_variant_english_desc">8×8、アメリカ式とも呼ばれます。駒は前にだけ進み、キングは1マス動きます。黒が先手です。</string>
+    <string name="checkers_variant_italian">イタリア式チェッカー</string>
+    <string name="checkers_variant_italian_desc">8×8。駒はキングを取れず、キングは1マス動きます。一番多く取れる手が必須です。</string>
+    <string name="checkers_variant_russian">ロシア式チェッカー</string>
+    <string name="checkers_variant_russian_desc">8×8。キングは遠くまで動けます。どの取り方を選んでもよく、取る途中でキングになった駒はキングとして取り続けます。</string>
+    <string name="checkers_score">あなた: %1$d · コンピューター: %2$d</string>
+    <string name="checkers_pick_piece">あなたの番です: 自分の駒をタップ</string>
+    <string name="checkers_pick_target">光っているマスをタップ</string>
+    <string name="checkers_must_capture">取らなければなりません! 取れる駒に印があります。</string>
+    <string name="checkers_continue">続けて取ります: 次のマスをタップ</string>
+    <string name="checkers_draw">引き分け: キングだけが動き、取らない手がそれぞれ25手続きました。</string>
+    <string name="checkers_ai_no_pieces">コンピューターの駒がなくなりました。</string>
+    <string name="checkers_ai_no_moves">コンピューターは動けません。</string>
+    <string name="checkers_you_no_pieces">あなたの駒がなくなりました。</string>
+    <string name="checkers_you_no_moves">あなたは動けません。</string>
+</resources>
