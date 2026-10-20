@@ -130,5 +130,8 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun nonogram() = gameShot("game_nonogram", GameId.NONOGRAM, Difficulty.MEDIUM)
+    @Test fun kakuro() = gameShot("game_kakuro", GameId.KAKURO, Difficulty.MEDIUM)
+    @Test fun killerDark() = gameShot("game_killer_dark", GameId.KILLER, settings = Settings(darkMode = true))
 
 }

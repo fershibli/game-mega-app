@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">Kakuro</string>
+    <string name="howto_kakuro">Ein Kreuzworträtsel aus Zahlen: Fülle die weißen Felder mit 1 bis 9, sodass jede Reihe weißer Felder, waagerecht oder senkrecht, die Zahl im schwarzen Feld davor ergibt, ohne eine Ziffer zu wiederholen.</string>
+    <string name="kakuro_tap_cell">Tippe auf ein weißes Feld, dann auf eine Zahl</string>
+    <string name="kakuro_hint_again">Tippe nochmal auf Tipp, um dieses Feld auszufüllen.</string>
+</resources>

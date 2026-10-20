@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">Kakuro</string>
+    <string name="howto_kakuro">Un crucigrama de números: rellena los cuadros blancos con 1 a 9 para que cada tramo de cuadros blancos, en fila o en columna, sume el número del cuadro negro anterior, sin repetir cifras.</string>
+    <string name="kakuro_tap_cell">Toca un cuadro blanco y luego un número</string>
+    <string name="kakuro_hint_again">Toca Pista otra vez para rellenar este cuadro.</string>
+</resources>

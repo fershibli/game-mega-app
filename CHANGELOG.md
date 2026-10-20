@@ -5,6 +5,9 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Nonogram** (paint by numbers) on 5×5, 10×10 and 15×15 grids: more than 20 hand-drawn pictures for each size (animals, flowers, a house, a teapot...), revealed in color with their name, every one solvable line by line. Tap to paint, hold or **Mark** for ✕, drag to paint a line; finished lines dim, Undo and Hint.
+- **Kakuro**, the crossword of numbers, on three grid sizes: every puzzle has one solution found by reasoning alone. Notes, Undo, and a Hint that first shows the combinations that make the sums.
+- **Killer sudoku** (sudoku with sums): dashed cages with their totals, unique solutions checked by a solver; Easy has single-square cages and needs simple reasoning, Hard has bigger cages and may need the 45 rule. Notes, Undo, and a Hint that shows the cage combinations.
 - **Checkers** with five sets of rules (Brazilian, International 10×10, English, Italian, Russian): mandatory and majority captures, flying kings where they apply, multi-captures by tapping the final square, a draw after long king-only endgames, Undo and Hint, and a computer opponent on three levels.
 - **Chess** against the computer with every rule (castling, en passant, promotion, all the draws), Undo and Hint, plus **Famous games**: seven historic games, from the Immortal Game (1851) to Kasparov–Topalov (1999), replayed move by move with their story.
 - Home screen grouped by category (cards, board games, puzzles, calm action, pastimes), ready for many more games. Settings → Game list: **Group by category** (or one single list) and **Recently played first** (the game you open moves to the top of its group and its group to the top; both layouts keep their own order).

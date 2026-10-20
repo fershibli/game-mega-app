@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">Sudoku de sumas</string>
+    <string name="howto_killer">Sudoku sin números dados: cada fila, columna y caja de 3×3 tiene del 1 al 9 una vez, y las cifras de cada zona punteada suman el número pequeño de su esquina, sin repetirse.</string>
+    <string name="killer_tap_cell">Toca un cuadro y luego un número</string>
+    <string name="killer_hint_combos">Formas de sumar %1$d: %2$s</string>
+    <string name="killer_hint_again">Toca Pista otra vez para rellenar este cuadro.</string>
+</resources>
