@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">Checkers</string>
+    <string name="howto_checkers">Move your pieces diagonally on the dark squares and jump over the computer’s pieces to capture them. Reach the far side to get a king. Take all its pieces or leave it without moves to win.</string>
+    <string name="checkers_variant_brazilian">Brazilian checkers</string>
+    <string name="checkers_variant_brazilian_desc">8×8. Men also capture backwards, kings move far, and you must take the most pieces.</string>
+    <string name="checkers_variant_international">International draughts</string>
+    <string name="checkers_variant_international_desc">10×10 board with 20 pieces each. Same rules as Brazilian checkers.</string>
+    <string name="checkers_variant_english">English checkers</string>
+    <string name="checkers_variant_english_desc">8×8, also called American checkers. Men go only forwards, kings move one square, dark starts.</string>
+    <string name="checkers_variant_italian">Italian checkers</string>
+    <string name="checkers_variant_italian_desc">8×8. Men cannot capture kings, kings move one square, and you must take the most pieces.</string>
+    <string name="checkers_variant_russian">Russian checkers</string>
+    <string name="checkers_variant_russian_desc">8×8. Kings move far, you may choose any capture, and a man crowned while capturing goes on as a king.</string>
+    <string name="checkers_score">You: %1$d · Computer: %2$d</string>
+    <string name="checkers_pick_piece">Your turn: tap one of your pieces</string>
+    <string name="checkers_pick_target">Now tap a highlighted square</string>
+    <string name="checkers_must_capture">You must capture! The pieces that can are marked.</string>
+    <string name="checkers_continue">Keep capturing: tap the next square</string>
+    <string name="checkers_draw">Draw: 25 moves each with only kings moving and nothing captured.</string>
+    <string name="checkers_ai_no_pieces">The computer has no pieces left.</string>
+    <string name="checkers_ai_no_moves">The computer cannot move.</string>
+    <string name="checkers_you_no_pieces">You have no pieces left.</string>
+    <string name="checkers_you_no_moves">You have no move left.</string>
+</resources>

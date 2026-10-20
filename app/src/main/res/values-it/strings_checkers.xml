@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">Dama</string>
+    <string name="howto_checkers">Muovi le tue pedine in diagonale sulle case scure e salta sopra le pedine del computer per catturarle. Arriva in fondo per avere una dama. Vinci catturando tutti i suoi pezzi o lasciandolo senza mosse.</string>
+    <string name="checkers_variant_brazilian">Dama brasiliana</string>
+    <string name="checkers_variant_brazilian_desc">8×8. Le pedine catturano anche all’indietro, la dama vola ed è obbligatorio prendere più pezzi possibile.</string>
+    <string name="checkers_variant_international">Dama internazionale</string>
+    <string name="checkers_variant_international_desc">Scacchiera 10×10 con 20 pedine a testa. Stesse regole della dama brasiliana.</string>
+    <string name="checkers_variant_english">Dama inglese</string>
+    <string name="checkers_variant_english_desc">8×8, detta anche dama americana. Le pedine vanno solo avanti, la dama si muove di una casa, iniziano le scure.</string>
+    <string name="checkers_variant_italian">Dama italiana</string>
+    <string name="checkers_variant_italian_desc">8×8. Le pedine non possono mangiare le dame, la dama si muove di una casa ed è obbligatorio prendere più pezzi.</string>
+    <string name="checkers_variant_russian">Dama russa</string>
+    <string name="checkers_variant_russian_desc">8×8. La dama vola, scegli tu quale presa fare, e la pedina promossa durante una presa continua come dama.</string>
+    <string name="checkers_score">Tu: %1$d · Computer: %2$d</string>
+    <string name="checkers_pick_piece">Tocca a te: tocca una delle tue pedine</string>
+    <string name="checkers_pick_target">Ora tocca una casa evidenziata</string>
+    <string name="checkers_must_capture">Presa obbligatoria! Le pedine che possono mangiare sono segnate.</string>
+    <string name="checkers_continue">Continua a mangiare: tocca la casa successiva</string>
+    <string name="checkers_draw">Patta: 25 mosse a testa muovendo solo dame e senza prese.</string>
+    <string name="checkers_ai_no_pieces">Il computer non ha più pezzi.</string>
+    <string name="checkers_ai_no_moves">Il computer non può muovere.</string>
+    <string name="checkers_you_no_pieces">Non hai più pezzi.</string>
+    <string name="checkers_you_no_moves">Non hai più mosse.</string>
+</resources>

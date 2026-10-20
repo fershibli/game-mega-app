@@ -5,6 +5,8 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Checkers** with five sets of rules (Brazilian, International 10×10, English, Italian, Russian): mandatory and majority captures, flying kings where they apply, multi-captures by tapping the final square, a draw after long king-only endgames, Undo and Hint, and a computer opponent on three levels.
+- **Chess** against the computer with every rule (castling, en passant, promotion, all the draws), Undo and Hint, plus **Famous games**: seven historic games, from the Immortal Game (1851) to Kasparov–Topalov (1999), replayed move by move with their story.
 - **Take turns on this phone** ("Revezando celular"): games that can be played by several people offer it at the end of the difficulty wheel, now titled "How do you want to play?", with a picture of two hands holding the phone and a line that explains it. Between turns a cover hides the player's private things and asks to pass the phone to the next player; a tap dims the scene, switches to the next player's view and, after a short pause, shows their side. Reversi is the first game with it. On tablets it says "tablet".
 - **How many at the table?**: games with several table sizes ask before starting, with the last choice preselected.
 - Settings → **Pace and movement**: waiting time (quick, normal, calm) between moves and before messages go away, and animations (off, gentle, full). Every game follows them.
