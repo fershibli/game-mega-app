@@ -44,6 +44,8 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.PIPES -> pipes(p)
             GameId.CONNECT -> connect(p)
             GameId.DOTS -> dots(p)
+            GameId.CACHETA -> io.github.fershibli.megagames.games.cacheta.cachetaThumbnail(this, p, m)
+            GameId.TRUCO -> io.github.fershibli.megagames.games.truco.trucoThumbnail(this, p, m)
         }
     }
 }

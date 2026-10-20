@@ -5,6 +5,8 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Cacheta** (cards): the Brazilian rummy against 1 to 3 computer players, with Classic, With wild card (vira and curinga) and Pife (sequences turn the corner, grab a discard to go out) rules; a fanned hand with groups underlined, sort by suit or number, a Hint and a Bater! button that lights up when every card fits.
+- **Truco** (cards): Paulista (vira and manilhas) and Mineiro (fixed manilhas) rules, 1 vs 1 or 2 vs 2 with a computer partner; Truco!/Seis!/Nove!/Doze! in big speech balloons with big answer buttons, hand of eleven, and a computer that weighs its chances without seeing your cards and bluffs now and then.
 - Home screen grouped by category (cards, board games, puzzles, calm action, pastimes), ready for many more games. Settings → Game list: **Group by category** (or one single list) and **Recently played first** (the game you open moves to the top of its group and its group to the top; both layouts keep their own order).
 - A rules screen for games with regional variants, shown before the difficulty; the rules picked last time come preselected.
 - Lasting storage for pastime games (a pet, a farm), kept apart from the game in progress and included in Android's own backup.

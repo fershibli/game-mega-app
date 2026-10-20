@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_truco">Труко</string>
+    <string name="howto_truco">Возьмите две взятки из трёх самыми сильными картами. Крикните «Truco!», чтобы поднять ставку очков. Побеждает тот, кто первым наберёт 12.</string>
+    <string name="truco_variant_paulista">Паулиста</string>
+    <string name="truco_variant_paulista_desc">40 карт; открытая карта (вира) задаёт манильи — самые сильные карты.</string>
+    <string name="truco_variant_mineiro">Минейру</string>
+    <string name="truco_variant_mineiro_desc">40 карт; постоянные манильи 4♣, 7♥, A♠, 7♦, без виры.</string>
+    <string name="truco_how_many">Как вы хотите играть?</string>
+    <string name="truco_one_vs_one">Вы против компьютера</string>
+    <string name="truco_two_vs_two">Вы с напарником против двух компьютеров</string>
+    <string name="truco_us">Мы</string>
+    <string name="truco_them">Они</string>
+    <string name="truco_worth">Ставка %1$d</string>
+    <string name="truco_vira">Вира</string>
+    <string name="truco_manilha">Манилья: %1$s</string>
+    <string name="truco_manilhas_fixed">Манильи: 4♣ 7♥ A♠ 7♦</string>
+    <string name="truco_call_truco">Truco!</string>
+    <string name="truco_call_seis">Seis!</string>
+    <string name="truco_call_nove">Nove!</string>
+    <string name="truco_call_doze">Doze!</string>
+    <string name="truco_shout_accept">Принимаю!</string>
+    <string name="truco_shout_run">Пас!</string>
+    <string name="truco_shout_play_eleven">Играем!</string>
+    <string name="truco_shout_run_eleven">Пасуем!</string>
+    <string name="truco_accept">Принять</string>
+    <string name="truco_run">Пас</string>
+    <string name="truco_play_card">Сыграть карту</string>
+    <string name="truco_next_hand">Следующая раздача</string>
+    <string name="truco_eleven_play">Играть (3 очка)</string>
+    <string name="truco_eleven_run">Пас (им 1 очко)</string>
+    <string name="truco_prompt_play">Ваш ход: коснитесь карты, чтобы выбрать её</string>
+    <string name="truco_prompt_again">Коснитесь карты ещё раз (или «Сыграть карту»)</string>
+    <string name="truco_prompt_answer">Вам кричат %1$s Принять (ставка %2$d), спасовать (им %3$d) или поднять?</string>
+    <string name="truco_prompt_eleven">Рука одиннадцати: посмотрите карты. Играть на 3 очка или спасовать?</string>
+    <string name="truco_waiting_answer">Ждём ответа…</string>
+    <string name="truco_partner_turn">Ходит ваш напарник…</string>
+    <string name="truco_trick_us">Эта взятка наша</string>
+    <string name="truco_trick_them">Эта взятка их</string>
+    <string name="truco_trick_tie">Ничья во взятке</string>
+    <string name="truco_hand_won">Раздача наша: +%1$d</string>
+    <string name="truco_hand_lost">Раздача их: +%1$d</string>
+    <string name="truco_hand_tied">Ничья: очков никто не получает</string>
+    <string name="truco_final">Итог: мы %1$d × %2$d они</string>
+    <string name="truco_partner">Напарник</string>
+    <string name="truco_computer">Компьютер</string>
+</resources>
