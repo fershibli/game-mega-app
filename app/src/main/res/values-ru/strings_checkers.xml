@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">Шашки</string>
+    <string name="howto_checkers">Ходите шашками по диагонали по тёмным клеткам и перепрыгивайте через шашки компьютера, чтобы их бить. Дойдите до последнего ряда, чтобы получить дамку. Побеждает тот, кто забрал все шашки соперника или лишил его ходов.</string>
+    <string name="checkers_variant_brazilian">Бразильские шашки</string>
+    <string name="checkers_variant_brazilian_desc">8×8. Простые бьют и назад, дамка ходит далеко, бить нужно наибольшее число шашек.</string>
+    <string name="checkers_variant_international">Международные шашки</string>
+    <string name="checkers_variant_international_desc">Доска 10×10, по 20 шашек. Правила как в бразильских шашках.</string>
+    <string name="checkers_variant_english">Английские шашки</string>
+    <string name="checkers_variant_english_desc">8×8, их ещё называют американскими. Простые идут и бьют только вперёд, дамка ходит на одну клетку, начинают тёмные.</string>
+    <string name="checkers_variant_italian">Итальянские шашки</string>
+    <string name="checkers_variant_italian_desc">8×8. Простые не бьют дамок, дамка ходит на одну клетку, бить нужно наибольшее число шашек.</string>
+    <string name="checkers_variant_russian">Русские шашки</string>
+    <string name="checkers_variant_russian_desc">8×8. Дамка ходит далеко, бить можно любым путём, а шашка, ставшая дамкой во время боя, продолжает бить как дамка.</string>
+    <string name="checkers_score">Вы: %1$d · Компьютер: %2$d</string>
+    <string name="checkers_pick_piece">Ваш ход: нажмите на свою шашку</string>
+    <string name="checkers_pick_target">Теперь нажмите на подсвеченную клетку</string>
+    <string name="checkers_must_capture">Бить обязательно! Шашки, которые могут бить, отмечены.</string>
+    <string name="checkers_continue">Продолжайте бить: нажмите на следующую клетку</string>
+    <string name="checkers_draw">Ничья: по 25 ходов только дамками и без взятий.</string>
+    <string name="checkers_ai_no_pieces">У компьютера не осталось шашек.</string>
+    <string name="checkers_ai_no_moves">Компьютеру некуда ходить.</string>
+    <string name="checkers_you_no_pieces">У вас не осталось шашек.</string>
+    <string name="checkers_you_no_moves">Вам некуда ходить.</string>
+</resources>
