@@ -48,6 +48,7 @@ enum class GameId(
     PIPES("pipes", R.string.game_pipes, R.string.howto_pipes, GameCategory.PUZZLES),
     CONNECT("connect", R.string.game_connect, R.string.howto_connect, GameCategory.PUZZLES),
     DOTS("dots", R.string.game_dots, R.string.howto_dots, GameCategory.PUZZLES),
+    PET("pet", R.string.game_pet, R.string.howto_pet, GameCategory.PASTIMES, hasDifficulty = false),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

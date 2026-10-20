@@ -11,6 +11,12 @@ import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.core.WorldStore
+import io.github.fershibli.megagames.games.pet.PET_WORLD_KEY
+import io.github.fershibli.megagames.games.pet.PetRules
+import io.github.fershibli.megagames.games.pet.PetWorld
+import io.github.fershibli.megagames.games.pet.Species
+import org.robolectric.RuntimeEnvironment
 import io.github.fershibli.megagames.ui.components.TopBar
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -128,5 +134,14 @@ class ScreenshotTest {
     @Test fun backgammonUpright() = gameShot("game_backgammon_upright", GameId.BACKGAMMON, settings = Settings(backgammonUpright = true))
     @Test fun buraco() = gameShot("game_buraco", GameId.BURACO)
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
+    @Test fun petChoose() = gameShot("game_pet_choose", GameId.PET)
+    @Test fun petRoom() {
+        // A cat already living in the room.
+        WorldStore(RuntimeEnvironment.getApplication()).run {
+            save(PET_WORLD_KEY, PetWorld.serializer(), PetRules.adopt(PetWorld(), Species.CAT, "Sunny", System.currentTimeMillis()))
+            flush()
+        }
+        gameShot("game_pet", GameId.PET)
+    }
 
 }

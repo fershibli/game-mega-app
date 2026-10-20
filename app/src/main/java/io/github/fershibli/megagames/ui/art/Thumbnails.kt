@@ -19,6 +19,7 @@ import androidx.compose.ui.text.rememberTextMeasurer
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.cards.Card
 import io.github.fershibli.megagames.games.cards.Suit
+import io.github.fershibli.megagames.games.pet.petThumbnail
 import io.github.fershibli.megagames.games.pipes.Pipes
 import io.github.fershibli.megagames.games.pipes.drawPipe
 import io.github.fershibli.megagames.ui.theme.LocalPalette
@@ -44,6 +45,7 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.PIPES -> pipes(p)
             GameId.CONNECT -> connect(p)
             GameId.DOTS -> dots(p)
+            GameId.PET -> petThumbnail(p)
         }
     }
 }
