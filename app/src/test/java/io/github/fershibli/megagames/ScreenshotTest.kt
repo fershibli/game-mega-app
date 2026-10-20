@@ -11,6 +11,12 @@ import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.core.WorldStore
+import io.github.fershibli.megagames.games.pet.PET_WORLD_KEY
+import io.github.fershibli.megagames.games.pet.PetRules
+import io.github.fershibli.megagames.games.pet.PetWorld
+import io.github.fershibli.megagames.games.pet.Species
+import org.robolectric.RuntimeEnvironment
 import io.github.fershibli.megagames.ui.components.TopBar
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -130,6 +136,15 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun petChoose() = gameShot("game_pet_choose", GameId.PET)
+    @Test fun petRoom() {
+        // A cat already living in the room.
+        WorldStore(RuntimeEnvironment.getApplication()).run {
+            save(PET_WORLD_KEY, PetWorld.serializer(), PetRules.adopt(PetWorld(), Species.CAT, "Sunny", System.currentTimeMillis()))
+            flush()
+        }
+        gameShot("game_pet", GameId.PET)
+    }
     @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
     @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
     @Test fun blocks() = gameShot("game_blocks", GameId.BLOCKS)
