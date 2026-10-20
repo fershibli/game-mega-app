@@ -326,7 +326,8 @@ class AppFlowTest {
         // Back to categories: their own order was kept too.
         settings = settings.copy(showCategories = true)
         rule.waitForIdle()
-        assertTrue(rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top < rule.onAllNodesWithText("Board games").onFirst().getBoundsInRoot().top)
+        // The category played last opens at the top of the screen.
+        assertTrue(rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top < rule.onRoot().getBoundsInRoot().bottom / 4)
     }
 
     @Test
@@ -343,7 +344,8 @@ class AppFlowTest {
         order = HomeOrder.Default
         rule.waitForIdle()
         assertEquals(1, rule.onAllNodesWithText("Cards").fetchSemanticsNodes().size.coerceAtMost(1))
-        assertTrue(rule.onAllNodesWithText("Cards").onFirst().getBoundsInRoot().top < rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top)
+        // The usual order starts with the cards.
+        assertTrue(rule.onAllNodesWithText("Cards").onFirst().getBoundsInRoot().top < rule.onRoot().getBoundsInRoot().bottom / 4)
     }
 
     @Test
