@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">المكعب السحري</string>
+    <string name="howto_cube">أدِر الطبقات حتى يصبح لكل وجه لون واحد. اسحب إصبعك فوق مربع لتدوير صفّه، أو اسحب في المساحة الفارغة لرؤية المكعب من جهة أخرى، أو اختر وجهًا في الأسفل والمس الأسهم المستديرة.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">مكعب صغير من 8 قطع: أسهل بداية.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">المكعب الكلاسيكي. يعلّمك التلميح طريقة الحل طبقةً بعد طبقة.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">مكعب أكبر بلا مراكز ثابتة. استخدم زر «الطبقة» للطبقات الداخلية.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">أكبر مكعب، لمن يملك الصبر.</string>
+    <string name="cube_moves">الحركات: %1$d</string>
+    <string name="cube_solved">تم الحل! لكل وجه لون واحد.</string>
+    <string name="cube_hint_step">الخطوة %1$d من %2$d: %3$s</string>
+    <string name="cube_hint_back">الدورات المتبقية حتى البداية: %1$d</string>
+    <string name="cube_stage_cross">الصليب السفلي</string>
+    <string name="cube_stage_corners">الزوايا السفلية</string>
+    <string name="cube_stage_middle">الطبقة الوسطى</string>
+    <string name="cube_stage_top_cross">الصليب العلوي</string>
+    <string name="cube_stage_top_edges">الحواف العلوية</string>
+    <string name="cube_stage_top_place">الزوايا العلوية في أماكنها</string>
+    <string name="cube_stage_top_turn">تدوير الزوايا العلوية</string>
+    <string name="cube_stage_top_face">اللون العلوي</string>
+    <string name="cube_turn_cw">أدِر الوجه المختار باتجاه عقارب الساعة</string>
+    <string name="cube_turn_ccw">أدِر الوجه المختار عكس اتجاه عقارب الساعة</string>
+    <string name="cube_layer">الطبقة %1$d</string>
+    <string name="cube_face">الوجه %1$d</string>
+    <string name="cube_view_left">أدِر المكعب كله إلى اليسار</string>
+    <string name="cube_view_right">أدِر المكعب كله إلى اليمين</string>
+    <string name="cube_view_up">أدِر المكعب كله إلى الأعلى</string>
+    <string name="cube_view_down">أدِر المكعب كله إلى الأسفل</string>
+</resources>

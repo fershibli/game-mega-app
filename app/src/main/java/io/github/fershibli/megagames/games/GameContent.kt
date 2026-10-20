@@ -7,6 +7,7 @@ import io.github.fershibli.megagames.games.backgammon.BackgammonGame
 import io.github.fershibli.megagames.games.buraco.BuracoGame
 import io.github.fershibli.megagames.games.connect.ConnectGame
 import io.github.fershibli.megagames.games.crossword.CrosswordGame
+import io.github.fershibli.megagames.games.cube.CubeGame
 import io.github.fershibli.megagames.games.dots.DotsGame
 import io.github.fershibli.megagames.games.mahjong.MahjongGame
 import io.github.fershibli.megagames.games.pipes.PipesGame
@@ -30,5 +31,6 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.BURACO -> BuracoGame(host)
         GameId.CHECKERS -> io.github.fershibli.megagames.games.checkers.CheckersGame(host)
         GameId.CHESS -> io.github.fershibli.megagames.games.chess.ChessGame(host)
+        GameId.CUBE -> CubeGame(host)
     }
 }
