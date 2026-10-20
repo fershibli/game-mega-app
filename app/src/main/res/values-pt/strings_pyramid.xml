@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">Pirâmide</string>
+    <string name="howto_pyramid">Tire duas cartas descobertas que somem 13: Dama e Ás, Valete e 2, 10 e 3… O Rei sai sozinho. Toque no monte para virar uma nova carta. Limpe a pirâmide inteira para ganhar.</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">Cartas na pirâmide: %1$d</string>
+    <string name="pyramid_passes">Voltas no monte restantes: %1$d</string>
+    <string name="pyramid_needs">Esta carta vale %1$d: toque numa carta que vale %2$d.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d, não 13.</string>
+    <string name="pyramid_covered">Essa carta ainda está coberta pelas cartas de baixo.</string>
+    <string name="pyramid_hint_deck">Toque no monte para virar uma nova carta.</string>
+    <string name="pyramid_stuck_title">Sem mais jogadas</string>
+    <string name="pyramid_stuck_message">Não dá para tirar mais nenhuma carta. Você pode desfazer algumas jogadas e tentar outro caminho, ou desistir.</string>
+    <string name="pyramid_give_up">Desistir</string>
+    <string name="pyramid_keep_playing">Continuar procurando</string>
+    <string name="pyramid_lost">Não havia mais pares possíveis.</string>
+</resources>

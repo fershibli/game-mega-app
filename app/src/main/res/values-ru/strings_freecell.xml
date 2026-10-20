@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">Свободные ячейки</string>
+    <string name="howto_freecell">Все карты лежат открытыми. Соберите четыре стопки от туза до короля, по одной на масть. В колонках кладите карту на карту на одно значение старше и другого цвета. Четыре свободные ячейки вмещают по одной карте. Нажмите на карту, чтобы переложить её, и нажмите ещё раз, чтобы попробовать другое место.</string>
+    <string name="freecell_status">Ходы: %1$d · Свободных ячеек: %2$d</string>
+    <string name="freecell_too_many">Не хватает места, чтобы переложить сразу столько карт (%1$d): сейчас можно не больше %2$d. Сначала освободите ячейку или колонку.</string>
+    <string name="freecell_not_in_order">Вместе можно переложить только карты по порядку, чередуя красные и чёрные.</string>
+    <string name="freecell_finish">Завершить</string>
+    <string name="freecell_thinking">Ищу хороший ход…</string>
+    <string name="freecell_no_hint">Хороший ход не найден. Попробуйте отменить ход.</string>
+    <string name="freecell_stuck_title">Ходов больше нет</string>
+    <string name="freecell_stuck_message">Отсюда эту партию уже не выиграть. Можно отменить несколько ходов и попробовать по-другому или сдаться.</string>
+    <string name="freecell_give_up">Сдаться</string>
+    <string name="freecell_keep_playing">Искать дальше</string>
+    <string name="freecell_lost">Карты оказались заблокированы: выиграть было уже нельзя.</string>
+</resources>

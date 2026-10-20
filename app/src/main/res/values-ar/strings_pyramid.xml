@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">الهرم</string>
+    <string name="howto_pyramid">أزِل ورقتين مكشوفتين مجموعهما 13: الملكة والآس، الولد و2، و10 و3… الملك يُزال وحده. المس الرزمة لكشف ورقة جديدة. أزِل الهرم كله لتفوز.</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">الأوراق في الهرم: %1$d</string>
+    <string name="pyramid_passes">دورات الرزمة المتبقية: %1$d</string>
+    <string name="pyramid_needs">قيمة هذه الورقة %1$d: المس ورقة قيمتها %2$d.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d، وليس 13.</string>
+    <string name="pyramid_covered">هذه الورقة ما زالت مغطاة بالأوراق التي تحتها.</string>
+    <string name="pyramid_hint_deck">المس الرزمة لكشف ورقة جديدة.</string>
+    <string name="pyramid_stuck_title">لا مزيد من الحركات</string>
+    <string name="pyramid_stuck_message">لم يعد من الممكن إزالة أي ورقة. يمكنك التراجع عن بعض الحركات وتجربة طريق آخر، أو الاستسلام.</string>
+    <string name="pyramid_give_up">استسلام</string>
+    <string name="pyramid_keep_playing">متابعة البحث</string>
+    <string name="pyramid_lost">لم تعد هناك أزواج ممكنة.</string>
+</resources>

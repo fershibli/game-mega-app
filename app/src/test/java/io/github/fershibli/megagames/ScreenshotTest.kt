@@ -130,5 +130,9 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun spider() = gameShot("game_spider", GameId.SPIDER)
+    @Test fun freecell() = gameShot("game_freecell", GameId.FREECELL)
+    @Test fun pyramid() = gameShot("game_pyramid", GameId.PYRAMID)
+    @Test fun pyramidLeftHandedBig() = gameShot("game_pyramid_left_big", GameId.PYRAMID, settings = Settings(leftHanded = true, pieceScale = 1.4f))
 
 }
