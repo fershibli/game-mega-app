@@ -130,6 +130,8 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
+    @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
     @Test fun pegs() = gameShot("game_pegs", GameId.PEGS)
     @Test fun memoryFruits() = memoryShot("game_memory_fruits", "fruits", Difficulty.HARD)
     @Test fun memoryAnimalsDark() = memoryShot("game_memory_animals_dark", "animals", Difficulty.MEDIUM, Settings(darkMode = true))

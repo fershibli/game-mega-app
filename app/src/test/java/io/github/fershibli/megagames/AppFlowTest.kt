@@ -304,7 +304,7 @@ class AppFlowTest {
         assertEquals(listOf(GameId.DOTS, GameId.CONNECT, GameId.SUDOKU), store.gamesIn(GameCategory.PUZZLES).take(3))
         store.recordPlayed(GameId.BURACO)
         assertEquals(listOf(GameCategory.CARDS, GameCategory.PUZZLES, GameCategory.BOARD), store.categories().take(3))
-        assertEquals(listOf(GameId.BURACO, GameId.SOLITAIRE), store.gamesIn(GameCategory.CARDS))
+        assertEquals(listOf(GameId.BURACO, GameId.SOLITAIRE), store.gamesIn(GameCategory.CARDS).take(2))
         // The puzzles keep the order they had.
         assertEquals(listOf(GameId.DOTS, GameId.CONNECT, GameId.SUDOKU), ChoiceStore(RuntimeEnvironment.getApplication()).gamesIn(GameCategory.PUZZLES).take(3))
         // The single list is kept up to date at the same time.

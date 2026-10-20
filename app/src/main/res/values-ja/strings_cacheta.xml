@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">カシェタ</string>
+    <string name="howto_cacheta">カードを引いて捨て、手札がすべて続き札と同じ数字の組になったら、コンピューターより先に「Bater!」を押して上がります。</string>
+    <string name="cacheta_variant_classic">クラシック</string>
+    <string name="cacheta_variant_classic_desc">トランプ2組、1人9枚、ワイルドカードなし。</string>
+    <string name="cacheta_variant_wild">ワイルドあり</string>
+    <string name="cacheta_variant_wild_desc">表にした札（ヴィラ）の同じマークで一つ上の札がワイルドになります。</string>
+    <string name="cacheta_variant_pife">ピーフェ</string>
+    <string name="cacheta_variant_pife_desc">ワイルドなし。続き札はK-A-2とつながり、捨て札で上がれるなら順番外でも取れます。</string>
+    <string name="cacheta_how_many">コンピューターは何人？</string>
+    <string name="cacheta_computer">コンピューター%1$d</string>
+    <string name="cacheta_playing">コンピューター%1$dの番です…</string>
+    <string name="cacheta_deck">山札（%1$d）</string>
+    <string name="cacheta_pile">捨て札</string>
+    <string name="cacheta_vira">ヴィラ</string>
+    <string name="cacheta_wild">ワイルド</string>
+    <string name="cacheta_draw">引く</string>
+    <string name="cacheta_take">捨て札を取る</string>
+    <string name="cacheta_discard">捨てる</string>
+    <string name="cacheta_go_out">Bater!</string>
+    <string name="cacheta_sort_suit">マーク順</string>
+    <string name="cacheta_sort_rank">数字順</string>
+    <string name="cacheta_skip">いいえ</string>
+    <string name="cacheta_prompt_draw">あなたの番：山札から引くか、捨て札を取ってください</string>
+    <string name="cacheta_prompt_discard">カードを選んで「捨てる」を押してください</string>
+    <string name="cacheta_prompt_go_out">全部そろいました！「Bater!」を押してください</string>
+    <string name="cacheta_offer">捨てられた%1$sで上がれます！取りますか？</string>
+    <string name="cacheta_err_taken">捨て札から取ったばかりの札はすぐには捨てられません。</string>
+    <string name="cacheta_won">上がりました！</string>
+    <string name="cacheta_won_ten">10枚すべてで上がりました！</string>
+    <string name="cacheta_lost">コンピューター%1$dが上がりました。</string>
+    <string name="cacheta_deck_over">札がなくなりました。上がった人はいません。</string>
+    <string name="cacheta_your_hand">あなたの手札</string>
+    <string name="cacheta_groups_note">緑の線＝そろった札</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="other">コンピューター%1$d人</item>
+    </plurals>
+</resources>
