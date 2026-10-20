@@ -48,6 +48,8 @@ enum class GameId(
     PIPES("pipes", R.string.game_pipes, R.string.howto_pipes, GameCategory.PUZZLES),
     CONNECT("connect", R.string.game_connect, R.string.howto_connect, GameCategory.PUZZLES),
     DOTS("dots", R.string.game_dots, R.string.howto_dots, GameCategory.PUZZLES),
+    CHECKERS("checkers", R.string.game_checkers, R.string.howto_checkers, GameCategory.BOARD, io.github.fershibli.megagames.games.checkers.CheckersRules.VARIANTS),
+    CHESS("chess", R.string.game_chess, R.string.howto_chess, GameCategory.BOARD, listOf(GameVariant("standard", R.string.chess_variant_standard, R.string.chess_variant_standard_desc), GameVariant("famous", R.string.chess_variant_famous, R.string.chess_variant_famous_desc))),
     CACHETA("cacheta", R.string.game_cacheta, R.string.howto_cacheta, GameCategory.CARDS, listOf(GameVariant("classic", R.string.cacheta_variant_classic, R.string.cacheta_variant_classic_desc), GameVariant("wild", R.string.cacheta_variant_wild, R.string.cacheta_variant_wild_desc), GameVariant("pife", R.string.cacheta_variant_pife, R.string.cacheta_variant_pife_desc))),
     TRUCO("truco", R.string.game_truco, R.string.howto_truco, GameCategory.CARDS, listOf(GameVariant("paulista", R.string.truco_variant_paulista, R.string.truco_variant_paulista_desc), GameVariant("mineiro", R.string.truco_variant_mineiro, R.string.truco_variant_mineiro_desc))),
     ;

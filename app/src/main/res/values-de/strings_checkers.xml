@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_checkers">Dame</string>
+    <string name="howto_checkers">Ziehe deine Steine diagonal über die dunklen Felder und springe über die Steine des Computers, um sie zu schlagen. Erreichst du die andere Seite, wird dein Stein zur Dame. Du gewinnst, wenn der Computer keine Steine oder Züge mehr hat.</string>
+    <string name="checkers_variant_brazilian">Brasilianische Dame</string>
+    <string name="checkers_variant_brazilian_desc">8×8. Steine schlagen auch rückwärts, Damen ziehen weit, und man muss die meisten Steine schlagen.</string>
+    <string name="checkers_variant_international">Internationale Dame</string>
+    <string name="checkers_variant_international_desc">10×10-Brett mit je 20 Steinen. Gleiche Regeln wie die brasilianische Dame.</string>
+    <string name="checkers_variant_english">Englische Dame</string>
+    <string name="checkers_variant_english_desc">8×8, auch amerikanische Dame genannt. Steine ziehen nur vorwärts, Damen ein Feld, Dunkel beginnt.</string>
+    <string name="checkers_variant_italian">Italienische Dame</string>
+    <string name="checkers_variant_italian_desc">8×8. Steine dürfen keine Damen schlagen, Damen ziehen ein Feld, man muss die meisten Steine schlagen.</string>
+    <string name="checkers_variant_russian">Russische Dame</string>
+    <string name="checkers_variant_russian_desc">8×8. Damen ziehen weit, man wählt den Schlag frei, und ein Stein, der beim Schlagen zur Dame wird, schlägt als Dame weiter.</string>
+    <string name="checkers_score">Du: %1$d · Computer: %2$d</string>
+    <string name="checkers_pick_piece">Du bist dran: tippe auf einen deiner Steine</string>
+    <string name="checkers_pick_target">Tippe jetzt auf ein markiertes Feld</string>
+    <string name="checkers_must_capture">Schlagpflicht! Die Steine, die schlagen können, sind markiert.</string>
+    <string name="checkers_continue">Weiter schlagen: tippe auf das nächste Feld</string>
+    <string name="checkers_draw">Remis: je 25 Züge nur mit Damen und ohne Schlagen.</string>
+    <string name="checkers_ai_no_pieces">Der Computer hat keine Steine mehr.</string>
+    <string name="checkers_ai_no_moves">Der Computer kann nicht mehr ziehen.</string>
+    <string name="checkers_you_no_pieces">Du hast keine Steine mehr.</string>
+    <string name="checkers_you_no_moves">Du kannst nicht mehr ziehen.</string>
+</resources>
