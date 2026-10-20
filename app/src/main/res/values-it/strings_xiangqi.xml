@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">Scacchi cinesi</string>
+    <string name="howto_xiangqi">Scacchi cinesi (xiangqi). Tocca uno dei tuoi pezzi rossi, poi un punto verde per muoverlo. I segni su ogni pezzo mostrano come si muove. Chiudi il generale nero in modo che non possa più scappare.</string>
+    <string name="xiangqi_pick_piece">Tocca a te: tocca uno dei tuoi pezzi rossi</string>
+    <string name="xiangqi_pick_target">Tocca un punto verde per andare lì</string>
+    <string name="xiangqi_check">Scacco! Il tuo generale è attaccato: proteggilo</string>
+    <string name="xiangqi_pieces">Pezzi</string>
+    <string name="xiangqi_guide_title">Come si muovono i pezzi</string>
+    <string name="xiangqi_guide_marks">I pezzi stanno sugli incroci delle linee. Su ogni pezzo, un punto è un passo in quella direzione, due punti sono due passi, una freccia vuol dire qualsiasi distanza, una freccia con una sbarra vuol dire che salta un pezzo per catturare, e un punto vuoto vale solo dopo aver attraversato il fiume.</string>
+    <string name="xiangqi_piece_general">Generale (帥, 將): un passo lungo una linea, sempre dentro il palazzo. I due generali non possono mai trovarsi faccia a faccia su una linea libera.</string>
+    <string name="xiangqi_piece_advisor">Consigliere (仕, 士): un passo in diagonale, solo dentro il palazzo.</string>
+    <string name="xiangqi_piece_elephant">Elefante (相, 象): due punti in diagonale, senza mai attraversare il fiume. È bloccato se il punto in mezzo è occupato.</string>
+    <string name="xiangqi_piece_horse">Cavallo (馬): un punto dritto, poi uno in diagonale verso l’esterno. È bloccato se il primo punto è occupato.</string>
+    <string name="xiangqi_piece_chariot">Carro (車): qualsiasi distanza lungo una linea, come la torre negli scacchi.</string>
+    <string name="xiangqi_piece_cannon">Cannone (炮, 砲): si muove come il carro, ma cattura solo saltando esattamente un pezzo.</string>
+    <string name="xiangqi_piece_soldier">Soldato (兵, 卒): un passo in avanti. Dopo aver attraversato il fiume può anche andare di lato. Non torna mai indietro.</string>
+    <string name="xiangqi_checkmate">Scacco matto!</string>
+    <string name="xiangqi_no_moves">Nessuna mossa possibile: negli scacchi cinesi questo fa perdere la partita.</string>
+    <string name="xiangqi_draw_repetition">Patta: la stessa posizione si è ripetuta tre volte.</string>
+    <string name="xiangqi_draw_limit">Patta: 60 mosse a testa senza nessuna cattura.</string>
+    <string name="xiangqi_draw_material">Patta: a nessuno restano pezzi capaci di attaccare.</string>
+</resources>

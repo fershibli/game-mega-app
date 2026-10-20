@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">Shogi</string>
+    <string name="howto_shogi">Scacchi giapponesi. Tocca uno dei tuoi pezzi (puntano in alto), poi un punto verde. I pezzi che catturi passano dalla tua parte: toccane uno sotto la scacchiera per metterlo su una casella vuota. Dai scacco matto al re del computer per vincere.</string>
+    <string name="shogi_variant_standard">Shogi (9 × 9)</string>
+    <string name="shogi_variant_standard_desc">Il gioco completo, sulla scacchiera 9 per 9.</string>
+    <string name="shogi_variant_mini">Minishogi (5 × 5)</string>
+    <string name="shogi_variant_mini_desc">Una piccola scacchiera 5 per 5 con meno pezzi: partite veloci, ideale per imparare.</string>
+    <string name="shogi_pick_piece">Tocca a te: tocca uno dei tuoi pezzi, sulla scacchiera o in mano</string>
+    <string name="shogi_pick_target">Tocca un punto verde per andare lì</string>
+    <string name="shogi_pick_drop">Tocca un punto verde per mettere lì il pezzo</string>
+    <string name="shogi_check">Scacco! Il tuo re è attaccato: proteggilo</string>
+    <string name="shogi_pieces">Pezzi</string>
+    <string name="shogi_guide_title">Come si muovono i pezzi</string>
+    <string name="shogi_guide_marks">Su ogni pezzo, un punto è un passo in quella direzione e una freccia vuol dire qualsiasi distanza. I caratteri rossi indicano i pezzi promossi. Le righe ombreggiate dall’altra parte (tre righe, una nel minishogi) sono quelle dove i tuoi pezzi possono essere promossi.</string>
+    <string name="shogi_piece_king">Re (王, 玉): un passo in qualsiasi direzione.</string>
+    <string name="shogi_piece_rook">Torre (飛): qualsiasi distanza lungo una linea. Promossa, diventa drago.</string>
+    <string name="shogi_piece_bishop">Alfiere (角): qualsiasi distanza in diagonale. Promosso, diventa cavallo.</string>
+    <string name="shogi_piece_gold">Generale d’oro (金): un passo in ogni direzione tranne in diagonale all’indietro. Non viene promosso.</string>
+    <string name="shogi_piece_silver">Generale d’argento (銀): un passo in avanti o in diagonale. Promosso, si muove come l’oro.</string>
+    <string name="shogi_piece_knight">Cavaliere (桂): salta due caselle in avanti e una di lato, sopra qualsiasi pezzo. Promosso, si muove come l’oro.</string>
+    <string name="shogi_piece_lance">Lancia (香): qualsiasi distanza dritto in avanti. Promossa, si muove come l’oro.</string>
+    <string name="shogi_piece_pawn">Pedone (歩): un passo in avanti. Promosso, diventa tokin (と) e si muove come l’oro.</string>
+    <string name="shogi_piece_dragon">Drago (龍), la torre promossa: qualsiasi distanza lungo una linea, o un passo in diagonale.</string>
+    <string name="shogi_piece_horse">Cavallo (馬), l’alfiere promosso: qualsiasi distanza in diagonale, o un passo lungo una linea.</string>
+    <string name="shogi_piece_promoted">Pedone, lancia, cavaliere o argento promossi (と, 杏, 圭, 全): si muovono come il generale d’oro.</string>
+    <string name="shogi_promote_title">Promuovere questo pezzo?</string>
+    <string name="shogi_promote_yes">Promuovi</string>
+    <string name="shogi_promote_no">Lascialo com’è</string>
+    <string name="shogi_checkmate">Scacco matto!</string>
+    <string name="shogi_draw_repetition">Patta: la stessa posizione si è ripetuta quattro volte.</string>
+    <string name="shogi_draw_limit">Patta: la partita è arrivata a 400 mosse.</string>
+</resources>

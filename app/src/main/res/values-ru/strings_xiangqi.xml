@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">Китайские шахматы</string>
+    <string name="howto_xiangqi">Китайские шахматы (сянци). Нажмите на одну из своих красных фигур, затем на зелёную точку, чтобы сделать ход. Значки на каждой фигуре показывают, как она ходит. Загоните чёрного генерала так, чтобы ему некуда было уйти.</string>
+    <string name="xiangqi_pick_piece">Ваш ход: нажмите на одну из своих красных фигур</string>
+    <string name="xiangqi_pick_target">Нажмите на зелёную точку, чтобы пойти туда</string>
+    <string name="xiangqi_check">Шах! Вашего генерала атакуют: защитите его</string>
+    <string name="xiangqi_pieces">Фигуры</string>
+    <string name="xiangqi_guide_title">Как ходят фигуры</string>
+    <string name="xiangqi_guide_marks">Фигуры стоят на пересечениях линий. На каждой фигуре точка означает один шаг в эту сторону, две точки — два шага, стрелка — на любое расстояние, стрелка с чертой — фигура бьёт, перепрыгивая через одну фигуру, а пустая точка разрешена только после перехода через реку.</string>
+    <string name="xiangqi_piece_general">Генерал (帥, 將): один шаг по линии, всегда внутри дворца. Два генерала никогда не могут стоять друг против друга на свободной линии.</string>
+    <string name="xiangqi_piece_advisor">Советник (仕, 士): один шаг по диагонали, только внутри дворца.</string>
+    <string name="xiangqi_piece_elephant">Слон (相, 象): две точки по диагонали, никогда не переходит реку. Не может ходить, если точка посередине занята.</string>
+    <string name="xiangqi_piece_horse">Конь (馬): одна точка прямо, затем одна по диагонали наружу. Не может ходить, если первая точка занята.</string>
+    <string name="xiangqi_piece_chariot">Колесница (車): на любое расстояние по линии, как ладья в шахматах.</string>
+    <string name="xiangqi_piece_cannon">Пушка (炮, 砲): ходит как колесница, но бьёт, только перепрыгивая ровно через одну фигуру.</string>
+    <string name="xiangqi_piece_soldier">Солдат (兵, 卒): один шаг вперёд. Перейдя реку, может ходить и в сторону. Назад не ходит никогда.</string>
+    <string name="xiangqi_checkmate">Мат!</string>
+    <string name="xiangqi_no_moves">Ходов больше нет: в китайских шахматах это проигрыш.</string>
+    <string name="xiangqi_draw_repetition">Ничья: одна и та же позиция повторилась три раза.</string>
+    <string name="xiangqi_draw_limit">Ничья: по 60 ходов без единого взятия.</string>
+    <string name="xiangqi_draw_material">Ничья: ни у кого не осталось фигур, способных атаковать.</string>
+</resources>

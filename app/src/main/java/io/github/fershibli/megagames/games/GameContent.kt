@@ -8,11 +8,14 @@ import io.github.fershibli.megagames.games.buraco.BuracoGame
 import io.github.fershibli.megagames.games.connect.ConnectGame
 import io.github.fershibli.megagames.games.crossword.CrosswordGame
 import io.github.fershibli.megagames.games.dots.DotsGame
+import io.github.fershibli.megagames.games.janggi.JanggiGame
 import io.github.fershibli.megagames.games.mahjong.MahjongGame
 import io.github.fershibli.megagames.games.pipes.PipesGame
 import io.github.fershibli.megagames.games.reversi.ReversiGame
+import io.github.fershibli.megagames.games.shogi.ShogiGame
 import io.github.fershibli.megagames.games.solitaire.SolitaireGame
 import io.github.fershibli.megagames.games.sudoku.SudokuGame
+import io.github.fershibli.megagames.games.xiangqi.XiangqiGame
 
 /** Routes a [GameId] to its screen. */
 @Composable
@@ -30,5 +33,8 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.BURACO -> BuracoGame(host)
         GameId.CHECKERS -> io.github.fershibli.megagames.games.checkers.CheckersGame(host)
         GameId.CHESS -> io.github.fershibli.megagames.games.chess.ChessGame(host)
+        GameId.XIANGQI -> XiangqiGame(host)
+        GameId.JANGGI -> JanggiGame(host)
+        GameId.SHOGI -> ShogiGame(host)
     }
 }

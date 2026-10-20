@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">Ajedrez coreano</string>
+    <string name="howto_janggi">Ajedrez coreano (janggi). Toca una de tus piezas azules y luego un punto verde. Dentro de los palacios las piezas también pueden seguir las líneas diagonales. Puedes pasar en lugar de mover. Encierra al general rojo para ganar.</string>
+    <string name="janggi_pick_piece">Tu turno: toca una de tus piezas azules</string>
+    <string name="janggi_pick_target">Toca un punto verde para ir allí</string>
+    <string name="janggi_check">¡Jaque! Atacan a tu general: protégelo</string>
+    <string name="janggi_pieces">Piezas</string>
+    <string name="janggi_guide_title">Cómo se mueven las piezas</string>
+    <string name="janggi_guide_marks">Las piezas están en los cruces de las líneas. En cada pieza, un punto es un paso, dos puntos marcan el salto más largo del elefante, una flecha significa cualquier distancia, una flecha con una barra significa que tiene que saltar una pieza, y un punto hueco es un paso en diagonal permitido solo por las líneas de un palacio.</string>
+    <string name="janggi_piece_general">General (楚, 漢): un paso por las líneas del palacio, diagonales incluidas. Nunca sale del palacio.</string>
+    <string name="janggi_piece_guard">Guardia (士): se mueve como el general, un paso por las líneas del palacio, y se queda en el palacio.</string>
+    <string name="janggi_piece_elephant">Elefante (象): un punto recto y luego dos en diagonal hacia fuera. Queda bloqueado si algún punto del camino está ocupado.</string>
+    <string name="janggi_piece_horse">Caballo (馬): un punto recto y luego uno en diagonal hacia fuera. Queda bloqueado si el primer punto está ocupado.</string>
+    <string name="janggi_piece_chariot">Carro (車): cualquier distancia a lo largo de una línea, y por las líneas diagonales dentro de un palacio.</string>
+    <string name="janggi_piece_cannon">Cañón (包): tiene que saltar exactamente una pieza para moverse o capturar. Nunca salta ni captura otro cañón.</string>
+    <string name="janggi_piece_soldier">Soldado (卒, 兵): un paso hacia delante o de lado, nunca hacia atrás. Dentro del palacio enemigo también puede avanzar en diagonal por las líneas.</string>
+    <string name="janggi_pass">Pasar</string>
+    <string name="janggi_ai_passed">El ordenador ha pasado. Tu turno.</string>
+    <string name="janggi_must_pass">Ninguna de tus piezas puede moverse: toca Pasar</string>
+    <string name="janggi_checkmate">¡Jaque mate!</string>
+    <string name="janggi_draw_repetition">Tablas: la misma posición se repitió tres veces.</string>
+    <string name="janggi_draw_limit">Tablas: 60 jugadas de cada lado sin ninguna captura.</string>
+    <string name="janggi_draw_material">Tablas: a ningún bando le quedan piezas que puedan atacar.</string>
+    <string name="janggi_bikjang">Tablas: los dos generales quedaron frente a frente en una línea libre (bikjang).</string>
+    <string name="janggi_draw_passes">Tablas: los dos jugadores pasaron, uno después del otro.</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">Korean chess</string>
+    <string name="howto_janggi">Korean chess (janggi). Tap one of your blue pieces, then a green dot. Inside the palaces pieces may also follow the diagonal lines. You may pass instead of moving. Trap the red general to win.</string>
+    <string name="janggi_pick_piece">Your turn: tap one of your blue pieces</string>
+    <string name="janggi_pick_target">Tap a green dot to move there</string>
+    <string name="janggi_check">Check! Your general is attacked: protect it</string>
+    <string name="janggi_pieces">Pieces</string>
+    <string name="janggi_guide_title">How the pieces move</string>
+    <string name="janggi_guide_marks">Pieces stand on the line crossings. On each piece, a dot is one step, two dots mark the longer jump of the elephant, an arrow means any distance, an arrow with a bar means it must jump over one piece, and a hollow dot is a diagonal step allowed only along the lines of a palace.</string>
+    <string name="janggi_piece_general">General (楚, 漢): one step along the lines of the palace, diagonals included. It never leaves the palace.</string>
+    <string name="janggi_piece_guard">Guard (士): moves like the general, one step along the palace lines, and stays in the palace.</string>
+    <string name="janggi_piece_elephant">Elephant (象): one point straight, then two diagonally outward. Blocked if a point on the way is taken.</string>
+    <string name="janggi_piece_horse">Horse (馬): one point straight, then one diagonally outward. Blocked if the first point is taken.</string>
+    <string name="janggi_piece_chariot">Chariot (車): any distance along a line, and along the diagonal lines inside a palace.</string>
+    <string name="janggi_piece_cannon">Cannon (包): must jump over exactly one piece to move or to capture. It never jumps over or captures another cannon.</string>
+    <string name="janggi_piece_soldier">Soldier (卒, 兵): one step forward or sideways, never back. Inside the enemy palace it may also step diagonally forward along the lines.</string>
+    <string name="janggi_pass">Pass</string>
+    <string name="janggi_ai_passed">The computer passed. Your turn.</string>
+    <string name="janggi_must_pass">None of your pieces can move: press Pass</string>
+    <string name="janggi_checkmate">Checkmate!</string>
+    <string name="janggi_draw_repetition">Draw: the same position came back three times.</string>
+    <string name="janggi_draw_limit">Draw: 60 moves each without a capture.</string>
+    <string name="janggi_draw_material">Draw: neither side has a piece left that can attack.</string>
+    <string name="janggi_bikjang">Draw: the two generals face each other on an open line (bikjang).</string>
+    <string name="janggi_draw_passes">Draw: both players passed, one after the other.</string>
+</resources>
