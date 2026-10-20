@@ -29,6 +29,7 @@ import io.github.fershibli.megagames.games.GameContent
 import io.github.fershibli.megagames.ui.components.BigDialog
 import io.github.fershibli.megagames.ui.components.FloatingGear
 import io.github.fershibli.megagames.ui.components.TopBar
+import io.github.fershibli.megagames.ui.theme.LocalGameCovered
 import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
 
 /**
@@ -67,7 +68,7 @@ fun GameScreen(
         Column(Modifier.fillMaxSize()) {
             TopBar(stringResource(game.title), onSettings = { showSettings = true })
             Box(Modifier.weight(1f).fillMaxWidth()) {
-                CompositionLocalProvider(LocalUpdateSettings provides onSettingsChange) {
+                CompositionLocalProvider(LocalUpdateSettings provides onSettingsChange, LocalGameCovered provides showSettings) {
                     key(session) { GameContent(game, host) }
                 }
             }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">Quebra-cabeça de blocos</string>
+    <string name="howto_blocks">Arraste uma peça de baixo para o tabuleiro (ou toque na peça e depois no tabuleiro). Complete uma linha ou coluna inteira para limpá-la. Nada cai e não há relógio: o jogo só termina quando nenhuma peça cabe.</string>
+    <string name="blocks_score">Pontos: %1$d · Recorde: %2$d</string>
+    <string name="blocks_rotate">Girar peça</string>
+    <string name="blocks_no_fit">Nenhuma peça cabe mais</string>
+    <string name="blocks_final">Pontos: %1$d\nRecorde: %2$d</string>
+    <string name="blocks_new_best">Novo recorde!</string>
+</resources>
