@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pet friend -->
+    <string name="game_pet">小宠物</string>
+    <string name="howto_pet">照顾一个小伙伴：喂它吃饭、摸摸它、给它洗澡、一起玩。它从不生病，见到你总是很开心。</string>
+    <string name="pet_species_cat">小猫</string>
+    <string name="pet_species_dog">小狗</string>
+    <string name="pet_species_bunny">小兔</string>
+    <string name="pet_species_chick">小鸡</string>
+    <string name="pet_species_panda">熊猫</string>
+    <string name="pet_species_frog">青蛙</string>
+    <string name="pet_species_fox">狐狸</string>
+    <string name="pet_species_penguin">企鹅</string>
+    <string name="pet_species_hamster">仓鼠</string>
+    <string name="pet_species_turtle">乌龟</string>
+    <string name="pet_food_apple">苹果</string>
+    <string name="pet_food_carrot">胡萝卜</string>
+    <string name="pet_food_fish">小鱼</string>
+    <string name="pet_food_cookie">饼干</string>
+    <string name="pet_wear_none">不戴</string>
+    <string name="pet_wear_bow">蝴蝶结</string>
+    <string name="pet_wear_hat">帽子</string>
+    <string name="pet_wear_flower">小花</string>
+    <string name="pet_wear_scarf">围巾</string>
+    <string name="pet_need_happiness">开心</string>
+    <string name="pet_need_fullness">饱饱</string>
+    <string name="pet_need_energy">精力</string>
+    <string name="pet_need_cleanliness">干净</string>
+    <string name="pet_need_value">%1$s：%2$d%%</string>
+    <string name="pet_percent">%1$d%%</string>
+    <string name="pet_feed">喂食</string>
+    <string name="pet_cuddle">摸摸</string>
+    <string name="pet_kiss">亲亲</string>
+    <string name="pet_wave">挥手</string>
+    <string name="pet_bath">洗澡</string>
+    <string name="pet_sleep">睡觉</string>
+    <string name="pet_wake">叫醒</string>
+    <string name="pet_walk">散步</string>
+    <string name="pet_play">玩耍</string>
+    <string name="pet_dress">打扮</string>
+    <string name="pet_friends">伙伴和领养</string>
+    <string name="pet_rps">石头剪刀布</string>
+    <string name="pet_ttt">井字棋</string>
+    <string name="pet_ball">皮球</string>
+    <string name="pet_rock">石头</string>
+    <string name="pet_paper">布</string>
+    <string name="pet_scissors">剪刀</string>
+    <string name="pet_rps_pick">选一个吧！</string>
+    <string name="pet_rps_shake">石头…剪刀…布…</string>
+    <string name="pet_rps_score">你 %1$d · %2$s %3$d</string>
+    <string name="pet_you_win">你赢了！</string>
+    <string name="pet_pet_wins">%1$s赢了！</string>
+    <string name="pet_tie">平手！</string>
+    <string name="pet_thinking">%1$s正在想…</string>
+    <string name="pet_msg_hello">%1$s见到你很开心！</string>
+    <string name="pet_msg_hungry">%1$s有点饿了。</string>
+    <string name="pet_msg_sleepy">%1$s有点困了。</string>
+    <string name="pet_msg_dirty">%1$s想洗个澡。</string>
+    <string name="pet_msg_lonely">%1$s想要摸摸。</string>
+    <string name="pet_msg_yum">好吃！%1$s很喜欢。</string>
+    <string name="pet_msg_favorite">好吃！这是%1$s最爱吃的！</string>
+    <string name="pet_msg_cuddle">也可以用手指摸摸%1$s。</string>
+    <string name="pet_msg_petted">%1$s最喜欢你摸它了！</string>
+    <string name="pet_msg_kiss">%1$s也亲了你一下！</string>
+    <string name="pet_msg_wave">%1$s向你挥手！</string>
+    <string name="pet_msg_bath">哗啦！%1$s洗得干干净净。</string>
+    <string name="pet_msg_sleeping">嘘…%1$s在睡觉。</string>
+    <string name="pet_msg_woke">%1$s休息得很好。</string>
+    <string name="pet_msg_walk">%1$s散步很开心！</string>
+    <string name="pet_msg_ball">%1$s最爱玩球了！</string>
+    <string name="pet_msg_dress">%1$s真好看！</string>
+    <string name="pet_scene">%1$s（%2$s）</string>
+    <string name="pet_choose_title">选择你的新伙伴</string>
+    <string name="pet_your_friends">你的伙伴</string>
+    <string name="pet_name_title">起个名字</string>
+    <string name="pet_name_hint">或者输入名字</string>
+    <string name="pet_adopt">领养</string>
+    <string name="pet_switch_title">换一个伙伴吗？</string>
+    <string name="pet_switch_message">%1$s会在花园里等你。你可以随时在“伙伴”里把%1$s叫回来。</string>
+    <string name="pet_switch_yes">好的，换一个</string>
+    <string-array name="pet_names">
+        <item>豆豆</item>
+        <item>球球</item>
+        <item>毛毛</item>
+        <item>糖糖</item>
+        <item>乐乐</item>
+        <item>花花</item>
+    </string-array>
+</resources>
