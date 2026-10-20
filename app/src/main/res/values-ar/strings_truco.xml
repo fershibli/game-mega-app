@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_truco">تروكو</string>
+    <string name="howto_truco">اربح لمتين من ثلاث بأقوى الأوراق. اصرخ Truco! لرفع النقاط. أول فريق يصل إلى 12 يفوز.</string>
+    <string name="truco_variant_paulista">باوليستا</string>
+    <string name="truco_variant_paulista_desc">40 ورقة؛ الورقة المكشوفة (الفيرا) تحدد المانيليا، أقوى الأوراق.</string>
+    <string name="truco_variant_mineiro">مينيرو</string>
+    <string name="truco_variant_mineiro_desc">40 ورقة؛ مانيليا ثابتة 4♣ و7♥ وA♠ و7♦ بلا فيرا.</string>
+    <string name="truco_how_many">كيف تريد أن تلعب؟</string>
+    <string name="truco_one_vs_one">أنت ضد الكمبيوتر</string>
+    <string name="truco_two_vs_two">أنت وشريك ضد كمبيوترين</string>
+    <string name="truco_us">نحن</string>
+    <string name="truco_them">هم</string>
+    <string name="truco_worth">القيمة %1$d</string>
+    <string name="truco_vira">الفيرا</string>
+    <string name="truco_manilha">المانيليا: %1$s</string>
+    <string name="truco_manilhas_fixed">المانيليا: 4♣ 7♥ A♠ 7♦</string>
+    <string name="truco_call_truco">Truco!</string>
+    <string name="truco_call_seis">Seis!</string>
+    <string name="truco_call_nove">Nove!</string>
+    <string name="truco_call_doze">Doze!</string>
+    <string name="truco_shout_accept">أقبل!</string>
+    <string name="truco_shout_run">أنسحب!</string>
+    <string name="truco_shout_play_eleven">نلعب!</string>
+    <string name="truco_shout_run_eleven">ننسحب!</string>
+    <string name="truco_accept">أقبل</string>
+    <string name="truco_run">انسحب</string>
+    <string name="truco_play_card">العب الورقة</string>
+    <string name="truco_next_hand">الجولة التالية</string>
+    <string name="truco_eleven_play">العب (3 نقاط)</string>
+    <string name="truco_eleven_run">انسحب (لهم نقطة)</string>
+    <string name="truco_prompt_play">دورك: اضغط ورقة لتختارها</string>
+    <string name="truco_prompt_again">اضغط الورقة مرة أخرى (أو العب الورقة) لتلعبها</string>
+    <string name="truco_prompt_answer">صرخوا %1$s تقبل (القيمة %2$d) أم تنسحب (لهم %3$d) أم ترفع؟</string>
+    <string name="truco_prompt_eleven">يد الأحد عشر: انظر إلى أوراقك. تلعب على 3 نقاط أم تنسحب؟</string>
+    <string name="truco_waiting_answer">في انتظار الرد…</string>
+    <string name="truco_partner_turn">شريكك يلعب…</string>
+    <string name="truco_trick_us">هذه اللمّة لنا</string>
+    <string name="truco_trick_them">هذه اللمّة لهم</string>
+    <string name="truco_trick_tie">لمّة متعادلة</string>
+    <string name="truco_hand_won">ربحنا الجولة: +%1$d</string>
+    <string name="truco_hand_lost">ربحوا الجولة: +%1$d</string>
+    <string name="truco_hand_tied">تعادل: لا أحد يسجل</string>
+    <string name="truco_final">النتيجة النهائية: نحن %1$d × %2$d هم</string>
+    <string name="truco_partner">الشريك</string>
+    <string name="truco_computer">الكمبيوتر</string>
+</resources>
