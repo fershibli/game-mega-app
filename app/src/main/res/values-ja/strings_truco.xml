@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_truco">トルーコ</string>
+    <string name="howto_truco">強い札で3回中2回の勝負に勝ちます。「Truco!」で点数を上げられます。先に12点取った側の勝ち。</string>
+    <string name="truco_variant_paulista">パウリスタ</string>
+    <string name="truco_variant_paulista_desc">40枚。表にした札（ヴィラ）が最強の札マニーリャを決めます。</string>
+    <string name="truco_variant_mineiro">ミネイロ</string>
+    <string name="truco_variant_mineiro_desc">40枚。マニーリャは4♣・7♥・A♠・7♦で固定、ヴィラなし。</string>
+    <string name="truco_how_many">どう遊びますか？</string>
+    <string name="truco_one_vs_one">あなた対コンピューター</string>
+    <string name="truco_two_vs_two">あなたと味方 対 コンピューター2人</string>
+    <string name="truco_us">味方</string>
+    <string name="truco_them">相手</string>
+    <string name="truco_worth">%1$d点の勝負</string>
+    <string name="truco_vira">ヴィラ</string>
+    <string name="truco_manilha">マニーリャ：%1$s</string>
+    <string name="truco_manilhas_fixed">マニーリャ：4♣ 7♥ A♠ 7♦</string>
+    <string name="truco_call_truco">Truco!</string>
+    <string name="truco_call_seis">Seis!</string>
+    <string name="truco_call_nove">Nove!</string>
+    <string name="truco_call_doze">Doze!</string>
+    <string name="truco_shout_accept">受けた！</string>
+    <string name="truco_shout_run">降りる！</string>
+    <string name="truco_shout_play_eleven">勝負する！</string>
+    <string name="truco_shout_run_eleven">降ります！</string>
+    <string name="truco_accept">受ける</string>
+    <string name="truco_run">降りる</string>
+    <string name="truco_play_card">札を出す</string>
+    <string name="truco_next_hand">次の勝負へ</string>
+    <string name="truco_eleven_play">勝負する（3点）</string>
+    <string name="truco_eleven_run">降りる（相手に1点）</string>
+    <string name="truco_prompt_play">あなたの番：出す札をタップしてください</string>
+    <string name="truco_prompt_again">もう一度タップ（または「札を出す」）で出します</string>
+    <string name="truco_prompt_answer">相手が%1$s 受ける（%2$d点）、降りる（相手に%3$d点）、それとも上げる？</string>
+    <string name="truco_prompt_eleven">11点の勝負：手札を見て、3点で勝負するか降りるか決めてください</string>
+    <string name="truco_waiting_answer">返事を待っています…</string>
+    <string name="truco_partner_turn">味方の番です…</string>
+    <string name="truco_trick_us">この勝負は味方の勝ち</string>
+    <string name="truco_trick_them">この勝負は相手の勝ち</string>
+    <string name="truco_trick_tie">引き分け</string>
+    <string name="truco_hand_won">この回は味方の勝ち：+%1$d点</string>
+    <string name="truco_hand_lost">この回は相手の勝ち：+%1$d点</string>
+    <string name="truco_hand_tied">引き分け：点数なし</string>
+    <string name="truco_final">最終得点：味方 %1$d × %2$d 相手</string>
+    <string name="truco_partner">味方</string>
+    <string name="truco_computer">コンピューター</string>
+</resources>

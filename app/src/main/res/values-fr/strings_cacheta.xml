@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">Cacheta</string>
+    <string name="howto_cacheta">Piochez et défaussez jusqu’à ce que toutes vos cartes forment des suites et des brelans, puis appuyez sur Bater ! avant les ordinateurs.</string>
+    <string name="cacheta_variant_classic">Classique</string>
+    <string name="cacheta_variant_classic_desc">Deux jeux, 9 cartes chacun, sans joker.</string>
+    <string name="cacheta_variant_wild">Avec joker</string>
+    <string name="cacheta_variant_wild_desc">Une carte retournée (la vira) rend joker la carte suivante de sa couleur.</string>
+    <string name="cacheta_variant_pife">Pife</string>
+    <string name="cacheta_variant_pife_desc">Sans joker, les suites peuvent tourner (R-A-2) et vous pouvez prendre n’importe quelle défausse pour bater.</string>
+    <string name="cacheta_how_many">Combien d’adversaires ordinateur ?</string>
+    <string name="cacheta_computer">Ordinateur %1$d</string>
+    <string name="cacheta_playing">L’ordinateur %1$d joue…</string>
+    <string name="cacheta_deck">Pioche (%1$d)</string>
+    <string name="cacheta_pile">Défausse</string>
+    <string name="cacheta_vira">Vira</string>
+    <string name="cacheta_wild">Joker</string>
+    <string name="cacheta_draw">Piocher</string>
+    <string name="cacheta_take">Prendre la défausse</string>
+    <string name="cacheta_discard">Défausser</string>
+    <string name="cacheta_go_out">Bater !</string>
+    <string name="cacheta_sort_suit">Par couleur</string>
+    <string name="cacheta_sort_rank">Par valeur</string>
+    <string name="cacheta_skip">Non, merci</string>
+    <string name="cacheta_prompt_draw">À vous : piochez ou prenez la défausse</string>
+    <string name="cacheta_prompt_discard">Touchez une carte, puis Défausser</string>
+    <string name="cacheta_prompt_go_out">Toutes vos cartes vont ensemble ! Appuyez sur Bater !</string>
+    <string name="cacheta_offer">Vous pouvez bater avec le %1$s défaussé ! Le prendre ?</string>
+    <string name="cacheta_err_taken">Vous ne pouvez pas rejeter la carte que vous venez de prendre.</string>
+    <string name="cacheta_won">Vous avez baté !</string>
+    <string name="cacheta_won_ten">Vous avez baté avec les 10 cartes !</string>
+    <string name="cacheta_lost">L’ordinateur %1$d a baté.</string>
+    <string name="cacheta_deck_over">Plus de cartes : personne n’a baté.</string>
+    <string name="cacheta_your_hand">Votre main</string>
+    <string name="cacheta_groups_note">barre verte = déjà en groupe</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="one">%1$d ordinateur</item>
+        <item quantity="many">%1$d ordinateurs</item>
+        <item quantity="other">%1$d ordinateurs</item>
+    </plurals>
+</resources>
