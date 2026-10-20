@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pet friend -->
+    <string name="game_pet">صديقي الأليف</string>
+    <string name="howto_pet">اعتنِ بصديق صغير: أطعمه، ودلّله، وحمّمه، والعبا معًا. لا يمرض أبدًا ويفرح دائمًا برؤيتك.</string>
+    <string name="pet_species_cat">قطة</string>
+    <string name="pet_species_dog">كلب</string>
+    <string name="pet_species_bunny">أرنب</string>
+    <string name="pet_species_chick">كتكوت</string>
+    <string name="pet_species_panda">باندا</string>
+    <string name="pet_species_frog">ضفدع</string>
+    <string name="pet_species_fox">ثعلب</string>
+    <string name="pet_species_penguin">بطريق</string>
+    <string name="pet_species_hamster">هامستر</string>
+    <string name="pet_species_turtle">سلحفاة</string>
+    <string name="pet_food_apple">تفاحة</string>
+    <string name="pet_food_carrot">جزرة</string>
+    <string name="pet_food_fish">سمكة</string>
+    <string name="pet_food_cookie">بسكويتة</string>
+    <string name="pet_wear_none">لا شيء</string>
+    <string name="pet_wear_bow">فيونكة</string>
+    <string name="pet_wear_hat">قبعة</string>
+    <string name="pet_wear_flower">زهرة</string>
+    <string name="pet_wear_scarf">وشاح</string>
+    <string name="pet_need_happiness">السعادة</string>
+    <string name="pet_need_fullness">الشبع</string>
+    <string name="pet_need_energy">النشاط</string>
+    <string name="pet_need_cleanliness">النظافة</string>
+    <string name="pet_need_value">%1$s: %2$d%%</string>
+    <string name="pet_percent">%1$d%%</string>
+    <string name="pet_feed">إطعام</string>
+    <string name="pet_cuddle">دلال</string>
+    <string name="pet_kiss">قبلة</string>
+    <string name="pet_wave">تلويح</string>
+    <string name="pet_bath">حمّام</string>
+    <string name="pet_sleep">نوم</string>
+    <string name="pet_wake">استيقاظ</string>
+    <string name="pet_walk">نزهة</string>
+    <string name="pet_play">لعب</string>
+    <string name="pet_dress">تزيين</string>
+    <string name="pet_friends">الأصدقاء والتبنّي</string>
+    <string name="pet_rps">حجر، ورقة، مقص</string>
+    <string name="pet_ttt">إكس أو</string>
+    <string name="pet_ball">كرة</string>
+    <string name="pet_rock">حجر</string>
+    <string name="pet_paper">ورقة</string>
+    <string name="pet_scissors">مقص</string>
+    <string name="pet_rps_pick">اختر واحدًا!</string>
+    <string name="pet_rps_shake">حجر… ورقة… مقص…</string>
+    <string name="pet_rps_score">أنت %1$d · %2$s %3$d</string>
+    <string name="pet_you_win">لقد فزت!</string>
+    <string name="pet_pet_wins">فاز %1$s!</string>
+    <string name="pet_tie">تعادل!</string>
+    <string name="pet_thinking">%1$s يفكّر…</string>
+    <string name="pet_msg_hello">%1$s سعيد برؤيتك!</string>
+    <string name="pet_msg_hungry">%1$s جائع قليلًا.</string>
+    <string name="pet_msg_sleepy">%1$s نعسان قليلًا.</string>
+    <string name="pet_msg_dirty">%1$s يحب أن يستحم.</string>
+    <string name="pet_msg_lonely">%1$s يحب بعض الدلال.</string>
+    <string name="pet_msg_yum">لذيذ! أعجب ذلك %1$s.</string>
+    <string name="pet_msg_favorite">لذيذ! هذا أكثر ما يحبه %1$s!</string>
+    <string name="pet_msg_cuddle">مرّر إصبعك على %1$s لتدليله أيضًا.</string>
+    <string name="pet_msg_petted">%1$s يحب دلالك!</string>
+    <string name="pet_msg_kiss">%1$s يردّ لك القبلة!</string>
+    <string name="pet_msg_wave">%1$s يلوّح لك!</string>
+    <string name="pet_msg_bath">طرطشة! %1$s نظيف ولامع.</string>
+    <string name="pet_msg_sleeping">صه… %1$s نائم.</string>
+    <string name="pet_msg_woke">%1$s نال قسطًا جيدًا من الراحة.</string>
+    <string name="pet_msg_walk">%1$s يستمتع بالنزهة!</string>
+    <string name="pet_msg_ball">%1$s يحب الكرة!</string>
+    <string name="pet_msg_dress">%1$s يبدو رائعًا!</string>
+    <string name="pet_scene">%1$s (%2$s)</string>
+    <string name="pet_choose_title">اختر صديقك الجديد</string>
+    <string name="pet_your_friends">أصدقاؤك</string>
+    <string name="pet_name_title">اختر اسمًا</string>
+    <string name="pet_name_hint">أو اكتب اسمًا</string>
+    <string name="pet_adopt">تبنَّ</string>
+    <string name="pet_switch_title">تغيير الصديق؟</string>
+    <string name="pet_switch_message">سينتظرك %1$s في الحديقة. يمكنك إعادة %1$s في أي وقت من «الأصدقاء».</string>
+    <string name="pet_switch_yes">نعم، غيّر</string>
+    <string-array name="pet_names">
+        <item>لولو</item>
+        <item>بندق</item>
+        <item>سكر</item>
+        <item>قمر</item>
+        <item>زهرة</item>
+        <item>فلّة</item>
+    </string-array>
+</resources>
