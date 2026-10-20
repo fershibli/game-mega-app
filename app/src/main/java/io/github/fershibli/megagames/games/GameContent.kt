@@ -10,6 +10,7 @@ import io.github.fershibli.megagames.games.crossword.CrosswordGame
 import io.github.fershibli.megagames.games.dots.DotsGame
 import io.github.fershibli.megagames.games.janggi.JanggiGame
 import io.github.fershibli.megagames.games.mahjong.MahjongGame
+import io.github.fershibli.megagames.games.pet.PetGame
 import io.github.fershibli.megagames.games.pipes.PipesGame
 import io.github.fershibli.megagames.games.reversi.ReversiGame
 import io.github.fershibli.megagames.games.shogi.ShogiGame
@@ -33,6 +34,7 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.BURACO -> BuracoGame(host)
         GameId.CHECKERS -> io.github.fershibli.megagames.games.checkers.CheckersGame(host)
         GameId.CHESS -> io.github.fershibli.megagames.games.chess.ChessGame(host)
+        GameId.PET -> PetGame(host)
         GameId.CACHETA -> io.github.fershibli.megagames.games.cacheta.CachetaGame(host)
         GameId.TRUCO -> io.github.fershibli.megagames.games.truco.TrucoGame(host)
         GameId.XIANGQI -> XiangqiGame(host)
