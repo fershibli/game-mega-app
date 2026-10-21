@@ -45,7 +45,7 @@ class MemoryPuzzlesUiTest {
     private val app get() = RuntimeEnvironment.getApplication()
 
     private fun <T> open(game: GameId, difficulty: Difficulty, serializer: KSerializer<T>, state: T, store: SaveStore, onFinish: (GameOutcome) -> Unit = {}) {
-        val host = GameHost(game, difficulty, AppJson.encodeToJsonElement(serializer, state), store, game.variant(null), onFinish)
+        val host = GameHost(game, difficulty, AppJson.encodeToJsonElement(serializer, state), store, game.variant(null), onFinish = onFinish)
         rule.setContent { MegaGamesTheme(Settings()) { GameContent(game, host) } }
         settle()
     }
