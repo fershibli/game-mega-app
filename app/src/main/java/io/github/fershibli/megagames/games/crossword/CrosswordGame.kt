@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.crossword
 
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import android.content.Context
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -50,7 +52,6 @@ import io.github.fershibli.megagames.ui.components.RoundIconButton
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
@@ -118,7 +119,8 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
     val solved = solution.all { (cell, letter) -> s.entries[cell] == letter }
     val scale = LocalSettings.current.pieceScale
 
-    LaunchedEffect(solved) { if (solved) { delay(600); host.finish(GameOutcome(true, null)) } }
+    val pace = currentPace
+    LaunchedEffect(solved) { if (solved) { pace.wait(600); host.finish(GameOutcome(true, null)) } }
 
     fun select(cell: Int, acrossDir: Boolean) {
         state.value = s.copy(selected = cell, across = if (s.wordAt(cell, acrossDir) != null) acrossDir else !acrossDir)

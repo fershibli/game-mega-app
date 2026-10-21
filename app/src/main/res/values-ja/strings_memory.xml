@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">神経衰弱</string>
+    <string name="howto_memory">1回に2枚のカードをめくります。同じ絵ならそのまま表向きに。できるだけ少ない回数で全部のペアを見つけましょう。</string>
+    <string name="memory_variant_cards">トランプ</string>
+    <string name="memory_variant_cards_desc">同じ数字で同じ色の2枚がペア：♥と♦、または♠と♣。</string>
+    <string name="memory_variant_fruits">くだもの</string>
+    <string name="memory_variant_fruits_desc">りんご、さくらんぼ、洋なし、レモン、ぶどうなど。</string>
+    <string name="memory_variant_symbols">記号</string>
+    <string name="memory_variant_symbols_desc">星、ハート、月、太陽、しずく、葉っぱなど。</string>
+    <string name="memory_variant_animals">どうぶつ</string>
+    <string name="memory_variant_animals_desc">かわいい顔：ねこ、いぬ、うさぎ、ふくろうなど。</string>
+    <string name="memory_counts">回数：%1$d・ペア：%2$d／%3$d</string>
+    <string name="memory_best">最高記録：%1$d</string>
+    <string name="memory_first">カードを2枚めくってください</string>
+    <string name="memory_second">ペアになるカードをさがしてください</string>
+    <string name="memory_miss">ペアではありません。カードをタップして続けます</string>
+    <string name="memory_match">ペアです！その調子</string>
+    <string name="memory_all_found">全部のペアが見つかりました！</string>
+    <string name="memory_record">新記録です！</string>
+    <string name="memory_card">カード %1$d</string>
+    <string name="memory_card_found">カード %1$d、ペア成立</string>
+    <plurals name="memory_result">
+        <item quantity="other">%1$d回で全部のペアを見つけました。</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="other">これまでの最高記録：%1$d回。</item>
+    </plurals>
+</resources>

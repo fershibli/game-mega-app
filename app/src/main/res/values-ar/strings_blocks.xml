@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">لغز المكعبات</string>
+    <string name="howto_blocks">اسحب قطعة من الأسفل إلى اللوحة (أو المس القطعة ثم المس اللوحة). املأ صفًا أو عمودًا كاملًا ليختفي. لا شيء يسقط ولا يوجد وقت: تنتهي اللعبة فقط عندما لا تتسع أي قطعة.</string>
+    <string name="blocks_score">النقاط: %1$d · الأفضل: %2$d</string>
+    <string name="blocks_rotate">تدوير</string>
+    <string name="blocks_no_fit">لم تعد أي قطعة تتسع</string>
+    <string name="blocks_final">النقاط: %1$d\nأفضل نتيجة: %2$d</string>
+    <string name="blocks_new_best">رقم قياسي جديد!</string>
+</resources>

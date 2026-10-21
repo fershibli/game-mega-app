@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.ui.components
 
+import io.github.fershibli.megagames.R
+import androidx.compose.ui.res.booleanResource
 import androidx.compose.ui.graphics.drawscope.scale
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.platform.LocalLayoutDirection
@@ -29,7 +31,7 @@ import kotlin.math.min
 import kotlin.math.sin
 
 /** Icons are drawn in code (no icon font, no image files) to keep the app tiny. */
-enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO }
+enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO, TAKE_TURNS, TAKE_TURNS_TABLET }
 
 private val DIRECTIONAL = setOf(AppIcon.BACK, AppIcon.NEXT, AppIcon.PREV, AppIcon.ERASE)
 
@@ -85,6 +87,8 @@ fun DrawScope.drawAppIcon(icon: AppIcon, tint: Color) {
             drawRoundRect(tint, Offset(s * 0.36f, s * 0.6f), Size(s * 0.28f, s * 0.14f), CornerRadius(s * 0.04f))
             drawRoundRect(tint, Offset(s * 0.39f, s * 0.78f), Size(s * 0.22f, s * 0.1f), CornerRadius(s * 0.05f))
         }
+        AppIcon.TAKE_TURNS -> takeTurns(tint, tablet = false)
+        AppIcon.TAKE_TURNS_TABLET -> takeTurns(tint, tablet = true)
         AppIcon.INFO -> {
             drawCircle(tint, s * 0.42f, c, style = Stroke(s * 0.08f))
             drawCircle(tint, s * 0.07f, Offset(c.x, s * 0.3f))
@@ -184,4 +188,38 @@ private fun DrawScope.arrowHead(tint: Color, tip: Offset, right: Boolean, s: Flo
         moveTo(tip.x, tip.y); lineTo(tip.x + d * s * 0.2f, tip.y - s * 0.13f); lineTo(tip.x + d * s * 0.2f, tip.y + s * 0.13f); close()
     }
     drawPath(p, tint)
+}
+
+/** "Take turns": two hands holding the same phone (or tablet), passing it from one to the other. */
+@Composable
+fun takeTurnsIcon(): AppIcon = if (booleanResource(R.bool.tablet)) AppIcon.TAKE_TURNS_TABLET else AppIcon.TAKE_TURNS
+
+private fun DrawScope.takeTurns(tint: Color, tablet: Boolean) {
+    val s = min(size.width, size.height)
+    val w = if (tablet) s * 0.5f else s * 0.3f
+    val h = if (tablet) s * 0.38f else s * 0.5f
+    val x0 = (s - w) / 2
+    val y0 = (s - h) / 2
+    val x1 = x0 + w
+    val y1 = y0 + h
+    // A hand: wrist, palm, the thumb resting on the screen and two fingers curled around the edge.
+    fun hand(wristFrom: Offset, palm: Offset, thumbTo: Offset, fingers: List<Pair<Offset, Offset>>) {
+        drawLine(tint, wristFrom, palm, s * 0.12f, StrokeCap.Round)
+        drawCircle(tint, s * 0.085f, palm)
+        drawLine(tint, palm, thumbTo, s * 0.065f, StrokeCap.Round)
+        fingers.forEach { (a, b) -> drawLine(tint, a, b, s * 0.05f, StrokeCap.Round) }
+    }
+    rotate(-14f, Offset(s / 2, s / 2)) {
+        drawRoundRect(tint, Offset(x0, y0), Size(w, h), CornerRadius(s * 0.05f), style = Stroke(s * 0.05f))
+        drawLine(tint, Offset(s / 2 - w * 0.18f, y1 - s * 0.06f), Offset(s / 2 + w * 0.18f, y1 - s * 0.06f), s * 0.03f, StrokeCap.Round)
+        // One hand holds the lower left corner and the other the upper right one: the device goes from hand to hand.
+        hand(
+            Offset(x0 - s * 0.2f, y1 + s * 0.12f), Offset(x0 - s * 0.03f, y1 - s * 0.08f), Offset(x0 + s * 0.09f, y1 - s * 0.17f),
+            listOf(Offset(x0 - s * 0.07f, y1 - s * 0.2f) to Offset(x0 - s * 0.005f, y1 - s * 0.24f), Offset(x0 - s * 0.08f, y1 - s * 0.29f) to Offset(x0 - s * 0.005f, y1 - s * 0.33f)),
+        )
+        hand(
+            Offset(x1 + s * 0.2f, y0 - s * 0.12f), Offset(x1 + s * 0.03f, y0 + s * 0.08f), Offset(x1 - s * 0.09f, y0 + s * 0.17f),
+            listOf(Offset(x1 + s * 0.07f, y0 + s * 0.2f) to Offset(x1 + s * 0.005f, y0 + s * 0.24f), Offset(x1 + s * 0.08f, y0 + s * 0.29f) to Offset(x1 + s * 0.005f, y0 + s * 0.33f)),
+        )
+    }
 }

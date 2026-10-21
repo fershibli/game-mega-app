@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">Killer sudoku</string>
+    <string name="howto_killer">Sudoku without given numbers: each row, column and 3×3 box has 1 to 9 once, and the digits inside each dashed cage add up to the small number in its corner, without repeating.</string>
+    <string name="killer_tap_cell">Tap a square, then a number</string>
+    <string name="killer_hint_combos">Ways to make %1$d: %2$s</string>
+    <string name="killer_hint_again">Tap Hint again to fill in this square.</string>
+</resources>

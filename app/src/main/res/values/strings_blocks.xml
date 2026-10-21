@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">Block puzzle</string>
+    <string name="howto_blocks">Drag a piece from below onto the board (or tap the piece, then tap the board). Fill a whole row or column to clear it. Nothing falls and there is no clock: the game ends only when no piece fits.</string>
+    <string name="blocks_score">Score: %1$d · Best: %2$d</string>
+    <string name="blocks_rotate">Turn piece</string>
+    <string name="blocks_no_fit">No piece fits anymore</string>
+    <string name="blocks_final">Score: %1$d\nBest score: %2$d</string>
+    <string name="blocks_new_best">A new best score!</string>
+</resources>

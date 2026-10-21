@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">Snake</string>
+    <string name="howto_snake">Guide the slow snake with the four arrows (or swipe) to eat the fruit; each fruit makes it one longer. On Easy it passes through the edges and only loses its tail if it touches itself; on Medium touching itself ends the game; on Hard the edges are walls too.</string>
+    <string name="snake_length">Length: %1$d · Best: %2$d</string>
+    <string name="snake_bump">Bump! The snake stops here</string>
+    <string name="snake_final">Length: %1$d\nBest length: %2$d</string>
+    <string name="snake_new_best">Your longest snake yet!</string>
+    <string name="snake_up">Up</string>
+    <string name="snake_down">Down</string>
+    <string name="snake_left">Left</string>
+    <string name="snake_right">Right</string>
+    <string name="snake_pause">Pause</string>
+    <string name="snake_continue">Continue</string>
+    <string name="snake_start">Start</string>
+    <string name="snake_paused">Paused. Take your time.</string>
+    <string name="snake_ready">Ready when you are</string>
+</resources>

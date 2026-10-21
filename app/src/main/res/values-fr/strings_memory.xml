@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">Jeu des paires</string>
+    <string name="howto_memory">Retournez deux cartes par coup. Si elles montrent la même image, elles restent visibles. Trouvez toutes les paires en le moins de coups possible.</string>
+    <string name="memory_variant_cards">Cartes à jouer</string>
+    <string name="memory_variant_cards_desc">Une paire, c’est le même nombre de la même couleur : ♥ avec ♦, ou ♠ avec ♣.</string>
+    <string name="memory_variant_fruits">Fruits</string>
+    <string name="memory_variant_fruits_desc">Pomme, cerises, poire, citron, raisin et d’autres.</string>
+    <string name="memory_variant_symbols">Symboles</string>
+    <string name="memory_variant_symbols_desc">Étoile, cœur, lune, soleil, goutte, feuille et d’autres.</string>
+    <string name="memory_variant_animals">Animaux</string>
+    <string name="memory_variant_animals_desc">Des frimousses : chat, chien, lapin, hibou et d’autres.</string>
+    <string name="memory_counts">Coups : %1$d · Paires : %2$d sur %3$d</string>
+    <string name="memory_best">Record : %1$d</string>
+    <string name="memory_first">Retournez deux cartes</string>
+    <string name="memory_second">Trouvez maintenant sa paire</string>
+    <string name="memory_miss">Pas une paire. Touchez une carte pour continuer</string>
+    <string name="memory_match">Une paire ! Continuez</string>
+    <string name="memory_all_found">Toutes les paires sont trouvées !</string>
+    <string name="memory_record">Nouveau record !</string>
+    <string name="memory_card">Carte %1$d</string>
+    <string name="memory_card_found">Carte %1$d, paire trouvée</string>
+    <plurals name="memory_result">
+        <item quantity="one">Vous avez trouvé toutes les paires en %1$d coup.</item>
+        <item quantity="many">Vous avez trouvé toutes les paires en %1$d coups.</item>
+        <item quantity="other">Vous avez trouvé toutes les paires en %1$d coups.</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="one">Votre record : %1$d coup.</item>
+        <item quantity="many">Votre record : %1$d coups.</item>
+        <item quantity="other">Votre record : %1$d coups.</item>
+    </plurals>
+</resources>

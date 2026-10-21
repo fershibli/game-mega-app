@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">Puzzle di blocchi</string>
+    <string name="howto_blocks">Trascina un pezzo dal basso sul tabellone (oppure tocca il pezzo e poi il tabellone). Completa una riga o una colonna intera per liberarla. Non cade nulla e non c’è tempo: la partita finisce solo quando nessun pezzo entra.</string>
+    <string name="blocks_score">Punti: %1$d · Record: %2$d</string>
+    <string name="blocks_rotate">Ruota pezzo</string>
+    <string name="blocks_no_fit">Nessun pezzo entra più</string>
+    <string name="blocks_final">Punti: %1$d\nRecord: %2$d</string>
+    <string name="blocks_new_best">Nuovo record!</string>
+</resources>

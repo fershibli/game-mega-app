@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames
 
+import io.github.fershibli.megagames.R
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.semantics.SemanticsProperties
 import android.graphics.Bitmap
@@ -11,6 +12,12 @@ import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.core.WorldStore
+import io.github.fershibli.megagames.games.pet.PET_WORLD_KEY
+import io.github.fershibli.megagames.games.pet.PetRules
+import io.github.fershibli.megagames.games.pet.PetWorld
+import io.github.fershibli.megagames.games.pet.Species
+import org.robolectric.RuntimeEnvironment
 import io.github.fershibli.megagames.ui.components.TopBar
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
@@ -60,12 +67,12 @@ class ScreenshotTest {
         save(name)
     }
 
-    private fun gameShot(name: String, game: GameId, difficulty: Difficulty = Difficulty.EASY, settings: Settings = Settings()) {
+    private fun gameShot(name: String, game: GameId, difficulty: Difficulty = Difficulty.EASY, settings: Settings = Settings(), variant: String? = null) {
         rule.setContent {
             MegaGamesTheme(settings) {
                 Column(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
                     TopBar(stringResource(game.title), {})
-                    Box(Modifier.weight(1f)) { GameContent(game, GameHost(game, difficulty, null, null) {}) }
+                    Box(Modifier.weight(1f)) { GameContent(game, GameHost(game, difficulty, null, null, game.variant(variant)) {}) }
                 }
             }
         }
@@ -96,6 +103,17 @@ class ScreenshotTest {
     @Test fun sudokuFrLeftHanded() = gameShot("game_sudoku_fr_left", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.FRENCH, leftHanded = true))
     @Test fun solitaireBigText() = gameShot("game_solitaire_big_text", GameId.SOLITAIRE, settings = Settings(fontScale = 1.4f, pieceScale = 1.4f))
     @Test fun difficulty() = shot("difficulty") { DifficultyScreen(GameId.MAHJONG, Difficulty.MEDIUM, {}, {}, {}) }
+    @Test fun takeTurnsPt() = shot("take_turns_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        DifficultyScreen(GameId.REVERSI, Difficulty.EASY, {}, {}, {}, onTogether = {}, initialTogether = true)
+    }
+    @Test fun handoffPt() = shot("handoff_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        val handoff = androidx.compose.runtime.remember { io.github.fershibli.megagames.ui.components.Handoff().apply { passTo(io.github.fershibli.megagames.ui.components.Seat("Jogador 2", androidx.compose.ui.graphics.Color(0xFFD9534F))) } }
+        io.github.fershibli.megagames.ui.components.HandoffOverlay(handoff) {}
+    }
+    @Test fun tablePt() = shot("table_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        val tables = listOf(io.github.fershibli.megagames.core.TableSize(2), io.github.fershibli.megagames.core.TableSize(4, R.string.reversi_dark))
+        io.github.fershibli.megagames.ui.screens.TableScreen(GameId.BURACO, false, tables[1], {}, {}, {}, tables)
+    }
     @Test fun settings() = shot("settings") { SettingsScreen(Settings(), {}, {}, null) }
     @Test fun settingsInGamePt() = shot("settings_in_game_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {}, InGameActions({}, {}, {}))
@@ -116,8 +134,13 @@ class ScreenshotTest {
     @Test fun connect() = gameShot("game_connect", GameId.CONNECT, Difficulty.MEDIUM)
     @Test fun connectColorblind() = gameShot("game_connect_colorblind", GameId.CONNECT, Difficulty.MEDIUM, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
     @Test fun dots() = gameShot("game_dots", GameId.DOTS)
+    @Test fun cube3() = gameShot("game_cube", GameId.CUBE, Difficulty.MEDIUM, variant = "3")
+    @Test fun cube5Colorblind() = gameShot("game_cube_5_colorblind", GameId.CUBE, Difficulty.HARD, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND), variant = "5")
     @Test fun dotsHighContrastDark() = gameShot("game_dots_hc_dark", GameId.DOTS, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST, darkMode = true))
     @Test fun crosswordEasy() = gameShot("game_crossword_easy", GameId.CROSSWORD)
+    @Test fun xiangqi() = gameShot("game_xiangqi", GameId.XIANGQI)
+    @Test fun janggiDark() = gameShot("game_janggi_dark", GameId.JANGGI, settings = Settings(darkMode = true))
+    @Test fun shogiJapanese() = gameShot("game_shogi_ja", GameId.SHOGI, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))
     @Test fun crosswordHard() = gameShot("game_crossword_hard", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun crosswordChinese() = gameShot("game_crossword_zh", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE))
     @Test fun crosswordJapanese() = gameShot("game_crossword_ja", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))
@@ -130,6 +153,48 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun petChoose() = gameShot("game_pet_choose", GameId.PET)
+    @Test fun petRoom() {
+        // A cat already living in the room.
+        WorldStore(RuntimeEnvironment.getApplication()).run {
+            save(PET_WORLD_KEY, PetWorld.serializer(), PetRules.adopt(PetWorld(), Species.CAT, "Sunny", System.currentTimeMillis()))
+            flush()
+        }
+        gameShot("game_pet", GameId.PET)
+    }
+    @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
+    @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
+    @Test fun blocks() = gameShot("game_blocks", GameId.BLOCKS)
+    @Test fun pairs() = gameShot("game_pairs", GameId.PAIRS)
+    @Test fun pairsColorblindHard() = gameShot("game_pairs_colorblind", GameId.PAIRS, Difficulty.HARD, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
+    @Test fun snake() = gameShot("game_snake", GameId.SNAKE, Difficulty.HARD)
+    @Test fun pegs() = gameShot("game_pegs", GameId.PEGS)
+    @Test fun memoryFruits() = memoryShot("game_memory_fruits", "fruits", Difficulty.HARD)
+    @Test fun memoryAnimalsDark() = memoryShot("game_memory_animals_dark", "animals", Difficulty.MEDIUM, Settings(darkMode = true))
+    @Test fun memoryCardsColorblind() = memoryShot("game_memory_cards_colorblind", "cards", Difficulty.EASY, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
+    @Test fun sequence() = gameShot("game_sequence", GameId.SEQUENCE)
+
+    /** A memory game halfway through: some pairs found and a miss on show. */
+    private fun memoryShot(name: String, variant: String, difficulty: Difficulty, settings: Settings = Settings()) {
+        val start = io.github.fershibli.megagames.games.memory.Memory.newGame(variant, difficulty, kotlin.random.Random(5))
+        val byPair = start.faces.indices.groupBy { start.faces[it] / 2 }.values.toList()
+        val found = byPair.take(start.pairs / 2).flatten().toSet()
+        val state = start.copy(matched = start.faces.indices.map { it in found }, open = listOf(byPair[start.pairs / 2][0], byPair[start.pairs - 1][0]), moves = start.pairs)
+        val saved = io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.memory.MemoryState.serializer(), state)
+        shot(name, settings) {
+            Column(Modifier.fillMaxSize()) {
+                TopBar(stringResource(GameId.MEMORY.title), {})
+                Box(Modifier.weight(1f)) { GameContent(GameId.MEMORY, GameHost(GameId.MEMORY, difficulty, saved, null, GameId.MEMORY.variant(variant)) {}) }
+            }
+        }
+    }
+    @Test fun nonogram() = gameShot("game_nonogram", GameId.NONOGRAM, Difficulty.MEDIUM)
+    @Test fun kakuro() = gameShot("game_kakuro", GameId.KAKURO, Difficulty.MEDIUM)
+    @Test fun killerDark() = gameShot("game_killer_dark", GameId.KILLER, settings = Settings(darkMode = true))
+    @Test fun spider() = gameShot("game_spider", GameId.SPIDER)
+    @Test fun freecell() = gameShot("game_freecell", GameId.FREECELL)
+    @Test fun pyramid() = gameShot("game_pyramid", GameId.PYRAMID)
+    @Test fun pyramidLeftHandedBig() = gameShot("game_pyramid_left_big", GameId.PYRAMID, settings = Settings(leftHanded = true, pieceScale = 1.4f))
     @Test fun wordSearch() = gameShot("game_wordsearch", GameId.WORDSEARCH, Difficulty.MEDIUM)
     @Test fun wordSearchArabicColorblind() = gameShot("game_wordsearch_ar_colorblind", GameId.WORDSEARCH, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC, colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
     @Test fun anagramJapanese() = gameShot("game_anagram_ja", GameId.ANAGRAM, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))

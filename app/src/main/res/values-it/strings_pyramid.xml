@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">Piramide</string>
+    <string name="howto_pyramid">Togli due carte scoperte che sommano 13: Regina e Asso, Fante e 2, 10 e 3… Il Re va via da solo. Tocca il mazzo per girare una nuova carta. Svuota tutta la piramide per vincere.</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">Carte nella piramide: %1$d</string>
+    <string name="pyramid_passes">Giri del mazzo rimasti: %1$d</string>
+    <string name="pyramid_needs">Questa carta vale %1$d: tocca una carta che vale %2$d.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d, non 13.</string>
+    <string name="pyramid_covered">Quella carta è ancora coperta dalle carte sotto.</string>
+    <string name="pyramid_hint_deck">Tocca il mazzo per girare una nuova carta.</string>
+    <string name="pyramid_stuck_title">Nessuna mossa</string>
+    <string name="pyramid_stuck_message">Non si può togliere più nessuna carta. Puoi annullare alcune mosse e provare un’altra strada, oppure arrenderti.</string>
+    <string name="pyramid_give_up">Arrenditi</string>
+    <string name="pyramid_keep_playing">Continua a cercare</string>
+    <string name="pyramid_lost">Non c’erano più coppie possibili.</string>
+</resources>

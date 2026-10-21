@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">Chinese chess</string>
+    <string name="howto_xiangqi">Chinese chess (xiangqi). Tap one of your red pieces, then a green dot to move it. The marks on each piece show how it moves. Trap the black general so that it cannot escape.</string>
+    <string name="xiangqi_pick_piece">Your turn: tap one of your red pieces</string>
+    <string name="xiangqi_pick_target">Tap a green dot to move there</string>
+    <string name="xiangqi_check">Check! Your general is attacked: protect it</string>
+    <string name="xiangqi_pieces">Pieces</string>
+    <string name="xiangqi_guide_title">How the pieces move</string>
+    <string name="xiangqi_guide_marks">Pieces stand on the line crossings. On each piece, a dot is one step that way, two dots are two steps, an arrow means any distance, an arrow with a bar means it jumps over one piece to capture, and a hollow dot is allowed only after crossing the river.</string>
+    <string name="xiangqi_piece_general">General (帥, 將): one step along a line, always inside the palace. The two generals may never face each other on an open line.</string>
+    <string name="xiangqi_piece_advisor">Advisor (仕, 士): one step diagonally, inside the palace only.</string>
+    <string name="xiangqi_piece_elephant">Elephant (相, 象): two points diagonally, never across the river. Blocked if the point in between is taken.</string>
+    <string name="xiangqi_piece_horse">Horse (馬): one point straight, then one diagonally outward. Blocked if the first point is taken.</string>
+    <string name="xiangqi_piece_chariot">Chariot (車): any distance along a line, like the rook in chess.</string>
+    <string name="xiangqi_piece_cannon">Cannon (炮, 砲): moves like the chariot, but captures only by jumping over exactly one piece.</string>
+    <string name="xiangqi_piece_soldier">Soldier (兵, 卒): one step forward. Once across the river it may also step sideways. It never goes back.</string>
+    <string name="xiangqi_checkmate">Checkmate!</string>
+    <string name="xiangqi_no_moves">No legal move left: in Chinese chess that loses the game.</string>
+    <string name="xiangqi_draw_repetition">Draw: the same position came back three times.</string>
+    <string name="xiangqi_draw_limit">Draw: 60 moves each without a capture.</string>
+    <string name="xiangqi_draw_material">Draw: neither side has a piece left that can attack.</string>
+</resources>

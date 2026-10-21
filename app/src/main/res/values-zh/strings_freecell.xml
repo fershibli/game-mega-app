@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">空当接龙</string>
+    <string name="howto_freecell">所有的牌都是正面朝上。按花色从A到K叠成四堆。在各列中，把牌放到比它大一点、颜色不同的牌上。四个空当各能放一张牌。点一张牌移动它；再点一次可以换个地方。</string>
+    <string name="freecell_status">步数：%1$d · 空当：%2$d</string>
+    <string name="freecell_too_many">没有足够的位置一次移动%1$d张牌：现在最多能移动%2$d张。请先空出一个空当或一列。</string>
+    <string name="freecell_not_in_order">只有按顺序、红黑交替的牌才能一起移动。</string>
+    <string name="freecell_finish">自动完成</string>
+    <string name="freecell_thinking">正在寻找好的一步…</string>
+    <string name="freecell_no_hint">没有找到好的走法。试试撤销。</string>
+    <string name="freecell_stuck_title">没有可走的了</string>
+    <string name="freecell_stuck_message">从这里已经无法赢得这一局。你可以撤销几步换个走法，或者放弃。</string>
+    <string name="freecell_give_up">放弃</string>
+    <string name="freecell_keep_playing">继续找找</string>
+    <string name="freecell_lost">牌被堵住了：已经没有获胜的办法。</string>
+</resources>

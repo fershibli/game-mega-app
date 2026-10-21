@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">フリーセル</string>
+    <string name="howto_freecell">カードはすべて表向きです。マークごとにエースからキングまで4つの山を作りましょう。列では、ひとつ大きい数で色のちがうカードの上に重ねます。4つのフリーセルにはカードを1枚ずつ置けます。カードをタップすると動き、もう一度タップすると別の場所を試します。</string>
+    <string name="freecell_status">手数：%1$d · 空きセル：%2$d</string>
+    <string name="freecell_too_many">%1$d枚を一度に動かす場所がありません。今は%2$d枚まで動かせます。先にセルか列をひとつ空けてください。</string>
+    <string name="freecell_not_in_order">赤と黒が交互に順番どおり並んだカードだけ、いっしょに動かせます。</string>
+    <string name="freecell_finish">自動で仕上げる</string>
+    <string name="freecell_thinking">よい手を探しています…</string>
+    <string name="freecell_no_hint">よい手が見つかりません。一手戻してみましょう。</string>
+    <string name="freecell_stuck_title">もう動かせません</string>
+    <string name="freecell_stuck_message">ここからはこのゲームに勝てません。何手か戻して別の方法を試すか、あきらめることができます。</string>
+    <string name="freecell_give_up">あきらめる</string>
+    <string name="freecell_keep_playing">もう少し探す</string>
+    <string name="freecell_lost">カードがふさがって、勝つ方法がなくなりました。</string>
+</resources>

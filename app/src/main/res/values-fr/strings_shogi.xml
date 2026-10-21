@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">Shōgi</string>
+    <string name="howto_shogi">Échecs japonais. Touchez une de vos pièces (elles pointent vers le haut), puis un point vert. Les pièces que vous prenez passent dans votre camp : touchez-en une sous le plateau pour la poser sur une case vide. Matez le roi de l’ordinateur pour gagner.</string>
+    <string name="shogi_variant_standard">Shōgi (9 × 9)</string>
+    <string name="shogi_variant_standard_desc">Le jeu complet, sur le plateau de 9 sur 9.</string>
+    <string name="shogi_variant_mini">Mini-shōgi (5 × 5)</string>
+    <string name="shogi_variant_mini_desc">Un petit plateau de 5 sur 5 avec moins de pièces : parties rapides, idéal pour apprendre.</string>
+    <string name="shogi_pick_piece">À vous : touchez une de vos pièces, sur le plateau ou dans votre main</string>
+    <string name="shogi_pick_target">Touchez un point vert pour y aller</string>
+    <string name="shogi_pick_drop">Touchez un point vert pour y poser la pièce</string>
+    <string name="shogi_check">Échec ! Votre roi est attaqué : protégez-le</string>
+    <string name="shogi_pieces">Pièces</string>
+    <string name="shogi_guide_title">Comment se déplacent les pièces</string>
+    <string name="shogi_guide_marks">Sur chaque pièce, un point est un pas dans cette direction et une flèche veut dire n’importe quelle distance. Les caractères rouges indiquent une pièce promue. Les rangées ombrées de l’autre côté (trois rangées, une seule au mini-shōgi) sont celles où vos pièces peuvent être promues.</string>
+    <string name="shogi_piece_king">Roi (王, 玉) : un pas dans n’importe quelle direction.</string>
+    <string name="shogi_piece_rook">Tour (飛) : n’importe quelle distance le long d’une ligne. Promue, elle devient dragon.</string>
+    <string name="shogi_piece_bishop">Fou (角) : n’importe quelle distance en diagonale. Promu, il devient cheval.</string>
+    <string name="shogi_piece_gold">Général d’or (金) : un pas dans toutes les directions sauf en diagonale vers l’arrière. Il n’est jamais promu.</string>
+    <string name="shogi_piece_silver">Général d’argent (銀) : un pas en avant ou en diagonale. Promu, il se déplace comme l’or.</string>
+    <string name="shogi_piece_knight">Cavalier (桂) : saute de deux cases en avant et une sur le côté, par-dessus n’importe quelle pièce. Promu, il se déplace comme l’or.</string>
+    <string name="shogi_piece_lance">Lance (香) : n’importe quelle distance tout droit vers l’avant. Promue, elle se déplace comme l’or.</string>
+    <string name="shogi_piece_pawn">Pion (歩) : un pas en avant. Promu, il devient tokin (と) et se déplace comme l’or.</string>
+    <string name="shogi_piece_dragon">Dragon (龍), la tour promue : n’importe quelle distance le long d’une ligne, ou un pas en diagonale.</string>
+    <string name="shogi_piece_horse">Cheval (馬), le fou promu : n’importe quelle distance en diagonale, ou un pas le long d’une ligne.</string>
+    <string name="shogi_piece_promoted">Pion, lance, cavalier ou argent promus (と, 杏, 圭, 全) : se déplacent comme le général d’or.</string>
+    <string name="shogi_promote_title">Promouvoir cette pièce ?</string>
+    <string name="shogi_promote_yes">Promouvoir</string>
+    <string name="shogi_promote_no">La laisser telle quelle</string>
+    <string name="shogi_checkmate">Échec et mat !</string>
+    <string name="shogi_draw_repetition">Partie nulle : la même position est revenue quatre fois.</string>
+    <string name="shogi_draw_limit">Partie nulle : la partie a atteint 400 coups.</string>
+</resources>

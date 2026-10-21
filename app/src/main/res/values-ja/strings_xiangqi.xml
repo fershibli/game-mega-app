@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">シャンチー（中国象棋）</string>
+    <string name="howto_xiangqi">中国の将棋、シャンチーです。自分の赤い駒をタップし、緑の点をタップして動かします。駒の印が動き方を表しています。黒の将が逃げられないように追いつめれば勝ちです。</string>
+    <string name="xiangqi_pick_piece">あなたの番です：自分の赤い駒をタップしてください</string>
+    <string name="xiangqi_pick_target">緑の点をタップするとそこへ動きます</string>
+    <string name="xiangqi_check">王手！あなたの将がねらわれています。守りましょう</string>
+    <string name="xiangqi_pieces">駒</string>
+    <string name="xiangqi_guide_title">駒の動き方</string>
+    <string name="xiangqi_guide_marks">駒は線の交点に置きます。駒の印は、点が一歩、二つの点が二歩、矢印がどこまでも、横線つきの矢印が駒を一つ飛び越えて取る動き、白抜きの点は川を渡ってからできる動きを表します。</string>
+    <string name="xiangqi_piece_general">将（帥・將）：線にそって一歩。九宮（宮殿）から出られません。二つの将が間に何もない同じ線で向かい合ってはいけません。</string>
+    <string name="xiangqi_piece_advisor">士（仕・士）：斜めに一歩。九宮の中だけを動きます。</string>
+    <string name="xiangqi_piece_elephant">象（相・象）：斜めに二点進みます。川は渡れません。間の点に駒があると動けません。</string>
+    <string name="xiangqi_piece_horse">馬：まっすぐ一点、そこから外側へ斜めに一点。最初の点に駒があると動けません。</string>
+    <string name="xiangqi_piece_chariot">車：線にそってどこまでも進めます。チェスのルークと同じです。</string>
+    <string name="xiangqi_piece_cannon">砲（炮・砲）：動きは車と同じですが、駒を取るときはちょうど一つの駒を飛び越えます。</string>
+    <string name="xiangqi_piece_soldier">兵（兵・卒）：前に一歩。川を渡ると横にも一歩進めます。後ろには戻れません。</string>
+    <string name="xiangqi_checkmate">詰みです！</string>
+    <string name="xiangqi_no_moves">指せる手がありません。シャンチーではこれで負けになります。</string>
+    <string name="xiangqi_draw_repetition">引き分け：同じ局面が三回くり返されました。</string>
+    <string name="xiangqi_draw_limit">引き分け：おたがい60手、駒を取りませんでした。</string>
+    <string name="xiangqi_draw_material">引き分け：どちらにも攻められる駒が残っていません。</string>
+</resources>

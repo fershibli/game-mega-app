@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">Freie Zellen</string>
+    <string name="howto_freecell">Alle Karten liegen offen. Baue vier Stapel vom Ass bis zum König, einen pro Farbe. In den Spalten kommt jede Karte auf eine um eins höhere der anderen Farbe (rot auf schwarz). Die vier freien Zellen nehmen je eine Karte auf. Tippe auf eine Karte, um sie zu bewegen, und tippe noch einmal, um einen anderen Platz zu versuchen.</string>
+    <string name="freecell_status">Züge: %1$d · Freie Zellen: %2$d</string>
+    <string name="freecell_too_many">Nicht genug Platz, um %1$d Karten auf einmal zu bewegen: Jetzt gehen %2$d. Leere zuerst eine Zelle oder eine Spalte.</string>
+    <string name="freecell_not_in_order">Nur geordnete Karten, abwechselnd rot und schwarz, können zusammen bewegt werden.</string>
+    <string name="freecell_finish">Zu Ende spielen</string>
+    <string name="freecell_thinking">Suche einen guten Zug…</string>
+    <string name="freecell_no_hint">Kein guter Zug gefunden. Versuche Rückgängig.</string>
+    <string name="freecell_stuck_title">Keine Züge mehr</string>
+    <string name="freecell_stuck_message">Von hier aus ist dieses Spiel nicht mehr zu gewinnen. Du kannst einige Züge rückgängig machen und einen anderen Weg versuchen oder aufgeben.</string>
+    <string name="freecell_give_up">Aufgeben</string>
+    <string name="freecell_keep_playing">Weiter suchen</string>
+    <string name="freecell_lost">Die Karten waren blockiert: Es gab keinen Weg mehr zum Sieg.</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_truco">Truco</string>
+    <string name="howto_truco">Gagnez deux plis sur trois avec les cartes les plus fortes. Criez Truco ! pour monter les points. Le premier camp à 12 gagne.</string>
+    <string name="truco_variant_paulista">Paulista</string>
+    <string name="truco_variant_paulista_desc">40 cartes ; la carte retournée (vira) choisit les manilhas, les plus fortes.</string>
+    <string name="truco_variant_mineiro">Mineiro</string>
+    <string name="truco_variant_mineiro_desc">40 cartes ; manilhas fixes 4♣, 7♥, A♠, 7♦, sans vira.</string>
+    <string name="truco_how_many">Comment voulez-vous jouer ?</string>
+    <string name="truco_one_vs_one">Vous contre l’ordinateur</string>
+    <string name="truco_two_vs_two">Vous et un partenaire contre deux ordinateurs</string>
+    <string name="truco_us">Nous</string>
+    <string name="truco_them">Eux</string>
+    <string name="truco_worth">Vaut %1$d</string>
+    <string name="truco_vira">Vira</string>
+    <string name="truco_manilha">Manilha : %1$s</string>
+    <string name="truco_manilhas_fixed">Manilhas : 4♣ 7♥ A♠ 7♦</string>
+    <string name="truco_call_truco">Truco !</string>
+    <string name="truco_call_seis">Seis !</string>
+    <string name="truco_call_nove">Nove !</string>
+    <string name="truco_call_doze">Doze !</string>
+    <string name="truco_shout_accept">J’accepte !</string>
+    <string name="truco_shout_run">Je passe !</string>
+    <string name="truco_shout_play_eleven">On joue !</string>
+    <string name="truco_shout_run_eleven">On passe !</string>
+    <string name="truco_accept">Accepter</string>
+    <string name="truco_run">Passer</string>
+    <string name="truco_play_card">Jouer la carte</string>
+    <string name="truco_next_hand">Main suivante</string>
+    <string name="truco_eleven_play">Jouer (vaut 3)</string>
+    <string name="truco_eleven_run">Passer (ils gagnent 1)</string>
+    <string name="truco_prompt_play">À vous : touchez une carte pour la choisir</string>
+    <string name="truco_prompt_again">Touchez encore la carte (ou Jouer la carte) pour la jouer</string>
+    <string name="truco_prompt_answer">Ils crient %1$s Accepter (vaut %2$d), passer (ils gagnent %3$d) ou relancer ?</string>
+    <string name="truco_prompt_eleven">Main de onze : regardez vos cartes. Jouer pour 3 points ou passer ?</string>
+    <string name="truco_waiting_answer">En attente de la réponse…</string>
+    <string name="truco_partner_turn">Votre partenaire joue…</string>
+    <string name="truco_trick_us">Nous gagnons ce pli</string>
+    <string name="truco_trick_them">Ils gagnent ce pli</string>
+    <string name="truco_trick_tie">Pli à égalité</string>
+    <string name="truco_hand_won">Nous gagnons la main : +%1$d</string>
+    <string name="truco_hand_lost">Ils gagnent la main : +%1$d</string>
+    <string name="truco_hand_tied">Main nulle : personne ne marque</string>
+    <string name="truco_final">Score final : nous %1$d × %2$d eux</string>
+    <string name="truco_partner">Partenaire</string>
+    <string name="truco_computer">Ordinateur</string>
+</resources>

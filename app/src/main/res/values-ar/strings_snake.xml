@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">الثعبان</string>
+    <string name="howto_snake">وجّه الثعبان البطيء بالأسهم الأربعة (أو بالسحب) ليأكل الفاكهة؛ كل ثمرة تجعله أطول بقليل. في السهل يعبر الحواف ولا يفقد إلا ذيله إذا لمس نفسه؛ في المتوسط تنتهي اللعبة إذا لمس نفسه؛ وفي الصعب تصبح الحواف جدرانًا أيضًا.</string>
+    <string name="snake_length">الطول: %1$d · الأفضل: %2$d</string>
+    <string name="snake_bump">أوه! توقف الثعبان هنا</string>
+    <string name="snake_final">الطول: %1$d\nأفضل طول: %2$d</string>
+    <string name="snake_new_best">أطول ثعبان لك حتى الآن!</string>
+    <string name="snake_up">أعلى</string>
+    <string name="snake_down">أسفل</string>
+    <string name="snake_left">يسار</string>
+    <string name="snake_right">يمين</string>
+    <string name="snake_pause">إيقاف مؤقت</string>
+    <string name="snake_continue">متابعة</string>
+    <string name="snake_start">ابدأ</string>
+    <string name="snake_paused">متوقف مؤقتًا. خذ وقتك.</string>
+    <string name="snake_ready">ابدأ عندما تكون مستعدًا</string>
+</resources>

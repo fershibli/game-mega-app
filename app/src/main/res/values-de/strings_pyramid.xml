@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">Pyramide</string>
+    <string name="howto_pyramid">Nimm zwei freie Karten weg, die zusammen 13 ergeben: Dame und Ass, Bube und 2, 10 und 3… Der König geht allein. Tippe auf den Stapel, um eine neue Karte aufzudecken. Räume die ganze Pyramide ab, um zu gewinnen.</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">Karten in der Pyramide: %1$d</string>
+    <string name="pyramid_passes">Verbleibende Durchgänge: %1$d</string>
+    <string name="pyramid_needs">Diese Karte zählt %1$d: Tippe auf eine Karte, die %2$d zählt.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d, nicht 13.</string>
+    <string name="pyramid_covered">Diese Karte ist noch von den Karten darunter bedeckt.</string>
+    <string name="pyramid_hint_deck">Tippe auf den Stapel, um eine neue Karte aufzudecken.</string>
+    <string name="pyramid_stuck_title">Keine Züge mehr</string>
+    <string name="pyramid_stuck_message">Es kann keine Karte mehr weggenommen werden. Du kannst einige Züge rückgängig machen und einen anderen Weg versuchen oder aufgeben.</string>
+    <string name="pyramid_give_up">Aufgeben</string>
+    <string name="pyramid_keep_playing">Weiter suchen</string>
+    <string name="pyramid_lost">Es waren keine Paare mehr möglich.</string>
+</resources>

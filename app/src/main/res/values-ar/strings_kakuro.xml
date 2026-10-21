@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">كاكورو</string>
+    <string name="howto_kakuro">كلمات متقاطعة بالأرقام: املأ المربعات البيضاء بالأرقام من 1 إلى 9 بحيث يساوي مجموع كل سلسلة من المربعات البيضاء، أفقيًا أو عموديًا، الرقمَ الموجود في المربع الأسود قبلها، دون تكرار أي رقم.</string>
+    <string name="kakuro_tap_cell">المس مربعًا أبيض، ثم رقمًا</string>
+    <string name="kakuro_hint_again">المس تلميح مرة أخرى لملء هذا المربع.</string>
+</resources>

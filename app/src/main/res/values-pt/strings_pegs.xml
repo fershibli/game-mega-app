@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pegs">Resta um</string>
+    <string name="howto_pegs">Pule uma bolinha por cima da vizinha até um buraco vazio: a bolinha pulada sai do tabuleiro. Deixe só uma bolinha para ganhar.</string>
+    <string name="pegs_variant_english">Tabuleiro inglês</string>
+    <string name="pegs_variant_english_desc">33 buracos em forma de cruz. O centro começa vazio.</string>
+    <string name="pegs_variant_french">Tabuleiro francês</string>
+    <string name="pegs_variant_french_desc">37 buracos: a cruz e mais quatro buracos nos cantos. Um pouco mais difícil.</string>
+    <string name="pegs_left">Bolinhas: %1$d</string>
+    <string name="pegs_pick_peg">Toque numa bolinha para mexer</string>
+    <string name="pegs_pick_hole">Agora toque no buraco vazio para onde ela pula</string>
+    <string name="pegs_no_jumps">Não há mais pulos</string>
+    <string name="pegs_restart">Recomeçar</string>
+    <string name="pegs_win_one">Restou só uma bolinha. Muito bem!</string>
+    <string name="pegs_win_perfect">Uma bolinha só, bem no buraco marcado: final perfeito!</string>
+    <plurals name="pegs_end_left">
+        <item quantity="one">Não há mais pulos e restou %1$d bolinha. Boa tentativa!</item>
+        <item quantity="many">Não há mais pulos e restaram %1$d bolinhas. Boa tentativa!</item>
+        <item quantity="other">Não há mais pulos e restaram %1$d bolinhas. Boa tentativa!</item>
+    </plurals>
+</resources>

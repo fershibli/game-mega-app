@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">الشوغي</string>
+    <string name="howto_shogi">الشطرنج الياباني. المس إحدى قطعك (تشير إلى الأعلى) ثم نقطة خضراء. القطع التي تأسرها تنضم إليك: المس إحداها تحت الرقعة لتضعها في مربع فارغ. اجعل ملك الكمبيوتر في وضع كش مات لتفوز.</string>
+    <string name="shogi_variant_standard">الشوغي (9 × 9)</string>
+    <string name="shogi_variant_standard_desc">اللعبة الكاملة على رقعة 9 في 9.</string>
+    <string name="shogi_variant_mini">الشوغي المصغّر (5 × 5)</string>
+    <string name="shogi_variant_mini_desc">رقعة صغيرة 5 في 5 وقطع أقل: مباريات سريعة ومناسبة للتعلم.</string>
+    <string name="shogi_pick_piece">دورك: المس إحدى قطعك على الرقعة أو في يدك</string>
+    <string name="shogi_pick_target">المس نقطة خضراء للانتقال إليها</string>
+    <string name="shogi_pick_drop">المس نقطة خضراء لوضع القطعة هناك</string>
+    <string name="shogi_check">كش! ملكك مهدَّد: احمِه</string>
+    <string name="shogi_pieces">القطع</string>
+    <string name="shogi_guide_title">كيف تتحرك القطع</string>
+    <string name="shogi_guide_marks">على كل قطعة: النقطة خطوة واحدة في ذلك الاتجاه، والسهم يعني أي مسافة. الحروف الحمراء تدل على قطع مُرقّاة. الصفوف المظللة في الجهة المقابلة (ثلاثة صفوف، وصف واحد في الشوغي المصغّر) هي المنطقة التي يمكن أن تترقى فيها قطعك.</string>
+    <string name="shogi_piece_king">الملك (王، 玉): خطوة واحدة في أي اتجاه.</string>
+    <string name="shogi_piece_rook">الرخ (飛): أي مسافة على خط. عند ترقيته يصبح تنينًا.</string>
+    <string name="shogi_piece_bishop">الفيل (角): أي مسافة قطريًا. عند ترقيته يصبح حصانًا.</string>
+    <string name="shogi_piece_gold">الجنرال الذهبي (金): خطوة واحدة في أي اتجاه إلا القطري إلى الخلف. لا يترقى.</string>
+    <string name="shogi_piece_silver">الجنرال الفضي (銀): خطوة واحدة إلى الأمام أو قطريًا. عند ترقيته يتحرك مثل الذهبي.</string>
+    <string name="shogi_piece_knight">الفارس (桂): يقفز مربعين إلى الأمام ومربعًا إلى الجانب، فوق أي قطعة. عند ترقيته يتحرك مثل الذهبي.</string>
+    <string name="shogi_piece_lance">الرمح (香): أي مسافة إلى الأمام مباشرة. عند ترقيته يتحرك مثل الذهبي.</string>
+    <string name="shogi_piece_pawn">البيدق (歩): خطوة واحدة إلى الأمام. عند ترقيته يصبح «توكين» (と) ويتحرك مثل الذهبي.</string>
+    <string name="shogi_piece_dragon">التنين (龍)، الرخ المُرقّى: أي مسافة على خط، أو خطوة واحدة قطريًا.</string>
+    <string name="shogi_piece_horse">الحصان (馬)، الفيل المُرقّى: أي مسافة قطريًا، أو خطوة واحدة على خط.</string>
+    <string name="shogi_piece_promoted">البيدق أو الرمح أو الفارس أو الفضي بعد الترقية (と، 杏، 圭، 全): تتحرك مثل الجنرال الذهبي.</string>
+    <string name="shogi_promote_title">هل تريد ترقية هذه القطعة؟</string>
+    <string name="shogi_promote_yes">ترقية</string>
+    <string name="shogi_promote_no">إبقاؤها كما هي</string>
+    <string name="shogi_checkmate">كش مات!</string>
+    <string name="shogi_draw_repetition">تعادل: تكرر الوضع نفسه أربع مرات.</string>
+    <string name="shogi_draw_limit">تعادل: بلغت المباراة 400 نقلة.</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pairs">Цветные капли</string>
+    <string name="howto_pairs">Пара капель медленно падает. Двигайте её стрелками (или проведите пальцем), поворачивайте или бросайте вниз. Когда 3 или больше капель одного цвета соприкасаются, они лопаются, а капли сверху падают: несколько таких хлопков подряд — цепочка, она приносит больше очков. Игра заканчивается, когда верх средней колонки заполнен.</string>
+    <string name="pairs_score">Очки: %1$d · Рекорд: %2$d</string>
+    <string name="pairs_chain">Цепочка ×%1$d!</string>
+    <string name="pairs_next">Далее</string>
+    <string name="pairs_left">Влево</string>
+    <string name="pairs_right">Вправо</string>
+    <string name="pairs_turn">Повернуть</string>
+    <string name="pairs_drop">Бросить</string>
+    <string name="pairs_pause">Пауза</string>
+    <string name="pairs_continue">Продолжить</string>
+    <string name="pairs_start">Начать</string>
+    <string name="pairs_paused">Пауза. Не торопитесь.</string>
+    <string name="pairs_ready">Начните, когда будете готовы</string>
+    <string name="pairs_final">Очки: %1$d\nРекорд: %2$d</string>
+    <string name="pairs_new_best">Новый рекорд!</string>
+    <string name="pairs_full">Средняя колонка заполнена</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">Киллер-судоку</string>
+    <string name="howto_killer">Судоку без подсказанных цифр: в каждой строке, столбце и квадрате 3×3 цифры от 1 до 9 встречаются по разу, а сумма цифр в каждой пунктирной области равна маленькому числу в её углу, без повторов.</string>
+    <string name="killer_tap_cell">Нажмите на клетку, затем на цифру</string>
+    <string name="killer_hint_combos">Как получить %1$d: %2$s</string>
+    <string name="killer_hint_again">Нажмите «Подсказка» ещё раз, чтобы заполнить эту клетку.</string>
+</resources>

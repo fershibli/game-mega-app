@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">Xadrez coreano</string>
+    <string name="howto_janggi">Xadrez coreano (janggi). Toque numa das suas peças azuis e depois num ponto verde. Dentro dos palácios as peças também podem seguir as linhas diagonais. Você pode passar a vez em vez de jogar. Encurrale o general vermelho para vencer.</string>
+    <string name="janggi_pick_piece">Sua vez: toque numa das suas peças azuis</string>
+    <string name="janggi_pick_target">Toque num ponto verde para ir até lá</string>
+    <string name="janggi_check">Xeque! Seu general está sendo atacado: proteja-o</string>
+    <string name="janggi_pieces">Peças</string>
+    <string name="janggi_guide_title">Como as peças andam</string>
+    <string name="janggi_guide_marks">As peças ficam nos cruzamentos das linhas. Em cada peça, um ponto é um passo, dois pontos marcam o salto mais longo do elefante, uma seta quer dizer qualquer distância, uma seta com uma barra quer dizer que ela precisa pular uma peça, e um ponto vazado é um passo diagonal permitido só nas linhas de um palácio.</string>
+    <string name="janggi_piece_general">General (楚, 漢): um passo pelas linhas do palácio, inclusive as diagonais. Nunca sai do palácio.</string>
+    <string name="janggi_piece_guard">Guarda (士): anda como o general, um passo pelas linhas do palácio, e fica no palácio.</string>
+    <string name="janggi_piece_elephant">Elefante (象): um ponto reto e depois dois na diagonal, para fora. Fica bloqueado se algum ponto do caminho estiver ocupado.</string>
+    <string name="janggi_piece_horse">Cavalo (馬): um ponto reto e depois um na diagonal, para fora. Fica bloqueado se o primeiro ponto estiver ocupado.</string>
+    <string name="janggi_piece_chariot">Carro (車): qualquer distância ao longo de uma linha, e pelas linhas diagonais dentro de um palácio.</string>
+    <string name="janggi_piece_cannon">Canhão (包): precisa pular exatamente uma peça para andar ou capturar. Nunca pula nem captura outro canhão.</string>
+    <string name="janggi_piece_soldier">Soldado (卒, 兵): um passo para a frente ou para o lado, nunca para trás. Dentro do palácio inimigo também pode andar na diagonal para a frente, pelas linhas.</string>
+    <string name="janggi_pass">Passar</string>
+    <string name="janggi_ai_passed">O computador passou a vez. Sua vez.</string>
+    <string name="janggi_must_pass">Nenhuma das suas peças pode andar: toque em Passar</string>
+    <string name="janggi_checkmate">Xeque-mate!</string>
+    <string name="janggi_draw_repetition">Empate: a mesma posição voltou três vezes.</string>
+    <string name="janggi_draw_limit">Empate: 60 lances de cada lado sem nenhuma captura.</string>
+    <string name="janggi_draw_material">Empate: nenhum dos lados tem mais peças que possam atacar.</string>
+    <string name="janggi_bikjang">Empate: os dois generais ficaram frente a frente numa linha livre (bikjang).</string>
+    <string name="janggi_draw_passes">Empate: os dois jogadores passaram a vez, um depois do outro.</string>
+</resources>

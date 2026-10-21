@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pegs">Senku</string>
+    <string name="howto_pegs">Salta una canica por encima de su vecina hasta un agujero vacío: la canica saltada sale del tablero. Deja una sola canica para ganar.</string>
+    <string name="pegs_variant_english">Tablero inglés</string>
+    <string name="pegs_variant_english_desc">33 agujeros en forma de cruz. El centro empieza vacío.</string>
+    <string name="pegs_variant_french">Tablero francés</string>
+    <string name="pegs_variant_french_desc">37 agujeros: la cruz y cuatro agujeros en las esquinas. Un poco más difícil.</string>
+    <string name="pegs_left">Canicas: %1$d</string>
+    <string name="pegs_pick_peg">Toca una canica para moverla</string>
+    <string name="pegs_pick_hole">Ahora toca el agujero vacío adonde salta</string>
+    <string name="pegs_no_jumps">No quedan saltos</string>
+    <string name="pegs_restart">Reiniciar</string>
+    <string name="pegs_win_one">Solo queda una canica. ¡Muy bien hecho!</string>
+    <string name="pegs_win_perfect">Una canica, justo en el agujero marcado: ¡un final perfecto!</string>
+    <plurals name="pegs_end_left">
+        <item quantity="one">No quedan saltos y queda %1$d canica. ¡Buen intento!</item>
+        <item quantity="many">No quedan saltos y quedan %1$d canicas. ¡Buen intento!</item>
+        <item quantity="other">No quedan saltos y quedan %1$d canicas. ¡Buen intento!</item>
+    </plurals>
+</resources>

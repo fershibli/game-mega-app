@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">Cacheta</string>
+    <string name="howto_cacheta">Draw and discard until all your cards form sequences and trios, then press Bater! to go out before the computers.</string>
+    <string name="cacheta_variant_classic">Classic</string>
+    <string name="cacheta_variant_classic_desc">Two decks, 9 cards each, no wild cards.</string>
+    <string name="cacheta_variant_wild">With wild card</string>
+    <string name="cacheta_variant_wild_desc">A turned card (the vira) makes the next card of its suit wild.</string>
+    <string name="cacheta_variant_pife">Pife</string>
+    <string name="cacheta_variant_pife_desc">No wild cards, sequences may turn the corner (K-A-2) and you may grab any discard to go out.</string>
+    <string name="cacheta_how_many">How many computer players?</string>
+    <string name="cacheta_computer">Computer %1$d</string>
+    <string name="cacheta_playing">Computer %1$d is playing…</string>
+    <string name="cacheta_deck">Deck (%1$d)</string>
+    <string name="cacheta_pile">Discard pile</string>
+    <string name="cacheta_vira">Vira</string>
+    <string name="cacheta_wild">Wild</string>
+    <string name="cacheta_draw">Draw</string>
+    <string name="cacheta_take">Take discard</string>
+    <string name="cacheta_discard">Discard</string>
+    <string name="cacheta_go_out">Bater!</string>
+    <string name="cacheta_sort_suit">By suit</string>
+    <string name="cacheta_sort_rank">By number</string>
+    <string name="cacheta_skip">No, thanks</string>
+    <string name="cacheta_prompt_draw">Your turn: draw from the deck or take the discard</string>
+    <string name="cacheta_prompt_discard">Tap a card, then press Discard</string>
+    <string name="cacheta_prompt_go_out">All your cards fit! Press Bater! to go out</string>
+    <string name="cacheta_offer">You can go out with the %1$s just thrown away! Take it?</string>
+    <string name="cacheta_err_taken">You cannot throw back the card you just took from the discard.</string>
+    <string name="cacheta_won">You went out!</string>
+    <string name="cacheta_won_ten">You went out with all 10 cards!</string>
+    <string name="cacheta_lost">Went out first: computer %1$d.</string>
+    <string name="cacheta_deck_over">The cards ran out: nobody went out.</string>
+    <string name="cacheta_your_hand">Your hand</string>
+    <string name="cacheta_groups_note">green bar = already in a group</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="one">%1$d computer</item>
+        <item quantity="other">%1$d computers</item>
+    </plurals>
+</resources>

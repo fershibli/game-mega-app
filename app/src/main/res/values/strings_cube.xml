@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">Magic cube</string>
+    <string name="howto_cube">Turn the layers until every face has a single color. Swipe across a sticker to turn its row, drag the empty space to look around, or choose a face below and tap the round arrows.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">Small cube of 8 pieces: the gentlest start.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">The classic cube. The hint teaches the layer-by-layer method.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">Bigger cube with no fixed centers. Use the Layer button for the inner layers.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">The biggest cube, for patient hands.</string>
+    <string name="cube_moves">Moves: %1$d</string>
+    <string name="cube_solved">Solved! Every face has one color.</string>
+    <string name="cube_hint_step">Step %1$d of %2$d: %3$s</string>
+    <string name="cube_hint_back">Turns left to the start: %1$d</string>
+    <string name="cube_stage_cross">bottom cross</string>
+    <string name="cube_stage_corners">bottom corners</string>
+    <string name="cube_stage_middle">middle layer</string>
+    <string name="cube_stage_top_cross">top cross</string>
+    <string name="cube_stage_top_edges">top edges</string>
+    <string name="cube_stage_top_place">top corners in place</string>
+    <string name="cube_stage_top_turn">turn the top corners</string>
+    <string name="cube_stage_top_face">top color</string>
+    <string name="cube_turn_cw">Turn the chosen face clockwise</string>
+    <string name="cube_turn_ccw">Turn the chosen face anticlockwise</string>
+    <string name="cube_layer">Layer %1$d</string>
+    <string name="cube_face">Face %1$d</string>
+    <string name="cube_view_left">Turn the whole cube left</string>
+    <string name="cube_view_right">Turn the whole cube right</string>
+    <string name="cube_view_up">Turn the whole cube up</string>
+    <string name="cube_view_down">Turn the whole cube down</string>
+</resources>

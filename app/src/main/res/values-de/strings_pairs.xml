@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pairs">Farbtropfen</string>
+    <string name="howto_pairs">Ein Tropfenpaar fällt langsam. Bewege es mit den Pfeilen (oder durch Wischen), drehe es oder lass es fallen. Berühren sich 3 oder mehr Tropfen derselben Farbe, platzen sie und die Tropfen darüber fallen nach: Mehrere Treffer hintereinander sind eine Kette und bringen mehr Punkte. Das Spiel endet, wenn die mittlere Spalte oben voll ist.</string>
+    <string name="pairs_score">Punkte: %1$d · Rekord: %2$d</string>
+    <string name="pairs_chain">Kette ×%1$d!</string>
+    <string name="pairs_next">Nächstes</string>
+    <string name="pairs_left">Nach links</string>
+    <string name="pairs_right">Nach rechts</string>
+    <string name="pairs_turn">Drehen</string>
+    <string name="pairs_drop">Fallen lassen</string>
+    <string name="pairs_pause">Pause</string>
+    <string name="pairs_continue">Weiter</string>
+    <string name="pairs_start">Starten</string>
+    <string name="pairs_paused">Pause. Lass dir Zeit.</string>
+    <string name="pairs_ready">Los geht’s, wann du willst</string>
+    <string name="pairs_final">Punkte: %1$d\nRekord: %2$d</string>
+    <string name="pairs_new_best">Neuer Rekord!</string>
+    <string name="pairs_full">Die mittlere Spalte ist voll</string>
+</resources>

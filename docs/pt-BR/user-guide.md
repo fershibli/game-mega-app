@@ -8,14 +8,15 @@ Este guia é para quem joga e para os familiares que preparam o celular para ele
 
 1. [Instalação](#instalação)
 2. [Como navegar](#como-navegar)
-3. [Salvamento automático e "continuar?"](#salvamento-automático-e-continuar)
-4. [Zoom](#zoom)
-5. [Configurações](#configurações)
-6. [Acessibilidade](#acessibilidade)
-7. [Os jogos](#os-jogos)
+3. [Jogando juntos no mesmo celular](#jogando-juntos-no-mesmo-celular)
+4. [Salvamento automático e "continuar?"](#salvamento-automático-e-continuar)
+5. [Zoom](#zoom)
+6. [Configurações](#configurações)
+7. [Acessibilidade](#acessibilidade)
+8. [Os jogos](#os-jogos)
    - [Sudoku](#sudoku) · [Paciência](#paciência) · [Buraco](#buraco) · [Gamão](#gamão) · [Mahjong](#mahjong)
    - [Reversi](#reversi) · [Palavras cruzadas](#palavras-cruzadas) · [Encanamento](#encanamento) · [Ligue as cores](#ligue-as-cores) · [Pontinhos](#pontinhos)
-8. [Perguntas frequentes](#perguntas-frequentes)
+9. [Perguntas frequentes](#perguntas-frequentes)
 
 ---
 
@@ -51,6 +52,14 @@ A **engrenagem** abre as configurações. Dentro de um jogo, as configurações 
 
 O botão/gesto **Voltar** do celular, dentro de um jogo, abre (ou fecha) as configurações, então ninguém sai de uma partida por engano.
 
+## Jogando juntos no mesmo celular
+
+Alguns jogos também podem ser jogados por pessoas juntas, revezando o mesmo celular. Na roleta de dificuldade, que passa a se chamar **Como você quer jogar?**, escolha **Revezando celular** (no tablet: *Revezando tablet*). Ninguém joga contra o computador.
+
+Quando acaba a vez, a tela esconde o que é daquele jogador (por exemplo as cartas da mão) e mostra um botão grande com duas mãos segurando um celular, **Passar para o próximo jogador** e quem é (uma cor ou um número). A próxima pessoa toca no botão: o cenário escurece, muda para o lado dela da mesa e, depois de uma pequena pausa (veja *Tempo de espera* nas configurações), mostra as coisas dela. O tabuleiro nunca gira, para ninguém ficar tonto.
+
+Os jogos que aceitam um número diferente de pessoas perguntam antes **Quantos à mesa?**, já com a última escolha marcada.
+
 ## Salvamento automático e "continuar?"
 
 Cada jogada é salva na hora, no próprio celular. Se o app fechar — sem querer, por uma ligação, porque a bateria acabou — da próxima vez que abrir ele vai direto para aquele jogo e pergunta:
@@ -85,6 +94,8 @@ Todo tabuleiro pode ser ampliado.
 | ↳ *Toque duplo* | Toque duas vezes para ampliar: 2×, depois 3×, depois volta ao normal. Toque duas vezes **e arraste** para se mover. |
 | ↳ *Pressionar e girar* | Encoste e segure até o celular vibrar, depois faça círculos: no sentido horário amplia, no anti-horário diminui. Toque duas vezes e arraste para se mover; toque duas vezes para voltar ao normal. |
 | **Dificuldade padrão** | O nível que já vem marcado na roleta de dificuldade. |
+| **Tempo de espera** | Rápido, Normal ou Calmo: quanto o app espera entre as jogadas (a vez do computador, passar o celular) e antes de as mensagens sumirem. Calmo dobra todas as esperas. |
+| **Animações** | Desligadas (peças e cartas vão direto para o lugar), Suaves (movimentos lentos e pequenos) ou Completas. |
 | **Separar por categoria** | Ligado: os jogos aparecem em grupos (cartas, tabuleiro, quebra-cabeças…). Desligado: uma lista única. |
 | **Últimos jogados primeiro** | Ligado: o jogo que você abre sobe para o começo do grupo dele, e o grupo sobe para o começo da lista; o resto mantém a ordem, então os preferidos ficam lá em cima. Os dois jeitos de ver guardam a própria ordem, então trocar não perde nada. Desligado: a ordem de sempre. |
 | **Sobre** | Versão, aviso de privacidade, link para este projeto, **Restaurar configurações padrão** e, no finalzinho, **Por que o Mili Games existe**: por que o app é e sempre será gratuito e sem propaganda, como ele foi feito (com a ajuda do Claude, sem nenhuma IA dentro do app) e um link para o código-fonte. |
