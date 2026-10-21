@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">Células livres</string>
+    <string name="howto_freecell">Todas as cartas ficam viradas para cima. Monte quatro pilhas do Ás ao Rei, uma de cada naipe. Nas colunas, ponha cada carta sobre uma de valor um acima e da outra cor. As quatro células livres guardam uma carta cada. Toque numa carta para movê-la, e toque de novo para tentar outro lugar.</string>
+    <string name="freecell_status">Jogadas: %1$d · Células livres: %2$d</string>
+    <string name="freecell_too_many">Não há espaço para mover %1$d cartas de uma vez: agora dá para mover %2$d. Esvazie antes uma célula ou uma coluna.</string>
+    <string name="freecell_not_in_order">Só cartas em ordem, alternando vermelho e preto, podem se mover juntas.</string>
+    <string name="freecell_finish">Terminar</string>
+    <string name="freecell_thinking">Procurando uma boa jogada…</string>
+    <string name="freecell_no_hint">Nenhuma boa jogada encontrada. Tente Desfazer.</string>
+    <string name="freecell_stuck_title">Sem mais jogadas</string>
+    <string name="freecell_stuck_message">Daqui não é mais possível ganhar este jogo. Você pode desfazer algumas jogadas e tentar outro caminho, ou desistir.</string>
+    <string name="freecell_give_up">Desistir</string>
+    <string name="freecell_keep_playing">Continuar procurando</string>
+    <string name="freecell_lost">As cartas ficaram bloqueadas: não restava jeito de ganhar.</string>
+</resources>

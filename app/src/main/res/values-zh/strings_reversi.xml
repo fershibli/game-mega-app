@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">黑棋</string>
+    <string name="reversi_light">白棋</string>
+    <string name="reversi_dark_turn">轮到黑棋</string>
+    <string name="reversi_light_turn">轮到白棋</string>
+    <string name="reversi_dark_passed">黑棋无处可下，白棋继续。</string>
+    <string name="reversi_light_passed">白棋无处可下，黑棋继续。</string>
+    <string name="reversi_score_together">● 黑：%1$d   ○ 白：%2$d</string>
+    <string name="reversi_dark_wins">黑棋获胜！</string>
+    <string name="reversi_light_wins">白棋获胜！</string>
+</resources>

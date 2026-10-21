@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.backgammon
 
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -55,7 +57,6 @@ import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
 import io.github.fershibli.megagames.ui.theme.Palette
 import kotlin.random.Random
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 
@@ -157,6 +158,7 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
     val usedDice = s.played.map { it.die }
     val win = Backgammon.winner(s.position)
 
+    val pace = currentPace
     LaunchedEffect(win) {
         if (win != 0) {
             val mult = Backgammon.winMultiplier(s.position, win)
@@ -165,7 +167,7 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
                 2 -> context.getString(R.string.backgammon_gammon)
                 else -> null
             }
-            delay(600)
+            pace.wait(600)
             host.finish(GameOutcome(win == HUMAN, detail))
         }
     }
@@ -176,7 +178,7 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
     LaunchedEffect(s.turn, s.roll, s.aiMoves, win) {
         if (s.turn != AI || win != 0) return@LaunchedEffect
         if (s.roll.isEmpty()) {
-            delay(700)
+            pace.wait(700)
             val r = Random.Default
             val roll = listOf(r.nextInt(1, 7), r.nextInt(1, 7))
             val view = Backgammon.view(s.position, AI)
@@ -185,12 +187,12 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
             state.value = s.copy(roll = roll, aiMoves = moves)
             return@LaunchedEffect
         }
-        delay(700)
+        pace.wait(700)
         for (k in 1..s.aiMoves.size) {
             aiShown = k
-            delay(650)
+            pace.wait(650)
         }
-        if (s.aiMoves.isEmpty()) delay(900)
+        if (s.aiMoves.isEmpty()) pace.wait(900)
         val end = Backgammon.play(Backgammon.view(s.position, AI), s.aiMoves)
         aiShown = 0
         state.value = BackgammonState(Backgammon.toPosition(end, AI), HUMAN)

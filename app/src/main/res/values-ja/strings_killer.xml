@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">キラーナンプレ</string>
+    <string name="howto_killer">最初の数字がないナンプレです。どの行・列・3×3のブロックにも1〜9が1つずつ入り、点線で囲まれた中の数字の合計が、角の小さな数字になります。囲みの中で同じ数字は使えません。</string>
+    <string name="killer_tap_cell">マスをタッチしてから数字をえらびます</string>
+    <string name="killer_hint_combos">%1$dになる組み合わせ：%2$s</string>
+    <string name="killer_hint_again">もう一度ヒントをおすと、このマスに数字が入ります。</string>
+</resources>

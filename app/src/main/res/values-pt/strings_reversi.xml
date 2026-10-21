@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">Peças escuras</string>
+    <string name="reversi_light">Peças claras</string>
+    <string name="reversi_dark_turn">Vez das peças escuras</string>
+    <string name="reversi_light_turn">Vez das peças claras</string>
+    <string name="reversi_dark_passed">As escuras não tinham jogada. Vez das claras de novo.</string>
+    <string name="reversi_light_passed">As claras não tinham jogada. Vez das escuras de novo.</string>
+    <string name="reversi_score_together">● Escuras: %1$d   ○ Claras: %2$d</string>
+    <string name="reversi_dark_wins">As peças escuras venceram!</string>
+    <string name="reversi_light_wins">As peças claras venceram!</string>
+</resources>

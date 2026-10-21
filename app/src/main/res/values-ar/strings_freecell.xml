@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">الخلايا الحرة</string>
+    <string name="howto_freecell">كل الأوراق مكشوفة. كوّن أربع كومات من الآس إلى الملك، كومة لكل نوع. في الأعمدة ضع كل ورقة على ورقة أعلى منها بدرجة واحدة ومن اللون الآخر. كل خلية من الخلايا الحرة الأربع تتسع لورقة واحدة. المس ورقة لنقلها، والمسها مرة أخرى لتجربة مكان آخر.</string>
+    <string name="freecell_status">الحركات: %1$d · الخلايا الحرة: %2$d</string>
+    <string name="freecell_too_many">لا توجد مساحة كافية لنقل %1$d من الأوراق دفعة واحدة: يمكنك الآن نقل %2$d. أفرغ خلية أو عمودًا أولًا.</string>
+    <string name="freecell_not_in_order">لا يمكن نقل الأوراق معًا إلا إذا كانت مرتبة بالتناوب بين الأحمر والأسود.</string>
+    <string name="freecell_finish">إنهاء</string>
+    <string name="freecell_thinking">أبحث عن حركة جيدة…</string>
+    <string name="freecell_no_hint">لم أجد حركة جيدة. جرّب التراجع.</string>
+    <string name="freecell_stuck_title">لا مزيد من الحركات</string>
+    <string name="freecell_stuck_message">لم يعد من الممكن الفوز في هذه اللعبة من هنا. يمكنك التراجع عن بعض الحركات وتجربة طريق آخر، أو الاستسلام.</string>
+    <string name="freecell_give_up">استسلام</string>
+    <string name="freecell_keep_playing">متابعة البحث</string>
+    <string name="freecell_lost">انسدت الأوراق: لم يعد هناك طريق للفوز.</string>
+</resources>

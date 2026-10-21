@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">Tempo und Bewegung</string>
+    <string name="pace_title">Wartezeit</string>
+    <string name="pace_quick">Schnell</string>
+    <string name="pace_quick_desc">Kurze Pausen zwischen Zügen und Meldungen.</string>
+    <string name="pace_normal">Normal</string>
+    <string name="pace_normal_desc">Genug Pause, um jedem Zug zu folgen.</string>
+    <string name="pace_calm">Ruhig</string>
+    <string name="pace_calm_desc">Doppelt so lang: mehr Zeit, um zu sehen, was der Computer gemacht hat, und Meldungen zu lesen.</string>
+    <string name="motion_title">Animationen</string>
+    <string name="motion_none">Aus</string>
+    <string name="motion_none_desc">Steine und Karten gehen direkt an ihren Platz, ohne Bewegung.</string>
+    <string name="motion_gentle">Sanft</string>
+    <string name="motion_gentle_desc">Langsame, kleine Bewegungen.</string>
+    <string name="motion_full">Voll</string>
+    <string name="motion_full_desc">Normale Bewegungen.</string>
+    <string name="how_to_play">Wie möchtest du spielen?</string>
+    <string name="take_turns">Abwechselnd an diesem Telefon</string>
+    <string name="take_turns_desc">Jede Person spielt, wenn sie dran ist, und gibt das Telefon weiter. Niemand spielt gegen den Computer.</string>
+    <string name="pass_to_next">An die nächste Person weitergeben</string>
+    <string name="pass_ready">Fertig, ich bin dran</string>
+    <string name="player_number">Spieler %1$d</string>
+    <string name="seats_title">Wie viele am Tisch?</string>
+    <plurals name="seats_with_computer">
+        <item quantity="one">Du und %1$d Computerspieler</item>
+        <item quantity="other">Du und %1$d Computerspieler</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="one">%1$d Person, abwechselnd</item>
+        <item quantity="other">%1$d Personen, abwechselnd</item>
+    </plurals>
+    <string name="game_end">Ende der Partie</string>
+</resources>

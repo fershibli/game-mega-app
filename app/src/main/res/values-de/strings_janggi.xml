@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">Koreanisches Schach</string>
+    <string name="howto_janggi">Koreanisches Schach (Janggi). Tippe auf eine deiner blauen Figuren und dann auf einen grünen Punkt. In den Palästen dürfen die Figuren auch den Diagonalen folgen. Du darfst passen statt zu ziehen. Setze den roten General fest, um zu gewinnen.</string>
+    <string name="janggi_pick_piece">Du bist dran: tippe auf eine deiner blauen Figuren</string>
+    <string name="janggi_pick_target">Tippe auf einen grünen Punkt, um dorthin zu ziehen</string>
+    <string name="janggi_check">Schach! Dein General wird angegriffen: schütze ihn</string>
+    <string name="janggi_pieces">Figuren</string>
+    <string name="janggi_guide_title">So ziehen die Figuren</string>
+    <string name="janggi_guide_marks">Die Figuren stehen auf den Kreuzungen der Linien. Auf jeder Figur ist ein Punkt ein Schritt, zwei Punkte zeigen den längeren Sprung des Elefanten, ein Pfeil heißt beliebig weit, ein Pfeil mit Querstrich heißt, dass sie über eine Figur springen muss, und ein leerer Punkt ist ein diagonaler Schritt, der nur auf den Linien eines Palastes erlaubt ist.</string>
+    <string name="janggi_piece_general">General (楚, 漢): ein Schritt entlang der Linien des Palastes, Diagonalen eingeschlossen. Er verlässt den Palast nie.</string>
+    <string name="janggi_piece_guard">Wächter (士): zieht wie der General, ein Schritt entlang der Palastlinien, und bleibt im Palast.</string>
+    <string name="janggi_piece_elephant">Elefant (象): ein Punkt geradeaus, dann zwei diagonal nach außen. Gesperrt, wenn ein Punkt auf dem Weg besetzt ist.</string>
+    <string name="janggi_piece_horse">Pferd (馬): ein Punkt geradeaus, dann einer diagonal nach außen. Gesperrt, wenn der erste Punkt besetzt ist.</string>
+    <string name="janggi_piece_chariot">Wagen (車): beliebig weit entlang einer Linie und entlang der Diagonalen in einem Palast.</string>
+    <string name="janggi_piece_cannon">Kanone (包): muss über genau eine Figur springen, um zu ziehen oder zu schlagen. Sie springt nie über eine andere Kanone und schlägt nie eine.</string>
+    <string name="janggi_piece_soldier">Soldat (卒, 兵): ein Schritt vorwärts oder seitwärts, nie zurück. Im gegnerischen Palast darf er auch diagonal vorwärts entlang der Linien ziehen.</string>
+    <string name="janggi_pass">Passen</string>
+    <string name="janggi_ai_passed">Der Computer hat gepasst. Du bist dran.</string>
+    <string name="janggi_must_pass">Keine deiner Figuren kann ziehen: tippe auf Passen</string>
+    <string name="janggi_checkmate">Schachmatt!</string>
+    <string name="janggi_draw_repetition">Remis: Dieselbe Stellung kam dreimal vor.</string>
+    <string name="janggi_draw_limit">Remis: 60 Züge pro Seite ohne einen Schlag.</string>
+    <string name="janggi_draw_material">Remis: Keine Seite hat noch eine Figur, die angreifen kann.</string>
+    <string name="janggi_bikjang">Remis: Die beiden Generäle stehen sich auf einer freien Linie gegenüber (Bikjang).</string>
+    <string name="janggi_draw_passes">Remis: Beide Spieler haben nacheinander gepasst.</string>
+</resources>

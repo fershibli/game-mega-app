@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">Cellules libres</string>
+    <string name="howto_freecell">Toutes les cartes sont visibles. Montez quatre piles de l’As au Roi, une par couleur. Sur les colonnes, posez chaque carte sur une carte d’un rang plus haut et de l’autre teinte. Les quatre cellules libres gardent une carte chacune. Touchez une carte pour la déplacer, et touchez-la encore pour essayer une autre place.</string>
+    <string name="freecell_status">Coups : %1$d · Cellules libres : %2$d</string>
+    <string name="freecell_too_many">Pas assez de place pour déplacer %1$d cartes à la fois : pour l’instant, vous pouvez en déplacer %2$d. Videz d’abord une cellule ou une colonne.</string>
+    <string name="freecell_not_in_order">Seules des cartes qui se suivent, en alternant rouge et noir, peuvent bouger ensemble.</string>
+    <string name="freecell_finish">Terminer</string>
+    <string name="freecell_thinking">Recherche d’un bon coup…</string>
+    <string name="freecell_no_hint">Aucun bon coup trouvé. Essayez Annuler.</string>
+    <string name="freecell_stuck_title">Plus de coups possibles</string>
+    <string name="freecell_stuck_message">Cette partie ne peut plus être gagnée à partir d’ici. Vous pouvez annuler quelques coups et essayer autrement, ou abandonner.</string>
+    <string name="freecell_give_up">Abandonner</string>
+    <string name="freecell_keep_playing">Continuer à chercher</string>
+    <string name="freecell_lost">Les cartes étaient bloquées : il n’y avait plus moyen de gagner.</string>
+</resources>

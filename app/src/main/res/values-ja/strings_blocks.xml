@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">ブロックパズル</string>
+    <string name="howto_blocks">下のピースを盤へドラッグします（ピースをタップしてから盤をタップしても置けます）。横一列か縦一列がそろうと消えます。何も落ちてこず、時間制限もありません。どのピースも置けなくなったら終わりです。</string>
+    <string name="blocks_score">得点: %1$d · 最高: %2$d</string>
+    <string name="blocks_rotate">回転</string>
+    <string name="blocks_no_fit">置けるピースがありません</string>
+    <string name="blocks_final">得点: %1$d\n最高得点: %2$d</string>
+    <string name="blocks_new_best">最高得点を更新しました！</string>
+</resources>

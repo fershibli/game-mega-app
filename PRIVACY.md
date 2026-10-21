@@ -10,7 +10,8 @@ Mili Games (`io.github.fershibli.miligames`) **does not collect, store on any se
 
 - **No internet access.** The app does not request the `INTERNET` permission, so Android does not let it connect to anything. It has no ads, analytics, crash reporting, accounts or purchases, and requests no Android permission.
 - **What stays on your phone.** Your settings and the game in progress are saved in the app's private storage so you can continue later. The saved game is deleted when the game ends or is abandoned, and everything is deleted when you uninstall the app.
-- **Android backup.** If you turned on Android's own backup, Android may include those two files in *your* Google backup, so a new phone keeps your settings. The developer has no access to that backup.
+- **Your pet.** The pet game keeps your friend (its kind, its name and the times each of its needs was last cared for) only on the phone, in the app's private storage, so it is still there next time. It is deleted when you uninstall the app.
+- **Android backup.** If you turned on Android's own backup, Android may include those files, the pet included, in *your* Google backup, so a new phone keeps your settings and your pet. The developer has no access to that backup.
 - **"Open the project page".** The button in Settings → About asks Android to open the project's GitHub page in your browser; the app itself still makes no connection.
 - **Children.** The app collects nothing from anyone, including children.
 
@@ -22,7 +23,8 @@ O Mili Games (`io.github.fershibli.miligames`) **não coleta, não guarda em ser
 
 - **Sem internet.** O app não pede a permissão `INTERNET`, então o Android não deixa ele se conectar a nada. Não tem anúncios, estatísticas, relatórios de falha, contas nem compras, e não pede nenhuma permissão do Android.
 - **O que fica no seu celular.** Suas configurações e o jogo em andamento ficam no armazenamento privado do app para você continuar depois. O jogo salvo é apagado quando a partida termina ou é abandonada, e tudo é apagado ao desinstalar o app.
-- **Backup do Android.** Se você ativou o backup do próprio Android, ele pode incluir esses dois arquivos no *seu* backup do Google, para um celular novo manter suas configurações. O desenvolvedor não tem acesso a esse backup.
+- **Seu bichinho.** O jogo do bichinho guarda seu amigo (o tipo, o nome e os horários em que cada necessidade dele foi cuidada pela última vez) só no celular, no armazenamento privado do app, para ele continuar lá da próxima vez. Ele é apagado ao desinstalar o app.
+- **Backup do Android.** Se você ativou o backup do próprio Android, ele pode incluir esses arquivos, inclusive o bichinho, no *seu* backup do Google, para um celular novo manter suas configurações e seu bichinho. O desenvolvedor não tem acesso a esse backup.
 - **"Abrir a página do projeto".** O botão em Configurações → Sobre pede ao Android para abrir a página do projeto no GitHub no seu navegador; o app em si continua sem fazer nenhuma conexão.
 - **Crianças.** O app não coleta nada de ninguém, inclusive de crianças.
 
@@ -34,7 +36,8 @@ Mili Games (`io.github.fershibli.miligames`) **no recoge, no guarda en ningún s
 
 - **Sin internet.** La app no pide el permiso `INTERNET`, así que Android no le deja conectarse a nada. No tiene anuncios, estadísticas, informes de errores, cuentas ni compras, y no pide ningún permiso de Android.
 - **Lo que queda en tu teléfono.** Tus ajustes y la partida en curso se guardan en el almacenamiento privado de la app para que puedas seguir después. La partida guardada se borra cuando termina o se abandona, y todo se borra al desinstalar la app.
-- **Copia de seguridad de Android.** Si activaste la copia de seguridad del propio Android, este puede incluir esos dos archivos en *tu* copia de Google, para que un teléfono nuevo conserve tus ajustes. El desarrollador no tiene acceso a esa copia.
+- **Tu mascotita.** El juego de la mascota guarda a tu amigo (su tipo, su nombre y las horas en que se atendió por última vez cada una de sus necesidades) solo en el teléfono, en el almacenamiento privado de la app, para que siga ahí la próxima vez. Se borra al desinstalar la app.
+- **Copia de seguridad de Android.** Si activaste la copia de seguridad del propio Android, este puede incluir esos archivos, también la mascota, en *tu* copia de Google, para que un teléfono nuevo conserve tus ajustes y tu mascota. El desarrollador no tiene acceso a esa copia.
 - **«Abrir la página del proyecto».** El botón de Ajustes → Acerca de pide a Android que abra la página del proyecto en GitHub en tu navegador; la app en sí sigue sin conectarse a nada.
 - **Niños.** La app no recoge nada de nadie, tampoco de niños.
 
@@ -46,7 +49,8 @@ Mili Games (`io.github.fershibli.miligames`) **ne collecte, ne stocke sur aucun 
 
 - **Pas d’internet.** L’application ne demande pas l’autorisation `INTERNET` : Android ne la laisse se connecter à rien. Pas de publicité, de statistiques, de rapports de plantage, de compte ni d’achat, et aucune autorisation Android demandée.
 - **Ce qui reste sur votre téléphone.** Vos réglages et la partie en cours sont enregistrés dans le stockage privé de l’application pour reprendre plus tard. La partie enregistrée est supprimée quand elle se termine ou est abandonnée, et tout est supprimé à la désinstallation.
-- **Sauvegarde Android.** Si vous avez activé la sauvegarde d’Android, celui-ci peut inclure ces deux fichiers dans *votre* sauvegarde Google, pour qu’un nouveau téléphone garde vos réglages. Le développeur n’a pas accès à cette sauvegarde.
+- **Votre petit compagnon.** Le jeu du compagnon garde votre ami (son espèce, son nom et les heures où chacun de ses besoins a été soigné pour la dernière fois) uniquement sur le téléphone, dans le stockage privé de l’application, pour le retrouver la prochaine fois. Il est supprimé à la désinstallation.
+- **Sauvegarde Android.** Si vous avez activé la sauvegarde d’Android, celui-ci peut inclure ces fichiers, compagnon compris, dans *votre* sauvegarde Google, pour qu’un nouveau téléphone garde vos réglages et votre compagnon. Le développeur n’a pas accès à cette sauvegarde.
 - **« Ouvrir la page du projet ».** Le bouton dans Réglages → À propos demande à Android d’ouvrir la page GitHub du projet dans votre navigateur ; l’application elle-même ne se connecte toujours à rien.
 - **Enfants.** L’application ne collecte rien de personne, enfants compris.
 
@@ -58,7 +62,8 @@ Mili Games (`io.github.fershibli.miligames`) **non raccoglie, non conserva su ne
 
 - **Niente internet.** L’app non chiede l’autorizzazione `INTERNET`, quindi Android non le permette di collegarsi a niente. Non ha pubblicità, statistiche, segnalazione dei crash, account né acquisti, e non chiede nessuna autorizzazione Android.
 - **Che cosa resta sul tuo telefono.** Le tue impostazioni e la partita in corso sono salvate nella memoria privata dell’app, così puoi continuare più tardi. La partita salvata viene eliminata quando finisce o viene abbandonata, e tutto viene eliminato quando disinstalli l’app.
-- **Backup di Android.** Se hai attivato il backup di Android, Android può includere questi due file nel *tuo* backup Google, così un telefono nuovo mantiene le tue impostazioni. Lo sviluppatore non ha accesso a questo backup.
+- **Il tuo cucciolo.** Il gioco del cucciolo conserva il tuo amico (il tipo, il nome e gli orari in cui ogni suo bisogno è stato curato l’ultima volta) solo sul telefono, nella memoria privata dell’app, così la prossima volta è ancora lì. Viene eliminato quando disinstalli l’app.
+- **Backup di Android.** Se hai attivato il backup di Android, Android può includere questi file, cucciolo compreso, nel *tuo* backup Google, così un telefono nuovo mantiene le tue impostazioni e il tuo cucciolo. Lo sviluppatore non ha accesso a questo backup.
 - **“Apri la pagina del progetto”.** Il pulsante in Impostazioni → Informazioni chiede ad Android di aprire la pagina GitHub del progetto nel tuo browser; l’app in sé continua a non fare nessuna connessione.
 - **Bambini.** L’app non raccoglie niente da nessuno, nemmeno dai bambini.
 
@@ -70,7 +75,8 @@ Mili Games (`io.github.fershibli.miligames`) **sammelt keine personenbezogenen D
 
 - **Kein Internetzugang.** Die App fordert die Berechtigung `INTERNET` nicht an, deshalb lässt Android sie keinerlei Verbindung aufbauen. Sie hat keine Werbung, keine Statistiken, keine Absturzberichte, keine Konten und keine Käufe und fordert keine einzige Android-Berechtigung an.
 - **Was auf deinem Telefon bleibt.** Deine Einstellungen und das laufende Spiel werden im privaten Speicher der App gesichert, damit du später weiterspielen kannst. Das gespeicherte Spiel wird gelöscht, wenn das Spiel endet oder abgebrochen wird, und alles wird gelöscht, wenn du die App deinstallierst.
-- **Android-Sicherung.** Wenn du die Sicherung von Android selbst eingeschaltet hast, kann Android diese beiden Dateien in *deine* Google-Sicherung aufnehmen, damit ein neues Telefon deine Einstellungen behält. Der Entwickler hat keinen Zugriff auf diese Sicherung.
+- **Dein Tierfreund.** Das Tierfreund-Spiel speichert deinen Freund (seine Art, seinen Namen und die Zeitpunkte, zu denen du dich zuletzt um jedes seiner Bedürfnisse gekümmert hast) nur auf dem Telefon, im privaten Speicher der App, damit er beim nächsten Mal noch da ist. Er wird gelöscht, wenn du die App deinstallierst.
+- **Android-Sicherung.** Wenn du die Sicherung von Android selbst eingeschaltet hast, kann Android diese Dateien, auch den Tierfreund, in *deine* Google-Sicherung aufnehmen, damit ein neues Telefon deine Einstellungen und deinen Tierfreund behält. Der Entwickler hat keinen Zugriff auf diese Sicherung.
 - **„Projektseite öffnen“.** Die Taste unter Einstellungen → Über bittet Android, die GitHub-Seite des Projekts in deinem Browser zu öffnen; die App selbst baut weiterhin keine Verbindung auf.
 - **Kinder.** Die App sammelt von niemandem etwas, auch nicht von Kindern.
 
@@ -82,7 +88,8 @@ Mili Games (`io.github.fershibli.miligames`) **не собирает, не хр�
 
 - **Без интернета.** Приложение не запрашивает разрешение `INTERNET`, поэтому Android не позволяет ему ни с чем соединяться. В нём нет рекламы, аналитики, отчётов о сбоях, учётных записей и покупок, и оно не запрашивает никаких разрешений Android.
 - **Что остаётся на вашем телефоне.** Ваши настройки и текущая партия хранятся в закрытой памяти приложения, чтобы вы могли продолжить позже. Сохранённая партия удаляется, когда игра закончена или прервана, а при удалении приложения удаляется всё.
-- **Резервное копирование Android.** Если вы включили встроенное резервное копирование Android, система может включить эти два файла в *вашу* резервную копию Google, чтобы на новом телефоне сохранились ваши настройки. У разработчика нет доступа к этой резервной копии.
+- **Ваш питомец.** Игра «Питомец» хранит вашего друга (его вид, имя и время, когда о каждой его потребности заботились в последний раз) только на телефоне, в закрытой памяти приложения, чтобы в следующий раз он был на месте. Он удаляется вместе с приложением.
+- **Резервное копирование Android.** Если вы включили встроенное резервное копирование Android, система может включить эти файлы, в том числе питомца, в *вашу* резервную копию Google, чтобы на новом телефоне сохранились ваши настройки и ваш питомец. У разработчика нет доступа к этой резервной копии.
 - **«Открыть страницу проекта».** Эта кнопка в разделе Настройки → О приложении просит Android открыть страницу проекта на GitHub в вашем браузере; само приложение по-прежнему ни с чем не соединяется.
 - **Дети.** Приложение ничего не собирает ни у кого, в том числе у детей.
 
@@ -94,7 +101,8 @@ Mili Games（`io.github.fershibli.miligames`）は、**個人のデータを集�
 
 - **インターネットを使いません。** このアプリは `INTERNET` の権限を求めていないため、Android がどこへの接続もさせません。広告、利用状況の分析、エラー報告、アカウント、課金はなく、Android の権限も1つも求めません。
 - **スマホの中に残るもの。** 設定と遊んでいる途中のゲームは、あとで続きから遊べるように、アプリ専用の場所に保存されます。保存したゲームは、ゲームが終わったとき、またはやめたときに消えます。アプリをアンインストールすると、すべて消えます。
-- **Android のバックアップ。** Android のバックアップをオンにしている場合は、新しいスマホでも設定が引きつがれるように、Android がこの2つのファイルを *あなた自身の* Google のバックアップにふくめることがあります。開発者がそのバックアップを見ることはできません。
+- **ペットのおともだち。** ペットのゲームは、おともだち（種類、名前、それぞれのお世話を最後にした時刻）を、次に来たときもいるように、スマホの中のアプリ専用の場所だけに保存します。アプリをアンインストールすると消えます。
+- **Android のバックアップ。** Android のバックアップをオンにしている場合は、新しいスマホでも設定とおともだちが引きつがれるように、Android がこれらのファイル（ペットもふくむ）を *あなた自身の* Google のバックアップにふくめることがあります。開発者がそのバックアップを見ることはできません。
 - **「プロジェクトのページを開く」。** 設定 → このアプリについて にあるこのボタンは、ブラウザでプロジェクトの GitHub ページを開くよう Android にお願いするだけです。アプリ自体は、そのときも一切通信しません。
 - **子ども。** このアプリは、子どもをふくめ、だれからも何も集めません。
 
@@ -106,7 +114,8 @@ Mili Games（`io.github.fershibli.miligames`）**不收集、不在任何服务�
 
 - **不联网。** 应用没有申请 `INTERNET` 权限，安卓根本不允许它建立任何连接。没有广告、统计、崩溃上报、账号或购买，也不申请任何安卓权限。
 - **留在你手机上的内容。** 你的设置和正在进行的游戏保存在应用的私有存储中，方便之后继续。游戏结束或放弃时会删除存档，卸载应用时所有内容都会删除。
-- **安卓备份。** 如果你开启了安卓自带的备份，系统可能会把这两个文件包含在*你自己的*谷歌备份中，让新手机保留你的设置。开发者无法访问这份备份。
+- **你的小宠物。** 小宠物游戏只把你的伙伴（种类、名字，以及每项需要上次被照顾的时间）保存在手机上应用的私有存储中，下次来时它还在。卸载应用时会删除。
+- **安卓备份。** 如果你开启了安卓自带的备份，系统可能会把这些文件（包括小宠物）包含在*你自己的*谷歌备份中，让新手机保留你的设置和小宠物。开发者无法访问这份备份。
 - **“打开项目主页”。** 设置 → 关于 中的这个按钮只是请安卓用浏览器打开项目的 GitHub 页面；应用本身仍然不建立任何连接。
 - **儿童。** 应用不收集任何人的任何信息，包括儿童。
 
@@ -120,7 +129,8 @@ Mili Games（`io.github.fershibli.miligames`）**不收集、不在任何服务�
 
 - **لا اتصال بالإنترنت.** لا يطلب التطبيق إذن `INTERNET`، لذلك لا يسمح له أندرويد بالاتصال بأي شيء. لا إعلانات فيه، ولا إحصاءات، ولا تقارير أعطال، ولا حسابات، ولا مشتريات، ولا يطلب أي إذن من أذونات أندرويد.
 - **ما يبقى على هاتفك.** تُحفظ إعداداتك واللعبة الجارية في المساحة الخاصة بالتطبيق حتى تتمكن من المتابعة لاحقًا. تُحذف اللعبة المحفوظة عندما تنتهي أو تُترك، ويُحذف كل شيء عند إلغاء تثبيت التطبيق.
-- **النسخ الاحتياطي في أندرويد.** إذا فعّلت النسخ الاحتياطي في أندرويد نفسه، فقد يضيف أندرويد هذين الملفين إلى النسخة الاحتياطية *الخاصة بك* في Google، فيحتفظ الهاتف الجديد بإعداداتك. ولا يستطيع المطوّر الوصول إلى هذه النسخة.
+- **صديقك الأليف.** تحفظ لعبة الصديق الأليف صديقك (نوعه واسمه وأوقات آخر عناية بكل حاجة من حاجاته) على الهاتف فقط، في المساحة الخاصة بالتطبيق، ليبقى موجودًا في المرة القادمة. ويُحذف عند إلغاء تثبيت التطبيق.
+- **النسخ الاحتياطي في أندرويد.** إذا فعّلت النسخ الاحتياطي في أندرويد نفسه، فقد يضيف أندرويد هذه الملفات، ومنها الصديق الأليف، إلى النسخة الاحتياطية *الخاصة بك* في Google، فيحتفظ الهاتف الجديد بإعداداتك وبصديقك الأليف. ولا يستطيع المطوّر الوصول إلى هذه النسخة.
 - **«افتح صفحة المشروع».** هذا الزر في الإعدادات ← حول التطبيق يطلب من أندرويد أن يفتح صفحة المشروع على GitHub في متصفحك؛ أما التطبيق نفسه فلا يجري أي اتصال.
 - **الأطفال.** لا يجمع التطبيق أي شيء من أي شخص، ومن ذلك الأطفال.
 

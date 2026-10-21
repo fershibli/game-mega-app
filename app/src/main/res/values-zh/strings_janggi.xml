@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">韩国象棋</string>
+    <string name="howto_janggi">韩国象棋（将棋）。先点你的一枚蓝棋子，再点一个绿点。在九宫里，棋子也可以沿着斜线走。你也可以不走棋，选择停一步。把红方的将困住就赢了。</string>
+    <string name="janggi_pick_piece">轮到你了：点一枚你的蓝棋子</string>
+    <string name="janggi_pick_target">点一个绿点，棋子就走到那里</string>
+    <string name="janggi_check">将军！你的将被攻击了，快保护它</string>
+    <string name="janggi_pieces">棋子</string>
+    <string name="janggi_guide_title">棋子怎么走</string>
+    <string name="janggi_guide_marks">棋子放在线的交叉点上。棋子上的记号：一个点表示走一步，两个点表示象的远跳，箭头表示可以走任意远，带横杠的箭头表示必须隔一个棋子才能走，空心点表示只能沿九宫斜线走的一步。</string>
+    <string name="janggi_piece_general">将（楚、漢）：沿九宫的线走一步，斜线也可以。永远不出九宫。</string>
+    <string name="janggi_piece_guard">士：和将一样，沿九宫的线走一步，不出九宫。</string>
+    <string name="janggi_piece_elephant">象：先直走一点，再向外斜走两点。路上的点有棋子就不能走。</string>
+    <string name="janggi_piece_horse">马（馬）：先直走一点，再向外斜走一点。第一点有棋子就不能走。</string>
+    <string name="janggi_piece_chariot">车（車）：沿着线走任意远，在九宫里也可以沿斜线走。</string>
+    <string name="janggi_piece_cannon">包：无论走还是吃，都必须正好隔一个棋子。不能隔着另一个包，也不能吃包。</string>
+    <string name="janggi_piece_soldier">兵、卒：向前或横走一步，不能后退。在对方九宫里也可以沿斜线向前走。</string>
+    <string name="janggi_pass">停一步</string>
+    <string name="janggi_ai_passed">电脑停了一步。轮到你了。</string>
+    <string name="janggi_must_pass">你的棋子都不能走：请点“停一步”</string>
+    <string name="janggi_checkmate">将死！</string>
+    <string name="janggi_draw_repetition">和棋：同一个局面出现了三次。</string>
+    <string name="janggi_draw_limit">和棋：双方各走了60步都没有吃子。</string>
+    <string name="janggi_draw_material">和棋：双方都没有能进攻的棋子了。</string>
+    <string name="janggi_bikjang">和棋：两个将在中间没有棋子的线上对面了（对将）。</string>
+    <string name="janggi_draw_passes">和棋：双方接连停了一步。</string>
+</resources>

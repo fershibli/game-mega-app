@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pairs">Gouttes de couleur</string>
+    <string name="howto_pairs">Une paire de gouttes tombe lentement. Déplacez-la avec les flèches (ou en glissant le doigt), tournez-la ou laissez-la tomber. Quand 3 gouttes de la même couleur ou plus se touchent, elles éclatent et celles du dessus tombent : plusieurs éclats à la suite forment une chaîne qui rapporte plus. La partie finit quand le haut de la colonne du milieu est plein.</string>
+    <string name="pairs_score">Score : %1$d · Record : %2$d</string>
+    <string name="pairs_chain">Chaîne ×%1$d !</string>
+    <string name="pairs_next">Suivant</string>
+    <string name="pairs_left">Aller à gauche</string>
+    <string name="pairs_right">Aller à droite</string>
+    <string name="pairs_turn">Tourner</string>
+    <string name="pairs_drop">Lâcher</string>
+    <string name="pairs_pause">Pause</string>
+    <string name="pairs_continue">Reprendre</string>
+    <string name="pairs_start">Commencer</string>
+    <string name="pairs_paused">En pause. Prenez votre temps.</string>
+    <string name="pairs_ready">Commencez quand vous voulez</string>
+    <string name="pairs_final">Score : %1$d\nRecord : %2$d</string>
+    <string name="pairs_new_best">Nouveau record !</string>
+    <string name="pairs_full">La colonne du milieu est pleine</string>
+</resources>

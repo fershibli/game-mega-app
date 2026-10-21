@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">Sudoku des sommes</string>
+    <string name="howto_killer">Un sudoku sans chiffres donnés : chaque ligne, colonne et carré 3×3 contient 1 à 9 une seule fois, et les chiffres de chaque zone en pointillés font la somme du petit nombre dans son coin, sans se répéter.</string>
+    <string name="killer_tap_cell">Touchez une case, puis un chiffre</string>
+    <string name="killer_hint_combos">Façons de faire %1$d : %2$s</string>
+    <string name="killer_hint_again">Touchez Indice encore une fois pour remplir cette case.</string>
+</resources>
