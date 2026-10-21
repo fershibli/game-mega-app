@@ -161,5 +161,9 @@ class ScreenshotTest {
     }
     @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
     @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
+    @Test fun blocks() = gameShot("game_blocks", GameId.BLOCKS)
+    @Test fun pairs() = gameShot("game_pairs", GameId.PAIRS)
+    @Test fun pairsColorblindHard() = gameShot("game_pairs_colorblind", GameId.PAIRS, Difficulty.HARD, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
+    @Test fun snake() = gameShot("game_snake", GameId.SNAKE, Difficulty.HARD)
 
 }

@@ -21,8 +21,11 @@ import io.github.fershibli.megagames.games.cards.Card
 import io.github.fershibli.megagames.games.cards.Suit
 import io.github.fershibli.megagames.games.pet.petThumbnail
 import io.github.fershibli.megagames.games.cube.cubeThumbnail
+import io.github.fershibli.megagames.games.blocks.blocksThumbnail
+import io.github.fershibli.megagames.games.pairs.pairsThumbnail
 import io.github.fershibli.megagames.games.pipes.Pipes
 import io.github.fershibli.megagames.games.pipes.drawPipe
+import io.github.fershibli.megagames.games.snake.snakeThumbnail
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
 
@@ -52,6 +55,9 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.CACHETA -> io.github.fershibli.megagames.games.cacheta.cachetaThumbnail(this, p, m)
             GameId.TRUCO -> io.github.fershibli.megagames.games.truco.trucoThumbnail(this, p, m)
             GameId.CUBE -> cubeThumbnail(p)
+            GameId.BLOCKS -> blocksThumbnail(p)
+            GameId.PAIRS -> pairsThumbnail(p)
+            GameId.SNAKE -> snakeThumbnail(p)
         }
     }
 }

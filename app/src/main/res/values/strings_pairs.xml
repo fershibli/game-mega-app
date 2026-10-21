@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pairs">Color drops</string>
+    <string name="howto_pairs">A pair of drops falls slowly. Move it with the arrows (or swipe), turn it, or let it drop. When 3 or more drops of the same color touch, they pop and the drops above fall: one pop after another is a chain worth more. The game ends when the top of the middle column fills up.</string>
+    <string name="pairs_score">Score: %1$d · Best: %2$d</string>
+    <string name="pairs_chain">Chain ×%1$d!</string>
+    <string name="pairs_next">Next</string>
+    <string name="pairs_left">Move left</string>
+    <string name="pairs_right">Move right</string>
+    <string name="pairs_turn">Turn</string>
+    <string name="pairs_drop">Drop</string>
+    <string name="pairs_pause">Pause</string>
+    <string name="pairs_continue">Continue</string>
+    <string name="pairs_start">Start</string>
+    <string name="pairs_paused">Paused. Take your time.</string>
+    <string name="pairs_ready">Ready when you are</string>
+    <string name="pairs_final">Score: %1$d\nBest score: %2$d</string>
+    <string name="pairs_new_best">A new best score!</string>
+    <string name="pairs_full">The middle column is full</string>
+</resources>
