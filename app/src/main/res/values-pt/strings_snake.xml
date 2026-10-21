@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">Cobrinha</string>
+    <string name="howto_snake">Guie a cobrinha lenta com as quatro setas (ou deslizando o dedo) para comer as frutas; cada fruta a deixa um pouco maior. No Fácil ela atravessa as bordas e só perde o rabo se tocar em si mesma; no Médio, tocar em si mesma encerra o jogo; no Difícil as bordas também são paredes.</string>
+    <string name="snake_length">Tamanho: %1$d · Recorde: %2$d</string>
+    <string name="snake_bump">Opa! A cobrinha parou aqui</string>
+    <string name="snake_final">Tamanho: %1$d\nRecorde: %2$d</string>
+    <string name="snake_new_best">Sua maior cobrinha até agora!</string>
+    <string name="snake_up">Para cima</string>
+    <string name="snake_down">Para baixo</string>
+    <string name="snake_left">Esquerda</string>
+    <string name="snake_right">Direita</string>
+    <string name="snake_pause">Pausar</string>
+    <string name="snake_continue">Continuar</string>
+    <string name="snake_start">Começar</string>
+    <string name="snake_paused">Pausado. Sem pressa.</string>
+    <string name="snake_ready">Comece quando quiser</string>
+</resources>

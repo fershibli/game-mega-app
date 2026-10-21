@@ -9,6 +9,13 @@ All notable changes to this project are documented here. The format follows [Kee
 - **Chess** against the computer with every rule (castling, en passant, promotion, all the draws), Undo and Hint, plus **Famous games**: seven historic games, from the Immortal Game (1851) to Kasparov–Topalov (1999), replayed move by move with their story.
 - **Cacheta** (cards): the Brazilian rummy against 1 to 3 computer players, with Classic, With wild card (vira and curinga) and Pife (sequences turn the corner, grab a discard to go out) rules; a fanned hand with groups underlined, sort by suit or number, a Hint and a Bater! button that lights up when every card fits.
 - **Truco** (cards): Paulista (vira and manilhas) and Mineiro (fixed manilhas) rules, 1 vs 1 or 2 vs 2 with a computer partner; Truco!/Seis!/Nove!/Doze! in big speech balloons with big answer buttons, hand of eleven, and a computer that weighs its chances without seeing your cards and bluffs now and then.
+- **Take turns on this phone** ("Revezando celular"): games that can be played by several people offer it at the end of the difficulty wheel, now titled "How do you want to play?", with a picture of two hands holding the phone and a line that explains it. Between turns a cover hides the player's private things and asks to pass the phone to the next player; a tap dims the scene, switches to the next player's view and, after a short pause, shows their side. Reversi is the first game with it. On tablets it says "tablet".
+- **How many at the table?**: games with several table sizes ask before starting, with the last choice preselected.
+- Settings → **Pace and movement**: waiting time (quick, normal, calm) between moves and before messages go away, and animations (off, gentle, full). Every game follows them.
+- **Magic cube** (puzzles): the color cube puzzle in 2×2, 3×3, 4×4 and 5×5, drawn in 3D in code. Swipe a sticker or use big face buttons with ↺/↻ to turn, arrows to see every side, unlimited Undo, a step-by-step Hint that teaches the beginner's layer-by-layer method on the 2×2 and 3×3 (and walks back to the start on the bigger cubes), and a symbol on every color in the color-blind palette.
+- **Block puzzle** (puzzles): place three offered pieces on a 9 × 9 or 10 × 10 board and clear full rows and columns; no clock and nothing falls, with a drag preview of where the piece lands and which lines clear, a hint, undo and, on Easy, turning pieces. The best score of each level is kept.
+- **Color drops** (puzzles): a slow pair of round drops in a narrow well; three or more of one color pop and chains score more. Every color has its own symbol, Easy shows the next pair and waits while a finger rests on the buttons, and Pause freezes everything.
+- **Snake** (calm action): a slow snake steered with four big arrows or swipes; on Easy it passes through the edges and touching itself only shortens the tail, Hard has walls. It always waits for Start or Continue and pauses by itself when the settings open or the app goes away.
 - Home screen grouped by category (cards, board games, puzzles, calm action, pastimes), ready for many more games. Settings → Game list: **Group by category** (or one single list) and **Recently played first** (the game you open moves to the top of its group and its group to the top; both layouts keep their own order).
 - A rules screen for games with regional variants, shown before the difficulty; the rules picked last time come preselected.
 - Lasting storage for pastime games (a pet, a farm), kept apart from the game in progress and included in Android's own backup.
@@ -20,6 +27,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - Four new languages: **Italian, German, Russian and Japanese** — the interface, crossword dictionaries (with QWERTZ and ЙЦУКЕН keyboards; Japanese in katakana with a kana bank), store listings, README, user guide, trust page and privacy policy.
 
 ### Changed
+- Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".
 - The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
 
 ## [1.0.0] - 2026-10-19

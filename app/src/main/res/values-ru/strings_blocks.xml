@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">Головоломка с блоками</string>
+    <string name="howto_blocks">Перетащите фигуру снизу на поле (или нажмите на фигуру, а затем на поле). Заполните целый ряд или столбец, чтобы он исчез. Ничего не падает и нет таймера: игра заканчивается, только когда ни одна фигура не помещается.</string>
+    <string name="blocks_score">Очки: %1$d · Рекорд: %2$d</string>
+    <string name="blocks_rotate">Повернуть</string>
+    <string name="blocks_no_fit">Больше ни одна фигура не помещается</string>
+    <string name="blocks_final">Очки: %1$d\nРекорд: %2$d</string>
+    <string name="blocks_new_best">Новый рекорд!</string>
+</resources>

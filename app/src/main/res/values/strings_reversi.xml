@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">Dark pieces</string>
+    <string name="reversi_light">Light pieces</string>
+    <string name="reversi_dark_turn">Dark pieces to play</string>
+    <string name="reversi_light_turn">Light pieces to play</string>
+    <string name="reversi_dark_passed">Dark pieces had no move. Light again.</string>
+    <string name="reversi_light_passed">Light pieces had no move. Dark again.</string>
+    <string name="reversi_score_together">● Dark: %1$d   ○ Light: %2$d</string>
+    <string name="reversi_dark_wins">Dark pieces win!</string>
+    <string name="reversi_light_wins">Light pieces win!</string>
+</resources>
