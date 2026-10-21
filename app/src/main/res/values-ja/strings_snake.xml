@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">ヘビ</string>
+    <string name="howto_snake">4つの矢印（またはスワイプ）でゆっくり進むヘビを動かし、果物を食べさせましょう。食べるたびに1つ長くなります。かんたんでは端を通り抜け、自分に触れてもしっぽが短くなるだけです。ふつうでは自分に触れると終わり、むずかしいでは端も壁になります。</string>
+    <string name="snake_length">長さ: %1$d · 最高: %2$d</string>
+    <string name="snake_bump">ゴツン！ヘビはここで止まりました</string>
+    <string name="snake_final">長さ: %1$d\n最高の長さ: %2$d</string>
+    <string name="snake_new_best">これまでで一番長いヘビです！</string>
+    <string name="snake_up">上</string>
+    <string name="snake_down">下</string>
+    <string name="snake_left">左</string>
+    <string name="snake_right">右</string>
+    <string name="snake_pause">一時停止</string>
+    <string name="snake_continue">続ける</string>
+    <string name="snake_start">スタート</string>
+    <string name="snake_paused">一時停止中。ごゆっくりどうぞ。</string>
+    <string name="snake_ready">準備ができたらどうぞ</string>
+</resources>

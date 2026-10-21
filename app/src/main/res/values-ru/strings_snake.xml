@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">Змейка</string>
+    <string name="howto_snake">Ведите медленную змейку четырьмя стрелками (или проведите пальцем), чтобы она ела фрукты; каждый фрукт делает её длиннее. На лёгком уровне она проходит сквозь края и, коснувшись себя, лишь теряет хвост; на среднем касание себя заканчивает игру; на сложном края — это ещё и стены.</string>
+    <string name="snake_length">Длина: %1$d · Рекорд: %2$d</string>
+    <string name="snake_bump">Ой! Змейка остановилась</string>
+    <string name="snake_final">Длина: %1$d\nРекорд: %2$d</string>
+    <string name="snake_new_best">Самая длинная змейка!</string>
+    <string name="snake_up">Вверх</string>
+    <string name="snake_down">Вниз</string>
+    <string name="snake_left">Влево</string>
+    <string name="snake_right">Вправо</string>
+    <string name="snake_pause">Пауза</string>
+    <string name="snake_continue">Продолжить</string>
+    <string name="snake_start">Начать</string>
+    <string name="snake_paused">Пауза. Не торопитесь.</string>
+    <string name="snake_ready">Начните, когда будете готовы</string>
+</resources>

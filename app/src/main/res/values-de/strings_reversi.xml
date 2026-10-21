@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">Dunkle Steine</string>
+    <string name="reversi_light">Helle Steine</string>
+    <string name="reversi_dark_turn">Dunkel ist dran</string>
+    <string name="reversi_light_turn">Hell ist dran</string>
+    <string name="reversi_dark_passed">Dunkel konnte nicht ziehen. Hell ist wieder dran.</string>
+    <string name="reversi_light_passed">Hell konnte nicht ziehen. Dunkel ist wieder dran.</string>
+    <string name="reversi_score_together">● Dunkel: %1$d   ○ Hell: %2$d</string>
+    <string name="reversi_dark_wins">Dunkel gewinnt!</string>
+    <string name="reversi_light_wins">Hell gewinnt!</string>
+</resources>

@@ -8,14 +8,15 @@ This guide is written for players and for the family members who set the phone u
 
 1. [Installing](#installing)
 2. [Getting around](#getting-around)
-3. [Automatic save and "continue?"](#automatic-save-and-continue)
-4. [Zoom](#zoom)
-5. [Settings](#settings)
-6. [Accessibility](#accessibility)
-7. [The games](#the-games)
+3. [Playing together on one phone](#playing-together-on-one-phone)
+4. [Automatic save and "continue?"](#automatic-save-and-continue)
+5. [Zoom](#zoom)
+6. [Settings](#settings)
+7. [Accessibility](#accessibility)
+8. [The games](#the-games)
    - [Sudoku](#sudoku) · [Solitaire](#solitaire) · [Buraco](#buraco) · [Backgammon](#backgammon) · [Mahjong](#mahjong)
    - [Reversi](#reversi) · [Crossword](#crossword) · [Pipes](#pipes) · [Connect](#connect) · [Dots](#dots)
-8. [Frequently asked questions](#frequently-asked-questions)
+9. [Frequently asked questions](#frequently-asked-questions)
 
 ---
 
@@ -51,6 +52,14 @@ The **gear** opens the settings. Inside a game, settings also show three big but
 
 The phone's **Back** button/gesture inside a game opens (or closes) the settings, so nobody leaves a game by mistake.
 
+## Playing together on one phone
+
+Some games can also be played by people sitting together, taking turns on the same phone. On the difficulty wheel, now titled **How do you want to play?**, choose **Take turns on this phone** (on a tablet: *…on this tablet*). Nobody plays against the computer.
+
+When a turn ends, the screen covers what belongs to that player (for example the cards in hand) and shows a big button with two hands holding a phone, **Pass to the next player** and who that is (a color or a number). The next person taps the button: the scene dims, switches to their side of the table and, after a short pause (see *Waiting time* in the settings), shows their things. The board never turns around, so nobody gets dizzy.
+
+Games that can be played with different numbers of people ask **How many at the table?** first; the last choice comes preselected.
+
 ## Automatic save and "continue?"
 
 Every move is saved immediately on the phone. If the app is closed — by accident, by a phone call, by the battery running out — the next time it opens it goes straight to that game and asks:
@@ -85,6 +94,8 @@ Every game board can be enlarged.
 | ↳ *Double tap* | Double tap to zoom in: 2×, then 3×, then back to normal. Double tap **and drag** to move around. |
 | ↳ *Press and rotate* | Touch and hold until the phone vibrates, then draw circles: clockwise zooms in, counter-clockwise zooms out. Double tap and drag to move; double tap to reset. |
 | **Default difficulty** | The level pre-selected on the difficulty wheel. |
+| **Waiting time** | Quick, Normal or Calm: how long the app waits between moves (the computer's turns, passing the phone) and before messages go away. Calm doubles every wait. |
+| **Animations** | Off (pieces and cards go straight to their place), Gentle (slow, small movements) or Full. |
 | **Group by category** | On: games appear under headings (cards, board games, puzzles…). Off: one single list. |
 | **Recently played first** | On: the game you open moves to the top of its group, and its group to the top of the list; the rest keeps its order, so favorites stay near the top. Both layouts keep their own order, so switching never loses it. Off: the usual order. |
 | **About** | Version, privacy statement, a link to this project, **Restore default settings** and, at the very end, **Why Mili Games exists**: why the app is free and ad-free forever, how it was made (with the help of Claude, with no AI inside the app) and a link to the source code. |

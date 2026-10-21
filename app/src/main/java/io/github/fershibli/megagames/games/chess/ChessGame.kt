@@ -66,8 +66,9 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
@@ -185,6 +186,7 @@ private fun PlayScreen(state: MutableState<ChessState>, host: GameHost) {
     var promotion by remember { mutableStateOf<List<Int>>(emptyList()) }
     var hint by remember { mutableStateOf<Int?>(null) }
 
+    val pace = currentPace
     LaunchedEffect(s.moves) {
         if (!playing) {
             val detail = when (status) {
@@ -194,10 +196,10 @@ private fun PlayScreen(state: MutableState<ChessState>, host: GameHost) {
                 Chess.Status.FIFTY_MOVES -> context.getString(R.string.chess_fifty)
                 else -> context.getString(R.string.chess_repetition)
             }
-            delay(900)
+            pace.wait(900)
             host.finish(GameOutcome(status == Chess.Status.CHECKMATE && pos.side == Chess.BLACK, detail))
         } else if (pos.side == Chess.BLACK) {
-            delay(450)
+            pace.wait(450)
             val history = line.keys.dropLast(1).toSet()
             val move = withContext(Dispatchers.Default) { ChessAi.bestMove(pos, host.difficulty, Random.Default, history) }
             if (move != null) state.value = s.copy(moves = s.moves + Chess.uci(move))

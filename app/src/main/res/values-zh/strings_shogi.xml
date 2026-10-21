@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">日本将棋</string>
+    <string name="howto_shogi">日本将棋。先点你的一枚棋子（尖头朝上），再点一个绿点。吃掉的棋子归你所有：点棋盘下方的一枚，就能把它打到一个空格里。将死电脑的王就赢了。</string>
+    <string name="shogi_variant_standard">将棋（9×9）</string>
+    <string name="shogi_variant_standard_desc">完整的游戏，9乘9的棋盘。</string>
+    <string name="shogi_variant_mini">五五将棋（5×5）</string>
+    <string name="shogi_variant_mini_desc">5乘5的小棋盘，棋子更少：下得快，适合入门。</string>
+    <string name="shogi_pick_piece">轮到你了：点棋盘上或手中的一枚你的棋子</string>
+    <string name="shogi_pick_target">点一个绿点，棋子就走到那里</string>
+    <string name="shogi_pick_drop">点一个绿点，把棋子打到那里</string>
+    <string name="shogi_check">将军！你的王被攻击了，快保护它</string>
+    <string name="shogi_pieces">棋子</string>
+    <string name="shogi_guide_title">棋子怎么走</string>
+    <string name="shogi_guide_marks">棋子上的记号：一个点表示朝那个方向走一步，箭头表示可以走任意远。红字是升变后的棋子。对面带颜色的几行（三行，五五将棋是一行）是你的棋子可以升变的地方。</string>
+    <string name="shogi_piece_king">王将、玉将（王、玉）：任何方向走一步。</string>
+    <string name="shogi_piece_rook">飞车（飛）：横竖走任意远。升变后成为龙王。</string>
+    <string name="shogi_piece_bishop">角行（角）：斜走任意远。升变后成为龙马。</string>
+    <string name="shogi_piece_gold">金将（金）：除了斜后方，任何方向走一步。不能升变。</string>
+    <string name="shogi_piece_silver">银将（銀）：向前或斜向走一步。升变后走法和金将一样。</string>
+    <string name="shogi_piece_knight">桂马（桂）：跳到前方两格再偏一格的位置，可以越过棋子。升变后走法和金将一样。</string>
+    <string name="shogi_piece_lance">香车（香）：一直向前走任意远。升变后走法和金将一样。</string>
+    <string name="shogi_piece_pawn">步兵（歩）：向前走一步。升变后成为“と金”（と），走法和金将一样。</string>
+    <string name="shogi_piece_dragon">龙王（龍），升变的飞车：横竖走任意远，或者斜走一步。</string>
+    <string name="shogi_piece_horse">龙马（馬），升变的角行：斜走任意远，或者横竖走一步。</string>
+    <string name="shogi_piece_promoted">升变的步兵、香车、桂马或银将（と、杏、圭、全）：走法和金将一样。</string>
+    <string name="shogi_promote_title">要升变这枚棋子吗？</string>
+    <string name="shogi_promote_yes">升变</string>
+    <string name="shogi_promote_no">保持原样</string>
+    <string name="shogi_checkmate">将死！</string>
+    <string name="shogi_draw_repetition">和棋：同一个局面出现了四次（千日手）。</string>
+    <string name="shogi_draw_limit">和棋：对局达到了400手。</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">Scacchi coreani</string>
+    <string name="howto_janggi">Scacchi coreani (janggi). Tocca uno dei tuoi pezzi blu, poi un punto verde. Dentro i palazzi i pezzi possono anche seguire le linee diagonali. Puoi passare invece di muovere. Chiudi il generale rosso per vincere.</string>
+    <string name="janggi_pick_piece">Tocca a te: tocca uno dei tuoi pezzi blu</string>
+    <string name="janggi_pick_target">Tocca un punto verde per andare lì</string>
+    <string name="janggi_check">Scacco! Il tuo generale è attaccato: proteggilo</string>
+    <string name="janggi_pieces">Pezzi</string>
+    <string name="janggi_guide_title">Come si muovono i pezzi</string>
+    <string name="janggi_guide_marks">I pezzi stanno sugli incroci delle linee. Su ogni pezzo, un punto è un passo, due punti indicano il salto più lungo dell’elefante, una freccia vuol dire qualsiasi distanza, una freccia con una sbarra vuol dire che deve saltare un pezzo, e un punto vuoto è un passo in diagonale permesso solo lungo le linee di un palazzo.</string>
+    <string name="janggi_piece_general">Generale (楚, 漢): un passo lungo le linee del palazzo, diagonali comprese. Non esce mai dal palazzo.</string>
+    <string name="janggi_piece_guard">Guardia (士): si muove come il generale, un passo lungo le linee del palazzo, e resta nel palazzo.</string>
+    <string name="janggi_piece_elephant">Elefante (象): un punto dritto, poi due in diagonale verso l’esterno. È bloccato se un punto del percorso è occupato.</string>
+    <string name="janggi_piece_horse">Cavallo (馬): un punto dritto, poi uno in diagonale verso l’esterno. È bloccato se il primo punto è occupato.</string>
+    <string name="janggi_piece_chariot">Carro (車): qualsiasi distanza lungo una linea, e lungo le linee diagonali dentro un palazzo.</string>
+    <string name="janggi_piece_cannon">Cannone (包): deve saltare esattamente un pezzo per muoversi o catturare. Non salta mai e non cattura mai un altro cannone.</string>
+    <string name="janggi_piece_soldier">Soldato (卒, 兵): un passo in avanti o di lato, mai indietro. Dentro il palazzo nemico può anche avanzare in diagonale lungo le linee.</string>
+    <string name="janggi_pass">Passa</string>
+    <string name="janggi_ai_passed">Il computer ha passato. Tocca a te.</string>
+    <string name="janggi_must_pass">Nessuno dei tuoi pezzi può muoversi: tocca Passa</string>
+    <string name="janggi_checkmate">Scacco matto!</string>
+    <string name="janggi_draw_repetition">Patta: la stessa posizione si è ripetuta tre volte.</string>
+    <string name="janggi_draw_limit">Patta: 60 mosse a testa senza nessuna cattura.</string>
+    <string name="janggi_draw_material">Patta: a nessuno restano pezzi capaci di attaccare.</string>
+    <string name="janggi_bikjang">Patta: i due generali sono faccia a faccia su una linea libera (bikjang).</string>
+    <string name="janggi_draw_passes">Patta: entrambi i giocatori hanno passato, uno dopo l’altro.</string>
+</resources>

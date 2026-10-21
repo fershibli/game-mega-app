@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">Сёги</string>
+    <string name="howto_shogi">Японские шахматы. Нажмите на одну из своих фигур (они смотрят вверх), затем на зелёную точку. Взятые фигуры переходят на вашу сторону: нажмите на одну из них под доской, чтобы поставить её на свободную клетку. Поставьте мат королю компьютера, чтобы победить.</string>
+    <string name="shogi_variant_standard">Сёги (9 × 9)</string>
+    <string name="shogi_variant_standard_desc">Полная игра на доске 9 на 9.</string>
+    <string name="shogi_variant_mini">Мини-сёги (5 × 5)</string>
+    <string name="shogi_variant_mini_desc">Маленькая доска 5 на 5 и меньше фигур: быстрые партии, хорошо для обучения.</string>
+    <string name="shogi_pick_piece">Ваш ход: нажмите на свою фигуру на доске или в руке</string>
+    <string name="shogi_pick_target">Нажмите на зелёную точку, чтобы пойти туда</string>
+    <string name="shogi_pick_drop">Нажмите на зелёную точку, чтобы поставить туда фигуру</string>
+    <string name="shogi_check">Шах! Вашего короля атакуют: защитите его</string>
+    <string name="shogi_pieces">Фигуры</string>
+    <string name="shogi_guide_title">Как ходят фигуры</string>
+    <string name="shogi_guide_marks">На каждой фигуре точка означает один шаг в эту сторону, а стрелка — на любое расстояние. Красные иероглифы — у превращённых фигур. Затенённые ряды на той стороне (три ряда, в мини-сёги один) — зона, где ваши фигуры могут превратиться.</string>
+    <string name="shogi_piece_king">Король (王, 玉): один шаг в любую сторону.</string>
+    <string name="shogi_piece_rook">Ладья (飛): на любое расстояние по линии. Превращается в дракона.</string>
+    <string name="shogi_piece_bishop">Слон (角): на любое расстояние по диагонали. Превращается в коня.</string>
+    <string name="shogi_piece_gold">Золотой генерал (金): один шаг в любую сторону, кроме диагонали назад. Не превращается.</string>
+    <string name="shogi_piece_silver">Серебряный генерал (銀): один шаг вперёд или по диагонали. После превращения ходит как золотой.</string>
+    <string name="shogi_piece_knight">Конь (桂): прыгает на две клетки вперёд и одну в сторону, через любые фигуры. После превращения ходит как золотой.</string>
+    <string name="shogi_piece_lance">Копьё (香): на любое расстояние прямо вперёд. После превращения ходит как золотой.</string>
+    <string name="shogi_piece_pawn">Пешка (歩): один шаг вперёд. После превращения становится токин (と) и ходит как золотой.</string>
+    <string name="shogi_piece_dragon">Дракон (龍), превращённая ладья: на любое расстояние по линии или один шаг по диагонали.</string>
+    <string name="shogi_piece_horse">Конь-дракон (馬), превращённый слон: на любое расстояние по диагонали или один шаг по линии.</string>
+    <string name="shogi_piece_promoted">Превращённые пешка, копьё, конь или серебряный (と, 杏, 圭, 全): ходят как золотой генерал.</string>
+    <string name="shogi_promote_title">Превратить эту фигуру?</string>
+    <string name="shogi_promote_yes">Превратить</string>
+    <string name="shogi_promote_no">Оставить как есть</string>
+    <string name="shogi_checkmate">Мат!</string>
+    <string name="shogi_draw_repetition">Ничья: одна и та же позиция повторилась четыре раза.</string>
+    <string name="shogi_draw_limit">Ничья: партия дошла до 400 ходов.</string>
+</resources>

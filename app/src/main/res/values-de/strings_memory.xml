@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">Paare finden</string>
+    <string name="howto_memory">Decke pro Zug zwei Karten auf. Zeigen sie dasselbe Bild, bleiben sie offen. Finde alle Paare mit möglichst wenigen Zügen.</string>
+    <string name="memory_variant_cards">Spielkarten</string>
+    <string name="memory_variant_cards_desc">Ein Paar ist dieselbe Zahl in derselben Farbe: ♥ mit ♦ oder ♠ mit ♣.</string>
+    <string name="memory_variant_fruits">Obst</string>
+    <string name="memory_variant_fruits_desc">Apfel, Kirschen, Birne, Zitrone, Trauben und mehr.</string>
+    <string name="memory_variant_symbols">Symbole</string>
+    <string name="memory_variant_symbols_desc">Stern, Herz, Mond, Sonne, Tropfen, Blatt und mehr.</string>
+    <string name="memory_variant_animals">Tiere</string>
+    <string name="memory_variant_animals_desc">Freundliche Gesichter: Katze, Hund, Hase, Eule und mehr.</string>
+    <string name="memory_counts">Züge: %1$d · Paare: %2$d von %3$d</string>
+    <string name="memory_best">Bestwert: %1$d</string>
+    <string name="memory_first">Decke zwei Karten auf</string>
+    <string name="memory_second">Jetzt das passende Paar finden</string>
+    <string name="memory_miss">Kein Paar. Tippe auf eine Karte, um weiterzuspielen</string>
+    <string name="memory_match">Ein Paar! Weiter so</string>
+    <string name="memory_all_found">Alle Paare gefunden!</string>
+    <string name="memory_record">Neuer Bestwert!</string>
+    <string name="memory_card">Karte %1$d</string>
+    <string name="memory_card_found">Karte %1$d, Paar gefunden</string>
+    <plurals name="memory_result">
+        <item quantity="one">Du hast alle Paare in %1$d Zug gefunden.</item>
+        <item quantity="other">Du hast alle Paare in %1$d Zügen gefunden.</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="one">Dein Bestwert: %1$d Zug.</item>
+        <item quantity="other">Dein Bestwert: %1$d Züge.</item>
+    </plurals>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">Échecs chinois</string>
+    <string name="howto_xiangqi">Échecs chinois (xiangqi). Touchez une de vos pièces rouges, puis un point vert pour la déplacer. Les marques sur chaque pièce montrent comment elle se déplace. Enfermez le général noir pour qu’il ne puisse plus s’échapper.</string>
+    <string name="xiangqi_pick_piece">À vous : touchez une de vos pièces rouges</string>
+    <string name="xiangqi_pick_target">Touchez un point vert pour y aller</string>
+    <string name="xiangqi_check">Échec ! Votre général est attaqué : protégez-le</string>
+    <string name="xiangqi_pieces">Pièces</string>
+    <string name="xiangqi_guide_title">Comment se déplacent les pièces</string>
+    <string name="xiangqi_guide_marks">Les pièces se placent sur les croisements des lignes. Sur chaque pièce, un point est un pas dans cette direction, deux points sont deux pas, une flèche veut dire n’importe quelle distance, une flèche barrée veut dire qu’elle saute par-dessus une pièce pour prendre, et un point creux n’est permis qu’après avoir traversé la rivière.</string>
+    <string name="xiangqi_piece_general">Général (帥, 將) : un pas le long d’une ligne, toujours dans le palais. Les deux généraux ne doivent jamais se faire face sur une ligne libre.</string>
+    <string name="xiangqi_piece_advisor">Conseiller (仕, 士) : un pas en diagonale, seulement dans le palais.</string>
+    <string name="xiangqi_piece_elephant">Éléphant (相, 象) : deux points en diagonale, sans jamais traverser la rivière. Bloqué si le point du milieu est occupé.</string>
+    <string name="xiangqi_piece_horse">Cheval (馬) : un point tout droit, puis un en diagonale vers l’extérieur. Bloqué si le premier point est occupé.</string>
+    <string name="xiangqi_piece_chariot">Char (車) : n’importe quelle distance le long d’une ligne, comme la tour aux échecs.</string>
+    <string name="xiangqi_piece_cannon">Canon (炮, 砲) : se déplace comme le char, mais ne prend qu’en sautant par-dessus exactement une pièce.</string>
+    <string name="xiangqi_piece_soldier">Soldat (兵, 卒) : un pas en avant. Une fois la rivière traversée, il peut aussi aller sur le côté. Il ne recule jamais.</string>
+    <string name="xiangqi_checkmate">Échec et mat !</string>
+    <string name="xiangqi_no_moves">Plus aucun coup possible : aux échecs chinois, cela fait perdre la partie.</string>
+    <string name="xiangqi_draw_repetition">Partie nulle : la même position est revenue trois fois.</string>
+    <string name="xiangqi_draw_limit">Partie nulle : 60 coups chacun sans aucune prise.</string>
+    <string name="xiangqi_draw_material">Partie nulle : aucun camp n’a plus de pièce capable d’attaquer.</string>
+</resources>

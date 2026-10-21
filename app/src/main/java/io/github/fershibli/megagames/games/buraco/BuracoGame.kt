@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.buraco
 
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -65,7 +67,6 @@ import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import kotlin.random.Random
 
@@ -88,7 +89,8 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
     var afterDraw by remember { mutableStateOf<BuracoState?>(null) }
     val scale = LocalSettings.current.pieceScale
 
-    LaunchedEffect(error) { if (error != null) { delay(3500); error = null } }
+    val pace = currentPace
+    LaunchedEffect(error) { if (error != null) { pace.wait(3500); error = null } }
 
     LaunchedEffect(s.finished) {
         if (!s.finished) return@LaunchedEffect
@@ -102,18 +104,18 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
                 else -> add(context.getString(R.string.buraco_deck_over))
             }
         }
-        delay(1200)
+        pace.wait(1200)
         host.finish(GameOutcome(you.total > ai.total, lines.joinToString("\n")))
     }
 
     // Computer's turn, shown step by step.
     LaunchedEffect(s.turn, s.finished) {
         if (s.turn != COMPUTER || s.finished) return@LaunchedEffect
-        delay(900)
+        pace.wait(900)
         val steps = withContext(Dispatchers.Default) { BuracoAi.playTurn(state.value, host.difficulty, Random.Default) }
         for (st in steps) {
             state.value = st
-            delay(750)
+            pace.wait(750)
         }
     }
 

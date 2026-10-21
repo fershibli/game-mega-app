@@ -20,7 +20,7 @@
     <string name="difficulty_hard">むずかしい</string>
 
     <!-- Games -->
-    <string name="game_sudoku">数独</string>
+    <string name="game_sudoku">ナンプレ</string>
     <string name="game_solitaire">ソリティア</string>
     <string name="game_buraco">ブラコ</string>
     <string name="game_backgammon">バックギャモン</string>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">Puzle de bloques</string>
+    <string name="howto_blocks">Arrastra una pieza de abajo al tablero (o toca la pieza y luego el tablero). Completa una fila o columna entera para borrarla. Nada cae y no hay reloj: la partida solo termina cuando ninguna pieza cabe.</string>
+    <string name="blocks_score">Puntos: %1$d · Récord: %2$d</string>
+    <string name="blocks_rotate">Girar pieza</string>
+    <string name="blocks_no_fit">Ya no cabe ninguna pieza</string>
+    <string name="blocks_final">Puntos: %1$d\nRécord: %2$d</string>
+    <string name="blocks_new_best">¡Nuevo récord!</string>
+</resources>

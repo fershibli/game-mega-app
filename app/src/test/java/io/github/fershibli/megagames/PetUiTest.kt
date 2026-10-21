@@ -2,6 +2,7 @@ package io.github.fershibli.megagames
 
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.SemanticsNodeInteraction
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
@@ -161,7 +162,7 @@ class PetUiTest {
     }
 
     @Test
-    fun theSettingsNewGameKeepsThePet() {
+    fun theSettingsOfferNoNewGameForThePet() {
         seed(PetRules.adopt(PetWorld(), Species.FROG, "Pip", clock.time))
         val saves = SaveStore(app).apply { clear() }
         rule.setContent {
@@ -176,11 +177,8 @@ class PetUiTest {
         rule.onNodeWithText("Kiss").performClick()
         rule.onAllNodesWithContentDescription("Settings").onFirst().performClick()
         rule.waitForIdle()
-        rule.onAllNodesWithText("New game").onFirst().performClick()
-        rule.waitForIdle()
-        rule.onAllNodesWithText("New game").onLast().performClick()
-        rule.waitForIdle()
-        rule.onNodeWithText("Pip is happy to see you!").assertIsDisplayed()
+        // A pastime has nothing to restart: the pet lives on, so there is no "New game" at all.
+        rule.onAllNodesWithText("New game").assertCountEquals(0)
         assertEquals(1, stored()?.pets?.size)
     }
 

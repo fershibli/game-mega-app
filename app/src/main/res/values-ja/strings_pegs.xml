@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pegs">ペグ・ソリテール</string>
+    <string name="howto_pegs">玉をとなりの玉の上を跳ばして空いた穴に入れます。跳び越えられた玉は盤から取り除かれます。玉を1つだけ残せば勝ちです。</string>
+    <string name="pegs_variant_english">イギリス式の盤</string>
+    <string name="pegs_variant_english_desc">十字形の33個の穴。最初は中央が空いています。</string>
+    <string name="pegs_variant_french">フランス式の盤</string>
+    <string name="pegs_variant_french_desc">37個の穴：十字形に四すみの穴が4つ加わります。少しむずかしめ。</string>
+    <string name="pegs_left">残りの玉：%1$d</string>
+    <string name="pegs_pick_peg">動かす玉をタップ</string>
+    <string name="pegs_pick_hole">跳び先の空いた穴をタップ</string>
+    <string name="pegs_no_jumps">もう跳べる玉がありません</string>
+    <string name="pegs_restart">はじめから</string>
+    <string name="pegs_win_one">玉が1つだけ残りました。おみごと！</string>
+    <string name="pegs_win_perfect">最後の1つが印の穴に：パーフェクトです！</string>
+    <plurals name="pegs_end_left">
+        <item quantity="other">もう跳べません。玉が%1$d個残りました。よくがんばりました！</item>
+    </plurals>
+</resources>

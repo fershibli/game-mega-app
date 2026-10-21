@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames.core
 
+import kotlinx.serialization.Serializable
 import androidx.annotation.StringRes
 import io.github.fershibli.megagames.R
 
@@ -26,9 +27,24 @@ enum class GameCategory(@StringRes val label: Int) {
 data class GameVariant(val key: String, @StringRes val name: Int, @StringRes val description: Int)
 
 /**
+ * A number of seats a game can be played with, and an optional note about it ("in pairs").
+ * Against the computer, the other seats are computer players; taking turns, they are people.
+ */
+data class TableSize(val seats: Int, @StringRes val note: Int? = null)
+
+/**
+ * How a game is set up before it starts: against the computer or [together] (people taking
+ * turns on this device), and with how many [seats] at the table (0 = the game's usual number).
+ */
+@Serializable
+data class PlaySetup(val together: Boolean = false, val seats: Int = 0)
+
+/**
  * Every game shipped in the app. The [key] is persisted in save files, so it must never change
  * once released. A game with [variants] asks which rules to use before the difficulty (the last
  * choice comes preselected); a game without [hasDifficulty] (a pet, a farm) starts right away.
+ * [takeTurns] adds "take turns on this phone" to the difficulty list, and more than one entry in
+ * [tables] asks how many sit at the table.
  */
 enum class GameId(
     val key: String,
@@ -37,13 +53,15 @@ enum class GameId(
     val category: GameCategory,
     val variants: List<GameVariant> = emptyList(),
     val hasDifficulty: Boolean = true,
+    val takeTurns: Boolean = false,
+    val tables: List<TableSize> = emptyList(),
 ) {
     SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku, GameCategory.PUZZLES),
     SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire, GameCategory.CARDS),
     BURACO("buraco", R.string.game_buraco, R.string.howto_buraco, GameCategory.CARDS),
     BACKGAMMON("backgammon", R.string.game_backgammon, R.string.howto_backgammon, GameCategory.BOARD),
     MAHJONG("mahjong", R.string.game_mahjong, R.string.howto_mahjong, GameCategory.PUZZLES),
-    REVERSI("reversi", R.string.game_reversi, R.string.howto_reversi, GameCategory.BOARD),
+    REVERSI("reversi", R.string.game_reversi, R.string.howto_reversi, GameCategory.BOARD, takeTurns = true),
     CROSSWORD("crossword", R.string.game_crossword, R.string.howto_crossword, GameCategory.PUZZLES),
     PIPES("pipes", R.string.game_pipes, R.string.howto_pipes, GameCategory.PUZZLES),
     CONNECT("connect", R.string.game_connect, R.string.howto_connect, GameCategory.PUZZLES),
@@ -53,6 +71,16 @@ enum class GameId(
     PET("pet", R.string.game_pet, R.string.howto_pet, GameCategory.PASTIMES, hasDifficulty = false),
     CACHETA("cacheta", R.string.game_cacheta, R.string.howto_cacheta, GameCategory.CARDS, listOf(GameVariant("classic", R.string.cacheta_variant_classic, R.string.cacheta_variant_classic_desc), GameVariant("wild", R.string.cacheta_variant_wild, R.string.cacheta_variant_wild_desc), GameVariant("pife", R.string.cacheta_variant_pife, R.string.cacheta_variant_pife_desc))),
     TRUCO("truco", R.string.game_truco, R.string.howto_truco, GameCategory.CARDS, listOf(GameVariant("paulista", R.string.truco_variant_paulista, R.string.truco_variant_paulista_desc), GameVariant("mineiro", R.string.truco_variant_mineiro, R.string.truco_variant_mineiro_desc))),
+    CUBE("cube", R.string.game_cube, R.string.howto_cube, GameCategory.PUZZLES, listOf(GameVariant("2", R.string.cube_variant_2, R.string.cube_variant_2_desc), GameVariant("3", R.string.cube_variant_3, R.string.cube_variant_3_desc), GameVariant("4", R.string.cube_variant_4, R.string.cube_variant_4_desc), GameVariant("5", R.string.cube_variant_5, R.string.cube_variant_5_desc))),
+    BLOCKS("blocks", R.string.game_blocks, R.string.howto_blocks, GameCategory.PUZZLES),
+    PAIRS("pairs", R.string.game_pairs, R.string.howto_pairs, GameCategory.PUZZLES),
+    SNAKE("snake", R.string.game_snake, R.string.howto_snake, GameCategory.CALM_ACTION),
+    XIANGQI("xiangqi", R.string.game_xiangqi, R.string.howto_xiangqi, GameCategory.BOARD),
+    JANGGI("janggi", R.string.game_janggi, R.string.howto_janggi, GameCategory.BOARD),
+    SHOGI("shogi", R.string.game_shogi, R.string.howto_shogi, GameCategory.BOARD, listOf(GameVariant("standard", R.string.shogi_variant_standard, R.string.shogi_variant_standard_desc), GameVariant("mini", R.string.shogi_variant_mini, R.string.shogi_variant_mini_desc))),
+    PEGS("pegs", R.string.game_pegs, R.string.howto_pegs, GameCategory.PUZZLES, listOf(GameVariant("english", R.string.pegs_variant_english, R.string.pegs_variant_english_desc), GameVariant("french", R.string.pegs_variant_french, R.string.pegs_variant_french_desc))),
+    MEMORY("memory", R.string.game_memory, R.string.howto_memory, GameCategory.PUZZLES, listOf(GameVariant("cards", R.string.memory_variant_cards, R.string.memory_variant_cards_desc), GameVariant("fruits", R.string.memory_variant_fruits, R.string.memory_variant_fruits_desc), GameVariant("symbols", R.string.memory_variant_symbols, R.string.memory_variant_symbols_desc), GameVariant("animals", R.string.memory_variant_animals, R.string.memory_variant_animals_desc))),
+    SEQUENCE("sequence", R.string.game_sequence, R.string.howto_sequence, GameCategory.PUZZLES),
     NONOGRAM("nonogram", R.string.game_nonogram, R.string.howto_nonogram, GameCategory.PUZZLES),
     KAKURO("kakuro", R.string.game_kakuro, R.string.howto_kakuro, GameCategory.PUZZLES),
     KILLER("killer", R.string.game_killer, R.string.howto_killer, GameCategory.PUZZLES),
@@ -65,5 +93,9 @@ enum class GameId(
     }
 }
 
-/** Result reported by a game when it ends. [detail] is an already localized, optional line. */
-data class GameOutcome(val won: Boolean, val detail: String? = null)
+/**
+ * Result reported by a game when it ends. [detail] is an already localized, optional line.
+ * [shared] is a game played by people taking turns: nobody "won against the phone", so the end
+ * shows "End of the game" and [detail] says who won.
+ */
+data class GameOutcome(val won: Boolean, val detail: String? = null, val shared: Boolean = false)

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">节奏与动画</string>
+    <string name="pace_title">等待时间</string>
+    <string name="pace_quick">快</string>
+    <string name="pace_quick_desc">每步和提示之间停顿较短。</string>
+    <string name="pace_normal">正常</string>
+    <string name="pace_normal_desc">停顿足够看清每一步。</string>
+    <string name="pace_calm">慢</string>
+    <string name="pace_calm_desc">时间加倍：有更多时间看清电脑走了什么、读完提示。</string>
+    <string name="motion_title">动画</string>
+    <string name="motion_none">关闭</string>
+    <string name="motion_none_desc">棋子和纸牌直接到位，不移动。</string>
+    <string name="motion_gentle">柔和</string>
+    <string name="motion_gentle_desc">缓慢、幅度小的动作。</string>
+    <string name="motion_full">完整</string>
+    <string name="motion_full_desc">正常的动作。</string>
+    <string name="how_to_play">你想怎么玩？</string>
+    <string name="take_turns">在这部手机上轮流玩</string>
+    <string name="take_turns_desc">每个人轮到时下一步，把手机传给下一位。不和电脑对战。</string>
+    <string name="pass_to_next">交给下一位玩家</string>
+    <string name="pass_ready">好了，轮到我了</string>
+    <string name="player_number">玩家%1$d</string>
+    <string name="seats_title">几个人一起玩？</string>
+    <plurals name="seats_with_computer">
+        <item quantity="other">你和%1$d位电脑玩家</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="other">%1$d人轮流玩</item>
+    </plurals>
+    <string name="game_end">对局结束</string>
+</resources>
