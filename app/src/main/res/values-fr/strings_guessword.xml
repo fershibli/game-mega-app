@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">Devine le mot</string>
+    <string name="howto_guessword">Devine le mot caché, une lettre à la fois. Chaque lettre qui n’est pas dans le mot fait tomber un pétale de la fleur. Trouve le mot avant que le dernier pétale ne tombe. Cinq mots par manche.</string>
+    <string name="guessword_progress">Mot %1$d sur %2$d · Pétales : %3$d</string>
+    <string name="guessword_clue">Indice : %1$s</string>
+    <string name="guessword_clue_hidden">Pas d’indice à ce niveau. Touche Indice pour le voir.</string>
+    <string name="guessword_not_in_word">Pas dans le mot : %1$s</string>
+    <string name="guessword_found">Bravo ! Le mot est %1$s.</string>
+    <string name="guessword_word_was">Le mot était %1$s.</string>
+    <string name="guessword_replant">Ce n’est pas grave : une nouvelle fleur est plantée pour le mot suivant.</string>
+    <string name="guessword_next">Mot suivant</string>
+    <string name="guessword_see_result">Voir le résultat</string>
+    <string name="guessword_result">Mots trouvés : %1$d sur %2$d.</string>
+    <string name="guessword_petals_kept">Pétales gardés : %1$d.</string>
+    <string name="guessword_hints_used">Indices utilisés : %1$d.</string>
+    <string name="guessword_flower">Fleur · pétales : %1$d sur %2$d</string>
+</resources>

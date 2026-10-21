@@ -211,5 +211,9 @@ class ScreenshotTest {
     @Test fun ludo() = gameShot("game_ludo", GameId.LUDO)
     @Test fun morris() = gameShot("game_morris", GameId.MORRIS)
     @Test fun mancala() = gameShot("game_mancala", GameId.MANCALA, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true))
+    @Test fun guessWord() = gameShot("game_guessword", GameId.GUESSWORD)
+    @Test fun cryptogram() = gameShot("game_cryptogram", GameId.CRYPTOGRAM, Difficulty.MEDIUM)
+    @Test fun cryptogramArabic() = gameShot("game_cryptogram_ar", GameId.CRYPTOGRAM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
+    @Test fun maze() = gameShot("game_maze", GameId.MAZE, Difficulty.MEDIUM)
 
 }

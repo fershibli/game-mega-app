@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">Cryptogramme</string>
+    <string name="howto_cryptogram">Un proverbe connu est caché : chaque lettre a été remplacée par un autre symbole (un nombre en Facile). Touche une case, puis la lettre qu’elle cache selon toi. Le même symbole cache toujours la même lettre.</string>
+    <string name="cryptogram_pick">Touche une case, puis une lettre.</string>
+    <string name="cryptogram_which">Quelle lettre est %1$s ?</string>
+    <string name="cryptogram_not_yet">Certaines lettres ne sont pas encore justes. L’indice peut aider.</string>
+    <string name="cryptogram_solved">Résolu !</string>
+    <string name="cryptogram_done">Tu as déchiffré le proverbe : %1$s</string>
+    <string name="cryptogram_hints_used">Indices utilisés : %1$d.</string>
+    <string name="cryptogram_letter_locked">Cette lettre est déjà à sa place.</string>
+</resources>

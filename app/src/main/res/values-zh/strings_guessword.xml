@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">猜词</string>
+    <string name="howto_guessword">一次猜一个字母，猜出隐藏的词。每选一个不在词里的字母，花就会掉一片花瓣。在最后一片花瓣掉落之前找出这个词。每轮五个词。</string>
+    <string name="guessword_progress">第%1$d个词，共%2$d个 · 花瓣：%3$d</string>
+    <string name="guessword_clue">提示：%1$s</string>
+    <string name="guessword_clue_hidden">这个级别不显示提示。点“提示”就能看到。</string>
+    <string name="guessword_not_in_word">不在词里：%1$s</string>
+    <string name="guessword_found">真棒！这个词是 %1$s。</string>
+    <string name="guessword_word_was">这个词是 %1$s。</string>
+    <string name="guessword_replant">没关系：为下一个词种了一朵新花。</string>
+    <string name="guessword_next">下一个词</string>
+    <string name="guessword_see_result">查看结果</string>
+    <string name="guessword_result">你找到了%2$d个词中的%1$d个。</string>
+    <string name="guessword_petals_kept">保留的花瓣：%1$d。</string>
+    <string name="guessword_hints_used">使用提示：%1$d次。</string>
+    <string name="guessword_flower">花朵有%1$d片花瓣，共%2$d片</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">暗号パズル</string>
+    <string name="howto_cryptogram">よく知られたことわざがかくれています。どの文字も別の記号（やさしいでは数字）に置きかえられています。マスをタップしてから、かくれていると思う文字をタップしましょう。同じ記号はいつも同じ文字です。</string>
+    <string name="cryptogram_pick">マスをタップしてから、文字をタップしましょう。</string>
+    <string name="cryptogram_which">%1$s はどの文字？</string>
+    <string name="cryptogram_not_yet">まだ合っていない文字があります。ヒントが役に立ちます。</string>
+    <string name="cryptogram_solved">解けました！</string>
+    <string name="cryptogram_done">ことわざが解けました：%1$s</string>
+    <string name="cryptogram_hints_used">ヒントを使った回数：%1$d</string>
+    <string name="cryptogram_letter_locked">その文字はもう正しい場所にあります。</string>
+</resources>

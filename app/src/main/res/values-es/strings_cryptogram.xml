@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">Criptograma</string>
+    <string name="howto_cryptogram">Un refrán conocido está escondido: cada letra se cambió por otro símbolo (un número en Fácil). Toca un cuadro y luego la letra que crees que esconde. El mismo símbolo esconde siempre la misma letra.</string>
+    <string name="cryptogram_pick">Toca un cuadro y luego una letra.</string>
+    <string name="cryptogram_which">¿Qué letra es %1$s?</string>
+    <string name="cryptogram_not_yet">Algunas letras todavía no están bien. La Pista puede ayudar.</string>
+    <string name="cryptogram_solved">¡Resuelto!</string>
+    <string name="cryptogram_done">Descifraste el refrán: %1$s</string>
+    <string name="cryptogram_hints_used">Pistas usadas: %1$d.</string>
+    <string name="cryptogram_letter_locked">Esa letra ya está en su sitio.</string>
+</resources>

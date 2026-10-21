@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">متاهة</string>
+    <string name="howto_maze">ارسم طريقًا من الصديق المستدير إلى البيت الصغير. مرّر إصبعك في الممرات، أو المس مربعًا أبعد في الممر. ارجع بإصبعك لتتراجع خطوات.</string>
+    <string name="maze_start">ارسم طريقًا من الصديق المستدير إلى البيت.</string>
+    <string name="maze_going">تابع! ارجع بإصبعك لتتراجع خطوة.</string>
+    <string name="maze_hint_back">ارجع إلى الحلقة الكبيرة ثم اتبع الحلقات.</string>
+    <string name="maze_hint_next">اتبع الحلقات.</string>
+    <string name="maze_done">وصلت إلى البيت!</string>
+    <string name="maze_hints_used">التلميحات المستخدمة: %1$d.</string>
+    <string name="maze_board">متاهة %1$d × %2$d</string>
+</resources>
