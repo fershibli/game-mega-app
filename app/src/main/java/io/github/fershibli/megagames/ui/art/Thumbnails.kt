@@ -20,11 +20,18 @@ import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.cards.Card
 import io.github.fershibli.megagames.games.cards.Suit
 import io.github.fershibli.megagames.games.pet.petThumbnail
+import io.github.fershibli.megagames.games.cube.cubeThumbnail
+import io.github.fershibli.megagames.games.blocks.blocksThumbnail
+import io.github.fershibli.megagames.games.pairs.pairsThumbnail
 import io.github.fershibli.megagames.games.memory.memoryThumbnail
 import io.github.fershibli.megagames.games.pegs.pegsThumbnail
 import io.github.fershibli.megagames.games.sequence.sequenceThumbnail
 import io.github.fershibli.megagames.games.pipes.Pipes
 import io.github.fershibli.megagames.games.pipes.drawPipe
+import io.github.fershibli.megagames.games.snake.snakeThumbnail
+import io.github.fershibli.megagames.games.janggi.janggiThumbnail
+import io.github.fershibli.megagames.games.shogi.shogiThumbnail
+import io.github.fershibli.megagames.games.xiangqi.xiangqiThumbnail
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
 
@@ -53,6 +60,13 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.PET -> petThumbnail(p)
             GameId.CACHETA -> io.github.fershibli.megagames.games.cacheta.cachetaThumbnail(this, p, m)
             GameId.TRUCO -> io.github.fershibli.megagames.games.truco.trucoThumbnail(this, p, m)
+            GameId.CUBE -> cubeThumbnail(p)
+            GameId.BLOCKS -> blocksThumbnail(p)
+            GameId.PAIRS -> pairsThumbnail(p)
+            GameId.SNAKE -> snakeThumbnail(p)
+            GameId.XIANGQI -> xiangqiThumbnail(p, m)
+            GameId.JANGGI -> janggiThumbnail(p, m)
+            GameId.SHOGI -> shogiThumbnail(p, m)
             GameId.PEGS -> pegsThumbnail(p)
             GameId.MEMORY -> memoryThumbnail(p)
             GameId.SEQUENCE -> sequenceThumbnail(p)

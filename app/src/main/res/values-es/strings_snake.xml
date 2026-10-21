@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">Serpiente</string>
+    <string name="howto_snake">Guía a la serpiente lenta con las cuatro flechas (o deslizando) para comer la fruta; cada fruta la alarga un poco. En Fácil atraviesa los bordes y solo pierde la cola si se toca a sí misma; en Medio, tocarse termina la partida; en Difícil los bordes también son paredes.</string>
+    <string name="snake_length">Largo: %1$d · Récord: %2$d</string>
+    <string name="snake_bump">¡Uy! La serpiente se detiene aquí</string>
+    <string name="snake_final">Largo: %1$d\nRécord: %2$d</string>
+    <string name="snake_new_best">¡Tu serpiente más larga hasta ahora!</string>
+    <string name="snake_up">Arriba</string>
+    <string name="snake_down">Abajo</string>
+    <string name="snake_left">Izquierda</string>
+    <string name="snake_right">Derecha</string>
+    <string name="snake_pause">Pausa</string>
+    <string name="snake_continue">Continuar</string>
+    <string name="snake_start">Empezar</string>
+    <string name="snake_paused">En pausa. Sin prisa.</string>
+    <string name="snake_ready">Empieza cuando quieras</string>
+</resources>

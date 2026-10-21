@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">الإيقاع والحركة</string>
+    <string name="pace_title">وقت الانتظار</string>
+    <string name="pace_quick">سريع</string>
+    <string name="pace_quick_desc">توقفات قصيرة بين النقلات والرسائل.</string>
+    <string name="pace_normal">عادي</string>
+    <string name="pace_normal_desc">توقفات كافية لمتابعة كل نقلة.</string>
+    <string name="pace_calm">هادئ</string>
+    <string name="pace_calm_desc">ضعف الوقت: وقت أطول لرؤية ما فعله الحاسوب ولقراءة الرسائل.</string>
+    <string name="motion_title">الحركات</string>
+    <string name="motion_none">متوقفة</string>
+    <string name="motion_none_desc">تذهب القطع والأوراق إلى مكانها مباشرة دون حركة.</string>
+    <string name="motion_gentle">هادئة</string>
+    <string name="motion_gentle_desc">حركات بطيئة وصغيرة.</string>
+    <string name="motion_full">كاملة</string>
+    <string name="motion_full_desc">حركات عادية.</string>
+    <string name="how_to_play">كيف تريد أن تلعب؟</string>
+    <string name="take_turns">بالتناوب على هذا الهاتف</string>
+    <string name="take_turns_desc">يلعب كل شخص في دوره ثم يمرر الهاتف. لا أحد يلعب ضد الحاسوب.</string>
+    <string name="pass_to_next">مرّر إلى اللاعب التالي</string>
+    <string name="pass_ready">جاهز، إنه دوري</string>
+    <string name="player_number">اللاعب %1$d</string>
+    <string name="seats_title">كم شخصًا حول الطاولة؟</string>
+    <plurals name="seats_with_computer">
+        <item quantity="zero">أنت و%1$d لاعب من الحاسوب</item>
+        <item quantity="one">أنت ولاعب واحد من الحاسوب: %1$d</item>
+        <item quantity="two">أنت ولاعبان من الحاسوب: %1$d</item>
+        <item quantity="few">أنت و%1$d لاعبين من الحاسوب</item>
+        <item quantity="many">أنت و%1$d لاعبًا من الحاسوب</item>
+        <item quantity="other">أنت و%1$d لاعب من الحاسوب</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="zero">%1$d أشخاص بالتناوب</item>
+        <item quantity="one">شخص واحد: %1$d</item>
+        <item quantity="two">شخصان بالتناوب: %1$d</item>
+        <item quantity="few">%1$d أشخاص بالتناوب</item>
+        <item quantity="many">%1$d شخصًا بالتناوب</item>
+        <item quantity="other">%1$d شخص بالتناوب</item>
+    </plurals>
+    <string name="game_end">نهاية المباراة</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">Blockpuzzle</string>
+    <string name="howto_blocks">Ziehe ein Teil von unten auf das Spielfeld (oder tippe das Teil an und dann das Feld). Eine volle Reihe oder Spalte verschwindet. Nichts fällt und es gibt keine Uhr: Das Spiel endet erst, wenn kein Teil mehr passt.</string>
+    <string name="blocks_score">Punkte: %1$d · Rekord: %2$d</string>
+    <string name="blocks_rotate">Drehen</string>
+    <string name="blocks_no_fit">Kein Teil passt mehr</string>
+    <string name="blocks_final">Punkte: %1$d\nRekord: %2$d</string>
+    <string name="blocks_new_best">Neuer Rekord!</string>
+</resources>

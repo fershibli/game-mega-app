@@ -75,10 +75,11 @@ import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @Composable
 fun CachetaGame(host: GameHost) {
@@ -102,12 +103,13 @@ private fun CachetaScreen(state: MutableState<CachetaState>, host: GameHost) {
         return
     }
     val res = LocalResources.current
+    val pace = currentPace
     var selected by remember { mutableStateOf<Card?>(null) }
     var error by remember { mutableStateOf(false) }
     val french = LocalGameLanguage.current == AppLanguage.FRENCH
     val t = s.table
 
-    LaunchedEffect(error) { if (error) { delay(3500); error = false } }
+    LaunchedEffect(error) { if (error) { pace.wait(3500); error = false } }
 
     LaunchedEffect(s.finished) {
         if (!s.finished) return@LaunchedEffect
@@ -117,14 +119,14 @@ private fun CachetaScreen(state: MutableState<CachetaState>, host: GameHost) {
             s.winner > 0 -> res.getString(R.string.cacheta_lost, s.winner)
             else -> res.getString(R.string.cacheta_deck_over)
         }
-        delay(3000)
+        pace.wait(3000)
         host.finish(GameOutcome(s.winner == 0, detail))
     }
 
     // The computers play one step at a time, so you can follow every draw and discard.
     LaunchedEffect(s) {
         if (s.finished || Cacheta.actor(s) == 0) return@LaunchedEffect
-        delay(if (s.drawn) 700 else 900)
+        pace.wait(if (s.drawn) 700 else 900)
         state.value = withContext(Dispatchers.Default) { CachetaAi.step(s, host.difficulty, Random.Default) }
     }
 

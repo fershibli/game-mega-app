@@ -7,16 +7,20 @@ import io.github.fershibli.megagames.games.backgammon.BackgammonGame
 import io.github.fershibli.megagames.games.buraco.BuracoGame
 import io.github.fershibli.megagames.games.connect.ConnectGame
 import io.github.fershibli.megagames.games.crossword.CrosswordGame
+import io.github.fershibli.megagames.games.cube.CubeGame
 import io.github.fershibli.megagames.games.dots.DotsGame
+import io.github.fershibli.megagames.games.janggi.JanggiGame
 import io.github.fershibli.megagames.games.mahjong.MahjongGame
 import io.github.fershibli.megagames.games.pet.PetGame
 import io.github.fershibli.megagames.games.memory.MemoryGame
 import io.github.fershibli.megagames.games.pegs.PegsGame
 import io.github.fershibli.megagames.games.pipes.PipesGame
 import io.github.fershibli.megagames.games.reversi.ReversiGame
+import io.github.fershibli.megagames.games.shogi.ShogiGame
 import io.github.fershibli.megagames.games.sequence.SequenceGame
 import io.github.fershibli.megagames.games.solitaire.SolitaireGame
 import io.github.fershibli.megagames.games.sudoku.SudokuGame
+import io.github.fershibli.megagames.games.xiangqi.XiangqiGame
 
 /** Routes a [GameId] to its screen. */
 @Composable
@@ -37,6 +41,13 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.PET -> PetGame(host)
         GameId.CACHETA -> io.github.fershibli.megagames.games.cacheta.CachetaGame(host)
         GameId.TRUCO -> io.github.fershibli.megagames.games.truco.TrucoGame(host)
+        GameId.CUBE -> CubeGame(host)
+        GameId.BLOCKS -> io.github.fershibli.megagames.games.blocks.BlocksGame(host)
+        GameId.PAIRS -> io.github.fershibli.megagames.games.pairs.PairsGame(host)
+        GameId.SNAKE -> io.github.fershibli.megagames.games.snake.SnakeGame(host)
+        GameId.XIANGQI -> XiangqiGame(host)
+        GameId.JANGGI -> JanggiGame(host)
+        GameId.SHOGI -> ShogiGame(host)
         GameId.PEGS -> PegsGame(host)
         GameId.MEMORY -> MemoryGame(host)
         GameId.SEQUENCE -> SequenceGame(host)

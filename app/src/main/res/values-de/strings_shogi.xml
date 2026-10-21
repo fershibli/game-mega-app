@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">Shogi</string>
+    <string name="howto_shogi">Japanisches Schach. Tippe auf eine deiner Figuren (sie zeigen nach oben) und dann auf einen grünen Punkt. Geschlagene Figuren wechseln auf deine Seite: tippe unter dem Brett auf eine, um sie auf ein freies Feld zu setzen. Setze den König des Computers matt, um zu gewinnen.</string>
+    <string name="shogi_variant_standard">Shogi (9 × 9)</string>
+    <string name="shogi_variant_standard_desc">Das vollständige Spiel auf dem Brett mit 9 mal 9 Feldern.</string>
+    <string name="shogi_variant_mini">Mini-Shogi (5 × 5)</string>
+    <string name="shogi_variant_mini_desc">Ein kleines Brett mit 5 mal 5 Feldern und weniger Figuren: schnelle Partien, gut zum Lernen.</string>
+    <string name="shogi_pick_piece">Du bist dran: tippe auf eine deiner Figuren, auf dem Brett oder in deiner Hand</string>
+    <string name="shogi_pick_target">Tippe auf einen grünen Punkt, um dorthin zu ziehen</string>
+    <string name="shogi_pick_drop">Tippe auf einen grünen Punkt, um die Figur dort einzusetzen</string>
+    <string name="shogi_check">Schach! Dein König wird angegriffen: schütze ihn</string>
+    <string name="shogi_pieces">Figuren</string>
+    <string name="shogi_guide_title">So ziehen die Figuren</string>
+    <string name="shogi_guide_marks">Auf jeder Figur ist ein Punkt ein Schritt in diese Richtung, und ein Pfeil heißt beliebig weit. Rote Schriftzeichen zeigen beförderte Figuren. Die schattierten Reihen auf der anderen Seite (drei Reihen, im Mini-Shogi eine) sind die Zone, in der deine Figuren befördert werden können.</string>
+    <string name="shogi_piece_king">König (王, 玉): ein Schritt in jede Richtung.</string>
+    <string name="shogi_piece_rook">Turm (飛): beliebig weit entlang einer Linie. Befördert wird er zum Drachen.</string>
+    <string name="shogi_piece_bishop">Läufer (角): beliebig weit diagonal. Befördert wird er zum Pferd.</string>
+    <string name="shogi_piece_gold">Goldgeneral (金): ein Schritt in jede Richtung außer diagonal rückwärts. Er wird nie befördert.</string>
+    <string name="shogi_piece_silver">Silbergeneral (銀): ein Schritt vorwärts oder diagonal. Befördert zieht er wie Gold.</string>
+    <string name="shogi_piece_knight">Springer (桂): springt zwei Felder vor und eins zur Seite, über jede Figur hinweg. Befördert zieht er wie Gold.</string>
+    <string name="shogi_piece_lance">Lanze (香): beliebig weit geradeaus nach vorn. Befördert zieht sie wie Gold.</string>
+    <string name="shogi_piece_pawn">Bauer (歩): ein Schritt vorwärts. Befördert wird er zum Tokin (と) und zieht wie Gold.</string>
+    <string name="shogi_piece_dragon">Drache (龍), der beförderte Turm: beliebig weit entlang einer Linie oder ein Schritt diagonal.</string>
+    <string name="shogi_piece_horse">Pferd (馬), der beförderte Läufer: beliebig weit diagonal oder ein Schritt entlang einer Linie.</string>
+    <string name="shogi_piece_promoted">Beförderte Bauern, Lanzen, Springer oder Silber (と, 杏, 圭, 全): ziehen wie der Goldgeneral.</string>
+    <string name="shogi_promote_title">Diese Figur befördern?</string>
+    <string name="shogi_promote_yes">Befördern</string>
+    <string name="shogi_promote_no">So lassen</string>
+    <string name="shogi_checkmate">Schachmatt!</string>
+    <string name="shogi_draw_repetition">Remis: Dieselbe Stellung kam viermal vor.</string>
+    <string name="shogi_draw_limit">Remis: Die Partie hat 400 Züge erreicht.</string>
+</resources>

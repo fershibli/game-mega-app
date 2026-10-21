@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">将棋</string>
+    <string name="howto_shogi">日本の将棋です。自分の駒（上向き）をタップし、緑の点をタップします。取った駒は持ち駒になります。盤の下の持ち駒をタップすると、空いているマスに打てます。コンピューターの玉を詰ませれば勝ちです。</string>
+    <string name="shogi_variant_standard">本将棋（9×9）</string>
+    <string name="shogi_variant_standard_desc">9×9の盤で指す、ふつうの将棋です。</string>
+    <string name="shogi_variant_mini">五五将棋（5×5）</string>
+    <string name="shogi_variant_mini_desc">5×5の小さな盤で、駒も少なめ。すぐ終わるので練習にぴったりです。</string>
+    <string name="shogi_pick_piece">あなたの番です：盤の上の駒か持ち駒をタップしてください</string>
+    <string name="shogi_pick_target">緑の点をタップするとそこへ動きます</string>
+    <string name="shogi_pick_drop">緑の点をタップするとそこに駒を打ちます</string>
+    <string name="shogi_check">王手！あなたの玉がねらわれています。守りましょう</string>
+    <string name="shogi_pieces">駒</string>
+    <string name="shogi_guide_title">駒の動き方</string>
+    <string name="shogi_guide_marks">駒の印は、点がその方向へ一歩、矢印がどこまでも進めることを表します。赤い字は成った駒です。盤の向こう側の色のついた段（三段、五五将棋では一段）に入ると駒が成れます。</string>
+    <string name="shogi_piece_king">玉将（王・玉）：どの方向にも一歩。</string>
+    <string name="shogi_piece_rook">飛車（飛）：たて・横にどこまでも。成ると竜王になります。</string>
+    <string name="shogi_piece_bishop">角行（角）：斜めにどこまでも。成ると竜馬になります。</string>
+    <string name="shogi_piece_gold">金将（金）：斜め後ろ以外のどの方向にも一歩。成りません。</string>
+    <string name="shogi_piece_silver">銀将（銀）：前と斜めに一歩。成ると金と同じ動きになります。</string>
+    <string name="shogi_piece_knight">桂馬（桂）：二つ前の左右に跳びます。間の駒は飛び越えます。成ると金と同じ動きになります。</string>
+    <string name="shogi_piece_lance">香車（香）：まっすぐ前にどこまでも。成ると金と同じ動きになります。</string>
+    <string name="shogi_piece_pawn">歩兵（歩）：前に一歩。成ると「と金（と）」になり、金と同じ動きになります。</string>
+    <string name="shogi_piece_dragon">竜王（龍）、成った飛車：たて・横にどこまでも、または斜めに一歩。</string>
+    <string name="shogi_piece_horse">竜馬（馬）、成った角：斜めにどこまでも、またはたて・横に一歩。</string>
+    <string name="shogi_piece_promoted">成った歩・香・桂・銀（と・杏・圭・全）：金将と同じ動きです。</string>
+    <string name="shogi_promote_title">この駒を成りますか？</string>
+    <string name="shogi_promote_yes">成る</string>
+    <string name="shogi_promote_no">成らない</string>
+    <string name="shogi_checkmate">詰みです！</string>
+    <string name="shogi_draw_repetition">引き分け：同じ局面が四回くり返されました（千日手）。</string>
+    <string name="shogi_draw_limit">引き分け：400手に達しました。</string>
+</resources>

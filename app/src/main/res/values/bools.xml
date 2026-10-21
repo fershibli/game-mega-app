@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Larger screens (sw600dp) name and draw the tablet instead of the phone. -->
+    <bool name="tablet">false</bool>
+</resources>

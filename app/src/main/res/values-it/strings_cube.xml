@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">Cubo magico</string>
+    <string name="howto_cube">Gira gli strati finché ogni faccia ha un solo colore. Scorri il dito su un quadratino per girare la sua fila, trascina nello spazio vuoto per guardare il cubo da un altro lato, oppure scegli una faccia qui sotto e tocca le frecce rotonde.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">Cubo piccolo di 8 pezzi: l’inizio più dolce.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">Il cubo classico. Il suggerimento insegna il metodo strato per strato.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">Cubo più grande, senza centri fissi. Usa il pulsante Strato per gli strati interni.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">Il cubo più grande, per mani pazienti.</string>
+    <string name="cube_moves">Mosse: %1$d</string>
+    <string name="cube_solved">Risolto! Ogni faccia ha un solo colore.</string>
+    <string name="cube_hint_step">Passo %1$d di %2$d: %3$s</string>
+    <string name="cube_hint_back">Giri fino all’inizio: %1$d</string>
+    <string name="cube_stage_cross">croce in basso</string>
+    <string name="cube_stage_corners">angoli in basso</string>
+    <string name="cube_stage_middle">strato di mezzo</string>
+    <string name="cube_stage_top_cross">croce in alto</string>
+    <string name="cube_stage_top_edges">spigoli in alto</string>
+    <string name="cube_stage_top_place">angoli in alto al loro posto</string>
+    <string name="cube_stage_top_turn">girare gli angoli in alto</string>
+    <string name="cube_stage_top_face">colore in alto</string>
+    <string name="cube_turn_cw">Gira la faccia scelta in senso orario</string>
+    <string name="cube_turn_ccw">Gira la faccia scelta in senso antiorario</string>
+    <string name="cube_layer">Strato %1$d</string>
+    <string name="cube_face">Faccia %1$d</string>
+    <string name="cube_view_left">Gira tutto il cubo a sinistra</string>
+    <string name="cube_view_right">Gira tutto il cubo a destra</string>
+    <string name="cube_view_up">Gira tutto il cubo in su</string>
+    <string name="cube_view_down">Gira tutto il cubo in giù</string>
+</resources>

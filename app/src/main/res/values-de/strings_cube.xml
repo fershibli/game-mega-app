@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">Zauberwürfel</string>
+    <string name="howto_cube">Drehen Sie die Schichten, bis jede Seite nur eine Farbe hat. Wischen Sie über ein Feld, um seine Reihe zu drehen, ziehen Sie im leeren Bereich, um den Würfel von einer anderen Seite zu sehen, oder wählen Sie unten eine Seite und tippen Sie auf die runden Pfeile.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">Kleiner Würfel aus 8 Teilen: der sanfteste Einstieg.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">Der klassische Würfel. Der Tipp zeigt die Methode Schicht für Schicht.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">Größerer Würfel ohne feste Mittelteile. Mit der Taste Schicht drehen Sie innere Schichten.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">Der größte Würfel, für geduldige Hände.</string>
+    <string name="cube_moves">Züge: %1$d</string>
+    <string name="cube_solved">Gelöst! Jede Seite hat eine Farbe.</string>
+    <string name="cube_hint_step">Schritt %1$d von %2$d: %3$s</string>
+    <string name="cube_hint_back">Drehungen bis zum Anfang: %1$d</string>
+    <string name="cube_stage_cross">Kreuz unten</string>
+    <string name="cube_stage_corners">Ecken unten</string>
+    <string name="cube_stage_middle">mittlere Schicht</string>
+    <string name="cube_stage_top_cross">Kreuz oben</string>
+    <string name="cube_stage_top_edges">Kanten oben</string>
+    <string name="cube_stage_top_place">Ecken oben an ihren Platz</string>
+    <string name="cube_stage_top_turn">Ecken oben drehen</string>
+    <string name="cube_stage_top_face">Farbe oben</string>
+    <string name="cube_turn_cw">Gewählte Seite im Uhrzeigersinn drehen</string>
+    <string name="cube_turn_ccw">Gewählte Seite gegen den Uhrzeigersinn drehen</string>
+    <string name="cube_layer">Schicht %1$d</string>
+    <string name="cube_face">Seite %1$d</string>
+    <string name="cube_view_left">Ganzen Würfel nach links drehen</string>
+    <string name="cube_view_right">Ganzen Würfel nach rechts drehen</string>
+    <string name="cube_view_up">Ganzen Würfel nach oben drehen</string>
+    <string name="cube_view_down">Ganzen Würfel nach unten drehen</string>
+</resources>

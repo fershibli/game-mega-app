@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">Ritmo e movimento</string>
+    <string name="pace_title">Tempo de espera</string>
+    <string name="pace_quick">Rápido</string>
+    <string name="pace_quick_desc">Pausas curtas entre as jogadas e as mensagens.</string>
+    <string name="pace_normal">Normal</string>
+    <string name="pace_normal_desc">Pausas suficientes para acompanhar cada jogada.</string>
+    <string name="pace_calm">Calmo</string>
+    <string name="pace_calm_desc">O dobro do tempo: mais calma para ver o que o computador fez e para ler as mensagens.</string>
+    <string name="motion_title">Animações</string>
+    <string name="motion_none">Desligadas</string>
+    <string name="motion_none_desc">Peças e cartas vão direto para o lugar, sem movimento.</string>
+    <string name="motion_gentle">Suaves</string>
+    <string name="motion_gentle_desc">Movimentos lentos e pequenos.</string>
+    <string name="motion_full">Completas</string>
+    <string name="motion_full_desc">Movimentos normais.</string>
+    <string name="how_to_play">Como você quer jogar?</string>
+    <string name="take_turns">Revezando celular</string>
+    <string name="take_turns_desc">Cada pessoa joga na sua vez, passando o celular. Ninguém joga contra o computador.</string>
+    <string name="pass_to_next">Passar para o próximo jogador</string>
+    <string name="pass_ready">Pronto, é a minha vez</string>
+    <string name="player_number">Jogador %1$d</string>
+    <string name="seats_title">Quantos à mesa?</string>
+    <plurals name="seats_with_computer">
+        <item quantity="one">Você e %1$d jogador do computador</item>
+        <item quantity="many">Você e %1$d jogadores do computador</item>
+        <item quantity="other">Você e %1$d jogadores do computador</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="one">%1$d pessoa revezando</item>
+        <item quantity="many">%1$d pessoas revezando</item>
+        <item quantity="other">%1$d pessoas revezando</item>
+    </plurals>
+    <string name="game_end">Fim da partida</string>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">Темп и движение</string>
+    <string name="pace_title">Время ожидания</string>
+    <string name="pace_quick">Быстро</string>
+    <string name="pace_quick_desc">Короткие паузы между ходами и сообщениями.</string>
+    <string name="pace_normal">Обычно</string>
+    <string name="pace_normal_desc">Паузы, достаточные, чтобы проследить за каждым ходом.</string>
+    <string name="pace_calm">Спокойно</string>
+    <string name="pace_calm_desc">Вдвое дольше: больше времени, чтобы увидеть ход компьютера и прочитать сообщения.</string>
+    <string name="motion_title">Анимация</string>
+    <string name="motion_none">Выключена</string>
+    <string name="motion_none_desc">Фишки и карты сразу встают на место, без движения.</string>
+    <string name="motion_gentle">Мягкая</string>
+    <string name="motion_gentle_desc">Медленные и небольшие движения.</string>
+    <string name="motion_full">Полная</string>
+    <string name="motion_full_desc">Обычные движения.</string>
+    <string name="how_to_play">Как вы хотите играть?</string>
+    <string name="take_turns">По очереди на этом телефоне</string>
+    <string name="take_turns_desc">Каждый ходит в свою очередь, передавая телефон. Никто не играет против компьютера.</string>
+    <string name="pass_to_next">Передать следующему игроку</string>
+    <string name="pass_ready">Готово, мой ход</string>
+    <string name="player_number">Игрок %1$d</string>
+    <string name="seats_title">Сколько за столом?</string>
+    <plurals name="seats_with_computer">
+        <item quantity="one">Вы и %1$d игрок-компьютер</item>
+        <item quantity="few">Вы и %1$d игрока-компьютера</item>
+        <item quantity="many">Вы и %1$d игроков-компьютеров</item>
+        <item quantity="other">Вы и %1$d игрока-компьютера</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="one">%1$d человек по очереди</item>
+        <item quantity="few">%1$d человека по очереди</item>
+        <item quantity="many">%1$d человек по очереди</item>
+        <item quantity="other">%1$d человека по очереди</item>
+    </plurals>
+    <string name="game_end">Конец партии</string>
+</resources>
