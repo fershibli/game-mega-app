@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">غو</string>
+    <string name="howto_go">يضع اللاعبان الأحجار بالتناوب على نقاط التقاطع. طوّق النقاط الفارغة، وأسِر الأحجار بسدّ كل منافذها الحرة. عندما يمرّر اللاعبان، تُعدّ الأحجار والنقاط المطوّقة، ويفوز صاحب العدد الأكبر.</string>
+    <string name="go_variant_9">لوحة 9×9</string>
+    <string name="go_variant_9_desc">صغيرة وسريعة، وهي الأفضل للبداية.</string>
+    <string name="go_variant_13">لوحة 13×13</string>
+    <string name="go_variant_13_desc">حجم متوسط ومساحة أكبر للخطط.</string>
+    <string name="go_variant_19">لوحة 19×19</string>
+    <string name="go_variant_19_desc">اللوحة الكلاسيكية الكاملة. باعد بين إصبعين للتكبير.</string>
+    <string name="go_your_turn">دورك (الأسود): المس نقطة تقاطع</string>
+    <string name="go_confirm">المس نقطة التقاطع نفسها مرة أخرى لوضع الحجر</string>
+    <string name="go_ai_passed">مرّر الكمبيوتر دوره. تابع اللعب، أو مرّر أنت أيضًا لعدّ النقاط.</string>
+    <string name="go_ko">ليس الآن: لا يمكنك استرجاع الكو فورًا. العب في مكان آخر أولًا.</string>
+    <string name="go_suicide">ليس هنا: لن يبقى لحجرك أي منفذ حر.</string>
+    <string name="go_captured">المأسور: أنت %1$d · الكمبيوتر %2$d</string>
+    <string name="go_pass">تمرير</string>
+    <string name="go_counting">جارٍ عدّ النقاط…</string>
+    <string name="go_mark_dead">الأحجار المشطوبة تُحسب مأسورة. المس مجموعة لتغييرها، ثم المس «عُدّ».</string>
+    <string name="go_score">أنت: %1$s · الكمبيوتر: %2$s</string>
+    <string name="go_komi">تشمل نقاط الكمبيوتر %1$s لأنه يلعب ثانيًا.</string>
+    <string name="go_count">عُدّ</string>
+    <string name="go_keep_playing">تابع اللعب</string>
+    <string name="go_hint_pass">تلميح: لم يبقَ ما يمكن كسبه. يمكنك التمرير.</string>
+    <string name="go_win">فزت بفارق %1$s.</string>
+    <string name="go_lose">فاز الكمبيوتر بفارق %1$s.</string>
+</resources>

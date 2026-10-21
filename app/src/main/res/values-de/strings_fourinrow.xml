@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">Vier in einer Reihe</string>
+    <string name="howto_fourinrow">Tippe auf eine Spalte, um eine Scheibe fallen zu lassen. Bringe vier deiner Scheiben in eine Reihe – waagerecht, senkrecht oder diagonal –, bevor es der Computer schafft. Du spielst die hellen Scheiben und fängst an.</string>
+    <string name="fourinrow_your_turn">Du bist dran (helle Scheiben): tippe auf eine Spalte</string>
+    <string name="fourinrow_win">Vier in einer Reihe! Du gewinnst.</string>
+    <string name="fourinrow_lose">Der Computer hat vier in einer Reihe.</string>
+    <string name="fourinrow_draw">Das Brett ist voll: unentschieden.</string>
+</resources>

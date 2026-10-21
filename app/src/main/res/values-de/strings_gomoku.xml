@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">Gomoku</string>
+    <string name="howto_gomoku">Abwechselnd werden Steine auf die Kreuzungspunkte gesetzt. Wer zuerst fünf oder mehr in eine Reihe bringt – waagerecht, senkrecht oder diagonal –, gewinnt. Du spielst Schwarz und fängst an.</string>
+    <string name="gomoku_your_turn">Du bist dran (Schwarz): tippe auf einen Punkt</string>
+    <string name="gomoku_confirm">Tippe noch einmal auf denselben Punkt, um den Stein zu setzen</string>
+    <string name="gomoku_win">Fünf in einer Reihe! Du gewinnst.</string>
+    <string name="gomoku_lose">Der Computer hat fünf in einer Reihe.</string>
+    <string name="gomoku_draw">Das Brett ist voll: unentschieden.</string>
+</resources>

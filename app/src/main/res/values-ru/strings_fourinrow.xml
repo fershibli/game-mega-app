@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">Четыре в ряд</string>
+    <string name="howto_fourinrow">Нажмите на столбец, чтобы бросить фишку. Выстройте четыре свои фишки в ряд — по горизонтали, вертикали или диагонали — раньше компьютера. Вы играете светлыми фишками и ходите первым.</string>
+    <string name="fourinrow_your_turn">Ваш ход (светлые фишки): нажмите на столбец</string>
+    <string name="fourinrow_win">Четыре в ряд! Вы победили.</string>
+    <string name="fourinrow_lose">Компьютер выстроил четыре в ряд.</string>
+    <string name="fourinrow_draw">Поле заполнено: ничья.</string>
+</resources>

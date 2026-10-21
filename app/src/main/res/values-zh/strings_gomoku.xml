@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">五子棋</string>
+    <string name="howto_gomoku">双方轮流在交叉点上落子。先在横、竖或斜线上连成五子或更多的一方获胜。你执黑先行。</string>
+    <string name="gomoku_your_turn">轮到你（黑棋）：点一个交叉点</string>
+    <string name="gomoku_confirm">再点一次同一个交叉点即可落子</string>
+    <string name="gomoku_win">五子连珠！你赢了。</string>
+    <string name="gomoku_lose">电脑连成了五子。</string>
+    <string name="gomoku_draw">棋盘已满：平局。</string>
+</resources>

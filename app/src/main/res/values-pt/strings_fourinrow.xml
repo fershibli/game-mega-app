@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">Quatro em linha</string>
+    <string name="howto_fourinrow">Toque em uma coluna para soltar uma peça. Alinhe quatro peças suas — na horizontal, na vertical ou na diagonal — antes do computador. Você joga com as peças claras e começa.</string>
+    <string name="fourinrow_your_turn">Sua vez (peças claras): toque em uma coluna</string>
+    <string name="fourinrow_win">Quatro em linha! Você venceu.</string>
+    <string name="fourinrow_lose">O computador alinhou quatro.</string>
+    <string name="fourinrow_draw">O tabuleiro está cheio: empate.</string>
+</resources>

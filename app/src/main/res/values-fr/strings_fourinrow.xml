@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">Quatre en ligne</string>
+    <string name="howto_fourinrow">Touchez une colonne pour y lâcher un pion. Alignez quatre pions, horizontalement, verticalement ou en diagonale, avant l’ordinateur. Vous jouez les pions clairs et commencez.</string>
+    <string name="fourinrow_your_turn">À vous (pions clairs) : touchez une colonne</string>
+    <string name="fourinrow_win">Quatre en ligne ! Vous gagnez.</string>
+    <string name="fourinrow_lose">L’ordinateur a aligné quatre pions.</string>
+    <string name="fourinrow_draw">La grille est pleine : match nul.</string>
+</resources>

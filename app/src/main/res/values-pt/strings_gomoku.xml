@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">Cinco em linha</string>
+    <string name="howto_gomoku">Coloquem pedras alternadamente nos cruzamentos. Vence quem primeiro formar uma linha de cinco ou mais — na horizontal, na vertical ou na diagonal. Você joga com as pretas e começa.</string>
+    <string name="gomoku_your_turn">Sua vez (pretas): toque em um cruzamento</string>
+    <string name="gomoku_confirm">Toque de novo no mesmo cruzamento para colocar a pedra</string>
+    <string name="gomoku_win">Cinco em linha! Você venceu.</string>
+    <string name="gomoku_lose">O computador fez cinco em linha.</string>
+    <string name="gomoku_draw">O tabuleiro está cheio: empate.</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">أربعة في صف</string>
+    <string name="howto_fourinrow">المس عمودًا لإسقاط قرص فيه. صفّ أربعة من أقراصك أفقيًا أو عموديًا أو قطريًا قبل الكمبيوتر. أنت تلعب بالأقراص الفاتحة وتبدأ أولًا.</string>
+    <string name="fourinrow_your_turn">دورك (الأقراص الفاتحة): المس عمودًا</string>
+    <string name="fourinrow_win">أربعة في صف! لقد فزت.</string>
+    <string name="fourinrow_lose">صفّ الكمبيوتر أربعة أقراص.</string>
+    <string name="fourinrow_draw">امتلأت اللوحة: تعادل.</string>
+</resources>

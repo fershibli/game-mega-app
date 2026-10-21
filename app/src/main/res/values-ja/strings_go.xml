@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">囲碁</string>
+    <string name="howto_go">交互に交点へ石を置きます。空いた点を囲み、相手の石の呼吸点をすべてふさぐと取れます。両者がパスしたら、石と囲んだ点を数え、多いほうの勝ちです。</string>
+    <string name="go_variant_9">9路盤</string>
+    <string name="go_variant_9_desc">小さくて早い。はじめるのに最適です。</string>
+    <string name="go_variant_13">13路盤</string>
+    <string name="go_variant_13_desc">中くらいの大きさ。作戦の余地が広がります。</string>
+    <string name="go_variant_19">19路盤</string>
+    <string name="go_variant_19_desc">正式な大きさの盤。二本の指で広げると拡大できます。</string>
+    <string name="go_your_turn">あなたの番（黒）: 交点をタップ</string>
+    <string name="go_confirm">同じ交点をもう一度タップすると石を置きます</string>
+    <string name="go_ai_passed">コンピューターがパスしました。続けるか、あなたもパスして数えましょう。</string>
+    <string name="go_ko">まだ打てません: コウはすぐには取り返せません。先にほかへ打ってください。</string>
+    <string name="go_suicide">そこには打てません: 石の呼吸点がなくなります。</string>
+    <string name="go_captured">取った石: あなた %1$d・コンピューター %2$d</string>
+    <string name="go_pass">パス</string>
+    <string name="go_counting">数えています…</string>
+    <string name="go_mark_dead">×印の石は取られた石として数えます。グループをタップして変更し、「数える」をタップ。</string>
+    <string name="go_score">あなた: %1$s・コンピューター: %2$s</string>
+    <string name="go_komi">コンピューターの点には後手のコミ %1$s が含まれます。</string>
+    <string name="go_count">数える</string>
+    <string name="go_keep_playing">続ける</string>
+    <string name="go_hint_pass">ヒント: もう得になる手はありません。パスできます。</string>
+    <string name="go_win">%1$s 差であなたの勝ち。</string>
+    <string name="go_lose">%1$s 差でコンピューターの勝ち。</string>
+</resources>

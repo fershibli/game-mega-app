@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">Го</string>
+    <string name="howto_go">Игроки по очереди ставят камни на пересечения линий. Окружайте пустые пункты и захватывайте камни, отнимая у них все свободные пункты. Когда оба игрока пасуют, считаются камни и окружённые пункты: побеждает тот, у кого больше.</string>
+    <string name="go_variant_9">Доска 9×9</string>
+    <string name="go_variant_9_desc">Маленькая и быстрая. Лучше всего для начала.</string>
+    <string name="go_variant_13">Доска 13×13</string>
+    <string name="go_variant_13_desc">Средний размер: больше места для планов.</string>
+    <string name="go_variant_19">Доска 19×19</string>
+    <string name="go_variant_19_desc">Полная классическая доска. Разведите два пальца, чтобы увеличить.</string>
+    <string name="go_your_turn">Ваш ход (чёрные): нажмите на пересечение</string>
+    <string name="go_confirm">Нажмите на то же пересечение ещё раз, чтобы поставить камень</string>
+    <string name="go_ai_passed">Компьютер спасовал. Играйте дальше или тоже спасуйте, чтобы подсчитать очки.</string>
+    <string name="go_ko">Пока нельзя: ко нельзя забирать сразу. Сначала сыграйте в другом месте.</string>
+    <string name="go_suicide">Сюда нельзя: у вашего камня не останется свободных пунктов.</string>
+    <string name="go_captured">Захвачено: вы %1$d · компьютер %2$d</string>
+    <string name="go_pass">Пас</string>
+    <string name="go_counting">Подсчёт очков…</string>
+    <string name="go_mark_dead">Зачёркнутые камни считаются захваченными. Нажмите на группу, чтобы изменить, затем на «Подсчитать».</string>
+    <string name="go_score">Вы: %1$s · Компьютер: %2$s</string>
+    <string name="go_komi">В счёт компьютера входит %1$s за то, что он ходит вторым.</string>
+    <string name="go_count">Подсчитать</string>
+    <string name="go_keep_playing">Играть дальше</string>
+    <string name="go_hint_pass">Подсказка: больше ничего не выиграть. Можно спасовать.</string>
+    <string name="go_win">Вы победили с перевесом %1$s.</string>
+    <string name="go_lose">Компьютер победил с перевесом %1$s.</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">غوموكو</string>
+    <string name="howto_gomoku">يضع اللاعبان الأحجار بالتناوب على نقاط التقاطع. يفوز أول من يصفّ خمسة أحجار أو أكثر في خط واحد: أفقيًا أو عموديًا أو قطريًا. أنت تلعب بالأسود وتبدأ أولًا.</string>
+    <string name="gomoku_your_turn">دورك (الأسود): المس نقطة تقاطع</string>
+    <string name="gomoku_confirm">المس نقطة التقاطع نفسها مرة أخرى لوضع الحجر</string>
+    <string name="gomoku_win">خمسة في صف! لقد فزت.</string>
+    <string name="gomoku_lose">صفّ الكمبيوتر خمسة أحجار.</string>
+    <string name="gomoku_draw">امتلأت اللوحة: تعادل.</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">Гомоку</string>
+    <string name="howto_gomoku">Игроки по очереди ставят камни на пересечения. Побеждает тот, кто первым выстроит пять или больше камней в ряд — по горизонтали, вертикали или диагонали. Вы играете чёрными и ходите первым.</string>
+    <string name="gomoku_your_turn">Ваш ход (чёрные): нажмите на пересечение</string>
+    <string name="gomoku_confirm">Нажмите на то же пересечение ещё раз, чтобы поставить камень</string>
+    <string name="gomoku_win">Пять в ряд! Вы победили.</string>
+    <string name="gomoku_lose">Компьютер выстроил пять в ряд.</string>
+    <string name="gomoku_draw">Доска заполнена: ничья.</string>
+</resources>

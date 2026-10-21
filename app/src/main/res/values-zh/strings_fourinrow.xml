@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">四子棋</string>
+    <string name="howto_fourinrow">点一列即可投下一枚棋子。抢在电脑之前，把自己的四枚棋子连成一线：横、竖、斜都可以。你执浅色棋子先行。</string>
+    <string name="fourinrow_your_turn">轮到你（浅色棋子）：点一列</string>
+    <string name="fourinrow_win">四子连线！你赢了。</string>
+    <string name="fourinrow_lose">电脑连成了四子。</string>
+    <string name="fourinrow_draw">棋盘已满：平局。</string>
+</resources>
