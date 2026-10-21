@@ -50,6 +50,9 @@ enum class GameId(
     DOTS("dots", R.string.game_dots, R.string.howto_dots, GameCategory.PUZZLES),
     CHECKERS("checkers", R.string.game_checkers, R.string.howto_checkers, GameCategory.BOARD, io.github.fershibli.megagames.games.checkers.CheckersRules.VARIANTS),
     CHESS("chess", R.string.game_chess, R.string.howto_chess, GameCategory.BOARD, listOf(GameVariant("standard", R.string.chess_variant_standard, R.string.chess_variant_standard_desc), GameVariant("famous", R.string.chess_variant_famous, R.string.chess_variant_famous_desc))),
+    WORDSEARCH("wordsearch", R.string.game_wordsearch, R.string.howto_wordsearch, GameCategory.PUZZLES),
+    ANAGRAM("anagram", R.string.game_anagram, R.string.howto_anagram, GameCategory.PUZZLES),
+    DAYWORD("dayword", R.string.game_dayword, R.string.howto_dayword, GameCategory.PUZZLES),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

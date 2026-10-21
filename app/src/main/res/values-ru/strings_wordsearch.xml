@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">Поиск слов</string>
+    <string name="howto_wordsearch">Найдите спрятанные слова в сетке. Проведите пальцем от первой буквы до последней или нажмите первую букву, а затем последнюю.</string>
+    <string name="wordsearch_found">Найдено слов: %1$d из %2$d</string>
+    <string name="wordsearch_words">Слова для поиска (нажмите на слово, чтобы увидеть подсказку)</string>
+    <string name="wordsearch_tap_last">Теперь нажмите последнюю букву слова</string>
+    <string name="wordsearch_not_word">Это не одно из слов. Попробуйте ещё раз.</string>
+    <string name="wordsearch_hint_first">Обведённая буква — начало одного из слов.</string>
+    <string name="wordsearch_hint_last">Теперь обведена и его последняя буква.</string>
+    <string name="wordsearch_done">Вы нашли все слова!</string>
+    <string name="wordsearch_hints_used">Подсказок: %1$d.</string>
+</resources>

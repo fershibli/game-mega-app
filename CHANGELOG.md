@@ -5,6 +5,10 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Word search**: find 6, 8 or 10 words in an 8×8 to 12×12 grid by sliding a finger (or tapping the first and last letter); Easy reads only across and down, Medium adds diagonals, Hard adds backwards. Found words get colored bands with their own patterns (clear in color-blind mode too), clues on tap, and a Hint that circles where a word starts and ends.
+- **Anagrams**: rounds of five scrambled words to rebuild with big tiles, with Undo, Shuffle and a Hint that places the next right letter; Easy shows the clue and the first letter, Medium the clue, Hard nothing until asked.
+- **Word of the day**: guess a hidden word on notebook lines, each letter marked ● right place, ○ elsewhere or — not in the word (symbols first, so it never depends on colors), one word per day, level and language, then practice words on demand. Japanese and Chinese pick kana or characters from a small bank.
+- The three word games work in all ten languages with the crossword dictionaries, which gained some 60 Chinese words of three and four characters (including well-known four-character sayings).
 - **Checkers** with five sets of rules (Brazilian, International 10×10, English, Italian, Russian): mandatory and majority captures, flying kings where they apply, multi-captures by tapping the final square, a draw after long king-only endgames, Undo and Hint, and a computer opponent on three levels.
 - **Chess** against the computer with every rule (castling, en passant, promotion, all the draws), Undo and Hint, plus **Famous games**: seven historic games, from the Immortal Game (1851) to Kasparov–Topalov (1999), replayed move by move with their story.
 - Home screen grouped by category (cards, board games, puzzles, calm action, pastimes), ready for many more games. Settings → Game list: **Group by category** (or one single list) and **Recently played first** (the game you open moves to the top of its group and its group to the top; both layouts keep their own order).

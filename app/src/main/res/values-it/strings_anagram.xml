@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">Anagrammi</string>
+    <string name="howto_anagram">Le lettere di una parola sono mescolate. Toccale nell’ordine giusto per comporre la parola. Cinque parole per partita.</string>
+    <string name="anagram_progress">Parola %1$d di %2$d</string>
+    <string name="anagram_clue_hidden">Nessuna definizione a questo livello. Tocca Suggerimento se serve.</string>
+    <string name="anagram_wrong">Non ancora. Tocca una lettera per toglierla.</string>
+    <string name="anagram_right">Bravo!</string>
+    <string name="anagram_shuffle">Mescola</string>
+    <string name="anagram_done">Hai riordinato tutte le parole!</string>
+    <string name="anagram_hints_used">Suggerimenti usati: %1$d.</string>
+</resources>

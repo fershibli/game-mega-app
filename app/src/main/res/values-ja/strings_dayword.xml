@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">今日のことば</string>
+    <string name="howto_dayword">かくれたことばを当てましょう。行にことばを書いて「たしかめる」をタップすると、文字ごとに印がつきます。● 正しい場所、○ ことばの別の場所にある、— ことばにない。</string>
+    <string name="dayword_today">今日のことば・%2$d行中%1$d行目</string>
+    <string name="dayword_practice">練習のことば・%2$d行中%1$d行目</string>
+    <string name="dayword_today_done">今日のことばはもう遊びました。練習のことばをどうぞ。明日は新しい今日のことばが出ます。</string>
+    <string name="dayword_check">たしかめる</string>
+    <string name="dayword_another">別のことば</string>
+    <string name="dayword_known">わかっていること：</string>
+    <string name="dayword_clue">カギ：%1$s</string>
+    <string name="dayword_won">よくできました！%2$d行目で「%1$s」を当てました。</string>
+    <string name="dayword_lost">答えは「%1$s」でした。</string>
+    <string name="dayword_legend">● 正しい場所　○ 別の場所　— ない</string>
+    <string name="dayword_mark_right">正しい場所</string>
+    <string name="dayword_mark_elsewhere">ことばの別の場所にある</string>
+    <string name="dayword_mark_absent">ことばにない</string>
+</resources>

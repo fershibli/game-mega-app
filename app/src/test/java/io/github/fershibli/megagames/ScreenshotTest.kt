@@ -130,5 +130,10 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun wordSearch() = gameShot("game_wordsearch", GameId.WORDSEARCH, Difficulty.MEDIUM)
+    @Test fun wordSearchArabicColorblind() = gameShot("game_wordsearch_ar_colorblind", GameId.WORDSEARCH, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC, colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
+    @Test fun anagramJapanese() = gameShot("game_anagram_ja", GameId.ANAGRAM, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))
+    @Test fun dayWord() = gameShot("game_dayword", GameId.DAYWORD)
+    @Test fun dayWordArabic() = gameShot("game_dayword_ar", GameId.DAYWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
 
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">ترتيب الحروف</string>
+    <string name="howto_anagram">حروف الكلمة مبعثرة. المسها بالترتيب الصحيح لتكوّن الكلمة. خمس كلمات في كل جولة.</string>
+    <string name="anagram_progress">الكلمة %1$d من %2$d</string>
+    <string name="anagram_clue_hidden">لا يوجد تلميح في هذا المستوى. المس «تلميح» إذا احتجت إلى مساعدة.</string>
+    <string name="anagram_wrong">ليس تمامًا. المس حرفًا لإرجاعه.</string>
+    <string name="anagram_right">أحسنت!</string>
+    <string name="anagram_shuffle">خلط</string>
+    <string name="anagram_done">رتبت كل الكلمات!</string>
+    <string name="anagram_hints_used">التلميحات المستخدمة: %1$d.</string>
+</resources>

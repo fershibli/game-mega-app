@@ -36,6 +36,7 @@ import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameOutcome
+import io.github.fershibli.megagames.games.words.WordKit
 import io.github.fershibli.megagames.ui.art.pxToSp
 import io.github.fershibli.megagames.ui.art.text
 import io.github.fershibli.megagames.ui.components.ActionBar
@@ -88,8 +89,7 @@ fun dictionaryFile(lang: AppLanguage) = "crossword/" + when (lang) {
 } + ".txt"
 
 fun newCrossword(context: Context, language: AppLanguage, difficulty: Difficulty, random: Random = Random.Default): CrosswordState {
-    val text = context.assets.open(dictionaryFile(language)).bufferedReader().use { it.readText() }
-    val entries = Crossword.parse(text, language)
+    val entries = WordKit.dictionary(context, language)
     val size = Crossword.sizeFor(difficulty, language.syllabic)
     val words = Crossword.generate(entries, size, Crossword.targetWords(difficulty, language.syllabic), random)
     val alphabet = entries.flatMap { it.letters }.distinct()
@@ -103,12 +103,6 @@ fun CrosswordGame(host: GameHost) {
     val language = LocalGameLanguage.current
     LoadGame(host, CrosswordState.serializer(), { newCrossword(context, language, host.difficulty) }) { state -> CrosswordScreen(state, host) }
 }
-
-private val QWERTY = listOf("QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM")
-private val QWERTY_ES = listOf("QWERTYUIOP", "ASDFGHJKLÑ", "ZXCVBNM")
-private val AZERTY = listOf("AZERTYUIOP", "QSDFGHJKLM", "WXCVBN")
-private val QWERTZ = listOf("QWERTZUIOP", "ASDFGHJKL", "YXCVBNM")
-private val JCUKEN = listOf("ЙЦУКЕНГШЩЗХ", "ФЫВАПРОЛДЖЭ", "ЯЧСМИТЬБЮЪ")
 
 @Composable
 private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost) {
@@ -193,17 +187,11 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
                     }
                 }
             } else {
-                val rows = when (s.language) {
-                    AppLanguage.FRENCH -> AZERTY
-                    AppLanguage.SPANISH -> QWERTY_ES
-                    AppLanguage.GERMAN -> QWERTZ
-                    AppLanguage.RUSSIAN -> JCUKEN
-                    else -> QWERTY
-                }
+                val rows = WordKit.keyboard(s.language)
                 Column(verticalArrangement = Arrangement.spacedBy(5.dp)) {
                     rows.forEach { row ->
                         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(4.dp)) {
-                            row.forEach { ch -> KeyButton(ch.toString(), { type(ch.toString()) }, Modifier.weight(1f).height(keyHeight)) }
+                            row.forEach { key -> KeyButton(key, { type(key) }, Modifier.weight(1f).height(keyHeight)) }
                         }
                     }
                 }

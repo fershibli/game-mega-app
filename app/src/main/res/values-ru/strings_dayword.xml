@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">Слово дня</string>
+    <string name="howto_dayword">Отгадайте спрятанное слово. Напишите слово на строке и нажмите «Проверить»: каждая буква получит знак. ● на своём месте, ○ есть в слове, но в другом месте, — нет в слове.</string>
+    <string name="dayword_today">Слово дня · строка %1$d из %2$d</string>
+    <string name="dayword_practice">Тренировочное слово · строка %1$d из %2$d</string>
+    <string name="dayword_today_done">Сегодняшнее слово вы уже сыграли. Вот тренировочное слово; новое слово дня будет завтра.</string>
+    <string name="dayword_check">Проверить</string>
+    <string name="dayword_another">Другое</string>
+    <string name="dayword_known">Известно:</string>
+    <string name="dayword_clue">Подсказка: %1$s</string>
+    <string name="dayword_won">Отлично! Вы отгадали %1$s в строке %2$d.</string>
+    <string name="dayword_lost">Это было слово %1$s.</string>
+    <string name="dayword_legend">● на месте   ○ в другом месте   — нет в слове</string>
+    <string name="dayword_mark_right">на своём месте</string>
+    <string name="dayword_mark_elsewhere">есть в слове, в другом месте</string>
+    <string name="dayword_mark_absent">нет в слове</string>
+</resources>
