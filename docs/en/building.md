@@ -172,3 +172,5 @@ Each game lives in its own files, so several games can be developed in parallel 
 7. **Rules for players** go to `docs/<lang>/games/<key>.md` in the ten languages.
 8. **Tests**: engine tests, at least one UI test that plays a few moves by tapping the board like a person would, and a screenshot in `ScreenshotTest`. `CatalogTest` already opens every game with every set of rules.
 9. **Names and looks**: only generic, descriptive names, and pictures of our own. Game rules are free to use, but names, characters, artwork and the look of a commercial game are not (see [Trust](trust.md)). When in doubt, leave it out: a single complaint can take the whole app off the store.
+
+When a pull request to `stag` is merged, the **Sync open PRs** workflow (`sync-prs.yml`) merges `stag` into every other open pull request that now conflicts. If the conflicts are only in the lists above (`GameId`, `GameContent.kt`, `Thumbnails.kt`, `ScreenshotTest.kt` and the changelog), it keeps both sides (`scripts/merge_game_lists.py`), checks that everything compiles, pushes the merge and starts CI. Any other conflict is listed in the run summary for a person to solve.

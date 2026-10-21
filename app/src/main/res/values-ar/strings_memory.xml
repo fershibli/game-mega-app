@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">لعبة الذاكرة</string>
+    <string name="howto_memory">اقلب بطاقتين في كل حركة. إذا ظهرت عليهما الصورة نفسها تبقيان مكشوفتين. اعثر على كل الأزواج بأقل عدد ممكن من الحركات.</string>
+    <string name="memory_variant_cards">ورق اللعب</string>
+    <string name="memory_variant_cards_desc">الزوج هو الرقم نفسه باللون نفسه: ♥ مع ♦، أو ♠ مع ♣.</string>
+    <string name="memory_variant_fruits">فواكه</string>
+    <string name="memory_variant_fruits_desc">تفاحة وكرز وكمثرى وليمون وعنب وغيرها.</string>
+    <string name="memory_variant_symbols">رموز</string>
+    <string name="memory_variant_symbols_desc">نجمة وقلب وقمر وشمس وقطرة وورقة شجر وغيرها.</string>
+    <string name="memory_variant_animals">حيوانات</string>
+    <string name="memory_variant_animals_desc">وجوه لطيفة: قطة وكلب وأرنب وبومة وغيرها.</string>
+    <string name="memory_counts">الحركات: %1$d · الأزواج: %2$d من %3$d</string>
+    <string name="memory_best">الأفضل: %1$d</string>
+    <string name="memory_first">اقلب بطاقتين</string>
+    <string name="memory_second">والآن ابحث عن شبيهتها</string>
+    <string name="memory_miss">ليستا زوجًا. المس أي بطاقة للمتابعة</string>
+    <string name="memory_match">زوج! تابع</string>
+    <string name="memory_all_found">وجدت كل الأزواج!</string>
+    <string name="memory_record">رقم قياسي جديد!</string>
+    <string name="memory_card">البطاقة %1$d</string>
+    <string name="memory_card_found">البطاقة %1$d، تم إيجاد زوجها</string>
+    <plurals name="memory_result">
+        <item quantity="zero">وجدت كل الأزواج في %1$d حركة.</item>
+        <item quantity="one">وجدت كل الأزواج في حركة واحدة (%1$d).</item>
+        <item quantity="two">وجدت كل الأزواج في حركتين (%1$d).</item>
+        <item quantity="few">وجدت كل الأزواج في %1$d حركات.</item>
+        <item quantity="many">وجدت كل الأزواج في %1$d حركة.</item>
+        <item quantity="other">وجدت كل الأزواج في %1$d حركة.</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="zero">أفضل نتيجة لك: %1$d حركة.</item>
+        <item quantity="one">أفضل نتيجة لك: حركة واحدة (%1$d).</item>
+        <item quantity="two">أفضل نتيجة لك: حركتان (%1$d).</item>
+        <item quantity="few">أفضل نتيجة لك: %1$d حركات.</item>
+        <item quantity="many">أفضل نتيجة لك: %1$d حركة.</item>
+        <item quantity="other">أفضل نتيجة لك: %1$d حركة.</item>
+    </plurals>
+</resources>

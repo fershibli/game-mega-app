@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">سوليتير العنكبوت</string>
+    <string name="howto_spider">رتّب سلاسل من الملك إلى الآس من النوع نفسه: السلسلة الكاملة تغادر الطاولة. المس ورقة لنقلها مع الأوراق التي فوقها، والمسها مرة أخرى لتجربة مكان آخر. المس الرزمة لتوزيع صف جديد.</string>
+    <string name="spider_variant_one">نوع واحد</string>
+    <string name="spider_variant_one_desc">البستوني فقط. أسهل طريقة، مناسبة للتعلّم.</string>
+    <string name="spider_variant_two">نوعان</string>
+    <string name="spider_variant_two_desc">البستوني والكبة. أصعب قليلًا.</string>
+    <string name="spider_variant_four">أربعة أنواع</string>
+    <string name="spider_variant_four_desc">الأنواع الأربعة كلها. تحدٍّ حقيقي.</string>
+    <string name="spider_status">السلاسل: %1$d من 8 · التوزيعات المتبقية: %2$d</string>
+    <string name="spider_fill_columns">لتوزيع صف جديد يجب أن يحتوي كل عمود على ورقة. انقل ورقة إلى العمود الفارغ أولًا.</string>
+    <string name="spider_hint_deal">المس الرزمة لتوزيع صف جديد.</string>
+    <string name="spider_cannot_move">هذه الأوراق ليست مرتبة من النوع نفسه، لذلك لا يمكن نقلها معًا.</string>
+    <string name="spider_stuck_title">لا مزيد من الحركات</string>
+    <string name="spider_stuck_message">لم تعد هناك حركات مفيدة ولا أوراق للتوزيع. يمكنك التراجع عن بعض الحركات وتجربة طريق آخر، أو الاستسلام.</string>
+    <string name="spider_give_up">استسلام</string>
+    <string name="spider_keep_playing">متابعة البحث</string>
+    <string name="spider_lost">لم تعد هناك حركات ممكنة.</string>
+</resources>

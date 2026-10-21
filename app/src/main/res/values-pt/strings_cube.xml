@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">Cubo mágico</string>
+    <string name="howto_cube">Gire as camadas até cada face ficar de uma cor só. Deslize o dedo sobre um quadradinho para girar a fileira dele, arraste no espaço vazio para ver o cubo de outro lado, ou escolha uma face abaixo e toque nas setas redondas.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">Cubo pequeno de 8 peças: o começo mais tranquilo.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">O cubo clássico. A dica ensina o método camada por camada.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">Cubo maior, sem centros fixos. Use o botão Camada para as camadas de dentro.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">O maior cubo, para quem tem paciência.</string>
+    <string name="cube_moves">Movimentos: %1$d</string>
+    <string name="cube_solved">Resolvido! Cada face tem uma cor só.</string>
+    <string name="cube_hint_step">Passo %1$d de %2$d: %3$s</string>
+    <string name="cube_hint_back">Giros até o início: %1$d</string>
+    <string name="cube_stage_cross">cruz de baixo</string>
+    <string name="cube_stage_corners">cantos de baixo</string>
+    <string name="cube_stage_middle">camada do meio</string>
+    <string name="cube_stage_top_cross">cruz de cima</string>
+    <string name="cube_stage_top_edges">arestas de cima</string>
+    <string name="cube_stage_top_place">cantos de cima no lugar</string>
+    <string name="cube_stage_top_turn">girar os cantos de cima</string>
+    <string name="cube_stage_top_face">cor de cima</string>
+    <string name="cube_turn_cw">Girar a face escolhida no sentido horário</string>
+    <string name="cube_turn_ccw">Girar a face escolhida no sentido anti-horário</string>
+    <string name="cube_layer">Camada %1$d</string>
+    <string name="cube_face">Face %1$d</string>
+    <string name="cube_view_left">Virar o cubo inteiro para a esquerda</string>
+    <string name="cube_view_right">Virar o cubo inteiro para a direita</string>
+    <string name="cube_view_up">Virar o cubo inteiro para cima</string>
+    <string name="cube_view_down">Virar o cubo inteiro para baixo</string>
+</resources>

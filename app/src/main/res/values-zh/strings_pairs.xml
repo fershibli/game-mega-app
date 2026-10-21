@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pairs">彩色水滴</string>
+    <string name="howto_pairs">一对水滴会慢慢落下。用箭头（或滑动）移动它、旋转它，或让它直接落下。3 个或更多同色水滴相连时会消除，上面的水滴随之下落：接连消除形成连锁，得分更高。中间一列的顶部被填满时游戏结束。</string>
+    <string name="pairs_score">得分：%1$d · 最佳：%2$d</string>
+    <string name="pairs_chain">%1$d 连锁！</string>
+    <string name="pairs_next">下一个</string>
+    <string name="pairs_left">向左</string>
+    <string name="pairs_right">向右</string>
+    <string name="pairs_turn">旋转</string>
+    <string name="pairs_drop">落下</string>
+    <string name="pairs_pause">暂停</string>
+    <string name="pairs_continue">继续</string>
+    <string name="pairs_start">开始</string>
+    <string name="pairs_paused">已暂停，慢慢来。</string>
+    <string name="pairs_ready">准备好了就开始吧</string>
+    <string name="pairs_final">得分：%1$d\n最佳得分：%2$d</string>
+    <string name="pairs_new_best">新纪录！</string>
+    <string name="pairs_full">中间一列满了</string>
+</resources>

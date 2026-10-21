@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">蜘蛛纸牌</string>
+    <string name="howto_spider">用同一花色从K排到A：排满一整列就会离开牌桌。点一张牌，它会带着上面的牌一起移动；再点一次可以换个地方。点牌堆发一排新牌。</string>
+    <string name="spider_variant_one">单一花色</string>
+    <string name="spider_variant_one_desc">只有黑桃。最简单，适合入门。</string>
+    <string name="spider_variant_two">两种花色</string>
+    <string name="spider_variant_two_desc">黑桃和红心。稍难一些。</string>
+    <string name="spider_variant_four">四种花色</string>
+    <string name="spider_variant_four_desc">四种花色都有。真正的挑战。</string>
+    <string name="spider_status">完成：%1$d / 8 列 · 剩余发牌：%2$d</string>
+    <string name="spider_fill_columns">要发新的一排，每一列都必须有牌。请先把一张牌放到空列里。</string>
+    <string name="spider_hint_deal">点牌堆发一排新牌。</string>
+    <string name="spider_cannot_move">这些牌不是同一花色按顺序排列的，不能一起移动。</string>
+    <string name="spider_stuck_title">没有可走的了</string>
+    <string name="spider_stuck_message">已经没有有用的走法，也没有牌可发了。你可以撤销几步换个走法，或者放弃。</string>
+    <string name="spider_give_up">放弃</string>
+    <string name="spider_keep_playing">继续找找</string>
+    <string name="spider_lost">已经没有可走的步了。</string>
+</resources>

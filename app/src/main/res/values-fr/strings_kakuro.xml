@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">Kakuro</string>
+    <string name="howto_kakuro">Des mots croisés de chiffres : remplissez les cases blanches avec 1 à 9 pour que chaque suite de cases blanches, en ligne ou en colonne, fasse la somme indiquée dans la case noire qui la précède, sans répéter de chiffre.</string>
+    <string name="kakuro_tap_cell">Touchez une case blanche, puis un chiffre</string>
+    <string name="kakuro_hint_again">Touchez Indice encore une fois pour remplir cette case.</string>
+</resources>

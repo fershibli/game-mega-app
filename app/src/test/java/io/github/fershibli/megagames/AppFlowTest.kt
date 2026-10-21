@@ -38,6 +38,9 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.test.pinch
+import androidx.compose.ui.test.hasScrollAction
+import androidx.compose.ui.test.hasContentDescription
+import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.Difficulty
@@ -174,8 +177,11 @@ class AppFlowTest {
         SettingsStore(app).save(Settings())
         rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = true) }
         rule.onNodeWithText("Choose your game").assertIsDisplayed()
+        // With many card games the board games start below the screen.
+        rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi"))
         rule.onAllNodesWithContentDescription("Reversi")[0].performClick()
-        rule.onNodeWithText("Choose the difficulty").assertIsDisplayed()
+        // Reversi can also be played taking turns, so the wheel asks how to play.
+        rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
         rule.onNodeWithText("Confirm").performClick()
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
         // Settings from inside the game can abandon it.

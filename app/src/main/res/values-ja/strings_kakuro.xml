@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">たし算クロス</string>
+    <string name="howto_kakuro">数字のクロスワードです。白いマスに1〜9を入れ、たて・よこに続く白いマスの合計が、その前の黒いマスの数字になるようにします。続いたマスの中で同じ数字は使えません。</string>
+    <string name="kakuro_tap_cell">白いマスをタッチしてから数字をえらびます</string>
+    <string name="kakuro_hint_again">もう一度ヒントをおすと、このマスに数字が入ります。</string>
+</resources>

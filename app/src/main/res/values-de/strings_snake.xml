@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">Schlange</string>
+    <string name="howto_snake">Lenke die langsame Schlange mit den vier Pfeilen (oder durch Wischen) zum Obst; jede Frucht macht sie ein Stück länger. Auf Leicht geht sie durch die Ränder und verliert nur den Schwanz, wenn sie sich berührt; auf Mittel beendet das Berühren das Spiel; auf Schwer sind die Ränder auch Wände.</string>
+    <string name="snake_length">Länge: %1$d · Rekord: %2$d</string>
+    <string name="snake_bump">Hoppla! Die Schlange hält hier an</string>
+    <string name="snake_final">Länge: %1$d\nRekord: %2$d</string>
+    <string name="snake_new_best">Deine bisher längste Schlange!</string>
+    <string name="snake_up">Hoch</string>
+    <string name="snake_down">Runter</string>
+    <string name="snake_left">Links</string>
+    <string name="snake_right">Rechts</string>
+    <string name="snake_pause">Pause</string>
+    <string name="snake_continue">Weiter</string>
+    <string name="snake_start">Starten</string>
+    <string name="snake_paused">Pause. Lass dir Zeit.</string>
+    <string name="snake_ready">Los geht’s, wann du willst</string>
+</resources>

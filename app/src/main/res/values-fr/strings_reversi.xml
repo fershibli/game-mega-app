@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">Pions foncés</string>
+    <string name="reversi_light">Pions clairs</string>
+    <string name="reversi_dark_turn">Aux pions foncés de jouer</string>
+    <string name="reversi_light_turn">Aux pions clairs de jouer</string>
+    <string name="reversi_dark_passed">Les foncés n’avaient aucun coup. Encore aux clairs.</string>
+    <string name="reversi_light_passed">Les clairs n’avaient aucun coup. Encore aux foncés.</string>
+    <string name="reversi_score_together">● Foncés : %1$d   ○ Clairs : %2$d</string>
+    <string name="reversi_dark_wins">Les pions foncés gagnent !</string>
+    <string name="reversi_light_wins">Les pions clairs gagnent !</string>
+</resources>

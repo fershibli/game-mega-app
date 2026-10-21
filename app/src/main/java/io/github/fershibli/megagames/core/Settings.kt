@@ -57,6 +57,27 @@ enum class ColorMode(@StringRes val label: Int, @StringRes val description: Int)
     COLORBLIND(R.string.color_colorblind, R.string.color_colorblind_desc),
 }
 
+/**
+ * How long the app waits between moves and before hiding messages: the computer's turns, the
+ * pause before showing the next player's cards, how long a hint stays... Calm doubles the waits
+ * for people who need more time to follow what happened.
+ */
+enum class Pace(@StringRes val label: Int, @StringRes val description: Int, val factor: Float) {
+    QUICK(R.string.pace_quick, R.string.pace_quick_desc, 0.6f),
+    NORMAL(R.string.pace_normal, R.string.pace_normal_desc, 1f),
+    CALM(R.string.pace_calm, R.string.pace_calm_desc, 2f),
+}
+
+/**
+ * Movement on screen. [NONE] moves pieces and cards straight to their place; [GENTLE] moves them
+ * slowly and with smaller swings; [FULL] is the regular animation.
+ */
+enum class Motion(@StringRes val label: Int, @StringRes val description: Int, val duration: Float, val amplitude: Float) {
+    NONE(R.string.motion_none, R.string.motion_none_desc, 0f, 0f),
+    GENTLE(R.string.motion_gentle, R.string.motion_gentle_desc, 1.6f, 0.5f),
+    FULL(R.string.motion_full, R.string.motion_full_desc, 1f, 1f),
+}
+
 /** Zoom gesture used while one-hand mode is active (two fingers are not available). */
 enum class OneHandZoom(@StringRes val label: Int, @StringRes val description: Int) {
     DOUBLE_TAP(R.string.onehand_doubletap, R.string.onehand_doubletap_desc),
@@ -81,6 +102,8 @@ data class Settings(
     val recentFirst: Boolean = true,
     /** Home screen: games grouped under category headings, or one single list. */
     val showCategories: Boolean = true,
+    val pace: Pace = Pace.NORMAL,
+    val motion: Motion = Motion.FULL,
 ) {
     companion object {
         const val SCALE_MIN = 0.8f
@@ -110,6 +133,8 @@ class SettingsStore(context: Context) {
             backgammonUpright = prefs.getBoolean("backgammonUpright", d.backgammonUpright),
             recentFirst = prefs.getBoolean("recentFirst", d.recentFirst),
             showCategories = prefs.getBoolean("showCategories", d.showCategories),
+            pace = enumOr(prefs.getString("pace", null), d.pace),
+            motion = enumOr(prefs.getString("motion", null), d.motion),
         )
     }
 
@@ -128,6 +153,8 @@ class SettingsStore(context: Context) {
             .putBoolean("backgammonUpright", s.backgammonUpright)
             .putBoolean("recentFirst", s.recentFirst)
             .putBoolean("showCategories", s.showCategories)
+            .putString("pace", s.pace.name)
+            .putString("motion", s.motion.name)
             .apply()
     }
 
@@ -185,6 +212,18 @@ class ChoiceStore(context: Context) {
 
     fun rememberVariant(game: GameId, variant: GameVariant) {
         prefs.edit().putString("variant.${game.key}", variant.key).apply()
+    }
+
+    /** Whether people took turns on this device the last time this game was played. */
+    fun lastTogether(game: GameId): Boolean = prefs.getBoolean("together.${game.key}", false)
+
+    /** The number of seats picked last time for this game, or null. */
+    fun lastSeats(game: GameId): Int? = prefs.getInt("seats.${game.key}", 0).takeIf { it > 0 }
+
+    fun rememberSetup(game: GameId, setup: PlaySetup) {
+        prefs.edit().putBoolean("together.${game.key}", setup.together).apply {
+            if (setup.seats > 0) putInt("seats.${game.key}", setup.seats)
+        }.apply()
     }
 
     /** Language picked last time for a game that is not available in the app language. */

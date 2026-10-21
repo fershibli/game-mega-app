@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">Pyramide</string>
+    <string name="howto_pyramid">Retirez deux cartes découvertes dont la somme fait 13 : Dame et As, Valet et 2, 10 et 3… Le Roi part seul. Touchez le talon pour retourner une nouvelle carte. Videz toute la pyramide pour gagner.</string>
+    <string name="pyramid_values">A = 1 · V = 11 · D = 12 · R = 13</string>
+    <string name="pyramid_left">Cartes dans la pyramide : %1$d</string>
+    <string name="pyramid_passes">Tours de talon restants : %1$d</string>
+    <string name="pyramid_needs">Cette carte vaut %1$d : touchez une carte qui vaut %2$d.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d, pas 13.</string>
+    <string name="pyramid_covered">Cette carte est encore couverte par les cartes du dessous.</string>
+    <string name="pyramid_hint_deck">Touchez le talon pour retourner une nouvelle carte.</string>
+    <string name="pyramid_stuck_title">Plus de coups possibles</string>
+    <string name="pyramid_stuck_message">Plus aucune carte ne peut être retirée. Vous pouvez annuler quelques coups et essayer autrement, ou abandonner.</string>
+    <string name="pyramid_give_up">Abandonner</string>
+    <string name="pyramid_keep_playing">Continuer à chercher</string>
+    <string name="pyramid_lost">Plus aucune paire n’était possible.</string>
+</resources>

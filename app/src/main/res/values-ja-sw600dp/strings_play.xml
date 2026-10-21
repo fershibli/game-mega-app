@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tablets: the take-turns option names the tablet instead of the phone. -->
+<resources>
+    <string name="take_turns">交代で遊ぶ（このタブレットで）</string>
+    <string name="take_turns_desc">タブレットを回して、一人ずつ順番に遊びます。コンピューターとは対戦しません。</string>
+</resources>

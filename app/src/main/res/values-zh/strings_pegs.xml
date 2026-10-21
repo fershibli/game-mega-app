@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pegs">孔明棋</string>
+    <string name="howto_pegs">让一颗弹珠跳过相邻的弹珠，落进空洞里；被跳过的弹珠从棋盘上拿走。最后只剩一颗弹珠就赢了。</string>
+    <string name="pegs_variant_english">英式棋盘</string>
+    <string name="pegs_variant_english_desc">33 个洞排成十字形，开始时中心是空的。</string>
+    <string name="pegs_variant_french">法式棋盘</string>
+    <string name="pegs_variant_french_desc">37 个洞：十字形再加四角的四个洞，稍微难一点。</string>
+    <string name="pegs_left">剩余弹珠：%1$d</string>
+    <string name="pegs_pick_peg">点一颗弹珠来移动</string>
+    <string name="pegs_pick_hole">再点它要跳进去的空洞</string>
+    <string name="pegs_no_jumps">已经不能再跳了</string>
+    <string name="pegs_restart">重新开始</string>
+    <string name="pegs_win_one">只剩一颗弹珠，太棒了！</string>
+    <string name="pegs_win_perfect">最后一颗正好在标记的洞里：完美结局！</string>
+    <plurals name="pegs_end_left">
+        <item quantity="other">已经不能再跳了，还剩 %1$d 颗弹珠。很好的尝试！</item>
+    </plurals>
+</resources>

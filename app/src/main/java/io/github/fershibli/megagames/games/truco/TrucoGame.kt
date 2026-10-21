@@ -75,10 +75,11 @@ import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 @Composable
 fun TrucoGame(host: GameHost) {
@@ -115,13 +116,14 @@ private fun TrucoScreen(state: MutableState<TrucoState>, host: GameHost) {
         return
     }
     val res = LocalResources.current
+    val pace = currentPace
     var chosen by remember { mutableStateOf<Card?>(null) }
     val selected = chosen?.takeIf { it in s.hands[0] }
     val french = LocalGameLanguage.current == AppLanguage.FRENCH
 
     LaunchedEffect(s.finished) {
         if (!s.finished) return@LaunchedEffect
-        delay(3000)
+        pace.wait(3000)
         host.finish(GameOutcome(s.score[0] > s.score[1], res.getString(R.string.truco_final, s.score[0], s.score[1])))
     }
 
@@ -129,12 +131,12 @@ private fun TrucoScreen(state: MutableState<TrucoState>, host: GameHost) {
     LaunchedEffect(s) {
         if (s.finished || s.handOver) return@LaunchedEffect
         if (s.trickComplete) {
-            delay(1500)
+            pace.wait(1500)
             state.value = Truco.collect(s)
             return@LaunchedEffect
         }
         if (Truco.actor(s) == 0) return@LaunchedEffect
-        delay(1100)
+        pace.wait(1100)
         state.value = withContext(Dispatchers.Default) { TrucoAi.step(s, host.difficulty, Random.Default) }
     }
 

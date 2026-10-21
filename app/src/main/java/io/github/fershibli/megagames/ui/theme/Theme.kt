@@ -8,6 +8,7 @@ import androidx.compose.material3.Typography
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.compositionLocalOf
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -30,6 +31,9 @@ val LocalSettings = staticCompositionLocalOf { Settings() }
 
 /** Changes and saves the settings from inside a game (for example the Backgammon board orientation). */
 val LocalUpdateSettings = staticCompositionLocalOf<(Settings) -> Unit> { {} }
+
+/** True while something covers the game (the in-game settings): games that move by themselves pause. */
+val LocalGameCovered = compositionLocalOf { false }
 
 /** Language actually in use (never [AppLanguage.SYSTEM]). Used by content such as crosswords. */
 val LocalGameLanguage = staticCompositionLocalOf { AppLanguage.ENGLISH }

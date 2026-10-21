@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.dots
 
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -45,7 +47,6 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 import kotlin.random.Random
 
 @Composable
@@ -61,9 +62,10 @@ private fun DotsScreen(state: MutableState<DotsState>, host: GameHost) {
     var loop by remember { mutableStateOf(false) }
     val p = LocalPalette.current
 
+    val pace = currentPace
     LaunchedEffect(s.won, s.lost) {
-        if (s.won) { delay(500); host.finish(GameOutcome(true, null)) }
-        else if (s.lost) { delay(700); host.finish(GameOutcome(false, null)) }
+        if (s.won) { pace.wait(500); host.finish(GameOutcome(true, null)) }
+        else if (s.lost) { pace.wait(700); host.finish(GameOutcome(false, null)) }
     }
 
     GameLayout(

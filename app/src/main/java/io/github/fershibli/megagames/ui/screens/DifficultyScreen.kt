@@ -1,5 +1,9 @@
 package io.github.fershibli.megagames.ui.screens
 
+import io.github.fershibli.megagames.ui.components.takeTurnsIcon
+import io.github.fershibli.megagames.ui.components.IconView
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,7 +22,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -45,7 +48,9 @@ import io.github.fershibli.megagames.ui.theme.ProvideGameLanguage
 
 /**
  * Difficulty choice: a scroll wheel with the default difficulty already selected, then
- * "Confirm". Everything you touch sits in the lower half of the screen.
+ * "Confirm". Everything you touch sits in the lower half of the screen. Games that can be played
+ * by people taking turns on this device add that option at the end of the wheel ([onTogether]);
+ * the title then asks "How do you want to play?" and the option explains itself when selected.
  */
 @Composable
 fun DifficultyScreen(
@@ -54,11 +59,14 @@ fun DifficultyScreen(
     onConfirm: (Difficulty) -> Unit,
     onBack: () -> Unit,
     onSettings: () -> Unit,
+    onTogether: (() -> Unit)? = null,
+    initialTogether: Boolean = false,
     language: AppLanguage? = null,
 ) {
     val p = LocalPalette.current
-    var selected by remember { mutableStateOf(initial) }
-    val labels = Difficulty.entries.map { stringResource(it.label) }
+    val together = Difficulty.entries.size // index of "take turns" on the wheel, when offered
+    var selected by remember { mutableIntStateOf(if (initialTogether && onTogether != null) together else initial.ordinal) }
+    val labels = Difficulty.entries.map { stringResource(it.label) } + listOfNotNull(onTogether?.let { stringResource(R.string.take_turns) })
     Box(Modifier.fillMaxSize()) {
         Column(Modifier.fillMaxSize()) {
             TopBar(stringResource(game.title), onSettings)
@@ -98,10 +106,21 @@ fun DifficultyScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                Text(stringResource(R.string.choose_difficulty), style = MaterialTheme.typography.titleLarge, color = p.text)
-                WheelPicker(labels, initial.ordinal, { selected = Difficulty.entries[it] }, Modifier.fillMaxWidth())
+                Text(
+                    stringResource(if (onTogether != null) R.string.how_to_play else R.string.choose_difficulty),
+                    style = MaterialTheme.typography.titleLarge, color = p.text,
+                )
+                WheelPicker(labels, selected, { selected = it }, Modifier.fillMaxWidth())
+                if (onTogether != null && selected == together) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                        IconView(takeTurnsIcon(), p.primary, size = 56.dp)
+                        Text(stringResource(R.string.take_turns_desc), Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                    }
+                }
                 ActionBar {
-                    BigButton(stringResource(R.string.confirm), { onConfirm(selected) }, icon = AppIcon.CHECK)
+                    BigButton(stringResource(R.string.confirm), {
+                        if (onTogether != null && selected == together) onTogether() else onConfirm(Difficulty.entries[selected])
+                    }, icon = AppIcon.CHECK)
                     BigButton(stringResource(R.string.back), onBack, icon = AppIcon.BACK, style = ButtonStyle.SECONDARY)
                 }
             }

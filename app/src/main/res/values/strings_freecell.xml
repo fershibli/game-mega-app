@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">Free Cells</string>
+    <string name="howto_freecell">All the cards are face up. Build four piles from Ace to King, one per suit. On the columns, put each card on one a rank higher of the other color. The four free cells hold one card each. Tap a card to move it, and tap it again to try another place.</string>
+    <string name="freecell_status">Moves: %1$d · Free cells: %2$d</string>
+    <string name="freecell_too_many">Not enough room to move that many cards at once (%1$d): right now the most is %2$d. Empty a free cell or a column first.</string>
+    <string name="freecell_not_in_order">Only cards in order, alternating red and black, can move together.</string>
+    <string name="freecell_finish">Finish</string>
+    <string name="freecell_thinking">Looking for a good move…</string>
+    <string name="freecell_no_hint">No good move found. Try Undo.</string>
+    <string name="freecell_stuck_title">No more moves</string>
+    <string name="freecell_stuck_message">This game can no longer be won from here. You can undo some moves and try another way, or give up.</string>
+    <string name="freecell_give_up">Give up</string>
+    <string name="freecell_keep_playing">Keep looking</string>
+    <string name="freecell_lost">The cards were blocked: no way to win was left.</string>
+</resources>

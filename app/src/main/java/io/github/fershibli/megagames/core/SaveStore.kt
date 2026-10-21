@@ -23,6 +23,7 @@ data class SavedGame(
     val formatVersion: Int = FORMAT_VERSION,
     /** [GameVariant.key] of the rules being played, for games that have variants. */
     val variant: String? = null,
+    val setup: PlaySetup = PlaySetup(),
     /**
      * [AppLanguage] name the game is played in, for games pinned to a language (see
      * [GameLanguages]); `null` (also in old saves) means "the app language".
@@ -80,7 +81,8 @@ class SaveStore(context: Context) {
 
 /**
  * Handle given to every game: restore its state, autosave it and report the end of the game.
- * [variant] is the set of rules chosen before the game, for games that have variants.
+ * [variant] is the set of rules chosen before the game, for games that have variants, and
+ * [setup] says whether people take turns on this device and how many sit at the table.
  */
 class GameHost(
     val game: GameId,
@@ -88,6 +90,7 @@ class GameHost(
     private val restored: JsonElement?,
     private val store: SaveStore?,
     val variant: GameVariant? = game.variant(null),
+    val setup: PlaySetup = PlaySetup(),
     private val onFinish: (GameOutcome) -> Unit,
 ) {
     @Volatile var finished = false
@@ -102,7 +105,7 @@ class GameHost(
     fun <T> save(serializer: KSerializer<T>, value: T) {
         if (finished) return
         val element = runCatching { AppJson.encodeToJsonElement(serializer, value) }.getOrNull() ?: return
-        store?.save(SavedGame(game.key, difficulty, element, variant = variant?.key, language = language?.name))
+        store?.save(SavedGame(game.key, difficulty, element, variant = variant?.key, setup = setup, language = language?.name))
     }
 
     fun finish(outcome: GameOutcome) {

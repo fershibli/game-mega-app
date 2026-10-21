@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pet friend -->
+    <string name="game_pet">Питомец</string>
+    <string name="howto_pet">Заботьтесь о маленьком друге: кормите, гладьте, купайте и играйте вместе. Он никогда не болеет и всегда рад вас видеть.</string>
+    <string name="pet_species_cat">Котик</string>
+    <string name="pet_species_dog">Пёсик</string>
+    <string name="pet_species_bunny">Зайчик</string>
+    <string name="pet_species_chick">Цыплёнок</string>
+    <string name="pet_species_panda">Панда</string>
+    <string name="pet_species_frog">Лягушка</string>
+    <string name="pet_species_fox">Лисичка</string>
+    <string name="pet_species_penguin">Пингвин</string>
+    <string name="pet_species_hamster">Хомячок</string>
+    <string name="pet_species_turtle">Черепаха</string>
+    <string name="pet_food_apple">Яблоко</string>
+    <string name="pet_food_carrot">Морковка</string>
+    <string name="pet_food_fish">Рыбка</string>
+    <string name="pet_food_cookie">Печенье</string>
+    <string name="pet_wear_none">Ничего</string>
+    <string name="pet_wear_bow">Бантик</string>
+    <string name="pet_wear_hat">Шляпка</string>
+    <string name="pet_wear_flower">Цветок</string>
+    <string name="pet_wear_scarf">Шарфик</string>
+    <string name="pet_need_happiness">Радость</string>
+    <string name="pet_need_fullness">Сытость</string>
+    <string name="pet_need_energy">Бодрость</string>
+    <string name="pet_need_cleanliness">Чистота</string>
+    <string name="pet_need_value">%1$s: %2$d%%</string>
+    <string name="pet_percent">%1$d%%</string>
+    <string name="pet_feed">Покормить</string>
+    <string name="pet_cuddle">Погладить</string>
+    <string name="pet_kiss">Поцелуй</string>
+    <string name="pet_wave">Помахать</string>
+    <string name="pet_bath">Купание</string>
+    <string name="pet_sleep">Спать</string>
+    <string name="pet_wake">Разбудить</string>
+    <string name="pet_walk">Гулять</string>
+    <string name="pet_play">Играть</string>
+    <string name="pet_dress">Наряд</string>
+    <string name="pet_friends">Друзья и новый питомец</string>
+    <string name="pet_rps">Камень, ножницы, бумага</string>
+    <string name="pet_ttt">Крестики-нолики</string>
+    <string name="pet_ball">Мячик</string>
+    <string name="pet_rock">Камень</string>
+    <string name="pet_paper">Бумага</string>
+    <string name="pet_scissors">Ножницы</string>
+    <string name="pet_rps_pick">Выберите!</string>
+    <string name="pet_rps_shake">Камень… ножницы… бумага…</string>
+    <string name="pet_rps_score">Вы %1$d · %2$s %3$d</string>
+    <string name="pet_you_win">Вы выиграли!</string>
+    <string name="pet_pet_wins">%1$s выигрывает!</string>
+    <string name="pet_tie">Ничья!</string>
+    <string name="pet_thinking">%1$s думает…</string>
+    <string name="pet_msg_hello">%1$s радуется вам!</string>
+    <string name="pet_msg_hungry">%1$s немного проголодался.</string>
+    <string name="pet_msg_sleepy">%1$s немного хочет спать.</string>
+    <string name="pet_msg_dirty">%1$s хочет искупаться.</string>
+    <string name="pet_msg_lonely">%1$s хочет, чтобы его погладили.</string>
+    <string name="pet_msg_yum">Вкусно! %1$s доволен.</string>
+    <string name="pet_msg_favorite">Вкусно! %1$s больше всего любит это!</string>
+    <string name="pet_msg_cuddle">Погладьте питомца пальцем: %1$s это любит.</string>
+    <string name="pet_msg_petted">%1$s обожает, когда его гладят!</string>
+    <string name="pet_msg_kiss">%1$s целует вас в ответ!</string>
+    <string name="pet_msg_wave">%1$s машет вам!</string>
+    <string name="pet_msg_bath">Плюх! %1$s чистенький.</string>
+    <string name="pet_msg_sleeping">Тсс… %1$s спит.</string>
+    <string name="pet_msg_woke">%1$s хорошо отдохнул.</string>
+    <string name="pet_msg_walk">%1$s радуется прогулке!</string>
+    <string name="pet_msg_ball">%1$s обожает мячик!</string>
+    <string name="pet_msg_dress">%1$s такой нарядный!</string>
+    <string name="pet_scene">%1$s (%2$s)</string>
+    <string name="pet_choose_title">Выберите нового друга</string>
+    <string name="pet_your_friends">Ваши друзья</string>
+    <string name="pet_name_title">Выберите имя</string>
+    <string name="pet_name_hint">Или напишите имя</string>
+    <string name="pet_adopt">Взять домой</string>
+    <string name="pet_switch_title">Сменить друга?</string>
+    <string name="pet_switch_message">%1$s подождёт вас в саду. Позвать %1$s обратно можно в любой момент в разделе «Друзья».</string>
+    <string name="pet_switch_yes">Да, сменить</string>
+    <string-array name="pet_names">
+        <item>Пушок</item>
+        <item>Солнышко</item>
+        <item>Кнопка</item>
+        <item>Бусинка</item>
+        <item>Тишка</item>
+        <item>Зефирка</item>
+    </string-array>
+</resources>

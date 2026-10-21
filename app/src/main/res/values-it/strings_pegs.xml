@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pegs">Solitario della Bastiglia</string>
+    <string name="howto_pegs">Fai saltare una biglia sopra la vicina fino a un buco vuoto: la biglia saltata esce dal tavoliere. Lascia una sola biglia per vincere.</string>
+    <string name="pegs_variant_english">Tavoliere inglese</string>
+    <string name="pegs_variant_english_desc">33 buchi a forma di croce. Il centro è vuoto all’inizio.</string>
+    <string name="pegs_variant_french">Tavoliere francese</string>
+    <string name="pegs_variant_french_desc">37 buchi: la croce più quattro buchi negli angoli. Un po’ più difficile.</string>
+    <string name="pegs_left">Biglie: %1$d</string>
+    <string name="pegs_pick_peg">Tocca una biglia per muoverla</string>
+    <string name="pegs_pick_hole">Ora tocca il buco vuoto dove salta</string>
+    <string name="pegs_no_jumps">Nessun salto possibile</string>
+    <string name="pegs_restart">Ricomincia</string>
+    <string name="pegs_win_one">È rimasta una sola biglia. Bravissimo!</string>
+    <string name="pegs_win_perfect">Una biglia sola, proprio nel buco segnato: un finale perfetto!</string>
+    <plurals name="pegs_end_left">
+        <item quantity="one">Nessun salto possibile, resta %1$d biglia. Bel tentativo!</item>
+        <item quantity="many">Nessun salto possibile, restano %1$d biglie. Bel tentativo!</item>
+        <item quantity="other">Nessun salto possibile, restano %1$d biglie. Bel tentativo!</item>
+    </plurals>
+</resources>

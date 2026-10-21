@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">中国象棋</string>
+    <string name="howto_xiangqi">中国象棋。先点你的一枚红棋子，再点一个绿点就能走过去。每枚棋子上的记号表示它怎么走。把黑方的将困住、让它无路可逃就赢了。</string>
+    <string name="xiangqi_pick_piece">轮到你了：点一枚你的红棋子</string>
+    <string name="xiangqi_pick_target">点一个绿点，棋子就走到那里</string>
+    <string name="xiangqi_check">将军！你的帅被攻击了，快保护它</string>
+    <string name="xiangqi_pieces">棋子</string>
+    <string name="xiangqi_guide_title">棋子怎么走</string>
+    <string name="xiangqi_guide_marks">棋子放在线的交叉点上。棋子上的记号：一个点表示朝那个方向走一步，两个点表示走两步，箭头表示可以走任意远，带横杠的箭头表示要隔一个棋子才能吃子，空心点表示过河以后才能这样走。</string>
+    <string name="xiangqi_piece_general">帅、将（帥、將）：沿着线走一步，只能在九宫里。两个将帅不能在中间没有棋子的同一条线上对面。</string>
+    <string name="xiangqi_piece_advisor">仕、士：斜走一步，只能在九宫里。</string>
+    <string name="xiangqi_piece_elephant">相、象：斜走两点（走“田”字），不能过河。中间的点有棋子就不能走（塞象眼）。</string>
+    <string name="xiangqi_piece_horse">马（馬）：先直走一点，再向外斜走一点（走“日”字）。第一点有棋子就不能走（蹩马腿）。</string>
+    <string name="xiangqi_piece_chariot">车（車）：沿着线走任意远，和国际象棋的车一样。</string>
+    <string name="xiangqi_piece_cannon">炮（炮、砲）：走法和车一样，但吃子时必须正好隔一个棋子。</string>
+    <string name="xiangqi_piece_soldier">兵、卒：向前走一步。过河以后也可以横走一步。永远不能后退。</string>
+    <string name="xiangqi_checkmate">将死！</string>
+    <string name="xiangqi_no_moves">已经无棋可走：在中国象棋里这就算输。</string>
+    <string name="xiangqi_draw_repetition">和棋：同一个局面出现了三次。</string>
+    <string name="xiangqi_draw_limit">和棋：双方各走了60步都没有吃子。</string>
+    <string name="xiangqi_draw_material">和棋：双方都没有能进攻的棋子了。</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pairs">قطرات ملونة</string>
+    <string name="howto_pairs">يسقط زوج من القطرات ببطء. حرّكه بالأسهم (أو بالسحب)، أو أدِره، أو أسقطه مباشرة. عندما تتلامس 3 قطرات أو أكثر من اللون نفسه تنفجر وتسقط القطرات التي فوقها: الانفجارات المتتالية سلسلة تمنح نقاطًا أكثر. تنتهي اللعبة عندما يمتلئ أعلى العمود الأوسط.</string>
+    <string name="pairs_score">النقاط: %1$d · الأفضل: %2$d</string>
+    <string name="pairs_chain">سلسلة ×%1$d!</string>
+    <string name="pairs_next">التالي</string>
+    <string name="pairs_left">إلى اليسار</string>
+    <string name="pairs_right">إلى اليمين</string>
+    <string name="pairs_turn">تدوير</string>
+    <string name="pairs_drop">إسقاط</string>
+    <string name="pairs_pause">إيقاف مؤقت</string>
+    <string name="pairs_continue">متابعة</string>
+    <string name="pairs_start">ابدأ</string>
+    <string name="pairs_paused">متوقف مؤقتًا. خذ وقتك.</string>
+    <string name="pairs_ready">ابدأ عندما تكون مستعدًا</string>
+    <string name="pairs_final">النقاط: %1$d\nأفضل نتيجة: %2$d</string>
+    <string name="pairs_new_best">رقم قياسي جديد!</string>
+    <string name="pairs_full">العمود الأوسط ممتلئ</string>
+</resources>
