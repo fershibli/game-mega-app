@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">Найди пару</string>
+    <string name="howto_memory">За ход откройте две карточки. Если на них одинаковая картинка, они остаются открытыми. Найдите все пары за как можно меньшее число ходов.</string>
+    <string name="memory_variant_cards">Игральные карты</string>
+    <string name="memory_variant_cards_desc">Пара — одно и то же число одного цвета: ♥ с ♦ или ♠ с ♣.</string>
+    <string name="memory_variant_fruits">Фрукты</string>
+    <string name="memory_variant_fruits_desc">Яблоко, вишни, груша, лимон, виноград и другие.</string>
+    <string name="memory_variant_symbols">Символы</string>
+    <string name="memory_variant_symbols_desc">Звезда, сердце, луна, солнце, капля, лист и другие.</string>
+    <string name="memory_variant_animals">Животные</string>
+    <string name="memory_variant_animals_desc">Добрые мордочки: кошка, собака, кролик, сова и другие.</string>
+    <string name="memory_counts">Ходы: %1$d · Пары: %2$d из %3$d</string>
+    <string name="memory_best">Рекорд: %1$d</string>
+    <string name="memory_first">Откройте две карточки</string>
+    <string name="memory_second">Теперь найдите ей пару</string>
+    <string name="memory_miss">Не пара. Нажмите на карточку, чтобы продолжить</string>
+    <string name="memory_match">Пара! Так держать</string>
+    <string name="memory_all_found">Все пары найдены!</string>
+    <string name="memory_record">Новый рекорд!</string>
+    <string name="memory_card">Карточка %1$d</string>
+    <string name="memory_card_found">Карточка %1$d, пара найдена</string>
+    <plurals name="memory_result">
+        <item quantity="one">Вы нашли все пары за %1$d ход.</item>
+        <item quantity="few">Вы нашли все пары за %1$d хода.</item>
+        <item quantity="many">Вы нашли все пары за %1$d ходов.</item>
+        <item quantity="other">Вы нашли все пары за %1$d хода.</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="one">Ваш рекорд: %1$d ход.</item>
+        <item quantity="few">Ваш рекорд: %1$d хода.</item>
+        <item quantity="many">Ваш рекорд: %1$d ходов.</item>
+        <item quantity="other">Ваш рекорд: %1$d хода.</item>
+    </plurals>
+</resources>

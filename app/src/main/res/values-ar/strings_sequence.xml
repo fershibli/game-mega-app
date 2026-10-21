@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sequence">اتبع الألوان</string>
+    <string name="howto_sequence">شاهد المربعات وهي تضيء، ثم المسها بالترتيب نفسه. في كل جولة يُضاف لون جديد.</string>
+    <string name="sequence_ready">المس «ابدأ» عندما تكون مستعدًا</string>
+    <string name="sequence_watch">شاهد…</string>
+    <string name="sequence_again">اقتربت! شاهد مرة أخرى…</string>
+    <string name="sequence_your_turn">دورك</string>
+    <string name="sequence_well_done">أحسنت!</string>
+    <string name="sequence_oops">كان ذلك مربعًا آخر</string>
+    <string name="sequence_progress">الألوان: %1$d من %2$d</string>
+    <string name="sequence_best">الأفضل: %1$d</string>
+    <string name="sequence_start">ابدأ</string>
+    <string name="sequence_watch_again">شاهد مرة أخرى</string>
+    <string name="sequence_lose">أطول تسلسل كررته: %1$d.</string>
+    <string name="sequence_record">رقم قياسي جديد!</string>
+    <string name="sequence_pad_star">مربع عليه نجمة</string>
+    <string name="sequence_pad_drop">مربع عليه قطرة</string>
+    <string name="sequence_pad_leaf">مربع عليه ورقة شجر</string>
+    <string name="sequence_pad_heart">مربع عليه قلب</string>
+    <plurals name="sequence_win">
+        <item quantity="zero">كررت كل الألوان الـ%1$d!</item>
+        <item quantity="one">كررت اللون (%1$d)!</item>
+        <item quantity="two">كررت اللونين (%1$d)!</item>
+        <item quantity="few">كررت كل الألوان الـ%1$d!</item>
+        <item quantity="many">كررت كل الألوان الـ%1$d!</item>
+        <item quantity="other">كررت كل الألوان الـ%1$d!</item>
+    </plurals>
+</resources>

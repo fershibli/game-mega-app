@@ -12,9 +12,12 @@ import io.github.fershibli.megagames.games.dots.DotsGame
 import io.github.fershibli.megagames.games.janggi.JanggiGame
 import io.github.fershibli.megagames.games.mahjong.MahjongGame
 import io.github.fershibli.megagames.games.pet.PetGame
+import io.github.fershibli.megagames.games.memory.MemoryGame
+import io.github.fershibli.megagames.games.pegs.PegsGame
 import io.github.fershibli.megagames.games.pipes.PipesGame
 import io.github.fershibli.megagames.games.reversi.ReversiGame
 import io.github.fershibli.megagames.games.shogi.ShogiGame
+import io.github.fershibli.megagames.games.sequence.SequenceGame
 import io.github.fershibli.megagames.games.solitaire.SolitaireGame
 import io.github.fershibli.megagames.games.sudoku.SudokuGame
 import io.github.fershibli.megagames.games.xiangqi.XiangqiGame
@@ -45,5 +48,8 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.XIANGQI -> XiangqiGame(host)
         GameId.JANGGI -> JanggiGame(host)
         GameId.SHOGI -> ShogiGame(host)
+        GameId.PEGS -> PegsGame(host)
+        GameId.MEMORY -> MemoryGame(host)
+        GameId.SEQUENCE -> SequenceGame(host)
     }
 }

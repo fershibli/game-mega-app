@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sequence">Follow the colors</string>
+    <string name="howto_sequence">Watch the squares light up, then tap them in the same order. Each round adds one more color.</string>
+    <string name="sequence_ready">Tap Start when you are ready</string>
+    <string name="sequence_watch">Watch…</string>
+    <string name="sequence_again">Not quite. Watch again…</string>
+    <string name="sequence_your_turn">Your turn</string>
+    <string name="sequence_well_done">Well done!</string>
+    <string name="sequence_oops">That was another square</string>
+    <string name="sequence_progress">Colors: %1$d of %2$d</string>
+    <string name="sequence_best">Best: %1$d</string>
+    <string name="sequence_start">Start</string>
+    <string name="sequence_watch_again">Watch again</string>
+    <string name="sequence_lose">Longest sequence repeated: %1$d.</string>
+    <string name="sequence_record">A new best!</string>
+    <string name="sequence_pad_star">Square with a star</string>
+    <string name="sequence_pad_drop">Square with a drop</string>
+    <string name="sequence_pad_leaf">Square with a leaf</string>
+    <string name="sequence_pad_heart">Square with a heart</string>
+    <plurals name="sequence_win">
+        <item quantity="one">You repeated all %1$d color!</item>
+        <item quantity="other">You repeated all %1$d colors!</item>
+    </plurals>
+</resources>

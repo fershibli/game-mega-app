@@ -23,6 +23,9 @@ import io.github.fershibli.megagames.games.pet.petThumbnail
 import io.github.fershibli.megagames.games.cube.cubeThumbnail
 import io.github.fershibli.megagames.games.blocks.blocksThumbnail
 import io.github.fershibli.megagames.games.pairs.pairsThumbnail
+import io.github.fershibli.megagames.games.memory.memoryThumbnail
+import io.github.fershibli.megagames.games.pegs.pegsThumbnail
+import io.github.fershibli.megagames.games.sequence.sequenceThumbnail
 import io.github.fershibli.megagames.games.pipes.Pipes
 import io.github.fershibli.megagames.games.pipes.drawPipe
 import io.github.fershibli.megagames.games.snake.snakeThumbnail
@@ -64,6 +67,9 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.XIANGQI -> xiangqiThumbnail(p, m)
             GameId.JANGGI -> janggiThumbnail(p, m)
             GameId.SHOGI -> shogiThumbnail(p, m)
+            GameId.PEGS -> pegsThumbnail(p)
+            GameId.MEMORY -> memoryThumbnail(p)
+            GameId.SEQUENCE -> sequenceThumbnail(p)
         }
     }
 }

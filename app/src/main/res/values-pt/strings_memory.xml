@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">Jogo da memória</string>
+    <string name="howto_memory">Vire duas cartas por jogada. Se mostrarem a mesma figura, ficam viradas. Encontre todos os pares com o menor número de jogadas.</string>
+    <string name="memory_variant_cards">Cartas de baralho</string>
+    <string name="memory_variant_cards_desc">Um par é o mesmo número na mesma cor: ♥ com ♦, ou ♠ com ♣.</string>
+    <string name="memory_variant_fruits">Frutas</string>
+    <string name="memory_variant_fruits_desc">Maçã, cerejas, pera, limão, uvas e outras.</string>
+    <string name="memory_variant_symbols">Símbolos</string>
+    <string name="memory_variant_symbols_desc">Estrela, coração, lua, sol, gota, folha e outros.</string>
+    <string name="memory_variant_animals">Bichinhos</string>
+    <string name="memory_variant_animals_desc">Carinhas amigas: gato, cachorro, coelho, coruja e outros.</string>
+    <string name="memory_counts">Jogadas: %1$d · Pares: %2$d de %3$d</string>
+    <string name="memory_best">Recorde: %1$d</string>
+    <string name="memory_first">Vire duas cartas</string>
+    <string name="memory_second">Agora encontre o par dela</string>
+    <string name="memory_miss">Não formam par. Toque numa carta para seguir</string>
+    <string name="memory_match">Um par! Continue</string>
+    <string name="memory_all_found">Todos os pares encontrados!</string>
+    <string name="memory_record">Novo recorde!</string>
+    <string name="memory_card">Carta %1$d</string>
+    <string name="memory_card_found">Carta %1$d, par encontrado</string>
+    <plurals name="memory_result">
+        <item quantity="one">Você encontrou todos os pares em %1$d jogada.</item>
+        <item quantity="many">Você encontrou todos os pares em %1$d jogadas.</item>
+        <item quantity="other">Você encontrou todos os pares em %1$d jogadas.</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="one">Seu recorde: %1$d jogada.</item>
+        <item quantity="many">Seu recorde: %1$d jogadas.</item>
+        <item quantity="other">Seu recorde: %1$d jogadas.</item>
+    </plurals>
+</resources>
