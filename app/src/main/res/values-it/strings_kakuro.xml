@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">Kakuro</string>
+    <string name="howto_kakuro">Un cruciverba di numeri: riempi i quadrati bianchi con cifre da 1 a 9 in modo che ogni sequenza di quadrati bianchi, in riga o in colonna, dia come somma il numero nel quadrato nero che la precede, senza ripetere cifre.</string>
+    <string name="kakuro_tap_cell">Tocca un quadrato bianco, poi un numero</string>
+    <string name="kakuro_hint_again">Tocca di nuovo Suggerimento per riempire questo quadrato.</string>
+</resources>

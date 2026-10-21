@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">Kakuro</string>
+    <string name="howto_kakuro">Uma palavra cruzada de números: preencha os quadrados brancos com 1 a 9 de modo que cada sequência de quadrados brancos, na linha ou na coluna, some o número do quadrado preto antes dela, sem repetir algarismo.</string>
+    <string name="kakuro_tap_cell">Toque num quadrado branco e depois num número</string>
+    <string name="kakuro_hint_again">Toque em Dica de novo para preencher este quadrado.</string>
+</resources>

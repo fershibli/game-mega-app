@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">Find the pairs</string>
+    <string name="howto_memory">Turn over two cards per move. When they show the same picture, they stay up. Find every pair in as few moves as you can.</string>
+    <string name="memory_variant_cards">Playing cards</string>
+    <string name="memory_variant_cards_desc">A pair is the same number in the same color: ♥ with ♦, or ♠ with ♣.</string>
+    <string name="memory_variant_fruits">Fruits</string>
+    <string name="memory_variant_fruits_desc">Apple, cherries, pear, lemon, grapes and more.</string>
+    <string name="memory_variant_symbols">Symbols</string>
+    <string name="memory_variant_symbols_desc">Star, heart, moon, sun, drop, leaf and more.</string>
+    <string name="memory_variant_animals">Animals</string>
+    <string name="memory_variant_animals_desc">Friendly faces: cat, dog, rabbit, owl and more.</string>
+    <string name="memory_counts">Moves: %1$d · Pairs: %2$d of %3$d</string>
+    <string name="memory_best">Best: %1$d</string>
+    <string name="memory_first">Turn over two cards</string>
+    <string name="memory_second">Now find its pair</string>
+    <string name="memory_miss">Not a pair. Tap a card to go on</string>
+    <string name="memory_match">A pair! Keep going</string>
+    <string name="memory_all_found">All pairs found!</string>
+    <string name="memory_record">A new best!</string>
+    <string name="memory_card">Card %1$d</string>
+    <string name="memory_card_found">Card %1$d, pair found</string>
+    <plurals name="memory_result">
+        <item quantity="one">You found every pair in %1$d move.</item>
+        <item quantity="other">You found every pair in %1$d moves.</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="one">Your best so far: %1$d move.</item>
+        <item quantity="other">Your best so far: %1$d moves.</item>
+    </plurals>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">Какуро</string>
+    <string name="howto_kakuro">Кроссворд из чисел: впишите в белые клетки цифры от 1 до 9 так, чтобы сумма каждого ряда белых клеток по горизонтали или вертикали равнялась числу в чёрной клетке перед ним, без повторов цифр.</string>
+    <string name="kakuro_tap_cell">Нажмите на белую клетку, затем на цифру</string>
+    <string name="kakuro_hint_again">Нажмите «Подсказка» ещё раз, чтобы заполнить эту клетку.</string>
+</resources>

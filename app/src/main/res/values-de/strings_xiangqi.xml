@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">Chinesisches Schach</string>
+    <string name="howto_xiangqi">Chinesisches Schach (Xiangqi). Tippe auf eine deiner roten Figuren und dann auf einen grünen Punkt, um sie zu ziehen. Die Zeichen auf jeder Figur zeigen, wie sie zieht. Setze den schwarzen General so fest, dass er nicht mehr entkommen kann.</string>
+    <string name="xiangqi_pick_piece">Du bist dran: tippe auf eine deiner roten Figuren</string>
+    <string name="xiangqi_pick_target">Tippe auf einen grünen Punkt, um dorthin zu ziehen</string>
+    <string name="xiangqi_check">Schach! Dein General wird angegriffen: schütze ihn</string>
+    <string name="xiangqi_pieces">Figuren</string>
+    <string name="xiangqi_guide_title">So ziehen die Figuren</string>
+    <string name="xiangqi_guide_marks">Die Figuren stehen auf den Kreuzungen der Linien. Auf jeder Figur ist ein Punkt ein Schritt in diese Richtung, zwei Punkte sind zwei Schritte, ein Pfeil heißt beliebig weit, ein Pfeil mit Querstrich heißt, dass sie zum Schlagen über eine Figur springt, und ein leerer Punkt gilt erst nach dem Überqueren des Flusses.</string>
+    <string name="xiangqi_piece_general">General (帥, 將): ein Schritt entlang einer Linie, immer im Palast. Die beiden Generäle dürfen sich nie auf einer freien Linie gegenüberstehen.</string>
+    <string name="xiangqi_piece_advisor">Berater (仕, 士): ein Schritt diagonal, nur im Palast.</string>
+    <string name="xiangqi_piece_elephant">Elefant (相, 象): zwei Punkte diagonal, nie über den Fluss. Gesperrt, wenn der Punkt dazwischen besetzt ist.</string>
+    <string name="xiangqi_piece_horse">Pferd (馬): ein Punkt geradeaus, dann einer diagonal nach außen. Gesperrt, wenn der erste Punkt besetzt ist.</string>
+    <string name="xiangqi_piece_chariot">Wagen (車): beliebig weit entlang einer Linie, wie der Turm im Schach.</string>
+    <string name="xiangqi_piece_cannon">Kanone (炮, 砲): zieht wie der Wagen, schlägt aber nur, indem sie über genau eine Figur springt.</string>
+    <string name="xiangqi_piece_soldier">Soldat (兵, 卒): ein Schritt vorwärts. Nach dem Fluss darf er auch seitwärts gehen. Er geht nie zurück.</string>
+    <string name="xiangqi_checkmate">Schachmatt!</string>
+    <string name="xiangqi_no_moves">Kein Zug mehr möglich: Im chinesischen Schach ist die Partie damit verloren.</string>
+    <string name="xiangqi_draw_repetition">Remis: Dieselbe Stellung kam dreimal vor.</string>
+    <string name="xiangqi_draw_limit">Remis: 60 Züge pro Seite ohne einen Schlag.</string>
+    <string name="xiangqi_draw_material">Remis: Keine Seite hat noch eine Figur, die angreifen kann.</string>
+</resources>

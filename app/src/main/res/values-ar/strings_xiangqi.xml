@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">الشطرنج الصيني</string>
+    <string name="howto_xiangqi">الشطرنج الصيني (شيانغ تشي). المس إحدى قطعك الحمراء ثم نقطة خضراء لتحريكها. العلامات على كل قطعة تبيّن طريقة حركتها. حاصر الجنرال الأسود حتى لا يستطيع الهرب.</string>
+    <string name="xiangqi_pick_piece">دورك: المس إحدى قطعك الحمراء</string>
+    <string name="xiangqi_pick_target">المس نقطة خضراء للانتقال إليها</string>
+    <string name="xiangqi_check">كش! جنرالك مهدَّد: احمِه</string>
+    <string name="xiangqi_pieces">القطع</string>
+    <string name="xiangqi_guide_title">كيف تتحرك القطع</string>
+    <string name="xiangqi_guide_marks">توضع القطع على تقاطعات الخطوط. على كل قطعة: النقطة خطوة واحدة في ذلك الاتجاه، والنقطتان خطوتان، والسهم يعني أي مسافة، والسهم ذو الشرطة يعني أنها تقفز فوق قطعة واحدة لتأسر، والنقطة المفرغة مسموحة فقط بعد عبور النهر.</string>
+    <string name="xiangqi_piece_general">الجنرال (帥، 將): خطوة واحدة على خط، داخل القصر دائمًا. لا يجوز أبدًا أن يتقابل الجنرالان على خط خالٍ.</string>
+    <string name="xiangqi_piece_advisor">المستشار (仕، 士): خطوة واحدة قطريًا، داخل القصر فقط.</string>
+    <string name="xiangqi_piece_elephant">الفيل (相، 象): نقطتان قطريًا، ولا يعبر النهر أبدًا. يُمنع إذا كانت النقطة التي في الوسط مشغولة.</string>
+    <string name="xiangqi_piece_horse">الحصان (馬): نقطة مستقيمة ثم نقطة قطرية إلى الخارج. يُمنع إذا كانت النقطة الأولى مشغولة.</string>
+    <string name="xiangqi_piece_chariot">العربة (車): أي مسافة على خط، مثل الرخ في الشطرنج.</string>
+    <string name="xiangqi_piece_cannon">المدفع (炮، 砲): يتحرك مثل العربة، لكنه لا يأسر إلا بالقفز فوق قطعة واحدة بالضبط.</string>
+    <string name="xiangqi_piece_soldier">الجندي (兵، 卒): خطوة واحدة إلى الأمام. بعد عبور النهر يمكنه أيضًا التحرك جانبيًا. لا يعود إلى الخلف أبدًا.</string>
+    <string name="xiangqi_checkmate">كش مات!</string>
+    <string name="xiangqi_no_moves">لا توجد أي نقلة ممكنة: في الشطرنج الصيني هذا يعني خسارة المباراة.</string>
+    <string name="xiangqi_draw_repetition">تعادل: تكرر الوضع نفسه ثلاث مرات.</string>
+    <string name="xiangqi_draw_limit">تعادل: 60 نقلة لكل طرف دون أي أسر.</string>
+    <string name="xiangqi_draw_material">تعادل: لم يبق لأي طرف قطعة تستطيع الهجوم.</string>
+</resources>

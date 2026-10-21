@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">Корейские шахматы</string>
+    <string name="howto_janggi">Корейские шахматы (чанги). Нажмите на одну из своих синих фигур, затем на зелёную точку. Внутри дворцов фигуры могут ходить и по диагональным линиям. Вместо хода можно пропустить ход. Загоните красного генерала, чтобы победить.</string>
+    <string name="janggi_pick_piece">Ваш ход: нажмите на одну из своих синих фигур</string>
+    <string name="janggi_pick_target">Нажмите на зелёную точку, чтобы пойти туда</string>
+    <string name="janggi_check">Шах! Вашего генерала атакуют: защитите его</string>
+    <string name="janggi_pieces">Фигуры</string>
+    <string name="janggi_guide_title">Как ходят фигуры</string>
+    <string name="janggi_guide_marks">Фигуры стоят на пересечениях линий. На каждой фигуре точка означает один шаг, две точки — более длинный прыжок слона, стрелка — на любое расстояние, стрелка с чертой — фигура обязательно перепрыгивает через одну фигуру, а пустая точка — шаг по диагонали, разрешённый только по линиям дворца.</string>
+    <string name="janggi_piece_general">Генерал (楚, 漢): один шаг по линиям дворца, включая диагонали. Никогда не покидает дворец.</string>
+    <string name="janggi_piece_guard">Страж (士): ходит как генерал, на один шаг по линиям дворца, и остаётся во дворце.</string>
+    <string name="janggi_piece_elephant">Слон (象): одна точка прямо, затем две по диагонали наружу. Не может ходить, если точка на пути занята.</string>
+    <string name="janggi_piece_horse">Конь (馬): одна точка прямо, затем одна по диагонали наружу. Не может ходить, если первая точка занята.</string>
+    <string name="janggi_piece_chariot">Колесница (車): на любое расстояние по линии, а также по диагональным линиям внутри дворца.</string>
+    <string name="janggi_piece_cannon">Пушка (包): чтобы пойти или побить, должна перепрыгнуть ровно через одну фигуру. Никогда не прыгает через другую пушку и не бьёт её.</string>
+    <string name="janggi_piece_soldier">Солдат (卒, 兵): один шаг вперёд или в сторону, никогда назад. Во дворце противника может также идти по диагонали вперёд по линиям.</string>
+    <string name="janggi_pass">Пропустить</string>
+    <string name="janggi_ai_passed">Компьютер пропустил ход. Ваш ход.</string>
+    <string name="janggi_must_pass">Ни одна ваша фигура не может ходить: нажмите «Пропустить»</string>
+    <string name="janggi_checkmate">Мат!</string>
+    <string name="janggi_draw_repetition">Ничья: одна и та же позиция повторилась три раза.</string>
+    <string name="janggi_draw_limit">Ничья: по 60 ходов без единого взятия.</string>
+    <string name="janggi_draw_material">Ничья: ни у кого не осталось фигур, способных атаковать.</string>
+    <string name="janggi_bikjang">Ничья: два генерала стоят друг против друга на свободной линии (пикчан).</string>
+    <string name="janggi_draw_passes">Ничья: оба игрока пропустили ход один за другим.</string>
+</resources>

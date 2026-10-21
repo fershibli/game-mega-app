@@ -180,7 +180,8 @@ class AppFlowTest {
         // With many card games the board games start below the screen.
         rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi"))
         rule.onAllNodesWithContentDescription("Reversi")[0].performClick()
-        rule.onNodeWithText("Choose the difficulty").assertIsDisplayed()
+        // Reversi can also be played taking turns, so the wheel asks how to play.
+        rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
         rule.onNodeWithText("Confirm").performClick()
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
         // Settings from inside the game can abandon it.

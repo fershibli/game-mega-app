@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">方块拼图</string>
+    <string name="howto_blocks">把下方的方块拖到棋盘上（也可以先点方块，再点棋盘）。填满一整行或一整列就会消除。没有东西会掉落，也没有计时：只有当所有方块都放不下时游戏才结束。</string>
+    <string name="blocks_score">得分：%1$d · 最佳：%2$d</string>
+    <string name="blocks_rotate">旋转</string>
+    <string name="blocks_no_fit">没有方块能放下了</string>
+    <string name="blocks_final">得分：%1$d\n最佳得分：%2$d</string>
+    <string name="blocks_new_best">新纪录！</string>
+</resources>

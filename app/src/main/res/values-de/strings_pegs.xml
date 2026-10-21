@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pegs">Brett-Solitär</string>
+    <string name="howto_pegs">Lass eine Kugel über ihre Nachbarin in ein leeres Loch springen: Die übersprungene Kugel verlässt das Brett. Bleibt nur eine Kugel übrig, hast du gewonnen.</string>
+    <string name="pegs_variant_english">Englisches Brett</string>
+    <string name="pegs_variant_english_desc">33 Löcher in Kreuzform. Die Mitte ist am Anfang leer.</string>
+    <string name="pegs_variant_french">Französisches Brett</string>
+    <string name="pegs_variant_french_desc">37 Löcher: das Kreuz und vier Löcher in den Ecken. Etwas schwieriger.</string>
+    <string name="pegs_left">Kugeln: %1$d</string>
+    <string name="pegs_pick_peg">Tippe auf eine Kugel, um sie zu bewegen</string>
+    <string name="pegs_pick_hole">Tippe jetzt auf das leere Loch, in das sie springt</string>
+    <string name="pegs_no_jumps">Kein Sprung mehr möglich</string>
+    <string name="pegs_restart">Neu beginnen</string>
+    <string name="pegs_win_one">Nur noch eine Kugel. Wunderbar gemacht!</string>
+    <string name="pegs_win_perfect">Eine Kugel, genau im markierten Loch: ein perfektes Ende!</string>
+    <plurals name="pegs_end_left">
+        <item quantity="one">Kein Sprung mehr möglich, %1$d Kugel ist übrig. Gut versucht!</item>
+        <item quantity="other">Kein Sprung mehr möglich, %1$d Kugeln sind übrig. Gut versucht!</item>
+    </plurals>
+</resources>

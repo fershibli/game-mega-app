@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">Xadrez chinês</string>
+    <string name="howto_xiangqi">Xadrez chinês (xiangqi). Toque numa das suas peças vermelhas e depois num ponto verde para movê-la. As marcas em cada peça mostram como ela anda. Encurrale o general preto para que ele não possa escapar.</string>
+    <string name="xiangqi_pick_piece">Sua vez: toque numa das suas peças vermelhas</string>
+    <string name="xiangqi_pick_target">Toque num ponto verde para ir até lá</string>
+    <string name="xiangqi_check">Xeque! Seu general está sendo atacado: proteja-o</string>
+    <string name="xiangqi_pieces">Peças</string>
+    <string name="xiangqi_guide_title">Como as peças andam</string>
+    <string name="xiangqi_guide_marks">As peças ficam nos cruzamentos das linhas. Em cada peça, um ponto é um passo naquela direção, dois pontos são dois passos, uma seta quer dizer qualquer distância, uma seta com uma barra quer dizer que ela pula uma peça para capturar, e um ponto vazado só vale depois de atravessar o rio.</string>
+    <string name="xiangqi_piece_general">General (帥, 將): um passo ao longo de uma linha, sempre dentro do palácio. Os dois generais nunca podem ficar frente a frente numa linha livre.</string>
+    <string name="xiangqi_piece_advisor">Conselheiro (仕, 士): um passo na diagonal, só dentro do palácio.</string>
+    <string name="xiangqi_piece_elephant">Elefante (相, 象): dois pontos na diagonal, nunca atravessa o rio. Fica bloqueado se o ponto do meio estiver ocupado.</string>
+    <string name="xiangqi_piece_horse">Cavalo (馬): um ponto reto e depois um na diagonal, para fora. Fica bloqueado se o primeiro ponto estiver ocupado.</string>
+    <string name="xiangqi_piece_chariot">Carro (車): qualquer distância ao longo de uma linha, como a torre do xadrez.</string>
+    <string name="xiangqi_piece_cannon">Canhão (炮, 砲): anda como o carro, mas só captura pulando exatamente uma peça.</string>
+    <string name="xiangqi_piece_soldier">Soldado (兵, 卒): um passo para a frente. Depois de atravessar o rio, também pode ir para o lado. Nunca volta.</string>
+    <string name="xiangqi_checkmate">Xeque-mate!</string>
+    <string name="xiangqi_no_moves">Nenhum lance possível: no xadrez chinês isso perde a partida.</string>
+    <string name="xiangqi_draw_repetition">Empate: a mesma posição voltou três vezes.</string>
+    <string name="xiangqi_draw_limit">Empate: 60 lances de cada lado sem nenhuma captura.</string>
+    <string name="xiangqi_draw_material">Empate: nenhum dos lados tem mais peças que possam atacar.</string>
+</resources>

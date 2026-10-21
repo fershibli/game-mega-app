@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">Shogi</string>
+    <string name="howto_shogi">Xadrez japonês. Toque numa das suas peças (elas apontam para cima) e depois num ponto verde. As peças que você captura passam para o seu lado: toque numa delas abaixo do tabuleiro para colocá-la numa casa vazia. Dê xeque-mate no rei do computador para vencer.</string>
+    <string name="shogi_variant_standard">Shogi (9 × 9)</string>
+    <string name="shogi_variant_standard_desc">O jogo completo, no tabuleiro de 9 por 9.</string>
+    <string name="shogi_variant_mini">Minishogi (5 × 5)</string>
+    <string name="shogi_variant_mini_desc">Um tabuleiro pequeno, de 5 por 5, com menos peças: partidas rápidas, bom para aprender.</string>
+    <string name="shogi_pick_piece">Sua vez: toque numa das suas peças, no tabuleiro ou na sua mão</string>
+    <string name="shogi_pick_target">Toque num ponto verde para ir até lá</string>
+    <string name="shogi_pick_drop">Toque num ponto verde para colocar a peça ali</string>
+    <string name="shogi_check">Xeque! Seu rei está sendo atacado: proteja-o</string>
+    <string name="shogi_pieces">Peças</string>
+    <string name="shogi_guide_title">Como as peças andam</string>
+    <string name="shogi_guide_marks">Em cada peça, um ponto é um passo naquela direção e uma seta quer dizer qualquer distância. Letras vermelhas indicam peças promovidas. As fileiras sombreadas do outro lado (três fileiras, uma no minishogi) são onde as suas peças podem ser promovidas.</string>
+    <string name="shogi_piece_king">Rei (王, 玉): um passo em qualquer direção.</string>
+    <string name="shogi_piece_rook">Torre (飛): qualquer distância ao longo de uma linha. Promovida, vira dragão.</string>
+    <string name="shogi_piece_bishop">Bispo (角): qualquer distância na diagonal. Promovido, vira cavalo.</string>
+    <string name="shogi_piece_gold">General de ouro (金): um passo em qualquer direção, menos na diagonal para trás. Não é promovido.</string>
+    <string name="shogi_piece_silver">General de prata (銀): um passo para a frente ou na diagonal. Promovido, anda como o de ouro.</string>
+    <string name="shogi_piece_knight">Cavaleiro (桂): salta duas casas para a frente e uma para o lado, por cima de qualquer peça. Promovido, anda como o de ouro.</string>
+    <string name="shogi_piece_lance">Lança (香): qualquer distância em linha reta para a frente. Promovida, anda como o de ouro.</string>
+    <string name="shogi_piece_pawn">Peão (歩): um passo para a frente. Promovido, vira tokin (と) e anda como o de ouro.</string>
+    <string name="shogi_piece_dragon">Dragão (龍), a torre promovida: qualquer distância ao longo de uma linha, ou um passo na diagonal.</string>
+    <string name="shogi_piece_horse">Cavalo (馬), o bispo promovido: qualquer distância na diagonal, ou um passo ao longo de uma linha.</string>
+    <string name="shogi_piece_promoted">Peão, lança, cavaleiro ou prata promovidos (と, 杏, 圭, 全): andam como o general de ouro.</string>
+    <string name="shogi_promote_title">Promover esta peça?</string>
+    <string name="shogi_promote_yes">Promover</string>
+    <string name="shogi_promote_no">Deixar como está</string>
+    <string name="shogi_checkmate">Xeque-mate!</string>
+    <string name="shogi_draw_repetition">Empate: a mesma posição voltou quatro vezes.</string>
+    <string name="shogi_draw_limit">Empate: a partida chegou a 400 lances.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tablets: the take-turns option names the tablet instead of the phone. -->
+<resources>
+    <string name="take_turns">По очереди на этом планшете</string>
+    <string name="take_turns_desc">Каждый ходит в свою очередь, передавая планшет. Никто не играет против компьютера.</string>
+</resources>

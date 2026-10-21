@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">テンポと動き</string>
+    <string name="pace_title">待ち時間</string>
+    <string name="pace_quick">はやい</string>
+    <string name="pace_quick_desc">手と手のあいだやメッセージの待ち時間が短めです。</string>
+    <string name="pace_normal">ふつう</string>
+    <string name="pace_normal_desc">一手ずつ目で追える長さです。</string>
+    <string name="pace_calm">ゆっくり</string>
+    <string name="pace_calm_desc">2倍の長さです。コンピューターの手やメッセージをゆっくり確かめられます。</string>
+    <string name="motion_title">アニメーション</string>
+    <string name="motion_none">なし</string>
+    <string name="motion_none_desc">駒やカードは動かずに、すぐその場所に置かれます。</string>
+    <string name="motion_gentle">ひかえめ</string>
+    <string name="motion_gentle_desc">ゆっくり小さく動きます。</string>
+    <string name="motion_full">ふつう</string>
+    <string name="motion_full_desc">通常の動きです。</string>
+    <string name="how_to_play">どうやって遊びますか？</string>
+    <string name="take_turns">交代で遊ぶ（このスマホで）</string>
+    <string name="take_turns_desc">スマホを回して、一人ずつ順番に遊びます。コンピューターとは対戦しません。</string>
+    <string name="pass_to_next">次の人に渡す</string>
+    <string name="pass_ready">準備ができました。私の番です</string>
+    <string name="player_number">プレイヤー%1$d</string>
+    <string name="seats_title">何人で遊びますか？</string>
+    <plurals name="seats_with_computer">
+        <item quantity="other">あなたとコンピューター%1$d人</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="other">%1$d人で交代</item>
+    </plurals>
+    <string name="game_end">対局終了</string>
+</resources>
