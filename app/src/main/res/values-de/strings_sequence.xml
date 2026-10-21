@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sequence">Folge den Farben</string>
+    <string name="howto_sequence">Schau zu, wie die Felder aufleuchten, und tippe sie dann in derselben Reihenfolge an. Jede Runde kommt eine Farbe dazu.</string>
+    <string name="sequence_ready">Tippe auf Start, wenn du bereit bist</string>
+    <string name="sequence_watch">Schau zu…</string>
+    <string name="sequence_again">Fast! Schau noch einmal zu…</string>
+    <string name="sequence_your_turn">Du bist dran</string>
+    <string name="sequence_well_done">Gut gemacht!</string>
+    <string name="sequence_oops">Das war ein anderes Feld</string>
+    <string name="sequence_progress">Farben: %1$d von %2$d</string>
+    <string name="sequence_best">Bestwert: %1$d</string>
+    <string name="sequence_start">Start</string>
+    <string name="sequence_watch_again">Noch einmal zeigen</string>
+    <string name="sequence_lose">Längste wiederholte Folge: %1$d.</string>
+    <string name="sequence_record">Neuer Bestwert!</string>
+    <string name="sequence_pad_star">Feld mit Stern</string>
+    <string name="sequence_pad_drop">Feld mit Tropfen</string>
+    <string name="sequence_pad_leaf">Feld mit Blatt</string>
+    <string name="sequence_pad_heart">Feld mit Herz</string>
+    <plurals name="sequence_win">
+        <item quantity="one">Du hast %1$d Farbe wiederholt!</item>
+        <item quantity="other">Du hast alle %1$d Farben wiederholt!</item>
+    </plurals>
+</resources>

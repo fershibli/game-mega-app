@@ -166,3 +166,5 @@ keyPassword=...
 3. 用 `LoadGame(host, State.serializer(), create = { ... })` 和 `GameLayout(status, controls) { 棋盘 }` 编写界面；游戏结束时调用 `host.finish(GameOutcome(...))`。
 4. 在 `GameContent.kt` 中注册，并在 `ui/art/Thumbnails.kt` 中绘制缩略图。
 5. 添加截图测试，并在五种语言的用户指南中写明规则。
+
+当一个指向 `stag` 的 pull request 被合并后，**Sync open PRs** 工作流（`sync-prs.yml`）会把 `stag` 合并进其他所有因此产生冲突的 pull request。如果冲突只出现在游戏列表里（`GameId`、`GameContent.kt`、`Thumbnails.kt`、`ScreenshotTest.kt` 和更新日志），它会保留双方的内容（`scripts/merge_game_lists.py`），确认一切都能编译，推送合并结果并启动 CI。其他冲突会列在运行摘要中，留给人来解决。

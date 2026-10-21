@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">سودوكو المجاميع</string>
+    <string name="howto_killer">سودوكو بلا أرقام معطاة: يحتوي كل صف وعمود ومربع 3×3 على الأرقام من 1 إلى 9 مرة واحدة، ومجموع الأرقام داخل كل منطقة منقّطة يساوي الرقم الصغير في زاويتها، دون تكرار.</string>
+    <string name="killer_tap_cell">المس مربعًا، ثم رقمًا</string>
+    <string name="killer_hint_combos">طرق تكوين %1$d: %2$s</string>
+    <string name="killer_hint_again">المس تلميح مرة أخرى لملء هذا المربع.</string>
+</resources>

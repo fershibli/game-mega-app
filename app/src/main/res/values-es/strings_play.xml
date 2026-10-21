@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">Ritmo y movimiento</string>
+    <string name="pace_title">Tiempo de espera</string>
+    <string name="pace_quick">Rápido</string>
+    <string name="pace_quick_desc">Pausas cortas entre jugadas y mensajes.</string>
+    <string name="pace_normal">Normal</string>
+    <string name="pace_normal_desc">Pausas suficientes para seguir cada jugada.</string>
+    <string name="pace_calm">Tranquilo</string>
+    <string name="pace_calm_desc">El doble de tiempo: más calma para ver qué hizo el ordenador y para leer los mensajes.</string>
+    <string name="motion_title">Animaciones</string>
+    <string name="motion_none">Desactivadas</string>
+    <string name="motion_none_desc">Las fichas y las cartas van directas a su sitio, sin movimiento.</string>
+    <string name="motion_gentle">Suaves</string>
+    <string name="motion_gentle_desc">Movimientos lentos y pequeños.</string>
+    <string name="motion_full">Completas</string>
+    <string name="motion_full_desc">Movimientos normales.</string>
+    <string name="how_to_play">¿Cómo quieres jugar?</string>
+    <string name="take_turns">Por turnos en este teléfono</string>
+    <string name="take_turns_desc">Cada persona juega en su turno, pasando el teléfono. Nadie juega contra el ordenador.</string>
+    <string name="pass_to_next">Pasar al siguiente jugador</string>
+    <string name="pass_ready">Listo, es mi turno</string>
+    <string name="player_number">Jugador %1$d</string>
+    <string name="seats_title">¿Cuántos en la mesa?</string>
+    <plurals name="seats_with_computer">
+        <item quantity="one">Tú y %1$d jugador del ordenador</item>
+        <item quantity="many">Tú y %1$d jugadores del ordenador</item>
+        <item quantity="other">Tú y %1$d jugadores del ordenador</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="one">%1$d persona por turnos</item>
+        <item quantity="many">%1$d personas por turnos</item>
+        <item quantity="other">%1$d personas por turnos</item>
+    </plurals>
+    <string name="game_end">Fin de la partida</string>
+</resources>

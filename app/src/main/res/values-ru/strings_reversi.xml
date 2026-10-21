@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">Тёмные фишки</string>
+    <string name="reversi_light">Светлые фишки</string>
+    <string name="reversi_dark_turn">Ход тёмных</string>
+    <string name="reversi_light_turn">Ход светлых</string>
+    <string name="reversi_dark_passed">У тёмных не было хода. Снова ходят светлые.</string>
+    <string name="reversi_light_passed">У светлых не было хода. Снова ходят тёмные.</string>
+    <string name="reversi_score_together">● Тёмные: %1$d   ○ Светлые: %2$d</string>
+    <string name="reversi_dark_wins">Победили тёмные!</string>
+    <string name="reversi_light_wins">Победили светлые!</string>
+</resources>

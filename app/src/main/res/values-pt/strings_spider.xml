@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">Paciência Spider</string>
+    <string name="howto_spider">Monte sequências do Rei ao Ás do mesmo naipe: uma sequência completa sai da mesa. Toque numa carta para movê-la junto com as cartas de cima, e toque de novo para tentar outro lugar. Toque no monte para distribuir uma nova fileira.</string>
+    <string name="spider_variant_one">Um naipe</string>
+    <string name="spider_variant_one_desc">Só espadas. O jeito mais fácil, bom para aprender.</string>
+    <string name="spider_variant_two">Dois naipes</string>
+    <string name="spider_variant_two_desc">Espadas e copas. Um pouco mais difícil.</string>
+    <string name="spider_variant_four">Quatro naipes</string>
+    <string name="spider_variant_four_desc">Os quatro naipes. Um desafio de verdade.</string>
+    <string name="spider_status">Sequências: %1$d de 8 · Distribuições: %2$d</string>
+    <string name="spider_fill_columns">Para distribuir uma nova fileira, toda coluna precisa de uma carta. Primeiro coloque uma carta na coluna vazia.</string>
+    <string name="spider_hint_deal">Toque no monte para distribuir uma nova fileira.</string>
+    <string name="spider_cannot_move">Estas cartas não estão em ordem do mesmo naipe, então não podem se mover juntas.</string>
+    <string name="spider_stuck_title">Sem mais jogadas</string>
+    <string name="spider_stuck_message">Não há mais jogadas úteis nem cartas para distribuir. Você pode desfazer algumas jogadas e tentar outro caminho, ou desistir.</string>
+    <string name="spider_give_up">Desistir</string>
+    <string name="spider_keep_playing">Continuar procurando</string>
+    <string name="spider_lost">Não havia mais jogadas possíveis.</string>
+</resources>

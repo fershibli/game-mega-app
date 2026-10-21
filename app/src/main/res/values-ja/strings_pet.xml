@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Pet friend -->
+    <string name="game_pet">ペットのおともだち</string>
+    <string name="howto_pet">小さなおともだちのお世話をしましょう。ごはん、なでなで、おふろ、いっしょに遊ぶ。病気にならず、いつもあなたに会えるのを喜びます。</string>
+    <string name="pet_species_cat">ねこ</string>
+    <string name="pet_species_dog">いぬ</string>
+    <string name="pet_species_bunny">うさぎ</string>
+    <string name="pet_species_chick">ひよこ</string>
+    <string name="pet_species_panda">パンダ</string>
+    <string name="pet_species_frog">かえる</string>
+    <string name="pet_species_fox">きつね</string>
+    <string name="pet_species_penguin">ペンギン</string>
+    <string name="pet_species_hamster">ハムスター</string>
+    <string name="pet_species_turtle">かめ</string>
+    <string name="pet_food_apple">りんご</string>
+    <string name="pet_food_carrot">にんじん</string>
+    <string name="pet_food_fish">さかな</string>
+    <string name="pet_food_cookie">クッキー</string>
+    <string name="pet_wear_none">なし</string>
+    <string name="pet_wear_bow">リボン</string>
+    <string name="pet_wear_hat">ぼうし</string>
+    <string name="pet_wear_flower">お花</string>
+    <string name="pet_wear_scarf">マフラー</string>
+    <string name="pet_need_happiness">ごきげん</string>
+    <string name="pet_need_fullness">おなか</string>
+    <string name="pet_need_energy">げんき</string>
+    <string name="pet_need_cleanliness">きれい</string>
+    <string name="pet_need_value">%1$s：%2$d%%</string>
+    <string name="pet_percent">%1$d%%</string>
+    <string name="pet_feed">ごはん</string>
+    <string name="pet_cuddle">なでなで</string>
+    <string name="pet_kiss">キス</string>
+    <string name="pet_wave">手をふる</string>
+    <string name="pet_bath">おふろ</string>
+    <string name="pet_sleep">おやすみ</string>
+    <string name="pet_wake">おはよう</string>
+    <string name="pet_walk">おさんぽ</string>
+    <string name="pet_play">あそぶ</string>
+    <string name="pet_dress">おしゃれ</string>
+    <string name="pet_friends">おともだち・むかえる</string>
+    <string name="pet_rps">じゃんけん</string>
+    <string name="pet_ttt">まるばつ</string>
+    <string name="pet_ball">ボール</string>
+    <string name="pet_rock">グー</string>
+    <string name="pet_paper">パー</string>
+    <string name="pet_scissors">チョキ</string>
+    <string name="pet_rps_pick">どれにする？</string>
+    <string name="pet_rps_shake">じゃん…けん…ぽん…</string>
+    <string name="pet_rps_score">あなた %1$d・%2$s %3$d</string>
+    <string name="pet_you_win">あなたの勝ち！</string>
+    <string name="pet_pet_wins">%1$sの勝ち！</string>
+    <string name="pet_tie">あいこ！</string>
+    <string name="pet_thinking">%1$sが考えています…</string>
+    <string name="pet_msg_hello">%1$sはあなたに会えてうれしいです！</string>
+    <string name="pet_msg_hungry">%1$sはちょっとおなかがすいています。</string>
+    <string name="pet_msg_sleepy">%1$sはちょっとねむそうです。</string>
+    <string name="pet_msg_dirty">%1$sはおふろに入りたいみたい。</string>
+    <string name="pet_msg_lonely">%1$sはなでてほしいみたい。</string>
+    <string name="pet_msg_yum">おいしい！%1$sはよろこんでいます。</string>
+    <string name="pet_msg_favorite">おいしい！%1$sの大好物です！</string>
+    <string name="pet_msg_cuddle">指で%1$sをなでてあげてね。</string>
+    <string name="pet_msg_petted">%1$sはなでなでが大好き！</string>
+    <string name="pet_msg_kiss">%1$sからもキスのおかえし！</string>
+    <string name="pet_msg_wave">%1$sが手をふっています！</string>
+    <string name="pet_msg_bath">ちゃぷちゃぷ！%1$sはぴかぴかです。</string>
+    <string name="pet_msg_sleeping">しーっ… %1$sはねています。</string>
+    <string name="pet_msg_woke">%1$sはよく休みました。</string>
+    <string name="pet_msg_walk">%1$sはおさんぽを楽しんでいます！</string>
+    <string name="pet_msg_ball">%1$sはボールが大好き！</string>
+    <string name="pet_msg_dress">%1$sとってもかわいい！</string>
+    <string name="pet_scene">%1$s（%2$s）</string>
+    <string name="pet_choose_title">新しいおともだちをえらんでね</string>
+    <string name="pet_your_friends">あなたのおともだち</string>
+    <string name="pet_name_title">名前をえらんでね</string>
+    <string name="pet_name_hint">または名前を入力</string>
+    <string name="pet_adopt">むかえる</string>
+    <string name="pet_switch_title">おともだちを交代しますか？</string>
+    <string name="pet_switch_message">%1$sはお庭で待っています。「おともだち」からいつでも%1$sを呼びもどせます。</string>
+    <string name="pet_switch_yes">はい、交代する</string>
+    <string-array name="pet_names">
+        <item>モモ</item>
+        <item>ハナ</item>
+        <item>ポチ</item>
+        <item>ミミ</item>
+        <item>コロ</item>
+        <item>マル</item>
+    </string-array>
+</resources>

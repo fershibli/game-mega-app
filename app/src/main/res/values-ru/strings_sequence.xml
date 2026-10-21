@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sequence">Повтори цвета</string>
+    <string name="howto_sequence">Смотрите, как загораются квадраты, а затем нажмите на них в том же порядке. В каждом раунде добавляется ещё один цвет.</string>
+    <string name="sequence_ready">Нажмите «Начать», когда будете готовы</string>
+    <string name="sequence_watch">Смотрите…</string>
+    <string name="sequence_again">Почти! Смотрите ещё раз…</string>
+    <string name="sequence_your_turn">Ваш ход</string>
+    <string name="sequence_well_done">Отлично!</string>
+    <string name="sequence_oops">Это был другой квадрат</string>
+    <string name="sequence_progress">Цвета: %1$d из %2$d</string>
+    <string name="sequence_best">Рекорд: %1$d</string>
+    <string name="sequence_start">Начать</string>
+    <string name="sequence_watch_again">Показать ещё раз</string>
+    <string name="sequence_lose">Самая длинная повторённая цепочка: %1$d.</string>
+    <string name="sequence_record">Новый рекорд!</string>
+    <string name="sequence_pad_star">Квадрат со звездой</string>
+    <string name="sequence_pad_drop">Квадрат с каплей</string>
+    <string name="sequence_pad_leaf">Квадрат с листиком</string>
+    <string name="sequence_pad_heart">Квадрат с сердцем</string>
+    <plurals name="sequence_win">
+        <item quantity="one">Вы повторили все цвета: %1$d!</item>
+        <item quantity="few">Вы повторили все цвета: %1$d!</item>
+        <item quantity="many">Вы повторили все цвета: %1$d!</item>
+        <item quantity="other">Вы повторили все цвета: %1$d!</item>
+    </plurals>
+</resources>

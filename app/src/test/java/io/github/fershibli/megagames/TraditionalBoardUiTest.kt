@@ -58,7 +58,7 @@ class TraditionalBoardUiTest {
     private fun <T> open(game: GameId, variant: String, serializer: KSerializer<T>, start: T?): SaveStore {
         val store = SaveStore(app).apply { clear() }
         val restored: JsonElement? = start?.let { AppJson.encodeToJsonElement(serializer, it) }
-        val host = GameHost(game, Difficulty.EASY, restored, store, game.variant(variant)) {}
+        val host = GameHost(game, Difficulty.EASY, restored, store, game.variant(variant), onFinish = {})
         rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(game, host) } }
         rule.waitForIdle()
         return store

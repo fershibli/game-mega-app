@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">チャンギ（朝鮮将棋）</string>
+    <string name="howto_janggi">韓国の将棋、チャンギです。自分の青い駒をタップし、緑の点をタップします。宮殿の中では斜めの線にそっても動けます。指す代わりにパスもできます。赤の将を追いつめれば勝ちです。</string>
+    <string name="janggi_pick_piece">あなたの番です：自分の青い駒をタップしてください</string>
+    <string name="janggi_pick_target">緑の点をタップするとそこへ動きます</string>
+    <string name="janggi_check">王手！あなたの将がねらわれています。守りましょう</string>
+    <string name="janggi_pieces">駒</string>
+    <string name="janggi_guide_title">駒の動き方</string>
+    <string name="janggi_guide_marks">駒は線の交点に置きます。駒の印は、点が一歩、二つの点が象の長い跳び、矢印がどこまでも、横線つきの矢印が駒を一つ飛び越えなければならない動き、白抜きの点は宮殿の線の上だけでできる斜めの一歩を表します。</string>
+    <string name="janggi_piece_general">将（楚・漢）：宮殿の線にそって一歩。斜めの線も使えます。宮殿から出られません。</string>
+    <string name="janggi_piece_guard">士：将と同じく宮殿の線にそって一歩。宮殿から出られません。</string>
+    <string name="janggi_piece_elephant">象：まっすぐ一点、そこから外側へ斜めに二点。途中の点に駒があると動けません。</string>
+    <string name="janggi_piece_horse">馬：まっすぐ一点、そこから外側へ斜めに一点。最初の点に駒があると動けません。</string>
+    <string name="janggi_piece_chariot">車：線にそってどこまでも。宮殿の中では斜めの線にそっても進めます。</string>
+    <string name="janggi_piece_cannon">包：動くときも取るときも、ちょうど一つの駒を飛び越えなければなりません。ほかの包は飛び越えられず、取れません。</string>
+    <string name="janggi_piece_soldier">兵（卒・兵）：前か横に一歩。後ろには戻れません。相手の宮殿の中では線にそって斜め前にも進めます。</string>
+    <string name="janggi_pass">パス</string>
+    <string name="janggi_ai_passed">コンピューターはパスしました。あなたの番です。</string>
+    <string name="janggi_must_pass">動ける駒がありません。「パス」を押してください</string>
+    <string name="janggi_checkmate">詰みです！</string>
+    <string name="janggi_draw_repetition">引き分け：同じ局面が三回くり返されました。</string>
+    <string name="janggi_draw_limit">引き分け：おたがい60手、駒を取りませんでした。</string>
+    <string name="janggi_draw_material">引き分け：どちらにも攻められる駒が残っていません。</string>
+    <string name="janggi_bikjang">引き分け：二つの将が間に何もない線で向かい合いました（ビッチャン）。</string>
+    <string name="janggi_draw_passes">引き分け：二人が続けてパスしました。</string>
+</resources>

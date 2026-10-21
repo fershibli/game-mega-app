@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_xiangqi">Ajedrez chino</string>
+    <string name="howto_xiangqi">Ajedrez chino (xiangqi). Toca una de tus piezas rojas y luego un punto verde para moverla. Las marcas de cada pieza muestran cómo se mueve. Encierra al general negro para que no pueda escapar.</string>
+    <string name="xiangqi_pick_piece">Tu turno: toca una de tus piezas rojas</string>
+    <string name="xiangqi_pick_target">Toca un punto verde para ir allí</string>
+    <string name="xiangqi_check">¡Jaque! Atacan a tu general: protégelo</string>
+    <string name="xiangqi_pieces">Piezas</string>
+    <string name="xiangqi_guide_title">Cómo se mueven las piezas</string>
+    <string name="xiangqi_guide_marks">Las piezas están en los cruces de las líneas. En cada pieza, un punto es un paso en esa dirección, dos puntos son dos pasos, una flecha significa cualquier distancia, una flecha con una barra significa que salta una pieza para capturar, y un punto hueco solo vale después de cruzar el río.</string>
+    <string name="xiangqi_piece_general">General (帥, 將): un paso a lo largo de una línea, siempre dentro del palacio. Los dos generales nunca pueden quedar frente a frente en una línea libre.</string>
+    <string name="xiangqi_piece_advisor">Consejero (仕, 士): un paso en diagonal, solo dentro del palacio.</string>
+    <string name="xiangqi_piece_elephant">Elefante (相, 象): dos puntos en diagonal, nunca cruza el río. Queda bloqueado si el punto del medio está ocupado.</string>
+    <string name="xiangqi_piece_horse">Caballo (馬): un punto recto y luego uno en diagonal hacia fuera. Queda bloqueado si el primer punto está ocupado.</string>
+    <string name="xiangqi_piece_chariot">Carro (車): cualquier distancia a lo largo de una línea, como la torre del ajedrez.</string>
+    <string name="xiangqi_piece_cannon">Cañón (炮, 砲): se mueve como el carro, pero solo captura saltando exactamente una pieza.</string>
+    <string name="xiangqi_piece_soldier">Soldado (兵, 卒): un paso hacia delante. Después de cruzar el río también puede ir de lado. Nunca retrocede.</string>
+    <string name="xiangqi_checkmate">¡Jaque mate!</string>
+    <string name="xiangqi_no_moves">No queda ningún movimiento posible: en el ajedrez chino eso pierde la partida.</string>
+    <string name="xiangqi_draw_repetition">Tablas: la misma posición se repitió tres veces.</string>
+    <string name="xiangqi_draw_limit">Tablas: 60 jugadas de cada lado sin ninguna captura.</string>
+    <string name="xiangqi_draw_material">Tablas: a ningún bando le quedan piezas que puedan atacar.</string>
+</resources>

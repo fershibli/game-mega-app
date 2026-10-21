@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">翻牌配对</string>
+    <string name="howto_memory">每次翻开两张牌。如果图案相同，它们就保持翻开。用尽量少的步数找出所有配对。</string>
+    <string name="memory_variant_cards">扑克牌</string>
+    <string name="memory_variant_cards_desc">同一点数、同一颜色的两张是一对：♥ 配 ♦，或 ♠ 配 ♣。</string>
+    <string name="memory_variant_fruits">水果</string>
+    <string name="memory_variant_fruits_desc">苹果、樱桃、梨、柠檬、葡萄等等。</string>
+    <string name="memory_variant_symbols">符号</string>
+    <string name="memory_variant_symbols_desc">星星、爱心、月亮、太阳、水滴、叶子等等。</string>
+    <string name="memory_variant_animals">动物</string>
+    <string name="memory_variant_animals_desc">可爱的脸：猫、狗、兔子、猫头鹰等等。</string>
+    <string name="memory_counts">步数：%1$d · 配对：%2$d / %3$d</string>
+    <string name="memory_best">最佳：%1$d</string>
+    <string name="memory_first">翻开两张牌</string>
+    <string name="memory_second">现在找出和它一样的牌</string>
+    <string name="memory_miss">不是一对。点任意一张牌继续</string>
+    <string name="memory_match">配对成功！继续加油</string>
+    <string name="memory_all_found">所有配对都找到了！</string>
+    <string name="memory_record">新纪录！</string>
+    <string name="memory_card">第 %1$d 张牌</string>
+    <string name="memory_card_found">第 %1$d 张牌，已配对</string>
+    <plurals name="memory_result">
+        <item quantity="other">你用 %1$d 步找到了所有配对。</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="other">你的最佳成绩：%1$d 步。</item>
+    </plurals>
+</resources>

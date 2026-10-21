@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">Cubo mágico</string>
+    <string name="howto_cube">Gira las capas hasta que cada cara tenga un solo color. Desliza el dedo sobre una pegatina para girar su fila, arrastra en el espacio vacío para ver el cubo desde otro lado, o elige una cara abajo y toca las flechas redondas.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">Cubo pequeño de 8 piezas: el comienzo más suave.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">El cubo clásico. La pista enseña el método capa por capa.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">Cubo más grande, sin centros fijos. Usa el botón Capa para las capas interiores.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">El cubo más grande, para manos pacientes.</string>
+    <string name="cube_moves">Movimientos: %1$d</string>
+    <string name="cube_solved">¡Resuelto! Cada cara tiene un solo color.</string>
+    <string name="cube_hint_step">Paso %1$d de %2$d: %3$s</string>
+    <string name="cube_hint_back">Giros hasta el inicio: %1$d</string>
+    <string name="cube_stage_cross">cruz de abajo</string>
+    <string name="cube_stage_corners">esquinas de abajo</string>
+    <string name="cube_stage_middle">capa del medio</string>
+    <string name="cube_stage_top_cross">cruz de arriba</string>
+    <string name="cube_stage_top_edges">aristas de arriba</string>
+    <string name="cube_stage_top_place">esquinas de arriba en su sitio</string>
+    <string name="cube_stage_top_turn">girar las esquinas de arriba</string>
+    <string name="cube_stage_top_face">color de arriba</string>
+    <string name="cube_turn_cw">Girar la cara elegida en sentido horario</string>
+    <string name="cube_turn_ccw">Girar la cara elegida en sentido antihorario</string>
+    <string name="cube_layer">Capa %1$d</string>
+    <string name="cube_face">Cara %1$d</string>
+    <string name="cube_view_left">Girar todo el cubo a la izquierda</string>
+    <string name="cube_view_right">Girar todo el cubo a la derecha</string>
+    <string name="cube_view_up">Girar todo el cubo hacia arriba</string>
+    <string name="cube_view_down">Girar todo el cubo hacia abajo</string>
+</resources>

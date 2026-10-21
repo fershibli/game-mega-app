@@ -38,6 +38,9 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.compose.ui.test.performTouchInput
 import androidx.compose.ui.test.pinch
+import androidx.compose.ui.test.hasScrollAction
+import androidx.compose.ui.test.hasContentDescription
+import androidx.compose.ui.test.performScrollToNode
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.Difficulty
@@ -174,8 +177,11 @@ class AppFlowTest {
         SettingsStore(app).save(Settings())
         rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = true) }
         rule.onNodeWithText("Choose your game").assertIsDisplayed()
+        // With many card games the board games start below the screen.
+        rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi"))
         rule.onAllNodesWithContentDescription("Reversi")[0].performClick()
-        rule.onNodeWithText("Choose the difficulty").assertIsDisplayed()
+        // Reversi can also be played taking turns, so the wheel asks how to play.
+        rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
         rule.onNodeWithText("Confirm").performClick()
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
         // Settings from inside the game can abandon it.
@@ -304,7 +310,7 @@ class AppFlowTest {
         assertEquals(listOf(GameId.DOTS, GameId.CONNECT, GameId.SUDOKU), store.gamesIn(GameCategory.PUZZLES).take(3))
         store.recordPlayed(GameId.BURACO)
         assertEquals(listOf(GameCategory.CARDS, GameCategory.PUZZLES, GameCategory.BOARD), store.categories().take(3))
-        assertEquals(listOf(GameId.BURACO, GameId.SOLITAIRE), store.gamesIn(GameCategory.CARDS))
+        assertEquals(listOf(GameId.BURACO, GameId.SOLITAIRE), store.gamesIn(GameCategory.CARDS).take(2))
         // The puzzles keep the order they had.
         assertEquals(listOf(GameId.DOTS, GameId.CONNECT, GameId.SUDOKU), ChoiceStore(RuntimeEnvironment.getApplication()).gamesIn(GameCategory.PUZZLES).take(3))
         // The single list is kept up to date at the same time.
@@ -326,7 +332,8 @@ class AppFlowTest {
         // Back to categories: their own order was kept too.
         settings = settings.copy(showCategories = true)
         rule.waitForIdle()
-        assertTrue(rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top < rule.onAllNodesWithText("Board games").onFirst().getBoundsInRoot().top)
+        // The category played last opens at the top of the screen.
+        assertTrue(rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top < rule.onRoot().getBoundsInRoot().bottom / 4)
     }
 
     @Test
@@ -343,7 +350,8 @@ class AppFlowTest {
         order = HomeOrder.Default
         rule.waitForIdle()
         assertEquals(1, rule.onAllNodesWithText("Cards").fetchSemanticsNodes().size.coerceAtMost(1))
-        assertTrue(rule.onAllNodesWithText("Cards").onFirst().getBoundsInRoot().top < rule.onAllNodesWithText("Puzzles").onFirst().getBoundsInRoot().top)
+        // The usual order starts with the cards.
+        assertTrue(rule.onAllNodesWithText("Cards").onFirst().getBoundsInRoot().top < rule.onRoot().getBoundsInRoot().bottom / 4)
     }
 
     @Test

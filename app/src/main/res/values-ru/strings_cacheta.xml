@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">Кашета</string>
+    <string name="howto_cacheta">Берите и сбрасывайте карты, пока все ваши карты не сложатся в последовательности и тройки, и нажмите «Bater!» раньше компьютеров.</string>
+    <string name="cacheta_variant_classic">Классика</string>
+    <string name="cacheta_variant_classic_desc">Две колоды, по 9 карт, без джокеров.</string>
+    <string name="cacheta_variant_wild">С джокером</string>
+    <string name="cacheta_variant_wild_desc">Открытая карта (вира) делает джокером следующую карту той же масти.</string>
+    <string name="cacheta_variant_pife">Пифе</string>
+    <string name="cacheta_variant_pife_desc">Без джокеров, последовательность может идти по кругу (K-A-2), и можно забрать любой сброс, чтобы выйти.</string>
+    <string name="cacheta_how_many">Сколько соперников-компьютеров?</string>
+    <string name="cacheta_computer">Компьютер %1$d</string>
+    <string name="cacheta_playing">Ходит компьютер %1$d…</string>
+    <string name="cacheta_deck">Колода (%1$d)</string>
+    <string name="cacheta_pile">Сброс</string>
+    <string name="cacheta_vira">Вира</string>
+    <string name="cacheta_wild">Джокер</string>
+    <string name="cacheta_draw">Взять</string>
+    <string name="cacheta_take">Взять из сброса</string>
+    <string name="cacheta_discard">Сбросить</string>
+    <string name="cacheta_go_out">Bater!</string>
+    <string name="cacheta_sort_suit">По масти</string>
+    <string name="cacheta_sort_rank">По значению</string>
+    <string name="cacheta_skip">Нет, спасибо</string>
+    <string name="cacheta_prompt_draw">Ваш ход: возьмите карту из колоды или из сброса</string>
+    <string name="cacheta_prompt_discard">Коснитесь карты и нажмите «Сбросить»</string>
+    <string name="cacheta_prompt_go_out">Все карты сложились! Нажмите «Bater!»</string>
+    <string name="cacheta_offer">Сброшенная %1$s позволяет вам выйти! Взять её?</string>
+    <string name="cacheta_err_taken">Нельзя сразу сбросить карту, которую вы только что взяли из сброса.</string>
+    <string name="cacheta_won">Вы вышли!</string>
+    <string name="cacheta_won_ten">Вы вышли со всеми 10 картами!</string>
+    <string name="cacheta_lost">Компьютер %1$d вышел.</string>
+    <string name="cacheta_deck_over">Карты закончились: никто не вышел.</string>
+    <string name="cacheta_your_hand">Ваши карты</string>
+    <string name="cacheta_groups_note">зелёная полоса = уже в группе</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="one">%1$d компьютер</item>
+        <item quantity="few">%1$d компьютера</item>
+        <item quantity="many">%1$d компьютеров</item>
+        <item quantity="other">%1$d компьютера</item>
+    </plurals>
+</resources>

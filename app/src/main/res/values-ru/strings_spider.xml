@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">Паук</string>
+    <string name="howto_spider">Собирайте ряды от короля до туза одной масти: полный ряд уходит со стола. Нажмите на карту, чтобы переложить её вместе с картами сверху, и нажмите ещё раз, чтобы попробовать другое место. Нажмите на колоду, чтобы раздать новый ряд.</string>
+    <string name="spider_variant_one">Одна масть</string>
+    <string name="spider_variant_one_desc">Только пики. Самый простой вариант, хорош для начала.</string>
+    <string name="spider_variant_two">Две масти</string>
+    <string name="spider_variant_two_desc">Пики и червы. Немного сложнее.</string>
+    <string name="spider_variant_four">Четыре масти</string>
+    <string name="spider_variant_four_desc">Все четыре масти. Настоящее испытание.</string>
+    <string name="spider_status">Ряды: %1$d из 8 · Раздач: %2$d</string>
+    <string name="spider_fill_columns">Чтобы раздать новый ряд, в каждой колонке должна быть карта. Сначала положите карту в пустую колонку.</string>
+    <string name="spider_hint_deal">Нажмите на колоду, чтобы раздать новый ряд.</string>
+    <string name="spider_cannot_move">Эти карты не идут по порядку одной масти, поэтому их нельзя переложить вместе.</string>
+    <string name="spider_stuck_title">Ходов больше нет</string>
+    <string name="spider_stuck_message">Полезных ходов и карт для раздачи не осталось. Можно отменить несколько ходов и попробовать по-другому или сдаться.</string>
+    <string name="spider_give_up">Сдаться</string>
+    <string name="spider_keep_playing">Искать дальше</string>
+    <string name="spider_lost">Ходов больше не было.</string>
+</resources>

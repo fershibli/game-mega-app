@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_snake">贪吃蛇</string>
+    <string name="howto_snake">用四个箭头（或滑动）引导慢慢爬行的蛇去吃水果，每吃一个就变长一节。简单：可以穿过边缘，碰到自己只会失去尾巴；中等：碰到自己游戏结束；困难：边缘也是墙。</string>
+    <string name="snake_length">长度：%1$d · 最佳：%2$d</string>
+    <string name="snake_bump">哎呀！蛇停下来了</string>
+    <string name="snake_final">长度：%1$d\n最佳长度：%2$d</string>
+    <string name="snake_new_best">目前最长的蛇！</string>
+    <string name="snake_up">上</string>
+    <string name="snake_down">下</string>
+    <string name="snake_left">左</string>
+    <string name="snake_right">右</string>
+    <string name="snake_pause">暂停</string>
+    <string name="snake_continue">继续</string>
+    <string name="snake_start">开始</string>
+    <string name="snake_paused">已暂停，慢慢来。</string>
+    <string name="snake_ready">准备好了就开始吧</string>
+</resources>

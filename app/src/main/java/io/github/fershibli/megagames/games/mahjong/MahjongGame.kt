@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.mahjong
 
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -33,7 +35,6 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
-import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
@@ -90,14 +91,15 @@ private fun MahjongScreen(state: MutableState<MahjongState>, host: GameHost) {
     val dimBlocked = host.difficulty != Difficulty.HARD
     val free = remember(s.tiles) { s.tiles.filter { Mahjong.isFree(it, s.tiles) }.map { it.id }.toSet() }
 
+    val pace = currentPace
     LaunchedEffect(s.tiles.size, pairs.isEmpty(), s.shufflesLeft) {
         if (s.tiles.isEmpty()) host.finish(GameOutcome(true, null))
         else if (pairs.isEmpty() && s.shufflesLeft == 0) {
-            delay(800)
+            pace.wait(800)
             host.finish(GameOutcome(false, null))
         }
     }
-    LaunchedEffect(hint) { if (hint.isNotEmpty()) { delay(2500); hint = emptySet() } }
+    LaunchedEffect(hint) { if (hint.isNotEmpty()) { pace.wait(2500); hint = emptySet() } }
 
     fun tap(t: MTile?) {
         if (t == null) { state.value = s.copy(selected = -1); return }

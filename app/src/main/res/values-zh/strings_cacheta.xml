@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cacheta">卡舍塔（Cacheta）</string>
+    <string name="howto_cacheta">摸牌、弃牌，直到所有手牌都组成顺子和三条，然后抢在电脑之前按“Bater!”（胡牌）。</string>
+    <string name="cacheta_variant_classic">经典</string>
+    <string name="cacheta_variant_classic_desc">两副牌，每人9张，没有百搭牌。</string>
+    <string name="cacheta_variant_wild">有百搭牌</string>
+    <string name="cacheta_variant_wild_desc">翻开的一张牌（vira）决定百搭牌：同花色的下一张。</string>
+    <string name="cacheta_variant_pife">皮菲（Pife）</string>
+    <string name="cacheta_variant_pife_desc">没有百搭牌，顺子可以首尾相连（K-A-2），能胡牌时可以随时拿走别人弃的牌。</string>
+    <string name="cacheta_how_many">要几个电脑对手？</string>
+    <string name="cacheta_computer">电脑%1$d</string>
+    <string name="cacheta_playing">电脑%1$d正在出牌…</string>
+    <string name="cacheta_deck">牌堆（%1$d）</string>
+    <string name="cacheta_pile">弃牌堆</string>
+    <string name="cacheta_vira">翻牌</string>
+    <string name="cacheta_wild">百搭</string>
+    <string name="cacheta_draw">摸牌</string>
+    <string name="cacheta_take">拿弃牌</string>
+    <string name="cacheta_discard">弃掉</string>
+    <string name="cacheta_go_out">Bater!</string>
+    <string name="cacheta_sort_suit">按花色</string>
+    <string name="cacheta_sort_rank">按点数</string>
+    <string name="cacheta_skip">不用了</string>
+    <string name="cacheta_prompt_draw">轮到你：从牌堆摸牌，或拿走弃牌</string>
+    <string name="cacheta_prompt_discard">点一张牌，再按“弃掉”</string>
+    <string name="cacheta_prompt_go_out">所有牌都成组了！按“Bater!”胡牌</string>
+    <string name="cacheta_offer">用刚弃的%1$s就能胡牌！要拿吗？</string>
+    <string name="cacheta_err_taken">刚从弃牌拿到的牌不能马上再弃掉。</string>
+    <string name="cacheta_won">你胡牌了！</string>
+    <string name="cacheta_won_ten">你用全部10张牌胡牌了！</string>
+    <string name="cacheta_lost">电脑%1$d胡牌了。</string>
+    <string name="cacheta_deck_over">牌用完了：没有人胡牌。</string>
+    <string name="cacheta_your_hand">你的手牌</string>
+    <string name="cacheta_groups_note">绿条 = 已成组</string>
+    <plurals name="cacheta_opponents">
+        <item quantity="other">%1$d个电脑</item>
+    </plurals>
+</resources>

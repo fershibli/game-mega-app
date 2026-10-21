@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tablets: the take-turns option names the tablet instead of the phone. -->
+<resources>
+    <string name="take_turns">在这台平板上轮流玩</string>
+    <string name="take_turns_desc">每个人轮到时下一步，把平板传给下一位。不和电脑对战。</string>
+</resources>

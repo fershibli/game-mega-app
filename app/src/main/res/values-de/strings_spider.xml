@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">Spider</string>
+    <string name="howto_spider">Bilde Folgen vom König bis zum Ass in einer Farbe: Eine vollständige Folge verlässt den Tisch. Tippe auf eine Karte, um sie mit den Karten darauf zu verschieben, und tippe noch einmal, um einen anderen Platz zu versuchen. Tippe auf den Stapel, um eine neue Reihe zu geben.</string>
+    <string name="spider_variant_one">Eine Farbe</string>
+    <string name="spider_variant_one_desc">Nur Pik. Am einfachsten, gut zum Lernen.</string>
+    <string name="spider_variant_two">Zwei Farben</string>
+    <string name="spider_variant_two_desc">Pik und Herz. Etwas schwieriger.</string>
+    <string name="spider_variant_four">Vier Farben</string>
+    <string name="spider_variant_four_desc">Alle vier Farben. Eine echte Herausforderung.</string>
+    <string name="spider_status">Folgen: %1$d von 8 · Neue Reihen: %2$d</string>
+    <string name="spider_fill_columns">Für eine neue Reihe braucht jede Spalte eine Karte. Lege zuerst eine Karte in die leere Spalte.</string>
+    <string name="spider_hint_deal">Tippe auf den Stapel, um eine neue Reihe zu geben.</string>
+    <string name="spider_cannot_move">Diese Karten sind nicht in einer Farbe geordnet und können nicht zusammen bewegt werden.</string>
+    <string name="spider_stuck_title">Keine Züge mehr</string>
+    <string name="spider_stuck_message">Es gibt keine sinnvollen Züge und keine Karten mehr zum Geben. Du kannst einige Züge rückgängig machen und einen anderen Weg versuchen oder aufgeben.</string>
+    <string name="spider_give_up">Aufgeben</string>
+    <string name="spider_keep_playing">Weiter suchen</string>
+    <string name="spider_lost">Es war kein Zug mehr möglich.</string>
+</resources>

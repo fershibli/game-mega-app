@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">Sudoku de somas</string>
+    <string name="howto_killer">Sudoku sem números dados: cada linha, coluna e bloco 3×3 tem de 1 a 9 uma vez, e os algarismos dentro de cada área tracejada somam o número pequeno no seu canto, sem repetir.</string>
+    <string name="killer_tap_cell">Toque num quadrado e depois num número</string>
+    <string name="killer_hint_combos">Formas de somar %1$d: %2$s</string>
+    <string name="killer_hint_again">Toque em Dica de novo para preencher este quadrado.</string>
+</resources>

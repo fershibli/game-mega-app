@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pegs">سوليتير الأوتاد</string>
+    <string name="howto_pegs">اقفز بكرة فوق جارتها إلى ثقب فارغ، فتخرج الكرة التي قفزت فوقها من اللوحة. اترك كرة واحدة فقط لتفوز.</string>
+    <string name="pegs_variant_english">اللوحة الإنجليزية</string>
+    <string name="pegs_variant_english_desc">33 ثقبًا على شكل صليب، ويبدأ المركز فارغًا.</string>
+    <string name="pegs_variant_french">اللوحة الفرنسية</string>
+    <string name="pegs_variant_french_desc">37 ثقبًا: الصليب وأربعة ثقوب في الزوايا. أصعب قليلًا.</string>
+    <string name="pegs_left">الكرات: %1$d</string>
+    <string name="pegs_pick_peg">المس كرة لتحريكها</string>
+    <string name="pegs_pick_hole">والآن المس الثقب الفارغ الذي تقفز إليه</string>
+    <string name="pegs_no_jumps">لا توجد قفزات أخرى</string>
+    <string name="pegs_restart">البدء من جديد</string>
+    <string name="pegs_win_one">بقيت كرة واحدة فقط. أحسنت!</string>
+    <string name="pegs_win_perfect">كرة واحدة في الثقب المعلَّم تمامًا: نهاية مثالية!</string>
+    <plurals name="pegs_end_left">
+        <item quantity="zero">لا توجد قفزات أخرى، وبقيت %1$d كرة. محاولة جميلة!</item>
+        <item quantity="one">لا توجد قفزات أخرى، وبقيت كرة واحدة (%1$d). محاولة جميلة!</item>
+        <item quantity="two">لا توجد قفزات أخرى، وبقيت كرتان (%1$d). محاولة جميلة!</item>
+        <item quantity="few">لا توجد قفزات أخرى، وبقيت %1$d كرات. محاولة جميلة!</item>
+        <item quantity="many">لا توجد قفزات أخرى، وبقيت %1$d كرة. محاولة جميلة!</item>
+        <item quantity="other">لا توجد قفزات أخرى، وبقيت %1$d كرة. محاولة جميلة!</item>
+    </plurals>
+</resources>

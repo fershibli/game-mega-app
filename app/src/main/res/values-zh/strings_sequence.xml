@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sequence">跟着颜色</string>
+    <string name="howto_sequence">看方块依次亮起，然后按同样的顺序点它们。每一轮多加一种颜色。</string>
+    <string name="sequence_ready">准备好了就点“开始”</string>
+    <string name="sequence_watch">请看…</string>
+    <string name="sequence_again">差一点！再看一遍…</string>
+    <string name="sequence_your_turn">轮到你了</string>
+    <string name="sequence_well_done">做得好！</string>
+    <string name="sequence_oops">那是另一个方块</string>
+    <string name="sequence_progress">颜色：%1$d / %2$d</string>
+    <string name="sequence_best">最佳：%1$d</string>
+    <string name="sequence_start">开始</string>
+    <string name="sequence_watch_again">再看一遍</string>
+    <string name="sequence_lose">按对的最长顺序：%1$d。</string>
+    <string name="sequence_record">新纪录！</string>
+    <string name="sequence_pad_star">星星方块</string>
+    <string name="sequence_pad_drop">水滴方块</string>
+    <string name="sequence_pad_leaf">叶子方块</string>
+    <string name="sequence_pad_heart">爱心方块</string>
+    <plurals name="sequence_win">
+        <item quantity="other">你把 %1$d 种颜色全部按对了！</item>
+    </plurals>
+</resources>

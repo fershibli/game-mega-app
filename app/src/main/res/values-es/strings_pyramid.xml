@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">Pirámide</string>
+    <string name="howto_pyramid">Quita dos cartas descubiertas que sumen 13: Reina y As, Jota y 2, 10 y 3… El Rey sale solo. Toca el mazo para dar la vuelta a una carta nueva. Vacía toda la pirámide para ganar.</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">Cartas en la pirámide: %1$d</string>
+    <string name="pyramid_passes">Vueltas al mazo restantes: %1$d</string>
+    <string name="pyramid_needs">Esta carta vale %1$d: toca una carta que valga %2$d.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d, no 13.</string>
+    <string name="pyramid_covered">Esa carta todavía está tapada por las cartas de abajo.</string>
+    <string name="pyramid_hint_deck">Toca el mazo para dar la vuelta a una carta nueva.</string>
+    <string name="pyramid_stuck_title">No quedan jugadas</string>
+    <string name="pyramid_stuck_message">Ya no se puede quitar ninguna carta. Puedes deshacer algunas jugadas y probar otro camino, o rendirte.</string>
+    <string name="pyramid_give_up">Rendirse</string>
+    <string name="pyramid_keep_playing">Seguir buscando</string>
+    <string name="pyramid_lost">No quedaban parejas posibles.</string>
+</resources>

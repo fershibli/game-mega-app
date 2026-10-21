@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">Araignée</string>
+    <string name="howto_spider">Formez des suites du Roi à l’As dans une même couleur : une suite complète quitte la table. Touchez une carte pour la déplacer avec les cartes posées dessus, et touchez-la encore pour essayer une autre place. Touchez le talon pour distribuer une nouvelle rangée.</string>
+    <string name="spider_variant_one">Une couleur</string>
+    <string name="spider_variant_one_desc">Seulement des piques. La façon la plus facile, idéale pour apprendre.</string>
+    <string name="spider_variant_two">Deux couleurs</string>
+    <string name="spider_variant_two_desc">Piques et cœurs. Un peu plus difficile.</string>
+    <string name="spider_variant_four">Quatre couleurs</string>
+    <string name="spider_variant_four_desc">Les quatre couleurs. Un vrai défi.</string>
+    <string name="spider_status">Suites : %1$d sur 8 · Distributions : %2$d</string>
+    <string name="spider_fill_columns">Pour distribuer une nouvelle rangée, chaque colonne doit avoir une carte. Placez d’abord une carte dans la colonne vide.</string>
+    <string name="spider_hint_deal">Touchez le talon pour distribuer une nouvelle rangée.</string>
+    <string name="spider_cannot_move">Ces cartes ne se suivent pas dans une même couleur : elles ne peuvent pas bouger ensemble.</string>
+    <string name="spider_stuck_title">Plus de coups possibles</string>
+    <string name="spider_stuck_message">Il ne reste aucun coup utile ni carte à distribuer. Vous pouvez annuler quelques coups et essayer autrement, ou abandonner.</string>
+    <string name="spider_give_up">Abandonner</string>
+    <string name="spider_keep_playing">Continuer à chercher</string>
+    <string name="spider_lost">Plus aucun coup n’était possible.</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">金字塔纸牌</string>
+    <string name="howto_pyramid">拿走两张没被压住、加起来等于13的牌：Q和A、J和2、10和3……K可以单独拿走。点牌堆翻开一张新牌。把整座金字塔清空就赢了。</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">金字塔里的牌：%1$d张</string>
+    <string name="pyramid_passes">剩余翻牌次数：%1$d</string>
+    <string name="pyramid_needs">这张牌是%1$d点：请点一张%2$d点的牌。</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d，不是13。</string>
+    <string name="pyramid_covered">这张牌还被下面的牌压着。</string>
+    <string name="pyramid_hint_deck">点牌堆翻开一张新牌。</string>
+    <string name="pyramid_stuck_title">没有可走的了</string>
+    <string name="pyramid_stuck_message">已经没有牌可以拿走了。你可以撤销几步换个走法，或者放弃。</string>
+    <string name="pyramid_give_up">放弃</string>
+    <string name="pyramid_keep_playing">继续找找</string>
+    <string name="pyramid_lost">已经凑不出可以拿走的牌了。</string>
+</resources>

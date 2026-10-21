@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_memory">Trova le coppie</string>
+    <string name="howto_memory">Gira due carte per mossa. Se mostrano la stessa figura, restano scoperte. Trova tutte le coppie con meno mosse possibile.</string>
+    <string name="memory_variant_cards">Carte da gioco</string>
+    <string name="memory_variant_cards_desc">Una coppia è lo stesso numero dello stesso colore: ♥ con ♦, oppure ♠ con ♣.</string>
+    <string name="memory_variant_fruits">Frutta</string>
+    <string name="memory_variant_fruits_desc">Mela, ciliegie, pera, limone, uva e altro.</string>
+    <string name="memory_variant_symbols">Simboli</string>
+    <string name="memory_variant_symbols_desc">Stella, cuore, luna, sole, goccia, foglia e altro.</string>
+    <string name="memory_variant_animals">Animali</string>
+    <string name="memory_variant_animals_desc">Musetti simpatici: gatto, cane, coniglio, gufo e altro.</string>
+    <string name="memory_counts">Mosse: %1$d · Coppie: %2$d su %3$d</string>
+    <string name="memory_best">Record: %1$d</string>
+    <string name="memory_first">Gira due carte</string>
+    <string name="memory_second">Ora trova la sua coppia</string>
+    <string name="memory_miss">Non sono una coppia. Tocca una carta per continuare</string>
+    <string name="memory_match">Una coppia! Continua così</string>
+    <string name="memory_all_found">Tutte le coppie trovate!</string>
+    <string name="memory_record">Nuovo record!</string>
+    <string name="memory_card">Carta %1$d</string>
+    <string name="memory_card_found">Carta %1$d, coppia trovata</string>
+    <plurals name="memory_result">
+        <item quantity="one">Hai trovato tutte le coppie in %1$d mossa.</item>
+        <item quantity="many">Hai trovato tutte le coppie in %1$d mosse.</item>
+        <item quantity="other">Hai trovato tutte le coppie in %1$d mosse.</item>
+    </plurals>
+    <plurals name="memory_best_line">
+        <item quantity="one">Il tuo record: %1$d mossa.</item>
+        <item quantity="many">Il tuo record: %1$d mosse.</item>
+        <item quantity="other">Il tuo record: %1$d mosse.</item>
+    </plurals>
+</resources>
