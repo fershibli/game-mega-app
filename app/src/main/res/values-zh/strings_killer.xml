@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">杀手数独</string>
+    <string name="howto_killer">没有提示数字的数独：每行、每列和每个3×3宫格都有1到9各一次，每个虚线框里的数字之和等于框角上的小数字，框内数字不能重复。</string>
+    <string name="killer_tap_cell">先点一个方格，再点一个数字</string>
+    <string name="killer_hint_combos">和为%1$d的组合：%2$s</string>
+    <string name="killer_hint_again">再点一次提示，就会填好这个方格。</string>
+</resources>

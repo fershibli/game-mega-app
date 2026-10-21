@@ -70,6 +70,9 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.PEGS -> pegsThumbnail(p)
             GameId.MEMORY -> memoryThumbnail(p)
             GameId.SEQUENCE -> sequenceThumbnail(p)
+            GameId.NONOGRAM -> io.github.fershibli.megagames.games.nonogram.nonogramThumbnail(this, p, m)
+            GameId.KAKURO -> io.github.fershibli.megagames.games.kakuro.kakuroThumbnail(this, p, m)
+            GameId.KILLER -> io.github.fershibli.megagames.games.killer.killerThumbnail(this, p, m)
         }
     }
 }

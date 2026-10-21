@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">Kakuro</string>
+    <string name="howto_kakuro">A crossword of numbers: fill the white squares with 1 to 9 so that each row or column of white squares adds up to the number in the black square before it, without repeating a digit.</string>
+    <string name="kakuro_tap_cell">Tap a white square, then a number</string>
+    <string name="kakuro_hint_again">Tap Hint again to fill in this square.</string>
+</resources>

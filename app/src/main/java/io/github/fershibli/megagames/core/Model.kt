@@ -81,6 +81,9 @@ enum class GameId(
     PEGS("pegs", R.string.game_pegs, R.string.howto_pegs, GameCategory.PUZZLES, listOf(GameVariant("english", R.string.pegs_variant_english, R.string.pegs_variant_english_desc), GameVariant("french", R.string.pegs_variant_french, R.string.pegs_variant_french_desc))),
     MEMORY("memory", R.string.game_memory, R.string.howto_memory, GameCategory.PUZZLES, listOf(GameVariant("cards", R.string.memory_variant_cards, R.string.memory_variant_cards_desc), GameVariant("fruits", R.string.memory_variant_fruits, R.string.memory_variant_fruits_desc), GameVariant("symbols", R.string.memory_variant_symbols, R.string.memory_variant_symbols_desc), GameVariant("animals", R.string.memory_variant_animals, R.string.memory_variant_animals_desc))),
     SEQUENCE("sequence", R.string.game_sequence, R.string.howto_sequence, GameCategory.PUZZLES),
+    NONOGRAM("nonogram", R.string.game_nonogram, R.string.howto_nonogram, GameCategory.PUZZLES),
+    KAKURO("kakuro", R.string.game_kakuro, R.string.howto_kakuro, GameCategory.PUZZLES),
+    KILLER("killer", R.string.game_killer, R.string.howto_killer, GameCategory.PUZZLES),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

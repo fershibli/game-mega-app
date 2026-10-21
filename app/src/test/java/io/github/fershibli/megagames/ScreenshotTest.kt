@@ -188,5 +188,8 @@ class ScreenshotTest {
             }
         }
     }
+    @Test fun nonogram() = gameShot("game_nonogram", GameId.NONOGRAM, Difficulty.MEDIUM)
+    @Test fun kakuro() = gameShot("game_kakuro", GameId.KAKURO, Difficulty.MEDIUM)
+    @Test fun killerDark() = gameShot("game_killer_dark", GameId.KILLER, settings = Settings(darkMode = true))
 
 }

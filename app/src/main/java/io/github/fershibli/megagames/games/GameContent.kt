@@ -51,5 +51,8 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.PEGS -> PegsGame(host)
         GameId.MEMORY -> MemoryGame(host)
         GameId.SEQUENCE -> SequenceGame(host)
+        GameId.NONOGRAM -> io.github.fershibli.megagames.games.nonogram.NonogramGame(host)
+        GameId.KAKURO -> io.github.fershibli.megagames.games.kakuro.KakuroGame(host)
+        GameId.KILLER -> io.github.fershibli.megagames.games.killer.KillerGame(host)
     }
 }

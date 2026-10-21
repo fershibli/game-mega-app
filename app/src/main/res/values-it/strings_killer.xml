@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_killer">Sudoku delle somme</string>
+    <string name="howto_killer">Un sudoku senza numeri dati: ogni riga, colonna e riquadro 3×3 contiene da 1 a 9 una volta, e le cifre dentro ogni gabbia tratteggiata danno come somma il numero piccolo nell’angolo, senza ripetersi.</string>
+    <string name="killer_tap_cell">Tocca un quadrato, poi un numero</string>
+    <string name="killer_hint_combos">Modi di fare %1$d: %2$s</string>
+    <string name="killer_hint_again">Tocca di nuovo Suggerimento per riempire questo quadrato.</string>
+</resources>
