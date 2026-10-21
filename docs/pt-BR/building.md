@@ -161,7 +161,7 @@ RESPOSTA|Uma dica curta e simpática
 
 ## Adicionando um jogo
 
-1. Crie uma entrada em `GameId` (a `key` dela fica gravada nos salvamentos: nunca a mude depois) com os textos de título e de como jogar.
+1. Crie uma entrada em `GameId` (a `key` dela fica gravada nos salvamentos: nunca a mude depois) com os textos de título e de como jogar. Um jogo que não funciona em todos os idiomas (um criptograma não tem alfabeto para trocar em japonês ou chinês) lista os que aceita com `languages = setOf(AppLanguage.ENGLISH, AppLanguage.PORTUGUESE, ...)`: ele continua na tela inicial e, quando o idioma do app não está na lista, o jogador escolhe antes um deles; o jogo lê esse idioma em `LocalGameLanguage` (e os textos dele vêm nesse idioma).
 2. Crie `games/<nome>/` com um motor em Kotlin puro (estado `@Serializable`) e testes.
 3. Escreva a tela com `LoadGame(host, State.serializer(), create = { ... })` e `GameLayout(status, controls) { tabuleiro }`; chame `host.finish(GameOutcome(...))` no fim.
 4. Ligue-o em `GameContent.kt` e desenhe a miniatura em `ui/art/Thumbnails.kt`.

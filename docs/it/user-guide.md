@@ -89,6 +89,8 @@ Ogni tabellone si può ingrandire.
 
 L’elenco delle impostazioni comincia nella parte bassa dello schermo, e puoi far scorrere ogni opzione verso il pollice.
 
+**Giochi in altre lingue.** Alcuni giochi non funzionano in tutte le lingue (un rompicapo che scambia le lettere, per esempio, ha bisogno di un alfabeto). Restano nella schermata iniziale; quando ne apri uno che non è disponibile nella tua lingua, Mili Games te lo dice prima e mostra un grande pulsante per ogni lingua del gioco, più **Annulla**. Il gioco (regole e testi) si gioca allora nella lingua scelta, mentre il resto dell’app resta nella tua. La lingua scelta compare per prima la volta successiva, e una partita salvata continua sempre nella lingua in cui è iniziata.
+
 ## Accessibilità
 
 Pensata per le persone anziane:

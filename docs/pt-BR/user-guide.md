@@ -91,6 +91,8 @@ Todo tabuleiro pode ser ampliado.
 
 A lista de configurações começa mais para baixo na tela, e qualquer opção pode ser rolada para perto do polegar.
 
+**Jogos em outros idiomas.** Alguns jogos não funcionam em todos os idiomas (um quebra-cabeça que troca letras, por exemplo, precisa de um alfabeto). Eles continuam na tela inicial; ao abrir um que não está disponível no seu idioma, o Mili Games avisa “Esse jogo não está disponível no seu idioma, prosseguir em:” e mostra um botão grande para cada idioma do jogo, além de **Cancelar**. O jogo (as regras e os textos dele) fica no idioma escolhido, e o resto do app continua no seu. O idioma escolhido aparece primeiro da próxima vez, e um jogo salvo sempre continua no idioma em que começou.
+
 ## Acessibilidade
 
 Pensado para pessoas idosas:

@@ -29,6 +29,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
+import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.ui.art.GameThumbnail
@@ -40,6 +41,7 @@ import io.github.fershibli.megagames.ui.components.FloatingGear
 import io.github.fershibli.megagames.ui.components.TopBar
 import io.github.fershibli.megagames.ui.components.WheelPicker
 import io.github.fershibli.megagames.ui.theme.LocalPalette
+import io.github.fershibli.megagames.ui.theme.ProvideGameLanguage
 
 /**
  * Difficulty choice: a scroll wheel with the default difficulty already selected, then
@@ -52,6 +54,7 @@ fun DifficultyScreen(
     onConfirm: (Difficulty) -> Unit,
     onBack: () -> Unit,
     onSettings: () -> Unit,
+    language: AppLanguage? = null,
 ) {
     val p = LocalPalette.current
     var selected by remember { mutableStateOf(initial) }
@@ -78,10 +81,13 @@ fun DifficultyScreen(
                         .background(p.surface),
                 ) { GameThumbnail(game, Modifier.fillMaxSize()) }
                 Spacer(Modifier.height(14.dp))
-                Text(
-                    stringResource(game.howTo), style = MaterialTheme.typography.bodyLarge, color = p.text,
-                    textAlign = TextAlign.Center,
-                )
+                // The rules are read in the language the game will be played in.
+                ProvideGameLanguage(language) {
+                    Text(
+                        stringResource(game.howTo), style = MaterialTheme.typography.bodyLarge, color = p.text,
+                        textAlign = TextAlign.Center,
+                    )
+                }
                 Spacer(Modifier.height(14.dp))
             }
             Column(

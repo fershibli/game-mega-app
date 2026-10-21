@@ -91,6 +91,8 @@ Every game board can be enlarged.
 
 The settings list starts low on the screen, and you can scroll any option down towards your thumb.
 
+**Games in other languages.** A few games cannot be played in every language (a puzzle that swaps letters, for example, needs an alphabet). They are still on the home screen; when you open one that is not available in your language, Mili Games first says so and shows a big button for each language the game has, plus **Cancel**. The game (its rules and its texts) is then played in the language you choose, while the rest of the app stays in yours. The language you picked comes first next time, and a saved game always continues in the language it was started in.
+
 ## Accessibility
 
 Designed with older adults in mind:

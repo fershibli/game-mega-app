@@ -137,7 +137,8 @@ class SettingsStore(context: Context) {
 
 /**
  * Choices remembered between games that are not settings: the rules last picked for each game
- * (preselected next time, so one tap starts the game) and the order of the home screen.
+ * (preselected next time, so one tap starts the game), the language picked for a game that is
+ * not available in the app language, and the order of the home screen.
  */
 class ChoiceStore(context: Context) {
     private val prefs: SharedPreferences = context.getSharedPreferences("choices", Context.MODE_PRIVATE)
@@ -184,6 +185,13 @@ class ChoiceStore(context: Context) {
 
     fun rememberVariant(game: GameId, variant: GameVariant) {
         prefs.edit().putString("variant.${game.key}", variant.key).apply()
+    }
+
+    /** Language picked last time for a game that is not available in the app language. */
+    fun lastLanguage(game: GameId): AppLanguage? = GameLanguages.fromName(prefs.getString("language.${game.key}", null))
+
+    fun rememberLanguage(game: GameId, language: AppLanguage) {
+        prefs.edit().putString("language.${game.key}", language.name).apply()
     }
 }
 

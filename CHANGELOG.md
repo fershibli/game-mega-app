@@ -14,6 +14,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - Lasting storage for pastime games (a pet, a farm), kept apart from the game in progress and included in Android's own backup.
 - Settings → **Why Mili Games exists** (at the very end): why the app is and always will be free and ad-free, how it was made (with the help of Claude, with no AI inside the app) and a button to the source code and documentation. The same text is in the store descriptions.
 - **Arabic** (Modern Standard Arabic): screens read right to left, while game boards keep their layout and left-handed mode still means the physical left; the crossword reads right to left with a letter bank. Western digits are kept, as on the boards.
+- Games that cannot be played in every language: they stay on the home screen and, when the app language is not one of theirs, ask first which of their languages to play in (one big button each, the last choice first). The game then plays in that language, and a saved game always continues in the language it started in.
 - CI reports the release APK size, warns past 10 MB and fails past 20 MB.
 - Four new languages: **Italian, German, Russian and Japanese** — the interface, crossword dictionaries (with QWERTZ and ЙЦУКЕН keyboards; Japanese in katakana with a kana bank), store listings, README, user guide, trust page and privacy policy.
 

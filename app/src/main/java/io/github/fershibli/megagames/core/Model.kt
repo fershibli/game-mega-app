@@ -29,6 +29,10 @@ data class GameVariant(val key: String, @StringRes val name: Int, @StringRes val
  * Every game shipped in the app. The [key] is persisted in save files, so it must never change
  * once released. A game with [variants] asks which rules to use before the difficulty (the last
  * choice comes preselected); a game without [hasDifficulty] (a pet, a farm) starts right away.
+ * A game that cannot be played in every language (a cryptogram needs an alphabet) lists the
+ * [languages] it can use, for example `languages = setOf(AppLanguage.ENGLISH, AppLanguage.SPANISH)`;
+ * `null` means every language. It is still listed, and asks which language to play in when the
+ * app language is not one of them.
  */
 enum class GameId(
     val key: String,
@@ -37,6 +41,7 @@ enum class GameId(
     val category: GameCategory,
     val variants: List<GameVariant> = emptyList(),
     val hasDifficulty: Boolean = true,
+    val languages: Set<AppLanguage>? = null,
 ) {
     SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku, GameCategory.PUZZLES),
     SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire, GameCategory.CARDS),
@@ -55,6 +60,9 @@ enum class GameId(
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()
+
+    /** True when the game can be played in [language] ([AppLanguage.SYSTEM] is resolved first). */
+    fun supports(language: AppLanguage): Boolean = GameLanguages.supports(languages, language)
 
     companion object {
         fun fromKey(key: String): GameId? = entries.firstOrNull { it.key == key }
