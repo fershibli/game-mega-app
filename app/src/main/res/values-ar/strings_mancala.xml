@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">المنقلة</string>
+    <string name="howto_mancala">اختر إحدى حفرك: تُوزَّع بذورها واحدة واحدة على الحفر التالية عكس اتجاه عقارب الساعة. اربح البذور كما تسمح القواعد. يفوز من ينهي اللعبة ومعه بذور أكثر.</string>
+    <string name="mancala_variant_kalah">كالاه</string>
+    <string name="mancala_variant_kalah_desc">6 حفر في كل منها 4 بذور ومخزن. آخر بذرة في مخزنك تمنحك دورًا آخر، وفي حفرة فارغة لك تأخذ البذور المقابلة.</string>
+    <string name="mancala_variant_oware">أواري</string>
+    <string name="mancala_variant_oware_desc">لا تُزرع البذور في المخازن. اجعل في حفر الحاسوب بذرتين أو ثلاثًا لتأخذها، ولا تتركه أبدًا بلا بذور.</string>
+    <string name="mancala_score">مخزنك: %1$d · الحاسوب: %2$d</string>
+    <string name="mancala_pick">دورك: المس إحدى حفرك (الصف السفلي)</string>
+    <string name="mancala_again">سقطت آخر بذرة في مخزنك: العب مرة أخرى!</string>
+    <string name="mancala_feed">لا بذور لدى الحاسوب: اختر حفرة تعطيه بعضها</string>
+    <string name="mancala_final">النتيجة النهائية: أنت %1$d، الحاسوب %2$d.</string>
+    <string name="mancala_draw">تعادل: لكل منكما %1$d.</string>
+</resources>

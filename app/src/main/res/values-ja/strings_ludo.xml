@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">ルドー</string>
+    <string name="howto_ludo">サイコロを振り、4つのコマを盤のまわりに進めて中央まで運びます。コマを出すには6が必要です。相手のコマに止まると、そのコマを家に戻せます。4つのコマを先に中央に入れた人の勝ちです。</string>
+    <string name="ludo_variant_classic">クラシック</string>
+    <string name="ludo_variant_classic_desc">星のマスは安全、6が出たらもう一度、6が3回続くとその番は終わりです。</string>
+    <string name="ludo_variant_simple">シンプル</string>
+    <string name="ludo_variant_simple_desc">安全なマスはありません。どのコマも取られます。6が出たらもう一度振れます。</string>
+    <string name="ludo_choose_opponents">コンピューターは何人？</string>
+    <string name="ludo_you_are">あなたは左下の青です。あなたから始めます。</string>
+    <string name="ludo_red">赤</string>
+    <string name="ludo_green">緑</string>
+    <string name="ludo_yellow">黄</string>
+    <string name="ludo_blue">青</string>
+    <string name="ludo_home_count">中央に着いたコマ：%1$d／4</string>
+    <string name="ludo_roll">振る</string>
+    <string name="ludo_roll_prompt">あなたの番：サイコロをタップ</string>
+    <string name="ludo_pick_piece">%1$dが出ました：光っているコマをタップ</string>
+    <string name="ludo_no_move">%1$dが出ました：動けるコマがありません</string>
+    <string name="ludo_three_sixes">6が3回続きました：この番は終わりです</string>
+    <string name="ludo_computer_turn">%1$sの番です…</string>
+    <string name="ludo_computer_rolled">%1$sは%2$dを出しました</string>
+    <string name="ludo_you_won">4つのコマがすべて中央に着きました！</string>
+    <string name="ludo_other_won">%1$sが先に4つのコマを中央に運びました。</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">Mancala</string>
+    <string name="howto_mancala">Wähle eine deiner Mulden: Ihre Samen werden einzeln in die nächsten Mulden gesät, gegen den Uhrzeigersinn. Fange Samen, wie es die Regeln erlauben. Wer am Ende mehr Samen hat, gewinnt.</string>
+    <string name="mancala_variant_kalah">Kalah</string>
+    <string name="mancala_variant_kalah_desc">6 Mulden mit je 4 Samen und ein Speicher. Landet der letzte Samen in deinem Speicher, bist du noch einmal dran; in einer leeren eigenen Mulde fängt er die Samen gegenüber.</string>
+    <string name="mancala_variant_oware">Oware</string>
+    <string name="mancala_variant_oware_desc">In die Speicher wird nicht gesät. Mach 2 oder 3 Samen in den Mulden des Computers, um sie zu fangen, und lass ihn nie ohne Samen.</string>
+    <string name="mancala_score">Dein Speicher: %1$d · Computer: %2$d</string>
+    <string name="mancala_pick">Du bist dran: tippe auf eine deiner Mulden (untere Reihe)</string>
+    <string name="mancala_again">Dein letzter Samen ist in deinem Speicher: noch einmal!</string>
+    <string name="mancala_feed">Der Computer hat keine Samen: wähle eine Mulde, die ihm welche gibt</string>
+    <string name="mancala_final">Endstand: du %1$d, Computer %2$d.</string>
+    <string name="mancala_draw">Unentschieden: jede Seite hat %1$d.</string>
+</resources>

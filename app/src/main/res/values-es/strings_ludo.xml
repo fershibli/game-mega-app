@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">Parchís</string>
+    <string name="howto_ludo">Tira el dado y lleva tus cuatro fichas alrededor del tablero hasta el centro. Necesitas un 6 para sacar una ficha de casa. Cae sobre una ficha rival para mandarla de vuelta a casa. Gana quien lleve primero sus cuatro fichas al centro.</string>
+    <string name="ludo_variant_classic">Clásico</string>
+    <string name="ludo_variant_classic_desc">Las casillas con estrella son seguras, un 6 da otra tirada y tres 6 seguidos pierden el turno.</string>
+    <string name="ludo_variant_simple">Sencillo</string>
+    <string name="ludo_variant_simple_desc">Sin casillas seguras: cualquier ficha se puede comer. Un 6 sigue dando otra tirada.</string>
+    <string name="ludo_choose_opponents">¿Cuántos jugadores del ordenador?</string>
+    <string name="ludo_you_are">Juegas con el azul, abajo a la izquierda. Empiezas tú.</string>
+    <string name="ludo_red">Rojo</string>
+    <string name="ludo_green">Verde</string>
+    <string name="ludo_yellow">Amarillo</string>
+    <string name="ludo_blue">Azul</string>
+    <string name="ludo_home_count">Tus fichas en el centro: %1$d de 4</string>
+    <string name="ludo_roll">Tirar</string>
+    <string name="ludo_roll_prompt">Tu turno: toca el dado</string>
+    <string name="ludo_pick_piece">Has sacado %1$d: toca una ficha resaltada</string>
+    <string name="ludo_no_move">Has sacado %1$d: ninguna ficha puede moverse</string>
+    <string name="ludo_three_sixes">Tres 6 seguidos: pierdes el turno</string>
+    <string name="ludo_computer_turn">%1$s está jugando…</string>
+    <string name="ludo_computer_rolled">%1$s ha sacado %2$d</string>
+    <string name="ludo_you_won">¡Tus cuatro fichas llegaron al centro!</string>
+    <string name="ludo_other_won">%1$s llevó primero sus cuatro fichas al centro.</string>
+</resources>

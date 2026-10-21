@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">Mühle</string>
+    <string name="howto_morris">Setzt abwechselnd eure Steine auf die Punkte und zieht sie dann entlang der Linien. Drei in einer Reihe (eine Mühle) erlauben dir, einen Stein des Computers wegzunehmen. Lass ihm nur zwei Steine oder keinen Zug, dann gewinnst du.</string>
+    <string name="morris_variant_nine">Mühle mit 9 Steinen</string>
+    <string name="morris_variant_nine_desc">9 Steine pro Person auf drei Quadraten. Mit nur 3 Steinen dürfen deine auf jeden Punkt springen.</string>
+    <string name="morris_variant_six">Mühle mit 6 Steinen</string>
+    <string name="morris_variant_six_desc">6 Steine pro Person auf einem kleineren Brett mit zwei Quadraten. Kein Springen.</string>
+    <string name="morris_variant_twelve">Mühle mit 12 Steinen</string>
+    <string name="morris_variant_twelve_desc">12 Steine pro Person und Diagonalen, die auch Mühlen bilden. Mit 3 Steinen dürfen deine springen.</string>
+    <string name="morris_score">Steine: du %1$d · Computer %2$d</string>
+    <string name="morris_place">Du bist dran: tippe auf einen freien Punkt, um einen Stein zu setzen. Noch zu setzen: %1$d</string>
+    <string name="morris_pick_piece">Du bist dran: tippe auf einen deiner Steine</string>
+    <string name="morris_pick_target">Tippe jetzt, wohin er soll</string>
+    <string name="morris_fly">Du hast 3 Steine: sie dürfen auf jeden freien Punkt springen</string>
+    <string name="morris_remove">Mühle! Tippe auf einen Stein des Computers, um ihn wegzunehmen</string>
+    <string name="morris_ai_two_left">Der Computer hat nur noch zwei Steine.</string>
+    <string name="morris_ai_blocked">Der Computer kann nicht mehr ziehen.</string>
+    <string name="morris_you_two_left">Du hast nur noch zwei Steine.</string>
+    <string name="morris_you_blocked">Du kannst nicht mehr ziehen.</string>
+    <string name="morris_draw">Unentschieden: 50 Züge pro Person ohne Mühle.</string>
+    <string name="morris_draw_full">Unentschieden: Das Brett ist voll.</string>
+</resources>

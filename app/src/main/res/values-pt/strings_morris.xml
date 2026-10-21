@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">Trilha</string>
+    <string name="howto_morris">Coloquem as peças nos pontos, um de cada vez, e depois movam-nas pelas linhas. Três em linha (uma trilha) deixa você tirar uma peça do computador. Deixe-o com duas peças ou sem jogadas para ganhar.</string>
+    <string name="morris_variant_nine">Trilha de 9</string>
+    <string name="morris_variant_nine_desc">9 peças cada, em três quadrados. Com só 3 peças, as suas podem pular para qualquer ponto.</string>
+    <string name="morris_variant_six">Trilha de 6</string>
+    <string name="morris_variant_six_desc">6 peças cada, num tabuleiro menor com dois quadrados. Sem pulos.</string>
+    <string name="morris_variant_twelve">Trilha de 12</string>
+    <string name="morris_variant_twelve_desc">12 peças cada e linhas diagonais que também formam trilhas. Com 3 peças, as suas podem pular.</string>
+    <string name="morris_score">Peças: você %1$d · computador %2$d</string>
+    <string name="morris_place">Sua vez: toque num ponto vazio para colocar uma peça. Ainda a colocar: %1$d</string>
+    <string name="morris_pick_piece">Sua vez: toque numa das suas peças</string>
+    <string name="morris_pick_target">Agora toque onde ela deve ir</string>
+    <string name="morris_fly">Você tem 3 peças: elas podem pular para qualquer ponto vazio</string>
+    <string name="morris_remove">Trilha! Toque numa peça do computador para tirá-la</string>
+    <string name="morris_ai_two_left">O computador ficou com só duas peças.</string>
+    <string name="morris_ai_blocked">O computador não pode se mover.</string>
+    <string name="morris_you_two_left">Você ficou com só duas peças.</string>
+    <string name="morris_you_blocked">Você não pode se mover.</string>
+    <string name="morris_draw">Empate: 50 jogadas de cada um sem trilha.</string>
+    <string name="morris_draw_full">Empate: o tabuleiro está cheio.</string>
+</resources>

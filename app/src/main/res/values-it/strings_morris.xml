@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">Mulino</string>
+    <string name="howto_morris">A turno mettete le pedine sui punti, poi spostatele lungo le linee. Tre in fila (un mulino) ti permettono di togliere una pedina al computer. Lascialo con due pedine o senza mosse per vincere.</string>
+    <string name="morris_variant_nine">Mulino a 9</string>
+    <string name="morris_variant_nine_desc">9 pedine a testa su tre quadrati. Con sole 3 pedine, le tue possono saltare su qualsiasi punto.</string>
+    <string name="morris_variant_six">Mulino a 6</string>
+    <string name="morris_variant_six_desc">6 pedine a testa su un tavoliere più piccolo con due quadrati. Niente salti.</string>
+    <string name="morris_variant_twelve">Mulino a 12</string>
+    <string name="morris_variant_twelve_desc">12 pedine a testa e diagonali che formano anche mulini. Con 3 pedine, le tue possono saltare.</string>
+    <string name="morris_score">Pedine: tu %1$d · computer %2$d</string>
+    <string name="morris_place">Tocca a te: tocca un punto libero per mettere una pedina. Da mettere: %1$d</string>
+    <string name="morris_pick_piece">Tocca a te: tocca una delle tue pedine</string>
+    <string name="morris_pick_target">Ora tocca dove deve andare</string>
+    <string name="morris_fly">Hai 3 pedine: possono saltare su qualsiasi punto libero</string>
+    <string name="morris_remove">Mulino! Tocca una pedina del computer per toglierla</string>
+    <string name="morris_ai_two_left">Al computer restano solo due pedine.</string>
+    <string name="morris_ai_blocked">Il computer non può muoversi.</string>
+    <string name="morris_you_two_left">Ti restano solo due pedine.</string>
+    <string name="morris_you_blocked">Non puoi muoverti.</string>
+    <string name="morris_draw">Patta: 50 mosse a testa senza mulino.</string>
+    <string name="morris_draw_full">Patta: il tavoliere è pieno.</string>
+</resources>

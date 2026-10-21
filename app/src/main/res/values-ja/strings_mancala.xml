@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">マンカラ</string>
+    <string name="howto_mancala">自分の穴を1つ選ぶと、その中の種が反時計回りに次の穴へ1つずつまかれます。ルールに従って種を取りましょう。最後に種が多い人の勝ちです。</string>
+    <string name="mancala_variant_kalah">カラハ</string>
+    <string name="mancala_variant_kalah_desc">6つの穴に4つずつの種と、ストアがあります。最後の種が自分のストアに入るともう一度、空の自分の穴に入ると向かいの種を取れます。</string>
+    <string name="mancala_variant_oware">オワレ</string>
+    <string name="mancala_variant_oware_desc">ストアには種をまきません。コンピューターの穴を2つか3つにすると取れます。相手の種をなくしてはいけません。</string>
+    <string name="mancala_score">あなたのストア：%1$d・コンピューター：%2$d</string>
+    <string name="mancala_pick">あなたの番：自分の穴（下の列）をタップ</string>
+    <string name="mancala_again">最後の種がストアに入りました：もう一度どうぞ！</string>
+    <string name="mancala_feed">コンピューターに種がありません：種が渡る穴を選んでください</string>
+    <string name="mancala_final">結果：あなた %1$d、コンピューター %2$d。</string>
+    <string name="mancala_draw">引き分け：どちらも %1$d。</string>
+</resources>

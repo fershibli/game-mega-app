@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">ナイン・メンズ・モリス</string>
+    <string name="howto_morris">交互にコマを点に置き、そのあと線に沿って動かします。3つ並べる（ミル）とコンピューターのコマを1つ取れます。相手のコマを2つにするか、動けなくすれば勝ちです。</string>
+    <string name="morris_variant_nine">9個のミル</string>
+    <string name="morris_variant_nine_desc">それぞれ9個、3つの正方形の盤。残り3個になると、どの点へも飛べます。</string>
+    <string name="morris_variant_six">6個のミル</string>
+    <string name="morris_variant_six_desc">それぞれ6個、2つの正方形の小さな盤。飛ぶことはできません。</string>
+    <string name="morris_variant_twelve">12個のミル</string>
+    <string name="morris_variant_twelve_desc">それぞれ12個、斜めの線でもミルができます。残り3個になると飛べます。</string>
+    <string name="morris_score">コマ：あなた %1$d・コンピューター %2$d</string>
+    <string name="morris_place">あなたの番：空いている点をタップしてコマを置く（残り%1$d個）</string>
+    <string name="morris_pick_piece">あなたの番：自分のコマをタップ</string>
+    <string name="morris_pick_target">次に動かす先をタップ</string>
+    <string name="morris_fly">コマが3個です：空いているどの点へも飛べます</string>
+    <string name="morris_remove">ミル！取りたいコンピューターのコマをタップ</string>
+    <string name="morris_ai_two_left">コンピューターのコマが2個になりました。</string>
+    <string name="morris_ai_blocked">コンピューターは動けません。</string>
+    <string name="morris_you_two_left">あなたのコマが2個になりました。</string>
+    <string name="morris_you_blocked">あなたは動けません。</string>
+    <string name="morris_draw">引き分け：お互い50手ミルなし。</string>
+    <string name="morris_draw_full">引き分け：盤がいっぱいです。</string>
+</resources>

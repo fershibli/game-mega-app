@@ -130,5 +130,8 @@ class ScreenshotTest {
     @Test fun sudokuDark() = gameShot("game_sudoku_dark", GameId.SUDOKU, settings = Settings(darkMode = true))
     @Test fun checkers() = gameShot("game_checkers", GameId.CHECKERS)
     @Test fun chess() = gameShot("game_chess", GameId.CHESS)
+    @Test fun ludo() = gameShot("game_ludo", GameId.LUDO)
+    @Test fun morris() = gameShot("game_morris", GameId.MORRIS)
+    @Test fun mancala() = gameShot("game_mancala", GameId.MANCALA, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true))
 
 }

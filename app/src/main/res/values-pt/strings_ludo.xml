@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">Ludo</string>
+    <string name="howto_ludo">Jogue o dado e leve suas quatro peças pela volta do tabuleiro até o centro. Você precisa de um 6 para tirar uma peça da casa. Pare em cima de uma peça adversária para mandá-la de volta. Quem levar as quatro peças ao centro primeiro ganha.</string>
+    <string name="ludo_variant_classic">Clássico</string>
+    <string name="ludo_variant_classic_desc">As casas com estrela são seguras, o 6 dá outra jogada e três 6 seguidos perdem a vez.</string>
+    <string name="ludo_variant_simple">Simples</string>
+    <string name="ludo_variant_simple_desc">Sem casas seguras: qualquer peça pode ser capturada. O 6 continua dando outra jogada.</string>
+    <string name="ludo_choose_opponents">Quantos jogadores do computador?</string>
+    <string name="ludo_you_are">Você joga com o azul, embaixo à esquerda. Você começa.</string>
+    <string name="ludo_red">Vermelho</string>
+    <string name="ludo_green">Verde</string>
+    <string name="ludo_yellow">Amarelo</string>
+    <string name="ludo_blue">Azul</string>
+    <string name="ludo_home_count">Suas peças no centro: %1$d de 4</string>
+    <string name="ludo_roll">Jogar dado</string>
+    <string name="ludo_roll_prompt">Sua vez: toque no dado</string>
+    <string name="ludo_pick_piece">Saiu %1$d: toque numa peça destacada</string>
+    <string name="ludo_no_move">Saiu %1$d: nenhuma peça pode andar</string>
+    <string name="ludo_three_sixes">Três 6 seguidos: perdeu a vez</string>
+    <string name="ludo_computer_turn">%1$s está jogando…</string>
+    <string name="ludo_computer_rolled">%1$s tirou %2$d</string>
+    <string name="ludo_you_won">Suas quatro peças chegaram ao centro!</string>
+    <string name="ludo_other_won">%1$s levou as quatro peças ao centro primeiro.</string>
+</resources>

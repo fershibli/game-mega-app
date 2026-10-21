@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">Nine Men’s Morris</string>
+    <string name="howto_morris">Take turns placing your pieces on the points, then move them along the lines. Three in a row (a mill) lets you remove one of the computer’s pieces. Leave it with two pieces or with no move to win.</string>
+    <string name="morris_variant_nine">Nine men’s morris</string>
+    <string name="morris_variant_nine_desc">9 pieces each on three squares. With only 3 pieces left, yours can jump to any point.</string>
+    <string name="morris_variant_six">Six men’s morris</string>
+    <string name="morris_variant_six_desc">6 pieces each on a smaller board with two squares. No jumping.</string>
+    <string name="morris_variant_twelve">Twelve men’s morris</string>
+    <string name="morris_variant_twelve_desc">12 pieces each and diagonal lines that also make mills. With 3 pieces left, yours can jump.</string>
+    <string name="morris_score">Pieces: you %1$d · computer %2$d</string>
+    <string name="morris_place">Your turn: tap an empty point to place a piece. Still to place: %1$d</string>
+    <string name="morris_pick_piece">Your turn: tap one of your pieces</string>
+    <string name="morris_pick_target">Now tap where it should go</string>
+    <string name="morris_fly">You have 3 pieces: they can jump to any empty point</string>
+    <string name="morris_remove">A mill! Tap a computer piece to remove it</string>
+    <string name="morris_ai_two_left">The computer has only two pieces left.</string>
+    <string name="morris_ai_blocked">The computer cannot move.</string>
+    <string name="morris_you_two_left">You have only two pieces left.</string>
+    <string name="morris_you_blocked">You cannot move.</string>
+    <string name="morris_draw">Draw: 50 moves each without a mill.</string>
+    <string name="morris_draw_full">Draw: the board is full.</string>
+</resources>
