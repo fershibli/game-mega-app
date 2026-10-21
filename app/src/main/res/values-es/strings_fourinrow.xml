@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">Cuatro en línea</string>
+    <string name="howto_fourinrow">Toca una columna para soltar una ficha. Alinea cuatro fichas tuyas, en horizontal, en vertical o en diagonal, antes que el ordenador. Juegas con las fichas claras y empiezas tú.</string>
+    <string name="fourinrow_your_turn">Tu turno (fichas claras): toca una columna</string>
+    <string name="fourinrow_win">¡Cuatro en línea! Has ganado.</string>
+    <string name="fourinrow_lose">El ordenador ha alineado cuatro.</string>
+    <string name="fourinrow_draw">El tablero está lleno: empate.</string>
+</resources>

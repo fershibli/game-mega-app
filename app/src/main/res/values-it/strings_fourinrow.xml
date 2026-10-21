@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">Quattro in fila</string>
+    <string name="howto_fourinrow">Tocca una colonna per far cadere una pedina. Allinea quattro pedine, in orizzontale, in verticale o in diagonale, prima del computer. Tu giochi con le pedine chiare e inizi.</string>
+    <string name="fourinrow_your_turn">Tocca a te (pedine chiare): tocca una colonna</string>
+    <string name="fourinrow_win">Quattro in fila! Hai vinto.</string>
+    <string name="fourinrow_lose">Il computer ha allineato quattro pedine.</string>
+    <string name="fourinrow_draw">La griglia è piena: pareggio.</string>
+</resources>

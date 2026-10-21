@@ -89,6 +89,8 @@ Tous les plateaux peuvent être agrandis.
 
 La liste des réglages commence assez bas sur l’écran, et chaque option peut être amenée près du pouce en faisant défiler.
 
+**Jeux dans d’autres langues.** Quelques jeux ne fonctionnent pas dans toutes les langues (un casse-tête qui échange des lettres, par exemple, a besoin d’un alphabet). Ils restent sur l’écran d’accueil ; quand vous en ouvrez un qui n’existe pas dans votre langue, Mili Games vous le dit d’abord et affiche un grand bouton pour chaque langue du jeu, plus **Annuler**. Le jeu (ses règles et ses textes) se joue alors dans la langue choisie, et le reste de l’application reste dans la vôtre. La langue choisie apparaît en premier la fois suivante, et une partie enregistrée reprend toujours dans la langue où elle a commencé.
+
 ## Accessibilité
 
 Pensée pour les personnes âgées :

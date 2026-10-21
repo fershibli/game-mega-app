@@ -24,6 +24,11 @@ data class SavedGame(
     /** [GameVariant.key] of the rules being played, for games that have variants. */
     val variant: String? = null,
     val setup: PlaySetup = PlaySetup(),
+    /**
+     * [AppLanguage] name the game is played in, for games pinned to a language (see
+     * [GameLanguages]); `null` (also in old saves) means "the app language".
+     */
+    val language: String? = null,
 ) {
     companion object {
         const val FORMAT_VERSION = 1
@@ -91,13 +96,16 @@ class GameHost(
     @Volatile var finished = false
         private set
 
+    /** Language the game is pinned to and saved with (see [GameLanguages]); `null` follows the app. */
+    var language: AppLanguage? = null
+
     fun <T> restore(serializer: KSerializer<T>): T? =
         restored?.let { runCatching { AppJson.decodeFromJsonElement(serializer, it) }.getOrNull() }
 
     fun <T> save(serializer: KSerializer<T>, value: T) {
         if (finished) return
         val element = runCatching { AppJson.encodeToJsonElement(serializer, value) }.getOrNull() ?: return
-        store?.save(SavedGame(game.key, difficulty, element, variant = variant?.key, setup = setup))
+        store?.save(SavedGame(game.key, difficulty, element, variant = variant?.key, setup = setup, language = language?.name))
     }
 
     fun finish(outcome: GameOutcome) {

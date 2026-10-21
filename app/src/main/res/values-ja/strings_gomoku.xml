@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">五目並べ</string>
+    <string name="howto_gomoku">交互に交点へ石を置きます。縦・横・斜めのどれかに五つ以上先に並べたほうの勝ちです。あなたは黒で先手です。</string>
+    <string name="gomoku_your_turn">あなたの番（黒）: 交点をタップ</string>
+    <string name="gomoku_confirm">同じ交点をもう一度タップすると石を置きます</string>
+    <string name="gomoku_win">五つ並びました！あなたの勝ち。</string>
+    <string name="gomoku_lose">コンピューターが五つ並べました。</string>
+    <string name="gomoku_draw">盤がいっぱいです: 引き分け。</string>
+</resources>

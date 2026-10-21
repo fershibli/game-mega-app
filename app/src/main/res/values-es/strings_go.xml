@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">Go</string>
+    <string name="howto_go">Por turnos, se colocan piedras en los cruces. Rodea puntos vacíos y captura piedras quitándoles todas sus libertades. Cuando los dos pasan, se cuentan las piedras y los puntos rodeados: gana quien tenga más.</string>
+    <string name="go_variant_9">Tablero 9×9</string>
+    <string name="go_variant_9_desc">Pequeño y rápido. Lo mejor para empezar.</string>
+    <string name="go_variant_13">Tablero 13×13</string>
+    <string name="go_variant_13_desc">Tamaño medio: más espacio para planes.</string>
+    <string name="go_variant_19">Tablero 19×19</string>
+    <string name="go_variant_19_desc">El tablero clásico completo. Separa dos dedos para ampliar.</string>
+    <string name="go_your_turn">Tu turno (negras): toca un cruce</string>
+    <string name="go_confirm">Toca otra vez el mismo cruce para poner la piedra</string>
+    <string name="go_ai_passed">El ordenador ha pasado. Sigue jugando o pasa tú también para contar los puntos.</string>
+    <string name="go_ko">Todavía no: no puedes recuperar el ko enseguida. Juega antes en otro sitio.</string>
+    <string name="go_suicide">Ahí no: tu piedra se quedaría sin libertades.</string>
+    <string name="go_captured">Capturadas: tú %1$d · ordenador %2$d</string>
+    <string name="go_pass">Pasar</string>
+    <string name="go_counting">Contando los puntos…</string>
+    <string name="go_mark_dead">Las piedras tachadas cuentan como capturadas. Toca un grupo para cambiarlo y luego toca Contar.</string>
+    <string name="go_score">Tú: %1$s · Ordenador: %2$s</string>
+    <string name="go_komi">La cuenta del ordenador incluye %1$s por jugar en segundo lugar.</string>
+    <string name="go_count">Contar</string>
+    <string name="go_keep_playing">Seguir jugando</string>
+    <string name="go_hint_pass">Pista: ya no queda nada por ganar. Puedes pasar.</string>
+    <string name="go_win">Has ganado por %1$s.</string>
+    <string name="go_lose">El ordenador gana por %1$s.</string>
+</resources>

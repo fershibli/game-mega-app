@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">四目並べ</string>
+    <string name="howto_fourinrow">列をタップするとコマが落ちます。縦・横・斜めのどれかに自分のコマを四つ、コンピューターより先に並べましょう。あなたは明るい色のコマで先手です。</string>
+    <string name="fourinrow_your_turn">あなたの番（明るいコマ）: 列をタップ</string>
+    <string name="fourinrow_win">四つ並びました！あなたの勝ち。</string>
+    <string name="fourinrow_lose">コンピューターが四つ並べました。</string>
+    <string name="fourinrow_draw">盤がいっぱいです: 引き分け。</string>
+</resources>

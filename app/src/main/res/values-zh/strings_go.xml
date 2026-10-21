@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">围棋</string>
+    <string name="howto_go">双方轮流在交叉点上落子。围住空点，把对方棋子的气全部堵住就能提子。双方都停一手后，计算棋子和围住的点，多者获胜。</string>
+    <string name="go_variant_9">9路棋盘</string>
+    <string name="go_variant_9_desc">小而快，最适合入门。</string>
+    <string name="go_variant_13">13路棋盘</string>
+    <string name="go_variant_13_desc">中等大小，布局空间更大。</string>
+    <string name="go_variant_19">19路棋盘</string>
+    <string name="go_variant_19_desc">完整的标准棋盘。双指张开可放大。</string>
+    <string name="go_your_turn">轮到你（黑棋）：点一个交叉点</string>
+    <string name="go_confirm">再点一次同一个交叉点即可落子</string>
+    <string name="go_ai_passed">电脑停了一手。你可以继续下，也可以停一手来数子。</string>
+    <string name="go_ko">现在不行：打劫不能立刻提回。请先在别处下一手。</string>
+    <string name="go_suicide">这里不行：你的棋子将没有气。</string>
+    <string name="go_captured">提子：你 %1$d · 电脑 %2$d</string>
+    <string name="go_pass">停一手</string>
+    <string name="go_counting">正在数子…</string>
+    <string name="go_mark_dead">画叉的棋子算作被提。点一个棋块可以更改，然后点“数子”。</string>
+    <string name="go_score">你：%1$s · 电脑：%2$s</string>
+    <string name="go_komi">电脑的得分包含后手贴目 %1$s。</string>
+    <string name="go_count">数子</string>
+    <string name="go_keep_playing">继续下</string>
+    <string name="go_hint_pass">提示：已经没有可以得分的地方了，你可以停一手。</string>
+    <string name="go_win">你赢了 %1$s。</string>
+    <string name="go_lose">电脑赢了 %1$s。</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">Go</string>
+    <string name="howto_go">Take turns placing stones on the crossings. Surround empty points, and capture stones by taking away all their free points. When both players pass, stones plus surrounded points are counted: the higher score wins.</string>
+    <string name="go_variant_9">9×9 board</string>
+    <string name="go_variant_9_desc">Small and quick. The best way to start.</string>
+    <string name="go_variant_13">13×13 board</string>
+    <string name="go_variant_13_desc">Medium size: more room for plans.</string>
+    <string name="go_variant_19">19×19 board</string>
+    <string name="go_variant_19_desc">The full classic board. Pinch to zoom in.</string>
+    <string name="go_your_turn">Your turn (black): tap a crossing</string>
+    <string name="go_confirm">Tap the same crossing again to place your stone</string>
+    <string name="go_ai_passed">The computer passed. Keep playing, or pass too to count the points.</string>
+    <string name="go_ko">Not yet: you cannot take back the ko right away. Play somewhere else first.</string>
+    <string name="go_suicide">Not there: your stone would have no free points left.</string>
+    <string name="go_captured">Captured: you %1$d · computer %2$d</string>
+    <string name="go_pass">Pass</string>
+    <string name="go_counting">Counting the points…</string>
+    <string name="go_mark_dead">Crossed-out stones count as captured. Tap a group to change it, then tap Count.</string>
+    <string name="go_score">You: %1$s · Computer: %2$s</string>
+    <string name="go_komi">The computer’s count includes %1$s for playing second.</string>
+    <string name="go_count">Count</string>
+    <string name="go_keep_playing">Keep playing</string>
+    <string name="go_hint_pass">Hint: there is nothing more to gain. You can pass.</string>
+    <string name="go_win">You win by %1$s.</string>
+    <string name="go_lose">The computer wins by %1$s.</string>
+</resources>

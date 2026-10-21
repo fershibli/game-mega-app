@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">Go</string>
+    <string name="howto_go">Abwechselnd werden Steine auf die Kreuzungspunkte gesetzt. Umschließe leere Punkte und schlage Steine, indem du ihnen alle Freiheiten nimmst. Wenn beide passen, werden Steine und umschlossene Punkte gezählt: Wer mehr hat, gewinnt.</string>
+    <string name="go_variant_9">Brett 9×9</string>
+    <string name="go_variant_9_desc">Klein und schnell. Ideal für den Anfang.</string>
+    <string name="go_variant_13">Brett 13×13</string>
+    <string name="go_variant_13_desc">Mittlere Größe: mehr Platz für Pläne.</string>
+    <string name="go_variant_19">Brett 19×19</string>
+    <string name="go_variant_19_desc">Das große klassische Brett. Mit zwei Fingern vergrößern.</string>
+    <string name="go_your_turn">Du bist dran (Schwarz): tippe auf einen Punkt</string>
+    <string name="go_confirm">Tippe noch einmal auf denselben Punkt, um den Stein zu setzen</string>
+    <string name="go_ai_passed">Der Computer hat gepasst. Spiel weiter oder passe auch, um die Punkte zu zählen.</string>
+    <string name="go_ko">Noch nicht: Das Ko darfst du nicht sofort zurückschlagen. Spiele zuerst woanders.</string>
+    <string name="go_suicide">Nicht dort: Dein Stein hätte keine Freiheit mehr.</string>
+    <string name="go_captured">Geschlagen: du %1$d · Computer %2$d</string>
+    <string name="go_pass">Passen</string>
+    <string name="go_counting">Die Punkte werden gezählt…</string>
+    <string name="go_mark_dead">Durchgestrichene Steine zählen als geschlagen. Tippe auf eine Gruppe, um das zu ändern, dann auf Zählen.</string>
+    <string name="go_score">Du: %1$s · Computer: %2$s</string>
+    <string name="go_komi">Der Computer bekommt %1$s dazu, weil er als Zweiter spielt.</string>
+    <string name="go_count">Zählen</string>
+    <string name="go_keep_playing">Weiterspielen</string>
+    <string name="go_hint_pass">Tipp: Es gibt nichts mehr zu gewinnen. Du kannst passen.</string>
+    <string name="go_win">Du gewinnst mit %1$s Vorsprung.</string>
+    <string name="go_lose">Der Computer gewinnt mit %1$s Vorsprung.</string>
+</resources>

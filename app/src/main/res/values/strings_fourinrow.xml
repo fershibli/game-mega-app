@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_fourinrow">Four in a row</string>
+    <string name="howto_fourinrow">Tap a column to drop a disc. Line up four of your discs — across, up and down or diagonally — before the computer does. You play the light discs and go first.</string>
+    <string name="fourinrow_your_turn">Your turn (light discs): tap a column</string>
+    <string name="fourinrow_win">Four in a row! You win.</string>
+    <string name="fourinrow_lose">The computer lined up four.</string>
+    <string name="fourinrow_draw">The board is full: it’s a draw.</string>
+</resources>

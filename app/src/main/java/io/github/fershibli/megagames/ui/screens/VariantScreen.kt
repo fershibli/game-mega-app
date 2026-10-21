@@ -27,6 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
+import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameVariant
 import io.github.fershibli.megagames.ui.components.ActionBar
@@ -37,6 +38,7 @@ import io.github.fershibli.megagames.ui.components.FloatingGear
 import io.github.fershibli.megagames.ui.components.IconView
 import io.github.fershibli.megagames.ui.components.TopBar
 import io.github.fershibli.megagames.ui.theme.LocalPalette
+import io.github.fershibli.megagames.ui.theme.ProvideGameLanguage
 
 /**
  * Which rules to play with (regional variants), shown before the difficulty. The rules picked
@@ -50,6 +52,7 @@ fun VariantScreen(
     onBack: () -> Unit,
     onSettings: () -> Unit,
     variants: List<GameVariant> = game.variants,
+    language: AppLanguage? = null,
 ) {
     val p = LocalPalette.current
     var selected by remember { mutableStateOf(initial) }
@@ -80,8 +83,11 @@ fun VariantScreen(
                     ) {
                         Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
                             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                                Text(stringResource(variant.name), style = MaterialTheme.typography.titleLarge, color = p.text)
-                                Text(stringResource(variant.description), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
+                                // The rules are read in the language the game will be played in.
+                                ProvideGameLanguage(language) {
+                                    Text(stringResource(variant.name), style = MaterialTheme.typography.titleLarge, color = p.text)
+                                    Text(stringResource(variant.description), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
+                                }
                             }
                             if (chosen) IconView(AppIcon.CHECK, p.primary, Modifier.padding(start = 12.dp), size = 32.dp)
                         }

@@ -45,6 +45,10 @@ data class PlaySetup(val together: Boolean = false, val seats: Int = 0)
  * choice comes preselected); a game without [hasDifficulty] (a pet, a farm) starts right away.
  * [takeTurns] adds "take turns on this phone" to the difficulty list, and more than one entry in
  * [tables] asks how many sit at the table.
+ * A game that cannot be played in every language (a cryptogram needs an alphabet) lists the
+ * [languages] it can use, for example `languages = setOf(AppLanguage.ENGLISH, AppLanguage.SPANISH)`;
+ * `null` means every language. It is still listed, and asks which language to play in when the
+ * app language is not one of them.
  */
 enum class GameId(
     val key: String,
@@ -55,6 +59,7 @@ enum class GameId(
     val hasDifficulty: Boolean = true,
     val takeTurns: Boolean = false,
     val tables: List<TableSize> = emptyList(),
+    val languages: Set<AppLanguage>? = null,
 ) {
     SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku, GameCategory.PUZZLES),
     SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire, GameCategory.CARDS),
@@ -90,12 +95,18 @@ enum class GameId(
     WORDSEARCH("wordsearch", R.string.game_wordsearch, R.string.howto_wordsearch, GameCategory.PUZZLES),
     ANAGRAM("anagram", R.string.game_anagram, R.string.howto_anagram, GameCategory.PUZZLES),
     DAYWORD("dayword", R.string.game_dayword, R.string.howto_dayword, GameCategory.PUZZLES),
+    GO("go", R.string.game_go, R.string.howto_go, GameCategory.BOARD, io.github.fershibli.megagames.games.go.Go.VARIANTS),
+    GOMOKU("gomoku", R.string.game_gomoku, R.string.howto_gomoku, GameCategory.BOARD),
+    FOURINROW("fourinrow", R.string.game_fourinrow, R.string.howto_fourinrow, GameCategory.BOARD),
     LUDO("ludo", R.string.game_ludo, R.string.howto_ludo, GameCategory.BOARD, io.github.fershibli.megagames.games.ludo.LudoRules.VARIANTS),
     MORRIS("morris", R.string.game_morris, R.string.howto_morris, GameCategory.BOARD, io.github.fershibli.megagames.games.morris.MorrisRules.VARIANTS),
     MANCALA("mancala", R.string.game_mancala, R.string.howto_mancala, GameCategory.BOARD, io.github.fershibli.megagames.games.mancala.MancalaRules.VARIANTS),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()
+
+    /** True when the game can be played in [language] ([AppLanguage.SYSTEM] is resolved first). */
+    fun supports(language: AppLanguage): Boolean = GameLanguages.supports(languages, language)
 
     companion object {
         fun fromKey(key: String): GameId? = entries.firstOrNull { it.key == key }

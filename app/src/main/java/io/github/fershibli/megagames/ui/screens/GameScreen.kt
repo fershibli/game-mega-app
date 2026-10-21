@@ -18,6 +18,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import io.github.fershibli.megagames.R
+import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
@@ -32,10 +33,12 @@ import io.github.fershibli.megagames.ui.components.FloatingGear
 import io.github.fershibli.megagames.ui.components.TopBar
 import io.github.fershibli.megagames.ui.theme.LocalGameCovered
 import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
+import io.github.fershibli.megagames.ui.theme.ProvideGameLanguage
 
 /**
  * Hosts one game: top bar with the gear, the game itself, the in-game settings (which can
  * abandon the game), the "continue?" prompt after a restart and the end-of-game dialog.
+ * A game pinned to a [language] other than the app's shows its own area in that language.
  */
 @Composable
 fun GameScreen(
@@ -50,6 +53,7 @@ fun GameScreen(
     onExit: () -> Unit,
     variant: GameVariant? = game.variant(saved?.variant),
     setup: PlaySetup = saved?.setup ?: PlaySetup(),
+    language: AppLanguage? = null,
 ) {
     // Pastimes (no difficulty: a pet, a farm) keep their own lasting world: no autosave, no "new game".
     val lasting = !game.hasDifficulty
@@ -58,6 +62,7 @@ fun GameScreen(
     var outcome by remember { mutableStateOf<GameOutcome?>(null) }
     val host = remember(session) {
         GameHost(game, difficulty, if (session == 0) saved?.state else null, saveStore.takeUnless { lasting }, variant, setup) { outcome = it }
+            .also { it.language = language }
     }
     val newGame: () -> Unit = {
         saveStore.clear()
@@ -73,7 +78,7 @@ fun GameScreen(
             TopBar(stringResource(game.title), onSettings = { showSettings = true })
             Box(Modifier.weight(1f).fillMaxWidth()) {
                 CompositionLocalProvider(LocalUpdateSettings provides onSettingsChange, LocalGameCovered provides showSettings) {
-                    key(session) { GameContent(game, host) }
+                    key(session) { ProvideGameLanguage(language) { GameContent(game, host) } }
                 }
             }
         }

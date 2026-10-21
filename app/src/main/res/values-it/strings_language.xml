@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Asked before a game that cannot be played in the app language; one button per language follows. -->
+    <string name="language_fallback_message">Questo gioco non è disponibile nella tua lingua. Continua in:</string>
+</resources>

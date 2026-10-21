@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">Cinco en raya</string>
+    <string name="howto_gomoku">Por turnos, se colocan piedras en los cruces. Gana quien primero alinee cinco o más: en horizontal, en vertical o en diagonal. Juegas con negras y empiezas tú.</string>
+    <string name="gomoku_your_turn">Tu turno (negras): toca un cruce</string>
+    <string name="gomoku_confirm">Toca otra vez el mismo cruce para poner la piedra</string>
+    <string name="gomoku_win">¡Cinco en raya! Has ganado.</string>
+    <string name="gomoku_lose">El ordenador ha hecho cinco en raya.</string>
+    <string name="gomoku_draw">El tablero está lleno: empate.</string>
+</resources>
