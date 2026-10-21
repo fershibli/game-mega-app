@@ -52,7 +52,7 @@ class CardSolitairesUiTest {
     private val settings = Settings(language = AppLanguage.ENGLISH)
 
     private fun <T> start(game: GameId, serializer: KSerializer<T>, state: T, store: SaveStore, onFinish: (GameOutcome) -> Unit = {}) {
-        val host = GameHost(game, Difficulty.EASY, AppJson.encodeToJsonElement(serializer, state), store, game.variants.firstOrNull(), onFinish)
+        val host = GameHost(game, Difficulty.EASY, AppJson.encodeToJsonElement(serializer, state), store, game.variants.firstOrNull(), onFinish = onFinish)
         rule.setContent { MegaGamesTheme(settings) { GameContent(game, host) } }
         rule.waitForIdle()
     }
