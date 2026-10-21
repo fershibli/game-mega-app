@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">Anagramas</string>
+    <string name="howto_anagram">Las letras de una palabra están mezcladas. Tócalas en el orden correcto para formar la palabra. Cinco palabras en cada ronda.</string>
+    <string name="anagram_progress">Palabra %1$d de %2$d</string>
+    <string name="anagram_clue_hidden">Sin pista en este nivel. Toca Pista si necesitas ayuda.</string>
+    <string name="anagram_wrong">Casi. Toca una letra para quitarla.</string>
+    <string name="anagram_right">¡Muy bien!</string>
+    <string name="anagram_shuffle">Mezclar</string>
+    <string name="anagram_done">¡Ordenaste todas las palabras!</string>
+    <string name="anagram_hints_used">Pistas usadas: %1$d.</string>
+</resources>

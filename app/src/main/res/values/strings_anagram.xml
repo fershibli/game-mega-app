@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">Anagrams</string>
+    <string name="howto_anagram">The letters of a word are mixed up. Tap them in the right order to spell the word. Five words in each round.</string>
+    <string name="anagram_progress">Word %1$d of %2$d</string>
+    <string name="anagram_clue_hidden">No clue on this level. Tap Hint if you need help.</string>
+    <string name="anagram_wrong">Not quite. Tap a letter to take it back.</string>
+    <string name="anagram_right">Well done!</string>
+    <string name="anagram_shuffle">Shuffle</string>
+    <string name="anagram_done">You unscrambled every word!</string>
+    <string name="anagram_hints_used">Hints used: %1$d.</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">Word search</string>
+    <string name="howto_wordsearch">Find the hidden words in the grid. Slide your finger from the first letter to the last, or tap the first letter and then the last one.</string>
+    <string name="wordsearch_found">Words found: %1$d of %2$d</string>
+    <string name="wordsearch_words">Words to find (tap one to see its clue)</string>
+    <string name="wordsearch_tap_last">Now tap the last letter of the word</string>
+    <string name="wordsearch_not_word">That is not one of the words. Try again.</string>
+    <string name="wordsearch_hint_first">The circled letter is where a word begins.</string>
+    <string name="wordsearch_hint_last">Now its last letter is circled too.</string>
+    <string name="wordsearch_done">You found every word!</string>
+    <string name="wordsearch_hints_used">Hints used: %1$d.</string>
+</resources>

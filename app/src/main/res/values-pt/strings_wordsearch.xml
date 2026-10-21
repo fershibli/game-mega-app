@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">Caça-palavras</string>
+    <string name="howto_wordsearch">Encontre as palavras escondidas na grade. Deslize o dedo da primeira à última letra, ou toque na primeira letra e depois na última.</string>
+    <string name="wordsearch_found">Palavras encontradas: %1$d de %2$d</string>
+    <string name="wordsearch_words">Palavras para achar (toque numa para ver a dica)</string>
+    <string name="wordsearch_tap_last">Agora toque na última letra da palavra</string>
+    <string name="wordsearch_not_word">Essa não é uma das palavras. Tente de novo.</string>
+    <string name="wordsearch_hint_first">A letra circulada é o começo de uma palavra.</string>
+    <string name="wordsearch_hint_last">Agora a última letra também está circulada.</string>
+    <string name="wordsearch_done">Você encontrou todas as palavras!</string>
+    <string name="wordsearch_hints_used">Dicas usadas: %1$d.</string>
+</resources>

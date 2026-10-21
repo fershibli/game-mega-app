@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">Анаграммы</string>
+    <string name="howto_anagram">Буквы слова перепутаны. Нажимайте на них в правильном порядке, чтобы составить слово. В каждом раунде пять слов.</string>
+    <string name="anagram_progress">Слово %1$d из %2$d</string>
+    <string name="anagram_clue_hidden">На этом уровне подсказки нет. Нажмите «Подсказка», если нужна помощь.</string>
+    <string name="anagram_wrong">Не совсем. Нажмите на букву, чтобы убрать её.</string>
+    <string name="anagram_right">Отлично!</string>
+    <string name="anagram_shuffle">Перемешать</string>
+    <string name="anagram_done">Вы собрали все слова!</string>
+    <string name="anagram_hints_used">Подсказок: %1$d.</string>
+</resources>
