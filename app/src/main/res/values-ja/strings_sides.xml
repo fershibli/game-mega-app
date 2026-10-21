@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sides of a board game played by people taking turns on this phone -->
+    <string name="side_white">白</string>
+    <string name="side_black">黒</string>
+    <string name="side_red">赤</string>
+    <string name="side_blue">青</string>
+    <string name="side_light">明るい色のコマ</string>
+    <string name="side_dark">暗い色のコマ</string>
+    <string name="side_bottom">下の人</string>
+    <string name="side_top">上の人</string>
+    <string name="side_white_turn">白の番です</string>
+    <string name="side_black_turn">黒の番です</string>
+    <string name="side_red_turn">赤の番です</string>
+    <string name="side_blue_turn">青の番です</string>
+    <string name="side_light_turn">明るい色のコマの番です</string>
+    <string name="side_dark_turn">暗い色のコマの番です</string>
+    <string name="side_bottom_turn">下の人の番です</string>
+    <string name="side_top_turn">上の人の番です</string>
+    <string name="side_white_wins">白の勝ちです！</string>
+    <string name="side_black_wins">黒の勝ちです！</string>
+    <string name="side_red_wins">赤の勝ちです！</string>
+    <string name="side_blue_wins">青の勝ちです！</string>
+    <string name="side_light_wins">明るい色のコマの勝ちです！</string>
+    <string name="side_dark_wins">暗い色のコマの勝ちです！</string>
+    <string name="side_bottom_wins">下の人の勝ちです！</string>
+    <string name="side_top_wins">上の人の勝ちです！</string>
+    <string name="sides_score">%1$s：%2$d · %3$s：%4$d</string>
+    <string name="sides_other_passed">相手はパスしました。</string>
+</resources>

@@ -4,6 +4,8 @@
 
 Un jeu de plateau d’Asie de l’Est vieux de plusieurs milliers d’années, pour deux joueurs : vous jouez les pierres noires et l’ordinateur les blanches. Les pierres se posent sur les intersections des lignes et ne bougent jamais. Le but est d’entourer une plus grande partie du plateau que l’adversaire.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour. À la fin, vous décidez ensemble quelles pierres sont mortes.
+
 ## Comment jouer
 
 - Touchez une intersection pour poser une pierre. Sur les plateaux 13×13 et 19×19 les intersections sont petites : le premier toucher montre la pierre en transparence et un second toucher sur la même intersection la pose.

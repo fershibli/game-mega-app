@@ -4,6 +4,8 @@
 
 A game for two on the crossings of a 15×15 board. You play black and go first; the computer plays white. The first to make an unbroken line of five or more stones, across, down or diagonally, wins.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is.
+
 ## How to play
 
 - Tap a crossing: a faint stone shows where it will go. Tap the same crossing again to place it, or another crossing to change your mind.

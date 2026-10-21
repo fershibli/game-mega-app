@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">Клетки со звездой безопасны, шестёрка даёт ещё бросок, три шестёрки подряд — ход пропадает.</string>
     <string name="ludo_variant_simple">Простые</string>
     <string name="ludo_variant_simple_desc">Безопасных клеток нет: любую фишку можно сбить. Шестёрка всё так же даёт ещё бросок.</string>
-    <string name="ludo_choose_opponents">Сколько игроков-компьютеров?</string>
-    <string name="ludo_you_are">Вы играете синими, внизу слева. Вы ходите первым.</string>
     <string name="ludo_red">Красный</string>
     <string name="ludo_green">Зелёный</string>
     <string name="ludo_yellow">Жёлтый</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s: выпало %2$d</string>
     <string name="ludo_you_won">Все четыре ваши фишки в центре!</string>
     <string name="ludo_other_won">%1$s первым привёл все четыре фишки в центр.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s: нажмите на кубик</string>
+    <string name="ludo_turn_pick">%1$s: выпало %2$d, нажмите на выделенную фишку</string>
+    <string name="ludo_turn_no_move">%1$s: выпало %2$d, ни одна фишка не может пойти</string>
+    <string name="ludo_center_all">В центре: %1$s</string>
 </resources>

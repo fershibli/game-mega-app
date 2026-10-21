@@ -4,6 +4,8 @@
 
 El clásico juego de estrategia. Juegas con las blancas, abajo en la pantalla; el ordenador juega con las negras. Gana dando **jaque mate** al rey del ordenador: atacándolo de modo que no tenga escapatoria.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca. No en las partidas famosas.
+
 ## Jugar contra el ordenador
 
 - Toca una de tus piezas: las casillas a las que puede ir se marcan con puntos (anillos si captura). Toca una de ellas.

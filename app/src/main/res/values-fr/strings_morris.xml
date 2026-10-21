@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">Vous ne pouvez plus bouger.</string>
     <string name="morris_draw">Match nul : 50 coups chacun sans moulin.</string>
     <string name="morris_draw_full">Match nul : le plateau est plein.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">Pions : clairs %1$d · foncés %2$d</string>
+    <string name="morris_place_together">Touchez un point libre pour poser un pion. Reste à poser : %1$d</string>
+    <string name="morris_remove_together">Un moulin ! Touchez un pion de l’autre couleur pour le retirer</string>
 </resources>

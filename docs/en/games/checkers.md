@@ -4,6 +4,8 @@
 
 A board game for two: you against the computer. Pieces move diagonally on the dark squares; you capture by jumping over an enemy piece onto the empty square just behind it. A piece that reaches the far side becomes a **king** (it gets a gold crown). You win when the computer has no pieces left or cannot move.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is.
+
 ## How to play
 
 - Tap one of your pieces: the squares it can reach light up. Tap one of them.

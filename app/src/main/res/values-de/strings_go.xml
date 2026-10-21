@@ -24,4 +24,12 @@
     <string name="go_hint_pass">Tipp: Es gibt nichts mehr zu gewinnen. Du kannst passen.</string>
     <string name="go_win">Du gewinnst mit %1$s Vorsprung.</string>
     <string name="go_lose">Der Computer gewinnt mit %1$s Vorsprung.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">Geschlagen: Schwarz %1$d · Weiß %2$d</string>
+    <string name="go_score_together">Schwarz: %1$s · Weiß: %2$s</string>
+    <string name="go_komi_together">Die Zählung von Weiß enthält %1$s für den Nachzug.</string>
+    <string name="go_other_passed">Der andere Spieler hat gepasst. Spiel weiter oder passe auch, um die Punkte zu zählen.</string>
+    <string name="go_mark_dead_together">Einigt euch: Durchgestrichene Steine zählen als geschlagen. Tippt auf eine Gruppe, um sie zu ändern, dann auf Zählen.</string>
+    <string name="go_black_wins_by">Schwarz gewinnt mit %1$s.</string>
+    <string name="go_white_wins_by">Weiß gewinnt mit %1$s.</string>
 </resources>

@@ -4,6 +4,8 @@
 
 O xadrez chinês é o jogo de tabuleiro mais jogado na China e no Vietnã. Dois exércitos se enfrentam dos dois lados de um rio; vence quem encurralar o **general** do outro lado.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez.
+
 ## O tabuleiro
 
 - 9 linhas na horizontal e 10 na vertical. As peças ficam **nos cruzamentos**, não dentro dos quadrados.

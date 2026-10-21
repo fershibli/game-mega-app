@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">الشطرنج</string>
     <string name="howto_chess">المس قطعة لترى أين يمكنها الذهاب، ثم المس المربع. اكسب بكش مات ملك الحاسوب.</string>
-    <string name="chess_variant_standard">العب ضد الحاسوب</string>
+    <string name="chess_variant_standard">العب مباراة</string>
     <string name="chess_variant_standard_desc">القواعد كاملة: التبييت، الأخذ في المرور، الترقية، الكش وكل أنواع التعادل.</string>
     <string name="chess_variant_famous">مباريات شهيرة</string>
     <string name="chess_variant_famous_desc">أعد مشاهدة مباريات تاريخية عظيمة نقلة بنقلة.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">خالدة كاسباروف</string>
     <string name="chess_famous_kasparov_where">فايك آن زي، 1999</string>
     <string name="chess_famous_kasparov_about">يضحي كاسباروف برخ ويطارد ملك توبالوف عبر الرقعة كلها. كثيرًا ما توصف بأنها من أجمل المباريات على الإطلاق.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">كش مات!</string>
 </resources>

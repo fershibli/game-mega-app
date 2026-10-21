@@ -12,6 +12,7 @@ import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
+import io.github.fershibli.megagames.core.PlaySetup
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.games.GameContent
@@ -55,10 +56,10 @@ class TraditionalBoardUiTest {
         return saved
     }
 
-    private fun <T> open(game: GameId, variant: String, serializer: KSerializer<T>, start: T?): SaveStore {
+    private fun <T> open(game: GameId, variant: String, serializer: KSerializer<T>, start: T?, setup: PlaySetup = PlaySetup()): SaveStore {
         val store = SaveStore(app).apply { clear() }
         val restored: JsonElement? = start?.let { AppJson.encodeToJsonElement(serializer, it) }
-        val host = GameHost(game, Difficulty.EASY, restored, store, game.variant(variant), onFinish = {})
+        val host = GameHost(game, Difficulty.EASY, restored, store, game.variant(variant), setup, onFinish = {})
         rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(game, host) } }
         rule.waitForIdle()
         return store
@@ -71,9 +72,9 @@ class TraditionalBoardUiTest {
     }
 
     @Test
-    fun ludoChooseTheTableThenTapTheDie() {
-        val store = open(GameId.LUDO, "classic", LudoState.serializer(), null)
-        rule.onNodeWithText("2").performClick()
+    fun ludoSeatsComeFromTheTableChosenInTheAppThenTapTheDie() {
+        // "How many at the table?" answered 3: you and 2 computer players.
+        val store = open(GameId.LUDO, "classic", LudoState.serializer(), null, PlaySetup(seats = 3))
         val table = waitForSave(store, LudoState.serializer()) { it.colors.isNotEmpty() }
         assertEquals(3, table?.colors?.size)
         // The die sits in the middle of the board.
@@ -81,6 +82,15 @@ class TraditionalBoardUiTest {
         val rolled = waitForSave(store, LudoState.serializer()) { it.die > 0 || it.turn != 0 }
         assertNotNull(rolled)
         assertTrue(rolled!!.die > 0 || rolled.turn != 0)
+        store.clear()
+    }
+
+    @Test
+    fun ludoSaveFromBeforeTheTableWasChosenStillLoads() {
+        // Older versions saved an empty table while asking "How many computer players?".
+        val store = open(GameId.LUDO, "classic", LudoState.serializer(), LudoState(), PlaySetup(seats = 2))
+        val table = waitForSave(store, LudoState.serializer()) { it.colors.isNotEmpty() }
+        assertEquals(2, table?.colors?.size)
         store.clear()
     }
 

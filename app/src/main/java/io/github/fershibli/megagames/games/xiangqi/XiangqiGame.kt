@@ -10,6 +10,7 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.ColorMode
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.games.eastern.BoardGeometry
+import io.github.fershibli.megagames.ui.components.BoardSide
 import io.github.fershibli.megagames.games.eastern.DIAGONAL
 import io.github.fershibli.megagames.games.eastern.EasternGame
 import io.github.fershibli.megagames.games.eastern.EasternRules
@@ -34,6 +35,8 @@ internal fun redInk(p: Palette) = if (p.mode == ColorMode.COLORBLIND) Color(0xFF
 /** Xiangqi on the shared screen: red discs for the player, black for the computer. */
 object XiangqiRules : EasternRules() {
     override val key = "xiangqi"
+    override val sides = listOf(BoardSide.RED, BoardSide.BLACK)
+    override fun sideColor(p: Palette, side: Int): Color = if (side == 0) redInk(p) else Color(0xFF1B1B1B)
     override val cols = 9
     override val rows = 10
     override val points = true

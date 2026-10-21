@@ -4,6 +4,8 @@
 
 Un gioco per due su un supporto di legno in piedi, con 7 colonne e 6 file di fori. Tu giochi con le pedine chiare e inizi; il computer gioca con quelle scure. Vince chi per primo allinea quattro pedine, in orizzontale, in verticale o in diagonale.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca.
+
 ## Come si gioca
 
 - Tocca un punto qualsiasi di una colonna, dall’alto al basso del tavoliere: la tua pedina cade nel foro libero più basso.

@@ -4,6 +4,8 @@
 
 Un juego de tablero de Asia oriental, con miles de años, para dos jugadores: tú juegas con las piedras negras y el ordenador con las blancas. Las piedras se ponen en los cruces de las líneas y nunca se mueven. El objetivo es rodear más parte del tablero que el rival.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca. Al final, deciden juntos qué piedras están muertas.
+
 ## Cómo se juega
 
 - Toca un cruce para poner una piedra. En los tableros de 13×13 y 19×19 los cruces son pequeños: el primer toque muestra la piedra en tono claro y un segundo toque en el mismo cruce la coloca.

@@ -4,6 +4,8 @@
 
 Les échecs chinois sont le jeu de plateau le plus joué en Chine et au Vietnam. Deux armées se font face de part et d’autre d’une rivière ; celui qui enferme le **général** adverse gagne.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour.
+
 ## Le plateau
 
 - 9 lignes horizontales et 10 verticales. Les pièces se placent **sur les croisements**, pas dans les cases.

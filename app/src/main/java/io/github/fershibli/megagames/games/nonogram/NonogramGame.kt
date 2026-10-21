@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.nonogram
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import android.os.SystemClock
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Canvas
@@ -47,7 +49,6 @@ import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
@@ -91,6 +92,7 @@ private class Drag(val start: Int, val from: Int, val to: Int) {
 
 @Composable
 private fun NonogramScreen(state: MutableState<NonogramState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val history = remember { mutableStateListOf<NonogramState>() }
     val showErrors = host.difficulty != Difficulty.HARD
@@ -102,7 +104,7 @@ private fun NonogramScreen(state: MutableState<NonogramState>, host: GameHost) {
     LaunchedEffect(solved) {
         if (solved) {
             // Time to enjoy the picture in color before the end-of-game message.
-            delay(1800)
+            pace.wait(1800)
             host.finish(GameOutcome(true, detail))
         }
     }

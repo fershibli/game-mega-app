@@ -4,6 +4,8 @@
 
 Ein Spiel für zwei auf einem stehenden Holzgestell mit 7 Spalten und 6 Reihen von Löchern. Du spielst die hellen Scheiben und fängst an; der Computer spielt die dunklen. Wer zuerst vier Scheiben in eine Reihe bringt – waagerecht, senkrecht oder diagonal –, gewinnt.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist.
+
 ## So wird gespielt
 
 - Tippe irgendwo in eine Spalte, von oben bis unten auf dem Brett: Deine Scheibe fällt ins unterste freie Loch.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Played by people taking turns on this phone -->
+    <string name="backgammon_off_together">Portate fuori: chiare %1$d · scure %2$d</string>
+    <string name="backgammon_roll_now">Lancia i dadi</string>
+</resources>

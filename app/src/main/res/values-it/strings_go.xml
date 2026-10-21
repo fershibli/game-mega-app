@@ -24,4 +24,12 @@
     <string name="go_hint_pass">Suggerimento: non c’è più nulla da guadagnare. Puoi passare.</string>
     <string name="go_win">Hai vinto di %1$s.</string>
     <string name="go_lose">Il computer vince di %1$s.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">Catturate: nero %1$d · bianco %2$d</string>
+    <string name="go_score_together">Nero: %1$s · Bianco: %2$s</string>
+    <string name="go_komi_together">Il conteggio del Bianco include %1$s perché gioca per secondo.</string>
+    <string name="go_other_passed">L’altro giocatore ha passato. Continua a giocare, o passa anche tu per contare i punti.</string>
+    <string name="go_mark_dead_together">Mettetevi d’accordo: le pietre barrate contano come catturate. Toccate un gruppo per cambiarlo, poi Conta.</string>
+    <string name="go_black_wins_by">Vince il Nero di %1$s.</string>
+    <string name="go_white_wins_by">Vince il Bianco di %1$s.</string>
 </resources>

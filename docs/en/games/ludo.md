@@ -4,7 +4,9 @@
 
 A race game for 2 to 4 players: you and one, two or three computer players. Each player has four pieces waiting in a yard in a corner of the cross-shaped board. Roll the die, bring your pieces out and take them once around the board, then up your own colored column to the center. The first to get all four pieces to the center wins.
 
-You play **blue** (bottom left) and you start. At the beginning of each game you choose how many computer players sit at the table (1, 2 or 3); the app remembers your choice. Every color also has its own symbol (circle, triangle, square, diamond), so you never need to tell colors apart.
+You play **blue** (bottom left) and you start. Before the game the app asks **How many at the table?** (2, 3 or 4 seats, so 1, 2 or 3 computer players); it remembers your choice. Every color also has its own symbol (circle, triangle, square, diamond), so you never need to tell colors apart.
+
+**Take turns on this phone:** 2 to 4 people play, each with their own color, without the computer. The app first asks how many sit at the table; against the computer it is you plus the other seats.
 
 ## How to play
 

@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">Chess</string>
     <string name="howto_chess">Tap a piece to see where it can go, then tap the square. Checkmate the computer’s king to win.</string>
-    <string name="chess_variant_standard">Play against the computer</string>
+    <string name="chess_variant_standard">Play a game</string>
     <string name="chess_variant_standard_desc">Full rules: castling, en passant, promotion, check and every kind of draw.</string>
     <string name="chess_variant_famous">Famous games</string>
     <string name="chess_variant_famous_desc">Replay great games from history, move by move.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">Kasparov’s Immortal</string>
     <string name="chess_famous_kasparov_where">Wijk aan Zee, 1999</string>
     <string name="chess_famous_kasparov_about">Kasparov gives up a rook and chases Topalov’s king across the whole board. It is often called one of the most beautiful games ever played.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">Checkmate!</string>
 </resources>

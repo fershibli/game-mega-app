@@ -4,6 +4,8 @@
 
 Una familia de juegos de «siembra» muy antiguos de África y Oriente Medio, para dos: tú juegas la **fila de abajo** de seis hoyos y el ordenador la de arriba. Tu almacén es el hoyo grande de la derecha; el del ordenador, el de la izquierda. El número grande junto a cada hoyo dice cuántas semillas tiene.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca.
+
 ## Cómo se juega
 
 - Toca uno de tus hoyos con semillas (aparecen rodeados). Todas sus semillas se **siembran** una a una en los hoyos siguientes, en sentido contrario a las agujas del reloj: por tu fila hacia la derecha y luego por la fila del ordenador hacia la izquierda.

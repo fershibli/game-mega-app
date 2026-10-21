@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">Sternfelder sind sicher, eine 6 bringt einen weiteren Wurf, drei 6 hintereinander kosten den Zug.</string>
     <string name="ludo_variant_simple">Einfach</string>
     <string name="ludo_variant_simple_desc">Keine sicheren Felder: Jede Figur kann geschlagen werden. Eine 6 bringt weiter einen Wurf.</string>
-    <string name="ludo_choose_opponents">Wie viele Computerspieler?</string>
-    <string name="ludo_you_are">Du spielst Blau, unten links. Du fängst an.</string>
     <string name="ludo_red">Rot</string>
     <string name="ludo_green">Grün</string>
     <string name="ludo_yellow">Gelb</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s hat %2$d gewürfelt</string>
     <string name="ludo_you_won">Alle vier Figuren sind in der Mitte!</string>
     <string name="ludo_other_won">%1$s hat zuerst alle vier Figuren in die Mitte gebracht.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s: tippe auf den Würfel</string>
+    <string name="ludo_turn_pick">%1$s hat %2$d gewürfelt: tippe auf eine markierte Figur</string>
+    <string name="ludo_turn_no_move">%1$s hat %2$d gewürfelt: keine Figur kann ziehen</string>
+    <string name="ludo_center_all">In der Mitte: %1$s</string>
 </resources>

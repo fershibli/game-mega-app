@@ -4,6 +4,8 @@
 
 Das klassische Strategiespiel. Du spielst Weiß, unten auf dem Bildschirm; der Computer spielt Schwarz. Gewinne, indem du den König des Computers **schachmatt** setzt: ihn so angreifst, dass er nicht mehr entkommen kann.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist. Nicht bei den berühmten Partien.
+
 ## Gegen den Computer spielen
 
 - Tippe auf eine deiner Figuren: Die Felder, auf die sie ziehen kann, sind mit Punkten markiert (mit Ringen, wenn geschlagen wird). Tippe auf eines davon.

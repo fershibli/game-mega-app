@@ -10,6 +10,7 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.ColorMode
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.games.eastern.BoardGeometry
+import io.github.fershibli.megagames.ui.components.BoardSide
 import io.github.fershibli.megagames.games.eastern.DIAGONAL
 import io.github.fershibli.megagames.games.eastern.EasternGame
 import io.github.fershibli.megagames.games.eastern.EasternRules
@@ -31,6 +32,8 @@ fun JanggiGame(host: GameHost) = EasternGame(host, JanggiRules)
 /** Janggi on the shared screen: blue discs (Cho) for the player, red (Han) for the computer. */
 object JanggiRules : EasternRules() {
     override val key = "janggi"
+    override val sides = listOf(BoardSide.BLUE, BoardSide.RED)
+    override fun sideColor(p: Palette, side: Int): Color = if (side == 0) blueInk(p) else redInk(p)
     override val cols = 9
     override val rows = 10
     override val points = true

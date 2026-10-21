@@ -35,7 +35,12 @@ import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.games.chess.boardSquares
 import io.github.fershibli.megagames.ui.art.darker
 import io.github.fershibli.megagames.ui.art.lighter
+import androidx.compose.foundation.layout.Box
 import io.github.fershibli.megagames.ui.components.ActionBar
+import io.github.fershibli.megagames.ui.components.BoardSide
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
+import io.github.fershibli.megagames.ui.components.sideSeat
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
@@ -100,14 +105,33 @@ private fun CheckersScreen(state: MutableState<CheckersState>, host: GameHost, r
     val context = LocalResources.current
     val board = s.board.toIntArray()
     val n = rules.size
-    val legal = remember(s) { if (s.turn == Checkers.PLAYER) Checkers.legalMoves(board, Checkers.PLAYER, rules) else emptyList() }
+    // Taking turns on this phone: both colors are people, and the phone is passed after each move.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    fun human(side: Int) = side == Checkers.PLAYER || (together && side == Checkers.AI)
+    // The side that starts plays the dark pieces under English rules, the light ones elsewhere.
+    fun sideOf(side: Int) = if ((side == Checkers.PLAYER) == rules.darkMovesFirst) BoardSide.DARK else BoardSide.LIGHT
+    val (firstColor, secondColor) = checkersColors(LocalPalette.current, rules.darkMovesFirst)
+    val firstSeat = sideSeat(sideOf(Checkers.PLAYER), firstColor)
+    val secondSeat = sideSeat(sideOf(Checkers.AI), secondColor)
+    val legal = remember(s) { if (s.turn != 0 && human(s.turn)) Checkers.legalMoves(board, s.turn, rules) else emptyList() }
     val candidates = if (partial.isEmpty()) emptyList() else legal.filter { it.path.size >= partial.size && it.path.subList(0, partial.size) == partial }
     val mustCapture = legal.firstOrNull()?.captured?.isNotEmpty() == true
 
     val pace = currentPace
     LaunchedEffect(s) {
-        when (s.turn) {
-            0 -> {
+        when {
+            s.turn == 0 && together -> {
+                val score = context.getString(
+                    R.string.sides_score,
+                    context.getString(sideOf(Checkers.PLAYER).label), Checkers.count(board, Checkers.PLAYER),
+                    context.getString(sideOf(Checkers.AI).label), Checkers.count(board, Checkers.AI),
+                )
+                val result = if (s.reason == 3) context.getString(R.string.checkers_draw) else context.getString(sideOf(s.winner).wins)
+                pace.wait(700)
+                host.finish(GameOutcome(true, result + "\n" + score, shared = true))
+            }
+            s.turn == 0 -> {
                 val detail = when (s.reason) {
                     3 -> context.getString(R.string.checkers_draw)
                     1 -> context.getString(if (s.winner == Checkers.PLAYER) R.string.checkers_ai_no_pieces else R.string.checkers_you_no_pieces)
@@ -116,7 +140,7 @@ private fun CheckersScreen(state: MutableState<CheckersState>, host: GameHost, r
                 pace.wait(700)
                 host.finish(GameOutcome(s.winner == Checkers.PLAYER, detail))
             }
-            Checkers.AI -> {
+            s.turn == Checkers.AI && !together -> {
                 pace.wait(600)
                 val move = withContext(Dispatchers.Default) { Checkers.bestMove(board, Checkers.AI, rules, host.difficulty, Random.Default) }
                 if (move != null) state.value = advanceCheckers(s, move, rules)
@@ -128,11 +152,13 @@ private fun CheckersScreen(state: MutableState<CheckersState>, host: GameHost, r
         history += s
         partial = emptyList()
         hint = null
-        state.value = advanceCheckers(s, move, rules)
+        val next = advanceCheckers(s, move, rules)
+        state.value = next
+        if (together && next.turn != 0) handoff.passTo(if (next.turn == Checkers.PLAYER) firstSeat else secondSeat)
     }
 
     fun tap(sq: Int) {
-        if (s.turn != Checkers.PLAYER) return
+        if (s.turn == 0 || !human(s.turn)) return
         if (partial.isNotEmpty()) {
             val ahead = candidates.filter { it.path.size > partial.size }
             // The final square of a capture that can only be done one way: play it at once.
@@ -149,96 +175,109 @@ private fun CheckersScreen(state: MutableState<CheckersState>, host: GameHost, r
         partial = if (legal.any { it.from == sq }) listOf(sq) else emptyList()
     }
 
-    GameLayout(
-        status = {
-            val text = when {
-                s.turn == Checkers.AI -> stringResource(R.string.computer_turn)
-                s.turn == 0 -> ""
-                partial.size > 1 -> stringResource(R.string.checkers_continue)
-                partial.isNotEmpty() -> stringResource(R.string.checkers_pick_target)
-                mustCapture -> stringResource(R.string.checkers_must_capture)
-                else -> stringResource(R.string.checkers_pick_piece)
-            }
-            val score = stringResource(R.string.checkers_score, Checkers.count(board, Checkers.PLAYER), Checkers.count(board, Checkers.AI))
-            StatusPill(if (text.isEmpty()) score else score + "\n" + text, emphasized = s.turn == Checkers.PLAYER)
-        },
-        controls = {
-            ActionBar {
-                BigButton(stringResource(R.string.undo), {
-                    history.removeLastOrNull()?.let { state.value = it; partial = emptyList(); hint = null }
-                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = history.isNotEmpty() && s.turn == Checkers.PLAYER)
-                BigButton(stringResource(R.string.hint), {
-                    hint = Checkers.bestMove(board, Checkers.PLAYER, rules, Difficulty.MEDIUM, Random.Default)
-                    partial = emptyList()
-                }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = s.turn == Checkers.PLAYER)
-            }
-        },
-    ) {
-        val p = LocalPalette.current
-        val (lightSquare, darkSquare) = boardSquares(p)
-        val (mine, theirs) = checkersColors(p, rules.darkMovesFirst)
-        // What to mark on the board.
-        val movable = if (partial.isEmpty() && mustCapture) legal.map { it.from }.toSet() else emptySet()
-        val nextSteps = candidates.filter { it.path.size > partial.size }.map { it.path[partial.size] }.toSet()
-        val finals = candidates.filter { it.path.size > partial.size + 1 }.map { it.to }.toSet()
-        val takenSoFar = candidates.firstOrNull()?.captured?.take(partial.size - 1).orEmpty().toSet()
-        BoxWithConstraints(Modifier.fillMaxSize().padding(8.dp), contentAlignment = Alignment.Center) {
-            val side = minOf(maxWidth, maxHeight)
-            Canvas(
-                Modifier
-                    .size(side)
-                    .testTag("checkers-board")
-                    .pointerInput(s, partial, legal) {
-                        detectTapGestures { pos ->
-                            val frame = size.width * 0.03f
-                            val cell = (size.width - frame * 2) / n
-                            val c = ((pos.x - frame) / cell).toInt()
-                            val r = ((pos.y - frame) / cell).toInt()
-                            if (pos.x >= frame && pos.y >= frame && c in 0 until n && r in 0 until n) tap(r * n + c)
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val text = when {
+                    s.turn == 0 -> ""
+                    !human(s.turn) -> stringResource(R.string.computer_turn)
+                    partial.size > 1 -> stringResource(R.string.checkers_continue)
+                    partial.isNotEmpty() -> stringResource(R.string.checkers_pick_target)
+                    mustCapture -> stringResource(R.string.checkers_must_capture)
+                    together -> ""
+                    else -> stringResource(R.string.checkers_pick_piece)
+                }
+                val score = if (together) {
+                    stringResource(
+                        R.string.sides_score, stringResource(sideOf(Checkers.PLAYER).label), Checkers.count(board, Checkers.PLAYER),
+                        stringResource(sideOf(Checkers.AI).label), Checkers.count(board, Checkers.AI),
+                    )
+                } else stringResource(R.string.checkers_score, Checkers.count(board, Checkers.PLAYER), Checkers.count(board, Checkers.AI))
+                val turn = if (together && s.turn != 0) stringResource(sideOf(s.turn).turn) else ""
+                StatusPill(listOf(score, turn, text).filter { it.isNotEmpty() }.joinToString("\n"), emphasized = s.turn != 0 && human(s.turn))
+            },
+            controls = {
+                ActionBar {
+                    BigButton(stringResource(R.string.undo), {
+                        history.removeLastOrNull()?.let { state.value = it; partial = emptyList(); hint = null }
+                    }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = history.isNotEmpty() && s.turn != 0 && human(s.turn))
+                    BigButton(stringResource(R.string.hint), {
+                        hint = Checkers.bestMove(board, s.turn, rules, Difficulty.MEDIUM, Random.Default)
+                        partial = emptyList()
+                    }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = s.turn != 0 && human(s.turn))
+                }
+            },
+        ) {
+            val p = LocalPalette.current
+            val (lightSquare, darkSquare) = boardSquares(p)
+            val mine = firstColor
+            val theirs = secondColor
+            // What to mark on the board.
+            val movable = if (partial.isEmpty() && mustCapture) legal.map { it.from }.toSet() else emptySet()
+            val nextSteps = candidates.filter { it.path.size > partial.size }.map { it.path[partial.size] }.toSet()
+            val finals = candidates.filter { it.path.size > partial.size + 1 }.map { it.to }.toSet()
+            val takenSoFar = candidates.firstOrNull()?.captured?.take(partial.size - 1).orEmpty().toSet()
+            BoxWithConstraints(Modifier.fillMaxSize().padding(8.dp), contentAlignment = Alignment.Center) {
+                val side = minOf(maxWidth, maxHeight)
+                Canvas(
+                    Modifier
+                        .size(side)
+                        .testTag("checkers-board")
+                        .pointerInput(s, partial, legal) {
+                            detectTapGestures { pos ->
+                                val frame = size.width * 0.03f
+                                val cell = (size.width - frame * 2) / n
+                                val c = ((pos.x - frame) / cell).toInt()
+                                val r = ((pos.y - frame) / cell).toInt()
+                                if (pos.x >= frame && pos.y >= frame && c in 0 until n && r in 0 until n) tap(r * n + c)
+                            }
+                        },
+                ) {
+                    val frame = size.width * 0.03f
+                    val cell = (size.width - frame * 2) / n
+                    fun topLeft(i: Int) = Offset(frame + (i % n) * cell, frame + (i / n) * cell)
+                    fun center(i: Int) = topLeft(i) + Offset(cell / 2, cell / 2)
+                    drawRoundRect(Brush.linearGradient(listOf(p.wood.lighter(0.2f), p.woodDark)), Offset.Zero, size, CornerRadius(frame))
+                    drawRect(lightSquare, Offset(frame, frame), Size(cell * n, cell * n))
+                    for (i in 0 until n * n) {
+                        if (Checkers.playable(i / n, i % n, rules)) drawRect(darkSquare, topLeft(i), Size(cell, cell))
+                    }
+                    // The last move: its squares tinted and its path drawn as a line.
+                    s.last?.let { m ->
+                        for (sq in listOf(m.from, m.to)) drawRect(p.highlight.copy(alpha = 0.45f), topLeft(sq), Size(cell, cell))
+                        for (k in 1 until m.path.size) {
+                            drawLine(p.highlight.copy(alpha = 0.8f), center(m.path[k - 1]), center(m.path[k]), cell * 0.08f, StrokeCap.Round)
                         }
-                    },
-            ) {
-                val frame = size.width * 0.03f
-                val cell = (size.width - frame * 2) / n
-                fun topLeft(i: Int) = Offset(frame + (i % n) * cell, frame + (i / n) * cell)
-                fun center(i: Int) = topLeft(i) + Offset(cell / 2, cell / 2)
-                drawRoundRect(Brush.linearGradient(listOf(p.wood.lighter(0.2f), p.woodDark)), Offset.Zero, size, CornerRadius(frame))
-                drawRect(lightSquare, Offset(frame, frame), Size(cell * n, cell * n))
-                for (i in 0 until n * n) {
-                    if (Checkers.playable(i / n, i % n, rules)) drawRect(darkSquare, topLeft(i), Size(cell, cell))
-                }
-                // The last move: its squares tinted and its path drawn as a line.
-                s.last?.let { m ->
-                    for (sq in listOf(m.from, m.to)) drawRect(p.highlight.copy(alpha = 0.45f), topLeft(sq), Size(cell, cell))
-                    for (k in 1 until m.path.size) {
-                        drawLine(p.highlight.copy(alpha = 0.8f), center(m.path[k - 1]), center(m.path[k]), cell * 0.08f, StrokeCap.Round)
                     }
-                }
-                hint?.let { m ->
-                    for (sq in listOf(m.from, m.to)) {
-                        drawRoundRect(p.hint, topLeft(sq) + Offset(cell * 0.05f, cell * 0.05f), Size(cell * 0.9f, cell * 0.9f), CornerRadius(cell * 0.1f), style = Stroke(cell * 0.09f))
+                    hint?.let { m ->
+                        for (sq in listOf(m.from, m.to)) {
+                            drawRoundRect(p.hint, topLeft(sq) + Offset(cell * 0.05f, cell * 0.05f), Size(cell * 0.9f, cell * 0.9f), CornerRadius(cell * 0.1f), style = Stroke(cell * 0.09f))
+                        }
                     }
+                    val strong = p.strongOutlines
+                    val moving = partial.firstOrNull() ?: -1
+                    for (i in 0 until n * n) {
+                        val v = board[i]
+                        if (v == 0 || i == moving) continue
+                        val color = if (Checkers.owner(v) == Checkers.PLAYER) mine else theirs
+                        if (i in movable) drawCircle(p.highlight, cell * 0.49f, center(i), style = Stroke(cell * 0.09f))
+                        drawCheckersPiece(center(i), cell * 0.4f, color, Checkers.isKing(v), strong, alpha = if (i in takenSoFar) 0.35f else 1f)
+                    }
+                    // The piece being moved, drawn where it is now in the middle of its move.
+                    if (moving >= 0) {
+                        val at = partial.last()
+                        drawRect(p.highlight.copy(alpha = 0.6f), topLeft(moving), Size(cell, cell))
+                        drawCircle(p.highlight, cell * 0.49f, center(at), style = Stroke(cell * 0.1f))
+                        val color = if (Checkers.owner(board[moving]) == Checkers.PLAYER) mine else theirs
+                        drawCheckersPiece(center(at), cell * 0.4f, color, Checkers.isKing(board[moving]), strong)
+                    }
+                    for (t in nextSteps) drawCircle(p.hint.darker(0.1f), cell * 0.2f, center(t))
+                    for (t in finals - nextSteps) drawCircle(p.hint, cell * 0.3f, center(t), style = Stroke(cell * 0.07f))
+                    if (strong) drawRect(Color.Black, Offset(frame, frame), Size(cell * n, cell * n), style = Stroke(2f))
                 }
-                val strong = p.strongOutlines
-                val moving = partial.firstOrNull() ?: -1
-                for (i in 0 until n * n) {
-                    val v = board[i]
-                    if (v == 0 || i == moving) continue
-                    val color = if (Checkers.owner(v) == Checkers.PLAYER) mine else theirs
-                    if (i in movable) drawCircle(p.highlight, cell * 0.49f, center(i), style = Stroke(cell * 0.09f))
-                    drawCheckersPiece(center(i), cell * 0.4f, color, Checkers.isKing(v), strong, alpha = if (i in takenSoFar) 0.35f else 1f)
-                }
-                // The piece being moved, drawn where it is now in the middle of its move.
-                if (moving >= 0) {
-                    val at = partial.last()
-                    drawRect(p.highlight.copy(alpha = 0.6f), topLeft(moving), Size(cell, cell))
-                    drawCircle(p.highlight, cell * 0.49f, center(at), style = Stroke(cell * 0.1f))
-                    drawCheckersPiece(center(at), cell * 0.4f, mine, Checkers.isKing(board[moving]), strong)
-                }
-                for (t in nextSteps) drawCircle(p.hint.darker(0.1f), cell * 0.2f, center(t))
-                for (t in finals - nextSteps) drawCircle(p.hint, cell * 0.3f, center(t), style = Stroke(cell * 0.07f))
-                if (strong) drawRect(Color.Black, Offset(frame, frame), Size(cell * n, cell * n), style = Stroke(2f))
             }
         }
+        HandoffOverlay(handoff) {}
     }
 }
+

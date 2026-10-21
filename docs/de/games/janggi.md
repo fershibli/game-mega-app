@@ -4,6 +4,8 @@
 
 Koreanisches Schach ist ein Verwandter des chinesischen Schachs und wird in Korea seit Jahrhunderten gespielt. Das Brett hat keinen Fluss, die Paläste haben Diagonalen, die mehrere Figuren nutzen können, und du darfst **passen**, statt zu ziehen.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist.
+
 ## Das Brett
 
 - 9 Linien quer und 10 längs; die Figuren stehen **auf den Kreuzungen**.

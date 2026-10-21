@@ -24,4 +24,12 @@
     <string name="go_hint_pass">Dica: não há mais nada a ganhar. Você pode passar.</string>
     <string name="go_win">Você venceu por %1$s.</string>
     <string name="go_lose">O computador venceu por %1$s.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">Capturadas: pretas %1$d · brancas %2$d</string>
+    <string name="go_score_together">Pretas: %1$s · Brancas: %2$s</string>
+    <string name="go_komi_together">A contagem das brancas inclui %1$s por jogarem em segundo.</string>
+    <string name="go_other_passed">O outro jogador passou a vez. Continue jogando ou passe também para contar os pontos.</string>
+    <string name="go_mark_dead_together">Combinem juntos: as pedras riscadas contam como capturadas. Toque num grupo para mudar e depois em Contar.</string>
+    <string name="go_black_wins_by">As pretas venceram por %1$s.</string>
+    <string name="go_white_wins_by">As brancas venceram por %1$s.</string>
 </resources>

@@ -211,5 +211,16 @@ class ScreenshotTest {
     @Test fun ludo() = gameShot("game_ludo", GameId.LUDO)
     @Test fun morris() = gameShot("game_morris", GameId.MORRIS)
     @Test fun mancala() = gameShot("game_mancala", GameId.MANCALA, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true))
+    @Test fun takeTurnsChess() = shot("take_turns_chess") {
+        // White and Black are both people: after three moves it is Black's turn on the same board.
+        val restored = io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.chess.ChessState.serializer(), io.github.fershibli.megagames.games.chess.ChessState(listOf("e2e4", "e7e5", "g1f3")))
+        Column(Modifier.fillMaxSize()) {
+            TopBar(stringResource(GameId.CHESS.title), {})
+            Box(Modifier.weight(1f)) { GameContent(GameId.CHESS, GameHost(GameId.CHESS, Difficulty.EASY, restored, null, GameId.CHESS.variant("standard"), io.github.fershibli.megagames.core.PlaySetup(together = true)) {}) }
+        }
+    }
+    @Test fun tableLudo() = shot("table_ludo") {
+        io.github.fershibli.megagames.ui.screens.TableScreen(GameId.LUDO, true, GameId.LUDO.tables[1], {}, {}, {})
+    }
 
 }

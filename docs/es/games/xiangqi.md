@@ -4,6 +4,8 @@
 
 El ajedrez chino es el juego de tablero más jugado en China y Vietnam. Dos ejércitos se enfrentan a ambos lados de un río; gana quien encierra al **general** del otro bando.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca.
+
 ## El tablero
 
 - 9 líneas horizontales y 10 verticales. Las piezas están **en los cruces**, no dentro de las casillas.

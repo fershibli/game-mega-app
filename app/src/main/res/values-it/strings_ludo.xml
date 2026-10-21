@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">Le caselle con la stella sono sicure, il 6 fa ritirare e tre 6 di fila fanno perdere il turno.</string>
     <string name="ludo_variant_simple">Semplice</string>
     <string name="ludo_variant_simple_desc">Nessuna casella sicura: ogni pedina può essere mangiata. Il 6 fa sempre ritirare.</string>
-    <string name="ludo_choose_opponents">Quanti giocatori del computer?</string>
-    <string name="ludo_you_are">Giochi con il blu, in basso a sinistra. Cominci tu.</string>
     <string name="ludo_red">Rosso</string>
     <string name="ludo_green">Verde</string>
     <string name="ludo_yellow">Giallo</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s ha fatto %2$d</string>
     <string name="ludo_you_won">Tutte e quattro le tue pedine sono al centro!</string>
     <string name="ludo_other_won">%1$s ha portato per primo le quattro pedine al centro.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s: tocca il dado</string>
+    <string name="ludo_turn_pick">%1$s ha fatto %2$d: tocca una pedina evidenziata</string>
+    <string name="ludo_turn_no_move">%1$s ha fatto %2$d: nessuna pedina può muoversi</string>
+    <string name="ludo_center_all">Al centro: %1$s</string>
 </resources>

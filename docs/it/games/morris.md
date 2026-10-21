@@ -4,6 +4,8 @@
 
 Uno dei giochi da tavolo più antichi del mondo, per due: tu (pedine chiare) contro il computer (pedine scure). Il tavoliere ha punti uniti da linee. Allinea tre tue pedine su una linea, un **mulino**, e togli una pedina al computer.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca.
+
 ## Come si gioca
 
 1. **Piazzare**: a turno ognuno mette una pedina su un punto libero. Le tue pedine ancora da piazzare aspettano sotto il tavoliere, quelle del computer sopra.

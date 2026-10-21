@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.freecell
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -50,7 +52,6 @@ import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.random.Random
@@ -105,6 +106,7 @@ private class TapCycle(val before: FreeCellState, val options: List<FcMove>, val
 
 @Composable
 private fun FreeCellScreen(state: MutableState<FreeCellState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val history = remember { mutableStateListOf<FreeCellState>() }
     var flash by remember { mutableStateOf<Card?>(null) }
@@ -148,9 +150,9 @@ private fun FreeCellScreen(state: MutableState<FreeCellState>, host: GameHost) {
 
     // A game saved right at the winning move still ends properly when it is restored.
     LaunchedEffect(Unit) { if (state.value.won) host.finish(GameOutcome(true, null)) }
-    LaunchedEffect(flash) { if (flash != null) { delay(CARD_FLASH_MS); flash = null } }
-    LaunchedEffect(refused) { if (refused != null) { delay(CARD_REFUSED_MS); refused = null } }
-    LaunchedEffect(message) { if (message != null) { delay(CARD_MESSAGE_MS); message = null } }
+    LaunchedEffect(flash) { if (flash != null) { pace.wait(CARD_FLASH_MS); flash = null } }
+    LaunchedEffect(refused) { if (refused != null) { pace.wait(CARD_REFUSED_MS); refused = null } }
+    LaunchedEffect(message) { if (message != null) { pace.wait(CARD_MESSAGE_MS); message = null } }
     LaunchedEffect(autoFinishing) {
         while (autoFinishing) {
             val cur = state.value
@@ -158,7 +160,7 @@ private fun FreeCellScreen(state: MutableState<FreeCellState>, host: GameHost) {
             history += cur
             state.value = next
             if (next.won) { host.finish(GameOutcome(true, null)); break }
-            delay(CARD_AUTO_STEP_MS)
+            pace.wait(CARD_AUTO_STEP_MS)
         }
         autoFinishing = false
     }
@@ -167,7 +169,7 @@ private fun FreeCellScreen(state: MutableState<FreeCellState>, host: GameHost) {
         val lost = !s.won && withContext(Dispatchers.Default) { FreeCellDeals.isLost(s) }
         stuck = lost
         if (!lost) stuckDismissed = false
-        else if (!stuckDismissed) { delay(CARD_FLASH_MS); showStuck = true }
+        else if (!stuckDismissed) { pace.wait(CARD_FLASH_MS); showStuck = true }
     }
 
     fun onTap(hit: FcHit?) {

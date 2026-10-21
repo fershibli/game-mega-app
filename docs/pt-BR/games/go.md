@@ -4,6 +4,8 @@
 
 Um jogo de tabuleiro do Leste Asiático, com milhares de anos, para dois jogadores: você joga com as pedras pretas e o computador com as brancas. As pedras vão nos cruzamentos das linhas e nunca se movem. O objetivo é cercar uma parte maior do tabuleiro do que o adversário.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez. No final, vocês combinam juntos quais pedras estão mortas.
+
 ## Como jogar
 
 - Toque em um cruzamento para colocar uma pedra. Nos tabuleiros 13×13 e 19×19 os cruzamentos são pequenos: o primeiro toque mostra a pedra clarinha e um segundo toque no mesmo cruzamento a coloca.

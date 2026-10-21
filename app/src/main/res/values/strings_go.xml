@@ -24,4 +24,12 @@
     <string name="go_hint_pass">Hint: there is nothing more to gain. You can pass.</string>
     <string name="go_win">You win by %1$s.</string>
     <string name="go_lose">The computer wins by %1$s.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">Captured: black %1$d · white %2$d</string>
+    <string name="go_score_together">Black: %1$s · White: %2$s</string>
+    <string name="go_komi_together">White’s count includes %1$s for playing second.</string>
+    <string name="go_other_passed">The other player passed. Keep playing, or pass too to count the points.</string>
+    <string name="go_mark_dead_together">Agree together: crossed-out stones count as captured. Tap a group to change it, then tap Count.</string>
+    <string name="go_black_wins_by">Black wins by %1$s.</string>
+    <string name="go_white_wins_by">White wins by %1$s.</string>
 </resources>

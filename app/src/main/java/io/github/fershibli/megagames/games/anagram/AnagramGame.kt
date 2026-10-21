@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.anagram
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import android.content.Context
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -67,7 +69,6 @@ import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
@@ -135,6 +136,7 @@ fun AnagramGame(host: GameHost) {
 
 @Composable
 private fun AnagramScreen(state: MutableState<AnagramState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val p = LocalPalette.current
     val scale = LocalSettings.current.pieceScale
@@ -143,7 +145,7 @@ private fun AnagramScreen(state: MutableState<AnagramState>, host: GameHost) {
 
     LaunchedEffect(s.index, s.solved) {
         if (!s.solved) return@LaunchedEffect
-        delay(SOLVED_PAUSE_MS)
+        pace.wait(SOLVED_PAUSE_MS)
         val cur = state.value
         if (cur.index + 1 < cur.words.size) {
             state.value = startWord(cur, cur.index + 1, host.difficulty)

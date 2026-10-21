@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sides of a board game played by people taking turns on this phone -->
+    <string name="side_white">白方</string>
+    <string name="side_black">黑方</string>
+    <string name="side_red">红方</string>
+    <string name="side_blue">蓝方</string>
+    <string name="side_light">浅色棋子</string>
+    <string name="side_dark">深色棋子</string>
+    <string name="side_bottom">下方玩家</string>
+    <string name="side_top">上方玩家</string>
+    <string name="side_white_turn">轮到白方</string>
+    <string name="side_black_turn">轮到黑方</string>
+    <string name="side_red_turn">轮到红方</string>
+    <string name="side_blue_turn">轮到蓝方</string>
+    <string name="side_light_turn">轮到浅色棋子</string>
+    <string name="side_dark_turn">轮到深色棋子</string>
+    <string name="side_bottom_turn">轮到下方玩家</string>
+    <string name="side_top_turn">轮到上方玩家</string>
+    <string name="side_white_wins">白方获胜！</string>
+    <string name="side_black_wins">黑方获胜！</string>
+    <string name="side_red_wins">红方获胜！</string>
+    <string name="side_blue_wins">蓝方获胜！</string>
+    <string name="side_light_wins">浅色棋子获胜！</string>
+    <string name="side_dark_wins">深色棋子获胜！</string>
+    <string name="side_bottom_wins">下方玩家获胜！</string>
+    <string name="side_top_wins">上方玩家获胜！</string>
+    <string name="sides_score">%1$s：%2$d · %3$s：%4$d</string>
+    <string name="sides_other_passed">对方选择了停一手。</string>
+</resources>

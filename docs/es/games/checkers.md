@@ -4,6 +4,8 @@
 
 Un juego de tablero para dos: tú contra el ordenador. Las fichas se mueven en diagonal por las casillas oscuras; para capturar, salta sobre una ficha rival hasta la casilla vacía justo detrás. La ficha que llega al otro lado se convierte en **dama** (recibe una corona dorada). Ganas cuando el ordenador se queda sin fichas o sin jugadas.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca.
+
 ## Cómo jugar
 
 - Toca una de tus fichas: se iluminan las casillas a las que puede ir. Toca una de ellas.

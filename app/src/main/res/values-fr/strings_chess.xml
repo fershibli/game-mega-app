@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">Échecs</string>
     <string name="howto_chess">Touchez une pièce pour voir où elle peut aller, puis touchez la case. Faites échec et mat au roi de l’ordinateur pour gagner.</string>
-    <string name="chess_variant_standard">Jouer contre l’ordinateur</string>
+    <string name="chess_variant_standard">Jouer une partie</string>
     <string name="chess_variant_standard_desc">Règles complètes : roque, prise en passant, promotion, échec et toutes les nulles.</string>
     <string name="chess_variant_famous">Parties célèbres</string>
     <string name="chess_variant_famous_desc">Rejouez de grandes parties de l’histoire, coup par coup.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">L’Immortelle de Kasparov</string>
     <string name="chess_famous_kasparov_where">Wijk aan Zee, 1999</string>
     <string name="chess_famous_kasparov_about">Kasparov sacrifie une tour et pourchasse le roi de Topalov à travers tout l’échiquier. On la cite souvent parmi les plus belles parties jamais jouées.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">Échec et mat !</string>
 </resources>

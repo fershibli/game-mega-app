@@ -4,6 +4,8 @@
 
 Une famille de très vieux jeux de « semailles » d’Afrique et du Moyen-Orient, pour deux : vous jouez la **rangée du bas** de six trous, l’ordinateur celle du haut. Votre grenier est le grand trou à droite, celui de l’ordinateur à gauche. Le grand chiffre près de chaque trou indique combien de graines il contient.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour.
+
 ## Comment jouer
 
 - Touchez un de vos trous qui contient des graines (ils sont entourés). Toutes ses graines sont **semées** une à une dans les trous suivants, dans le sens inverse des aiguilles d’une montre : le long de votre rangée vers la droite, puis le long de celle de l’ordinateur vers la gauche.

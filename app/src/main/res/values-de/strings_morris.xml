@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">Du kannst nicht mehr ziehen.</string>
     <string name="morris_draw">Unentschieden: 50 Züge pro Person ohne Mühle.</string>
     <string name="morris_draw_full">Unentschieden: Das Brett ist voll.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">Steine: hell %1$d · dunkel %2$d</string>
+    <string name="morris_place_together">Tippe auf einen freien Punkt, um einen Stein zu setzen. Noch zu setzen: %1$d</string>
+    <string name="morris_remove_together">Eine Mühle! Tippe auf einen Stein der anderen Farbe, um ihn wegzunehmen</string>
 </resources>

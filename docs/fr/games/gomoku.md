@@ -4,6 +4,8 @@
 
 Un jeu pour deux sur les intersections d’un plateau 15×15. Vous jouez les noirs et commencez ; l’ordinateur joue les blancs. Le premier qui forme une ligne continue de cinq pierres ou plus, horizontalement, verticalement ou en diagonale, gagne.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour.
+
 ## Comment jouer
 
 - Touchez une intersection : une pierre transparente montre où elle ira. Touchez à nouveau la même intersection pour la poser, ou une autre pour changer d’avis.

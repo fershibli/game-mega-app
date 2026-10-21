@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">Non puoi muoverti.</string>
     <string name="morris_draw">Patta: 50 mosse a testa senza mulino.</string>
     <string name="morris_draw_full">Patta: il tavoliere è pieno.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">Pedine: chiare %1$d · scure %2$d</string>
+    <string name="morris_place_together">Tocca un punto vuoto per mettere una pedina. Ancora da mettere: %1$d</string>
+    <string name="morris_remove_together">Un mulino! Tocca una pedina dell’altro colore per toglierla</string>
 </resources>

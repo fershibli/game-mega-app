@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sides of a board game played by people taking turns on this phone -->
+    <string name="side_white">Bianco</string>
+    <string name="side_black">Nero</string>
+    <string name="side_red">Rosso</string>
+    <string name="side_blue">Blu</string>
+    <string name="side_light">Pedine chiare</string>
+    <string name="side_dark">Pedine scure</string>
+    <string name="side_bottom">Giocatore in basso</string>
+    <string name="side_top">Giocatore in alto</string>
+    <string name="side_white_turn">Tocca al Bianco</string>
+    <string name="side_black_turn">Tocca al Nero</string>
+    <string name="side_red_turn">Tocca al Rosso</string>
+    <string name="side_blue_turn">Tocca al Blu</string>
+    <string name="side_light_turn">Tocca alle pedine chiare</string>
+    <string name="side_dark_turn">Tocca alle pedine scure</string>
+    <string name="side_bottom_turn">Tocca al giocatore in basso</string>
+    <string name="side_top_turn">Tocca al giocatore in alto</string>
+    <string name="side_white_wins">Vince il Bianco!</string>
+    <string name="side_black_wins">Vince il Nero!</string>
+    <string name="side_red_wins">Vince il Rosso!</string>
+    <string name="side_blue_wins">Vince il Blu!</string>
+    <string name="side_light_wins">Vincono le pedine chiare!</string>
+    <string name="side_dark_wins">Vincono le pedine scure!</string>
+    <string name="side_bottom_wins">Vince il giocatore in basso!</string>
+    <string name="side_top_wins">Vince il giocatore in alto!</string>
+    <string name="sides_score">%1$s: %2$d · %3$s: %4$d</string>
+    <string name="sides_other_passed">L’altro giocatore ha passato.</string>
+</resources>

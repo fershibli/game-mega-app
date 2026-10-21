@@ -4,7 +4,9 @@
 
 Un jeu de course pour 2 à 4 joueurs : vous et un, deux ou trois joueurs ordinateur. Chaque joueur a quatre pions qui attendent dans sa maison, dans un coin du plateau en forme de croix. Lancez le dé, sortez vos pions, faites le tour du plateau puis remontez votre allée de couleur jusqu’au centre. Le premier à amener ses quatre pions au centre gagne.
 
-Vous jouez le **bleu** (en bas à gauche) et vous commencez. Au début de chaque partie, vous choisissez combien de joueurs ordinateur sont à la table (1, 2 ou 3) ; l’application s’en souvient. Chaque couleur a aussi son symbole (rond, triangle, carré, losange) : inutile de distinguer les couleurs.
+Vous jouez le **bleu** (en bas à gauche) et vous commencez. Avant la partie, l’application demande **Combien à table ?** (2, 3 ou 4 places, soit 1, 2 ou 3 joueurs ordinateur) ; elle s’en souvient. Chaque couleur a aussi son symbole (rond, triangle, carré, losange) : inutile de distinguer les couleurs.
+
+**Chacun son tour sur ce téléphone :** 2 à 4 personnes jouent, chacune avec sa couleur, sans l’ordinateur. L’application demande d’abord combien sont à table ; contre l’ordinateur, c’est vous et les autres places.
 
 ## Comment jouer
 

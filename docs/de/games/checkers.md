@@ -4,6 +4,8 @@
 
 Ein Brettspiel zu zweit: du gegen den Computer. Die Steine ziehen diagonal über die dunklen Felder; geschlagen wird, indem man über einen gegnerischen Stein auf das leere Feld direkt dahinter springt. Ein Stein, der die andere Seite erreicht, wird zur **Dame** (er bekommt eine goldene Krone). Du gewinnst, wenn der Computer keine Steine mehr hat oder nicht mehr ziehen kann.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist.
+
 ## So wird gespielt
 
 - Tippe auf einen deiner Steine: Die Felder, die er erreichen kann, leuchten auf. Tippe auf eines davon.

@@ -4,6 +4,8 @@
 
 A board game from East Asia, thousands of years old, for two players: you play the black stones and the computer the white ones. Stones go on the crossings of the lines and never move. The aim is to surround more of the board than your opponent.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is. At the end, you agree together which stones are dead.
+
 ## How to play
 
 - Tap a crossing to place a stone. On the 13×13 and 19×19 boards the crossings are small, so the first tap shows the stone faintly and a second tap on the same crossing places it.
