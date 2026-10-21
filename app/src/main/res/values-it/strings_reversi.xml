@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">Pedine scure</string>
+    <string name="reversi_light">Pedine chiare</string>
+    <string name="reversi_dark_turn">Tocca alle pedine scure</string>
+    <string name="reversi_light_turn">Tocca alle pedine chiare</string>
+    <string name="reversi_dark_passed">Le scure non avevano mosse. Di nuovo le chiare.</string>
+    <string name="reversi_light_passed">Le chiare non avevano mosse. Di nuovo le scure.</string>
+    <string name="reversi_score_together">● Scure: %1$d   ○ Chiare: %2$d</string>
+    <string name="reversi_dark_wins">Vincono le pedine scure!</string>
+    <string name="reversi_light_wins">Vincono le pedine chiare!</string>
+</resources>

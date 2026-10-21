@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.ui.screens
 
+import io.github.fershibli.megagames.core.Motion
+import io.github.fershibli.megagames.core.Pace
 import androidx.compose.ui.AbsoluteAlignment
 import android.content.Context
 import android.content.Intent
@@ -68,7 +70,8 @@ import io.github.fershibli.megagames.ui.theme.Palette
 import kotlin.math.roundToInt
 
 /** Extra actions shown when Settings is opened from inside a game. */
-class InGameActions(val onResume: () -> Unit, val onNewGame: () -> Unit, val onMainMenu: () -> Unit)
+/** Buttons shown when the settings are opened during a game. Without [onNewGame] (pastimes) nothing can be lost, so leaving asks nothing. */
+class InGameActions(val onResume: () -> Unit, val onNewGame: (() -> Unit)?, val onMainMenu: () -> Unit)
 
 const val PROJECT_URL = "https://github.com/fershibli/game-mega-app"
 
@@ -198,6 +201,15 @@ fun SettingsScreen(
                     }
                 }
 
+                Section(stringResource(R.string.section_pace_motion)) {
+                    ChoiceRow(stringResource(R.string.pace_title), Pace.entries, settings.pace, { stringResource(it.label) }, { stringResource(it.description) }) {
+                        onChange(settings.copy(pace = it))
+                    }
+                    ChoiceRow(stringResource(R.string.motion_title), Motion.entries, settings.motion, { stringResource(it.label) }, { stringResource(it.description) }) {
+                        onChange(settings.copy(motion = it))
+                    }
+                }
+
                 Section(stringResource(R.string.section_game_list)) {
                     ToggleRow(stringResource(R.string.show_categories), stringResource(R.string.show_categories_desc), settings.showCategories) {
                         onChange(settings.copy(showCategories = it))
@@ -224,9 +236,15 @@ fun SettingsScreen(
             if (inGame != null) {
                 ActionBar {
                     BigButton(stringResource(R.string.resume), inGame.onResume, icon = AppIcon.CHECK)
-                    BigButton(stringResource(R.string.new_game), { confirmNew = true }, icon = AppIcon.NEW_GAME, style = ButtonStyle.SECONDARY)
+                    if (inGame.onNewGame != null) {
+                        BigButton(stringResource(R.string.new_game), { confirmNew = true }, icon = AppIcon.NEW_GAME, style = ButtonStyle.SECONDARY)
+                    }
                 }
-                BigButton(stringResource(R.string.main_menu), { confirmExit = true }, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.DANGER)
+                if (inGame.onNewGame != null) {
+                    BigButton(stringResource(R.string.main_menu), { confirmExit = true }, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.DANGER)
+                } else {
+                    BigButton(stringResource(R.string.main_menu), inGame.onMainMenu, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.SECONDARY)
+                }
             } else {
                 BigButton(stringResource(R.string.done), onClose, Modifier.fillMaxWidth(), icon = AppIcon.CHECK)
             }
@@ -267,11 +285,34 @@ fun SettingsScreen(
             message = stringResource(R.string.new_game_message),
             onDismiss = { confirmNew = false },
             buttons = listOf(
-                stringResource(R.string.new_game) to { confirmNew = false; inGame.onNewGame() },
+                stringResource(R.string.new_game) to { confirmNew = false; inGame.onNewGame?.invoke() },
                 stringResource(R.string.cancel) to { confirmNew = false },
             ),
         )
     }
+}
+
+/** A title, one big button per option (the chosen one highlighted) and what the chosen option does. */
+@Composable
+private fun <T> ChoiceRow(
+    title: String,
+    options: List<T>,
+    selected: T,
+    label: @Composable (T) -> String,
+    description: @Composable (T) -> String,
+    onSelect: (T) -> Unit,
+) {
+    val p = LocalPalette.current
+    Text(title, style = MaterialTheme.typography.titleMedium, color = p.text)
+    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        options.forEach { option ->
+            BigButton(
+                label(option), { onSelect(option) }, Modifier.weight(1f), compact = true,
+                style = if (option == selected) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY,
+            )
+        }
+    }
+    Text(description(selected), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
 }
 
 @Composable

@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.solitaire
 
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -41,7 +43,6 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.delay
 import kotlin.random.Random
 
 @Composable
@@ -136,10 +137,11 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
         if (next.won) host.finish(GameOutcome(true, null))
     }
 
+    val pace = currentPace
     // A game saved right at the winning move still ends properly when it is restored.
     LaunchedEffect(Unit) { if (state.value.won) host.finish(GameOutcome(true, null)) }
-    LaunchedEffect(flash) { if (flash != null) { delay(700); flash = null } }
-    LaunchedEffect(refused) { if (refused != null) { delay(500); refused = null } }
+    LaunchedEffect(flash) { if (flash != null) { pace.wait(700); flash = null } }
+    LaunchedEffect(refused) { if (refused != null) { pace.wait(500); refused = null } }
     LaunchedEffect(autoFinishing) {
         while (autoFinishing) {
             val cur = state.value
@@ -147,7 +149,7 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
             history += cur
             state.value = next
             if (next.won) { host.finish(GameOutcome(true, null)); break }
-            delay(140)
+            pace.wait(140)
         }
         autoFinishing = false
     }
