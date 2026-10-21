@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">Palavra do dia</string>
+    <string name="howto_dayword">Adivinhe a palavra escondida. Escreva uma palavra na linha e toque em Conferir: cada letra ganha um sinal. ● lugar certo, ○ está na palavra em outro lugar, — não está na palavra.</string>
+    <string name="dayword_today">Palavra do dia · linha %1$d de %2$d</string>
+    <string name="dayword_practice">Palavra de treino · linha %1$d de %2$d</string>
+    <string name="dayword_today_done">Você já jogou a palavra de hoje. Aqui vai uma palavra de treino; amanhã tem palavra do dia nova.</string>
+    <string name="dayword_check">Conferir</string>
+    <string name="dayword_another">Outra</string>
+    <string name="dayword_known">Você sabe:</string>
+    <string name="dayword_clue">Dica: %1$s</string>
+    <string name="dayword_won">Muito bem! Você achou %1$s na linha %2$d.</string>
+    <string name="dayword_lost">A palavra era %1$s.</string>
+    <string name="dayword_legend">● lugar certo   ○ outro lugar   — não está</string>
+    <string name="dayword_mark_right">lugar certo</string>
+    <string name="dayword_mark_elsewhere">está na palavra, em outro lugar</string>
+    <string name="dayword_mark_absent">não está na palavra</string>
+</resources>

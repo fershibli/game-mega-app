@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">Cerca parole</string>
+    <string name="howto_wordsearch">Trova le parole nascoste nella griglia. Fai scorrere il dito dalla prima lettera all’ultima, oppure tocca la prima lettera e poi l’ultima.</string>
+    <string name="wordsearch_found">Parole trovate: %1$d su %2$d</string>
+    <string name="wordsearch_words">Parole da trovare (toccane una per la definizione)</string>
+    <string name="wordsearch_tap_last">Ora tocca l’ultima lettera della parola</string>
+    <string name="wordsearch_not_word">Non è una delle parole. Riprova.</string>
+    <string name="wordsearch_hint_first">La lettera cerchiata è l’inizio di una parola.</string>
+    <string name="wordsearch_hint_last">Ora è cerchiata anche la sua ultima lettera.</string>
+    <string name="wordsearch_done">Hai trovato tutte le parole!</string>
+    <string name="wordsearch_hints_used">Suggerimenti usati: %1$d.</string>
+</resources>

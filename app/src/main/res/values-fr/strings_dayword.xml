@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">Mot du jour</string>
+    <string name="howto_dayword">Devinez le mot caché. Écrivez un mot sur la ligne et touchez Vérifier : chaque lettre reçoit un signe. ● bonne place, ○ dans le mot mais ailleurs, — pas dans le mot.</string>
+    <string name="dayword_today">Mot du jour · ligne %1$d sur %2$d</string>
+    <string name="dayword_practice">Mot d’entraînement · ligne %1$d sur %2$d</string>
+    <string name="dayword_today_done">Vous avez déjà joué le mot du jour. Voici un mot d’entraînement ; un nouveau mot du jour arrive demain.</string>
+    <string name="dayword_check">Vérifier</string>
+    <string name="dayword_another">Un autre</string>
+    <string name="dayword_known">Vous savez :</string>
+    <string name="dayword_clue">Définition : %1$s</string>
+    <string name="dayword_won">Bravo ! Vous avez trouvé %1$s à la ligne %2$d.</string>
+    <string name="dayword_lost">Le mot était %1$s.</string>
+    <string name="dayword_legend">● bonne place   ○ ailleurs   — absente</string>
+    <string name="dayword_mark_right">bonne place</string>
+    <string name="dayword_mark_elsewhere">dans le mot, ailleurs</string>
+    <string name="dayword_mark_absent">pas dans le mot</string>
+</resources>

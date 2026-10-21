@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">ワードサーチ</string>
+    <string name="howto_wordsearch">マスの中にかくれたことばを探しましょう。最初の文字から最後の文字まで指でなぞるか、最初の文字をタップしてから最後の文字をタップします。</string>
+    <string name="wordsearch_found">見つけたことば：%2$d語中%1$d語</string>
+    <string name="wordsearch_words">探すことば（タップするとカギが出ます）</string>
+    <string name="wordsearch_tap_last">ことばの最後の文字をタップしてください</string>
+    <string name="wordsearch_not_word">リストにないことばです。もう一度どうぞ。</string>
+    <string name="wordsearch_hint_first">丸で囲んだ文字が、ことばの始まりです。</string>
+    <string name="wordsearch_hint_last">最後の文字も丸で囲みました。</string>
+    <string name="wordsearch_done">ことばを全部見つけました！</string>
+    <string name="wordsearch_hints_used">ヒント：%1$d回。</string>
+</resources>

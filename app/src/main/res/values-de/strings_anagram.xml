@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">Anagramme</string>
+    <string name="howto_anagram">Die Buchstaben eines Wortes sind durcheinander. Tippe sie in der richtigen Reihenfolge an, um das Wort zu bilden. Fünf Wörter pro Runde.</string>
+    <string name="anagram_progress">Wort %1$d von %2$d</string>
+    <string name="anagram_clue_hidden">Auf dieser Stufe gibt es keinen Hinweis. Tippe auf Tipp, wenn du Hilfe brauchst.</string>
+    <string name="anagram_wrong">Noch nicht ganz. Tippe einen Buchstaben an, um ihn zurückzunehmen.</string>
+    <string name="anagram_right">Sehr gut!</string>
+    <string name="anagram_shuffle">Mischen</string>
+    <string name="anagram_done">Du hast alle Wörter geordnet!</string>
+    <string name="anagram_hints_used">Benutzte Tipps: %1$d.</string>
+</resources>

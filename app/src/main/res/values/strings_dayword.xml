@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">Word of the day</string>
+    <string name="howto_dayword">Guess the hidden word. Write a word on the line and tap Check: each letter gets a mark. ● right place, ○ in the word but elsewhere, — not in the word.</string>
+    <string name="dayword_today">Word of the day · line %1$d of %2$d</string>
+    <string name="dayword_practice">Practice word · line %1$d of %2$d</string>
+    <string name="dayword_today_done">You have played today’s word. Here is a practice word; a new word of the day comes tomorrow.</string>
+    <string name="dayword_check">Check</string>
+    <string name="dayword_another">Another</string>
+    <string name="dayword_known">You know:</string>
+    <string name="dayword_clue">Clue: %1$s</string>
+    <string name="dayword_won">Well done! You found %1$s on line %2$d.</string>
+    <string name="dayword_lost">The word was %1$s.</string>
+    <string name="dayword_legend">● right place   ○ elsewhere   — not in the word</string>
+    <string name="dayword_mark_right">right place</string>
+    <string name="dayword_mark_elsewhere">in the word, elsewhere</string>
+    <string name="dayword_mark_absent">not in the word</string>
+</resources>

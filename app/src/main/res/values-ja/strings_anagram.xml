@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">アナグラム</string>
+    <string name="howto_anagram">ことばの文字がばらばらになっています。正しい順にタップして、ことばを作りましょう。1回につき5問です。</string>
+    <string name="anagram_progress">%2$d問中%1$d問目</string>
+    <string name="anagram_clue_hidden">このレベルではカギは出ません。困ったらヒントをタップしてください。</string>
+    <string name="anagram_wrong">おしい！文字をタップすると戻せます。</string>
+    <string name="anagram_right">よくできました！</string>
+    <string name="anagram_shuffle">まぜる</string>
+    <string name="anagram_done">全問正解です！</string>
+    <string name="anagram_hints_used">ヒント：%1$d回。</string>
+</resources>

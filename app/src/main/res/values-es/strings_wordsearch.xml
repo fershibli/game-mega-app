@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">Sopa de letras</string>
+    <string name="howto_wordsearch">Encuentra las palabras escondidas en la cuadrícula. Desliza el dedo de la primera letra a la última, o toca la primera letra y luego la última.</string>
+    <string name="wordsearch_found">Palabras encontradas: %1$d de %2$d</string>
+    <string name="wordsearch_words">Palabras que buscar (toca una para ver su pista)</string>
+    <string name="wordsearch_tap_last">Ahora toca la última letra de la palabra</string>
+    <string name="wordsearch_not_word">Esa no es una de las palabras. Inténtalo otra vez.</string>
+    <string name="wordsearch_hint_first">La letra rodeada es donde empieza una palabra.</string>
+    <string name="wordsearch_hint_last">Ahora también está rodeada su última letra.</string>
+    <string name="wordsearch_done">¡Encontraste todas las palabras!</string>
+    <string name="wordsearch_hints_used">Pistas usadas: %1$d.</string>
+</resources>

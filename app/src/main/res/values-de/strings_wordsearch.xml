@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">Wortsuche</string>
+    <string name="howto_wordsearch">Finde die versteckten Wörter im Gitter. Ziehe den Finger vom ersten bis zum letzten Buchstaben oder tippe erst den ersten und dann den letzten Buchstaben an.</string>
+    <string name="wordsearch_found">Gefundene Wörter: %1$d von %2$d</string>
+    <string name="wordsearch_words">Gesuchte Wörter (antippen zeigt den Hinweis)</string>
+    <string name="wordsearch_tap_last">Tippe jetzt den letzten Buchstaben des Wortes an</string>
+    <string name="wordsearch_not_word">Das ist keines der Wörter. Versuch es noch einmal.</string>
+    <string name="wordsearch_hint_first">Der eingekreiste Buchstabe ist der Anfang eines Wortes.</string>
+    <string name="wordsearch_hint_last">Jetzt ist auch sein letzter Buchstabe eingekreist.</string>
+    <string name="wordsearch_done">Du hast alle Wörter gefunden!</string>
+    <string name="wordsearch_hints_used">Benutzte Tipps: %1$d.</string>
+</resources>

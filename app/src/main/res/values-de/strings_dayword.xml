@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">Wort des Tages</string>
+    <string name="howto_dayword">Errate das versteckte Wort. Schreibe ein Wort auf die Zeile und tippe auf Prüfen: Jeder Buchstabe bekommt ein Zeichen. ● richtige Stelle, ○ im Wort, aber woanders, — nicht im Wort.</string>
+    <string name="dayword_today">Wort des Tages · Zeile %1$d von %2$d</string>
+    <string name="dayword_practice">Übungswort · Zeile %1$d von %2$d</string>
+    <string name="dayword_today_done">Das heutige Wort hast du schon gespielt. Hier ist ein Übungswort; morgen gibt es ein neues Wort des Tages.</string>
+    <string name="dayword_check">Prüfen</string>
+    <string name="dayword_another">Noch eins</string>
+    <string name="dayword_known">Du weißt:</string>
+    <string name="dayword_clue">Hinweis: %1$s</string>
+    <string name="dayword_won">Sehr gut! Du hast %1$s in Zeile %2$d gefunden.</string>
+    <string name="dayword_lost">Das Wort war %1$s.</string>
+    <string name="dayword_legend">● richtige Stelle   ○ woanders   — nicht im Wort</string>
+    <string name="dayword_mark_right">richtige Stelle</string>
+    <string name="dayword_mark_elsewhere">im Wort, an anderer Stelle</string>
+    <string name="dayword_mark_absent">nicht im Wort</string>
+</resources>
