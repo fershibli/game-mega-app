@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_gomoku">Gomoku</string>
+    <string name="howto_gomoku">Chacun pose à son tour une pierre sur une intersection. Le premier qui aligne cinq pierres ou plus, horizontalement, verticalement ou en diagonale, gagne. Vous jouez les noirs et commencez.</string>
+    <string name="gomoku_your_turn">À vous (noirs) : touchez une intersection</string>
+    <string name="gomoku_confirm">Touchez à nouveau la même intersection pour poser la pierre</string>
+    <string name="gomoku_win">Cinq alignées ! Vous gagnez.</string>
+    <string name="gomoku_lose">L’ordinateur a aligné cinq pierres.</string>
+    <string name="gomoku_draw">Le plateau est plein : match nul.</string>
+</resources>

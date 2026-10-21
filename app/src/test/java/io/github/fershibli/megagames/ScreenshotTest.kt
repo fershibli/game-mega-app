@@ -204,5 +204,9 @@ class ScreenshotTest {
     @Test fun anagramJapanese() = gameShot("game_anagram_ja", GameId.ANAGRAM, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))
     @Test fun dayWord() = gameShot("game_dayword", GameId.DAYWORD)
     @Test fun dayWordArabic() = gameShot("game_dayword_ar", GameId.DAYWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
+    @Test fun go() = gameShot("game_go", GameId.GO)
+    @Test fun gomoku() = gameShot("game_gomoku", GameId.GOMOKU)
+    @Test fun fourInRow() = gameShot("game_fourinrow", GameId.FOURINROW)
+    @Test fun fourInRowColorblindDark() = gameShot("game_fourinrow_colorblind_dark", GameId.FOURINROW, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND, darkMode = true))
 
 }

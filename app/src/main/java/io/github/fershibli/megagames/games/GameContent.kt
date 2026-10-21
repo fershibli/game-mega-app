@@ -60,5 +60,8 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.WORDSEARCH -> io.github.fershibli.megagames.games.wordsearch.WordSearchGame(host)
         GameId.ANAGRAM -> io.github.fershibli.megagames.games.anagram.AnagramGame(host)
         GameId.DAYWORD -> io.github.fershibli.megagames.games.dayword.DayWordGame(host)
+        GameId.GO -> io.github.fershibli.megagames.games.go.GoGame(host)
+        GameId.GOMOKU -> io.github.fershibli.megagames.games.gomoku.GomokuGame(host)
+        GameId.FOURINROW -> io.github.fershibli.megagames.games.fourinrow.FourInRowGame(host)
     }
 }

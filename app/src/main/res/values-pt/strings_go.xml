@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">Go</string>
+    <string name="howto_go">Coloquem pedras alternadamente nos cruzamentos. Cerque pontos vazios e capture pedras tirando todas as suas liberdades. Quando os dois passam, contam-se as pedras e os pontos cercados: vence quem tiver mais.</string>
+    <string name="go_variant_9">Tabuleiro 9×9</string>
+    <string name="go_variant_9_desc">Pequeno e rápido. O melhor para começar.</string>
+    <string name="go_variant_13">Tabuleiro 13×13</string>
+    <string name="go_variant_13_desc">Tamanho médio: mais espaço para planos.</string>
+    <string name="go_variant_19">Tabuleiro 19×19</string>
+    <string name="go_variant_19_desc">O tabuleiro clássico completo. Afaste dois dedos para ampliar.</string>
+    <string name="go_your_turn">Sua vez (pretas): toque em um cruzamento</string>
+    <string name="go_confirm">Toque de novo no mesmo cruzamento para colocar a pedra</string>
+    <string name="go_ai_passed">O computador passou. Continue jogando ou passe também para contar os pontos.</string>
+    <string name="go_ko">Ainda não: não dá para retomar o ko logo em seguida. Jogue em outro lugar antes.</string>
+    <string name="go_suicide">Aí não: sua pedra ficaria sem nenhuma liberdade.</string>
+    <string name="go_captured">Capturadas: você %1$d · computador %2$d</string>
+    <string name="go_pass">Passar</string>
+    <string name="go_counting">Contando os pontos…</string>
+    <string name="go_mark_dead">As pedras riscadas contam como capturadas. Toque em um grupo para mudar e depois em Contar.</string>
+    <string name="go_score">Você: %1$s · Computador: %2$s</string>
+    <string name="go_komi">A contagem do computador inclui %1$s por jogar em segundo.</string>
+    <string name="go_count">Contar</string>
+    <string name="go_keep_playing">Continuar jogando</string>
+    <string name="go_hint_pass">Dica: não há mais nada a ganhar. Você pode passar.</string>
+    <string name="go_win">Você venceu por %1$s.</string>
+    <string name="go_lose">O computador venceu por %1$s.</string>
+</resources>

@@ -79,6 +79,9 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.WORDSEARCH -> io.github.fershibli.megagames.games.wordsearch.wordSearchThumbnail(this, p, m)
             GameId.ANAGRAM -> io.github.fershibli.megagames.games.anagram.anagramThumbnail(this, p, m)
             GameId.DAYWORD -> io.github.fershibli.megagames.games.dayword.dayWordThumbnail(this, p, m)
+            GameId.GO -> io.github.fershibli.megagames.games.go.goThumbnail(this, p)
+            GameId.GOMOKU -> io.github.fershibli.megagames.games.gomoku.gomokuThumbnail(this, p)
+            GameId.FOURINROW -> io.github.fershibli.megagames.games.fourinrow.fourInRowThumbnail(this, p)
         }
     }
 }

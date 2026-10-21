@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_go">Go</string>
+    <string name="howto_go">Chacun pose à son tour une pierre sur une intersection. Entourez des points vides et capturez des pierres en leur retirant toutes leurs libertés. Quand les deux joueurs passent, on compte les pierres et les points entourés : le plus haut score gagne.</string>
+    <string name="go_variant_9">Plateau 9×9</string>
+    <string name="go_variant_9_desc">Petit et rapide. Idéal pour commencer.</string>
+    <string name="go_variant_13">Plateau 13×13</string>
+    <string name="go_variant_13_desc">Taille moyenne : plus de place pour les plans.</string>
+    <string name="go_variant_19">Plateau 19×19</string>
+    <string name="go_variant_19_desc">Le grand plateau classique. Écartez deux doigts pour zoomer.</string>
+    <string name="go_your_turn">À vous (noirs) : touchez une intersection</string>
+    <string name="go_confirm">Touchez à nouveau la même intersection pour poser la pierre</string>
+    <string name="go_ai_passed">L’ordinateur a passé. Continuez à jouer, ou passez aussi pour compter les points.</string>
+    <string name="go_ko">Pas encore : vous ne pouvez pas reprendre le ko tout de suite. Jouez d’abord ailleurs.</string>
+    <string name="go_suicide">Pas ici : votre pierre n’aurait plus aucune liberté.</string>
+    <string name="go_captured">Capturées : vous %1$d · ordinateur %2$d</string>
+    <string name="go_pass">Passer</string>
+    <string name="go_counting">Décompte des points…</string>
+    <string name="go_mark_dead">Les pierres barrées comptent comme capturées. Touchez un groupe pour le changer, puis Compter.</string>
+    <string name="go_score">Vous : %1$s · Ordinateur : %2$s</string>
+    <string name="go_komi">Le score de l’ordinateur inclut %1$s parce qu’il joue en second.</string>
+    <string name="go_count">Compter</string>
+    <string name="go_keep_playing">Continuer</string>
+    <string name="go_hint_pass">Indice : il n’y a plus rien à gagner. Vous pouvez passer.</string>
+    <string name="go_win">Vous gagnez de %1$s.</string>
+    <string name="go_lose">L’ordinateur gagne de %1$s.</string>
+</resources>

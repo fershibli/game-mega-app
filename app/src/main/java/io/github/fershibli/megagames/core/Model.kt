@@ -95,6 +95,9 @@ enum class GameId(
     WORDSEARCH("wordsearch", R.string.game_wordsearch, R.string.howto_wordsearch, GameCategory.PUZZLES),
     ANAGRAM("anagram", R.string.game_anagram, R.string.howto_anagram, GameCategory.PUZZLES),
     DAYWORD("dayword", R.string.game_dayword, R.string.howto_dayword, GameCategory.PUZZLES),
+    GO("go", R.string.game_go, R.string.howto_go, GameCategory.BOARD, io.github.fershibli.megagames.games.go.Go.VARIANTS),
+    GOMOKU("gomoku", R.string.game_gomoku, R.string.howto_gomoku, GameCategory.BOARD),
+    FOURINROW("fourinrow", R.string.game_fourinrow, R.string.howto_fourinrow, GameCategory.BOARD),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()
