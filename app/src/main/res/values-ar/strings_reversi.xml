@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Reversi played by two people taking turns on this phone -->
+    <string name="reversi_dark">القطع الداكنة</string>
+    <string name="reversi_light">القطع الفاتحة</string>
+    <string name="reversi_dark_turn">دور القطع الداكنة</string>
+    <string name="reversi_light_turn">دور القطع الفاتحة</string>
+    <string name="reversi_dark_passed">لم تكن للداكنة نقلة. الدور للفاتحة مرة أخرى.</string>
+    <string name="reversi_light_passed">لم تكن للفاتحة نقلة. الدور للداكنة مرة أخرى.</string>
+    <string name="reversi_score_together">● الداكنة: %1$d   ○ الفاتحة: %2$d</string>
+    <string name="reversi_dark_wins">فازت القطع الداكنة!</string>
+    <string name="reversi_light_wins">فازت القطع الفاتحة!</string>
+</resources>

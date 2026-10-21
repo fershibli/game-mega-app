@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="section_pace_motion">Pace and movement</string>
+    <string name="pace_title">Waiting time</string>
+    <string name="pace_quick">Quick</string>
+    <string name="pace_quick_desc">Short pauses between moves and messages.</string>
+    <string name="pace_normal">Normal</string>
+    <string name="pace_normal_desc">Pauses long enough to follow each move.</string>
+    <string name="pace_calm">Calm</string>
+    <string name="pace_calm_desc">Twice as long: more time to see what the computer did and to read messages.</string>
+    <string name="motion_title">Animations</string>
+    <string name="motion_none">Off</string>
+    <string name="motion_none_desc">Pieces and cards go straight to their place, with no movement.</string>
+    <string name="motion_gentle">Gentle</string>
+    <string name="motion_gentle_desc">Slow, small movements.</string>
+    <string name="motion_full">Full</string>
+    <string name="motion_full_desc">Regular movements.</string>
+    <string name="how_to_play">How do you want to play?</string>
+    <string name="take_turns">Take turns on this phone</string>
+    <string name="take_turns_desc">Each person plays in turn, passing the phone. Nobody plays against the computer.</string>
+    <string name="pass_to_next">Pass to the next player</string>
+    <string name="pass_ready">Ready, it is my turn</string>
+    <string name="player_number">Player %1$d</string>
+    <string name="seats_title">How many at the table?</string>
+    <plurals name="seats_with_computer">
+        <item quantity="one">You and %1$d computer player</item>
+        <item quantity="other">You and %1$d computer players</item>
+    </plurals>
+    <plurals name="seats_people">
+        <item quantity="one">%1$d person taking turns</item>
+        <item quantity="other">%1$d people taking turns</item>
+    </plurals>
+    <string name="game_end">End of the game</string>
+</resources>

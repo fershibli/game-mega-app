@@ -1,5 +1,9 @@
 package io.github.fershibli.megagames.ui.components
 
+import io.github.fershibli.megagames.ui.theme.spec
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.animation.core.animateFloatAsState
@@ -58,7 +62,6 @@ import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
 import kotlin.math.abs
@@ -113,13 +116,14 @@ fun FloatingGear(onSettings: () -> Unit) {
     var tucked by remember { mutableStateOf(false) }
     var interaction by remember { mutableIntStateOf(0) }
     var dragY by remember { mutableFloatStateOf(0f) }
+    val pace = currentPace
     LaunchedEffect(interaction) {
         tucked = false
-        delay(3500)
+        pace.wait(3500)
         tucked = true
     }
     val bubble = 64.dp
-    val tuck by animateFloatAsState(if (tucked) 1f else 0f, label = "tuck")
+    val tuck by animateFloatAsState(if (tucked) 1f else 0f, currentMotion.spec(300), label = "tuck")
     BoxWithConstraints(Modifier.fillMaxSize()) {
         val maxDrag = with(density) { (maxHeight * 0.6f).toPx() }
         val bubblePx = with(density) { bubble.toPx() }

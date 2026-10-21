@@ -1,7 +1,10 @@
 package io.github.fershibli.megagames.games.pipes
 
+import io.github.fershibli.megagames.ui.theme.spec
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -46,7 +49,6 @@ import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
@@ -75,14 +77,16 @@ private fun PipesScreen(state: MutableState<PipesState>, host: GameHost) {
     var finishing by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
 
+    val pace = currentPace
+    val motion = currentMotion
     LaunchedEffect(solved) {
         if (solved && !finishing) {
             finishing = true
-            delay(900)
+            pace.wait(900)
             host.finish(GameOutcome(true, null))
         }
     }
-    LaunchedEffect(hinted) { if (hinted >= 0) { delay(1500); hinted = -1 } }
+    LaunchedEffect(hinted) { if (hinted >= 0) { pace.wait(1500); hinted = -1 } }
 
     fun turn(i: Int, times: Int = 1) {
         if (solved) return
@@ -92,7 +96,7 @@ private fun PipesScreen(state: MutableState<PipesState>, host: GameHost) {
         spinning = i
         scope.launch {
             spin.snapTo(-90f * times)
-            spin.animateTo(0f, tween(180))
+            spin.animateTo(0f, motion.spec(180))
         }
     }
 

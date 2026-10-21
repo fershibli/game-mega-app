@@ -7,6 +7,7 @@ import io.github.fershibli.megagames.games.backgammon.BackgammonGame
 import io.github.fershibli.megagames.games.buraco.BuracoGame
 import io.github.fershibli.megagames.games.connect.ConnectGame
 import io.github.fershibli.megagames.games.crossword.CrosswordGame
+import io.github.fershibli.megagames.games.cube.CubeGame
 import io.github.fershibli.megagames.games.dots.DotsGame
 import io.github.fershibli.megagames.games.mahjong.MahjongGame
 import io.github.fershibli.megagames.games.pet.PetGame
@@ -34,6 +35,7 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.PET -> PetGame(host)
         GameId.CACHETA -> io.github.fershibli.megagames.games.cacheta.CachetaGame(host)
         GameId.TRUCO -> io.github.fershibli.megagames.games.truco.TrucoGame(host)
+        GameId.CUBE -> CubeGame(host)
         GameId.BLOCKS -> io.github.fershibli.megagames.games.blocks.BlocksGame(host)
         GameId.PAIRS -> io.github.fershibli.megagames.games.pairs.PairsGame(host)
         GameId.SNAKE -> io.github.fershibli.megagames.games.snake.SnakeGame(host)

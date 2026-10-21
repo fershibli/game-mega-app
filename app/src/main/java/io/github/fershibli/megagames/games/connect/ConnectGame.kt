@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.connect
 
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
@@ -43,7 +45,6 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
-import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.math.abs
 import kotlin.random.Random
@@ -109,7 +110,8 @@ private fun ConnectScreen(state: MutableState<ConnectState>, host: GameHost) {
     val won = s.won
     val connectedCount = (0 until s.colors).count { s.isComplete(it) }
 
-    LaunchedEffect(won) { if (won) { delay(700); host.finish(GameOutcome(true, null)) } }
+    val pace = currentPace
+    LaunchedEffect(won) { if (won) { pace.wait(700); host.finish(GameOutcome(true, null)) } }
 
     GameLayout(
         status = {

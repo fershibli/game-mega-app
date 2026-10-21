@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">Cube magique</string>
+    <string name="howto_cube">Tournez les couches jusqu’à ce que chaque face soit d’une seule couleur. Glissez le doigt sur une case pour tourner sa rangée, faites glisser dans l’espace vide pour voir le cube sous un autre angle, ou choisissez une face en bas et touchez les flèches rondes.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">Petit cube de 8 pièces : le début le plus doux.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">Le cube classique. L’indice enseigne la méthode couche par couche.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">Cube plus grand, sans centres fixes. Le bouton Couche tourne les couches intérieures.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">Le plus grand cube, pour les mains patientes.</string>
+    <string name="cube_moves">Coups : %1$d</string>
+    <string name="cube_solved">Résolu ! Chaque face a une seule couleur.</string>
+    <string name="cube_hint_step">Étape %1$d sur %2$d : %3$s</string>
+    <string name="cube_hint_back">Tours restants jusqu’au départ : %1$d</string>
+    <string name="cube_stage_cross">croix du bas</string>
+    <string name="cube_stage_corners">coins du bas</string>
+    <string name="cube_stage_middle">couche du milieu</string>
+    <string name="cube_stage_top_cross">croix du haut</string>
+    <string name="cube_stage_top_edges">arêtes du haut</string>
+    <string name="cube_stage_top_place">coins du haut à leur place</string>
+    <string name="cube_stage_top_turn">tourner les coins du haut</string>
+    <string name="cube_stage_top_face">couleur du haut</string>
+    <string name="cube_turn_cw">Tourner la face choisie dans le sens horaire</string>
+    <string name="cube_turn_ccw">Tourner la face choisie dans le sens antihoraire</string>
+    <string name="cube_layer">Couche %1$d</string>
+    <string name="cube_face">Face %1$d</string>
+    <string name="cube_view_left">Tourner tout le cube vers la gauche</string>
+    <string name="cube_view_right">Tourner tout le cube vers la droite</string>
+    <string name="cube_view_up">Tourner tout le cube vers le haut</string>
+    <string name="cube_view_down">Tourner tout le cube vers le bas</string>
+</resources>
