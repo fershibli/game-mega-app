@@ -7,7 +7,8 @@ import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
 /**
- * Cacheta, the Brazilian rummy game, for you and 1 to 3 computer players.
+ * Cacheta, the Brazilian rummy game, for 2 to 4 players: you and 1 to 3 computer players, or
+ * people taking turns on one phone. Play goes counterclockwise, as is the custom in Brazil.
  *
  * Common to every variant:
  * - Two 52-card decks (104 cards), no jokers. Each player gets 9 cards; the rest is the deck.
@@ -43,7 +44,7 @@ enum class CachetaRules(val key: String, val wild: Boolean, val wrap: Boolean, v
 @Serializable
 data class CachetaState(
     val variant: String = CachetaRules.CLASSIC.key,
-    /** Players at the table, you included (2 to 4); 0 until you choose. Seat 0 is you. */
+    /** Players at the table, you included (2 to 4); 0 only in saves from before the table screen. Seat 0 is you. */
     val players: Int = 0,
     val hands: List<List<Card>> = emptyList(),
     val stock: List<Card> = emptyList(),
@@ -221,12 +222,12 @@ object Cacheta {
         return st.copy(finished = true, winner = p, groups = way.groups, tenCards = way.discard == null, offers = emptyList(), drawn = false)
     }
 
-    /** Sorts your hand by suit (alternating colors) or by rank; wild cards go to the end. */
-    fun sorted(s: CachetaState, bySuit: Boolean): CachetaState {
+    /** Sorts the hand of [seat] (yours by default) by suit (alternating colors) or by rank; wild cards go to the end. */
+    fun sorted(s: CachetaState, bySuit: Boolean, seat: Int = 0): CachetaState {
         val order = listOf(Suit.SPADES, Suit.HEARTS, Suit.CLUBS, Suit.DIAMONDS)
         val t = s.table
         val cmp = if (bySuit) compareBy<Card>({ if (t.isWild(it)) 1 else 0 }, { order.indexOf(it.suit) }, { it.rank })
         else compareBy({ if (t.isWild(it)) 1 else 0 }, { it.rank }, { order.indexOf(it.suit) })
-        return s.withHand(0, s.hands[0].sortedWith(cmp)).copy(sortBySuit = bySuit)
+        return s.withHand(seat, s.hands[seat].sortedWith(cmp)).copy(sortBySuit = bySuit)
     }
 }

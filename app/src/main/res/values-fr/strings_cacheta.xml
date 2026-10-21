@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">Une carte retournée (la vira) rend joker la carte suivante de sa couleur.</string>
     <string name="cacheta_variant_pife">Pife</string>
     <string name="cacheta_variant_pife_desc">Sans joker, les suites peuvent tourner (R-A-2) et vous pouvez prendre n’importe quelle défausse pour bater.</string>
-    <string name="cacheta_how_many">Combien d’adversaires ordinateur ?</string>
     <string name="cacheta_computer">Ordinateur %1$d</string>
     <string name="cacheta_playing">L’ordinateur %1$d joue…</string>
     <string name="cacheta_deck">Pioche (%1$d)</string>
@@ -33,9 +32,7 @@
     <string name="cacheta_deck_over">Plus de cartes : personne n’a baté.</string>
     <string name="cacheta_your_hand">Votre main</string>
     <string name="cacheta_groups_note">barre verte = déjà en groupe</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="one">%1$d ordinateur</item>
-        <item quantity="many">%1$d ordinateurs</item>
-        <item quantity="other">%1$d ordinateurs</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$s joue…</string>
+    <string name="cacheta_went_out_seat">%1$s a baté !</string>
+    <string name="cacheta_went_out_ten_seat">%1$s a baté avec les 10 cartes !</string>
 </resources>

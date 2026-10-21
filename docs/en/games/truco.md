@@ -1,6 +1,6 @@
 # Truco
 
-Truco is Brazil's favourite card game of bluff and good humour: win two of three tricks with the strongest cards, and shout **"Truco!"** to make the hand worth more. In Mili Games you choose at the start: **you against the computer**, or **you and a computer partner against two computers** (your partner sits across from you).
+Truco is Brazil's favourite card game of bluff and good humour: win two of three tricks with the strongest cards, and shout **"Truco!"** to make the hand worth more. In Mili Games the app asks **How many at the table?** before each game: **2** (one against one) or **4** (two against two, partners sitting opposite each other). Against the computer, at four your partner is a computer too; you can also play with people **taking turns on one phone**.
 
 ## The cards
 - 40 cards: a normal deck without the 8s, 9s, 10s and jokers. Everyone gets **3 cards**.
@@ -36,3 +36,6 @@ Truco keeps its Portuguese words in every language: **Truco!**, **Seis!** (six),
 
 ## About regional rules
 Truco changes from town to town. In Minas Gerais many tables start each hand at 2 points (truco 4, then 6 or 8, 10 and 12) and use a "hand of ten"; Mili Games uses the same simple 1-3-6-9-12 ladder and hand of eleven for both variants. Playing a card face down ("encoberta") and the partners' secret signals are not part of the app.
+
+## Taking turns on one phone
+Choose **Take turns on this phone** on the level screen, then 2 or 4 at the table: two people play one against one, or four people play in pairs (players 1 and 3 against players 2 and 4). After each move a cover hides the cards and asks to pass the phone to whoever must act next — to play a card, or to answer a truco (the player after the one who called answers). Play goes counterclockwise, as is the custom in Brazil. The score bar shows each side by its players and the symbols of their seats.

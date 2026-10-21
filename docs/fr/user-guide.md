@@ -137,7 +137,7 @@ Chaque grille est générée à neuf et a exactement **une** solution.
 
 ### Buraco
 
-Le Buraco brésilien à deux : vous contre l’ordinateur.
+Le Buraco brésilien à deux (vous contre l’ordinateur) ou à quatre en équipes (vous et un partenaire ordinateur contre deux ordinateurs), ou chacun son tour sur un seul téléphone. Règles complètes, le jeu à quatre et conseils : [Buraco](games/buraco.md).
 
 **Cartes :** deux jeux de 52 cartes (104 cartes). **Tous les 2 sont des jokers.**
 

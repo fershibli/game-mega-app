@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buraco_table_pairs">两人一组：搭档面对面坐</string>
+    <string name="buraco_seat_you">你</string>
+    <string name="buraco_seat_partner">搭档</string>
+    <string name="buraco_seat_right">右边</string>
+    <string name="buraco_seat_left">左边</string>
+    <string name="buraco_us">我方</string>
+    <string name="buraco_them">对方</string>
+    <string name="buraco_pair">玩家 %1$d 和 %2$d</string>
+    <string name="buraco_playing">%1$s 正在出牌…</string>
+    <string name="buraco_our_sequences">我方的顺子</string>
+    <string name="buraco_their_sequences">对方的顺子</string>
+    <string name="buraco_points_sides">得分 — %1$s：%2$d · %3$s：%4$d</string>
+    <string name="buraco_went_out_seat">%1$s 出完了牌（+100）。</string>
+    <string name="buraco_winner">获胜：%1$s</string>
+    <string name="buraco_tie">平局。</string>
+</resources>

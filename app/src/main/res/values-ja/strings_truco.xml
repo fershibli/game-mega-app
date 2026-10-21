@@ -6,9 +6,6 @@
     <string name="truco_variant_paulista_desc">40枚。表にした札（ヴィラ）が最強の札マニーリャを決めます。</string>
     <string name="truco_variant_mineiro">ミネイロ</string>
     <string name="truco_variant_mineiro_desc">40枚。マニーリャは4♣・7♥・A♠・7♦で固定、ヴィラなし。</string>
-    <string name="truco_how_many">どう遊びますか？</string>
-    <string name="truco_one_vs_one">あなた対コンピューター</string>
-    <string name="truco_two_vs_two">あなたと味方 対 コンピューター2人</string>
     <string name="truco_us">味方</string>
     <string name="truco_them">相手</string>
     <string name="truco_worth">%1$d点の勝負</string>
@@ -44,4 +41,11 @@
     <string name="truco_final">最終得点：味方 %1$d × %2$d 相手</string>
     <string name="truco_partner">味方</string>
     <string name="truco_computer">コンピューター</string>
+    <string name="truco_table_pairs">2対2：パートナーは向かい合わせに座ります</string>
+    <string name="truco_pair">プレイヤー%1$dと%2$d</string>
+    <string name="truco_playing">%1$sの番です…</string>
+    <string name="truco_trick_to">この勝負は%1$sの勝ち</string>
+    <string name="truco_hand_to">このハンドは%1$sの勝ち：+%2$d</string>
+    <string name="truco_final_sides">最終得点 — %1$s：%2$d、%3$s：%4$d</string>
+    <string name="truco_winner">勝者：%1$s</string>
 </resources>

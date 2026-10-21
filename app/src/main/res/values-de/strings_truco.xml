@@ -6,9 +6,6 @@
     <string name="truco_variant_paulista_desc">40 Karten; die aufgedeckte Karte (Vira) bestimmt die Manilhas, die stärksten Karten.</string>
     <string name="truco_variant_mineiro">Mineiro</string>
     <string name="truco_variant_mineiro_desc">40 Karten; feste Manilhas 4♣, 7♥, A♠, 7♦, keine Vira.</string>
-    <string name="truco_how_many">Wie möchtest du spielen?</string>
-    <string name="truco_one_vs_one">Du gegen den Computer</string>
-    <string name="truco_two_vs_two">Du und ein Partner gegen zwei Computer</string>
     <string name="truco_us">Wir</string>
     <string name="truco_them">Sie</string>
     <string name="truco_worth">Wert %1$d</string>
@@ -44,4 +41,11 @@
     <string name="truco_final">Endstand: wir %1$d × %2$d sie</string>
     <string name="truco_partner">Partner</string>
     <string name="truco_computer">Computer</string>
+    <string name="truco_table_pairs">Zwei gegen zwei: Partner sitzen sich gegenüber</string>
+    <string name="truco_pair">Spieler %1$d und %2$d</string>
+    <string name="truco_playing">%1$s ist am Zug…</string>
+    <string name="truco_trick_to">Dieser Stich geht an %1$s</string>
+    <string name="truco_hand_to">Die Runde geht an %1$s: +%2$d</string>
+    <string name="truco_final_sides">Endstand — %1$s: %2$d, %3$s: %4$d</string>
+    <string name="truco_winner">Gewinner: %1$s</string>
 </resources>

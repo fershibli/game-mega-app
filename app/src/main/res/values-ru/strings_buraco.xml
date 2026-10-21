@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buraco_table_pairs">Парами: партнёры сидят друг напротив друга</string>
+    <string name="buraco_seat_you">Вы</string>
+    <string name="buraco_seat_partner">Партнёр</string>
+    <string name="buraco_seat_right">Справа</string>
+    <string name="buraco_seat_left">Слева</string>
+    <string name="buraco_us">Мы</string>
+    <string name="buraco_them">Они</string>
+    <string name="buraco_pair">Игроки %1$d и %2$d</string>
+    <string name="buraco_playing">Ходит: %1$s…</string>
+    <string name="buraco_our_sequences">Наши комбинации</string>
+    <string name="buraco_their_sequences">Их комбинации</string>
+    <string name="buraco_points_sides">Очки — %1$s: %2$d · %3$s: %4$d</string>
+    <string name="buraco_went_out_seat">Вышел: %1$s (+100).</string>
+    <string name="buraco_winner">Победитель: %1$s</string>
+    <string name="buraco_tie">Ничья.</string>
+</resources>

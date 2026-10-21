@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buraco_table_pairs">A coppie: i compagni siedono uno di fronte all’altro</string>
+    <string name="buraco_seat_you">Tu</string>
+    <string name="buraco_seat_partner">Compagno</string>
+    <string name="buraco_seat_right">Destra</string>
+    <string name="buraco_seat_left">Sinistra</string>
+    <string name="buraco_us">Noi</string>
+    <string name="buraco_them">Loro</string>
+    <string name="buraco_pair">Giocatori %1$d e %2$d</string>
+    <string name="buraco_playing">%1$s sta giocando…</string>
+    <string name="buraco_our_sequences">Le nostre scale</string>
+    <string name="buraco_their_sequences">Le loro scale</string>
+    <string name="buraco_points_sides">Punti — %1$s: %2$d · %3$s: %4$d</string>
+    <string name="buraco_went_out_seat">%1$s ha chiuso (+100).</string>
+    <string name="buraco_winner">Vince: %1$s</string>
+    <string name="buraco_tie">Pareggio.</string>
+</resources>

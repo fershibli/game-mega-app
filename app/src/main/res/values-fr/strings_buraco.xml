@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buraco_table_pairs">En équipes : les partenaires sont face à face</string>
+    <string name="buraco_seat_you">Vous</string>
+    <string name="buraco_seat_partner">Partenaire</string>
+    <string name="buraco_seat_right">Droite</string>
+    <string name="buraco_seat_left">Gauche</string>
+    <string name="buraco_us">Nous</string>
+    <string name="buraco_them">Eux</string>
+    <string name="buraco_pair">Joueurs %1$d et %2$d</string>
+    <string name="buraco_playing">%1$s joue…</string>
+    <string name="buraco_our_sequences">Nos suites</string>
+    <string name="buraco_their_sequences">Leurs suites</string>
+    <string name="buraco_points_sides">Points — %1$s : %2$d · %3$s : %4$d</string>
+    <string name="buraco_went_out_seat">%1$s a fini (+100).</string>
+    <string name="buraco_winner">Gagnant : %1$s</string>
+    <string name="buraco_tie">Égalité.</string>
+</resources>

@@ -137,7 +137,7 @@ Cada sudoku se genera nuevo y tiene exactamente **una** solución.
 
 ### Buraco
 
-Buraco brasileño para dos: tú contra el ordenador.
+Buraco brasileño para dos (tú contra el ordenador) o para cuatro por parejas (tú y un compañero del ordenador contra dos ordenadores), o por turnos en un solo teléfono. Reglas completas, el juego a cuatro y consejos: [Buraco](games/buraco.md).
 
 **Cartas:** dos barajas de 52 cartas (104 cartas). **Todos los 2 son comodines.**
 

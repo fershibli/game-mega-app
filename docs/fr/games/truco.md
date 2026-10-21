@@ -1,6 +1,6 @@
 # Truco
 
-Le truco est le jeu de cartes le plus joyeux du Brésil : gagnez deux plis sur trois avec les cartes les plus fortes, et criez **« Truco ! »** pour que la main vaille plus. Dans Mili Games, vous choisissez au début : **vous contre l’ordinateur**, ou **vous et un partenaire (ordinateur) contre deux ordinateurs** ; le partenaire est assis en face.
+Le truco est le jeu de cartes le plus joyeux du Brésil : gagnez deux plis sur trois avec les cartes les plus fortes, et criez **« Truco ! »** pour que la main vaille plus. Dans Mili Games, l’application demande **Combien à table ?** avant chaque partie : **2** (un contre un) ou **4** (deux contre deux, partenaires face à face). Contre l’ordinateur, à quatre votre partenaire est aussi l’ordinateur ; vous pouvez aussi jouer entre personnes, **chacun son tour sur un seul téléphone**.
 
 ## Les cartes
 - 40 cartes : un jeu normal sans les 8, 9, 10 ni jokers. Chacun reçoit **3 cartes**.
@@ -36,3 +36,6 @@ Le truco garde ses mots portugais dans toutes les langues : **Truco !**, **Seis*
 
 ## Règles régionales
 Le truco change d’une ville à l’autre. Dans le Minas Gerais, beaucoup de tables commencent la main à 2 points (truco 4, puis 6 ou 8, 10 et 12) avec une « main de dix » ; Mili Games utilise la même échelle simple 1-3-6-9-12 et la main de onze pour les deux variantes. Jouer une carte face cachée (« encoberta ») et les signes secrets entre partenaires ne font pas partie de l’application.
+
+## Chacun son tour sur un seul téléphone
+Choisissez **Chacun son tour sur ce téléphone** sur l’écran du niveau, puis 2 ou 4 à table : deux personnes jouent l’une contre l’autre, ou quatre jouent en équipes (joueurs 1 et 3 contre 2 et 4). Après chaque coup, un écran cache les cartes et demande de passer le téléphone à celui qui doit agir — jouer une carte ou répondre à un truco (c’est le joueur après celui qui l’a lancé qui répond). On joue dans le sens inverse des aiguilles d’une montre, comme au Brésil. Le score montre chaque équipe par ses joueurs et les symboles de leurs places.

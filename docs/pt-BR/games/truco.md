@@ -1,6 +1,6 @@
 # Truco
 
-O truco é o jogo de cartas mais animado do Brasil: ganhe duas de três rodadas com as cartas mais fortes e grite **"Truco!"** para a mão valer mais. No Mili Games você escolhe no começo: **você contra o computador**, ou **você e um parceiro (computador) contra dois computadores** — o parceiro fica à sua frente.
+O truco é o jogo de cartas mais animado do Brasil: ganhe duas de três rodadas com as cartas mais fortes e grite **"Truco!"** para a mão valer mais. No Mili Games o app pergunta **Quantos à mesa?** antes de cada partida: **2** (um contra um) ou **4** (dois contra dois, parceiros frente a frente). Contra o computador, a quatro o seu parceiro também é computador; dá também para jogar com outras pessoas **revezando o celular**.
 
 ## As cartas
 - 40 cartas: baralho comum sem 8, 9, 10 e curingas. Cada um recebe **3 cartas**.
@@ -33,3 +33,6 @@ O computador nunca vê as suas cartas: ele calcula as chances imaginando as cart
 
 ## Regras regionais
 O truco muda de cidade para cidade. Em Minas muitas mesas começam a mão valendo 2 (truco 4, depois 6 ou 8, 10 e 12) e usam a "mão de dez"; o Mili Games usa a mesma escada simples 1-3-6-9-12 e a mão de onze nas duas variantes. Jogar carta coberta ("encoberta") e os sinais entre parceiros não fazem parte do app.
+
+## Revezando o celular
+Escolha **Revezando celular** na tela de nível e depois 2 ou 4 à mesa: duas pessoas jogam uma contra a outra, ou quatro jogam em duplas (jogadores 1 e 3 contra 2 e 4). Depois de cada jogada, uma capa esconde as cartas e pede para passar o celular para quem age em seguida — jogar uma carta ou responder a um truco (responde quem está depois de quem pediu). A ordem é anti-horária, como é costume no Brasil. O placar mostra cada dupla pelos seus jogadores e pelos símbolos dos lugares.

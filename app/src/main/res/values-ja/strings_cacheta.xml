@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">表にした札（ヴィラ）の同じマークで一つ上の札がワイルドになります。</string>
     <string name="cacheta_variant_pife">ピーフェ</string>
     <string name="cacheta_variant_pife_desc">ワイルドなし。続き札はK-A-2とつながり、捨て札で上がれるなら順番外でも取れます。</string>
-    <string name="cacheta_how_many">コンピューターは何人？</string>
     <string name="cacheta_computer">コンピューター%1$d</string>
     <string name="cacheta_playing">コンピューター%1$dの番です…</string>
     <string name="cacheta_deck">山札（%1$d）</string>
@@ -33,7 +32,7 @@
     <string name="cacheta_deck_over">札がなくなりました。上がった人はいません。</string>
     <string name="cacheta_your_hand">あなたの手札</string>
     <string name="cacheta_groups_note">緑の線＝そろった札</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="other">コンピューター%1$d人</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$sの番です…</string>
+    <string name="cacheta_went_out_seat">%1$sが上がりました！</string>
+    <string name="cacheta_went_out_ten_seat">%1$sが10枚すべてで上がりました！</string>
 </resources>

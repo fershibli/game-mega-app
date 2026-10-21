@@ -41,6 +41,9 @@ All notable changes to this project are documented here. The format follows [Kee
 - Games that cannot be played in every language: they stay on the home screen and, when the app language is not one of theirs, ask first which of their languages to play in (one big button each, the last choice first). The game then plays in that language, and a saved game always continues in the language it started in.
 - CI reports the release APK size, warns past 10 MB and fails past 20 MB.
 - Four new languages: **Italian, German, Russian and Japanese** — the interface, crossword dictionaries (with QWERTZ and ЙЦУКЕН keyboards; Japanese in katakana with a kana bank), store listings, README, user guide, trust page and privacy policy.
+- **Buraco for four, in pairs** ("duplas"): you and a computer partner, sitting opposite each other, against two computer players, with shared sequences and one morto per side, scores per side, every seat named (Left, Partner, Right) with its own color and symbol and its number of cards, and play counterclockwise as is the custom in Brazil. The app asks **How many at the table?** (2 or 4) and remembers it; two-player games and saves are unchanged.
+- **Take turns on this phone** in Buraco (2 people, or 4 in pairs), Cacheta (2 to 4 people) and Truco (1 vs 1, or 2 vs 2 with four people): between turns a cover hides the cards and asks to pass the phone to the next player, shown by name, color and symbol.
+- Cacheta and Truco ask how many play on the standard **How many at the table?** screen (Cacheta 2 to 4, Truco 2 or 4) instead of their own question inside the game; games saved before still continue.
 
 ### Changed
 - Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".

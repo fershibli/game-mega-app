@@ -6,9 +6,6 @@
     <string name="truco_variant_paulista_desc">40张牌；翻开的牌（vira）决定最大的牌“manilha”。</string>
     <string name="truco_variant_mineiro">米纳斯式</string>
     <string name="truco_variant_mineiro_desc">40张牌；固定的manilha：4♣、7♥、A♠、7♦，不翻牌。</string>
-    <string name="truco_how_many">你想怎么玩？</string>
-    <string name="truco_one_vs_one">你对电脑</string>
-    <string name="truco_two_vs_two">你和搭档对两个电脑</string>
     <string name="truco_us">我方</string>
     <string name="truco_them">对方</string>
     <string name="truco_worth">本局%1$d分</string>
@@ -44,4 +41,11 @@
     <string name="truco_final">最终比分：我方 %1$d × %2$d 对方</string>
     <string name="truco_partner">搭档</string>
     <string name="truco_computer">电脑</string>
+    <string name="truco_table_pairs">二对二：搭档面对面坐</string>
+    <string name="truco_pair">玩家 %1$d 和 %2$d</string>
+    <string name="truco_playing">%1$s 正在出牌…</string>
+    <string name="truco_trick_to">这一墩归 %1$s</string>
+    <string name="truco_hand_to">这一局归 %1$s：+%2$d</string>
+    <string name="truco_final_sides">最终比分 — %1$s：%2$d，%3$s：%4$d</string>
+    <string name="truco_winner">获胜：%1$s</string>
 </resources>

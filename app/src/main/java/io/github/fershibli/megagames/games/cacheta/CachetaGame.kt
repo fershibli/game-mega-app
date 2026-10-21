@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -27,6 +26,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -41,7 +41,6 @@ import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.pluralStringResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -50,7 +49,6 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.rememberTextMeasurer
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
@@ -58,6 +56,8 @@ import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.games.cards.Card
+import io.github.fershibli.megagames.games.cards.SeatChip
+import io.github.fershibli.megagames.games.cards.tableSeat
 import io.github.fershibli.megagames.games.cards.Suit
 import io.github.fershibli.megagames.ui.art.darker
 import io.github.fershibli.megagames.ui.art.drawCard
@@ -69,6 +69,8 @@ import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
 import io.github.fershibli.megagames.ui.components.GameLayout
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
@@ -84,7 +86,16 @@ import kotlinx.coroutines.withContext
 @Composable
 fun CachetaGame(host: GameHost) {
     val rules = CachetaRules.of(host.variant?.key)
-    LoadGame(host, CachetaState.serializer(), { CachetaState(variant = rules.key) }) { state -> CachetaScreen(state, host) }
+    LoadGame(host, CachetaState.serializer(), { newGame(rules, host) }) { state -> CachetaScreen(state, host) }
+}
+
+/** A new hand for the table chosen before starting (2 to 4 seats), with the hands sorted by suit. */
+private fun newGame(rules: CachetaRules, host: GameHost): CachetaState {
+    val players = host.setup.seats.takeIf { it in 2..4 } ?: 2
+    var s = Cacheta.deal(rules, players, Random.Default)
+    // Taking turns, everybody's hand starts sorted; otherwise only yours is ever shown.
+    for (seat in 0 until if (host.setup.together) players else 1) s = Cacheta.sorted(s, true, seat)
+    return s
 }
 
 /** Short spoken/written name of a card, e.g. "7♥". */
@@ -99,196 +110,191 @@ fun cardLabel(c: Card, french: Boolean = false): String = Card.rankLabel(c.rank,
 private fun CachetaScreen(state: MutableState<CachetaState>, host: GameHost) {
     val s = state.value
     if (s.players == 0) {
-        SetupChoice { opponents -> state.value = Cacheta.sorted(Cacheta.deal(s.rules, opponents + 1, Random.Default), true) }
+        // A game saved before the table screen chose the seats: deal it now.
+        LaunchedEffect(Unit) { state.value = newGame(s.rules, host) }
         return
     }
     val res = LocalResources.current
     val pace = currentPace
+    val p = LocalPalette.current
     var selected by remember { mutableStateOf<Card?>(null) }
     var error by remember { mutableStateOf(false) }
     val french = LocalGameLanguage.current == AppLanguage.FRENCH
     val t = s.table
+    // Taking turns on this phone: every seat is a person, and the phone is passed between them.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    // The seat whose hand is shown. Taking turns, nobody's until the first person says "ready".
+    var viewer by remember { mutableIntStateOf(if (together) -1 else 0) }
+    val me = viewer.coerceAtLeast(0)
+    val showHand = viewer >= 0 && handoff.showsPrivate
+    fun human(seat: Int) = together || seat == 0
+    val names = List(s.players) { if (together) stringResource(R.string.player_number, it + 1) else stringResource(R.string.cacheta_computer, it) }
+    val actor = Cacheta.actor(s)
 
     LaunchedEffect(error) { if (error) { pace.wait(3500); error = false } }
 
     LaunchedEffect(s.finished) {
         if (!s.finished) return@LaunchedEffect
         val detail = when {
+            together && s.winner >= 0 -> res.getString(if (s.tenCards) R.string.cacheta_went_out_ten_seat else R.string.cacheta_went_out_seat, names[s.winner])
             s.winner == 0 && s.tenCards -> res.getString(R.string.cacheta_won_ten)
             s.winner == 0 -> res.getString(R.string.cacheta_won)
             s.winner > 0 -> res.getString(R.string.cacheta_lost, s.winner)
             else -> res.getString(R.string.cacheta_deck_over)
         }
         pace.wait(3000)
-        host.finish(GameOutcome(s.winner == 0, detail))
+        host.finish(GameOutcome(together || s.winner == 0, detail, shared = together))
     }
 
     // The computers play one step at a time, so you can follow every draw and discard.
     LaunchedEffect(s) {
-        if (s.finished || Cacheta.actor(s) == 0) return@LaunchedEffect
+        if (s.finished || human(Cacheta.actor(s))) return@LaunchedEffect
         pace.wait(if (s.drawn) 700 else 900)
         state.value = withContext(Dispatchers.Default) { CachetaAi.step(s, host.difficulty, Random.Default) }
     }
 
-    val offered = s.offers.firstOrNull() == 0 && !s.finished
-    val myTurn = s.turn == 0 && s.offers.isEmpty() && !s.finished
-    val goOut = if (myTurn && s.drawn) t.goOut(s.hands[0], forbidden = s.tookFromPile, preferred = selected) else null
-    val inGroups = remember(s.hands[0], s.vira, s.variant) {
-        val hand = s.hands[0]
+    // Taking turns: when another person must act, cover the hand and ask to pass the phone.
+    LaunchedEffect(actor, s.finished) {
+        if (together && !s.finished && actor != viewer) handoff.passTo(tableSeat(p, actor, names[actor]))
+    }
+
+    // The person holding the phone must act now (and may see their hand).
+    val acting = actor == me && human(me) && showHand && !s.finished
+    val offered = acting && s.offers.firstOrNull() == me
+    val myTurn = acting && s.turn == me && s.offers.isEmpty()
+    val goOut = if (myTurn && s.drawn) t.goOut(s.hands[me], forbidden = s.tookFromPile, preferred = selected) else null
+    val inGroups = remember(s.hands[me], s.vira, s.variant) {
+        val hand = s.hands[me]
         val mask = CachetaAi.coverMask(t, hand)
         hand.filterIndexed { i, _ -> mask and (1 shl i) != 0 }.toSet()
     }
 
-    GameLayout(
-        status = {
-            val text = when {
-                error -> stringResource(R.string.cacheta_err_taken)
-                s.finished && s.winner == 0 -> stringResource(if (s.tenCards) R.string.cacheta_won_ten else R.string.cacheta_won)
-                s.finished && s.winner > 0 -> stringResource(R.string.cacheta_lost, s.winner)
-                s.finished -> stringResource(R.string.cacheta_deck_over)
-                offered -> stringResource(R.string.cacheta_offer, cardLabel(s.discard.last(), french))
-                !myTurn -> stringResource(R.string.cacheta_playing, Cacheta.actor(s))
-                !s.drawn -> stringResource(R.string.cacheta_prompt_draw)
-                goOut != null -> stringResource(R.string.cacheta_prompt_go_out)
-                else -> stringResource(R.string.cacheta_prompt_discard)
-            }
-            StatusPill(text, emphasized = error || offered || goOut != null || (myTurn && !s.drawn))
-        },
-        controls = {
-            ActionBar {
-                when {
-                    offered -> {
-                        BigButton(stringResource(R.string.cacheta_go_out), { Cacheta.grab(s)?.let { state.value = it } }, icon = AppIcon.CHECK, compact = true)
-                        BigButton(stringResource(R.string.cacheta_skip), { state.value = Cacheta.pass(s) }, style = ButtonStyle.SECONDARY, compact = true)
-                    }
-                    myTurn && !s.drawn -> {
-                        BigButton(stringResource(R.string.cacheta_draw), { state.value = Cacheta.drawFromStock(s, Random.Default) }, icon = AppIcon.PLUS, compact = true)
-                        BigButton(stringResource(R.string.cacheta_take), { Cacheta.takeDiscard(s)?.let { state.value = it } },
-                            icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = s.discard.isNotEmpty(), compact = true)
-                    }
-                    else -> {
-                        BigButton(stringResource(R.string.cacheta_discard), {
-                            val card = selected ?: return@BigButton
-                            val next = Cacheta.discard(s, card)
-                            if (next == null) error = true else { state.value = next; selected = null }
-                        }, icon = AppIcon.CHECK, enabled = myTurn && s.drawn && selected != null, compact = true)
-                        BigButton(stringResource(R.string.cacheta_go_out), {
-                            Cacheta.goOut(s, selected)?.let { state.value = it; selected = null }
-                        }, style = if (goOut != null) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, enabled = goOut != null, compact = true)
-                        BigButton(stringResource(R.string.hint), {
-                            selected = CachetaAi.chooseDiscard(s, danger = false, noise = 0.0, random = Random.Default)
-                        }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn && s.drawn, compact = true)
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val text = when {
+                    error -> stringResource(R.string.cacheta_err_taken)
+                    s.finished && together && s.winner >= 0 -> stringResource(if (s.tenCards) R.string.cacheta_went_out_ten_seat else R.string.cacheta_went_out_seat, names[s.winner])
+                    s.finished && s.winner == 0 -> stringResource(if (s.tenCards) R.string.cacheta_won_ten else R.string.cacheta_won)
+                    s.finished && s.winner > 0 -> stringResource(R.string.cacheta_lost, s.winner)
+                    s.finished -> stringResource(R.string.cacheta_deck_over)
+                    offered -> stringResource(R.string.cacheta_offer, cardLabel(s.discard.last(), french))
+                    together && !acting -> stringResource(R.string.cacheta_seat_playing, names[actor])
+                    !myTurn -> stringResource(R.string.cacheta_playing, actor)
+                    !s.drawn -> stringResource(R.string.cacheta_prompt_draw)
+                    goOut != null -> stringResource(R.string.cacheta_prompt_go_out)
+                    else -> stringResource(R.string.cacheta_prompt_discard)
+                }
+                // Taking turns, every instruction starts with who is playing.
+                StatusPill(if (together && acting && !error) names[me] + " · " + text else text, emphasized = error || offered || goOut != null || (myTurn && !s.drawn))
+            },
+            controls = {
+                ActionBar {
+                    when {
+                        offered -> {
+                            BigButton(stringResource(R.string.cacheta_go_out), { Cacheta.grab(s)?.let { state.value = it } }, icon = AppIcon.CHECK, compact = true)
+                            BigButton(stringResource(R.string.cacheta_skip), { state.value = Cacheta.pass(s) }, style = ButtonStyle.SECONDARY, compact = true)
+                        }
+                        myTurn && !s.drawn -> {
+                            BigButton(stringResource(R.string.cacheta_draw), { state.value = Cacheta.drawFromStock(s, Random.Default) }, icon = AppIcon.PLUS, compact = true)
+                            BigButton(stringResource(R.string.cacheta_take), { Cacheta.takeDiscard(s)?.let { state.value = it } },
+                                icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = s.discard.isNotEmpty(), compact = true)
+                        }
+                        else -> {
+                            BigButton(stringResource(R.string.cacheta_discard), {
+                                val card = selected ?: return@BigButton
+                                val next = Cacheta.discard(s, card)
+                                if (next == null) error = true else { state.value = next; selected = null }
+                            }, icon = AppIcon.CHECK, enabled = myTurn && s.drawn && selected != null, compact = true)
+                            BigButton(stringResource(R.string.cacheta_go_out), {
+                                Cacheta.goOut(s, selected)?.let { state.value = it; selected = null }
+                            }, style = if (goOut != null) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, enabled = goOut != null, compact = true)
+                            BigButton(stringResource(R.string.hint), {
+                                selected = CachetaAi.chooseDiscard(s, danger = false, noise = 0.0, random = Random.Default)
+                            }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn && s.drawn, compact = true)
+                        }
                     }
                 }
-            }
-        },
-    ) {
-        val p = LocalPalette.current
-        val scale = LocalSettings.current.pieceScale
-        Column(
-            Modifier
-                .fillMaxSize()
-                .background(Brush.verticalGradient(listOf(p.felt, p.feltDark)))
-                .verticalScroll(rememberScrollState())
-                .padding(10.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
+            },
         ) {
-            // The computers: only the backs of their cards.
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
-                for (i in 1 until s.players) Opponent(i, s.hands[i].size, active = !s.finished && Cacheta.actor(s) == i, won = s.winner == i)
-            }
-
-            // Deck, discard pile and, with wild cards, the vira and the wild card it chooses.
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(14.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.Bottom) {
-                Pile(stringResource(R.string.cacheta_deck, s.stock.size), (64 * scale).dp, enabled = myTurn && !s.drawn, tag = "cacheta-deck",
-                    onClick = { state.value = Cacheta.drawFromStock(s, Random.Default) }) { size, _ ->
-                    if (s.stock.isNotEmpty()) drawCardBack(Offset.Zero, size, p) else drawCardSlot(Offset.Zero, size, p.cardFace)
-                }
-                Pile(stringResource(R.string.cacheta_pile), (64 * scale).dp, enabled = (myTurn && !s.drawn && s.discard.isNotEmpty()) || offered, tag = "cacheta-pile",
-                    onClick = { if (offered) Cacheta.grab(s)?.let { state.value = it } else Cacheta.takeDiscard(s)?.let { state.value = it } }) { size, m ->
-                    val top = s.discard.lastOrNull()
-                    if (top != null) drawCard(top, Offset.Zero, size, p, m, french = french, wildMark = t.isWild(top)) else drawCardSlot(Offset.Zero, size, p.cardFace)
-                }
-                val vira = s.vira
-                if (vira != null) {
-                    Pile(stringResource(R.string.cacheta_vira), (44 * scale).dp, enabled = false, tag = "cacheta-vira", onClick = {}) { size, m ->
-                        drawCard(vira, Offset.Zero, size, p, m, french = french)
-                    }
-                    val wild = Card(vira.suit, vira.rank % 13 + 1)
-                    Pile(stringResource(R.string.cacheta_wild), (44 * scale).dp, enabled = false, tag = "cacheta-wild", onClick = {}) { size, m ->
-                        drawCard(wild, Offset.Zero, size, p, m, french = french, wildMark = true)
+            val scale = LocalSettings.current.pieceScale
+            Column(
+                Modifier
+                    .fillMaxSize()
+                    .background(Brush.verticalGradient(listOf(p.felt, p.feltDark)))
+                    .verticalScroll(rememberScrollState())
+                    .padding(10.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+            ) {
+                // The other players, in playing order after you: only the backs of their cards.
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+                    for (k in 1 until s.players) {
+                        val i = (me + k) % s.players
+                        SeatChip(i, names[i], s.hands[i].size, active = (!s.finished && actor == i) || s.winner == i)
                     }
                 }
-            }
 
-            // How the winner went out.
-            if (s.finished && s.groups.isNotEmpty()) {
-                FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
-                    for (g in s.groups) MiniFan(g, (34 * scale).dp, french) { t.isWild(it) }
+                // Deck, discard pile and, with wild cards, the vira and the wild card it chooses.
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(14.dp, Alignment.CenterHorizontally), verticalAlignment = Alignment.Bottom) {
+                    Pile(stringResource(R.string.cacheta_deck, s.stock.size), (64 * scale).dp, enabled = myTurn && !s.drawn, tag = "cacheta-deck",
+                        onClick = { state.value = Cacheta.drawFromStock(s, Random.Default) }) { size, _ ->
+                        if (s.stock.isNotEmpty()) drawCardBack(Offset.Zero, size, p) else drawCardSlot(Offset.Zero, size, p.cardFace)
+                    }
+                    Pile(stringResource(R.string.cacheta_pile), (64 * scale).dp, enabled = (myTurn && !s.drawn && s.discard.isNotEmpty()) || offered, tag = "cacheta-pile",
+                        onClick = { if (offered) Cacheta.grab(s)?.let { state.value = it } else Cacheta.takeDiscard(s)?.let { state.value = it } }) { size, m ->
+                        val top = s.discard.lastOrNull()
+                        if (top != null) drawCard(top, Offset.Zero, size, p, m, french = french, wildMark = t.isWild(top)) else drawCardSlot(Offset.Zero, size, p.cardFace)
+                    }
+                    val vira = s.vira
+                    if (vira != null) {
+                        Pile(stringResource(R.string.cacheta_vira), (44 * scale).dp, enabled = false, tag = "cacheta-vira", onClick = {}) { size, m ->
+                            drawCard(vira, Offset.Zero, size, p, m, french = french)
+                        }
+                        val wild = Card(vira.suit, vira.rank % 13 + 1)
+                        Pile(stringResource(R.string.cacheta_wild), (44 * scale).dp, enabled = false, tag = "cacheta-wild", onClick = {}) { size, m ->
+                            drawCard(wild, Offset.Zero, size, p, m, french = french, wildMark = true)
+                        }
+                    }
                 }
-            }
 
-            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                Column(Modifier.weight(1f)) {
-                    Text(stringResource(R.string.cacheta_your_hand), color = Color.White, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                    if (inGroups.isNotEmpty()) Text(stringResource(R.string.cacheta_groups_note), color = Color.White, style = MaterialTheme.typography.bodyMedium)
+                // How the winner went out.
+                if (s.finished && s.groups.isNotEmpty()) {
+                    FlowRow(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        for (g in s.groups) MiniFan(g, (34 * scale).dp, french) { t.isWild(it) }
+                    }
                 }
-                SortButton(s) { state.value = it }
+
+                Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Column(Modifier.weight(1f)) {
+                        Text(stringResource(R.string.cacheta_your_hand), color = Color.White, style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                        if (inGroups.isNotEmpty()) Text(stringResource(R.string.cacheta_groups_note), color = Color.White, style = MaterialTheme.typography.bodyMedium)
+                    }
+                    SortButton(s, me, enabled = showHand) { state.value = it }
+                }
+                CardFan(
+                    s.hands[me], selected, inGroups, t::isWild, french,
+                    enabled = myTurn && s.drawn,
+                    hidden = !showHand,
+                    onTap = { card -> selected = if (selected == card) null else card },
+                )
+                Spacer(Modifier.height(8.dp))
             }
-            CardFan(
-                s.hands[0], selected, inGroups, t::isWild, french,
-                enabled = myTurn && s.drawn,
-                onTap = { card -> selected = if (selected == card) null else card },
-            )
-            Spacer(Modifier.height(8.dp))
+        }
+        HandoffOverlay(handoff) {
+            viewer = Cacheta.actor(state.value)
+            selected = null
         }
     }
 }
 
 @Composable
-private fun SortButton(s: CachetaState, onSorted: (CachetaState) -> Unit) {
+private fun SortButton(s: CachetaState, seat: Int, enabled: Boolean, onSorted: (CachetaState) -> Unit) {
     BigButton(
         stringResource(if (s.sortBySuit) R.string.cacheta_sort_rank else R.string.cacheta_sort_suit),
-        { onSorted(Cacheta.sorted(s, !s.sortBySuit)) },
-        style = ButtonStyle.SECONDARY, compact = true,
+        { onSorted(Cacheta.sorted(s, !s.sortBySuit, seat)) },
+        style = ButtonStyle.SECONDARY, compact = true, enabled = enabled,
     )
-}
-
-/** First screen: how many computer players sit at the table. */
-@Composable
-private fun SetupChoice(onChoose: (Int) -> Unit) {
-    val p = LocalPalette.current
-    Column(
-        Modifier.fillMaxSize().background(Brush.verticalGradient(listOf(p.felt, p.feltDark))).verticalScroll(rememberScrollState()).padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(18.dp, Alignment.CenterVertically),
-    ) {
-        Text(stringResource(R.string.cacheta_how_many), color = Color.White, style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
-        for (n in 1..3) {
-            BigButton(pluralStringResource(R.plurals.cacheta_opponents, n, n), { onChoose(n) }, Modifier.fillMaxWidth().widthIn(max = 420.dp), style = if (n == 1) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY)
-        }
-    }
-}
-
-@Composable
-private fun Opponent(seat: Int, cards: Int, active: Boolean, won: Boolean) {
-    val p = LocalPalette.current
-    val shape = RoundedCornerShape(12.dp)
-    Column(
-        Modifier
-            .clip(shape)
-            .border(if (active || won) 3.dp else 1.dp, if (active || won) p.highlight else Color.White.copy(alpha = 0.3f), shape)
-            .padding(8.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Text(stringResource(R.string.cacheta_computer, seat), color = Color.White, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.SemiBold)
-        Canvas(Modifier.size(70.dp, 44.dp)) {
-            val w = size.height / 1.42f
-            val step = if (cards > 1) (size.width - w) / (cards - 1) else 0f
-            for (k in 0 until cards) drawCardBack(Offset(k * step, 0f), Size(w, size.height), p)
-        }
-        Text("$cards", color = Color.White, style = MaterialTheme.typography.titleMedium)
-    }
 }
 
 @Composable
@@ -342,6 +348,7 @@ private fun CardFan(
     isWild: (Card) -> Boolean,
     french: Boolean,
     enabled: Boolean,
+    hidden: Boolean,
     onTap: (Card) -> Unit,
 ) {
     val p = LocalPalette.current
@@ -363,12 +370,16 @@ private fun CardFan(
                         .offset(x = x, y = if (isSel) 0.dp else lift)
                         .size(cardW, cardH)
                         .clickable(enabled = enabled, role = Role.Button) { onTap(card) }
-                        .semantics { contentDescription = label; this.selected = isSel },
+                        .then(if (hidden) Modifier else Modifier.semantics { contentDescription = label; this.selected = isSel }),
                 ) {
                     val measurer = rememberTextMeasurer()
-                    Canvas(Modifier.fillMaxSize()) { drawCard(card, Offset.Zero, size, p, measurer, selected = isSel, french = french, wildMark = isWild(card)) }
+                    // While the phone is passed to the next person, only the backs of the cards show.
+                    Canvas(Modifier.fillMaxSize()) {
+                        if (hidden) drawCardBack(Offset.Zero, size, p)
+                        else drawCard(card, Offset.Zero, size, p, measurer, selected = isSel, french = french, wildMark = isWild(card))
+                    }
                 }
-                if (card in inGroups) {
+                if (card in inGroups && !hidden) {
                     val barWidth = (if (i == cards.lastIndex) cardW else minOf(step, cardW)) - 4.dp
                     Box(
                         Modifier

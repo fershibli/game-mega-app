@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">翻开的一张牌（vira）决定百搭牌：同花色的下一张。</string>
     <string name="cacheta_variant_pife">皮菲（Pife）</string>
     <string name="cacheta_variant_pife_desc">没有百搭牌，顺子可以首尾相连（K-A-2），能胡牌时可以随时拿走别人弃的牌。</string>
-    <string name="cacheta_how_many">要几个电脑对手？</string>
     <string name="cacheta_computer">电脑%1$d</string>
     <string name="cacheta_playing">电脑%1$d正在出牌…</string>
     <string name="cacheta_deck">牌堆（%1$d）</string>
@@ -33,7 +32,7 @@
     <string name="cacheta_deck_over">牌用完了：没有人胡牌。</string>
     <string name="cacheta_your_hand">你的手牌</string>
     <string name="cacheta_groups_note">绿条 = 已成组</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="other">%1$d个电脑</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$s 正在出牌…</string>
+    <string name="cacheta_went_out_seat">%1$s 胡牌了！</string>
+    <string name="cacheta_went_out_ten_seat">%1$s 用全部 10 张牌胡牌了！</string>
 </resources>
