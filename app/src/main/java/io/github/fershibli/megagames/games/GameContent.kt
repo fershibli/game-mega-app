@@ -57,5 +57,8 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.SPIDER -> io.github.fershibli.megagames.games.spider.SpiderGame(host)
         GameId.FREECELL -> io.github.fershibli.megagames.games.freecell.FreeCellGame(host)
         GameId.PYRAMID -> io.github.fershibli.megagames.games.pyramid.PyramidGame(host)
+        GameId.WORDSEARCH -> io.github.fershibli.megagames.games.wordsearch.WordSearchGame(host)
+        GameId.ANAGRAM -> io.github.fershibli.megagames.games.anagram.AnagramGame(host)
+        GameId.DAYWORD -> io.github.fershibli.megagames.games.dayword.DayWordGame(host)
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">Mots mêlés</string>
+    <string name="howto_wordsearch">Trouvez les mots cachés dans la grille. Glissez le doigt de la première lettre à la dernière, ou touchez la première lettre puis la dernière.</string>
+    <string name="wordsearch_found">Mots trouvés : %1$d sur %2$d</string>
+    <string name="wordsearch_words">Mots à trouver (touchez-en un pour voir sa définition)</string>
+    <string name="wordsearch_tap_last">Touchez maintenant la dernière lettre du mot</string>
+    <string name="wordsearch_not_word">Ce n’est pas un des mots. Essayez encore.</string>
+    <string name="wordsearch_hint_first">La lettre entourée est le début d’un mot.</string>
+    <string name="wordsearch_hint_last">Sa dernière lettre est maintenant entourée aussi.</string>
+    <string name="wordsearch_done">Vous avez trouvé tous les mots !</string>
+    <string name="wordsearch_hints_used">Indices utilisés : %1$d.</string>
+</resources>

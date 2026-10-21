@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">Parola del giorno</string>
+    <string name="howto_dayword">Indovina la parola nascosta. Scrivi una parola sulla riga e tocca Verifica: ogni lettera riceve un segno. ● al posto giusto, ○ nella parola ma altrove, — non c’è.</string>
+    <string name="dayword_today">Parola del giorno · riga %1$d di %2$d</string>
+    <string name="dayword_practice">Parola di allenamento · riga %1$d di %2$d</string>
+    <string name="dayword_today_done">Hai già giocato la parola di oggi. Ecco una parola di allenamento; domani arriva una nuova parola del giorno.</string>
+    <string name="dayword_check">Verifica</string>
+    <string name="dayword_another">Un’altra</string>
+    <string name="dayword_known">Sai già:</string>
+    <string name="dayword_clue">Definizione: %1$s</string>
+    <string name="dayword_won">Bravo! Hai trovato %1$s alla riga %2$d.</string>
+    <string name="dayword_lost">La parola era %1$s.</string>
+    <string name="dayword_legend">● posto giusto   ○ altrove   — non c’è</string>
+    <string name="dayword_mark_right">posto giusto</string>
+    <string name="dayword_mark_elsewhere">nella parola, altrove</string>
+    <string name="dayword_mark_absent">non è nella parola</string>
+</resources>

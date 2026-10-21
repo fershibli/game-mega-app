@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_dayword">每日一词</string>
+    <string name="howto_dayword">猜出藏起来的词。在横线上写一个词，然后点“检查”：每个字下面都会有记号。● 位置正确，○ 词里有但位置不对，— 词里没有。</string>
+    <string name="dayword_today">每日一词 · 第 %1$d 行，共 %2$d 行</string>
+    <string name="dayword_practice">练习词 · 第 %1$d 行，共 %2$d 行</string>
+    <string name="dayword_today_done">今天的词已经玩过了。这是一个练习词，明天会有新的每日一词。</string>
+    <string name="dayword_check">检查</string>
+    <string name="dayword_another">换一个</string>
+    <string name="dayword_known">已知：</string>
+    <string name="dayword_clue">提示：%1$s</string>
+    <string name="dayword_won">真棒！你在第 %2$d 行猜出了“%1$s”。</string>
+    <string name="dayword_lost">答案是“%1$s”。</string>
+    <string name="dayword_legend">● 位置正确　○ 位置不对　— 没有</string>
+    <string name="dayword_mark_right">位置正确</string>
+    <string name="dayword_mark_elsewhere">词里有，位置不对</string>
+    <string name="dayword_mark_absent">词里没有</string>
+</resources>

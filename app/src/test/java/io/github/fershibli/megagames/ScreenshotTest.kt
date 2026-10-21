@@ -195,5 +195,10 @@ class ScreenshotTest {
     @Test fun freecell() = gameShot("game_freecell", GameId.FREECELL)
     @Test fun pyramid() = gameShot("game_pyramid", GameId.PYRAMID)
     @Test fun pyramidLeftHandedBig() = gameShot("game_pyramid_left_big", GameId.PYRAMID, settings = Settings(leftHanded = true, pieceScale = 1.4f))
+    @Test fun wordSearch() = gameShot("game_wordsearch", GameId.WORDSEARCH, Difficulty.MEDIUM)
+    @Test fun wordSearchArabicColorblind() = gameShot("game_wordsearch_ar_colorblind", GameId.WORDSEARCH, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC, colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
+    @Test fun anagramJapanese() = gameShot("game_anagram_ja", GameId.ANAGRAM, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))
+    @Test fun dayWord() = gameShot("game_dayword", GameId.DAYWORD)
+    @Test fun dayWordArabic() = gameShot("game_dayword_ar", GameId.DAYWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
 
 }

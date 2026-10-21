@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">词语重组</string>
+    <string name="howto_anagram">一个词的字被打乱了。按正确的顺序点这些字，把词拼回来。每轮五个词。</string>
+    <string name="anagram_progress">第 %1$d 个词，共 %2$d 个</string>
+    <string name="anagram_clue_hidden">这一级没有提示语。需要帮助时请点“提示”。</string>
+    <string name="anagram_wrong">还不对。点一个字可以把它拿回来。</string>
+    <string name="anagram_right">真棒！</string>
+    <string name="anagram_shuffle">打乱</string>
+    <string name="anagram_done">所有的词都拼好了！</string>
+    <string name="anagram_hints_used">用了 %1$d 次提示。</string>
+</resources>

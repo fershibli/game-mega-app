@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">البحث عن الكلمات</string>
+    <string name="howto_wordsearch">ابحث عن الكلمات المخفية في الشبكة. اسحب إصبعك من الحرف الأول إلى الحرف الأخير، أو المس الحرف الأول ثم الحرف الأخير.</string>
+    <string name="wordsearch_found">الكلمات التي وجدتها: %1$d من %2$d</string>
+    <string name="wordsearch_words">الكلمات المطلوبة (المس كلمة لترى تلميحها)</string>
+    <string name="wordsearch_tap_last">الآن المس الحرف الأخير من الكلمة</string>
+    <string name="wordsearch_not_word">هذه ليست من الكلمات المطلوبة. حاول مرة أخرى.</string>
+    <string name="wordsearch_hint_first">الحرف المحاط بدائرة هو بداية إحدى الكلمات.</string>
+    <string name="wordsearch_hint_last">والآن أحيط حرفها الأخير بدائرة أيضًا.</string>
+    <string name="wordsearch_done">وجدت كل الكلمات!</string>
+    <string name="wordsearch_hints_used">التلميحات المستخدمة: %1$d.</string>
+</resources>

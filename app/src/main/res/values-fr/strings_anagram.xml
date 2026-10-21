@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_anagram">Anagrammes</string>
+    <string name="howto_anagram">Les lettres d’un mot sont mélangées. Touchez-les dans le bon ordre pour écrire le mot. Cinq mots par manche.</string>
+    <string name="anagram_progress">Mot %1$d sur %2$d</string>
+    <string name="anagram_clue_hidden">Pas de définition à ce niveau. Touchez Indice si besoin.</string>
+    <string name="anagram_wrong">Pas tout à fait. Touchez une lettre pour la retirer.</string>
+    <string name="anagram_right">Bravo !</string>
+    <string name="anagram_shuffle">Mélanger</string>
+    <string name="anagram_done">Vous avez remis tous les mots en ordre !</string>
+    <string name="anagram_hints_used">Indices utilisés : %1$d.</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_wordsearch">找词游戏</string>
+    <string name="howto_wordsearch">在格子里找出藏着的词语。手指从第一个字滑到最后一个字，或者先点第一个字，再点最后一个字。</string>
+    <string name="wordsearch_found">已找到：%1$d / %2$d</string>
+    <string name="wordsearch_words">要找的词（点一下可以看提示）</string>
+    <string name="wordsearch_tap_last">现在请点这个词的最后一个字</string>
+    <string name="wordsearch_not_word">这不是要找的词，再试一次。</string>
+    <string name="wordsearch_hint_first">圈起来的字是一个词的开头。</string>
+    <string name="wordsearch_hint_last">现在最后一个字也圈起来了。</string>
+    <string name="wordsearch_done">所有的词都找到了！</string>
+    <string name="wordsearch_hints_used">用了 %1$d 次提示。</string>
+</resources>
