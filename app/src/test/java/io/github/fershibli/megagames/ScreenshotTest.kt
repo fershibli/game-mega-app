@@ -191,5 +191,9 @@ class ScreenshotTest {
     @Test fun nonogram() = gameShot("game_nonogram", GameId.NONOGRAM, Difficulty.MEDIUM)
     @Test fun kakuro() = gameShot("game_kakuro", GameId.KAKURO, Difficulty.MEDIUM)
     @Test fun killerDark() = gameShot("game_killer_dark", GameId.KILLER, settings = Settings(darkMode = true))
+    @Test fun spider() = gameShot("game_spider", GameId.SPIDER)
+    @Test fun freecell() = gameShot("game_freecell", GameId.FREECELL)
+    @Test fun pyramid() = gameShot("game_pyramid", GameId.PYRAMID)
+    @Test fun pyramidLeftHandedBig() = gameShot("game_pyramid_left_big", GameId.PYRAMID, settings = Settings(leftHanded = true, pieceScale = 1.4f))
 
 }

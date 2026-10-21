@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">Spider</string>
+    <string name="howto_spider">Forma scale dal Re all’Asso dello stesso seme: una scala completa lascia il tavolo. Tocca una carta per spostarla con le carte sopra, e toccala di nuovo per provare un altro posto. Tocca il mazzo per distribuire una nuova fila.</string>
+    <string name="spider_variant_one">Un seme</string>
+    <string name="spider_variant_one_desc">Solo picche. Il modo più facile, ideale per imparare.</string>
+    <string name="spider_variant_two">Due semi</string>
+    <string name="spider_variant_two_desc">Picche e cuori. Un po’ più difficile.</string>
+    <string name="spider_variant_four">Quattro semi</string>
+    <string name="spider_variant_four_desc">Tutti e quattro i semi. Una vera sfida.</string>
+    <string name="spider_status">Scale: %1$d su 8 · Distribuzioni: %2$d</string>
+    <string name="spider_fill_columns">Per distribuire una nuova fila, ogni colonna deve avere una carta. Prima sposta una carta nella colonna vuota.</string>
+    <string name="spider_hint_deal">Tocca il mazzo per distribuire una nuova fila.</string>
+    <string name="spider_cannot_move">Queste carte non sono in ordine dello stesso seme, quindi non possono spostarsi insieme.</string>
+    <string name="spider_stuck_title">Nessuna mossa</string>
+    <string name="spider_stuck_message">Non restano mosse utili né carte da distribuire. Puoi annullare alcune mosse e provare un’altra strada, oppure arrenderti.</string>
+    <string name="spider_give_up">Arrenditi</string>
+    <string name="spider_keep_playing">Continua a cercare</string>
+    <string name="spider_lost">Non c’erano più mosse possibili.</string>
+</resources>

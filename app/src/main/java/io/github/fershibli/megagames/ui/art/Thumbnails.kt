@@ -73,6 +73,9 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.NONOGRAM -> io.github.fershibli.megagames.games.nonogram.nonogramThumbnail(this, p, m)
             GameId.KAKURO -> io.github.fershibli.megagames.games.kakuro.kakuroThumbnail(this, p, m)
             GameId.KILLER -> io.github.fershibli.megagames.games.killer.killerThumbnail(this, p, m)
+            GameId.SPIDER -> io.github.fershibli.megagames.games.spider.spiderThumbnail(this, p, m)
+            GameId.FREECELL -> io.github.fershibli.megagames.games.freecell.freeCellThumbnail(this, p, m)
+            GameId.PYRAMID -> io.github.fershibli.megagames.games.pyramid.pyramidThumbnail(this, p, m)
         }
     }
 }

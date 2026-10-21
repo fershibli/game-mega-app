@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_freecell">Celdas libres</string>
+    <string name="howto_freecell">Todas las cartas están boca arriba. Forma cuatro montones del As al Rey, uno por palo. En las columnas, pon cada carta sobre otra de un valor más y del otro color. Las cuatro celdas libres guardan una carta cada una. Toca una carta para moverla, y tócala otra vez para probar otro sitio.</string>
+    <string name="freecell_status">Movimientos: %1$d · Celdas libres: %2$d</string>
+    <string name="freecell_too_many">No hay sitio para mover %1$d cartas a la vez: ahora puedes mover %2$d. Vacía antes una celda o una columna.</string>
+    <string name="freecell_not_in_order">Solo las cartas en orden, alternando rojo y negro, pueden moverse juntas.</string>
+    <string name="freecell_finish">Terminar</string>
+    <string name="freecell_thinking">Buscando una buena jugada…</string>
+    <string name="freecell_no_hint">No se encontró una buena jugada. Prueba Deshacer.</string>
+    <string name="freecell_stuck_title">No quedan jugadas</string>
+    <string name="freecell_stuck_message">Desde aquí ya no se puede ganar esta partida. Puedes deshacer algunas jugadas y probar otro camino, o rendirte.</string>
+    <string name="freecell_give_up">Rendirse</string>
+    <string name="freecell_keep_playing">Seguir buscando</string>
+    <string name="freecell_lost">Las cartas quedaron bloqueadas: ya no había forma de ganar.</string>
+</resources>

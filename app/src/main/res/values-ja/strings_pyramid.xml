@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">ピラミッド</string>
+    <string name="howto_pyramid">表に出ている2枚のカードで、合計が13になる組を取りましょう。クイーンとエース、ジャックと2、10と3…。キングは1枚で取れます。山札をタップすると新しいカードをめくります。ピラミッドをすべて片づけたら勝ちです。</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">ピラミッドのカード：%1$d枚</string>
+    <string name="pyramid_passes">山札をめくれる残り回数：%1$d</string>
+    <string name="pyramid_needs">このカードは%1$dです。%2$dのカードをタップしてください。</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d、13ではありません。</string>
+    <string name="pyramid_covered">そのカードはまだ下のカードに隠れています。</string>
+    <string name="pyramid_hint_deck">山札をタップして新しいカードをめくりましょう。</string>
+    <string name="pyramid_stuck_title">もう動かせません</string>
+    <string name="pyramid_stuck_message">もう取れるカードがありません。何手か戻して別の方法を試すか、あきらめることができます。</string>
+    <string name="pyramid_give_up">あきらめる</string>
+    <string name="pyramid_keep_playing">もう少し探す</string>
+    <string name="pyramid_lost">もう組を作れませんでした。</string>
+</resources>

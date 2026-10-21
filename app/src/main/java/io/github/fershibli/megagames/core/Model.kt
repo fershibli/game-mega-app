@@ -84,6 +84,9 @@ enum class GameId(
     NONOGRAM("nonogram", R.string.game_nonogram, R.string.howto_nonogram, GameCategory.PUZZLES),
     KAKURO("kakuro", R.string.game_kakuro, R.string.howto_kakuro, GameCategory.PUZZLES),
     KILLER("killer", R.string.game_killer, R.string.howto_killer, GameCategory.PUZZLES),
+    SPIDER("spider", R.string.game_spider, R.string.howto_spider, GameCategory.CARDS, io.github.fershibli.megagames.games.spider.SpiderRules.VARIANTS, hasDifficulty = false),
+    FREECELL("freecell", R.string.game_freecell, R.string.howto_freecell, GameCategory.CARDS),
+    PYRAMID("pyramid", R.string.game_pyramid, R.string.howto_pyramid, GameCategory.CARDS),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

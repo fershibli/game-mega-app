@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">Solitario Spider</string>
+    <string name="howto_spider">Forma escaleras del Rey al As del mismo palo: una escalera completa sale de la mesa. Toca una carta para moverla con las cartas que tiene encima, y tócala otra vez para probar otro sitio. Toca el mazo para repartir una nueva fila.</string>
+    <string name="spider_variant_one">Un palo</string>
+    <string name="spider_variant_one_desc">Solo picas. La forma más fácil, buena para aprender.</string>
+    <string name="spider_variant_two">Dos palos</string>
+    <string name="spider_variant_two_desc">Picas y corazones. Un poco más difícil.</string>
+    <string name="spider_variant_four">Cuatro palos</string>
+    <string name="spider_variant_four_desc">Los cuatro palos. Todo un desafío.</string>
+    <string name="spider_status">Escaleras: %1$d de 8 · Repartos: %2$d</string>
+    <string name="spider_fill_columns">Para repartir una nueva fila, cada columna necesita una carta. Primero mueve una carta a la columna vacía.</string>
+    <string name="spider_hint_deal">Toca el mazo para repartir una nueva fila.</string>
+    <string name="spider_cannot_move">Estas cartas no están en orden de un mismo palo, así que no pueden moverse juntas.</string>
+    <string name="spider_stuck_title">No quedan jugadas</string>
+    <string name="spider_stuck_message">No quedan jugadas útiles ni cartas para repartir. Puedes deshacer algunas jugadas y probar otro camino, o rendirte.</string>
+    <string name="spider_give_up">Rendirse</string>
+    <string name="spider_keep_playing">Seguir buscando</string>
+    <string name="spider_lost">No quedaban jugadas posibles.</string>
+</resources>
