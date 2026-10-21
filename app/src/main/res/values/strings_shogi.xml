@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_shogi">Shogi</string>
+    <string name="howto_shogi">Japanese chess. Tap one of your pieces (they point up), then a green dot. Pieces you capture join your side: tap one below the board to place it on an empty square. Checkmate the computer’s king to win.</string>
+    <string name="shogi_variant_standard">Shogi (9 × 9)</string>
+    <string name="shogi_variant_standard_desc">The full game on the 9 by 9 board.</string>
+    <string name="shogi_variant_mini">Mini shogi (5 × 5)</string>
+    <string name="shogi_variant_mini_desc">A small 5 by 5 board with fewer pieces: quick games, good for learning.</string>
+    <string name="shogi_pick_piece">Your turn: tap one of your pieces, on the board or in your hand</string>
+    <string name="shogi_pick_target">Tap a green dot to move there</string>
+    <string name="shogi_pick_drop">Tap a green dot to place the piece there</string>
+    <string name="shogi_check">Check! Your king is attacked: protect it</string>
+    <string name="shogi_pieces">Pieces</string>
+    <string name="shogi_guide_title">How the pieces move</string>
+    <string name="shogi_guide_marks">On each piece, a dot is one step that way and an arrow means any distance. Red characters are promoted pieces. The shaded rows at the far side (three rows, one in mini shogi) are where your pieces can promote.</string>
+    <string name="shogi_piece_king">King (王, 玉): one step in any direction.</string>
+    <string name="shogi_piece_rook">Rook (飛): any distance along a line. Promotes to a dragon.</string>
+    <string name="shogi_piece_bishop">Bishop (角): any distance diagonally. Promotes to a horse.</string>
+    <string name="shogi_piece_gold">Gold general (金): one step in any direction except diagonally backward. It does not promote.</string>
+    <string name="shogi_piece_silver">Silver general (銀): one step forward or diagonally. Promoted, it moves like a gold.</string>
+    <string name="shogi_piece_knight">Knight (桂): jumps two forward and one to the side, over any piece. Promoted, it moves like a gold.</string>
+    <string name="shogi_piece_lance">Lance (香): any distance straight forward. Promoted, it moves like a gold.</string>
+    <string name="shogi_piece_pawn">Pawn (歩): one step forward. Promoted, it becomes a tokin (と) and moves like a gold.</string>
+    <string name="shogi_piece_dragon">Dragon (龍), the promoted rook: any distance along a line, or one step diagonally.</string>
+    <string name="shogi_piece_horse">Horse (馬), the promoted bishop: any distance diagonally, or one step along a line.</string>
+    <string name="shogi_piece_promoted">Promoted pawn, lance, knight or silver (と, 杏, 圭, 全): moves like a gold general.</string>
+    <string name="shogi_promote_title">Promote this piece?</string>
+    <string name="shogi_promote_yes">Promote</string>
+    <string name="shogi_promote_no">Keep it as it is</string>
+    <string name="shogi_checkmate">Checkmate!</string>
+    <string name="shogi_draw_repetition">Draw: the same position came back four times.</string>
+    <string name="shogi_draw_limit">Draw: the game reached 400 moves.</string>
+</resources>

@@ -75,6 +75,9 @@ enum class GameId(
     BLOCKS("blocks", R.string.game_blocks, R.string.howto_blocks, GameCategory.PUZZLES),
     PAIRS("pairs", R.string.game_pairs, R.string.howto_pairs, GameCategory.PUZZLES),
     SNAKE("snake", R.string.game_snake, R.string.howto_snake, GameCategory.CALM_ACTION),
+    XIANGQI("xiangqi", R.string.game_xiangqi, R.string.howto_xiangqi, GameCategory.BOARD),
+    JANGGI("janggi", R.string.game_janggi, R.string.howto_janggi, GameCategory.BOARD),
+    SHOGI("shogi", R.string.game_shogi, R.string.howto_shogi, GameCategory.BOARD, listOf(GameVariant("standard", R.string.shogi_variant_standard, R.string.shogi_variant_standard_desc), GameVariant("mini", R.string.shogi_variant_mini, R.string.shogi_variant_mini_desc))),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

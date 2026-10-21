@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">الشطرنج الكوري</string>
+    <string name="howto_janggi">الشطرنج الكوري (جانغي). المس إحدى قطعك الزرقاء ثم نقطة خضراء. داخل القصرين يمكن للقطع أيضًا أن تسير على الخطوط القطرية. يمكنك أن تمرّر دورك بدل أن تلعب. حاصر الجنرال الأحمر لتفوز.</string>
+    <string name="janggi_pick_piece">دورك: المس إحدى قطعك الزرقاء</string>
+    <string name="janggi_pick_target">المس نقطة خضراء للانتقال إليها</string>
+    <string name="janggi_check">كش! جنرالك مهدَّد: احمِه</string>
+    <string name="janggi_pieces">القطع</string>
+    <string name="janggi_guide_title">كيف تتحرك القطع</string>
+    <string name="janggi_guide_marks">توضع القطع على تقاطعات الخطوط. على كل قطعة: النقطة خطوة واحدة، والنقطتان تدلان على قفزة الفيل الأطول، والسهم يعني أي مسافة، والسهم ذو الشرطة يعني أنها يجب أن تقفز فوق قطعة واحدة، والنقطة المفرغة خطوة قطرية مسموحة فقط على خطوط القصر.</string>
+    <string name="janggi_piece_general">الجنرال (楚، 漢): خطوة واحدة على خطوط القصر، بما فيها القطرية. لا يغادر القصر أبدًا.</string>
+    <string name="janggi_piece_guard">الحارس (士): يتحرك مثل الجنرال، خطوة واحدة على خطوط القصر، ويبقى في القصر.</string>
+    <string name="janggi_piece_elephant">الفيل (象): نقطة مستقيمة ثم نقطتان قطريًا إلى الخارج. يُمنع إذا كانت نقطة في الطريق مشغولة.</string>
+    <string name="janggi_piece_horse">الحصان (馬): نقطة مستقيمة ثم نقطة قطرية إلى الخارج. يُمنع إذا كانت النقطة الأولى مشغولة.</string>
+    <string name="janggi_piece_chariot">العربة (車): أي مسافة على خط، وعلى الخطوط القطرية داخل القصر.</string>
+    <string name="janggi_piece_cannon">المدفع (包): يجب أن يقفز فوق قطعة واحدة بالضبط ليتحرك أو ليأسر. لا يقفز أبدًا فوق مدفع آخر ولا يأسره.</string>
+    <string name="janggi_piece_soldier">الجندي (卒، 兵): خطوة واحدة إلى الأمام أو إلى الجانب، ولا يعود إلى الخلف. داخل قصر الخصم يمكنه أيضًا التقدم قطريًا على الخطوط.</string>
+    <string name="janggi_pass">تمرير</string>
+    <string name="janggi_ai_passed">مرّر الكمبيوتر دوره. الدور لك.</string>
+    <string name="janggi_must_pass">لا تستطيع أي قطعة من قطعك الحركة: المس «تمرير»</string>
+    <string name="janggi_checkmate">كش مات!</string>
+    <string name="janggi_draw_repetition">تعادل: تكرر الوضع نفسه ثلاث مرات.</string>
+    <string name="janggi_draw_limit">تعادل: 60 نقلة لكل طرف دون أي أسر.</string>
+    <string name="janggi_draw_material">تعادل: لم يبق لأي طرف قطعة تستطيع الهجوم.</string>
+    <string name="janggi_bikjang">تعادل: تقابل الجنرالان على خط خالٍ (بيكجانغ).</string>
+    <string name="janggi_draw_passes">تعادل: مرّر اللاعبان دوريهما واحدًا تلو الآخر.</string>
+</resources>
