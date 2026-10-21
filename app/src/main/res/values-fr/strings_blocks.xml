@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_blocks">Puzzle de blocs</string>
+    <string name="howto_blocks">Faites glisser une pièce du bas vers le plateau (ou touchez la pièce, puis le plateau). Remplissez une ligne ou une colonne entière pour l’effacer. Rien ne tombe et il n’y a pas de chrono : la partie ne finit que lorsqu’aucune pièce ne rentre.</string>
+    <string name="blocks_score">Score : %1$d · Record : %2$d</string>
+    <string name="blocks_rotate">Tourner</string>
+    <string name="blocks_no_fit">Plus aucune pièce ne rentre</string>
+    <string name="blocks_final">Score : %1$d\nRecord : %2$d</string>
+    <string name="blocks_new_best">Nouveau record !</string>
+</resources>

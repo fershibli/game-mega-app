@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">Pyramid</string>
+    <string name="howto_pyramid">Remove two uncovered cards that add up to 13: Queen and Ace, Jack and 2, 10 and 3… A King goes on its own. Tap the deck to turn a new card. Clear the whole pyramid to win.</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">Cards in the pyramid: %1$d</string>
+    <string name="pyramid_passes">Deck turns left: %1$d</string>
+    <string name="pyramid_needs">This card is worth %1$d: tap a card worth %2$d.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d, not 13.</string>
+    <string name="pyramid_covered">That card is still covered by the cards below it.</string>
+    <string name="pyramid_hint_deck">Tap the deck to turn a new card.</string>
+    <string name="pyramid_stuck_title">No more moves</string>
+    <string name="pyramid_stuck_message">No more cards can be removed. You can undo some moves and try another way, or give up.</string>
+    <string name="pyramid_give_up">Give up</string>
+    <string name="pyramid_keep_playing">Keep looking</string>
+    <string name="pyramid_lost">No more pairs could be made.</string>
+</resources>

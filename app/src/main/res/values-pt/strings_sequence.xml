@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sequence">Siga as cores</string>
+    <string name="howto_sequence">Observe os quadrados acenderem e depois toque neles na mesma ordem. A cada rodada entra mais uma cor.</string>
+    <string name="sequence_ready">Toque em Começar quando estiver pronto</string>
+    <string name="sequence_watch">Observe…</string>
+    <string name="sequence_again">Quase! Observe de novo…</string>
+    <string name="sequence_your_turn">Sua vez</string>
+    <string name="sequence_well_done">Muito bem!</string>
+    <string name="sequence_oops">Era outro quadrado</string>
+    <string name="sequence_progress">Cores: %1$d de %2$d</string>
+    <string name="sequence_best">Recorde: %1$d</string>
+    <string name="sequence_start">Começar</string>
+    <string name="sequence_watch_again">Ver de novo</string>
+    <string name="sequence_lose">Maior sequência repetida: %1$d.</string>
+    <string name="sequence_record">Novo recorde!</string>
+    <string name="sequence_pad_star">Quadrado com estrela</string>
+    <string name="sequence_pad_drop">Quadrado com gota</string>
+    <string name="sequence_pad_leaf">Quadrado com folha</string>
+    <string name="sequence_pad_heart">Quadrado com coração</string>
+    <plurals name="sequence_win">
+        <item quantity="one">Você repetiu %1$d cor!</item>
+        <item quantity="many">Você repetiu todas as %1$d cores!</item>
+        <item quantity="other">Você repetiu todas as %1$d cores!</item>
+    </plurals>
+</resources>

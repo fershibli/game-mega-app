@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">Spider</string>
+    <string name="howto_spider">Build runs from King down to Ace in one suit: a complete run leaves the table. Tap a card to move it with the cards on top of it, and tap it again to try another place. Tap the deck to deal a new row.</string>
+    <string name="spider_variant_one">One suit</string>
+    <string name="spider_variant_one_desc">Spades only. The easiest way to play, good for learning.</string>
+    <string name="spider_variant_two">Two suits</string>
+    <string name="spider_variant_two_desc">Spades and hearts. A little harder.</string>
+    <string name="spider_variant_four">Four suits</string>
+    <string name="spider_variant_four_desc">All four suits. A real challenge.</string>
+    <string name="spider_status">Runs: %1$d of 8 · Deals left: %2$d</string>
+    <string name="spider_fill_columns">To deal a new row, every column needs a card. Move a card into the empty column first.</string>
+    <string name="spider_hint_deal">Tap the deck to deal a new row.</string>
+    <string name="spider_cannot_move">These cards are not in order of one suit, so they cannot move together.</string>
+    <string name="spider_stuck_title">No more moves</string>
+    <string name="spider_stuck_message">There are no useful moves left and no cards to deal. You can undo some moves and try another way, or give up.</string>
+    <string name="spider_give_up">Give up</string>
+    <string name="spider_keep_playing">Keep looking</string>
+    <string name="spider_lost">No more moves were possible.</string>
+</resources>

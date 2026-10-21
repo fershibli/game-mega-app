@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_spider">スパイダー</string>
+    <string name="howto_spider">同じマークでキングからエースまで並べましょう。そろった列は場から消えます。カードをタップすると上のカードといっしょに動きます。もう一度タップすると別の場所を試します。山札をタップすると新しい列を配ります。</string>
+    <string name="spider_variant_one">1種類のマーク</string>
+    <string name="spider_variant_one_desc">スペードだけ。いちばんやさしく、覚えるのにぴったりです。</string>
+    <string name="spider_variant_two">2種類のマーク</string>
+    <string name="spider_variant_two_desc">スペードとハート。少しむずかしくなります。</string>
+    <string name="spider_variant_four">4種類のマーク</string>
+    <string name="spider_variant_four_desc">4つのマークすべて。本格的な挑戦です。</string>
+    <string name="spider_status">そろった列：%1$d／8 · 残りの配り：%2$d</string>
+    <string name="spider_fill_columns">新しい列を配るには、すべての列にカードが必要です。先に空いた列へカードを動かしてください。</string>
+    <string name="spider_hint_deal">山札をタップして新しい列を配りましょう。</string>
+    <string name="spider_cannot_move">このカードは同じマークの順番になっていないので、いっしょには動かせません。</string>
+    <string name="spider_stuck_title">もう動かせません</string>
+    <string name="spider_stuck_message">役に立つ手も、配るカードも残っていません。何手か戻して別の方法を試すか、あきらめることができます。</string>
+    <string name="spider_give_up">あきらめる</string>
+    <string name="spider_keep_playing">もう少し探す</string>
+    <string name="spider_lost">もう動かせる手がありませんでした。</string>
+</resources>

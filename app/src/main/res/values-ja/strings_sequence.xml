@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sequence">色をまねして</string>
+    <string name="howto_sequence">四角が光る順番をよく見て、同じ順番でタップします。1回ごとに色が1つずつ増えます。</string>
+    <string name="sequence_ready">準備ができたら「スタート」をタップ</string>
+    <string name="sequence_watch">よく見てください…</string>
+    <string name="sequence_again">おしい！もう一度見てください…</string>
+    <string name="sequence_your_turn">あなたの番です</string>
+    <string name="sequence_well_done">よくできました！</string>
+    <string name="sequence_oops">ちがう四角でした</string>
+    <string name="sequence_progress">色：%1$d／%2$d</string>
+    <string name="sequence_best">最高記録：%1$d</string>
+    <string name="sequence_start">スタート</string>
+    <string name="sequence_watch_again">もう一度見る</string>
+    <string name="sequence_lose">まねできた最長の長さ：%1$d。</string>
+    <string name="sequence_record">新記録です！</string>
+    <string name="sequence_pad_star">星の四角</string>
+    <string name="sequence_pad_drop">しずくの四角</string>
+    <string name="sequence_pad_leaf">葉っぱの四角</string>
+    <string name="sequence_pad_heart">ハートの四角</string>
+    <plurals name="sequence_win">
+        <item quantity="other">%1$d色すべてまねできました！</item>
+    </plurals>
+</resources>

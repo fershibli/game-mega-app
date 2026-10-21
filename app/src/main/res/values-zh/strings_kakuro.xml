@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_kakuro">数和</string>
+    <string name="howto_kakuro">数字填字游戏：在白格里填入1到9，让横向或纵向每一段白格的数字之和等于它前面黑格里的数字，同一段里数字不能重复。</string>
+    <string name="kakuro_tap_cell">先点一个白格，再点一个数字</string>
+    <string name="kakuro_hint_again">再点一次提示，就会填好这个方格。</string>
+</resources>

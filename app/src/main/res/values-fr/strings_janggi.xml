@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_janggi">Échecs coréens</string>
+    <string name="howto_janggi">Échecs coréens (janggi). Touchez une de vos pièces bleues, puis un point vert. Dans les palais, les pièces peuvent aussi suivre les lignes diagonales. Vous pouvez passer au lieu de jouer. Enfermez le général rouge pour gagner.</string>
+    <string name="janggi_pick_piece">À vous : touchez une de vos pièces bleues</string>
+    <string name="janggi_pick_target">Touchez un point vert pour y aller</string>
+    <string name="janggi_check">Échec ! Votre général est attaqué : protégez-le</string>
+    <string name="janggi_pieces">Pièces</string>
+    <string name="janggi_guide_title">Comment se déplacent les pièces</string>
+    <string name="janggi_guide_marks">Les pièces se placent sur les croisements des lignes. Sur chaque pièce, un point est un pas, deux points marquent le saut plus long de l’éléphant, une flèche veut dire n’importe quelle distance, une flèche barrée veut dire qu’elle doit sauter par-dessus une pièce, et un point creux est un pas en diagonale permis seulement sur les lignes d’un palais.</string>
+    <string name="janggi_piece_general">Général (楚, 漢) : un pas le long des lignes du palais, diagonales comprises. Il ne quitte jamais le palais.</string>
+    <string name="janggi_piece_guard">Garde (士) : se déplace comme le général, un pas le long des lignes du palais, et reste dans le palais.</string>
+    <string name="janggi_piece_elephant">Éléphant (象) : un point tout droit, puis deux en diagonale vers l’extérieur. Bloqué si un point du chemin est occupé.</string>
+    <string name="janggi_piece_horse">Cheval (馬) : un point tout droit, puis un en diagonale vers l’extérieur. Bloqué si le premier point est occupé.</string>
+    <string name="janggi_piece_chariot">Char (車) : n’importe quelle distance le long d’une ligne, et le long des diagonales à l’intérieur d’un palais.</string>
+    <string name="janggi_piece_cannon">Canon (包) : doit sauter par-dessus exactement une pièce pour se déplacer ou pour prendre. Il ne saute jamais un autre canon et ne le prend jamais.</string>
+    <string name="janggi_piece_soldier">Soldat (卒, 兵) : un pas en avant ou sur le côté, jamais en arrière. Dans le palais ennemi, il peut aussi avancer en diagonale le long des lignes.</string>
+    <string name="janggi_pass">Passer</string>
+    <string name="janggi_ai_passed">L’ordinateur a passé son tour. À vous.</string>
+    <string name="janggi_must_pass">Aucune de vos pièces ne peut bouger : touchez Passer</string>
+    <string name="janggi_checkmate">Échec et mat !</string>
+    <string name="janggi_draw_repetition">Partie nulle : la même position est revenue trois fois.</string>
+    <string name="janggi_draw_limit">Partie nulle : 60 coups chacun sans aucune prise.</string>
+    <string name="janggi_draw_material">Partie nulle : aucun camp n’a plus de pièce capable d’attaquer.</string>
+    <string name="janggi_bikjang">Partie nulle : les deux généraux se font face sur une ligne libre (bikjang).</string>
+    <string name="janggi_draw_passes">Partie nulle : les deux joueurs ont passé, l’un après l’autre.</string>
+</resources>

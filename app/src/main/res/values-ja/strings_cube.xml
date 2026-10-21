@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">キューブパズル</string>
+    <string name="howto_cube">各面が一色になるまで層を回しましょう。シールの上を指でなぞるとその列が回ります。何もない所をドラッグすると向きを変えられます。下で面を選んで丸い矢印を押しても回せます。</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">8個のピースの小さなキューブ。いちばんやさしい入門です。</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">定番のキューブ。ヒントで一段ずつそろえる方法を学べます。</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">大きめのキューブで、中心が固定されていません。内側の層は「層」ボタンで選びます。</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">いちばん大きなキューブ。じっくり楽しみたい方に。</string>
+    <string name="cube_moves">手数: %1$d</string>
+    <string name="cube_solved">完成！ すべての面が一色になりました。</string>
+    <string name="cube_hint_step">ステップ %1$d / %2$d: %3$s</string>
+    <string name="cube_hint_back">スタートまで残り: %1$d 回</string>
+    <string name="cube_stage_cross">下の十字</string>
+    <string name="cube_stage_corners">下の角</string>
+    <string name="cube_stage_middle">真ん中の段</string>
+    <string name="cube_stage_top_cross">上の十字</string>
+    <string name="cube_stage_top_edges">上の辺</string>
+    <string name="cube_stage_top_place">上の角を正しい位置へ</string>
+    <string name="cube_stage_top_turn">上の角の向きをそろえる</string>
+    <string name="cube_stage_top_face">上の面の色</string>
+    <string name="cube_turn_cw">選んだ面を時計回りに回す</string>
+    <string name="cube_turn_ccw">選んだ面を反時計回りに回す</string>
+    <string name="cube_layer">層 %1$d</string>
+    <string name="cube_face">面 %1$d</string>
+    <string name="cube_view_left">キューブ全体を左に回す</string>
+    <string name="cube_view_right">キューブ全体を右に回す</string>
+    <string name="cube_view_up">キューブ全体を上に回す</string>
+    <string name="cube_view_down">キューブ全体を下に回す</string>
+</resources>

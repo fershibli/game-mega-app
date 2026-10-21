@@ -43,8 +43,9 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
@@ -103,6 +104,7 @@ private fun CheckersScreen(state: MutableState<CheckersState>, host: GameHost, r
     val candidates = if (partial.isEmpty()) emptyList() else legal.filter { it.path.size >= partial.size && it.path.subList(0, partial.size) == partial }
     val mustCapture = legal.firstOrNull()?.captured?.isNotEmpty() == true
 
+    val pace = currentPace
     LaunchedEffect(s) {
         when (s.turn) {
             0 -> {
@@ -111,11 +113,11 @@ private fun CheckersScreen(state: MutableState<CheckersState>, host: GameHost, r
                     1 -> context.getString(if (s.winner == Checkers.PLAYER) R.string.checkers_ai_no_pieces else R.string.checkers_you_no_pieces)
                     else -> context.getString(if (s.winner == Checkers.PLAYER) R.string.checkers_ai_no_moves else R.string.checkers_you_no_moves)
                 }
-                delay(700)
+                pace.wait(700)
                 host.finish(GameOutcome(s.winner == Checkers.PLAYER, detail))
             }
             Checkers.AI -> {
-                delay(600)
+                pace.wait(600)
                 val move = withContext(Dispatchers.Default) { Checkers.bestMove(board, Checkers.AI, rules, host.difficulty, Random.Default) }
                 if (move != null) state.value = advanceCheckers(s, move, rules)
             }

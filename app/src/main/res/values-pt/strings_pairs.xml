@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pairs">Gotas de cor</string>
+    <string name="howto_pairs">Um par de gotas cai devagar. Mova-o com as setas (ou deslizando o dedo), gire-o ou deixe-o cair. Quando 3 ou mais gotas da mesma cor se tocam, elas estouram e as de cima caem: estouros seguidos formam uma corrente que vale mais. O jogo termina quando o alto da coluna do meio fica cheio.</string>
+    <string name="pairs_score">Pontos: %1$d · Recorde: %2$d</string>
+    <string name="pairs_chain">Corrente ×%1$d!</string>
+    <string name="pairs_next">Próximo</string>
+    <string name="pairs_left">Mover para a esquerda</string>
+    <string name="pairs_right">Mover para a direita</string>
+    <string name="pairs_turn">Girar</string>
+    <string name="pairs_drop">Soltar</string>
+    <string name="pairs_pause">Pausar</string>
+    <string name="pairs_continue">Continuar</string>
+    <string name="pairs_start">Começar</string>
+    <string name="pairs_paused">Pausado. Sem pressa.</string>
+    <string name="pairs_ready">Comece quando quiser</string>
+    <string name="pairs_final">Pontos: %1$d\nRecorde: %2$d</string>
+    <string name="pairs_new_best">Novo recorde!</string>
+    <string name="pairs_full">A coluna do meio está cheia</string>
+</resources>

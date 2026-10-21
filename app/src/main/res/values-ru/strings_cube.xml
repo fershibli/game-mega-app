@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Magic cube (color cube puzzle) -->
+    <string name="game_cube">Кубик-головоломка</string>
+    <string name="howto_cube">Поворачивайте слои, пока каждая грань не станет одного цвета. Проведите пальцем по наклейке, чтобы повернуть её ряд, тяните по пустому месту, чтобы осмотреть кубик, или выберите грань внизу и нажмите круглые стрелки.</string>
+    <string name="cube_variant_2">2×2×2</string>
+    <string name="cube_variant_2_desc">Маленький кубик из 8 деталей: самое мягкое начало.</string>
+    <string name="cube_variant_3">3×3×3</string>
+    <string name="cube_variant_3_desc">Классический кубик. Подсказка учит собирать слой за слоем.</string>
+    <string name="cube_variant_4">4×4×4</string>
+    <string name="cube_variant_4_desc">Кубик побольше, без закреплённых центров. Кнопка «Слой» поворачивает внутренние слои.</string>
+    <string name="cube_variant_5">5×5×5</string>
+    <string name="cube_variant_5_desc">Самый большой кубик, для терпеливых.</string>
+    <string name="cube_moves">Ходов: %1$d</string>
+    <string name="cube_solved">Собрано! Каждая грань одного цвета.</string>
+    <string name="cube_hint_step">Шаг %1$d из %2$d: %3$s</string>
+    <string name="cube_hint_back">Поворотов до начала: %1$d</string>
+    <string name="cube_stage_cross">нижний крест</string>
+    <string name="cube_stage_corners">нижние углы</string>
+    <string name="cube_stage_middle">средний слой</string>
+    <string name="cube_stage_top_cross">верхний крест</string>
+    <string name="cube_stage_top_edges">верхние рёбра</string>
+    <string name="cube_stage_top_place">верхние углы на свои места</string>
+    <string name="cube_stage_top_turn">развернуть верхние углы</string>
+    <string name="cube_stage_top_face">верхний цвет</string>
+    <string name="cube_turn_cw">Повернуть выбранную грань по часовой стрелке</string>
+    <string name="cube_turn_ccw">Повернуть выбранную грань против часовой стрелки</string>
+    <string name="cube_layer">Слой %1$d</string>
+    <string name="cube_face">Грань %1$d</string>
+    <string name="cube_view_left">Повернуть весь кубик влево</string>
+    <string name="cube_view_right">Повернуть весь кубик вправо</string>
+    <string name="cube_view_up">Повернуть весь кубик вверх</string>
+    <string name="cube_view_down">Повернуть весь кубик вниз</string>
+</resources>

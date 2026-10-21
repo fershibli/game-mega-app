@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pyramid">Пирамида</string>
+    <string name="howto_pyramid">Убирайте две открытые карты, которые вместе дают 13: даму и туза, валета и двойку, десятку и тройку… Король уходит один. Нажмите на колоду, чтобы открыть новую карту. Разберите всю пирамиду, чтобы выиграть.</string>
+    <string name="pyramid_values">A = 1 · J = 11 · Q = 12 · K = 13</string>
+    <string name="pyramid_left">Карт в пирамиде: %1$d</string>
+    <string name="pyramid_passes">Осталось проходов колоды: %1$d</string>
+    <string name="pyramid_needs">Эта карта стоит %1$d: нажмите на карту, которая стоит %2$d.</string>
+    <string name="pyramid_not_13">%1$d + %2$d = %3$d, а не 13.</string>
+    <string name="pyramid_covered">Эта карта ещё закрыта картами снизу.</string>
+    <string name="pyramid_hint_deck">Нажмите на колоду, чтобы открыть новую карту.</string>
+    <string name="pyramid_stuck_title">Ходов больше нет</string>
+    <string name="pyramid_stuck_message">Больше нельзя убрать ни одной карты. Можно отменить несколько ходов и попробовать по-другому или сдаться.</string>
+    <string name="pyramid_give_up">Сдаться</string>
+    <string name="pyramid_keep_playing">Искать дальше</string>
+    <string name="pyramid_lost">Пар больше не осталось.</string>
+</resources>
