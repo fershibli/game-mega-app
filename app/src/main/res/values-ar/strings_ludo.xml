@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">لودو</string>
+    <string name="howto_ludo">ارمِ النرد وحرّك قطعك الأربع حول اللوحة حتى المركز. تحتاج إلى 6 لإخراج قطعة. إذا وقفت على قطعة منافس أعدتها إلى بيتها. يفوز من يوصل قطعه الأربع إلى المركز أولًا.</string>
+    <string name="ludo_variant_classic">الكلاسيكية</string>
+    <string name="ludo_variant_classic_desc">المربعات ذات النجمة آمنة، والرقم 6 يمنح رمية أخرى، وثلاث 6 متتالية تُضيّع الدور.</string>
+    <string name="ludo_variant_simple">البسيطة</string>
+    <string name="ludo_variant_simple_desc">لا مربعات آمنة: يمكن أسر أي قطعة. والرقم 6 ما زال يمنح رمية أخرى.</string>
+    <string name="ludo_choose_opponents">كم لاعبًا للحاسوب؟</string>
+    <string name="ludo_you_are">أنت تلعب بالأزرق، في الأسفل يسارًا. أنت تبدأ.</string>
+    <string name="ludo_red">الأحمر</string>
+    <string name="ludo_green">الأخضر</string>
+    <string name="ludo_yellow">الأصفر</string>
+    <string name="ludo_blue">الأزرق</string>
+    <string name="ludo_home_count">قطعك في المركز: %1$d من 4</string>
+    <string name="ludo_roll">ارمِ</string>
+    <string name="ludo_roll_prompt">دورك: المس النرد</string>
+    <string name="ludo_pick_piece">حصلت على %1$d: المس قطعة مضيئة</string>
+    <string name="ludo_no_move">حصلت على %1$d: لا يمكن تحريك أي قطعة</string>
+    <string name="ludo_three_sixes">ثلاث 6 متتالية: ضاع الدور</string>
+    <string name="ludo_computer_turn">%1$s يلعب…</string>
+    <string name="ludo_computer_rolled">%1$s حصل على %2$d</string>
+    <string name="ludo_you_won">وصلت قطعك الأربع إلى المركز!</string>
+    <string name="ludo_other_won">%1$s أوصل قطعه الأربع إلى المركز أولًا.</string>
+</resources>

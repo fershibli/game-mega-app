@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">Ludo</string>
+    <string name="howto_ludo">Lancez le dé et faites le tour du plateau avec vos quatre pions jusqu’au centre. Il faut un 6 pour sortir un pion. Arrêtez-vous sur un pion adverse pour le renvoyer chez lui. Le premier à amener ses quatre pions au centre gagne.</string>
+    <string name="ludo_variant_classic">Classique</string>
+    <string name="ludo_variant_classic_desc">Les cases étoile sont protégées, un 6 fait rejouer et trois 6 de suite font perdre le tour.</string>
+    <string name="ludo_variant_simple">Simple</string>
+    <string name="ludo_variant_simple_desc">Aucune case protégée : tout pion peut être pris. Un 6 fait toujours rejouer.</string>
+    <string name="ludo_choose_opponents">Combien de joueurs ordinateur ?</string>
+    <string name="ludo_you_are">Vous jouez le bleu, en bas à gauche. Vous commencez.</string>
+    <string name="ludo_red">Rouge</string>
+    <string name="ludo_green">Vert</string>
+    <string name="ludo_yellow">Jaune</string>
+    <string name="ludo_blue">Bleu</string>
+    <string name="ludo_home_count">Vos pions au centre : %1$d sur 4</string>
+    <string name="ludo_roll">Lancer</string>
+    <string name="ludo_roll_prompt">À vous : touchez le dé</string>
+    <string name="ludo_pick_piece">Vous avez fait %1$d : touchez un pion en surbrillance</string>
+    <string name="ludo_no_move">Vous avez fait %1$d : aucun pion ne peut avancer</string>
+    <string name="ludo_three_sixes">Trois 6 de suite : le tour est perdu</string>
+    <string name="ludo_computer_turn">%1$s joue…</string>
+    <string name="ludo_computer_rolled">%1$s a fait %2$d</string>
+    <string name="ludo_you_won">Vos quatre pions sont arrivés au centre !</string>
+    <string name="ludo_other_won">%1$s a amené ses quatre pions au centre en premier.</string>
+</resources>

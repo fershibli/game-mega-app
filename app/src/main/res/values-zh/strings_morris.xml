@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">九子棋</string>
+    <string name="howto_morris">双方轮流把棋子放到点上，然后沿着线移动。三子连成一线（成“磨”）就可以拿走电脑的一枚棋子。让电脑只剩两枚棋子或无路可走，你就赢了。</string>
+    <string name="morris_variant_nine">九子棋（9 子）</string>
+    <string name="morris_variant_nine_desc">每方 9 枚棋子，三个方框。只剩 3 枚时，你的棋子可以跳到任意点。</string>
+    <string name="morris_variant_six">六子棋盘（6 子）</string>
+    <string name="morris_variant_six_desc">每方 6 枚棋子，两个方框的小棋盘。不能跳。</string>
+    <string name="morris_variant_twelve">十二子棋（12 子）</string>
+    <string name="morris_variant_twelve_desc">每方 12 枚棋子，斜线也能连成一线。只剩 3 枚时可以跳。</string>
+    <string name="morris_score">棋子：你 %1$d · 电脑 %2$d</string>
+    <string name="morris_place">轮到你：点一个空点放下棋子（还剩 %1$d 枚）</string>
+    <string name="morris_pick_piece">轮到你：点一枚你的棋子</string>
+    <string name="morris_pick_target">现在点要走到的位置</string>
+    <string name="morris_fly">你只有 3 枚棋子：可以跳到任意空点</string>
+    <string name="morris_remove">成线了！点一枚电脑的棋子把它拿走</string>
+    <string name="morris_ai_two_left">电脑只剩两枚棋子。</string>
+    <string name="morris_ai_blocked">电脑无路可走。</string>
+    <string name="morris_you_two_left">你只剩两枚棋子。</string>
+    <string name="morris_you_blocked">你无路可走。</string>
+    <string name="morris_draw">和棋：双方各走 50 步都没有成线。</string>
+    <string name="morris_draw_full">和棋：棋盘已满。</string>
+</resources>

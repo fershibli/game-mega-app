@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">Juego del molino</string>
+    <string name="howto_morris">Por turnos, colocad las fichas en los puntos y después movedlas por las líneas. Tres en línea (un molino) te deja quitar una ficha del ordenador. Déjalo con dos fichas o sin movimientos para ganar.</string>
+    <string name="morris_variant_nine">Molino de 9</string>
+    <string name="morris_variant_nine_desc">9 fichas cada uno en tres cuadrados. Con solo 3 fichas, las tuyas pueden saltar a cualquier punto.</string>
+    <string name="morris_variant_six">Molino de 6</string>
+    <string name="morris_variant_six_desc">6 fichas cada uno en un tablero más pequeño de dos cuadrados. Sin saltos.</string>
+    <string name="morris_variant_twelve">Molino de 12</string>
+    <string name="morris_variant_twelve_desc">12 fichas cada uno y diagonales que también forman molinos. Con 3 fichas, las tuyas pueden saltar.</string>
+    <string name="morris_score">Fichas: tú %1$d · ordenador %2$d</string>
+    <string name="morris_place">Tu turno: toca un punto libre para colocar una ficha. Por colocar: %1$d</string>
+    <string name="morris_pick_piece">Tu turno: toca una de tus fichas</string>
+    <string name="morris_pick_target">Ahora toca adónde debe ir</string>
+    <string name="morris_fly">Tienes 3 fichas: pueden saltar a cualquier punto libre</string>
+    <string name="morris_remove">¡Molino! Toca una ficha del ordenador para quitarla</string>
+    <string name="morris_ai_two_left">Al ordenador solo le quedan dos fichas.</string>
+    <string name="morris_ai_blocked">El ordenador no puede moverse.</string>
+    <string name="morris_you_two_left">Solo te quedan dos fichas.</string>
+    <string name="morris_you_blocked">No puedes moverte.</string>
+    <string name="morris_draw">Empate: 50 jugadas cada uno sin molino.</string>
+    <string name="morris_draw_full">Empate: el tablero está lleno.</string>
+</resources>

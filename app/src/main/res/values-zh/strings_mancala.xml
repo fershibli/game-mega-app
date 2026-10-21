@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">播棋</string>
+    <string name="howto_mancala">选一个你的坑：坑里的种子会按逆时针方向一颗一颗播到后面的坑里。按规则吃掉种子。最后种子多的一方获胜。</string>
+    <string name="mancala_variant_kalah">卡拉哈</string>
+    <string name="mancala_variant_kalah_desc">6 个坑，每坑 4 颗种子，另有一个仓。最后一颗落入自己的仓可以再走一次；落入自己的空坑，可以吃掉对面的种子。</string>
+    <string name="mancala_variant_oware">欧瓦雷</string>
+    <string name="mancala_variant_oware_desc">仓里不播种子。让电脑的坑里变成 2 或 3 颗就能吃掉，而且不能让电脑没有种子。</string>
+    <string name="mancala_score">你的仓：%1$d · 电脑：%2$d</string>
+    <string name="mancala_pick">轮到你：点一个你的坑（下面一排）</string>
+    <string name="mancala_again">最后一颗种子落进了你的仓：再走一次！</string>
+    <string name="mancala_feed">电脑没有种子了：请选一个能给它种子的坑</string>
+    <string name="mancala_final">最终结果：你 %1$d，电脑 %2$d。</string>
+    <string name="mancala_draw">平局：双方都是 %1$d。</string>
+</resources>

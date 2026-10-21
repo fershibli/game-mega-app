@@ -82,6 +82,9 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.GO -> io.github.fershibli.megagames.games.go.goThumbnail(this, p)
             GameId.GOMOKU -> io.github.fershibli.megagames.games.gomoku.gomokuThumbnail(this, p)
             GameId.FOURINROW -> io.github.fershibli.megagames.games.fourinrow.fourInRowThumbnail(this, p)
+            GameId.LUDO -> io.github.fershibli.megagames.games.ludo.ludoThumbnail(this, p)
+            GameId.MORRIS -> io.github.fershibli.megagames.games.morris.morrisThumbnail(this, p)
+            GameId.MANCALA -> io.github.fershibli.megagames.games.mancala.mancalaThumbnail(this, p)
         }
     }
 }

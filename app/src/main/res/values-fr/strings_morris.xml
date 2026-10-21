@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">Jeu du moulin</string>
+    <string name="howto_morris">Posez vos pions à tour de rôle sur les points, puis déplacez-les le long des lignes. Trois pions alignés (un moulin) vous permettent de retirer un pion de l’ordinateur. Laissez-lui deux pions ou aucun coup pour gagner.</string>
+    <string name="morris_variant_nine">Moulin à 9</string>
+    <string name="morris_variant_nine_desc">9 pions chacun sur trois carrés. Avec 3 pions seulement, les vôtres peuvent sauter sur n’importe quel point.</string>
+    <string name="morris_variant_six">Moulin à 6</string>
+    <string name="morris_variant_six_desc">6 pions chacun sur un plateau plus petit à deux carrés. Pas de saut.</string>
+    <string name="morris_variant_twelve">Moulin à 12</string>
+    <string name="morris_variant_twelve_desc">12 pions chacun et des diagonales qui forment aussi des moulins. Avec 3 pions, les vôtres peuvent sauter.</string>
+    <string name="morris_score">Pions : vous %1$d · ordinateur %2$d</string>
+    <string name="morris_place">À vous : touchez un point libre pour poser un pion. À poser : %1$d</string>
+    <string name="morris_pick_piece">À vous : touchez un de vos pions</string>
+    <string name="morris_pick_target">Touchez maintenant où il doit aller</string>
+    <string name="morris_fly">Vous avez 3 pions : ils peuvent sauter sur n’importe quel point libre</string>
+    <string name="morris_remove">Un moulin ! Touchez un pion de l’ordinateur pour le retirer</string>
+    <string name="morris_ai_two_left">L’ordinateur n’a plus que deux pions.</string>
+    <string name="morris_ai_blocked">L’ordinateur ne peut plus bouger.</string>
+    <string name="morris_you_two_left">Il ne vous reste que deux pions.</string>
+    <string name="morris_you_blocked">Vous ne pouvez plus bouger.</string>
+    <string name="morris_draw">Match nul : 50 coups chacun sans moulin.</string>
+    <string name="morris_draw_full">Match nul : le plateau est plein.</string>
+</resources>

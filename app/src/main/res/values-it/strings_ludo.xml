@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">Ludo</string>
+    <string name="howto_ludo">Tira il dado e porta le tue quattro pedine intorno al tabellone fino al centro. Serve un 6 per far uscire una pedina. Fermati su una pedina avversaria per rimandarla a casa. Vince chi porta per primo tutte e quattro le pedine al centro.</string>
+    <string name="ludo_variant_classic">Classico</string>
+    <string name="ludo_variant_classic_desc">Le caselle con la stella sono sicure, il 6 fa ritirare e tre 6 di fila fanno perdere il turno.</string>
+    <string name="ludo_variant_simple">Semplice</string>
+    <string name="ludo_variant_simple_desc">Nessuna casella sicura: ogni pedina può essere mangiata. Il 6 fa sempre ritirare.</string>
+    <string name="ludo_choose_opponents">Quanti giocatori del computer?</string>
+    <string name="ludo_you_are">Giochi con il blu, in basso a sinistra. Cominci tu.</string>
+    <string name="ludo_red">Rosso</string>
+    <string name="ludo_green">Verde</string>
+    <string name="ludo_yellow">Giallo</string>
+    <string name="ludo_blue">Blu</string>
+    <string name="ludo_home_count">Le tue pedine al centro: %1$d su 4</string>
+    <string name="ludo_roll">Tira</string>
+    <string name="ludo_roll_prompt">Tocca a te: tocca il dado</string>
+    <string name="ludo_pick_piece">Hai fatto %1$d: tocca una pedina evidenziata</string>
+    <string name="ludo_no_move">Hai fatto %1$d: nessuna pedina può muoversi</string>
+    <string name="ludo_three_sixes">Tre 6 di fila: il turno è perso</string>
+    <string name="ludo_computer_turn">%1$s sta giocando…</string>
+    <string name="ludo_computer_rolled">%1$s ha fatto %2$d</string>
+    <string name="ludo_you_won">Tutte e quattro le tue pedine sono al centro!</string>
+    <string name="ludo_other_won">%1$s ha portato per primo le quattro pedine al centro.</string>
+</resources>

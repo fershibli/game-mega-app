@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">Mancala</string>
+    <string name="howto_mancala">Scegli una delle tue buche: i suoi semi vengono seminati uno alla volta nelle buche seguenti, in senso antiorario. Cattura i semi come dicono le regole. Vince chi finisce con più semi.</string>
+    <string name="mancala_variant_kalah">Kalah</string>
+    <string name="mancala_variant_kalah_desc">6 buche con 4 semi e un granaio. L’ultimo seme nel tuo granaio fa rigiocare; in una tua buca vuota, prende i semi di fronte.</string>
+    <string name="mancala_variant_oware">Oware</string>
+    <string name="mancala_variant_oware_desc">Nei granai non si semina. Lascia 2 o 3 semi nelle buche del computer per prenderli, e non lasciarlo mai senza semi.</string>
+    <string name="mancala_score">Il tuo granaio: %1$d · Computer: %2$d</string>
+    <string name="mancala_pick">Tocca a te: tocca una delle tue buche (fila in basso)</string>
+    <string name="mancala_again">L’ultimo seme è finito nel tuo granaio: gioca ancora!</string>
+    <string name="mancala_feed">Il computer non ha semi: scegli una buca che gliene dia</string>
+    <string name="mancala_final">Risultato finale: tu %1$d, computer %2$d.</string>
+    <string name="mancala_draw">Pareggio: ognuno ne ha %1$d.</string>
+</resources>

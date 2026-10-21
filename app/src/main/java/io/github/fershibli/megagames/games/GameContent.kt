@@ -63,5 +63,8 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.GO -> io.github.fershibli.megagames.games.go.GoGame(host)
         GameId.GOMOKU -> io.github.fershibli.megagames.games.gomoku.GomokuGame(host)
         GameId.FOURINROW -> io.github.fershibli.megagames.games.fourinrow.FourInRowGame(host)
+        GameId.LUDO -> io.github.fershibli.megagames.games.ludo.LudoGame(host)
+        GameId.MORRIS -> io.github.fershibli.megagames.games.morris.MorrisGame(host)
+        GameId.MANCALA -> io.github.fershibli.megagames.games.mancala.MancalaGame(host)
     }
 }

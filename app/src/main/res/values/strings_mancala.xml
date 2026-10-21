@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">Mancala</string>
+    <string name="howto_mancala">Pick one of your pits: its seeds are sown one by one into the next pits, going counterclockwise. Capture seeds as the rules allow. Whoever ends with more seeds wins.</string>
+    <string name="mancala_variant_kalah">Kalah</string>
+    <string name="mancala_variant_kalah_desc">6 pits with 4 seeds each and a store. A last seed in your store gives another turn; in an empty pit of yours, it takes the seeds opposite.</string>
+    <string name="mancala_variant_oware">Oware</string>
+    <string name="mancala_variant_oware_desc">The stores are not sown. Make 2 or 3 seeds in the computer’s pits to take them, and never leave it without seeds.</string>
+    <string name="mancala_score">Your store: %1$d · Computer: %2$d</string>
+    <string name="mancala_pick">Your turn: tap one of your pits (bottom row)</string>
+    <string name="mancala_again">Your last seed fell in your store: play again!</string>
+    <string name="mancala_feed">The computer has no seeds: pick a pit that gives it some</string>
+    <string name="mancala_final">Final count: you %1$d, computer %2$d.</string>
+    <string name="mancala_draw">A draw: each side has %1$d.</string>
+</resources>

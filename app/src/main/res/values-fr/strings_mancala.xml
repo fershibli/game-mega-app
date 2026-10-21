@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">Mancala</string>
+    <string name="howto_mancala">Choisissez un de vos trous : ses graines sont semées une à une dans les trous suivants, dans le sens inverse des aiguilles d’une montre. Prenez des graines comme le permettent les règles. Celui qui finit avec le plus de graines gagne.</string>
+    <string name="mancala_variant_kalah">Kalah</string>
+    <string name="mancala_variant_kalah_desc">6 trous de 4 graines et un grenier. La dernière graine dans votre grenier fait rejouer ; dans un de vos trous vide, elle prend les graines d’en face.</string>
+    <string name="mancala_variant_oware">Awalé</string>
+    <string name="mancala_variant_oware_desc">On ne sème pas dans les greniers. Faites 2 ou 3 graines dans les trous de l’ordinateur pour les prendre, et ne le laissez jamais sans graines.</string>
+    <string name="mancala_score">Votre grenier : %1$d · Ordinateur : %2$d</string>
+    <string name="mancala_pick">À vous : touchez un de vos trous (rangée du bas)</string>
+    <string name="mancala_again">Votre dernière graine est dans votre grenier : rejouez !</string>
+    <string name="mancala_feed">L’ordinateur n’a plus de graines : choisissez un trou qui lui en donne</string>
+    <string name="mancala_final">Score final : vous %1$d, ordinateur %2$d.</string>
+    <string name="mancala_draw">Égalité : chacun en a %1$d.</string>
+</resources>

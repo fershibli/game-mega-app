@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">Ludo</string>
+    <string name="howto_ludo">Roll the die and race your four pieces around the board to the center. You need a 6 to bring a piece out. Land on a rival piece to send it back home. Get all four pieces to the center first to win.</string>
+    <string name="ludo_variant_classic">Classic</string>
+    <string name="ludo_variant_classic_desc">Star squares are safe, a 6 gives another roll, and three 6s in a row lose the turn.</string>
+    <string name="ludo_variant_simple">Simple</string>
+    <string name="ludo_variant_simple_desc">No safe squares: any piece can be captured. A 6 still gives another roll.</string>
+    <string name="ludo_choose_opponents">How many computer players?</string>
+    <string name="ludo_you_are">You play blue, at the bottom left. You start.</string>
+    <string name="ludo_red">Red</string>
+    <string name="ludo_green">Green</string>
+    <string name="ludo_yellow">Yellow</string>
+    <string name="ludo_blue">Blue</string>
+    <string name="ludo_home_count">Your pieces in the center: %1$d of 4</string>
+    <string name="ludo_roll">Roll</string>
+    <string name="ludo_roll_prompt">Your turn: tap the die</string>
+    <string name="ludo_pick_piece">You rolled %1$d: tap a highlighted piece</string>
+    <string name="ludo_no_move">You rolled %1$d: no piece can move</string>
+    <string name="ludo_three_sixes">Three 6s in a row: the turn is lost</string>
+    <string name="ludo_computer_turn">%1$s is playing…</string>
+    <string name="ludo_computer_rolled">%1$s rolled %2$d</string>
+    <string name="ludo_you_won">All four of your pieces reached the center!</string>
+    <string name="ludo_other_won">%1$s got all four pieces to the center first.</string>
+</resources>

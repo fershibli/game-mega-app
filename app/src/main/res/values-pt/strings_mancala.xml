@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">Mancala</string>
+    <string name="howto_mancala">Escolha uma das suas casas: as sementes são semeadas uma a uma nas casas seguintes, no sentido anti-horário. Capture sementes como as regras permitem. Quem terminar com mais sementes ganha.</string>
+    <string name="mancala_variant_kalah">Kalah</string>
+    <string name="mancala_variant_kalah_desc">6 casas com 4 sementes e um depósito. A última semente no seu depósito dá outra jogada; numa casa sua vazia, ela captura as sementes da frente.</string>
+    <string name="mancala_variant_oware">Oware</string>
+    <string name="mancala_variant_oware_desc">Os depósitos não recebem sementes. Deixe 2 ou 3 sementes nas casas do computador para capturá-las, e nunca o deixe sem sementes.</string>
+    <string name="mancala_score">Seu depósito: %1$d · Computador: %2$d</string>
+    <string name="mancala_pick">Sua vez: toque numa das suas casas (fileira de baixo)</string>
+    <string name="mancala_again">Sua última semente caiu no seu depósito: jogue de novo!</string>
+    <string name="mancala_feed">O computador está sem sementes: escolha uma casa que lhe dê algumas</string>
+    <string name="mancala_final">Resultado final: você %1$d, computador %2$d.</string>
+    <string name="mancala_draw">Empate: cada um ficou com %1$d.</string>
+</resources>

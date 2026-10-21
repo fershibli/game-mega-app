@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">Mancala</string>
+    <string name="howto_mancala">Elige uno de tus hoyos: sus semillas se siembran una a una en los hoyos siguientes, en sentido contrario a las agujas del reloj. Captura semillas según las reglas. Gana quien termine con más semillas.</string>
+    <string name="mancala_variant_kalah">Kalah</string>
+    <string name="mancala_variant_kalah_desc">6 hoyos con 4 semillas y un almacén. La última semilla en tu almacén da otro turno; en un hoyo tuyo vacío, se lleva las semillas de enfrente.</string>
+    <string name="mancala_variant_oware">Oware</string>
+    <string name="mancala_variant_oware_desc">En los almacenes no se siembra. Deja 2 o 3 semillas en los hoyos del ordenador para llevártelas, y nunca lo dejes sin semillas.</string>
+    <string name="mancala_score">Tu almacén: %1$d · Ordenador: %2$d</string>
+    <string name="mancala_pick">Tu turno: toca uno de tus hoyos (fila de abajo)</string>
+    <string name="mancala_again">Tu última semilla cayó en tu almacén: ¡juega otra vez!</string>
+    <string name="mancala_feed">El ordenador no tiene semillas: elige un hoyo que le dé alguna</string>
+    <string name="mancala_final">Resultado final: tú %1$d, ordenador %2$d.</string>
+    <string name="mancala_draw">Empate: cada uno tiene %1$d.</string>
+</resources>

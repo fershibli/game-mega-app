@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">لعبة الطاحونة</string>
+    <string name="howto_morris">ضعا القطع على النقاط بالتناوب، ثم حرّكاها على الخطوط. ثلاث قطع في صف (طاحونة) تسمح لك بإزالة قطعة من قطع الحاسوب. اترك له قطعتين فقط أو لا حركة لديه لتفوز.</string>
+    <string name="morris_variant_nine">الطاحونة (9 قطع)</string>
+    <string name="morris_variant_nine_desc">9 قطع لكل لاعب على ثلاثة مربعات. عندما تبقى 3 قطع فقط يمكن لقطعك القفز إلى أي نقطة.</string>
+    <string name="morris_variant_six">الطاحونة (6 قطع)</string>
+    <string name="morris_variant_six_desc">6 قطع لكل لاعب على لوحة أصغر بمربعين. لا قفز.</string>
+    <string name="morris_variant_twelve">الطاحونة (12 قطعة)</string>
+    <string name="morris_variant_twelve_desc">12 قطعة لكل لاعب وخطوط قطرية تصنع طواحين أيضًا. مع 3 قطع يمكن لقطعك القفز.</string>
+    <string name="morris_score">القطع: أنت %1$d · الحاسوب %2$d</string>
+    <string name="morris_place">دورك: المس نقطة فارغة لوضع قطعة (باقي %1$d)</string>
+    <string name="morris_pick_piece">دورك: المس إحدى قطعك</string>
+    <string name="morris_pick_target">المس الآن المكان الذي تذهب إليه</string>
+    <string name="morris_fly">لديك 3 قطع: يمكنها القفز إلى أي نقطة فارغة</string>
+    <string name="morris_remove">طاحونة! المس قطعة للحاسوب لإزالتها</string>
+    <string name="morris_ai_two_left">لم يبقَ للحاسوب إلا قطعتان.</string>
+    <string name="morris_ai_blocked">لا يستطيع الحاسوب التحرك.</string>
+    <string name="morris_you_two_left">لم يبقَ لك إلا قطعتان.</string>
+    <string name="morris_you_blocked">لا تستطيع التحرك.</string>
+    <string name="morris_draw">تعادل: 50 حركة لكل لاعب دون طاحونة.</string>
+    <string name="morris_draw_full">تعادل: اللوحة ممتلئة.</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_mancala">Манкала</string>
+    <string name="howto_mancala">Выберите свою лунку: её семена раскладываются по одному в следующие лунки против часовой стрелки. Забирайте семена по правилам. Побеждает тот, у кого в конце больше семян.</string>
+    <string name="mancala_variant_kalah">Калах</string>
+    <string name="mancala_variant_kalah_desc">6 лунок по 4 семени и амбар. Последнее семя в вашем амбаре даёт ещё ход; в пустой вашей лунке оно забирает семена напротив.</string>
+    <string name="mancala_variant_oware">Оваре</string>
+    <string name="mancala_variant_oware_desc">В амбары не сеют. Сделайте 2 или 3 семени в лунках компьютера, чтобы забрать их, и никогда не оставляйте его без семян.</string>
+    <string name="mancala_score">Ваш амбар: %1$d · Компьютер: %2$d</string>
+    <string name="mancala_pick">Ваш ход: нажмите на свою лунку (нижний ряд)</string>
+    <string name="mancala_again">Последнее семя упало в ваш амбар: ходите ещё!</string>
+    <string name="mancala_feed">У компьютера нет семян: выберите лунку, которая даст ему семена</string>
+    <string name="mancala_final">Итог: у вас %1$d, у компьютера %2$d.</string>
+    <string name="mancala_draw">Ничья: у каждого по %1$d.</string>
+</resources>

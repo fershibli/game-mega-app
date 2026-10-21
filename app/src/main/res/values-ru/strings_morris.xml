@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_morris">Мельница</string>
+    <string name="howto_morris">По очереди ставьте фишки на точки, а потом двигайте их по линиям. Три в ряд (мельница) позволяют снять фишку компьютера. Оставьте ему две фишки или ни одного хода — и вы победили.</string>
+    <string name="morris_variant_nine">Мельница (9 фишек)</string>
+    <string name="morris_variant_nine_desc">По 9 фишек на трёх квадратах. Когда остаётся 3 фишки, они могут прыгать на любую точку.</string>
+    <string name="morris_variant_six">Мельница (6 фишек)</string>
+    <string name="morris_variant_six_desc">По 6 фишек на маленькой доске из двух квадратов. Без прыжков.</string>
+    <string name="morris_variant_twelve">Мельница (12 фишек)</string>
+    <string name="morris_variant_twelve_desc">По 12 фишек и диагонали, которые тоже дают мельницы. С 3 фишками можно прыгать.</string>
+    <string name="morris_score">Фишки: у вас %1$d · у компьютера %2$d</string>
+    <string name="morris_place">Ваш ход: нажмите на пустую точку, чтобы поставить фишку. Ещё поставить: %1$d</string>
+    <string name="morris_pick_piece">Ваш ход: нажмите на свою фишку</string>
+    <string name="morris_pick_target">Теперь нажмите, куда её поставить</string>
+    <string name="morris_fly">У вас 3 фишки: они могут прыгать на любую пустую точку</string>
+    <string name="morris_remove">Мельница! Нажмите на фишку компьютера, чтобы снять её</string>
+    <string name="morris_ai_two_left">У компьютера осталось только две фишки.</string>
+    <string name="morris_ai_blocked">Компьютеру некуда ходить.</string>
+    <string name="morris_you_two_left">У вас осталось только две фишки.</string>
+    <string name="morris_you_blocked">Вам некуда ходить.</string>
+    <string name="morris_draw">Ничья: по 50 ходов без мельницы.</string>
+    <string name="morris_draw_full">Ничья: доска заполнена.</string>
+</resources>

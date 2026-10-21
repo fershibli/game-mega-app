@@ -98,6 +98,9 @@ enum class GameId(
     GO("go", R.string.game_go, R.string.howto_go, GameCategory.BOARD, io.github.fershibli.megagames.games.go.Go.VARIANTS),
     GOMOKU("gomoku", R.string.game_gomoku, R.string.howto_gomoku, GameCategory.BOARD),
     FOURINROW("fourinrow", R.string.game_fourinrow, R.string.howto_fourinrow, GameCategory.BOARD),
+    LUDO("ludo", R.string.game_ludo, R.string.howto_ludo, GameCategory.BOARD, io.github.fershibli.megagames.games.ludo.LudoRules.VARIANTS),
+    MORRIS("morris", R.string.game_morris, R.string.howto_morris, GameCategory.BOARD, io.github.fershibli.megagames.games.morris.MorrisRules.VARIANTS),
+    MANCALA("mancala", R.string.game_mancala, R.string.howto_mancala, GameCategory.BOARD, io.github.fershibli.megagames.games.mancala.MancalaRules.VARIANTS),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

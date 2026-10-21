@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_ludo">Лудо</string>
+    <string name="howto_ludo">Бросайте кубик и проведите четыре фишки по кругу доски до центра. Чтобы вывести фишку, нужна шестёрка. Встаньте на фишку соперника, чтобы отправить её домой. Побеждает тот, кто первым приведёт все четыре фишки в центр.</string>
+    <string name="ludo_variant_classic">Классика</string>
+    <string name="ludo_variant_classic_desc">Клетки со звездой безопасны, шестёрка даёт ещё бросок, три шестёрки подряд — ход пропадает.</string>
+    <string name="ludo_variant_simple">Простые</string>
+    <string name="ludo_variant_simple_desc">Безопасных клеток нет: любую фишку можно сбить. Шестёрка всё так же даёт ещё бросок.</string>
+    <string name="ludo_choose_opponents">Сколько игроков-компьютеров?</string>
+    <string name="ludo_you_are">Вы играете синими, внизу слева. Вы ходите первым.</string>
+    <string name="ludo_red">Красный</string>
+    <string name="ludo_green">Зелёный</string>
+    <string name="ludo_yellow">Жёлтый</string>
+    <string name="ludo_blue">Синий</string>
+    <string name="ludo_home_count">Ваших фишек в центре: %1$d из 4</string>
+    <string name="ludo_roll">Бросить</string>
+    <string name="ludo_roll_prompt">Ваш ход: нажмите на кубик</string>
+    <string name="ludo_pick_piece">Выпало %1$d: нажмите на выделенную фишку</string>
+    <string name="ludo_no_move">Выпало %1$d: ни одна фишка не может пойти</string>
+    <string name="ludo_three_sixes">Три шестёрки подряд: ход пропадает</string>
+    <string name="ludo_computer_turn">%1$s ходит…</string>
+    <string name="ludo_computer_rolled">%1$s: выпало %2$d</string>
+    <string name="ludo_you_won">Все четыре ваши фишки в центре!</string>
+    <string name="ludo_other_won">%1$s первым привёл все четыре фишки в центр.</string>
+</resources>
