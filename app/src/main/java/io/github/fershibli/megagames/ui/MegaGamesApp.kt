@@ -16,7 +16,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.GameLanguages
 import io.github.fershibli.megagames.core.ChoiceStore
 import io.github.fershibli.megagames.core.rememberChoiceStore
 import io.github.fershibli.megagames.core.GameId
@@ -28,19 +30,23 @@ import io.github.fershibli.megagames.core.SettingsStore
 import io.github.fershibli.megagames.ui.screens.DifficultyScreen
 import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.HomeScreen
+import io.github.fershibli.megagames.ui.screens.LanguageFallbackDialog
 import io.github.fershibli.megagames.ui.screens.SettingsScreen
 import io.github.fershibli.megagames.ui.screens.VariantScreen
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 
-/** Screens of the app. Navigation is a tiny state machine: no navigation library is needed. */
+/**
+ * Screens of the app. Navigation is a tiny state machine: no navigation library is needed.
+ * [language] is the language a game is pinned to (see [GameLanguages]); `null` follows the app.
+ */
 sealed interface Screen {
     data object Home : Screen
     data object Settings : Screen
-    data class ChooseVariant(val game: GameId) : Screen
-    data class ChooseDifficulty(val game: GameId, val variant: GameVariant?) : Screen
-    data class ChooseTable(val game: GameId, val variant: GameVariant?, val difficulty: Difficulty, val together: Boolean) : Screen
-    data class Playing(val game: GameId, val difficulty: Difficulty, val variant: GameVariant?, val setup: PlaySetup, val saved: SavedGame?) : Screen
+    data class ChooseVariant(val game: GameId, val language: AppLanguage? = null) : Screen
+    data class ChooseDifficulty(val game: GameId, val variant: GameVariant?, val language: AppLanguage? = null) : Screen
+    data class ChooseTable(val game: GameId, val variant: GameVariant?, val difficulty: Difficulty, val together: Boolean, val language: AppLanguage? = null) : Screen
+    data class Playing(val game: GameId, val difficulty: Difficulty, val variant: GameVariant?, val setup: PlaySetup, val saved: SavedGame?, val language: AppLanguage? = null) : Screen
 }
 
 @Composable
@@ -50,6 +56,8 @@ fun MegaGamesApp(
     offerResume: Boolean,
     onDarkMode: (Boolean) -> Unit = {},
     choiceStore: ChoiceStore = rememberChoiceStore(),
+    // Languages of each game; tests replace it to try a game limited to a few languages.
+    languagesOf: (GameId) -> Set<AppLanguage>? = { it.languages },
 ) {
     var settings by remember { mutableStateOf(settingsStore.load()) }
     LaunchedEffect(settings.darkMode) { onDarkMode(settings.darkMode) }
@@ -62,29 +70,41 @@ fun MegaGamesApp(
     val initial = remember {
         val saved = if (offerResume) saveStore.load() else null
         val game = saved?.let { GameId.fromKey(it.game) }
-        if (saved != null && game != null) Screen.Playing(game, saved.difficulty, game.variant(saved.variant), saved.setup, saved) else Screen.Home
+        if (saved != null && game != null) {
+            // A game keeps the language it was started in.
+            val language = GameLanguages.restored(languagesOf(game), settings.language, GameLanguages.fromName(saved.language))
+            Screen.Playing(game, saved.difficulty, game.variant(saved.variant), saved.setup, saved, language)
+        } else {
+            Screen.Home
+        }
     }
     var screen by remember { mutableStateOf(initial) }
     var askResume by rememberSaveable { mutableStateOf(initial is Screen.Playing) }
+    // A game not available in the app language asks which language to play in first.
+    var askLanguage by remember { mutableStateOf<Pair<GameId, List<AppLanguage>>?>(null) }
 
-    fun start(game: GameId, difficulty: Difficulty, variant: GameVariant?, setup: PlaySetup = PlaySetup()) {
+    fun start(game: GameId, difficulty: Difficulty, variant: GameVariant?, setup: PlaySetup = PlaySetup(), language: AppLanguage? = null) {
         choiceStore.recordPlayed(game)
         choiceStore.rememberSetup(game, setup)
         // Pastimes (a pet, a farm) keep their own lasting world and leave the game in progress alone.
         if (game.hasDifficulty) saveStore.clear()
-        screen = Screen.Playing(game, difficulty, variant, setup, null)
+        screen = Screen.Playing(game, difficulty, variant, setup, null, language)
     }
 
     // Then how many sit at the table, when the game offers a choice.
-    fun afterDifficulty(game: GameId, variant: GameVariant?, difficulty: Difficulty, together: Boolean) {
-        if (game.tables.size > 1) screen = Screen.ChooseTable(game, variant, difficulty, together)
-        else start(game, difficulty, variant, PlaySetup(together, game.tables.firstOrNull()?.seats ?: 0))
+    fun afterDifficulty(game: GameId, variant: GameVariant?, difficulty: Difficulty, together: Boolean, language: AppLanguage?) {
+        if (game.tables.size > 1) screen = Screen.ChooseTable(game, variant, difficulty, together, language)
+        else start(game, difficulty, variant, PlaySetup(together, game.tables.firstOrNull()?.seats ?: 0), language)
     }
 
     // Rules first (when the game has variants), then the difficulty (when it has one).
-    fun afterVariant(game: GameId, variant: GameVariant?) {
-        if (game.hasDifficulty) screen = Screen.ChooseDifficulty(game, variant)
-        else afterDifficulty(game, variant, settings.defaultDifficulty, together = false)
+    fun afterVariant(game: GameId, variant: GameVariant?, language: AppLanguage?) {
+        if (game.hasDifficulty) screen = Screen.ChooseDifficulty(game, variant, language)
+        else afterDifficulty(game, variant, settings.defaultDifficulty, together = false, language = language)
+    }
+
+    fun open(game: GameId, language: AppLanguage?) {
+        if (game.variants.isNotEmpty()) screen = Screen.ChooseVariant(game, language) else afterVariant(game, null, language)
     }
 
     MegaGamesTheme(settings) {
@@ -96,7 +116,11 @@ fun MegaGamesApp(
         ) {
             when (val s = screen) {
                 Screen.Home -> HomeScreen(
-                    onGame = { if (it.variants.isNotEmpty()) screen = Screen.ChooseVariant(it) else afterVariant(it, null) },
+                    onGame = { game ->
+                        val languages = languagesOf(game)
+                        val choices = GameLanguages.fallbackChoices(languages, settings.language, choiceStore.lastLanguage(game))
+                        if (choices == null) open(game, GameLanguages.opening(languages, settings.language)) else askLanguage = game to choices
+                    },
                     onSettings = { screen = Screen.Settings },
                     // Read every time the home screen shows, so the game just played is already first.
                     order = HomeOrder.of(settings, choiceStore),
@@ -112,36 +136,39 @@ fun MegaGamesApp(
                         initial = s.game.variant(choiceStore.lastVariant(s.game))!!,
                         onConfirm = {
                             choiceStore.rememberVariant(s.game, it)
-                            afterVariant(s.game, it)
+                            afterVariant(s.game, it, s.language)
                         },
                         onBack = { screen = Screen.Home },
                         onSettings = { screen = Screen.Settings },
+                        language = s.language,
                     )
                 }
                 is Screen.ChooseDifficulty -> {
-                    val back = { screen = if (s.game.variants.isNotEmpty()) Screen.ChooseVariant(s.game) else Screen.Home }
+                    val back = { screen = if (s.game.variants.isNotEmpty()) Screen.ChooseVariant(s.game, s.language) else Screen.Home }
                     BackHandler { back() }
                     DifficultyScreen(
                         game = s.game,
                         initial = settings.defaultDifficulty,
-                        onConfirm = { afterDifficulty(s.game, s.variant, it, together = false) },
+                        onConfirm = { afterDifficulty(s.game, s.variant, it, together = false, language = s.language) },
                         onBack = back,
                         onSettings = { screen = Screen.Settings },
-                        onTogether = if (s.game.takeTurns) ({ afterDifficulty(s.game, s.variant, settings.defaultDifficulty, together = true) }) else null,
+                        onTogether = if (s.game.takeTurns) ({ afterDifficulty(s.game, s.variant, settings.defaultDifficulty, together = true, language = s.language) }) else null,
                         initialTogether = choiceStore.lastTogether(s.game),
+                        language = s.language,
                     )
                 }
                 is Screen.ChooseTable -> {
-                    val back = { screen = Screen.ChooseDifficulty(s.game, s.variant) }
+                    val back = { screen = Screen.ChooseDifficulty(s.game, s.variant, s.language) }
                     BackHandler { back() }
                     val last = choiceStore.lastSeats(s.game)
                     TableScreen(
                         game = s.game,
                         together = s.together,
                         initial = s.game.tables.firstOrNull { it.seats == last } ?: s.game.tables.first(),
-                        onConfirm = { start(s.game, s.difficulty, s.variant, PlaySetup(s.together, it.seats)) },
+                        onConfirm = { start(s.game, s.difficulty, s.variant, PlaySetup(s.together, it.seats), s.language) },
                         onBack = back,
                         onSettings = { screen = Screen.Settings },
+                        language = s.language,
                     )
                 }
                 is Screen.Playing -> GameScreen(
@@ -149,6 +176,7 @@ fun MegaGamesApp(
                     difficulty = s.difficulty,
                     variant = s.variant,
                     setup = s.setup,
+                    language = s.language,
                     saved = s.saved,
                     saveStore = saveStore,
                     settings = settings,
@@ -165,6 +193,17 @@ fun MegaGamesApp(
                         if (s.game.hasDifficulty) saveStore.clear()
                         screen = Screen.Home
                     },
+                )
+            }
+            askLanguage?.let { (game, choices) ->
+                LanguageFallbackDialog(
+                    game, choices,
+                    onChoose = { language ->
+                        askLanguage = null
+                        choiceStore.rememberLanguage(game, language)
+                        open(game, language)
+                    },
+                    onCancel = { askLanguage = null },
                 )
             }
         }

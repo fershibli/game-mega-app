@@ -99,6 +99,10 @@ class ScreenshotTest {
     @Test fun sudokuArabic() = gameShot("game_sudoku_ar", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
     @Test fun crosswordArabic() = gameShot("game_crossword_ar", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
     @Test fun homeJapanese() = shot("home_ja", Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE)) { HomeScreen({}, {}) }
+    @Test fun languageFallbackJapanese() = shot("language_fallback_ja", Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE)) {
+        HomeScreen({}, {})
+        io.github.fershibli.megagames.ui.screens.LanguageFallbackDialog(GameId.CROSSWORD, listOf(io.github.fershibli.megagames.core.AppLanguage.SPANISH, io.github.fershibli.megagames.core.AppLanguage.ENGLISH, io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {})
+    }
     @Test fun buracoPt() = gameShot("game_buraco_pt", GameId.BURACO, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun sudokuFrLeftHanded() = gameShot("game_sudoku_fr_left", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.FRENCH, leftHanded = true))
     @Test fun solitaireBigText() = gameShot("game_solitaire_big_text", GameId.SOLITAIRE, settings = Settings(fontScale = 1.4f, pieceScale = 1.4f))

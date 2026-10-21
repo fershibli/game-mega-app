@@ -33,6 +33,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
+import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.TableSize
 import io.github.fershibli.megagames.ui.components.ActionBar
@@ -43,6 +44,7 @@ import io.github.fershibli.megagames.ui.components.FloatingGear
 import io.github.fershibli.megagames.ui.components.IconView
 import io.github.fershibli.megagames.ui.components.TopBar
 import io.github.fershibli.megagames.ui.theme.LocalPalette
+import io.github.fershibli.megagames.ui.theme.ProvideGameLanguage
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
@@ -61,6 +63,7 @@ fun TableScreen(
     onBack: () -> Unit,
     onSettings: () -> Unit,
     tables: List<TableSize> = game.tables,
+    language: AppLanguage? = null,
 ) {
     val p = LocalPalette.current
     var selected by remember { mutableStateOf(initial) }
@@ -94,7 +97,8 @@ fun TableScreen(
                                 val who = if (together) pluralStringResource(R.plurals.seats_people, table.seats, table.seats)
                                 else pluralStringResource(R.plurals.seats_with_computer, table.seats - 1, table.seats - 1)
                                 Text(who, style = MaterialTheme.typography.bodyLarge, color = p.text)
-                                table.note?.let { Text(stringResource(it), style = MaterialTheme.typography.bodyMedium, color = p.textMuted) }
+                                // The game's own note is read in the language the game will be played in.
+                                table.note?.let { ProvideGameLanguage(language) { Text(stringResource(it), style = MaterialTheme.typography.bodyMedium, color = p.textMuted) } }
                             }
                             if (chosen) IconView(AppIcon.CHECK, p.primary, size = 32.dp)
                         }

@@ -89,6 +89,8 @@ Jedes Spielfeld lässt sich vergrößern.
 
 Die Liste der Einstellungen beginnt weit unten auf dem Bildschirm, und du kannst jede Option nach unten zu deinem Daumen scrollen.
 
+**Spiele in anderen Sprachen.** Einige Spiele gibt es nicht in jeder Sprache (ein Rätsel, das Buchstaben vertauscht, braucht zum Beispiel ein Alphabet). Sie stehen trotzdem auf dem Startbildschirm; öffnest du eines, das es in deiner Sprache nicht gibt, sagt Mili Games dir das zuerst und zeigt für jede Sprache des Spiels eine große Taste, dazu **Abbrechen**. Das Spiel (seine Regeln und Texte) läuft dann in der gewählten Sprache, der Rest der App bleibt in deiner. Die gewählte Sprache steht beim nächsten Mal oben, und ein gespeichertes Spiel geht immer in der Sprache weiter, in der es begonnen hat.
+
 ## Barrierefreiheit
 
 Mit Blick auf ältere Menschen gestaltet:

@@ -89,6 +89,8 @@ Todos los tableros se pueden ampliar.
 
 La lista de ajustes empieza bastante abajo en la pantalla, y cualquier opción se puede desplazar hacia el pulgar.
 
+**Juegos en otros idiomas.** Algunos juegos no funcionan en todos los idiomas (un pasatiempo que cambia letras, por ejemplo, necesita un alfabeto). Siguen en la pantalla de inicio; al abrir uno que no está disponible en tu idioma, Mili Games te lo avisa primero y muestra un botón grande por cada idioma del juego, además de **Cancelar**. El juego (sus reglas y sus textos) se juega entonces en el idioma que elijas, y el resto de la aplicación sigue en el tuyo. El idioma elegido aparece primero la próxima vez, y una partida guardada siempre continúa en el idioma en que empezó.
+
 ## Accesibilidad
 
 Pensada para personas mayores:

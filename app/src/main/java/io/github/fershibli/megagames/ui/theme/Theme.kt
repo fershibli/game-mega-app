@@ -48,6 +48,29 @@ fun Context.localized(language: AppLanguage): Context {
     return createConfigurationContext(config)
 }
 
+/**
+ * Shows [content] (a game, or its rules texts) in [language] when the game is played in another
+ * language than the app (see [io.github.fershibli.megagames.core.GameLanguages]): its texts,
+ * its reading direction and [LocalGameLanguage]. `null` or the app language changes nothing.
+ */
+@Composable
+fun ProvideGameLanguage(language: AppLanguage?, content: @Composable () -> Unit) {
+    if (language == null || language == LocalGameLanguage.current) {
+        content()
+        return
+    }
+    val baseContext = LocalContext.current
+    val context = remember(baseContext, language) { baseContext.localized(language) }
+    CompositionLocalProvider(
+        LocalContext provides context,
+        LocalResources provides context.resources,
+        LocalConfiguration provides context.resources.configuration,
+        LocalLayoutDirection provides if (language.rightToLeft) LayoutDirection.Rtl else LayoutDirection.Ltr,
+        LocalGameLanguage provides language,
+        content = content,
+    )
+}
+
 private fun Palette.toColorScheme(): ColorScheme {
     val base = if (isDark) darkColorScheme() else lightColorScheme()
     return base.copy(
