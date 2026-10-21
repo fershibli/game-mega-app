@@ -71,6 +71,7 @@ enum class GameId(
     PET("pet", R.string.game_pet, R.string.howto_pet, GameCategory.PASTIMES, hasDifficulty = false),
     CACHETA("cacheta", R.string.game_cacheta, R.string.howto_cacheta, GameCategory.CARDS, listOf(GameVariant("classic", R.string.cacheta_variant_classic, R.string.cacheta_variant_classic_desc), GameVariant("wild", R.string.cacheta_variant_wild, R.string.cacheta_variant_wild_desc), GameVariant("pife", R.string.cacheta_variant_pife, R.string.cacheta_variant_pife_desc))),
     TRUCO("truco", R.string.game_truco, R.string.howto_truco, GameCategory.CARDS, listOf(GameVariant("paulista", R.string.truco_variant_paulista, R.string.truco_variant_paulista_desc), GameVariant("mineiro", R.string.truco_variant_mineiro, R.string.truco_variant_mineiro_desc))),
+    CUBE("cube", R.string.game_cube, R.string.howto_cube, GameCategory.PUZZLES, listOf(GameVariant("2", R.string.cube_variant_2, R.string.cube_variant_2_desc), GameVariant("3", R.string.cube_variant_3, R.string.cube_variant_3_desc), GameVariant("4", R.string.cube_variant_4, R.string.cube_variant_4_desc), GameVariant("5", R.string.cube_variant_5, R.string.cube_variant_5_desc))),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

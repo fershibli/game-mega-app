@@ -20,6 +20,7 @@ import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.games.cards.Card
 import io.github.fershibli.megagames.games.cards.Suit
 import io.github.fershibli.megagames.games.pet.petThumbnail
+import io.github.fershibli.megagames.games.cube.cubeThumbnail
 import io.github.fershibli.megagames.games.pipes.Pipes
 import io.github.fershibli.megagames.games.pipes.drawPipe
 import io.github.fershibli.megagames.ui.theme.LocalPalette
@@ -50,6 +51,7 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.PET -> petThumbnail(p)
             GameId.CACHETA -> io.github.fershibli.megagames.games.cacheta.cachetaThumbnail(this, p, m)
             GameId.TRUCO -> io.github.fershibli.megagames.games.truco.trucoThumbnail(this, p, m)
+            GameId.CUBE -> cubeThumbnail(p)
         }
     }
 }

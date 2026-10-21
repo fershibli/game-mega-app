@@ -67,12 +67,12 @@ class ScreenshotTest {
         save(name)
     }
 
-    private fun gameShot(name: String, game: GameId, difficulty: Difficulty = Difficulty.EASY, settings: Settings = Settings()) {
+    private fun gameShot(name: String, game: GameId, difficulty: Difficulty = Difficulty.EASY, settings: Settings = Settings(), variant: String? = null) {
         rule.setContent {
             MegaGamesTheme(settings) {
                 Column(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
                     TopBar(stringResource(game.title), {})
-                    Box(Modifier.weight(1f)) { GameContent(game, GameHost(game, difficulty, null, null) {}) }
+                    Box(Modifier.weight(1f)) { GameContent(game, GameHost(game, difficulty, null, null, game.variant(variant)) {}) }
                 }
             }
         }
@@ -134,6 +134,8 @@ class ScreenshotTest {
     @Test fun connect() = gameShot("game_connect", GameId.CONNECT, Difficulty.MEDIUM)
     @Test fun connectColorblind() = gameShot("game_connect_colorblind", GameId.CONNECT, Difficulty.MEDIUM, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
     @Test fun dots() = gameShot("game_dots", GameId.DOTS)
+    @Test fun cube3() = gameShot("game_cube", GameId.CUBE, Difficulty.MEDIUM, variant = "3")
+    @Test fun cube5Colorblind() = gameShot("game_cube_5_colorblind", GameId.CUBE, Difficulty.HARD, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND), variant = "5")
     @Test fun dotsHighContrastDark() = gameShot("game_dots_hc_dark", GameId.DOTS, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST, darkMode = true))
     @Test fun crosswordEasy() = gameShot("game_crossword_easy", GameId.CROSSWORD)
     @Test fun crosswordHard() = gameShot("game_crossword_hard", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
