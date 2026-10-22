@@ -7,6 +7,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
+import androidx.compose.ui.test.onAllNodesWithTag
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
@@ -47,7 +48,8 @@ class AbstractBoardUiTest {
             // The computer waits a moment before answering: let the screen's clock run.
             rule.mainClock.advanceTimeBy(100)
             rule.waitForIdle()
-            saved = store.load()?.let { read(it.state) }
+            // A late autosave of the previous test may still be another game's: skip what doesn't read.
+            saved = store.load()?.let { runCatching { read(it.state) }.getOrNull() }
             if (saved != null && done(saved)) break
         }
         return saved
@@ -62,7 +64,8 @@ class AbstractBoardUiTest {
     private fun open(game: GameId, store: SaveStore, variant: String? = null, restored: JsonElement? = null, onFinish: (GameOutcome) -> Unit = {}) {
         val host = GameHost(game, Difficulty.EASY, restored, store, game.variant(variant), onFinish = onFinish)
         rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(game, host) } }
-        rule.waitForIdle()
+        // A new game is prepared off the main thread: tap only once its board is on screen.
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag("${game.key}-board").fetchSemanticsNodes().isNotEmpty() }
     }
 
     @Test
