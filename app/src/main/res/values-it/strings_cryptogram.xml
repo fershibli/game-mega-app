@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">Crittogramma</string>
+    <string name="howto_cryptogram">Un proverbio famoso è nascosto: ogni lettera è stata scambiata con un altro simbolo (un numero nel livello Facile). Tocca una casella e poi la lettera che secondo te nasconde. Lo stesso simbolo nasconde sempre la stessa lettera.</string>
+    <string name="cryptogram_pick">Tocca una casella e poi una lettera.</string>
+    <string name="cryptogram_which">Quale lettera è %1$s?</string>
+    <string name="cryptogram_not_yet">Alcune lettere non sono ancora giuste. Il suggerimento può aiutare.</string>
+    <string name="cryptogram_solved">Risolto!</string>
+    <string name="cryptogram_done">Hai decifrato il proverbio: %1$s</string>
+    <string name="cryptogram_hints_used">Suggerimenti usati: %1$d.</string>
+    <string name="cryptogram_letter_locked">Questa lettera è già al suo posto.</string>
+</resources>

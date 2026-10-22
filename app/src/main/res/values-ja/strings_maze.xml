@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">迷路</string>
+    <string name="howto_maze">まるい友だちから小さな家まで道をかきましょう。通路にそって指をすべらせるか、通路の先のマスをタップします。指を戻すと、道を戻せます。</string>
+    <string name="maze_start">まるい友だちから家まで道をかきましょう。</string>
+    <string name="maze_going">その調子！指を戻すと1歩戻れます。</string>
+    <string name="maze_hint_back">大きな輪まで戻ってから、輪をたどりましょう。</string>
+    <string name="maze_hint_next">輪をたどりましょう。</string>
+    <string name="maze_done">家に着きました！</string>
+    <string name="maze_hints_used">ヒントを使った回数：%1$d</string>
+    <string name="maze_board">%1$d×%2$dマスの迷路</string>
+</resources>

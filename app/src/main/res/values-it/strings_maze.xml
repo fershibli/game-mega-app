@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">Labirinto</string>
+    <string name="howto_maze">Disegna un percorso dall’amichetto rotondo alla casetta. Fai scorrere il dito lungo i corridoi, oppure tocca una casella più avanti nel corridoio. Torna indietro scorrendo per togliere dei passi.</string>
+    <string name="maze_start">Disegna un percorso dall’amichetto rotondo alla casetta.</string>
+    <string name="maze_going">Continua! Torna indietro scorrendo per togliere un passo.</string>
+    <string name="maze_hint_back">Torna all’anello grande, poi segui gli anelli.</string>
+    <string name="maze_hint_next">Segui gli anelli.</string>
+    <string name="maze_done">Sei arrivato alla casetta!</string>
+    <string name="maze_hints_used">Suggerimenti usati: %1$d.</string>
+    <string name="maze_board">Labirinto, %1$d × %2$d</string>
+</resources>

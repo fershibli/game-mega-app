@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">Labyrinthe</string>
+    <string name="howto_maze">Trace un chemin du petit ami tout rond jusqu’à la petite maison. Fais glisser ton doigt dans les couloirs, ou touche une case plus loin dans le couloir. Reviens en arrière en glissant pour effacer des pas.</string>
+    <string name="maze_start">Trace un chemin du petit ami tout rond jusqu’à la maison.</string>
+    <string name="maze_going">Continue ! Reviens en glissant pour reculer d’un pas.</string>
+    <string name="maze_hint_back">Reviens au grand anneau, puis suis les anneaux.</string>
+    <string name="maze_hint_next">Suis les anneaux.</string>
+    <string name="maze_done">Tu es arrivé à la maison !</string>
+    <string name="maze_hints_used">Indices utilisés : %1$d.</string>
+    <string name="maze_board">Labyrinthe, %1$d × %2$d</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">Criptograma</string>
+    <string name="howto_cryptogram">Um ditado conhecido está escondido: cada letra foi trocada por outro símbolo (um número no nível Fácil). Toque em um quadrado e depois na letra que você acha que ele esconde. O mesmo símbolo esconde sempre a mesma letra.</string>
+    <string name="cryptogram_pick">Toque em um quadrado e depois em uma letra.</string>
+    <string name="cryptogram_which">Que letra é %1$s?</string>
+    <string name="cryptogram_not_yet">Algumas letras ainda não estão certas. A Dica pode ajudar.</string>
+    <string name="cryptogram_solved">Resolvido!</string>
+    <string name="cryptogram_done">Você decifrou o ditado: %1$s</string>
+    <string name="cryptogram_hints_used">Dicas usadas: %1$d.</string>
+    <string name="cryptogram_letter_locked">Essa letra já está no lugar certo.</string>
+</resources>

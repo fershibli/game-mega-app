@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">Labirinto</string>
+    <string name="howto_maze">Desenhe um caminho do amiguinho redondo até a casinha. Deslize o dedo pelos corredores ou toque em um quadrado mais adiante no corredor. Deslize de volta para voltar passos.</string>
+    <string name="maze_start">Desenhe um caminho do amiguinho redondo até a casinha.</string>
+    <string name="maze_going">Continue! Deslize de volta para voltar um passo.</string>
+    <string name="maze_hint_back">Volte até o anel grande e depois siga os anéis.</string>
+    <string name="maze_hint_next">Siga os anéis.</string>
+    <string name="maze_done">Você chegou à casinha!</string>
+    <string name="maze_hints_used">Dicas usadas: %1$d.</string>
+    <string name="maze_board">Labirinto, %1$d × %2$d</string>
+</resources>
