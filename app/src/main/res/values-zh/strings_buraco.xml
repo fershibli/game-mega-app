@@ -7,7 +7,7 @@
     <string name="buraco_seat_left">左边</string>
     <string name="buraco_us">我方</string>
     <string name="buraco_them">对方</string>
-    <string name="buraco_pair">玩家 %1$d 和 %2$d</string>
+    <string name="buraco_pair">玩家 %1$s 和 %2$s</string>
     <string name="buraco_playing">%1$s 正在出牌…</string>
     <string name="buraco_our_sequences">我方的顺子</string>
     <string name="buraco_their_sequences">对方的顺子</string>

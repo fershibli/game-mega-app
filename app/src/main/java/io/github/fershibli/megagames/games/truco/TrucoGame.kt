@@ -138,7 +138,7 @@ private fun TrucoScreen(state: MutableState<TrucoState>, host: GameHost) {
     fun human(seat: Int) = together || seat == 0
     val names = seatNames(s.seats, together)
     fun teamName(team: Int): String = when {
-        s.seats == 4 -> res.getString(R.string.truco_pair, team + 1, team + 3)
+        s.seats == 4 -> res.getString(R.string.truco_pair, "${team + 1}", "${team + 3}")
         else -> names[team]
     }
     var chosen by remember { mutableStateOf<Card?>(null) }

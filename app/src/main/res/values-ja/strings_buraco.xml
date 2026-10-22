@@ -7,7 +7,7 @@
     <string name="buraco_seat_left">左</string>
     <string name="buraco_us">味方</string>
     <string name="buraco_them">相手</string>
-    <string name="buraco_pair">プレイヤー%1$dと%2$d</string>
+    <string name="buraco_pair">プレイヤー%1$sと%2$s</string>
     <string name="buraco_playing">%1$sの番です…</string>
     <string name="buraco_our_sequences">味方の組</string>
     <string name="buraco_their_sequences">相手の組</string>

@@ -7,7 +7,7 @@
     <string name="buraco_seat_left">Links</string>
     <string name="buraco_us">Wir</string>
     <string name="buraco_them">Sie</string>
-    <string name="buraco_pair">Spieler %1$d und %2$d</string>
+    <string name="buraco_pair">Spieler %1$s und %2$s</string>
     <string name="buraco_playing">%1$s ist am Zug…</string>
     <string name="buraco_our_sequences">Unsere Folgen</string>
     <string name="buraco_their_sequences">Ihre Folgen</string>

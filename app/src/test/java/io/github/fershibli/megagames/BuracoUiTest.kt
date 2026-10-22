@@ -124,7 +124,11 @@ class BuracoUiTest {
         rule.waitForIdle()
         val inHand = hasClickAction() and hasAnyAncestor(hasTestTag("buraco-hand"))
         // The game starts covered: the phone goes to the first player, no card can be seen or touched.
-        rule.onNode(hasText("Player 1") and hasAnyAncestor(hasTestTag("handoff")), useUnmergedTree = true).assertIsDisplayed()
+        val firstPlayer = hasText("Player 1") and hasAnyAncestor(hasTestTag("handoff"))
+        // The new deal is made in the background: wait until the cover is up.
+        rule.waitUntil(10_000) { rule.onAllNodes(firstPlayer, useUnmergedTree = true).fetchSemanticsNodes().isNotEmpty() }
+        rule.waitForIdle()
+        rule.onNode(firstPlayer, useUnmergedTree = true).assertIsDisplayed()
         assertEquals(0, rule.onAllNodes(inHand).fetchSemanticsNodes().size)
         rule.onNodeWithContentDescription("Ready, it is my turn").performClick()
         rule.waitUntil(10_000) { rule.onAllNodesWithTag("handoff").fetchSemanticsNodes().isEmpty() }

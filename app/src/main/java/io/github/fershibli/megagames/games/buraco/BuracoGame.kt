@@ -112,7 +112,7 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
     val names = seatNames(s.players, together)
     val mySide = if (viewer >= 0) s.side(viewer) else 0
     fun sideName(side: Int): String = when {
-        together && four -> context.getString(R.string.buraco_pair, side + 1, side + 3)
+        together && four -> context.getString(R.string.buraco_pair, "${side + 1}", "${side + 3}")
         together -> names[side]
         else -> context.getString(if (side == mySide) R.string.buraco_us else R.string.buraco_them)
     }

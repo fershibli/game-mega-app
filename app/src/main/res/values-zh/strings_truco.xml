@@ -42,7 +42,7 @@
     <string name="truco_partner">搭档</string>
     <string name="truco_computer">电脑</string>
     <string name="truco_table_pairs">二对二：搭档面对面坐</string>
-    <string name="truco_pair">玩家 %1$d 和 %2$d</string>
+    <string name="truco_pair">玩家 %1$s 和 %2$s</string>
     <string name="truco_playing">%1$s 正在出牌…</string>
     <string name="truco_trick_to">这一墩归 %1$s</string>
     <string name="truco_hand_to">这一局归 %1$s：+%2$d</string>

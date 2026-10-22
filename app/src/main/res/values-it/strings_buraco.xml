@@ -7,7 +7,7 @@
     <string name="buraco_seat_left">Sinistra</string>
     <string name="buraco_us">Noi</string>
     <string name="buraco_them">Loro</string>
-    <string name="buraco_pair">Giocatori %1$d e %2$d</string>
+    <string name="buraco_pair">Giocatori %1$s e %2$s</string>
     <string name="buraco_playing">%1$s sta giocando…</string>
     <string name="buraco_our_sequences">Le nostre scale</string>
     <string name="buraco_their_sequences">Le loro scale</string>

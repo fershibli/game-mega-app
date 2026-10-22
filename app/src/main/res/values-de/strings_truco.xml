@@ -42,7 +42,7 @@
     <string name="truco_partner">Partner</string>
     <string name="truco_computer">Computer</string>
     <string name="truco_table_pairs">Zwei gegen zwei: Partner sitzen sich gegenüber</string>
-    <string name="truco_pair">Spieler %1$d und %2$d</string>
+    <string name="truco_pair">Spieler %1$s und %2$s</string>
     <string name="truco_playing">%1$s ist am Zug…</string>
     <string name="truco_trick_to">Dieser Stich geht an %1$s</string>
     <string name="truco_hand_to">Die Runde geht an %1$s: +%2$d</string>
