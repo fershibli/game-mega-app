@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">スエカ</string>
+    <string name="howto_sueca">あなたとパートナー対2人。同じスートを出し、エースと7を取りましょう。120点中60点を超えればその回の勝ち。先に4勝した組の勝ちです。</string>
+    <string name="sueca_bandeira">バンデイラ！全トリックを取ったのは：%1$s</string>
+    <string name="sueca_carry">次の回に上乗せされる勝ち</string>
+</resources>

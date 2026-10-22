@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">Bisca</string>
+    <string name="howto_bisca">Drei Karten für jeden, nach jedem Stich wird nachgezogen. Hole Asse und Siebener: mehr als 60 der 120 Punkte gewinnt das Spiel. Wer zuerst 4 Siege hat, gewinnt.</string>
+    <string name="bisca_table_pairs">Zwei gegen zwei, Partner sitzen sich gegenüber</string>
+    <string name="bisca_follow_now">Keine Karten mehr zum Ziehen: bediene die Farbe, wenn du kannst</string>
+</resources>

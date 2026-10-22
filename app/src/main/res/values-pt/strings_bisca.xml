@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">Bisca</string>
+    <string name="howto_bisca">Três cartas cada um, compre uma depois de cada vaza. Ganhe os ases e as setes: mais de 60 dos 120 pontos ganha a mão. Quem fizer 4 jogos primeiro vence.</string>
+    <string name="bisca_table_pairs">Dois contra dois, parceiros frente a frente</string>
+    <string name="bisca_follow_now">Acabou o monte: assista ao naipe se puder</string>
+</resources>

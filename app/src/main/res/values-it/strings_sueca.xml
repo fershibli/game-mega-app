@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">Sueca</string>
+    <string name="howto_sueca">Tu e il tuo compagno contro due giocatori. Rispondi al seme e prendi assi e sette: più di 60 dei 120 punti vince la mano. Vince la prima coppia che arriva a 4 partite.</string>
+    <string name="sueca_bandeira">Bandeira! Tutte le prese per: %1$s</string>
+    <string name="sueca_carry">Partite in più alla prossima mano</string>
+</resources>

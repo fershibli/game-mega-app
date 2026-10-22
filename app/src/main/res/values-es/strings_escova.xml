@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">Escoba</string>
+    <string name="howto_escova">Juega una carta y llévate las cartas de la mesa que suman 15 con ella. Limpia la mesa para hacer escoba. Puntos por más cartas, oros, sietes y el 7♦. Gana quien llegue antes a 15.</string>
+    <string name="escova_table_pairs">Dos contra dos, los compañeros frente a frente</string>
+    <string name="escova_prompt_card">Tu turno: toca una carta de tu mano</string>
+    <string name="escova_prompt_table">Toca las cartas de la mesa que suman 15 con ella</string>
+    <string name="escova_prompt_take">Suma exactamente 15 y toca Llevar</string>
+    <string name="escova_must_take">Esta carta puede sumar 15: elige qué cartas llevarte</string>
+    <string name="escova_not_fifteen">Eso suma %1$d, no 15</string>
+    <string name="escova_fifteen">¡15! Toca Llevar</string>
+    <string name="escova_need_more">Faltan %1$d para 15</string>
+    <string name="escova_too_much">Más de 15: toca una carta para quitarla</string>
+    <string name="escova_take">Llevar</string>
+    <string name="escova_lay">Dejar en la mesa</string>
+    <string name="escova_clear">Borrar</string>
+    <string name="escova_goal">Meta: 15</string>
+    <string name="escova_stock">Mazo: %1$d</string>
+    <string name="escova_escovas">Escobas %1$d – %2$d</string>
+    <string name="escova_opening">Las cuatro primeras cartas suman 15: ¡escoba para %1$s!</string>
+    <string name="escova_took">%1$s se llevó %2$s con %3$s</string>
+    <string name="escova_laid">%1$s dejó %2$s en la mesa</string>
+    <string name="escova_swept">¡Escoba! %1$s limpió la mesa con %2$s</string>
+    <string name="escova_hand_over">Fin de la mano: mira los puntos</string>
+    <string name="escova_hand_points">Esta mano — %1$s: +%2$d, %3$s: +%4$d</string>
+    <string name="escova_line_escovas">Escobas</string>
+    <string name="escova_line_cards">Más cartas</string>
+    <string name="escova_line_diamonds">Más oros (diamantes)</string>
+    <string name="escova_line_sete_belo">Siete de oros (7♦)</string>
+    <string name="escova_line_sevens">Más sietes</string>
+    <string name="escova_final">Puntos — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

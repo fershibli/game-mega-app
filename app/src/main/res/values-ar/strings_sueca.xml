@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">سويكا</string>
+    <string name="howto_sueca">أنت وشريكك ضد لاعبَين. اتبع الشكل واربح الآسات والسبعات: أكثر من 60 من 120 نقطة يربح الجولة. أول فريق يصل إلى 4 انتصارات يفوز.</string>
+    <string name="sueca_bandeira">بانديرا! كل اللمّات لـ: %1$s</string>
+    <string name="sueca_carry">انتصارات إضافية في الجولة التالية</string>
+</resources>

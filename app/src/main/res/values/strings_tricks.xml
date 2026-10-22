@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">You</string>
+    <string name="tricks_computer">Computer</string>
+    <string name="tricks_partner">Partner</string>
+    <string name="tricks_left">Left</string>
+    <string name="tricks_right">Right</string>
+    <string name="tricks_across">Across</string>
+    <string name="tricks_us">Us</string>
+    <string name="tricks_them">Them</string>
+    <string name="tricks_pair">Players %1$d and %2$d</string>
+    <string name="tricks_play_card">Play card</string>
+    <string name="tricks_next_hand">Next hand</string>
+    <string name="tricks_prompt_play">Your turn: tap a card to choose it</string>
+    <string name="tricks_prompt_again">Tap the card again (or Play card) to play it</string>
+    <string name="tricks_player_turn">%1$s: your turn</string>
+    <string name="tricks_partner_turn">Your partner is playing…</string>
+    <string name="tricks_follow_suit">You must follow suit: play a %1$s card</string>
+    <string name="tricks_trick_you">You take the trick</string>
+    <string name="tricks_trick_taken">Trick for: %1$s</string>
+    <string name="tricks_hand_won">Hand won by: %1$s</string>
+    <string name="tricks_hand_tie">60 to 60: nobody wins the hand</string>
+    <string name="tricks_trumps">Trumps</string>
+    <string name="tricks_stock">Stock</string>
+    <string name="tricks_games">Games</string>
+    <string name="tricks_tricks">Tricks %1$d – %2$d</string>
+    <string name="tricks_card_points">Card points</string>
+    <string name="tricks_games_won">Games won</string>
+    <string name="tricks_winner">Winners: %1$s</string>
+    <string name="tricks_final">Games — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

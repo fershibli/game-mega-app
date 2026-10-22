@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">你</string>
+    <string name="tricks_computer">电脑</string>
+    <string name="tricks_partner">搭档</string>
+    <string name="tricks_left">左边</string>
+    <string name="tricks_right">右边</string>
+    <string name="tricks_across">对面</string>
+    <string name="tricks_us">我方</string>
+    <string name="tricks_them">对方</string>
+    <string name="tricks_pair">玩家%1$d和%2$d</string>
+    <string name="tricks_play_card">出牌</string>
+    <string name="tricks_next_hand">下一局</string>
+    <string name="tricks_prompt_play">轮到你：点一张牌选中它</string>
+    <string name="tricks_prompt_again">再点一次这张牌（或点“出牌”）就出这张</string>
+    <string name="tricks_player_turn">%1$s：轮到你</string>
+    <string name="tricks_partner_turn">你的搭档正在出牌…</string>
+    <string name="tricks_follow_suit">必须跟出同花色：请出一张%1$s</string>
+    <string name="tricks_trick_you">这一墩归你</string>
+    <string name="tricks_trick_taken">这一墩归：%1$s</string>
+    <string name="tricks_hand_won">本局赢家：%1$s</string>
+    <string name="tricks_hand_tie">60比60：本局没有人赢</string>
+    <string name="tricks_trumps">王牌</string>
+    <string name="tricks_stock">牌堆</string>
+    <string name="tricks_games">胜局</string>
+    <string name="tricks_tricks">墩数 %1$d – %2$d</string>
+    <string name="tricks_card_points">牌分</string>
+    <string name="tricks_games_won">赢得的胜局</string>
+    <string name="tricks_winner">赢家：%1$s</string>
+    <string name="tricks_final">胜局 — %1$s：%2$d，%3$s：%4$d</string>
+</resources>

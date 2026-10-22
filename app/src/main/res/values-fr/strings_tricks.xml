@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">Vous</string>
+    <string name="tricks_computer">Ordinateur</string>
+    <string name="tricks_partner">Partenaire</string>
+    <string name="tricks_left">Gauche</string>
+    <string name="tricks_right">Droite</string>
+    <string name="tricks_across">En face</string>
+    <string name="tricks_us">Nous</string>
+    <string name="tricks_them">Eux</string>
+    <string name="tricks_pair">Joueurs %1$d et %2$d</string>
+    <string name="tricks_play_card">Jouer la carte</string>
+    <string name="tricks_next_hand">Donne suivante</string>
+    <string name="tricks_prompt_play">À vous : touchez une carte pour la choisir</string>
+    <string name="tricks_prompt_again">Touchez encore la carte (ou Jouer la carte) pour la jouer</string>
+    <string name="tricks_player_turn">%1$s : à vous</string>
+    <string name="tricks_partner_turn">Votre partenaire joue…</string>
+    <string name="tricks_follow_suit">Vous devez fournir : jouez une carte %1$s</string>
+    <string name="tricks_trick_you">Le pli est pour vous</string>
+    <string name="tricks_trick_taken">Pli pour : %1$s</string>
+    <string name="tricks_hand_won">Donne gagnée par : %1$s</string>
+    <string name="tricks_hand_tie">60 à 60 : personne ne gagne la donne</string>
+    <string name="tricks_trumps">Atout</string>
+    <string name="tricks_stock">Talon</string>
+    <string name="tricks_games">Parties</string>
+    <string name="tricks_tricks">Plis %1$d – %2$d</string>
+    <string name="tricks_card_points">Points des cartes</string>
+    <string name="tricks_games_won">Parties gagnées</string>
+    <string name="tricks_winner">Gagnants : %1$s</string>
+    <string name="tricks_final">Parties — %1$s : %2$d, %3$s : %4$d</string>
+</resources>

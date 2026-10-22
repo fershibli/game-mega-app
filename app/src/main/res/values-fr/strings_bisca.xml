@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">Bisca</string>
+    <string name="howto_bisca">Trois cartes chacun, on pioche après chaque pli. Prenez les as et les sept : plus de 60 des 120 points gagne la donne. Le premier à 4 parties gagne.</string>
+    <string name="bisca_table_pairs">Deux contre deux, partenaires face à face</string>
+    <string name="bisca_follow_now">Plus de cartes à piocher : fournissez si vous pouvez</string>
+</resources>

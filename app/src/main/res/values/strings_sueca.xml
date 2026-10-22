@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">Sueca</string>
+    <string name="howto_sueca">You and your partner against two players. Follow suit, take the aces and sevens: more than 60 of the 120 points wins the hand. First pair to 4 games wins.</string>
+    <string name="sueca_bandeira">Bandeira! Every trick for: %1$s</string>
+    <string name="sueca_carry">Extra games for the next hand</string>
+</resources>

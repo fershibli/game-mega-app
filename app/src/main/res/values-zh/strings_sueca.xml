@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">苏埃卡（Sueca）</string>
+    <string name="howto_sueca">你和搭档对两位玩家。跟出同花色，拿下A和7：120分中超过60分就赢这一局。先拿到4个胜局的一组获胜。</string>
+    <string name="sueca_bandeira">满旗！所有的墩都归：%1$s</string>
+    <string name="sueca_carry">下一局额外的胜局</string>
+</resources>

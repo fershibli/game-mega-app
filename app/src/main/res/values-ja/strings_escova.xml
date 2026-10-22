@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">エスコバ</string>
+    <string name="howto_escova">カードを1枚出し、合わせて15になる場のカードを取ります。場を空にすればエスコバ。カードの枚数、ダイヤ、7、♦7でも点が入ります。先に15点の人の勝ちです。</string>
+    <string name="escova_table_pairs">2対2、パートナーは向かい合わせ</string>
+    <string name="escova_prompt_card">あなたの番：手札のカードをタップします</string>
+    <string name="escova_prompt_table">それと合わせて15になる場のカードをタップします</string>
+    <string name="escova_prompt_take">ちょうど15にして「取る」をタップ</string>
+    <string name="escova_must_take">このカードは15を作れます：取るカードを選んでください</string>
+    <string name="escova_not_fifteen">合計は%1$dで、15ではありません</string>
+    <string name="escova_fifteen">15！「取る」をタップ</string>
+    <string name="escova_need_more">15まであと%1$d</string>
+    <string name="escova_too_much">15を超えました：カードをタップして外します</string>
+    <string name="escova_take">取る</string>
+    <string name="escova_lay">場に置く</string>
+    <string name="escova_clear">やり直す</string>
+    <string name="escova_goal">目標：15</string>
+    <string name="escova_stock">山札：%1$d</string>
+    <string name="escova_escovas">エスコバ %1$d – %2$d</string>
+    <string name="escova_opening">最初の4枚で15：%1$sにエスコバ！</string>
+    <string name="escova_took">%1$sが%3$sで%2$sを取りました</string>
+    <string name="escova_laid">%1$sが%2$sを場に置きました</string>
+    <string name="escova_swept">エスコバ！%1$sが%2$sで場を空にしました</string>
+    <string name="escova_hand_over">この回の終わり：点数を見てください</string>
+    <string name="escova_hand_points">この回 — %1$s：+%2$d、%3$s：+%4$d</string>
+    <string name="escova_line_escovas">エスコバ</string>
+    <string name="escova_line_cards">カードの枚数</string>
+    <string name="escova_line_diamonds">ダイヤの枚数（ouros）</string>
+    <string name="escova_line_sete_belo">セッテ・ベロ（♦7）</string>
+    <string name="escova_line_sevens">7の枚数</string>
+    <string name="escova_final">点数 — %1$s：%2$d、%3$s：%4$d</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">Herzen</string>
+    <string name="howto_hearts">Nimm möglichst keine Herzen (je 1 Punkt) und nicht die Pik-Dame (13). Vor jedem Spiel gibst du drei Karten weiter. Erreicht jemand 100, gewinnt die niedrigste Punktzahl.</string>
+    <string name="hearts_pass_left">Wähle 3 Karten für links</string>
+    <string name="hearts_pass_right">Wähle 3 Karten für rechts</string>
+    <string name="hearts_pass_across">Wähle 3 Karten für gegenüber</string>
+    <string name="hearts_pass_button">3 Karten weitergeben</string>
+    <string name="hearts_waiting_pass">Die anderen wählen ihre Karten…</string>
+    <string name="hearts_lead_two">Die ♣2 eröffnet den ersten Stich</string>
+    <string name="hearts_not_broken">Noch kein Herz gespielt: beginne mit einer anderen Farbe</string>
+    <string name="hearts_first_trick">Kein Herz und keine Q♠ im ersten Stich</string>
+    <string name="hearts_moon">%1$s hat alle Punkte geholt: 26 für jeden anderen!</string>
+    <string name="hearts_hand_over">Ende des Spiels</string>
+    <string name="hearts_hand_points">Punkte in diesem Spiel</string>
+    <string name="hearts_lowest_wins">Niedrigste Punktzahl: %1$s</string>
+</resources>

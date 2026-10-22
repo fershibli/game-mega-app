@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">红心</string>
+    <string name="howto_hearts">尽量不要拿到红心（每张1分）和黑桃Q（13分）。每局开始前传出三张牌。有人到100分时，分数最低的人获胜。</string>
+    <string name="hearts_pass_left">选3张牌传给左边</string>
+    <string name="hearts_pass_right">选3张牌传给右边</string>
+    <string name="hearts_pass_across">选3张牌传给对面</string>
+    <string name="hearts_pass_button">传出3张牌</string>
+    <string name="hearts_waiting_pass">其他人正在选牌…</string>
+    <string name="hearts_lead_two">第一墩由♣2开始</string>
+    <string name="hearts_not_broken">还没有人出过红心：请先出别的花色</string>
+    <string name="hearts_first_trick">第一墩不能出红心或黑桃Q</string>
+    <string name="hearts_moon">%1$s拿到了全部分数：其他每人各得26分！</string>
+    <string name="hearts_hand_over">本局结束</string>
+    <string name="hearts_hand_points">本局得分</string>
+    <string name="hearts_lowest_wins">分数最低：%1$s</string>
+</resources>

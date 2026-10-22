@@ -105,6 +105,10 @@ enum class GameId(
     GUESSWORD("guessword", R.string.game_guessword, R.string.howto_guessword, GameCategory.PUZZLES),
     CRYPTOGRAM("cryptogram", R.string.game_cryptogram, R.string.howto_cryptogram, GameCategory.PUZZLES, languages = setOf(AppLanguage.ENGLISH, AppLanguage.PORTUGUESE, AppLanguage.SPANISH, AppLanguage.FRENCH, AppLanguage.ITALIAN, AppLanguage.GERMAN, AppLanguage.RUSSIAN, AppLanguage.ARABIC)),
     MAZE("maze", R.string.game_maze, R.string.howto_maze, GameCategory.PUZZLES),
+    SUECA("sueca", R.string.game_sueca, R.string.howto_sueca, GameCategory.CARDS, takeTurns = true),
+    BISCA("bisca", R.string.game_bisca, R.string.howto_bisca, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.bisca_table_pairs))),
+    HEARTS("hearts", R.string.game_hearts, R.string.howto_hearts, GameCategory.CARDS, takeTurns = true),
+    ESCOVA("escova", R.string.game_escova, R.string.howto_escova, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.escova_table_pairs))),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

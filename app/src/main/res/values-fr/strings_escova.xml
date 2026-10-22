@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">Escova</string>
+    <string name="howto_escova">Jouez une carte et prenez les cartes de la table qui font 15 avec elle. Videz la table pour faire une escova. Points pour le plus de cartes, de carreaux, de sept et le 7♦. Le premier à 15 gagne.</string>
+    <string name="escova_table_pairs">Deux contre deux, partenaires face à face</string>
+    <string name="escova_prompt_card">À vous : touchez une carte de votre main</string>
+    <string name="escova_prompt_table">Touchez les cartes de la table qui font 15 avec elle</string>
+    <string name="escova_prompt_take">Faites exactement 15, puis touchez Prendre</string>
+    <string name="escova_must_take">Cette carte peut faire 15 : choisissez les cartes à prendre</string>
+    <string name="escova_not_fifteen">Cela fait %1$d, pas 15</string>
+    <string name="escova_fifteen">15 ! Touchez Prendre</string>
+    <string name="escova_need_more">Encore %1$d pour faire 15</string>
+    <string name="escova_too_much">Plus de 15 : touchez une carte pour la retirer</string>
+    <string name="escova_take">Prendre</string>
+    <string name="escova_lay">Poser</string>
+    <string name="escova_clear">Effacer</string>
+    <string name="escova_goal">But : 15</string>
+    <string name="escova_stock">Talon : %1$d</string>
+    <string name="escova_escovas">Escovas %1$d – %2$d</string>
+    <string name="escova_opening">Les quatre premières cartes font 15 : escova pour %1$s !</string>
+    <string name="escova_took">%1$s a pris %2$s avec %3$s</string>
+    <string name="escova_laid">%1$s a posé %2$s</string>
+    <string name="escova_swept">Escova ! %1$s a vidé la table avec %2$s</string>
+    <string name="escova_hand_over">Fin de la donne : voyez les points</string>
+    <string name="escova_hand_points">Cette donne — %1$s : +%2$d, %3$s : +%4$d</string>
+    <string name="escova_line_escovas">Escovas</string>
+    <string name="escova_line_cards">Le plus de cartes</string>
+    <string name="escova_line_diamonds">Le plus de carreaux (ouros)</string>
+    <string name="escova_line_sete_belo">Sete belo (7♦)</string>
+    <string name="escova_line_sevens">Le plus de sept</string>
+    <string name="escova_final">Points — %1$s : %2$d, %3$s : %4$d</string>
+</resources>

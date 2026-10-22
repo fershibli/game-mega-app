@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">Corazones</string>
+    <string name="howto_hearts">Evita llevarte corazones (1 punto cada uno) y la dama de picas (13). Pasa tres cartas antes de cada mano. Cuando alguien llega a 100, gana la puntuación más baja.</string>
+    <string name="hearts_pass_left">Elige 3 cartas para pasar a la izquierda</string>
+    <string name="hearts_pass_right">Elige 3 cartas para pasar a la derecha</string>
+    <string name="hearts_pass_across">Elige 3 cartas para pasar enfrente</string>
+    <string name="hearts_pass_button">Pasar 3 cartas</string>
+    <string name="hearts_waiting_pass">Los demás están eligiendo sus cartas…</string>
+    <string name="hearts_lead_two">El 2♣ empieza la primera baza</string>
+    <string name="hearts_not_broken">Aún no ha salido ningún corazón: empieza con otro palo</string>
+    <string name="hearts_first_trick">Ni corazones ni Q♠ en la primera baza</string>
+    <string name="hearts_moon">¡%1$s se llevó todos los puntos: 26 para cada uno de los demás!</string>
+    <string name="hearts_hand_over">Fin de la mano</string>
+    <string name="hearts_hand_points">Puntos de esta mano</string>
+    <string name="hearts_lowest_wins">Puntuación más baja: %1$s</string>
+</resources>

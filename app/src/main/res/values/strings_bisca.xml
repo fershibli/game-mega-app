@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">Bisca</string>
+    <string name="howto_bisca">Three cards each, draw one after every trick. Take the aces and sevens: more than 60 of the 120 points wins the hand. First to 4 games wins.</string>
+    <string name="bisca_table_pairs">Two against two, partners sit across</string>
+    <string name="bisca_follow_now">No more cards to draw: follow suit if you can</string>
+</resources>

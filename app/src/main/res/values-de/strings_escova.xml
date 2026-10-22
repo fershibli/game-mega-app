@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">Escova</string>
+    <string name="howto_escova">Spiele eine Karte und nimm Karten vom Tisch, die mit ihr zusammen 15 ergeben. Räumst du den Tisch ab, ist das eine Escova. Punkte für die meisten Karten, Karos, Siebener und die ♦7. Wer zuerst 15 hat, gewinnt.</string>
+    <string name="escova_table_pairs">Zwei gegen zwei, Partner sitzen sich gegenüber</string>
+    <string name="escova_prompt_card">Du bist dran: tippe eine Karte deiner Hand an</string>
+    <string name="escova_prompt_table">Tippe die Tischkarten an, die mit ihr 15 ergeben</string>
+    <string name="escova_prompt_take">Genau 15 bilden, dann Nehmen tippen</string>
+    <string name="escova_must_take">Diese Karte kann 15 bilden: wähle die Karten zum Nehmen</string>
+    <string name="escova_not_fifteen">Das ergibt %1$d, nicht 15</string>
+    <string name="escova_fifteen">15! Tippe auf Nehmen</string>
+    <string name="escova_need_more">Noch %1$d bis 15</string>
+    <string name="escova_too_much">Mehr als 15: tippe eine Karte an, um sie wegzunehmen</string>
+    <string name="escova_take">Nehmen</string>
+    <string name="escova_lay">Ablegen</string>
+    <string name="escova_clear">Löschen</string>
+    <string name="escova_goal">Ziel: 15</string>
+    <string name="escova_stock">Stapel: %1$d</string>
+    <string name="escova_escovas">Escovas %1$d – %2$d</string>
+    <string name="escova_opening">Die ersten vier Karten ergeben 15: Escova für %1$s!</string>
+    <string name="escova_took">%1$s nahm %2$s mit %3$s</string>
+    <string name="escova_laid">%1$s legte %2$s ab</string>
+    <string name="escova_swept">Escova! %1$s räumte den Tisch mit %2$s ab</string>
+    <string name="escova_hand_over">Ende des Spiels: sieh dir die Punkte an</string>
+    <string name="escova_hand_points">Dieses Spiel — %1$s: +%2$d, %3$s: +%4$d</string>
+    <string name="escova_line_escovas">Escovas</string>
+    <string name="escova_line_cards">Meiste Karten</string>
+    <string name="escova_line_diamonds">Meiste Karos (ouros)</string>
+    <string name="escova_line_sete_belo">Sete belo (♦7)</string>
+    <string name="escova_line_sevens">Meiste Siebener</string>
+    <string name="escova_final">Punkte — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

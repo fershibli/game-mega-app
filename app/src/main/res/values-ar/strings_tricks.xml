@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">أنت</string>
+    <string name="tricks_computer">الكمبيوتر</string>
+    <string name="tricks_partner">الشريك</string>
+    <string name="tricks_left">اليسار</string>
+    <string name="tricks_right">اليمين</string>
+    <string name="tricks_across">المقابل</string>
+    <string name="tricks_us">نحن</string>
+    <string name="tricks_them">هم</string>
+    <string name="tricks_pair">اللاعبان %1$d و%2$d</string>
+    <string name="tricks_play_card">العب الورقة</string>
+    <string name="tricks_next_hand">الجولة التالية</string>
+    <string name="tricks_prompt_play">دورك: المس ورقة لتختارها</string>
+    <string name="tricks_prompt_again">المس الورقة مرة أخرى (أو «العب الورقة») لتلعبها</string>
+    <string name="tricks_player_turn">%1$s: دورك</string>
+    <string name="tricks_partner_turn">شريكك يلعب…</string>
+    <string name="tricks_follow_suit">يجب أن تتبع الشكل: العب ورقة %1$s</string>
+    <string name="tricks_trick_you">اللمّة لك</string>
+    <string name="tricks_trick_taken">اللمّة لـ: %1$s</string>
+    <string name="tricks_hand_won">ربح الجولة: %1$s</string>
+    <string name="tricks_hand_tie">60 مقابل 60: لا أحد يربح الجولة</string>
+    <string name="tricks_trumps">الحَكَم</string>
+    <string name="tricks_stock">الكومة</string>
+    <string name="tricks_games">الانتصارات</string>
+    <string name="tricks_tricks">اللمّات %1$d – %2$d</string>
+    <string name="tricks_card_points">نقاط الأوراق</string>
+    <string name="tricks_games_won">انتصارات مكتسبة</string>
+    <string name="tricks_winner">الفائزون: %1$s</string>
+    <string name="tricks_final">الانتصارات — %1$s: %2$d، %3$s: %4$d</string>
+</resources>

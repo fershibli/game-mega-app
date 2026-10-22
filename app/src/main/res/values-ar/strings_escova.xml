@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">إسكوفا</string>
+    <string name="howto_escova">العب ورقة وخذ من الطاولة أوراقًا مجموعها معها 15. إذا أفرغت الطاولة فهذه «إسكوفا». نقاط لأكثر الأوراق والديناري والسبعات وللورقة 7♦. أول من يصل إلى 15 يفوز.</string>
+    <string name="escova_table_pairs">اثنان ضد اثنين، والشريكان متقابلان</string>
+    <string name="escova_prompt_card">دورك: المس ورقة من يدك</string>
+    <string name="escova_prompt_table">المس أوراق الطاولة التي مجموعها معها 15</string>
+    <string name="escova_prompt_take">اجمع 15 بالضبط ثم المس «خذ»</string>
+    <string name="escova_must_take">هذه الورقة تصنع 15: اختر الأوراق التي ستأخذها</string>
+    <string name="escova_not_fifteen">المجموع %1$d وليس 15</string>
+    <string name="escova_fifteen">15! المس «خذ»</string>
+    <string name="escova_need_more">ينقص %1$d لتصل إلى 15</string>
+    <string name="escova_too_much">أكثر من 15: المس ورقة لإزالتها</string>
+    <string name="escova_take">خذ</string>
+    <string name="escova_lay">ضع على الطاولة</string>
+    <string name="escova_clear">مسح</string>
+    <string name="escova_goal">الهدف: 15</string>
+    <string name="escova_stock">الكومة: %1$d</string>
+    <string name="escova_escovas">الإسكوفا %1$d – %2$d</string>
+    <string name="escova_opening">الأوراق الأربع الأولى مجموعها 15: إسكوفا لـ %1$s!</string>
+    <string name="escova_took">%1$s أخذ %2$s بالورقة %3$s</string>
+    <string name="escova_laid">%1$s وضع %2$s على الطاولة</string>
+    <string name="escova_swept">إسكوفا! %1$s أفرغ الطاولة بالورقة %2$s</string>
+    <string name="escova_hand_over">نهاية الجولة: انظر إلى النقاط</string>
+    <string name="escova_hand_points">هذه الجولة — %1$s: +%2$d، %3$s: +%4$d</string>
+    <string name="escova_line_escovas">الإسكوفا</string>
+    <string name="escova_line_cards">أكثر الأوراق</string>
+    <string name="escova_line_diamonds">أكثر الديناري (ouros)</string>
+    <string name="escova_line_sete_belo">السبعة الجميلة (7♦)</string>
+    <string name="escova_line_sevens">أكثر السبعات</string>
+    <string name="escova_final">النقاط — %1$s: %2$d، %3$s: %4$d</string>
+</resources>

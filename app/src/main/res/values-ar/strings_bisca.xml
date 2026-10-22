@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">بيسكا</string>
+    <string name="howto_bisca">ثلاث أوراق لكل لاعب، ويسحب كل واحد ورقة بعد كل لمّة. اربح الآسات والسبعات: أكثر من 60 من 120 نقطة يربح الجولة. أول من يصل إلى 4 انتصارات يفوز.</string>
+    <string name="bisca_table_pairs">اثنان ضد اثنين، والشريكان متقابلان</string>
+    <string name="bisca_follow_now">لم يبقَ ما يُسحب: اتبع الشكل إن استطعت</string>
+</resources>

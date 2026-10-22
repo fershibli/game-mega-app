@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">Hearts</string>
+    <string name="howto_hearts">Avoid taking hearts (1 point each) and the queen of spades (13). Pass three cards before each hand. When someone reaches 100, the lowest score wins.</string>
+    <string name="hearts_pass_left">Choose 3 cards to pass to the left</string>
+    <string name="hearts_pass_right">Choose 3 cards to pass to the right</string>
+    <string name="hearts_pass_across">Choose 3 cards to pass across</string>
+    <string name="hearts_pass_button">Pass 3 cards</string>
+    <string name="hearts_waiting_pass">The others are choosing their cards…</string>
+    <string name="hearts_lead_two">The 2♣ starts the first trick</string>
+    <string name="hearts_not_broken">No hearts played yet: start with another suit</string>
+    <string name="hearts_first_trick">No hearts or Q♠ on the first trick</string>
+    <string name="hearts_moon">%1$s took every point: 26 for everyone else!</string>
+    <string name="hearts_hand_over">End of the hand</string>
+    <string name="hearts_hand_points">Points this hand</string>
+    <string name="hearts_lowest_wins">Lowest score: %1$s</string>
+</resources>

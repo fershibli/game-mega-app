@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">Du</string>
+    <string name="tricks_computer">Computer</string>
+    <string name="tricks_partner">Partner</string>
+    <string name="tricks_left">Links</string>
+    <string name="tricks_right">Rechts</string>
+    <string name="tricks_across">Gegenüber</string>
+    <string name="tricks_us">Wir</string>
+    <string name="tricks_them">Sie</string>
+    <string name="tricks_pair">Spieler %1$d und %2$d</string>
+    <string name="tricks_play_card">Karte spielen</string>
+    <string name="tricks_next_hand">Nächstes Spiel</string>
+    <string name="tricks_prompt_play">Du bist dran: tippe eine Karte an</string>
+    <string name="tricks_prompt_again">Tippe die Karte noch einmal (oder Karte spielen), um sie zu spielen</string>
+    <string name="tricks_player_turn">%1$s: du bist dran</string>
+    <string name="tricks_partner_turn">Dein Partner spielt…</string>
+    <string name="tricks_follow_suit">Du musst Farbe bekennen: spiele eine %1$s-Karte</string>
+    <string name="tricks_trick_you">Der Stich gehört dir</string>
+    <string name="tricks_trick_taken">Stich für: %1$s</string>
+    <string name="tricks_hand_won">Spiel gewonnen von: %1$s</string>
+    <string name="tricks_hand_tie">60 zu 60: niemand gewinnt das Spiel</string>
+    <string name="tricks_trumps">Trumpf</string>
+    <string name="tricks_stock">Stapel</string>
+    <string name="tricks_games">Siege</string>
+    <string name="tricks_tricks">Stiche %1$d – %2$d</string>
+    <string name="tricks_card_points">Kartenpunkte</string>
+    <string name="tricks_games_won">Gewonnene Siege</string>
+    <string name="tricks_winner">Gewinner: %1$s</string>
+    <string name="tricks_final">Siege — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

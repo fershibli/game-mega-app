@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">Escova</string>
+    <string name="howto_escova">Play a card and take table cards that add up to 15 with it. Clear the table for an escova. Points for most cards, diamonds, sevens and the 7♦. First to 15 wins.</string>
+    <string name="escova_table_pairs">Two against two, partners sit across</string>
+    <string name="escova_prompt_card">Your turn: tap a card in your hand</string>
+    <string name="escova_prompt_table">Tap the table cards that make 15 with it</string>
+    <string name="escova_prompt_take">Make exactly 15, then tap Take</string>
+    <string name="escova_must_take">This card can make 15: choose cards to take</string>
+    <string name="escova_not_fifteen">That makes %1$d, not 15</string>
+    <string name="escova_fifteen">15! Tap Take</string>
+    <string name="escova_need_more">%1$d more to make 15</string>
+    <string name="escova_too_much">More than 15: tap a card to remove it</string>
+    <string name="escova_take">Take</string>
+    <string name="escova_lay">Lay down</string>
+    <string name="escova_clear">Clear</string>
+    <string name="escova_goal">Goal: 15</string>
+    <string name="escova_stock">Stock: %1$d</string>
+    <string name="escova_escovas">Escovas %1$d – %2$d</string>
+    <string name="escova_opening">The four first cards make 15: escova for %1$s!</string>
+    <string name="escova_took">%1$s took %2$s with %3$s</string>
+    <string name="escova_laid">%1$s laid down %2$s</string>
+    <string name="escova_swept">Escova! %1$s cleared the table with %2$s</string>
+    <string name="escova_hand_over">End of the hand: see the points</string>
+    <string name="escova_hand_points">This hand — %1$s: +%2$d, %3$s: +%4$d</string>
+    <string name="escova_line_escovas">Escovas</string>
+    <string name="escova_line_cards">Most cards</string>
+    <string name="escova_line_diamonds">Most diamonds (ouros)</string>
+    <string name="escova_line_sete_belo">Sete belo (7♦)</string>
+    <string name="escova_line_sevens">Most sevens</string>
+    <string name="escova_final">Points — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

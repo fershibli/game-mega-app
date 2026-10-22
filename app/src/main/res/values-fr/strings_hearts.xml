@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">Cœurs</string>
+    <string name="howto_hearts">Évitez de prendre des cœurs (1 point chacun) et la dame de pique (13). Passez trois cartes avant chaque donne. Quand quelqu’un atteint 100, le score le plus bas gagne.</string>
+    <string name="hearts_pass_left">Choisissez 3 cartes à passer à gauche</string>
+    <string name="hearts_pass_right">Choisissez 3 cartes à passer à droite</string>
+    <string name="hearts_pass_across">Choisissez 3 cartes à passer en face</string>
+    <string name="hearts_pass_button">Passer 3 cartes</string>
+    <string name="hearts_waiting_pass">Les autres choisissent leurs cartes…</string>
+    <string name="hearts_lead_two">Le 2♣ ouvre le premier pli</string>
+    <string name="hearts_not_broken">Pas encore de cœur joué : commencez par une autre couleur</string>
+    <string name="hearts_first_trick">Ni cœur ni D♠ au premier pli</string>
+    <string name="hearts_moon">%1$s a pris tous les points : 26 pour chacun des autres !</string>
+    <string name="hearts_hand_over">Fin de la donne</string>
+    <string name="hearts_hand_points">Points de cette donne</string>
+    <string name="hearts_lowest_wins">Score le plus bas : %1$s</string>
+</resources>

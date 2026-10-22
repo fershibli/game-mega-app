@@ -226,5 +226,9 @@ class ScreenshotTest {
     @Test fun cryptogram() = gameShot("game_cryptogram", GameId.CRYPTOGRAM, Difficulty.MEDIUM)
     @Test fun cryptogramArabic() = gameShot("game_cryptogram_ar", GameId.CRYPTOGRAM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
     @Test fun maze() = gameShot("game_maze", GameId.MAZE, Difficulty.MEDIUM)
+    @Test fun suecaPt() = TrickCardsUiTest.suecaScreenshotHost().let { host -> shot("game_sueca_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.SUECA, host) } }
+    @Test fun biscaPairs() = TrickCardsUiTest.biscaScreenshotHost().let { host -> shot("game_bisca") { GameContent(GameId.BISCA, host) } }
+    @Test fun heartsBig() = TrickCardsUiTest.heartsScreenshotHost().let { host -> shot("game_hearts_big", Settings(pieceScale = 1.4f)) { GameContent(GameId.HEARTS, host) } }
+    @Test fun escova() = TrickCardsUiTest.escovaScreenshotHost().let { host -> shot("game_escova") { GameContent(GameId.ESCOVA, host) } }
 
 }

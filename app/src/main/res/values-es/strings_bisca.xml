@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">Bisca</string>
+    <string name="howto_bisca">Tres cartas cada uno; se roba una después de cada baza. Gana los ases y los sietes: más de 60 de los 120 puntos gana la mano. Gana quien llegue antes a 4 juegos.</string>
+    <string name="bisca_table_pairs">Dos contra dos, los compañeros frente a frente</string>
+    <string name="bisca_follow_now">Ya no quedan cartas para robar: sigue el palo si puedes</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">القلوب</string>
+    <string name="howto_hearts">تجنّب أخذ القلوب (نقطة لكل واحدة) وملكة البستوني (13). مرّر ثلاث أوراق قبل كل جولة. عندما يصل أحد إلى 100 يفوز صاحب أقل نتيجة.</string>
+    <string name="hearts_pass_left">اختر 3 أوراق لتمريرها إلى اليسار</string>
+    <string name="hearts_pass_right">اختر 3 أوراق لتمريرها إلى اليمين</string>
+    <string name="hearts_pass_across">اختر 3 أوراق لتمريرها إلى المقابل</string>
+    <string name="hearts_pass_button">مرّر 3 أوراق</string>
+    <string name="hearts_waiting_pass">الآخرون يختارون أوراقهم…</string>
+    <string name="hearts_lead_two">الورقة 2♣ تبدأ اللمّة الأولى</string>
+    <string name="hearts_not_broken">لم يُلعب أي قلب بعد: ابدأ بشكل آخر</string>
+    <string name="hearts_first_trick">لا قلوب ولا Q♠ في اللمّة الأولى</string>
+    <string name="hearts_moon">%1$s أخذ كل النقاط: 26 لكل واحد من الآخرين!</string>
+    <string name="hearts_hand_over">نهاية الجولة</string>
+    <string name="hearts_hand_points">نقاط هذه الجولة</string>
+    <string name="hearts_lowest_wins">أقل نتيجة: %1$s</string>
+</resources>
