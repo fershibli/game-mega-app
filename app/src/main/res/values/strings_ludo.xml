@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">Star squares are safe, a 6 gives another roll, and three 6s in a row lose the turn.</string>
     <string name="ludo_variant_simple">Simple</string>
     <string name="ludo_variant_simple_desc">No safe squares: any piece can be captured. A 6 still gives another roll.</string>
-    <string name="ludo_choose_opponents">How many computer players?</string>
-    <string name="ludo_you_are">You play blue, at the bottom left. You start.</string>
     <string name="ludo_red">Red</string>
     <string name="ludo_green">Green</string>
     <string name="ludo_yellow">Yellow</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s rolled %2$d</string>
     <string name="ludo_you_won">All four of your pieces reached the center!</string>
     <string name="ludo_other_won">%1$s got all four pieces to the center first.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s: tap the die</string>
+    <string name="ludo_turn_pick">%1$s rolled %2$d: tap a highlighted piece</string>
+    <string name="ludo_turn_no_move">%1$s rolled %2$d: no piece can move</string>
+    <string name="ludo_center_all">In the center: %1$s</string>
 </resources>

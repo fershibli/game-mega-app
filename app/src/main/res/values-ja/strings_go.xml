@@ -24,4 +24,12 @@
     <string name="go_hint_pass">ヒント: もう得になる手はありません。パスできます。</string>
     <string name="go_win">%1$s 差であなたの勝ち。</string>
     <string name="go_lose">%1$s 差でコンピューターの勝ち。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">アゲハマ：黒 %1$d · 白 %2$d</string>
+    <string name="go_score_together">黒：%1$s · 白：%2$s</string>
+    <string name="go_komi_together">白の数には後手の分として%1$sが含まれます。</string>
+    <string name="go_other_passed">相手はパスしました。続けて打つか、あなたもパスして数えましょう。</string>
+    <string name="go_mark_dead_together">二人で相談してください：×印の石はアゲハマとして数えます。グループをタップして変え、「数える」をタップ。</string>
+    <string name="go_black_wins_by">黒の%1$s勝ちです。</string>
+    <string name="go_white_wins_by">白の%1$s勝ちです。</string>
 </resources>

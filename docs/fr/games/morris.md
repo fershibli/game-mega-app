@@ -4,6 +4,8 @@
 
 L’un des plus vieux jeux de plateau du monde, pour deux : vous (pions clairs) contre l’ordinateur (pions foncés). Le plateau a des points reliés par des lignes. Alignez trois de vos pions sur une ligne, un **moulin**, et vous retirez un pion de l’ordinateur.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour.
+
 ## Comment jouer
 
 1. **Poser** : chacun à son tour pose un pion sur un point libre. Vos pions à poser attendent sous le plateau, ceux de l’ordinateur au-dessus.

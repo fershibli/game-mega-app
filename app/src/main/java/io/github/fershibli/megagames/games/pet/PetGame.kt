@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.pet
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.annotation.StringRes
 import androidx.compose.animation.core.withInfiniteAnimationFrameMillis
 import androidx.compose.foundation.BorderStroke
@@ -169,6 +171,7 @@ private data class RpsRound(val you: Hand, val pet: Hand, val revealed: Boolean 
 
 @Composable
 private fun RoomScreen(pet: Pet, tick: IntState, clock: PetClock, onChange: ((Pet) -> Pet) -> Unit, onFriends: () -> Unit) {
+    val pace = currentPace
     val p = LocalPalette.current
     var now by remember { mutableLongStateOf(clock.now()) }
     var panel by remember { mutableStateOf(Panel.MAIN) }
@@ -188,7 +191,7 @@ private fun RoomScreen(pet: Pet, tick: IntState, clock: PetClock, onChange: ((Pe
     }
     LaunchedEffect(act) {
         val a = act ?: return@LaunchedEffect
-        delay(a.ms)
+        pace.wait(a.ms)
         if (act?.serial == a.serial) act = null
     }
 
@@ -208,7 +211,7 @@ private fun RoomScreen(pet: Pet, tick: IntState, clock: PetClock, onChange: ((Pe
     LaunchedEffect(rps) {
         val round = rps ?: return@LaunchedEffect
         if (round.revealed) return@LaunchedEffect
-        delay(900)
+        pace.wait(900)
         rps = round.copy(revealed = true)
         when (RockPaperScissors.play(round.you, round.pet)) {
             RoundResult.WIN -> rpsYou++
@@ -222,7 +225,7 @@ private fun RoomScreen(pet: Pet, tick: IntState, clock: PetClock, onChange: ((Pe
     // Tic-tac-toe: the pet thinks a little before playing.
     LaunchedEffect(board, petTurn) {
         if (!petTurn || TicTacToe.isOver(board)) return@LaunchedEffect
-        delay(700)
+        pace.wait(700)
         val next = TicTacToe.play(board, TicTacToe.petMove(board, Random.Default), TicTacToe.PET)
         board = next
         petTurn = false

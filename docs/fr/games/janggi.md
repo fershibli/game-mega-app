@@ -4,6 +4,8 @@
 
 Les échecs coréens sont cousins des échecs chinois et se jouent en Corée depuis des siècles. Le plateau n’a pas de rivière, les palais ont des diagonales que plusieurs pièces peuvent suivre, et l’on peut **passer** au lieu de jouer.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour.
+
 ## Le plateau
 
 - 9 lignes horizontales et 10 verticales ; les pièces se placent **sur les croisements**.

@@ -8,14 +8,15 @@ Ce guide s’adresse aux joueurs et aux proches qui préparent le téléphone po
 
 1. [Installation](#installation)
 2. [Se déplacer dans l’application](#se-déplacer-dans-lapplication)
-3. [Sauvegarde automatique et « continuer ? »](#sauvegarde-automatique-et--continuer-)
-4. [Zoom](#zoom)
-5. [Réglages](#réglages)
-6. [Accessibilité](#accessibilité)
-7. [Les jeux](#les-jeux)
+3. [Jouer ensemble sur un seul téléphone](#jouer-ensemble-sur-un-seul-téléphone)
+4. [Sauvegarde automatique et « continuer ? »](#sauvegarde-automatique-et--continuer-)
+5. [Zoom](#zoom)
+6. [Réglages](#réglages)
+7. [Accessibilité](#accessibilité)
+8. [Les jeux](#les-jeux)
    - [Sudoku](#sudoku) · [Solitaire](#solitaire) · [Buraco](#buraco) · [Backgammon](#backgammon) · [Mahjong](#mahjong)
    - [Reversi](#reversi) · [Mots croisés](#mots-croisés) · [Tuyaux](#tuyaux) · [Relie les couleurs](#relie-les-couleurs) · [Points](#points)
-8. [Questions fréquentes](#questions-fréquentes)
+9. [Questions fréquentes](#questions-fréquentes)
 
 ---
 
@@ -50,6 +51,10 @@ La **roue dentée** ouvre les réglages. Dans un jeu, les réglages affichent au
 - **Menu principal** — quitte le jeu et revient à la liste. *Cela abandonne la partie* : l’application demande d’abord « Quitter cette partie ? », pour éviter toute fausse manœuvre.
 
 Le bouton ou geste **Retour** du téléphone, dans un jeu, ouvre (ou ferme) les réglages : personne ne quitte une partie par erreur.
+
+## Jouer ensemble sur un seul téléphone
+
+Certains jeux se jouent à plusieurs personnes assises ensemble, chacune son tour sur le même téléphone : sur la roue de difficulté, choisissez **Chacun son tour sur ce téléphone**. Personne ne joue contre l’ordinateur. Entre deux tours, l’écran dit qui joue ; le plateau ne tourne jamais. **Annuler** reprend un coup. Jeux : Reversi, Dames, Échecs, Backgammon, Échecs chinois, Échecs coréens, Shōgi, Go, Gomoku, Quatre en ligne, Jeu du moulin, Mancala, Ludo. Au backgammon chacun lance ses dés ; le Ludo se joue de 2 à 4 personnes et demande d’abord **Combien à table ?**
 
 ## Sauvegarde automatique et « continuer ? »
 
@@ -175,6 +180,8 @@ Le Buraco brésilien à deux : vous contre l’ordinateur.
 ### Backgammon
 
 **But :** faire le tour du plateau avec vos 15 pions clairs jusqu’à votre jan intérieur (cases 1–6, en bas à droite) puis les sortir tous avant l’ordinateur (pions foncés).
+
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour. Chacun lance ses propres dés.
 
 Le plateau est le plateau traditionnel, **horizontal** : cases 13→24 en haut, 12→1 en bas (votre jan intérieur en bas à droite), la **barre** au milieu et le **plateau de sortie** à droite (le vôtre en bas). Pincez pour zoomer et vous déplacer sur le plateau. **Pivoter** met le plateau debout, sur tout l’écran et avec des pions plus grands : les cases 12→1 descendent alors la colonne de gauche (votre jan intérieur en bas à gauche), 13→24 celle de droite, la barre traverse le milieu et le plateau de sortie est en bas. L’application retient votre choix.
 

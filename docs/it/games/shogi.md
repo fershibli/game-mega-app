@@ -4,6 +4,8 @@
 
 Lo shogi è il gioco degli scacchi del Giappone. La grande differenza: **i pezzi che catturi cambiano parte**. Più tardi puoi rimetterli sulla scacchiera come tuoi.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca. I pezzi catturati da ogni giocatore restano dal suo lato.
+
 ## Regole da scegliere
 
 - **Shogi (9 × 9)**: il gioco completo, 20 pezzi per parte.

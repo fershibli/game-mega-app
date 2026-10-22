@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">星のマスは安全、6が出たらもう一度、6が3回続くとその番は終わりです。</string>
     <string name="ludo_variant_simple">シンプル</string>
     <string name="ludo_variant_simple_desc">安全なマスはありません。どのコマも取られます。6が出たらもう一度振れます。</string>
-    <string name="ludo_choose_opponents">コンピューターは何人？</string>
-    <string name="ludo_you_are">あなたは左下の青です。あなたから始めます。</string>
     <string name="ludo_red">赤</string>
     <string name="ludo_green">緑</string>
     <string name="ludo_yellow">黄</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$sは%2$dを出しました</string>
     <string name="ludo_you_won">4つのコマがすべて中央に着きました！</string>
     <string name="ludo_other_won">%1$sが先に4つのコマを中央に運びました。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s：サイコロをタップ</string>
+    <string name="ludo_turn_pick">%1$sは%2$dを出しました：光っているコマをタップ</string>
+    <string name="ludo_turn_no_move">%1$sは%2$dを出しました：動けるコマがありません</string>
+    <string name="ludo_center_all">中央：%1$s</string>
 </resources>

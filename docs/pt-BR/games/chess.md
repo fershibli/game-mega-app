@@ -4,6 +4,8 @@
 
 O clássico jogo de estratégia. Você joga com as brancas, embaixo na tela; o computador joga com as pretas. Ganhe dando **xeque-mate** no rei do computador: atacando-o de forma que ele não tenha escapatória.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez. Não vale para as partidas famosas.
+
 ## Jogar contra o computador
 
 - Toque em uma das suas peças: as casas aonde ela pode ir ficam marcadas com pontos (anéis quando a jogada captura). Toque em uma delas.

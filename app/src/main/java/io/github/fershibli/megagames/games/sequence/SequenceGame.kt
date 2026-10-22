@@ -1,7 +1,10 @@
 package io.github.fershibli.megagames.games.sequence
 
+import io.github.fershibli.megagames.ui.theme.spec
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -58,7 +61,6 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.components.TouchTarget
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /** Quiet moment before the colors are shown (longer after a mistake). */
@@ -85,9 +87,11 @@ fun SequenceGame(host: GameHost) {
 
 @Composable
 private fun SequenceScreen(state: MutableState<SequenceState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val d = host.difficulty
-    val pace = Sequence.pace(d)
+    // How long each square stays lit at this level, scaled by the chosen waiting time like every pause.
+    val speed = Sequence.pace(d)
     val worlds = rememberWorldStore()
     var records by remember { mutableStateOf(worlds.load(Sequence.STORE_KEY, SequenceRecords.serializer()) ?: SequenceRecords()) }
     val previousBest = remember { records.of(d) }
@@ -100,12 +104,12 @@ private fun SequenceScreen(state: MutableState<SequenceState>, host: GameHost) {
     // The game lights the squares one after the other, then hands over to the player.
     LaunchedEffect(s.shows, s.phase == SequencePhase.WATCH) {
         if (s.phase != SequencePhase.WATCH) return@LaunchedEffect
-        delay(if (s.retry) RETRY_LEAD_MS else LEAD_MS)
+        pace.wait(if (s.retry) RETRY_LEAD_MS else LEAD_MS)
         for (k in 0 until s.round) {
             shownPad = s.sequence[k]
-            delay(pace.lit)
+            pace.wait(speed.lit)
             shownPad = -1
-            delay(pace.gap)
+            pace.wait(speed.gap)
         }
         state.value = Sequence.shown(state.value)
     }
@@ -120,7 +124,7 @@ private fun SequenceScreen(state: MutableState<SequenceState>, host: GameHost) {
 
     LaunchedEffect(s.phase == SequencePhase.DONE) {
         if (s.phase != SequencePhase.DONE) return@LaunchedEffect
-        delay(END_PAUSE_MS)
+        pace.wait(END_PAUSE_MS)
         val line = if (s.won) resources.getQuantityString(R.plurals.sequence_win, s.goal, s.goal) else resources.getString(R.string.sequence_lose, s.completed)
         val record = if (s.completed > previousBest && previousBest > 0) "\n" + resources.getString(R.string.sequence_record) else ""
         host.finish(GameOutcome(s.won, line + record))
@@ -132,7 +136,7 @@ private fun SequenceScreen(state: MutableState<SequenceState>, host: GameHost) {
         haptics.performHapticFeedback(HapticFeedbackType.TextHandleMove)
         tappedPad = pad
         scope.launch {
-            delay(TAP_FLASH_MS)
+            pace.wait(TAP_FLASH_MS)
             if (tappedPad == pad) tappedPad = -1
         }
         state.value = Sequence.press(cur, pad, d)
@@ -183,7 +187,7 @@ private fun SequenceScreen(state: MutableState<SequenceState>, host: GameHost) {
 
 @Composable
 private fun ColorPad(index: Int, lit: Boolean, p: Palette, modifier: Modifier, enabled: Boolean, onTap: () -> Unit) {
-    val glow by animateFloatAsState(if (lit) 1f else 0f, tween(if (lit) 90 else 200), label = "glow")
+    val glow by animateFloatAsState(if (lit) 1f else 0f, currentMotion.spec(if (lit) 90 else 200), label = "glow")
     val label = stringResource(PAD_NAMES[index])
     Canvas(
         modifier

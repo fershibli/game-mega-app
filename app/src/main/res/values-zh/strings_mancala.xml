@@ -12,4 +12,8 @@
     <string name="mancala_feed">电脑没有种子了：请选一个能给它种子的坑</string>
     <string name="mancala_final">最终结果：你 %1$d，电脑 %2$d。</string>
     <string name="mancala_draw">平局：双方都是 %1$d。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">仓库：下方 %1$d · 上方 %2$d</string>
+    <string name="mancala_feed_together">对方没有种子了：选一个能给它种子的坑</string>
+    <string name="mancala_final_together">最终计数：下方 %1$d，上方 %2$d。</string>
 </resources>

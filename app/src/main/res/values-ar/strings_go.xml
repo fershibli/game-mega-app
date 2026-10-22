@@ -24,4 +24,12 @@
     <string name="go_hint_pass">تلميح: لم يبقَ ما يمكن كسبه. يمكنك التمرير.</string>
     <string name="go_win">فزت بفارق %1$s.</string>
     <string name="go_lose">فاز الكمبيوتر بفارق %1$s.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">المأسورة: الأسود %1$d · الأبيض %2$d</string>
+    <string name="go_score_together">الأسود: %1$s · الأبيض: %2$s</string>
+    <string name="go_komi_together">يشمل عدّ الأبيض %1$s لأنه يلعب ثانيًا.</string>
+    <string name="go_other_passed">مرّر اللاعب الآخر دوره. تابع اللعب، أو مرّر أنت أيضًا لعدّ النقاط.</string>
+    <string name="go_mark_dead_together">اتفقا معًا: الأحجار المشطوبة تُحسب مأسورة. المسا مجموعة لتغييرها، ثم المسا «عُدّ».</string>
+    <string name="go_black_wins_by">فاز الأسود بفارق %1$s.</string>
+    <string name="go_white_wins_by">فاز الأبيض بفارق %1$s.</string>
 </resources>

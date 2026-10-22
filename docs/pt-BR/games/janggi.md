@@ -4,6 +4,8 @@
 
 O xadrez coreano é primo do xadrez chinês e é jogado na Coreia há séculos. O tabuleiro não tem rio, os palácios têm linhas diagonais que várias peças podem usar, e você pode **passar a vez** em vez de jogar.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez.
+
 ## O tabuleiro
 
 - 9 linhas na horizontal e 10 na vertical; as peças ficam **nos cruzamentos**.

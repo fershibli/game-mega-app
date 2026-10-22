@@ -4,6 +4,8 @@
 
 Um dos jogos de tabuleiro mais antigos do mundo, para dois: você (peças claras) contra o computador (peças escuras). O tabuleiro tem pontos ligados por linhas. Coloque três peças suas numa linha, uma **trilha**, e você tira uma peça do computador.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez.
+
 ## Como jogar
 
 1. **Colocar**: cada um põe, na sua vez, uma peça num ponto vazio. As peças que você ainda vai colocar esperam abaixo do tabuleiro; as do computador, acima.

@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">You cannot move.</string>
     <string name="morris_draw">Draw: 50 moves each without a mill.</string>
     <string name="morris_draw_full">Draw: the board is full.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">Pieces: light %1$d · dark %2$d</string>
+    <string name="morris_place_together">Tap an empty point to place a piece. Still to place: %1$d</string>
+    <string name="morris_remove_together">A mill! Tap a piece of the other color to remove it</string>
 </resources>

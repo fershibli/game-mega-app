@@ -4,6 +4,8 @@
 
 A game for two on an upright wooden stand with 7 columns and 6 rows of holes. You play the light discs and go first; the computer plays the dark ones. The first to line up four discs, across, up and down or diagonally, wins.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is.
+
 ## How to play
 
 - Tap anywhere in a column, from the top of the board to the bottom: your disc drops into the lowest free hole.

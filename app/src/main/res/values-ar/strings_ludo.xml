@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">المربعات ذات النجمة آمنة، والرقم 6 يمنح رمية أخرى، وثلاث 6 متتالية تُضيّع الدور.</string>
     <string name="ludo_variant_simple">البسيطة</string>
     <string name="ludo_variant_simple_desc">لا مربعات آمنة: يمكن أسر أي قطعة. والرقم 6 ما زال يمنح رمية أخرى.</string>
-    <string name="ludo_choose_opponents">كم لاعبًا للحاسوب؟</string>
-    <string name="ludo_you_are">أنت تلعب بالأزرق، في الأسفل يسارًا. أنت تبدأ.</string>
     <string name="ludo_red">الأحمر</string>
     <string name="ludo_green">الأخضر</string>
     <string name="ludo_yellow">الأصفر</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s حصل على %2$d</string>
     <string name="ludo_you_won">وصلت قطعك الأربع إلى المركز!</string>
     <string name="ludo_other_won">%1$s أوصل قطعه الأربع إلى المركز أولًا.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s: المس النرد</string>
+    <string name="ludo_turn_pick">%1$s حصل على %2$d: المس قطعة مضيئة</string>
+    <string name="ludo_turn_no_move">%1$s حصل على %2$d: لا يمكن تحريك أي قطعة</string>
+    <string name="ludo_center_all">في المركز: %1$s</string>
 </resources>

@@ -4,7 +4,9 @@
 
 Um jogo de corrida para 2 a 4 jogadores: você e um, dois ou três jogadores do computador. Cada jogador tem quatro peças esperando numa casa no canto do tabuleiro em forma de cruz. Jogue o dado, tire suas peças da casa, dê uma volta no tabuleiro e suba pela sua coluna colorida até o centro. Quem levar as quatro peças ao centro primeiro ganha.
 
-Você joga com o **azul** (embaixo à esquerda) e começa. No início de cada partida você escolhe quantos jogadores do computador estão na mesa (1, 2 ou 3); o app lembra a sua escolha. Cada cor tem também o seu símbolo (círculo, triângulo, quadrado, losango), então você nunca precisa distinguir as cores.
+Você joga com o **azul** (embaixo à esquerda) e começa. Antes da partida o app pergunta **Quantos à mesa?** (2, 3 ou 4 lugares, ou seja, 1, 2 ou 3 jogadores do computador); ele lembra a sua escolha. Cada cor tem também o seu símbolo (círculo, triângulo, quadrado, losango), então você nunca precisa distinguir as cores.
+
+**Revezando celular:** de 2 a 4 pessoas jogam, cada uma com sua cor, sem o computador. O app pergunta antes quantos estão à mesa; contra o computador, são você e os outros lugares.
 
 ## Como jogar
 

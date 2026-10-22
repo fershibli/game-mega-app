@@ -4,7 +4,9 @@
 
 Un juego de carreras para 2 a 4 jugadores: tú y uno, dos o tres jugadores del ordenador. Cada jugador tiene cuatro fichas esperando en su casa, en una esquina del tablero en forma de cruz. Tira el dado, saca tus fichas, dales una vuelta al tablero y sube por tu pasillo de color hasta el centro. Gana quien lleve primero sus cuatro fichas al centro.
 
-Juegas con el **azul** (abajo a la izquierda) y empiezas tú. Al comienzo de cada partida eliges cuántos jugadores del ordenador hay en la mesa (1, 2 o 3); la aplicación recuerda tu elección. Cada color tiene además su símbolo (círculo, triángulo, cuadrado, rombo), así que nunca hace falta distinguir colores.
+Juegas con el **azul** (abajo a la izquierda) y empiezas tú. Antes de la partida la aplicación pregunta **¿Cuántos en la mesa?** (2, 3 o 4 puestos, es decir, 1, 2 o 3 jugadores del ordenador); recuerda tu elección. Cada color tiene además su símbolo (círculo, triángulo, cuadrado, rombo), así que nunca hace falta distinguir colores.
+
+**Por turnos en este teléfono:** juegan de 2 a 4 personas, cada una con su color, sin el ordenador. La aplicación pregunta antes cuántos hay en la mesa; contra el ordenador, eres tú y los demás puestos.
 
 ## Cómo se juega
 

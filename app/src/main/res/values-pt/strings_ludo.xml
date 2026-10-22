@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">As casas com estrela são seguras, o 6 dá outra jogada e três 6 seguidos perdem a vez.</string>
     <string name="ludo_variant_simple">Simples</string>
     <string name="ludo_variant_simple_desc">Sem casas seguras: qualquer peça pode ser capturada. O 6 continua dando outra jogada.</string>
-    <string name="ludo_choose_opponents">Quantos jogadores do computador?</string>
-    <string name="ludo_you_are">Você joga com o azul, embaixo à esquerda. Você começa.</string>
     <string name="ludo_red">Vermelho</string>
     <string name="ludo_green">Verde</string>
     <string name="ludo_yellow">Amarelo</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s tirou %2$d</string>
     <string name="ludo_you_won">Suas quatro peças chegaram ao centro!</string>
     <string name="ludo_other_won">%1$s levou as quatro peças ao centro primeiro.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s: toque no dado</string>
+    <string name="ludo_turn_pick">%1$s tirou %2$d: toque numa peça destacada</string>
+    <string name="ludo_turn_no_move">%1$s tirou %2$d: nenhuma peça pode andar</string>
+    <string name="ludo_center_all">No centro: %1$s</string>
 </resources>

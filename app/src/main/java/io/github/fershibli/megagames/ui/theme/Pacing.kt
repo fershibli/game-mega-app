@@ -1,6 +1,8 @@
 package io.github.fershibli.megagames.ui.theme
 
 import androidx.compose.animation.core.AnimationSpec
+import androidx.compose.animation.core.Easing
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.snap
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
@@ -22,8 +24,8 @@ val currentMotion: Motion
 suspend fun Pace.wait(millis: Long) = delay((millis * factor).toLong())
 
 /** An animation of [millis] that follows the chosen motion: instant, slow or regular. */
-fun <T> Motion.spec(millis: Int): AnimationSpec<T> =
-    if (this == Motion.NONE) snap() else tween((millis * duration).roundToInt())
+fun <T> Motion.spec(millis: Int, easing: Easing = FastOutSlowInEasing): AnimationSpec<T> =
+    if (this == Motion.NONE) snap() else tween((millis * duration).roundToInt(), easing = easing)
 
 /** Scales a swing, bounce or shake by the chosen motion (0 when movement is off). */
 fun Motion.swing(value: Float): Float = value * amplitude

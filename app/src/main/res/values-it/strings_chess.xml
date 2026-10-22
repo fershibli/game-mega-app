@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">Scacchi</string>
     <string name="howto_chess">Tocca un pezzo per vedere dove può andare, poi tocca la casa. Dai scacco matto al re del computer per vincere.</string>
-    <string name="chess_variant_standard">Gioca contro il computer</string>
+    <string name="chess_variant_standard">Gioca una partita</string>
     <string name="chess_variant_standard_desc">Regole complete: arrocco, presa en passant, promozione, scacco e ogni tipo di patta.</string>
     <string name="chess_variant_famous">Partite famose</string>
     <string name="chess_variant_famous_desc">Rivivi grandi partite della storia, mossa dopo mossa.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">L’Immortale di Kasparov</string>
     <string name="chess_famous_kasparov_where">Wijk aan Zee, 1999</string>
     <string name="chess_famous_kasparov_about">Kasparov sacrifica una torre e insegue il re di Topalov per tutta la scacchiera. Spesso è definita una delle partite più belle mai giocate.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">Scacco matto!</string>
 </resources>

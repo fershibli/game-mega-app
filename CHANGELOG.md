@@ -44,6 +44,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - Games that cannot be played in every language: they stay on the home screen and, when the app language is not one of theirs, ask first which of their languages to play in (one big button each, the last choice first). The game then plays in that language, and a saved game always continues in the language it started in.
 - CI reports the release APK size, warns past 10 MB and fails past 20 MB.
 - Four new languages: **Italian, German, Russian and Japanese** — the interface, crossword dictionaries (with QWERTZ and ЙЦУКЕН keyboards; Japanese in katakana with a kana bank), store listings, README, user guide, trust page and privacy policy.
+- **Take turns on this phone** for every board game played against each other: checkers, chess (not the famous games), backgammon (each side rolls its own dice), Chinese and Korean chess, shogi, go (dead stones agreed together on the same screen), five and four in a row, nine men’s morris, mancala and Ludo (2 to 4 people; Ludo now asks “How many at the table?”). The status names the side to play, the board never turns, Undo takes back one move, and the end says who won. Every remaining pause (messages, end of game, Follow the colors, card flashes, the pet’s games) follows the chosen pace, and the cube, memory card and disc drop animations follow the chosen movement.
 
 ### Changed
 - Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".

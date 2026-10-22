@@ -4,6 +4,8 @@
 
 Shogi ist das Schach Japans. Der große Unterschied: **Figuren, die du schlägst, wechseln die Seite**. Du kannst sie später als deine eigenen wieder aufs Brett setzen.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist. Die geschlagenen Figuren jedes Spielers liegen auf seiner Seite des Bretts.
+
 ## Regeln zur Auswahl
 
 - **Shogi (9 × 9)**: das vollständige Spiel, 20 Figuren pro Seite.

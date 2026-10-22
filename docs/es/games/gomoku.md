@@ -4,6 +4,8 @@
 
 Un juego para dos en los cruces de un tablero de 15×15. Tú juegas con negras y empiezas; el ordenador juega con blancas. Gana quien primero forme una línea seguida de cinco piedras o más, en horizontal, en vertical o en diagonal.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca.
+
 ## Cómo se juega
 
 - Toca un cruce: una piedra en tono claro muestra dónde irá. Toca otra vez el mismo cruce para ponerla, u otro cruce si cambias de idea.

@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">チェス</string>
     <string name="howto_chess">駒をタップすると動ける場所が表示されます。次にマスをタップします。コンピューターのキングをチェックメイトすれば勝ちです。</string>
-    <string name="chess_variant_standard">コンピューターと対局</string>
+    <string name="chess_variant_standard">対局する</string>
     <string name="chess_variant_standard_desc">キャスリング、アンパッサン、プロモーション、チェック、引き分けまで全ルール対応。</string>
     <string name="chess_variant_famous">名局</string>
     <string name="chess_variant_famous_desc">歴史に残る名局を一手ずつ再現します。</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">カスパロフの不滅の一局</string>
     <string name="chess_famous_kasparov_where">ウェイク・アーン・ゼー、1999年</string>
     <string name="chess_famous_kasparov_about">カスパロフはルークを捨て、トパロフのキングを盤の端から端まで追い詰めます。史上もっとも美しい対局のひとつとよく言われます。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">チェックメイト！</string>
 </resources>

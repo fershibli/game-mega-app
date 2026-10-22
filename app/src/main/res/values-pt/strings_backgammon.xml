@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Played by people taking turns on this phone -->
+    <string name="backgammon_off_together">Retiradas: claras %1$d · escuras %2$d</string>
+    <string name="backgammon_roll_now">Jogue os dados</string>
+</resources>

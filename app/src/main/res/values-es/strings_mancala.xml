@@ -12,4 +12,8 @@
     <string name="mancala_feed">El ordenador no tiene semillas: elige un hoyo que le dé alguna</string>
     <string name="mancala_final">Resultado final: tú %1$d, ordenador %2$d.</string>
     <string name="mancala_draw">Empate: cada uno tiene %1$d.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">Depósitos: abajo %1$d · arriba %2$d</string>
+    <string name="mancala_feed_together">El otro lado no tiene semillas: elige un hoyo que le dé algunas</string>
+    <string name="mancala_final_together">Recuento final: abajo %1$d, arriba %2$d.</string>
 </resources>

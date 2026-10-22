@@ -12,4 +12,8 @@
     <string name="mancala_feed">O computador está sem sementes: escolha uma casa que lhe dê algumas</string>
     <string name="mancala_final">Resultado final: você %1$d, computador %2$d.</string>
     <string name="mancala_draw">Empate: cada um ficou com %1$d.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">Depósitos: baixo %1$d · cima %2$d</string>
+    <string name="mancala_feed_together">O outro lado não tem sementes: escolha uma casa que lhe dê algumas</string>
+    <string name="mancala_final_together">Contagem final: baixo %1$d, cima %2$d.</string>
 </resources>

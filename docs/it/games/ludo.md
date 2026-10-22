@@ -4,7 +4,9 @@
 
 Un gioco di corsa per 2–4 giocatori: tu e uno, due o tre giocatori del computer. Ogni giocatore ha quattro pedine che aspettano nella sua casa, in un angolo del tabellone a croce. Tira il dado, fai uscire le pedine, fai il giro del tabellone e risali la tua colonna colorata fino al centro. Vince chi porta per primo tutte e quattro le pedine al centro.
 
-Giochi con il **blu** (in basso a sinistra) e cominci tu. All’inizio di ogni partita scegli quanti giocatori del computer siedono al tavolo (1, 2 o 3); l’app ricorda la scelta. Ogni colore ha anche il suo simbolo (cerchio, triangolo, quadrato, rombo), così non serve mai distinguere i colori.
+Giochi con il **blu** (in basso a sinistra) e cominci tu. Prima della partita l’app chiede **Quanti al tavolo?** (2, 3 o 4 posti, cioè 1, 2 o 3 giocatori del computer); ricorda la scelta. Ogni colore ha anche il suo simbolo (cerchio, triangolo, quadrato, rombo), così non serve mai distinguere i colori.
+
+**A turno su questo telefono:** giocano da 2 a 4 persone, ognuna con il suo colore, senza il computer. L’app chiede prima quanti sono al tavolo; contro il computer sei tu più gli altri posti.
 
 ## Come si gioca
 

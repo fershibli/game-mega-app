@@ -4,6 +4,8 @@
 
 Um jogo para dois em um suporte de madeira em pé, com 7 colunas e 6 fileiras de furos. Você joga com as peças claras e começa; o computador joga com as escuras. Vence quem primeiro alinhar quatro peças, na horizontal, na vertical ou na diagonal.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez.
+
 ## Como jogar
 
 - Toque em qualquer lugar de uma coluna, do alto ao pé do tabuleiro: sua peça cai até o furo livre mais baixo.

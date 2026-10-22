@@ -24,4 +24,12 @@
     <string name="go_hint_pass">Pista: ya no queda nada por ganar. Puedes pasar.</string>
     <string name="go_win">Has ganado por %1$s.</string>
     <string name="go_lose">El ordenador gana por %1$s.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">Capturadas: negras %1$d · blancas %2$d</string>
+    <string name="go_score_together">Negras: %1$s · Blancas: %2$s</string>
+    <string name="go_komi_together">La cuenta de las blancas incluye %1$s por jugar en segundo lugar.</string>
+    <string name="go_other_passed">El otro jugador ha pasado. Sigue jugando o pasa tú también para contar los puntos.</string>
+    <string name="go_mark_dead_together">Pónganse de acuerdo: las piedras tachadas cuentan como capturadas. Toquen un grupo para cambiarlo y luego Contar.</string>
+    <string name="go_black_wins_by">Ganan las negras por %1$s.</string>
+    <string name="go_white_wins_by">Ganan las blancas por %1$s.</string>
 </resources>

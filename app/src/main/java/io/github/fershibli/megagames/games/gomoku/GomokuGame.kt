@@ -28,7 +28,15 @@ import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.games.go.GridBoard
 import io.github.fershibli.megagames.games.go.drawGridBoard
 import io.github.fershibli.megagames.games.go.drawStone
+import androidx.compose.foundation.layout.Box
 import io.github.fershibli.megagames.ui.components.ActionBar
+import io.github.fershibli.megagames.ui.components.BoardSide
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
+import io.github.fershibli.megagames.ui.components.sideSeat
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
+import androidx.compose.ui.graphics.Color
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
@@ -37,7 +45,6 @@ import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.Palette
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
@@ -79,15 +86,27 @@ private fun GomokuScreen(state: MutableState<GomokuState>, host: GameHost) {
     val res = LocalResources.current
     val scope = rememberCoroutineScope()
     val pos = remember(s.moves) { GomokuPosition(s.moves) }
-    val human = Gomoku.opponent(s.computer)
+    // Taking turns on this phone: black and white are both people.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    val blackSeat = sideSeat(BoardSide.BLACK, Color(0xFF232323))
+    val whiteSeat = sideSeat(BoardSide.WHITE, Color(0xFFF4F1EA))
+    fun sideOf(color: Int) = if (color == Gomoku.BLACK) BoardSide.BLACK else BoardSide.WHITE
+    val human = if (together) pos.toMove else Gomoku.opponent(s.computer)
     val myTurn = !pos.over && pos.toMove == human
     var ghost by remember { mutableIntStateOf(-1) }
     var hint by remember { mutableIntStateOf(-1) }
 
+    val pace = currentPace
     LaunchedEffect(s.moves) {
         when {
+            pos.over && together -> {
+                pace.wait(END_DELAY_MS)
+                val detail = if (pos.winner == Gomoku.EMPTY) res.getString(R.string.gomoku_draw) else res.getString(sideOf(pos.winner).wins)
+                host.finish(GameOutcome(true, detail, shared = true))
+            }
             pos.over -> {
-                delay(END_DELAY_MS)
+                pace.wait(END_DELAY_MS)
                 val detail = when (pos.winner) {
                     human -> R.string.gomoku_win
                     Gomoku.EMPTY -> R.string.gomoku_draw
@@ -95,8 +114,8 @@ private fun GomokuScreen(state: MutableState<GomokuState>, host: GameHost) {
                 }
                 host.finish(GameOutcome(pos.winner == human, res.getString(detail)))
             }
-            pos.toMove == s.computer -> {
-                delay(AI_DELAY_MS)
+            pos.toMove == s.computer && !together -> {
+                pace.wait(AI_DELAY_MS)
                 val move = withContext(Dispatchers.Default) { GomokuAi.bestMove(pos.board, s.computer, host.difficulty, Random.Default) }
                 state.value = s.copy(moves = s.moves + move)
             }
@@ -111,49 +130,58 @@ private fun GomokuScreen(state: MutableState<GomokuState>, host: GameHost) {
         }
         ghost = -1
         hint = -1
-        state.value = s.copy(moves = s.moves + i)
+        val moves = s.moves + i
+        state.value = s.copy(moves = moves)
+        if (together && !GomokuPosition(moves).over) handoff.passTo(if (pos.toMove == Gomoku.BLACK) whiteSeat else blackSeat)
     }
 
-    GameLayout(
-        status = {
-            val text = when {
-                pos.over -> ""
-                pos.toMove == s.computer -> stringResource(R.string.computer_turn)
-                ghost >= 0 -> stringResource(R.string.gomoku_confirm)
-                else -> stringResource(R.string.gomoku_your_turn)
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val text = when {
+                    pos.over -> ""
+                    !myTurn -> stringResource(R.string.computer_turn)
+                    together && ghost >= 0 -> stringResource(sideOf(pos.toMove).turn) + "\n" + stringResource(R.string.gomoku_confirm)
+                    together -> stringResource(sideOf(pos.toMove).turn)
+                    ghost >= 0 -> stringResource(R.string.gomoku_confirm)
+                    else -> stringResource(R.string.gomoku_your_turn)
+                }
+                if (text.isNotEmpty()) StatusPill(text, emphasized = myTurn)
+            },
+            controls = {
+                ActionBar {
+                    // Against the computer Undo takes back its answer too; taking turns, one move.
+                    val back = if (together) 1 else 2
+                    BigButton(stringResource(R.string.undo), {
+                        state.value = s.copy(moves = s.moves.dropLast(back))
+                        ghost = -1
+                        hint = -1
+                    }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = myTurn && s.moves.size >= back)
+                    BigButton(stringResource(R.string.hint), {
+                        ghost = -1
+                        scope.launch {
+                            val best = withContext(Dispatchers.Default) { GomokuAi.bestMove(pos.board, human, Difficulty.MEDIUM, Random.Default) }
+                            if (state.value.moves == s.moves) hint = best
+                        }
+                    }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn)
+                }
+            },
+        ) {
+            BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
+                val side = minOf(maxWidth, maxHeight)
+                GridBoard(
+                    Gomoku.N, Modifier.size(side).testTag("gomoku-board"),
+                    stoneAt = { pos.board[it] },
+                    last = pos.last,
+                    ghost = ghost,
+                    ghostColor = human,
+                    hint = hint,
+                    line = pos.line,
+                    onTap = { tap(it) },
+                )
             }
-            if (text.isNotEmpty()) StatusPill(text, emphasized = myTurn)
-        },
-        controls = {
-            ActionBar {
-                BigButton(stringResource(R.string.undo), {
-                    state.value = s.copy(moves = s.moves.dropLast(2))
-                    ghost = -1
-                    hint = -1
-                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = myTurn && s.moves.size >= 2)
-                BigButton(stringResource(R.string.hint), {
-                    ghost = -1
-                    scope.launch {
-                        val best = withContext(Dispatchers.Default) { GomokuAi.bestMove(pos.board, human, Difficulty.MEDIUM, Random.Default) }
-                        if (state.value.moves == s.moves) hint = best
-                    }
-                }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn)
-            }
-        },
-    ) {
-        BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
-            val side = minOf(maxWidth, maxHeight)
-            GridBoard(
-                Gomoku.N, Modifier.size(side).testTag("gomoku-board"),
-                stoneAt = { pos.board[it] },
-                last = pos.last,
-                ghost = ghost,
-                ghostColor = human,
-                hint = hint,
-                line = pos.line,
-                onTap = { tap(it) },
-            )
         }
+        HandoffOverlay(handoff) {}
     }
 }
 

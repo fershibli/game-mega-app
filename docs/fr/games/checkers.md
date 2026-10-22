@@ -4,6 +4,8 @@
 
 Un jeu de plateau à deux : vous contre l’ordinateur. Les pions se déplacent en diagonale sur les cases foncées ; pour prendre, sautez par-dessus une pièce adverse jusqu’à la case vide juste derrière. Un pion qui atteint l’autre bord devient une **dame** (il reçoit une couronne dorée). Vous gagnez quand l’ordinateur n’a plus de pièces ou ne peut plus jouer.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour.
+
 ## Comment jouer
 
 - Touchez un de vos pions : les cases qu’il peut atteindre s’allument. Touchez l’une d’elles.

@@ -4,6 +4,8 @@
 
 Ein Spiel für zwei auf den Kreuzungspunkten eines 15×15-Bretts. Du spielst Schwarz und fängst an; der Computer spielt Weiß. Wer zuerst eine lückenlose Reihe aus fünf oder mehr Steinen bildet – waagerecht, senkrecht oder diagonal –, gewinnt.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist.
+
 ## So wird gespielt
 
 - Tippe auf einen Punkt: Ein blasser Stein zeigt, wohin er kommt. Tippe noch einmal auf denselben Punkt, um ihn zu setzen, oder auf einen anderen, wenn du es dir anders überlegst.

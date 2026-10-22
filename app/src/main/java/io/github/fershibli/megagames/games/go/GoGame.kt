@@ -25,7 +25,15 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameOutcome
+import androidx.compose.foundation.layout.Box
+import androidx.compose.ui.graphics.Color
 import io.github.fershibli.megagames.ui.components.ActionBar
+import io.github.fershibli.megagames.ui.components.BoardSide
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
+import io.github.fershibli.megagames.ui.components.sideSeat
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
@@ -33,7 +41,6 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
@@ -87,7 +94,13 @@ private fun GoScreen(state: MutableState<GoState>, host: GameHost) {
     val scope = rememberCoroutineScope()
     val record = remember(s.size, s.moves) { GoRecord(s.size, s.moves) }
     val n = s.size
-    val human = Go.opponent(s.computer)
+    // Taking turns on this phone: black and white are both people. At the end they agree together,
+    // on the same screen, which stones are dead.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    val blackSeat = sideSeat(BoardSide.BLACK, Color(0xFF232323))
+    val whiteSeat = sideSeat(BoardSide.WHITE, Color(0xFFF4F1EA))
+    val human = if (together) record.toMove else Go.opponent(s.computer)
     val myTurn = !s.scoring && !record.over && record.toMove == human
     var ghost by remember { mutableIntStateOf(-1) }
     var hint by remember { mutableStateOf<Int?>(null) }
@@ -95,6 +108,7 @@ private fun GoScreen(state: MutableState<GoState>, host: GameHost) {
     val dead = remember(s.dead) { s.dead.toSet() }
     val score = remember(record, dead, s.scoring) { if (s.scoring) Go.score(record.board, dead, s.komi) else null }
 
+    val pace = currentPace
     LaunchedEffect(s) {
         when {
             s.scoring -> Unit
@@ -106,8 +120,8 @@ private fun GoScreen(state: MutableState<GoState>, host: GameHost) {
                 }
                 state.value = s.copy(scoring = true, dead = proposal.sorted())
             }
-            record.toMove == s.computer -> {
-                delay(AI_DELAY_MS)
+            record.toMove == s.computer && !together -> {
+                pace.wait(AI_DELAY_MS)
                 val move = withContext(Dispatchers.Default) { goComputerMove(record, s, host.difficulty, Random.Default) }
                 state.value = s.copy(moves = s.moves + move)
             }
@@ -118,7 +132,9 @@ private fun GoScreen(state: MutableState<GoState>, host: GameHost) {
         ghost = -1
         hint = null
         warning = Go.OK
-        state.value = s.copy(moves = s.moves + move)
+        val moves = s.moves + move
+        state.value = s.copy(moves = moves)
+        if (together && !GoRecord(n, moves).over) handoff.passTo(if (record.toMove == Go.BLACK) whiteSeat else blackSeat)
     }
 
     fun tap(i: Int) {
@@ -140,86 +156,113 @@ private fun GoScreen(state: MutableState<GoState>, host: GameHost) {
         if (n >= CONFIRM_FROM_SIZE && ghost != i) ghost = i else play(i)
     }
 
-    GameLayout(
-        status = {
-            val lines = ArrayList<String>()
-            if (score != null) {
-                val mine = if (human == Go.BLACK) score.black.toDouble() else score.whiteTotal
-                val theirs = if (human == Go.BLACK) score.whiteTotal else score.black.toDouble()
-                lines += stringResource(R.string.go_score, goPoints(mine, locale), goPoints(theirs, locale))
-                lines += stringResource(R.string.go_komi, goPoints(s.komi, locale))
-                lines += stringResource(R.string.go_mark_dead)
-            } else {
-                lines += stringResource(R.string.go_captured, record.board.captured[human], record.board.captured[s.computer])
-                lines += when {
-                    record.over -> stringResource(R.string.go_counting)
-                    record.toMove == s.computer -> stringResource(R.string.computer_turn)
-                    warning == Go.KO -> stringResource(R.string.go_ko)
-                    warning == Go.SUICIDE -> stringResource(R.string.go_suicide)
-                    hint == Go.PASS -> stringResource(R.string.go_hint_pass)
-                    ghost >= 0 -> stringResource(R.string.go_confirm)
-                    record.last == Go.PASS -> stringResource(R.string.go_ai_passed)
-                    else -> stringResource(R.string.go_your_turn)
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val lines = ArrayList<String>()
+                if (score != null && together) {
+                    lines += stringResource(R.string.go_score_together, goPoints(score.black.toDouble(), locale), goPoints(score.whiteTotal, locale))
+                    lines += stringResource(R.string.go_komi_together, goPoints(s.komi, locale))
+                    lines += stringResource(R.string.go_mark_dead_together)
+                } else if (together) {
+                    lines += stringResource(R.string.go_captured_together, record.board.captured[Go.BLACK], record.board.captured[Go.WHITE])
+                    lines += when {
+                        record.over -> stringResource(R.string.go_counting)
+                        warning == Go.KO -> stringResource(R.string.go_ko)
+                        warning == Go.SUICIDE -> stringResource(R.string.go_suicide)
+                        hint == Go.PASS -> stringResource(R.string.go_hint_pass)
+                        ghost >= 0 -> stringResource(R.string.go_confirm)
+                        record.last == Go.PASS -> stringResource(if (record.toMove == Go.BLACK) BoardSide.BLACK.turn else BoardSide.WHITE.turn) + "\n" + stringResource(R.string.go_other_passed)
+                        else -> stringResource(if (record.toMove == Go.BLACK) BoardSide.BLACK.turn else BoardSide.WHITE.turn)
+                    }
+                } else if (score != null) {
+                    val mine = if (human == Go.BLACK) score.black.toDouble() else score.whiteTotal
+                    val theirs = if (human == Go.BLACK) score.whiteTotal else score.black.toDouble()
+                    lines += stringResource(R.string.go_score, goPoints(mine, locale), goPoints(theirs, locale))
+                    lines += stringResource(R.string.go_komi, goPoints(s.komi, locale))
+                    lines += stringResource(R.string.go_mark_dead)
+                } else {
+                    lines += stringResource(R.string.go_captured, record.board.captured[human], record.board.captured[s.computer])
+                    lines += when {
+                        record.over -> stringResource(R.string.go_counting)
+                        record.toMove == s.computer -> stringResource(R.string.computer_turn)
+                        warning == Go.KO -> stringResource(R.string.go_ko)
+                        warning == Go.SUICIDE -> stringResource(R.string.go_suicide)
+                        hint == Go.PASS -> stringResource(R.string.go_hint_pass)
+                        ghost >= 0 -> stringResource(R.string.go_confirm)
+                        record.last == Go.PASS -> stringResource(R.string.go_ai_passed)
+                        else -> stringResource(R.string.go_your_turn)
+                    }
                 }
-            }
-            StatusPill(lines.joinToString("\n"), emphasized = myTurn || s.scoring)
-        },
-        controls = {
-            if (s.scoring) {
-                ActionBar {
-                    BigButton(stringResource(R.string.go_keep_playing), {
-                        // Back to the game: take away the passes that ended it.
-                        state.value = s.copy(moves = s.moves.dropLastWhile { it == Go.PASS }, scoring = false, dead = emptyList())
-                    }, style = ButtonStyle.SECONDARY)
-                    BigButton(stringResource(R.string.go_count), {
-                        val final = score ?: return@BigButton
-                        val mine = if (human == Go.BLACK) final.black.toDouble() else final.whiteTotal
-                        val theirs = if (human == Go.BLACK) final.whiteTotal else final.black.toDouble()
-                        val margin = goPoints(kotlin.math.abs(mine - theirs), locale)
-                        val result = res.getString(if (mine > theirs) R.string.go_win else R.string.go_lose, margin)
-                        val detail = result + "\n" + res.getString(R.string.go_score, goPoints(mine, locale), goPoints(theirs, locale))
-                        host.finish(GameOutcome(mine > theirs, detail))
-                    }, icon = AppIcon.CHECK)
-                }
-            } else {
-                ActionBar {
-                    BigButton(stringResource(R.string.undo), {
-                        state.value = s.copy(moves = s.moves.dropLast(2))
-                        ghost = -1
-                        hint = null
-                        warning = Go.OK
-                    }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = myTurn && s.moves.size >= 2)
-                    BigButton(stringResource(R.string.go_pass), { play(Go.PASS) }, style = ButtonStyle.SECONDARY, enabled = myTurn)
-                    BigButton(stringResource(R.string.hint), {
-                        ghost = -1
-                        warning = Go.OK
-                        scope.launch {
-                            val best = withContext(Dispatchers.Default) {
-                                val board = record.board.copy()
-                                val p = GoAi.choose(board, record.toMove, s.komi, Difficulty.MEDIUM, Random.Default, false, record.played)
-                                if (p == Go.NONE) Go.PASS else board.index(p)
+                StatusPill(lines.joinToString("\n"), emphasized = myTurn || s.scoring)
+            },
+            controls = {
+                if (s.scoring) {
+                    ActionBar {
+                        BigButton(stringResource(R.string.go_keep_playing), {
+                            // Back to the game: take away the passes that ended it.
+                            state.value = s.copy(moves = s.moves.dropLastWhile { it == Go.PASS }, scoring = false, dead = emptyList())
+                        }, style = ButtonStyle.SECONDARY)
+                        BigButton(stringResource(R.string.go_count), {
+                            val final = score ?: return@BigButton
+                            if (together) {
+                                val margin = goPoints(kotlin.math.abs(final.black - final.whiteTotal), locale)
+                                val result = res.getString(if (final.black > final.whiteTotal) R.string.go_black_wins_by else R.string.go_white_wins_by, margin)
+                                val score = res.getString(R.string.go_score_together, goPoints(final.black.toDouble(), locale), goPoints(final.whiteTotal, locale))
+                                host.finish(GameOutcome(true, result + "\n" + score, shared = true))
+                                return@BigButton
                             }
-                            // Only if the player has not moved in the meantime.
-                            if (state.value.moves == s.moves) hint = best
-                        }
-                    }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn)
+                            val mine = if (human == Go.BLACK) final.black.toDouble() else final.whiteTotal
+                            val theirs = if (human == Go.BLACK) final.whiteTotal else final.black.toDouble()
+                            val margin = goPoints(kotlin.math.abs(mine - theirs), locale)
+                            val result = res.getString(if (mine > theirs) R.string.go_win else R.string.go_lose, margin)
+                            val detail = result + "\n" + res.getString(R.string.go_score, goPoints(mine, locale), goPoints(theirs, locale))
+                            host.finish(GameOutcome(mine > theirs, detail))
+                        }, icon = AppIcon.CHECK)
+                    }
+                } else {
+                    ActionBar {
+                        // Against the computer Undo takes back its answer too; taking turns, one move.
+                        val back = if (together) 1 else 2
+                        BigButton(stringResource(R.string.undo), {
+                            state.value = s.copy(moves = s.moves.dropLast(back))
+                            ghost = -1
+                            hint = null
+                            warning = Go.OK
+                        }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = myTurn && s.moves.size >= back)
+                        BigButton(stringResource(R.string.go_pass), { play(Go.PASS) }, style = ButtonStyle.SECONDARY, enabled = myTurn)
+                        BigButton(stringResource(R.string.hint), {
+                            ghost = -1
+                            warning = Go.OK
+                            scope.launch {
+                                val best = withContext(Dispatchers.Default) {
+                                    val board = record.board.copy()
+                                    val p = GoAi.choose(board, record.toMove, s.komi, Difficulty.MEDIUM, Random.Default, false, record.played)
+                                    if (p == Go.NONE) Go.PASS else board.index(p)
+                                }
+                                // Only if the player has not moved in the meantime.
+                                if (state.value.moves == s.moves) hint = best
+                            }
+                        }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn)
+                    }
                 }
+            },
+        ) {
+            BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
+                val side = minOf(maxWidth, maxHeight)
+                GridBoard(
+                    n, Modifier.size(side).testTag("go-board"),
+                    stoneAt = { record.board.at(it) },
+                    last = record.last?.takeIf { it >= 0 } ?: -1,
+                    ghost = ghost,
+                    ghostColor = human,
+                    hint = hint?.takeIf { it >= 0 } ?: -1,
+                    territory = score?.territory,
+                    dead = if (s.scoring) dead else emptySet(),
+                    onTap = { tap(it) },
+                )
             }
-        },
-    ) {
-        BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
-            val side = minOf(maxWidth, maxHeight)
-            GridBoard(
-                n, Modifier.size(side).testTag("go-board"),
-                stoneAt = { record.board.at(it) },
-                last = record.last?.takeIf { it >= 0 } ?: -1,
-                ghost = ghost,
-                ghostColor = human,
-                hint = hint?.takeIf { it >= 0 } ?: -1,
-                territory = score?.territory,
-                dead = if (s.scoring) dead else emptySet(),
-                onTap = { tap(it) },
-            )
         }
+        HandoffOverlay(handoff) {}
     }
 }

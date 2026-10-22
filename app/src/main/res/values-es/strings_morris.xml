@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">No puedes moverte.</string>
     <string name="morris_draw">Empate: 50 jugadas cada uno sin molino.</string>
     <string name="morris_draw_full">Empate: el tablero está lleno.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">Fichas: claras %1$d · oscuras %2$d</string>
+    <string name="morris_place_together">Toca un punto vacío para poner una ficha. Quedan por poner: %1$d</string>
+    <string name="morris_remove_together">¡Un molino! Toca una ficha del otro color para quitarla</string>
 </resources>

@@ -4,6 +4,8 @@
 
 Um jogo para dois nos cruzamentos de um tabuleiro 15×15. Você joga com as pretas e começa; o computador joga com as brancas. Vence quem primeiro formar uma linha contínua de cinco ou mais pedras, na horizontal, na vertical ou na diagonal.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez.
+
 ## Como jogar
 
 - Toque em um cruzamento: uma pedra clarinha mostra onde ela vai ficar. Toque de novo no mesmo cruzamento para colocá-la, ou em outro para mudar de ideia.

@@ -8,14 +8,15 @@ Diese Anleitung ist für alle, die spielen, und für die Angehörigen, die ihnen
 
 1. [Installation](#installation)
 2. [So findest du dich zurecht](#so-findest-du-dich-zurecht)
-3. [Automatisches Speichern und „Weiterspielen?“](#automatisches-speichern-und-weiterspielen)
-4. [Zoom](#zoom)
-5. [Einstellungen](#einstellungen)
-6. [Barrierefreiheit](#barrierefreiheit)
-7. [Die Spiele](#die-spiele)
+3. [Zusammen an einem Telefon spielen](#zusammen-an-einem-telefon-spielen)
+4. [Automatisches Speichern und „Weiterspielen?“](#automatisches-speichern-und-weiterspielen)
+5. [Zoom](#zoom)
+6. [Einstellungen](#einstellungen)
+7. [Barrierefreiheit](#barrierefreiheit)
+8. [Die Spiele](#die-spiele)
    - [Sudoku](#sudoku) · [Solitär](#solitär) · [Buraco](#buraco) · [Backgammon](#backgammon) · [Mahjong](#mahjong)
    - [Reversi](#reversi) · [Kreuzworträtsel](#kreuzworträtsel) · [Rohre](#rohre) · [Farben verbinden](#farben-verbinden) · [Punkte](#punkte)
-8. [Häufige Fragen](#häufige-fragen)
+9. [Häufige Fragen](#häufige-fragen)
 
 ---
 
@@ -50,6 +51,10 @@ Das **Zahnrad** öffnet die Einstellungen. Während eines Spiels zeigen die Eins
 - **Hauptmenü** — verlässt das Spiel und kehrt zur Liste der Spiele zurück. *Dabei wird das Spiel abgebrochen*: Vorher wird gefragt „Dieses Spiel verlassen?“, damit das nicht aus Versehen passiert.
 
 Die **Zurück**-Taste bzw. -Geste des Telefons öffnet (oder schließt) während eines Spiels die Einstellungen, damit niemand ein Spiel versehentlich verlässt.
+
+## Zusammen an einem Telefon spielen
+
+Manche Spiele können Menschen, die zusammensitzen, abwechselnd am selben Telefon spielen: Wähle auf dem Schwierigkeitsrad **Abwechselnd an diesem Telefon**. Niemand spielt gegen den Computer. Zwischen den Zügen zeigt der Bildschirm, wer dran ist; das Brett dreht sich nie. **Rückgängig** nimmt einen Zug zurück. Spiele: Reversi, Dame, Schach, Backgammon, Chinesisches Schach, Koreanisches Schach, Shogi, Go, Gomoku, Vier in einer Reihe, Mühle, Mancala, Ludo. Beim Backgammon würfelt jeder selbst; Ludo ist für 2 bis 4 Personen und fragt vorher **Wie viele am Tisch?**
 
 ## Automatisches Speichern und „Weiterspielen?“
 
@@ -175,6 +180,8 @@ Brasilianisches Buraco zu zweit: du gegen den Computer.
 ### Backgammon
 
 **Ziel:** Ziehe deine 15 hellen Steine einmal um das Brett herum in dein Heimfeld (Felder 1–6, unten rechts) und würfle sie alle vor dem Computer (dunkle Steine) hinaus.
+
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist. Jeder würfelt selbst.
 
 Das Brett ist das traditionelle **waagerechte**: Felder 13→24 oben, 12→1 unten (dein Heimfeld unten rechts), die **Bar** in der Mitte und rechts die **Ablage** für hinausgewürfelte Steine (deine unten). Mit zwei Fingern kannst du hineinzoomen und das Brett verschieben. **Drehen** stellt das Brett stattdessen hochkant und füllt den Bildschirm mit größeren Steinen: Die Felder 12→1 laufen dann in der linken Spalte nach unten (dein Heimfeld unten links), 13→24 in der rechten Spalte nach unten, die Bar geht quer durch die Mitte, und die Ablage ist unten. Die App merkt sich deine Wahl.
 

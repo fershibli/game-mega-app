@@ -4,6 +4,8 @@
 
 O shogi é o xadrez do Japão. A grande diferença: **as peças que você captura mudam de lado**. Depois você pode colocá-las de volta no tabuleiro como suas.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez. As peças capturadas de cada jogador ficam do lado dele.
+
 ## Regras para escolher
 
 - **Shogi (9 × 9)**: o jogo completo, 20 peças de cada lado.

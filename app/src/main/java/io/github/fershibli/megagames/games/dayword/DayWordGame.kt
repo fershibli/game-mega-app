@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.dayword
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import android.content.Context
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -71,7 +73,6 @@ import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
@@ -156,6 +157,7 @@ fun DayWordGame(host: GameHost) {
 
 @Composable
 private fun DayWordScreen(state: MutableState<DayWordState>, host: GameHost, world: WorldStore) {
+    val pace = currentPace
     val s = state.value
     val p = LocalPalette.current
     val context = LocalContext.current.applicationContext
@@ -174,7 +176,7 @@ private fun DayWordScreen(state: MutableState<DayWordState>, host: GameHost, wor
             val old = world.load(WORLD_KEY, DayWordDays.serializer()) ?: DayWordDays()
             world.save(WORLD_KEY, DayWordDays.serializer(), old.copy(finished = old.finished + (key to s.day)))
         }
-        delay(FINISH_PAUSE_MS)
+        pace.wait(FINISH_PAUSE_MS)
         host.finish(GameOutcome(s.won, (if (s.won) wonText else lostText) + "\n" + clueText))
     }
 

@@ -4,6 +4,8 @@
 
 Un gioco per due sulle intersezioni di un tavoliere 15×15. Tu giochi con il nero e inizi; il computer gioca con il bianco. Vince chi per primo forma una linea continua di cinque o più pietre, in orizzontale, in verticale o in diagonale.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca.
+
 ## Come si gioca
 
 - Tocca un’intersezione: una pietra in trasparenza mostra dove andrà. Tocca di nuovo la stessa intersezione per posarla, oppure un’altra se cambi idea.

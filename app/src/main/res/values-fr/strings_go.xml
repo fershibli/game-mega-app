@@ -24,4 +24,12 @@
     <string name="go_hint_pass">Indice : il n’y a plus rien à gagner. Vous pouvez passer.</string>
     <string name="go_win">Vous gagnez de %1$s.</string>
     <string name="go_lose">L’ordinateur gagne de %1$s.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">Prises : noirs %1$d · blancs %2$d</string>
+    <string name="go_score_together">Noirs : %1$s · Blancs : %2$s</string>
+    <string name="go_komi_together">Le compte des blancs inclut %1$s pour avoir joué en second.</string>
+    <string name="go_other_passed">L’autre joueur a passé. Continuez, ou passez aussi pour compter les points.</string>
+    <string name="go_mark_dead_together">Mettez-vous d’accord : les pierres barrées comptent comme prises. Touchez un groupe pour changer, puis Compter.</string>
+    <string name="go_black_wins_by">Les noirs gagnent de %1$s.</string>
+    <string name="go_white_wins_by">Les blancs gagnent de %1$s.</string>
 </resources>

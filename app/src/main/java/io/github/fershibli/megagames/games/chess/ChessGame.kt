@@ -57,7 +57,12 @@ import io.github.fershibli.megagames.ui.art.darker
 import io.github.fershibli.megagames.ui.art.lighter
 import io.github.fershibli.megagames.ui.art.pxToSp
 import io.github.fershibli.megagames.ui.art.text
+import androidx.compose.foundation.layout.Box
 import io.github.fershibli.megagames.ui.components.ActionBar
+import io.github.fershibli.megagames.ui.components.BoardSide
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
+import io.github.fershibli.megagames.ui.components.sideSeat
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.BigDialog
@@ -181,14 +186,31 @@ private fun PlayScreen(state: MutableState<ChessState>, host: GameHost) {
     val pos = line.current
     val status = remember(line) { line.status() }
     val playing = status == Chess.Status.PLAYING
-    val legal = remember(line) { if (playing && pos.side == Chess.WHITE) Chess.legalMoves(pos) else emptyList() }
+    // Taking turns on this phone: White and Black are both people; the board never turns around.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    val whiteSeat = sideSeat(BoardSide.WHITE, Color(0xFFF4F1EA))
+    val blackSeat = sideSeat(BoardSide.BLACK, Color(0xFF232323))
+    val human = pos.side == Chess.WHITE || together
+    val legal = remember(line) { if (playing && human) Chess.legalMoves(pos) else emptyList() }
     var selected by remember { mutableIntStateOf(-1) }
     var promotion by remember { mutableStateOf<List<Int>>(emptyList()) }
     var hint by remember { mutableStateOf<Int?>(null) }
 
     val pace = currentPace
     LaunchedEffect(s.moves) {
-        if (!playing) {
+        if (!playing && together) {
+            val winner = if (pos.side == Chess.BLACK) BoardSide.WHITE else BoardSide.BLACK
+            val detail = when (status) {
+                Chess.Status.CHECKMATE -> context.getString(R.string.chess_checkmate) + "\n" + context.getString(winner.wins)
+                Chess.Status.STALEMATE -> context.getString(R.string.chess_stalemate)
+                Chess.Status.INSUFFICIENT -> context.getString(R.string.chess_insufficient)
+                Chess.Status.FIFTY_MOVES -> context.getString(R.string.chess_fifty)
+                else -> context.getString(R.string.chess_repetition)
+            }
+            pace.wait(900)
+            host.finish(GameOutcome(true, detail, shared = true))
+        } else if (!playing) {
             val detail = when (status) {
                 Chess.Status.CHECKMATE -> context.getString(if (pos.side == Chess.BLACK) R.string.chess_checkmate_win else R.string.chess_checkmate_lose)
                 Chess.Status.STALEMATE -> context.getString(R.string.chess_stalemate)
@@ -198,7 +220,7 @@ private fun PlayScreen(state: MutableState<ChessState>, host: GameHost) {
             }
             pace.wait(900)
             host.finish(GameOutcome(status == Chess.Status.CHECKMATE && pos.side == Chess.BLACK, detail))
-        } else if (pos.side == Chess.BLACK) {
+        } else if (pos.side == Chess.BLACK && !together) {
             pace.wait(450)
             val history = line.keys.dropLast(1).toSet()
             val move = withContext(Dispatchers.Default) { ChessAi.bestMove(pos, host.difficulty, Random.Default, history) }
@@ -210,7 +232,11 @@ private fun PlayScreen(state: MutableState<ChessState>, host: GameHost) {
         selected = -1
         promotion = emptyList()
         hint = null
-        state.value = s.copy(moves = s.moves + Chess.uci(m))
+        val moves = s.moves + Chess.uci(m)
+        state.value = s.copy(moves = moves)
+        if (together && ChessGameLine.fromUci(moves).status() == Chess.Status.PLAYING) {
+            handoff.passTo(if (pos.side == Chess.WHITE) blackSeat else whiteSeat)
+        }
     }
 
     fun tap(sq: Int) {
@@ -223,44 +249,52 @@ private fun PlayScreen(state: MutableState<ChessState>, host: GameHost) {
         selected = if (legal.any { Chess.from(it) == sq } && sq != selected) sq else -1
     }
 
-    GameLayout(
-        status = {
-            val text = when {
-                !playing -> ""
-                pos.side == Chess.BLACK -> stringResource(R.string.computer_turn)
-                Chess.inCheck(pos) -> stringResource(R.string.chess_check_you)
-                selected >= 0 -> stringResource(R.string.chess_pick_target)
-                else -> stringResource(R.string.chess_pick_piece)
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val text = when {
+                    !playing -> ""
+                    !human -> stringResource(R.string.computer_turn)
+                    Chess.inCheck(pos) -> stringResource(R.string.chess_check_you)
+                    selected >= 0 -> stringResource(R.string.chess_pick_target)
+                    together -> ""
+                    else -> stringResource(R.string.chess_pick_piece)
+                }
+                val turn = if (together && playing) stringResource(if (pos.side == Chess.WHITE) BoardSide.WHITE.turn else BoardSide.BLACK.turn) else ""
+                val lines = listOf(turn, text).filter { it.isNotEmpty() }
+                if (lines.isNotEmpty()) StatusPill(lines.joinToString("\n"), emphasized = human)
+            },
+            controls = {
+                ActionBar {
+                    // Against the computer Undo takes back its answer too; taking turns, one move.
+                    val back = if (together) 1 else 2
+                    BigButton(stringResource(R.string.undo), {
+                        state.value = s.copy(moves = s.moves.dropLast(back))
+                        selected = -1
+                        hint = null
+                    }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = legal.isNotEmpty() && s.moves.size >= back)
+                    BigButton(stringResource(R.string.hint), {
+                        selected = -1
+                        scope.launch {
+                            val keys = line.keys.dropLast(1).toSet()
+                            val best = withContext(Dispatchers.Default) { ChessAi.bestMove(pos, Difficulty.MEDIUM, Random.Default, keys) }
+                            // Only if the player has not moved in the meantime.
+                            if (state.value.moves == s.moves) hint = best
+                        }
+                    }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = legal.isNotEmpty())
+                }
+            },
+        ) {
+            BoxWithConstraints(Modifier.fillMaxSize().padding(8.dp), contentAlignment = Alignment.Center) {
+                val side = minOf(maxWidth, maxHeight)
+                val targets = if (selected >= 0) legal.filter { Chess.from(it) == selected }.map { Chess.to(it) }.toSet() else emptySet()
+                ChessBoard(
+                    pos, Modifier.size(side).testTag("chess-board"), selected, targets, line.moves.lastOrNull(), hint,
+                    onTap = { tap(it) },
+                )
             }
-            if (text.isNotEmpty()) StatusPill(text, emphasized = pos.side == Chess.WHITE)
-        },
-        controls = {
-            ActionBar {
-                BigButton(stringResource(R.string.undo), {
-                    state.value = s.copy(moves = s.moves.dropLast(2))
-                    selected = -1
-                    hint = null
-                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = legal.isNotEmpty() && s.moves.size >= 2)
-                BigButton(stringResource(R.string.hint), {
-                    selected = -1
-                    scope.launch {
-                        val keys = line.keys.dropLast(1).toSet()
-                        val best = withContext(Dispatchers.Default) { ChessAi.bestMove(pos, Difficulty.MEDIUM, Random.Default, keys) }
-                        // Only if the player has not moved in the meantime.
-                        if (state.value.moves == s.moves) hint = best
-                    }
-                }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = legal.isNotEmpty())
-            }
-        },
-    ) {
-        BoxWithConstraints(Modifier.fillMaxSize().padding(8.dp), contentAlignment = Alignment.Center) {
-            val side = minOf(maxWidth, maxHeight)
-            val targets = if (selected >= 0) legal.filter { Chess.from(it) == selected }.map { Chess.to(it) }.toSet() else emptySet()
-            ChessBoard(
-                pos, Modifier.size(side).testTag("chess-board"), selected, targets, line.moves.lastOrNull(), hint,
-                onTap = { tap(it) },
-            )
         }
+        HandoffOverlay(handoff) {}
     }
 
     if (promotion.isNotEmpty()) {

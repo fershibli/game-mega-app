@@ -12,4 +12,8 @@
     <string name="mancala_feed">لا بذور لدى الحاسوب: اختر حفرة تعطيه بعضها</string>
     <string name="mancala_final">النتيجة النهائية: أنت %1$d، الحاسوب %2$d.</string>
     <string name="mancala_draw">تعادل: لكل منكما %1$d.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">المخازن: الأسفل %1$d · الأعلى %2$d</string>
+    <string name="mancala_feed_together">الجانب الآخر بلا بذور: اختر حفرة تعطيه بعضها</string>
+    <string name="mancala_final_together">العدّ النهائي: الأسفل %1$d، الأعلى %2$d.</string>
 </resources>

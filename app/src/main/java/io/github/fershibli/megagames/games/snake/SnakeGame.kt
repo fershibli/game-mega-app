@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.snake
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -64,7 +66,6 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 import kotlin.math.abs
 import kotlin.random.Random
 
@@ -78,6 +79,7 @@ fun SnakeGame(host: GameHost) {
 
 @Composable
 private fun SnakeScreen(state: MutableState<SnakeState>, host: GameHost, store: WorldStore) {
+    val pace = currentPace
     val s = state.value
     val p = LocalPalette.current
     val left = LocalSettings.current.leftHanded
@@ -92,7 +94,7 @@ private fun SnakeScreen(state: MutableState<SnakeState>, host: GameHost, store: 
     LaunchedEffect(s.over) {
         if (s.over) {
             running = false
-            delay(1500)
+            pace.wait(1500)
             host.finish(GameOutcome(newBest, detail))
         }
     }

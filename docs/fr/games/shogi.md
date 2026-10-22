@@ -4,6 +4,8 @@
 
 Le shōgi est le jeu d’échecs du Japon. Sa grande différence : **les pièces que vous prenez changent de camp**. Vous pouvez ensuite les reposer sur le plateau comme les vôtres.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour. Les pièces prises par chaque joueur attendent de son côté du plateau.
+
 ## Règles au choix
 
 - **Shōgi (9 × 9)** : le jeu complet, 20 pièces par camp.

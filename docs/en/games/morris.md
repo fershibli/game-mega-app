@@ -4,6 +4,8 @@
 
 One of the oldest board games in the world, for two: you (light pieces) against the computer (dark pieces). The board has points joined by lines. Line up three of your pieces along a line, a **mill**, and you remove one of the computer’s pieces.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is.
+
 ## How to play
 
 1. **Placing**: you take turns putting one piece on any empty point. Your pieces still to place wait below the board, the computer’s above it.

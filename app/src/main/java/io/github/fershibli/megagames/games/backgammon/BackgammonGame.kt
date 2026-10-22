@@ -44,7 +44,12 @@ import io.github.fershibli.megagames.ui.art.lighter
 import io.github.fershibli.megagames.ui.art.pxToSp
 import io.github.fershibli.megagames.ui.art.raisedBlock
 import io.github.fershibli.megagames.ui.art.text
+import androidx.compose.foundation.layout.Box
 import io.github.fershibli.megagames.ui.components.ActionBar
+import io.github.fershibli.megagames.ui.components.BoardSide
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
+import io.github.fershibli.megagames.ui.components.sideSeat
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
@@ -82,8 +87,12 @@ fun BackgammonGame(host: GameHost) {
         var a: Int
         var b: Int
         do { a = r.nextInt(1, 7); b = r.nextInt(1, 7) } while (a == b)
-        if (a > b) BackgammonState(BgPosition.initial(), HUMAN, listOf(a, b), BgPosition.initial())
-        else BackgammonState(BgPosition.initial(), AI)
+        when {
+            a > b -> BackgammonState(BgPosition.initial(), HUMAN, listOf(a, b), BgPosition.initial())
+            // Taking turns, the dark side is a person too and plays the opening roll itself.
+            host.setup.together -> BackgammonState(BgPosition.initial(), AI, listOf(b, a), BgPosition.initial())
+            else -> BackgammonState(BgPosition.initial(), AI)
+        }
     }) { state -> BackgammonScreen(state, host) }
 }
 
@@ -144,17 +153,29 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
     val sideways = !settings.backgammonUpright
     var selected by remember { mutableIntStateOf(-1) }
     var noMoves by remember { mutableIntStateOf(0) }
+    // Taking turns on this phone: the light and the dark checkers are both people, each rolling
+    // their own dice. The board never turns around, so the dark side's moves (counted from its own
+    // point of view) are shown on the absolute points.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    val p0 = LocalPalette.current
+    val lightSeat = sideSeat(BoardSide.LIGHT, p0.checkerPlayer)
+    val darkSeat = sideSeat(BoardSide.DARK, p0.checkerAi)
+    fun human(side: Int) = side == HUMAN || together
+    val mine = human(s.turn)
+    /** A point as the side to move counts it, from the absolute point [abs] (bar 25 and tray 0 stay). */
+    fun relative(abs: Int) = if (s.turn == AI && abs in 1..24) 25 - abs else abs
 
-    // All legal sequences for the human's roll, computed from the start of the turn.
+    // All legal sequences for the roll of the person to play, computed from the start of the turn.
     val sequences = remember(s.turnStart, s.roll, s.turn) {
-        if (s.turn == HUMAN && s.roll.isNotEmpty() && s.turnStart != null) {
-            Backgammon.sequences(Backgammon.view(s.turnStart, HUMAN), Backgammon.diceList(s.roll[0], s.roll[1]))
+        if (mine && s.roll.isNotEmpty() && s.turnStart != null) {
+            Backgammon.sequences(Backgammon.view(s.turnStart, s.turn), Backgammon.diceList(s.roll[0], s.roll[1]))
         } else emptyList()
     }
     val nextMoves = remember(sequences, s.played) {
         sequences.filter { it.size > s.played.size && it.subList(0, s.played.size) == s.played }.map { it[s.played.size] }.distinct()
     }
-    val turnComplete = s.turn == HUMAN && s.roll.isNotEmpty() && nextMoves.isEmpty()
+    val turnComplete = mine && s.roll.isNotEmpty() && nextMoves.isEmpty()
     val usedDice = s.played.map { it.die }
     val win = Backgammon.winner(s.position)
 
@@ -168,7 +189,12 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
                 else -> null
             }
             pace.wait(600)
-            host.finish(GameOutcome(win == HUMAN, detail))
+            if (together) {
+                val winner = context.getString(if (win == HUMAN) BoardSide.LIGHT.wins else BoardSide.DARK.wins)
+                host.finish(GameOutcome(true, listOfNotNull(winner, detail).joinToString("\n"), shared = true))
+            } else {
+                host.finish(GameOutcome(win == HUMAN, detail))
+            }
         }
     }
 
@@ -176,7 +202,7 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
     // moves one by one and finally commit the new position.
     var aiShown by remember { mutableIntStateOf(0) }
     LaunchedEffect(s.turn, s.roll, s.aiMoves, win) {
-        if (s.turn != AI || win != 0) return@LaunchedEffect
+        if (s.turn != AI || win != 0 || together) return@LaunchedEffect
         if (s.roll.isEmpty()) {
             pace.wait(700)
             val r = Random.Default
@@ -210,18 +236,21 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
     }
 
     fun move(m: BgMove) {
-        val v = Backgammon.play(Backgammon.view(s.position, HUMAN), listOf(m))
-        state.value = s.copy(position = Backgammon.toPosition(v, HUMAN), played = s.played + m)
+        val v = Backgammon.play(Backgammon.view(s.position, s.turn), listOf(m))
+        state.value = s.copy(position = Backgammon.toPosition(v, s.turn), played = s.played + m)
         selected = -1
     }
 
     fun endTurn() {
         selected = -1
-        state.value = BackgammonState(s.position, AI)
+        val next = if (s.turn == HUMAN) AI else HUMAN
+        state.value = BackgammonState(s.position, next)
+        if (together && Backgammon.winner(s.position) == 0) handoff.passTo(if (next == HUMAN) lightSeat else darkSeat)
     }
 
-    fun tap(target: Int?) {
-        if (s.turn != HUMAN || s.roll.isEmpty() || target == null) return
+    fun tap(screenTarget: Int?) {
+        if (!mine || s.roll.isEmpty() || screenTarget == null) return
+        val target = relative(screenTarget)
         // Tapping a destination of the selected checker moves it.
         if (selected >= 0) {
             val m = nextMoves.firstOrNull { it.from == selected && it.to == target }
@@ -234,84 +263,92 @@ private fun BackgammonScreen(state: MutableState<BackgammonState>, host: GameHos
         if (dests.size == 1 && selected >= 0) move(dests.first())
     }
 
-    GameLayout(
-        status = {
-            val text = when {
-                s.turn == AI -> stringResource(R.string.computer_turn)
-                s.roll.isEmpty() -> stringResource(R.string.backgammon_roll_prompt)
-                turnComplete && sequences.isEmpty() -> stringResource(R.string.backgammon_no_moves)
-                turnComplete -> stringResource(R.string.backgammon_done_prompt)
-                selected >= 0 -> stringResource(R.string.backgammon_pick_target)
-                else -> stringResource(R.string.backgammon_pick_checker)
-            }
-            StatusPill(stringResource(R.string.backgammon_off, shownPosition.offHuman, shownPosition.offAi) + "\n" + text, emphasized = s.turn == HUMAN)
-        },
-        controls = {
-            ActionBar {
-                when {
-                    s.turn == HUMAN && s.roll.isEmpty() -> BigButton(stringResource(R.string.backgammon_roll), ::roll, icon = AppIcon.DICE, compact = true)
-                    else -> BigButton(stringResource(R.string.backgammon_done), ::endTurn, icon = AppIcon.CHECK, enabled = turnComplete, compact = true)
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val text = when {
+                    !mine -> stringResource(R.string.computer_turn)
+                    together && s.roll.isEmpty() -> stringResource(R.string.backgammon_roll_now)
+                    s.roll.isEmpty() -> stringResource(R.string.backgammon_roll_prompt)
+                    turnComplete && sequences.isEmpty() -> stringResource(R.string.backgammon_no_moves)
+                    turnComplete -> stringResource(R.string.backgammon_done_prompt)
+                    selected >= 0 -> stringResource(R.string.backgammon_pick_target)
+                    else -> stringResource(R.string.backgammon_pick_checker)
                 }
-                BigButton(stringResource(R.string.undo), {
-                    s.turnStart?.let { state.value = s.copy(position = it, played = emptyList()) }
-                    selected = -1
-                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = s.turn == HUMAN && s.played.isNotEmpty(), compact = true)
-                BigButton(
-                    stringResource(R.string.backgammon_rotate),
-                    { updateSettings(settings.copy(backgammonUpright = !settings.backgammonUpright)) },
-                    icon = AppIcon.ROTATE, style = ButtonStyle.SECONDARY, compact = true,
-                )
-            }
-        },
-    ) {
-        val p = LocalPalette.current
-        val measurer = rememberTextMeasurer()
-        val targets = nextMoves.filter { it.from == selected }.map { it.to }.toSet()
-        val sources = nextMoves.map { it.from }.toSet()
-        BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
-            // Same proportions either way: 4 wide by 5 tall standing, 5 wide by 4 tall sideways.
-            val (w, h) = if (sideways) {
-                minOf(maxWidth, maxHeight * 1.25f).let { it to it * 0.8f }
-            } else {
-                minOf(maxWidth, maxHeight * 0.8f) to maxHeight
-            }
-            Canvas(
-                Modifier
-                    .size(w, h)
-                    .testTag("backgammon-board")
-                    .pointerInput(s, selected, nextMoves, sideways) {
-                        detectTapGestures { o -> tap(BoardGeometry(size.width.toFloat(), size.height.toFloat(), sideways).hit(o)) }
-                    },
-            ) {
-                val g = BoardGeometry(size.width, size.height, sideways)
-                orient(g) {
-                    drawBoard(g, p, measurer)
-                    // Highlights
-                    for (t in targets) {
-                        val r = if (t == 0) g.trayRect else g.pointRect(t)
-                        drawRoundRect(p.hint.copy(alpha = 0.45f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
+                val off = if (together) stringResource(R.string.backgammon_off_together, shownPosition.offHuman, shownPosition.offAi)
+                else stringResource(R.string.backgammon_off, shownPosition.offHuman, shownPosition.offAi)
+                val turn = if (together) stringResource(if (s.turn == HUMAN) BoardSide.LIGHT.turn else BoardSide.DARK.turn) + "\n" else ""
+                StatusPill(off + "\n" + turn + text, emphasized = mine)
+            },
+            controls = {
+                ActionBar {
+                    when {
+                        mine && s.roll.isEmpty() -> BigButton(stringResource(R.string.backgammon_roll), ::roll, icon = AppIcon.DICE, compact = true)
+                        else -> BigButton(stringResource(R.string.backgammon_done), ::endTurn, icon = AppIcon.CHECK, enabled = turnComplete, compact = true)
                     }
-                    if (s.turn == HUMAN && selected < 0) for (src in sources) {
-                        if (src == 25) continue
-                        val r = g.pointRect(src)
-                        drawRoundRect(p.highlight.copy(alpha = 0.35f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
-                    }
-                    drawCheckers(g, shownPosition, p, measurer, selected)
-                    val lastAi = if (aiShown > 0) s.aiMoves[aiShown - 1] else null
-                    if (lastAi != null && lastAi.to != 0) {
-                        val abs = 25 - lastAi.to
-                        val r = g.pointRect(abs)
-                        drawRoundRect(p.danger, r.topLeft, r.size, CornerRadius(g.ph * 0.2f), style = Stroke(g.ph * 0.08f))
-                    }
-                    if (s.roll.isNotEmpty()) {
-                        val dice = Backgammon.diceList(s.roll[0], s.roll[1])
-                        val used = if (s.turn == HUMAN) usedDice else s.aiMoves.take(aiShown).map { it.die }
-                        val remaining = dice.toMutableList().also { list -> used.forEach { list.remove(it) } }
-                        drawDice(g, s.roll, dice, remaining, s.turn == AI, p)
+                    BigButton(stringResource(R.string.undo), {
+                        s.turnStart?.let { state.value = s.copy(position = it, played = emptyList()) }
+                        selected = -1
+                    }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = mine && s.played.isNotEmpty(), compact = true)
+                    BigButton(
+                        stringResource(R.string.backgammon_rotate),
+                        { updateSettings(settings.copy(backgammonUpright = !settings.backgammonUpright)) },
+                        icon = AppIcon.ROTATE, style = ButtonStyle.SECONDARY, compact = true,
+                    )
+                }
+            },
+        ) {
+            val p = LocalPalette.current
+            val measurer = rememberTextMeasurer()
+            // Moves are counted from the side to play; the board shows absolute points (same numbers once turned).
+            val targets = nextMoves.filter { it.from == selected }.map { relative(it.to) }.toSet()
+            val sources = nextMoves.map { relative(it.from) }.toSet()
+            BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
+                // Same proportions either way: 4 wide by 5 tall standing, 5 wide by 4 tall sideways.
+                val (w, h) = if (sideways) {
+                    minOf(maxWidth, maxHeight * 1.25f).let { it to it * 0.8f }
+                } else {
+                    minOf(maxWidth, maxHeight * 0.8f) to maxHeight
+                }
+                Canvas(
+                    Modifier
+                        .size(w, h)
+                        .testTag("backgammon-board")
+                        .pointerInput(s, selected, nextMoves, sideways) {
+                            detectTapGestures { o -> tap(BoardGeometry(size.width.toFloat(), size.height.toFloat(), sideways).hit(o)) }
+                        },
+                ) {
+                    val g = BoardGeometry(size.width, size.height, sideways)
+                    orient(g) {
+                        drawBoard(g, p, measurer)
+                        // Highlights
+                        for (t in targets) {
+                            val r = if (t == 0) g.trayRect else g.pointRect(t)
+                            drawRoundRect(p.hint.copy(alpha = 0.45f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
+                        }
+                        if (mine && selected < 0) for (src in sources) {
+                            if (src == 25) continue
+                            val r = g.pointRect(src)
+                            drawRoundRect(p.highlight.copy(alpha = 0.35f), r.topLeft, r.size, CornerRadius(g.ph * 0.2f))
+                        }
+                        drawCheckers(g, shownPosition, p, measurer, if (selected >= 0) relative(selected) else -1, s.turn)
+                        val lastAi = if (aiShown > 0) s.aiMoves[aiShown - 1] else null
+                        if (lastAi != null && lastAi.to != 0) {
+                            val abs = 25 - lastAi.to
+                            val r = g.pointRect(abs)
+                            drawRoundRect(p.danger, r.topLeft, r.size, CornerRadius(g.ph * 0.2f), style = Stroke(g.ph * 0.08f))
+                        }
+                        if (s.roll.isNotEmpty()) {
+                            val dice = Backgammon.diceList(s.roll[0], s.roll[1])
+                            val used = if (mine) usedDice else s.aiMoves.take(aiShown).map { it.die }
+                            val remaining = dice.toMutableList().also { list -> used.forEach { list.remove(it) } }
+                            drawDice(g, s.roll, dice, remaining, s.turn == AI, p)
+                        }
                     }
                 }
             }
         }
+        HandoffOverlay(handoff) {}
     }
 }
 
@@ -357,7 +394,8 @@ private fun DrawScope.drawBoard(g: BoardGeometry, p: Palette, measurer: TextMeas
     drawLine(p.wood, Offset(g.trayRect.center.x, g.trayRect.top), Offset(g.trayRect.center.x, g.trayRect.bottom), 3f)
 }
 
-private fun DrawScope.drawCheckers(g: BoardGeometry, pos: BgPosition, p: Palette, measurer: TextMeasurer, selected: Int) {
+/** [selected] is the absolute point (or 25 for the bar) of the checker picked by [side], or -1. */
+private fun DrawScope.drawCheckers(g: BoardGeometry, pos: BgPosition, p: Palette, measurer: TextMeasurer, selected: Int, side: Int) {
     val r = g.radius
     fun stack(baseX: Float, y: Float, dir: Float, count: Int, color: Color, rim: Color, highlightTop: Boolean, room: Float) {
         if (count == 0) return
@@ -381,11 +419,11 @@ private fun DrawScope.drawCheckers(g: BoardGeometry, pos: BgPosition, p: Palette
         if (v == 0) continue
         val rect = g.pointRect(pt)
         val left = pt <= 12
-        stack(if (left) rect.left else rect.right, rect.center.y, if (left) 1f else -1f, kotlin.math.abs(v), if (v > 0) human else ai, if (v > 0) humanRim else aiRim, v > 0 && pt == selected, g.halfW)
+        stack(if (left) rect.left else rect.right, rect.center.y, if (left) 1f else -1f, kotlin.math.abs(v), if (v > 0) human else ai, if (v > 0) humanRim else aiRim, pt == selected && (v > 0) == (side == HUMAN), g.halfW)
     }
     // Bar: player's checkers on the left end, computer's on the right end (the dice sit between).
-    stack(g.barRect.left, g.barRect.center.y, 1f, pos.barHuman, human, humanRim, selected == 25, g.halfW * 0.45f)
-    stack(g.barRect.right, g.barRect.center.y, -1f, pos.barAi, ai, aiRim, false, g.halfW * 0.45f)
+    stack(g.barRect.left, g.barRect.center.y, 1f, pos.barHuman, human, humanRim, selected == 25 && side == HUMAN, g.halfW * 0.45f)
+    stack(g.barRect.right, g.barRect.center.y, -1f, pos.barAi, ai, aiRim, selected == 25 && side == AI, g.halfW * 0.45f)
     // Borne-off checkers as thin slabs in the tray: yours on the left, the computer's on the right.
     val slabW = (g.trayRect.width / 2 - g.frame) / 15f
     for (k in 0 until pos.offHuman) {

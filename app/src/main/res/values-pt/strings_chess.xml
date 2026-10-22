@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">Xadrez</string>
     <string name="howto_chess">Toque em uma peça para ver aonde ela pode ir e depois toque na casa. Dê xeque-mate no rei do computador para ganhar.</string>
-    <string name="chess_variant_standard">Jogar contra o computador</string>
+    <string name="chess_variant_standard">Jogar uma partida</string>
     <string name="chess_variant_standard_desc">Regras completas: roque, en passant, promoção, xeque e todos os tipos de empate.</string>
     <string name="chess_variant_famous">Partidas famosas</string>
     <string name="chess_variant_famous_desc">Reveja grandes partidas da história, lance a lance.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">A Imortal de Kasparov</string>
     <string name="chess_famous_kasparov_where">Wijk aan Zee, 1999</string>
     <string name="chess_famous_kasparov_about">Kasparov entrega uma torre e persegue o rei de Topalov pelo tabuleiro inteiro. Muitos a consideram uma das partidas mais bonitas já jogadas.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">Xeque-mate!</string>
 </resources>
