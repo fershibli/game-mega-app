@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buraco_table_pairs">في فريقين: يجلس الشريكان متقابلين</string>
+    <string name="buraco_seat_you">أنت</string>
+    <string name="buraco_seat_partner">الشريك</string>
+    <string name="buraco_seat_right">اليمين</string>
+    <string name="buraco_seat_left">اليسار</string>
+    <string name="buraco_us">نحن</string>
+    <string name="buraco_them">هم</string>
+    <string name="buraco_pair">اللاعبان %1$s و%2$s</string>
+    <string name="buraco_playing">%1$s يلعب الآن…</string>
+    <string name="buraco_our_sequences">متتالياتنا</string>
+    <string name="buraco_their_sequences">متتالياتهم</string>
+    <string name="buraco_points_sides">النقاط — %1$s: %2$d · %3$s: %4$d</string>
+    <string name="buraco_went_out_seat">أنهى %1$s أوراقه (+100).</string>
+    <string name="buraco_winner">الفائز: %1$s</string>
+    <string name="buraco_tie">تعادل.</string>
+</resources>

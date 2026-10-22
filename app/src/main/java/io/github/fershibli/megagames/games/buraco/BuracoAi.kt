@@ -15,6 +15,11 @@ import kotlin.random.Random
  * - Hard: also weighs the whole pile, keeps wild cards for canastas, never dirties a clean
  *   canasta and tracks which cards you picked up to avoid feeding you.
  *
+ * With four players the same player sits in every computer seat. Partners share their side's
+ * sequences, so a partner keeps adding to them and protects their canastas like its own; the
+ * "danger" of a discard is judged against the other side's sequences, which is what the next
+ * player (always an opponent) could use or take the pile for.
+ *
  * A turn is returned as a list of intermediate states so the screen can show each step.
  */
 object BuracoAi {
@@ -52,7 +57,7 @@ object BuracoAi {
         if (pile.isEmpty()) return false
         val me = s.turn
         val hand = s.hands[me]
-        val melds = s.melds[me]
+        val melds = s.melds[s.side(me)]
         val top = pile.last()
         val topUseful = top.rank == 2 || usableNow(top, hand, melds)
         return when (difficulty) {
@@ -122,6 +127,7 @@ object BuracoAi {
         val steps = ArrayList<BuracoState>()
         var s = start
         val me = s.turn
+        val side = s.side(me)
         if (!s.drawn) {
             s = if (wantsPile(s, difficulty, random)) Buraco.takeDiscardPile(s) ?: Buraco.drawFromStock(s) else Buraco.drawFromStock(s)
             steps += s
@@ -134,7 +140,7 @@ object BuracoAi {
             progress = false
             // 1) Add natural cards to existing sequences.
             for (card in s.hands[me].filter { it.rank != 2 }.sortedBy { it.rank }) {
-                val idx = fitsAnyMeld(card, s.melds[me])
+                val idx = fitsAnyMeld(card, s.melds[side])
                 if (idx < 0) continue
                 applyOk(Buraco.addToMeld(s, idx, listOf(card)))?.let { s = it; steps += s; progress = true }
                 if (progress) break
@@ -148,7 +154,7 @@ object BuracoAi {
             if (progress) continue
             // 3) Wild cards.
             val wild = s.hands[me].firstOrNull { it.rank == 2 } ?: continue
-            val melds = s.melds[me]
+            val melds = s.melds[side]
             val target = melds.indices.firstOrNull { i ->
                 val m = melds[i]
                 val clean = BuracoRules.isClean(m)
@@ -173,12 +179,14 @@ object BuracoAi {
 
         // Discard the least useful card, avoiding cards that would help the opponent.
         val hand = s.hands[me]
-        val opponentMelds = s.melds[1 - me]
+        val opponentMelds = s.melds[1 - side]
+        // What the other side picked up from the pile (the hard player remembers it).
+        val opponentPicks = if (side == 0) s.theirPicks else s.yourPicks
         val scored = hand.map { c ->
-            var cost = keepValue(c, hand, s.melds[me])
+            var cost = keepValue(c, hand, s.melds[side])
             if (difficulty != Difficulty.EASY && fitsAnyMeld(c, opponentMelds) >= 0) cost += if (difficulty == Difficulty.HARD) 60.0 else 35.0
             if (difficulty == Difficulty.HARD) {
-                if (s.yourPicks.any { it.suit == c.suit && abs(it.rank - c.rank) <= 2 }) cost += 12.0
+                if (opponentPicks.any { it.suit == c.suit && abs(it.rank - c.rank) <= 2 }) cost += 12.0
                 // Cards next to ones already thrown away are less likely to help the opponent.
                 if (s.discard.any { it.suit == c.suit && abs(it.rank - c.rank) <= 1 }) cost -= 8.0
                 // Discarding a card the opponent can lay down right away invites them to take the pile.

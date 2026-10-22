@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">A turned card (the vira) makes the next card of its suit wild.</string>
     <string name="cacheta_variant_pife">Pife</string>
     <string name="cacheta_variant_pife_desc">No wild cards, sequences may turn the corner (K-A-2) and you may grab any discard to go out.</string>
-    <string name="cacheta_how_many">How many computer players?</string>
     <string name="cacheta_computer">Computer %1$d</string>
     <string name="cacheta_playing">Computer %1$d is playing…</string>
     <string name="cacheta_deck">Deck (%1$d)</string>
@@ -33,8 +32,7 @@
     <string name="cacheta_deck_over">The cards ran out: nobody went out.</string>
     <string name="cacheta_your_hand">Your hand</string>
     <string name="cacheta_groups_note">green bar = already in a group</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="one">%1$d computer</item>
-        <item quantity="other">%1$d computers</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$s is playing…</string>
+    <string name="cacheta_went_out_seat">%1$s went out!</string>
+    <string name="cacheta_went_out_ten_seat">%1$s went out with all 10 cards!</string>
 </resources>

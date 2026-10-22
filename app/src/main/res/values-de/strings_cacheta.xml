@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">Eine aufgedeckte Karte (die Vira) macht die nächste Karte ihrer Farbe zum Joker.</string>
     <string name="cacheta_variant_pife">Pife</string>
     <string name="cacheta_variant_pife_desc">Ohne Joker, Folgen dürfen herumgehen (K-A-2) und du darfst jede abgeworfene Karte nehmen, um zu bater.</string>
-    <string name="cacheta_how_many">Wie viele Computergegner?</string>
     <string name="cacheta_computer">Computer %1$d</string>
     <string name="cacheta_playing">Computer %1$d ist am Zug…</string>
     <string name="cacheta_deck">Stapel (%1$d)</string>
@@ -33,8 +32,7 @@
     <string name="cacheta_deck_over">Die Karten sind aus: niemand hat gebatet.</string>
     <string name="cacheta_your_hand">Deine Hand</string>
     <string name="cacheta_groups_note">grüner Balken = schon in einer Gruppe</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="one">%1$d Computer</item>
-        <item quantity="other">%1$d Computer</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$s ist am Zug…</string>
+    <string name="cacheta_went_out_seat">%1$s hat gebatet!</string>
+    <string name="cacheta_went_out_ten_seat">%1$s hat mit allen 10 Karten gebatet!</string>
 </resources>

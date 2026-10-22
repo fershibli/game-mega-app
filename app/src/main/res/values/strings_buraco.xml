@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="buraco_table_pairs">In pairs: partners sit opposite each other</string>
+    <string name="buraco_seat_you">You</string>
+    <string name="buraco_seat_partner">Partner</string>
+    <string name="buraco_seat_right">Right</string>
+    <string name="buraco_seat_left">Left</string>
+    <string name="buraco_us">Us</string>
+    <string name="buraco_them">Them</string>
+    <string name="buraco_pair">Players %1$s and %2$s</string>
+    <string name="buraco_playing">%1$s is playing…</string>
+    <string name="buraco_our_sequences">Our sequences</string>
+    <string name="buraco_their_sequences">Their sequences</string>
+    <string name="buraco_points_sides">Points — %1$s: %2$d · %3$s: %4$d</string>
+    <string name="buraco_went_out_seat">%1$s went out (+100).</string>
+    <string name="buraco_winner">Winner: %1$s</string>
+    <string name="buraco_tie">It is a tie.</string>
+</resources>

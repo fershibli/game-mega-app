@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">Una carta vuelta (la vira) hace comodín a la siguiente carta de su palo.</string>
     <string name="cacheta_variant_pife">Pife</string>
     <string name="cacheta_variant_pife_desc">Sin comodín, la escalera puede dar la vuelta (K-A-2) y puedes coger cualquier descarte para bater.</string>
-    <string name="cacheta_how_many">¿Cuántos jugadores del ordenador?</string>
     <string name="cacheta_computer">Ordenador %1$d</string>
     <string name="cacheta_playing">El ordenador %1$d está jugando…</string>
     <string name="cacheta_deck">Mazo (%1$d)</string>
@@ -33,9 +32,7 @@
     <string name="cacheta_deck_over">Se acabaron las cartas: nadie batió.</string>
     <string name="cacheta_your_hand">Tu mano</string>
     <string name="cacheta_groups_note">barra verde = ya en un grupo</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="one">%1$d ordenador</item>
-        <item quantity="many">%1$d ordenadores</item>
-        <item quantity="other">%1$d ordenadores</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$s está jugando…</string>
+    <string name="cacheta_went_out_seat">¡%1$s ha batido!</string>
+    <string name="cacheta_went_out_ten_seat">¡%1$s ha batido con las 10 cartas!</string>
 </resources>

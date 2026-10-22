@@ -1,6 +1,6 @@
 # Truco
 
-Truco ist das fröhlichste Kartenspiel Brasiliens: Gewinne zwei von drei Stichen mit den stärksten Karten und rufe **„Truco!“**, damit die Runde mehr zählt. In Mili Games wählst du zu Beginn: **du gegen den Computer** oder **du und ein Partner (Computer) gegen zwei Computer**; der Partner sitzt dir gegenüber.
+Truco ist das fröhlichste Kartenspiel Brasiliens: Gewinne zwei von drei Stichen mit den stärksten Karten und rufe **„Truco!“**, damit die Runde mehr zählt. In Mili Games fragt die App vor jedem Spiel **Wie viele am Tisch?**: **2** (einer gegen einen) oder **4** (zwei gegen zwei, Partner sitzen sich gegenüber). Gegen den Computer ist zu viert auch dein Partner ein Computer; ihr könnt auch als Menschen **abwechselnd an einem Telefon** spielen.
 
 ## Die Karten
 - 40 Karten: ein normales Spiel ohne 8, 9, 10 und Joker. Jeder bekommt **3 Karten**.
@@ -36,3 +36,6 @@ Truco behält in allen Sprachen seine portugiesischen Wörter: **Truco!**, **Sei
 
 ## Regionale Regeln
 Truco ist von Stadt zu Stadt anders. In Minas Gerais beginnen viele Runden bei 2 Punkten (Truco 4, dann 6 oder 8, 10 und 12) mit einer „Zehnerhand“; Mili Games nutzt für beide Varianten dieselbe einfache Leiter 1-3-6-9-12 und die Elferhand. Verdeckt gespielte Karten („encoberta“) und geheime Zeichen zwischen Partnern gibt es in der App nicht.
+
+## Abwechselnd an einem Telefon
+Wähle **Abwechselnd an diesem Telefon** beim Schwierigkeitsgrad und dann 2 oder 4 am Tisch: Zwei Menschen spielen gegeneinander, oder vier spielen in Paaren (Spieler 1 und 3 gegen 2 und 4). Nach jedem Zug verdeckt ein Schirm die Karten und bittet, das Telefon an den weiterzugeben, der als Nächstes handeln muss — eine Karte spielen oder auf ein Truco antworten (es antwortet, wer nach dem Rufer sitzt). Gespielt wird gegen den Uhrzeigersinn, wie in Brasilien. Die Punkteleiste zeigt jede Seite mit ihren Spielern und den Symbolen ihrer Plätze.

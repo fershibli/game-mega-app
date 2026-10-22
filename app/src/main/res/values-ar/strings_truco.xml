@@ -6,9 +6,6 @@
     <string name="truco_variant_paulista_desc">40 ورقة؛ الورقة المكشوفة (الفيرا) تحدد المانيليا، أقوى الأوراق.</string>
     <string name="truco_variant_mineiro">مينيرو</string>
     <string name="truco_variant_mineiro_desc">40 ورقة؛ مانيليا ثابتة 4♣ و7♥ وA♠ و7♦ بلا فيرا.</string>
-    <string name="truco_how_many">كيف تريد أن تلعب؟</string>
-    <string name="truco_one_vs_one">أنت ضد الكمبيوتر</string>
-    <string name="truco_two_vs_two">أنت وشريك ضد كمبيوترين</string>
     <string name="truco_us">نحن</string>
     <string name="truco_them">هم</string>
     <string name="truco_worth">القيمة %1$d</string>
@@ -44,4 +41,11 @@
     <string name="truco_final">النتيجة النهائية: نحن %1$d × %2$d هم</string>
     <string name="truco_partner">الشريك</string>
     <string name="truco_computer">الكمبيوتر</string>
+    <string name="truco_table_pairs">اثنان ضد اثنين: يجلس الشريكان متقابلين</string>
+    <string name="truco_pair">اللاعبان %1$s و%2$s</string>
+    <string name="truco_playing">%1$s يلعب الآن…</string>
+    <string name="truco_trick_to">هذه اللمّة لـ%1$s</string>
+    <string name="truco_hand_to">الجولة لـ%1$s: +%2$d</string>
+    <string name="truco_final_sides">النتيجة النهائية — %1$s: %2$d، %3$s: %4$d</string>
+    <string name="truco_winner">الفائز: %1$s</string>
 </resources>

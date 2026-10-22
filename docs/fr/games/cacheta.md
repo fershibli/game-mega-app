@@ -1,6 +1,6 @@
 # Cacheta
 
-La cacheta est le rami brésilien des tables de cuisine : piochez, défaussez et soyez le premier à avoir toutes vos cartes en combinaisons. Dans Mili Games, vous jouez contre **1, 2 ou 3 ordinateurs** (à choisir au début de chaque partie).
+La cacheta est le rami brésilien des tables de cuisine : piochez, défaussez et soyez le premier à avoir toutes vos cartes en combinaisons. Dans Mili Games, on joue **à 2, 3 ou 4** : avant chaque partie, l’application demande **Combien à table ?** (et retient votre choix). Vous jouez contre 1 à 3 ordinateurs, ou avec d’autres personnes **chacun son tour sur un seul téléphone**.
 
 ## Les cartes
 - Deux jeux de 52 cartes (104 cartes), sans jokers.
@@ -34,3 +34,6 @@ Après la pioche vous avez 10 cartes. Quand 9 d’entre elles sont combinées (l
 - **Indice** propose la carte à défausser. **Par couleur / Par valeur** trie votre main.
 - Les paires (deux 7, ou 7♥ 8♥) sont des demi-combinaisons : gardez-les et jetez d’abord les cartes isolées.
 - Surveillez la défausse : si un ordinateur a pris un 6♠, ne lui donnez ni le 5♠ ni le 7♠.
+
+## Chacun son tour sur un seul téléphone
+Choisissez **Chacun son tour sur ce téléphone** sur l’écran du niveau, puis 2, 3 ou 4 à table : tout le monde est une personne, personne ne joue contre l’ordinateur. Après chaque tour, un écran cache les cartes et demande de passer le téléphone au joueur suivant, avec sa couleur et son symbole ; il touche le grand bouton (« C’est bon, c’est mon tour ») pour voir sa main. On joue dans le sens inverse des aiguilles d’une montre, comme au Brésil. Au Pife, si un autre joueur peut bater avec la carte qui vient d’être jetée, le téléphone lui revient pour la prendre ou la laisser.

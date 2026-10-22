@@ -6,9 +6,6 @@
     <string name="truco_variant_paulista_desc">40 cartas; a vira escolhe as manilhas, as cartas mais fortes.</string>
     <string name="truco_variant_mineiro">Mineiro</string>
     <string name="truco_variant_mineiro_desc">40 cartas; manilhas fixas 4♣, 7♥, A♠, 7♦, sem vira.</string>
-    <string name="truco_how_many">Como você quer jogar?</string>
-    <string name="truco_one_vs_one">Você contra o computador</string>
-    <string name="truco_two_vs_two">Você e um parceiro contra dois computadores</string>
     <string name="truco_us">Nós</string>
     <string name="truco_them">Eles</string>
     <string name="truco_worth">Valendo %1$d</string>
@@ -44,4 +41,11 @@
     <string name="truco_final">Placar final: nós %1$d × %2$d eles</string>
     <string name="truco_partner">Parceiro</string>
     <string name="truco_computer">Computador</string>
+    <string name="truco_table_pairs">Dois contra dois: os parceiros sentam frente a frente</string>
+    <string name="truco_pair">Jogadores %1$s e %2$s</string>
+    <string name="truco_playing">%1$s está jogando…</string>
+    <string name="truco_trick_to">Esta rodada é de %1$s</string>
+    <string name="truco_hand_to">A mão é de %1$s: +%2$d</string>
+    <string name="truco_final_sides">Placar final — %1$s: %2$d, %3$s: %4$d</string>
+    <string name="truco_winner">Vencedor: %1$s</string>
 </resources>
