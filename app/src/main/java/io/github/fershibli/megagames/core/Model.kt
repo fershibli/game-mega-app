@@ -102,6 +102,9 @@ enum class GameId(
     LUDO("ludo", R.string.game_ludo, R.string.howto_ludo, GameCategory.BOARD, io.github.fershibli.megagames.games.ludo.LudoRules.VARIANTS, takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
     MORRIS("morris", R.string.game_morris, R.string.howto_morris, GameCategory.BOARD, io.github.fershibli.megagames.games.morris.MorrisRules.VARIANTS, takeTurns = true),
     MANCALA("mancala", R.string.game_mancala, R.string.howto_mancala, GameCategory.BOARD, io.github.fershibli.megagames.games.mancala.MancalaRules.VARIANTS, takeTurns = true),
+    GUESSWORD("guessword", R.string.game_guessword, R.string.howto_guessword, GameCategory.PUZZLES),
+    CRYPTOGRAM("cryptogram", R.string.game_cryptogram, R.string.howto_cryptogram, GameCategory.PUZZLES, languages = setOf(AppLanguage.ENGLISH, AppLanguage.PORTUGUESE, AppLanguage.SPANISH, AppLanguage.FRENCH, AppLanguage.ITALIAN, AppLanguage.GERMAN, AppLanguage.RUSSIAN, AppLanguage.ARABIC)),
+    MAZE("maze", R.string.game_maze, R.string.howto_maze, GameCategory.PUZZLES),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

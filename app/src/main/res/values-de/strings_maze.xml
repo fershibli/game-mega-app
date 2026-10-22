@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">Labyrinth</string>
+    <string name="howto_maze">Zeichne einen Weg vom runden Freund bis zum kleinen Haus. Fahre mit dem Finger durch die Gänge oder tippe auf ein Feld weiter vorn im Gang. Fahre zurück, um Schritte zurückzunehmen.</string>
+    <string name="maze_start">Zeichne einen Weg vom runden Freund bis zum Haus.</string>
+    <string name="maze_going">Weiter so! Fahre zurück, um einen Schritt zurückzugehen.</string>
+    <string name="maze_hint_back">Geh zurück zum großen Ring und folge dann den Ringen.</string>
+    <string name="maze_hint_next">Folge den Ringen.</string>
+    <string name="maze_done">Du bist beim Haus angekommen!</string>
+    <string name="maze_hints_used">Benutzte Tipps: %1$d.</string>
+    <string name="maze_board">Labyrinth, %1$d × %2$d</string>
+</resources>

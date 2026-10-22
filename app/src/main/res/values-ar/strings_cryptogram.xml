@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">الكلمات المشفرة</string>
+    <string name="howto_cryptogram">مثل معروف مخفي هنا: كل حرف استُبدل برمز آخر (برقم في المستوى السهل). المس مربعًا ثم الحرف الذي تظن أنه يخفيه. الرمز نفسه يخفي دائمًا الحرف نفسه.</string>
+    <string name="cryptogram_pick">المس مربعًا ثم حرفًا.</string>
+    <string name="cryptogram_which">ما الحرف الذي يخفيه %1$s؟</string>
+    <string name="cryptogram_not_yet">بعض الحروف ليست صحيحة بعد. يمكن أن يساعدك التلميح.</string>
+    <string name="cryptogram_solved">تم الحل!</string>
+    <string name="cryptogram_done">فككت شفرة المثل: %1$s</string>
+    <string name="cryptogram_hints_used">التلميحات المستخدمة: %1$d.</string>
+    <string name="cryptogram_letter_locked">هذا الحرف في مكانه الصحيح بالفعل.</string>
+</resources>

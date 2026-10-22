@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">Laberinto</string>
+    <string name="howto_maze">Dibuja un camino desde el amiguito redondo hasta la casita. Desliza el dedo por los pasillos o toca un cuadro más adelante en el pasillo. Desliza hacia atrás para deshacer pasos.</string>
+    <string name="maze_start">Dibuja un camino desde el amiguito redondo hasta la casita.</string>
+    <string name="maze_going">¡Sigue! Desliza hacia atrás para retroceder un paso.</string>
+    <string name="maze_hint_back">Vuelve al anillo grande y luego sigue los anillos.</string>
+    <string name="maze_hint_next">Sigue los anillos.</string>
+    <string name="maze_done">¡Llegaste a la casita!</string>
+    <string name="maze_hints_used">Pistas usadas: %1$d.</string>
+    <string name="maze_board">Laberinto, %1$d × %2$d</string>
+</resources>

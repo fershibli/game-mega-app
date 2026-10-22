@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">密码谜题</string>
+    <string name="howto_cryptogram">一句有名的谚语藏在这里：每个字母都换成了别的符号（简单级别换成数字）。先点一个方格，再点你认为它代表的字母。同一个符号总是代表同一个字母。</string>
+    <string name="cryptogram_pick">先点一个方格，再点一个字母。</string>
+    <string name="cryptogram_which">%1$s 是哪个字母？</string>
+    <string name="cryptogram_not_yet">还有一些字母不对。提示可以帮忙。</string>
+    <string name="cryptogram_solved">解开了！</string>
+    <string name="cryptogram_done">你解开了这句谚语：%1$s</string>
+    <string name="cryptogram_hints_used">使用提示：%1$d次。</string>
+    <string name="cryptogram_letter_locked">这个字母已经在正确的位置上了。</string>
+</resources>

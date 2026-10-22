@@ -222,5 +222,9 @@ class ScreenshotTest {
     @Test fun tableLudo() = shot("table_ludo") {
         io.github.fershibli.megagames.ui.screens.TableScreen(GameId.LUDO, true, GameId.LUDO.tables[1], {}, {}, {})
     }
+    @Test fun guessWord() = gameShot("game_guessword", GameId.GUESSWORD)
+    @Test fun cryptogram() = gameShot("game_cryptogram", GameId.CRYPTOGRAM, Difficulty.MEDIUM)
+    @Test fun cryptogramArabic() = gameShot("game_cryptogram_ar", GameId.CRYPTOGRAM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
+    @Test fun maze() = gameShot("game_maze", GameId.MAZE, Difficulty.MEDIUM)
 
 }

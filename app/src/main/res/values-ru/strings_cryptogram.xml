@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">Криптограмма</string>
+    <string name="howto_cryptogram">Спрятана известная пословица: каждая буква заменена другим знаком (на лёгком уровне — числом). Нажмите на клетку, а затем на букву, которую она, по-вашему, скрывает. Один и тот же знак всегда скрывает одну и ту же букву.</string>
+    <string name="cryptogram_pick">Нажмите на клетку, а затем на букву.</string>
+    <string name="cryptogram_which">Какая буква скрыта за %1$s?</string>
+    <string name="cryptogram_not_yet">Некоторые буквы пока неверны. Подсказка может помочь.</string>
+    <string name="cryptogram_solved">Решено!</string>
+    <string name="cryptogram_done">Вы разгадали пословицу: %1$s</string>
+    <string name="cryptogram_hints_used">Подсказок использовано: %1$d.</string>
+    <string name="cryptogram_letter_locked">Эта буква уже на своём месте.</string>
+</resources>

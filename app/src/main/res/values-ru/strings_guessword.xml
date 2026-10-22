@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">Угадай слово</string>
+    <string name="howto_guessword">Угадайте спрятанное слово по одной букве. Каждая буква, которой нет в слове, роняет лепесток с цветка. Найдите слово, пока не упал последний лепесток. В каждом раунде пять слов.</string>
+    <string name="guessword_progress">Слово %1$d из %2$d · Лепестки: %3$d</string>
+    <string name="guessword_clue">Подсказка: %1$s</string>
+    <string name="guessword_clue_hidden">На этом уровне подсказки нет. Нажмите «Подсказка», чтобы её увидеть.</string>
+    <string name="guessword_not_in_word">Нет в слове: %1$s</string>
+    <string name="guessword_found">Отлично! Это слово %1$s.</string>
+    <string name="guessword_word_was">Это было слово %1$s.</string>
+    <string name="guessword_replant">Ничего страшного: для следующего слова посажен новый цветок.</string>
+    <string name="guessword_next">Следующее слово</string>
+    <string name="guessword_see_result">Посмотреть результат</string>
+    <string name="guessword_result">Найдено слов: %1$d из %2$d.</string>
+    <string name="guessword_petals_kept">Сохранено лепестков: %1$d.</string>
+    <string name="guessword_hints_used">Подсказок использовано: %1$d.</string>
+    <string name="guessword_flower">Цветок: лепестков %1$d из %2$d</string>
+</resources>
