@@ -69,9 +69,13 @@ fun <T : Any> LoadGame(
     var loaded by remember(host) { mutableStateOf<MutableState<T>?>(null) }
     LaunchedEffect(host) {
         val initial = host.restore(serializer) ?: withContext(Dispatchers.Default) { create() }
-        val state = mutableStateOf(initial)
-        loaded = state
-        snapshotFlow { state.value }.collect { host.save(serializer, it) }
+        // Back to the main thread before touching the screen: an effect running unconfined (as in
+        // tests) would otherwise carry on in the worker thread that created the game.
+        withContext(Dispatchers.Main) {
+            val state = mutableStateOf(initial)
+            loaded = state
+            snapshotFlow { state.value }.collect { host.save(serializer, it) }
+        }
     }
     val state = loaded
     if (state == null) LoadingBox(Modifier.fillMaxSize()) else content(state)
