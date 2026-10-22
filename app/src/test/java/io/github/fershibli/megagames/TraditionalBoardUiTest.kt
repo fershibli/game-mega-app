@@ -7,6 +7,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTouchInput
+import androidx.compose.ui.test.onAllNodesWithTag
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
@@ -61,7 +62,8 @@ class TraditionalBoardUiTest {
         val restored: JsonElement? = start?.let { AppJson.encodeToJsonElement(serializer, it) }
         val host = GameHost(game, Difficulty.EASY, restored, store, game.variant(variant), setup, onFinish = {})
         rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(game, host) } }
-        rule.waitForIdle()
+        // A new game is prepared off the main thread: tap only once its board is on screen.
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag("${game.key}-board").fetchSemanticsNodes().isNotEmpty() }
         return store
     }
 
