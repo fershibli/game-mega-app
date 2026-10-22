@@ -24,4 +24,12 @@
     <string name="go_hint_pass">提示：已经没有可以得分的地方了，你可以停一手。</string>
     <string name="go_win">你赢了 %1$s。</string>
     <string name="go_lose">电脑赢了 %1$s。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">提子：黑方 %1$d · 白方 %2$d</string>
+    <string name="go_score_together">黑方：%1$s · 白方：%2$s</string>
+    <string name="go_komi_together">白方的计数包含后手补偿 %1$s。</string>
+    <string name="go_other_passed">对方停了一手。继续下，或者也停一手来数子。</string>
+    <string name="go_mark_dead_together">请两人商量：打叉的棋子算作被提。点一组棋子来更改，然后点“数子”。</string>
+    <string name="go_black_wins_by">黑方胜 %1$s。</string>
+    <string name="go_white_wins_by">白方胜 %1$s。</string>
 </resources>

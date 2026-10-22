@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.pegs
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -27,7 +29,6 @@ import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
-import kotlinx.coroutines.delay
 
 /** Pause before the end-of-game message, so the last jump can be seen. */
 private const val END_PAUSE_MS = 700L
@@ -40,13 +41,14 @@ fun PegsGame(host: GameHost) {
 
 @Composable
 private fun PegsScreen(state: MutableState<PegsState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val resources = LocalResources.current
     val legal = Pegs.legalMoves(s.french, s.pegs)
 
     LaunchedEffect(s.pegs) {
         if (!Pegs.isOver(s)) return@LaunchedEffect
-        delay(END_PAUSE_MS)
+        pace.wait(END_PAUSE_MS)
         val n = s.count
         when {
             Pegs.isPerfect(s) -> host.finish(GameOutcome(true, resources.getString(R.string.pegs_win_perfect)))

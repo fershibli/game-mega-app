@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">Шахматы</string>
     <string name="howto_chess">Нажмите на фигуру, чтобы увидеть, куда она может пойти, затем на клетку. Поставьте мат королю компьютера, чтобы победить.</string>
-    <string name="chess_variant_standard">Игра с компьютером</string>
+    <string name="chess_variant_standard">Сыграть партию</string>
     <string name="chess_variant_standard_desc">Все правила: рокировка, взятие на проходе, превращение, шах и все виды ничьей.</string>
     <string name="chess_variant_famous">Знаменитые партии</string>
     <string name="chess_variant_famous_desc">Великие партии истории, ход за ходом.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">Бессмертная Каспарова</string>
     <string name="chess_famous_kasparov_where">Вейк-ан-Зее, 1999</string>
     <string name="chess_famous_kasparov_about">Каспаров жертвует ладью и гонит короля Топалова через всю доску. Её часто называют одной из самых красивых партий в истории.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">Мат!</string>
 </resources>

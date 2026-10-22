@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sides of a board game played by people taking turns on this phone -->
+    <string name="side_white">White</string>
+    <string name="side_black">Black</string>
+    <string name="side_red">Red</string>
+    <string name="side_blue">Blue</string>
+    <string name="side_light">Light pieces</string>
+    <string name="side_dark">Dark pieces</string>
+    <string name="side_bottom">Bottom player</string>
+    <string name="side_top">Top player</string>
+    <string name="side_white_turn">White to play</string>
+    <string name="side_black_turn">Black to play</string>
+    <string name="side_red_turn">Red to play</string>
+    <string name="side_blue_turn">Blue to play</string>
+    <string name="side_light_turn">Light pieces to play</string>
+    <string name="side_dark_turn">Dark pieces to play</string>
+    <string name="side_bottom_turn">Bottom player to play</string>
+    <string name="side_top_turn">Top player to play</string>
+    <string name="side_white_wins">White wins!</string>
+    <string name="side_black_wins">Black wins!</string>
+    <string name="side_red_wins">Red wins!</string>
+    <string name="side_blue_wins">Blue wins!</string>
+    <string name="side_light_wins">Light pieces win!</string>
+    <string name="side_dark_wins">Dark pieces win!</string>
+    <string name="side_bottom_wins">The bottom player wins!</string>
+    <string name="side_top_wins">The top player wins!</string>
+    <string name="sides_score">%1$s: %2$d · %3$s: %4$d</string>
+    <string name="sides_other_passed">The other player passed.</string>
+</resources>

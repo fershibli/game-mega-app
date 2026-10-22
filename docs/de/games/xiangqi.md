@@ -4,6 +4,8 @@
 
 Chinesisches Schach ist das meistgespielte Brettspiel in China und Vietnam. Zwei Armeen stehen sich an einem Fluss gegenüber; wer den **General** der anderen Seite festsetzt, gewinnt.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist.
+
 ## Das Brett
 
 - 9 Linien quer und 10 Linien längs. Die Figuren stehen **auf den Kreuzungen**, nicht in den Feldern.

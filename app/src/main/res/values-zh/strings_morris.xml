@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">你无路可走。</string>
     <string name="morris_draw">和棋：双方各走 50 步都没有成线。</string>
     <string name="morris_draw_full">和棋：棋盘已满。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">棋子：浅色 %1$d · 深色 %2$d</string>
+    <string name="morris_place_together">点一个空点放一枚棋子。还剩：%1$d</string>
+    <string name="morris_remove_together">成三了！点一枚对方颜色的棋子把它拿掉</string>
 </resources>

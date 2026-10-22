@@ -4,6 +4,8 @@
 
 A family of very old “sowing” games from Africa and the Middle East, for two: you play the **bottom row** of six pits, the computer plays the top row. Your store is the big hole on the right, the computer’s on the left. The big number next to each pit tells how many seeds it holds.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is.
+
 ## How to play
 
 - Tap one of your pits that has seeds (they are circled). All its seeds are **sown** one by one into the following holes, counterclockwise: along your row to the right, then along the computer’s row to the left.

@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.spider
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -48,7 +50,6 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.delay
 import kotlin.random.Random
 
 @Composable
@@ -107,6 +108,7 @@ private class TapCycle(val before: SpiderState, val options: List<SpiderMove>, v
 
 @Composable
 private fun SpiderScreen(state: MutableState<SpiderState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val history = remember { mutableStateListOf<SpiderState>() }
     var flash by remember { mutableStateOf<Card?>(null) }
@@ -145,12 +147,12 @@ private fun SpiderScreen(state: MutableState<SpiderState>, host: GameHost) {
 
     // A game saved right at the winning move still ends properly when it is restored.
     LaunchedEffect(Unit) { if (state.value.won) host.finish(GameOutcome(true, null)) }
-    LaunchedEffect(flash) { if (flash != null) { delay(CARD_FLASH_MS); flash = null } }
-    LaunchedEffect(refused) { if (refused != null) { delay(CARD_REFUSED_MS); refused = null } }
-    LaunchedEffect(message) { if (message != null) { delay(CARD_MESSAGE_MS); message = null } }
+    LaunchedEffect(flash) { if (flash != null) { pace.wait(CARD_FLASH_MS); flash = null } }
+    LaunchedEffect(refused) { if (refused != null) { pace.wait(CARD_REFUSED_MS); refused = null } }
+    LaunchedEffect(message) { if (message != null) { pace.wait(CARD_MESSAGE_MS); message = null } }
     LaunchedEffect(stuck) {
         if (!stuck) stuckDismissed = false
-        else if (!stuckDismissed) { delay(CARD_FLASH_MS); showStuck = true }
+        else if (!stuckDismissed) { pace.wait(CARD_FLASH_MS); showStuck = true }
     }
 
     fun onTap(hit: SpiderHit?) {

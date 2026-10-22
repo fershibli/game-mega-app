@@ -2,7 +2,6 @@ package io.github.fershibli.megagames.games.fourinrow
 
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.FastOutLinearInEasing
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -37,7 +36,16 @@ import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.ui.art.darker
 import io.github.fershibli.megagames.ui.art.glossyDisc
 import io.github.fershibli.megagames.ui.art.lighter
+import androidx.compose.foundation.layout.Box
 import io.github.fershibli.megagames.ui.components.ActionBar
+import io.github.fershibli.megagames.ui.components.BoardSide
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
+import io.github.fershibli.megagames.ui.components.sideSeat
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.ui.theme.spec
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
@@ -48,7 +56,6 @@ import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
@@ -109,27 +116,41 @@ private fun FourInRowScreen(state: MutableState<FourInRowState>, host: GameHost)
     val res = LocalResources.current
     val scope = rememberCoroutineScope()
     val pos = remember(s.moves) { FourInRowPosition(s.moves) }
-    val human = FourInRow.opponent(s.computer)
+    // Taking turns on this phone: the light and the dark discs are both people.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    val (firstColor, secondColor) = fourDiscColors(LocalPalette.current)
+    val firstSeat = sideSeat(BoardSide.LIGHT, firstColor)
+    val secondSeat = sideSeat(BoardSide.DARK, secondColor)
+    fun sideOf(side: Int) = if (side == FourInRow.FIRST) BoardSide.LIGHT else BoardSide.DARK
+    val human = if (together) pos.toMove else FourInRow.opponent(s.computer)
     val myTurn = !pos.over && pos.toMove == human
     var hint by remember { mutableIntStateOf(-1) }
     // The newest disc falls into place; a restored game shows its discs at once.
     val drop = remember { Animatable(1f) }
+    val motion = currentMotion
     var shownMoves by remember { mutableIntStateOf(s.moves.size) }
     LaunchedEffect(s.moves.size) {
         if (s.moves.size > shownMoves) {
             drop.snapTo(0f)
             shownMoves = s.moves.size
-            drop.animateTo(1f, tween(DROP_MS, easing = FastOutLinearInEasing))
+            drop.animateTo(1f, motion.spec(DROP_MS, FastOutLinearInEasing))
         } else {
             shownMoves = s.moves.size
             drop.snapTo(1f)
         }
     }
 
+    val pace = currentPace
     LaunchedEffect(s.moves) {
         when {
+            pos.over && together -> {
+                pace.wait(END_DELAY_MS)
+                val detail = if (pos.winner == FourInRow.EMPTY) res.getString(R.string.fourinrow_draw) else res.getString(sideOf(pos.winner).wins)
+                host.finish(GameOutcome(true, detail, shared = true))
+            }
             pos.over -> {
-                delay(END_DELAY_MS)
+                pace.wait(END_DELAY_MS)
                 val detail = when (pos.winner) {
                     human -> R.string.fourinrow_win
                     FourInRow.EMPTY -> R.string.fourinrow_draw
@@ -137,8 +158,8 @@ private fun FourInRowScreen(state: MutableState<FourInRowState>, host: GameHost)
                 }
                 host.finish(GameOutcome(pos.winner == human, res.getString(detail)))
             }
-            pos.toMove == s.computer -> {
-                delay(AI_DELAY_MS)
+            pos.toMove == s.computer && !together -> {
+                pace.wait(AI_DELAY_MS)
                 val col = withContext(Dispatchers.Default) { FourInRowAi.bestMove(pos.board, s.computer, host.difficulty, Random.Default) }
                 if (col >= 0) state.value = s.copy(moves = s.moves + col)
             }
@@ -148,79 +169,86 @@ private fun FourInRowScreen(state: MutableState<FourInRowState>, host: GameHost)
     fun tap(col: Int) {
         if (!myTurn || FourInRow.landingRow(pos.board, col) < 0) return
         hint = -1
-        state.value = s.copy(moves = s.moves + col)
+        val moves = s.moves + col
+        state.value = s.copy(moves = moves)
+        if (together && !FourInRowPosition(moves).over) handoff.passTo(if (pos.toMove == FourInRow.FIRST) secondSeat else firstSeat)
     }
 
-    GameLayout(
-        status = {
-            val text = when {
-                pos.over -> ""
-                pos.toMove == s.computer -> stringResource(R.string.computer_turn)
-                else -> stringResource(R.string.fourinrow_your_turn)
-            }
-            if (text.isNotEmpty()) StatusPill(text, emphasized = myTurn)
-        },
-        controls = {
-            ActionBar {
-                BigButton(stringResource(R.string.undo), {
-                    state.value = s.copy(moves = s.moves.dropLast(2))
-                    hint = -1
-                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = myTurn && s.moves.size >= 2)
-                BigButton(stringResource(R.string.hint), {
-                    scope.launch {
-                        val best = withContext(Dispatchers.Default) { FourInRowAi.bestMove(pos.board, human, Difficulty.MEDIUM, Random.Default) }
-                        if (state.value.moves == s.moves) hint = best
-                    }
-                }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn)
-            }
-        },
-    ) {
-        val p = LocalPalette.current
-        val scale = LocalSettings.current.pieceScale
-        val (firstColor, secondColor) = fourDiscColors(p)
-        Canvas(
-            Modifier
-                .fillMaxSize()
-                .padding(6.dp)
-                .testTag("fourinrow-board")
-                // The whole height of the board area is the column's touch target.
-                .pointerInput(s.moves, myTurn) {
-                    detectTapGestures { o -> FourGeometry(size.width.toFloat(), size.height.toFloat()).columnAt(o.x).takeIf { it >= 0 }?.let { tap(it) } }
-                },
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val text = when {
+                    pos.over -> ""
+                    !myTurn -> stringResource(R.string.computer_turn)
+                    together -> stringResource(sideOf(pos.toMove).turn)
+                    else -> stringResource(R.string.fourinrow_your_turn)
+                }
+                if (text.isNotEmpty()) StatusPill(text, emphasized = myTurn)
+            },
+            controls = {
+                ActionBar {
+                    // Against the computer Undo takes back its answer too; taking turns, one move.
+                    val back = if (together) 1 else 2
+                    BigButton(stringResource(R.string.undo), {
+                        state.value = s.copy(moves = s.moves.dropLast(back))
+                        hint = -1
+                    }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = myTurn && s.moves.size >= back)
+                    BigButton(stringResource(R.string.hint), {
+                        scope.launch {
+                            val best = withContext(Dispatchers.Default) { FourInRowAi.bestMove(pos.board, human, Difficulty.MEDIUM, Random.Default) }
+                            if (state.value.moves == s.moves) hint = best
+                        }
+                    }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = myTurn)
+                }
+            },
         ) {
-            val g = FourGeometry(size.width, size.height)
-            val discR = g.cell * (0.4f * scale).coerceIn(0.33f, 0.44f)
-            val holeR = discR + g.cell * 0.03f
-            fun discColor(side: Int) = if (side == FourInRow.FIRST) firstColor else secondColor
-            // Hint: the column is tinted from top to bottom.
-            if (hint >= 0) {
-                drawRoundRect(p.hint.copy(alpha = 0.55f), Offset(g.left + hint * g.cell, g.top - g.cell), Size(g.cell, g.cell * (FourInRow.ROWS + 1)), CornerRadius(g.cell * 0.2f))
-            }
-            // The falling disc is drawn behind the frame, so it slides down inside the column.
-            val falling = if (drop.value < 1f && pos.last >= 0) pos.last else -1
-            if (falling >= 0) {
-                val row = falling / FourInRow.COLS
-                val col = falling % FourInRow.COLS
-                val target = g.center(row, col)
-                val start = g.center(-1, col)
-                val at = Offset(target.x, start.y + (target.y - start.y) * drop.value)
-                clipRect(0f, 0f, size.width, target.y + discR) {
-                    drawDisc(at, discR, discColor(pos.board[falling]), p, pos.board[falling] == FourInRow.SECOND)
+            val p = LocalPalette.current
+            val scale = LocalSettings.current.pieceScale
+            Canvas(
+                Modifier
+                    .fillMaxSize()
+                    .padding(6.dp)
+                    .testTag("fourinrow-board")
+                    // The whole height of the board area is the column's touch target.
+                    .pointerInput(s.moves, myTurn) {
+                        detectTapGestures { o -> FourGeometry(size.width.toFloat(), size.height.toFloat()).columnAt(o.x).takeIf { it >= 0 }?.let { tap(it) } }
+                    },
+            ) {
+                val g = FourGeometry(size.width, size.height)
+                val discR = g.cell * (0.4f * scale).coerceIn(0.33f, 0.44f)
+                val holeR = discR + g.cell * 0.03f
+                fun discColor(side: Int) = if (side == FourInRow.FIRST) firstColor else secondColor
+                // Hint: the column is tinted from top to bottom.
+                if (hint >= 0) {
+                    drawRoundRect(p.hint.copy(alpha = 0.55f), Offset(g.left + hint * g.cell, g.top - g.cell), Size(g.cell, g.cell * (FourInRow.ROWS + 1)), CornerRadius(g.cell * 0.2f))
+                }
+                // The falling disc is drawn behind the frame, so it slides down inside the column.
+                val falling = if (drop.value < 1f && pos.last >= 0) pos.last else -1
+                if (falling >= 0) {
+                    val row = falling / FourInRow.COLS
+                    val col = falling % FourInRow.COLS
+                    val target = g.center(row, col)
+                    val start = g.center(-1, col)
+                    val at = Offset(target.x, start.y + (target.y - start.y) * drop.value)
+                    clipRect(0f, 0f, size.width, target.y + discR) {
+                        drawDisc(at, discR, discColor(pos.board[falling]), p, pos.board[falling] == FourInRow.SECOND)
+                    }
+                }
+                drawFrame(g, holeR, p)
+                for (i in pos.board.indices) {
+                    val side = pos.board[i]
+                    if (side == FourInRow.EMPTY || i == falling) continue
+                    drawDisc(g.center(i / FourInRow.COLS, i % FourInRow.COLS), discR, discColor(side), p, side == FourInRow.SECOND)
+                }
+                if (pos.line.size >= 2 && falling < 0) {
+                    val a = g.center(pos.line.first() / FourInRow.COLS, pos.line.first() % FourInRow.COLS)
+                    val b = g.center(pos.line.last() / FourInRow.COLS, pos.line.last() % FourInRow.COLS)
+                    drawLine(p.highlight.darker(0.3f), a, b, g.cell * 0.24f, StrokeCap.Round)
+                    drawLine(p.highlight, a, b, g.cell * 0.15f, StrokeCap.Round)
                 }
             }
-            drawFrame(g, holeR, p)
-            for (i in pos.board.indices) {
-                val side = pos.board[i]
-                if (side == FourInRow.EMPTY || i == falling) continue
-                drawDisc(g.center(i / FourInRow.COLS, i % FourInRow.COLS), discR, discColor(side), p, side == FourInRow.SECOND)
-            }
-            if (pos.line.size >= 2 && falling < 0) {
-                val a = g.center(pos.line.first() / FourInRow.COLS, pos.line.first() % FourInRow.COLS)
-                val b = g.center(pos.line.last() / FourInRow.COLS, pos.line.last() % FourInRow.COLS)
-                drawLine(p.highlight.darker(0.3f), a, b, g.cell * 0.24f, StrokeCap.Round)
-                drawLine(p.highlight, a, b, g.cell * 0.15f, StrokeCap.Round)
-            }
         }
+        HandoffOverlay(handoff) {}
     }
 }
 

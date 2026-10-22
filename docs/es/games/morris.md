@@ -4,6 +4,8 @@
 
 Uno de los juegos de tablero más antiguos del mundo, para dos: tú (fichas claras) contra el ordenador (fichas oscuras). El tablero tiene puntos unidos por líneas. Pon tres fichas tuyas seguidas en una línea, un **molino**, y quitas una ficha del ordenador.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca.
+
 ## Cómo se juega
 
 1. **Colocar**: por turnos, cada uno pone una ficha en un punto libre. Tus fichas por colocar esperan bajo el tablero; las del ordenador, encima.

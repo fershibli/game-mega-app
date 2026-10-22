@@ -8,14 +8,15 @@ Questa guida è scritta per chi gioca e per i familiari che preparano il telefon
 
 1. [Installazione](#installazione)
 2. [Come muoversi nell’app](#come-muoversi-nellapp)
-3. [Salvataggio automatico e “Continuare?”](#salvataggio-automatico-e-continuare)
-4. [Zoom](#zoom)
-5. [Impostazioni](#impostazioni)
-6. [Accessibilità](#accessibilità)
-7. [I giochi](#i-giochi)
+3. [Giocare insieme su un solo telefono](#giocare-insieme-su-un-solo-telefono)
+4. [Salvataggio automatico e “Continuare?”](#salvataggio-automatico-e-continuare)
+5. [Zoom](#zoom)
+6. [Impostazioni](#impostazioni)
+7. [Accessibilità](#accessibilità)
+8. [I giochi](#i-giochi)
    - [Sudoku](#sudoku) · [Solitario](#solitario) · [Buraco](#buraco) · [Backgammon](#backgammon) · [Mahjong](#mahjong)
    - [Reversi](#reversi) · [Cruciverba](#cruciverba) · [Tubi](#tubi) · [Unisci i colori](#unisci-i-colori) · [Puntini](#puntini)
-8. [Domande frequenti](#domande-frequenti)
+9. [Domande frequenti](#domande-frequenti)
 
 ---
 
@@ -50,6 +51,10 @@ L’**ingranaggio** apre le impostazioni. Durante una partita, le impostazioni m
 - **Menu principale**: esce dalla partita e torna all’elenco dei giochi. *La partita viene abbandonata*: prima l’app chiede “Uscire da questa partita?”, così non può succedere per sbaglio.
 
 Durante una partita, il pulsante o il gesto **Indietro** del telefono apre (o chiude) le impostazioni, così nessuno esce da una partita per errore.
+
+## Giocare insieme su un solo telefono
+
+Alcuni giochi si possono fare tra persone sedute insieme, a turno sullo stesso telefono: sulla ruota della difficoltà scegli **A turno su questo telefono**. Nessuno gioca contro il computer. Tra un turno e l’altro lo schermo dice chi gioca; la scacchiera non si gira mai. **Annulla mossa** toglie una mossa. Giochi: Reversi, Dama, Scacchi, Backgammon, Scacchi cinesi, Scacchi coreani, Shogi, Go, Gomoku, Quattro in fila, Mulino, Mancala, Ludo. Nel backgammon ognuno lancia i suoi dadi; il Ludo è per 2–4 persone e chiede prima **Quanti al tavolo?**
 
 ## Salvataggio automatico e “Continuare?”
 
@@ -175,6 +180,8 @@ Il burraco brasiliano in due (tu contro il computer) o in quattro a coppie (tu e
 ### Backgammon
 
 **Scopo:** portare le tue 15 pedine chiare lungo il tavoliere fino alla tua casa (punte 1–6, in basso a destra) e farle uscire tutte prima del computer (pedine scure).
+
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca. Ognuno lancia i propri dadi.
 
 Il tavoliere è quello tradizionale **orizzontale**: le punte 13→24 lungo il lato alto, 12→1 lungo il lato basso (la tua casa è in basso a destra), la **barra** nel mezzo e il **vassoio** per le pedine uscite a destra (il tuo è in basso). Usa lo zoom con due dita per ingrandire e spostarti. **Ruota** mette invece il tavoliere in verticale, così riempie lo schermo con pedine più grandi: le punte 12→1 scendono lungo la colonna di sinistra (la tua casa è in basso a sinistra), 13→24 lungo la colonna di destra, la barra attraversa il centro e il vassoio è in basso. L’app ricorda la tua scelta.
 

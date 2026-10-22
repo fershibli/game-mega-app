@@ -12,4 +12,8 @@
     <string name="mancala_feed">コンピューターに種がありません：種が渡る穴を選んでください</string>
     <string name="mancala_final">結果：あなた %1$d、コンピューター %2$d。</string>
     <string name="mancala_draw">引き分け：どちらも %1$d。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">ストア：下 %1$d · 上 %2$d</string>
+    <string name="mancala_feed_together">相手側に種がありません：相手に種が渡る穴を選んでください</string>
+    <string name="mancala_final_together">最終結果：下 %1$d、上 %2$d。</string>
 </resources>

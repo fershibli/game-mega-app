@@ -4,6 +4,8 @@
 
 Gli scacchi cinesi sono il gioco da tavolo più giocato in Cina e in Vietnam. Due eserciti si affrontano ai lati di un fiume; vince chi chiude il **generale** avversario.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca.
+
 ## La scacchiera
 
 - 9 linee orizzontali e 10 verticali. I pezzi stanno **sugli incroci**, non dentro le caselle.

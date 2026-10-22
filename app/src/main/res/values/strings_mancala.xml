@@ -12,4 +12,8 @@
     <string name="mancala_feed">The computer has no seeds: pick a pit that gives it some</string>
     <string name="mancala_final">Final count: you %1$d, computer %2$d.</string>
     <string name="mancala_draw">A draw: each side has %1$d.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">Stores: bottom %1$d · top %2$d</string>
+    <string name="mancala_feed_together">The other side has no seeds: pick a pit that gives it some</string>
+    <string name="mancala_final_together">Final count: bottom %1$d, top %2$d.</string>
 </resources>

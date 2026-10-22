@@ -4,6 +4,8 @@
 
 Eines der ältesten Brettspiele der Welt, für zwei: du (helle Steine) gegen den Computer (dunkle Steine). Das Brett hat Punkte, die durch Linien verbunden sind. Bring drei deiner Steine auf eine Linie, eine **Mühle**, und du nimmst einen Stein des Computers weg.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist.
+
 ## So wird gespielt
 
 1. **Setzen**: Abwechselnd setzt jeder einen Stein auf einen freien Punkt. Deine noch zu setzenden Steine warten unter dem Brett, die des Computers darüber.

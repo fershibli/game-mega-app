@@ -8,14 +8,15 @@ Esta guía está escrita para quienes juegan y para los familiares que les prepa
 
 1. [Instalación](#instalación)
 2. [Cómo moverse por la aplicación](#cómo-moverse-por-la-aplicación)
-3. [Guardado automático y "¿continuar?"](#guardado-automático-y-continuar)
-4. [Zoom](#zoom)
-5. [Ajustes](#ajustes)
-6. [Accesibilidad](#accesibilidad)
-7. [Los juegos](#los-juegos)
+3. [Jugar juntos en un mismo teléfono](#jugar-juntos-en-un-mismo-teléfono)
+4. [Guardado automático y "¿continuar?"](#guardado-automático-y-continuar)
+5. [Zoom](#zoom)
+6. [Ajustes](#ajustes)
+7. [Accesibilidad](#accesibilidad)
+8. [Los juegos](#los-juegos)
    - [Sudoku](#sudoku) · [Solitario](#solitario) · [Buraco](#buraco) · [Backgammon](#backgammon) · [Mahjong](#mahjong)
    - [Reversi](#reversi) · [Crucigrama](#crucigrama) · [Tuberías](#tuberías) · [Une los colores](#une-los-colores) · [Puntos](#puntos)
-8. [Preguntas frecuentes](#preguntas-frecuentes)
+9. [Preguntas frecuentes](#preguntas-frecuentes)
 
 ---
 
@@ -50,6 +51,10 @@ El **engranaje** abre los ajustes. Dentro de un juego, los ajustes muestran adem
 - **Menú principal**: sale del juego y vuelve a la lista. *Esto abandona la partida*: antes pregunta "¿Salir de este juego?", para que no ocurra sin querer.
 
 El botón o gesto **Atrás** del teléfono, dentro de un juego, abre (o cierra) los ajustes, así nadie sale de una partida por error.
+
+## Jugar juntos en un mismo teléfono
+
+Algunos juegos se pueden jugar entre personas sentadas juntas, por turnos en el mismo teléfono: en la rueda de dificultad elige **Por turnos en este teléfono**. Nadie juega contra el ordenador. Entre turnos la pantalla dice quién juega ahora; el tablero nunca gira. **Deshacer** devuelve una jugada. Juegos: Reversi, Damas, Ajedrez, Backgammon, Ajedrez chino, Ajedrez coreano, Shogi, Go, Cinco en raya, Cuatro en línea, Juego del molino, Mancala, Parchís. En el Backgammon cada uno tira sus dados; el Parchís es para 2 a 4 personas, y antes pregunta **¿Cuántos en la mesa?**
 
 ## Guardado automático y "¿continuar?"
 
@@ -175,6 +180,8 @@ Buraco brasileño para dos (tú contra el ordenador) o para cuatro por parejas (
 ### Backgammon
 
 **Objetivo:** mover tus 15 fichas claras por el tablero hasta tu casa (puntos 1–6, abajo a la derecha) y sacarlas todas antes que el ordenador (fichas oscuras).
+
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca. Cada jugador tira sus propios dados.
 
 El tablero es el tradicional, **horizontal**: puntos 13→24 arriba, 12→1 abajo (tu casa abajo a la derecha), la **barra** en el centro y la **bandeja** de fichas sacadas a la derecha (la tuya abajo). Pellizca para ampliar y moverte por el tablero. **Girar** pone el tablero de pie, llenando la pantalla con fichas más grandes: los puntos 12→1 bajan entonces por la columna izquierda (tu casa abajo a la izquierda), 13→24 por la derecha, la barra cruza el centro y la bandeja queda abajo. La aplicación recuerda tu elección.
 

@@ -56,6 +56,8 @@ The phone's **Back** button/gesture inside a game opens (or closes) the settings
 
 Some games can also be played by people sitting together, taking turns on the same phone. On the difficulty wheel, now titled **How do you want to play?**, choose **Take turns on this phone** (on a tablet: *…on this tablet*). Nobody plays against the computer.
 
+Games you can play this way: Reversi, Checkers, Chess, Backgammon, Chinese chess, Korean chess, Shogi, Go, Gomoku, Four in a row, Nine Men’s Morris, Mancala, Ludo. In Backgammon each player rolls their own dice; Ludo is for 2 to 4 people; Chess takes turns in a normal game, not with the famous games. In these board games everything is in view of both players, so the cover between turns only says who plays next. **Undo** takes back one move, and at the end of Go both players agree on the same screen which stones are dead.
+
 When a turn ends, the screen covers what belongs to that player (for example the cards in hand) and shows a big button with two hands holding a phone, **Pass to the next player** and who that is (a color or a number). The next person taps the button: the scene dims, switches to their side of the table and, after a short pause (see *Waiting time* in the settings), shows their things. The board never turns around, so nobody gets dizzy.
 
 Games that can be played with different numbers of people ask **How many at the table?** first; the last choice comes preselected.
@@ -188,6 +190,8 @@ Brazilian Buraco for two (you against the computer) or for four in pairs (you an
 ### Backgammon
 
 **Goal:** move your 15 light checkers around the board into your home (points 1–6, bottom right) and bear them all off before the computer (dark checkers).
+
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is. Each player rolls their own dice.
 
 The board is the traditional **horizontal** one: points 13→24 along the top, 12→1 along the bottom (your home at the bottom right), the **bar** down the middle and the **tray** for borne-off checkers on the right (yours at the bottom). Pinch to zoom in and move around it. **Rotate** stands the board up instead, filling the screen with bigger checkers: points 12→1 then run down the left column (your home at the bottom left), 13→24 down the right column, the bar crosses the middle and the tray is at the bottom. The app remembers your choice.
 

@@ -4,6 +4,8 @@
 
 Uma família de jogos de “semeadura” muito antigos da África e do Oriente Médio, para dois: você joga com a **fileira de baixo** de seis casas, o computador com a de cima. O seu depósito é o buraco grande à direita; o do computador, à esquerda. O número grande ao lado de cada casa diz quantas sementes ela tem.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez.
+
 ## Como jogar
 
 - Toque numa casa sua que tenha sementes (elas ficam circuladas). Todas as sementes são **semeadas** uma a uma nos buracos seguintes, no sentido anti-horário: pela sua fileira para a direita, depois pela fileira do computador para a esquerda.

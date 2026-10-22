@@ -1,7 +1,10 @@
 package io.github.fershibli.megagames.games.memory
 
+import io.github.fershibli.megagames.ui.theme.spec
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -39,7 +42,6 @@ import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 
 /** How long a card takes to turn over. */
 private const val FLIP_MS = 260
@@ -58,6 +60,7 @@ fun MemoryGame(host: GameHost) {
 
 @Composable
 private fun MemoryScreen(state: MutableState<MemoryState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val worlds = rememberWorldStore()
     val records = remember { worlds.load(Memory.STORE_KEY, MemoryRecords.serializer()) ?: MemoryRecords() }
@@ -66,7 +69,7 @@ private fun MemoryScreen(state: MutableState<MemoryState>, host: GameHost) {
 
     LaunchedEffect(s.won) {
         if (!s.won) return@LaunchedEffect
-        delay(END_PAUSE_MS)
+        pace.wait(END_PAUSE_MS)
         val (updated, record) = records.with(s.variant, host.difficulty, s.moves)
         if (record) worlds.save(Memory.STORE_KEY, MemoryRecords.serializer(), updated)
         val lines = listOfNotNull(
@@ -126,7 +129,7 @@ private fun MemoryScreen(state: MutableState<MemoryState>, host: GameHost) {
 private fun MemoryCard(index: Int, s: MemoryState, p: Palette, cardPalette: Palette, measurer: TextMeasurer, modifier: Modifier, onTap: () -> Unit) {
     val found = s.matched[index]
     val shown = found || index in s.open
-    val angle by animateFloatAsState(if (shown) 180f else 0f, tween(FLIP_MS), label = "flip")
+    val angle by animateFloatAsState(if (shown) 180f else 0f, currentMotion.spec(FLIP_MS), label = "flip")
     val label = stringResource(if (found) R.string.memory_card_found else R.string.memory_card, index + 1)
     Canvas(
         modifier

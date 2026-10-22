@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.blocks
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
@@ -43,7 +45,6 @@ import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.coroutines.delay
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
@@ -60,6 +61,7 @@ fun BlocksGame(host: GameHost) {
 
 @Composable
 private fun BlocksScreen(state: MutableState<BlocksState>, host: GameHost, store: WorldStore) {
+    val pace = currentPace
     val s = state.value
     val p = LocalPalette.current
     // Piece picked by a tap (-1 = none), waiting for a tap on the board.
@@ -87,11 +89,11 @@ private fun BlocksScreen(state: MutableState<BlocksState>, host: GameHost, store
     KeepBest(store, host.game, host.difficulty, s.score, s.recordToBeat)
     LaunchedEffect(s.over) {
         if (s.over) {
-            delay(1500)
+            pace.wait(1500)
             host.finish(GameOutcome(newBest, detail))
         }
     }
-    LaunchedEffect(miss) { if (miss >= 0) { delay(700); miss = -1 } }
+    LaunchedEffect(miss) { if (miss >= 0) { pace.wait(700); miss = -1 } }
 
     GameLayout(
         status = {

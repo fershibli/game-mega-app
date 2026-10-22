@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sides of a board game played by people taking turns on this phone -->
+    <string name="side_white">الأبيض</string>
+    <string name="side_black">الأسود</string>
+    <string name="side_red">الأحمر</string>
+    <string name="side_blue">الأزرق</string>
+    <string name="side_light">القطع الفاتحة</string>
+    <string name="side_dark">القطع الداكنة</string>
+    <string name="side_bottom">اللاعب في الأسفل</string>
+    <string name="side_top">اللاعب في الأعلى</string>
+    <string name="side_white_turn">دور الأبيض</string>
+    <string name="side_black_turn">دور الأسود</string>
+    <string name="side_red_turn">دور الأحمر</string>
+    <string name="side_blue_turn">دور الأزرق</string>
+    <string name="side_light_turn">دور القطع الفاتحة</string>
+    <string name="side_dark_turn">دور القطع الداكنة</string>
+    <string name="side_bottom_turn">دور اللاعب في الأسفل</string>
+    <string name="side_top_turn">دور اللاعب في الأعلى</string>
+    <string name="side_white_wins">فاز الأبيض!</string>
+    <string name="side_black_wins">فاز الأسود!</string>
+    <string name="side_red_wins">فاز الأحمر!</string>
+    <string name="side_blue_wins">فاز الأزرق!</string>
+    <string name="side_light_wins">فازت القطع الفاتحة!</string>
+    <string name="side_dark_wins">فازت القطع الداكنة!</string>
+    <string name="side_bottom_wins">فاز اللاعب في الأسفل!</string>
+    <string name="side_top_wins">فاز اللاعب في الأعلى!</string>
+    <string name="sides_score">%1$s: %2$d · %3$s: %4$d</string>
+    <string name="sides_other_passed">اللاعب الآخر مرّر دوره.</string>
+</resources>

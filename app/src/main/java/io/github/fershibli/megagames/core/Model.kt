@@ -23,8 +23,9 @@ enum class GameCategory(@StringRes val label: Int) {
 /**
  * A set of rules a game can be played with (regional rules of checkers, cacheta, truco...).
  * The [key] is persisted in save files and in the remembered choice, so it must never change.
+ * A variant without [takeTurns] (a replay of famous games) is never offered to people taking turns.
  */
-data class GameVariant(val key: String, @StringRes val name: Int, @StringRes val description: Int)
+data class GameVariant(val key: String, @StringRes val name: Int, @StringRes val description: Int, val takeTurns: Boolean = true)
 
 /**
  * A number of seats a game can be played with, and an optional note about it ("in pairs").
@@ -64,15 +65,15 @@ enum class GameId(
     SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku, GameCategory.PUZZLES),
     SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire, GameCategory.CARDS),
     BURACO("buraco", R.string.game_buraco, R.string.howto_buraco, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.buraco_table_pairs))),
-    BACKGAMMON("backgammon", R.string.game_backgammon, R.string.howto_backgammon, GameCategory.BOARD),
+    BACKGAMMON("backgammon", R.string.game_backgammon, R.string.howto_backgammon, GameCategory.BOARD, takeTurns = true),
     MAHJONG("mahjong", R.string.game_mahjong, R.string.howto_mahjong, GameCategory.PUZZLES),
     REVERSI("reversi", R.string.game_reversi, R.string.howto_reversi, GameCategory.BOARD, takeTurns = true),
     CROSSWORD("crossword", R.string.game_crossword, R.string.howto_crossword, GameCategory.PUZZLES),
     PIPES("pipes", R.string.game_pipes, R.string.howto_pipes, GameCategory.PUZZLES),
     CONNECT("connect", R.string.game_connect, R.string.howto_connect, GameCategory.PUZZLES),
     DOTS("dots", R.string.game_dots, R.string.howto_dots, GameCategory.PUZZLES),
-    CHECKERS("checkers", R.string.game_checkers, R.string.howto_checkers, GameCategory.BOARD, io.github.fershibli.megagames.games.checkers.CheckersRules.VARIANTS),
-    CHESS("chess", R.string.game_chess, R.string.howto_chess, GameCategory.BOARD, listOf(GameVariant("standard", R.string.chess_variant_standard, R.string.chess_variant_standard_desc), GameVariant("famous", R.string.chess_variant_famous, R.string.chess_variant_famous_desc))),
+    CHECKERS("checkers", R.string.game_checkers, R.string.howto_checkers, GameCategory.BOARD, io.github.fershibli.megagames.games.checkers.CheckersRules.VARIANTS, takeTurns = true),
+    CHESS("chess", R.string.game_chess, R.string.howto_chess, GameCategory.BOARD, listOf(GameVariant("standard", R.string.chess_variant_standard, R.string.chess_variant_standard_desc), GameVariant("famous", R.string.chess_variant_famous, R.string.chess_variant_famous_desc, takeTurns = false)), takeTurns = true),
     PET("pet", R.string.game_pet, R.string.howto_pet, GameCategory.PASTIMES, hasDifficulty = false),
     CACHETA("cacheta", R.string.game_cacheta, R.string.howto_cacheta, GameCategory.CARDS, listOf(GameVariant("classic", R.string.cacheta_variant_classic, R.string.cacheta_variant_classic_desc), GameVariant("wild", R.string.cacheta_variant_wild, R.string.cacheta_variant_wild_desc), GameVariant("pife", R.string.cacheta_variant_pife, R.string.cacheta_variant_pife_desc)), takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
     TRUCO("truco", R.string.game_truco, R.string.howto_truco, GameCategory.CARDS, listOf(GameVariant("paulista", R.string.truco_variant_paulista, R.string.truco_variant_paulista_desc), GameVariant("mineiro", R.string.truco_variant_mineiro, R.string.truco_variant_mineiro_desc)), takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.truco_table_pairs))),
@@ -80,9 +81,9 @@ enum class GameId(
     BLOCKS("blocks", R.string.game_blocks, R.string.howto_blocks, GameCategory.PUZZLES),
     PAIRS("pairs", R.string.game_pairs, R.string.howto_pairs, GameCategory.PUZZLES),
     SNAKE("snake", R.string.game_snake, R.string.howto_snake, GameCategory.CALM_ACTION),
-    XIANGQI("xiangqi", R.string.game_xiangqi, R.string.howto_xiangqi, GameCategory.BOARD),
-    JANGGI("janggi", R.string.game_janggi, R.string.howto_janggi, GameCategory.BOARD),
-    SHOGI("shogi", R.string.game_shogi, R.string.howto_shogi, GameCategory.BOARD, listOf(GameVariant("standard", R.string.shogi_variant_standard, R.string.shogi_variant_standard_desc), GameVariant("mini", R.string.shogi_variant_mini, R.string.shogi_variant_mini_desc))),
+    XIANGQI("xiangqi", R.string.game_xiangqi, R.string.howto_xiangqi, GameCategory.BOARD, takeTurns = true),
+    JANGGI("janggi", R.string.game_janggi, R.string.howto_janggi, GameCategory.BOARD, takeTurns = true),
+    SHOGI("shogi", R.string.game_shogi, R.string.howto_shogi, GameCategory.BOARD, listOf(GameVariant("standard", R.string.shogi_variant_standard, R.string.shogi_variant_standard_desc), GameVariant("mini", R.string.shogi_variant_mini, R.string.shogi_variant_mini_desc)), takeTurns = true),
     PEGS("pegs", R.string.game_pegs, R.string.howto_pegs, GameCategory.PUZZLES, listOf(GameVariant("english", R.string.pegs_variant_english, R.string.pegs_variant_english_desc), GameVariant("french", R.string.pegs_variant_french, R.string.pegs_variant_french_desc))),
     MEMORY("memory", R.string.game_memory, R.string.howto_memory, GameCategory.PUZZLES, listOf(GameVariant("cards", R.string.memory_variant_cards, R.string.memory_variant_cards_desc), GameVariant("fruits", R.string.memory_variant_fruits, R.string.memory_variant_fruits_desc), GameVariant("symbols", R.string.memory_variant_symbols, R.string.memory_variant_symbols_desc), GameVariant("animals", R.string.memory_variant_animals, R.string.memory_variant_animals_desc))),
     SEQUENCE("sequence", R.string.game_sequence, R.string.howto_sequence, GameCategory.PUZZLES),
@@ -95,12 +96,12 @@ enum class GameId(
     WORDSEARCH("wordsearch", R.string.game_wordsearch, R.string.howto_wordsearch, GameCategory.PUZZLES),
     ANAGRAM("anagram", R.string.game_anagram, R.string.howto_anagram, GameCategory.PUZZLES),
     DAYWORD("dayword", R.string.game_dayword, R.string.howto_dayword, GameCategory.PUZZLES),
-    GO("go", R.string.game_go, R.string.howto_go, GameCategory.BOARD, io.github.fershibli.megagames.games.go.Go.VARIANTS),
-    GOMOKU("gomoku", R.string.game_gomoku, R.string.howto_gomoku, GameCategory.BOARD),
-    FOURINROW("fourinrow", R.string.game_fourinrow, R.string.howto_fourinrow, GameCategory.BOARD),
-    LUDO("ludo", R.string.game_ludo, R.string.howto_ludo, GameCategory.BOARD, io.github.fershibli.megagames.games.ludo.LudoRules.VARIANTS),
-    MORRIS("morris", R.string.game_morris, R.string.howto_morris, GameCategory.BOARD, io.github.fershibli.megagames.games.morris.MorrisRules.VARIANTS),
-    MANCALA("mancala", R.string.game_mancala, R.string.howto_mancala, GameCategory.BOARD, io.github.fershibli.megagames.games.mancala.MancalaRules.VARIANTS),
+    GO("go", R.string.game_go, R.string.howto_go, GameCategory.BOARD, io.github.fershibli.megagames.games.go.Go.VARIANTS, takeTurns = true),
+    GOMOKU("gomoku", R.string.game_gomoku, R.string.howto_gomoku, GameCategory.BOARD, takeTurns = true),
+    FOURINROW("fourinrow", R.string.game_fourinrow, R.string.howto_fourinrow, GameCategory.BOARD, takeTurns = true),
+    LUDO("ludo", R.string.game_ludo, R.string.howto_ludo, GameCategory.BOARD, io.github.fershibli.megagames.games.ludo.LudoRules.VARIANTS, takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
+    MORRIS("morris", R.string.game_morris, R.string.howto_morris, GameCategory.BOARD, io.github.fershibli.megagames.games.morris.MorrisRules.VARIANTS, takeTurns = true),
+    MANCALA("mancala", R.string.game_mancala, R.string.howto_mancala, GameCategory.BOARD, io.github.fershibli.megagames.games.mancala.MancalaRules.VARIANTS, takeTurns = true),
     GUESSWORD("guessword", R.string.game_guessword, R.string.howto_guessword, GameCategory.PUZZLES),
     CRYPTOGRAM("cryptogram", R.string.game_cryptogram, R.string.howto_cryptogram, GameCategory.PUZZLES, languages = setOf(AppLanguage.ENGLISH, AppLanguage.PORTUGUESE, AppLanguage.SPANISH, AppLanguage.FRENCH, AppLanguage.ITALIAN, AppLanguage.GERMAN, AppLanguage.RUSSIAN, AppLanguage.ARABIC)),
     MAZE("maze", R.string.game_maze, R.string.howto_maze, GameCategory.PUZZLES),

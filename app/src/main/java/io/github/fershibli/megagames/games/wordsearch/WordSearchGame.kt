@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.wordsearch
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import android.content.Context
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
@@ -58,7 +60,6 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.delay
 import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
@@ -104,6 +105,7 @@ fun WordSearchGame(host: GameHost) {
 
 @Composable
 private fun WordSearchScreen(state: MutableState<WordSearchState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val p = LocalPalette.current
     // Arabic reads right to left: the grid is shown mirrored, so words read from the right.
@@ -122,7 +124,7 @@ private fun WordSearchScreen(state: MutableState<WordSearchState>, host: GameHos
 
     LaunchedEffect(s.done) {
         if (s.done) {
-            delay(FINISH_PAUSE_MS)
+            pace.wait(FINISH_PAUSE_MS)
             host.finish(GameOutcome(true, if (s.hints > 0) "$doneText $hintsText" else doneText))
         }
     }

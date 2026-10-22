@@ -4,6 +4,8 @@
 
 The classic game of strategy. You play White, at the bottom of the screen; the computer plays Black. Win by **checkmating** the computer's king: attacking it so that it has no escape.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is. Not for the famous games.
+
 ## Play against the computer
 
 - Tap one of your pieces: the squares it can go to are marked with dots (rings when it would capture). Tap one of them.

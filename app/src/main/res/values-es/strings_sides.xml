@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sides of a board game played by people taking turns on this phone -->
+    <string name="side_white">Blancas</string>
+    <string name="side_black">Negras</string>
+    <string name="side_red">Rojas</string>
+    <string name="side_blue">Azules</string>
+    <string name="side_light">Fichas claras</string>
+    <string name="side_dark">Fichas oscuras</string>
+    <string name="side_bottom">Jugador de abajo</string>
+    <string name="side_top">Jugador de arriba</string>
+    <string name="side_white_turn">Turno de las blancas</string>
+    <string name="side_black_turn">Turno de las negras</string>
+    <string name="side_red_turn">Turno de las rojas</string>
+    <string name="side_blue_turn">Turno de las azules</string>
+    <string name="side_light_turn">Turno de las fichas claras</string>
+    <string name="side_dark_turn">Turno de las fichas oscuras</string>
+    <string name="side_bottom_turn">Turno del jugador de abajo</string>
+    <string name="side_top_turn">Turno del jugador de arriba</string>
+    <string name="side_white_wins">¡Ganan las blancas!</string>
+    <string name="side_black_wins">¡Ganan las negras!</string>
+    <string name="side_red_wins">¡Ganan las rojas!</string>
+    <string name="side_blue_wins">¡Ganan las azules!</string>
+    <string name="side_light_wins">¡Ganan las fichas claras!</string>
+    <string name="side_dark_wins">¡Ganan las fichas oscuras!</string>
+    <string name="side_bottom_wins">¡Gana el jugador de abajo!</string>
+    <string name="side_top_wins">¡Gana el jugador de arriba!</string>
+    <string name="sides_score">%1$s: %2$d · %3$s: %4$d</string>
+    <string name="sides_other_passed">El otro jugador ha pasado.</string>
+</resources>

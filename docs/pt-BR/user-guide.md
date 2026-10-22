@@ -56,6 +56,8 @@ O botão/gesto **Voltar** do celular, dentro de um jogo, abre (ou fecha) as conf
 
 Alguns jogos também podem ser jogados por pessoas juntas, revezando o mesmo celular. Na roleta de dificuldade, que passa a se chamar **Como você quer jogar?**, escolha **Revezando celular** (no tablet: *Revezando tablet*). Ninguém joga contra o computador.
 
+Jogos que podem ser jogados assim: Reversi, Damas, Xadrez, Gamão, Xadrez chinês, Xadrez coreano, Shogi, Go, Cinco em linha, Quatro em linha, Trilha, Mancala, Ludo. No Gamão cada jogador joga os próprios dados; o Ludo é para 2 a 4 pessoas; no Xadrez vale para uma partida normal, não para as partidas famosas. Nesses jogos de tabuleiro tudo fica à vista dos dois jogadores, então a tela entre as vezes só diz quem joga a seguir. **Desfazer** volta uma jogada, e no fim do Go os dois combinam na mesma tela quais pedras estão mortas.
+
 Quando acaba a vez, a tela esconde o que é daquele jogador (por exemplo as cartas da mão) e mostra um botão grande com duas mãos segurando um celular, **Passar para o próximo jogador** e quem é (uma cor ou um número). A próxima pessoa toca no botão: o cenário escurece, muda para o lado dela da mesa e, depois de uma pequena pausa (veja *Tempo de espera* nas configurações), mostra as coisas dela. O tabuleiro nunca gira, para ninguém ficar tonto.
 
 Os jogos que aceitam um número diferente de pessoas perguntam antes **Quantos à mesa?**, já com a última escolha marcada.
@@ -188,6 +190,8 @@ Buraco brasileiro para dois (você contra o computador) ou para quatro em duplas
 ### Gamão
 
 **Objetivo:** levar suas 15 pedras claras pelo tabuleiro até a sua casa (pontos 1–6, embaixo à direita) e retirá-las todas antes do computador (pedras escuras).
+
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez. Cada jogador joga os próprios dados.
 
 O tabuleiro é o tradicional, **deitado**: pontos 13→24 em cima, 12→1 embaixo (a sua casa embaixo à direita), a **barra** no meio e a **bandeja** das pedras retiradas à direita (a sua embaixo). Use a pinça para ampliar e navegar pelo tabuleiro. **Girar** deixa o tabuleiro em pé, ocupando a tela com pedras maiores: aí os pontos 12→1 descem pela coluna da esquerda (a sua casa embaixo à esquerda), 13→24 pela da direita, a barra atravessa o meio e a bandeja fica embaixo. O app lembra a sua escolha.
 

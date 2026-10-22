@@ -4,6 +4,8 @@
 
 El ajedrez coreano es primo del ajedrez chino y se juega en Corea desde hace siglos. El tablero no tiene río, los palacios tienen líneas diagonales que varias piezas pueden usar, y puedes **pasar** en lugar de mover.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca.
+
 ## El tablero
 
 - 9 líneas horizontales y 10 verticales; las piezas están **en los cruces**.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Played by people taking turns on this phone -->
+    <string name="backgammon_off_together">Sortis : clairs %1$d · foncés %2$d</string>
+    <string name="backgammon_roll_now">Lancez les dés</string>
+</resources>

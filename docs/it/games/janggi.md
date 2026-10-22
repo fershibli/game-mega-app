@@ -4,6 +4,8 @@
 
 Gli scacchi coreani sono cugini degli scacchi cinesi e si giocano in Corea da secoli. La scacchiera non ha il fiume, i palazzi hanno linee diagonali che diversi pezzi possono usare, e puoi **passare** invece di muovere.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca.
+
 ## La scacchiera
 
 - 9 linee orizzontali e 10 verticali; i pezzi stanno **sugli incroci**.

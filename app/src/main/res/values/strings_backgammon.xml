@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Played by people taking turns on this phone -->
+    <string name="backgammon_off_together">Borne off: light %1$d · dark %2$d</string>
+    <string name="backgammon_roll_now">Roll the dice</string>
+</resources>

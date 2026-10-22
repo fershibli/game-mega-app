@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">Ajedrez</string>
     <string name="howto_chess">Toca una pieza para ver adónde puede ir y luego toca la casilla. Da jaque mate al rey del ordenador para ganar.</string>
-    <string name="chess_variant_standard">Jugar contra el ordenador</string>
+    <string name="chess_variant_standard">Jugar una partida</string>
     <string name="chess_variant_standard_desc">Reglas completas: enroque, captura al paso, coronación, jaque y todas las tablas.</string>
     <string name="chess_variant_famous">Partidas famosas</string>
     <string name="chess_variant_famous_desc">Repasa grandes partidas de la historia, jugada a jugada.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">La Inmortal de Kaspárov</string>
     <string name="chess_famous_kasparov_where">Wijk aan Zee, 1999</string>
     <string name="chess_famous_kasparov_about">Kaspárov entrega una torre y persigue al rey de Topálov por todo el tablero. Muchos la consideran una de las partidas más bellas jamás jugadas.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">¡Jaque mate!</string>
 </resources>

@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">Las casillas con estrella son seguras, un 6 da otra tirada y tres 6 seguidos pierden el turno.</string>
     <string name="ludo_variant_simple">Sencillo</string>
     <string name="ludo_variant_simple_desc">Sin casillas seguras: cualquier ficha se puede comer. Un 6 sigue dando otra tirada.</string>
-    <string name="ludo_choose_opponents">¿Cuántos jugadores del ordenador?</string>
-    <string name="ludo_you_are">Juegas con el azul, abajo a la izquierda. Empiezas tú.</string>
     <string name="ludo_red">Rojo</string>
     <string name="ludo_green">Verde</string>
     <string name="ludo_yellow">Amarillo</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s ha sacado %2$d</string>
     <string name="ludo_you_won">¡Tus cuatro fichas llegaron al centro!</string>
     <string name="ludo_other_won">%1$s llevó primero sus cuatro fichas al centro.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s: toca el dado</string>
+    <string name="ludo_turn_pick">%1$s ha sacado %2$d: toca una ficha resaltada</string>
+    <string name="ludo_turn_no_move">%1$s ha sacado %2$d: ninguna ficha puede moverse</string>
+    <string name="ludo_center_all">En el centro: %1$s</string>
 </resources>

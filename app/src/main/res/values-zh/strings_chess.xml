@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">国际象棋</string>
     <string name="howto_chess">点一个棋子查看它能走到哪里，再点目标格子。将死电脑的王就赢了。</string>
-    <string name="chess_variant_standard">与电脑对弈</string>
+    <string name="chess_variant_standard">下一盘棋</string>
     <string name="chess_variant_standard_desc">完整规则：王车易位、吃过路兵、升变、将军以及各种和棋。</string>
     <string name="chess_variant_famous">名局欣赏</string>
     <string name="chess_variant_famous_desc">一步一步重温历史上的经典对局。</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">卡斯帕罗夫的不朽之局</string>
     <string name="chess_famous_kasparov_where">维克安泽，1999年</string>
     <string name="chess_famous_kasparov_about">卡斯帕罗夫弃车，并把托帕洛夫的王赶过整个棋盘。它常被称为史上最美的对局之一。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">将死！</string>
 </resources>

@@ -4,6 +4,8 @@
 
 Um jogo de tabuleiro para dois: você contra o computador. As peças andam na diagonal pelas casas escuras; para capturar, salte sobre uma peça adversária até a casa vazia logo atrás dela. A peça que chega ao outro lado vira **dama** (ganha uma coroa dourada). Você ganha quando o computador fica sem peças ou sem jogadas.
 
+**Revezando celular:** duas pessoas também podem jogar uma contra a outra, sem o computador. O tabuleiro nunca gira e a tela diz de quem é a vez.
+
 ## Como jogar
 
 - Toque em uma das suas peças: as casas aonde ela pode ir se acendem. Toque em uma delas.

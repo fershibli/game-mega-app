@@ -4,6 +4,8 @@
 
 Ein Brettspiel aus Ostasien, Tausende Jahre alt, für zwei: Du spielst die schwarzen Steine, der Computer die weißen. Die Steine kommen auf die Kreuzungspunkte der Linien und bewegen sich nie. Ziel ist es, mehr vom Brett zu umschließen als der Gegner.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist. Am Ende entscheidet ihr gemeinsam, welche Steine tot sind.
+
 ## So wird gespielt
 
 - Tippe auf einen Kreuzungspunkt, um einen Stein zu setzen. Auf den Brettern 13×13 und 19×19 sind die Punkte klein: Der erste Tipp zeigt den Stein blass an, ein zweiter Tipp auf denselben Punkt setzt ihn.

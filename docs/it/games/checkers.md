@@ -4,6 +4,8 @@
 
 Un gioco da tavolo per due: tu contro il computer. Le pedine si muovono in diagonale sulle case scure; per catturare si salta sopra un pezzo avversario fino alla casa vuota subito dietro. La pedina che arriva dall’altra parte diventa **dama** (riceve una corona dorata). Vinci quando il computer resta senza pezzi o senza mosse.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca.
+
 ## Come si gioca
 
 - Tocca una delle tue pedine: le case che può raggiungere si illuminano. Toccane una.

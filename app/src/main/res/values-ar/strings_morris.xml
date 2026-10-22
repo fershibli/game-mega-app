@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">لا تستطيع التحرك.</string>
     <string name="morris_draw">تعادل: 50 حركة لكل لاعب دون طاحونة.</string>
     <string name="morris_draw_full">تعادل: اللوحة ممتلئة.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">القطع: الفاتحة %1$d · الداكنة %2$d</string>
+    <string name="morris_place_together">المس نقطة فارغة لوضع قطعة. المتبقي للوضع: %1$d</string>
+    <string name="morris_remove_together">طاحونة! المس قطعة من اللون الآخر لإزالتها</string>
 </resources>

@@ -4,6 +4,8 @@
 
 Le grand classique de la stratégie. Vous jouez les Blancs, en bas de l’écran ; l’ordinateur joue les Noirs. Gagnez en faisant **échec et mat** au roi de l’ordinateur : en l’attaquant sans qu’il puisse s’échapper.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour. Pas pour les parties célèbres.
+
 ## Jouer contre l’ordinateur
 
 - Touchez une de vos pièces : les cases où elle peut aller sont marquées de points (d’anneaux pour une prise). Touchez l’une d’elles.

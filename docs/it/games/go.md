@@ -4,6 +4,8 @@
 
 Un gioco da tavolo dell’Asia orientale, vecchio di migliaia di anni, per due giocatori: tu giochi con le pietre nere e il computer con le bianche. Le pietre si posano sulle intersezioni delle linee e non si muovono mai. Lo scopo è circondare una parte del tavoliere più grande di quella dell’avversario.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca. Alla fine decidete insieme quali pietre sono morte.
+
 ## Come si gioca
 
 - Tocca un’intersezione per posare una pietra. Sui tavolieri 13×13 e 19×19 le intersezioni sono piccole: il primo tocco mostra la pietra in trasparenza e un secondo tocco sulla stessa intersezione la posa.

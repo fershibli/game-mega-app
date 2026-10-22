@@ -4,6 +4,8 @@
 
 Korean chess is a cousin of Chinese chess, played in Korea for centuries. The board has no river, the palaces have diagonal lines that several pieces can use, and you may **pass** instead of moving.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is.
+
 ## The board
 
 - 9 lines across and 10 lines down; the pieces stand **on the crossings**.

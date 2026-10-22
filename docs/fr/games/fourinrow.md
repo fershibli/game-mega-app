@@ -4,6 +4,8 @@
 
 Un jeu pour deux sur un support en bois debout, avec 7 colonnes et 6 rangées de trous. Vous jouez les pions clairs et commencez ; l’ordinateur joue les pions foncés. Le premier qui aligne quatre pions, horizontalement, verticalement ou en diagonale, gagne.
 
+**Chacun son tour sur ce téléphone :** deux personnes peuvent aussi jouer l’une contre l’autre, sans l’ordinateur. Le plateau ne tourne jamais et l’écran dit à qui c’est le tour.
+
 ## Comment jouer
 
 - Touchez n’importe où dans une colonne, du haut au bas du plateau : votre pion tombe dans le trou libre le plus bas.

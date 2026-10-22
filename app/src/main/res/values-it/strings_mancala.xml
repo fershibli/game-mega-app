@@ -12,4 +12,8 @@
     <string name="mancala_feed">Il computer non ha semi: scegli una buca che gliene dia</string>
     <string name="mancala_final">Risultato finale: tu %1$d, computer %2$d.</string>
     <string name="mancala_draw">Pareggio: ognuno ne ha %1$d.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">Granai: in basso %1$d · in alto %2$d</string>
+    <string name="mancala_feed_together">L’altro lato non ha semi: scegli una buca che gliene dia</string>
+    <string name="mancala_final_together">Conteggio finale: in basso %1$d, in alto %2$d.</string>
 </resources>

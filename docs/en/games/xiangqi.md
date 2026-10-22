@@ -4,6 +4,8 @@
 
 Chinese chess is the most played board game in China and Vietnam. Two armies face each other across a river; whoever traps the other side's **general** wins.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is.
+
 ## The board
 
 - 9 lines across and 10 lines down. The pieces stand **on the crossings**, not inside the squares.

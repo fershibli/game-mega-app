@@ -48,7 +48,15 @@ import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.ui.art.pxToSp
 import io.github.fershibli.megagames.ui.art.text
+import androidx.compose.foundation.layout.Box
+import androidx.compose.ui.graphics.Color
 import io.github.fershibli.megagames.ui.components.ActionBar
+import io.github.fershibli.megagames.ui.components.BoardSide
+import io.github.fershibli.megagames.ui.components.Handoff
+import io.github.fershibli.megagames.ui.components.HandoffOverlay
+import io.github.fershibli.megagames.ui.components.sideSeat
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.BigDialog
@@ -59,7 +67,6 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
@@ -95,6 +102,8 @@ data class EasternTexts(
     @StringRes val promoteTitle: Int = 0,
     @StringRes val promoteYes: Int = 0,
     @StringRes val promoteNo: Int = 0,
+    /** Taking turns: the other person passed (janggi). */
+    @StringRes val otherPassed: Int = R.string.sides_other_passed,
 )
 
 /** What the shared screen needs to know about one of the three games. */
@@ -112,6 +121,10 @@ abstract class EasternRules {
     open val canPass: Boolean = false
     /** Height of the strips above and below the board, in cells. */
     open val strip: Float = 0.8f
+    /** Names of side 0 (bottom, moves first) and side 1 when people take turns. */
+    abstract val sides: List<BoardSide>
+    /** Color of [side]'s pieces, shown when the phone is passed (null: both look alike). */
+    open fun sideColor(p: Palette, side: Int): Color? = null
 
     open fun cols(variant: String?) = cols
     open fun rows(variant: String?) = rows
@@ -153,7 +166,12 @@ private fun EasternScreen(state: MutableState<EasternState>, host: GameHost, rul
     val scope = rememberCoroutineScope()
     val pos = remember(s) { rules.position(variant, s.moves) }
     val start = remember(variant) { rules.position(variant, emptyList()) }
-    val humanTurn = pos.side == 0
+    // Taking turns on this phone: both sides are people; the board never turns around.
+    val together = host.setup.together
+    val handoff = remember { Handoff() }
+    val palette = LocalPalette.current
+    val seats = listOf(sideSeat(rules.sides[0], rules.sideColor(palette, 0)), sideSeat(rules.sides[1], rules.sideColor(palette, 1)))
+    val humanTurn = pos.side == 0 || together
     val legal = remember(s) { if (humanTurn) pos.legalMoves() else emptyList() }
     val ending = remember(s) { pos.ending() }
     val inCheck = remember(s) { pos.inCheck() }
@@ -173,12 +191,15 @@ private fun EasternScreen(state: MutableState<EasternState>, host: GameHost, rul
         dropType = 0
         hint = 0
         promotion = null
-        state.value = s.copy(moves = s.moves + move, variant = variant)
+        val moves = s.moves + move
+        state.value = s.copy(moves = moves, variant = variant)
+        if (together && rules.position(variant, moves).ending() == null) handoff.passTo(seats[1 - pos.side])
     }
 
+    val pace = currentPace
     LaunchedEffect(s, ending) {
         if (ending != null) {
-            delay(900)
+            pace.wait(900)
             val detail = when (ending.reason) {
                 EndReason.CHECKMATE -> texts.checkmate
                 EndReason.NO_MOVES -> texts.noMoves
@@ -188,9 +209,14 @@ private fun EasternScreen(state: MutableState<EasternState>, host: GameHost, rul
                 EndReason.GENERALS_FACING -> texts.generalsFacing
                 EndReason.BOTH_PASSED -> texts.bothPassed
             }
-            host.finish(GameOutcome(ending.winner == 0, context.getString(detail)))
+            if (together) {
+                val winner = if (ending.winner >= 0) "\n" + context.getString(rules.sides[ending.winner].wins) else ""
+                host.finish(GameOutcome(true, context.getString(detail) + winner, shared = true))
+            } else {
+                host.finish(GameOutcome(ending.winner == 0, context.getString(detail)))
+            }
         } else if (!humanTurn) {
-            delay(500)
+            pace.wait(500)
             val move = withContext(Dispatchers.Default) {
                 EasternSearch.bestMove(rules.position(variant, s.moves), host.difficulty, Random.Default)
             }
@@ -209,7 +235,7 @@ private fun EasternScreen(state: MutableState<EasternState>, host: GameHost, rul
         when {
             options.size == 2 -> promotion = options.first { Mv.promotes(it) } to options.first { !Mv.promotes(it) }
             options.size == 1 -> play(options[0])
-            pos.isOwn(pos.board[sq], 0) -> { selected = if (selected == sq) -1 else sq; hint = 0 }
+            pos.isOwn(pos.board[sq], pos.side) -> { selected = if (selected == sq) -1 else sq; hint = 0 }
             else -> selected = -1
         }
     }
@@ -217,157 +243,166 @@ private fun EasternScreen(state: MutableState<EasternState>, host: GameHost, rul
     /** Tap on the player's hand: [slot] counts only the piece types actually in hand. */
     fun tapHand(slot: Int) {
         if (!humanTurn || ending != null || promotion != null) return
-        val type = rules.handTypes(variant).filter { rules.handCount(pos, 0, it) > 0 }.getOrNull(slot) ?: return
+        val type = rules.handTypes(variant).filter { rules.handCount(pos, pos.side, it) > 0 }.getOrNull(slot) ?: return
         selected = -1
         hint = 0
         dropType = if (dropType == type || legal.none { Mv.isDrop(it) && Mv.dropType(it) == type }) 0 else type
     }
     val onTap by rememberUpdatedState(::tap)
     val onHand by rememberUpdatedState(::tapHand)
+    // Whose hand strip takes taps: the side to play (the top one when people take turns).
+    val handSide by rememberUpdatedState(pos.side)
 
     val aiPassed = s.moves.isNotEmpty() && s.moves.last() == Mv.PASS && humanTurn
     val mustPass = rules.canPass && humanTurn && legal.isEmpty() && !inCheck
 
-    GameLayout(
-        status = {
-            val text = when {
-                ending != null -> ""
-                !humanTurn -> stringResource(R.string.computer_turn)
-                dropType != 0 -> stringResource(texts.pickDrop)
-                selected >= 0 -> stringResource(texts.pickTarget)
-                mustPass -> stringResource(texts.mustPass)
-                inCheck -> stringResource(texts.check)
-                aiPassed -> stringResource(texts.aiPassed)
-                else -> stringResource(texts.pickPiece)
-            }
-            // The chosen piece's name and moves, under the instruction.
-            val piece = when {
-                !humanTurn || ending != null -> 0
-                dropType != 0 -> dropType
-                selected >= 0 -> pos.board[selected]
-                else -> 0
-            }
-            Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                if (text.isNotEmpty()) StatusPill(text, emphasized = humanTurn && (inCheck || mustPass))
-                if (piece != 0) {
-                    Text(
-                        stringResource(rules.description(piece)), color = LocalPalette.current.text, style = MaterialTheme.typography.bodyLarge,
-                        textAlign = TextAlign.Center, maxLines = 4, overflow = TextOverflow.Ellipsis,
-                    )
+    Box(Modifier.fillMaxSize()) {
+        GameLayout(
+            status = {
+                val text = when {
+                    ending != null -> ""
+                    !humanTurn -> stringResource(R.string.computer_turn)
+                    dropType != 0 -> stringResource(texts.pickDrop)
+                    selected >= 0 -> stringResource(texts.pickTarget)
+                    mustPass -> stringResource(texts.mustPass)
+                    inCheck -> stringResource(texts.check)
+                    aiPassed && together -> stringResource(texts.otherPassed)
+                    aiPassed -> stringResource(texts.aiPassed)
+                    together -> ""
+                    else -> stringResource(texts.pickPiece)
+                }.let { if (together && ending == null) listOf(stringResource(rules.sides[pos.side].turn), it).filter { t -> t.isNotEmpty() }.joinToString("\n") else it }
+                // The chosen piece's name and moves, under the instruction.
+                val piece = when {
+                    !humanTurn || ending != null -> 0
+                    dropType != 0 -> dropType
+                    selected >= 0 -> pos.board[selected]
+                    else -> 0
                 }
-            }
-        },
-        controls = {
-            ActionBar {
-                if (rules.canPass) {
-                    BigButton(stringResource(texts.pass), { play(Mv.PASS) }, icon = AppIcon.NEXT, style = if (mustPass) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY,
-                        enabled = humanTurn && ending == null && !inCheck, compact = true)
-                }
-                BigButton(stringResource(R.string.undo), {
-                    selected = -1; dropType = 0; hint = 0
-                    state.value = s.copy(moves = s.moves.dropLast(2))
-                }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = humanTurn && ending == null && s.moves.size >= 2, compact = true)
-                BigButton(stringResource(R.string.hint), {
-                    thinkingHint = true
-                    val moves = s.moves
-                    scope.launch {
-                        val m = withContext(Dispatchers.Default) { EasternSearch.bestMove(rules.position(variant, moves), Difficulty.MEDIUM, Random.Default, 400) }
-                        thinkingHint = false
-                        if (state.value.moves == moves) {
-                            selected = -1; dropType = 0
-                            hint = m
-                        }
-                    }
-                }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = humanTurn && ending == null && !thinkingHint && legal.isNotEmpty(), compact = true)
-                // With four buttons (janggi) the guide's icon makes room for its word.
-                BigButton(stringResource(texts.pieces), { guide = true }, icon = if (rules.canPass) null else AppIcon.INFO, style = ButtonStyle.SECONDARY, compact = true)
-            }
-        },
-    ) {
-        val p = LocalPalette.current
-        val measurer = rememberTextMeasurer(cacheSize = 64)
-        val cols = rules.cols(variant)
-        val rows = rules.rows(variant)
-        val handTypes = rules.handTypes(variant)
-        val targets = when {
-            dropType != 0 -> legal.filter { Mv.isDrop(it) && Mv.dropType(it) == dropType }.map { Mv.to(it) }.toSet()
-            selected >= 0 -> legal.filter { !Mv.isDrop(it) && it != Mv.PASS && Mv.from(it) == selected }.map { Mv.to(it) }.toSet()
-            else -> emptySet()
-        }
-        val last = pos.lastMove.takeIf { it != 0 && it != Mv.PASS }
-        BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
-            val aspect = BoardGeometry.aspect(cols, rows, rules.points, rules.strip)
-            val w = minOf(maxWidth, maxHeight * aspect)
-            Canvas(
-                Modifier
-                    .size(w, w / aspect)
-                    .testTag("${rules.key}-board")
-                    .pointerInput(Unit) {
-                        detectTapGestures { o ->
-                            val g = BoardGeometry(size.width.toFloat(), size.height.toFloat(), cols, rows, rules.points, rules.strip)
-                            val sq = g.square(o)
-                            if (sq != null) onTap(sq) else if (rules.hands) g.stripSlot(o, 0, handTypes.size)?.let { onHand(it) }
-                        }
-                    },
-            ) {
-                val g = BoardGeometry(size.width, size.height, cols, rows, rules.points, rules.strip)
-                with(rules) { drawBoard(g, p, measurer) }
-                // Last move: a soft mark on where it came from and where it went.
-                if (last != null) {
-                    for (sq in listOfNotNull(Mv.from(last).takeIf { it != Mv.DROP }, Mv.to(last))) {
-                        val c = g.center(sq)
-                        drawRect(p.highlight.copy(alpha = 0.55f), c - Offset(g.cell / 2, g.cell / 2), Size(g.cell, g.cell))
+                Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
+                    if (text.isNotEmpty()) StatusPill(text, emphasized = humanTurn && (inCheck || mustPass))
+                    if (piece != 0) {
+                        Text(
+                            stringResource(rules.description(piece)), color = LocalPalette.current.text, style = MaterialTheme.typography.bodyLarge,
+                            textAlign = TextAlign.Center, maxLines = 4, overflow = TextOverflow.Ellipsis,
+                        )
                     }
                 }
-                if (inCheck && ending == null) {
-                    val king = (0 until cols * rows).firstOrNull { pos.board[it] == (if (pos.side == 0) 1 else -1) * kingType(rules) }
-                    if (king != null) drawCircle(p.danger.copy(alpha = 0.6f), g.cell * 0.55f, g.center(king))
-                }
-                for (sq in 0 until cols * rows) {
-                    val piece = pos.board[sq]
-                    if (piece != 0) with(rules) { drawPiece(piece, g.center(sq), g.cell, p, measurer) }
-                }
-                if (selected >= 0) {
-                    drawCircle(p.onPrimary, g.cell * 0.53f, g.center(selected), style = Stroke(g.cell * 0.13f))
-                    drawCircle(p.primary, g.cell * 0.53f, g.center(selected), style = Stroke(g.cell * 0.08f))
-                }
-                drawTargets(g, targets, { pos.board[it] != 0 }, p)
-                if (hint != 0) {
-                    val to = g.center(Mv.to(hint))
-                    val from = if (Mv.isDrop(hint)) {
-                        val shown = handTypes.filter { rules.handCount(pos, 0, it) > 0 }
-                        g.slotCenter(0, shown.indexOf(Mv.dropType(hint)).coerceAtLeast(0), handTypes.size)
-                    } else g.center(Mv.from(hint))
-                    drawHintArrow(g, from, to, p)
-                }
-                // Strips: hands (shogi) or captured pieces (xiangqi, janggi).
-                for (side in 0..1) {
-                    if (rules.hands) {
-                        val shown = handTypes.filter { rules.handCount(pos, side, it) > 0 }
-                        shown.forEachIndexed { i, type ->
-                            val c = g.slotCenter(side, i, handTypes.size)
-                            if (side == 0 && type == dropType) drawCircle(p.highlight, g.cell * 0.55f, c)
-                            with(rules) { drawPiece(if (side == 0) type else -type, c, g.cell * 0.95f, p, measurer) }
-                            val n = rules.handCount(pos, side, type)
-                            if (n > 1) {
-                                val badge = c + Offset(g.cell * 0.36f, g.cell * 0.3f)
-                                drawCircle(p.primary, g.cell * 0.2f, badge)
-                                text(measurer, n.toString(), badge, p.onPrimary, pxToSp(g.cell * 0.26f))
+            },
+            controls = {
+                ActionBar {
+                    if (rules.canPass) {
+                        BigButton(stringResource(texts.pass), { play(Mv.PASS) }, icon = AppIcon.NEXT, style = if (mustPass) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY,
+                            enabled = humanTurn && ending == null && !inCheck, compact = true)
+                    }
+                    // Against the computer Undo takes back its answer too; taking turns, one move.
+                    val back = if (together) 1 else 2
+                    BigButton(stringResource(R.string.undo), {
+                        selected = -1; dropType = 0; hint = 0
+                        state.value = s.copy(moves = s.moves.dropLast(back))
+                    }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = humanTurn && ending == null && s.moves.size >= back, compact = true)
+                    BigButton(stringResource(R.string.hint), {
+                        thinkingHint = true
+                        val moves = s.moves
+                        scope.launch {
+                            val m = withContext(Dispatchers.Default) { EasternSearch.bestMove(rules.position(variant, moves), Difficulty.MEDIUM, Random.Default, 400) }
+                            thinkingHint = false
+                            if (state.value.moves == moves) {
+                                selected = -1; dropType = 0
+                                hint = m
                             }
                         }
-                    } else {
-                        val taken = capturedBy(start, pos, side)
-                        if (taken.isEmpty()) continue
-                        val small = g.cell * 0.62f
-                        val step = minOf(small, (cols * g.cell - small) / maxOf(1, taken.size - 1))
-                        taken.forEachIndexed { i, piece ->
-                            val c = Offset(g.left + small / 2 + i * step, g.stripY(side))
-                            with(rules) { drawPiece(piece, c, small, p, measurer, small = true) }
+                    }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY, enabled = humanTurn && ending == null && !thinkingHint && legal.isNotEmpty(), compact = true)
+                    // With four buttons (janggi) the guide's icon makes room for its word.
+                    BigButton(stringResource(texts.pieces), { guide = true }, icon = if (rules.canPass) null else AppIcon.INFO, style = ButtonStyle.SECONDARY, compact = true)
+                }
+            },
+        ) {
+            val p = LocalPalette.current
+            val measurer = rememberTextMeasurer(cacheSize = 64)
+            val cols = rules.cols(variant)
+            val rows = rules.rows(variant)
+            val handTypes = rules.handTypes(variant)
+            val targets = when {
+                dropType != 0 -> legal.filter { Mv.isDrop(it) && Mv.dropType(it) == dropType }.map { Mv.to(it) }.toSet()
+                selected >= 0 -> legal.filter { !Mv.isDrop(it) && it != Mv.PASS && Mv.from(it) == selected }.map { Mv.to(it) }.toSet()
+                else -> emptySet()
+            }
+            val last = pos.lastMove.takeIf { it != 0 && it != Mv.PASS }
+            BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
+                val aspect = BoardGeometry.aspect(cols, rows, rules.points, rules.strip)
+                val w = minOf(maxWidth, maxHeight * aspect)
+                Canvas(
+                    Modifier
+                        .size(w, w / aspect)
+                        .testTag("${rules.key}-board")
+                        .pointerInput(Unit) {
+                            detectTapGestures { o ->
+                                val g = BoardGeometry(size.width.toFloat(), size.height.toFloat(), cols, rows, rules.points, rules.strip)
+                                val sq = g.square(o)
+                                if (sq != null) onTap(sq) else if (rules.hands) g.stripSlot(o, handSide, handTypes.size)?.let { onHand(it) }
+                            }
+                        },
+                ) {
+                    val g = BoardGeometry(size.width, size.height, cols, rows, rules.points, rules.strip)
+                    with(rules) { drawBoard(g, p, measurer) }
+                    // Last move: a soft mark on where it came from and where it went.
+                    if (last != null) {
+                        for (sq in listOfNotNull(Mv.from(last).takeIf { it != Mv.DROP }, Mv.to(last))) {
+                            val c = g.center(sq)
+                            drawRect(p.highlight.copy(alpha = 0.55f), c - Offset(g.cell / 2, g.cell / 2), Size(g.cell, g.cell))
+                        }
+                    }
+                    if (inCheck && ending == null) {
+                        val king = (0 until cols * rows).firstOrNull { pos.board[it] == (if (pos.side == 0) 1 else -1) * kingType(rules) }
+                        if (king != null) drawCircle(p.danger.copy(alpha = 0.6f), g.cell * 0.55f, g.center(king))
+                    }
+                    for (sq in 0 until cols * rows) {
+                        val piece = pos.board[sq]
+                        if (piece != 0) with(rules) { drawPiece(piece, g.center(sq), g.cell, p, measurer) }
+                    }
+                    if (selected >= 0) {
+                        drawCircle(p.onPrimary, g.cell * 0.53f, g.center(selected), style = Stroke(g.cell * 0.13f))
+                        drawCircle(p.primary, g.cell * 0.53f, g.center(selected), style = Stroke(g.cell * 0.08f))
+                    }
+                    drawTargets(g, targets, { pos.board[it] != 0 }, p)
+                    if (hint != 0) {
+                        val to = g.center(Mv.to(hint))
+                        val from = if (Mv.isDrop(hint)) {
+                            val shown = handTypes.filter { rules.handCount(pos, pos.side, it) > 0 }
+                            g.slotCenter(pos.side, shown.indexOf(Mv.dropType(hint)).coerceAtLeast(0), handTypes.size)
+                        } else g.center(Mv.from(hint))
+                        drawHintArrow(g, from, to, p)
+                    }
+                    // Strips: hands (shogi) or captured pieces (xiangqi, janggi).
+                    for (side in 0..1) {
+                        if (rules.hands) {
+                            val shown = handTypes.filter { rules.handCount(pos, side, it) > 0 }
+                            shown.forEachIndexed { i, type ->
+                                val c = g.slotCenter(side, i, handTypes.size)
+                                if (side == pos.side && type == dropType) drawCircle(p.highlight, g.cell * 0.55f, c)
+                                with(rules) { drawPiece(if (side == 0) type else -type, c, g.cell * 0.95f, p, measurer) }
+                                val n = rules.handCount(pos, side, type)
+                                if (n > 1) {
+                                    val badge = c + Offset(g.cell * 0.36f, g.cell * 0.3f)
+                                    drawCircle(p.primary, g.cell * 0.2f, badge)
+                                    text(measurer, n.toString(), badge, p.onPrimary, pxToSp(g.cell * 0.26f))
+                                }
+                            }
+                        } else {
+                            val taken = capturedBy(start, pos, side)
+                            if (taken.isEmpty()) continue
+                            val small = g.cell * 0.62f
+                            val step = minOf(small, (cols * g.cell - small) / maxOf(1, taken.size - 1))
+                            taken.forEachIndexed { i, piece ->
+                                val c = Offset(g.left + small / 2 + i * step, g.stripY(side))
+                                with(rules) { drawPiece(piece, c, small, p, measurer, small = true) }
+                            }
                         }
                     }
                 }
             }
         }
+        HandoffOverlay(handoff) {}
     }
 
     promotion?.let { (yes, no) ->

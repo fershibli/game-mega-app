@@ -4,6 +4,8 @@
 
 Una famiglia di antichissimi giochi di «semina» dell’Africa e del Medio Oriente, per due: tu giochi la **fila in basso** di sei buche, il computer quella in alto. Il tuo granaio è la buca grande a destra, quello del computer a sinistra. Il numero grande accanto a ogni buca dice quanti semi contiene.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca.
+
 ## Come si gioca
 
 - Tocca una tua buca con dei semi (sono cerchiate). Tutti i suoi semi vengono **seminati** uno alla volta nelle buche seguenti, in senso antiorario: lungo la tua fila verso destra, poi lungo quella del computer verso sinistra.

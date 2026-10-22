@@ -4,6 +4,8 @@
 
 Un juego para dos en un soporte de madera de pie, con 7 columnas y 6 filas de agujeros. Tú juegas con las fichas claras y empiezas; el ordenador juega con las oscuras. Gana quien primero alinee cuatro fichas, en horizontal, en vertical o en diagonal.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca.
+
 ## Cómo se juega
 
 - Toca cualquier punto de una columna, de arriba abajo del tablero: tu ficha cae hasta el agujero libre más bajo.

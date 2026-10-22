@@ -12,4 +12,8 @@
     <string name="mancala_feed">Der Computer hat keine Samen: wähle eine Mulde, die ihm welche gibt</string>
     <string name="mancala_final">Endstand: du %1$d, Computer %2$d.</string>
     <string name="mancala_draw">Unentschieden: jede Seite hat %1$d.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="mancala_score_together">Speicher: unten %1$d · oben %2$d</string>
+    <string name="mancala_feed_together">Die andere Seite hat keine Samen: wähle eine Mulde, die ihr welche gibt</string>
+    <string name="mancala_final_together">Endstand: unten %1$d, oben %2$d.</string>
 </resources>

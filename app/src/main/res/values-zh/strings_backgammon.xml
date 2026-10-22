@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Played by people taking turns on this phone -->
+    <string name="backgammon_off_together">已移出：浅色 %1$d · 深色 %2$d</string>
+    <string name="backgammon_roll_now">请掷骰子</string>
+</resources>

@@ -24,4 +24,12 @@
     <string name="go_hint_pass">Подсказка: больше ничего не выиграть. Можно спасовать.</string>
     <string name="go_win">Вы победили с перевесом %1$s.</string>
     <string name="go_lose">Компьютер победил с перевесом %1$s.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="go_captured_together">Взято: чёрные %1$d · белые %2$d</string>
+    <string name="go_score_together">Чёрные: %1$s · Белые: %2$s</string>
+    <string name="go_komi_together">В счёт белых входит %1$s за то, что они ходят вторыми.</string>
+    <string name="go_other_passed">Другой игрок пропустил ход. Продолжайте или тоже пропустите ход, чтобы подсчитать очки.</string>
+    <string name="go_mark_dead_together">Договоритесь вместе: зачёркнутые камни считаются взятыми. Нажмите на группу, чтобы изменить, затем «Подсчитать».</string>
+    <string name="go_black_wins_by">Чёрные победили с перевесом %1$s.</string>
+    <string name="go_white_wins_by">Белые победили с перевесом %1$s.</string>
 </resources>

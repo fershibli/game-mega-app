@@ -1,7 +1,10 @@
 package io.github.fershibli.megagames.games.cube
 
+import io.github.fershibli.megagames.ui.theme.spec
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -65,7 +68,6 @@ import io.github.fershibli.megagames.ui.components.RoundIconButton
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.math.abs
@@ -141,6 +143,8 @@ private class CubeCamera {
 
 @Composable
 private fun CubeScreen(state: MutableState<CubeState>, host: GameHost) {
+    val pace = currentPace
+    val motion = currentMotion
     val s = state.value
     val n = s.size
     val p = LocalPalette.current
@@ -161,7 +165,7 @@ private fun CubeScreen(state: MutableState<CubeState>, host: GameHost) {
     LaunchedEffect(solved) {
         if (solved && !finishing) {
             finishing = true
-            delay(1200)
+            pace.wait(1200)
             host.finish(GameOutcome(true, movesText))
         }
     }
@@ -170,7 +174,7 @@ private fun CubeScreen(state: MutableState<CubeState>, host: GameHost) {
         turning = move
         scope.launch {
             turnAnim.snapTo(1f)
-            turnAnim.animateTo(0f, tween(TURN_MS))
+            turnAnim.animateTo(0f, motion.spec(TURN_MS))
         }
     }
 
@@ -185,7 +189,7 @@ private fun CubeScreen(state: MutableState<CubeState>, host: GameHost) {
         val (_, s2) = camera.quarter(vertical, sign)
         scope.launch {
             camera.spin.snapTo(-90f * s2)
-            camera.spin.animateTo(0f, tween(TURN_MS))
+            camera.spin.animateTo(0f, motion.spec(TURN_MS))
         }
     }
 

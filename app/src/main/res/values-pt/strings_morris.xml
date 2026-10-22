@@ -20,4 +20,8 @@
     <string name="morris_you_blocked">Você não pode se mover.</string>
     <string name="morris_draw">Empate: 50 jogadas de cada um sem trilha.</string>
     <string name="morris_draw_full">Empate: o tabuleiro está cheio.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="morris_score_together">Peças: claras %1$d · escuras %2$d</string>
+    <string name="morris_place_together">Toque num ponto vazio para colocar uma peça. Faltam colocar: %1$d</string>
+    <string name="morris_remove_together">Um moinho! Toque numa peça da outra cor para tirá-la</string>
 </resources>

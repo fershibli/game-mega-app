@@ -4,6 +4,8 @@
 
 Shogi is the chess of Japan. Its big difference: **pieces you capture change sides**. You can later place them back on the board as your own.
 
+**Take turns on this phone:** two people can also play against each other, without the computer. The board never turns around and the screen says whose turn it is. Each player’s captured pieces wait on their own side of the board.
+
 ## Rules to choose
 
 - **Shogi (9 × 9)**: the full game, 20 pieces each.

@@ -152,7 +152,7 @@ fun MegaGamesApp(
                         onConfirm = { afterDifficulty(s.game, s.variant, it, together = false, language = s.language) },
                         onBack = back,
                         onSettings = { screen = Screen.Settings },
-                        onTogether = if (s.game.takeTurns) ({ afterDifficulty(s.game, s.variant, settings.defaultDifficulty, together = true, language = s.language) }) else null,
+                        onTogether = if (s.game.takeTurns && s.variant?.takeTurns != false) ({ afterDifficulty(s.game, s.variant, settings.defaultDifficulty, together = true, language = s.language) }) else null,
                         initialTogether = choiceStore.lastTogether(s.game),
                         language = s.language,
                     )

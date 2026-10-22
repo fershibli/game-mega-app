@@ -2,7 +2,7 @@
 <resources>
     <string name="game_chess">Schach</string>
     <string name="howto_chess">Tippe auf eine Figur, um zu sehen, wohin sie ziehen kann, dann auf das Feld. Setze den König des Computers matt, um zu gewinnen.</string>
-    <string name="chess_variant_standard">Gegen den Computer spielen</string>
+    <string name="chess_variant_standard">Eine Partie spielen</string>
     <string name="chess_variant_standard_desc">Alle Regeln: Rochade, en passant, Umwandlung, Schach und jede Art von Remis.</string>
     <string name="chess_variant_famous">Berühmte Partien</string>
     <string name="chess_variant_famous_desc">Große Partien der Geschichte Zug um Zug nachspielen.</string>
@@ -52,4 +52,6 @@
     <string name="chess_famous_kasparov">Kasparows Unsterbliche</string>
     <string name="chess_famous_kasparov_where">Wijk aan Zee, 1999</string>
     <string name="chess_famous_kasparov_about">Kasparow opfert einen Turm und jagt Topalows König über das ganze Brett. Sie gilt oft als eine der schönsten Partien, die je gespielt wurden.</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="chess_checkmate">Schachmatt!</string>
 </resources>

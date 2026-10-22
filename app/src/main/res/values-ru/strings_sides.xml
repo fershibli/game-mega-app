@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Sides of a board game played by people taking turns on this phone -->
+    <string name="side_white">Белые</string>
+    <string name="side_black">Чёрные</string>
+    <string name="side_red">Красные</string>
+    <string name="side_blue">Синие</string>
+    <string name="side_light">Светлые фишки</string>
+    <string name="side_dark">Тёмные фишки</string>
+    <string name="side_bottom">Игрок снизу</string>
+    <string name="side_top">Игрок сверху</string>
+    <string name="side_white_turn">Ход белых</string>
+    <string name="side_black_turn">Ход чёрных</string>
+    <string name="side_red_turn">Ход красных</string>
+    <string name="side_blue_turn">Ход синих</string>
+    <string name="side_light_turn">Ход светлых</string>
+    <string name="side_dark_turn">Ход тёмных</string>
+    <string name="side_bottom_turn">Ход игрока снизу</string>
+    <string name="side_top_turn">Ход игрока сверху</string>
+    <string name="side_white_wins">Победили белые!</string>
+    <string name="side_black_wins">Победили чёрные!</string>
+    <string name="side_red_wins">Победили красные!</string>
+    <string name="side_blue_wins">Победили синие!</string>
+    <string name="side_light_wins">Победили светлые!</string>
+    <string name="side_dark_wins">Победили тёмные!</string>
+    <string name="side_bottom_wins">Победил игрок снизу!</string>
+    <string name="side_top_wins">Победил игрок сверху!</string>
+    <string name="sides_score">%1$s: %2$d · %3$s: %4$d</string>
+    <string name="sides_other_passed">Другой игрок пропустил ход.</string>
+</resources>

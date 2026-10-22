@@ -4,6 +4,8 @@
 
 Eine Familie sehr alter „Säspiele“ aus Afrika und dem Nahen Osten, für zwei: du spielst die **untere Reihe** mit sechs Mulden, der Computer die obere. Dein Speicher ist die große Mulde rechts, der des Computers links. Die große Zahl neben jeder Mulde sagt, wie viele Samen darin liegen.
 
+**Abwechselnd an diesem Telefon:** Zwei Personen können auch gegeneinander spielen, ohne den Computer. Das Brett dreht sich nie, und der Bildschirm zeigt, wer am Zug ist.
+
 ## So wird gespielt
 
 - Tippe auf eine deiner Mulden mit Samen (sie sind eingekreist). Alle ihre Samen werden einzeln in die folgenden Mulden **gesät**, gegen den Uhrzeigersinn: deine Reihe entlang nach rechts, dann die Reihe des Computers entlang nach links.

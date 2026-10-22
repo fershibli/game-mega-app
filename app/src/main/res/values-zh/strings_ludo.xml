@@ -6,8 +6,6 @@
     <string name="ludo_variant_classic_desc">星形格是安全格，掷出 6 可以再掷一次，连续三个 6 则失去这一轮。</string>
     <string name="ludo_variant_simple">简单</string>
     <string name="ludo_variant_simple_desc">没有安全格：任何棋子都可能被吃掉。掷出 6 仍可再掷一次。</string>
-    <string name="ludo_choose_opponents">要几个电脑对手？</string>
-    <string name="ludo_you_are">你执蓝色，在左下角。你先走。</string>
     <string name="ludo_red">红</string>
     <string name="ludo_green">绿</string>
     <string name="ludo_yellow">黄</string>
@@ -22,4 +20,9 @@
     <string name="ludo_computer_rolled">%1$s掷出了 %2$d</string>
     <string name="ludo_you_won">你的四枚棋子都到达了中央！</string>
     <string name="ludo_other_won">%1$s先把四枚棋子都送到了中央。</string>
+    <!-- Played by people taking turns on this phone -->
+    <string name="ludo_turn_roll">%1$s：点一下骰子</string>
+    <string name="ludo_turn_pick">%1$s掷出了 %2$d：点一枚高亮的棋子</string>
+    <string name="ludo_turn_no_move">%1$s掷出了 %2$d：没有棋子可以走</string>
+    <string name="ludo_center_all">中央：%1$s</string>
 </resources>

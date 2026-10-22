@@ -4,6 +4,8 @@
 
 Il classico gioco di strategia. Giochi con il Bianco, in basso sullo schermo; il computer gioca con il Nero. Vinci dando **scacco matto** al re del computer: attaccandolo in modo che non possa fuggire.
 
+**A turno su questo telefono:** due persone possono anche giocare l’una contro l’altra, senza il computer. La scacchiera non si gira mai e lo schermo dice a chi tocca. Non per le partite famose.
+
 ## Gioca contro il computer
 
 - Tocca uno dei tuoi pezzi: le case dove può andare sono segnate con punti (anelli se cattura). Toccane una.

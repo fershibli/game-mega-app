@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.pyramid
 
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -49,7 +51,6 @@ import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.random.Random
@@ -106,6 +107,7 @@ internal class PyramidLayout(val width: Float, val height: Float, val leftHanded
 
 @Composable
 private fun PyramidScreen(state: MutableState<PyramidState>, host: GameHost) {
+    val pace = currentPace
     val s = state.value
     val history = remember { mutableStateListOf<PyramidState>() }
     var selected by remember { mutableStateOf<PyPick?>(null) }
@@ -141,11 +143,11 @@ private fun PyramidScreen(state: MutableState<PyramidState>, host: GameHost) {
 
     // A game saved right at the winning move still ends properly when it is restored.
     LaunchedEffect(Unit) { if (state.value.won) host.finish(GameOutcome(true, null)) }
-    LaunchedEffect(refused) { if (refused != null) { delay(CARD_REFUSED_MS); refused = null } }
-    LaunchedEffect(message) { if (message != null) { delay(CARD_MESSAGE_MS); message = null } }
+    LaunchedEffect(refused) { if (refused != null) { pace.wait(CARD_REFUSED_MS); refused = null } }
+    LaunchedEffect(message) { if (message != null) { pace.wait(CARD_MESSAGE_MS); message = null } }
     LaunchedEffect(stuck) {
         if (!stuck) stuckDismissed = false
-        else if (!stuckDismissed) { delay(CARD_FLASH_MS); showStuck = true }
+        else if (!stuckDismissed) { pace.wait(CARD_FLASH_MS); showStuck = true }
     }
 
     fun onTap(hit: PyramidHit?) {

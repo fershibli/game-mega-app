@@ -4,6 +4,8 @@
 
 El shogi es el ajedrez de Japón. Su gran diferencia: **las piezas que capturas cambian de bando**. Más tarde puedes volver a ponerlas en el tablero como tuyas.
 
+**Por turnos en este teléfono:** dos personas también pueden jugar una contra otra, sin el ordenador. El tablero nunca gira y la pantalla dice a quién le toca. Las piezas capturadas de cada jugador esperan en su lado del tablero.
+
 ## Reglas para elegir
 
 - **Shogi (9 × 9)**: el juego completo, 20 piezas por bando.

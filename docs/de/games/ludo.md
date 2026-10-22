@@ -4,7 +4,9 @@
 
 Ein Laufspiel für 2 bis 4 Personen: du und ein, zwei oder drei Computerspieler. Jede Farbe hat vier Figuren, die in ihrem Haus in einer Ecke des kreuzförmigen Bretts warten. Würfle, bring deine Figuren heraus, lauf einmal um das Brett und dann deine farbige Zielspalte hinauf bis in die Mitte. Wer zuerst alle vier Figuren in der Mitte hat, gewinnt.
 
-Du spielst **Blau** (unten links) und fängst an. Zu Beginn jeder Partie wählst du, wie viele Computerspieler mitspielen (1, 2 oder 3); die App merkt sich die Wahl. Jede Farbe hat außerdem ihr eigenes Zeichen (Kreis, Dreieck, Quadrat, Raute), du musst die Farben also nie unterscheiden.
+Du spielst **Blau** (unten links) und fängst an. Vor der Partie fragt die App **Wie viele am Tisch?** (2, 3 oder 4 Plätze, also 1, 2 oder 3 Computerspieler); sie merkt sich die Wahl. Jede Farbe hat außerdem ihr eigenes Zeichen (Kreis, Dreieck, Quadrat, Raute), du musst die Farben also nie unterscheiden.
+
+**Abwechselnd an diesem Telefon:** 2 bis 4 Personen spielen, jede mit ihrer Farbe, ohne den Computer. Die App fragt zuerst, wie viele am Tisch sitzen; gegen den Computer bist du es plus die anderen Plätze.
 
 ## So wird gespielt
 

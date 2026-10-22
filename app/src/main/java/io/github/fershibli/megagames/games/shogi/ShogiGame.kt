@@ -9,6 +9,7 @@ import androidx.compose.ui.text.TextMeasurer
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.games.eastern.BoardGeometry
+import io.github.fershibli.megagames.ui.components.BoardSide
 import io.github.fershibli.megagames.games.eastern.EasternGame
 import io.github.fershibli.megagames.games.eastern.EasternRules
 import io.github.fershibli.megagames.games.eastern.EasternTexts
@@ -30,6 +31,7 @@ object ShogiRules : EasternRules() {
     const val MINI = "mini"
 
     override val key = "shogi"
+    override val sides = listOf(BoardSide.BOTTOM, BoardSide.TOP)
     override val cols = 9
     override val rows = 9
     override val points = false
