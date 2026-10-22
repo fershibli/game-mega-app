@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_boxes">搬箱子</string>
+    <string name="howto_boxes">带着圆圆的小伙伴在房间里走动，把每个箱子推到圆点上。箱子只能推，一次推一个。滑动、用箭头或点要去的地方。可以随意撤销。</string>
+    <string name="boxes_counts">步数：%1$d · 推动：%2$d</string>
+    <string name="boxes_goal">把每个箱子推到圆点上。</string>
+    <string name="boxes_left">还要放的箱子：%1$d</string>
+    <string name="boxes_done">所有箱子都到位了！</string>
+    <string name="boxes_done_detail">用了 %1$d 步，推了 %2$d 次。</string>
+    <string name="boxes_hints_used">使用提示：%1$d 次。</string>
+    <string name="boxes_stuck">卡住了？那个箱子从那里到不了圆点了。点“撤销”把它放出来。</string>
+    <string name="boxes_no_way">从这里没法把所有箱子推到圆点上。请点几次“撤销”。</string>
+    <string name="boxes_thinking">正在找路…</string>
+    <string name="boxes_hint">提示：往%1$s走。</string>
+    <string name="boxes_restart">重新开始</string>
+    <string name="boxes_up">上</string>
+    <string name="boxes_right">右</string>
+    <string name="boxes_down">下</string>
+    <string name="boxes_left_arrow">左</string>
+    <string name="boxes_board">有 %1$d 个箱子的房间</string>
+</resources>

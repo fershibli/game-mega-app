@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">Spegni le luci</string>
+    <string name="howto_lights">Tocca una lampada: lei e le vicine sopra, sotto e ai lati cambiano stato. Spegni tutte le lampade. Il suggerimento cerchia una lampada da toccare.</string>
+    <string name="lights_moves">Mosse: %1$d</string>
+    <string name="lights_goal">Tocca una lampada per cambiarla insieme alle vicine.</string>
+    <string name="lights_hint_tap">Tocca la lampada cerchiata.</string>
+    <string name="lights_done">Tutte le luci sono spente!</string>
+    <string name="lights_hints_used">Suggerimenti usati: %1$d.</string>
+    <string name="lights_restart">Ricomincia</string>
+    <string name="lights_board">Lampade, %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="one">Spente in %1$d mossa.</item>
+        <item quantity="many">Spente in %1$d mosse.</item>
+        <item quantity="other">Spente in %1$d mosse.</item>
+    </plurals>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_boxes">Spingi casse</string>
+    <string name="howto_boxes">Porta l’amico rotondo nella stanza e spingi ogni cassa su un cerchio. Le casse si possono solo spingere, una alla volta. Scorri il dito, usa le frecce o tocca dove andare. Annulla quante volte vuoi.</string>
+    <string name="boxes_counts">Passi: %1$d · Spinte: %2$d</string>
+    <string name="boxes_goal">Spingi ogni cassa su un cerchio.</string>
+    <string name="boxes_left">Casse da sistemare: %1$d</string>
+    <string name="boxes_done">Tutte le casse sono al loro posto!</string>
+    <string name="boxes_done_detail">Fatto in %1$d passi e %2$d spinte.</string>
+    <string name="boxes_hints_used">Suggerimenti usati: %1$d.</string>
+    <string name="boxes_stuck">Bloccato? Quella cassa da lì non arriva più a un cerchio. Tocca Annulla mossa per liberarla.</string>
+    <string name="boxes_no_way">Da qui le casse non possono arrivare tutte ai cerchi. Tocca Annulla mossa qualche volta.</string>
+    <string name="boxes_thinking">Cerco la strada…</string>
+    <string name="boxes_hint">Suggerimento: vai verso %1$s.</string>
+    <string name="boxes_restart">Ricomincia</string>
+    <string name="boxes_up">l’alto</string>
+    <string name="boxes_right">destra</string>
+    <string name="boxes_down">il basso</string>
+    <string name="boxes_left_arrow">sinistra</string>
+    <string name="boxes_board">Stanza con %1$d casse</string>
+</resources>

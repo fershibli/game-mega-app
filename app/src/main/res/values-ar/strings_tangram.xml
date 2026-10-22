@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_tangram">تانغرام</string>
+    <string name="howto_tangram">املأ الشكل بالقطع السبع كلها دون تداخل. اسحب القطعة لتحريكها، والمسها لتدويرها، واستخدم اقلب لمتوازي الأضلاع. تستقر القطع في مكانها عندما تقترب منه. التلميح يضع قطعة واحدة.</string>
+    <string name="tangram_shape">الشكل: %1$s</string>
+    <string name="tangram_how">اسحب القطع إلى داخل الشكل. المس القطعة لتدويرها.</string>
+    <string name="tangram_done">أحسنت! صنعت: %1$s.</string>
+    <string name="tangram_hints_used">التلميحات المستخدمة: %1$d.</string>
+    <string name="tangram_flip">اقلب</string>
+    <string name="tangram_restart">من جديد</string>
+    <string name="tangram_board">طاولة التانغرام، الشكل: %1$s</string>
+    <string name="tangram_shape_square">مربع</string>
+    <string name="tangram_shape_triangle">مثلث</string>
+    <string name="tangram_shape_house">بيت</string>
+    <string name="tangram_shape_rocket">صاروخ</string>
+    <string name="tangram_shape_bridge">جسر</string>
+    <string name="tangram_shape_table">طاولة</string>
+    <string name="tangram_shape_boat">مركب شراعي</string>
+    <string name="tangram_shape_candle">شمعة</string>
+    <string name="tangram_shape_cat">قطة</string>
+    <string name="tangram_shape_fox">ثعلب</string>
+    <string name="tangram_shape_swan">بجعة</string>
+    <string name="tangram_shape_gem">جوهرة</string>
+    <string name="tangram_shape_ship">سفينة</string>
+    <string name="tangram_shape_arrow">سهم</string>
+    <string name="tangram_shape_mushroom">فطر</string>
+    <string name="tangram_shape_teapot">إبريق شاي</string>
+    <string name="tangram_shape_chair">كرسي</string>
+    <string name="tangram_shape_tree">شجرة صنوبر</string>
+    <string name="tangram_shape_fish">سمكة</string>
+    <string name="tangram_shape_mountains">جبال</string>
+    <string name="tangram_shape_crown">تاج</string>
+    <string name="tangram_shape_heart">قلب</string>
+    <string name="tangram_shape_owl">بومة</string>
+    <string name="tangram_shape_turtle">سلحفاة</string>
+    <string name="tangram_shape_elephant">فيل</string>
+    <string name="tangram_shape_dog">كلب</string>
+    <string name="tangram_shape_person">شخص</string>
+    <string name="tangram_shape_runner">عدّاء</string>
+    <string name="tangram_shape_child">طفل</string>
+    <string name="tangram_shape_duck">بطة</string>
+    <string name="tangram_shape_rabbit">أرنب</string>
+    <string name="tangram_shape_bird">طائر</string>
+</resources>

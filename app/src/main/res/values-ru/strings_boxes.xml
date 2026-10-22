@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_boxes">Толкай ящики</string>
+    <string name="howto_boxes">Водите круглого друга по комнате и толкайте каждый ящик на круглое место. Ящики можно только толкать, по одному. Проведите пальцем, нажмите стрелки или место, куда идти. Отменять можно сколько угодно.</string>
+    <string name="boxes_counts">Шаги: %1$d · Толчки: %2$d</string>
+    <string name="boxes_goal">Поставьте каждый ящик на круглое место.</string>
+    <string name="boxes_left">Осталось ящиков: %1$d</string>
+    <string name="boxes_done">Все ящики на местах!</string>
+    <string name="boxes_done_detail">Готово: шагов %1$d, толчков %2$d.</string>
+    <string name="boxes_hints_used">Подсказок: %1$d.</string>
+    <string name="boxes_stuck">Застряли? Этот ящик оттуда уже не попадёт на место. Нажмите «Отменить ход», чтобы освободить его.</string>
+    <string name="boxes_no_way">Отсюда не все ящики могут попасть на места. Нажмите «Отменить ход» несколько раз.</string>
+    <string name="boxes_thinking">Ищу путь…</string>
+    <string name="boxes_hint">Подсказка: идите %1$s.</string>
+    <string name="boxes_restart">Сначала</string>
+    <string name="boxes_up">вверх</string>
+    <string name="boxes_right">вправо</string>
+    <string name="boxes_down">вниз</string>
+    <string name="boxes_left_arrow">влево</string>
+    <string name="boxes_board">Комната с ящиками: %1$d</string>
+</resources>

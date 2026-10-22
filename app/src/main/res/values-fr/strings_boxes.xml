@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_boxes">Pousse-caisses</string>
+    <string name="howto_boxes">Promène le petit ami rond dans la pièce et pousse chaque caisse sur un rond. Les caisses se poussent seulement, une à la fois. Glisse le doigt, utilise les flèches ou touche où aller. Annule autant que tu veux.</string>
+    <string name="boxes_counts">Pas : %1$d · Poussées : %2$d</string>
+    <string name="boxes_goal">Pousse chaque caisse sur un rond.</string>
+    <string name="boxes_left">Caisses à placer : %1$d</string>
+    <string name="boxes_done">Toutes les caisses sont à leur place !</string>
+    <string name="boxes_done_detail">Réussi en %1$d pas et %2$d poussées.</string>
+    <string name="boxes_hints_used">Indices utilisés : %1$d.</string>
+    <string name="boxes_stuck">Coincé ? Cette caisse ne peut plus atteindre un rond. Touche Annuler pour la libérer.</string>
+    <string name="boxes_no_way">D’ici, les caisses ne peuvent pas toutes atteindre leur rond. Touche Annuler plusieurs fois.</string>
+    <string name="boxes_thinking">Je cherche le chemin…</string>
+    <string name="boxes_hint">Indice : va vers %1$s.</string>
+    <string name="boxes_restart">Recommencer</string>
+    <string name="boxes_up">le haut</string>
+    <string name="boxes_right">la droite</string>
+    <string name="boxes_down">le bas</string>
+    <string name="boxes_left_arrow">la gauche</string>
+    <string name="boxes_board">Pièce avec %1$d caisses</string>
+</resources>

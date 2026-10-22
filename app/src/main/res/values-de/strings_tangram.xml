@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_tangram">Tangram</string>
+    <string name="howto_tangram">Fülle die Form mit allen sieben Teilen, ohne dass sie sich überlappen. Ziehe ein Teil, um es zu bewegen, tippe es an, um es zu drehen, und wende das Parallelogramm mit Wenden. Teile rasten ein, wenn sie nah genug sind. Der Tipp legt ein Teil an seinen Platz.</string>
+    <string name="tangram_shape">Form: %1$s</string>
+    <string name="tangram_how">Ziehe die Teile in die Form. Tippe ein Teil an, um es zu drehen.</string>
+    <string name="tangram_done">Gut gemacht! Fertig: %1$s.</string>
+    <string name="tangram_hints_used">Benutzte Tipps: %1$d.</string>
+    <string name="tangram_flip">Wenden</string>
+    <string name="tangram_restart">Neu beginnen</string>
+    <string name="tangram_board">Tangram-Tisch, Form: %1$s</string>
+    <string name="tangram_shape_square">Quadrat</string>
+    <string name="tangram_shape_triangle">Dreieck</string>
+    <string name="tangram_shape_house">Haus</string>
+    <string name="tangram_shape_rocket">Rakete</string>
+    <string name="tangram_shape_bridge">Brücke</string>
+    <string name="tangram_shape_table">Tisch</string>
+    <string name="tangram_shape_boat">Segelboot</string>
+    <string name="tangram_shape_candle">Kerze</string>
+    <string name="tangram_shape_cat">Katze</string>
+    <string name="tangram_shape_fox">Fuchs</string>
+    <string name="tangram_shape_swan">Schwan</string>
+    <string name="tangram_shape_gem">Edelstein</string>
+    <string name="tangram_shape_ship">Schiff</string>
+    <string name="tangram_shape_arrow">Pfeil</string>
+    <string name="tangram_shape_mushroom">Pilz</string>
+    <string name="tangram_shape_teapot">Teekanne</string>
+    <string name="tangram_shape_chair">Stuhl</string>
+    <string name="tangram_shape_tree">Tanne</string>
+    <string name="tangram_shape_fish">Fisch</string>
+    <string name="tangram_shape_mountains">Berge</string>
+    <string name="tangram_shape_crown">Krone</string>
+    <string name="tangram_shape_heart">Herz</string>
+    <string name="tangram_shape_owl">Eule</string>
+    <string name="tangram_shape_turtle">Schildkröte</string>
+    <string name="tangram_shape_elephant">Elefant</string>
+    <string name="tangram_shape_dog">Hund</string>
+    <string name="tangram_shape_person">Mensch</string>
+    <string name="tangram_shape_runner">Läufer</string>
+    <string name="tangram_shape_child">Kind</string>
+    <string name="tangram_shape_duck">Ente</string>
+    <string name="tangram_shape_rabbit">Hase</string>
+    <string name="tangram_shape_bird">Vogel</string>
+</resources>

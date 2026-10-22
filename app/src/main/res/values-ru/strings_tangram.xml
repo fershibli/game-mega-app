@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_tangram">Танграм</string>
+    <string name="howto_tangram">Заполните фигуру всеми семью частями, не накладывая их друг на друга. Перетаскивайте часть пальцем, нажмите на неё, чтобы повернуть, а кнопкой «Перевернуть» переверните параллелограмм. Рядом с местом части встают сами. Подсказка ставит одну часть.</string>
+    <string name="tangram_shape">Фигура: %1$s</string>
+    <string name="tangram_how">Перетащите части в фигуру. Нажмите на часть, чтобы повернуть её.</string>
+    <string name="tangram_done">Отлично! Получилось: %1$s.</string>
+    <string name="tangram_hints_used">Подсказок: %1$d.</string>
+    <string name="tangram_flip">Перевернуть</string>
+    <string name="tangram_restart">Сначала</string>
+    <string name="tangram_board">Стол танграма, фигура: %1$s</string>
+    <string name="tangram_shape_square">Квадрат</string>
+    <string name="tangram_shape_triangle">Треугольник</string>
+    <string name="tangram_shape_house">Дом</string>
+    <string name="tangram_shape_rocket">Ракета</string>
+    <string name="tangram_shape_bridge">Мост</string>
+    <string name="tangram_shape_table">Стол</string>
+    <string name="tangram_shape_boat">Парусник</string>
+    <string name="tangram_shape_candle">Свеча</string>
+    <string name="tangram_shape_cat">Кошка</string>
+    <string name="tangram_shape_fox">Лиса</string>
+    <string name="tangram_shape_swan">Лебедь</string>
+    <string name="tangram_shape_gem">Самоцвет</string>
+    <string name="tangram_shape_ship">Корабль</string>
+    <string name="tangram_shape_arrow">Стрела</string>
+    <string name="tangram_shape_mushroom">Гриб</string>
+    <string name="tangram_shape_teapot">Чайник</string>
+    <string name="tangram_shape_chair">Стул</string>
+    <string name="tangram_shape_tree">Ёлка</string>
+    <string name="tangram_shape_fish">Рыба</string>
+    <string name="tangram_shape_mountains">Горы</string>
+    <string name="tangram_shape_crown">Корона</string>
+    <string name="tangram_shape_heart">Сердце</string>
+    <string name="tangram_shape_owl">Сова</string>
+    <string name="tangram_shape_turtle">Черепаха</string>
+    <string name="tangram_shape_elephant">Слон</string>
+    <string name="tangram_shape_dog">Собака</string>
+    <string name="tangram_shape_person">Человек</string>
+    <string name="tangram_shape_runner">Бегун</string>
+    <string name="tangram_shape_child">Ребёнок</string>
+    <string name="tangram_shape_duck">Утка</string>
+    <string name="tangram_shape_rabbit">Заяц</string>
+    <string name="tangram_shape_bird">Птица</string>
+</resources>

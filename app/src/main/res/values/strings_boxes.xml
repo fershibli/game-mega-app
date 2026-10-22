@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_boxes">Box pusher</string>
+    <string name="howto_boxes">Walk the round friend around the room and push every box onto a round spot. Boxes can only be pushed, one at a time. Swipe, use the arrows or tap where to walk. Undo as often as you like.</string>
+    <string name="boxes_counts">Steps: %1$d · Pushes: %2$d</string>
+    <string name="boxes_goal">Push every box onto a round spot.</string>
+    <string name="boxes_left">Boxes still to place: %1$d</string>
+    <string name="boxes_done">Every box is in its place!</string>
+    <string name="boxes_done_detail">Done in %1$d steps and %2$d pushes.</string>
+    <string name="boxes_hints_used">Hints used: %1$d.</string>
+    <string name="boxes_stuck">Stuck? That box cannot reach a spot from there. Tap Undo to free it.</string>
+    <string name="boxes_no_way">From here the boxes cannot all reach their spots. Tap Undo a few times.</string>
+    <string name="boxes_thinking">Looking for the way…</string>
+    <string name="boxes_hint">Hint: go %1$s.</string>
+    <string name="boxes_restart">Restart</string>
+    <string name="boxes_up">up</string>
+    <string name="boxes_right">right</string>
+    <string name="boxes_down">down</string>
+    <string name="boxes_left_arrow">left</string>
+    <string name="boxes_board">Room with %1$d boxes</string>
+</resources>

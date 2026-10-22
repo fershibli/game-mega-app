@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">Apague as luzes</string>
+    <string name="howto_lights">Toque em uma lâmpada: ela e as vizinhas de cima, de baixo e dos lados trocam de estado. Apague todas as lâmpadas. A dica marca uma lâmpada para tocar.</string>
+    <string name="lights_moves">Jogadas: %1$d</string>
+    <string name="lights_goal">Toque em uma lâmpada para trocá-la junto com as vizinhas.</string>
+    <string name="lights_hint_tap">Toque na lâmpada marcada.</string>
+    <string name="lights_done">Todas as luzes estão apagadas!</string>
+    <string name="lights_hints_used">Dicas usadas: %1$d.</string>
+    <string name="lights_restart">Recomeçar</string>
+    <string name="lights_board">Lâmpadas, %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="one">Apagadas em %1$d jogada.</item>
+        <item quantity="many">Apagadas em %1$d jogadas.</item>
+        <item quantity="other">Apagadas em %1$d jogadas.</item>
+    </plurals>
+</resources>

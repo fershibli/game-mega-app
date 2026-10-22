@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_boxes">ادفع الصناديق</string>
+    <string name="howto_boxes">حرّك الصديق المستدير في الغرفة وادفع كل صندوق إلى دائرة. الصناديق تُدفع فقط، واحدًا في كل مرة. اسحب بإصبعك أو استخدم الأسهم أو المس المكان الذي تريد الذهاب إليه. يمكنك التراجع كما تشاء.</string>
+    <string name="boxes_counts">الخطوات: %1$d · الدفعات: %2$d</string>
+    <string name="boxes_goal">ادفع كل صندوق إلى دائرة.</string>
+    <string name="boxes_left">الصناديق الباقية: %1$d</string>
+    <string name="boxes_done">كل الصناديق في أماكنها!</string>
+    <string name="boxes_done_detail">تم في %1$d خطوة و%2$d دفعة.</string>
+    <string name="boxes_hints_used">التلميحات المستخدمة: %1$d.</string>
+    <string name="boxes_stuck">علقت؟ هذا الصندوق لا يصل إلى دائرة من هناك. المس تراجع لتحريره.</string>
+    <string name="boxes_no_way">من هنا لا تصل كل الصناديق إلى دوائرها. المس تراجع عدة مرات.</string>
+    <string name="boxes_thinking">أبحث عن الطريق…</string>
+    <string name="boxes_hint">تلميح: اذهب إلى %1$s.</string>
+    <string name="boxes_restart">من جديد</string>
+    <string name="boxes_up">الأعلى</string>
+    <string name="boxes_right">اليمين</string>
+    <string name="boxes_down">الأسفل</string>
+    <string name="boxes_left_arrow">اليسار</string>
+    <string name="boxes_board">غرفة فيها %1$d صناديق</string>
+</resources>

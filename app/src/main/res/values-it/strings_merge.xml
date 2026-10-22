@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">Unisci numeri</string>
+    <string name="howto_merge">Scorri il dito o usa le frecce per far scivolare tutte le tessere. Due numeri uguali che si incontrano diventano la loro somma. Dopo ogni mossa appare un 2 (o un 4). Arriva al numero obiettivo; puoi continuare anche dopo. Senza orologio.</string>
+    <string name="merge_score">Punti: %1$d · Record: %2$d</string>
+    <string name="merge_goal">Unisci numeri uguali fino a fare %1$d.</string>
+    <string name="merge_keep_going">Continua verso un numero ancora più grande!</string>
+    <string name="merge_goal_title">Hai fatto %1$d!</string>
+    <string name="merge_goal_message">Continua a giocare per più punti, o finisci qui.</string>
+    <string name="merge_keep_playing">Continua a giocare</string>
+    <string name="merge_finish">Finisci qui</string>
+    <string name="merge_no_moves">Non ci sono più mosse.</string>
+    <string name="merge_final">Punti: %1$d. Numero più grande: %2$d.</string>
+    <string name="merge_new_best">Nuovo record!</string>
+    <string name="merge_up">Su</string>
+    <string name="merge_right">Destra</string>
+    <string name="merge_down">Giù</string>
+    <string name="merge_left">Sinistra</string>
+    <string name="merge_board">Tavola dei numeri, %1$d × %2$d</string>
+</resources>

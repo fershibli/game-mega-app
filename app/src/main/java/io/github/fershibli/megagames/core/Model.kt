@@ -105,6 +105,10 @@ enum class GameId(
     GUESSWORD("guessword", R.string.game_guessword, R.string.howto_guessword, GameCategory.PUZZLES),
     CRYPTOGRAM("cryptogram", R.string.game_cryptogram, R.string.howto_cryptogram, GameCategory.PUZZLES, languages = setOf(AppLanguage.ENGLISH, AppLanguage.PORTUGUESE, AppLanguage.SPANISH, AppLanguage.FRENCH, AppLanguage.ITALIAN, AppLanguage.GERMAN, AppLanguage.RUSSIAN, AppLanguage.ARABIC)),
     MAZE("maze", R.string.game_maze, R.string.howto_maze, GameCategory.PUZZLES),
+    LIGHTS("lights", R.string.game_lights, R.string.howto_lights, GameCategory.PUZZLES),
+    BOXES("boxes", R.string.game_boxes, R.string.howto_boxes, GameCategory.PUZZLES),
+    MERGE("merge", R.string.game_merge, R.string.howto_merge, GameCategory.PUZZLES),
+    TANGRAM("tangram", R.string.game_tangram, R.string.howto_tangram, GameCategory.PUZZLES),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">Apaga las luces</string>
+    <string name="howto_lights">Toca una lámpara: ella y sus vecinas de arriba, abajo y los lados cambian. Apaga todas las lámparas. La pista marca una lámpara para tocar.</string>
+    <string name="lights_moves">Jugadas: %1$d</string>
+    <string name="lights_goal">Toca una lámpara para cambiarla junto con sus vecinas.</string>
+    <string name="lights_hint_tap">Toca la lámpara marcada.</string>
+    <string name="lights_done">¡Todas las luces están apagadas!</string>
+    <string name="lights_hints_used">Pistas usadas: %1$d.</string>
+    <string name="lights_restart">Empezar de nuevo</string>
+    <string name="lights_board">Lámparas, %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="one">Apagadas en %1$d jugada.</item>
+        <item quantity="many">Apagadas en %1$d jugadas.</item>
+        <item quantity="other">Apagadas en %1$d jugadas.</item>
+    </plurals>
+</resources>

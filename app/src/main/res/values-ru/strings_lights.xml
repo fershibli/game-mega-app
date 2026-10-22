@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">Погаси огни</string>
+    <string name="howto_lights">Нажмите на лампу: она и её соседи сверху, снизу и по бокам переключаются. Погасите все лампы. Подсказка обводит лампу, на которую стоит нажать.</string>
+    <string name="lights_moves">Ходы: %1$d</string>
+    <string name="lights_goal">Нажмите на лампу, чтобы переключить её и соседей.</string>
+    <string name="lights_hint_tap">Нажмите на обведённую лампу.</string>
+    <string name="lights_done">Все огни погашены!</string>
+    <string name="lights_hints_used">Подсказок: %1$d.</string>
+    <string name="lights_restart">Сначала</string>
+    <string name="lights_board">Лампы, %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="one">Погашено за %1$d ход.</item>
+        <item quantity="few">Погашено за %1$d хода.</item>
+        <item quantity="many">Погашено за %1$d ходов.</item>
+        <item quantity="other">Погашено за %1$d хода.</item>
+    </plurals>
+</resources>

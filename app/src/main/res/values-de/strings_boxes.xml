@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_boxes">Kistenschieber</string>
+    <string name="howto_boxes">Führe den runden Freund durch den Raum und schiebe jede Kiste auf einen runden Platz. Kisten lassen sich nur schieben, eine nach der anderen. Wische, nutze die Pfeile oder tippe, wohin er gehen soll. Rückgängig so oft du willst.</string>
+    <string name="boxes_counts">Schritte: %1$d · Schübe: %2$d</string>
+    <string name="boxes_goal">Schiebe jede Kiste auf einen runden Platz.</string>
+    <string name="boxes_left">Noch zu platzierende Kisten: %1$d</string>
+    <string name="boxes_done">Alle Kisten sind an ihrem Platz!</string>
+    <string name="boxes_done_detail">Geschafft in %1$d Schritten und %2$d Schüben.</string>
+    <string name="boxes_hints_used">Benutzte Tipps: %1$d.</string>
+    <string name="boxes_stuck">Festgefahren? Diese Kiste kommt von dort nicht mehr auf einen Platz. Tippe auf Rückgängig.</string>
+    <string name="boxes_no_way">Von hier aus kommen nicht alle Kisten auf ihre Plätze. Tippe ein paarmal auf Rückgängig.</string>
+    <string name="boxes_thinking">Ich suche den Weg…</string>
+    <string name="boxes_hint">Tipp: geh nach %1$s.</string>
+    <string name="boxes_restart">Neu beginnen</string>
+    <string name="boxes_up">oben</string>
+    <string name="boxes_right">rechts</string>
+    <string name="boxes_down">unten</string>
+    <string name="boxes_left_arrow">links</string>
+    <string name="boxes_board">Raum mit %1$d Kisten</string>
+</resources>
