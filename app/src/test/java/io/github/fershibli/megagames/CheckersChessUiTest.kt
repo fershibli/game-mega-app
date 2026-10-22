@@ -40,7 +40,8 @@ class CheckersChessUiTest {
         for (attempt in 0 until 100) {
             Thread.sleep(20)
             rule.waitForIdle()
-            saved = store.load()?.let { read(it.state) }
+            // A late autosave of the previous test may still be another game's: skip what doesn't read.
+            saved = store.load()?.let { runCatching { read(it.state) }.getOrNull() }
             if (saved != null && done(saved)) break
         }
         return saved
