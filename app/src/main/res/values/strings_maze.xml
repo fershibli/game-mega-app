@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">Maze</string>
+    <string name="howto_maze">Draw a path from the round friend to the little house. Slide your finger along the corridors, or tap a square further along a corridor. Slide back to take steps back.</string>
+    <string name="maze_start">Draw a path from the round friend to the house.</string>
+    <string name="maze_going">Keep going! Slide back to take a step back.</string>
+    <string name="maze_hint_back">Go back to the big ring, then follow the rings.</string>
+    <string name="maze_hint_next">Follow the rings.</string>
+    <string name="maze_done">You reached the house!</string>
+    <string name="maze_hints_used">Hints used: %1$d.</string>
+    <string name="maze_board">Maze, %1$d × %2$d</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">迷宫</string>
+    <string name="howto_maze">从圆圆的小伙伴画一条路到小房子。用手指沿着通道滑动，或者点通道前方的方格。往回滑可以退回去。</string>
+    <string name="maze_start">从圆圆的小伙伴画一条路到小房子。</string>
+    <string name="maze_going">继续走！往回滑可以退一步。</string>
+    <string name="maze_hint_back">先回到大圆圈，再沿着圆圈走。</string>
+    <string name="maze_hint_next">沿着圆圈走。</string>
+    <string name="maze_done">你到小房子了！</string>
+    <string name="maze_hints_used">使用提示：%1$d次。</string>
+    <string name="maze_board">%1$d×%2$d格的迷宫</string>
+</resources>

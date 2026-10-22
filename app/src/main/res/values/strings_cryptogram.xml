@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">Cryptogram</string>
+    <string name="howto_cryptogram">A well-known saying is hidden: every letter was swapped for another symbol (a number on Easy). Tap a square, then the letter you think it hides. The same symbol always hides the same letter.</string>
+    <string name="cryptogram_pick">Tap a square, then a letter.</string>
+    <string name="cryptogram_which">Which letter is %1$s?</string>
+    <string name="cryptogram_not_yet">Some letters are not right yet. Hint can help.</string>
+    <string name="cryptogram_solved">Solved!</string>
+    <string name="cryptogram_done">You decoded the saying: %1$s</string>
+    <string name="cryptogram_hints_used">Hints used: %1$d.</string>
+    <string name="cryptogram_letter_locked">That letter is already in its place.</string>
+</resources>

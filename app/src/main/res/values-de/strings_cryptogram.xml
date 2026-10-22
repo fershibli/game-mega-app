@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_cryptogram">Kryptogramm</string>
+    <string name="howto_cryptogram">Ein bekanntes Sprichwort ist versteckt: Jeder Buchstabe wurde durch ein anderes Zeichen ersetzt (auf Leicht durch eine Zahl). Tippe auf ein Feld und dann auf den Buchstaben, den es deiner Meinung nach versteckt. Dasselbe Zeichen steht immer für denselben Buchstaben.</string>
+    <string name="cryptogram_pick">Tippe auf ein Feld und dann auf einen Buchstaben.</string>
+    <string name="cryptogram_which">Welcher Buchstabe ist %1$s?</string>
+    <string name="cryptogram_not_yet">Einige Buchstaben stimmen noch nicht. Ein Tipp kann helfen.</string>
+    <string name="cryptogram_solved">Gelöst!</string>
+    <string name="cryptogram_done">Du hast das Sprichwort entschlüsselt: %1$s</string>
+    <string name="cryptogram_hints_used">Benutzte Tipps: %1$d.</string>
+    <string name="cryptogram_letter_locked">Dieser Buchstabe steht schon an seinem Platz.</string>
+</resources>

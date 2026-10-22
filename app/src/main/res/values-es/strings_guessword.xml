@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">Adivina la palabra</string>
+    <string name="howto_guessword">Adivina la palabra escondida letra a letra. Cada letra que no está en la palabra hace caer un pétalo de la flor. Encuentra la palabra antes de que caiga el último pétalo. Cinco palabras en cada ronda.</string>
+    <string name="guessword_progress">Palabra %1$d de %2$d · Pétalos: %3$d</string>
+    <string name="guessword_clue">Pista: %1$s</string>
+    <string name="guessword_clue_hidden">Sin pista en este nivel. Toca Pista para verla.</string>
+    <string name="guessword_not_in_word">No están en la palabra: %1$s</string>
+    <string name="guessword_found">¡Muy bien! La palabra es %1$s.</string>
+    <string name="guessword_word_was">La palabra era %1$s.</string>
+    <string name="guessword_replant">No pasa nada: se planta una flor nueva para la siguiente palabra.</string>
+    <string name="guessword_next">Siguiente palabra</string>
+    <string name="guessword_see_result">Ver el resultado</string>
+    <string name="guessword_result">Palabras encontradas: %1$d de %2$d.</string>
+    <string name="guessword_petals_kept">Pétalos conservados: %1$d.</string>
+    <string name="guessword_hints_used">Pistas usadas: %1$d.</string>
+    <string name="guessword_flower">Flor · pétalos: %1$d de %2$d</string>
+</resources>

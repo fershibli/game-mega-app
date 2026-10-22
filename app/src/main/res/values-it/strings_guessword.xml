@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">Indovina la parola</string>
+    <string name="howto_guessword">Indovina la parola nascosta una lettera alla volta. Ogni lettera che non è nella parola fa cadere un petalo dal fiore. Trova la parola prima che cada l’ultimo petalo. Cinque parole per ogni partita.</string>
+    <string name="guessword_progress">Parola %1$d di %2$d · Petali: %3$d</string>
+    <string name="guessword_clue">Indizio: %1$s</string>
+    <string name="guessword_clue_hidden">Nessun indizio a questo livello. Tocca Suggerimento per vederlo.</string>
+    <string name="guessword_not_in_word">Non sono nella parola: %1$s</string>
+    <string name="guessword_found">Bravo! La parola è %1$s.</string>
+    <string name="guessword_word_was">La parola era %1$s.</string>
+    <string name="guessword_replant">Non importa: un fiore nuovo è piantato per la prossima parola.</string>
+    <string name="guessword_next">Parola successiva</string>
+    <string name="guessword_see_result">Vedi il risultato</string>
+    <string name="guessword_result">Parole trovate: %1$d su %2$d.</string>
+    <string name="guessword_petals_kept">Petali salvati: %1$d.</string>
+    <string name="guessword_hints_used">Suggerimenti usati: %1$d.</string>
+    <string name="guessword_flower">Fiore · petali: %1$d su %2$d</string>
+</resources>

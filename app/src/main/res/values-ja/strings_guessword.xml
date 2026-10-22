@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">言葉あて</string>
+    <string name="howto_guessword">かくれた言葉を1文字ずつ当てましょう。言葉にない文字を選ぶと、花びらが1枚落ちます。最後の花びらが落ちる前に言葉を見つけましょう。1回に5つの言葉があります。</string>
+    <string name="guessword_progress">%2$d問中%1$d問目 · 花びら：%3$d</string>
+    <string name="guessword_clue">ヒント：%1$s</string>
+    <string name="guessword_clue_hidden">このレベルではヒントは最初は出ません。「ヒント」をタップすると見られます。</string>
+    <string name="guessword_not_in_word">言葉にない文字：%1$s</string>
+    <string name="guessword_found">よくできました！答えは %1$s です。</string>
+    <string name="guessword_word_was">答えは %1$s でした。</string>
+    <string name="guessword_replant">だいじょうぶ。次の言葉のために新しい花を植えました。</string>
+    <string name="guessword_next">次の言葉</string>
+    <string name="guessword_see_result">結果を見る</string>
+    <string name="guessword_result">%2$d問中%1$d問当たりました。</string>
+    <string name="guessword_petals_kept">残った花びら：%1$d</string>
+    <string name="guessword_hints_used">ヒントを使った回数：%1$d</string>
+    <string name="guessword_flower">花びら%2$d枚中%1$d枚の花</string>
+</resources>

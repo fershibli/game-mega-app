@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">Errate das Wort</string>
+    <string name="howto_guessword">Errate das versteckte Wort Buchstabe für Buchstabe. Jeder Buchstabe, der nicht im Wort steht, lässt ein Blütenblatt von der Blume fallen. Finde das Wort, bevor das letzte Blatt fällt. Fünf Wörter pro Runde.</string>
+    <string name="guessword_progress">Wort %1$d von %2$d · Blätter: %3$d</string>
+    <string name="guessword_clue">Hinweis: %1$s</string>
+    <string name="guessword_clue_hidden">Auf dieser Stufe gibt es keinen Hinweis. Tippe auf Tipp, um ihn zu sehen.</string>
+    <string name="guessword_not_in_word">Nicht im Wort: %1$s</string>
+    <string name="guessword_found">Gut gemacht! Das Wort ist %1$s.</string>
+    <string name="guessword_word_was">Das Wort war %1$s.</string>
+    <string name="guessword_replant">Macht nichts: Für das nächste Wort wird eine neue Blume gepflanzt.</string>
+    <string name="guessword_next">Nächstes Wort</string>
+    <string name="guessword_see_result">Ergebnis ansehen</string>
+    <string name="guessword_result">Gefundene Wörter: %1$d von %2$d.</string>
+    <string name="guessword_petals_kept">Behaltene Blütenblätter: %1$d.</string>
+    <string name="guessword_hints_used">Benutzte Tipps: %1$d.</string>
+    <string name="guessword_flower">Blume · Blütenblätter: %1$d von %2$d</string>
+</resources>

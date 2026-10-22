@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_maze">Лабиринт</string>
+    <string name="howto_maze">Нарисуйте путь от круглого друга до домика. Ведите пальцем по коридорам или нажмите на клетку дальше по коридору. Проведите назад, чтобы отменить шаги.</string>
+    <string name="maze_start">Нарисуйте путь от круглого друга до домика.</string>
+    <string name="maze_going">Дальше! Проведите назад, чтобы вернуться на шаг.</string>
+    <string name="maze_hint_back">Вернитесь к большому кольцу, затем идите по кольцам.</string>
+    <string name="maze_hint_next">Идите по кольцам.</string>
+    <string name="maze_done">Вы дошли до домика!</string>
+    <string name="maze_hints_used">Подсказок использовано: %1$d.</string>
+    <string name="maze_board">Лабиринт %1$d × %2$d</string>
+</resources>

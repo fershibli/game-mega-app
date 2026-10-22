@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_guessword">Guess the word</string>
+    <string name="howto_guessword">Guess the hidden word one letter at a time. Each letter that is not in the word makes a petal fall from the flower. Find the word before the last petal falls. Five words in each round.</string>
+    <string name="guessword_progress">Word %1$d of %2$d · Petals: %3$d</string>
+    <string name="guessword_clue">Clue: %1$s</string>
+    <string name="guessword_clue_hidden">No clue on this level. Tap Hint to see it.</string>
+    <string name="guessword_not_in_word">Not in the word: %1$s</string>
+    <string name="guessword_found">Well done! The word is %1$s.</string>
+    <string name="guessword_word_was">The word was %1$s.</string>
+    <string name="guessword_replant">Never mind: a new flower is planted for the next word.</string>
+    <string name="guessword_next">Next word</string>
+    <string name="guessword_see_result">See the result</string>
+    <string name="guessword_result">Words found: %1$d of %2$d.</string>
+    <string name="guessword_petals_kept">Petals kept: %1$d.</string>
+    <string name="guessword_hints_used">Hints used: %1$d.</string>
+    <string name="guessword_flower">Flower · petals: %1$d of %2$d</string>
+</resources>
