@@ -45,6 +45,7 @@
     <!-- In-game common -->
     <string name="resume">ゲームに戻る</string>
     <string name="new_game">新しいゲーム</string>
+    <string name="new_game_options">設定を変えて新しいゲーム</string>
     <string name="main_menu">メインメニュー</string>
     <string name="leave_game_title">このゲームをやめますか？</string>
     <string name="leave_game_message">メインメニューに戻ると、このゲームは終了となり、続きから遊ぶことはできません。</string>

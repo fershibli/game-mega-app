@@ -70,8 +70,11 @@ import io.github.fershibli.megagames.ui.theme.Palette
 import kotlin.math.roundToInt
 
 /** Extra actions shown when Settings is opened from inside a game. */
-/** Buttons shown when the settings are opened during a game. Without [onNewGame] (pastimes) nothing can be lost, so leaving asks nothing. */
-class InGameActions(val onResume: () -> Unit, val onNewGame: (() -> Unit)?, val onMainMenu: () -> Unit)
+/**
+ * Buttons shown when the settings are opened during a game. Without [onNewGame] (pastimes) nothing can be lost, so leaving asks nothing.
+ * [onNewOptions] starts a new game of the same game choosing its rules, level and table again, without the main menu.
+ */
+class InGameActions(val onResume: () -> Unit, val onNewGame: (() -> Unit)?, val onNewOptions: (() -> Unit)? = null, val onMainMenu: () -> Unit)
 
 const val PROJECT_URL = "https://github.com/fershibli/game-mega-app"
 
@@ -120,6 +123,7 @@ fun SettingsScreen(
     val left = LocalSettings.current.leftHanded
     var confirmExit by remember { mutableStateOf(false) }
     var confirmNew by remember { mutableStateOf(false) }
+    var confirmOptions by remember { mutableStateOf(false) }
     var pickLanguage by remember { mutableStateOf(false) }
     var showMission by remember { mutableStateOf(false) }
 
@@ -240,6 +244,9 @@ fun SettingsScreen(
                         BigButton(stringResource(R.string.new_game), { confirmNew = true }, icon = AppIcon.NEW_GAME, style = ButtonStyle.SECONDARY)
                     }
                 }
+                if (inGame.onNewOptions != null) {
+                    BigButton(stringResource(R.string.new_game_options), { confirmOptions = true }, Modifier.fillMaxWidth(), icon = AppIcon.NEW_GAME, style = ButtonStyle.SECONDARY)
+                }
                 if (inGame.onNewGame != null) {
                     BigButton(stringResource(R.string.main_menu), { confirmExit = true }, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.DANGER)
                 } else {
@@ -276,6 +283,17 @@ fun SettingsScreen(
             buttons = listOf(
                 stringResource(R.string.leave_game_yes) to { confirmExit = false; inGame.onMainMenu() },
                 stringResource(R.string.cancel) to { confirmExit = false },
+            ),
+        )
+    }
+    if (confirmOptions && inGame != null) {
+        BigDialog(
+            title = stringResource(R.string.new_game_title),
+            message = stringResource(R.string.new_game_message),
+            onDismiss = { confirmOptions = false },
+            buttons = listOf(
+                stringResource(R.string.new_game_options) to { confirmOptions = false; inGame.onNewOptions?.invoke() },
+                stringResource(R.string.cancel) to { confirmOptions = false },
             ),
         )
     }
