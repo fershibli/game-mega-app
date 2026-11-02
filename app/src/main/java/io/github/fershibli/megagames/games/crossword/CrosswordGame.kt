@@ -66,6 +66,8 @@ data class CrosswordState(
     val across: Boolean = true,
     /** Letters offered in the letter bank come from here (distractors). */
     val alphabet: List<String>,
+    /** Cells whose letter is given from the start (the first letter of each word on Easy). */
+    val given: List<Int> = emptyList(),
 ) {
     fun solution(): Map<Int, String> {
         val out = HashMap<Int, String>()
@@ -89,13 +91,25 @@ fun dictionaryFile(lang: AppLanguage) = "crossword/" + when (lang) {
     else -> "en"
 } + ".txt"
 
+/** How many of the last words are kept out of the next games, so they don't keep coming back. */
+private const val RECENT_WORDS = 60
+
 fun newCrossword(context: Context, language: AppLanguage, difficulty: Difficulty, random: Random = Random.Default): CrosswordState {
     val entries = WordKit.dictionary(context, language)
     val size = Crossword.sizeFor(difficulty, language.syllabic)
-    val words = Crossword.generate(entries, size, Crossword.targetWords(difficulty, language.syllabic), random)
+    val prefs = context.getSharedPreferences("crossword", Context.MODE_PRIVATE)
+    val key = "recent.${language.name}"
+    val recent = prefs.getString(key, null).orEmpty().lines().filter { it.isNotEmpty() }.map { it.split('\t') }
+    val words = Crossword.generate(entries, size, Crossword.targetWords(difficulty, language.syllabic), random, difficulty, recent.toSet())
+    prefs.edit().putString(key, (recent + words.map { it.letters }).takeLast(RECENT_WORDS).joinToString("\n") { it.joinToString("\t") }).apply()
     val alphabet = entries.flatMap { it.letters }.distinct()
+    // On Easy the first letter of every word is already in place.
+    val given = if (difficulty == Difficulty.EASY) words.map { it.cell(0, size) }.distinct() else emptyList()
+    val letters = words.flatMap { w -> w.cells(size).zip(w.letters) }.toMap()
+    val entered = List(size * size) { if (it in given) letters.getValue(it) else "" }
     val first = words.first()
-    return CrosswordState(size, language, words, List(size * size) { "" }, first.cell(0, size), first.across, alphabet)
+    val start = first.cells(size).firstOrNull { it !in given } ?: first.cell(0, size)
+    return CrosswordState(size, language, words, entered, start, first.across, alphabet, given)
 }
 
 @Composable
@@ -135,12 +149,13 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
 
     fun type(letter: String) {
         val w = word ?: return
-        val entries = s.entries.toMutableList().also { it[s.selected] = letter }
+        // A given letter stays: typing on it just moves on.
+        val entries = s.entries.toMutableList().also { if (s.selected !in s.given) it[s.selected] = letter }
         val cells = w.cells(s.size)
         val pos = cells.indexOf(s.selected)
-        // Next empty cell in this word, else simply the next cell, else stay.
+        // Next empty cell in this word, else simply the next cell that isn't given, else stay.
         val nextCell = (cells.drop(pos + 1) + cells.take(pos)).firstOrNull { entries[it].isEmpty() }
-            ?: cells.getOrNull(pos + 1) ?: s.selected
+            ?: cells.drop(pos + 1).firstOrNull { it !in s.given } ?: s.selected
         state.value = s.copy(entries = entries, selected = nextCell, across = w.across)
     }
 
@@ -148,7 +163,8 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
         val w = word ?: return
         val cells = w.cells(s.size)
         val pos = cells.indexOf(s.selected)
-        val target = if (s.entries[s.selected].isEmpty() && pos > 0) cells[pos - 1] else s.selected
+        val target = if ((s.entries[s.selected].isEmpty() || s.selected in s.given) && pos > 0) cells[pos - 1] else s.selected
+        if (target in s.given) { state.value = s.copy(selected = target, across = w.across); return }
         state.value = s.copy(entries = s.entries.toMutableList().also { it[target] = "" }, selected = target, across = w.across)
     }
 
@@ -251,7 +267,9 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
                     val typed = s.entries[i]
                     if (typed.isNotEmpty()) {
                         val wrong = showErrors && typed != letter
-                        text(measurer, typed, tl + Offset(cell / 2, cell * 0.56f), if (wrong) p.danger else p.text, pxToSp(cell * (if (syllabic) 0.56f else 0.6f)))
+                        // Given letters are shown in the accent color, so they read as part of the puzzle.
+                        val color = when { i in s.given -> p.primary; wrong -> p.danger; else -> p.text }
+                        text(measurer, typed, tl + Offset(cell / 2, cell * 0.56f), color, pxToSp(cell * (if (syllabic) 0.56f else 0.6f)))
                     }
                 }
             }

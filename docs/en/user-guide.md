@@ -227,7 +227,9 @@ Place a disc so that one or more of the computer's discs are trapped in a straig
 
 ### Crossword
 
-A **new crossword is generated** for every game from a dictionary of everyday words with gentle clues, in the app's language.
+A **new crossword is generated** for every game from a dictionary of everyday words with gentle clues, in the app's language. Words from the last games are left out of the next one, so they don't keep coming back.
+
+**Levels:** on **Easy** the first letter of every word is already filled in (in blue) and a letter bank is shown; **Medium** has a bigger grid with more words; **Hard** has the biggest grid, doesn't mark mistakes in red and, in Portuguese, uses less common words (the Portuguese dictionary marks each word as easy, medium or hard).
 
 **Playing:** tap a square to choose its word; tap the same square again to switch between across and down. The clue is shown at the bottom between ◀ and ▶ (previous / next word). Type with the letters below: after each letter the cursor moves on. The eraser clears a letter. **Hint** fills in the selected square.
 
