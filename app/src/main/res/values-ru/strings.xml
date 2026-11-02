@@ -194,4 +194,16 @@
         <item quantity="many">%1$d карт</item>
         <item quantity="other">%1$d карты</item>
     </plurals>
+    <string name="options_match">Матч</string>
+    <string name="options_single">Одна партия</string>
+    <string name="options_best_of">До %d побед</string>
+    <string name="options_time">Время</string>
+    <string name="options_no_limit">Без ограничения</string>
+    <string name="options_minutes">%d мин</string>
+    <string name="match_score">Счёт — вы: %1$d · компьютер: %2$d · из %3$d партий</string>
+    <string name="match_next">Следующая партия</string>
+    <string name="match_won">Вы выиграли матч!</string>
+    <string name="match_lost">Компьютер выиграл матч</string>
+    <string name="time_up">Время вышло!</string>
+    <string name="time_left">Осталось времени: %s</string>
 </resources>

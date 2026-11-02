@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Best of 3 or 5, and against the clock**: games against the computer can be a match of 3 or 5 games, with the score between games and kept with the autosave; games played alone can have a time limit of 5 to 30 minutes at any level, with a clock that pauses while the settings are open or the app is in the background.
 - **Crossword variety and levels**: the last games' words are left out of the next one, the grid no longer starts from the same long words, Easy fills in the first letter of every word, and the Portuguese dictionary grows to more than 500 words, each marked easy, medium or hard (Easy leaves out the hard ones, Hard the easy ones).
 - **New game, other options**: from the settings during a game, or when a game ends, start the same game again choosing its rules, level and table, without going back to the main menu.
 - **Buraco for three to six**: three or four each for themselves, four in pairs, and six in three pairs or two teams of three (three decks for the bigger tables). The table screen shows the teams in colors, and the scores of every side are kept on top.

@@ -220,6 +220,10 @@ class ChoiceStore(context: Context) {
     /** The number of seats picked last time for this game, or null. */
     fun lastSeats(game: GameId): Int? = prefs.getInt("seats.${game.key}", 0).takeIf { it > 0 }
 
+    /** The match length (1, 3 or 5) and the time limit (minutes, 0 = none) picked last time for this game. */
+    fun lastBestOf(game: GameId): Int = prefs.getInt("bestOf.${game.key}", 1)
+    fun lastMinutes(game: GameId): Int = prefs.getInt("minutes.${game.key}", 0)
+
     /** The number of teams picked last time for this game (0 = the usual way). */
     fun lastTeams(game: GameId): Int = prefs.getInt("teams.${game.key}", 0)
 
@@ -227,6 +231,8 @@ class ChoiceStore(context: Context) {
         prefs.edit().putBoolean("together.${game.key}", setup.together).apply {
             if (setup.seats > 0) putInt("seats.${game.key}", setup.seats)
             putInt("teams.${game.key}", setup.teams)
+            if (game.offersMatches && !setup.together) putInt("bestOf.${game.key}", setup.bestOf)
+            if (game.offersTimeLimit) putInt("minutes.${game.key}", setup.minutes)
         }.apply()
     }
 
