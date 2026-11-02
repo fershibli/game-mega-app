@@ -62,6 +62,12 @@ Quando acaba a vez, a tela esconde o que é daquele jogador (por exemplo as cart
 
 Os jogos que aceitam um número diferente de pessoas perguntam antes **Quantos à mesa?**, já com a última escolha marcada.
 
+## Melhor de 3, melhor de 5 e contra o relógio
+
+Na tela de nível, os jogos contra o computador (gamão, damas, xadrez, buraco, truco...) mostram **Partida: Jogo único / Melhor de 3 / Melhor de 5**. Numa série, o placar aparece no fim de cada jogo e o botão **Próxima partida** continua a série; ganha quem vencer a maioria dos jogos. Se o app for fechado no meio, o placar volta junto com o jogo salvo.
+
+Os jogos de jogar sozinho (sudoku, paciência, palavras cruzadas...) mostram **Tempo: Sem limite / 5 / 10 / 20 / 30 min**, em qualquer nível. Com tempo, um relógio no alto conta para trás (fica vermelho no último minuto) e para enquanto as configurações estão abertas ou o app está em segundo plano; se o tempo acabar, a partida é perdida. O app lembra a última escolha de cada jogo.
+
 ## Salvamento automático e "continuar?"
 
 Cada jogada é salva na hora, no próprio celular. Se o app fechar — sem querer, por uma ligação, porque a bateria acabou — da próxima vez que abrir ele vai direto para aquele jogo e pergunta:

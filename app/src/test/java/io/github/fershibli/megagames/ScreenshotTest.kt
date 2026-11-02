@@ -118,6 +118,12 @@ class ScreenshotTest {
         val tables = listOf(io.github.fershibli.megagames.core.TableSize(2), io.github.fershibli.megagames.core.TableSize(4, R.string.reversi_dark))
         io.github.fershibli.megagames.ui.screens.TableScreen(GameId.BURACO, false, tables[1], {}, {}, {}, tables)
     }
+    @Test fun levelMatchPt() = shot("level_match_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.DifficultyScreen(GameId.BACKGAMMON, Difficulty.MEDIUM, {}, {}, {}, initialBestOf = 3)
+    }
+    @Test fun levelClockPt() = shot("level_clock_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.DifficultyScreen(GameId.SUDOKU, Difficulty.EASY, {}, {}, {}, initialMinutes = 10)
+    }
     @Test fun settings() = shot("settings") { SettingsScreen(Settings(), {}, {}, null) }
     @Test fun settingsInGamePt() = shot("settings_in_game_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {}, InGameActions({}, {}, {}, {}))

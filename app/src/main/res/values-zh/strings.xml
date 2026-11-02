@@ -177,4 +177,16 @@
     <plurals name="buraco_cards">
         <item quantity="other">%1$d 张牌</item>
     </plurals>
+    <string name="options_match">比赛</string>
+    <string name="options_single">单局</string>
+    <string name="options_best_of">%d局定胜负</string>
+    <string name="options_time">时间</string>
+    <string name="options_no_limit">不限时</string>
+    <string name="options_minutes">%d 分钟</string>
+    <string name="match_score">比分 — 你：%1$d · 电脑：%2$d · %3$d局</string>
+    <string name="match_next">下一局</string>
+    <string name="match_won">你赢得了这轮比赛！</string>
+    <string name="match_lost">电脑赢得了这轮比赛</string>
+    <string name="time_up">时间到了！</string>
+    <string name="time_left">剩余时间：%s</string>
 </resources>

@@ -194,4 +194,16 @@
         <item quantity="one">%1$d card</item>
         <item quantity="other">%1$d cards</item>
     </plurals>
+    <string name="options_match">Match</string>
+    <string name="options_single">Single game</string>
+    <string name="options_best_of">Best of %d</string>
+    <string name="options_time">Time</string>
+    <string name="options_no_limit">No limit</string>
+    <string name="options_minutes">%d min</string>
+    <string name="match_score">Score — you: %1$d · computer: %2$d · best of %3$d</string>
+    <string name="match_next">Next game</string>
+    <string name="match_won">You won the match!</string>
+    <string name="match_lost">The computer won the match</string>
+    <string name="time_up">Time is up!</string>
+    <string name="time_left">Time left: %s</string>
 </resources>
