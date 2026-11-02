@@ -45,6 +45,7 @@
     <!-- In-game common -->
     <string name="resume">Вернуться к игре</string>
     <string name="new_game">Новая игра</string>
+    <string name="new_game_options">Новая игра с другими настройками</string>
     <string name="main_menu">Главное меню</string>
     <string name="leave_game_title">Выйти из этой игры?</string>
     <string name="leave_game_message">Если вернуться в главное меню, эта партия будет прервана, и продолжить её будет нельзя.</string>

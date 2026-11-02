@@ -31,6 +31,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
+import androidx.compose.ui.test.onLast
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -207,6 +208,26 @@ class AppFlowTest {
         rule.onNodeWithText("Main menu").performClick()
         rule.onNodeWithText("Yes, leave the game").performClick()
         rule.onNodeWithText("Choose your game").assertIsDisplayed()
+        Thread.sleep(100)
+        assertNull(saves.load())
+    }
+
+    @Test
+    fun aNewGameWithOtherOptionsGoesBackToTheChoicesWithoutTheMenu() {
+        val saves = SaveStore(app).also { it.clear() }
+        SettingsStore(app).save(Settings())
+        rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = true) }
+        rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi"))
+        rule.onAllNodesWithContentDescription("Reversi")[0].performClick()
+        rule.onNodeWithText("Confirm").performClick()
+        rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithContentDescription("Settings").performClick()
+        rule.onNodeWithText("New game, other options").performClick()
+        // The game in progress is lost, so it asks first.
+        rule.onAllNodesWithText("New game, other options").onLast().performClick()
+        // Straight to Reversi's own choices, not the main menu.
+        rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
+        assertEquals(0, rule.onAllNodesWithText("Choose your game").fetchSemanticsNodes().size)
         Thread.sleep(100)
         assertNull(saves.load())
     }

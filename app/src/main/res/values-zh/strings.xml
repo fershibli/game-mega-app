@@ -42,6 +42,7 @@
 
     <string name="resume">返回游戏</string>
     <string name="new_game">新游戏</string>
+    <string name="new_game_options">换个设置开新游戏</string>
     <string name="main_menu">主菜单</string>
     <string name="leave_game_title">要离开这局游戏吗？</string>
     <string name="leave_game_message">回到主菜单后，这局游戏将被放弃，不能再继续。</string>

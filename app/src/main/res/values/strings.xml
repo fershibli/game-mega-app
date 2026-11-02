@@ -47,6 +47,7 @@
     <!-- In-game common -->
     <string name="resume">Back to game</string>
     <string name="new_game">New game</string>
+    <string name="new_game_options">New game, other options</string>
     <string name="main_menu">Main menu</string>
     <string name="leave_game_title">Leave this game?</string>
     <string name="leave_game_message">If you go back to the main menu, this game will be abandoned and cannot be continued.</string>

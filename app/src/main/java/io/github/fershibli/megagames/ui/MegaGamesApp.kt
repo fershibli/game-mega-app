@@ -195,6 +195,11 @@ fun MegaGamesApp(
                         if (s.game.hasDifficulty) saveStore.clear()
                         screen = Screen.Home
                     },
+                    // Back to the rules / level / table choice of the same game, the last choices preselected.
+                    onNewOptions = {
+                        saveStore.clear()
+                        open(s.game, s.language)
+                    }.takeIf { s.game.hasDifficulty || s.game.variants.isNotEmpty() },
                 )
             }
             askLanguage?.let { (game, choices) ->
