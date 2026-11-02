@@ -42,6 +42,7 @@
 
     <string name="resume">Volver al juego</string>
     <string name="new_game">Nuevo juego</string>
+    <string name="new_game_options">Nuevo juego con otras opciones</string>
     <string name="main_menu">Menú principal</string>
     <string name="leave_game_title">¿Salir de este juego?</string>
     <string name="leave_game_message">Si vuelves al menú principal, esta partida se abandonará y no se podrá continuar.</string>

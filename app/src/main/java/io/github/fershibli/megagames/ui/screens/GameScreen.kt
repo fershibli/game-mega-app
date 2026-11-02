@@ -54,6 +54,8 @@ fun GameScreen(
     variant: GameVariant? = game.variant(saved?.variant),
     setup: PlaySetup = saved?.setup ?: PlaySetup(),
     language: AppLanguage? = null,
+    /** Starts a new game of [game] choosing its options again (null: the game has none to choose). */
+    onNewOptions: (() -> Unit)? = null,
 ) {
     // Pastimes (no difficulty: a pet, a farm) keep their own lasting world: no autosave, no "new game".
     val lasting = !game.hasDifficulty
@@ -86,7 +88,9 @@ fun GameScreen(
         if (showSettings) {
             SettingsScreen(
                 settings, onSettingsChange, onClose = { showSettings = false },
-                inGame = InGameActions(onResume = { showSettings = false }, onNewGame = newGame.takeUnless { lasting }, onMainMenu = onExit),
+                inGame = InGameActions(onResume = { showSettings = false }, onNewGame = newGame.takeUnless { lasting }, onMainMenu = onExit,
+                    onNewOptions = onNewOptions.takeUnless { lasting },
+                ),
             )
         }
     }
@@ -111,8 +115,9 @@ fun GameScreen(
             else listOfNotNull(stringResource(if (result.won) R.string.win_message else R.string.lose_message), result.detail).joinToString("\n\n"),
             onDismiss = {},
             dismissible = false,
-            buttons = listOf(
+            buttons = listOfNotNull(
                 stringResource(R.string.play_again) to { newGame() },
+                onNewOptions?.let { stringResource(R.string.new_game_options) to it },
                 stringResource(R.string.main_menu) to onExit,
             ),
         )
