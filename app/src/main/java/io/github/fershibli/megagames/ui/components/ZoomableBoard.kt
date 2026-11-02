@@ -47,12 +47,21 @@ import kotlin.math.exp
 
 /** Zoom/pan state of a game board. Offsets are in viewport pixels, scale is 1x..[MAX_SCALE]. */
 @Stable
-class ZoomState {
+class ZoomState(
+    /** Zoom to show once the board's size is known (1 = the whole board). */
+    private val initial: Float = 1f,
+) {
     var scale by mutableFloatStateOf(1f)
         private set
     var offset by mutableStateOf(Offset.Zero)
         private set
     internal var viewport: IntSize = IntSize.Zero
+        set(value) {
+            val first = field == IntSize.Zero
+            field = value
+            // The first time the board is measured, start at the initial zoom, centered.
+            if (first && initial > 1.01f && value != IntSize.Zero) zoomAt(Offset(value.width / 2f, value.height / 2f), initial)
+        }
 
     val isZoomed: Boolean get() = scale > 1.01f
 
@@ -92,7 +101,7 @@ class ZoomState {
 }
 
 @Composable
-fun rememberZoomState(): ZoomState = remember { ZoomState() }
+fun rememberZoomState(initial: Float = 1f): ZoomState = remember { ZoomState(initial) }
 
 /**
  * Wraps a game board and adds the zoom gestures configured in Settings:
