@@ -142,6 +142,7 @@ class ScreenshotTest {
     @Test fun cube5Colorblind() = gameShot("game_cube_5_colorblind", GameId.CUBE, Difficulty.HARD, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND), variant = "5")
     @Test fun dotsHighContrastDark() = gameShot("game_dots_hc_dark", GameId.DOTS, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST, darkMode = true))
     @Test fun crosswordEasy() = gameShot("game_crossword_easy", GameId.CROSSWORD)
+    @Test fun crosswordEasyPt() = gameShot("game_crossword_easy_pt", GameId.CROSSWORD, Difficulty.EASY, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun xiangqi() = gameShot("game_xiangqi", GameId.XIANGQI)
     @Test fun janggiDark() = gameShot("game_janggi_dark", GameId.JANGGI, settings = Settings(darkMode = true))
     @Test fun shogiJapanese() = gameShot("game_shogi_ja", GameId.SHOGI, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))

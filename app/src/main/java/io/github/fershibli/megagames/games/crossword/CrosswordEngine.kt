@@ -7,7 +7,8 @@ import java.text.Normalizer
 import kotlin.random.Random
 
 /** A dictionary entry: the answer as a list of "letters" (a Chinese character is one letter). */
-data class WordEntry(val letters: List<String>, val clue: String)
+/** A dictionary word; [level] is how hard it is (1 easy, 2 medium, 3 hard; 0 = not marked). */
+data class WordEntry(val letters: List<String>, val clue: String, val level: Int = 0)
 
 @Serializable
 data class PlacedWord(
@@ -92,8 +93,9 @@ object Crossword {
         .map { it.trim() }
         .filter { it.isNotEmpty() && !it.startsWith("#") && '|' in it }
         .map { line ->
-            val (answer, clue) = line.split('|', limit = 2)
-            WordEntry(normalize(answer, language), clue.trim())
+            // RESPOSTA|dica, optionally followed by |1, |2 or |3 for the word's level.
+            val parts = line.split('|', limit = 3)
+            WordEntry(normalize(parts[0], language), parts[1].trim(), parts.getOrNull(2)?.trim()?.toIntOrNull()?.takeIf { it in 1..3 } ?: 0)
         }
         .filter { it.letters.size >= 2 }
         .distinctBy { it.letters }
@@ -156,16 +158,47 @@ object Crossword {
         }
     }
 
-    private fun attempt(entries: List<WordEntry>, size: Int, target: Int, random: Random): List<PlacedWord> {
+    /**
+     * The words a [difficulty] draws from: Easy leaves out the hard ones and Hard the easy ones
+     * (unmarked words fit every level). Words used in the last games ([recent]) are left out too,
+     * as long as enough words remain to fill a grid comfortably.
+     */
+    fun poolFor(entries: List<WordEntry>, difficulty: Difficulty?, recent: Set<List<String>> = emptySet()): List<WordEntry> {
+        val excluded = when (difficulty) {
+            Difficulty.EASY -> 3
+            Difficulty.HARD -> 1
+            else -> -1
+        }
+        val byLevel = entries.filter { it.level != excluded }.takeIf { it.size >= MIN_POOL } ?: entries
+        return byLevel.filter { it.letters !in recent }.takeIf { it.size >= MIN_POOL } ?: byLevel
+    }
+
+    /** Fewer words than this and a grid may not fill, or the same words keep coming back. */
+    private const val MIN_POOL = 80
+
+    /** How much a word suits [difficulty]: Easy prefers easy words, Hard the hard ones. */
+    private fun fit(e: WordEntry, difficulty: Difficulty?) = when (difficulty) {
+        Difficulty.EASY -> if (e.level == 1) 1.5f else 0f
+        Difficulty.HARD -> if (e.level == 3) 1.5f else 0f
+        Difficulty.MEDIUM -> if (e.level == 2) 1f else 0f
+        null -> 0f
+    }
+
+    private fun attempt(entries: List<WordEntry>, size: Int, target: Int, random: Random, difficulty: Difficulty?): List<PlacedWord> {
         val g = Grid(size)
-        // Longer words first (they make better skeletons), shuffled among equals.
-        val pool = entries.filter { it.letters.size in 2..size }
-            .map { it to minOf(it.letters.size, 7) + random.nextFloat() }
+        val fits = entries.filter { it.letters.size in 2..size }
+        // A long word makes the skeleton; any of them, so games don't all start alike.
+        val longest = fits.maxOfOrNull { it.letters.size } ?: return emptyList()
+        val skeletons = fits.filter { it.letters.size >= minOf(longest, size - 2, 7) }
+        val first = (skeletons.filter { fit(it, difficulty) > 0f }.takeIf { it.size >= 5 } ?: skeletons).random(random)
+        g.place(first, size / 2, (size - first.letters.size) / 2, true)
+        // Then longer words a little ahead (they cross more), mostly shuffled, and the ones that
+        // suit the level first.
+        val remaining = (fits - first)
+            .map { it to minOf(it.letters.size, 7) * 0.4f + random.nextFloat() * 3f + fit(it, difficulty) }
             .sortedByDescending { it.second }
             .map { it.first }
-        val first = pool.firstOrNull() ?: return emptyList()
-        g.place(first, size / 2, (size - first.letters.size) / 2, true)
-        val remaining = pool.drop(1).toMutableList()
+            .toMutableList()
         var progress = true
         while (g.words.size < target && progress) {
             progress = false
@@ -191,11 +224,18 @@ object Crossword {
         return g.words
     }
 
-    /** Builds a crossword (best of several attempts) and numbers it like a printed one. */
-    fun generate(entries: List<WordEntry>, size: Int, target: Int, random: Random): List<PlacedWord> {
+    /**
+     * Builds a crossword (best of several attempts) and numbers it like a printed one, from the
+     * words that suit [difficulty] and were not used [recent]ly.
+     */
+    fun generate(
+        entries: List<WordEntry>, size: Int, target: Int, random: Random,
+        difficulty: Difficulty? = null, recent: Set<List<String>> = emptySet(),
+    ): List<PlacedWord> {
+        val pool = poolFor(entries, difficulty, recent)
         var best = emptyList<PlacedWord>()
         repeat(60) {
-            val words = attempt(entries, size, target, random)
+            val words = attempt(pool, size, target, random, difficulty)
             if (words.size > best.size) best = words
             if (best.size >= target) return number(best, size)
         }
