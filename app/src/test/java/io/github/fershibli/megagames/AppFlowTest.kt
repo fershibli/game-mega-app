@@ -130,6 +130,24 @@ class AppFlowTest {
     fun pinchIsIgnoredWhenDisabled() = assertEquals(1f, pinchResult(false), 0.001f)
 
     @Test
+    fun aBoardCanStartZoomedInAtTheCenter() {
+        val zoom = ZoomState(1.6f)
+        rule.setContent {
+            MegaGamesTheme(Settings()) {
+                ZoomableBoard(Modifier.size(300.dp).testTag("board"), zoom) { Box(Modifier.fillMaxSize()) }
+            }
+        }
+        rule.waitForIdle()
+        assertEquals(1.6f, zoom.scale, 0.001f)
+        // Centered: the same amount is cut off on each side.
+        assertEquals(zoom.offset.x, zoom.offset.y, 0.5f)
+        assertTrue(zoom.offset.x < 0f)
+        // The reset button shows the whole board again.
+        rule.onNodeWithContentDescription("Reset zoom").performClick()
+        assertEquals(1f, zoom.scale, 0.001f)
+    }
+
+    @Test
     fun oneHandDoubleTapZoomsInSteps() {
         val zoom = ZoomState()
         rule.setContent {
