@@ -208,7 +208,9 @@ class AppFlowTest {
         assertTrue(kit.fresh(app, "anagram", pt, Difficulty.MEDIUM).any { it.letters in used })
         // Easy leaves out the hard words.
         assertTrue(kit.fresh(app, "anagram", pt, Difficulty.EASY).none { it.level == 3 })
+    }
 
+    @Test
     fun aNewGameWithOtherOptionsGoesBackToTheChoicesWithoutTheMenu() {
         val saves = SaveStore(app).also { it.clear() }
         SettingsStore(app).save(Settings())
