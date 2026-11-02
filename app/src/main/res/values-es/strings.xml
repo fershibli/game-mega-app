@@ -179,4 +179,16 @@
         <item quantity="many">%1$d cartas</item>
         <item quantity="other">%1$d cartas</item>
     </plurals>
+    <string name="options_match">Partida</string>
+    <string name="options_single">Partida única</string>
+    <string name="options_best_of">Al mejor de %d</string>
+    <string name="options_time">Tiempo</string>
+    <string name="options_no_limit">Sin límite</string>
+    <string name="options_minutes">%d min</string>
+    <string name="match_score">Marcador — tú: %1$d · computadora: %2$d · al mejor de %3$d</string>
+    <string name="match_next">Siguiente partida</string>
+    <string name="match_won">¡Ganaste la serie!</string>
+    <string name="match_lost">La computadora ganó la serie</string>
+    <string name="time_up">¡Se acabó el tiempo!</string>
+    <string name="time_left">Tiempo restante: %s</string>
 </resources>

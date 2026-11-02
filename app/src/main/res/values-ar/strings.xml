@@ -196,4 +196,16 @@
         <item quantity="many">%1$d ورقة</item>
         <item quantity="other">%1$d ورقة</item>
     </plurals>
+    <string name="options_match">المباراة</string>
+    <string name="options_single">لعبة واحدة</string>
+    <string name="options_best_of">الأفضل من %d</string>
+    <string name="options_time">الوقت</string>
+    <string name="options_no_limit">بلا حد</string>
+    <string name="options_minutes">%d دقيقة</string>
+    <string name="match_score">النتيجة — أنت: %1$d · الحاسوب: %2$d · الأفضل من %3$d</string>
+    <string name="match_next">اللعبة التالية</string>
+    <string name="match_won">فزت بالمباراة!</string>
+    <string name="match_lost">فاز الحاسوب بالمباراة</string>
+    <string name="time_up">انتهى الوقت!</string>
+    <string name="time_left">الوقت المتبقي: %s</string>
 </resources>

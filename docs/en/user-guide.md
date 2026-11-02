@@ -62,6 +62,12 @@ When a turn ends, the screen covers what belongs to that player (for example the
 
 Games that can be played with different numbers of people ask **How many at the table?** first; the last choice comes preselected.
 
+## Best of 3, best of 5 and against the clock
+
+On the level screen, games against the computer (backgammon, checkers, chess, buraco, truco...) show **Match: Single game / Best of 3 / Best of 5**. In a match the score is shown at the end of each game and **Next game** carries on; whoever wins most of the games takes the match. If the app is closed halfway, the score comes back with the saved game.
+
+Games played alone (sudoku, solitaire, crossword...) show **Time: No limit / 5 / 10 / 20 / 30 min**, at any level. With a limit a clock counts down at the top (red in the last minute) and stops while the settings are open or the app is in the background; when the time runs out the game is lost. The app remembers the last choice of each game.
+
 ## Automatic save and "continue?"
 
 Every move is saved immediately on the phone. If the app is closed — by accident, by a phone call, by the battery running out — the next time it opens it goes straight to that game and asks:

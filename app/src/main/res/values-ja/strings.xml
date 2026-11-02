@@ -191,4 +191,16 @@
     <plurals name="buraco_cards">
         <item quantity="other">%1$d枚</item>
     </plurals>
+    <string name="options_match">試合</string>
+    <string name="options_single">1ゲーム</string>
+    <string name="options_best_of">%d番勝負</string>
+    <string name="options_time">時間</string>
+    <string name="options_no_limit">制限なし</string>
+    <string name="options_minutes">%d分</string>
+    <string name="match_score">スコア — あなた：%1$d・コンピューター：%2$d（%3$d番勝負）</string>
+    <string name="match_next">次のゲーム</string>
+    <string name="match_won">シリーズに勝ちました！</string>
+    <string name="match_lost">コンピューターがシリーズに勝ちました</string>
+    <string name="time_up">時間切れです！</string>
+    <string name="time_left">残り時間：%s</string>
 </resources>

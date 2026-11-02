@@ -39,9 +39,35 @@ data class TableSize(val seats: Int, @StringRes val note: Int? = null, val teams
  * How a game is set up before it starts: against the computer or [together] (people taking
  * turns on this device), and with how many [seats] at the table (0 = the game's usual number), split into how many
  * [teams] (0 = the game's usual way).
+ *
+ * Against the computer a game can be one of a match of [bestOf] games (3 or 5; [wins] and
+ * [losses] so far are kept with each game so a resumed match goes on), and a game played alone
+ * can be against the clock: [minutes] to finish it (0 = no limit).
  */
 @Serializable
-data class PlaySetup(val together: Boolean = false, val seats: Int = 0, val teams: Int = 0)
+data class PlaySetup(
+    val together: Boolean = false,
+    val seats: Int = 0,
+    val teams: Int = 0,
+    val bestOf: Int = 1,
+    val wins: Int = 0,
+    val losses: Int = 0,
+    val minutes: Int = 0,
+) {
+    /** Games to win to take the match. */
+    val toWin get() = bestOf / 2 + 1
+    val matchOver get() = wins >= toWin || losses >= toWin
+}
+
+/** Matches of 3 or 5 are offered in games played against someone. */
+val GameId.offersMatches get() = takeTurns
+
+/** A time limit is offered in games played alone that have levels (puzzles, solitaires...). */
+val GameId.offersTimeLimit get() = hasDifficulty && !takeTurns && category != GameCategory.CALM_ACTION && category != GameCategory.PASTIMES
+
+/** The match lengths and time limits (minutes; 0 = none) offered. */
+val MATCH_LENGTHS = listOf(1, 3, 5)
+val TIME_LIMITS = listOf(0, 5, 10, 20, 30)
 
 /**
  * Every game shipped in the app. The [key] is persisted in save files, so it must never change
