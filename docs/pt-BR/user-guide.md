@@ -227,7 +227,9 @@ Coloque uma pedra de forma que uma ou mais pedras do computador fiquem presas, e
 
 ### Palavras cruzadas
 
-Uma **cruzadinha nova é gerada** a cada partida, a partir de um dicionário de palavras do dia a dia com dicas simples, no idioma do app.
+Uma **cruzadinha nova é gerada** a cada partida, a partir de um dicionário de palavras do dia a dia com dicas simples, no idioma do app. As palavras das últimas partidas ficam de fora da próxima, para não repetir.
+
+**Níveis:** no **Fácil** a primeira letra de cada palavra já vem preenchida (em azul) e aparecem as letras para tocar; no **Médio** a grade é maior, com mais palavras; no **Difícil** a grade é a maior, os erros não ficam vermelhos e, em português, entram palavras menos comuns (o dicionário em português marca cada palavra como fácil, média ou difícil).
 
 **Como jogar:** toque num quadradinho para escolher a palavra; toque de novo no mesmo para trocar entre horizontal e vertical. A dica aparece embaixo, entre ◀ e ▶ (palavra anterior / próxima). Digite com as letras embaixo: depois de cada letra o cursor avança. A borracha apaga uma letra. **Dica** preenche o quadradinho selecionado.
 

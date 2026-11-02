@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Crossword variety and levels**: the last games' words are left out of the next one, the grid no longer starts from the same long words, Easy fills in the first letter of every word, and the Portuguese dictionary grows to more than 500 words, each marked easy, medium or hard (Easy leaves out the hard ones, Hard the easy ones).
 - **Buraco for three to six**: three or four each for themselves, four in pairs, and six in three pairs or two teams of three (three decks for the bigger tables). The table screen shows the teams in colors, and the scores of every side are kept on top.
 - **Nonogram** (paint by numbers) on 5×5, 10×10 and 15×15 grids: more than 20 hand-drawn pictures for each size (animals, flowers, a house, a teapot...), revealed in color with their name, every one solvable line by line. Tap to paint, hold or **Mark** for ✕, drag to paint a line; finished lines dim, Undo and Hint.
 - **Kakuro**, the crossword of numbers, on three grid sizes: every puzzle has one solution found by reasoning alone. Notes, Undo, and a Hint that first shows the combinations that make the sums.
