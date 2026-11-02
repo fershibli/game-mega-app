@@ -72,7 +72,7 @@ app/src/main/java/io/github/fershibli/megagames/
 └── games/
     ├── cards/  sudoku/  solitaire/  buraco/  backgammon/  mahjong/
     └── reversi/  crossword/  pipes/  connect/  dots/
-app/src/main/assets/crossword/   en.txt pt.txt es.txt fr.txt zh.txt   (word|clue)
+app/src/main/assets/crossword/   en.txt pt.txt es.txt fr.txt zh.txt   (word|clue, optionally |level 1-3)
 app/src/main/res/values*/        strings in 5 languages
 app/src/test/                     unit, UI-flow, translation, screenshot and benchmark tests
 ```
@@ -113,7 +113,7 @@ All art is drawn at runtime with Compose `DrawScope`, so it is sharp at any zoom
 | Mahjong | Fixed layouts (tower 48, fortress 96, turtle 144 turned upright). Faces are assigned by *simulating the game backwards*: repeatedly remove two currently free positions and give them a matching pair. Playing in that order wins. Shuffle re-runs this on the remaining tiles. | Every deal and every reshuffle is solvable |
 | Pipes | Random spanning tree grown from the central source (randomized Prim, avoiding 4-way crosses), then every piece rotated randomly. | Connected, loop-free, solvable; never already solved |
 | Connect | A Hamiltonian path (serpentine) randomized by thousands of "backbite" moves, then cut into colored segments of ≥3 cells whose ends are not adjacent. | Solvable with the whole board filled |
-| Crossword | Words (longest first) placed only where they cross existing letters, never touching other words sideways; best of up to 60 attempts; numbered like a printed crossword. | No letter clashes; target word count per level |
+| Crossword | Words that suit the level and weren't used in the last games (a random long word first, then a mostly shuffled order) placed only where they cross existing letters, never touching other words sideways; best of up to 60 attempts; numbered like a printed crossword. | No letter clashes; target word count per level |
 | Dots | Random colors; refill after gravity; the board is reshuffled if no move exists. | A move always exists |
 | Solitaire / Buraco | Fair shuffle of one / two decks (`kotlin.random`). | — |
 
