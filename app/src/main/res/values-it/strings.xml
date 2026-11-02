@@ -45,6 +45,7 @@
     <!-- In-game common -->
     <string name="resume">Torna alla partita</string>
     <string name="new_game">Nuova partita</string>
+    <string name="new_game_options">Nuova partita con altre opzioni</string>
     <string name="main_menu">Menu principale</string>
     <string name="leave_game_title">Uscire da questa partita?</string>
     <string name="leave_game_message">Se torni al menu principale, questa partita verrà abbandonata e non potrà essere ripresa.</string>

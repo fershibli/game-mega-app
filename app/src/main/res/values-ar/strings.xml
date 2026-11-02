@@ -45,6 +45,7 @@
     <!-- In-game common -->
     <string name="resume">العودة إلى اللعبة</string>
     <string name="new_game">لعبة جديدة</string>
+    <string name="new_game_options">لعبة جديدة بخيارات أخرى</string>
     <string name="main_menu">القائمة الرئيسية</string>
     <string name="leave_game_title">هل تريد مغادرة هذه اللعبة؟</string>
     <string name="leave_game_message">إذا عدت إلى القائمة الرئيسية، فستُترك هذه اللعبة ولن تستطيع إكمالها.</string>
