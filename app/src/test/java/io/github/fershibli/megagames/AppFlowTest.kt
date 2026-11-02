@@ -194,6 +194,22 @@ class AppFlowTest {
     }
 
     @Test
+    fun wordGamesLeaveOutTheirRecentWordsAndKeepEachGameApart() {
+        val pt = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE
+        val kit = io.github.fershibli.megagames.games.words.WordKit
+        val all = kit.dictionary(app, pt)
+        val used = all.take(10).map { it.letters }
+        kit.remember(app, "wordsearch", pt, used)
+        assertEquals(used, kit.recent(app, "wordsearch", pt).takeLast(10))
+        val fresh = kit.fresh(app, "wordsearch", pt, Difficulty.MEDIUM)
+        assertTrue(fresh.none { it.letters in used })
+        // Another game keeps its own memory.
+        assertTrue(kit.fresh(app, "anagram", pt, Difficulty.MEDIUM).any { it.letters in used })
+        // Easy leaves out the hard words.
+        assertTrue(kit.fresh(app, "anagram", pt, Difficulty.EASY).none { it.level == 3 })
+    }
+
+    @Test
     fun savedGameIsOfferedAtStartup() {
         val saves = SaveStore(app)
         // A real saved game: start one, let it autosave, then "restart" the app.

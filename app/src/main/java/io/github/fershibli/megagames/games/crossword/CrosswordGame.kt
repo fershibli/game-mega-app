@@ -1,7 +1,5 @@
 package io.github.fershibli.megagames.games.crossword
 
-import io.github.fershibli.megagames.ui.theme.wait
-import io.github.fershibli.megagames.ui.theme.currentPace
 import android.content.Context
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
@@ -37,6 +35,7 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
+import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.games.words.WordKit
 import io.github.fershibli.megagames.ui.art.pxToSp
@@ -52,8 +51,10 @@ import io.github.fershibli.megagames.ui.components.RoundIconButton
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.serialization.Serializable
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
+import kotlinx.serialization.Serializable
 
 @Serializable
 data class CrosswordState(
@@ -91,17 +92,12 @@ fun dictionaryFile(lang: AppLanguage) = "crossword/" + when (lang) {
     else -> "en"
 } + ".txt"
 
-/** How many of the last words are kept out of the next games, so they don't keep coming back. */
-private const val RECENT_WORDS = 60
-
 fun newCrossword(context: Context, language: AppLanguage, difficulty: Difficulty, random: Random = Random.Default): CrosswordState {
     val entries = WordKit.dictionary(context, language)
     val size = Crossword.sizeFor(difficulty, language.syllabic)
-    val prefs = context.getSharedPreferences("crossword", Context.MODE_PRIVATE)
-    val key = "recent.${language.name}"
-    val recent = prefs.getString(key, null).orEmpty().lines().filter { it.isNotEmpty() }.map { it.split('\t') }
+    val recent = WordKit.recent(context, GameId.CROSSWORD.key, language)
     val words = Crossword.generate(entries, size, Crossword.targetWords(difficulty, language.syllabic), random, difficulty, recent.toSet())
-    prefs.edit().putString(key, (recent + words.map { it.letters }).takeLast(RECENT_WORDS).joinToString("\n") { it.joinToString("\t") }).apply()
+    WordKit.remember(context, GameId.CROSSWORD.key, language, words.map { it.letters })
     val alphabet = entries.flatMap { it.letters }.distinct()
     // On Easy the first letter of every word is already in place.
     val given = if (difficulty == Difficulty.EASY) words.map { it.cell(0, size) }.distinct() else emptyList()
