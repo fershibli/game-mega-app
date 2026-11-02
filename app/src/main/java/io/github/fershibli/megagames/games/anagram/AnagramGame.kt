@@ -1,7 +1,5 @@
 package io.github.fershibli.megagames.games.anagram
 
-import io.github.fershibli.megagames.ui.theme.currentPace
-import io.github.fershibli.megagames.ui.theme.wait
 import android.content.Context
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -38,13 +36,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
-import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
@@ -54,6 +52,7 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
+import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.games.words.WordKit
 import io.github.fershibli.megagames.ui.art.pxToSp
@@ -69,8 +68,10 @@ import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
-import kotlinx.serialization.Serializable
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
+import kotlinx.serialization.Serializable
 
 @Serializable
 data class AnagramState(
@@ -105,7 +106,10 @@ fun startWord(s: AnagramState, index: Int, difficulty: Difficulty): AnagramState
 }
 
 fun newAnagram(context: Context, language: AppLanguage, difficulty: Difficulty, random: Random = Random.Default): AnagramState {
-    val words = Anagram.round(WordKit.dictionary(context, language), difficulty, language, random)
+    // Words that suit the level and weren't asked lately; the whole dictionary if too few are left.
+    val words = Anagram.round(WordKit.fresh(context, GameId.ANAGRAM.key, language, difficulty), difficulty, language, random)
+        .takeIf { it.size >= Anagram.ROUND } ?: Anagram.round(WordKit.dictionary(context, language), difficulty, language, random)
+    WordKit.remember(context, GameId.ANAGRAM.key, language, words.map { it.letters })
     return startWord(AnagramState(language, words), 0, difficulty)
 }
 

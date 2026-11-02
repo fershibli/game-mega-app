@@ -1,7 +1,5 @@
 package io.github.fershibli.megagames.games.wordsearch
 
-import io.github.fershibli.megagames.ui.theme.currentPace
-import io.github.fershibli.megagames.ui.theme.wait
 import android.content.Context
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
@@ -46,6 +44,7 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
+import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.games.words.WordKit
 import io.github.fershibli.megagames.ui.art.pxToSp
@@ -60,8 +59,10 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.serialization.Serializable
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
+import kotlinx.serialization.Serializable
 
 /** A word found by the player: its index in the list and the squares at both ends of its band. */
 @Serializable
@@ -89,10 +90,12 @@ private const val FINISH_PAUSE_MS = 900L
 
 fun newWordSearch(context: Context, language: AppLanguage, difficulty: Difficulty, random: Random = Random.Default): WordSearchState {
     val size = WordSearch.sizeFor(difficulty)
+    // Words that suit the level and weren't hidden in the last games.
     val puzzle = WordSearch.generate(
-        WordKit.dictionary(context, language), size, WordSearch.wordsFor(difficulty),
+        WordKit.fresh(context, GameId.WORDSEARCH.key, language, difficulty), size, WordSearch.wordsFor(difficulty),
         WordSearch.directions(difficulty), random, WordSearch.minLength(language),
     )
+    WordKit.remember(context, GameId.WORDSEARCH.key, language, puzzle.words.map { it.letters })
     return WordSearchState(size, language, puzzle.grid, puzzle.words)
 }
 
