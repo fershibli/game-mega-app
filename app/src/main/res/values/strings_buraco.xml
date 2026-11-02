@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="buraco_table_pairs">In pairs: partners sit opposite each other</string>
+    <string name="buraco_table_alone">Each player for themselves</string>
+    <string name="buraco_table_three_pairs">Three pairs: partners sit opposite each other</string>
+    <string name="buraco_table_trios">Two teams of three: partners sit in every other seat</string>
+    <string name="buraco_trio">Players %1$s, %2$s and %3$s</string>
+    <string name="buraco_side_points">%1$s: %2$d</string>
     <string name="buraco_seat_you">You</string>
     <string name="buraco_seat_partner">Partner</string>
     <string name="buraco_seat_right">Right</string>

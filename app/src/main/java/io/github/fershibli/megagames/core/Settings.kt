@@ -220,9 +220,13 @@ class ChoiceStore(context: Context) {
     /** The number of seats picked last time for this game, or null. */
     fun lastSeats(game: GameId): Int? = prefs.getInt("seats.${game.key}", 0).takeIf { it > 0 }
 
+    /** The number of teams picked last time for this game (0 = the usual way). */
+    fun lastTeams(game: GameId): Int = prefs.getInt("teams.${game.key}", 0)
+
     fun rememberSetup(game: GameId, setup: PlaySetup) {
         prefs.edit().putBoolean("together.${game.key}", setup.together).apply {
             if (setup.seats > 0) putInt("seats.${game.key}", setup.seats)
+            putInt("teams.${game.key}", setup.teams)
         }.apply()
     }
 

@@ -15,10 +15,10 @@ import kotlin.random.Random
  * - Hard: also weighs the whole pile, keeps wild cards for canastas, never dirties a clean
  *   canasta and tracks which cards you picked up to avoid feeding you.
  *
- * With four players the same player sits in every computer seat. Partners share their side's
+ * With more players the same player sits in every computer seat. Partners share their side's
  * sequences, so a partner keeps adding to them and protects their canastas like its own; the
- * "danger" of a discard is judged against the other side's sequences, which is what the next
- * player (always an opponent) could use or take the pile for.
+ * "danger" of a discard is judged against the sequences of the next player's side, which is what
+ * that player (never a partner) could use or take the pile for.
  *
  * A turn is returned as a list of intermediate states so the screen can show each step.
  */
@@ -179,7 +179,7 @@ object BuracoAi {
 
         // Discard the least useful card, avoiding cards that would help the opponent.
         val hand = s.hands[me]
-        val opponentMelds = s.melds[1 - side]
+        val opponentMelds = s.melds[s.side((me + 1) % s.players)]
         // What the other side picked up from the pile (the hard player remembers it).
         val opponentPicks = if (side == 0) s.theirPicks else s.yourPicks
         val scored = hand.map { c ->

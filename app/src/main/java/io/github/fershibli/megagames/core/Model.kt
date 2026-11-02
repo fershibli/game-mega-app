@@ -30,15 +30,18 @@ data class GameVariant(val key: String, @StringRes val name: Int, @StringRes val
 /**
  * A number of seats a game can be played with, and an optional note about it ("in pairs").
  * Against the computer, the other seats are computer players; taking turns, they are people.
+ * [teams] splits the seats into that many teams (0 = the game's usual way), so the same number
+ * of seats can be offered both in pairs and each for themselves.
  */
-data class TableSize(val seats: Int, @StringRes val note: Int? = null)
+data class TableSize(val seats: Int, @StringRes val note: Int? = null, val teams: Int = 0)
 
 /**
  * How a game is set up before it starts: against the computer or [together] (people taking
- * turns on this device), and with how many [seats] at the table (0 = the game's usual number).
+ * turns on this device), and with how many [seats] at the table (0 = the game's usual number), split into how many
+ * [teams] (0 = the game's usual way).
  */
 @Serializable
-data class PlaySetup(val together: Boolean = false, val seats: Int = 0)
+data class PlaySetup(val together: Boolean = false, val seats: Int = 0, val teams: Int = 0)
 
 /**
  * Every game shipped in the app. The [key] is persisted in save files, so it must never change
@@ -64,7 +67,11 @@ enum class GameId(
 ) {
     SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku, GameCategory.PUZZLES),
     SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire, GameCategory.CARDS),
-    BURACO("buraco", R.string.game_buraco, R.string.howto_buraco, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.buraco_table_pairs))),
+    BURACO("buraco", R.string.game_buraco, R.string.howto_buraco, GameCategory.CARDS, takeTurns = true, tables = listOf(
+        TableSize(2), TableSize(3, R.string.buraco_table_alone, 3), TableSize(4, R.string.buraco_table_pairs, 2),
+        TableSize(4, R.string.buraco_table_alone, 4), TableSize(6, R.string.buraco_table_three_pairs, 3),
+        TableSize(6, R.string.buraco_table_trios, 2),
+    )),
     BACKGAMMON("backgammon", R.string.game_backgammon, R.string.howto_backgammon, GameCategory.BOARD, takeTurns = true),
     MAHJONG("mahjong", R.string.game_mahjong, R.string.howto_mahjong, GameCategory.PUZZLES),
     REVERSI("reversi", R.string.game_reversi, R.string.howto_reversi, GameCategory.BOARD, takeTurns = true),

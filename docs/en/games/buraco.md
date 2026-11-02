@@ -2,7 +2,7 @@
 
 🌐 **English** · [Português](../../pt-BR/games/buraco.md) · [Español](../../es/games/buraco.md) · [Français](../../fr/games/buraco.md) · [Italiano](../../it/games/buraco.md) · [Deutsch](../../de/games/buraco.md) · [Русский](../../ru/games/buraco.md) · [日本語](../../ja/games/buraco.md) · [中文](../../zh-CN/games/buraco.md) · [العربية](../../ar/games/buraco.md)
 
-Buraco is the Brazilian rummy of sequences and canastas, played with two decks. In Mili Games it is played by **two** (you against the computer) or by **four in pairs** ("duplas"): you and a computer partner, sitting opposite each other, against two computer players. The app asks **How many at the table?** before each game and remembers your choice. You can also **take turns on one phone** with other people.
+Buraco is the Brazilian rummy of sequences and canastas, played with two decks. In Mili Games it is played by **two** (you against the computer), **three** (each for themselves), **four** (in pairs, "duplas", or each for themselves) or **six** (in three pairs, or in two teams of three). The app asks **How many at the table?** before each game and remembers your choice. You can also **take turns on one phone** with other people.
 
 ## The cards
 - Two 52-card decks (104 cards), no jokers. **Every 2 is wild** ("curinga").
@@ -39,8 +39,14 @@ Buraco is the Brazilian rummy of sequences and canastas, played with two decks. 
 - **Scores per side:** the bar at the top shows the points each side already has on the table (cards and canastas). At the end, each side scores its sequences and canastas, +100 if one of the two went out, minus the cards left in **both** hands, and −100 if it never took its morto.
 - **Your computer partner** adds to your shared sequences, keeps clean canastas clean on Hard, and avoids throwing away cards the next opponent could use.
 
+## Three, four or six at the table
+- **Each player for themselves** (3 or 4): everyone has their own sequences and morto; the most points wins.
+- **Six in three pairs:** partners sit opposite each other (players 1 and 4, 2 and 5, 3 and 6).
+- **Six in two teams of three:** partners sit in every other seat (players 1, 3 and 5 against 2, 4 and 6), so the next player is always an opponent.
+- With six, or four each for themselves, the game uses **three decks** so the deck doesn't run out early. Every seat has its own color and symbol (● ▲ ■ ◆ ▼ ⬢).
+
 ## Taking turns on one phone
-Choose **Take turns on this phone** on the level screen, then 2 or 4 at the table. Everybody is a person (2 people, or 4 people in pairs: players 1 and 3 against players 2 and 4). After each discard a cover hides the cards and asks to pass the phone to the next player, shown with their color and symbol; they tap the big button (“Ready, it is my turn”) to see their own hand.
+Choose **Take turns on this phone** on the level screen, then how many sit at the table and how they play. Everybody is a person (2 people, or 4 people in pairs: players 1 and 3 against players 2 and 4). After each discard a cover hides the cards and asks to pass the phone to the next player, shown with their color and symbol; they tap the big button (“Ready, it is my turn”) to see their own hand.
 
 ## Levels
 - **Easy:** plays casually, rarely takes the pile and discards almost at random.

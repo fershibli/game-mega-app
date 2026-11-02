@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="buraco_table_pairs">Парами: партнёры сидят друг напротив друга</string>
+    <string name="buraco_table_alone">Каждый сам за себя</string>
+    <string name="buraco_table_three_pairs">Три пары: партнёры сидят друг напротив друга</string>
+    <string name="buraco_table_trios">Две команды по трое, через одного</string>
+    <string name="buraco_trio">Игроки %1$s, %2$s и %3$s</string>
+    <string name="buraco_side_points">%1$s: %2$d</string>
     <string name="buraco_seat_you">Вы</string>
     <string name="buraco_seat_partner">Партнёр</string>
     <string name="buraco_seat_right">Справа</string>

@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="buraco_table_pairs">ペア戦：パートナーは向かい合わせに座ります</string>
+    <string name="buraco_table_alone">個人戦</string>
+    <string name="buraco_table_three_pairs">3ペア戦：パートナーは向かい合わせに座ります</string>
+    <string name="buraco_table_trios">3人ずつ2チーム：交互に座ります</string>
+    <string name="buraco_trio">プレイヤー%1$s・%2$s・%3$s</string>
+    <string name="buraco_side_points">%1$s：%2$d</string>
     <string name="buraco_seat_you">あなた</string>
     <string name="buraco_seat_partner">パートナー</string>
     <string name="buraco_seat_right">右</string>

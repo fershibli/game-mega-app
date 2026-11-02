@@ -29,26 +29,29 @@ import io.github.fershibli.megagames.ui.art.drawCardBack
 import io.github.fershibli.megagames.ui.components.Seat
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
+import kotlin.math.PI
+import kotlin.math.cos
+import kotlin.math.sin
 
 /*
  * Seats around a card table (Buraco, Cacheta, Truco): each seat has its own color and its own
- * symbol (● ▲ ■ ◆), so it is never told apart by color alone. Partners of a four-player table
+ * symbol (● ▲ ■ ◆, and ▼ ⬢ for a table of six), so it is never told apart by color alone. Partners of a four-player table
  * (seats 0 and 2, 1 and 3) get colors of the same family: blue and green against red and orange.
  */
 
-/** The color of [seat] (0 to 3), from the palette so the color-blind and contrast modes apply. */
-fun seatColor(p: Palette, seat: Int): Color = p.pieces[intArrayOf(1, 0, 2, 5)[seat % 4]]
+/** The color of [seat] (0 to 5), from the palette so the color-blind and contrast modes apply. */
+fun seatColor(p: Palette, seat: Int): Color = p.pieces[intArrayOf(1, 0, 2, 5, 3, 4)[seat % 6]]
 
 /** A [Seat] for the "pass the phone" cover, in the seat's color. */
 fun tableSeat(p: Palette, seat: Int, name: String) = Seat(name, seatColor(p, seat))
 
-/** Draws the symbol of [seat] filling [size] at [topLeft]: circle, triangle, square or diamond. */
+/** Draws the symbol of [seat] filling [size] at [topLeft]: circle, triangle, square, diamond, upside-down triangle or hexagon. */
 fun DrawScope.seatSymbol(seat: Int, color: Color, topLeft: Offset, size: Size) {
     val w = size.width
     val h = size.height
     val outline = Color.White
     val path = Path()
-    when (seat % 4) {
+    when (seat % 6) {
         0 -> {
             drawCircle(color, w * 0.45f, Offset(topLeft.x + w / 2, topLeft.y + h / 2))
             drawCircle(outline, w * 0.45f, Offset(topLeft.x + w / 2, topLeft.y + h / 2), style = Stroke(w * 0.09f))
@@ -65,6 +68,21 @@ fun DrawScope.seatSymbol(seat: Int, color: Color, topLeft: Offset, size: Size) {
             lineTo(topLeft.x + w * 0.9f, topLeft.y + h * 0.1f)
             lineTo(topLeft.x + w * 0.9f, topLeft.y + h * 0.9f)
             lineTo(topLeft.x + w * 0.1f, topLeft.y + h * 0.9f)
+            close()
+        }
+        4 -> path.apply {
+            moveTo(topLeft.x + w * 0.04f, topLeft.y + h * 0.1f)
+            lineTo(topLeft.x + w * 0.96f, topLeft.y + h * 0.1f)
+            lineTo(topLeft.x + w / 2, topLeft.y + h * 0.94f)
+            close()
+        }
+        5 -> path.apply {
+            for (i in 0 until 6) {
+                val a = PI / 3 * i
+                val x = topLeft.x + w / 2 + w * 0.47f * cos(a).toFloat()
+                val y = topLeft.y + h / 2 + h * 0.47f * sin(a).toFloat()
+                if (i == 0) moveTo(x, y) else lineTo(x, y)
+            }
             close()
         }
         else -> path.apply {
