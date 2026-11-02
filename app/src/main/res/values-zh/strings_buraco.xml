@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="buraco_table_pairs">两人一组：搭档面对面坐</string>
+    <string name="buraco_table_alone">各自为战</string>
+    <string name="buraco_table_three_pairs">三组两人：搭档面对面坐</string>
+    <string name="buraco_table_trios">两队各三人，交替而坐</string>
+    <string name="buraco_trio">玩家 %1$s、%2$s 和 %3$s</string>
+    <string name="buraco_side_points">%1$s：%2$d</string>
     <string name="buraco_seat_you">你</string>
     <string name="buraco_seat_partner">搭档</string>
     <string name="buraco_seat_right">右边</string>

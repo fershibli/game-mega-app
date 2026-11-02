@@ -2,7 +2,7 @@
 
 🌐 [English](../../en/games/buraco.md) · **Português** · [Español](../../es/games/buraco.md) · [Français](../../fr/games/buraco.md) · [Italiano](../../it/games/buraco.md) · [Deutsch](../../de/games/buraco.md) · [Русский](../../ru/games/buraco.md) · [日本語](../../ja/games/buraco.md) · [中文](../../zh-CN/games/buraco.md) · [العربية](../../ar/games/buraco.md)
 
-O buraco é o jogo de sequências e canastras com dois baralhos, querido em todo o Brasil. No Mili Games ele é jogado **a dois** (você contra o computador) ou **a quatro, em duplas**: você e um parceiro (computador), sentados frente a frente, contra dois computadores. Antes de cada partida o app pergunta **Quantos à mesa?** e lembra a sua escolha. Também dá para **jogar revezando o celular** com outras pessoas.
+O buraco é o jogo de sequências e canastras com dois baralhos, querido em todo o Brasil. No Mili Games ele é jogado **a dois** (você contra o computador), **a três** (cada um por si), **a quatro** (em duplas, ou cada um por si) ou **a seis** (em três duplas, ou em dois trios). Antes de cada partida o app pergunta **Quantos à mesa?** e lembra a sua escolha. Também dá para **jogar revezando o celular** com outras pessoas.
 
 ## As cartas
 - Dois baralhos de 52 cartas (104 cartas), sem coringas. **Todo 2 é curinga.**
@@ -39,8 +39,14 @@ O buraco é o jogo de sequências e canastras com dois baralhos, querido em todo
 - **Pontos por dupla:** a barra no alto mostra os pontos que cada dupla já tem na mesa (cartas e canastras). No fim, cada dupla soma seus jogos e canastras, +100 se um dos dois bateu, menos as cartas que sobraram nas **duas** mãos, e −100 se não pegou o morto.
 - **O parceiro computador** encaixa nos jogos da dupla, mantém as canastras limpas no Difícil e evita descartar cartas que o próximo adversário possa usar.
 
+## Três, quatro ou seis à mesa
+- **Cada um por si** (3 ou 4): cada jogador tem seus jogos e seu morto; ganha quem fizer mais pontos.
+- **Seis em três duplas:** os parceiros sentam frente a frente (jogadores 1 e 4, 2 e 5, 3 e 6).
+- **Seis em dois trios:** os parceiros sentam alternados (jogadores 1, 3 e 5 contra 2, 4 e 6), então quem joga depois de você é sempre adversário.
+- Com seis, ou com quatro cada um por si, o jogo usa **três baralhos**, para o monte não acabar cedo. Cada lugar tem sua cor e seu símbolo (● ▲ ■ ◆ ▼ ⬢).
+
 ## Revezando o celular
-Escolha **Revezando celular** na tela de nível e depois 2 ou 4 na mesa. Todos são pessoas (2 pessoas, ou 4 em duplas: jogadores 1 e 3 contra 2 e 4). Depois de cada descarte, uma capa esconde as cartas e pede para passar o celular para o próximo jogador, mostrado com a sua cor e símbolo; ele toca no botão grande (“Pronto, é a minha vez”) para ver a própria mão.
+Escolha **Revezando celular** na tela de nível e depois quantos e como jogam à mesa. Todos são pessoas (2 pessoas, ou 4 em duplas: jogadores 1 e 3 contra 2 e 4). Depois de cada descarte, uma capa esconde as cartas e pede para passar o celular para o próximo jogador, mostrado com a sua cor e símbolo; ele toca no botão grande (“Pronto, é a minha vez”) para ver a própria mão.
 
 ## Níveis
 - **Fácil:** joga sem muito cuidado, raramente pega o lixo e descarta quase ao acaso.

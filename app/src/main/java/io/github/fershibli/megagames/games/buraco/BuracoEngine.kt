@@ -6,9 +6,10 @@ import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
 /**
- * Brazilian Buraco for two players, or for four in pairs ("duplas").
+ * Brazilian Buraco for two to six players: each for themselves, in pairs ("duplas") or in trios.
  *
- * - Two 52-card decks (104 cards), no jokers. Every 2 is wild ("curinga").
+ * - Two 52-card decks (104 cards), three for a big table (see [Buraco.decks]), no jokers. Every 2
+ *   is wild ("curinga").
  * - Each player gets 11 cards; two extra piles of 11 cards ("mortos") wait on the side, one for
  *   each side of the table.
  * - On your turn: draw one card from the deck OR take the whole discard pile; then you may lay
@@ -23,23 +24,25 @@ import kotlin.random.Random
  * - Card values: A = 15, 2 = 10, 8 to K = 10, 3 to 7 = 5. Cards left in hand count against you,
  *   and a player who never picked up a morto loses 100.
  *
- * With four players, partners sit opposite each other and play as one side: seats 0 and 2 against
- * 1 and 3 (side = seat % 2, which also holds with two players). Each side lays its sequences on one
- * shared space ([BuracoState.melds] and [BuracoState.tookMorto] are per side), picks up one morto
- * (whoever of the two empties a hand first) and scores together, counting the cards left in both
- * hands. Play goes counterclockwise, as is the custom in Brazil: the player on your right plays
- * after you (seat 1), then your partner (seat 2), then the player on your left (seat 3).
+ * Seats are split into [BuracoState.sides] sides and side = seat % sides, so partners never play
+ * one after the other: four in pairs are seats 0 and 2 against 1 and 3 (partners opposite each
+ * other), six in pairs are 0-3, 1-4 and 2-5, and six in trios are 0-2-4 against 1-3-5. With as many
+ * sides as seats everybody plays for themselves. Each side lays its sequences on one shared space
+ * ([BuracoState.melds] and [BuracoState.tookMorto] are per side), picks up one morto (whoever
+ * empties a hand first) and scores together, counting the cards left in all its hands. Play goes
+ * counterclockwise, as is the custom in Brazil: the player on your right plays after you (seat 1),
+ * then on around the table.
  */
 @Serializable
 data class BuracoState(
     val stock: List<Card>,
     val discard: List<Card>,
     val mortos: List<List<Card>>,
-    /** One hand per seat (2 or 4). */
+    /** One hand per seat. */
     val hands: List<List<Card>>,
-    /** The sequences on the table of each side (always 2). */
+    /** The sequences on the table of each side. */
     val melds: List<List<List<Card>>>,
-    /** Whether each side (always 2) has picked up its morto. */
+    /** Whether each side has picked up its morto. */
     val tookMorto: List<Boolean> = listOf(false, false),
     val turn: Int = 0,
     val drawn: Boolean = false,
@@ -48,13 +51,21 @@ data class BuracoState(
     val wentOut: Int = -1,
     /** Cards your side picked up from the discard pile recently (the hard opponents remember them). */
     val yourPicks: List<Card> = emptyList(),
-    /** Seats at the table: 2, or 4 in pairs. Older saves have none and are two-player games. */
+    /** Seats at the table. Older saves have none and are two-player games. */
     val players: Int = 2,
     /** Cards the other side picked up recently (a hard partner remembers them too). */
     val theirPicks: List<Card> = emptyList(),
+    /** Number of sides (teams): 2, or as many as seats when each plays for themselves. Older saves have 2. */
+    val sides: Int = 2,
 ) {
-    /** The side of [seat]: 0 (you, and your partner) or 1. */
-    fun side(seat: Int) = seat % 2
+    /** The side of [seat]; 0 is yours (with your partners). */
+    fun side(seat: Int) = seat % sides
+
+    /** The seats of [side], in playing order. */
+    fun seatsOf(side: Int) = (side until players step sides).toList()
+
+    /** Whether some players have partners (pairs or trios). */
+    val partners get() = sides < players
 }
 
 const val YOU = 0
@@ -143,15 +154,27 @@ object BuracoRules {
 }
 
 object Buraco {
-    /** Deals a game for [players] seats (2, or 4 in pairs). */
-    fun deal(random: Random, players: Int = 2): BuracoState {
-        require(players == 2 || players == 4)
-        val deck = Decks.multi(2, random).toMutableList()
+    /** The tables that can be dealt, as seats to sides; the first for a number of seats is its usual one. */
+    val TABLES = listOf(2 to 2, 3 to 3, 4 to 2, 4 to 4, 6 to 2, 6 to 3)
+
+    /** The usual sides for [players] seats: in pairs or trios when they split evenly, else each alone. */
+    fun defaultSides(players: Int) = TABLES.firstOrNull { it.first == players }?.second ?: players
+
+    /** Two decks, or three when the hands and mortos would leave too short a deck to draw from. */
+    fun decks(players: Int, sides: Int) = if (players + sides > 6) 3 else 2
+
+    /** Deals a game for [players] seats split into [sides] (one of [TABLES]). */
+    fun deal(random: Random, players: Int = 2, sides: Int = defaultSides(players)): BuracoState {
+        require(players to sides in TABLES)
+        val deck = Decks.multi(decks(players, sides), random).toMutableList()
         fun take(n: Int) = List(n) { deck.removeAt(deck.lastIndex) }
         val hands = List(players) { take(11) }
-        val mortos = listOf(take(11), take(11))
+        val mortos = List(sides) { take(11) }
         val discard = take(1)
-        return BuracoState(deck, discard, mortos, hands, listOf(emptyList(), emptyList()), players = players)
+        return BuracoState(
+            deck, discard, mortos, hands, List(sides) { emptyList() }, tookMorto = List(sides) { false },
+            players = players, sides = sides,
+        )
     }
 
     private fun BuracoState.withHand(p: Int, hand: List<Card>) = copy(hands = hands.toMutableList().also { it[p] = hand })
@@ -238,7 +261,7 @@ object Buraco {
         val total get() = melded + bonus - inHand + wentOut - mortoPenalty
     }
 
-    /** The score of [side] (0 or 1; with two players, the side is the seat). */
+    /** The score of [side] (with two players, the side is the seat). */
     fun score(s: BuracoState, side: Int): Score {
         val melded = s.melds[side].sumOf { m -> m.sumOf { BuracoRules.points(it) } }
         val bonus = tableBonus(s, side)

@@ -94,7 +94,7 @@ fun MegaGamesApp(
     // Then how many sit at the table, when the game offers a choice.
     fun afterDifficulty(game: GameId, variant: GameVariant?, difficulty: Difficulty, together: Boolean, language: AppLanguage?) {
         if (game.tables.size > 1) screen = Screen.ChooseTable(game, variant, difficulty, together, language)
-        else start(game, difficulty, variant, PlaySetup(together, game.tables.firstOrNull()?.seats ?: 0), language)
+        else start(game, difficulty, variant, game.tables.firstOrNull().let { PlaySetup(together, it?.seats ?: 0, it?.teams ?: 0) }, language)
     }
 
     // Rules first (when the game has variants), then the difficulty (when it has one).
@@ -161,11 +161,13 @@ fun MegaGamesApp(
                     val back = { screen = Screen.ChooseDifficulty(s.game, s.variant, s.language) }
                     BackHandler { back() }
                     val last = choiceStore.lastSeats(s.game)
+                    val lastTeams = choiceStore.lastTeams(s.game)
                     TableScreen(
                         game = s.game,
                         together = s.together,
-                        initial = s.game.tables.firstOrNull { it.seats == last } ?: s.game.tables.first(),
-                        onConfirm = { start(s.game, s.difficulty, s.variant, PlaySetup(s.together, it.seats), s.language) },
+                        initial = s.game.tables.firstOrNull { it.seats == last && it.teams == lastTeams }
+                            ?: s.game.tables.firstOrNull { it.seats == last } ?: s.game.tables.first(),
+                        onConfirm = { start(s.game, s.difficulty, s.variant, PlaySetup(s.together, it.seats, it.teams), s.language) },
                         onBack = back,
                         onSettings = { screen = Screen.Settings },
                         language = s.language,

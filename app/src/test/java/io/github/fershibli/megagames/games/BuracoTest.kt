@@ -267,6 +267,38 @@ class BuracoTest {
     }
 
     @Test
+    fun everyTableDealsAndComputerPlayersFinishWithoutLosingCards() {
+        for ((players, sides) in Buraco.TABLES) for (seed in 1..2) {
+            val r = Random(seed * 17 + players)
+            var st = Buraco.deal(r, players, sides)
+            val cards = 52 * Buraco.decks(players, sides)
+            assertEquals(sides, st.mortos.size)
+            assertEquals(sides, st.melds.size)
+            // Partners never play one after the other.
+            if (sides < players) for (seat in 0 until players) assertTrue(st.side(seat) != st.side((seat + 1) % players))
+            var turns = 0
+            while (!st.finished && turns < 1500) {
+                st = BuracoAi.playTurn(st, Difficulty.MEDIUM, r).last()
+                val total = st.stock.size + st.discard.size + st.mortos.sumOf { it.size } + st.hands.sumOf { it.size } + st.melds.sumOf { m -> m.sumOf { it.size } }
+                assertEquals("$players/$sides", cards, total)
+                turns++
+            }
+            assertTrue("$players seats in $sides sides, seed $seed did not finish", st.finished)
+            List(sides) { Buraco.score(st, it) }
+        }
+    }
+
+    @Test
+    fun theUsualSidesAreKeptForOlderChoices() {
+        assertEquals(2, Buraco.defaultSides(2))
+        assertEquals(3, Buraco.defaultSides(3))
+        assertEquals(2, Buraco.defaultSides(4))
+        assertEquals(2, Buraco.defaultSides(6))
+        // An older four-player save has no sides and is in pairs.
+        assertEquals(2, BuracoState(emptyList(), emptyList(), emptyList(), List(4) { emptyList() }, listOf(emptyList(), emptyList()), players = 4).sides)
+    }
+
+    @Test
     fun hardPairBeatsEasyPair() {
         var hardWins = 0
         repeat(10) { g ->

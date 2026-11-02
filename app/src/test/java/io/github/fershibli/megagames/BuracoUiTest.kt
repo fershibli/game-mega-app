@@ -17,6 +17,7 @@ import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
@@ -73,6 +74,31 @@ class BuracoUiTest {
     }
 
     @Test
+    fun sixInTwoTriosShowsEveryoneAndBothTeams() {
+        val store = SaveStore(app).apply { clear() }
+        var setup by mutableStateOf<PlaySetup?>(null)
+        rule.setContent {
+            MegaGamesTheme(english) {
+                val chosen = setup
+                if (chosen == null) {
+                    TableScreen(GameId.BURACO, false, GameId.BURACO.tables.first(), { setup = PlaySetup(seats = it.seats, teams = it.teams) }, {}, {})
+                } else {
+                    val host = remember(chosen) { GameHost(GameId.BURACO, Difficulty.EASY, null, store, null, chosen) {} }
+                    GameContent(GameId.BURACO, host)
+                }
+            }
+        }
+        rule.onNodeWithText("Three pairs: partners sit opposite each other").assertExists()
+        rule.onNodeWithText("Two teams of three: partners sit in every other seat").performScrollTo().performClick()
+        rule.onNodeWithText("Confirm").performClick()
+        val start = await(store) { it.players == 6 }!!
+        assertEquals(2, start.sides)
+        assertEquals(List(6) { 11 }, start.hands.map { it.size })
+        for (name in listOf("Player 2", "Player 6", "Us", "Them")) rule.onNodeWithText(name).assertExists()
+        store.clear()
+    }
+
+    @Test
     fun fourAtTheTableWithAPartnerPlaysAWholeRound() {
         val store = SaveStore(app).apply { clear() }
         var setup by mutableStateOf<PlaySetup?>(null)
@@ -80,7 +106,7 @@ class BuracoUiTest {
             MegaGamesTheme(english) {
                 val chosen = setup
                 if (chosen == null) {
-                    TableScreen(GameId.BURACO, false, GameId.BURACO.tables.first(), { setup = PlaySetup(seats = it.seats) }, {}, {})
+                    TableScreen(GameId.BURACO, false, GameId.BURACO.tables.first(), { setup = PlaySetup(seats = it.seats, teams = it.teams) }, {}, {})
                 } else {
                     val host = remember(chosen) { GameHost(GameId.BURACO, Difficulty.EASY, null, store, null, chosen) {} }
                     GameContent(GameId.BURACO, host)
@@ -89,9 +115,11 @@ class BuracoUiTest {
         }
         rule.onNodeWithText("How many at the table?").assertIsDisplayed()
         rule.onNodeWithText("In pairs: partners sit opposite each other").assertIsDisplayed()
-        rule.onNodeWithText("You and 3 computer players").performClick()
+        // Four are offered in pairs and each for themselves: pick the pairs by their note.
+        rule.onNodeWithText("In pairs: partners sit opposite each other").performClick()
         rule.onNodeWithText("Confirm").performClick()
         val start = await(store) { it.players == 4 }!!
+        assertEquals(2, start.sides)
         assertEquals(listOf(11, 11, 11, 11), start.hands.map { it.size })
         // The three others, by where they sit, with their cards counted; the scores of both sides.
         for (name in listOf("Left", "Partner", "Right", "Us", "Them")) rule.onNodeWithText(name).assertIsDisplayed()
@@ -155,9 +183,9 @@ class BuracoUiTest {
 
     companion object {
         /** Four at the table, a few rounds in, your turn: sequences on both sides. */
-        fun fourState(): BuracoState {
+        fun fourState(players: Int = 4, sides: Int = Buraco.defaultSides(players)): BuracoState {
             val r = Random(21)
-            var s = Buraco.deal(r, players = 4)
+            var s = Buraco.deal(r, players, sides)
             var turns = 0
             while (!s.finished && (turns < 16 || s.turn != 0)) {
                 s = BuracoAi.playTurn(s, Difficulty.MEDIUM, r).last()
@@ -168,6 +196,11 @@ class BuracoUiTest {
 
         fun fourHost() = GameHost(
             GameId.BURACO, Difficulty.MEDIUM, AppJson.encodeToJsonElement(BuracoState.serializer(), fourState()), null, null, PlaySetup(seats = 4),
+        ) {}
+
+        /** Six in two trios, a few rounds in, in Portuguese for the screenshots. */
+        fun trioHost() = GameHost(
+            GameId.BURACO, Difficulty.MEDIUM, AppJson.encodeToJsonElement(BuracoState.serializer(), fourState(6, 2)), null, null, PlaySetup(seats = 6, teams = 2),
         ) {}
 
         /** Four people taking turns, at the very start: the cover asks to pass the phone to player 1. */

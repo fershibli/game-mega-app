@@ -82,9 +82,10 @@ import kotlin.random.Random
 
 @Composable
 fun BuracoGame(host: GameHost) {
-    // Four seats in pairs when chosen at the table screen; two otherwise (and in older saves).
-    val players = if (host.setup.seats == 4) 4 else 2
-    LoadGame(host, BuracoState.serializer(), { Buraco.deal(Random.Default, players) }) { state -> BuracoScreen(state, host) }
+    // The table chosen at the table screen (seats and teams); two players otherwise.
+    val players = host.setup.seats.takeIf { seats -> Buraco.TABLES.any { it.first == seats } } ?: 2
+    val sides = host.setup.teams.takeIf { players to it in Buraco.TABLES } ?: Buraco.defaultSides(players)
+    LoadGame(host, BuracoState.serializer(), { Buraco.deal(Random.Default, players, sides) }) { state -> BuracoScreen(state, host) }
 }
 
 private val SUIT_ORDER = listOf(Suit.SPADES, Suit.HEARTS, Suit.CLUBS, Suit.DIAMONDS)
@@ -104,17 +105,23 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
 
     // Taking turns on this phone: every seat is a person, and the phone is passed after each turn.
     val together = host.setup.together
-    val four = s.players == 4
+    // More than two at the table: the other seats are shown in a row, with each side's points.
+    val many = s.players > 2
     val handoff = remember { Handoff() }
     // The seat whose hand is shown. Taking turns, nobody's until the first person says "ready".
     var viewer by remember { mutableIntStateOf(if (together) -1 else YOU) }
     fun human(seat: Int) = together || seat == YOU
-    val names = seatNames(s.players, together)
+    val names = seatNames(s.players, s.partners, together)
     val mySide = if (viewer >= 0) s.side(viewer) else 0
-    fun sideName(side: Int): String = when {
-        together && four -> context.getString(R.string.buraco_pair, "${side + 1}", "${side + 3}")
-        together -> names[side]
-        else -> context.getString(if (side == mySide) R.string.buraco_us else R.string.buraco_them)
+    fun sideName(side: Int): String {
+        val seats = s.seatsOf(side).map { "${it + 1}" }
+        return when {
+            !s.partners -> names[side]
+            !together && side == mySide -> context.getString(R.string.buraco_us)
+            !together && s.sides == 2 -> context.getString(R.string.buraco_them)
+            seats.size == 2 -> context.getString(R.string.buraco_pair, seats[0], seats[1])
+            else -> context.getString(R.string.buraco_trio, seats[0], seats[1], seats[2])
+        }
     }
 
     val pace = currentPace
@@ -122,32 +129,27 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
 
     LaunchedEffect(s.finished) {
         if (!s.finished) return@LaunchedEffect
-        val ours = Buraco.score(s, 0)
-        val theirs = Buraco.score(s, 1)
+        val totals = List(s.sides) { Buraco.score(s, it).total }
+        val best = totals.max()
+        val winners = totals.indices.filter { totals[it] == best }
         val lines = buildList {
-            if (together || four) {
-                add(context.getString(R.string.buraco_points_sides, sideName(0), ours.total, sideName(1), theirs.total))
-            } else {
-                add(context.getString(R.string.buraco_points, ours.total, theirs.total))
+            when {
+                !together && !many -> add(context.getString(R.string.buraco_points, totals[0], totals[1]))
+                s.sides == 2 -> add(context.getString(R.string.buraco_points_sides, sideName(0), totals[0], sideName(1), totals[1]))
+                else -> totals.forEachIndexed { side, total -> add(context.getString(R.string.buraco_side_points, sideName(side), total)) }
             }
             when {
                 s.wentOut < 0 -> add(context.getString(R.string.buraco_deck_over))
                 !together && s.wentOut == YOU -> add(context.getString(R.string.buraco_went_out_you))
-                !together && !four -> add(context.getString(R.string.buraco_went_out_ai))
+                !together && !many -> add(context.getString(R.string.buraco_went_out_ai))
                 else -> add(context.getString(R.string.buraco_went_out_seat, names[s.wentOut]))
             }
-            if (together) {
-                add(
-                    when {
-                        ours.total > theirs.total -> context.getString(R.string.buraco_winner, sideName(0))
-                        theirs.total > ours.total -> context.getString(R.string.buraco_winner, sideName(1))
-                        else -> context.getString(R.string.buraco_tie)
-                    },
-                )
+            if (together || s.sides > 2) {
+                add(if (winners.size == 1) context.getString(R.string.buraco_winner, sideName(winners[0])) else context.getString(R.string.buraco_tie))
             }
         }
         pace.wait(1200)
-        host.finish(GameOutcome(together || ours.total > theirs.total, lines.joinToString("\n"), shared = together))
+        host.finish(GameOutcome(together || winners == listOf(0), lines.joinToString("\n"), shared = together))
     }
 
     // Computer seats play their whole turn, shown step by step.
@@ -188,7 +190,7 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
                             else -> R.string.buraco_prompt_play
                         },
                     )
-                    !myTurn && (together || four) && !s.finished -> stringResource(R.string.buraco_playing, names[s.turn])
+                    !myTurn && (together || many) && !s.finished -> stringResource(R.string.buraco_playing, names[s.turn])
                     !myTurn -> stringResource(R.string.computer_turn)
                     !s.drawn -> stringResource(R.string.buraco_prompt_draw)
                     selected.isNotEmpty() && s.melds[mySide].isNotEmpty() -> stringResource(R.string.buraco_prompt_add)
@@ -232,26 +234,35 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
                     .padding(10.dp),
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
-                if (together || four) SideScores(s, mySide, ::sideName)
+                if (together || many) SideScores(s, mySide, ::sideName)
                 val morto = " · " + stringResource(R.string.buraco_morto_taken)
-                if (four) {
-                    // The other three, where they sit: left, across (the partner) and right. Left and
-                    // right are the physical sides, so this row is never mirrored.
+                if (many) {
+                    // The others, where they sit, from the left round to the right (with four: left,
+                    // across and right). Left and right are the physical sides, so this row is never
+                    // mirrored; with five others it wraps.
                     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
-                        Row(Modifier.fillMaxWidth().testTag("buraco-seats"), horizontalArrangement = Arrangement.SpaceEvenly) {
-                            for (seat in listOf((me + 3) % 4, (me + 2) % 4, (me + 1) % 4)) {
+                        FlowRow(
+                            Modifier.fillMaxWidth().testTag("buraco-seats"),
+                            horizontalArrangement = Arrangement.SpaceEvenly, verticalArrangement = Arrangement.spacedBy(6.dp),
+                        ) {
+                            for (k in s.players - 1 downTo 1) {
+                                val seat = (me + k) % s.players
                                 SeatChip(seat, names[seat], s.hands[seat].size, active = !s.finished && s.turn == seat)
                             }
                         }
                     }
-                    SectionLabel(stringResource(R.string.buraco_their_sequences) + if (s.tookMorto[1 - mySide]) morto else "")
-                } else {
-                    // Opponent
-                    val other = 1 - me
-                    SectionLabel(names[other] + " · " + pluralStringResource(R.plurals.buraco_cards, s.hands[other].size, s.hands[other].size) +
-                        if (s.tookMorto[1 - mySide]) morto else "")
                 }
-                MeldArea(s.melds[1 - mySide], meldCard, french, onClick = null)
+                // The other sides' sequences, in playing order after yours.
+                for (k in 1 until s.sides) {
+                    val side = (mySide + k) % s.sides
+                    val label = when {
+                        !many -> names[side] + " · " + pluralStringResource(R.plurals.buraco_cards, s.hands[side].size, s.hands[side].size)
+                        s.sides == 2 -> stringResource(R.string.buraco_their_sequences)
+                        else -> sideName(side)
+                    }
+                    SectionLabel(label + if (s.tookMorto[side]) morto else "")
+                    MeldArea(s.melds[side], meldCard, french, onClick = null)
+                }
 
                 // Deck, discard pile and mortos
                 Row(horizontalArrangement = Arrangement.spacedBy(14.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -273,13 +284,13 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
                 }
 
                 // My side's sequences (shared with the partner)
-                SectionLabel(stringResource(if (four) R.string.buraco_our_sequences else R.string.buraco_your_sequences) + if (s.tookMorto[mySide]) morto else "")
+                SectionLabel(stringResource(if (s.partners) R.string.buraco_our_sequences else R.string.buraco_your_sequences) + if (s.tookMorto[mySide]) morto else "")
                 MeldArea(s.melds[mySide], meldCard, french, onClick = if (myTurn && s.drawn && selected.isNotEmpty()) { i -> handle(Buraco.addToMeld(s, i, selected.toList())) } else null)
 
                 // My hand (only the backs while the phone is being passed)
                 val hand = s.hands[if (viewer >= 0) viewer else s.turn]
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    if (four || together) SeatMark(me, size = 18.dp)
+                    if (many || together) SeatMark(me, size = 18.dp)
                     SectionLabel(stringResource(R.string.buraco_your_hand) + " (${hand.size})")
                 }
                 FlowRow(Modifier.testTag("buraco-hand"), horizontalArrangement = Arrangement.spacedBy(5.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -307,9 +318,11 @@ private fun BuracoScreen(state: MutableState<BuracoState>, host: GameHost) {
 
 /** Names of the seats: you and the computers (by where they sit), or "Player 1"... taking turns. */
 @Composable
-private fun seatNames(players: Int, together: Boolean): List<String> = when {
+private fun seatNames(players: Int, partners: Boolean, together: Boolean): List<String> = when {
     together -> List(players) { stringResource(R.string.player_number, it + 1) }
     players == 2 -> listOf(stringResource(R.string.buraco_seat_you), stringResource(R.string.buraco_computer))
+    // Three, six, or four each alone (no partner across): you and the others by number, counterclockwise.
+    players != 4 || !partners -> listOf(stringResource(R.string.buraco_seat_you)) + (2..players).map { stringResource(R.string.player_number, it) }
     else -> listOf(
         stringResource(R.string.buraco_seat_you), stringResource(R.string.buraco_seat_right),
         stringResource(R.string.buraco_seat_partner), stringResource(R.string.buraco_seat_left),
@@ -326,11 +339,11 @@ private fun SideScores(s: BuracoState, mySide: Int, sideName: (Int) -> String) {
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        for (side in listOf(mySide, 1 - mySide)) {
+        for (side in List(s.sides) { (mySide + it) % s.sides }) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(4.dp)) {
                     // The symbols of the seats on this side.
-                    for (seat in side until s.players step 2) SeatMark(seat, size = 16.dp)
+                    for (seat in s.seatsOf(side)) SeatMark(seat, size = 16.dp)
                     Text(sideName(side), color = p.text, style = MaterialTheme.typography.titleSmall)
                 }
                 Text(
