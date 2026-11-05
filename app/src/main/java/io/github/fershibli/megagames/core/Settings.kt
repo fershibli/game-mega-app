@@ -104,6 +104,10 @@ data class Settings(
     val recentFirst: Boolean = true,
     /** Home screen: games grouped under category headings, or one single list. */
     val showCategories: Boolean = true,
+    /** Vibration, in three groups that can be turned off apart: moves on the board, buttons and menus, and the end of a game. */
+    val vibrateMoves: Boolean = true,
+    val vibrateButtons: Boolean = true,
+    val vibrateAlerts: Boolean = true,
     val pace: Pace = Pace.NORMAL,
     val motion: Motion = Motion.FULL,
 ) {
@@ -136,6 +140,9 @@ class SettingsStore(context: Context) {
             solitaireSideways = prefs.getBoolean("solitaireSideways", d.solitaireSideways),
             recentFirst = prefs.getBoolean("recentFirst", d.recentFirst),
             showCategories = prefs.getBoolean("showCategories", d.showCategories),
+            vibrateMoves = prefs.getBoolean("vibrateMoves", d.vibrateMoves),
+            vibrateButtons = prefs.getBoolean("vibrateButtons", d.vibrateButtons),
+            vibrateAlerts = prefs.getBoolean("vibrateAlerts", d.vibrateAlerts),
             pace = enumOr(prefs.getString("pace", null), d.pace),
             motion = enumOr(prefs.getString("motion", null), d.motion),
         )
@@ -157,6 +164,9 @@ class SettingsStore(context: Context) {
             .putBoolean("solitaireSideways", s.solitaireSideways)
             .putBoolean("recentFirst", s.recentFirst)
             .putBoolean("showCategories", s.showCategories)
+            .putBoolean("vibrateMoves", s.vibrateMoves)
+            .putBoolean("vibrateButtons", s.vibrateButtons)
+            .putBoolean("vibrateAlerts", s.vibrateAlerts)
             .putString("pace", s.pace.name)
             .putString("motion", s.motion.name)
             .apply()

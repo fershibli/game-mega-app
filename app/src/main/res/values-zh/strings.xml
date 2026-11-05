@@ -189,4 +189,11 @@
     <string name="match_lost">电脑赢得了这轮比赛</string>
     <string name="time_up">时间到了！</string>
     <string name="time_left">剩余时间：%s</string>
+    <string name="section_vibration">振动</string>
+    <string name="vibrate_moves">游戏中</string>
+    <string name="vibrate_moves_desc">触碰棋盘或卡牌时轻轻振动。</string>
+    <string name="vibrate_buttons">按钮和菜单</string>
+    <string name="vibrate_buttons_desc">点按按钮、开关和难度转盘时振动。</string>
+    <string name="vibrate_alerts">游戏结束</string>
+    <string name="vibrate_alerts_desc">赢了或输了时有不同的振动。</string>
 </resources>
