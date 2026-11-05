@@ -31,6 +31,7 @@ import io.github.fershibli.megagames.ui.screens.DifficultyScreen
 import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.HomeOrder
 import io.github.fershibli.megagames.ui.screens.HomeScreen
+import io.github.fershibli.megagames.ui.screens.HowToScreen
 import io.github.fershibli.megagames.ui.screens.LanguageFallbackDialog
 import io.github.fershibli.megagames.ui.screens.SettingsScreen
 import io.github.fershibli.megagames.ui.screens.TableScreen
@@ -48,6 +49,7 @@ sealed interface Screen {
     data class ChooseVariant(val game: GameId, val language: AppLanguage? = null) : Screen
     data class ChooseDifficulty(val game: GameId, val variant: GameVariant?, val language: AppLanguage? = null) : Screen
     data class ChooseTable(val game: GameId, val variant: GameVariant?, val difficulty: Difficulty, val together: Boolean, val language: AppLanguage? = null) : Screen
+    data class HowTo(val game: GameId, val language: AppLanguage?, val back: Screen) : Screen
     data class Playing(val game: GameId, val difficulty: Difficulty, val variant: GameVariant?, val setup: PlaySetup, val saved: SavedGame?, val language: AppLanguage? = null) : Screen
 }
 
@@ -168,7 +170,12 @@ fun MegaGamesApp(
                         initialBestOf = choiceStore.lastBestOf(s.game).takeIf { s.game.offersMatches },
                         initialMinutes = choiceStore.lastMinutes(s.game).takeIf { s.game.offersTimeLimit },
                         onOptions = { bestOf, minutes -> options = bestOf to minutes },
+                        onLearn = { screen = Screen.HowTo(s.game, s.language, s) },
                     )
+                }
+                is Screen.HowTo -> {
+                    BackHandler { screen = s.back }
+                    HowToScreen(s.game, onBack = { screen = s.back }, onSettings = { screen = Screen.Settings }, language = s.language)
                 }
                 is Screen.ChooseTable -> {
                     val back = { screen = Screen.ChooseDifficulty(s.game, s.variant, s.language) }

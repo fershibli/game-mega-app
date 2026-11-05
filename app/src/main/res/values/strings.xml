@@ -213,4 +213,5 @@
     <string name="vibrate_buttons_desc">A tick on buttons, switches and the level wheel.</string>
     <string name="vibrate_alerts">End of a game</string>
     <string name="vibrate_alerts_desc">A different buzz when you win or lose.</string>
+    <string name="learn_to_play">Learn to play</string>
 </resources>

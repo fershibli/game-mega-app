@@ -213,4 +213,5 @@
     <string name="vibrate_buttons_desc">Вибрация на кнопках, переключателях и колесе уровня.</string>
     <string name="vibrate_alerts">Конец игры</string>
     <string name="vibrate_alerts_desc">Другая вибрация при победе или поражении.</string>
+    <string name="learn_to_play">Как играть</string>
 </resources>

@@ -215,4 +215,5 @@
     <string name="vibrate_buttons_desc">اهتزاز عند الضغط على الأزرار والمفاتيح وعجلة المستوى.</string>
     <string name="vibrate_alerts">نهاية اللعبة</string>
     <string name="vibrate_alerts_desc">اهتزاز مختلف عند الفوز أو الخسارة.</string>
+    <string name="learn_to_play">تعلّم اللعب</string>
 </resources>

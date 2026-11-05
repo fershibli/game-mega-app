@@ -196,4 +196,5 @@
     <string name="vibrate_buttons_desc">点按按钮、开关和难度转盘时振动。</string>
     <string name="vibrate_alerts">游戏结束</string>
     <string name="vibrate_alerts_desc">赢了或输了时有不同的振动。</string>
+    <string name="learn_to_play">玩法说明</string>
 </resources>

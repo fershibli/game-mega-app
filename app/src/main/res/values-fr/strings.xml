@@ -198,4 +198,5 @@
     <string name="vibrate_buttons_desc">Une vibration sur les boutons, les interrupteurs et la roue des niveaux.</string>
     <string name="vibrate_alerts">Fin de partie</string>
     <string name="vibrate_alerts_desc">Une vibration différente quand vous gagnez ou perdez.</string>
+    <string name="learn_to_play">Apprendre à jouer</string>
 </resources>

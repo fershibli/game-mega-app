@@ -77,6 +77,7 @@ fun DifficultyScreen(
     initialBestOf: Int? = null,
     initialMinutes: Int? = null,
     onOptions: (bestOf: Int, minutes: Int) -> Unit = { _, _ -> },
+    onLearn: (() -> Unit)? = null,
 ) {
     val p = LocalPalette.current
     val together = Difficulty.entries.size // index of "take turns" on the wheel, when offered
@@ -112,6 +113,11 @@ fun DifficultyScreen(
                         stringResource(game.howTo), style = MaterialTheme.typography.bodyLarge, color = p.text,
                         textAlign = TextAlign.Center,
                     )
+                }
+                // The whole page of rules, for whoever doesn't know the game yet.
+                if (onLearn != null) {
+                    Spacer(Modifier.height(10.dp))
+                    BigButton(stringResource(R.string.learn_to_play), onLearn, icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
                 }
                 Spacer(Modifier.height(14.dp))
             }

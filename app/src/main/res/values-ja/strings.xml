@@ -210,4 +210,5 @@
     <string name="vibrate_buttons_desc">ボタン、スイッチ、レベルの選択で振動します。</string>
     <string name="vibrate_alerts">ゲームの終わり</string>
     <string name="vibrate_alerts_desc">勝ったときと負けたときに違う振動をします。</string>
+    <string name="learn_to_play">遊び方</string>
 </resources>
