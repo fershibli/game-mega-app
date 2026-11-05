@@ -98,6 +98,8 @@ data class Settings(
     val defaultDifficulty: Difficulty = Difficulty.EASY,
     /** Backgammon board standing up (bigger checkers) instead of the traditional horizontal one. */
     val backgammonUpright: Boolean = false,
+    /** Solitaire table turned sideways (phone held lying down): the cards are about half as big again. */
+    val solitaireSideways: Boolean = false,
     /** Home screen: the games and the category played last come first. */
     val recentFirst: Boolean = true,
     /** Home screen: games grouped under category headings, or one single list. */
@@ -135,6 +137,7 @@ class SettingsStore(context: Context) {
             oneHandZoom = enumOr(prefs.getString("oneHandZoom", null), d.oneHandZoom),
             defaultDifficulty = enumOr(prefs.getString("defaultDifficulty", null), d.defaultDifficulty),
             backgammonUpright = prefs.getBoolean("backgammonUpright", d.backgammonUpright),
+            solitaireSideways = prefs.getBoolean("solitaireSideways", d.solitaireSideways),
             recentFirst = prefs.getBoolean("recentFirst", d.recentFirst),
             showCategories = prefs.getBoolean("showCategories", d.showCategories),
             vibrateMoves = prefs.getBoolean("vibrateMoves", d.vibrateMoves),
@@ -158,6 +161,7 @@ class SettingsStore(context: Context) {
             .putString("oneHandZoom", s.oneHandZoom.name)
             .putString("defaultDifficulty", s.defaultDifficulty.name)
             .putBoolean("backgammonUpright", s.backgammonUpright)
+            .putBoolean("solitaireSideways", s.solitaireSideways)
             .putBoolean("recentFirst", s.recentFirst)
             .putBoolean("showCategories", s.showCategories)
             .putBoolean("vibrateMoves", s.vibrateMoves)
