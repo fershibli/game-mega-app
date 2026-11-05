@@ -1,49 +1,50 @@
 package io.github.fershibli.megagames.ui.components
 
-import androidx.compose.ui.AbsoluteAlignment
-import androidx.compose.ui.unit.LayoutDirection
-import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.runtime.CompositionLocalProvider
+import android.os.SystemClock
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
+import androidx.compose.foundation.gestures.calculateCentroid
+import androidx.compose.foundation.gestures.calculatePan
+import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.hapticfeedback.HapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.PointerInputScope
 import androidx.compose.ui.input.pointer.pointerInput
-import android.os.SystemClock
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.gestures.awaitEachGesture
-import androidx.compose.foundation.gestures.awaitFirstDown
-import androidx.compose.foundation.gestures.calculateCentroid
-import androidx.compose.foundation.gestures.calculatePan
-import androidx.compose.foundation.gestures.calculateZoom
-import androidx.compose.ui.hapticfeedback.HapticFeedback
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.OneHandZoom
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.withTimeoutOrNull
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 import kotlin.math.PI
 import kotlin.math.atan2
 import kotlin.math.exp
+import kotlinx.coroutines.withTimeoutOrNull
 
 /** Zoom/pan state of a game board. Offsets are in viewport pixels, scale is 1x..[MAX_SCALE]. */
 @Stable
@@ -123,6 +124,7 @@ fun ZoomableBoard(
 ) {
     val settings = LocalSettings.current
     val haptics = LocalHapticFeedback.current
+    val boardHaptics = currentHaptics
     val twoFinger = settings.pinchZoom
     val oneHand = settings.oneHand
     val oneHandMode = settings.oneHandZoom
@@ -140,6 +142,13 @@ fun ZoomableBoard(
             Box(
                 Modifier
                     .fillMaxSize()
+                    // A light tick under the finger on every touch of the board (moves group).
+                    .pointerInput(boardHaptics) {
+                        awaitEachGesture {
+                            awaitFirstDown(requireUnconsumed = false, pass = PointerEventPass.Initial)
+                            boardHaptics.move()
+                        }
+                    }
                     .graphicsLayer {
                         transformOrigin = TransformOrigin(0f, 0f)
                         scaleX = state.scale

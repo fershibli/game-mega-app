@@ -1,8 +1,5 @@
 package io.github.fershibli.megagames.ui.screens
 
-import io.github.fershibli.megagames.core.Motion
-import io.github.fershibli.megagames.core.Pace
-import androidx.compose.ui.AbsoluteAlignment
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -40,6 +37,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -55,7 +53,9 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.ColorMode
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.Motion
 import io.github.fershibli.megagames.core.OneHandZoom
+import io.github.fershibli.megagames.core.Pace
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.ui.components.ActionBar
 import io.github.fershibli.megagames.ui.components.AppIcon
@@ -67,6 +67,7 @@ import io.github.fershibli.megagames.ui.components.Stepper
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 import kotlin.math.roundToInt
 
 /** Extra actions shown when Settings is opened from inside a game. */
@@ -211,6 +212,18 @@ fun SettingsScreen(
                     }
                     ChoiceRow(stringResource(R.string.motion_title), Motion.entries, settings.motion, { stringResource(it.label) }, { stringResource(it.description) }) {
                         onChange(settings.copy(motion = it))
+                    }
+                }
+
+                Section(stringResource(R.string.section_vibration)) {
+                    ToggleRow(stringResource(R.string.vibrate_moves), stringResource(R.string.vibrate_moves_desc), settings.vibrateMoves) {
+                        onChange(settings.copy(vibrateMoves = it))
+                    }
+                    ToggleRow(stringResource(R.string.vibrate_buttons), stringResource(R.string.vibrate_buttons_desc), settings.vibrateButtons) {
+                        onChange(settings.copy(vibrateButtons = it))
+                    }
+                    ToggleRow(stringResource(R.string.vibrate_alerts), stringResource(R.string.vibrate_alerts_desc), settings.vibrateAlerts) {
+                        onChange(settings.copy(vibrateAlerts = it))
                     }
                 }
 
@@ -368,12 +381,13 @@ private fun ScaleRow(label: String, value: Float, onValue: (Float) -> Unit) {
 
 @Composable
 private fun ToggleRow(title: String, description: String, checked: Boolean, onChecked: (Boolean) -> Unit) {
+    val haptics = currentHaptics
     val p = LocalPalette.current
     Row(
         Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .toggleable(checked, role = Role.Switch, onValueChange = onChecked)
+            .toggleable(checked, role = Role.Switch) { haptics.button(); onChecked(it) }
             .padding(vertical = 6.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
