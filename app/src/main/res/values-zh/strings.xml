@@ -189,4 +189,5 @@
     <string name="match_lost">电脑赢得了这轮比赛</string>
     <string name="time_up">时间到了！</string>
     <string name="time_left">剩余时间：%s</string>
+    <string name="learn_to_play">玩法说明</string>
 </resources>

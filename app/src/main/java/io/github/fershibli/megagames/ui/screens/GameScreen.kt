@@ -76,6 +76,7 @@ fun GameScreen(
     val lasting = !game.hasDifficulty
     var session by rememberSaveable { mutableIntStateOf(0) }
     var showSettings by remember { mutableStateOf(false) }
+    var showHowTo by remember { mutableStateOf(false) }
     var outcome by remember { mutableStateOf<GameOutcome?>(null) }
     // A match against the computer: games won and lost so far, kept with each game's autosave.
     var wins by rememberSaveable { mutableIntStateOf(setup.wins) }
@@ -140,9 +141,16 @@ fun GameScreen(
                 settings, onSettingsChange, onClose = { showSettings = false },
                 inGame = InGameActions(onResume = { showSettings = false }, onNewGame = newGame.takeUnless { lasting }, onMainMenu = onExit,
                     onNewOptions = onNewOptions.takeUnless { lasting },
+                    onLearn = { showHowTo = true },
                 ),
             )
         }
+    }
+
+    // The rules page over the game (and the settings it was opened from): back returns there.
+    if (showHowTo) {
+        BackHandler { showHowTo = false }
+        HowToScreen(game, onBack = { showHowTo = false }, onSettings = { showHowTo = false }, language = language)
     }
 
     if (askResume) {

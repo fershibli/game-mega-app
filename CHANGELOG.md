@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Learn to play**: every game's full page of rules, how to play it in the app, its levels and tips, in all ten languages, from a button on the level screen and in the settings during a game. The pages are the docs' own game pages (now one for every game), copied in when the app is built.
 - **Best of 3 or 5, and against the clock**: games against the computer can be a match of 3 or 5 games, with the score between games and kept with the autosave; games played alone can have a time limit of 5 to 30 minutes at any level, with a clock that pauses while the settings are open or the app is in the background.
 - **Word games vary too**: word search, anagrams and guess the word leave out the words of their last games, and use the word levels of the dictionary like the crossword (Easy without the hard words, Hard without the easy ones).
 - **Crossword variety and levels**: the last games' words are left out of the next one, the grid no longer starts from the same long words, Easy fills in the first letter of every word, and the Portuguese dictionary grows to more than 500 words, each marked easy, medium or hard (Easy leaves out the hard ones, Hard the easy ones).

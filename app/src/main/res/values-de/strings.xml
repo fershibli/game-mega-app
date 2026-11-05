@@ -204,4 +204,5 @@
     <string name="match_lost">Der Computer hat die Serie gewonnen</string>
     <string name="time_up">Die Zeit ist um!</string>
     <string name="time_left">Verbleibende Zeit: %s</string>
+    <string name="learn_to_play">So wird gespielt</string>
 </resources>

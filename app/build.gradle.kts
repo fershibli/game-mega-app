@@ -1,4 +1,5 @@
 import java.util.Properties
+import javax.inject.Inject
 
 plugins {
     alias(libs.plugins.android.application)
@@ -108,6 +109,44 @@ android {
         compose = true
         buildConfig = true
     }
+}
+
+/**
+ * Copies the docs' own game pages (docs/<language>/games/<game>.md) into the app's assets, as
+ * howto/<language>/games/<game>.md, for the "Learn to play" screen: the same text as the docs,
+ * never a second copy to keep in step.
+ */
+abstract class HowToPages : DefaultTask() {
+    @get:InputFiles
+    @get:PathSensitive(PathSensitivity.RELATIVE)
+    abstract val pages: ConfigurableFileCollection
+
+    @get:Internal
+    abstract val docs: DirectoryProperty
+
+    @get:OutputDirectory
+    abstract val output: DirectoryProperty
+
+    @get:Inject
+    abstract val fs: FileSystemOperations
+
+    @TaskAction
+    fun copy() {
+        fs.sync {
+            from(docs) { include("*/games/*.md") }
+            into(output.dir("howto"))
+        }
+    }
+}
+
+val howToPages = tasks.register<HowToPages>("howToPages") {
+    docs.set(rootProject.layout.projectDirectory.dir("docs"))
+    pages.from(rootProject.fileTree("docs") { include("*/games/*.md") })
+    output.set(layout.buildDirectory.dir("generated/howto"))
+}
+
+androidComponents {
+    onVariants { variant -> variant.sources.assets?.addGeneratedSourceDirectory(howToPages, HowToPages::output) }
 }
 
 kotlin {

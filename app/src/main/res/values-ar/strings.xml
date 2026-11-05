@@ -208,4 +208,5 @@
     <string name="match_lost">فاز الحاسوب بالمباراة</string>
     <string name="time_up">انتهى الوقت!</string>
     <string name="time_left">الوقت المتبقي: %s</string>
+    <string name="learn_to_play">تعلّم اللعب</string>
 </resources>

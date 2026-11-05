@@ -206,4 +206,5 @@
     <string name="match_lost">The computer won the match</string>
     <string name="time_up">Time is up!</string>
     <string name="time_left">Time left: %s</string>
+    <string name="learn_to_play">Learn to play</string>
 </resources>

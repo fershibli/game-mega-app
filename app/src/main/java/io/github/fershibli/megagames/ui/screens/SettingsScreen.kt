@@ -74,7 +74,13 @@ import kotlin.math.roundToInt
  * Buttons shown when the settings are opened during a game. Without [onNewGame] (pastimes) nothing can be lost, so leaving asks nothing.
  * [onNewOptions] starts a new game of the same game choosing its rules, level and table again, without the main menu.
  */
-class InGameActions(val onResume: () -> Unit, val onNewGame: (() -> Unit)?, val onNewOptions: (() -> Unit)? = null, val onMainMenu: () -> Unit)
+class InGameActions(
+    val onResume: () -> Unit,
+    val onNewGame: (() -> Unit)?,
+    val onNewOptions: (() -> Unit)? = null,
+    val onLearn: (() -> Unit)? = null,
+    val onMainMenu: () -> Unit,
+)
 
 const val PROJECT_URL = "https://github.com/fershibli/game-mega-app"
 
@@ -154,6 +160,9 @@ fun SettingsScreen(
                     )
                 }
 
+                inGame?.onLearn?.let { learn ->
+                    BigButton(stringResource(R.string.learn_to_play), learn, Modifier.fillMaxWidth(), icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
+                }
                 Section(stringResource(R.string.section_language)) {
                     val current = if (settings.language == AppLanguage.SYSTEM) stringResource(R.string.language_system) else settings.language.nativeName
                     BigButton(current, { pickLanguage = true }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)

@@ -203,4 +203,5 @@
     <string name="match_lost">コンピューターがシリーズに勝ちました</string>
     <string name="time_up">時間切れです！</string>
     <string name="time_left">残り時間：%s</string>
+    <string name="learn_to_play">遊び方</string>
 </resources>

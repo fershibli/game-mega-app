@@ -206,4 +206,5 @@
     <string name="match_lost">Компьютер выиграл матч</string>
     <string name="time_up">Время вышло!</string>
     <string name="time_left">Осталось времени: %s</string>
+    <string name="learn_to_play">Как играть</string>
 </resources>
