@@ -204,5 +204,12 @@
     <string name="match_lost">Der Computer hat die Serie gewonnen</string>
     <string name="time_up">Die Zeit ist um!</string>
     <string name="time_left">Verbleibende Zeit: %s</string>
+    <string name="section_vibration">Vibration</string>
+    <string name="vibrate_moves">In den Spielen</string>
+    <string name="vibrate_moves_desc">Ein leichtes Vibrieren beim Berühren des Spielbretts oder einer Karte.</string>
+    <string name="vibrate_buttons">Tasten und Menüs</string>
+    <string name="vibrate_buttons_desc">Ein Vibrieren bei Tasten, Schaltern und dem Stufenrad.</string>
+    <string name="vibrate_alerts">Spielende</string>
+    <string name="vibrate_alerts_desc">Ein anderes Vibrieren, wenn du gewinnst oder verlierst.</string>
     <string name="learn_to_play">So wird gespielt</string>
 </resources>

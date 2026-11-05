@@ -47,6 +47,7 @@ import io.github.fershibli.megagames.ui.theme.LocalGameCovered
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
 import io.github.fershibli.megagames.ui.theme.ProvideGameLanguage
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 import java.util.Locale
 import kotlinx.coroutines.delay
 
@@ -164,6 +165,12 @@ fun GameScreen(
                 stringResource(R.string.main_menu) to { onResumeAnswered(false) },
             ),
         )
+    }
+
+    val haptics = currentHaptics
+    LaunchedEffect(outcome) {
+        val result = outcome ?: return@LaunchedEffect
+        if (result.shared || result.won) haptics.won() else haptics.lost()
     }
 
     outcome?.let { result ->

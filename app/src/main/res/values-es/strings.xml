@@ -191,5 +191,12 @@
     <string name="match_lost">La computadora ganó la serie</string>
     <string name="time_up">¡Se acabó el tiempo!</string>
     <string name="time_left">Tiempo restante: %s</string>
+    <string name="section_vibration">Vibración</string>
+    <string name="vibrate_moves">En los juegos</string>
+    <string name="vibrate_moves_desc">Una vibración leve al tocar el tablero o una carta.</string>
+    <string name="vibrate_buttons">Botones y menús</string>
+    <string name="vibrate_buttons_desc">Una vibración en los botones, interruptores y la rueda de nivel.</string>
+    <string name="vibrate_alerts">Fin del juego</string>
+    <string name="vibrate_alerts_desc">Una vibración distinta cuando ganas o pierdes.</string>
     <string name="learn_to_play">Aprende a jugar</string>
 </resources>

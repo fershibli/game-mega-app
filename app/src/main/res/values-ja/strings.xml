@@ -203,5 +203,12 @@
     <string name="match_lost">コンピューターがシリーズに勝ちました</string>
     <string name="time_up">時間切れです！</string>
     <string name="time_left">残り時間：%s</string>
+    <string name="section_vibration">振動</string>
+    <string name="vibrate_moves">ゲーム中</string>
+    <string name="vibrate_moves_desc">盤やカードに触れたときに軽く振動します。</string>
+    <string name="vibrate_buttons">ボタンとメニュー</string>
+    <string name="vibrate_buttons_desc">ボタン、スイッチ、レベルの選択で振動します。</string>
+    <string name="vibrate_alerts">ゲームの終わり</string>
+    <string name="vibrate_alerts_desc">勝ったときと負けたときに違う振動をします。</string>
     <string name="learn_to_play">遊び方</string>
 </resources>
