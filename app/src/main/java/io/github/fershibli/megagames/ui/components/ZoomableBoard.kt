@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.input.pointer.PointerId
 import androidx.compose.ui.input.pointer.PointerInputScope
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.onSizeChanged
@@ -42,6 +43,7 @@ import io.github.fershibli.megagames.core.OneHandZoom
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.currentHaptics
 import kotlin.math.PI
+import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.exp
 import kotlinx.coroutines.withTimeoutOrNull
@@ -171,6 +173,12 @@ fun ZoomableBoard(
 
 private enum class Mode { NONE, MULTI, ROTATE }
 
+/** Touches starting this close to a side edge never count as half of a pinch. */
+private val EDGE_IGNORED = 24.dp
+
+/** A pinch's second finger comes down within this time of the first one. */
+private const val PINCH_WINDOW_MS = 300L
+
 private suspend fun PointerInputScope.zoomGestures(
     state: ZoomState,
     twoFinger: Boolean,
@@ -183,6 +191,9 @@ private suspend fun PointerInputScope.zoomGestures(
     val doubleTapTimeout = viewConfiguration.doubleTapTimeoutMillis
     val slop = viewConfiguration.touchSlop
     val rotateRadius = 28.dp.toPx()
+    // A touch that starts this close to the left or right edge is the side of a finger or the
+    // palm holding the phone, never half of a pinch.
+    val edge = EDGE_IGNORED.toPx()
 
     awaitEachGesture {
         val down = awaitFirstDown(requireUnconsumed = false, pass = PointerEventPass.Initial)
@@ -216,6 +227,13 @@ private suspend fun PointerInputScope.zoomGestures(
 
         var mode = Mode.NONE
         var moved = false
+        // Pointers that can't be half of a pinch: at the edge, or down too late (see below).
+        val ignored = HashSet<PointerId>()
+        fun atEdge(p: Offset) = p.x < edge || p.x > size.width - edge
+        if (atEdge(down.position)) ignored += down.id
+        var spreadStart = 0f
+        var centroidStart = Offset.Zero
+        var pinchSeen = false
         var lastAngle: Float? = null
         var anchor = down.position
         val longPressAt = down.uptimeMillis + viewConfiguration.longPressTimeoutMillis
@@ -234,6 +252,11 @@ private suspend fun PointerInputScope.zoomGestures(
                 haptics.performHapticFeedback(HapticFeedbackType.LongPress)
                 continue
             }
+            // A second finger is half of a pinch only if it comes down almost together with the
+            // first one, before that one started dragging a card or a piece, and away from the edges.
+            for (c in event.changes) if (c.pressed && !c.previousPressed && c.id != down.id) {
+                if (atEdge(c.position) || moved || c.uptimeMillis - down.uptimeMillis > PINCH_WINDOW_MS) ignored += c.id
+            }
             val pressed = event.changes.filter { it.pressed }
             if (pressed.isEmpty()) {
                 if (mode == Mode.NONE && !moved) {
@@ -243,12 +266,26 @@ private suspend fun PointerInputScope.zoomGestures(
                 if (mode != Mode.NONE) event.changes.forEach { it.consume() }
                 break
             }
-            if (twoFinger && pressed.size >= 2 && mode != Mode.ROTATE) {
-                mode = Mode.MULTI
-                val zoom = event.calculateZoom()
-                val pan = event.calculatePan()
-                val centroid = event.calculateCentroid(useCurrent = true)
-                if (zoom != 1f) state.zoomAt(centroid, state.scale * zoom)
+            val fingers = pressed.filter { it.id !in ignored }
+            if (twoFinger && fingers.size >= 2 && mode != Mode.ROTATE) {
+                val (a, b) = fingers
+                val spread = (a.position - b.position).getDistance()
+                val centroid = (a.position + b.position) / 2f
+                if (mode != Mode.MULTI) {
+                    // Zoom only once the two fingers clearly spread, pinch or move together;
+                    // until then the touches stay with the game.
+                    if (!pinchSeen) {
+                        pinchSeen = true
+                        spreadStart = spread
+                        centroidStart = centroid
+                    }
+                    if (abs(spread - spreadStart) < slop * 2 && (centroid - centroidStart).getDistance() < slop * 2) continue
+                    mode = Mode.MULTI
+                }
+                val previousSpread = (a.previousPosition - b.previousPosition).getDistance()
+                val previousCentroid = (a.previousPosition + b.previousPosition) / 2f
+                if (previousSpread > 0f && spread != previousSpread) state.zoomAt(centroid, state.scale * spread / previousSpread)
+                val pan = centroid - previousCentroid
                 if (pan != Offset.Zero) state.panBy(pan)
                 event.changes.forEach { it.consume() }
                 continue

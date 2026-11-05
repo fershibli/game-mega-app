@@ -130,6 +130,51 @@ class AppFlowTest {
     @Test
     fun pinchIsIgnoredWhenDisabled() = assertEquals(1f, pinchResult(false), 0.001f)
 
+    /** Plays [touches] on a 300 dp board with pinch zoom on and returns the zoom it ends at. */
+    private fun zoomAfter(touches: androidx.compose.ui.test.TouchInjectionScope.() -> Unit): Float {
+        val zoom = ZoomState()
+        rule.setContent {
+            MegaGamesTheme(Settings(pinchZoom = true)) {
+                ZoomableBoard(Modifier.size(300.dp).testTag("board"), zoom) { Box(Modifier.fillMaxSize()) }
+            }
+        }
+        rule.onNodeWithTag("board").performTouchInput(touches)
+        rule.waitForIdle()
+        return zoom.scale
+    }
+
+    @Test
+    fun theSideOfAFingerAtTheEdgeDoesNotZoom() = assertEquals(1f, zoomAfter {
+        // Dragging a piece while the side of the finger rests on the left edge and moves a little.
+        down(0, center)
+        down(1, Offset(4f, center.y))
+        repeat(10) { k ->
+            moveTo(0, center + Offset(k * 20f, k * 15f))
+            moveTo(1, Offset(4f + k * 2f, center.y - k * 6f))
+        }
+        up(1)
+        up(0)
+    }, 0.001f)
+
+    @Test
+    fun aSecondFingerLongAfterTheFirstDoesNotZoom() = assertEquals(1f, zoomAfter {
+        down(0, center - Offset(40f, 0f))
+        advanceEventTime(600)
+        down(1, center + Offset(40f, 0f))
+        repeat(10) { k -> moveTo(1, center + Offset(40f + k * 25f, 0f)) }
+        up(1)
+        up(0)
+    }, 0.001f)
+
+    @Test
+    fun twoFingersRestingStillDoNotZoom() = assertEquals(1f, zoomAfter {
+        down(0, center - Offset(60f, 0f))
+        down(1, center + Offset(60f, 0f))
+        repeat(5) { moveTo(1, center + Offset(61f, 1f)) }
+        up(1)
+        up(0)
+    }, 0.001f)
+
     @Test
     fun aBoardCanStartZoomedInAtTheCenter() {
         val zoom = ZoomState(1.6f)
