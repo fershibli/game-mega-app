@@ -135,6 +135,7 @@ class ScreenshotTest {
     }
     @Test fun sudoku() = gameShot("game_sudoku", GameId.SUDOKU)
     @Test fun solitaire() = gameShot("game_solitaire", GameId.SOLITAIRE)
+    @Test fun solitaireSideways() = gameShot("game_solitaire_sideways", GameId.SOLITAIRE, settings = Settings(solitaireSideways = true))
     @Test fun solitaireColorblind() = gameShot("game_solitaire_colorblind", GameId.SOLITAIRE, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
     @Test fun reversi() = gameShot("game_reversi", GameId.REVERSI)
     @Test fun mahjongEasy() = gameShot("game_mahjong_easy", GameId.MAHJONG)
