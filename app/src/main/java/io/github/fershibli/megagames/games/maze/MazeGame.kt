@@ -141,6 +141,9 @@ private fun MazeScreen(state: MutableState<MazeState>, host: GameHost) {
                             }
                             val start = cellAt(down.position)
                             var dragged = false
+                            // The cell under the finger last time: resting on a cell of the path
+                            // takes the path back once, not again with every small movement.
+                            var lastCell = -1
                             while (true) {
                                 val event = awaitPointerEvent()
                                 val change = event.changes.firstOrNull { it.id == down.id } ?: break
@@ -153,8 +156,12 @@ private fun MazeScreen(state: MutableState<MazeState>, host: GameHost) {
                                     move(Maze.tap(cur.open, n, cur.path, start))
                                 }
                                 if (dragged) {
-                                    val cur = state.value
-                                    move(Maze.drag(cur.open, n, cur.path, cellAt(change.position)))
+                                    val cell = cellAt(change.position)
+                                    if (cell != lastCell) {
+                                        lastCell = cell
+                                        val cur = state.value
+                                        move(Maze.drag(cur.open, n, cur.path, cell))
+                                    }
                                     change.consume()
                                 }
                             }
