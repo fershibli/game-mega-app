@@ -1,11 +1,5 @@
 package io.github.fershibli.megagames.ui.components
 
-import io.github.fershibli.megagames.ui.theme.spec
-import io.github.fershibli.megagames.ui.theme.currentMotion
-import io.github.fershibli.megagames.ui.theme.wait
-import io.github.fershibli.megagames.ui.theme.currentPace
-import androidx.compose.foundation.layout.absoluteOffset
-import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -17,6 +11,7 @@ import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.absoluteOffset
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -42,6 +37,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.snapshotFlow
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -62,10 +58,15 @@ import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.launch
+import io.github.fershibli.megagames.ui.theme.currentHaptics
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.spec
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.math.abs
 import kotlin.math.roundToInt
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.launch
 
 /**
  * Top bar: centered title and the gear on the right (left in left-handed mode). In one-hand
@@ -166,6 +167,7 @@ fun WheelPicker(
     onSelected: (Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    val haptics = currentHaptics
     val p = LocalPalette.current
     val rowHeight = 76.dp
     val state = rememberLazyListState(initialFirstVisibleItemIndex = selected)
@@ -179,7 +181,13 @@ fun WheelPicker(
         }
     }
     LaunchedEffect(state) {
-        snapshotFlow { center }.distinctUntilChanged().collect { onSelected(it) }
+        // A tick each time another option comes to the middle, like the click of a real wheel.
+        var first = true
+        snapshotFlow { center }.distinctUntilChanged().collect {
+            if (!first) haptics.button()
+            first = false
+            onSelected(it)
+        }
     }
     Box(modifier.height(rowHeight * 3), contentAlignment = Alignment.Center) {
         Box(

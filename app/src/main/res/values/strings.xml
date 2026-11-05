@@ -206,4 +206,11 @@
     <string name="match_lost">The computer won the match</string>
     <string name="time_up">Time is up!</string>
     <string name="time_left">Time left: %s</string>
+    <string name="section_vibration">Vibration</string>
+    <string name="vibrate_moves">In the games</string>
+    <string name="vibrate_moves_desc">A light tick when you touch a board or a card.</string>
+    <string name="vibrate_buttons">Buttons and menus</string>
+    <string name="vibrate_buttons_desc">A tick on buttons, switches and the level wheel.</string>
+    <string name="vibrate_alerts">End of a game</string>
+    <string name="vibrate_alerts_desc">A different buzz when you win or lose.</string>
 </resources>
