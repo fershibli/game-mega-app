@@ -1,0 +1,36 @@
+# Issues fixed on stag stay open until stag reaches main (GitHub closes an issue only when its
+# "Closes #N" lands on the default branch). Meanwhile this marks them, so it is clear they are
+# done and waiting to be tried in the test build: every issue that a commit pushed to stag
+# closes, fixes or resolves gets the "em avaliação (stag)" label.
+name: Label issues fixed on stag
+
+on:
+  push:
+    branches: [stag]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Label the issues the pushed commits close
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          MESSAGES: ${{ join(github.event.commits.*.message, '\n') }}
+        run: |
+          numbers=$(printf '%s\n' "$MESSAGES" \
+            | grep -oiE '(close[sd]?|fix(e[sd])?|resolve[sd]?)[[:space:]]+#[0-9]+' \
+            | grep -oE '[0-9]+' | sort -u)
+          [ -z "$numbers" ] && { echo "No issue closed by these commits."; exit 0; }
+          gh label create "em avaliação (stag)" --repo "$REPO" --color FBCA04 \
+            --description "Done on stag, waiting to be tried in the test build before main" 2>/dev/null || true
+          for n in $numbers; do
+            # Pull requests share the numbering; only open issues get the label.
+            state=$(gh issue view "$n" --repo "$REPO" --json state --jq .state 2>/dev/null) || continue
+            [ "$state" = "OPEN" ] || continue
+            gh issue edit "$n" --repo "$REPO" --add-label "em avaliação (stag)"
+            echo "#$n labelled"
+          done
