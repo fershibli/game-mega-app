@@ -64,7 +64,7 @@ Regole complete e consigli: **[Guida per l’utente](docs/it/user-guide.md)**.
 
 ## Pensata per le persone anziane
 
-- **Navigazione semplicissima**: scegli un gioco (solo immagini, non serve leggere) → scegli la difficoltà su una rotella → gioca. L’ingranaggio (⚙) è sempre nello stesso angolo.
+- **Navigazione semplicissima**: scegli un gioco (solo immagini, non serve leggere) → rispondi a poche domande brevi, una per schermata (imparare a giocare o andare al gioco, chi gioca, la difficoltà) → gioca. L’ingranaggio (⚙) è sempre nello stesso angolo.
 - **Pulsanti a portata di pollice**: quasi tutti i pulsanti si trovano nella metà bassa dello schermo. La **modalità mancini** li sposta sul lato opposto.
 - **Modalità una mano**: l’ingranaggio diventa una bolla mobile che si nasconde a metà nel bordo dello schermo; lo zoom funziona con il **doppio tocco** oppure con **premi e gira**.
 - **Dimensione del testo e di pezzi e pulsanti regolabile** (dall’80 % al 160 %).

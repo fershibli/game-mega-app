@@ -67,7 +67,7 @@ internal fun StepScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp),
             ) {
                 Column(
-                    Modifier.weight(1f, fill = false).fillMaxWidth().then(if (scrollable) Modifier.verticalScroll(rememberScrollState()) else Modifier),
+                    Modifier.weight(1f, fill = false).fillMaxWidth().then(if (scrollable) Modifier.verticalScroll(rememberScrollState()) else Modifier).padding(bottom = 4.dp),
                     verticalArrangement = Arrangement.spacedBy(12.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     content = content,

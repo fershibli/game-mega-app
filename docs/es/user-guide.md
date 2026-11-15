@@ -41,7 +41,7 @@ Requisitos: Android 6.0 o posterior, unos 5 MB libres. La aplicación nunca nece
 La aplicación solo tiene tres tipos de pantalla.
 
 1. **Elige tu juego.** Una cuadrícula de imágenes, dos por fila. No hay texto a propósito: cada imagen *es* el juego (un sudoku, cartas, un tablero de backgammon…). La lista se desplaza sin fin en ambos sentidos: si sigues bajando, los juegos vuelven a aparecer. Toca una imagen para elegirla.
-2. **Elige la dificultad.** Una breve explicación del juego y, debajo, una rueda con **Fácil / Medio / Difícil**. Tu dificultad predeterminada ya está seleccionada. Gira la rueda (o toca un nivel) y pulsa **Confirmar**. **Volver** regresa a los juegos.
+2. **Unas pocas preguntas cortas, una por pantalla.** Primero la imagen del juego con una frase sobre él: **Aprende a jugar** abre la página completa de reglas, y **Ir al juego** continúa. Después, solo cuando el juego lo tiene: con qué reglas jugar, **¿Cómo quieres jugar?** (con el ordenador, o personas por turnos en este teléfono) y la dificultad, en una rueda con **Fácil / Medio / Difícil**. Lo que elegiste la última vez, y tu dificultad predeterminada, ya están seleccionados: basta con pulsar **Confirmar**. **Volver** regresa una pantalla.
 3. **El juego.** El nombre del juego está arriba y el **engranaje ⚙** en la esquina superior derecha, exactamente donde estaba en la primera pantalla. Los botones del juego (deshacer, pista…) están abajo, cerca del pulgar.
 
 El **engranaje** abre los ajustes. Dentro de un juego, los ajustes muestran además tres botones grandes abajo:
@@ -54,7 +54,7 @@ El botón o gesto **Atrás** del teléfono, dentro de un juego, abre (o cierra) 
 
 ## Jugar juntos en un mismo teléfono
 
-Algunos juegos se pueden jugar entre personas sentadas juntas, por turnos en el mismo teléfono: en la rueda de dificultad elige **Por turnos en este teléfono**. Nadie juega contra el ordenador. Entre turnos la pantalla dice quién juega ahora; el tablero nunca gira. **Deshacer** devuelve una jugada. Juegos: Reversi, Damas, Ajedrez, Backgammon, Ajedrez chino, Ajedrez coreano, Shogi, Go, Cinco en raya, Cuatro en línea, Juego del molino, Mancala, Parchís. En el Backgammon cada uno tira sus dados; el Parchís es para 2 a 4 personas, y antes pregunta **¿Cuántos en la mesa?**
+Algunos juegos se pueden jugar entre personas sentadas juntas, por turnos en el mismo teléfono: en la pantalla **¿Cómo quieres jugar?** elige **Por turnos en este teléfono**. Nadie juega contra el ordenador. Entre turnos la pantalla dice quién juega ahora; el tablero nunca gira. **Deshacer** devuelve una jugada. Juegos: Reversi, Damas, Ajedrez, Backgammon, Ajedrez chino, Ajedrez coreano, Shogi, Go, Cinco en raya, Cuatro en línea, Juego del molino, Mancala, Parchís. En el Backgammon cada uno tira sus dados; el Parchís es para 2 a 4 personas, y antes pregunta **¿Cuántos en la mesa?**
 
 ## Guardado automático y "¿continuar?"
 

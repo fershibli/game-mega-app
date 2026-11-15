@@ -64,7 +64,7 @@ Alle Regeln und Tipps: **[Anleitung](docs/de/user-guide.md)**.
 
 ## Für ältere Menschen gemacht
 
-- **Ganz einfache Bedienung**: Spiel wählen (nur ein Bild, kein Lesen nötig) → Schwierigkeitsgrad an einem Drehrad wählen → spielen. Das Zahnrad (⚙) ist immer in derselben Ecke.
+- **Ganz einfache Bedienung**: Spiel wählen (nur ein Bild, kein Lesen nötig) → ein paar kurze Fragen beantworten, eine pro Bildschirm (Regeln lesen oder weiter zum Spiel, wer spielt, der Schwierigkeitsgrad) → spielen. Das Zahnrad (⚙) ist immer in derselben Ecke.
 - **Tasten dort, wo der Daumen ist**: Fast alle Tasten liegen in der unteren Hälfte des Bildschirms. Der **Linkshänder-Modus** spiegelt sie.
 - **Einhand-Modus**: Das Zahnrad wird zu einer schwebenden Blase, die sich an den Bildschirmrand schmiegt; der Zoom funktioniert mit **Doppeltippen** oder **Drücken und kreisen**.
 - **Einstellbare Textgröße und Größe von Spielsteinen und Tasten** (80 % bis 160 %).

@@ -64,7 +64,7 @@ Regras completas e dicas: **[Guia do usuário](docs/pt-BR/user-guide.md)**.
 
 ## Feito para pessoas idosas
 
-- **Navegação bem simples**: escolha o jogo (só imagem, sem precisar ler) → escolha a dificuldade numa roleta → jogue. A engrenagem (⚙) fica sempre no mesmo canto.
+- **Navegação bem simples**: escolha o jogo (só imagem, sem precisar ler) → responda a poucas perguntas curtas, uma por tela (aprender a jogar ou seguir para o jogo, quem joga, a dificuldade) → jogue. A engrenagem (⚙) fica sempre no mesmo canto.
 - **Botões onde o polegar alcança**: quase todos os botões de ação ficam na metade de baixo da tela. O **modo canhoto** espelha tudo.
 - **Modo uma mão**: a engrenagem vira uma bolinha flutuante que se recolhe na borda da tela; o zoom funciona com **toque duplo** ou **pressionar e girar**.
 - **Tamanho do texto e das peças/botões ajustável** (80 % a 160 %).

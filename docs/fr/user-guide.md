@@ -41,7 +41,7 @@ Configuration requise : Android 6.0 ou plus récent, environ 5 Mo libres. L’ap
 L’application n’a que trois sortes d’écrans.
 
 1. **Choisissez votre jeu.** Une grille d’images, deux par ligne. Il n’y a volontairement pas de texte : chaque image *est* le jeu (une grille de sudoku, des cartes, un plateau de backgammon…). La liste défile sans fin dans les deux sens : continuez et les jeux reviennent. Touchez une image pour la choisir.
-2. **Choisissez la difficulté.** Une courte explication du jeu et, en dessous, une roue **Facile / Moyen / Difficile**. Votre difficulté par défaut est déjà sélectionnée. Tournez la roue (ou touchez un niveau) puis appuyez sur **Confirmer**. **Retour** revient aux jeux.
+2. **Quelques questions courtes, une par écran.** D’abord l’image du jeu avec une phrase à son sujet : **Apprendre à jouer** ouvre la page complète des règles, et **Aller au jeu** continue. Ensuite, seulement quand le jeu les propose : avec quelles règles jouer, **Comment voulez-vous jouer ?** (avec l’ordinateur, ou à plusieurs chacun son tour sur ce téléphone) et la difficulté, sur une roue **Facile / Moyen / Difficile**. Ce que vous avez choisi la dernière fois, et votre difficulté par défaut, sont déjà sélectionnés : il suffit d’appuyer sur **Confirmer**. **Retour** revient d’un écran.
 3. **Le jeu.** Le nom du jeu est en haut et la **roue dentée ⚙** dans le coin supérieur droit, exactement comme sur le premier écran. Les boutons du jeu (annuler, indice…) sont en bas, près du pouce.
 
 La **roue dentée** ouvre les réglages. Dans un jeu, les réglages affichent aussi trois gros boutons en bas :
@@ -54,7 +54,7 @@ Le bouton ou geste **Retour** du téléphone, dans un jeu, ouvre (ou ferme) les 
 
 ## Jouer ensemble sur un seul téléphone
 
-Certains jeux se jouent à plusieurs personnes assises ensemble, chacune son tour sur le même téléphone : sur la roue de difficulté, choisissez **Chacun son tour sur ce téléphone**. Personne ne joue contre l’ordinateur. Entre deux tours, l’écran dit qui joue ; le plateau ne tourne jamais. **Annuler** reprend un coup. Jeux : Reversi, Dames, Échecs, Backgammon, Échecs chinois, Échecs coréens, Shōgi, Go, Gomoku, Quatre en ligne, Jeu du moulin, Mancala, Ludo. Au backgammon chacun lance ses dés ; le Ludo se joue de 2 à 4 personnes et demande d’abord **Combien à table ?**
+Certains jeux se jouent à plusieurs personnes assises ensemble, chacune son tour sur le même téléphone : sur l’écran **Comment voulez-vous jouer ?**, choisissez **Chacun son tour sur ce téléphone**. Personne ne joue contre l’ordinateur. Entre deux tours, l’écran dit qui joue ; le plateau ne tourne jamais. **Annuler** reprend un coup. Jeux : Reversi, Dames, Échecs, Backgammon, Échecs chinois, Échecs coréens, Shōgi, Go, Gomoku, Quatre en ligne, Jeu du moulin, Mancala, Ludo. Au backgammon chacun lance ses dés ; le Ludo se joue de 2 à 4 personnes et demande d’abord **Combien à table ?**
 
 ## Sauvegarde automatique et « continuer ? »
 

@@ -46,7 +46,7 @@ O buraco é o jogo de sequências e canastras com dois baralhos, querido em todo
 - Com seis, ou com quatro cada um por si, o jogo usa **três baralhos**, para o monte não acabar cedo. Cada lugar tem sua cor e seu símbolo (● ▲ ■ ◆ ▼ ⬢).
 
 ## Revezando o celular
-Escolha **Revezando celular** na tela de nível e depois quantos e como jogam à mesa. Todos são pessoas (2 pessoas, ou 4 em duplas: jogadores 1 e 3 contra 2 e 4). Depois de cada descarte, uma capa esconde as cartas e pede para passar o celular para o próximo jogador, mostrado com a sua cor e símbolo; ele toca no botão grande (“Pronto, é a minha vez”) para ver a própria mão.
+Escolha **Revezando celular** na tela **Como você quer jogar?** e depois quantos e como jogam à mesa. Todos são pessoas (2 pessoas, ou 4 em duplas: jogadores 1 e 3 contra 2 e 4). Depois de cada descarte, uma capa esconde as cartas e pede para passar o celular para o próximo jogador, mostrado com a sua cor e símbolo; ele toca no botão grande (“Pronto, é a minha vez”) para ver a própria mão.
 
 ## Níveis
 - **Fácil:** joga sem muito cuidado, raramente pega o lixo e descarta quase ao acaso.

@@ -40,7 +40,7 @@ Buraco ist das brasilianische Rommé mit Folgen und Canastas, gespielt mit zwei 
 - **Dein Computer-Partner** legt an eure gemeinsamen Folgen an, hält reine Canastas auf Schwer rein und wirft nichts ab, was der nächste Gegner brauchen könnte.
 
 ## Abwechselnd an einem Handy
-Wähle **Abwechselnd an diesem Telefon** beim Schwierigkeitsgrad und dann 2 oder 4 am Tisch. Alle sind Menschen (2 Personen oder 4 in Paaren: Spieler 1 und 3 gegen 2 und 4). Nach jedem Abwurf verdeckt ein Schirm die Karten und bittet, das Handy an den nächsten Spieler weiterzugeben, mit seiner Farbe und seinem Symbol; er tippt auf den großen Knopf („Fertig, ich bin dran“), um seine eigene Hand zu sehen.
+Wähle **Abwechselnd an diesem Telefon** auf dem Bildschirm **Wie möchtest du spielen?** und dann 2 oder 4 am Tisch. Alle sind Menschen (2 Personen oder 4 in Paaren: Spieler 1 und 3 gegen 2 und 4). Nach jedem Abwurf verdeckt ein Schirm die Karten und bittet, das Handy an den nächsten Spieler weiterzugeben, mit seiner Farbe und seinem Symbol; er tippt auf den großen Knopf („Fertig, ich bin dran“), um seine eigene Hand zu sehen.
 
 ## Stufen
 - **Leicht:** spielt locker, nimmt selten den Ablagestapel und wirft fast zufällig ab.

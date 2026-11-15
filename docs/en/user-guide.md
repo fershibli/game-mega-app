@@ -41,7 +41,7 @@ Requirements: Android 6.0 or newer, about 5 MB of free space. The app never need
 The app has only three kinds of screens.
 
 1. **Choose your game.** A grid of pictures, two per row. There is no text on purpose: each picture *is* the game (a sudoku grid, cards, a backgammon board…). The list scrolls endlessly in both directions — keep scrolling and the games come round again. Tap a picture to choose it.
-2. **Choose the difficulty.** A short explanation of the game, and below it a scroll wheel with **Easy / Medium / Hard**. Your default difficulty is already selected. Turn the wheel (or tap a level) and press **Confirm**. **Back** returns to the games.
+2. **A few short questions, one per screen.** First the game's picture with a sentence about it: **Learn to play** opens the whole page of rules, and **Go to the game** moves on. Then, only when the game has them: which rules to play, **How do you want to play?** (with the computer, or people taking turns on this phone) and the difficulty, on a scroll wheel with **Easy / Medium / Hard**. What you chose last time, and your default difficulty, are already selected, so **Confirm** is enough. **Back** returns one step.
 3. **The game.** The game name is at the top and the **gear ⚙** is in the top-right corner, exactly where it was on the first screen. Game buttons (undo, hint…) are at the bottom, near your thumb.
 
 The **gear** opens the settings. Inside a game, settings also show three big buttons at the bottom:
@@ -54,7 +54,7 @@ The phone's **Back** button/gesture inside a game opens (or closes) the settings
 
 ## Playing together on one phone
 
-Some games can also be played by people sitting together, taking turns on the same phone. On the difficulty wheel, now titled **How do you want to play?**, choose **Take turns on this phone** (on a tablet: *…on this tablet*). Nobody plays against the computer.
+Some games can also be played by people sitting together, taking turns on the same phone. On the screen **How do you want to play?**, choose **Take turns on this phone** (on a tablet: *…on this tablet*). Nobody plays against the computer.
 
 Games you can play this way: Reversi, Checkers, Chess, Backgammon, Chinese chess, Korean chess, Shogi, Go, Gomoku, Four in a row, Nine Men’s Morris, Mancala, Ludo. In Backgammon each player rolls their own dice; Ludo is for 2 to 4 people; Chess takes turns in a normal game, not with the famous games. In these board games everything is in view of both players, so the cover between turns only says who plays next. **Undo** takes back one move, and at the end of Go both players agree on the same screen which stones are dead.
 

@@ -40,7 +40,7 @@ Le buraco est le rami brésilien des suites et des canastas, avec deux jeux de c
 - **Votre partenaire ordinateur** complète vos suites communes, garde les canastas propres en Difficile et évite de défausser ce que l’adversaire suivant pourrait utiliser.
 
 ## À tour de rôle sur un seul téléphone
-Choisissez **Chacun son tour sur ce téléphone** sur l’écran du niveau, puis 2 ou 4 à table. Tout le monde est une personne (2 personnes, ou 4 en équipes : joueurs 1 et 3 contre 2 et 4). Après chaque défausse, un écran cache les cartes et demande de passer le téléphone au joueur suivant, avec sa couleur et son symbole ; il touche le grand bouton (« C’est bon, c’est mon tour ») pour voir sa propre main.
+Choisissez **Chacun son tour sur ce téléphone** sur l’écran **Comment voulez-vous jouer ?**, puis 2 ou 4 à table. Tout le monde est une personne (2 personnes, ou 4 en équipes : joueurs 1 et 3 contre 2 et 4). Après chaque défausse, un écran cache les cartes et demande de passer le téléphone au joueur suivant, avec sa couleur et son symbole ; il touche le grand bouton (« C’est bon, c’est mon tour ») pour voir sa propre main.
 
 ## Niveaux
 - **Facile :** joue sans trop réfléchir, prend rarement la défausse et défausse presque au hasard.

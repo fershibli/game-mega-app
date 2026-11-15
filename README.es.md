@@ -64,7 +64,7 @@ Reglas completas y consejos: **[Guía de uso](docs/es/user-guide.md)**.
 
 ## Pensada para personas mayores
 
-- **Navegación muy sencilla**: elige el juego (solo imágenes, no hace falta leer) → elige la dificultad en una rueda → juega. El engranaje (⚙) siempre está en la misma esquina.
+- **Navegación muy sencilla**: elige el juego (solo imágenes, no hace falta leer) → responde a unas pocas preguntas cortas, una por pantalla (aprender a jugar o ir al juego, quién juega, la dificultad) → juega. El engranaje (⚙) siempre está en la misma esquina.
 - **Botones al alcance del pulgar**: casi todos los botones de acción están en la mitad inferior de la pantalla. El **modo zurdo** los refleja.
 - **Modo una mano**: el engranaje se convierte en una burbuja flotante que se esconde en el borde; el zoom funciona con **doble toque** o **mantener y girar**.
 - **Tamaño de texto y de piezas/botones ajustable** (del 80 % al 160 %).

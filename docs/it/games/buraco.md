@@ -40,7 +40,7 @@ Il buraco è il ramino brasiliano di scale e canaste, con due mazzi. In Mili Gam
 - **Il compagno computer** attacca alle scale comuni, tiene pulite le canaste pulite a Difficile ed evita di scartare carte utili all’avversario successivo.
 
 ## A turno su un solo telefono
-Scegli **A turno su questo telefono** nella schermata del livello, poi 2 o 4 al tavolo. Tutti sono persone (2 persone, o 4 a coppie: giocatori 1 e 3 contro 2 e 4). Dopo ogni scarto una copertura nasconde le carte e chiede di passare il telefono al giocatore successivo, con il suo colore e simbolo; tocca il pulsante grande («Pronto, tocca a me») per vedere la sua mano.
+Scegli **A turno su questo telefono** nella schermata **Come vuoi giocare?**, poi 2 o 4 al tavolo. Tutti sono persone (2 persone, o 4 a coppie: giocatori 1 e 3 contro 2 e 4). Dopo ogni scarto una copertura nasconde le carte e chiede di passare il telefono al giocatore successivo, con il suo colore e simbolo; tocca il pulsante grande («Pronto, tocca a me») per vedere la sua mano.
 
 ## Livelli
 - **Facile:** gioca senza troppa cura, prende raramente gli scarti e scarta quasi a caso.
