@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">あなた</string>
+    <string name="tricks_computer">コンピューター</string>
+    <string name="tricks_partner">パートナー</string>
+    <string name="tricks_left">左</string>
+    <string name="tricks_right">右</string>
+    <string name="tricks_across">向かい</string>
+    <string name="tricks_us">味方</string>
+    <string name="tricks_them">相手</string>
+    <string name="tricks_pair">プレイヤー%1$dと%2$d</string>
+    <string name="tricks_play_card">カードを出す</string>
+    <string name="tricks_next_hand">次の回へ</string>
+    <string name="tricks_prompt_play">あなたの番：カードをタップして選びます</string>
+    <string name="tricks_prompt_again">もう一度タップ（または「カードを出す」）で出します</string>
+    <string name="tricks_player_turn">%1$s：あなたの番です</string>
+    <string name="tricks_partner_turn">パートナーが考えています…</string>
+    <string name="tricks_follow_suit">同じスートを出す必要があります：%1$sのカードを出してください</string>
+    <string name="tricks_trick_you">このトリックはあなたのものです</string>
+    <string name="tricks_trick_taken">トリックの勝者：%1$s</string>
+    <string name="tricks_hand_won">この回の勝者：%1$s</string>
+    <string name="tricks_hand_tie">60対60：この回は引き分け</string>
+    <string name="tricks_trumps">切り札</string>
+    <string name="tricks_stock">山札</string>
+    <string name="tricks_games">勝ち</string>
+    <string name="tricks_tricks">トリック %1$d – %2$d</string>
+    <string name="tricks_card_points">カードの点数</string>
+    <string name="tricks_games_won">獲得した勝ち</string>
+    <string name="tricks_winner">勝者：%1$s</string>
+    <string name="tricks_final">勝ち — %1$s：%2$d、%3$s：%4$d</string>
+</resources>

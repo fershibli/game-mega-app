@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">Червы</string>
+    <string name="howto_hearts">Старайтесь не брать черви (по 1 очку) и даму пик (13). Перед каждой раздачей передайте три карты. Когда кто-то набирает 100, побеждает наименьший счёт.</string>
+    <string name="hearts_pass_left">Выберите 3 карты для игрока слева</string>
+    <string name="hearts_pass_right">Выберите 3 карты для игрока справа</string>
+    <string name="hearts_pass_across">Выберите 3 карты для игрока напротив</string>
+    <string name="hearts_pass_button">Передать 3 карты</string>
+    <string name="hearts_waiting_pass">Остальные выбирают карты…</string>
+    <string name="hearts_lead_two">Первую взятку начинает 2♣</string>
+    <string name="hearts_not_broken">Черви ещё не сыграны: начните с другой масти</string>
+    <string name="hearts_first_trick">В первой взятке нельзя черви и Q♠</string>
+    <string name="hearts_moon">%1$s забрал все очки: по 26 всем остальным!</string>
+    <string name="hearts_hand_over">Конец раздачи</string>
+    <string name="hearts_hand_points">Очки за раздачу</string>
+    <string name="hearts_lowest_wins">Наименьший счёт: %1$s</string>
+</resources>

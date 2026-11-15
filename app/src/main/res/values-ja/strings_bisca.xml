@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">ビスカ</string>
+    <string name="howto_bisca">手札は3枚、トリックのたびに1枚ずつ引きます。エースと7を取りましょう。120点中60点を超えればその回の勝ち。先に4勝した人の勝ちです。</string>
+    <string name="bisca_table_pairs">2対2、パートナーは向かい合わせ</string>
+    <string name="bisca_follow_now">山札がなくなりました：出せるなら同じスートを出します</string>
+</resources>

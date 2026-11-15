@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">Bisca</string>
+    <string name="howto_bisca">Tre carte a testa, se ne pesca una dopo ogni presa: è la cugina portoghese della briscola. Più di 60 dei 120 punti vince la mano. Vince chi arriva prima a 4 partite.</string>
+    <string name="bisca_table_pairs">Due contro due, compagni di fronte</string>
+    <string name="bisca_follow_now">Mazzo finito: rispondi al seme se puoi</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">Tu</string>
+    <string name="tricks_computer">Computer</string>
+    <string name="tricks_partner">Compagno</string>
+    <string name="tricks_left">Sinistra</string>
+    <string name="tricks_right">Destra</string>
+    <string name="tricks_across">Di fronte</string>
+    <string name="tricks_us">Noi</string>
+    <string name="tricks_them">Loro</string>
+    <string name="tricks_pair">Giocatori %1$d e %2$d</string>
+    <string name="tricks_play_card">Gioca carta</string>
+    <string name="tricks_next_hand">Mano successiva</string>
+    <string name="tricks_prompt_play">Tocca a te: tocca una carta per sceglierla</string>
+    <string name="tricks_prompt_again">Tocca di nuovo la carta (o Gioca carta) per giocarla</string>
+    <string name="tricks_player_turn">%1$s: tocca a te</string>
+    <string name="tricks_partner_turn">Il tuo compagno sta giocando…</string>
+    <string name="tricks_follow_suit">Devi rispondere al seme: gioca una carta di %1$s</string>
+    <string name="tricks_trick_you">La presa è tua</string>
+    <string name="tricks_trick_taken">Presa per: %1$s</string>
+    <string name="tricks_hand_won">Mano vinta da: %1$s</string>
+    <string name="tricks_hand_tie">60 a 60: nessuno vince la mano</string>
+    <string name="tricks_trumps">Briscola</string>
+    <string name="tricks_stock">Mazzo</string>
+    <string name="tricks_games">Partite</string>
+    <string name="tricks_tricks">Prese %1$d – %2$d</string>
+    <string name="tricks_card_points">Punti delle carte</string>
+    <string name="tricks_games_won">Partite vinte</string>
+    <string name="tricks_winner">Vincitori: %1$s</string>
+    <string name="tricks_final">Partite — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

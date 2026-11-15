@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">Sueca</string>
+    <string name="howto_sueca">Tú y tu compañero contra dos jugadores. Sigue el palo y gana los ases y los sietes: más de 60 de los 120 puntos gana la mano. La primera pareja en llegar a 4 juegos gana.</string>
+    <string name="sueca_bandeira">¡Bandeira! Todas las bazas para: %1$s</string>
+    <string name="sueca_carry">Juegos extra en la próxima mano</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">ハーツ</string>
+    <string name="howto_hearts">ハート（1枚1点）とスペードのクイーン（13点）を取らないようにします。毎回3枚を渡します。誰かが100点に達したら、点数の一番少ない人の勝ちです。</string>
+    <string name="hearts_pass_left">左の人に渡す3枚を選んでください</string>
+    <string name="hearts_pass_right">右の人に渡す3枚を選んでください</string>
+    <string name="hearts_pass_across">向かいの人に渡す3枚を選んでください</string>
+    <string name="hearts_pass_button">3枚渡す</string>
+    <string name="hearts_waiting_pass">ほかの人がカードを選んでいます…</string>
+    <string name="hearts_lead_two">最初のトリックは♣2から始めます</string>
+    <string name="hearts_not_broken">まだハートが出ていません：ほかのスートから始めてください</string>
+    <string name="hearts_first_trick">最初のトリックではハートとQ♠は出せません</string>
+    <string name="hearts_moon">%1$sが全部の点を取りました：ほかの全員に26点！</string>
+    <string name="hearts_hand_over">この回の終わり</string>
+    <string name="hearts_hand_points">この回の点数</string>
+    <string name="hearts_lowest_wins">一番少ない点数：%1$s</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">Биска</string>
+    <string name="howto_bisca">У каждого три карты, после каждой взятки берут из колоды. Забирайте тузы и семёрки: больше 60 из 120 очков выигрывает раздачу. Кто первым наберёт 4 партии, побеждает.</string>
+    <string name="bisca_table_pairs">Двое на двое, партнёры сидят напротив</string>
+    <string name="bisca_follow_now">Колода кончилась: ходите в масть, если можете</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">Sueca</string>
+    <string name="howto_sueca">Você e seu parceiro contra dois jogadores. Assista ao naipe e ganhe os ases e as setes: mais de 60 dos 120 pontos ganha a mão. A primeira dupla a fazer 4 jogos vence.</string>
+    <string name="sueca_bandeira">Bandeira! Todas as vazas para: %1$s</string>
+    <string name="sueca_carry">Jogos a mais na próxima mão</string>
+</resources>

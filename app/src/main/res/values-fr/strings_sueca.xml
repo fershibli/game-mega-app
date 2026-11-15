@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">Sueca</string>
+    <string name="howto_sueca">Vous et votre partenaire contre deux joueurs. Fournissez à la couleur et prenez les as et les sept : plus de 60 des 120 points gagne la donne. La première équipe à 4 parties gagne.</string>
+    <string name="sueca_bandeira">Bandeira ! Tous les plis pour : %1$s</string>
+    <string name="sueca_carry">Parties en plus à la prochaine donne</string>
+</resources>

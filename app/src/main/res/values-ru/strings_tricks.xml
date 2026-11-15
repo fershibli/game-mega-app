@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">Вы</string>
+    <string name="tricks_computer">Компьютер</string>
+    <string name="tricks_partner">Партнёр</string>
+    <string name="tricks_left">Слева</string>
+    <string name="tricks_right">Справа</string>
+    <string name="tricks_across">Напротив</string>
+    <string name="tricks_us">Мы</string>
+    <string name="tricks_them">Они</string>
+    <string name="tricks_pair">Игроки %1$d и %2$d</string>
+    <string name="tricks_play_card">Сыграть карту</string>
+    <string name="tricks_next_hand">Следующая раздача</string>
+    <string name="tricks_prompt_play">Ваш ход: коснитесь карты, чтобы выбрать её</string>
+    <string name="tricks_prompt_again">Коснитесь карты ещё раз (или «Сыграть карту»), чтобы сыграть</string>
+    <string name="tricks_player_turn">%1$s: ваш ход</string>
+    <string name="tricks_partner_turn">Ходит ваш партнёр…</string>
+    <string name="tricks_follow_suit">Нужно ходить в масть: сыграйте карту %1$s</string>
+    <string name="tricks_trick_you">Взятка ваша</string>
+    <string name="tricks_trick_taken">Взятка: %1$s</string>
+    <string name="tricks_hand_won">Раздачу выиграли: %1$s</string>
+    <string name="tricks_hand_tie">60 на 60: никто не выиграл раздачу</string>
+    <string name="tricks_trumps">Козырь</string>
+    <string name="tricks_stock">Колода</string>
+    <string name="tricks_games">Партии</string>
+    <string name="tricks_tricks">Взятки %1$d – %2$d</string>
+    <string name="tricks_card_points">Очки за карты</string>
+    <string name="tricks_games_won">Выиграно партий</string>
+    <string name="tricks_winner">Победители: %1$s</string>
+    <string name="tricks_final">Партии — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

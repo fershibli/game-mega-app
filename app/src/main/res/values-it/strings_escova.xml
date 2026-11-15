@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">Scopa a 15</string>
+    <string name="howto_escova">Gioca una carta e prendi le carte in tavola che fanno 15 con lei. Pulisci la tavola per fare scopa. Punti per più carte, quadri, sette e il 7♦. Vince chi arriva prima a 15.</string>
+    <string name="escova_table_pairs">Due contro due, compagni di fronte</string>
+    <string name="escova_prompt_card">Tocca a te: tocca una carta della tua mano</string>
+    <string name="escova_prompt_table">Tocca le carte in tavola che fanno 15 con lei</string>
+    <string name="escova_prompt_take">Fai esattamente 15, poi tocca Prendi</string>
+    <string name="escova_must_take">Questa carta può fare 15: scegli le carte da prendere</string>
+    <string name="escova_not_fifteen">Fa %1$d, non 15</string>
+    <string name="escova_fifteen">15! Tocca Prendi</string>
+    <string name="escova_need_more">Mancano %1$d per fare 15</string>
+    <string name="escova_too_much">Più di 15: tocca una carta per toglierla</string>
+    <string name="escova_take">Prendi</string>
+    <string name="escova_lay">Cala</string>
+    <string name="escova_clear">Annulla</string>
+    <string name="escova_goal">Obiettivo: 15</string>
+    <string name="escova_stock">Mazzo: %1$d</string>
+    <string name="escova_escovas">Scope %1$d – %2$d</string>
+    <string name="escova_opening">Le prime quattro carte fanno 15: scopa per %1$s!</string>
+    <string name="escova_took">%1$s ha preso %2$s con %3$s</string>
+    <string name="escova_laid">%1$s ha calato %2$s</string>
+    <string name="escova_swept">Scopa! %1$s ha pulito la tavola con %2$s</string>
+    <string name="escova_hand_over">Fine della mano: guarda i punti</string>
+    <string name="escova_hand_points">Questa mano — %1$s: +%2$d, %3$s: +%4$d</string>
+    <string name="escova_line_escovas">Scope</string>
+    <string name="escova_line_cards">Più carte</string>
+    <string name="escova_line_diamonds">Più quadri (denari)</string>
+    <string name="escova_line_sete_belo">Settebello (7♦)</string>
+    <string name="escova_line_sevens">Più sette</string>
+    <string name="escova_final">Punti — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

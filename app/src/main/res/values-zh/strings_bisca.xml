@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_bisca">比斯卡（Bisca）</string>
+    <string name="howto_bisca">每人三张牌，每墩之后摸一张。拿下A和7：120分中超过60分就赢这一局。先拿到4个胜局的人获胜。</string>
+    <string name="bisca_table_pairs">二对二，搭档面对面坐</string>
+    <string name="bisca_follow_now">牌堆摸完了：能跟同花色就要跟</string>
+</resources>

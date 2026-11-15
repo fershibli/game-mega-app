@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shared by the trick-taking card games (Sueca, Bisca, Hearts) and Escova. -->
+<resources>
+    <string name="tricks_you">Você</string>
+    <string name="tricks_computer">Computador</string>
+    <string name="tricks_partner">Parceiro</string>
+    <string name="tricks_left">Esquerda</string>
+    <string name="tricks_right">Direita</string>
+    <string name="tricks_across">Em frente</string>
+    <string name="tricks_us">Nós</string>
+    <string name="tricks_them">Eles</string>
+    <string name="tricks_pair">Jogadores %1$d e %2$d</string>
+    <string name="tricks_play_card">Jogar carta</string>
+    <string name="tricks_next_hand">Próxima mão</string>
+    <string name="tricks_prompt_play">Sua vez: toque numa carta para escolher</string>
+    <string name="tricks_prompt_again">Toque na carta de novo (ou Jogar carta) para jogar</string>
+    <string name="tricks_player_turn">%1$s: sua vez</string>
+    <string name="tricks_partner_turn">Seu parceiro está jogando…</string>
+    <string name="tricks_follow_suit">Tem que assistir: jogue uma carta de %1$s</string>
+    <string name="tricks_trick_you">A vaza é sua</string>
+    <string name="tricks_trick_taken">Vaza para: %1$s</string>
+    <string name="tricks_hand_won">Mão ganha por: %1$s</string>
+    <string name="tricks_hand_tie">60 a 60: ninguém ganha a mão</string>
+    <string name="tricks_trumps">Trunfo</string>
+    <string name="tricks_stock">Monte</string>
+    <string name="tricks_games">Jogos</string>
+    <string name="tricks_tricks">Vazas %1$d – %2$d</string>
+    <string name="tricks_card_points">Pontos das cartas</string>
+    <string name="tricks_games_won">Jogos ganhos</string>
+    <string name="tricks_winner">Vencedores: %1$s</string>
+    <string name="tricks_final">Jogos — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

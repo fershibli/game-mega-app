@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">Sueca</string>
+    <string name="howto_sueca">Du und dein Partner gegen zwei Spieler. Bediene die Farbe und hole Asse und Siebener: mehr als 60 der 120 Punkte gewinnt das Spiel. Das erste Paar mit 4 Siegen gewinnt.</string>
+    <string name="sueca_bandeira">Bandeira! Alle Stiche für: %1$s</string>
+    <string name="sueca_carry">Zusätzliche Siege im nächsten Spiel</string>
+</resources>

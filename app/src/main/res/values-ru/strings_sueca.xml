@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_sueca">Суэка</string>
+    <string name="howto_sueca">Вы с партнёром против двух игроков. Ходите в масть и забирайте тузы и семёрки: больше 60 из 120 очков выигрывает раздачу. Первая пара, набравшая 4 партии, побеждает.</string>
+    <string name="sueca_bandeira">Бандейра! Все взятки у: %1$s</string>
+    <string name="sueca_carry">Дополнительные партии в следующей раздаче</string>
+</resources>

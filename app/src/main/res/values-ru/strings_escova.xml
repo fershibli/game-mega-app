@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">Эскова</string>
+    <string name="howto_escova">Сыграйте карту и заберите со стола карты, которые вместе с ней дают 15. Очистите стол — это эскова. Очки за большинство карт, бубен, семёрок и 7♦. Кто первым наберёт 15, побеждает.</string>
+    <string name="escova_table_pairs">Двое на двое, партнёры сидят напротив</string>
+    <string name="escova_prompt_card">Ваш ход: коснитесь карты в руке</string>
+    <string name="escova_prompt_table">Коснитесь карт на столе, которые дают с ней 15</string>
+    <string name="escova_prompt_take">Наберите ровно 15 и нажмите «Взять»</string>
+    <string name="escova_must_take">Эта карта может дать 15: выберите карты, которые возьмёте</string>
+    <string name="escova_not_fifteen">Получается %1$d, а не 15</string>
+    <string name="escova_fifteen">15! Нажмите «Взять»</string>
+    <string name="escova_need_more">До 15 не хватает %1$d</string>
+    <string name="escova_too_much">Больше 15: коснитесь карты, чтобы убрать её</string>
+    <string name="escova_take">Взять</string>
+    <string name="escova_lay">Положить</string>
+    <string name="escova_clear">Сбросить</string>
+    <string name="escova_goal">Цель: 15</string>
+    <string name="escova_stock">Колода: %1$d</string>
+    <string name="escova_escovas">Эсковы %1$d – %2$d</string>
+    <string name="escova_opening">Первые четыре карты дают 15: эскова для %1$s!</string>
+    <string name="escova_took">%1$s: взято %2$s картой %3$s</string>
+    <string name="escova_laid">%1$s: положена %2$s</string>
+    <string name="escova_swept">Эскова! %1$s очистил стол картой %2$s</string>
+    <string name="escova_hand_over">Конец раздачи: посмотрите очки</string>
+    <string name="escova_hand_points">Эта раздача — %1$s: +%2$d, %3$s: +%4$d</string>
+    <string name="escova_line_escovas">Эсковы</string>
+    <string name="escova_line_cards">Больше карт</string>
+    <string name="escova_line_diamonds">Больше бубен (ouros)</string>
+    <string name="escova_line_sete_belo">Сете бело (7♦)</string>
+    <string name="escova_line_sevens">Больше семёрок</string>
+    <string name="escova_final">Очки — %1$s: %2$d, %3$s: %4$d</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">Copas</string>
+    <string name="howto_hearts">Evite ganhar copas (1 ponto cada) e a dama de espadas (13). Passe três cartas antes de cada mão. Quando alguém chega a 100, ganha quem tem menos pontos.</string>
+    <string name="hearts_pass_left">Escolha 3 cartas para passar à esquerda</string>
+    <string name="hearts_pass_right">Escolha 3 cartas para passar à direita</string>
+    <string name="hearts_pass_across">Escolha 3 cartas para passar em frente</string>
+    <string name="hearts_pass_button">Passar 3 cartas</string>
+    <string name="hearts_waiting_pass">Os outros estão escolhendo as cartas…</string>
+    <string name="hearts_lead_two">O 2♣ começa a primeira vaza</string>
+    <string name="hearts_not_broken">Ainda não saiu copas: comece com outro naipe</string>
+    <string name="hearts_first_trick">Nada de copas nem Q♠ na primeira vaza</string>
+    <string name="hearts_moon">%1$s levou todos os pontos: 26 para cada um dos outros!</string>
+    <string name="hearts_hand_over">Fim da mão</string>
+    <string name="hearts_hand_points">Pontos desta mão</string>
+    <string name="hearts_lowest_wins">Menos pontos: %1$s</string>
+</resources>

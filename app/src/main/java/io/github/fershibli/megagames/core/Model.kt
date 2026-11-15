@@ -142,6 +142,10 @@ enum class GameId(
     BOXES("boxes", R.string.game_boxes, R.string.howto_boxes, GameCategory.PUZZLES),
     MERGE("merge", R.string.game_merge, R.string.howto_merge, GameCategory.PUZZLES),
     TANGRAM("tangram", R.string.game_tangram, R.string.howto_tangram, GameCategory.PUZZLES),
+    SUECA("sueca", R.string.game_sueca, R.string.howto_sueca, GameCategory.CARDS, takeTurns = true),
+    BISCA("bisca", R.string.game_bisca, R.string.howto_bisca, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.bisca_table_pairs))),
+    HEARTS("hearts", R.string.game_hearts, R.string.howto_hearts, GameCategory.CARDS, takeTurns = true),
+    ESCOVA("escova", R.string.game_escova, R.string.howto_escova, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.escova_table_pairs))),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

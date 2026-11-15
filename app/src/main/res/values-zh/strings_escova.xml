@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_escova">埃斯科瓦（Escova）</string>
+    <string name="howto_escova">出一张牌，拿走桌上和它加起来正好15的牌。把桌面清空就是一次“扫桌”。牌最多、方块最多、7最多和方块7都能得分。先到15分的一方获胜。</string>
+    <string name="escova_table_pairs">二对二，搭档面对面坐</string>
+    <string name="escova_prompt_card">轮到你：点一张手里的牌</string>
+    <string name="escova_prompt_table">点桌上和它加起来等于15的牌</string>
+    <string name="escova_prompt_take">凑成正好15，然后点“拿走”</string>
+    <string name="escova_must_take">这张牌能凑成15：请选要拿走的牌</string>
+    <string name="escova_not_fifteen">加起来是%1$d，不是15</string>
+    <string name="escova_fifteen">15！点“拿走”</string>
+    <string name="escova_need_more">还差%1$d到15</string>
+    <string name="escova_too_much">超过15了：点一张牌把它去掉</string>
+    <string name="escova_take">拿走</string>
+    <string name="escova_lay">放到桌上</string>
+    <string name="escova_clear">清除</string>
+    <string name="escova_goal">目标：15</string>
+    <string name="escova_stock">牌堆：%1$d</string>
+    <string name="escova_escovas">扫桌 %1$d – %2$d</string>
+    <string name="escova_opening">开局四张牌正好15：%1$s扫桌！</string>
+    <string name="escova_took">%1$s用%3$s拿走了%2$s</string>
+    <string name="escova_laid">%1$s把%2$s放到桌上</string>
+    <string name="escova_swept">扫桌！%1$s用%2$s清空了桌面</string>
+    <string name="escova_hand_over">本局结束：请看得分</string>
+    <string name="escova_hand_points">本局 — %1$s：+%2$d，%3$s：+%4$d</string>
+    <string name="escova_line_escovas">扫桌</string>
+    <string name="escova_line_cards">牌最多</string>
+    <string name="escova_line_diamonds">方块最多（ouros）</string>
+    <string name="escova_line_sete_belo">方块7（sete belo）</string>
+    <string name="escova_line_sevens">7最多</string>
+    <string name="escova_final">得分 — %1$s：%2$d，%3$s：%4$d</string>
+</resources>

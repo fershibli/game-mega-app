@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_hearts">Cuori</string>
+    <string name="howto_hearts">Evita di prendere cuori (1 punto ciascuno) e la donna di picche (13). Passa tre carte prima di ogni mano. Quando qualcuno arriva a 100, vince il punteggio più basso.</string>
+    <string name="hearts_pass_left">Scegli 3 carte da passare a sinistra</string>
+    <string name="hearts_pass_right">Scegli 3 carte da passare a destra</string>
+    <string name="hearts_pass_across">Scegli 3 carte da passare di fronte</string>
+    <string name="hearts_pass_button">Passa 3 carte</string>
+    <string name="hearts_waiting_pass">Gli altri stanno scegliendo le carte…</string>
+    <string name="hearts_lead_two">Il 2♣ apre la prima presa</string>
+    <string name="hearts_not_broken">Nessun cuore ancora giocato: inizia con un altro seme</string>
+    <string name="hearts_first_trick">Niente cuori né Q♠ alla prima presa</string>
+    <string name="hearts_moon">%1$s ha preso tutti i punti: 26 a ciascuno degli altri!</string>
+    <string name="hearts_hand_over">Fine della mano</string>
+    <string name="hearts_hand_points">Punti di questa mano</string>
+    <string name="hearts_lowest_wins">Punteggio più basso: %1$s</string>
+</resources>
