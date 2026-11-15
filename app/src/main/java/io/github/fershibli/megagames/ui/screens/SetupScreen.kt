@@ -60,9 +60,9 @@ private val TEXT_SIZES = listOf(1.0f, 1.2f, 1.4f)
  * changed later in the settings, which also open this again.
  */
 @Composable
-fun SetupScreen(settings: Settings, onChange: (Settings) -> Unit, onDone: () -> Unit) {
+fun SetupScreen(settings: Settings, onChange: (Settings) -> Unit, onDone: () -> Unit, startAt: Int = 0) {
     val p = LocalPalette.current
-    var index by rememberSaveable { mutableIntStateOf(0) }
+    var index by rememberSaveable { mutableIntStateOf(startAt) }
     val step = SetupStep.entries[index]
     val questions = SetupStep.entries.size - 2
     BackHandler { if (index > 0) index-- else onDone() }

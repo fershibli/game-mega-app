@@ -145,6 +145,18 @@ class ScreenshotTest {
         rule.mainClock.advanceTimeBy(1600)
         save("tutorial_solitaire_pt")
     }
+    @Test fun setupWelcomePt() = shot("setup_welcome_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.SetupScreen(Settings(), {}, {})
+    }
+    @Test fun setupHandPt() = shot("setup_hand_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, leftHanded = true)) {
+        io.github.fershibli.megagames.ui.screens.SetupScreen(Settings(leftHanded = true), {}, {}, startAt = 2)
+    }
+    @Test fun setupListPt() = shot("setup_list_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.SetupScreen(Settings(), {}, {}, startAt = 3)
+    }
+    @Test fun setupTextBigPt() = shot("setup_text_big_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = 1.4f)) {
+        io.github.fershibli.megagames.ui.screens.SetupScreen(Settings(fontScale = 1.4f), {}, {}, startAt = 1)
+    }
     @Test fun introPt() = shot("intro_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         io.github.fershibli.megagames.ui.screens.IntroScreen(GameId.BURACO, onPlay = {}, onLearn = {}, onBack = {}, onSettings = {})
     }
