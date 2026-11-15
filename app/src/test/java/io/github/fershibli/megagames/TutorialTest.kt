@@ -89,9 +89,14 @@ class TutorialTest {
         }
         // Step 1 is read, step 2 is watched, step 3 asks for the two of spades.
         rule.onNodeWithText("Next").performClick()
+        // A quick second touch doesn't skip the move being shown.
+        rule.onNodeWithText("Next").performClick()
+        rule.mainClock.advanceTimeByFrame()
+        rule.onNodeWithText("Next").assertIsNotEnabled()
         advanceUntil("the ace is played") { enabled("Next") }
         rule.onNodeWithText("Next").performClick()
         advanceUntil("the two is asked") { guide.expected == "column:2:2" }
+        rule.onNodeWithText("Moves: 1").assertIsDisplayed()
         val other = guide.rect("column:6:1")!!
         repeat(2) { rule.onRoot().performTouchInput { click(other.center) } }
         rule.mainClock.advanceTimeBy(200)

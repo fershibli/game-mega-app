@@ -135,8 +135,10 @@ class ScreenshotTest {
         fun until(condition: () -> Boolean) { repeat(300) { if (!condition()) rule.mainClock.advanceTimeBy(100) } }
         // The ace is shown, then the two is asked; two touches elsewhere bring the hand.
         rule.onNodeWithText("Próximo").performClick()
-        until { guide.expected == null && rule.onAllNodes(androidx.compose.ui.test.hasText("Próximo") and androidx.compose.ui.test.isEnabled()).fetchSemanticsNodes().isNotEmpty() }
+        rule.mainClock.advanceTimeByFrame()
+        until { rule.onAllNodes(androidx.compose.ui.test.hasText("Próximo") and androidx.compose.ui.test.isEnabled()).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithText("Próximo").performClick()
+        rule.mainClock.advanceTimeByFrame()
         until { guide.expected == "column:2:2" }
         val other = guide.rect("column:6:1")!!
         repeat(2) { rule.onRoot().performTouchInput { click(other.center) } }

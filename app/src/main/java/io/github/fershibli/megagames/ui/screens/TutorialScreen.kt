@@ -80,8 +80,10 @@ fun TutorialScreen(
     val host = remember { GameHost(game, Difficulty.EASY, lesson.state(), null) {}.also { it.language = language } }
     var index by remember { mutableIntStateOf(0) }
     val step = lesson.steps[index]
-    // Whether "Next" may be pressed: at once when there is only something to read, otherwise after the move.
-    var ready by remember { mutableStateOf(false) }
+    // "Next" may be pressed once the step is over: at once when there is only something to read,
+    // otherwise after the move. Kept by step, so a quick second touch can't skip the next one.
+    var finished by remember { mutableIntStateOf(-1) }
+    val ready = finished == index
     val hand = remember { Animatable(0f) }
     var press by remember { mutableStateOf(false) }
     val pulse by rememberInfiniteTransition(label = "tutorial").animateFloat(0f, if (motion == Motion.NONE) 0f else 1f, infiniteRepeatable(tween(800), RepeatMode.Reverse), label = "ring")
@@ -94,9 +96,8 @@ fun TutorialScreen(
         hand.snapTo(0f)
         press = false
         when (step.kind) {
-            TutorialStep.Kind.READ -> ready = true
+            TutorialStep.Kind.READ -> finished = index
             TutorialStep.Kind.SHOW -> {
-                ready = false
                 pace.wait(900)
                 reach()
                 press = true
@@ -105,14 +106,13 @@ fun TutorialScreen(
                 press = false
                 pace.wait(700)
                 hand.snapTo(0f)
-                ready = true
+                finished = index
             }
             TutorialStep.Kind.TRY -> {
-                ready = false
                 guide.expected = step.target
                 snapshotFlow { guide.done }.first { it }
                 hand.snapTo(0f)
-                ready = true
+                finished = index
             }
         }
     }
@@ -153,7 +153,7 @@ fun TutorialScreen(
             ActionBar {
                 val last = index == lesson.steps.lastIndex
                 BigButton(
-                    stringResource(if (last) R.string.done else R.string.tutorial_next), { if (last) onExit() else index++ },
+                    stringResource(if (last) R.string.done else R.string.tutorial_next), { if (finished == index) { if (last) onExit() else index++ } },
                     icon = if (last) AppIcon.CHECK else AppIcon.NEXT, enabled = ready,
                 )
                 BigButton(stringResource(R.string.tutorial_rules), onRules, icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
