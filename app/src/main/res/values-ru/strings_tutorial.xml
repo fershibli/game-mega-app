@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">Далее</string>
+    <string name="tutorial_rules">Правила</string>
+    <string name="tutorial_watch">Смотрите</string>
+    <string name="tutorial_well_done">Отлично!</string>
+    <string name="tutorial_solitaire_goal">Цель: перенести все карты на эти четыре места, от туза до короля, по одной масти на каждое.</string>
+    <string name="tutorial_solitaire_ace">Туз сразу идёт наверх. Просто коснитесь карты: она сама пойдёт на лучшее место.</string>
+    <string name="tutorial_solitaire_two">Коснитесь 2♠. Она пойдёт наверх, на своего туза.</string>
+    <string name="tutorial_solitaire_six">В столбцах карты кладут по убыванию, чередуя цвета: красная 6 идёт на чёрную 7.</string>
+    <string name="tutorial_solitaire_five">Коснитесь чёрной 5♠. Она пойдёт на красную 6.</string>
+    <string name="tutorial_solitaire_stock">Нет ходов? Коснитесь колоды, чтобы открыть новую карту.</string>
+    <string name="tutorial_solitaire_king">На пустой столбец можно положить только короля. Коснитесь короля.</string>
+    <string name="tutorial_solitaire_hint">Не знаете, как ходить? Нажмите «Подсказка».</string>
+    <string name="tutorial_solitaire_queen">Игра показывает ход: красная дама на чёрного короля. Коснитесь дамы.</string>
+    <string name="tutorial_solitaire_undo">Передумали? Нажмите «Отменить ход», чтобы вернуть последний ход.</string>
+    <string name="tutorial_solitaire_end">Вот и всё! Перенесите все карты наверх, от туза до короля. Удачной игры!</string>
+</resources>

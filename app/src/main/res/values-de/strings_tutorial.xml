@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">Weiter</string>
+    <string name="tutorial_rules">Regeln</string>
+    <string name="tutorial_watch">Schau zu</string>
+    <string name="tutorial_well_done">Sehr gut!</string>
+    <string name="tutorial_solitaire_goal">Das Ziel: alle Karten auf diese vier Plätze legen, vom Ass bis zum König, je eine Farbe (♠ ♥ ♦ ♣).</string>
+    <string name="tutorial_solitaire_ace">Ein Ass geht direkt nach oben. Tippe einfach auf eine Karte: Sie geht von selbst an den besten Platz.</string>
+    <string name="tutorial_solitaire_two">Tippe auf die 2♠. Sie geht nach oben auf ihr Ass.</string>
+    <string name="tutorial_solitaire_six">In den Spalten liegen die Karten absteigend, abwechselnd rot und schwarz: Die rote 6 geht auf die schwarze 7.</string>
+    <string name="tutorial_solitaire_five">Tippe auf die schwarze 5♠. Sie geht auf die rote 6.</string>
+    <string name="tutorial_solitaire_stock">Kein Zug mehr? Tippe auf den Stapel, um eine neue Karte aufzudecken.</string>
+    <string name="tutorial_solitaire_king">Nur ein König darf auf eine leere Spalte. Tippe auf den König.</string>
+    <string name="tutorial_solitaire_hint">Nicht sicher, was du spielen sollst? Tippe auf Tipp.</string>
+    <string name="tutorial_solitaire_queen">Das Spiel zeigt einen Zug: die rote Dame auf den schwarzen König. Tippe auf die Dame.</string>
+    <string name="tutorial_solitaire_undo">Anders überlegt? Tippe auf Rückgängig, um den letzten Zug zurückzunehmen.</string>
+    <string name="tutorial_solitaire_end">Das war’s! Lege alle Karten nach oben, vom Ass bis zum König. Viel Spaß!</string>
+</resources>

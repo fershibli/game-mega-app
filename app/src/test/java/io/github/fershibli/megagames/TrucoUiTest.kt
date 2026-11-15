@@ -6,6 +6,7 @@ import androidx.compose.ui.test.hasAnyAncestor
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -138,7 +139,8 @@ class TrucoUiTest {
         val store = SaveStore(app).apply { clear() }
         val host = GameHost(GameId.TRUCO, Difficulty.EASY, null, store, GameId.TRUCO.variant("mineiro"), PlaySetup(together = true, seats = 4)) {}
         rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(GameId.TRUCO, host) } }
-        rule.waitForIdle()
+        // The hands are dealt on a background thread: wait for the table, not just for the screen to settle.
+        rule.waitUntil(10_000) { rule.onAllNodesWithText("Pass to the next player").fetchSemanticsNodes().isNotEmpty() }
         // Before anybody plays, the cards are covered and the phone goes to the first player.
         rule.onNodeWithText("Pass to the next player").assertIsDisplayed()
         rule.onNode(hasText("Player 1") and hasAnyAncestor(hasTestTag("handoff")), useUnmergedTree = true).assertIsDisplayed()

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_progress" translatable="false">%1$d / %2$d</string>
+    <string name="tutorial_next">Next</string>
+    <string name="tutorial_rules">Rules</string>
+    <string name="tutorial_watch">Watch</string>
+    <string name="tutorial_well_done">Well done!</string>
+    <string name="tutorial_solitaire_goal">The goal: take every card up to these four places, from Ace to King, one suit in each.</string>
+    <string name="tutorial_solitaire_ace">An Ace goes straight up. Just touch a card: it goes to the best place by itself.</string>
+    <string name="tutorial_solitaire_two">Touch the 2♠. It goes up, onto its Ace.</string>
+    <string name="tutorial_solitaire_six">In the columns, cards go down in order, red and black taking turns: the red 6 goes onto the black 7.</string>
+    <string name="tutorial_solitaire_five">Touch the black 5♠. It goes onto the red 6.</string>
+    <string name="tutorial_solitaire_stock">No more moves? Touch the pile to turn a new card.</string>
+    <string name="tutorial_solitaire_king">Only a King can go to an empty column. Touch the King.</string>
+    <string name="tutorial_solitaire_hint">Not sure what to play? Touch Hint.</string>
+    <string name="tutorial_solitaire_queen">The game shows a move: the red Queen onto the black King. Touch the Queen.</string>
+    <string name="tutorial_solitaire_undo">Changed your mind? Touch Undo to take the last move back.</string>
+    <string name="tutorial_solitaire_end">That’s it! Take every card up, from Ace to King. Have a good game!</string>
+</resources>

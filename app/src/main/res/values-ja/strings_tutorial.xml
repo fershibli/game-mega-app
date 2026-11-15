@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">次へ</string>
+    <string name="tutorial_rules">ルール</string>
+    <string name="tutorial_watch">見てください</string>
+    <string name="tutorial_well_done">よくできました！</string>
+    <string name="tutorial_solitaire_goal">目標：すべてのカードを、この4つの場所に A から K まで、マークごとに積み上げます。</string>
+    <string name="tutorial_solitaire_ace">A はすぐ上に行きます。カードをタップするだけで、いちばんよい場所へ自動で動きます。</string>
+    <string name="tutorial_solitaire_two">2♠ をタップしてください。上の A に重なります。</string>
+    <string name="tutorial_solitaire_six">列では、数字が1つずつ小さくなるように、赤と黒を交互に重ねます。赤の 6 は黒の 7 の上に行きます。</string>
+    <string name="tutorial_solitaire_five">黒の 5♠ をタップしてください。赤の 6 の上に行きます。</string>
+    <string name="tutorial_solitaire_stock">動かせるカードがないときは、山札をタップして新しいカードをめくります。</string>
+    <string name="tutorial_solitaire_king">空いた列に置けるのは K だけです。K をタップしてください。</string>
+    <string name="tutorial_solitaire_hint">何を動かすか迷ったら、「ヒント」をタップしてください。</string>
+    <string name="tutorial_solitaire_queen">ゲームが動かし方を見せています：赤の Q を黒の K の上へ。Q をタップしてください。</string>
+    <string name="tutorial_solitaire_undo">やり直したいときは、「一手戻す」をタップすると、最後の一手が戻ります。</string>
+    <string name="tutorial_solitaire_end">これで終わりです。すべてのカードを A から K まで上に積みましょう。楽しんでください！</string>
+</resources>

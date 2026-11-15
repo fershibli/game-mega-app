@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">Suivant</string>
+    <string name="tutorial_rules">Règles</string>
+    <string name="tutorial_watch">Regardez</string>
+    <string name="tutorial_well_done">Très bien !</string>
+    <string name="tutorial_solitaire_goal">Le but : monter toutes les cartes sur ces quatre cases, de l’As au Roi, une couleur (♠ ♥ ♦ ♣) par case.</string>
+    <string name="tutorial_solitaire_ace">Un As monte directement. Il suffit de toucher la carte : elle va toute seule au meilleur endroit.</string>
+    <string name="tutorial_solitaire_two">Touchez le 2♠. Il monte sur son As.</string>
+    <string name="tutorial_solitaire_six">Dans les colonnes, les cartes descendent dans l’ordre, en alternant rouge et noir : le 6 rouge va sur le 7 noir.</string>
+    <string name="tutorial_solitaire_five">Touchez le 5♠ noir. Il va sur le 6 rouge.</string>
+    <string name="tutorial_solitaire_stock">Plus de coup possible ? Touchez la pioche pour retourner une nouvelle carte.</string>
+    <string name="tutorial_solitaire_king">Seul un Roi peut aller sur une colonne vide. Touchez le Roi.</string>
+    <string name="tutorial_solitaire_hint">Vous hésitez ? Touchez Indice.</string>
+    <string name="tutorial_solitaire_queen">Le jeu montre un coup : la Dame rouge sur le Roi noir. Touchez la Dame.</string>
+    <string name="tutorial_solitaire_undo">Vous avez changé d’avis ? Touchez Annuler pour reprendre le dernier coup.</string>
+    <string name="tutorial_solitaire_end">C’est tout ! Montez toutes les cartes, de l’As au Roi. Bonne partie !</string>
+</resources>

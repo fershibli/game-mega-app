@@ -25,7 +25,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.test.captureToImage
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.click
+import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
+import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performTouchInput
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.ui.screens.DifficultyScreen
@@ -117,6 +121,29 @@ class ScreenshotTest {
     @Test fun tablePt() = shot("table_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         val tables = listOf(io.github.fershibli.megagames.core.TableSize(2), io.github.fershibli.megagames.core.TableSize(4, R.string.reversi_dark))
         io.github.fershibli.megagames.ui.screens.TableScreen(GameId.BURACO, false, tables[1], {}, {}, {}, tables)
+    }
+    @Test fun tutorialSolitairePt() {
+        rule.mainClock.autoAdvance = false
+        val guide = io.github.fershibli.megagames.ui.components.TutorialGuide()
+        rule.setContent {
+            MegaGamesTheme(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+                Box(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
+                    io.github.fershibli.megagames.ui.screens.TutorialScreen(GameId.SOLITAIRE, io.github.fershibli.megagames.games.solitaire.solitaireTutorial, {}, {}, {}, guide = guide)
+                }
+            }
+        }
+        fun until(condition: () -> Boolean) { repeat(300) { if (!condition()) rule.mainClock.advanceTimeBy(100) } }
+        // The ace is shown, then the two is asked; two touches elsewhere bring the hand.
+        rule.onNodeWithText("Próximo").performClick()
+        rule.mainClock.advanceTimeByFrame()
+        until { rule.onAllNodes(androidx.compose.ui.test.hasText("Próximo") and androidx.compose.ui.test.isEnabled()).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithText("Próximo").performClick()
+        rule.mainClock.advanceTimeByFrame()
+        until { guide.expected == "column:2:2" }
+        val other = guide.rect("column:6:1")!!
+        repeat(2) { rule.onRoot().performTouchInput { click(other.center) } }
+        rule.mainClock.advanceTimeBy(1600)
+        save("tutorial_solitaire_pt")
     }
     @Test fun introPt() = shot("intro_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         io.github.fershibli.megagames.ui.screens.IntroScreen(GameId.BURACO, onPlay = {}, onLearn = {}, onBack = {}, onSettings = {})

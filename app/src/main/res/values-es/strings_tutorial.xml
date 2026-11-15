@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">Siguiente</string>
+    <string name="tutorial_rules">Reglas</string>
+    <string name="tutorial_watch">Mira</string>
+    <string name="tutorial_well_done">¡Muy bien!</string>
+    <string name="tutorial_solitaire_goal">El objetivo: llevar todas las cartas a estas cuatro casillas, del As al Rey, un palo en cada una.</string>
+    <string name="tutorial_solitaire_ace">Un As sube directamente. Basta con tocar la carta: va sola al mejor lugar.</string>
+    <string name="tutorial_solitaire_two">Toca el 2♠. Sube encima de su As.</string>
+    <string name="tutorial_solitaire_six">En las columnas, las cartas bajan en orden y alternando colores: el 6 rojo va sobre el 7 negro.</string>
+    <string name="tutorial_solitaire_five">Toca el 5♠ negro. Va sobre el 6 rojo.</string>
+    <string name="tutorial_solitaire_stock">¿No hay jugadas? Toca el mazo para dar la vuelta a una carta nueva.</string>
+    <string name="tutorial_solitaire_king">Solo un Rey puede ir a una columna vacía. Toca el Rey.</string>
+    <string name="tutorial_solitaire_hint">¿No sabes qué jugar? Toca Pista.</string>
+    <string name="tutorial_solitaire_queen">El juego muestra una jugada: la Reina roja sobre el Rey negro. Toca la Reina.</string>
+    <string name="tutorial_solitaire_undo">¿Cambiaste de idea? Toca Deshacer para volver atrás la última jugada.</string>
+    <string name="tutorial_solitaire_end">¡Eso es todo! Lleva todas las cartas arriba, del As al Rey. ¡Buena partida!</string>
+</resources>

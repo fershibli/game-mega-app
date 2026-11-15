@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">Próximo</string>
+    <string name="tutorial_rules">Regras</string>
+    <string name="tutorial_watch">Veja</string>
+    <string name="tutorial_well_done">Muito bem!</string>
+    <string name="tutorial_solitaire_goal">O objetivo: levar todas as cartas para estas quatro casas, do Ás ao Rei, um naipe em cada.</string>
+    <string name="tutorial_solitaire_ace">Um Ás sobe direto. Basta tocar na carta: ela vai sozinha para o melhor lugar.</string>
+    <string name="tutorial_solitaire_two">Toque no 2♠. Ele sobe para cima do Ás.</string>
+    <string name="tutorial_solitaire_six">Nas colunas, as cartas descem em ordem, alternando as cores: o 6 vermelho vai sobre o 7 preto.</string>
+    <string name="tutorial_solitaire_five">Toque no 5♠ preto. Ele vai sobre o 6 vermelho.</string>
+    <string name="tutorial_solitaire_stock">Sem jogadas? Toque no monte para virar uma carta nova.</string>
+    <string name="tutorial_solitaire_king">Só um Rei pode ir para uma coluna vazia. Toque no Rei.</string>
+    <string name="tutorial_solitaire_hint">Em dúvida sobre o que jogar? Toque em Dica.</string>
+    <string name="tutorial_solitaire_queen">O jogo mostra uma jogada: a Dama vermelha sobre o Rei preto. Toque na Dama.</string>
+    <string name="tutorial_solitaire_undo">Mudou de ideia? Toque em Desfazer para voltar a última jogada.</string>
+    <string name="tutorial_solitaire_end">É isso! Leve todas as cartas para cima, do Ás ao Rei. Bom jogo!</string>
+</resources>
