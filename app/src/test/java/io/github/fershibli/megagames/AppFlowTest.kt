@@ -96,10 +96,61 @@ class AppFlowTest {
         assertNull(store.load())
     }
 
+    private fun awaitSave(store: SaveStore, game: GameId): SavedGame? {
+        var loaded: SavedGame? = null
+        repeat(100) { if (loaded == null) { Thread.sleep(20); loaded = store.load(game) } }
+        return loaded
+    }
+
+    @Test
+    fun everyGameKeepsItsOwnGameInProgress() {
+        val store = SaveStore(app).apply { clear() }
+        val reversi = SavedGame(GameId.REVERSI.key, Difficulty.HARD, JsonPrimitive("reversi"))
+        val sudoku = SavedGame(GameId.SUDOKU.key, Difficulty.EASY, JsonPrimitive("sudoku"))
+        store.save(reversi)
+        assertEquals(reversi, awaitSave(store, GameId.REVERSI))
+        store.save(sudoku)
+        assertEquals(sudoku, awaitSave(store, GameId.SUDOKU))
+        // Saving one game leaves the other alone; the one saved last is the one a cold start offers.
+        assertEquals(reversi, store.load(GameId.REVERSI))
+        assertEquals(sudoku, store.load())
+        assertEquals(setOf(GameId.REVERSI, GameId.SUDOKU), store.inProgress())
+        assertTrue(store.size() > 0)
+        // A new store (the app opened again) finds them all.
+        assertEquals(setOf(GameId.REVERSI, GameId.SUDOKU), SaveStore(app).inProgress())
+        store.clear(GameId.SUDOKU)
+        assertNull(store.load(GameId.SUDOKU))
+        assertEquals(reversi, store.load())
+        assertEquals(setOf(GameId.REVERSI), store.inProgress())
+        store.clear()
+        assertEquals(emptySet<GameId>(), store.inProgress())
+        assertEquals(0L, store.size())
+    }
+
+    @Test
+    fun theSingleSaveOfOlderVersionsBecomesThatGamesSave() {
+        SaveStore(app).clear()
+        val old = SavedGame(GameId.SOLITAIRE.key, Difficulty.MEDIUM, JsonPrimitive("old"))
+        val legacy = java.io.File(app.filesDir, "current_game.json")
+        legacy.writeText(AppJson.encodeToString(SavedGame.serializer(), old))
+        val store = SaveStore(app)
+        assertEquals(old, store.load(GameId.SOLITAIRE))
+        assertEquals(old, store.load())
+        assertEquals(setOf(GameId.SOLITAIRE), store.inProgress())
+        assertTrue(!legacy.exists())
+        store.clear()
+    }
+
     @Test
     fun corruptSaveIsIgnored() {
+        SaveStore(app).clear()
         java.io.File(app.filesDir, "current_game.json").writeText("{ not json")
         assertNull(SaveStore(app).load())
+        java.io.File(app.filesDir, "saves").mkdirs()
+        java.io.File(app.filesDir, "saves/reversi.json").writeText("{ not json")
+        assertNull(SaveStore(app).load())
+        assertNull(SaveStore(app).load(GameId.REVERSI))
+        SaveStore(app).clear()
     }
 
     @Test
@@ -253,13 +304,45 @@ class AppFlowTest {
         rule.onNodeWithText("Choose the difficulty").assertIsDisplayed()
         rule.onNodeWithText("Confirm").performClick()
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
-        // Settings from inside the game can abandon it.
+        // Going to the menu keeps the game: no question asked, nothing lost.
         rule.onNodeWithContentDescription("Settings").performClick()
         rule.onNodeWithText("Main menu").performClick()
-        rule.onNodeWithText("Yes, leave the game").performClick()
         rule.onNodeWithText("Choose your game").assertIsDisplayed()
-        Thread.sleep(100)
-        assertNull(saves.load())
+        assertTrue(awaitSave(saves, GameId.REVERSI) != null)
+        saves.clear()
+    }
+
+    @Test
+    fun aGameLeftInTheMiddleIsMarkedAndCanBeContinuedOrStartedAnew() {
+        val saves = SaveStore(app).also { it.clear() }
+        SettingsStore(app).save(Settings())
+        // A game of Reversi left after two moves (so it is told apart from a new one).
+        val board = io.github.fershibli.megagames.games.reversi.Reversi.initial().toList()
+        val state = io.github.fershibli.megagames.games.reversi.ReversiState(board)
+        saves.save(SavedGame(GameId.REVERSI.key, Difficulty.HARD, AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.reversi.ReversiState.serializer(), state)))
+        assertTrue(awaitSave(saves, GameId.REVERSI) != null)
+        // Not a cold start: the app is already on the list of games.
+        rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = false) }
+        rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi, game in progress"))
+        rule.onAllNodesWithContentDescription("Reversi, game in progress")[0].performClick()
+        rule.onNodeWithText("You have a game of Reversi in progress", substring = true).assertIsDisplayed()
+        // "Cancel" stays on the list and keeps the game.
+        rule.onNodeWithText("Cancel").performClick()
+        rule.onNodeWithText("Choose your game").assertIsDisplayed()
+        assertTrue(saves.load(GameId.REVERSI) != null)
+        // "Continue playing" goes straight back to the board, at the level it was started on.
+        rule.onAllNodesWithContentDescription("Reversi, game in progress")[0].performClick()
+        rule.onNodeWithText("Continue playing").performClick()
+        rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
+        assertEquals(Difficulty.HARD, saves.load(GameId.REVERSI)?.difficulty)
+        rule.onNodeWithContentDescription("Settings").performClick()
+        rule.onNodeWithText("Main menu").performClick()
+        // "New game" goes through the game's choices; the old game is only forgotten when the new one starts.
+        rule.onAllNodesWithContentDescription("Reversi, game in progress")[0].performClick()
+        rule.onNodeWithText("New game").performClick()
+        rule.onNodeWithText("Go to the game").assertIsDisplayed()
+        assertTrue(saves.load(GameId.REVERSI) != null)
+        saves.clear()
     }
 
     @Test
