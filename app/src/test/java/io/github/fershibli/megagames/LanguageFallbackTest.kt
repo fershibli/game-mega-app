@@ -71,8 +71,9 @@ class LanguageFallbackTest {
         rule.onNodeWithText("日本語").assertDoesNotExist()
         rule.onNodeWithText("Português").performClick()
         // The app around the game stays in Japanese; the rules of the game are in Portuguese.
-        rule.onNodeWithText(text(ja, R.string.choose_difficulty)).assertIsDisplayed()
         rule.onNodeWithText(text(pt, R.string.howto_crossword)).assertIsDisplayed()
+        rule.onNodeWithText(text(ja, R.string.go_to_game)).performClick()
+        rule.onNodeWithText(text(ja, R.string.choose_difficulty)).assertIsDisplayed()
         rule.onNodeWithText(text(ja, R.string.confirm)).performClick()
         // The crossword itself: Portuguese words and texts.
         waitForClueIn(pt)
@@ -92,7 +93,7 @@ class LanguageFallbackTest {
         rule.onAllNodesWithContentDescription(text(ja, R.string.game_crossword))[0].performClick()
         rule.onNodeWithText(text(ja, R.string.cancel)).performClick()
         rule.onNodeWithText(text(ja, R.string.language_fallback_message)).assertDoesNotExist()
-        rule.onNodeWithText(text(ja, R.string.choose_difficulty)).assertDoesNotExist()
+        rule.onNodeWithText(text(ja, R.string.go_to_game)).assertDoesNotExist()
         rule.onNodeWithText(text(ja, R.string.choose_game)).assertIsDisplayed()
     }
 
@@ -102,7 +103,7 @@ class LanguageFallbackTest {
         openApp(pt)
         rule.onAllNodesWithContentDescription(text(pt, R.string.game_crossword))[0].performClick()
         rule.onNodeWithText(text(pt, R.string.language_fallback_message)).assertDoesNotExist()
-        rule.onNodeWithText(text(pt, R.string.choose_difficulty)).assertIsDisplayed()
+        rule.onNodeWithText(text(pt, R.string.go_to_game)).assertIsDisplayed()
     }
 
     @Test

@@ -31,4 +31,7 @@
         <item quantity="other">%1$d people taking turns</item>
     </plurals>
     <string name="game_end">End of the game</string>
+    <string name="go_to_game">Go to the game</string>
+    <string name="mode_computer">Play with the computer</string>
+    <string name="mode_computer_desc">The computer plays for the other players. Next you choose the difficulty.</string>
 </resources>

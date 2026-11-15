@@ -64,7 +64,7 @@ Full rules and tips: **[User guide](docs/en/user-guide.md)**.
 
 ## Made for older adults
 
-- **Very simple navigation**: pick a game (picture only, no reading needed) → pick a difficulty on a scroll wheel → play. The gear (⚙) is always in the same corner.
+- **Very simple navigation**: pick a game (picture only, no reading needed) → answer a few short questions, one per screen (learn to play or go to the game, who plays, the difficulty) → play. The gear (⚙) is always in the same corner.
 - **Buttons where the thumb is**: almost every action button sits in the lower half of the screen. **Left-handed mode** mirrors them.
 - **One-hand mode**: the gear becomes a floating bubble that tucks into the screen edge; zoom works with **double tap** or **press-and-rotate**.
 - **Adjustable text size and piece/button size** (80 % to 160 %).

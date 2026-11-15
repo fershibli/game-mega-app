@@ -41,7 +41,7 @@ Requisiti: Android 6.0 o più recente e circa 5 MB di spazio libero. L’app non
 L’app ha solo tre tipi di schermata.
 
 1. **Scegli il gioco.** Una griglia di immagini, due per riga. Non c’è testo, ed è voluto: ogni immagine *è* il gioco (una griglia di sudoku, delle carte, un tavoliere di backgammon…). L’elenco scorre senza fine in entrambe le direzioni: continuando a scorrere, i giochi ricominciano da capo. Tocca un’immagine per sceglierla.
-2. **Scegli la difficoltà.** Una breve spiegazione del gioco e, sotto, una rotella con **Facile / Medio / Difficile**. La tua difficoltà predefinita è già selezionata. Gira la rotella (o tocca un livello) e premi **Conferma**. **Indietro** riporta ai giochi.
+2. **Poche domande brevi, una per schermata.** Prima l’immagine del gioco con una frase che lo descrive: **Impara a giocare** apre la pagina completa delle regole, e **Vai al gioco** prosegue. Poi, solo quando il gioco le prevede: con quali regole giocare, **Come vuoi giocare?** (con il computer, o più persone a turno su questo telefono) e la difficoltà, su una rotella con **Facile / Medio / Difficile**. Quello che hai scelto l’ultima volta, e la tua difficoltà predefinita, sono già selezionati: basta premere **Conferma**. **Indietro** torna alla schermata precedente.
 3. **Il gioco.** In alto c’è il nome del gioco e, nell’angolo in alto a destra, l’**ingranaggio ⚙**, esattamente dov’era nella prima schermata. I pulsanti del gioco (annulla, suggerimento…) sono in basso, vicino al pollice.
 
 L’**ingranaggio** apre le impostazioni. Durante una partita, le impostazioni mostrano anche tre grandi pulsanti in basso:
@@ -54,7 +54,7 @@ Durante una partita, il pulsante o il gesto **Indietro** del telefono apre (o ch
 
 ## Giocare insieme su un solo telefono
 
-Alcuni giochi si possono fare tra persone sedute insieme, a turno sullo stesso telefono: sulla ruota della difficoltà scegli **A turno su questo telefono**. Nessuno gioca contro il computer. Tra un turno e l’altro lo schermo dice chi gioca; la scacchiera non si gira mai. **Annulla mossa** toglie una mossa. Giochi: Reversi, Dama, Scacchi, Backgammon, Scacchi cinesi, Scacchi coreani, Shogi, Go, Gomoku, Quattro in fila, Mulino, Mancala, Ludo. Nel backgammon ognuno lancia i suoi dadi; il Ludo è per 2–4 persone e chiede prima **Quanti al tavolo?**
+Alcuni giochi si possono fare tra persone sedute insieme, a turno sullo stesso telefono: nella schermata **Come vuoi giocare?** scegli **A turno su questo telefono**. Nessuno gioca contro il computer. Tra un turno e l’altro lo schermo dice chi gioca; la scacchiera non si gira mai. **Annulla mossa** toglie una mossa. Giochi: Reversi, Dama, Scacchi, Backgammon, Scacchi cinesi, Scacchi coreani, Shogi, Go, Gomoku, Quattro in fila, Mulino, Mancala, Ludo. Nel backgammon ognuno lancia i suoi dadi; il Ludo è per 2–4 persone e chiede prima **Quanti al tavolo?**
 
 ## Salvataggio automatico e “Continuare?”
 

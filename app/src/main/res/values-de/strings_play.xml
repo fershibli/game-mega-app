@@ -31,4 +31,7 @@
         <item quantity="other">%1$d Personen, abwechselnd</item>
     </plurals>
     <string name="game_end">Ende der Partie</string>
+    <string name="go_to_game">Weiter zum Spiel</string>
+    <string name="mode_computer">Mit dem Computer spielen</string>
+    <string name="mode_computer_desc">Der Computer spielt für die anderen Spieler. Danach wählst du den Schwierigkeitsgrad.</string>
 </resources>

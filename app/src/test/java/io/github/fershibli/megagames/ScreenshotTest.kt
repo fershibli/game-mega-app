@@ -108,7 +108,7 @@ class ScreenshotTest {
     @Test fun solitaireBigText() = gameShot("game_solitaire_big_text", GameId.SOLITAIRE, settings = Settings(fontScale = 1.4f, pieceScale = 1.4f))
     @Test fun difficulty() = shot("difficulty") { DifficultyScreen(GameId.MAHJONG, Difficulty.MEDIUM, {}, {}, {}) }
     @Test fun takeTurnsPt() = shot("take_turns_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
-        DifficultyScreen(GameId.REVERSI, Difficulty.EASY, {}, {}, {}, onTogether = {}, initialTogether = true)
+        io.github.fershibli.megagames.ui.screens.ModeScreen(GameId.REVERSI, initialTogether = true, onConfirm = {}, onBack = {}, onSettings = {})
     }
     @Test fun handoffPt() = shot("handoff_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         val handoff = androidx.compose.runtime.remember { io.github.fershibli.megagames.ui.components.Handoff().apply { passTo(io.github.fershibli.megagames.ui.components.Seat("Jogador 2", androidx.compose.ui.graphics.Color(0xFFD9534F))) } }
@@ -117,6 +117,12 @@ class ScreenshotTest {
     @Test fun tablePt() = shot("table_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         val tables = listOf(io.github.fershibli.megagames.core.TableSize(2), io.github.fershibli.megagames.core.TableSize(4, R.string.reversi_dark))
         io.github.fershibli.megagames.ui.screens.TableScreen(GameId.BURACO, false, tables[1], {}, {}, {}, tables)
+    }
+    @Test fun introPt() = shot("intro_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.IntroScreen(GameId.BURACO, onPlay = {}, onLearn = {}, onBack = {}, onSettings = {})
+    }
+    @Test fun introBigTextPt() = shot("intro_big_text_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = 1.4f)) {
+        io.github.fershibli.megagames.ui.screens.IntroScreen(GameId.BURACO, onPlay = {}, onLearn = {}, onBack = {}, onSettings = {})
     }
     @Test fun levelMatchPt() = shot("level_match_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         io.github.fershibli.megagames.ui.screens.DifficultyScreen(GameId.BACKGAMMON, Difficulty.MEDIUM, {}, {}, {}, initialBestOf = 3)

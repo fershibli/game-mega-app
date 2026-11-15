@@ -40,7 +40,7 @@ El buraco es el rummy brasileño de escaleras y canastas, con dos barajas. En Mi
 - **Tu compañero del ordenador** añade a las escaleras compartidas, mantiene limpias las canastas limpias en Difícil y evita descartar cartas que el siguiente rival pueda usar.
 
 ## Por turnos en un solo teléfono
-Elige **Por turnos en este teléfono** en la pantalla de nivel y luego 2 o 4 en la mesa. Todos son personas (2 personas, o 4 por parejas: jugadores 1 y 3 contra 2 y 4). Tras cada descarte una pantalla tapa las cartas y pide pasar el teléfono al siguiente jugador, con su color y su símbolo; este toca el botón grande (“Listo, es mi turno”) para ver su mano.
+Elige **Por turnos en este teléfono** en la pantalla **¿Cómo quieres jugar?** y luego 2 o 4 en la mesa. Todos son personas (2 personas, o 4 por parejas: jugadores 1 y 3 contra 2 y 4). Tras cada descarte una pantalla tapa las cartas y pide pasar el teléfono al siguiente jugador, con su color y su símbolo; este toca el botón grande (“Listo, es mi turno”) para ver su mano.
 
 ## Niveles
 - **Fácil:** juega sin mucho cuidado, rara vez toma el descarte y descarta casi al azar.

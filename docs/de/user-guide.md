@@ -41,7 +41,7 @@ Voraussetzungen: Android 6.0 oder neuer, etwa 5 MB freier Speicher. Die App brau
 Die App hat nur drei Arten von Bildschirmen.
 
 1. **Wähle ein Spiel.** Ein Raster mit Bildern, zwei pro Reihe. Text gibt es dort mit Absicht nicht: Jedes Bild *ist* das Spiel (ein Sudoku-Gitter, Karten, ein Backgammon-Brett…). Die Liste lässt sich endlos in beide Richtungen scrollen — scrolle einfach weiter, dann kommen die Spiele wieder. Tippe auf ein Bild, um es zu wählen.
-2. **Wähle den Schwierigkeitsgrad.** Eine kurze Erklärung des Spiels und darunter ein Drehrad mit **Leicht / Mittel / Schwer**. Dein Standard-Schwierigkeitsgrad ist schon ausgewählt. Drehe am Rad (oder tippe auf eine Stufe) und drücke **Bestätigen**. **Zurück** führt wieder zu den Spielen.
+2. **Ein paar kurze Fragen, eine pro Bildschirm.** Zuerst das Bild des Spiels mit einem Satz dazu: **So wird gespielt** öffnet die ganze Seite mit den Regeln, und **Weiter zum Spiel** geht weiter. Danach, nur wenn das Spiel es anbietet: nach welchen Regeln, **Wie möchtest du spielen?** (mit dem Computer oder mit Menschen abwechselnd an diesem Telefon) und der Schwierigkeitsgrad auf einem Drehrad mit **Leicht / Mittel / Schwer**. Was du beim letzten Mal gewählt hast und dein Standard-Schwierigkeitsgrad sind schon ausgewählt: **Bestätigen** genügt. **Zurück** geht einen Schritt zurück.
 3. **Das Spiel.** Oben steht der Name des Spiels, und das **Zahnrad ⚙** ist in der oberen rechten Ecke, genau dort, wo es auch auf dem ersten Bildschirm war. Die Tasten des Spiels (Rückgängig, Tipp…) sind unten, nahe an deinem Daumen.
 
 Das **Zahnrad** öffnet die Einstellungen. Während eines Spiels zeigen die Einstellungen unten außerdem drei große Tasten:
@@ -54,7 +54,7 @@ Die **Zurück**-Taste bzw. -Geste des Telefons öffnet (oder schließt) während
 
 ## Zusammen an einem Telefon spielen
 
-Manche Spiele können Menschen, die zusammensitzen, abwechselnd am selben Telefon spielen: Wähle auf dem Schwierigkeitsrad **Abwechselnd an diesem Telefon**. Niemand spielt gegen den Computer. Zwischen den Zügen zeigt der Bildschirm, wer dran ist; das Brett dreht sich nie. **Rückgängig** nimmt einen Zug zurück. Spiele: Reversi, Dame, Schach, Backgammon, Chinesisches Schach, Koreanisches Schach, Shogi, Go, Gomoku, Vier in einer Reihe, Mühle, Mancala, Ludo. Beim Backgammon würfelt jeder selbst; Ludo ist für 2 bis 4 Personen und fragt vorher **Wie viele am Tisch?**
+Manche Spiele können Menschen, die zusammensitzen, abwechselnd am selben Telefon spielen: Wähle auf dem Bildschirm **Wie möchtest du spielen?** **Abwechselnd an diesem Telefon**. Niemand spielt gegen den Computer. Zwischen den Zügen zeigt der Bildschirm, wer dran ist; das Brett dreht sich nie. **Rückgängig** nimmt einen Zug zurück. Spiele: Reversi, Dame, Schach, Backgammon, Chinesisches Schach, Koreanisches Schach, Shogi, Go, Gomoku, Vier in einer Reihe, Mühle, Mancala, Ludo. Beim Backgammon würfelt jeder selbst; Ludo ist für 2 bis 4 Personen und fragt vorher **Wie viele am Tisch?**
 
 ## Automatisches Speichern und „Weiterspielen?“
 

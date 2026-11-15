@@ -110,10 +110,10 @@ class TrickCardsUiTest {
         rule.onNodeWithTag("bisca-table").assertIsDisplayed()
         rule.onNodeWithContentDescription("2♣").performClick()
         rule.onNodeWithText("Play card").performClick()
-        val saved = awaitSaved(store, BiscaState.serializer()) { it.tricks.isNotEmpty() && it.trick.isEmpty() }!!
-        // Both drew: three cards again, the stock two cards shorter.
-        assertEquals(listOf(3, 3), saved.hands.map { it.size })
-        assertEquals(biscaSample().stock.size - 2, saved.stock.size)
+        // Both drew: the stock is two cards shorter and there are three cards each again
+        // (the winner may already have led one of them to the next trick).
+        val saved = awaitSaved(store, BiscaState.serializer()) { it.tricks.isNotEmpty() && it.stock.size == biscaSample().stock.size - 2 }!!
+        assertEquals(6, saved.hands.sumOf { it.size } + saved.trick.size)
         store.clear()
     }
 

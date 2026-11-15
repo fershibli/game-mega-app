@@ -41,7 +41,7 @@ Requisitos: Android 6.0 ou mais novo, cerca de 5 MB livres. O app nunca precisa 
 O app tem só três tipos de tela.
 
 1. **Escolha seu jogo.** Uma grade de imagens, duas por linha. Não há texto de propósito: cada imagem *é* o jogo (um sudoku, cartas, um tabuleiro de gamão…). A lista rola sem fim nos dois sentidos — continue rolando e os jogos voltam a aparecer. Toque numa imagem para escolher.
-2. **Escolha a dificuldade.** Uma explicação curta do jogo e, embaixo, uma roleta com **Fácil / Médio / Difícil**. A sua dificuldade padrão já vem selecionada. Gire a roleta (ou toque num nível) e aperte **Confirmar**. **Voltar** retorna aos jogos.
+2. **Algumas perguntas curtas, uma por tela.** Primeiro a figura do jogo com uma frase sobre ele: **Aprenda a jogar** abre a página completa de regras, e **Seguir para o jogo** continua. Depois, só quando o jogo tem: com quais regras jogar, **Como você quer jogar?** (com o computador, ou pessoas revezando o celular) e a dificuldade, numa roleta com **Fácil / Médio / Difícil**. O que você escolheu da última vez, e a sua dificuldade padrão, já vêm selecionados: basta apertar **Confirmar**. **Voltar** retorna uma tela.
 3. **O jogo.** O nome do jogo fica no alto e a **engrenagem ⚙** no canto superior direito, exatamente onde estava na primeira tela. Os botões do jogo (desfazer, dica…) ficam embaixo, perto do polegar.
 
 A **engrenagem** abre as configurações. Dentro de um jogo, as configurações também mostram três botões grandes embaixo:
@@ -54,7 +54,7 @@ O botão/gesto **Voltar** do celular, dentro de um jogo, abre (ou fecha) as conf
 
 ## Jogando juntos no mesmo celular
 
-Alguns jogos também podem ser jogados por pessoas juntas, revezando o mesmo celular. Na roleta de dificuldade, que passa a se chamar **Como você quer jogar?**, escolha **Revezando celular** (no tablet: *Revezando tablet*). Ninguém joga contra o computador.
+Alguns jogos também podem ser jogados por pessoas juntas, revezando o mesmo celular. Na tela **Como você quer jogar?**, escolha **Revezando celular** (no tablet: *Revezando tablet*). Ninguém joga contra o computador.
 
 Jogos que podem ser jogados assim: Reversi, Damas, Xadrez, Gamão, Xadrez chinês, Xadrez coreano, Shogi, Go, Cinco em linha, Quatro em linha, Trilha, Mancala, Ludo. No Gamão cada jogador joga os próprios dados; o Ludo é para 2 a 4 pessoas; no Xadrez vale para uma partida normal, não para as partidas famosas. Nesses jogos de tabuleiro tudo fica à vista dos dois jogadores, então a tela entre as vezes só diz quem joga a seguir. **Desfazer** volta uma jogada, e no fim do Go os dois combinam na mesma tela quais pedras estão mortas.
 

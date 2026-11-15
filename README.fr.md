@@ -64,7 +64,7 @@ Règles complètes et astuces : **[Guide d’utilisation](docs/fr/user-guide.md)
 
 ## Pensée pour les personnes âgées
 
-- **Navigation très simple** : choisissez le jeu (images seulement, pas besoin de lire) → choisissez la difficulté sur une roue → jouez. La roue dentée (⚙) est toujours dans le même coin.
+- **Navigation très simple** : choisissez le jeu (images seulement, pas besoin de lire) → répondez à quelques questions courtes, une par écran (apprendre à jouer ou aller au jeu, qui joue, la difficulté) → jouez. La roue dentée (⚙) est toujours dans le même coin.
 - **Boutons à portée de pouce** : presque tous les boutons d’action sont dans la moitié basse de l’écran. Le **mode gaucher** les inverse.
 - **Mode une main** : la roue dentée devient une bulle flottante qui se cache dans le bord de l’écran ; le zoom fonctionne par **double toucher** ou **appuyer et tourner**.
 - **Taille du texte et des pièces/boutons réglable** (de 80 % à 160 %).

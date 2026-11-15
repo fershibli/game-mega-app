@@ -29,4 +29,7 @@
         <item quantity="other">%1$d人轮流玩</item>
     </plurals>
     <string name="game_end">对局结束</string>
+    <string name="go_to_game">进入游戏</string>
+    <string name="mode_computer">和电脑一起玩</string>
+    <string name="mode_computer_desc">其他位置由电脑来玩。接着选择难度。</string>
 </resources>

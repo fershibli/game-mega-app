@@ -46,7 +46,7 @@ Buraco is the Brazilian rummy of sequences and canastas, played with two decks. 
 - With six, or four each for themselves, the game uses **three decks** so the deck doesn't run out early. Every seat has its own color and symbol (● ▲ ■ ◆ ▼ ⬢).
 
 ## Taking turns on one phone
-Choose **Take turns on this phone** on the level screen, then how many sit at the table and how they play. Everybody is a person (2 people, or 4 people in pairs: players 1 and 3 against players 2 and 4). After each discard a cover hides the cards and asks to pass the phone to the next player, shown with their color and symbol; they tap the big button (“Ready, it is my turn”) to see their own hand.
+Choose **Take turns on this phone** on the **How do you want to play?** screen, then how many sit at the table and how they play. Everybody is a person (2 people, or 4 people in pairs: players 1 and 3 against players 2 and 4). After each discard a cover hides the cards and asks to pass the phone to the next player, shown with their color and symbol; they tap the big button (“Ready, it is my turn”) to see their own hand.
 
 ## Levels
 - **Easy:** plays casually, rarely takes the pile and discards almost at random.

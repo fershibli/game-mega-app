@@ -35,4 +35,7 @@
         <item quantity="other">%1$d человека по очереди</item>
     </plurals>
     <string name="game_end">Конец партии</string>
+    <string name="go_to_game">Перейти к игре</string>
+    <string name="mode_computer">Играть с компьютером</string>
+    <string name="mode_computer_desc">Компьютер играет за остальных игроков. Затем вы выберете сложность.</string>
 </resources>
