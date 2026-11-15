@@ -7,7 +7,7 @@ Um labirinto no papel, como os do jornal: desenhe o caminho do amiguinho redondo
 ## Como jogar
 
 - Deslize o dedo pelos corredores: a linha segue o seu dedo e o amiguinho anda na ponta dela. Ela nunca atravessa uma parede.
-- Deslize de volta sobre a linha para voltar passos, ou toque em um quadrado da linha para voltar até ele. **Desfazer** volta um passo.
+- Deslize de volta sobre a linha para voltar passos, ou toque em um quadrado da linha para voltar na direção dele, no máximo 3 passos por toque (assim um esbarrão sem querer não apaga tudo). **Desfazer** volta um passo.
 - Toque em um quadrado mais adiante no corredor para andar direto até ele (a linha para em cada cruzamento, onde você escolhe o caminho).
 - **Dica** mostra os próximos quadrados com anéis. Se a linha entrou num caminho errado, o anel grande mostra até onde voltar.
 - Sempre existe um único caminho até a casinha, e não há relógio. Quando você chega, o caminho todo se ilumina.

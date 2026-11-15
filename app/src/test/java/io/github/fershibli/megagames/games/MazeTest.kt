@@ -78,9 +78,14 @@ class MazeTest {
         var path = listOf(0)
         for (c in way.drop(1)) path = Maze.drag(open, n, path, c)
         assertEquals(way, path)
-        // Sliding back onto an earlier cell takes the steps back.
-        val back = Maze.drag(open, n, path, way[3])
-        assertEquals(way.take(4), back)
+        // Sliding back onto the cell before the end takes that step back.
+        assertEquals(way.dropLast(1), Maze.drag(open, n, path, way[way.size - 2]))
+        // Brushing a much earlier cell takes at most three steps back, not the whole path.
+        assertEquals(way.dropLast(Maze.MAX_BACK), Maze.drag(open, n, path, way[1]))
+        // Sliding back along the path, cell by cell, goes all the way.
+        var back = path
+        for (c in way.reversed().drop(1).take(6)) back = Maze.drag(open, n, back, c)
+        assertEquals(way.dropLast(6), back)
         // A cell behind a wall, far around by the corridors, does not pull the path.
         val far = (0 until n * n).first { it !in way && Maze.route(open, n, 0, it).size > 6 }
         assertEquals(listOf(0), Maze.drag(open, n, listOf(0), far))
@@ -96,8 +101,9 @@ class MazeTest {
             val moved = Maze.tap(open, n, listOf(0), target)
             val crossing = way.subList(1, way.indexOf(target)).any { Integer.bitCount(open[it]) > 2 }
             assertEquals(if (crossing) listOf(0) else way.take(way.indexOf(target) + 1), moved)
-            // Tapping a cell of the path cuts it back there.
-            assertEquals(way.take(2), Maze.tap(open, n, way.take(6), way[1]))
+            // Tapping a cell of the path goes back towards it, three steps at a time.
+            assertEquals(way.take(3), Maze.tap(open, n, way.take(6), way[1]))
+            assertEquals(way.take(4), Maze.tap(open, n, way.take(6), way[3]))
         }
     }
 

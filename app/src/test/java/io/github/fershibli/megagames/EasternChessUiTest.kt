@@ -2,6 +2,7 @@ package io.github.fershibli.megagames
 
 import androidx.compose.ui.test.click
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -39,6 +40,8 @@ class EasternChessUiTest {
         val restored = moves?.let { AppJson.encodeToJsonElement(EasternState.serializer(), EasternState(it, variant)) }
         val host = GameHost(game, Difficulty.EASY, restored, store, game.variant(variant)) {}
         rule.setContent { MegaGamesTheme(Settings()) { GameContent(game, host) } }
+        // The game is created off the main thread: wait for its board before touching it.
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag("${game.key}-board").fetchSemanticsNodes().isNotEmpty() }
         rule.waitForIdle()
         return store
     }

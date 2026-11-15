@@ -7,7 +7,7 @@ Ein Labyrinth auf Papier, wie in der Zeitung: Zeichne den Weg vom runden Freund 
 ## So wird gespielt
 
 - Fahre mit dem Finger durch die Gänge: Die Linie folgt dir, und der runde Freund geht an ihrer Spitze. Sie geht nie durch eine Wand.
-- Fahre auf der Linie zurück, um Schritte zurückzunehmen, oder tippe auf ein Feld der Linie, um dorthin zurückzugehen. **Rückgängig** geht einen Schritt zurück.
+- Fahre auf der Linie zurück, um Schritte zurückzunehmen, oder tippe auf ein Feld der Linie, um in seine Richtung zurückzugehen, höchstens 3 Schritte pro Berührung (so löscht eine versehentliche Berührung nicht alles). **Rückgängig** geht einen Schritt zurück.
 - Tippe auf ein Feld weiter vorn im Gang, um direkt dorthin zu gehen (die Linie hält an jeder Kreuzung, wo du den Weg wählst).
 - **Tipp** zeigt die nächsten Felder mit Ringen. Ist die Linie falsch abgebogen, zeigt der große Ring, bis wohin du zurückgehen musst.
 - Es gibt immer genau einen Weg zum Haus und keine Uhr. Bist du angekommen, leuchtet der ganze Weg auf.

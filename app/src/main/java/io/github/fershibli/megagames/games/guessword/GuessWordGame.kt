@@ -58,6 +58,7 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
+import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.games.words.WordKit
 import io.github.fershibli.megagames.ui.art.pxToSp
@@ -76,11 +77,11 @@ import io.github.fershibli.megagames.ui.theme.Palette
 import io.github.fershibli.megagames.ui.theme.currentMotion
 import io.github.fershibli.megagames.ui.theme.spec
 import io.github.fershibli.megagames.ui.theme.swing
-import kotlinx.serialization.Serializable
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.random.Random
+import kotlinx.serialization.Serializable
 
 @Serializable
 data class GuessWordState(
@@ -115,7 +116,10 @@ fun startWord(s: GuessWordState, index: Int, difficulty: Difficulty, random: Ran
 }
 
 fun newGuessWord(context: Context, language: AppLanguage, difficulty: Difficulty, random: Random = Random.Default): GuessWordState {
-    val words = GuessWord.round(WordKit.dictionary(context, language), difficulty, language, random)
+    // Words that suit the level and weren't asked lately; the whole dictionary if too few are left.
+    val words = GuessWord.round(WordKit.fresh(context, GameId.GUESSWORD.key, language, difficulty), difficulty, language, random)
+        .takeIf { it.size >= GuessWord.ROUND } ?: GuessWord.round(WordKit.dictionary(context, language), difficulty, language, random)
+    WordKit.remember(context, GameId.GUESSWORD.key, language, words.map { it.letters })
     return startWord(GuessWordState(language, words, GuessWord.petals(difficulty)), 0, difficulty, random)
 }
 

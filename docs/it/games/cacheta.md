@@ -1,6 +1,6 @@
 # Cacheta
 
-La cacheta è il ramino brasiliano delle tavole di casa: pesca, scarta e sii il primo ad avere tutte le carte in combinazione. In Mili Games giochi contro **1, 2 o 3 computer** (lo scegli all’inizio di ogni partita).
+La cacheta è il ramino brasiliano delle tavole di casa: pesca, scarta e sii il primo ad avere tutte le carte in combinazione. In Mili Games si gioca **in 2, 3 o 4**: prima di ogni partita l’app chiede **Quanti al tavolo?** (e ricorda la scelta). Giochi contro 1, 2 o 3 computer, oppure con altre persone **a turno su un solo telefono**.
 
 ## Le carte
 - Due mazzi da 52 carte (104 carte), senza jolly.
@@ -34,3 +34,6 @@ Dopo aver pescato hai 10 carte. Quando 9 sono in combinazione (la 10ª è l’ul
 - **Suggerimento** propone la carta da scartare. **Per seme / Per numero** ordina la mano.
 - Le coppie (due 7, o 7♥ 8♥) sono mezze combinazioni: tienile e scarta prima le carte isolate.
 - Guarda gli scarti: se un computer ha preso un 6♠, non dargli il 5♠ né il 7♠.
+
+## A turno su un solo telefono
+Scegli **A turno su questo telefono** nella schermata del livello, poi 2, 3 o 4 al tavolo: tutti sono persone e nessuno gioca contro il computer. Dopo ogni turno una copertura nasconde le carte e chiede di passare il telefono al giocatore successivo, con il suo colore e simbolo; tocca il pulsante grande («Pronto, tocca a me») per vedere la sua mano. Si gioca in senso antiorario, come si usa in Brasile. Nel Pife, se un altro giocatore può battere con la carta appena scartata, il telefono passa a lui per prenderla o lasciarla.

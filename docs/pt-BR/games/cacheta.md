@@ -1,6 +1,6 @@
 # Cacheta
 
-A cacheta é o jogo de mesa de cozinha que todo mundo conhece: compre, descarte e seja o primeiro a ter todas as cartas combinadas. No Mili Games você joga contra **1, 2 ou 3 computadores** (escolha no começo de cada partida).
+A cacheta é o jogo de mesa de cozinha que todo mundo conhece: compre, descarte e seja o primeiro a ter todas as cartas combinadas. No Mili Games jogam **2, 3 ou 4**: antes de cada partida o app pergunta **Quantos à mesa?** (e lembra a sua escolha). Você joga contra 1 a 3 computadores, ou com outras pessoas **revezando o celular**.
 
 ## As cartas
 - Dois baralhos de 52 cartas (104 cartas), sem os coringas (jokers).
@@ -34,3 +34,6 @@ Depois de comprar você fica com 10 cartas. Quando 9 delas estão combinadas (a 
 - **Dica** sugere a carta para descartar. **Por naipe / Por número** organiza sua mão.
 - Pares (dois 7, ou 7♥ 8♥) já são meio jogo: guarde-os e descarte primeiro as cartas sozinhas.
 - Olhe o lixo: se um computador pegou um 6♠, não entregue o 5♠ nem o 7♠.
+
+## Revezando o celular
+Escolha **Revezando celular** na tela de nível e depois 2, 3 ou 4 à mesa: todos são pessoas e ninguém joga contra o computador. Depois de cada vez, uma capa esconde as cartas e pede para passar o celular para o próximo jogador, mostrado com uma cor e um símbolo; ele toca no botão grande (“Pronto, é a minha vez”) para ver a própria mão. A ordem é anti-horária, como é costume no Brasil. No Pife, quando outra pessoa pode bater com a carta que acabou de ser descartada, o celular vai para ela pegar ou deixar passar.

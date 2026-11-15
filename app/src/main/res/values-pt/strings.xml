@@ -42,6 +42,7 @@
 
     <string name="resume">Voltar ao jogo</string>
     <string name="new_game">Novo jogo</string>
+    <string name="new_game_options">Novo jogo com outras opções</string>
     <string name="main_menu">Menu principal</string>
     <string name="leave_game_title">Sair deste jogo?</string>
     <string name="leave_game_message">Se você voltar ao menu principal, este jogo será abandonado e não poderá ser continuado.</string>
@@ -178,4 +179,24 @@
         <item quantity="many">%1$d cartas</item>
         <item quantity="other">%1$d cartas</item>
     </plurals>
+    <string name="options_match">Partida</string>
+    <string name="options_single">Jogo único</string>
+    <string name="options_best_of">Melhor de %d</string>
+    <string name="options_time">Tempo</string>
+    <string name="options_no_limit">Sem limite</string>
+    <string name="options_minutes">%d min</string>
+    <string name="match_score">Placar — você: %1$d · computador: %2$d · melhor de %3$d</string>
+    <string name="match_next">Próxima partida</string>
+    <string name="match_won">Você venceu a série!</string>
+    <string name="match_lost">O computador venceu a série</string>
+    <string name="time_up">O tempo acabou!</string>
+    <string name="time_left">Tempo restante: %s</string>
+    <string name="section_vibration">Vibração</string>
+    <string name="vibrate_moves">Nos jogos</string>
+    <string name="vibrate_moves_desc">Uma vibração leve ao tocar no tabuleiro ou numa carta.</string>
+    <string name="vibrate_buttons">Botões e menus</string>
+    <string name="vibrate_buttons_desc">Uma vibração nos botões, chaves e na roleta de nível.</string>
+    <string name="vibrate_alerts">Fim de jogo</string>
+    <string name="vibrate_alerts_desc">Uma vibração diferente quando você ganha ou perde.</string>
+    <string name="learn_to_play">Aprenda a jogar</string>
 </resources>

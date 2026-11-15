@@ -1,6 +1,6 @@
 # Cacheta
 
-La cacheta es el rummy brasileño de toda la vida: roba, descarta y sé el primero en tener todas las cartas en grupos. En Mili Games juegas contra **1, 2 o 3 jugadores del ordenador** (lo eliges al empezar cada partida).
+La cacheta es el rummy brasileño de toda la vida: roba, descarta y sé el primero en tener todas las cartas en grupos. En Mili Games juegan **2, 3 o 4**: antes de cada partida la app pregunta **¿Cuántos en la mesa?** (y recuerda tu elección). Juegas contra 1 a 3 jugadores del ordenador, o con otras personas **por turnos en un solo teléfono**.
 
 ## Las cartas
 - Dos barajas de 52 cartas (104 cartas), sin comodines de figura (jokers).
@@ -34,3 +34,6 @@ Tras robar tienes 10 cartas. Cuando 9 forman grupos (la 10.ª es tu último desc
 - **Pista** sugiere qué descartar. **Por palo / Por número** ordena tu mano.
 - Las parejas (dos 7, o 7♥ 8♥) son medio grupo: guárdalas y tira primero las cartas sueltas.
 - Mira el descarte: si el ordenador cogió un 6♠, no le des el 5♠ ni el 7♠.
+
+## Por turnos en un solo teléfono
+Elige **Por turnos en este teléfono** en la pantalla de nivel y luego 2, 3 o 4 en la mesa: todos son personas y nadie juega contra el ordenador. Tras cada turno una pantalla tapa las cartas y pide pasar el teléfono al siguiente jugador, con su color y su símbolo; este toca el botón grande (“Listo, es mi turno”) para ver su mano. Se juega en sentido antihorario, como es costumbre en Brasil. En Pife, si otro jugador puede batir con la carta recién tirada, el teléfono pasa a él para tomarla o dejarla.

@@ -30,15 +30,44 @@ data class GameVariant(val key: String, @StringRes val name: Int, @StringRes val
 /**
  * A number of seats a game can be played with, and an optional note about it ("in pairs").
  * Against the computer, the other seats are computer players; taking turns, they are people.
+ * [teams] splits the seats into that many teams (0 = the game's usual way), so the same number
+ * of seats can be offered both in pairs and each for themselves.
  */
-data class TableSize(val seats: Int, @StringRes val note: Int? = null)
+data class TableSize(val seats: Int, @StringRes val note: Int? = null, val teams: Int = 0)
 
 /**
  * How a game is set up before it starts: against the computer or [together] (people taking
- * turns on this device), and with how many [seats] at the table (0 = the game's usual number).
+ * turns on this device), and with how many [seats] at the table (0 = the game's usual number), split into how many
+ * [teams] (0 = the game's usual way).
+ *
+ * Against the computer a game can be one of a match of [bestOf] games (3 or 5; [wins] and
+ * [losses] so far are kept with each game so a resumed match goes on), and a game played alone
+ * can be against the clock: [minutes] to finish it (0 = no limit).
  */
 @Serializable
-data class PlaySetup(val together: Boolean = false, val seats: Int = 0)
+data class PlaySetup(
+    val together: Boolean = false,
+    val seats: Int = 0,
+    val teams: Int = 0,
+    val bestOf: Int = 1,
+    val wins: Int = 0,
+    val losses: Int = 0,
+    val minutes: Int = 0,
+) {
+    /** Games to win to take the match. */
+    val toWin get() = bestOf / 2 + 1
+    val matchOver get() = wins >= toWin || losses >= toWin
+}
+
+/** Matches of 3 or 5 are offered in games played against someone. */
+val GameId.offersMatches get() = takeTurns
+
+/** A time limit is offered in games played alone that have levels (puzzles, solitaires...). */
+val GameId.offersTimeLimit get() = hasDifficulty && !takeTurns && category != GameCategory.CALM_ACTION && category != GameCategory.PASTIMES
+
+/** The match lengths and time limits (minutes; 0 = none) offered. */
+val MATCH_LENGTHS = listOf(1, 3, 5)
+val TIME_LIMITS = listOf(0, 5, 10, 20, 30)
 
 /**
  * Every game shipped in the app. The [key] is persisted in save files, so it must never change
@@ -64,7 +93,11 @@ enum class GameId(
 ) {
     SUDOKU("sudoku", R.string.game_sudoku, R.string.howto_sudoku, GameCategory.PUZZLES),
     SOLITAIRE("solitaire", R.string.game_solitaire, R.string.howto_solitaire, GameCategory.CARDS),
-    BURACO("buraco", R.string.game_buraco, R.string.howto_buraco, GameCategory.CARDS),
+    BURACO("buraco", R.string.game_buraco, R.string.howto_buraco, GameCategory.CARDS, takeTurns = true, tables = listOf(
+        TableSize(2), TableSize(3, R.string.buraco_table_alone, 3), TableSize(4, R.string.buraco_table_pairs, 2),
+        TableSize(4, R.string.buraco_table_alone, 4), TableSize(6, R.string.buraco_table_three_pairs, 3),
+        TableSize(6, R.string.buraco_table_trios, 2),
+    )),
     BACKGAMMON("backgammon", R.string.game_backgammon, R.string.howto_backgammon, GameCategory.BOARD, takeTurns = true),
     MAHJONG("mahjong", R.string.game_mahjong, R.string.howto_mahjong, GameCategory.PUZZLES),
     REVERSI("reversi", R.string.game_reversi, R.string.howto_reversi, GameCategory.BOARD, takeTurns = true),
@@ -75,8 +108,8 @@ enum class GameId(
     CHECKERS("checkers", R.string.game_checkers, R.string.howto_checkers, GameCategory.BOARD, io.github.fershibli.megagames.games.checkers.CheckersRules.VARIANTS, takeTurns = true),
     CHESS("chess", R.string.game_chess, R.string.howto_chess, GameCategory.BOARD, listOf(GameVariant("standard", R.string.chess_variant_standard, R.string.chess_variant_standard_desc), GameVariant("famous", R.string.chess_variant_famous, R.string.chess_variant_famous_desc, takeTurns = false)), takeTurns = true),
     PET("pet", R.string.game_pet, R.string.howto_pet, GameCategory.PASTIMES, hasDifficulty = false),
-    CACHETA("cacheta", R.string.game_cacheta, R.string.howto_cacheta, GameCategory.CARDS, listOf(GameVariant("classic", R.string.cacheta_variant_classic, R.string.cacheta_variant_classic_desc), GameVariant("wild", R.string.cacheta_variant_wild, R.string.cacheta_variant_wild_desc), GameVariant("pife", R.string.cacheta_variant_pife, R.string.cacheta_variant_pife_desc))),
-    TRUCO("truco", R.string.game_truco, R.string.howto_truco, GameCategory.CARDS, listOf(GameVariant("paulista", R.string.truco_variant_paulista, R.string.truco_variant_paulista_desc), GameVariant("mineiro", R.string.truco_variant_mineiro, R.string.truco_variant_mineiro_desc))),
+    CACHETA("cacheta", R.string.game_cacheta, R.string.howto_cacheta, GameCategory.CARDS, listOf(GameVariant("classic", R.string.cacheta_variant_classic, R.string.cacheta_variant_classic_desc), GameVariant("wild", R.string.cacheta_variant_wild, R.string.cacheta_variant_wild_desc), GameVariant("pife", R.string.cacheta_variant_pife, R.string.cacheta_variant_pife_desc)), takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
+    TRUCO("truco", R.string.game_truco, R.string.howto_truco, GameCategory.CARDS, listOf(GameVariant("paulista", R.string.truco_variant_paulista, R.string.truco_variant_paulista_desc), GameVariant("mineiro", R.string.truco_variant_mineiro, R.string.truco_variant_mineiro_desc)), takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.truco_table_pairs))),
     CUBE("cube", R.string.game_cube, R.string.howto_cube, GameCategory.PUZZLES, listOf(GameVariant("2", R.string.cube_variant_2, R.string.cube_variant_2_desc), GameVariant("3", R.string.cube_variant_3, R.string.cube_variant_3_desc), GameVariant("4", R.string.cube_variant_4, R.string.cube_variant_4_desc), GameVariant("5", R.string.cube_variant_5, R.string.cube_variant_5_desc))),
     BLOCKS("blocks", R.string.game_blocks, R.string.howto_blocks, GameCategory.PUZZLES),
     PAIRS("pairs", R.string.game_pairs, R.string.howto_pairs, GameCategory.PUZZLES),

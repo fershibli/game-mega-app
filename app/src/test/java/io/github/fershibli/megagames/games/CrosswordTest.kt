@@ -53,6 +53,38 @@ class CrosswordTest {
     }
 
     @Test
+    fun portugueseHasFiveHundredWordsEachWithALevel() {
+        val words = dictionary(AppLanguage.PORTUGUESE)
+        assertTrue("${words.size} words", words.size >= 500)
+        assertTrue(words.all { it.level in 1..3 })
+        for (level in 1..3) assertTrue("level $level: ${words.count { it.level == level }}", words.count { it.level == level } >= 80)
+    }
+
+    @Test
+    fun levelsAndRecentWordsShapeThePool() {
+        val words = dictionary(AppLanguage.PORTUGUESE)
+        assertTrue(Crossword.poolFor(words, Difficulty.EASY).none { it.level == 3 })
+        assertTrue(Crossword.poolFor(words, Difficulty.HARD).none { it.level == 1 })
+        assertEquals(words.size, Crossword.poolFor(words, Difficulty.MEDIUM).size)
+        // Words of the last games are left out of the next one.
+        val first = Crossword.generate(words, 11, 11, Random(5), Difficulty.MEDIUM)
+        val recent = first.map { it.letters }.toSet()
+        val next = Crossword.generate(words, 11, 11, Random(6), Difficulty.MEDIUM, recent)
+        assertTrue(next.none { it.letters in recent })
+        // Unmarked dictionaries (the other languages, for now) keep every word at every level.
+        val unmarked = dictionary(AppLanguage.ENGLISH)
+        assertEquals(unmarked.size, Crossword.poolFor(unmarked, Difficulty.HARD).size)
+    }
+
+    @Test
+    fun gamesVaryFromOneToTheNext() {
+        val words = dictionary(AppLanguage.PORTUGUESE)
+        val firsts = (1..8).map { seed -> Crossword.generate(words, 11, 11, Random(seed), Difficulty.MEDIUM).map { it.letters }.toSet() }
+        // Two games in a row share only a few words, even without the memory of recent words.
+        for (k in 1 until firsts.size) assertTrue((firsts[k] intersect firsts[k - 1]).size <= 4)
+    }
+
+    @Test
     fun generatedGridsAreConsistent() {
         for (lang in AppLanguage.entries.filter { it != AppLanguage.SYSTEM }) for (d in Difficulty.entries) for (seed in 1..3) {
             val size = Crossword.sizeFor(d, lang.syllabic)

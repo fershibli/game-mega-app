@@ -1,7 +1,5 @@
 package io.github.fershibli.megagames.games.solitaire
 
-import io.github.fershibli.megagames.ui.theme.wait
-import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,8 +17,11 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.withTransform
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.rememberTextMeasurer
 import io.github.fershibli.megagames.R
@@ -43,6 +44,9 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalGameLanguage
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
+import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
 
 @Composable
@@ -124,7 +128,12 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
     var hintMove by remember { mutableStateOf<Move?>(null) }
     var noHint by remember { mutableStateOf(false) }
     var autoFinishing by remember { mutableStateOf(false) }
-    val leftHanded = LocalSettings.current.leftHanded
+    val settings = LocalSettings.current
+    val leftHanded = settings.leftHanded
+    // The table can be turned a quarter turn, to be played with the phone lying down: the seven
+    // columns then run along the long side of the screen and the cards are much bigger.
+    val sideways = settings.solitaireSideways
+    val updateSettings = LocalUpdateSettings.current
     val french = LocalGameLanguage.current == AppLanguage.FRENCH
 
     fun commit(next: SolitaireState, moved: Card?) {
@@ -184,6 +193,10 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
                         noHint = hintMove == null
                     }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY)
                 }
+                BigButton(
+                    stringResource(R.string.backgammon_rotate), { updateSettings(settings.copy(solitaireSideways = !sideways)) },
+                    icon = AppIcon.ROTATE, style = ButtonStyle.SECONDARY, compact = true,
+                )
             }
         },
     ) {
@@ -192,51 +205,68 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
         Canvas(
             Modifier
                 .fillMaxSize()
-                .pointerInput(s, leftHanded) {
-                    detectTapGestures { pos -> onTap(TableLayout(size.width.toFloat(), size.height.toFloat(), leftHanded, s).hit(pos)) }
+                .testTag("solitaire-table")
+                .pointerInput(s, leftHanded, sideways) {
+                    detectTapGestures { pos ->
+                        val w = size.width.toFloat()
+                        val h = size.height.toFloat()
+                        // Sideways, the table's top is the screen's left edge (see the drawing below).
+                        val table = if (sideways) TableLayout(h, w, leftHanded, s) else TableLayout(w, h, leftHanded, s)
+                        onTap(table.hit(if (sideways) Offset(h - pos.y, pos.x) else pos))
+                    }
                 },
         ) {
-            val l = TableLayout(size.width, size.height, leftHanded, s)
             drawRect(Brush.radialGradient(listOf(p.felt, p.feltDark), center, size.maxDimension * 0.75f))
-            // Slots
-            for (f in 0 until 4) {
-                val r = l.foundationSlot(f)
-                drawCardSlot(r.topLeft, r.size, p.cardFace)
-                text(measurer, "A", r.center, p.cardFace.copy(alpha = 0.45f), pxToSp(r.width * 0.45f))
-            }
-            for (c in 0 until 7) l.columnSlot(c).let { drawCardSlot(it.topLeft, it.size, p.cardFace) }
-            // Stock
-            val sr = l.stockRect
-            if (s.stock.isNotEmpty()) {
-                val layers = minOf(3, (s.stock.size + 9) / 10)
-                for (k in layers - 1 downTo 0) drawCardBack(sr.topLeft + Offset(k * 2f, -k * 2f), sr.size, p)
-                text(measurer, s.stock.size.toString(), Offset(sr.center.x, sr.bottom + l.gap * 2.2f), p.cardFace, pxToSp(l.cardW * 0.22f))
-            } else {
-                drawCardSlot(sr.topLeft, sr.size, p.cardFace, highlighted = s.canRecycle)
-                if (s.canRecycle) {
-                    drawCircle(p.cardFace, sr.width * 0.28f, sr.center, style = Stroke(sr.width * 0.06f))
+            fun DrawScope.drawTable(l: TableLayout) {
+                // Slots
+                for (f in 0 until 4) {
+                    val r = l.foundationSlot(f)
+                    drawCardSlot(r.topLeft, r.size, p.cardFace)
+                    text(measurer, "A", r.center, p.cardFace.copy(alpha = 0.45f), pxToSp(r.width * 0.45f))
+                }
+                for (c in 0 until 7) l.columnSlot(c).let { drawCardSlot(it.topLeft, it.size, p.cardFace) }
+                // Stock
+                val sr = l.stockRect
+                if (s.stock.isNotEmpty()) {
+                    val layers = minOf(3, (s.stock.size + 9) / 10)
+                    for (k in layers - 1 downTo 0) drawCardBack(sr.topLeft + Offset(k * 2f, -k * 2f), sr.size, p)
+                    text(measurer, s.stock.size.toString(), Offset(sr.center.x, sr.bottom + l.gap * 2.2f), p.cardFace, pxToSp(l.cardW * 0.22f))
+                } else {
+                    drawCardSlot(sr.topLeft, sr.size, p.cardFace, highlighted = s.canRecycle)
+                    if (s.canRecycle) {
+                        drawCircle(p.cardFace, sr.width * 0.28f, sr.center, style = Stroke(sr.width * 0.06f))
+                    }
+                }
+                // Cards
+                val hintCard = hintMove?.let { Solitaire.pickUp(s, it.from, it.cardIndex)?.first() }
+                for ((rect, hit) in l.cards) {
+                    hit as Hit.Card
+                    val (card, faceUp) = when (val pile = hit.pile) {
+                        Pile.Waste -> s.waste[hit.index] to true
+                        is Pile.Foundation -> s.foundations[pile.index][hit.index] to true
+                        is Pile.Column -> s.tableau[pile.index][hit.index].let { it.card to it.faceUp }
+                    }
+                    drawCard(card, rect.topLeft, rect.size, p, measurer, faceUp = faceUp, selected = card == flash || card == hintCard, french = french)
+                    if (card == refused) drawRoundRect(p.danger, rect.topLeft, rect.size, CornerRadius(rect.width * 0.1f), style = Stroke(rect.width * 0.07f))
+                }
+                hintMove?.let { m ->
+                    val target = when (val t = m.to) {
+                        is Pile.Foundation -> l.foundationSlot(t.index)
+                        is Pile.Column -> l.cards.lastOrNull { (it.second as Hit.Card).pile == t }?.first ?: l.columnSlot(t.index)
+                        Pile.Waste -> null
+                    }
+                    target?.let { drawRoundRect(p.hint, it.topLeft, it.size, CornerRadius(it.width * 0.1f), style = Stroke(it.width * 0.08f)) }
                 }
             }
-            // Cards
-            val hintCard = hintMove?.let { Solitaire.pickUp(s, it.from, it.cardIndex)?.first() }
-            for ((rect, hit) in l.cards) {
-                hit as Hit.Card
-                val (card, faceUp) = when (val pile = hit.pile) {
-                    Pile.Waste -> s.waste[hit.index] to true
-                    is Pile.Foundation -> s.foundations[pile.index][hit.index] to true
-                    is Pile.Column -> s.tableau[pile.index][hit.index].let { it.card to it.faceUp }
+            val canvasHeight = size.height
+            withTransform({
+                // A table point (x, y) lands on the screen at (y, height - x): a quarter turn
+                // counterclockwise, read by turning the phone a quarter turn clockwise.
+                if (sideways) {
+                    translate(0f, canvasHeight)
+                    rotate(-90f, Offset.Zero)
                 }
-                drawCard(card, rect.topLeft, rect.size, p, measurer, faceUp = faceUp, selected = card == flash || card == hintCard, french = french)
-                if (card == refused) drawRoundRect(p.danger, rect.topLeft, rect.size, CornerRadius(rect.width * 0.1f), style = Stroke(rect.width * 0.07f))
-            }
-            hintMove?.let { m ->
-                val target = when (val t = m.to) {
-                    is Pile.Foundation -> l.foundationSlot(t.index)
-                    is Pile.Column -> l.cards.lastOrNull { (it.second as Hit.Card).pile == t }?.first ?: l.columnSlot(t.index)
-                    Pile.Waste -> null
-                }
-                target?.let { drawRoundRect(p.hint, it.topLeft, it.size, CornerRadius(it.width * 0.1f), style = Stroke(it.width * 0.08f)) }
-            }
+            }) { drawTable(if (sideways) TableLayout(size.height, size.width, leftHanded, s) else TableLayout(size.width, size.height, leftHanded, s)) }
         }
     }
 }

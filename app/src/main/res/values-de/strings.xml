@@ -45,6 +45,7 @@
     <!-- In-game common -->
     <string name="resume">Zurück zum Spiel</string>
     <string name="new_game">Neues Spiel</string>
+    <string name="new_game_options">Neues Spiel, andere Optionen</string>
     <string name="main_menu">Hauptmenü</string>
     <string name="leave_game_title">Dieses Spiel verlassen?</string>
     <string name="leave_game_message">Wenn du zum Hauptmenü gehst, wird dieses Spiel abgebrochen und kann nicht fortgesetzt werden.</string>
@@ -191,4 +192,24 @@
         <item quantity="one">%1$d Karte</item>
         <item quantity="other">%1$d Karten</item>
     </plurals>
+    <string name="options_match">Partie</string>
+    <string name="options_single">Einzelspiel</string>
+    <string name="options_best_of">Best of %d</string>
+    <string name="options_time">Zeit</string>
+    <string name="options_no_limit">Ohne Limit</string>
+    <string name="options_minutes">%d Min.</string>
+    <string name="match_score">Stand — du: %1$d · Computer: %2$d · Best of %3$d</string>
+    <string name="match_next">Nächste Partie</string>
+    <string name="match_won">Du hast die Serie gewonnen!</string>
+    <string name="match_lost">Der Computer hat die Serie gewonnen</string>
+    <string name="time_up">Die Zeit ist um!</string>
+    <string name="time_left">Verbleibende Zeit: %s</string>
+    <string name="section_vibration">Vibration</string>
+    <string name="vibrate_moves">In den Spielen</string>
+    <string name="vibrate_moves_desc">Ein leichtes Vibrieren beim Berühren des Spielbretts oder einer Karte.</string>
+    <string name="vibrate_buttons">Tasten und Menüs</string>
+    <string name="vibrate_buttons_desc">Ein Vibrieren bei Tasten, Schaltern und dem Stufenrad.</string>
+    <string name="vibrate_alerts">Spielende</string>
+    <string name="vibrate_alerts_desc">Ein anderes Vibrieren, wenn du gewinnst oder verlierst.</string>
+    <string name="learn_to_play">So wird gespielt</string>
 </resources>

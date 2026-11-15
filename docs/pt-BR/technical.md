@@ -72,7 +72,7 @@ app/src/main/java/io/github/fershibli/megagames/
 └── games/
     ├── cards/  sudoku/  solitaire/  buraco/  backgammon/  mahjong/
     └── reversi/  crossword/  pipes/  connect/  dots/
-app/src/main/assets/crossword/   en.txt pt.txt es.txt fr.txt zh.txt   (palavra|dica)
+app/src/main/assets/crossword/   en.txt pt.txt es.txt fr.txt zh.txt   (palavra|dica, opcionalmente |nível 1-3)
 app/src/main/res/values*/        textos em 5 idiomas
 app/src/test/                     testes de unidade, fluxo da interface, traduções, telas e benchmarks
 ```

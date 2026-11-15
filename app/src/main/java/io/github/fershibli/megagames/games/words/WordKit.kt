@@ -2,6 +2,7 @@ package io.github.fershibli.megagames.games.words
 
 import android.content.Context
 import io.github.fershibli.megagames.core.AppLanguage
+import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.games.crossword.Crossword
 import io.github.fershibli.megagames.games.crossword.WordEntry
 import io.github.fershibli.megagames.games.crossword.dictionaryFile
@@ -41,6 +42,30 @@ object WordKit {
     /** The dictionary of [language], parsed and normalized. */
     fun dictionary(context: Context, language: AppLanguage): List<WordEntry> =
         Crossword.parse(context.assets.open(dictionaryFile(language)).bufferedReader().use { it.readText() }, language)
+
+    /** How many of the last words of each game are kept out of its next games, so they don't keep coming back. */
+    private const val RECENT_WORDS = 60
+
+    private fun recentKey(game: String, language: AppLanguage) = "$game.${language.name}"
+
+    /** The words [game] used lately in [language], oldest first. */
+    fun recent(context: Context, game: String, language: AppLanguage): List<List<String>> =
+        context.getSharedPreferences("recent_words", Context.MODE_PRIVATE).getString(recentKey(game, language), null)
+            .orEmpty().lines().filter { it.isNotEmpty() }.map { it.split('\t') }
+
+    /** Adds the [words] of a new game of [game] to its recent ones. */
+    fun remember(context: Context, game: String, language: AppLanguage, words: List<List<String>>) {
+        val all = (recent(context, game, language) + words).takeLast(RECENT_WORDS)
+        context.getSharedPreferences("recent_words", Context.MODE_PRIVATE).edit()
+            .putString(recentKey(game, language), all.joinToString("\n") { it.joinToString("\t") }).apply()
+    }
+
+    /**
+     * The dictionary words for a new game of [game]: those that suit [difficulty] (when the
+     * dictionary marks levels), leaving out the ones the game used lately while enough remain.
+     */
+    fun fresh(context: Context, game: String, language: AppLanguage, difficulty: Difficulty): List<WordEntry> =
+        Crossword.poolFor(dictionary(context, language), difficulty, recent(context, game, language).toSet())
 
     /** The word as it is shown in lists and messages (Arabic letters join up again). */
     fun text(letters: List<String>) = letters.joinToString("")

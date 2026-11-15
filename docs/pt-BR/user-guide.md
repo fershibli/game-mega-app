@@ -62,6 +62,12 @@ Quando acaba a vez, a tela esconde o que é daquele jogador (por exemplo as cart
 
 Os jogos que aceitam um número diferente de pessoas perguntam antes **Quantos à mesa?**, já com a última escolha marcada.
 
+## Melhor de 3, melhor de 5 e contra o relógio
+
+Na tela de nível, os jogos contra o computador (gamão, damas, xadrez, buraco, truco...) mostram **Partida: Jogo único / Melhor de 3 / Melhor de 5**. Numa série, o placar aparece no fim de cada jogo e o botão **Próxima partida** continua a série; ganha quem vencer a maioria dos jogos. Se o app for fechado no meio, o placar volta junto com o jogo salvo.
+
+Os jogos de jogar sozinho (sudoku, paciência, palavras cruzadas...) mostram **Tempo: Sem limite / 5 / 10 / 20 / 30 min**, em qualquer nível. Com tempo, um relógio no alto conta para trás (fica vermelho no último minuto) e para enquanto as configurações estão abertas ou o app está em segundo plano; se o tempo acabar, a partida é perdida. O app lembra a última escolha de cada jogo.
+
 ## Salvamento automático e "continuar?"
 
 Cada jogada é salva na hora, no próprio celular. Se o app fechar — sem querer, por uma ligação, porque a bateria acabou — da próxima vez que abrir ele vai direto para aquele jogo e pergunta:
@@ -152,7 +158,7 @@ Cada sudoku é gerado na hora e tem exatamente **uma** solução.
 
 ### Buraco
 
-Buraco brasileiro para dois: você contra o computador.
+Buraco brasileiro para dois (você contra o computador) ou para quatro em duplas (você e um parceiro computador contra dois computadores), ou revezando o celular. Regras completas, o jogo a quatro e dicas: [Buraco](games/buraco.md).
 
 **Cartas:** dois baralhos de 52 cartas (104 cartas). **Todo 2 é curinga.**
 
@@ -227,7 +233,9 @@ Coloque uma pedra de forma que uma ou mais pedras do computador fiquem presas, e
 
 ### Palavras cruzadas
 
-Uma **cruzadinha nova é gerada** a cada partida, a partir de um dicionário de palavras do dia a dia com dicas simples, no idioma do app.
+Uma **cruzadinha nova é gerada** a cada partida, a partir de um dicionário de palavras do dia a dia com dicas simples, no idioma do app. As palavras das últimas partidas ficam de fora da próxima, para não repetir.
+
+**Níveis:** no **Fácil** a primeira letra de cada palavra já vem preenchida (em azul) e aparecem as letras para tocar; no **Médio** a grade é maior, com mais palavras; no **Difícil** a grade é a maior, os erros não ficam vermelhos e, em português, entram palavras menos comuns (o dicionário em português marca cada palavra como fácil, média ou difícil).
 
 **Como jogar:** toque num quadradinho para escolher a palavra; toque de novo no mesmo para trocar entre horizontal e vertical. A dica aparece embaixo, entre ◀ e ▶ (palavra anterior / próxima). Digite com as letras embaixo: depois de cada letra o cursor avança. A borracha apaga uma letra. **Dica** preenche o quadradinho selecionado.
 

@@ -118,9 +118,18 @@ class ScreenshotTest {
         val tables = listOf(io.github.fershibli.megagames.core.TableSize(2), io.github.fershibli.megagames.core.TableSize(4, R.string.reversi_dark))
         io.github.fershibli.megagames.ui.screens.TableScreen(GameId.BURACO, false, tables[1], {}, {}, {}, tables)
     }
+    @Test fun levelMatchPt() = shot("level_match_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.DifficultyScreen(GameId.BACKGAMMON, Difficulty.MEDIUM, {}, {}, {}, initialBestOf = 3)
+    }
+    @Test fun levelClockPt() = shot("level_clock_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.DifficultyScreen(GameId.SUDOKU, Difficulty.EASY, {}, {}, {}, initialMinutes = 10)
+    }
+    @Test fun howToSolitairePt() = shot("howto_solitaire_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.HowToScreen(GameId.SOLITAIRE, onBack = {}, onSettings = {})
+    }
     @Test fun settings() = shot("settings") { SettingsScreen(Settings(), {}, {}, null) }
     @Test fun settingsInGamePt() = shot("settings_in_game_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
-        SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {}, InGameActions({}, {}, {}))
+        SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), {}, {}, InGameActions(onResume = {}, onNewGame = {}, onNewOptions = {}, onLearn = {}, onMainMenu = {}))
     }
     @Test fun missionPt() = shot("mission_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { io.github.fershibli.megagames.ui.screens.MissionDialog {} }
     @Test fun resumeDialog() = shot("resume_dialog") {
@@ -129,6 +138,7 @@ class ScreenshotTest {
     }
     @Test fun sudoku() = gameShot("game_sudoku", GameId.SUDOKU)
     @Test fun solitaire() = gameShot("game_solitaire", GameId.SOLITAIRE)
+    @Test fun solitaireSideways() = gameShot("game_solitaire_sideways", GameId.SOLITAIRE, settings = Settings(solitaireSideways = true))
     @Test fun solitaireColorblind() = gameShot("game_solitaire_colorblind", GameId.SOLITAIRE, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
     @Test fun reversi() = gameShot("game_reversi", GameId.REVERSI)
     @Test fun mahjongEasy() = gameShot("game_mahjong_easy", GameId.MAHJONG)
@@ -142,6 +152,7 @@ class ScreenshotTest {
     @Test fun cube5Colorblind() = gameShot("game_cube_5_colorblind", GameId.CUBE, Difficulty.HARD, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND), variant = "5")
     @Test fun dotsHighContrastDark() = gameShot("game_dots_hc_dark", GameId.DOTS, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST, darkMode = true))
     @Test fun crosswordEasy() = gameShot("game_crossword_easy", GameId.CROSSWORD)
+    @Test fun crosswordEasyPt() = gameShot("game_crossword_easy_pt", GameId.CROSSWORD, Difficulty.EASY, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun xiangqi() = gameShot("game_xiangqi", GameId.XIANGQI)
     @Test fun janggiDark() = gameShot("game_janggi_dark", GameId.JANGGI, settings = Settings(darkMode = true))
     @Test fun shogiJapanese() = gameShot("game_shogi_ja", GameId.SHOGI, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE))
@@ -168,6 +179,12 @@ class ScreenshotTest {
     }
     @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
     @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
+    @Test fun buracoTriosPt() = BuracoUiTest.trioHost().let { host -> shot("game_buraco_trios_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BURACO, host) } }
+    @Test fun tableBuracoPt() = shot("table_buraco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        io.github.fershibli.megagames.ui.screens.TableScreen(GameId.BURACO, false, GameId.BURACO.tables.last(), {}, {}, {})
+    }
+    @Test fun buracoFour() = BuracoUiTest.fourHost().let { host -> shot("game_buraco_four") { GameContent(GameId.BURACO, host) } }
+    @Test fun takeTurnsBuracoHandoff() = BuracoUiTest.handoffHost().let { host -> shot("take_turns_buraco_handoff", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BURACO, host) } }
     @Test fun blocks() = gameShot("game_blocks", GameId.BLOCKS)
     @Test fun pairs() = gameShot("game_pairs", GameId.PAIRS)
     @Test fun pairsColorblindHard() = gameShot("game_pairs_colorblind", GameId.PAIRS, Difficulty.HARD, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))

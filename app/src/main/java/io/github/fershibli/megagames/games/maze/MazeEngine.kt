@@ -128,24 +128,33 @@ object Maze {
         return out
     }
 
+    /** The most steps a single touch on the path takes back, so brushing an early cell by mistake doesn't undo everything. */
+    const val MAX_BACK = 3
+
+    /** Takes the path back towards [cell], one of its cells, by at most [MAX_BACK] steps. */
+    fun back(path: List<Int>, cell: Int): List<Int> {
+        val steps = path.size - 1 - path.indexOf(cell)
+        return path.dropLast(minOf(steps, MAX_BACK))
+    }
+
     /**
-     * Moves the path while a finger slides to [cell]: a cell on the path cuts the path back to it;
+     * Moves the path while a finger slides to [cell]: a cell on the path takes it back towards it ([back]);
      * otherwise the path follows the corridors to it when it is at most [reach] steps from the end
      * (a quick finger can skip a cell or two), and stays as it is when [cell] lies behind a wall.
      */
     fun drag(open: List<Int>, size: Int, path: List<Int>, cell: Int, reach: Int = 3): List<Int> {
-        if (cell in path) return walk(path, listOf(cell))
+        if (cell in path) return back(path, cell)
         val way = route(open, size, path.last(), cell)
         if (way.size < 2 || way.size - 1 > reach) return path
         return walk(path, way.drop(1))
     }
 
     /**
-     * Moves the path to a tapped [cell]: back to it when it is on the path, or along the corridor
+     * Moves the path to a tapped [cell]: back towards it when it is on the path ([back]), or along the corridor
      * when it can be reached without passing a crossing (where the way would have to be chosen).
      */
     fun tap(open: List<Int>, size: Int, path: List<Int>, cell: Int): List<Int> {
-        if (cell in path) return walk(path, listOf(cell))
+        if (cell in path) return back(path, cell)
         val way = route(open, size, path.last(), cell)
         if (way.size < 2) return path
         // Every cell passed on the way (not the two ends) must be a plain corridor with two openings.

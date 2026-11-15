@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">Открытая карта (вира) делает джокером следующую карту той же масти.</string>
     <string name="cacheta_variant_pife">Пифе</string>
     <string name="cacheta_variant_pife_desc">Без джокеров, последовательность может идти по кругу (K-A-2), и можно забрать любой сброс, чтобы выйти.</string>
-    <string name="cacheta_how_many">Сколько соперников-компьютеров?</string>
     <string name="cacheta_computer">Компьютер %1$d</string>
     <string name="cacheta_playing">Ходит компьютер %1$d…</string>
     <string name="cacheta_deck">Колода (%1$d)</string>
@@ -33,10 +32,7 @@
     <string name="cacheta_deck_over">Карты закончились: никто не вышел.</string>
     <string name="cacheta_your_hand">Ваши карты</string>
     <string name="cacheta_groups_note">зелёная полоса = уже в группе</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="one">%1$d компьютер</item>
-        <item quantity="few">%1$d компьютера</item>
-        <item quantity="many">%1$d компьютеров</item>
-        <item quantity="other">%1$d компьютера</item>
-    </plurals>
+    <string name="cacheta_seat_playing">Ходит: %1$s…</string>
+    <string name="cacheta_went_out_seat">Вышел: %1$s!</string>
+    <string name="cacheta_went_out_ten_seat">Вышел со всеми 10 картами: %1$s!</string>
 </resources>

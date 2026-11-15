@@ -1,6 +1,6 @@
 # Cacheta
 
-Cacheta is the Brazilian rummy game played at so many kitchen tables: draw, throw away, and be the first to have every card in a group. In Mili Games you play against **1, 2 or 3 computer players** (you choose at the start of each game).
+Cacheta is the Brazilian rummy game played at so many kitchen tables: draw, throw away, and be the first to have every card in a group. In Mili Games **2, 3 or 4 play**: the app asks **How many at the table?** before each game (and remembers your choice). You play against 1 to 3 computer players, or with people **taking turns on one phone**.
 
 ## The cards
 - Two decks of 52 cards (104 cards), no jokers.
@@ -34,3 +34,6 @@ After drawing you hold 10 cards. When 9 of them form groups (the 10th is your la
 - **Hint** suggests the card to discard. **By suit / By number** sorts your hand.
 - Pairs (two 7s, or 7♥ 8♥) are halfway to a group: keep them and throw away lonely high cards first.
 - Watch the pile: if a computer picked up a 6♠, do not feed it the 5♠ or 7♠.
+
+## Taking turns on one phone
+Choose **Take turns on this phone** on the level screen, then 2, 3 or 4 at the table: everybody is a person and nobody plays against the computer. After each turn a cover hides the cards and asks to pass the phone to the next player, shown with a color and a symbol; they tap the big button (“Ready, it is my turn”) to see their own hand. Play goes counterclockwise, as is the custom in Brazil. In Pife, when another player can go out with the card just thrown away, the phone goes to them to take it or let it go.

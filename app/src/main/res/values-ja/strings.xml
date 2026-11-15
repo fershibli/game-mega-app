@@ -45,6 +45,7 @@
     <!-- In-game common -->
     <string name="resume">ゲームに戻る</string>
     <string name="new_game">新しいゲーム</string>
+    <string name="new_game_options">設定を変えて新しいゲーム</string>
     <string name="main_menu">メインメニュー</string>
     <string name="leave_game_title">このゲームをやめますか？</string>
     <string name="leave_game_message">メインメニューに戻ると、このゲームは終了となり、続きから遊ぶことはできません。</string>
@@ -190,4 +191,24 @@
     <plurals name="buraco_cards">
         <item quantity="other">%1$d枚</item>
     </plurals>
+    <string name="options_match">試合</string>
+    <string name="options_single">1ゲーム</string>
+    <string name="options_best_of">%d番勝負</string>
+    <string name="options_time">時間</string>
+    <string name="options_no_limit">制限なし</string>
+    <string name="options_minutes">%d分</string>
+    <string name="match_score">スコア — あなた：%1$d・コンピューター：%2$d（%3$d番勝負）</string>
+    <string name="match_next">次のゲーム</string>
+    <string name="match_won">シリーズに勝ちました！</string>
+    <string name="match_lost">コンピューターがシリーズに勝ちました</string>
+    <string name="time_up">時間切れです！</string>
+    <string name="time_left">残り時間：%s</string>
+    <string name="section_vibration">振動</string>
+    <string name="vibrate_moves">ゲーム中</string>
+    <string name="vibrate_moves_desc">盤やカードに触れたときに軽く振動します。</string>
+    <string name="vibrate_buttons">ボタンとメニュー</string>
+    <string name="vibrate_buttons_desc">ボタン、スイッチ、レベルの選択で振動します。</string>
+    <string name="vibrate_alerts">ゲームの終わり</string>
+    <string name="vibrate_alerts_desc">勝ったときと負けたときに違う振動をします。</string>
+    <string name="learn_to_play">遊び方</string>
 </resources>

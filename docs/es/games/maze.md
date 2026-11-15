@@ -7,7 +7,7 @@ Un laberinto en papel, como los del periódico: dibuja el camino desde el amigui
 ## Cómo se juega
 
 - Desliza el dedo por los pasillos: la línea te sigue y el amiguito camina en su punta. Nunca atraviesa una pared.
-- Desliza hacia atrás sobre la línea para deshacer pasos, o toca un cuadro de la línea para volver a él. **Deshacer** retrocede un paso.
+- Desliza hacia atrás sobre la línea para deshacer pasos, o toca un cuadro de la línea para volver hacia él, como máximo 3 pasos por toque (así un roce sin querer no lo deshace todo). **Deshacer** retrocede un paso.
 - Toca un cuadro más adelante en el pasillo para ir directo hasta él (la línea se detiene en cada cruce, donde eliges el camino).
 - **Pista** muestra los próximos cuadros con anillos. Si la línea tomó un camino equivocado, el anillo grande muestra hasta dónde volver.
 - Siempre hay un único camino hasta la casita, y no hay reloj. Al llegar, todo el camino se ilumina.

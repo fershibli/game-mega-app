@@ -6,10 +6,12 @@ import kotlinx.serialization.Serializable
 import kotlin.random.Random
 
 /**
- * Brazilian Buraco for two players (you against the computer).
+ * Brazilian Buraco for two to six players: each for themselves, in pairs ("duplas") or in trios.
  *
- * - Two 52-card decks (104 cards), no jokers. Every 2 is wild ("curinga").
- * - Each player gets 11 cards; two extra piles of 11 cards ("mortos") wait on the side.
+ * - Two 52-card decks (104 cards), three for a big table (see [Buraco.decks]), no jokers. Every 2
+ *   is wild ("curinga").
+ * - Each player gets 11 cards; two extra piles of 11 cards ("mortos") wait on the side, one for
+ *   each side of the table.
  * - On your turn: draw one card from the deck OR take the whole discard pile; then you may lay
  *   down sequences ("jogos") of 3+ cards of the same suit and add cards to your sequences; then
  *   discard one card.
@@ -21,26 +23,58 @@ import kotlin.random.Random
  *   clean canasta. Going out is worth 100 points.
  * - Card values: A = 15, 2 = 10, 8 to K = 10, 3 to 7 = 5. Cards left in hand count against you,
  *   and a player who never picked up a morto loses 100.
+ *
+ * Seats are split into [BuracoState.sides] sides and side = seat % sides, so partners never play
+ * one after the other: four in pairs are seats 0 and 2 against 1 and 3 (partners opposite each
+ * other), six in pairs are 0-3, 1-4 and 2-5, and six in trios are 0-2-4 against 1-3-5. With as many
+ * sides as seats everybody plays for themselves. Each side lays its sequences on one shared space
+ * ([BuracoState.melds] and [BuracoState.tookMorto] are per side), picks up one morto (whoever
+ * empties a hand first) and scores together, counting the cards left in all its hands. Play goes
+ * counterclockwise, as is the custom in Brazil: the player on your right plays after you (seat 1),
+ * then on around the table.
  */
 @Serializable
 data class BuracoState(
     val stock: List<Card>,
     val discard: List<Card>,
     val mortos: List<List<Card>>,
+    /** One hand per seat. */
     val hands: List<List<Card>>,
+    /** The sequences on the table of each side. */
     val melds: List<List<List<Card>>>,
+    /** Whether each side has picked up its morto. */
     val tookMorto: List<Boolean> = listOf(false, false),
     val turn: Int = 0,
     val drawn: Boolean = false,
     val finished: Boolean = false,
     /** Player who went out, or -1 (the deck ran out or the game is not over). */
     val wentOut: Int = -1,
-    /** Cards you picked up from the discard pile recently (the hard opponent remembers them). */
+    /** Cards your side picked up from the discard pile recently (the hard opponents remember them). */
     val yourPicks: List<Card> = emptyList(),
-)
+    /** Seats at the table. Older saves have none and are two-player games. */
+    val players: Int = 2,
+    /** Cards the other side picked up recently (a hard partner remembers them too). */
+    val theirPicks: List<Card> = emptyList(),
+    /** Number of sides (teams): 2, or as many as seats when each plays for themselves. Older saves have 2. */
+    val sides: Int = 2,
+) {
+    /** The side of [seat]; 0 is yours (with your partners). */
+    fun side(seat: Int) = seat % sides
+
+    /** The seats of [side], in playing order. */
+    fun seatsOf(side: Int) = (side until players step sides).toList()
+
+    /** Whether some players have partners (pairs or trios). */
+    val partners get() = sides < players
+}
 
 const val YOU = 0
 const val COMPUTER = 1
+
+/** Seats of a four-player table, counterclockwise from you. */
+const val RIGHT = 1
+const val PARTNER = 2
+const val LEFT = 3
 
 /** A sequence laid out in order; [wild] is the 2 used as a wild card, if any. */
 data class Arranged(val cards: List<Card>, val wild: Card?)
@@ -120,27 +154,42 @@ object BuracoRules {
 }
 
 object Buraco {
-    fun deal(random: Random): BuracoState {
-        val deck = Decks.multi(2, random).toMutableList()
+    /** The tables that can be dealt, as seats to sides; the first for a number of seats is its usual one. */
+    val TABLES = listOf(2 to 2, 3 to 3, 4 to 2, 4 to 4, 6 to 2, 6 to 3)
+
+    /** The usual sides for [players] seats: in pairs or trios when they split evenly, else each alone. */
+    fun defaultSides(players: Int) = TABLES.firstOrNull { it.first == players }?.second ?: players
+
+    /** Two decks, or three when the hands and mortos would leave too short a deck to draw from. */
+    fun decks(players: Int, sides: Int) = if (players + sides > 6) 3 else 2
+
+    /** Deals a game for [players] seats split into [sides] (one of [TABLES]). */
+    fun deal(random: Random, players: Int = 2, sides: Int = defaultSides(players)): BuracoState {
+        require(players to sides in TABLES)
+        val deck = Decks.multi(decks(players, sides), random).toMutableList()
         fun take(n: Int) = List(n) { deck.removeAt(deck.lastIndex) }
-        val hands = listOf(take(11), take(11))
-        val mortos = listOf(take(11), take(11))
+        val hands = List(players) { take(11) }
+        val mortos = List(sides) { take(11) }
         val discard = take(1)
-        return BuracoState(deck, discard, mortos, hands, listOf(emptyList(), emptyList()))
+        return BuracoState(
+            deck, discard, mortos, hands, List(sides) { emptyList() }, tookMorto = List(sides) { false },
+            players = players, sides = sides,
+        )
     }
 
     private fun BuracoState.withHand(p: Int, hand: List<Card>) = copy(hands = hands.toMutableList().also { it[p] = hand })
-    private fun BuracoState.withMelds(p: Int, m: List<List<Card>>) = copy(melds = melds.toMutableList().also { it[p] = m })
+    private fun BuracoState.withMelds(side: Int, m: List<List<Card>>) = copy(melds = melds.toMutableList().also { it[side] = m })
 
-    /** True when [p] may end up with no cards (to pick up the morto, or to go out). */
-    fun canEmptyHand(s: BuracoState, p: Int, melds: List<List<Card>> = s.melds[p]): Boolean =
-        (!s.tookMorto[p] && s.mortos.isNotEmpty()) || BuracoRules.hasCleanCanasta(melds)
+    /** True when [p] may end up with no cards (to pick up the side's morto, or to go out). */
+    fun canEmptyHand(s: BuracoState, p: Int, melds: List<List<Card>> = s.melds[s.side(p)]): Boolean =
+        (!s.tookMorto[s.side(p)] && s.mortos.isNotEmpty()) || BuracoRules.hasCleanCanasta(melds)
 
-    /** Handles an empty hand: pick up the morto, or go out and finish the game. */
+    /** Handles an empty hand: pick up the side's morto, or go out and finish the game. */
     private fun afterPlay(s: BuracoState, p: Int): BuracoState {
         if (s.hands[p].isNotEmpty()) return s
-        return if (!s.tookMorto[p] && s.mortos.isNotEmpty()) {
-            s.withHand(p, s.mortos.first()).copy(mortos = s.mortos.drop(1), tookMorto = s.tookMorto.toMutableList().also { it[p] = true })
+        val side = s.side(p)
+        return if (!s.tookMorto[side] && s.mortos.isNotEmpty()) {
+            s.withHand(p, s.mortos.first()).copy(mortos = s.mortos.drop(1), tookMorto = s.tookMorto.toMutableList().also { it[side] = true })
         } else {
             s.copy(finished = true, wentOut = p)
         }
@@ -159,8 +208,13 @@ object Buraco {
 
     fun takeDiscardPile(s: BuracoState): BuracoState? {
         if (s.discard.isEmpty() || s.drawn) return null
-        val picks = if (s.turn == YOU) (s.yourPicks + s.discard.takeLast(3)).takeLast(9) else s.yourPicks
-        return s.withHand(s.turn, s.hands[s.turn] + s.discard).copy(discard = emptyList(), drawn = true, yourPicks = picks)
+        val taken = s.discard.takeLast(3)
+        val mine = s.side(s.turn) == 0
+        return s.withHand(s.turn, s.hands[s.turn] + s.discard).copy(
+            discard = emptyList(), drawn = true,
+            yourPicks = if (mine) (s.yourPicks + taken).takeLast(9) else s.yourPicks,
+            theirPicks = if (mine) s.theirPicks else (s.theirPicks + taken).takeLast(9),
+        )
     }
 
     private fun minus(hand: List<Card>, cards: List<Card>) = hand.toMutableList().also { h -> cards.forEach { h.remove(it) } }
@@ -175,20 +229,22 @@ object Buraco {
         val p = s.turn
         if (!s.drawn || s.finished) return BuracoResult.Error(BuracoError.WRONG_PHASE)
         val arranged = BuracoRules.arrange(cards) ?: return BuracoResult.Error(BuracoError.INVALID_SEQUENCE)
-        val melds = s.melds[p] + listOf(arranged.cards)
+        val melds = s.melds[s.side(p)] + listOf(arranged.cards)
         val hand = minus(s.hands[p], cards)
         checkHandSize(s, p, hand.size, melds)?.let { return BuracoResult.Error(it) }
-        return BuracoResult.Ok(afterPlay(s.withHand(p, hand).withMelds(p, melds), p))
+        return BuracoResult.Ok(afterPlay(s.withHand(p, hand).withMelds(s.side(p), melds), p))
     }
 
+    /** Adds [cards] to sequence [meldIndex] of the side in turn (with a partner, the shared ones). */
     fun addToMeld(s: BuracoState, meldIndex: Int, cards: List<Card>): BuracoResult {
         val p = s.turn
+        val side = s.side(p)
         if (!s.drawn || s.finished) return BuracoResult.Error(BuracoError.WRONG_PHASE)
-        val arranged = BuracoRules.arrange(s.melds[p][meldIndex] + cards) ?: return BuracoResult.Error(BuracoError.INVALID_SEQUENCE)
-        val melds = s.melds[p].toMutableList().also { it[meldIndex] = arranged.cards }
+        val arranged = BuracoRules.arrange(s.melds[side][meldIndex] + cards) ?: return BuracoResult.Error(BuracoError.INVALID_SEQUENCE)
+        val melds = s.melds[side].toMutableList().also { it[meldIndex] = arranged.cards }
         val hand = minus(s.hands[p], cards)
         checkHandSize(s, p, hand.size, melds)?.let { return BuracoResult.Error(it) }
-        return BuracoResult.Ok(afterPlay(s.withHand(p, hand).withMelds(p, melds), p))
+        return BuracoResult.Ok(afterPlay(s.withHand(p, hand).withMelds(side, melds), p))
     }
 
     fun discard(s: BuracoState, card: Card): BuracoResult {
@@ -197,7 +253,7 @@ object Buraco {
         val hand = minus(s.hands[p], listOf(card))
         if (hand.isEmpty() && !canEmptyHand(s, p)) return BuracoResult.Error(BuracoError.NEED_CLEAN_CANASTA)
         var next = afterPlay(s.withHand(p, hand).copy(discard = s.discard + card), p)
-        if (!next.finished) next = next.copy(turn = 1 - p, drawn = false)
+        if (!next.finished) next = next.copy(turn = (p + 1) % s.players, drawn = false)
         return BuracoResult.Ok(next)
     }
 
@@ -205,10 +261,19 @@ object Buraco {
         val total get() = melded + bonus - inHand + wentOut - mortoPenalty
     }
 
-    fun score(s: BuracoState, p: Int): Score {
-        val melded = s.melds[p].sumOf { m -> m.sumOf { BuracoRules.points(it) } }
-        val bonus = s.melds[p].filter { BuracoRules.isCanasta(it) }.sumOf { if (BuracoRules.isClean(it)) 200 else 100 as Int }
-        val inHand = s.hands[p].sumOf { BuracoRules.points(it) }
-        return Score(melded, bonus, inHand, if (s.wentOut == p) 100 else 0, if (s.tookMorto[p]) 0 else 100)
+    /** The score of [side] (with two players, the side is the seat). */
+    fun score(s: BuracoState, side: Int): Score {
+        val melded = s.melds[side].sumOf { m -> m.sumOf { BuracoRules.points(it) } }
+        val bonus = tableBonus(s, side)
+        val inHand = s.hands.filterIndexed { seat, _ -> s.side(seat) == side }.sumOf { h -> h.sumOf { BuracoRules.points(it) } }
+        val wentOut = if (s.wentOut >= 0 && s.side(s.wentOut) == side) 100 else 0
+        return Score(melded, bonus, inHand, wentOut, if (s.tookMorto[side]) 0 else 100)
     }
+
+    private fun tableBonus(s: BuracoState, side: Int) =
+        s.melds[side].filter { BuracoRules.isCanasta(it) }.sumOf { if (BuracoRules.isClean(it)) 200 else 100 as Int }
+
+    /** Points [side] already has on the table (its cards and canastas), shown during the game. */
+    fun tablePoints(s: BuracoState, side: Int): Int =
+        s.melds[side].sumOf { m -> m.sumOf { BuracoRules.points(it) } } + tableBonus(s, side)
 }

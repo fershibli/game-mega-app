@@ -7,7 +7,7 @@ A maze on paper, like the ones in the newspaper: draw the way from the round fri
 ## How to play
 
 - Slide your finger along the corridors: the line follows you, and the friend walks at its tip. It never goes through a wall.
-- Slide back over the line to take steps back, or tap any square of the line to go back to it. **Undo** takes one step back.
+- Slide back over the line to take steps back, or tap a square of the line to go back towards it, at most 3 steps per touch (so brushing the line by mistake doesn't undo everything). **Undo** takes one step back.
 - Tap a square further along a corridor to walk straight to it (the line stops at every crossing, where you choose the way).
 - **Hint** shows the next few squares with rings. If the line has taken a wrong turn, the big ring shows where to go back to.
 - There is always exactly one way to the house, and no clock. When you get there, the whole way lights up.

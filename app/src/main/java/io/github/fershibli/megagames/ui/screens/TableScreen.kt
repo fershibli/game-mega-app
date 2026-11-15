@@ -91,7 +91,7 @@ fun TableScreen(
                         border = BorderStroke(if (chosen) 3.dp else 1.dp, if (chosen) p.primary else p.outline.copy(alpha = 0.5f)),
                     ) {
                         Row(Modifier.padding(14.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
-                            SeatsPicture(table.seats, p.primary, p.text)
+                            SeatsPicture(table.seats, table.teams, p.primary, p.pieces, p.text)
                             Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(4.dp)) {
                                 Text(table.seats.toString(), style = MaterialTheme.typography.headlineMedium, color = p.text)
                                 val who = if (together) pluralStringResource(R.plurals.seats_people, table.seats, table.seats)
@@ -116,16 +116,20 @@ fun TableScreen(
     }
 }
 
-/** A round table seen from above with one dot per seat. */
+/**
+ * A round table seen from above with one dot per seat. Split into teams, each team has its own
+ * color (team = seat % teams, so partners sit apart, like at the game itself).
+ */
 @Composable
-private fun SeatsPicture(seats: Int, seat: Color, table: Color) {
+private fun SeatsPicture(seats: Int, teams: Int, seat: Color, teamColors: List<Color>, table: Color) {
     Canvas(Modifier.size(64.dp)) {
         val c = Offset(size.width / 2, size.height / 2)
         val r = size.minDimension * 0.26f
         drawCircle(table, r, c, style = Stroke(size.minDimension * 0.05f))
         repeat(seats) { i ->
             val a = 2 * PI * i / seats + PI / 2
-            drawCircle(seat, size.minDimension * 0.1f, Offset(c.x + (r * 1.55f * cos(a)).toFloat(), c.y + (r * 1.55f * sin(a)).toFloat()))
+            val color = if (teams in 2 until seats) teamColors[intArrayOf(1, 0, 2)[i % teams]] else seat
+            drawCircle(color, size.minDimension * 0.1f, Offset(c.x + (r * 1.55f * cos(a)).toFloat(), c.y + (r * 1.55f * sin(a)).toFloat()))
         }
     }
 }

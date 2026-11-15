@@ -1,58 +1,70 @@
 package io.github.fershibli.megagames.ui.components
 
-import androidx.compose.ui.AbsoluteAlignment
-import androidx.compose.ui.unit.LayoutDirection
-import androidx.compose.ui.platform.LocalLayoutDirection
-import androidx.compose.runtime.CompositionLocalProvider
+import android.os.SystemClock
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
+import androidx.compose.foundation.gestures.calculateCentroid
+import androidx.compose.foundation.gestures.calculatePan
+import androidx.compose.foundation.gestures.calculateZoom
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.hapticfeedback.HapticFeedback
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.input.pointer.PointerId
 import androidx.compose.ui.input.pointer.PointerInputScope
 import androidx.compose.ui.input.pointer.pointerInput
-import android.os.SystemClock
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalHapticFeedback
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.IntSize
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.gestures.awaitEachGesture
-import androidx.compose.foundation.gestures.awaitFirstDown
-import androidx.compose.foundation.gestures.calculateCentroid
-import androidx.compose.foundation.gestures.calculatePan
-import androidx.compose.foundation.gestures.calculateZoom
-import androidx.compose.ui.hapticfeedback.HapticFeedback
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.OneHandZoom
 import io.github.fershibli.megagames.ui.theme.LocalSettings
-import kotlinx.coroutines.withTimeoutOrNull
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 import kotlin.math.PI
+import kotlin.math.abs
 import kotlin.math.atan2
 import kotlin.math.exp
+import kotlinx.coroutines.withTimeoutOrNull
 
 /** Zoom/pan state of a game board. Offsets are in viewport pixels, scale is 1x..[MAX_SCALE]. */
 @Stable
-class ZoomState {
+class ZoomState(
+    /** Zoom to show once the board's size is known (1 = the whole board). */
+    private val initial: Float = 1f,
+) {
     var scale by mutableFloatStateOf(1f)
         private set
     var offset by mutableStateOf(Offset.Zero)
         private set
     internal var viewport: IntSize = IntSize.Zero
+        set(value) {
+            val first = field == IntSize.Zero
+            field = value
+            // The first time the board is measured, start at the initial zoom, centered.
+            if (first && initial > 1.01f && value != IntSize.Zero) zoomAt(Offset(value.width / 2f, value.height / 2f), initial)
+        }
 
     val isZoomed: Boolean get() = scale > 1.01f
 
@@ -92,7 +104,7 @@ class ZoomState {
 }
 
 @Composable
-fun rememberZoomState(): ZoomState = remember { ZoomState() }
+fun rememberZoomState(initial: Float = 1f): ZoomState = remember { ZoomState(initial) }
 
 /**
  * Wraps a game board and adds the zoom gestures configured in Settings:
@@ -114,6 +126,7 @@ fun ZoomableBoard(
 ) {
     val settings = LocalSettings.current
     val haptics = LocalHapticFeedback.current
+    val boardHaptics = currentHaptics
     val twoFinger = settings.pinchZoom
     val oneHand = settings.oneHand
     val oneHandMode = settings.oneHandZoom
@@ -131,6 +144,13 @@ fun ZoomableBoard(
             Box(
                 Modifier
                     .fillMaxSize()
+                    // A light tick under the finger on every touch of the board (moves group).
+                    .pointerInput(boardHaptics) {
+                        awaitEachGesture {
+                            awaitFirstDown(requireUnconsumed = false, pass = PointerEventPass.Initial)
+                            boardHaptics.move()
+                        }
+                    }
                     .graphicsLayer {
                         transformOrigin = TransformOrigin(0f, 0f)
                         scaleX = state.scale
@@ -153,6 +173,12 @@ fun ZoomableBoard(
 
 private enum class Mode { NONE, MULTI, ROTATE }
 
+/** Touches starting this close to a side edge never count as half of a pinch. */
+private val EDGE_IGNORED = 24.dp
+
+/** A pinch's second finger comes down within this time of the first one. */
+private const val PINCH_WINDOW_MS = 300L
+
 private suspend fun PointerInputScope.zoomGestures(
     state: ZoomState,
     twoFinger: Boolean,
@@ -165,6 +191,9 @@ private suspend fun PointerInputScope.zoomGestures(
     val doubleTapTimeout = viewConfiguration.doubleTapTimeoutMillis
     val slop = viewConfiguration.touchSlop
     val rotateRadius = 28.dp.toPx()
+    // A touch that starts this close to the left or right edge is the side of a finger or the
+    // palm holding the phone, never half of a pinch.
+    val edge = EDGE_IGNORED.toPx()
 
     awaitEachGesture {
         val down = awaitFirstDown(requireUnconsumed = false, pass = PointerEventPass.Initial)
@@ -198,6 +227,13 @@ private suspend fun PointerInputScope.zoomGestures(
 
         var mode = Mode.NONE
         var moved = false
+        // Pointers that can't be half of a pinch: at the edge, or down too late (see below).
+        val ignored = HashSet<PointerId>()
+        fun atEdge(p: Offset) = p.x < edge || p.x > size.width - edge
+        if (atEdge(down.position)) ignored += down.id
+        var spreadStart = 0f
+        var centroidStart = Offset.Zero
+        var pinchSeen = false
         var lastAngle: Float? = null
         var anchor = down.position
         val longPressAt = down.uptimeMillis + viewConfiguration.longPressTimeoutMillis
@@ -216,6 +252,11 @@ private suspend fun PointerInputScope.zoomGestures(
                 haptics.performHapticFeedback(HapticFeedbackType.LongPress)
                 continue
             }
+            // A second finger is half of a pinch only if it comes down almost together with the
+            // first one, before that one started dragging a card or a piece, and away from the edges.
+            for (c in event.changes) if (c.pressed && !c.previousPressed && c.id != down.id) {
+                if (atEdge(c.position) || moved || c.uptimeMillis - down.uptimeMillis > PINCH_WINDOW_MS) ignored += c.id
+            }
             val pressed = event.changes.filter { it.pressed }
             if (pressed.isEmpty()) {
                 if (mode == Mode.NONE && !moved) {
@@ -225,12 +266,26 @@ private suspend fun PointerInputScope.zoomGestures(
                 if (mode != Mode.NONE) event.changes.forEach { it.consume() }
                 break
             }
-            if (twoFinger && pressed.size >= 2 && mode != Mode.ROTATE) {
-                mode = Mode.MULTI
-                val zoom = event.calculateZoom()
-                val pan = event.calculatePan()
-                val centroid = event.calculateCentroid(useCurrent = true)
-                if (zoom != 1f) state.zoomAt(centroid, state.scale * zoom)
+            val fingers = pressed.filter { it.id !in ignored }
+            if (twoFinger && fingers.size >= 2 && mode != Mode.ROTATE) {
+                val (a, b) = fingers
+                val spread = (a.position - b.position).getDistance()
+                val centroid = (a.position + b.position) / 2f
+                if (mode != Mode.MULTI) {
+                    // Zoom only once the two fingers clearly spread, pinch or move together;
+                    // until then the touches stay with the game.
+                    if (!pinchSeen) {
+                        pinchSeen = true
+                        spreadStart = spread
+                        centroidStart = centroid
+                    }
+                    if (abs(spread - spreadStart) < slop * 2 && (centroid - centroidStart).getDistance() < slop * 2) continue
+                    mode = Mode.MULTI
+                }
+                val previousSpread = (a.previousPosition - b.previousPosition).getDistance()
+                val previousCentroid = (a.previousPosition + b.previousPosition) / 2f
+                if (previousSpread > 0f && spread != previousSpread) state.zoomAt(centroid, state.scale * spread / previousSpread)
+                val pan = centroid - previousCentroid
                 if (pan != Offset.Zero) state.panBy(pan)
                 event.changes.forEach { it.consume() }
                 continue
