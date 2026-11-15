@@ -50,7 +50,7 @@ L’**ingranaggio** apre le impostazioni. Durante una partita, le impostazioni m
 
 - **Torna alla partita**: chiude le impostazioni.
 - **Nuova partita**: inizia una nuova partita dello stesso gioco (chiede conferma).
-- **Menu principale**: esce dalla partita e torna all’elenco dei giochi. *La partita viene abbandonata*: prima l’app chiede “Uscire da questa partita?”, così non può succedere per sbaglio.
+- **Menu principale**: torna all’elenco dei giochi. La partita resta salvata: riapri il gioco per continuare da dove avevi interrotto.
 
 Durante una partita, il pulsante o il gesto **Indietro** del telefono apre (o chiude) le impostazioni, così nessuno esce da una partita per errore.
 
@@ -65,9 +65,9 @@ Ogni mossa viene salvata subito sul telefono. Se l’app si chiude (per sbaglio,
 > **Che bello rivederti!** Hai una partita in corso: *Sudoku*. Vuoi continuare da dove avevi interrotto o tornare al menu principale?
 
 - **Continua a giocare**: tutto è esattamente com’era, compreso il turno del computer se stava giocando.
-- **Menu principale**: la partita salvata viene eliminata.
+- **Menu principale**: va all’elenco dei giochi; la partita resta salvata.
 
-Si conserva una sola partita alla volta. Una partita finita (vinta o persa) non viene conservata.
+Ogni gioco conserva la sua partita in corso: puoi lasciare un sudoku a metà, fare un solitario e tornare dopo. Nell’elenco, il gioco con una partita in corso ha un piccolo segno ▶; toccandolo, l’app chiede se vuoi continuare (**Continua a giocare**) o ricominciare (**Nuova partita**). Una partita finita (vinta o persa) non viene conservata. Una partita salvata occupa pochi kilobyte: tutti i giochi lasciati a metà insieme occupano meno di una foto.
 
 ## Zoom
 

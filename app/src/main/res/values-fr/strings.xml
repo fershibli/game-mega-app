@@ -44,14 +44,13 @@
     <string name="new_game">Nouvelle partie</string>
     <string name="new_game_options">Nouvelle partie, autres options</string>
     <string name="main_menu">Menu principal</string>
-    <string name="leave_game_title">Quitter cette partie ?</string>
-    <string name="leave_game_message">Si vous revenez au menu principal, cette partie sera abandonnée et ne pourra pas être reprise.</string>
-    <string name="leave_game_yes">Oui, quitter la partie</string>
     <string name="new_game_title">Commencer une nouvelle partie ?</string>
     <string name="new_game_message">La partie en cours sera perdue.</string>
     <string name="resume_title">Bon retour !</string>
     <string name="resume_message">Vous avez une partie de %1$s en cours. Voulez-vous reprendre là où vous vous étiez arrêté ou revenir au menu principal ?</string>
     <string name="resume_continue">Continuer la partie</string>
+    <string name="saved_game_message">Vous avez une partie de %1$s en cours. Voulez-vous reprendre là où vous vous étiez arrêté ou commencer une nouvelle partie ?</string>
+    <string name="game_in_progress">partie en cours</string>
     <string name="win_title">Bravo !</string>
     <string name="win_message">Vous avez gagné ! 🎉</string>
     <string name="lose_title">Partie terminée</string>

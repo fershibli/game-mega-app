@@ -33,7 +33,7 @@ Mili Games est conçue pour être installée sur le téléphone de personnes qui
 L’application enregistre exactement deux choses, toutes deux dans son espace **privé**, que les autres applications ne peuvent pas lire :
 
 1. `settings.xml` — vos choix dans les Réglages (langue, tailles, couleurs…).
-2. `current_game.json` — la partie en cours, pour pouvoir la reprendre après une fermeture. Il est supprimé quand la partie se termine ou est abandonnée.
+2. `saves/` — la partie en cours de chaque jeu (un petit fichier par jeu), pour pouvoir la reprendre plus tard, même après une fermeture. Le fichier est supprimé quand la partie se termine ou quand une nouvelle partie de ce jeu commence.
 
 Si vous avez activé la sauvegarde d’Android, celle-ci peut inclure ces deux fichiers dans *votre* sauvegarde Google (et dans le transfert d’un appareil à l’autre), pour qu’un nouveau téléphone garde vos réglages. C’est configuré dans [`backup_rules.xml`](../../app/src/main/res/xml/backup_rules.xml) et [`data_extraction_rules.xml`](../../app/src/main/res/xml/data_extraction_rules.xml). Rien d’autre n’est jamais enregistré ni envoyé.
 

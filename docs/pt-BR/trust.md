@@ -34,7 +34,7 @@ O Mili Games foi feito para ser instalado no celular de pessoas que talvez não 
 O app guarda exatamente duas coisas, ambas na sua área **privada**, que outros apps não conseguem ler:
 
 1. `settings.xml` — suas escolhas nas Configurações (idioma, tamanhos, cores…).
-2. `current_game.json` — a partida em andamento, para poder ser retomada depois que o app fecha. Ele é apagado quando a partida termina ou é abandonada.
+2. `saves/` — a partida em andamento de cada jogo (um arquivo pequeno por jogo), para poder ser retomada depois, mesmo com o app fechado. O arquivo é apagado quando a partida termina ou quando se começa uma nova partida daquele jogo.
 
 Se você ativou o backup do próprio Android, ele pode incluir esses dois arquivos no *seu* backup do Google (e na transferência entre aparelhos), para que um celular novo mantenha as configurações. Isso está definido em [`backup_rules.xml`](../../app/src/main/res/xml/backup_rules.xml) e [`data_extraction_rules.xml`](../../app/src/main/res/xml/data_extraction_rules.xml). Nada além disso é guardado ou enviado.
 

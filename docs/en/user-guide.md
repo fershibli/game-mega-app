@@ -50,7 +50,7 @@ The **gear** opens the settings. Inside a game, settings also show three big but
 
 - **Back to game** — closes the settings.
 - **New game** — starts a new game of the same kind (asks for confirmation).
-- **Main menu** — leaves the game and returns to the game list. *This abandons the game*: it asks "Leave this game?" first, so it cannot happen by accident.
+- **Main menu** — returns to the game list. The game stays saved: open it again to continue where you left off.
 
 The phone's **Back** button/gesture inside a game opens (or closes) the settings, so nobody leaves a game by mistake.
 
@@ -77,9 +77,9 @@ Every move is saved immediately on the phone. If the app is closed — by accide
 > **Welcome back!** You have a game of *Sudoku* in progress. Do you want to continue where you left off or go back to the main menu?
 
 - **Continue playing** — everything is exactly as it was, including the computer's turn if it was playing.
-- **Main menu** — the saved game is discarded.
+- **Main menu** — goes to the game list; the game stays saved.
 
-Only one game is kept at a time. A finished game (won or lost) is not kept.
+One game in progress is kept for each game, so you can leave a sudoku in the middle, play solitaire and come back. In the list, a game with a game in progress carries a small ▶ mark; touching it asks whether to continue (**Continue playing**) or start again (**New game**). A finished game (won or lost) is not kept. A saved game is a few kilobytes: all the games left in the middle at once take less room than one photo.
 
 ## Zoom
 

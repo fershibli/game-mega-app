@@ -92,7 +92,7 @@ fun GameScreen(
     val score = setup.copy(wins = wins, losses = losses)
     // The next game of the match keeps the score; any other new game starts the match over.
     val nextGame: () -> Unit = {
-        saveStore.clear()
+        saveStore.clear(game)
         outcome = null
         showSettings = false
         session++

@@ -47,14 +47,13 @@
     <string name="new_game">新しいゲーム</string>
     <string name="new_game_options">設定を変えて新しいゲーム</string>
     <string name="main_menu">メインメニュー</string>
-    <string name="leave_game_title">このゲームをやめますか？</string>
-    <string name="leave_game_message">メインメニューに戻ると、このゲームは終了となり、続きから遊ぶことはできません。</string>
-    <string name="leave_game_yes">はい、やめます</string>
     <string name="new_game_title">新しいゲームを始めますか？</string>
     <string name="new_game_message">今のゲームは消えてしまいます。</string>
     <string name="resume_title">おかえりなさい！</string>
     <string name="resume_message">%1$sのゲームが途中です。続きから遊びますか？ それともメインメニューに戻りますか？</string>
     <string name="resume_continue">続きから遊ぶ</string>
+    <string name="saved_game_message">%1$sのゲームが途中です。続きから遊びますか？ それとも新しいゲームを始めますか？</string>
+    <string name="game_in_progress">途中のゲームあり</string>
     <string name="win_title">おめでとうございます！</string>
     <string name="win_message">あなたの勝ちです！ 🎉</string>
     <string name="lose_title">ゲーム終了</string>

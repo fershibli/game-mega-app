@@ -47,14 +47,13 @@
     <string name="new_game">Новая игра</string>
     <string name="new_game_options">Новая игра с другими настройками</string>
     <string name="main_menu">Главное меню</string>
-    <string name="leave_game_title">Выйти из этой игры?</string>
-    <string name="leave_game_message">Если вернуться в главное меню, эта партия будет прервана, и продолжить её будет нельзя.</string>
-    <string name="leave_game_yes">Да, выйти из игры</string>
     <string name="new_game_title">Начать новую игру?</string>
     <string name="new_game_message">Текущая партия будет потеряна.</string>
     <string name="resume_title">С возвращением!</string>
     <string name="resume_message">У вас есть незаконченная партия: %1$s. Продолжить с того места, где вы остановились, или вернуться в главное меню?</string>
     <string name="resume_continue">Продолжить игру</string>
+    <string name="saved_game_message">У вас есть незаконченная партия: %1$s. Продолжить с того места, где вы остановились, или начать новую игру?</string>
+    <string name="game_in_progress">игра не закончена</string>
     <string name="win_title">Поздравляем!</string>
     <string name="win_message">Вы победили! 🎉</string>
     <string name="lose_title">Игра окончена</string>
