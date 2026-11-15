@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">التالي</string>
+    <string name="tutorial_rules">القواعد</string>
+    <string name="tutorial_watch">شاهد</string>
+    <string name="tutorial_well_done">أحسنت!</string>
+    <string name="tutorial_solitaire_goal">الهدف: انقل كل الأوراق إلى هذه الأماكن الأربعة، من الآس إلى الملك، شكل واحد في كل مكان.</string>
+    <string name="tutorial_solitaire_ace">الآس يصعد مباشرة. يكفي أن تلمس الورقة: تذهب وحدها إلى أفضل مكان.</string>
+    <string name="tutorial_solitaire_two">المس 2♠. تصعد فوق الآس.</string>
+    <string name="tutorial_solitaire_six">في الأعمدة تُرتَّب الأوراق نزولًا مع تبادل اللونين: الـ 6 الحمراء توضع على الـ 7 السوداء.</string>
+    <string name="tutorial_solitaire_five">المس 5♠ السوداء. تذهب فوق الـ 6 الحمراء.</string>
+    <string name="tutorial_solitaire_stock">لا توجد حركات؟ المس الكومة لتقلب ورقة جديدة.</string>
+    <string name="tutorial_solitaire_king">الملك وحده يوضع في عمود فارغ. المس الملك.</string>
+    <string name="tutorial_solitaire_hint">لا تعرف ماذا تلعب؟ المس «تلميح».</string>
+    <string name="tutorial_solitaire_queen">اللعبة تُظهر حركة: الملكة الحمراء على الملك الأسود. المس الملكة.</string>
+    <string name="tutorial_solitaire_undo">غيّرت رأيك؟ المس «تراجع» لإلغاء آخر حركة.</string>
+    <string name="tutorial_solitaire_end">هذا كل شيء! انقل كل الأوراق إلى الأعلى، من الآس إلى الملك. لعبًا ممتعًا!</string>
+</resources>

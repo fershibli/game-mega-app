@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">下一步</string>
+    <string name="tutorial_rules">规则</string>
+    <string name="tutorial_watch">请看</string>
+    <string name="tutorial_well_done">很好！</string>
+    <string name="tutorial_solitaire_goal">目标：把所有的牌移到这四个位置，从 A 到 K，每个位置一种花色。</string>
+    <string name="tutorial_solitaire_ace">A 可以直接上去。只要点一下牌，它会自己移到最合适的位置。</string>
+    <string name="tutorial_solitaire_two">点一下 2♠。它会移到上面的 A 上。</string>
+    <string name="tutorial_solitaire_six">在各列里，牌要从大到小、红黑交替地叠放：红色的 6 放在黑色的 7 上。</string>
+    <string name="tutorial_solitaire_five">点一下黑色的 5♠。它会移到红色的 6 上。</string>
+    <string name="tutorial_solitaire_stock">没有能走的牌了？点一下牌堆，翻开一张新牌。</string>
+    <string name="tutorial_solitaire_king">只有 K 能放到空列里。点一下 K。</string>
+    <string name="tutorial_solitaire_hint">不知道走哪一步？点“提示”。</string>
+    <string name="tutorial_solitaire_queen">游戏给出了一步：红色的 Q 放到黑色的 K 上。点一下 Q。</string>
+    <string name="tutorial_solitaire_undo">想重走？点“撤销”可以退回上一步。</string>
+    <string name="tutorial_solitaire_end">就是这样！把所有的牌从 A 到 K 移到上面。祝你玩得开心！</string>
+</resources>

@@ -5,6 +5,7 @@ import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
@@ -48,6 +49,11 @@ import io.github.fershibli.megagames.ui.theme.LocalUpdateSettings
 import io.github.fershibli.megagames.ui.theme.currentPace
 import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
+import androidx.compose.ui.layout.LayoutCoordinates
+import androidx.compose.ui.layout.onGloballyPositioned
+import io.github.fershibli.megagames.ui.components.LocalTutorial
+import io.github.fershibli.megagames.ui.components.toWindow
+import io.github.fershibli.megagames.ui.components.tutorialSpot
 
 @Composable
 fun SolitaireGame(host: GameHost) {
@@ -119,6 +125,42 @@ private class TableLayout(val width: Float, val height: Float, val leftHanded: B
     }
 }
 
+/** The name of a touched place for a lesson (see `TutorialGuide`): "stock", "waste", "foundation:1", "column:3:2". */
+private fun placeOf(hit: Hit): String = when (hit) {
+    Hit.Stock -> "stock"
+    is Hit.Card -> when (val pile = hit.pile) {
+        Pile.Waste -> "waste"
+        is Pile.Foundation -> "foundation:${pile.index}"
+        is Pile.Column -> "column:${pile.index}:${hit.index}"
+    }
+}
+
+private fun hitOf(place: String, s: SolitaireState): Hit? {
+    val parts = place.split(":")
+    return when (parts[0]) {
+        "stock" -> Hit.Stock
+        "waste" -> Hit.Card(Pile.Waste, s.waste.lastIndex)
+        "foundation" -> Hit.Card(Pile.Foundation(parts[1].toInt()), s.foundations[parts[1].toInt()].lastIndex)
+        "column" -> Hit.Card(Pile.Column(parts[1].toInt()), parts[2].toInt())
+        else -> null
+    }
+}
+
+/** Where a place of a lesson is on the table: a card with the ones lying on it, a pile, or all four foundations. */
+private fun TableLayout.placeRect(place: String, s: SolitaireState): Rect? {
+    if (place == "foundations") return Rect(foundationSlot(0).topLeft, foundationSlot(0).bottomRight).let { a -> (1..3).fold(a) { acc, f -> Rect(minOf(acc.left, foundationSlot(f).left), acc.top, maxOf(acc.right, foundationSlot(f).right), acc.bottom) } }
+    return when (val hit = hitOf(place, s)) {
+        null -> null
+        Hit.Stock -> stockRect
+        is Hit.Card -> {
+            val pile = hit.pile
+            val rects = cards.filter { (_, h) -> h is Hit.Card && h.pile == pile && (pile !is Pile.Column || h.index >= hit.index) }.map { it.first }
+            if (rects.isEmpty()) (pile as? Pile.Foundation)?.let { foundationSlot(it.index) }
+            else Rect(rects.minOf { it.left }, rects.minOf { it.top }, rects.maxOf { it.right }, rects.maxOf { it.bottom })
+        }
+    }
+}
+
 @Composable
 private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost) {
     val s = state.value
@@ -135,6 +177,9 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
     val sideways = settings.solitaireSideways
     val updateSettings = LocalUpdateSettings.current
     val french = LocalGameLanguage.current == AppLanguage.FRENCH
+    // In a lesson, the guide says which place may be touched and is told where the places are.
+    val guide = LocalTutorial.current
+    var board by remember { mutableStateOf<LayoutCoordinates?>(null) }
 
     fun commit(next: SolitaireState, moved: Card?) {
         history += s
@@ -176,6 +221,34 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
         }
     }
 
+    fun undo() {
+        history.removeLastOrNull()?.let { state.value = it }
+    }
+    fun showHint() {
+        hintMove = Solitaire.hint(s)
+        noHint = hintMove == null
+    }
+    if (guide != null) {
+        SideEffect {
+            guide.perform = { place ->
+                when (place) {
+                    "undo" -> undo()
+                    "hint" -> showHint()
+                    else -> onTap(hitOf(place, s))
+                }
+            }
+            guide.resolver = { place ->
+                board?.takeIf { it.isAttached }?.let { c ->
+                    val w = c.size.width.toFloat()
+                    val h = c.size.height.toFloat()
+                    val table = if (sideways) TableLayout(h, w, leftHanded, s) else TableLayout(w, h, leftHanded, s)
+                    // Sideways, a table point (x, y) is on the screen at (y, height - x).
+                    table.placeRect(place, s)?.let { r -> c.toWindow(if (sideways) Rect(r.top, h - r.right, r.bottom, h - r.left) else r) }
+                }
+            }
+        }
+    }
+
     GameLayout(
         status = {
             val parts = mutableListOf(stringResource(R.string.solitaire_moves, s.moves))
@@ -184,18 +257,21 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
         },
         controls = {
             ActionBar {
-                BigButton(stringResource(R.string.undo), { history.removeLastOrNull()?.let { state.value = it } }, icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = history.isNotEmpty() && !autoFinishing)
+                BigButton(
+                    stringResource(R.string.undo), { undo(); guide?.completed() }, Modifier.tutorialSpot("undo"), icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY,
+                    enabled = history.isNotEmpty() && !autoFinishing && (guide == null || guide.expected == "undo"),
+                )
                 if (s.canAutoFinish) {
                     BigButton(stringResource(R.string.solitaire_finish), { autoFinishing = true }, icon = AppIcon.CHECK, enabled = !autoFinishing)
                 } else {
-                    BigButton(stringResource(R.string.hint), {
-                        hintMove = Solitaire.hint(s)
-                        noHint = hintMove == null
-                    }, icon = AppIcon.HINT, style = ButtonStyle.SECONDARY)
+                    BigButton(
+                        stringResource(R.string.hint), { showHint(); guide?.completed() }, Modifier.tutorialSpot("hint"), icon = AppIcon.HINT, style = ButtonStyle.SECONDARY,
+                        enabled = guide == null || guide.expected == "hint",
+                    )
                 }
                 BigButton(
                     stringResource(R.string.backgammon_rotate), { updateSettings(settings.copy(solitaireSideways = !sideways)) },
-                    icon = AppIcon.ROTATE, style = ButtonStyle.SECONDARY, compact = true,
+                    icon = AppIcon.ROTATE, style = ButtonStyle.SECONDARY, compact = true, enabled = guide == null,
                 )
             }
         },
@@ -206,13 +282,17 @@ private fun SolitaireScreen(state: MutableState<SolitaireState>, host: GameHost)
             Modifier
                 .fillMaxSize()
                 .testTag("solitaire-table")
+                .onGloballyPositioned { board = it }
                 .pointerInput(s, leftHanded, sideways) {
                     detectTapGestures { pos ->
                         val w = size.width.toFloat()
                         val h = size.height.toFloat()
                         // Sideways, the table's top is the screen's left edge (see the drawing below).
                         val table = if (sideways) TableLayout(h, w, leftHanded, s) else TableLayout(w, h, leftHanded, s)
-                        onTap(table.hit(if (sideways) Offset(h - pos.y, pos.x) else pos))
+                        val hit = table.hit(if (sideways) Offset(h - pos.y, pos.x) else pos)
+                        if (guide != null && !guide.allows(hit?.let(::placeOf))) return@detectTapGestures
+                        onTap(hit)
+                        guide?.completed()
                     }
                 },
         ) {

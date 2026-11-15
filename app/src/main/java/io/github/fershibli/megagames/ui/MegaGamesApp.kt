@@ -27,6 +27,7 @@ import io.github.fershibli.megagames.core.SettingsStore
 import io.github.fershibli.megagames.core.offersMatches
 import io.github.fershibli.megagames.core.offersTimeLimit
 import io.github.fershibli.megagames.core.rememberChoiceStore
+import io.github.fershibli.megagames.games.tutorialOf
 import io.github.fershibli.megagames.ui.screens.DifficultyScreen
 import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.HomeOrder
@@ -37,6 +38,7 @@ import io.github.fershibli.megagames.ui.screens.LanguageFallbackDialog
 import io.github.fershibli.megagames.ui.screens.ModeScreen
 import io.github.fershibli.megagames.ui.screens.SettingsScreen
 import io.github.fershibli.megagames.ui.screens.TableScreen
+import io.github.fershibli.megagames.ui.screens.TutorialScreen
 import io.github.fershibli.megagames.ui.screens.VariantScreen
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
@@ -59,6 +61,8 @@ sealed interface Screen {
     data class ChooseDifficulty(val game: GameId, val variant: GameVariant?, val language: AppLanguage? = null) : Screen
     data class ChooseTable(val game: GameId, val variant: GameVariant?, val difficulty: Difficulty, val together: Boolean, val language: AppLanguage? = null) : Screen
     data class HowTo(val game: GameId, val language: AppLanguage?, val back: Screen) : Screen
+    /** The lesson played on the game's board, for the games that have one. */
+    data class Tutorial(val game: GameId, val language: AppLanguage?, val back: Screen) : Screen
     data class Playing(val game: GameId, val difficulty: Difficulty, val variant: GameVariant?, val setup: PlaySetup, val saved: SavedGame?, val language: AppLanguage? = null) : Screen
 }
 
@@ -175,7 +179,8 @@ fun MegaGamesApp(
                     IntroScreen(
                         game = s.game,
                         onPlay = { choose(s.game, s.language) },
-                        onLearn = { screen = Screen.HowTo(s.game, s.language, s) },
+                        // A game with a lesson teaches on its board first; the page of rules is one tap away from there.
+                        onLearn = { screen = if (tutorialOf(s.game) != null) Screen.Tutorial(s.game, s.language, s) else Screen.HowTo(s.game, s.language, s) },
                         onBack = { screen = Screen.Home },
                         onSettings = { screen = Screen.Settings },
                         language = s.language,
@@ -224,6 +229,17 @@ fun MegaGamesApp(
                 is Screen.HowTo -> {
                     BackHandler { screen = s.back }
                     HowToScreen(s.game, onBack = { screen = s.back }, onSettings = { screen = Screen.Settings }, language = s.language)
+                }
+                is Screen.Tutorial -> {
+                    BackHandler { screen = s.back }
+                    TutorialScreen(
+                        game = s.game,
+                        lesson = tutorialOf(s.game)!!,
+                        onExit = { screen = s.back },
+                        onRules = { screen = Screen.HowTo(s.game, s.language, s.back) },
+                        onSettings = { screen = Screen.Settings },
+                        language = s.language,
+                    )
                 }
                 is Screen.ChooseTable -> {
                     val back = {

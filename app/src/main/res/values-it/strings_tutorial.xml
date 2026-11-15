@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tutorial_next">Avanti</string>
+    <string name="tutorial_rules">Regole</string>
+    <string name="tutorial_watch">Guarda</string>
+    <string name="tutorial_well_done">Molto bene!</string>
+    <string name="tutorial_solitaire_goal">Lo scopo: portare tutte le carte in queste quattro caselle, dall’Asso al Re, un seme per casella.</string>
+    <string name="tutorial_solitaire_ace">Un Asso sale subito. Basta toccare la carta: va da sola nel posto migliore.</string>
+    <string name="tutorial_solitaire_two">Tocca il 2♠. Sale sopra il suo Asso.</string>
+    <string name="tutorial_solitaire_six">Nelle colonne le carte scendono in ordine, alternando i colori: il 6 rosso va sul 7 nero.</string>
+    <string name="tutorial_solitaire_five">Tocca il 5♠ nero. Va sul 6 rosso.</string>
+    <string name="tutorial_solitaire_stock">Non ci sono mosse? Tocca il mazzo per girare una carta nuova.</string>
+    <string name="tutorial_solitaire_king">Solo un Re può andare in una colonna vuota. Tocca il Re.</string>
+    <string name="tutorial_solitaire_hint">Non sai cosa giocare? Tocca Suggerimento.</string>
+    <string name="tutorial_solitaire_queen">Il gioco mostra una mossa: la Donna rossa sul Re nero. Tocca la Donna.</string>
+    <string name="tutorial_solitaire_undo">Hai cambiato idea? Tocca Annulla mossa per tornare indietro di una mossa.</string>
+    <string name="tutorial_solitaire_end">Tutto qui! Porta tutte le carte in alto, dall’Asso al Re. Buona partita!</string>
+</resources>
