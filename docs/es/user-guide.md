@@ -50,7 +50,7 @@ El **engranaje** abre los ajustes. Dentro de un juego, los ajustes muestran adem
 
 - **Volver al juego**: cierra los ajustes.
 - **Nuevo juego**: empieza otra partida del mismo juego (pide confirmación).
-- **Menú principal**: sale del juego y vuelve a la lista. *Esto abandona la partida*: antes pregunta "¿Salir de este juego?", para que no ocurra sin querer.
+- **Menú principal**: vuelve a la lista de juegos. La partida queda guardada: abre el juego otra vez para seguir donde lo dejaste.
 
 El botón o gesto **Atrás** del teléfono, dentro de un juego, abre (o cierra) los ajustes, así nadie sale de una partida por error.
 
@@ -65,9 +65,9 @@ Cada jugada se guarda al instante en el teléfono. Si la aplicación se cierra �
 > **¡Qué bueno verte de nuevo!** Tienes una partida de *Sudoku* sin terminar. ¿Quieres seguir donde lo dejaste o volver al menú principal?
 
 - **Seguir jugando**: todo queda exactamente como estaba, incluido el turno del ordenador si estaba jugando.
-- **Menú principal**: la partida guardada se descarta.
+- **Menú principal**: va a la lista de juegos; la partida sigue guardada.
 
-Solo se guarda una partida a la vez. Una partida terminada (ganada o perdida) no se guarda.
+Cada juego guarda su propia partida sin terminar: puedes dejar un sudoku a medias, jugar al solitario y volver después. En la lista, el juego con una partida sin terminar lleva una pequeña marca ▶; al tocarlo, la aplicación pregunta si quieres seguir (**Seguir jugando**) o empezar de nuevo (**Nuevo juego**). Una partida terminada (ganada o perdida) no se guarda. Una partida guardada ocupa unos pocos kilobytes: todos los juegos dejados a medias a la vez ocupan menos que una foto.
 
 ## Zoom
 

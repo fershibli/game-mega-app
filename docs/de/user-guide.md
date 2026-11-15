@@ -50,7 +50,7 @@ Das **Zahnrad** öffnet die Einstellungen. Während eines Spiels zeigen die Eins
 
 - **Zurück zum Spiel** — schließt die Einstellungen.
 - **Neues Spiel** — beginnt ein neues Spiel derselben Art (mit Rückfrage).
-- **Hauptmenü** — verlässt das Spiel und kehrt zur Liste der Spiele zurück. *Dabei wird das Spiel abgebrochen*: Vorher wird gefragt „Dieses Spiel verlassen?“, damit das nicht aus Versehen passiert.
+- **Hauptmenü** — kehrt zur Liste der Spiele zurück. Das Spiel bleibt gespeichert: Öffne es wieder, um dort weiterzuspielen, wo du aufgehört hast.
 
 Die **Zurück**-Taste bzw. -Geste des Telefons öffnet (oder schließt) während eines Spiels die Einstellungen, damit niemand ein Spiel versehentlich verlässt.
 
@@ -65,9 +65,9 @@ Jeder Zug wird sofort auf dem Telefon gespeichert. Wird die App geschlossen — 
 > **Willkommen zurück!** Eine Partie *Sudoku* ist noch nicht beendet. Möchtest du dort weiterspielen, wo du aufgehört hast, oder zum Hauptmenü zurückkehren?
 
 - **Weiterspielen** — alles ist genau so, wie es war, auch wenn gerade der Computer am Zug war.
-- **Hauptmenü** — das gespeicherte Spiel wird verworfen.
+- **Hauptmenü** — geht zur Liste der Spiele; das Spiel bleibt gespeichert.
 
-Es wird immer nur ein Spiel aufbewahrt. Ein beendetes Spiel (gewonnen oder verloren) wird nicht aufbewahrt.
+Jedes Spiel bewahrt seine eigene angefangene Partie auf: Du kannst ein Sudoku mittendrin liegen lassen, Solitär spielen und später zurückkommen. In der Liste trägt ein Spiel mit einer angefangenen Partie ein kleines Zeichen ▶; beim Antippen fragt die App, ob du weiterspielen (**Weiterspielen**) oder neu anfangen (**Neues Spiel**) möchtest. Ein beendetes Spiel (gewonnen oder verloren) wird nicht aufbewahrt. Eine gespeicherte Partie ist ein paar Kilobyte groß: Alle angefangenen Spiele zusammen brauchen weniger Platz als ein Foto.
 
 ## Zoom
 

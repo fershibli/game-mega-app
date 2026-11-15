@@ -50,7 +50,7 @@ La **roue dentée** ouvre les réglages. Dans un jeu, les réglages affichent au
 
 - **Retour au jeu** — ferme les réglages.
 - **Nouvelle partie** — recommence une partie du même jeu (avec confirmation).
-- **Menu principal** — quitte le jeu et revient à la liste. *Cela abandonne la partie* : l’application demande d’abord « Quitter cette partie ? », pour éviter toute fausse manœuvre.
+- **Menu principal** — revient à la liste des jeux. La partie reste enregistrée : rouvrez le jeu pour reprendre là où vous vous étiez arrêté.
 
 Le bouton ou geste **Retour** du téléphone, dans un jeu, ouvre (ou ferme) les réglages : personne ne quitte une partie par erreur.
 
@@ -65,9 +65,9 @@ Chaque coup est enregistré immédiatement sur le téléphone. Si l’applicatio
 > **Bon retour !** Vous avez une partie de *Sudoku* en cours. Voulez-vous reprendre là où vous vous étiez arrêté ou revenir au menu principal ?
 
 - **Continuer la partie** — tout est exactement comme avant, y compris le tour de l’ordinateur s’il était en train de jouer.
-- **Menu principal** — la partie enregistrée est supprimée.
+- **Menu principal** — va à la liste des jeux ; la partie reste enregistrée.
 
-Une seule partie est conservée à la fois. Une partie terminée (gagnée ou perdue) n’est pas conservée.
+Chaque jeu garde sa propre partie en cours : vous pouvez laisser un sudoku au milieu, faire un solitaire et revenir ensuite. Dans la liste, un jeu qui a une partie en cours porte une petite marque ▶ ; quand vous le touchez, l’application demande si vous voulez reprendre (**Continuer la partie**) ou recommencer (**Nouvelle partie**). Une partie terminée (gagnée ou perdue) n’est pas conservée. Une partie enregistrée pèse quelques kilo-octets : tous les jeux laissés en cours en même temps prennent moins de place qu’une photo.
 
 ## Zoom
 

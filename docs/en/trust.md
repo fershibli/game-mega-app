@@ -34,7 +34,7 @@ Mili Games is meant to be installed on the phones of people who may not be able 
 The app stores exactly two things, both in its **private** storage, which other apps cannot read:
 
 1. `settings.xml` — your choices in Settings (language, sizes, colors…).
-2. `current_game.json` — the game in progress, so it can be resumed after the app is closed. It is deleted when the game ends or is abandoned.
+2. `saves/` — the game in progress of each game (one small file per game), so it can be continued later, even after the app is closed. A file is deleted when its game ends or a new game of it is started.
 
 If you turned on Android's own backup, Android may include these two files in *your* Google backup (and device-to-device transfer), so a new phone keeps your settings. This is configured in [`backup_rules.xml`](../../app/src/main/res/xml/backup_rules.xml) and [`data_extraction_rules.xml`](../../app/src/main/res/xml/data_extraction_rules.xml). Nothing else is ever stored or sent.
 

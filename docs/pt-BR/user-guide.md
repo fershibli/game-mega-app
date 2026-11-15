@@ -50,7 +50,7 @@ A **engrenagem** abre as configurações. Dentro de um jogo, as configurações 
 
 - **Voltar ao jogo** — fecha as configurações.
 - **Novo jogo** — começa outra partida do mesmo jogo (pede confirmação).
-- **Menu principal** — sai do jogo e volta para a lista de jogos. *Isso abandona a partida*: antes, o app pergunta "Sair deste jogo?", para não acontecer sem querer.
+- **Menu principal** — volta para a lista de jogos. A partida fica salva: abra o jogo de novo para continuar de onde parou.
 
 O botão/gesto **Voltar** do celular, dentro de um jogo, abre (ou fecha) as configurações, então ninguém sai de uma partida por engano.
 
@@ -77,9 +77,9 @@ Cada jogada é salva na hora, no próprio celular. Se o app fechar — sem quere
 > **Que bom te ver de novo!** Você tem uma partida de *Sudoku* em andamento. Quer continuar de onde parou ou voltar para o menu principal?
 
 - **Continuar jogando** — tudo fica exatamente como estava, inclusive a vez do computador, se ele estava jogando.
-- **Menu principal** — a partida salva é descartada.
+- **Menu principal** — vai para a lista de jogos; a partida continua salva.
 
-Só uma partida é guardada por vez. Partida terminada (ganha ou perdida) não é guardada.
+Cada jogo guarda a sua partida em andamento: dá para largar um sudoku no meio, jogar paciência e voltar depois. Na lista, o jogo com partida em andamento tem uma marquinha ▶; ao tocar nele, o app pergunta se você quer continuar (**Continuar jogando**) ou recomeçar (**Novo jogo**). Uma partida terminada (ganha ou perdida) não é guardada. Uma partida salva ocupa poucos kilobytes: todos os jogos largados no meio ao mesmo tempo ocupam menos espaço que uma foto.
 
 ## Zoom
 

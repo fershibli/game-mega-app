@@ -157,6 +157,9 @@ class ScreenshotTest {
     @Test fun setupTextBigPt() = shot("setup_text_big_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = 1.4f)) {
         io.github.fershibli.megagames.ui.screens.SetupScreen(Settings(fontScale = 1.4f), {}, {}, startAt = 1)
     }
+    @Test fun homeInProgressPt() = shot("home_in_progress_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+        HomeScreen({}, {}, inProgress = setOf(GameId.SOLITAIRE, GameId.BURACO))
+    }
     @Test fun introPt() = shot("intro_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
         io.github.fershibli.megagames.ui.screens.IntroScreen(GameId.BURACO, onPlay = {}, onLearn = {}, onBack = {}, onSettings = {})
     }

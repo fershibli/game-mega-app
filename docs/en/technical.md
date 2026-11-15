@@ -157,6 +157,6 @@ Medium and Hard are close when two computers play Backgammon or Buraco — both 
 |---|---|
 | `SudokuEngineTest`, `SolitaireTest`, `ReversiTest`, `MahjongTest`, `PuzzleGeneratorsTest`, `CrosswordTest`, `BackgammonTest`, `BuracoTest` | Rules and generator guarantees, AI speed and correctness |
 | `TranslationsTest` | Every key translated in all languages, identical placeholders, no unescaped apostrophes |
-| `AppFlowTest` (Robolectric) | Autosave round trip, corrupted save, settings persistence, pinch zoom on/off, double-tap and press-and-rotate zoom, choosing and abandoning a game, the "continue?" prompt |
+| `AppFlowTest` (Robolectric) | Autosave round trip, corrupted save, settings persistence, pinch zoom on/off, double-tap and press-and-rotate zoom, choosing a game, leaving it saved and continuing it, the "continue?" prompt |
 | `ScreenshotTest` (opt-in) | Renders every screen and game to `docs/screenshots` |
 | `AiBenchmarkTest` (opt-in) | The table above |
