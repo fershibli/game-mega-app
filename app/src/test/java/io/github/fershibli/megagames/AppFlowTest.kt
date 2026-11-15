@@ -244,8 +244,13 @@ class AppFlowTest {
         // With many card games the board games start below the screen.
         rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi"))
         rule.onAllNodesWithContentDescription("Reversi")[0].performClick()
-        // Reversi can also be played taking turns, so the wheel asks how to play.
+        // One question per screen: learn or play, then who plays (Reversi can be played taking turns), then the level.
+        rule.onNodeWithText("Learn to play").assertIsDisplayed()
+        rule.onNodeWithText("Go to the game").performClick()
         rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
+        rule.onNodeWithText("Play with the computer").assertIsDisplayed()
+        rule.onNodeWithText("Confirm").performClick()
+        rule.onNodeWithText("Choose the difficulty").assertIsDisplayed()
         rule.onNodeWithText("Confirm").performClick()
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
         // Settings from inside the game can abandon it.
@@ -280,14 +285,17 @@ class AppFlowTest {
         rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = true) }
         rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi"))
         rule.onAllNodesWithContentDescription("Reversi")[0].performClick()
+        rule.onNodeWithText("Go to the game").performClick()
+        rule.onNodeWithText("Confirm").performClick()
         rule.onNodeWithText("Confirm").performClick()
         rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithContentDescription("Settings").performClick()
         rule.onNodeWithText("New game, other options").performClick()
         // The game in progress is lost, so it asks first.
         rule.onAllNodesWithText("New game, other options").onLast().performClick()
-        // Straight to Reversi's own choices, not the main menu.
+        // Straight to Reversi's own choices: not the main menu, nor the "learn to play" step again.
         rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
+        assertEquals(0, rule.onAllNodesWithText("Go to the game").fetchSemanticsNodes().size)
         assertEquals(0, rule.onAllNodesWithText("Choose your game").fetchSemanticsNodes().size)
         Thread.sleep(100)
         assertNull(saves.load())

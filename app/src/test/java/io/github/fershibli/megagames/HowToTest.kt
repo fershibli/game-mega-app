@@ -14,7 +14,6 @@ import io.github.fershibli.megagames.core.HowTo
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.ui.components.Markdown
 import io.github.fershibli.megagames.ui.components.MdBlock
-import io.github.fershibli.megagames.ui.screens.DifficultyScreen
 import io.github.fershibli.megagames.ui.screens.HowToScreen
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 import org.junit.Assert.assertEquals
@@ -71,11 +70,11 @@ class HowToTest {
     }
 
     @Test
-    fun theLevelScreenOpensThePageInTheGamesLanguage() {
+    fun theFirstScreenOfAGameOpensThePageInTheGamesLanguage() {
         var learn by mutableStateOf(false)
         rule.setContent {
             MegaGamesTheme(Settings(language = AppLanguage.PORTUGUESE)) {
-                if (!learn) DifficultyScreen(GameId.SOLITAIRE, Difficulty.EASY, {}, {}, {}, onLearn = { learn = true })
+                if (!learn) io.github.fershibli.megagames.ui.screens.IntroScreen(GameId.SOLITAIRE, onPlay = {}, onLearn = { learn = true }, onBack = {}, onSettings = {})
                 else HowToScreen(GameId.SOLITAIRE, onBack = { learn = false }, onSettings = {})
             }
         }

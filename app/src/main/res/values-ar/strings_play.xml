@@ -39,4 +39,7 @@
         <item quantity="other">%1$d شخص بالتناوب</item>
     </plurals>
     <string name="game_end">نهاية المباراة</string>
+    <string name="go_to_game">انتقل إلى اللعبة</string>
+    <string name="mode_computer">العب مع الحاسوب</string>
+    <string name="mode_computer_desc">الحاسوب يلعب مكان اللاعبين الآخرين. بعدها تختار مستوى الصعوبة.</string>
 </resources>

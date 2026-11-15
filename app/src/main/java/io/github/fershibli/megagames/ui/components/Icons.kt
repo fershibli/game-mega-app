@@ -31,7 +31,7 @@ import kotlin.math.min
 import kotlin.math.sin
 
 /** Icons are drawn in code (no icon font, no image files) to keep the app tiny. */
-enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO, TAKE_TURNS, TAKE_TURNS_TABLET }
+enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO, TAKE_TURNS, TAKE_TURNS_TABLET, COMPUTER }
 
 private val DIRECTIONAL = setOf(AppIcon.BACK, AppIcon.NEXT, AppIcon.PREV, AppIcon.ERASE)
 
@@ -93,6 +93,15 @@ fun DrawScope.drawAppIcon(icon: AppIcon, tint: Color) {
             drawCircle(tint, s * 0.42f, c, style = Stroke(s * 0.08f))
             drawCircle(tint, s * 0.07f, Offset(c.x, s * 0.3f))
             drawRoundRect(tint, Offset(c.x - s * 0.055f, s * 0.43f), Size(s * 0.11f, s * 0.32f), CornerRadius(s * 0.05f))
+        }
+        // The computer as a player: a friendly robot head.
+        AppIcon.COMPUTER -> {
+            drawLine(tint, Offset(c.x, s * 0.09f), Offset(c.x, s * 0.24f), s * 0.06f, StrokeCap.Round)
+            drawCircle(tint, s * 0.06f, Offset(c.x, s * 0.08f))
+            drawRoundRect(tint, Offset(s * 0.14f, s * 0.24f), Size(s * 0.72f, s * 0.6f), CornerRadius(s * 0.14f), style = Stroke(s * 0.08f))
+            drawCircle(tint, s * 0.07f, Offset(s * 0.35f, s * 0.47f))
+            drawCircle(tint, s * 0.07f, Offset(s * 0.65f, s * 0.47f))
+            drawLine(tint, Offset(s * 0.37f, s * 0.67f), Offset(s * 0.63f, s * 0.67f), s * 0.06f, StrokeCap.Round)
         }
         AppIcon.CLOSE -> {
             drawLine(tint, Offset(s * 0.2f, s * 0.2f), Offset(s * 0.8f, s * 0.8f), stroke.width, StrokeCap.Round)

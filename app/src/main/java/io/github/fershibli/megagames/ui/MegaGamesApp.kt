@@ -32,7 +32,9 @@ import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.HomeOrder
 import io.github.fershibli.megagames.ui.screens.HomeScreen
 import io.github.fershibli.megagames.ui.screens.HowToScreen
+import io.github.fershibli.megagames.ui.screens.IntroScreen
 import io.github.fershibli.megagames.ui.screens.LanguageFallbackDialog
+import io.github.fershibli.megagames.ui.screens.ModeScreen
 import io.github.fershibli.megagames.ui.screens.SettingsScreen
 import io.github.fershibli.megagames.ui.screens.TableScreen
 import io.github.fershibli.megagames.ui.screens.VariantScreen
@@ -42,11 +44,18 @@ import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 /**
  * Screens of the app. Navigation is a tiny state machine: no navigation library is needed.
  * [language] is the language a game is pinned to (see [GameLanguages]); `null` follows the app.
+ *
+ * From the menu to a game, each screen asks one thing: [Intro] (learn to play, or go to the game),
+ * then [ChooseVariant] (the rules), [ChooseMode] (with the computer or taking turns),
+ * [ChooseDifficulty] and [ChooseTable]. A game only shows the steps it has.
  */
 sealed interface Screen {
     data object Home : Screen
     data object Settings : Screen
+    data class Intro(val game: GameId, val language: AppLanguage? = null) : Screen
     data class ChooseVariant(val game: GameId, val language: AppLanguage? = null) : Screen
+    /** [together] is the way to preselect when coming back from a later step; `null` is the way played last time. */
+    data class ChooseMode(val game: GameId, val variant: GameVariant?, val language: AppLanguage? = null, val together: Boolean? = null) : Screen
     data class ChooseDifficulty(val game: GameId, val variant: GameVariant?, val language: AppLanguage? = null) : Screen
     data class ChooseTable(val game: GameId, val variant: GameVariant?, val difficulty: Difficulty, val together: Boolean, val language: AppLanguage? = null) : Screen
     data class HowTo(val game: GameId, val language: AppLanguage?, val back: Screen) : Screen
@@ -108,15 +117,35 @@ fun MegaGamesApp(
         else start(game, difficulty, variant, game.tables.firstOrNull().let { PlaySetup(together, it?.seats ?: 0, it?.teams ?: 0) }, language)
     }
 
-    // Rules first (when the game has variants), then the difficulty (when it has one).
+    // People taking turns need no level: the computer doesn't play.
+    fun afterMode(game: GameId, variant: GameVariant?, together: Boolean, language: AppLanguage?) {
+        if (!together && game.hasDifficulty) screen = Screen.ChooseDifficulty(game, variant, language)
+        else afterDifficulty(game, variant, settings.defaultDifficulty, together, language)
+    }
+
+    fun offersMode(game: GameId, variant: GameVariant?) = game.takeTurns && variant?.takeTurns != false
+
+    // After the rules, who plays (when the game can be played taking turns), then the level.
     fun afterVariant(game: GameId, variant: GameVariant?, language: AppLanguage?) {
-        if (game.hasDifficulty) screen = Screen.ChooseDifficulty(game, variant, language)
-        else afterDifficulty(game, variant, settings.defaultDifficulty, together = false, language = language)
+        if (offersMode(game, variant)) screen = Screen.ChooseMode(game, variant, language)
+        else afterMode(game, variant, together = false, language = language)
+    }
+
+    // The choices of a game, from the first one it has.
+    fun choose(game: GameId, language: AppLanguage?) {
+        options = choiceStore.lastBestOf(game) to choiceStore.lastMinutes(game)
+        if (game.variants.isNotEmpty()) screen = Screen.ChooseVariant(game, language) else afterVariant(game, null, language)
+    }
+
+    // The step before the level (and before the table, for people taking turns).
+    fun beforeLevel(game: GameId, variant: GameVariant?, language: AppLanguage?, together: Boolean): Screen = when {
+        offersMode(game, variant) -> Screen.ChooseMode(game, variant, language, together)
+        game.variants.isNotEmpty() -> Screen.ChooseVariant(game, language)
+        else -> Screen.Intro(game, language)
     }
 
     fun open(game: GameId, language: AppLanguage?) {
-        options = choiceStore.lastBestOf(game) to choiceStore.lastMinutes(game)
-        if (game.variants.isNotEmpty()) screen = Screen.ChooseVariant(game, language) else afterVariant(game, null, language)
+        screen = Screen.Intro(game, language)
     }
 
     MegaGamesTheme(settings) {
@@ -141,8 +170,20 @@ fun MegaGamesApp(
                     BackHandler { screen = Screen.Home }
                     SettingsScreen(settings, updateSettings, onClose = { screen = Screen.Home }, inGame = null)
                 }
-                is Screen.ChooseVariant -> {
+                is Screen.Intro -> {
                     BackHandler { screen = Screen.Home }
+                    IntroScreen(
+                        game = s.game,
+                        onPlay = { choose(s.game, s.language) },
+                        onLearn = { screen = Screen.HowTo(s.game, s.language, s) },
+                        onBack = { screen = Screen.Home },
+                        onSettings = { screen = Screen.Settings },
+                        language = s.language,
+                    )
+                }
+                is Screen.ChooseVariant -> {
+                    val back = { screen = Screen.Intro(s.game, s.language) }
+                    BackHandler { back() }
                     VariantScreen(
                         game = s.game,
                         initial = s.game.variant(choiceStore.lastVariant(s.game))!!,
@@ -150,13 +191,24 @@ fun MegaGamesApp(
                             choiceStore.rememberVariant(s.game, it)
                             afterVariant(s.game, it, s.language)
                         },
-                        onBack = { screen = Screen.Home },
+                        onBack = back,
                         onSettings = { screen = Screen.Settings },
                         language = s.language,
                     )
                 }
+                is Screen.ChooseMode -> {
+                    val back = { screen = if (s.game.variants.isNotEmpty()) Screen.ChooseVariant(s.game, s.language) else Screen.Intro(s.game, s.language) }
+                    BackHandler { back() }
+                    ModeScreen(
+                        game = s.game,
+                        initialTogether = s.together ?: choiceStore.lastTogether(s.game),
+                        onConfirm = { afterMode(s.game, s.variant, it, s.language) },
+                        onBack = back,
+                        onSettings = { screen = Screen.Settings },
+                    )
+                }
                 is Screen.ChooseDifficulty -> {
-                    val back = { screen = if (s.game.variants.isNotEmpty()) Screen.ChooseVariant(s.game, s.language) else Screen.Home }
+                    val back = { screen = beforeLevel(s.game, s.variant, s.language, together = false) }
                     BackHandler { back() }
                     DifficultyScreen(
                         game = s.game,
@@ -164,13 +216,9 @@ fun MegaGamesApp(
                         onConfirm = { afterDifficulty(s.game, s.variant, it, together = false, language = s.language) },
                         onBack = back,
                         onSettings = { screen = Screen.Settings },
-                        onTogether = if (s.game.takeTurns && s.variant?.takeTurns != false) ({ afterDifficulty(s.game, s.variant, settings.defaultDifficulty, together = true, language = s.language) }) else null,
-                        initialTogether = choiceStore.lastTogether(s.game),
-                        language = s.language,
                         initialBestOf = choiceStore.lastBestOf(s.game).takeIf { s.game.offersMatches },
                         initialMinutes = choiceStore.lastMinutes(s.game).takeIf { s.game.offersTimeLimit },
                         onOptions = { bestOf, minutes -> options = bestOf to minutes },
-                        onLearn = { screen = Screen.HowTo(s.game, s.language, s) },
                     )
                 }
                 is Screen.HowTo -> {
@@ -178,7 +226,10 @@ fun MegaGamesApp(
                     HowToScreen(s.game, onBack = { screen = s.back }, onSettings = { screen = Screen.Settings }, language = s.language)
                 }
                 is Screen.ChooseTable -> {
-                    val back = { screen = Screen.ChooseDifficulty(s.game, s.variant, s.language) }
+                    val back = {
+                        screen = if (!s.together && s.game.hasDifficulty) Screen.ChooseDifficulty(s.game, s.variant, s.language)
+                        else beforeLevel(s.game, s.variant, s.language, s.together)
+                    }
                     BackHandler { back() }
                     val last = choiceStore.lastSeats(s.game)
                     val lastTeams = choiceStore.lastTeams(s.game)
@@ -215,10 +266,10 @@ fun MegaGamesApp(
                         if (s.game.hasDifficulty) saveStore.clear()
                         screen = Screen.Home
                     },
-                    // Back to the rules / level / table choice of the same game, the last choices preselected.
+                    // Back to the rules / mode / level / table choice of the same game, the last choices preselected.
                     onNewOptions = {
                         saveStore.clear()
-                        open(s.game, s.language)
+                        choose(s.game, s.language)
                     }.takeIf { s.game.hasDifficulty || s.game.variants.isNotEmpty() },
                 )
             }

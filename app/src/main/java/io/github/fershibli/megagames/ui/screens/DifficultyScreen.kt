@@ -56,12 +56,9 @@ import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.ProvideGameLanguage
 
 /**
- * Difficulty choice: a scroll wheel with the default difficulty already selected, then
- * "Confirm". Everything you touch sits in the lower half of the screen. Games that can be played
- * by people taking turns on this device add that option at the end of the wheel ([onTogether]);
- * the title then asks "How do you want to play?" and the option explains itself when selected.
+ * Level choice: a scroll wheel with the default level already selected, then "Confirm".
  *
- * Games played against the computer also offer a match of 3 or 5 ([initialBestOf]), and games
+ * Games played with the computer also offer a match of 3 or 5 ([initialBestOf]), and games
  * played alone a time limit ([initialMinutes]); [onOptions] hears the choice before confirming.
  */
 @Composable
@@ -71,92 +68,34 @@ fun DifficultyScreen(
     onConfirm: (Difficulty) -> Unit,
     onBack: () -> Unit,
     onSettings: () -> Unit,
-    onTogether: (() -> Unit)? = null,
-    initialTogether: Boolean = false,
-    language: AppLanguage? = null,
     initialBestOf: Int? = null,
     initialMinutes: Int? = null,
     onOptions: (bestOf: Int, minutes: Int) -> Unit = { _, _ -> },
-    onLearn: (() -> Unit)? = null,
 ) {
     val p = LocalPalette.current
-    val together = Difficulty.entries.size // index of "take turns" on the wheel, when offered
-    var selected by remember { mutableIntStateOf(if (initialTogether && onTogether != null) together else initial.ordinal) }
-    val labels = Difficulty.entries.map { stringResource(it.label) } + listOfNotNull(onTogether?.let { stringResource(R.string.take_turns) })
+    var selected by remember { mutableIntStateOf(initial.ordinal) }
+    val labels = Difficulty.entries.map { stringResource(it.label) }
     var bestOf by remember { mutableIntStateOf(initialBestOf ?: 1) }
     var minutes by remember { mutableIntStateOf(initialMinutes ?: 0) }
-    Box(Modifier.fillMaxSize()) {
-        Column(Modifier.fillMaxSize()) {
-            TopBar(stringResource(game.title), onSettings)
-            Column(
-                Modifier
-                    .weight(1f)
-                    .fillMaxWidth()
-                    .verticalScroll(rememberScrollState())
-                    .padding(horizontal = 20.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Spacer(Modifier.height(16.dp))
-                Box(
-                    Modifier
-                        .widthIn(max = 220.dp)
-                        .fillMaxWidth(0.5f)
-                        .aspectRatio(1f)
-                        .shadow(6.dp, RoundedCornerShape(22.dp))
-                        .clip(RoundedCornerShape(22.dp))
-                        .background(p.surface),
-                ) { GameThumbnail(game, Modifier.fillMaxSize()) }
-                Spacer(Modifier.height(14.dp))
-                // The rules are read in the language the game will be played in.
-                ProvideGameLanguage(language) {
-                    Text(
-                        stringResource(game.howTo), style = MaterialTheme.typography.bodyLarge, color = p.text,
-                        textAlign = TextAlign.Center,
-                    )
-                }
-                // The whole page of rules, for whoever doesn't know the game yet.
-                if (onLearn != null) {
-                    Spacer(Modifier.height(10.dp))
-                    BigButton(stringResource(R.string.learn_to_play), onLearn, icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
-                }
-                Spacer(Modifier.height(14.dp))
-            }
-            Column(
-                Modifier
-                    .fillMaxWidth()
-                    .background(p.surface)
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                Text(
-                    stringResource(if (onTogether != null) R.string.how_to_play else R.string.choose_difficulty),
-                    style = MaterialTheme.typography.titleLarge, color = p.text,
-                )
-                WheelPicker(labels, selected, { selected = it }, Modifier.fillMaxWidth())
-                if (onTogether != null && selected == together) {
-                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                        IconView(takeTurnsIcon(), p.primary, size = 56.dp)
-                        Text(stringResource(R.string.take_turns_desc), Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = p.text)
-                    }
-                }
-                // A match is against the computer: people taking turns keep score themselves.
-                if (initialBestOf != null && !(onTogether != null && selected == together)) {
-                    OptionRow(stringResource(R.string.options_match), MATCH_LENGTHS.map { if (it == 1) stringResource(R.string.options_single) else stringResource(R.string.options_best_of, it) }, MATCH_LENGTHS.indexOf(bestOf)) { bestOf = MATCH_LENGTHS[it] }
-                }
-                if (initialMinutes != null) {
-                    OptionRow(stringResource(R.string.options_time), TIME_LIMITS.map { if (it == 0) stringResource(R.string.options_no_limit) else stringResource(R.string.options_minutes, it) }, TIME_LIMITS.indexOf(minutes)) { minutes = TIME_LIMITS[it] }
-                }
-                ActionBar {
-                    BigButton(stringResource(R.string.confirm), {
-                        onOptions(bestOf, minutes)
-                        if (onTogether != null && selected == together) onTogether() else onConfirm(Difficulty.entries[selected])
-                    }, icon = AppIcon.CHECK)
-                    BigButton(stringResource(R.string.back), onBack, icon = AppIcon.BACK, style = ButtonStyle.SECONDARY)
-                }
-            }
+    StepScreen(
+        game, onSettings,
+        actions = {
+            BigButton(stringResource(R.string.confirm), {
+                onOptions(bestOf, minutes)
+                onConfirm(Difficulty.entries[selected])
+            }, icon = AppIcon.CHECK)
+            BigButton(stringResource(R.string.back), onBack, icon = AppIcon.BACK, style = ButtonStyle.SECONDARY)
+        },
+        scrollable = false,
+    ) {
+        Text(stringResource(R.string.choose_difficulty), style = MaterialTheme.typography.titleLarge, color = p.text)
+        WheelPicker(labels, selected, { selected = it }, Modifier.fillMaxWidth())
+        if (initialBestOf != null) {
+            OptionRow(stringResource(R.string.options_match), MATCH_LENGTHS.map { if (it == 1) stringResource(R.string.options_single) else stringResource(R.string.options_best_of, it) }, MATCH_LENGTHS.indexOf(bestOf)) { bestOf = MATCH_LENGTHS[it] }
         }
-        FloatingGear(onSettings)
+        if (initialMinutes != null) {
+            OptionRow(stringResource(R.string.options_time), TIME_LIMITS.map { if (it == 0) stringResource(R.string.options_no_limit) else stringResource(R.string.options_minutes, it) }, TIME_LIMITS.indexOf(minutes)) { minutes = TIME_LIMITS[it] }
+        }
     }
 }
 

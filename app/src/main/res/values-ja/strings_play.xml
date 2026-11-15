@@ -29,4 +29,7 @@
         <item quantity="other">%1$d人で交代</item>
     </plurals>
     <string name="game_end">対局終了</string>
+    <string name="go_to_game">ゲームへ進む</string>
+    <string name="mode_computer">コンピューターと遊ぶ</string>
+    <string name="mode_computer_desc">ほかのプレイヤーはコンピューターが担当します。次にむずかしさを選びます。</string>
 </resources>

@@ -33,4 +33,7 @@
         <item quantity="other">%1$d personnes, chacun son tour</item>
     </plurals>
     <string name="game_end">Fin de la partie</string>
+    <string name="go_to_game">Aller au jeu</string>
+    <string name="mode_computer">Jouer avec l’ordinateur</string>
+    <string name="mode_computer_desc">L’ordinateur joue pour les autres joueurs. Ensuite, vous choisissez la difficulté.</string>
 </resources>

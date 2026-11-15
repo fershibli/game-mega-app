@@ -33,4 +33,7 @@
         <item quantity="other">%1$d pessoas revezando</item>
     </plurals>
     <string name="game_end">Fim da partida</string>
+    <string name="go_to_game">Seguir para o jogo</string>
+    <string name="mode_computer">Jogar com o computador</string>
+    <string name="mode_computer_desc">O computador joga pelos outros jogadores. Em seguida, você escolhe a dificuldade.</string>
 </resources>

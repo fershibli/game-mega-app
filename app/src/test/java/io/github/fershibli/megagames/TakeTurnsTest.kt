@@ -55,24 +55,29 @@ class TakeTurnsTest {
     private val english = Settings(language = AppLanguage.ENGLISH)
 
     @Test
-    fun theWheelOffersTakingTurnsAndExplainsIt() {
-        var together = false
+    fun theModeScreenOffersTakingTurnsAndExplainsIt() {
+        var together: Boolean? = null
         rule.setContent {
             MegaGamesTheme(english) {
-                DifficultyScreen(GameId.REVERSI, Difficulty.EASY, {}, {}, {}, onTogether = { together = true }, initialTogether = true)
+                io.github.fershibli.megagames.ui.screens.ModeScreen(GameId.REVERSI, initialTogether = true, onConfirm = { together = it }, onBack = {}, onSettings = {})
             }
         }
         rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
         rule.onNodeWithText("Nobody plays against the computer", substring = true).assertIsDisplayed()
+        // The way played last time comes chosen: one tap confirms it.
         rule.onNodeWithText("Confirm").performClick()
-        assertTrue(together)
+        assertEquals(true, together)
+        rule.onNodeWithText("Play with the computer").performClick()
+        rule.onNodeWithText("Confirm").performClick()
+        assertEquals(false, together)
     }
 
     @Test
-    fun withoutTakingTurnsTheTitleStaysTheDifficulty() {
-        rule.setContent { MegaGamesTheme(english) { DifficultyScreen(GameId.SUDOKU, Difficulty.EASY, {}, {}, {}) } }
+    fun theLevelScreenOnlyAsksTheDifficulty() {
+        rule.setContent { MegaGamesTheme(english) { DifficultyScreen(GameId.REVERSI, Difficulty.EASY, {}, {}, {}) } }
         rule.onNodeWithText("Choose the difficulty").assertIsDisplayed()
         assertEquals(0, rule.onAllNodesWithText("Take turns on this phone").fetchSemanticsNodes().size)
+        assertEquals(0, rule.onAllNodesWithText("Learn to play").fetchSemanticsNodes().size)
     }
 
     @Test
