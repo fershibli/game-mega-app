@@ -6,7 +6,6 @@
     <string name="boxes_goal">Empurre cada caixa até um ponto redondo.</string>
     <string name="boxes_left">Caixas que faltam: %1$d</string>
     <string name="boxes_done">Todas as caixas estão no lugar!</string>
-    <string name="boxes_done_detail">Feito em %1$d passos e %2$d empurrões.</string>
     <string name="boxes_hints_used">Dicas usadas: %1$d.</string>
     <string name="boxes_stuck">Travou? Essa caixa não chega mais a um ponto dali. Toque em Desfazer para soltá-la.</string>
     <string name="boxes_no_way">Daqui as caixas não chegam todas aos pontos. Toque em Desfazer algumas vezes.</string>
@@ -17,5 +16,5 @@
     <string name="boxes_right">a direita</string>
     <string name="boxes_down">baixo</string>
     <string name="boxes_left_arrow">a esquerda</string>
-    <string name="boxes_board">Sala com %1$d caixas</string>
+    <string name="boxes_board">Sala · caixas: %1$d</string>
 </resources>

@@ -6,7 +6,6 @@
     <string name="boxes_goal">Empuja cada caja hasta un punto redondo.</string>
     <string name="boxes_left">Cajas que faltan: %1$d</string>
     <string name="boxes_done">¡Todas las cajas están en su sitio!</string>
-    <string name="boxes_done_detail">Hecho en %1$d pasos y %2$d empujones.</string>
     <string name="boxes_hints_used">Pistas usadas: %1$d.</string>
     <string name="boxes_stuck">¿Atascado? Esa caja ya no llega a un punto desde ahí. Toca Deshacer para liberarla.</string>
     <string name="boxes_no_way">Desde aquí las cajas no pueden llegar todas a sus puntos. Toca Deshacer varias veces.</string>
@@ -17,5 +16,5 @@
     <string name="boxes_right">la derecha</string>
     <string name="boxes_down">abajo</string>
     <string name="boxes_left_arrow">la izquierda</string>
-    <string name="boxes_board">Sala con %1$d cajas</string>
+    <string name="boxes_board">Sala · cajas: %1$d</string>
 </resources>

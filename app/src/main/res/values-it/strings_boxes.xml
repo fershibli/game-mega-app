@@ -6,7 +6,6 @@
     <string name="boxes_goal">Spingi ogni cassa su un cerchio.</string>
     <string name="boxes_left">Casse da sistemare: %1$d</string>
     <string name="boxes_done">Tutte le casse sono al loro posto!</string>
-    <string name="boxes_done_detail">Fatto in %1$d passi e %2$d spinte.</string>
     <string name="boxes_hints_used">Suggerimenti usati: %1$d.</string>
     <string name="boxes_stuck">Bloccato? Quella cassa da lì non arriva più a un cerchio. Tocca Annulla mossa per liberarla.</string>
     <string name="boxes_no_way">Da qui le casse non possono arrivare tutte ai cerchi. Tocca Annulla mossa qualche volta.</string>
@@ -17,5 +16,5 @@
     <string name="boxes_right">destra</string>
     <string name="boxes_down">il basso</string>
     <string name="boxes_left_arrow">sinistra</string>
-    <string name="boxes_board">Stanza con %1$d casse</string>
+    <string name="boxes_board">Stanza · casse: %1$d</string>
 </resources>

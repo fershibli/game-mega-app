@@ -98,7 +98,7 @@ private fun BoxesScreen(state: MutableState<BoxesState>, host: GameHost) {
         if (!s.done) return@LaunchedEffect
         pace.wait(DONE_PAUSE_MS)
         val detail = buildString {
-            append(resources.getString(R.string.boxes_done_detail, s.moves, s.pushes))
+            append(resources.getString(R.string.boxes_counts, s.moves, s.pushes))
             if (s.hints > 0) append(' ').append(resources.getString(R.string.boxes_hints_used, s.hints))
         }
         host.finish(GameOutcome(true, detail))

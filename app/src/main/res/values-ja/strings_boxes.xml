@@ -6,7 +6,6 @@
     <string name="boxes_goal">箱をぜんぶ丸い印の上に押しましょう。</string>
     <string name="boxes_left">残りの箱：%1$d</string>
     <string name="boxes_done">箱がぜんぶ印の上にのりました！</string>
-    <string name="boxes_done_detail">%1$d 歩、%2$d 回押してできました。</string>
     <string name="boxes_hints_used">使ったヒント：%1$d。</string>
     <string name="boxes_stuck">動けませんか？その箱はそこからは印に届きません。「一手戻す」で動かせるようにしましょう。</string>
     <string name="boxes_no_way">ここからでは全部の箱を印にのせられません。「一手戻す」を何回か押してください。</string>
@@ -17,5 +16,5 @@
     <string name="boxes_right">右</string>
     <string name="boxes_down">下</string>
     <string name="boxes_left_arrow">左</string>
-    <string name="boxes_board">箱が %1$d 個ある部屋</string>
+    <string name="boxes_board">部屋・箱の数：%1$d</string>
 </resources>

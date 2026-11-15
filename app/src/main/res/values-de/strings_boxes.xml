@@ -6,7 +6,6 @@
     <string name="boxes_goal">Schiebe jede Kiste auf einen runden Platz.</string>
     <string name="boxes_left">Noch zu platzierende Kisten: %1$d</string>
     <string name="boxes_done">Alle Kisten sind an ihrem Platz!</string>
-    <string name="boxes_done_detail">Geschafft in %1$d Schritten und %2$d Schüben.</string>
     <string name="boxes_hints_used">Benutzte Tipps: %1$d.</string>
     <string name="boxes_stuck">Festgefahren? Diese Kiste kommt von dort nicht mehr auf einen Platz. Tippe auf Rückgängig.</string>
     <string name="boxes_no_way">Von hier aus kommen nicht alle Kisten auf ihre Plätze. Tippe ein paarmal auf Rückgängig.</string>
@@ -17,5 +16,5 @@
     <string name="boxes_right">rechts</string>
     <string name="boxes_down">unten</string>
     <string name="boxes_left_arrow">links</string>
-    <string name="boxes_board">Raum mit %1$d Kisten</string>
+    <string name="boxes_board">Raum · Kisten: %1$d</string>
 </resources>
