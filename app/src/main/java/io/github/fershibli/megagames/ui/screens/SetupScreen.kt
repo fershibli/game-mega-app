@@ -160,7 +160,8 @@ private fun HomePicture(grouped: Boolean, recent: Boolean, side: Dp) {
     val p = LocalPalette.current
     val rows = listOf(GameCategory.CARDS to listOf(GameId.SOLITAIRE, GameId.BURACO), GameCategory.BOARD to listOf(GameId.CHECKERS, GameId.REVERSI))
     val tile = (side - 12.dp) / 2 * if (grouped) 0.78f else 0.92f
-    Column(Modifier.width(side), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
+    // As wide as its two tiles, so that the group names start where the tiles do.
+    Column(Modifier.width(tile * 2 + 12.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
         rows.forEachIndexed { r, (category, games) ->
             if (grouped) Text(stringResource(category.label), Modifier.fillMaxWidth(), style = MaterialTheme.typography.titleMedium, color = p.text)
             Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {

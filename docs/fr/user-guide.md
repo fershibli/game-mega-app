@@ -38,7 +38,9 @@ Configuration requise : Android 6.0 ou plus récent, environ 5 Mo libres. L’ap
 
 ## Se déplacer dans l’application
 
-L’application n’a que trois sortes d’écrans.
+À la première ouverture, l’application pose quelques questions rapides, une par écran (taille du texte, main utilisée, présentation de la liste des jeux, fond clair ou sombre, difficulté). Chaque réponse s’applique tout de suite, **Passer** laisse tout tel quel, et **Réglages de départ**, à la fin des réglages, repose les questions.
+
+Ensuite, l’application n’a que trois sortes d’écrans.
 
 1. **Choisissez votre jeu.** Une grille d’images, deux par ligne. Il n’y a volontairement pas de texte : chaque image *est* le jeu (une grille de sudoku, des cartes, un plateau de backgammon…). La liste défile sans fin dans les deux sens : continuez et les jeux reviennent. Touchez une image pour la choisir.
 2. **Quelques questions courtes, une par écran.** D’abord l’image du jeu avec une phrase à son sujet : **Apprendre à jouer** ouvre la page complète des règles (dans les jeux qui ont une leçon, comme le Solitaire, il enseigne d’abord sur le plateau lui-même : une main montre chaque coup, puis c’est à vous d’essayer), et **Aller au jeu** continue. Ensuite, seulement quand le jeu les propose : avec quelles règles jouer, **Comment voulez-vous jouer ?** (avec l’ordinateur, ou à plusieurs chacun son tour sur ce téléphone) et la difficulté, sur une roue **Facile / Moyen / Difficile**. Ce que vous avez choisi la dernière fois, et votre difficulté par défaut, sont déjà sélectionnés : il suffit d’appuyer sur **Confirmer**. **Retour** revient d’un écran.

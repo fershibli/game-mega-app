@@ -38,7 +38,9 @@ Voraussetzungen: Android 6.0 oder neuer, etwa 5 MB freier Speicher. Die App brau
 
 ## So findest du dich zurecht
 
-Die App hat nur drei Arten von Bildschirmen.
+Beim ersten Öffnen stellt die App ein paar kurze Fragen, eine pro Bildschirm (Schriftgröße, welche Hand du benutzt, wie die Spiele aufgelistet werden, heller oder dunkler Hintergrund, Schwierigkeitsgrad). Jede Antwort gilt sofort, **Überspringen** lässt alles, wie es ist, und **Ersteinrichtung** am Ende der Einstellungen stellt die Fragen noch einmal.
+
+Danach hat die App nur drei Arten von Bildschirmen.
 
 1. **Wähle ein Spiel.** Ein Raster mit Bildern, zwei pro Reihe. Text gibt es dort mit Absicht nicht: Jedes Bild *ist* das Spiel (ein Sudoku-Gitter, Karten, ein Backgammon-Brett…). Die Liste lässt sich endlos in beide Richtungen scrollen — scrolle einfach weiter, dann kommen die Spiele wieder. Tippe auf ein Bild, um es zu wählen.
 2. **Ein paar kurze Fragen, eine pro Bildschirm.** Zuerst das Bild des Spiels mit einem Satz dazu: **So wird gespielt** öffnet die ganze Seite mit den Regeln (in Spielen mit einer Lektion, etwa Solitär, wird zuerst direkt auf dem Spielfeld erklärt: Eine Hand zeigt jeden Zug, dann probierst du es selbst), und **Weiter zum Spiel** geht weiter. Danach, nur wenn das Spiel es anbietet: nach welchen Regeln, **Wie möchtest du spielen?** (mit dem Computer oder mit Menschen abwechselnd an diesem Telefon) und der Schwierigkeitsgrad auf einem Drehrad mit **Leicht / Mittel / Schwer**. Was du beim letzten Mal gewählt hast und dein Standard-Schwierigkeitsgrad sind schon ausgewählt: **Bestätigen** genügt. **Zurück** geht einen Schritt zurück.

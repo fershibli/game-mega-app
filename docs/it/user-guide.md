@@ -38,7 +38,9 @@ Requisiti: Android 6.0 o più recente e circa 5 MB di spazio libero. L’app non
 
 ## Come muoversi nell’app
 
-L’app ha solo tre tipi di schermata.
+La prima volta che si apre, l’app fa poche domande veloci, una per schermata (dimensione del testo, quale mano usi, come sono elencati i giochi, sfondo chiaro o scuro, difficoltà). Ogni risposta vale subito, **Salta** lascia tutto com’è, e **Impostazioni iniziali**, in fondo alle impostazioni, rifà le domande.
+
+Dopo, l’app ha solo tre tipi di schermata.
 
 1. **Scegli il gioco.** Una griglia di immagini, due per riga. Non c’è testo, ed è voluto: ogni immagine *è* il gioco (una griglia di sudoku, delle carte, un tavoliere di backgammon…). L’elenco scorre senza fine in entrambe le direzioni: continuando a scorrere, i giochi ricominciano da capo. Tocca un’immagine per sceglierla.
 2. **Poche domande brevi, una per schermata.** Prima l’immagine del gioco con una frase che lo descrive: **Impara a giocare** apre la pagina completa delle regole (nei giochi che hanno una lezione, come il Solitario, prima insegna sul tavolo stesso: una mano mostra ogni mossa, poi tocca a te provare), e **Vai al gioco** prosegue. Poi, solo quando il gioco le prevede: con quali regole giocare, **Come vuoi giocare?** (con il computer, o più persone a turno su questo telefono) e la difficoltà, su una rotella con **Facile / Medio / Difficile**. Quello che hai scelto l’ultima volta, e la tua difficoltà predefinita, sono già selezionati: basta premere **Conferma**. **Indietro** torna alla schermata precedente.
