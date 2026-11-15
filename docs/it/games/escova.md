@@ -16,13 +16,13 @@
 
 ## Punti alla fine di ogni mano
 - **1 punto** per ogni scopa.
-- **1 punto** per chi ha più carte, **1** per più carte di denari, **1** per il **7 di denari** (*settebello*), **1** per più sette. In caso di parità il punto non va a nessuno.
+- **1 punto** per chi ha più carte, **1** per più carte di quadri ♦, **1** per il **7♦** (*settebello*), **1** per più sette. In caso di parità il punto non va a nessuno.
 - Vince chi arriva per primo a **15 punti** alla fine di una mano (il punteggio più alto se ci arrivano entrambi; un’altra mano se sono pari).
 
 ## Livelli
 Il computer vede solo le sue carte, il tavolo e le carte già prese.
 - **Facile:** prende la prima cosa che vede e cala le carte senza pensarci.
-- **Medio:** valuta ogni mossa (sette, denari e il settebello valgono di più) ed evita di lasciare una scopa facile.
+- **Medio:** valuta ogni mossa (sette, quadri e il settebello valgono di più) ed evita di lasciare una scopa facile.
 - **Difficile:** conta anche quali valori non sono ancora usciti, per capire quanto è probabile che il prossimo giocatore faccia scopa.
 
 ## Consigli
