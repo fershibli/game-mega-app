@@ -1,8 +1,14 @@
 package io.github.fershibli.megagames
 
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.hasAnyAncestor
+import androidx.compose.ui.test.hasTestTag
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onFirst
+import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onNodeWithContentDescription
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -15,6 +21,7 @@ import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameOutcome
+import io.github.fershibli.megagames.core.PlaySetup
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.games.GameContent
@@ -98,15 +105,59 @@ class CachetaUiTest {
     }
 
     @Test
-    fun theFirstScreenAsksHowManyComputers() {
+    fun theTableScreenChoosesHowManyPlayers() {
         val store = SaveStore(app).apply { clear() }
-        val host = GameHost(GameId.CACHETA, Difficulty.EASY, null, store, GameId.CACHETA.variant("pife")) {}
+        val host = GameHost(GameId.CACHETA, Difficulty.EASY, null, store, GameId.CACHETA.variant("pife"), PlaySetup(seats = 4)) {}
         rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(GameId.CACHETA, host) } }
         rule.waitForIdle()
-        rule.onNodeWithText("3 computers").performClick()
         val saved = awaitSaved(store) { it.players > 0 }
         assertEquals(4, saved?.players)
         assertEquals("pife", saved?.variant)
+        rule.onNodeWithText("Computer 3").assertExists()
+        store.clear()
+    }
+
+    @Test
+    fun aGameSavedBeforeTheTableScreenIsDealt() {
+        val store = SaveStore(app).apply { clear() }
+        val old = AppJson.parseToJsonElement("""{"variant":"classic","players":0}""")
+        val host = GameHost(GameId.CACHETA, Difficulty.EASY, old, store, GameId.CACHETA.variant("classic"), PlaySetup(seats = 3)) {}
+        rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(GameId.CACHETA, host) } }
+        val saved = awaitSaved(store) { it.players > 0 }
+        assertEquals(3, saved?.players)
+        store.clear()
+    }
+
+    @Test
+    fun peopleTakingTurnsPassThePhoneAndTheHandIsHidden() {
+        val store = SaveStore(app).apply { clear() }
+        val host = GameHost(GameId.CACHETA, Difficulty.EASY, AppJson.encodeToJsonElement(CachetaState.serializer(), sample()), store, GameId.CACHETA.variant("classic"), PlaySetup(together = true, seats = 2)) {}
+        rule.setContent { MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) { GameContent(GameId.CACHETA, host) } }
+        rule.waitForIdle()
+        rule.onNode(hasText("Player 1") and hasAnyAncestor(hasTestTag("handoff")), useUnmergedTree = true).assertIsDisplayed()
+        // Covered: none of player 1's cards can be read.
+        assertEquals(0, rule.onAllNodesWithContentDescription("2♣").fetchSemanticsNodes().size)
+        rule.onNodeWithContentDescription("Ready, it is my turn").performClick()
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag("handoff").fetchSemanticsNodes().isEmpty() }
+        rule.onNodeWithTag("cacheta-deck").performClick()
+        rule.waitForIdle()
+        rule.onAllNodesWithContentDescription("2♣").onFirst().performTouchInput { click(Offset(width * 0.12f, height * 0.5f)) }
+        rule.waitForIdle()
+        rule.onNodeWithText("Discard").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("Pass to the next player").assertIsDisplayed()
+        rule.onNode(hasText("Player 2") and hasAnyAncestor(hasTestTag("handoff")), useUnmergedTree = true).assertIsDisplayed()
+        assertEquals(0, rule.onAllNodesWithContentDescription("3♠").fetchSemanticsNodes().size)
+        // Player 2 is a person: nobody draws for them.
+        for (attempt in 0 until 6) { rule.mainClock.advanceTimeBy(1000); rule.waitForIdle() }
+        val saved = awaitSaved(store) { it.turn == 1 }
+        assertEquals(false, saved?.drawn)
+        assertEquals(9, saved?.hands?.get(1)?.size)
+        rule.onNodeWithContentDescription("Ready, it is my turn").performClick()
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag("handoff").fetchSemanticsNodes().isEmpty() }
+        // Player 2 now sees their own hand (the A♥ is theirs).
+        rule.onNodeWithText("Player 2 · Your turn", substring = true).assertIsDisplayed()
+        rule.onAllNodesWithContentDescription("A♥").onFirst().assertExists()
         store.clear()
     }
 

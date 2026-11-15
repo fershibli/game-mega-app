@@ -28,6 +28,9 @@ import kotlin.random.Random
  * - First side to 12 points wins.
  *
  * Seats: 0 is you; in 2 vs 2, 1 and 3 are the opponents and 2 is your partner. Team = seat % 2.
+ * Play goes counterclockwise, as is the custom in Brazil: seat 1 sits on your right.
+ * When people take turns on one phone ([TrucoState.together]) every seat is a person, and a call
+ * is always answered by the next seat after the caller.
  */
 enum class TrucoRules(val key: String, val fixedManilhas: Boolean) {
     PAULISTA("paulista", false),
@@ -56,7 +59,7 @@ data class ShoutAt(val seat: Int, val shout: Shout)
 @Serializable
 data class TrucoState(
     val variant: String = TrucoRules.PAULISTA.key,
-    /** 2 or 4; 0 until you choose. */
+    /** 2 or 4 (0 only in saves from before the table screen chose it). */
     val seats: Int = 0,
     val score: List<Int> = listOf(0, 0),
     val dealer: Int = 0,
@@ -82,6 +85,8 @@ data class TrucoState(
     val handPoints: Int = 0,
     val shout: ShoutAt? = null,
     val finished: Boolean = false,
+    /** People take turns on one phone: no computer seats. */
+    val together: Boolean = false,
 ) {
     val rules get() = TrucoRules.of(variant)
     val handOver get() = handWinner != null
@@ -136,10 +141,10 @@ object Truco {
         else -> Shout.DOZE
     }
 
-    fun newGame(rules: TrucoRules, seats: Int, random: Random): TrucoState {
+    fun newGame(rules: TrucoRules, seats: Int, random: Random, together: Boolean = false): TrucoState {
         require(seats == 2 || seats == 4)
         // The last seat deals, so you lead the first hand.
-        return deal(TrucoState(variant = rules.key, seats = seats, dealer = seats - 1), random)
+        return deal(TrucoState(variant = rules.key, seats = seats, dealer = seats - 1, together = together), random)
     }
 
     fun deal(s: TrucoState, random: Random): TrucoState {
@@ -170,10 +175,13 @@ object Truco {
         else -> s.turn
     }
 
-    /** You answer for your side; on the other side, the seat after the caller answers. */
+    /**
+     * You answer for your side; on the other side, the seat after the caller answers. People
+     * taking turns always answer from the seat after the caller.
+     */
     fun responder(s: TrucoState): Int {
         val call = s.call ?: return -1
-        return if (call.team == 1) 0 else (call.seat + 1) % s.seats
+        return if (call.team == 1 && !s.together) 0 else (call.seat + 1) % s.seats
     }
 
     /** The side at 11 plays (worth 3) or runs (the others score 1). */

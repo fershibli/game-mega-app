@@ -98,10 +98,16 @@ data class Settings(
     val defaultDifficulty: Difficulty = Difficulty.EASY,
     /** Backgammon board standing up (bigger checkers) instead of the traditional horizontal one. */
     val backgammonUpright: Boolean = false,
+    /** Solitaire table turned sideways (phone held lying down): the cards are about half as big again. */
+    val solitaireSideways: Boolean = false,
     /** Home screen: the games and the category played last come first. */
     val recentFirst: Boolean = true,
     /** Home screen: games grouped under category headings, or one single list. */
     val showCategories: Boolean = true,
+    /** Vibration, in three groups that can be turned off apart: moves on the board, buttons and menus, and the end of a game. */
+    val vibrateMoves: Boolean = true,
+    val vibrateButtons: Boolean = true,
+    val vibrateAlerts: Boolean = true,
     val pace: Pace = Pace.NORMAL,
     val motion: Motion = Motion.FULL,
 ) {
@@ -131,8 +137,12 @@ class SettingsStore(context: Context) {
             oneHandZoom = enumOr(prefs.getString("oneHandZoom", null), d.oneHandZoom),
             defaultDifficulty = enumOr(prefs.getString("defaultDifficulty", null), d.defaultDifficulty),
             backgammonUpright = prefs.getBoolean("backgammonUpright", d.backgammonUpright),
+            solitaireSideways = prefs.getBoolean("solitaireSideways", d.solitaireSideways),
             recentFirst = prefs.getBoolean("recentFirst", d.recentFirst),
             showCategories = prefs.getBoolean("showCategories", d.showCategories),
+            vibrateMoves = prefs.getBoolean("vibrateMoves", d.vibrateMoves),
+            vibrateButtons = prefs.getBoolean("vibrateButtons", d.vibrateButtons),
+            vibrateAlerts = prefs.getBoolean("vibrateAlerts", d.vibrateAlerts),
             pace = enumOr(prefs.getString("pace", null), d.pace),
             motion = enumOr(prefs.getString("motion", null), d.motion),
         )
@@ -151,8 +161,12 @@ class SettingsStore(context: Context) {
             .putString("oneHandZoom", s.oneHandZoom.name)
             .putString("defaultDifficulty", s.defaultDifficulty.name)
             .putBoolean("backgammonUpright", s.backgammonUpright)
+            .putBoolean("solitaireSideways", s.solitaireSideways)
             .putBoolean("recentFirst", s.recentFirst)
             .putBoolean("showCategories", s.showCategories)
+            .putBoolean("vibrateMoves", s.vibrateMoves)
+            .putBoolean("vibrateButtons", s.vibrateButtons)
+            .putBoolean("vibrateAlerts", s.vibrateAlerts)
             .putString("pace", s.pace.name)
             .putString("motion", s.motion.name)
             .apply()
@@ -220,9 +234,19 @@ class ChoiceStore(context: Context) {
     /** The number of seats picked last time for this game, or null. */
     fun lastSeats(game: GameId): Int? = prefs.getInt("seats.${game.key}", 0).takeIf { it > 0 }
 
+    /** The match length (1, 3 or 5) and the time limit (minutes, 0 = none) picked last time for this game. */
+    fun lastBestOf(game: GameId): Int = prefs.getInt("bestOf.${game.key}", 1)
+    fun lastMinutes(game: GameId): Int = prefs.getInt("minutes.${game.key}", 0)
+
+    /** The number of teams picked last time for this game (0 = the usual way). */
+    fun lastTeams(game: GameId): Int = prefs.getInt("teams.${game.key}", 0)
+
     fun rememberSetup(game: GameId, setup: PlaySetup) {
         prefs.edit().putBoolean("together.${game.key}", setup.together).apply {
             if (setup.seats > 0) putInt("seats.${game.key}", setup.seats)
+            putInt("teams.${game.key}", setup.teams)
+            if (game.offersMatches && !setup.together) putInt("bestOf.${game.key}", setup.bestOf)
+            if (game.offersTimeLimit) putInt("minutes.${game.key}", setup.minutes)
         }.apply()
     }
 

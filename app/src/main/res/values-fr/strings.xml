@@ -42,6 +42,7 @@
 
     <string name="resume">Retour au jeu</string>
     <string name="new_game">Nouvelle partie</string>
+    <string name="new_game_options">Nouvelle partie, autres options</string>
     <string name="main_menu">Menu principal</string>
     <string name="leave_game_title">Quitter cette partie ?</string>
     <string name="leave_game_message">Si vous revenez au menu principal, cette partie sera abandonnée et ne pourra pas être reprise.</string>
@@ -178,4 +179,24 @@
         <item quantity="many">%1$d cartes</item>
         <item quantity="other">%1$d cartes</item>
     </plurals>
+    <string name="options_match">Partie</string>
+    <string name="options_single">Partie unique</string>
+    <string name="options_best_of">Au meilleur des %d</string>
+    <string name="options_time">Temps</string>
+    <string name="options_no_limit">Sans limite</string>
+    <string name="options_minutes">%d min</string>
+    <string name="match_score">Score — vous : %1$d · ordinateur : %2$d · au meilleur des %3$d</string>
+    <string name="match_next">Partie suivante</string>
+    <string name="match_won">Vous avez gagné la série !</string>
+    <string name="match_lost">L’ordinateur a gagné la série</string>
+    <string name="time_up">Le temps est écoulé !</string>
+    <string name="time_left">Temps restant : %s</string>
+    <string name="section_vibration">Vibration</string>
+    <string name="vibrate_moves">Dans les jeux</string>
+    <string name="vibrate_moves_desc">Une légère vibration quand vous touchez le plateau ou une carte.</string>
+    <string name="vibrate_buttons">Boutons et menus</string>
+    <string name="vibrate_buttons_desc">Une vibration sur les boutons, les interrupteurs et la roue des niveaux.</string>
+    <string name="vibrate_alerts">Fin de partie</string>
+    <string name="vibrate_alerts_desc">Une vibration différente quand vous gagnez ou perdez.</string>
+    <string name="learn_to_play">Apprendre à jouer</string>
 </resources>

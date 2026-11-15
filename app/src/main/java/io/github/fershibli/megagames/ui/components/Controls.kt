@@ -5,8 +5,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.text.BasicText
-import androidx.compose.foundation.text.TextAutoSize
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,15 +13,15 @@ import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.BasicText
+import androidx.compose.foundation.text.TextAutoSize
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
@@ -37,6 +35,8 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.lerp
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
@@ -49,6 +49,7 @@ import androidx.compose.ui.unit.sp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 
 /** Minimum comfortable touch target for the app (bigger than the 48dp guideline). */
 val TouchTarget = 56.dp
@@ -67,6 +68,7 @@ fun BigButton(
     compact: Boolean = false,
     bigText: Boolean = false,
 ) {
+    val haptics = currentHaptics
     val p = LocalPalette.current
     val (bg, fg) = when (style) {
         ButtonStyle.PRIMARY -> p.primary to p.onPrimary
@@ -83,7 +85,7 @@ fun BigButton(
             .clip(shape)
             .background(Brush.verticalGradient(listOf(lerp(bg, Color.White, 0.12f).copy(alpha = alpha), bg.copy(alpha = alpha))))
             .then(if (border != null) Modifier.border(border, shape) else Modifier)
-            .clickable(enabled = enabled, role = Role.Button, onClick = onClick)
+            .clickable(enabled = enabled, role = Role.Button) { haptics.button(); onClick() }
             .padding(horizontal = if (compact) 10.dp else 18.dp, vertical = 8.dp),
         contentAlignment = Alignment.Center,
     ) {
@@ -109,6 +111,7 @@ fun BigButton(
 /** Keyboard key: big letter, no inner padding so even "W" fits on narrow phones. */
 @Composable
 fun KeyButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    val haptics = currentHaptics
     val p = LocalPalette.current
     val shape = RoundedCornerShape(12.dp)
     Box(
@@ -118,7 +121,7 @@ fun KeyButton(label: String, onClick: () -> Unit, modifier: Modifier = Modifier)
             .clip(shape)
             .background(Brush.verticalGradient(listOf(lerp(p.primary, Color.White, 0.12f), p.primary)))
             .then(if (p.strongOutlines) Modifier.border(2.dp, p.outline, shape) else Modifier)
-            .clickable(role = Role.Button, onClick = onClick),
+            .clickable(role = Role.Button) { haptics.button(); onClick() },
         contentAlignment = Alignment.Center,
     ) {
         Text(label, color = p.onPrimary, style = MaterialTheme.typography.titleLarge, maxLines = 1, softWrap = false)
@@ -136,6 +139,7 @@ fun RoundIconButton(
     filled: Boolean = false,
     enabled: Boolean = true,
 ) {
+    val haptics = currentHaptics
     val p = LocalPalette.current
     val bg = if (filled) p.primary else p.surface
     val fg = if (filled) p.onPrimary else p.text
@@ -146,7 +150,7 @@ fun RoundIconButton(
             .clip(CircleShape)
             .background(bg)
             .border(if (p.strongOutlines) 2.dp else 1.dp, p.outline.copy(alpha = if (p.strongOutlines) 1f else 0.5f), CircleShape)
-            .clickable(enabled = enabled, role = Role.Button, onClick = onClick)
+            .clickable(enabled = enabled, role = Role.Button) { haptics.button(); onClick() }
             .semantics { contentDescription = description },
         contentAlignment = Alignment.Center,
     ) {

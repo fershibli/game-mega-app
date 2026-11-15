@@ -7,7 +7,7 @@ Un labirinto su carta, come quelli del giornale: disegna la strada dall’amiche
 ## Come si gioca
 
 - Fai scorrere il dito lungo i corridoi: la linea ti segue e l’amichetto cammina sulla sua punta. Non attraversa mai un muro.
-- Torna indietro sulla linea per togliere dei passi, oppure tocca una casella della linea per tornarci. **Annulla mossa** torna indietro di un passo.
+- Torna indietro sulla linea per togliere dei passi, oppure tocca una casella della linea per tornare verso di essa, al massimo 3 passi per tocco (così uno sfioramento per sbaglio non cancella tutto). **Annulla mossa** torna indietro di un passo.
 - Tocca una casella più avanti in un corridoio per andarci dritto (la linea si ferma a ogni incrocio, dove scegli tu la strada).
 - **Suggerimento** mostra le prossime caselle con degli anelli. Se la linea ha preso una strada sbagliata, l’anello grande mostra fin dove tornare.
 - C’è sempre una sola strada fino alla casetta, e nessun orologio. All’arrivo tutta la strada si illumina.

@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">ورقة مكشوفة (الفيرا) تجعل الورقة التالية من شكلها جوكر.</string>
     <string name="cacheta_variant_pife">بيفي</string>
     <string name="cacheta_variant_pife_desc">بلا جوكر، المتتالية يمكن أن تلتف (K-A-2) ويمكنك أخذ أي ورقة مرمية لتنهي.</string>
-    <string name="cacheta_how_many">كم لاعبًا من الكمبيوتر؟</string>
     <string name="cacheta_computer">الكمبيوتر %1$d</string>
     <string name="cacheta_playing">الكمبيوتر %1$d يلعب…</string>
     <string name="cacheta_deck">الكومة (%1$d)</string>
@@ -33,12 +32,7 @@
     <string name="cacheta_deck_over">انتهت الأوراق: لم ينهِ أحد.</string>
     <string name="cacheta_your_hand">أوراقك</string>
     <string name="cacheta_groups_note">شريط أخضر = ضمن مجموعة</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="zero">%1$d كمبيوتر</item>
-        <item quantity="one">كمبيوتر واحد</item>
-        <item quantity="two">كمبيوتران</item>
-        <item quantity="few">%1$d أجهزة كمبيوتر</item>
-        <item quantity="many">%1$d جهاز كمبيوتر</item>
-        <item quantity="other">%1$d كمبيوتر</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$s يلعب الآن…</string>
+    <string name="cacheta_went_out_seat">%1$s أنهى!</string>
+    <string name="cacheta_went_out_ten_seat">%1$s أنهى بكل الأوراق العشر!</string>
 </resources>

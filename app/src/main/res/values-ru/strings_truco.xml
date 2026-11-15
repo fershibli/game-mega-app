@@ -6,9 +6,6 @@
     <string name="truco_variant_paulista_desc">40 карт; открытая карта (вира) задаёт манильи — самые сильные карты.</string>
     <string name="truco_variant_mineiro">Минейру</string>
     <string name="truco_variant_mineiro_desc">40 карт; постоянные манильи 4♣, 7♥, A♠, 7♦, без виры.</string>
-    <string name="truco_how_many">Как вы хотите играть?</string>
-    <string name="truco_one_vs_one">Вы против компьютера</string>
-    <string name="truco_two_vs_two">Вы с напарником против двух компьютеров</string>
     <string name="truco_us">Мы</string>
     <string name="truco_them">Они</string>
     <string name="truco_worth">Ставка %1$d</string>
@@ -44,4 +41,11 @@
     <string name="truco_final">Итог: мы %1$d × %2$d они</string>
     <string name="truco_partner">Напарник</string>
     <string name="truco_computer">Компьютер</string>
+    <string name="truco_table_pairs">Двое на двое: партнёры сидят друг напротив друга</string>
+    <string name="truco_pair">Игроки %1$s и %2$s</string>
+    <string name="truco_playing">Ходит: %1$s…</string>
+    <string name="truco_trick_to">Эта взятка: %1$s</string>
+    <string name="truco_hand_to">Раздачу выиграли: %1$s, +%2$d</string>
+    <string name="truco_final_sides">Итог — %1$s: %2$d, %3$s: %4$d</string>
+    <string name="truco_winner">Победитель: %1$s</string>
 </resources>

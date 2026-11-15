@@ -1,6 +1,6 @@
 # Truco
 
-Il truco è il gioco di carte più allegro del Brasile: vinci due prese su tre con le carte più forti e grida **«Truco!»** per far valere di più la mano. In Mili Games scegli all’inizio: **tu contro il computer**, oppure **tu e un compagno (computer) contro due computer**; il compagno siede di fronte.
+Il truco è il gioco di carte più allegro del Brasile: vinci due prese su tre con le carte più forti e grida **«Truco!»** per far valere di più la mano. In Mili Games l’app chiede **Quanti al tavolo?** prima di ogni partita: **2** (uno contro uno) o **4** (due contro due, compagni uno di fronte all’altro). Contro il computer, in quattro anche il compagno è il computer; potete anche giocare tra persone **a turno su un solo telefono**.
 
 ## Le carte
 - 40 carte: un mazzo normale senza 8, 9, 10 e jolly. Ognuno riceve **3 carte**.
@@ -36,3 +36,6 @@ Il truco tiene le sue parole portoghesi in tutte le lingue: **Truco!**, **Seis**
 
 ## Regole regionali
 Il truco cambia da città a città. Nel Minas Gerais molti tavoli iniziano la mano a 2 punti (truco 4, poi 6 o 8, 10 e 12) con una «mano del dieci»; Mili Games usa la stessa scala semplice 1-3-6-9-12 e la mano dell’undici in entrambe le varianti. Giocare una carta coperta («encoberta») e i segnali segreti tra compagni non sono nell’app.
+
+## A turno su un solo telefono
+Scegli **A turno su questo telefono** nella schermata del livello, poi 2 o 4 al tavolo: due persone giocano una contro l’altra, o quattro giocano a coppie (giocatori 1 e 3 contro 2 e 4). Dopo ogni mossa una copertura nasconde le carte e chiede di passare il telefono a chi deve agire: giocare una carta o rispondere a un truco (risponde chi viene dopo chi l’ha chiamato). Si gioca in senso antiorario, come in Brasile. Il punteggio mostra ogni coppia con i suoi giocatori e i simboli dei loro posti.

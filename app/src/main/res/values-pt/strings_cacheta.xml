@@ -8,7 +8,6 @@
     <string name="cacheta_variant_wild_desc">Uma carta virada (a vira) faz da carta seguinte do mesmo naipe o curinga.</string>
     <string name="cacheta_variant_pife">Pife</string>
     <string name="cacheta_variant_pife_desc">Sem curinga, a sequência pode dar a volta (K-A-2) e você pode furar a vez para bater com o descarte.</string>
-    <string name="cacheta_how_many">Quantos computadores na mesa?</string>
     <string name="cacheta_computer">Computador %1$d</string>
     <string name="cacheta_playing">O computador %1$d está jogando…</string>
     <string name="cacheta_deck">Monte (%1$d)</string>
@@ -33,9 +32,7 @@
     <string name="cacheta_deck_over">As cartas acabaram: ninguém bateu.</string>
     <string name="cacheta_your_hand">Sua mão</string>
     <string name="cacheta_groups_note">barra verde = já combinadas</string>
-    <plurals name="cacheta_opponents">
-        <item quantity="one">%1$d computador</item>
-        <item quantity="many">%1$d computadores</item>
-        <item quantity="other">%1$d computadores</item>
-    </plurals>
+    <string name="cacheta_seat_playing">%1$s está jogando…</string>
+    <string name="cacheta_went_out_seat">%1$s bateu!</string>
+    <string name="cacheta_went_out_ten_seat">%1$s bateu com as 10 cartas!</string>
 </resources>

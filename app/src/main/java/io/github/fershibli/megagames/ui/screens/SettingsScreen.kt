@@ -1,8 +1,5 @@
 package io.github.fershibli.megagames.ui.screens
 
-import io.github.fershibli.megagames.core.Motion
-import io.github.fershibli.megagames.core.Pace
-import androidx.compose.ui.AbsoluteAlignment
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -40,6 +37,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -55,7 +53,9 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.ColorMode
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.Motion
 import io.github.fershibli.megagames.core.OneHandZoom
+import io.github.fershibli.megagames.core.Pace
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.ui.components.ActionBar
 import io.github.fershibli.megagames.ui.components.AppIcon
@@ -67,11 +67,21 @@ import io.github.fershibli.megagames.ui.components.Stepper
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.ui.theme.Palette
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 import kotlin.math.roundToInt
 
 /** Extra actions shown when Settings is opened from inside a game. */
-/** Buttons shown when the settings are opened during a game. Without [onNewGame] (pastimes) nothing can be lost, so leaving asks nothing. */
-class InGameActions(val onResume: () -> Unit, val onNewGame: (() -> Unit)?, val onMainMenu: () -> Unit)
+/**
+ * Buttons shown when the settings are opened during a game. Without [onNewGame] (pastimes) nothing can be lost, so leaving asks nothing.
+ * [onNewOptions] starts a new game of the same game choosing its rules, level and table again, without the main menu.
+ */
+class InGameActions(
+    val onResume: () -> Unit,
+    val onNewGame: (() -> Unit)?,
+    val onNewOptions: (() -> Unit)? = null,
+    val onLearn: (() -> Unit)? = null,
+    val onMainMenu: () -> Unit,
+)
 
 const val PROJECT_URL = "https://github.com/fershibli/game-mega-app"
 
@@ -120,6 +130,7 @@ fun SettingsScreen(
     val left = LocalSettings.current.leftHanded
     var confirmExit by remember { mutableStateOf(false) }
     var confirmNew by remember { mutableStateOf(false) }
+    var confirmOptions by remember { mutableStateOf(false) }
     var pickLanguage by remember { mutableStateOf(false) }
     var showMission by remember { mutableStateOf(false) }
 
@@ -150,6 +161,9 @@ fun SettingsScreen(
                     )
                 }
 
+                inGame?.onLearn?.let { learn ->
+                    BigButton(stringResource(R.string.learn_to_play), learn, Modifier.fillMaxWidth(), icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
+                }
                 Section(stringResource(R.string.section_language)) {
                     val current = if (settings.language == AppLanguage.SYSTEM) stringResource(R.string.language_system) else settings.language.nativeName
                     BigButton(current, { pickLanguage = true }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
@@ -210,6 +224,18 @@ fun SettingsScreen(
                     }
                 }
 
+                Section(stringResource(R.string.section_vibration)) {
+                    ToggleRow(stringResource(R.string.vibrate_moves), stringResource(R.string.vibrate_moves_desc), settings.vibrateMoves) {
+                        onChange(settings.copy(vibrateMoves = it))
+                    }
+                    ToggleRow(stringResource(R.string.vibrate_buttons), stringResource(R.string.vibrate_buttons_desc), settings.vibrateButtons) {
+                        onChange(settings.copy(vibrateButtons = it))
+                    }
+                    ToggleRow(stringResource(R.string.vibrate_alerts), stringResource(R.string.vibrate_alerts_desc), settings.vibrateAlerts) {
+                        onChange(settings.copy(vibrateAlerts = it))
+                    }
+                }
+
                 Section(stringResource(R.string.section_game_list)) {
                     ToggleRow(stringResource(R.string.show_categories), stringResource(R.string.show_categories_desc), settings.showCategories) {
                         onChange(settings.copy(showCategories = it))
@@ -239,6 +265,9 @@ fun SettingsScreen(
                     if (inGame.onNewGame != null) {
                         BigButton(stringResource(R.string.new_game), { confirmNew = true }, icon = AppIcon.NEW_GAME, style = ButtonStyle.SECONDARY)
                     }
+                }
+                if (inGame.onNewOptions != null) {
+                    BigButton(stringResource(R.string.new_game_options), { confirmOptions = true }, Modifier.fillMaxWidth(), icon = AppIcon.NEW_GAME, style = ButtonStyle.SECONDARY)
                 }
                 if (inGame.onNewGame != null) {
                     BigButton(stringResource(R.string.main_menu), { confirmExit = true }, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.DANGER)
@@ -276,6 +305,17 @@ fun SettingsScreen(
             buttons = listOf(
                 stringResource(R.string.leave_game_yes) to { confirmExit = false; inGame.onMainMenu() },
                 stringResource(R.string.cancel) to { confirmExit = false },
+            ),
+        )
+    }
+    if (confirmOptions && inGame != null) {
+        BigDialog(
+            title = stringResource(R.string.new_game_title),
+            message = stringResource(R.string.new_game_message),
+            onDismiss = { confirmOptions = false },
+            buttons = listOf(
+                stringResource(R.string.new_game_options) to { confirmOptions = false; inGame.onNewOptions?.invoke() },
+                stringResource(R.string.cancel) to { confirmOptions = false },
             ),
         )
     }
@@ -350,12 +390,13 @@ private fun ScaleRow(label: String, value: Float, onValue: (Float) -> Unit) {
 
 @Composable
 private fun ToggleRow(title: String, description: String, checked: Boolean, onChecked: (Boolean) -> Unit) {
+    val haptics = currentHaptics
     val p = LocalPalette.current
     Row(
         Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .toggleable(checked, role = Role.Switch, onValueChange = onChecked)
+            .toggleable(checked, role = Role.Switch) { haptics.button(); onChecked(it) }
             .padding(vertical = 6.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {

@@ -153,6 +153,23 @@ class TrucoTest {
     }
 
     @Test
+    fun takingTurnsTheSeatAfterTheCallerAnswers() {
+        // Against the computer you answer for your side, whoever called.
+        val computer = Truco.newGame(TrucoRules.PAULISTA, 4, Random(5)).copy(turn = 1, leader = 1)
+        assertEquals(0, Truco.responder(Truco.raise(computer)!!))
+        // People taking turns: the next seat after the caller answers, on both sides.
+        val people = Truco.newGame(TrucoRules.PAULISTA, 4, Random(5), together = true)
+        assertTrue(people.together)
+        assertEquals(1, Truco.actor(Truco.raise(people)!!))
+        val third = Truco.raise(people.copy(turn = 1, leader = 1))!!
+        assertEquals(2, Truco.actor(third))
+        // A raise in answer goes back to the seat after the one who raised.
+        assertEquals(3, Truco.actor(Truco.answer(third, Truco.Answer.RAISE)!!))
+        // Old saves have no such flag and keep the computer rules.
+        assertFalse(AppJson.decodeFromString(TrucoState.serializer(), """{"seats":2}""").together)
+    }
+
+    @Test
     fun savedGamesRoundTrip() {
         val st = Truco.raise(Truco.newGame(TrucoRules.PAULISTA, 4, Random(3)))!!
         assertEquals(st, AppJson.decodeFromString(TrucoState.serializer(), AppJson.encodeToString(TrucoState.serializer(), st)))

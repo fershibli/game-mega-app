@@ -1,6 +1,6 @@
 # Cacheta
 
-Cacheta ist das brasilianische Rommé vom Küchentisch: ziehen, abwerfen und als Erster alle Karten in Gruppen haben. In Mili Games spielst du gegen **1, 2 oder 3 Computer** (du wählst zu Beginn jedes Spiels).
+Cacheta ist das brasilianische Rommé vom Küchentisch: ziehen, abwerfen und als Erster alle Karten in Gruppen haben. In Mili Games spielen **2, 3 oder 4**: Vor jedem Spiel fragt die App **Wie viele am Tisch?** (und merkt sich die Wahl). Du spielst gegen 1 bis 3 Computer oder mit anderen Menschen **abwechselnd an einem Telefon**.
 
 ## Die Karten
 - Zwei Kartenspiele mit je 52 Karten (104 Karten), ohne Joker.
@@ -34,3 +34,6 @@ Nach dem Ziehen hast du 10 Karten. Wenn 9 davon Gruppen bilden (die 10. ist dein
 - **Tipp** schlägt die Karte zum Abwerfen vor. **Nach Farbe / Nach Wert** sortiert deine Hand.
 - Paare (zwei 7er oder 7♥ 8♥) sind halbe Gruppen: behalte sie und wirf zuerst einzelne Karten ab.
 - Achte auf die Ablage: Hat ein Computer eine 6♠ genommen, gib ihm weder 5♠ noch 7♠.
+
+## Abwechselnd an einem Telefon
+Wähle **Abwechselnd an diesem Telefon** beim Schwierigkeitsgrad und dann 2, 3 oder 4 am Tisch: Alle sind Menschen, niemand spielt gegen den Computer. Nach jedem Zug verdeckt ein Schirm die Karten und bittet, das Telefon an den nächsten Spieler weiterzugeben, mit Farbe und Symbol; er tippt auf den großen Knopf („Fertig, ich bin dran“), um seine Hand zu sehen. Gespielt wird gegen den Uhrzeigersinn, wie in Brasilien üblich. Beim Pife geht das Telefon an einen anderen Spieler, der mit der gerade abgeworfenen Karte baten kann, damit er sie nimmt oder liegen lässt.

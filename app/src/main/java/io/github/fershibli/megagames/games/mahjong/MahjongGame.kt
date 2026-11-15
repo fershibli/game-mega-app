@@ -1,7 +1,5 @@
 package io.github.fershibli.megagames.games.mahjong
 
-import io.github.fershibli.megagames.ui.theme.wait
-import io.github.fershibli.megagames.ui.theme.currentPace
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.fillMaxSize
@@ -34,9 +32,13 @@ import io.github.fershibli.megagames.ui.components.ButtonStyle
 import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
+import io.github.fershibli.megagames.ui.components.rememberZoomState
 import io.github.fershibli.megagames.ui.theme.LocalPalette
-import kotlinx.serialization.Serializable
+import io.github.fershibli.megagames.ui.theme.LocalSettings
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
+import kotlinx.serialization.Serializable
 
 @Serializable
 data class MahjongState(
@@ -117,6 +119,9 @@ private fun MahjongScreen(state: MutableState<MahjongState>, host: GameHost) {
     }
 
     GameLayout(
+        // The layout always fits the screen, so a bigger piece size starts the board zoomed in
+        // (centered); the reset button or a pinch shows the whole layout again.
+        zoom = rememberZoomState(LocalSettings.current.pieceScale),
         status = {
             val text = if (pairs.isEmpty() && s.tiles.isNotEmpty()) stringResource(R.string.mahjong_stuck)
             else stringResource(R.string.mahjong_status, s.tiles.size, pairs.size)

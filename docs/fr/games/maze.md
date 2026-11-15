@@ -7,7 +7,7 @@ Un labyrinthe sur papier, comme dans le journal : trace le chemin du petit ami t
 ## Comment jouer
 
 - Fais glisser ton doigt dans les couloirs : le trait te suit et le petit ami marche à son bout. Il ne traverse jamais un mur.
-- Reviens en arrière sur le trait pour effacer des pas, ou touche une case du trait pour y revenir. **Annuler** recule d’un pas.
+- Reviens en arrière sur le trait pour effacer des pas, ou touche une case du trait pour revenir vers elle, 3 pas au plus par toucher (ainsi un effleurement involontaire n’efface pas tout). **Annuler** recule d’un pas.
 - Touche une case plus loin dans un couloir pour y aller directement (le trait s’arrête à chaque croisement, où tu choisis la route).
 - **Indice** montre les prochaines cases avec des anneaux. Si le trait a pris un mauvais chemin, le grand anneau montre jusqu’où revenir.
 - Il y a toujours un seul chemin jusqu’à la maison, et aucune horloge. À l’arrivée, tout le chemin s’illumine.

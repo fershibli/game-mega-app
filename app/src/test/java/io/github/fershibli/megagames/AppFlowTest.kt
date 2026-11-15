@@ -31,6 +31,7 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithContentDescription
 import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onFirst
+import androidx.compose.ui.test.onLast
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -129,6 +130,69 @@ class AppFlowTest {
     @Test
     fun pinchIsIgnoredWhenDisabled() = assertEquals(1f, pinchResult(false), 0.001f)
 
+    /** Plays [touches] on a 300 dp board with pinch zoom on and returns the zoom it ends at. */
+    private fun zoomAfter(touches: androidx.compose.ui.test.TouchInjectionScope.() -> Unit): Float {
+        val zoom = ZoomState()
+        rule.setContent {
+            MegaGamesTheme(Settings(pinchZoom = true)) {
+                ZoomableBoard(Modifier.size(300.dp).testTag("board"), zoom) { Box(Modifier.fillMaxSize()) }
+            }
+        }
+        rule.onNodeWithTag("board").performTouchInput(touches)
+        rule.waitForIdle()
+        return zoom.scale
+    }
+
+    @Test
+    fun theSideOfAFingerAtTheEdgeDoesNotZoom() = assertEquals(1f, zoomAfter {
+        // Dragging a piece while the side of the finger rests on the left edge and moves a little.
+        down(0, center)
+        down(1, Offset(4f, center.y))
+        repeat(10) { k ->
+            moveTo(0, center + Offset(k * 20f, k * 15f))
+            moveTo(1, Offset(4f + k * 2f, center.y - k * 6f))
+        }
+        up(1)
+        up(0)
+    }, 0.001f)
+
+    @Test
+    fun aSecondFingerLongAfterTheFirstDoesNotZoom() = assertEquals(1f, zoomAfter {
+        down(0, center - Offset(40f, 0f))
+        advanceEventTime(600)
+        down(1, center + Offset(40f, 0f))
+        repeat(10) { k -> moveTo(1, center + Offset(40f + k * 25f, 0f)) }
+        up(1)
+        up(0)
+    }, 0.001f)
+
+    @Test
+    fun twoFingersRestingStillDoNotZoom() = assertEquals(1f, zoomAfter {
+        down(0, center - Offset(60f, 0f))
+        down(1, center + Offset(60f, 0f))
+        repeat(5) { moveTo(1, center + Offset(61f, 1f)) }
+        up(1)
+        up(0)
+    }, 0.001f)
+
+    @Test
+    fun aBoardCanStartZoomedInAtTheCenter() {
+        val zoom = ZoomState(1.6f)
+        rule.setContent {
+            MegaGamesTheme(Settings()) {
+                ZoomableBoard(Modifier.size(300.dp).testTag("board"), zoom) { Box(Modifier.fillMaxSize()) }
+            }
+        }
+        rule.waitForIdle()
+        assertEquals(1.6f, zoom.scale, 0.001f)
+        // Centered: the same amount is cut off on each side.
+        assertEquals(zoom.offset.x, zoom.offset.y, 0.5f)
+        assertTrue(zoom.offset.x < 0f)
+        // The reset button shows the whole board again.
+        rule.onNodeWithContentDescription("Reset zoom").performClick()
+        assertEquals(1f, zoom.scale, 0.001f)
+    }
+
     @Test
     fun oneHandDoubleTapZoomsInSteps() {
         val zoom = ZoomState()
@@ -189,6 +253,42 @@ class AppFlowTest {
         rule.onNodeWithText("Main menu").performClick()
         rule.onNodeWithText("Yes, leave the game").performClick()
         rule.onNodeWithText("Choose your game").assertIsDisplayed()
+        Thread.sleep(100)
+        assertNull(saves.load())
+    }
+
+    @Test
+    fun wordGamesLeaveOutTheirRecentWordsAndKeepEachGameApart() {
+        val pt = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE
+        val kit = io.github.fershibli.megagames.games.words.WordKit
+        val all = kit.dictionary(app, pt)
+        val used = all.take(10).map { it.letters }
+        kit.remember(app, "wordsearch", pt, used)
+        assertEquals(used, kit.recent(app, "wordsearch", pt).takeLast(10))
+        val fresh = kit.fresh(app, "wordsearch", pt, Difficulty.MEDIUM)
+        assertTrue(fresh.none { it.letters in used })
+        // Another game keeps its own memory.
+        assertTrue(kit.fresh(app, "anagram", pt, Difficulty.MEDIUM).any { it.letters in used })
+        // Easy leaves out the hard words.
+        assertTrue(kit.fresh(app, "anagram", pt, Difficulty.EASY).none { it.level == 3 })
+    }
+
+    @Test
+    fun aNewGameWithOtherOptionsGoesBackToTheChoicesWithoutTheMenu() {
+        val saves = SaveStore(app).also { it.clear() }
+        SettingsStore(app).save(Settings())
+        rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = true) }
+        rule.onAllNodes(hasScrollAction()).onFirst().performScrollToNode(hasContentDescription("Reversi"))
+        rule.onAllNodesWithContentDescription("Reversi")[0].performClick()
+        rule.onNodeWithText("Confirm").performClick()
+        rule.waitUntil(10_000) { rule.onAllNodesWithText("Your turn", substring = true).fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithContentDescription("Settings").performClick()
+        rule.onNodeWithText("New game, other options").performClick()
+        // The game in progress is lost, so it asks first.
+        rule.onAllNodesWithText("New game, other options").onLast().performClick()
+        // Straight to Reversi's own choices, not the main menu.
+        rule.onNodeWithText("How do you want to play?").assertIsDisplayed()
+        assertEquals(0, rule.onAllNodesWithText("Choose your game").fetchSemanticsNodes().size)
         Thread.sleep(100)
         assertNull(saves.load())
     }

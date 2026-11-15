@@ -62,6 +62,12 @@ When a turn ends, the screen covers what belongs to that player (for example the
 
 Games that can be played with different numbers of people ask **How many at the table?** first; the last choice comes preselected.
 
+## Best of 3, best of 5 and against the clock
+
+On the level screen, games against the computer (backgammon, checkers, chess, buraco, truco...) show **Match: Single game / Best of 3 / Best of 5**. In a match the score is shown at the end of each game and **Next game** carries on; whoever wins most of the games takes the match. If the app is closed halfway, the score comes back with the saved game.
+
+Games played alone (sudoku, solitaire, crossword...) show **Time: No limit / 5 / 10 / 20 / 30 min**, at any level. With a limit a clock counts down at the top (red in the last minute) and stops while the settings are open or the app is in the background; when the time runs out the game is lost. The app remembers the last choice of each game.
+
 ## Automatic save and "continue?"
 
 Every move is saved immediately on the phone. If the app is closed — by accident, by a phone call, by the battery running out — the next time it opens it goes straight to that game and asks:
@@ -152,7 +158,7 @@ Every puzzle is generated new and has exactly **one** solution.
 
 ### Buraco
 
-Brazilian Buraco for two: you against the computer.
+Brazilian Buraco for two (you against the computer) or for four in pairs (you and a computer partner against two computers), or taken in turns on one phone. Full rules, the four-player game and tips: [Buraco](games/buraco.md).
 
 **Cards:** two 52-card decks (104 cards). **Every 2 is wild** ("curinga").
 
@@ -227,7 +233,9 @@ Place a disc so that one or more of the computer's discs are trapped in a straig
 
 ### Crossword
 
-A **new crossword is generated** for every game from a dictionary of everyday words with gentle clues, in the app's language.
+A **new crossword is generated** for every game from a dictionary of everyday words with gentle clues, in the app's language. Words from the last games are left out of the next one, so they don't keep coming back.
+
+**Levels:** on **Easy** the first letter of every word is already filled in (in blue) and a letter bank is shown; **Medium** has a bigger grid with more words; **Hard** has the biggest grid, doesn't mark mistakes in red and, in Portuguese, uses less common words (the Portuguese dictionary marks each word as easy, medium or hard).
 
 **Playing:** tap a square to choose its word; tap the same square again to switch between across and down. The clue is shown at the bottom between ◀ and ▶ (previous / next word). Type with the letters below: after each letter the cursor moves on. The eraser clears a letter. **Hint** fills in the selected square.
 
