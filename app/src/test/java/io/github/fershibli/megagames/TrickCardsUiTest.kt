@@ -146,7 +146,7 @@ class TrickCardsUiTest {
         rule.onNodeWithText("Tap the table cards that make 15 with it").assertIsDisplayed()
         rule.onNodeWithContentDescription("5♦").performClick()
         rule.onNodeWithText("7 + 5 = 12").assertIsDisplayed()
-        rule.onNodeWithText("3 more to make 15").assertIsDisplayed()
+        rule.onNodeWithText("Still needed for 15: 3").assertIsDisplayed()
         rule.onNodeWithContentDescription("3♣").performClick()
         rule.onNodeWithText("7 + 5 + 3 = 15 ✓").assertIsDisplayed()
         rule.onNodeWithText("Take").performClick()

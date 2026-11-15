@@ -9,7 +9,7 @@
     <string name="tricks_across">Across</string>
     <string name="tricks_us">Us</string>
     <string name="tricks_them">Them</string>
-    <string name="tricks_pair">Players %1$d and %2$d</string>
+    <string name="tricks_pair">Players %1$d + %2$d</string>
     <string name="tricks_play_card">Play card</string>
     <string name="tricks_next_hand">Next hand</string>
     <string name="tricks_prompt_play">Your turn: tap a card to choose it</string>

@@ -9,7 +9,7 @@
     <string name="escova_must_take">This card can make 15: choose cards to take</string>
     <string name="escova_not_fifteen">That makes %1$d, not 15</string>
     <string name="escova_fifteen">15! Tap Take</string>
-    <string name="escova_need_more">%1$d more to make 15</string>
+    <string name="escova_need_more">Still needed for 15: %1$d</string>
     <string name="escova_too_much">More than 15: tap a card to remove it</string>
     <string name="escova_take">Take</string>
     <string name="escova_lay">Lay down</string>
