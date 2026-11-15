@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">Number merge</string>
+    <string name="howto_merge">Swipe or use the arrows to slide every tile. Two equal numbers that meet join into their sum. After each move a new 2 (or 4) appears. Reach the goal number; you can keep playing after it. No clock.</string>
+    <string name="merge_score">Score: %1$d · Best: %2$d</string>
+    <string name="merge_goal">Join equal numbers to make %1$d.</string>
+    <string name="merge_keep_going">Keep going for a bigger number!</string>
+    <string name="merge_goal_title">You made %1$d!</string>
+    <string name="merge_goal_message">Keep playing for a higher score, or finish here.</string>
+    <string name="merge_keep_playing">Keep playing</string>
+    <string name="merge_finish">Finish here</string>
+    <string name="merge_no_moves">No more moves.</string>
+    <string name="merge_final">Score: %1$d. Biggest number: %2$d.</string>
+    <string name="merge_new_best">New best score!</string>
+    <string name="merge_up">Up</string>
+    <string name="merge_right">Right</string>
+    <string name="merge_down">Down</string>
+    <string name="merge_left">Left</string>
+    <string name="merge_board">Number board, %1$d × %2$d</string>
+</resources>

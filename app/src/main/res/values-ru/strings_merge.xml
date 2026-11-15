@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">Соедини числа</string>
+    <string name="howto_merge">Проведите пальцем или нажмите стрелки, чтобы сдвинуть все плитки. Два одинаковых числа при встрече складываются в одно. После каждого хода появляется новая 2 (или 4). Дойдите до цели; потом можно играть дальше. Без часов.</string>
+    <string name="merge_score">Очки: %1$d · Рекорд: %2$d</string>
+    <string name="merge_goal">Соединяйте одинаковые числа до %1$d.</string>
+    <string name="merge_keep_going">Дальше — к ещё большему числу!</string>
+    <string name="merge_goal_title">Получилось %1$d!</string>
+    <string name="merge_goal_message">Играйте дальше ради очков или закончите здесь.</string>
+    <string name="merge_keep_playing">Играть дальше</string>
+    <string name="merge_finish">Закончить</string>
+    <string name="merge_no_moves">Ходов больше нет.</string>
+    <string name="merge_final">Очки: %1$d. Самое большое число: %2$d.</string>
+    <string name="merge_new_best">Новый рекорд!</string>
+    <string name="merge_up">Вверх</string>
+    <string name="merge_right">Вправо</string>
+    <string name="merge_down">Вниз</string>
+    <string name="merge_left">Влево</string>
+    <string name="merge_board">Поле чисел, %1$d × %2$d</string>
+</resources>

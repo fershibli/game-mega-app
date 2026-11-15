@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">Zahlen vereinen</string>
+    <string name="howto_merge">Wische oder nutze die Pfeile, um alle Steine zu schieben. Zwei gleiche Zahlen, die sich treffen, werden zu ihrer Summe. Nach jedem Zug erscheint eine neue 2 (oder 4). Erreiche die Zielzahl; danach kannst du weiterspielen. Ohne Uhr.</string>
+    <string name="merge_score">Punkte: %1$d · Bestwert: %2$d</string>
+    <string name="merge_goal">Vereine gleiche Zahlen bis %1$d.</string>
+    <string name="merge_keep_going">Weiter zu einer noch größeren Zahl!</string>
+    <string name="merge_goal_title">Du hast %1$d geschafft!</string>
+    <string name="merge_goal_message">Spiele weiter für mehr Punkte oder höre hier auf.</string>
+    <string name="merge_keep_playing">Weiterspielen</string>
+    <string name="merge_finish">Hier aufhören</string>
+    <string name="merge_no_moves">Kein Zug mehr möglich.</string>
+    <string name="merge_final">Punkte: %1$d. Größte Zahl: %2$d.</string>
+    <string name="merge_new_best">Neuer Bestwert!</string>
+    <string name="merge_up">Hoch</string>
+    <string name="merge_right">Rechts</string>
+    <string name="merge_down">Runter</string>
+    <string name="merge_left">Links</string>
+    <string name="merge_board">Zahlenbrett, %1$d × %2$d</string>
+</resources>

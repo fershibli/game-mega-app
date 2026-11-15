@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_tangram">Tangram</string>
+    <string name="howto_tangram">Llena la figura con las siete piezas, sin encimarlas. Arrastra una pieza para moverla, tócala para girarla y usa Voltear con el paralelogramo. Las piezas encajan cuando están cerca. La pista coloca una pieza.</string>
+    <string name="tangram_shape">Figura: %1$s</string>
+    <string name="tangram_how">Arrastra las piezas dentro de la figura. Toca una pieza para girarla.</string>
+    <string name="tangram_done">¡Muy bien! Formaste: %1$s.</string>
+    <string name="tangram_hints_used">Pistas usadas: %1$d.</string>
+    <string name="tangram_flip">Voltear</string>
+    <string name="tangram_restart">Empezar de nuevo</string>
+    <string name="tangram_board">Mesa del tangram, figura: %1$s</string>
+    <string name="tangram_shape_square">Cuadrado</string>
+    <string name="tangram_shape_triangle">Triángulo</string>
+    <string name="tangram_shape_house">Casa</string>
+    <string name="tangram_shape_rocket">Cohete</string>
+    <string name="tangram_shape_bridge">Puente</string>
+    <string name="tangram_shape_table">Mesa</string>
+    <string name="tangram_shape_boat">Velero</string>
+    <string name="tangram_shape_candle">Vela</string>
+    <string name="tangram_shape_cat">Gato</string>
+    <string name="tangram_shape_fox">Zorro</string>
+    <string name="tangram_shape_swan">Cisne</string>
+    <string name="tangram_shape_gem">Joya</string>
+    <string name="tangram_shape_ship">Barco</string>
+    <string name="tangram_shape_arrow">Flecha</string>
+    <string name="tangram_shape_mushroom">Seta</string>
+    <string name="tangram_shape_teapot">Tetera</string>
+    <string name="tangram_shape_chair">Silla</string>
+    <string name="tangram_shape_tree">Abeto</string>
+    <string name="tangram_shape_fish">Pez</string>
+    <string name="tangram_shape_mountains">Montañas</string>
+    <string name="tangram_shape_crown">Corona</string>
+    <string name="tangram_shape_heart">Corazón</string>
+    <string name="tangram_shape_owl">Búho</string>
+    <string name="tangram_shape_turtle">Tortuga</string>
+    <string name="tangram_shape_elephant">Elefante</string>
+    <string name="tangram_shape_dog">Perro</string>
+    <string name="tangram_shape_person">Persona</string>
+    <string name="tangram_shape_runner">Corredor</string>
+    <string name="tangram_shape_child">Niño</string>
+    <string name="tangram_shape_duck">Pato</string>
+    <string name="tangram_shape_rabbit">Conejo</string>
+    <string name="tangram_shape_bird">Pájaro</string>
+</resources>

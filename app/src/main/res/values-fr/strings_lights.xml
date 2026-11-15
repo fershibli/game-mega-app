@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">Éteins les lumières</string>
+    <string name="howto_lights">Touche une lampe : elle et ses voisines du dessus, du dessous et des côtés changent d’état. Éteins toutes les lampes. L’indice entoure une lampe à toucher.</string>
+    <string name="lights_moves">Coups : %1$d</string>
+    <string name="lights_goal">Touche une lampe pour la changer avec ses voisines.</string>
+    <string name="lights_hint_tap">Touche la lampe entourée.</string>
+    <string name="lights_done">Toutes les lumières sont éteintes !</string>
+    <string name="lights_hints_used">Indices utilisés : %1$d.</string>
+    <string name="lights_restart">Recommencer</string>
+    <string name="lights_board">Lampes, %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="one">Éteintes en %1$d coup.</item>
+        <item quantity="many">Éteintes en %1$d coups.</item>
+        <item quantity="other">Éteintes en %1$d coups.</item>
+    </plurals>
+</resources>

@@ -138,6 +138,10 @@ class ScreenshotTest {
     }
     @Test fun sudoku() = gameShot("game_sudoku", GameId.SUDOKU)
     @Test fun solitaire() = gameShot("game_solitaire", GameId.SOLITAIRE)
+    @Test fun lightsPt() = gameShot("game_lights_pt", GameId.LIGHTS, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun boxesPt() = gameShot("game_boxes_pt", GameId.BOXES, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun mergePt() = gameShot("game_merge_pt", GameId.MERGE, Difficulty.EASY, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun tangramPt() = gameShot("game_tangram_pt", GameId.TANGRAM, Difficulty.EASY, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun solitaireSideways() = gameShot("game_solitaire_sideways", GameId.SOLITAIRE, settings = Settings(solitaireSideways = true))
     @Test fun solitaireColorblind() = gameShot("game_solitaire_colorblind", GameId.SOLITAIRE, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.COLORBLIND))
     @Test fun reversi() = gameShot("game_reversi", GameId.REVERSI)

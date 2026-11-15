@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_tangram">Tangram</string>
+    <string name="howto_tangram">Remplis la forme avec les sept pièces, sans chevauchement. Fais glisser une pièce pour la déplacer, touche-la pour la tourner et utilise Retourner pour le parallélogramme. Les pièces s’emboîtent quand elles sont proches. L’indice place une pièce.</string>
+    <string name="tangram_shape">Forme : %1$s</string>
+    <string name="tangram_how">Fais glisser les pièces dans la forme. Touche une pièce pour la tourner.</string>
+    <string name="tangram_done">Bravo ! Tu as fait : %1$s.</string>
+    <string name="tangram_hints_used">Indices utilisés : %1$d.</string>
+    <string name="tangram_flip">Retourner</string>
+    <string name="tangram_restart">Recommencer</string>
+    <string name="tangram_board">Table du tangram, forme : %1$s</string>
+    <string name="tangram_shape_square">Carré</string>
+    <string name="tangram_shape_triangle">Triangle</string>
+    <string name="tangram_shape_house">Maison</string>
+    <string name="tangram_shape_rocket">Fusée</string>
+    <string name="tangram_shape_bridge">Pont</string>
+    <string name="tangram_shape_table">Table</string>
+    <string name="tangram_shape_boat">Voilier</string>
+    <string name="tangram_shape_candle">Bougie</string>
+    <string name="tangram_shape_cat">Chat</string>
+    <string name="tangram_shape_fox">Renard</string>
+    <string name="tangram_shape_swan">Cygne</string>
+    <string name="tangram_shape_gem">Bijou</string>
+    <string name="tangram_shape_ship">Bateau</string>
+    <string name="tangram_shape_arrow">Flèche</string>
+    <string name="tangram_shape_mushroom">Champignon</string>
+    <string name="tangram_shape_teapot">Théière</string>
+    <string name="tangram_shape_chair">Chaise</string>
+    <string name="tangram_shape_tree">Sapin</string>
+    <string name="tangram_shape_fish">Poisson</string>
+    <string name="tangram_shape_mountains">Montagnes</string>
+    <string name="tangram_shape_crown">Couronne</string>
+    <string name="tangram_shape_heart">Cœur</string>
+    <string name="tangram_shape_owl">Hibou</string>
+    <string name="tangram_shape_turtle">Tortue</string>
+    <string name="tangram_shape_elephant">Éléphant</string>
+    <string name="tangram_shape_dog">Chien</string>
+    <string name="tangram_shape_person">Personne</string>
+    <string name="tangram_shape_runner">Coureur</string>
+    <string name="tangram_shape_child">Enfant</string>
+    <string name="tangram_shape_duck">Canard</string>
+    <string name="tangram_shape_rabbit">Lapin</string>
+    <string name="tangram_shape_bird">Oiseau</string>
+</resources>

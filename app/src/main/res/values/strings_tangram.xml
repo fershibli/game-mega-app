@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_tangram">Tangram</string>
+    <string name="howto_tangram">Fill the shape with all seven pieces, without overlapping. Drag a piece to move it, tap it to turn it, and use Flip for the parallelogram. Pieces snap into place when they are close. Hint places one piece.</string>
+    <string name="tangram_shape">Shape: %1$s</string>
+    <string name="tangram_how">Drag the pieces into the shape. Tap a piece to turn it.</string>
+    <string name="tangram_done">Well done! You made: %1$s.</string>
+    <string name="tangram_hints_used">Hints used: %1$d.</string>
+    <string name="tangram_flip">Flip</string>
+    <string name="tangram_restart">Start over</string>
+    <string name="tangram_board">Tangram table, shape: %1$s</string>
+    <string name="tangram_shape_square">Square</string>
+    <string name="tangram_shape_triangle">Triangle</string>
+    <string name="tangram_shape_house">House</string>
+    <string name="tangram_shape_rocket">Rocket</string>
+    <string name="tangram_shape_bridge">Bridge</string>
+    <string name="tangram_shape_table">Table</string>
+    <string name="tangram_shape_boat">Sailboat</string>
+    <string name="tangram_shape_candle">Candle</string>
+    <string name="tangram_shape_cat">Cat</string>
+    <string name="tangram_shape_fox">Fox</string>
+    <string name="tangram_shape_swan">Swan</string>
+    <string name="tangram_shape_gem">Gem</string>
+    <string name="tangram_shape_ship">Ship</string>
+    <string name="tangram_shape_arrow">Arrow</string>
+    <string name="tangram_shape_mushroom">Mushroom</string>
+    <string name="tangram_shape_teapot">Teapot</string>
+    <string name="tangram_shape_chair">Chair</string>
+    <string name="tangram_shape_tree">Fir tree</string>
+    <string name="tangram_shape_fish">Fish</string>
+    <string name="tangram_shape_mountains">Mountains</string>
+    <string name="tangram_shape_crown">Crown</string>
+    <string name="tangram_shape_heart">Heart</string>
+    <string name="tangram_shape_owl">Owl</string>
+    <string name="tangram_shape_turtle">Turtle</string>
+    <string name="tangram_shape_elephant">Elephant</string>
+    <string name="tangram_shape_dog">Dog</string>
+    <string name="tangram_shape_person">Person</string>
+    <string name="tangram_shape_runner">Runner</string>
+    <string name="tangram_shape_child">Child</string>
+    <string name="tangram_shape_duck">Duck</string>
+    <string name="tangram_shape_rabbit">Rabbit</string>
+    <string name="tangram_shape_bird">Bird</string>
+</resources>

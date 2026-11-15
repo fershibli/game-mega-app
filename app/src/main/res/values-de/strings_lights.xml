@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">Lichter löschen</string>
+    <string name="howto_lights">Tippe auf eine Lampe: Sie und ihre Nachbarn oben, unten und an den Seiten wechseln. Schalte alle Lampen aus. Der Tipp kreist eine Lampe zum Antippen ein.</string>
+    <string name="lights_moves">Züge: %1$d</string>
+    <string name="lights_goal">Tippe auf eine Lampe, um sie und ihre Nachbarn umzuschalten.</string>
+    <string name="lights_hint_tap">Tippe auf die eingekreiste Lampe.</string>
+    <string name="lights_done">Alle Lichter sind aus!</string>
+    <string name="lights_hints_used">Benutzte Tipps: %1$d.</string>
+    <string name="lights_restart">Neu beginnen</string>
+    <string name="lights_board">Lampen, %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="one">Ausgeschaltet in %1$d Zug.</item>
+        <item quantity="other">Ausgeschaltet in %1$d Zügen.</item>
+    </plurals>
+</resources>

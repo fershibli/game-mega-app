@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">关灯</string>
+    <string name="howto_lights">点一盏灯：它和上下左右相邻的灯都会切换。把所有的灯都关掉。提示会圈出一盏该点的灯。</string>
+    <string name="lights_moves">步数：%1$d</string>
+    <string name="lights_goal">点一盏灯，它和相邻的灯一起切换。</string>
+    <string name="lights_hint_tap">点被圈出的灯。</string>
+    <string name="lights_done">所有的灯都关了！</string>
+    <string name="lights_hints_used">使用提示：%1$d 次。</string>
+    <string name="lights_restart">重新开始</string>
+    <string name="lights_board">灯，%1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="other">用了 %1$d 步关灯。</item>
+    </plurals>
+</resources>
