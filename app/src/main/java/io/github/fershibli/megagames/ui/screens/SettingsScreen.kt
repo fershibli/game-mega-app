@@ -130,7 +130,6 @@ fun SettingsScreen(
 ) {
     val p = LocalPalette.current
     val left = LocalSettings.current.leftHanded
-    var confirmExit by remember { mutableStateOf(false) }
     var confirmNew by remember { mutableStateOf(false) }
     var confirmOptions by remember { mutableStateOf(false) }
     var pickLanguage by remember { mutableStateOf(false) }
@@ -272,11 +271,8 @@ fun SettingsScreen(
                 if (inGame.onNewOptions != null) {
                     BigButton(stringResource(R.string.new_game_options), { confirmOptions = true }, Modifier.fillMaxWidth(), icon = AppIcon.NEW_GAME, style = ButtonStyle.SECONDARY)
                 }
-                if (inGame.onNewGame != null) {
-                    BigButton(stringResource(R.string.main_menu), { confirmExit = true }, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.DANGER)
-                } else {
-                    BigButton(stringResource(R.string.main_menu), inGame.onMainMenu, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.SECONDARY)
-                }
+                // The game stays saved, so going to the menu needs no "are you sure?".
+                BigButton(stringResource(R.string.main_menu), inGame.onMainMenu, Modifier.fillMaxWidth(), icon = AppIcon.HOME, style = ButtonStyle.SECONDARY)
             } else {
                 BigButton(stringResource(R.string.done), onClose, Modifier.fillMaxWidth(), icon = AppIcon.CHECK)
             }
@@ -298,17 +294,6 @@ fun SettingsScreen(
                 }
             },
             primaryIndex = AppLanguage.entries.indexOf(settings.language),
-        )
-    }
-    if (confirmExit && inGame != null) {
-        BigDialog(
-            title = stringResource(R.string.leave_game_title),
-            message = stringResource(R.string.leave_game_message),
-            onDismiss = { confirmExit = false },
-            buttons = listOf(
-                stringResource(R.string.leave_game_yes) to { confirmExit = false; inGame.onMainMenu() },
-                stringResource(R.string.cancel) to { confirmExit = false },
-            ),
         )
     }
     if (confirmOptions && inGame != null) {

@@ -13,6 +13,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.ChoiceStore
 import io.github.fershibli.megagames.core.Difficulty
@@ -28,6 +30,7 @@ import io.github.fershibli.megagames.core.offersMatches
 import io.github.fershibli.megagames.core.offersTimeLimit
 import io.github.fershibli.megagames.core.rememberChoiceStore
 import io.github.fershibli.megagames.games.tutorialOf
+import io.github.fershibli.megagames.ui.components.BigDialog
 import io.github.fershibli.megagames.ui.screens.DifficultyScreen
 import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.HomeOrder
@@ -108,6 +111,17 @@ fun MegaGamesApp(
     // A game not available in the app language asks which language to play in first.
     var askLanguage by remember { mutableStateOf<Pair<GameId, List<AppLanguage>>?>(null) }
 
+    // A game with a game in progress asks first: continue it, or start a new one?
+    var askContinue by remember { mutableStateOf<SavedGame?>(null) }
+
+    // Back to a game in progress, in the language it was started in.
+    fun resume(saved: SavedGame) {
+        val game = GameId.fromKey(saved.game) ?: return
+        val language = GameLanguages.restored(languagesOf(game), settings.language, GameLanguages.fromName(saved.language))
+        choiceStore.recordPlayed(game)
+        screen = Screen.Playing(game, saved.difficulty, game.variant(saved.variant), saved.setup, saved, language)
+    }
+
     // Match length and time limit chosen with the level (kept until the game starts).
     var options by remember { mutableStateOf(1 to 0) }
 
@@ -119,7 +133,7 @@ fun MegaGamesApp(
         choiceStore.recordPlayed(game)
         choiceStore.rememberSetup(game, setup)
         // Pastimes (a pet, a farm) keep their own lasting world and leave the game in progress alone.
-        if (game.hasDifficulty) saveStore.clear()
+        if (game.hasDifficulty) saveStore.clear(game)
         screen = Screen.Playing(game, difficulty, variant, setup, null, language)
     }
 
@@ -160,6 +174,13 @@ fun MegaGamesApp(
         screen = Screen.Intro(game, language)
     }
 
+    // A new game of [game]: one not available in the app language asks which language to play in first.
+    fun openNew(game: GameId) {
+        val languages = languagesOf(game)
+        val choices = GameLanguages.fallbackChoices(languages, settings.language, choiceStore.lastLanguage(game))
+        if (choices == null) open(game, GameLanguages.opening(languages, settings.language)) else askLanguage = game to choices
+    }
+
     MegaGamesTheme(settings) {
         Box(
             Modifier
@@ -170,13 +191,13 @@ fun MegaGamesApp(
             when (val s = screen) {
                 Screen.Home -> HomeScreen(
                     onGame = { game ->
-                        val languages = languagesOf(game)
-                        val choices = GameLanguages.fallbackChoices(languages, settings.language, choiceStore.lastLanguage(game))
-                        if (choices == null) open(game, GameLanguages.opening(languages, settings.language)) else askLanguage = game to choices
+                        val saved = saveStore.load(game)
+                        if (saved != null) askContinue = saved else openNew(game)
                     },
                     onSettings = { screen = Screen.Settings },
                     // Read every time the home screen shows, so the game just played is already first.
                     order = HomeOrder.of(settings, choiceStore),
+                    inProgress = remember { saveStore.inProgress() },
                 )
                 Screen.Settings -> {
                     BackHandler { screen = Screen.Home }
@@ -285,20 +306,36 @@ fun MegaGamesApp(
                     askResume = askResume,
                     onResumeAnswered = { keepPlaying ->
                         askResume = false
-                        if (!keepPlaying) {
-                            saveStore.clear()
-                            screen = Screen.Home
-                        }
+                        // The game stays saved: it can be continued from the list of games.
+                        if (!keepPlaying) screen = Screen.Home
                     },
-                    onExit = {
-                        if (s.game.hasDifficulty) saveStore.clear()
-                        screen = Screen.Home
-                    },
+                    // Leaving keeps the game in progress (a finished game has already been forgotten).
+                    onExit = { screen = Screen.Home },
                     // Back to the rules / mode / level / table choice of the same game, the last choices preselected.
                     onNewOptions = {
-                        saveStore.clear()
+                        saveStore.clear(s.game)
                         choose(s.game, s.language)
                     }.takeIf { s.game.hasDifficulty || s.game.variants.isNotEmpty() },
+                )
+            }
+            askContinue?.let { saved ->
+                val game = GameId.fromKey(saved.game)!!
+                BigDialog(
+                    title = stringResource(game.title),
+                    message = stringResource(R.string.saved_game_message, stringResource(game.title)),
+                    onDismiss = { askContinue = null },
+                    buttons = listOf(
+                        stringResource(R.string.resume_continue) to {
+                            askContinue = null
+                            resume(saved)
+                        },
+                        // The game in progress is only forgotten when the new one really starts.
+                        stringResource(R.string.new_game) to {
+                            askContinue = null
+                            openNew(game)
+                        },
+                        stringResource(R.string.cancel) to { askContinue = null },
+                    ),
                 )
             }
             askLanguage?.let { (game, choices) ->

@@ -44,14 +44,13 @@
     <string name="new_game">新游戏</string>
     <string name="new_game_options">换个设置开新游戏</string>
     <string name="main_menu">主菜单</string>
-    <string name="leave_game_title">要离开这局游戏吗？</string>
-    <string name="leave_game_message">回到主菜单后，这局游戏将被放弃，不能再继续。</string>
-    <string name="leave_game_yes">是的，离开游戏</string>
     <string name="new_game_title">开始新游戏吗？</string>
     <string name="new_game_message">当前这局游戏会丢失。</string>
     <string name="resume_title">欢迎回来！</string>
     <string name="resume_message">你有一局“%1$s”还没玩完。要接着玩，还是回到主菜单？</string>
     <string name="resume_continue">继续游戏</string>
+    <string name="saved_game_message">你有一局“%1$s”还没玩完。要接着玩，还是开始新的一局？</string>
+    <string name="game_in_progress">有未完成的一局</string>
     <string name="win_title">恭喜！</string>
     <string name="win_message">你赢了！🎉</string>
     <string name="lose_title">游戏结束</string>

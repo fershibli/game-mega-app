@@ -47,14 +47,13 @@
     <string name="new_game">Nuova partita</string>
     <string name="new_game_options">Nuova partita con altre opzioni</string>
     <string name="main_menu">Menu principale</string>
-    <string name="leave_game_title">Uscire da questa partita?</string>
-    <string name="leave_game_message">Se torni al menu principale, questa partita verrà abbandonata e non potrà essere ripresa.</string>
-    <string name="leave_game_yes">Sì, esci dalla partita</string>
     <string name="new_game_title">Iniziare una nuova partita?</string>
     <string name="new_game_message">La partita in corso andrà persa.</string>
     <string name="resume_title">Che bello rivederti!</string>
     <string name="resume_message">Hai una partita in corso: %1$s. Vuoi continuare da dove avevi interrotto o tornare al menu principale?</string>
     <string name="resume_continue">Continua a giocare</string>
+    <string name="saved_game_message">Hai una partita in corso: %1$s. Vuoi continuare da dove avevi interrotto o iniziare una nuova partita?</string>
+    <string name="game_in_progress">partita in corso</string>
     <string name="win_title">Complimenti!</string>
     <string name="win_message">Hai vinto! 🎉</string>
     <string name="lose_title">Partita finita</string>

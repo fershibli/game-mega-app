@@ -44,14 +44,13 @@
     <string name="new_game">Novo jogo</string>
     <string name="new_game_options">Novo jogo com outras opções</string>
     <string name="main_menu">Menu principal</string>
-    <string name="leave_game_title">Sair deste jogo?</string>
-    <string name="leave_game_message">Se você voltar ao menu principal, este jogo será abandonado e não poderá ser continuado.</string>
-    <string name="leave_game_yes">Sim, sair do jogo</string>
     <string name="new_game_title">Começar um novo jogo?</string>
     <string name="new_game_message">O jogo atual será perdido.</string>
     <string name="resume_title">Que bom te ver de novo!</string>
     <string name="resume_message">Você tem uma partida de %1$s em andamento. Quer continuar de onde parou ou voltar para o menu principal?</string>
     <string name="resume_continue">Continuar jogando</string>
+    <string name="saved_game_message">Você tem uma partida de %1$s em andamento. Quer continuar de onde parou ou começar um jogo novo?</string>
+    <string name="game_in_progress">jogo em andamento</string>
     <string name="win_title">Parabéns!</string>
     <string name="win_message">Você venceu! 🎉</string>
     <string name="lose_title">Fim de jogo</string>

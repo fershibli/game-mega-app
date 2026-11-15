@@ -47,14 +47,13 @@
     <string name="new_game">لعبة جديدة</string>
     <string name="new_game_options">لعبة جديدة بخيارات أخرى</string>
     <string name="main_menu">القائمة الرئيسية</string>
-    <string name="leave_game_title">هل تريد مغادرة هذه اللعبة؟</string>
-    <string name="leave_game_message">إذا عدت إلى القائمة الرئيسية، فستُترك هذه اللعبة ولن تستطيع إكمالها.</string>
-    <string name="leave_game_yes">نعم، غادر اللعبة</string>
     <string name="new_game_title">هل تبدأ لعبة جديدة؟</string>
     <string name="new_game_message">ستضيع اللعبة الحالية.</string>
     <string name="resume_title">أهلًا بعودتك!</string>
     <string name="resume_message">لديك لعبة %1$s لم تنتهِ بعد. هل تريد المتابعة من حيث توقفت أم العودة إلى القائمة الرئيسية؟</string>
     <string name="resume_continue">متابعة اللعب</string>
+    <string name="saved_game_message">لديك لعبة %1$s لم تنتهِ بعد. هل تريد المتابعة من حيث توقفت أم بدء لعبة جديدة؟</string>
+    <string name="game_in_progress">لعبة لم تنتهِ</string>
     <string name="win_title">تهانينا!</string>
     <string name="win_message">لقد فزت! 🎉</string>
     <string name="lose_title">انتهت اللعبة</string>

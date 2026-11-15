@@ -8,7 +8,12 @@ import androidx.compose.ui.semantics.heading
 import androidx.compose.runtime.remember
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.platform.testTag
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -71,10 +76,11 @@ private const val CYCLES = 1000
 /**
  * Game chooser: two columns of square, text-free thumbnails grouped under category headings
  * (cards, board games, puzzles...), scrolling endlessly in both directions (the list wraps
- * around). Each thumbnail still has a spoken name for TalkBack.
+ * around). Each thumbnail still has a spoken name for TalkBack. The games with a game in
+ * progress ([inProgress]) carry a small "continue" mark in the corner.
  */
 @Composable
-fun HomeScreen(onGame: (GameId) -> Unit, onSettings: () -> Unit, order: HomeOrder = HomeOrder.Default) {
+fun HomeScreen(onGame: (GameId) -> Unit, onSettings: () -> Unit, order: HomeOrder = HomeOrder.Default, inProgress: Set<GameId> = emptySet()) {
     // Each category heading followed by its games (categories without games are left out), or
     // simply every game when the categories are turned off.
     val entries: List<Any> = remember(order) {
@@ -113,7 +119,8 @@ fun HomeScreen(onGame: (GameId) -> Unit, onSettings: () -> Unit, order: HomeOrde
                         return@items
                     }
                     val game = entry as GameId
-                    val name = stringResource(game.title)
+                    val waiting = game in inProgress
+                    val name = stringResource(game.title) + if (waiting) ", " + stringResource(R.string.game_in_progress) else ""
                     val shape = RoundedCornerShape(22.dp)
                     Box(
                         Modifier
@@ -127,10 +134,29 @@ fun HomeScreen(onGame: (GameId) -> Unit, onSettings: () -> Unit, order: HomeOrde
                             .semantics { contentDescription = name },
                     ) {
                         GameThumbnail(game, Modifier.fillMaxSize())
+                        if (waiting) ContinueMark(Modifier.align(Alignment.TopEnd).padding(8.dp))
                     }
                 }
             }
         }
         FloatingGear(onSettings)
+    }
+}
+
+/** The mark of a game in progress: a "play" triangle on a round badge, in a corner of the thumbnail. */
+@Composable
+private fun ContinueMark(modifier: Modifier = Modifier) {
+    val p = LocalPalette.current
+    Canvas(modifier.size(36.dp).testTag("in-progress")) {
+        drawCircle(p.onPrimary)
+        drawCircle(p.primary, size.minDimension * 0.44f)
+        val w = size.width
+        val triangle = Path().apply {
+            moveTo(w * 0.40f, w * 0.30f)
+            lineTo(w * 0.70f, w * 0.50f)
+            lineTo(w * 0.40f, w * 0.70f)
+            close()
+        }
+        drawPath(triangle, p.onPrimary)
     }
 }
