@@ -11,9 +11,9 @@ Des tuiles numérotées sur un plateau. Fais-les toutes glisser d’un côté : 
 - La partie s’arrête quand plus aucune tuile ne peut bouger. Pas de chrono.
 
 ## Niveaux
-- **Facile :** atteindre 256.
-- **Moyen :** atteindre 512.
-- **Difficile :** atteindre 1024.
+- **Facile :** plateau de 5 × 5, atteindre 256 ; Annuler autant que tu veux.
+- **Moyen :** plateau de 4 × 4, atteindre 512 ; Annuler ne reprend que le dernier coup.
+- **Difficile :** plateau de 4 × 4, atteindre 1024 ; Annuler ne reprend que le dernier coup.
 
 ## Astuces
 - Garde ton plus grand nombre dans un coin et glisse surtout dans deux directions.

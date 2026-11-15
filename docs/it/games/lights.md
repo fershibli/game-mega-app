@@ -6,6 +6,7 @@ Una griglia di lampade, alcune accese. Toccare una lampada cambia **lei e le vic
 
 ## Come si gioca
 - Tocca una lampada per cambiarla insieme alle vicine.
+- **Annulla mossa** toglie gli ultimi tocchi.
 - **Suggerimento** cerchia una lampada da toccare. **Ricomincia** riporta le lampade dell’inizio.
 - Ogni sfida ha una soluzione e non c’è orologio.
 

@@ -11,9 +11,9 @@ Fichas con números en un tablero. Deslízalas todas hacia un lado: dos números
 - El juego acaba cuando ninguna ficha puede moverse. No hay reloj.
 
 ## Niveles
-- **Fácil:** llegar a 256.
-- **Medio:** llegar a 512.
-- **Difícil:** llegar a 1024.
+- **Fácil:** tablero de 5 × 5, llegar a 256; Deshacer todas las veces que quieras.
+- **Medio:** tablero de 4 × 4, llegar a 512; Deshacer solo quita la última jugada.
+- **Difícil:** tablero de 4 × 4, llegar a 1024; Deshacer solo quita la última jugada.
 
 ## Consejos
 - Deja tu número más grande en una esquina y desliza casi siempre en dos direcciones.

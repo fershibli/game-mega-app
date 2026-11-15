@@ -11,9 +11,9 @@ Zahlenplättchen auf einem Brett. Schiebe alle zu einer Seite: Zwei gleiche Zahl
 - Das Spiel endet, wenn sich kein Plättchen mehr bewegen kann. Es gibt keine Uhr.
 
 ## Stufen
-- **Leicht:** 256 erreichen.
-- **Mittel:** 512 erreichen.
-- **Schwer:** 1024 erreichen.
+- **Leicht:** Brett 5 × 5, 256 erreichen; Rückgängig so oft du willst.
+- **Mittel:** Brett 4 × 4, 512 erreichen; Rückgängig nimmt nur den letzten Zug zurück.
+- **Schwer:** Brett 4 × 4, 1024 erreichen; Rückgängig nimmt nur den letzten Zug zurück.
 
 ## Tipps
 - Halte deine größte Zahl in einer Ecke und schiebe meist in zwei Richtungen.

@@ -11,9 +11,9 @@ Number tiles on a board. Slide all of them to one side: two equal numbers that m
 - The game ends when no tile can move. There is no clock.
 
 ## Levels
-- **Easy:** make 256.
-- **Medium:** make 512.
-- **Hard:** make 1024.
+- **Easy:** 5 × 5 board, make 256; Undo as often as you like.
+- **Medium:** 4 × 4 board, make 512; Undo takes back only the last move.
+- **Hard:** 4 × 4 board, make 1024; Undo takes back only the last move.
 
 ## Tips
 - Keep your biggest number in a corner and slide mostly in two directions.

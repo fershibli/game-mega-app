@@ -6,6 +6,7 @@ Ein Gitter aus Lampen, einige leuchten. Wer eine Lampe antippt, schaltet **sie u
 
 ## So wird gespielt
 - Tippe eine Lampe an, um sie und ihre Nachbarn umzuschalten.
+- **Rückgängig** nimmt die letzten Tipper zurück.
 - **Tipp** markiert eine Lampe mit einem Ring. **Neu beginnen** stellt die Lampen vom Anfang wieder her.
 - Jedes Rätsel ist lösbar, und es gibt keine Uhr.
 

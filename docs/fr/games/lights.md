@@ -6,6 +6,7 @@ Une grille de lampes, dont certaines sont allumées. Toucher une lampe la change
 
 ## Comment jouer
 - Touche une lampe pour la changer avec ses voisines.
+- **Annuler** reprend les dernières touches.
 - **Indice** entoure une lampe à toucher. **Recommencer** remet les lampes du départ.
 - Chaque défi a une solution, et il n’y a pas de chrono.
 

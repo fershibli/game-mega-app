@@ -6,6 +6,7 @@ A grid of lamps, some of them lit. Tapping a lamp switches it **and its neighbou
 
 ## How to play
 - Tap a lamp to switch it and its neighbours.
+- **Undo** takes back the last taps.
 - **Hint** puts a ring on a lamp to tap. **Restart** brings back the starting lamps.
 - Every puzzle can be solved, and there is no clock.
 

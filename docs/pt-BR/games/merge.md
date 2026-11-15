@@ -11,9 +11,9 @@ Peças com números num tabuleiro. Deslize todas para um lado: dois números igu
 - O jogo acaba quando nenhuma peça consegue se mexer. Não há relógio.
 
 ## Níveis
-- **Fácil:** chegar a 256.
-- **Médio:** chegar a 512.
-- **Difícil:** chegar a 1024.
+- **Fácil:** tabuleiro 5 × 5, chegar a 256; Desfazer quantas vezes quiser.
+- **Médio:** tabuleiro 4 × 4, chegar a 512; Desfazer volta só a última jogada.
+- **Difícil:** tabuleiro 4 × 4, chegar a 1024; Desfazer volta só a última jogada.
 
 ## Dicas
 - Deixe o maior número num canto e deslize quase sempre em duas direções.

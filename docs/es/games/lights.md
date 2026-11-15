@@ -6,6 +6,7 @@ Una cuadrícula de lámparas, algunas encendidas. Tocar una lámpara la cambia *
 
 ## Cómo jugar
 - Toca una lámpara para cambiarla junto con sus vecinas.
+- **Deshacer** quita los últimos toques.
 - **Pista** marca con un anillo una lámpara para tocar. **Empezar de nuevo** vuelve a las lámparas del inicio.
 - Todos los retos tienen solución y no hay reloj.
 

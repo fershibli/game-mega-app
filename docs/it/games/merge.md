@@ -11,9 +11,9 @@ Tessere con numeri su una tavola. Falle scorrere tutte da un lato: due numeri ug
 - La partita finisce quando nessuna tessera può muoversi. Non c’è orologio.
 
 ## Livelli
-- **Facile:** arrivare a 256.
-- **Medio:** arrivare a 512.
-- **Difficile:** arrivare a 1024.
+- **Facile:** tavola 5 × 5, arrivare a 256; Annulla mossa tutte le volte che vuoi.
+- **Medio:** tavola 4 × 4, arrivare a 512; Annulla mossa toglie solo l’ultima mossa.
+- **Difficile:** tavola 4 × 4, arrivare a 1024; Annulla mossa toglie solo l’ultima mossa.
 
 ## Consigli
 - Tieni il numero più grande in un angolo e fai scorrere quasi sempre in due direzioni.

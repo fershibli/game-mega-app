@@ -6,6 +6,7 @@ Uma grade de lâmpadas, algumas acesas. Tocar numa lâmpada muda ela **e as vizi
 
 ## Como jogar
 - Toque numa lâmpada para mudar ela e as vizinhas.
+- **Desfazer** volta os últimos toques.
 - **Dica** marca com um anel uma lâmpada para tocar. **Recomeçar** volta as lâmpadas do início.
 - Todo desafio tem solução, e não há relógio.
 
