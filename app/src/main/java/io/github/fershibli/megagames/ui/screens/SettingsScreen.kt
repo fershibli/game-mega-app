@@ -125,6 +125,8 @@ fun SettingsScreen(
     onChange: (Settings) -> Unit,
     onClose: () -> Unit,
     inGame: InGameActions?,
+    /** Opens the first-run questions again (only offered from the menu, not during a game). */
+    onSetup: (() -> Unit)? = null,
 ) {
     val p = LocalPalette.current
     val left = LocalSettings.current.leftHanded
@@ -252,6 +254,7 @@ fun SettingsScreen(
                     Text(stringResource(R.string.about_version, BuildConfig.VERSION_NAME), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
                     val context = LocalContext.current
                     BigButton(stringResource(R.string.about_open_project), { openProject(context) }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
+                    if (onSetup != null) BigButton(stringResource(R.string.setup_again), onSetup, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
                     BigButton(stringResource(R.string.reset_settings), { onChange(Settings()) }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
                     BigButton(stringResource(R.string.mission_button), { showMission = true }, Modifier.fillMaxWidth(), icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
                 }

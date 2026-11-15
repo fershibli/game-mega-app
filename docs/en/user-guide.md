@@ -38,7 +38,9 @@ Requirements: Android 6.0 or newer, about 5 MB of free space. The app never need
 
 ## Getting around
 
-The app has only three kinds of screens.
+The first time it opens, the app asks a few quick questions, one per screen (text size, which hand you use, how the games are listed, light or dark background, difficulty). Each answer takes effect at once, **Skip** leaves everything as it is, and **Initial setup** at the end of the settings asks them again.
+
+After that, the app has only three kinds of screens.
 
 1. **Choose your game.** A grid of pictures, two per row. There is no text on purpose: each picture *is* the game (a sudoku grid, cards, a backgammon board…). The list scrolls endlessly in both directions — keep scrolling and the games come round again. Tap a picture to choose it.
 2. **A few short questions, one per screen.** First the game's picture with a sentence about it: **Learn to play** opens the whole page of rules (in games that have a lesson, such as Solitaire, it first teaches on the board itself: a hand shows each move, then it is your turn to try), and **Go to the game** moves on. Then, only when the game has them: which rules to play, **How do you want to play?** (with the computer, or people taking turns on this phone) and the difficulty, on a scroll wheel with **Easy / Medium / Hard**. What you chose last time, and your default difficulty, are already selected, so **Confirm** is enough. **Back** returns one step.

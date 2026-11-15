@@ -37,6 +37,7 @@ import io.github.fershibli.megagames.ui.screens.IntroScreen
 import io.github.fershibli.megagames.ui.screens.LanguageFallbackDialog
 import io.github.fershibli.megagames.ui.screens.ModeScreen
 import io.github.fershibli.megagames.ui.screens.SettingsScreen
+import io.github.fershibli.megagames.ui.screens.SetupScreen
 import io.github.fershibli.megagames.ui.screens.TableScreen
 import io.github.fershibli.megagames.ui.screens.TutorialScreen
 import io.github.fershibli.megagames.ui.screens.VariantScreen
@@ -54,6 +55,8 @@ import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 sealed interface Screen {
     data object Home : Screen
     data object Settings : Screen
+    /** The questions of the first time the app opens (also opened again from the settings). */
+    data object Setup : Screen
     data class Intro(val game: GameId, val language: AppLanguage? = null) : Screen
     data class ChooseVariant(val game: GameId, val language: AppLanguage? = null) : Screen
     /** [together] is the way to preselect when coming back from a later step; `null` is the way played last time. */
@@ -75,6 +78,8 @@ fun MegaGamesApp(
     choiceStore: ChoiceStore = rememberChoiceStore(),
     // Languages of each game; tests replace it to try a game limited to a few languages.
     languagesOf: (GameId) -> Set<AppLanguage>? = { it.languages },
+    // The first time the app opens it asks a few questions before showing the games.
+    firstRun: Boolean = false,
 ) {
     var settings by remember { mutableStateOf(settingsStore.load()) }
     LaunchedEffect(settings.darkMode) { onDarkMode(settings.darkMode) }
@@ -91,6 +96,9 @@ fun MegaGamesApp(
             // A game keeps the language it was started in.
             val language = GameLanguages.restored(languagesOf(game), settings.language, GameLanguages.fromName(saved.language))
             Screen.Playing(game, saved.difficulty, game.variant(saved.variant), saved.setup, saved, language)
+        } else if (firstRun && !settingsStore.setupDone) {
+            // A game waiting to be continued comes first: the questions wait for the next start.
+            Screen.Setup
         } else {
             Screen.Home
         }
@@ -172,8 +180,12 @@ fun MegaGamesApp(
                 )
                 Screen.Settings -> {
                     BackHandler { screen = Screen.Home }
-                    SettingsScreen(settings, updateSettings, onClose = { screen = Screen.Home }, inGame = null)
+                    SettingsScreen(settings, updateSettings, onClose = { screen = Screen.Home }, inGame = null, onSetup = { screen = Screen.Setup })
                 }
+                Screen.Setup -> SetupScreen(settings, updateSettings, onDone = {
+                    settingsStore.setupDone = true
+                    screen = Screen.Home
+                })
                 is Screen.Intro -> {
                     BackHandler { screen = Screen.Home }
                     IntroScreen(

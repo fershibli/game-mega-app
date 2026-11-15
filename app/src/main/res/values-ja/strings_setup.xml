@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">Mili Games へようこそ！</string>
+    <string name="setup_welcome_text">かんたんな質問にいくつか答えて、アプリを使いやすく整えましょう。あとで設定（歯車 ⚙）からいつでも変えられます。</string>
+    <string name="setup_start">はじめる</string>
+    <string name="setup_skip">スキップ</string>
+    <string name="setup_continue">次へ進む</string>
+    <string name="setup_text_question">どの文字の大きさが読みやすいですか？</string>
+    <string name="setup_text_normal">ふつう</string>
+    <string name="setup_text_big">大きい</string>
+    <string name="setup_text_bigger">とても大きい</string>
+    <string name="setup_hand_question">どちらの手で画面をタップしますか？</string>
+    <string name="setup_hand_right">右手</string>
+    <string name="setup_hand_left">左手</string>
+    <string name="setup_hand_note">おもなボタンがその側に並びます。</string>
+    <string name="setup_list_question">ゲームをどのように並べますか？</string>
+    <string name="setup_list_groups">グループごと</string>
+    <string name="setup_list_groups_desc">カード、ボードゲーム、パズル…それぞれの名前の下に並びます。</string>
+    <string name="setup_list_single">ひとつのリスト</string>
+    <string name="setup_list_single_desc">すべてのゲームが順番に並びます。</string>
+    <string name="setup_recent_question">最後に遊んだゲームを先頭に出しますか？</string>
+    <string name="setup_recent_yes">はい、最後のゲームを先頭に</string>
+    <string name="setup_recent_no">いいえ、いつも同じ順番で</string>
+    <string name="setup_theme_question">どちらの背景が好きですか？</string>
+    <string name="setup_theme_light">明るい</string>
+    <string name="setup_theme_dark">暗い</string>
+    <string name="setup_level_question">どのむずかしさから始めますか？</string>
+    <string name="setup_done_title">準備ができました！</string>
+    <string name="setup_done_text">あとで変えたいときは、すみの歯車 ⚙ をタップしてください。</string>
+    <string name="setup_done_go">ゲームを選ぶ</string>
+    <string name="setup_again">はじめの設定</string>
+</resources>

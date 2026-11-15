@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">Bem-vindo ao Mili Games!</string>
+    <string name="setup_welcome_text">Vamos deixar o app do seu jeito com algumas perguntas rápidas. Tudo pode ser mudado depois nas configurações (a engrenagem ⚙).</string>
+    <string name="setup_start">Começar</string>
+    <string name="setup_skip">Pular</string>
+    <string name="setup_continue">Continuar</string>
+    <string name="setup_text_question">Qual tamanho de texto é mais fácil de ler?</string>
+    <string name="setup_text_normal">Normal</string>
+    <string name="setup_text_big">Grande</string>
+    <string name="setup_text_bigger">Bem grande</string>
+    <string name="setup_hand_question">Com qual mão você toca na tela?</string>
+    <string name="setup_hand_right">Mão direita</string>
+    <string name="setup_hand_left">Mão esquerda</string>
+    <string name="setup_hand_note">Os botões principais ficam desse lado.</string>
+    <string name="setup_list_question">Como você quer ver os jogos?</string>
+    <string name="setup_list_groups">Em grupos</string>
+    <string name="setup_list_groups_desc">Cartas, tabuleiro, quebra-cabeças… cada grupo com o seu nome.</string>
+    <string name="setup_list_single">Uma lista só</string>
+    <string name="setup_list_single_desc">Todos os jogos, um depois do outro.</string>
+    <string name="setup_recent_question">O último jogo que você jogou deve vir primeiro?</string>
+    <string name="setup_recent_yes">Sim, o último primeiro</string>
+    <string name="setup_recent_no">Não, sempre na mesma ordem</string>
+    <string name="setup_theme_question">Qual fundo você prefere?</string>
+    <string name="setup_theme_light">Claro</string>
+    <string name="setup_theme_dark">Escuro</string>
+    <string name="setup_level_question">Com qual dificuldade você quer começar?</string>
+    <string name="setup_done_title">Tudo pronto!</string>
+    <string name="setup_done_text">Para mudar depois, toque na engrenagem ⚙ no canto.</string>
+    <string name="setup_done_go">Escolher um jogo</string>
+    <string name="setup_again">Configuração inicial</string>
+</resources>

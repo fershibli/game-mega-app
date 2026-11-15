@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">Benvenuto in Mili Games!</string>
+    <string name="setup_welcome_text">Sistemiamo l’app a modo tuo con poche domande veloci. Tutto si può cambiare dopo nelle impostazioni (l’ingranaggio ⚙).</string>
+    <string name="setup_start">Inizia</string>
+    <string name="setup_skip">Salta</string>
+    <string name="setup_continue">Continua</string>
+    <string name="setup_text_question">Quale dimensione del testo si legge meglio?</string>
+    <string name="setup_text_normal">Normale</string>
+    <string name="setup_text_big">Grande</string>
+    <string name="setup_text_bigger">Molto grande</string>
+    <string name="setup_hand_question">Con quale mano tocchi lo schermo?</string>
+    <string name="setup_hand_right">Mano destra</string>
+    <string name="setup_hand_left">Mano sinistra</string>
+    <string name="setup_hand_note">I pulsanti principali restano da quel lato.</string>
+    <string name="setup_list_question">Come vuoi vedere i giochi?</string>
+    <string name="setup_list_groups">A gruppi</string>
+    <string name="setup_list_groups_desc">Carte, tavolo, rompicapi… ogni gruppo con il suo nome.</string>
+    <string name="setup_list_single">Un’unica lista</string>
+    <string name="setup_list_single_desc">Tutti i giochi, uno dopo l’altro.</string>
+    <string name="setup_recent_question">L’ultimo gioco a cui hai giocato deve venire per primo?</string>
+    <string name="setup_recent_yes">Sì, l’ultimo per primo</string>
+    <string name="setup_recent_no">No, sempre nello stesso ordine</string>
+    <string name="setup_theme_question">Quale sfondo preferisci?</string>
+    <string name="setup_theme_light">Chiaro</string>
+    <string name="setup_theme_dark">Scuro</string>
+    <string name="setup_level_question">Con quale difficoltà vuoi iniziare?</string>
+    <string name="setup_done_title">Tutto pronto!</string>
+    <string name="setup_done_text">Per cambiare qualcosa dopo, tocca l’ingranaggio ⚙ nell’angolo.</string>
+    <string name="setup_done_go">Scegli un gioco</string>
+    <string name="setup_again">Impostazioni iniziali</string>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">Bienvenue dans Mili Games !</string>
+    <string name="setup_welcome_text">Réglons l’appli à votre goût avec quelques questions rapides. Tout peut être changé plus tard dans les réglages (la roue dentée ⚙).</string>
+    <string name="setup_start">Commencer</string>
+    <string name="setup_skip">Passer</string>
+    <string name="setup_continue">Continuer</string>
+    <string name="setup_text_question">Quelle taille de texte est la plus facile à lire ?</string>
+    <string name="setup_text_normal">Normale</string>
+    <string name="setup_text_big">Grande</string>
+    <string name="setup_text_bigger">Très grande</string>
+    <string name="setup_hand_question">Avec quelle main touchez-vous l’écran ?</string>
+    <string name="setup_hand_right">Main droite</string>
+    <string name="setup_hand_left">Main gauche</string>
+    <string name="setup_hand_note">Les boutons principaux restent de ce côté.</string>
+    <string name="setup_list_question">Comment voulez-vous voir les jeux ?</string>
+    <string name="setup_list_groups">Par groupes</string>
+    <string name="setup_list_groups_desc">Cartes, plateau, casse-têtes… chaque groupe sous son nom.</string>
+    <string name="setup_list_single">Une seule liste</string>
+    <string name="setup_list_single_desc">Tous les jeux, les uns après les autres.</string>
+    <string name="setup_recent_question">Le dernier jeu joué doit-il venir en premier ?</string>
+    <string name="setup_recent_yes">Oui, le dernier en premier</string>
+    <string name="setup_recent_no">Non, toujours le même ordre</string>
+    <string name="setup_theme_question">Quel fond préférez-vous ?</string>
+    <string name="setup_theme_light">Clair</string>
+    <string name="setup_theme_dark">Sombre</string>
+    <string name="setup_level_question">Avec quelle difficulté voulez-vous commencer ?</string>
+    <string name="setup_done_title">Tout est prêt !</string>
+    <string name="setup_done_text">Pour changer plus tard, touchez la roue dentée ⚙ dans le coin.</string>
+    <string name="setup_done_go">Choisir un jeu</string>
+    <string name="setup_again">Réglages de départ</string>
+</resources>

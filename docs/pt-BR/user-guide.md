@@ -38,7 +38,9 @@ Requisitos: Android 6.0 ou mais novo, cerca de 5 MB livres. O app nunca precisa 
 
 ## Como navegar
 
-O app tem só três tipos de tela.
+Na primeira vez que abre, o app faz algumas perguntas rápidas, uma por tela (tamanho do texto, qual mão você usa, como os jogos aparecem na lista, fundo claro ou escuro, dificuldade). Cada resposta vale na hora, **Pular** deixa tudo como está, e **Configuração inicial**, no fim das configurações, faz as perguntas de novo.
+
+Depois disso, o app tem só três tipos de tela.
 
 1. **Escolha seu jogo.** Uma grade de imagens, duas por linha. Não há texto de propósito: cada imagem *é* o jogo (um sudoku, cartas, um tabuleiro de gamão…). A lista rola sem fim nos dois sentidos — continue rolando e os jogos voltam a aparecer. Toque numa imagem para escolher.
 2. **Algumas perguntas curtas, uma por tela.** Primeiro a figura do jogo com uma frase sobre ele: **Aprenda a jogar** abre a página completa de regras (nos jogos que têm lição, como a Paciência, primeiro ensina no próprio tabuleiro: uma mão mostra cada jogada e depois é a sua vez de tentar), e **Seguir para o jogo** continua. Depois, só quando o jogo tem: com quais regras jogar, **Como você quer jogar?** (com o computador, ou pessoas revezando o celular) e a dificuldade, numa roleta com **Fácil / Médio / Difícil**. O que você escolheu da última vez, e a sua dificuldade padrão, já vêm selecionados: basta apertar **Confirmar**. **Voltar** retorna uma tela.

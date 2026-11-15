@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">Добро пожаловать в Mili Games!</string>
+    <string name="setup_welcome_text">Давайте настроим приложение под вас: всего несколько быстрых вопросов. Всё можно изменить позже в настройках (шестерёнка ⚙).</string>
+    <string name="setup_start">Начать</string>
+    <string name="setup_skip">Пропустить</string>
+    <string name="setup_continue">Продолжить</string>
+    <string name="setup_text_question">Какой размер текста легче читать?</string>
+    <string name="setup_text_normal">Обычный</string>
+    <string name="setup_text_big">Крупный</string>
+    <string name="setup_text_bigger">Очень крупный</string>
+    <string name="setup_hand_question">Какой рукой вы касаетесь экрана?</string>
+    <string name="setup_hand_right">Правой рукой</string>
+    <string name="setup_hand_left">Левой рукой</string>
+    <string name="setup_hand_note">Главные кнопки будут с этой стороны.</string>
+    <string name="setup_list_question">Как показывать игры?</string>
+    <string name="setup_list_groups">По группам</string>
+    <string name="setup_list_groups_desc">Карты, настольные игры, головоломки… каждая группа под своим названием.</string>
+    <string name="setup_list_single">Одним списком</string>
+    <string name="setup_list_single_desc">Все игры подряд.</string>
+    <string name="setup_recent_question">Показывать первой игру, в которую вы играли последней?</string>
+    <string name="setup_recent_yes">Да, последнюю первой</string>
+    <string name="setup_recent_no">Нет, всегда в одном порядке</string>
+    <string name="setup_theme_question">Какой фон вам больше нравится?</string>
+    <string name="setup_theme_light">Светлый</string>
+    <string name="setup_theme_dark">Тёмный</string>
+    <string name="setup_level_question">С какой сложности вы хотите начать?</string>
+    <string name="setup_done_title">Всё готово!</string>
+    <string name="setup_done_text">Чтобы что-то изменить позже, нажмите на шестерёнку ⚙ в углу.</string>
+    <string name="setup_done_go">Выбрать игру</string>
+    <string name="setup_again">Первоначальная настройка</string>
+</resources>

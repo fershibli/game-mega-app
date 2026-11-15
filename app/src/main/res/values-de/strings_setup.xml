@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">Willkommen bei Mili Games!</string>
+    <string name="setup_welcome_text">Richten wir die App mit ein paar kurzen Fragen so ein, wie du sie magst. Alles lässt sich später in den Einstellungen (Zahnrad ⚙) ändern.</string>
+    <string name="setup_start">Los geht’s</string>
+    <string name="setup_skip">Überspringen</string>
+    <string name="setup_continue">Weiter</string>
+    <string name="setup_text_question">Welche Schriftgröße liest sich am besten?</string>
+    <string name="setup_text_normal">Normal</string>
+    <string name="setup_text_big">Groß</string>
+    <string name="setup_text_bigger">Sehr groß</string>
+    <string name="setup_hand_question">Mit welcher Hand tippst du auf den Bildschirm?</string>
+    <string name="setup_hand_right">Rechte Hand</string>
+    <string name="setup_hand_left">Linke Hand</string>
+    <string name="setup_hand_note">Die wichtigsten Tasten bleiben auf dieser Seite.</string>
+    <string name="setup_list_question">Wie möchtest du die Spiele sehen?</string>
+    <string name="setup_list_groups">In Gruppen</string>
+    <string name="setup_list_groups_desc">Karten, Brettspiele, Rätsel … jede Gruppe unter ihrem Namen.</string>
+    <string name="setup_list_single">Eine einzige Liste</string>
+    <string name="setup_list_single_desc">Alle Spiele nacheinander.</string>
+    <string name="setup_recent_question">Soll das zuletzt gespielte Spiel zuerst kommen?</string>
+    <string name="setup_recent_yes">Ja, das letzte zuerst</string>
+    <string name="setup_recent_no">Nein, immer dieselbe Reihenfolge</string>
+    <string name="setup_theme_question">Welchen Hintergrund magst du lieber?</string>
+    <string name="setup_theme_light">Hell</string>
+    <string name="setup_theme_dark">Dunkel</string>
+    <string name="setup_level_question">Mit welchem Schwierigkeitsgrad möchtest du anfangen?</string>
+    <string name="setup_done_title">Alles bereit!</string>
+    <string name="setup_done_text">Zum späteren Ändern tippe auf das Zahnrad ⚙ in der Ecke.</string>
+    <string name="setup_done_go">Spiel auswählen</string>
+    <string name="setup_again">Ersteinrichtung</string>
+</resources>

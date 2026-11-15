@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">Welcome to Mili Games!</string>
+    <string name="setup_welcome_text">Let’s set the app up your way with a few quick questions. Everything can be changed later in the settings (the gear ⚙).</string>
+    <string name="setup_start">Start</string>
+    <string name="setup_skip">Skip</string>
+    <string name="setup_continue">Continue</string>
+    <string name="setup_text_question">Which text size is easiest to read?</string>
+    <string name="setup_text_normal">Normal</string>
+    <string name="setup_text_big">Big</string>
+    <string name="setup_text_bigger">Very big</string>
+    <string name="setup_hand_question">Which hand do you touch the screen with?</string>
+    <string name="setup_hand_right">Right hand</string>
+    <string name="setup_hand_left">Left hand</string>
+    <string name="setup_hand_note">The main buttons stay on that side.</string>
+    <string name="setup_list_question">How do you want to see the games?</string>
+    <string name="setup_list_groups">In groups</string>
+    <string name="setup_list_groups_desc">Cards, board games, puzzles… each under its name.</string>
+    <string name="setup_list_single">One single list</string>
+    <string name="setup_list_single_desc">All the games one after the other.</string>
+    <string name="setup_recent_question">Should the game you played last come first?</string>
+    <string name="setup_recent_yes">Yes, the last one first</string>
+    <string name="setup_recent_no">No, always the same order</string>
+    <string name="setup_theme_question">Which background do you prefer?</string>
+    <string name="setup_theme_light">Light</string>
+    <string name="setup_theme_dark">Dark</string>
+    <string name="setup_level_question">Which difficulty do you want to start with?</string>
+    <string name="setup_done_title">All set!</string>
+    <string name="setup_done_text">To change anything later, touch the gear ⚙ in the corner.</string>
+    <string name="setup_done_go">Choose a game</string>
+    <string name="setup_again">Initial setup</string>
+</resources>
