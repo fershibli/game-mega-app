@@ -70,7 +70,7 @@ object Boxes {
     fun recipe(d: Difficulty) = when (d) {
         Difficulty.EASY -> Recipe(7, 7, 2, 1..3, 24, 4..10)
         Difficulty.MEDIUM -> Recipe(8, 8, 3, 3..5, 40, 9..20)
-        Difficulty.HARD -> Recipe(9, 9, 4, 5..8, 70, 15..40)
+        Difficulty.HARD -> Recipe(9, 9, 4, 5..8, 70, 11..40)
     }
 
     fun isFloor(map: String, i: Int) = i in map.indices && (map[i] == FLOOR || map[i] == SPOT)
