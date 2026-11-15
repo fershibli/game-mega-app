@@ -88,6 +88,10 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.GUESSWORD -> io.github.fershibli.megagames.games.guessword.guessWordThumbnail(this, p, m)
             GameId.CRYPTOGRAM -> io.github.fershibli.megagames.games.cryptogram.cryptogramThumbnail(this, p, m)
             GameId.MAZE -> io.github.fershibli.megagames.games.maze.mazeThumbnail(this, p)
+            GameId.LIGHTS -> io.github.fershibli.megagames.games.lights.lightsThumbnail(this, p)
+            GameId.BOXES -> io.github.fershibli.megagames.games.boxes.boxesThumbnail(this, p)
+            GameId.MERGE -> io.github.fershibli.megagames.games.merge.mergeThumbnail(this, p)
+            GameId.TANGRAM -> io.github.fershibli.megagames.games.tangram.tangramThumbnail(this, p)
         }
     }
 }

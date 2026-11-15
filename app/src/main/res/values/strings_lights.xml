@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">Switch off the lights</string>
+    <string name="howto_lights">Tap a lamp: it and its neighbours above, below and to the sides switch over. Switch every lamp off. Hint rings a lamp to tap.</string>
+    <string name="lights_moves">Moves: %1$d</string>
+    <string name="lights_goal">Tap a lamp to switch it and its neighbours.</string>
+    <string name="lights_hint_tap">Tap the ringed lamp.</string>
+    <string name="lights_done">All the lights are off!</string>
+    <string name="lights_hints_used">Hints used: %1$d.</string>
+    <string name="lights_restart">Restart</string>
+    <string name="lights_board">Lamps, %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="one">Switched off in %1$d move.</item>
+        <item quantity="other">Switched off in %1$d moves.</item>
+    </plurals>
+</resources>

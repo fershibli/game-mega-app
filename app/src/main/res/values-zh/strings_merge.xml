@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">数字合并</string>
+    <string name="howto_merge">滑动或用箭头把所有方块推向一边。两个相同的数字相遇就合成它们的和。每走一步会出现一个新的 2（有时是 4）。达到目标数字后还可以继续玩。没有时间限制。</string>
+    <string name="merge_score">得分：%1$d · 最高：%2$d</string>
+    <string name="merge_goal">合并相同的数字，做出 %1$d。</string>
+    <string name="merge_keep_going">继续，做出更大的数字！</string>
+    <string name="merge_goal_title">你做出了 %1$d！</string>
+    <string name="merge_goal_message">继续玩争取更高分，或者在这里结束。</string>
+    <string name="merge_keep_playing">继续玩</string>
+    <string name="merge_finish">在这里结束</string>
+    <string name="merge_no_moves">没有可走的了。</string>
+    <string name="merge_final">得分：%1$d。最大的数字：%2$d。</string>
+    <string name="merge_new_best">新的最高分！</string>
+    <string name="merge_up">上</string>
+    <string name="merge_right">右</string>
+    <string name="merge_down">下</string>
+    <string name="merge_left">左</string>
+    <string name="merge_board">数字盘，%1$d × %2$d</string>
+</resources>

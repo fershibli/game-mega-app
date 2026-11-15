@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">Fusion de nombres</string>
+    <string name="howto_merge">Glisse le doigt ou utilise les flèches pour faire glisser toutes les tuiles. Deux nombres égaux qui se rencontrent s’unissent en leur somme. Après chaque coup, un 2 (ou un 4) apparaît. Atteins le nombre visé ; tu peux continuer ensuite. Sans chrono.</string>
+    <string name="merge_score">Points : %1$d · Record : %2$d</string>
+    <string name="merge_goal">Unis les nombres égaux jusqu’à faire %1$d.</string>
+    <string name="merge_keep_going">Continue vers un nombre encore plus grand !</string>
+    <string name="merge_goal_title">Tu as fait %1$d !</string>
+    <string name="merge_goal_message">Continue pour faire plus de points, ou arrête-toi ici.</string>
+    <string name="merge_keep_playing">Continuer</string>
+    <string name="merge_finish">Terminer ici</string>
+    <string name="merge_no_moves">Plus aucun coup possible.</string>
+    <string name="merge_final">Points : %1$d. Plus grand nombre : %2$d.</string>
+    <string name="merge_new_best">Nouveau record !</string>
+    <string name="merge_up">Haut</string>
+    <string name="merge_right">Droite</string>
+    <string name="merge_down">Bas</string>
+    <string name="merge_left">Gauche</string>
+    <string name="merge_board">Plateau de nombres, %1$d × %2$d</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">数字あわせ</string>
+    <string name="howto_merge">スワイプか矢印で、すべてのタイルをすべらせます。同じ数字がぶつかると、たし算した一枚になります。毎回あたらしい 2（ときどき 4）が出ます。目標の数字をめざしましょう。そのあとも続けられます。時間制限はありません。</string>
+    <string name="merge_score">点数：%1$d・最高：%2$d</string>
+    <string name="merge_goal">同じ数字をあわせて %1$d をつくりましょう。</string>
+    <string name="merge_keep_going">もっと大きな数字をめざしましょう！</string>
+    <string name="merge_goal_title">%1$d ができました！</string>
+    <string name="merge_goal_message">続けて点数をのばすか、ここで終わりにしましょう。</string>
+    <string name="merge_keep_playing">続ける</string>
+    <string name="merge_finish">ここで終わる</string>
+    <string name="merge_no_moves">もう動かせません。</string>
+    <string name="merge_final">点数：%1$d。いちばん大きな数字：%2$d。</string>
+    <string name="merge_new_best">最高点を更新しました！</string>
+    <string name="merge_up">上</string>
+    <string name="merge_right">右</string>
+    <string name="merge_down">下</string>
+    <string name="merge_left">左</string>
+    <string name="merge_board">数字の盤、%1$d × %2$d</string>
+</resources>

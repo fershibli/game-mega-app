@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">Une números</string>
+    <string name="howto_merge">Desliza el dedo o usa las flechas para mover todas las fichas. Dos números iguales que se encuentran se unen en su suma. Tras cada jugada aparece un 2 (o un 4). Llega al número de la meta; puedes seguir después. Sin reloj.</string>
+    <string name="merge_score">Puntos: %1$d · Récord: %2$d</string>
+    <string name="merge_goal">Une números iguales hasta hacer %1$d.</string>
+    <string name="merge_keep_going">¡Sigue hacia un número aún mayor!</string>
+    <string name="merge_goal_title">¡Hiciste %1$d!</string>
+    <string name="merge_goal_message">Sigue jugando para sumar más puntos, o termina aquí.</string>
+    <string name="merge_keep_playing">Seguir jugando</string>
+    <string name="merge_finish">Terminar aquí</string>
+    <string name="merge_no_moves">No quedan jugadas.</string>
+    <string name="merge_final">Puntos: %1$d. Número mayor: %2$d.</string>
+    <string name="merge_new_best">¡Nuevo récord!</string>
+    <string name="merge_up">Arriba</string>
+    <string name="merge_right">Derecha</string>
+    <string name="merge_down">Abajo</string>
+    <string name="merge_left">Izquierda</string>
+    <string name="merge_board">Tablero de números, %1$d × %2$d</string>
+</resources>

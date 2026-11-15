@@ -69,5 +69,9 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.GUESSWORD -> io.github.fershibli.megagames.games.guessword.GuessWordGame(host)
         GameId.CRYPTOGRAM -> io.github.fershibli.megagames.games.cryptogram.CryptogramGame(host)
         GameId.MAZE -> io.github.fershibli.megagames.games.maze.MazeGame(host)
+        GameId.LIGHTS -> io.github.fershibli.megagames.games.lights.LightsGame(host)
+        GameId.BOXES -> io.github.fershibli.megagames.games.boxes.BoxesGame(host)
+        GameId.MERGE -> io.github.fershibli.megagames.games.merge.MergeGame(host)
+        GameId.TANGRAM -> io.github.fershibli.megagames.games.tangram.TangramGame(host)
     }
 }

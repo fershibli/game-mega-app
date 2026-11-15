@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_merge">ادمج الأرقام</string>
+    <string name="howto_merge">اسحب بإصبعك أو استخدم الأسهم لتحريك كل المربعات. الرقمان المتساويان إذا التقيا يصبحان مجموعهما. بعد كل حركة يظهر 2 جديد (أو 4). اصل إلى رقم الهدف، ويمكنك المتابعة بعده. لا توجد ساعة.</string>
+    <string name="merge_score">النقاط: %1$d · الأفضل: %2$d</string>
+    <string name="merge_goal">اجمع الأرقام المتساوية حتى تصنع %1$d.</string>
+    <string name="merge_keep_going">تابع نحو رقم أكبر!</string>
+    <string name="merge_goal_title">صنعت %1$d!</string>
+    <string name="merge_goal_message">تابع اللعب لتجمع نقاطًا أكثر، أو أنهِ هنا.</string>
+    <string name="merge_keep_playing">تابع اللعب</string>
+    <string name="merge_finish">أنهِ هنا</string>
+    <string name="merge_no_moves">لا توجد حركات أخرى.</string>
+    <string name="merge_final">النقاط: %1$d. أكبر رقم: %2$d.</string>
+    <string name="merge_new_best">أفضل نتيجة جديدة!</string>
+    <string name="merge_up">أعلى</string>
+    <string name="merge_right">يمين</string>
+    <string name="merge_down">أسفل</string>
+    <string name="merge_left">يسار</string>
+    <string name="merge_board">لوحة الأرقام، %1$d × %2$d</string>
+</resources>

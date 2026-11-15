@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_tangram">七巧板</string>
+    <string name="howto_tangram">用全部七块板拼满图形，不能重叠。拖动一块板来移动它，点一下就转动它，平行四边形用“翻面”翻过来。靠近时板会自动对齐。提示会放好一块板。</string>
+    <string name="tangram_shape">图形：%1$s</string>
+    <string name="tangram_how">把板拖进图形里。点一下板就能转动。</string>
+    <string name="tangram_done">真棒！你拼出了：%1$s。</string>
+    <string name="tangram_hints_used">使用提示：%1$d 次。</string>
+    <string name="tangram_flip">翻面</string>
+    <string name="tangram_restart">重新开始</string>
+    <string name="tangram_board">七巧板桌面，图形：%1$s</string>
+    <string name="tangram_shape_square">正方形</string>
+    <string name="tangram_shape_triangle">三角形</string>
+    <string name="tangram_shape_house">房子</string>
+    <string name="tangram_shape_rocket">火箭</string>
+    <string name="tangram_shape_bridge">桥</string>
+    <string name="tangram_shape_table">桌子</string>
+    <string name="tangram_shape_boat">帆船</string>
+    <string name="tangram_shape_candle">蜡烛</string>
+    <string name="tangram_shape_cat">猫</string>
+    <string name="tangram_shape_fox">狐狸</string>
+    <string name="tangram_shape_swan">天鹅</string>
+    <string name="tangram_shape_gem">宝石</string>
+    <string name="tangram_shape_ship">轮船</string>
+    <string name="tangram_shape_arrow">箭</string>
+    <string name="tangram_shape_mushroom">蘑菇</string>
+    <string name="tangram_shape_teapot">茶壶</string>
+    <string name="tangram_shape_chair">椅子</string>
+    <string name="tangram_shape_tree">松树</string>
+    <string name="tangram_shape_fish">鱼</string>
+    <string name="tangram_shape_mountains">山</string>
+    <string name="tangram_shape_crown">王冠</string>
+    <string name="tangram_shape_heart">爱心</string>
+    <string name="tangram_shape_owl">猫头鹰</string>
+    <string name="tangram_shape_turtle">乌龟</string>
+    <string name="tangram_shape_elephant">大象</string>
+    <string name="tangram_shape_dog">狗</string>
+    <string name="tangram_shape_person">人</string>
+    <string name="tangram_shape_runner">跑步的人</string>
+    <string name="tangram_shape_child">小孩</string>
+    <string name="tangram_shape_duck">鸭子</string>
+    <string name="tangram_shape_rabbit">兔子</string>
+    <string name="tangram_shape_bird">鸟</string>
+</resources>

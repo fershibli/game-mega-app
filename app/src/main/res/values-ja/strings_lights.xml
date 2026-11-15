@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">ライトを消そう</string>
+    <string name="howto_lights">ランプをタップすると、そのランプと上下左右のとなりが切りかわります。すべてのランプを消しましょう。ヒントはタップするランプを丸で示します。</string>
+    <string name="lights_moves">手数：%1$d</string>
+    <string name="lights_goal">ランプをタップすると、となりといっしょに切りかわります。</string>
+    <string name="lights_hint_tap">丸で囲まれたランプをタップしてください。</string>
+    <string name="lights_done">すべてのライトが消えました！</string>
+    <string name="lights_hints_used">使ったヒント：%1$d。</string>
+    <string name="lights_restart">最初から</string>
+    <string name="lights_board">ランプ、%1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="other">%1$d 手で消しました。</item>
+    </plurals>
+</resources>

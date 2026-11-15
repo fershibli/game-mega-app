@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_lights">أطفئ الأنوار</string>
+    <string name="howto_lights">المس مصباحًا: يتبدل هو وجيرانه من الأعلى والأسفل والجانبين. أطفئ كل المصابيح. التلميح يضع حلقة حول مصباح لتلمسه.</string>
+    <string name="lights_moves">الحركات: %1$d</string>
+    <string name="lights_goal">المس مصباحًا ليتبدل هو وجيرانه.</string>
+    <string name="lights_hint_tap">المس المصباح المحاط بحلقة.</string>
+    <string name="lights_done">انطفأت كل الأنوار!</string>
+    <string name="lights_hints_used">التلميحات المستخدمة: %1$d.</string>
+    <string name="lights_restart">من جديد</string>
+    <string name="lights_board">مصابيح، %1$d × %2$d</string>
+    <plurals name="lights_done_moves">
+        <item quantity="zero">أُطفئت في %1$d حركة.</item>
+        <item quantity="one">أُطفئت في حركة واحدة (%1$d).</item>
+        <item quantity="two">أُطفئت في حركتين (%1$d).</item>
+        <item quantity="few">أُطفئت في %1$d حركات.</item>
+        <item quantity="many">أُطفئت في %1$d حركة.</item>
+        <item quantity="other">أُطفئت في %1$d حركة.</item>
+    </plurals>
+</resources>
