@@ -172,6 +172,11 @@ class SettingsStore(context: Context) {
             .apply()
     }
 
+    /** Whether the first-run setup was already answered or skipped (kept apart from the settings, which can be reset). */
+    var setupDone: Boolean
+        get() = prefs.getBoolean("setupDone", false)
+        set(value) = prefs.edit().putBoolean("setupDone", value).apply()
+
     private inline fun <reified E : Enum<E>> enumOr(name: String?, fallback: E): E =
         name?.let { n -> enumValues<E>().firstOrNull { it.name == n } } ?: fallback
 }

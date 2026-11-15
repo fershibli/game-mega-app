@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         // Only a cold start offers to resume the saved game; a recreated activity keeps going.
         val coldStart = savedInstanceState == null
         setContent {
-            MegaGamesApp(settingsStore, saveStore, offerResume = coldStart, onDarkMode = ::applySystemBars)
+            MegaGamesApp(settingsStore, saveStore, offerResume = coldStart, onDarkMode = ::applySystemBars, firstRun = true)
         }
     }
 

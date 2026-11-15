@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">مرحبًا بك في Mili Games!</string>
+    <string name="setup_welcome_text">لنجهّز التطبيق على طريقتك ببضعة أسئلة سريعة. يمكن تغيير كل شيء لاحقًا من الإعدادات (الترس ⚙).</string>
+    <string name="setup_start">ابدأ</string>
+    <string name="setup_skip">تخطَّ</string>
+    <string name="setup_continue">متابعة</string>
+    <string name="setup_text_question">أي حجم للنص أسهل في القراءة؟</string>
+    <string name="setup_text_normal">عادي</string>
+    <string name="setup_text_big">كبير</string>
+    <string name="setup_text_bigger">كبير جدًّا</string>
+    <string name="setup_hand_question">بأي يد تلمس الشاشة؟</string>
+    <string name="setup_hand_right">اليد اليمنى</string>
+    <string name="setup_hand_left">اليد اليسرى</string>
+    <string name="setup_hand_note">الأزرار الرئيسية تبقى في هذه الجهة.</string>
+    <string name="setup_list_question">كيف تريد أن ترى الألعاب؟</string>
+    <string name="setup_list_groups">في مجموعات</string>
+    <string name="setup_list_groups_desc">ورق، ألعاب لوحية، ألغاز… كل مجموعة تحت اسمها.</string>
+    <string name="setup_list_single">قائمة واحدة</string>
+    <string name="setup_list_single_desc">كل الألعاب واحدة تلو الأخرى.</string>
+    <string name="setup_recent_question">هل تريد أن تظهر آخر لعبة لعبتها أولًا؟</string>
+    <string name="setup_recent_yes">نعم، الأخيرة أولًا</string>
+    <string name="setup_recent_no">لا، بالترتيب نفسه دائمًا</string>
+    <string name="setup_theme_question">أي خلفية تفضّل؟</string>
+    <string name="setup_theme_light">فاتحة</string>
+    <string name="setup_theme_dark">داكنة</string>
+    <string name="setup_level_question">بأي مستوى صعوبة تريد أن تبدأ؟</string>
+    <string name="setup_done_title">كل شيء جاهز!</string>
+    <string name="setup_done_text">لتغيير أي شيء لاحقًا، المس الترس ⚙ في الزاوية.</string>
+    <string name="setup_done_go">اختر لعبة</string>
+    <string name="setup_again">الإعداد الأولي</string>
+</resources>

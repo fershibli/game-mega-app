@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -20,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
 import io.github.fershibli.megagames.core.GameId
@@ -33,9 +33,6 @@ import io.github.fershibli.megagames.ui.theme.LocalPalette
  * One step of the way from the menu to a game: the game's picture on top, and below it a panel
  * with a single question ([content]) and its buttons ([actions]). Each step asks one thing, so
  * there is little to read at a time, and everything you touch sits in the lower half of the screen.
- *
- * The panel takes the height it needs and the picture the rest; on a small screen with big text
- * the picture gives way first, then the question scrolls ([scrollable]; a wheel scrolls by itself).
  */
 @Composable
 internal fun StepScreen(
@@ -47,34 +44,57 @@ internal fun StepScreen(
 ) {
     val p = LocalPalette.current
     Box(Modifier.fillMaxSize()) {
-        Column(Modifier.fillMaxSize()) {
-            TopBar(stringResource(game.title), onSettings)
-            BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
-                val side = min(min(maxWidth, maxHeight), 220.dp)
-                if (side >= 72.dp) {
-                    Box(
-                        Modifier
-                            .size(side)
-                            .aspectRatio(1f)
-                            .shadow(6.dp, RoundedCornerShape(22.dp))
-                            .clip(RoundedCornerShape(22.dp))
-                            .background(p.surface),
-                    ) { GameThumbnail(game, Modifier.fillMaxSize()) }
-                }
-            }
-            Column(
-                Modifier.fillMaxWidth().background(p.surface).padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(12.dp),
-            ) {
-                Column(
-                    Modifier.weight(1f, fill = false).fillMaxWidth().then(if (scrollable) Modifier.verticalScroll(rememberScrollState()) else Modifier).padding(bottom = 4.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    content = content,
-                )
-                ActionBar { actions() }
-            }
-        }
+        StepLayout(
+            header = { TopBar(stringResource(game.title), onSettings) },
+            picture = { side ->
+                Box(
+                    Modifier
+                        .size(min(side, 220.dp))
+                        .shadow(6.dp, RoundedCornerShape(22.dp))
+                        .clip(RoundedCornerShape(22.dp))
+                        .background(p.surface),
+                ) { GameThumbnail(game, Modifier.fillMaxSize()) }
+            },
+            actions = actions, scrollable = scrollable, content = content,
+        )
         FloatingGear(onSettings)
+    }
+}
+
+/**
+ * The layout of a step: [header], a [picture] in the space left over, and a panel at the bottom
+ * with one question ([content]) and its [actions].
+ *
+ * The panel takes the height it needs and the picture the rest ([picture] is told the side of the
+ * biggest square that fits); on a small screen with big text the picture gives way first, then
+ * the question scrolls ([scrollable]; a wheel scrolls by itself).
+ */
+@Composable
+internal fun StepLayout(
+    header: @Composable () -> Unit,
+    picture: @Composable (side: Dp) -> Unit,
+    actions: @Composable () -> Unit,
+    scrollable: Boolean = true,
+    content: @Composable ColumnScope.() -> Unit,
+) {
+    val p = LocalPalette.current
+    Column(Modifier.fillMaxSize()) {
+        header()
+        BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().padding(16.dp), contentAlignment = Alignment.Center) {
+            val side = min(maxWidth, maxHeight)
+            if (side >= 72.dp) picture(side)
+        }
+        Column(
+            Modifier.fillMaxWidth().background(p.surface).padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+        ) {
+            Column(
+                Modifier.weight(1f, fill = false).fillMaxWidth().then(if (scrollable) Modifier.verticalScroll(rememberScrollState()) else Modifier).padding(bottom = 4.dp),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                content = content,
+            )
+            ActionBar { actions() }
+        }
     }
 }

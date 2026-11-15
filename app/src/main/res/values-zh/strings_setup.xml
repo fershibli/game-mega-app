@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="setup_welcome_title">欢迎来到 Mili Games！</string>
+    <string name="setup_welcome_text">回答几个简单的问题，把应用调成你喜欢的样子。以后都可以在设置（齿轮 ⚙）里更改。</string>
+    <string name="setup_start">开始</string>
+    <string name="setup_skip">跳过</string>
+    <string name="setup_continue">继续</string>
+    <string name="setup_text_question">哪种文字大小最容易看清？</string>
+    <string name="setup_text_normal">普通</string>
+    <string name="setup_text_big">大</string>
+    <string name="setup_text_bigger">特大</string>
+    <string name="setup_hand_question">你用哪只手点屏幕？</string>
+    <string name="setup_hand_right">右手</string>
+    <string name="setup_hand_left">左手</string>
+    <string name="setup_hand_note">主要的按钮会放在这一边。</string>
+    <string name="setup_list_question">你想怎样查看游戏？</string>
+    <string name="setup_list_groups">分组显示</string>
+    <string name="setup_list_groups_desc">纸牌、棋类、益智……每组都有自己的名字。</string>
+    <string name="setup_list_single">一个列表</string>
+    <string name="setup_list_single_desc">所有游戏一个接一个。</string>
+    <string name="setup_recent_question">要把你最后玩的游戏排在最前面吗？</string>
+    <string name="setup_recent_yes">要，最后玩的排最前</string>
+    <string name="setup_recent_no">不要，顺序保持不变</string>
+    <string name="setup_theme_question">你喜欢哪种背景？</string>
+    <string name="setup_theme_light">浅色</string>
+    <string name="setup_theme_dark">深色</string>
+    <string name="setup_level_question">你想从哪个难度开始？</string>
+    <string name="setup_done_title">都准备好了！</string>
+    <string name="setup_done_text">以后想更改，点角落里的齿轮 ⚙。</string>
+    <string name="setup_done_go">选择游戏</string>
+    <string name="setup_again">初始设置</string>
+</resources>
