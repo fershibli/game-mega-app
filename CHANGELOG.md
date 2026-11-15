@@ -5,7 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
-- **Four card games of tricks and sums**: Sueca (pairs, trumps, 120 points), Bisca (draw after every trick, for two or in pairs), Hearts (pass three cards, avoid hearts and the queen of spades) and Escova (take cards that add up to 15). The computer never looks at hidden cards; pairs games can be played taking turns on one phone.
+- **Four card games of tricks and sums**: Sueca (pairs, trumps, 120 points), Bisca (draw after every trick, for two or in pairs), Hearts (pass three cards, avoid hearts and the queen of spades) and Escova (take cards that add up to 15). The computer never looks at hidden cards, and every one can also be played by people taking turns on one phone.
 - **Four new puzzles**: Switch off the lights (tap a lamp to switch it and its neighbours), Box pusher (push every box onto a spot, with unlimited Undo), Number merge (slide tiles and join equal numbers up to 256, 512 or 1024) and Tangram (fill a shape with the seven pieces; Easy draws every piece, Medium three, Hard none).
 - **Maze: a slip doesn't erase the way**: touching an earlier square of the line goes back towards it by at most 3 steps per touch, instead of cutting the whole line back there; sliding back along the line still takes it back square by square.
 - **No accidental zoom while moving pieces**: a touch starting at the left or right edge (the side of a finger, the hand holding the phone) or a second finger coming down well after the first is never taken for a pinch, and zoom only starts once two fingers clearly spread, pinch or move together.
