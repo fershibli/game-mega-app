@@ -734,3 +734,171 @@ TIME|Grupo de jogadores|1
 JUIZ|Apita a partida de futebol|1
 MEDALHA|Prêmio pendurado no pescoço do vencedor|1
 TROFÉU|Taça dada ao campeão|1
+CANTAR|Soltar a voz numa música|1
+DANÇAR|Mexer o corpo ao som da música|1
+NADAR|Mover-se dentro da água|1
+CORRER|Andar bem depressa|1
+ANDAR|Ir a pé de um lugar a outro|1
+DORMIR|Descansar de olhos fechados à noite|1
+COMER|Pôr o alimento na boca|1
+BEBER|Tomar água ou suco|1
+LER|Passar os olhos pelas páginas do livro|1
+ESCREVER|Pôr palavras no papel|1
+FALAR|Usar a voz para conversar|1
+OUVIR|Escutar com as orelhas|1
+OLHAR|Pôr os olhos em algo|1
+SORRIR|Mostrar alegria com os lábios|1
+ABRIR|Contrário de fechar|1
+FECHAR|Contrário de abrir|1
+LAVAR|Limpar com água e sabão|1
+COZINHAR|Preparar a comida no fogão|1
+PLANTAR|Pôr a semente na terra|1
+VIAJAR|Ir para outro lugar a passeio|1
+PASSEAR|Sair para dar uma volta|1
+BRINCAR|O que as crianças fazem no recreio|1
+ESTUDAR|Aprender com livros e aulas|1
+PINTAR|Colorir com tinta e pincel|1
+COSTURAR|Unir panos com agulha e linha|1
+SENTAR|Acomodar-se na cadeira|1
+ACORDAR|Abrir os olhos depois de dormir|1
+LEMBRAR|Trazer algo de volta à memória|1
+AJUDAR|Dar uma mão a quem precisa|1
+VISITAR|Ir ver alguém na casa dele|1
+GRANDE|Contrário de pequeno|1
+PEQUENO|Contrário de grande|1
+ALTO|Contrário de baixo|1
+BAIXO|Contrário de alto|1
+BONITO|Agradável de ver|1
+NOVO|Contrário de velho|1
+QUENTE|Contrário de frio|1
+AZEDO|Sabor do limão|1
+SALGADO|Que tem muito sal|1
+LIMPO|Contrário de sujo|1
+SUJO|Contrário de limpo|1
+CHEIO|Contrário de vazio|1
+VAZIO|Contrário de cheio|1
+RÁPIDO|Que anda depressa|1
+LENTO|Que anda devagar|1
+MACIO|Gostoso ao toque, como o algodão|1
+CALMO|Tranquilo, sem pressa|1
+CONTENTE|Alegre e satisfeito|1
+GENTIL|Educado e amável|1
+FORTE|Que tem muita força|1
+LEVE|Que pesa pouco|1
+PESADO|Que pesa muito|1
+CLARO|Cheio de luz|1
+ESCURO|Sem nenhuma luz|1
+AULA|Lição dada pelo professor|1
+LOUSA|Quadro onde o professor escreve com giz|1
+GIZ|Bastão branco para escrever no quadro-negro|1
+CADERNO|Folhas em branco presas para anotar|1
+BORRACHA|Apaga o que o lápis escreveu|1
+RÉGUA|Serve para traçar linhas retas|1
+ALUNO|Quem estuda na escola|1
+RECREIO|Intervalo para brincar na escola|1
+LOJA|Lugar onde se compra roupa ou sapato|1
+BAIRRO|Parte da cidade onde moramos|1
+CALÇADA|Caminho dos pedestres ao lado da rua|1
+ESQUINA|Encontro de duas ruas|1
+PARQUE|Área verde para passear|1
+CORREIO|Leva cartas e encomendas|1
+HOTEL|Hospedagem de quem viaja|1
+FÉRIAS|Descanso do trabalho ou da escola|1
+MARTELO|Bate o prego na madeira|1
+PREGO|Peça de metal batida com o martelo|1
+PÁ|Serve para cavar a terra|1
+BALANÇO|Brinquedo do parque que vai e vem|1
+ESCORREGADOR|Brinquedo do parque para descer deslizando|1
+LANTERNA|Ilumina no escuro com pilha|1
+FÓSFORO|Palito que acende o fogo|1
+PILHA|Dá energia ao controle remoto|1
+TIJOLO|Bloco da parede de casa|1
+AMIZADE|Laço entre amigos|1
+VIAGEM|Ida a um lugar distante|1
+FAROFA|Farinha torrada na manteiga|1
+LASANHA|Massa em camadas com molho e queijo|1
+PICA-PAU|Ave que bica o tronco das árvores|1
+MORCEGO|Voa à noite e dorme de cabeça para baixo|1
+SERROTE|Corta a madeira|2
+ALICATE|Ferramenta que aperta e corta arame|2
+PARAFUSO|Preso com a chave de fenda|2
+ENXADA|Ferramenta da roça para capinar|2
+CIMENTO|Pó cinza da construção|2
+CORAGEM|Força para enfrentar o medo|2
+CARIDADE|Ajuda dada a quem precisa|2
+TERNURA|Carinho delicado|2
+ORGULHO|Sentimento de quem se alegra com uma conquista|2
+CALMA|Tranquilidade, sossego|2
+SURPRESA|O que sentimos diante do inesperado|2
+CURIOSIDADE|Vontade de saber mais|2
+BAGAGEM|Malas de quem viaja|2
+CRUZEIRO|Viagem de navio a passeio|2
+PASSAPORTE|Documento para viajar para fora do país|2
+TURISTA|Quem visita outro lugar a passeio|2
+ROTEIRO|Plano dos lugares a visitar|2
+FRONTEIRA|Limite entre dois países|2
+PORTO|Onde os navios atracam|2
+CAIS|Plataforma onde se embarca no barco|2
+CACTO|Planta espinhosa do deserto|2
+SAMAMBAIA|Planta de folhas rendadas que pende do vaso|2
+HERA|Trepadeira que cobre os muros|2
+MUSGO|Plantinha verde que cobre pedras úmidas|2
+LÍRIO|Flor branca e perfumada|2
+TULIPA|Flor em forma de taça, símbolo da Holanda|2
+JASMIM|Flor branca de perfume forte à noite|2
+AZALEIA|Arbusto de flores rosadas|2
+BEGÔNIA|Flor de vaso de folhas carnudas|2
+ALECRIM|Erva cheirosa usada no assado|2
+LOURO|Folha seca que tempera o feijão|2
+COENTRO|Erva de cheiro forte da moqueca|2
+CEBOLINHA|Erva verde e fina picada sobre o prato|2
+GENGIBRE|Raiz picante usada no chá|2
+MOQUECA|Ensopado de peixe com dendê|2
+ACARAJÉ|Bolinho de feijão frito no dendê|2
+PIRÃO|Papa de farinha com caldo de peixe|2
+POLENTA|Angu de milho, mole ou frito|2
+NHOQUE|Massa de batata em bolinhas|2
+ESTROGONOFE|Carne em molho cremoso com batata palha|2
+MAIONESE|Molho de ovo e óleo|2
+BEIJINHO|Docinho de coco com cravo|2
+COCADA|Doce de coco ralado|2
+MARIA-MOLE|Doce fofo coberto de coco|2
+PÉ-DE-MOLEQUE|Doce de amendoim e rapadura|2
+CURAU|Creme de milho verde com canela|2
+PERIQUITO|Passarinho verde que vive em gaiola|2
+MARRECO|Ave parecida com o pato|2
+CORVO|Ave toda preta|2
+LONTRA|Nada nos rios e come peixe|2
+GAMBÁ|Solta mau cheiro para se defender|2
+LAGOSTA|Crustáceo de carne nobre|2
+OSTRA|Molusco que pode guardar uma pérola|2
+PÉROLA|Joia que nasce dentro da ostra|2
+ESTRELA-DO-MAR|Bicho do mar com cinco braços|2
+LULA|Molusco de dez braços, servido em anéis|2
+LIBÉLULA|Inseto de asas transparentes que voa sobre a água|2
+CIGARRA|Inseto que canta no verão|2
+BESOURO|Inseto de casca dura|2
+VESPA|Inseto que pica, parente da abelha|2
+PINHÃO|Semente da araucária, cozida no inverno|2
+NOZ-MOSCADA|Tempero ralado sobre o purê|3
+VATAPÁ|Creme baiano de pão e camarão|3
+ALAÚDE|Antigo instrumento de cordas de corpo arredondado|3
+BANDOLIM|Instrumento de cordas parecido com o cavaquinho|3
+CRAVINA|Flor parecida com o cravo, de pétalas recortadas|3
+ALFAZEMA|Erva de flores roxas e perfumadas|3
+ARRUDA|Erva de cheiro forte usada contra mau-olhado|3
+HIBISCO|Flor grande que vira chá vermelho|3
+ACÁCIA|Árvore de flores amarelas em cachos|3
+CEDRO|Árvore de madeira cheirosa|3
+CARVALHO|Árvore grande que dá bolotas|3
+SALGUEIRO|Árvore de galhos que pendem até a água|3
+ARAUCÁRIA|Pinheiro do Sul que dá pinhão|3
+IMBUIA|Madeira escura e nobre do Sul|3
+JACARANDÁ|Árvore de flores roxas e madeira nobre|3
+BAOBÁ|Árvore enorme de tronco grosso da África|3
+GRAÚNA|Pássaro preto do sertão|3
+CURIÓ|Passarinho cantor de peito vermelho|3
+TICO-TICO|Pardalzinho de topete|3
+JURITI|Pombinha do mato de canto suave|3
+SANHAÇO|Pássaro azulado que come frutas|3
+ANU|Pássaro preto que anda em bando no pasto|3
