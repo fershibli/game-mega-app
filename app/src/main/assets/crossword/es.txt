@@ -453,3 +453,139 @@ RISA|Sonido de quien se divierte|1
 BESO|Se da con los labios|1
 ABRAZO|Se da con los brazos|1
 CARIÑO|Afecto y ternura|1
+CARAMELO|Golosina dulce que se chupa|1
+BOCADILLO|Pan con jamón o queso para merendar|1
+MERIENDA|Comida ligera de la tarde|1
+ACEITUNA|Fruto pequeño del olivo|1
+SALCHICHA|Embutido alargado del perrito caliente|1
+TARTA|Dulce grande para celebrar|1
+MERMELADA|Dulce de fruta para untar|1
+GATITO|Cría pequeña del felino de casa|1
+CABALLITO|Atracción de feria que da vueltas|1
+VERDURA|Hortaliza que se come cocida|1
+MADERA|Material que sale de los árboles|1
+PAPEL|Hoja donde se escribe|1
+SOBRE|Se mete la carta dentro|1
+FOTO|Imagen hecha con la cámara|1
+CÁMARA|Aparato para hacer fotos|1
+GLOBO|Se infla en las fiestas|1
+FIESTA|Celebración con música y amigos|1
+PUZLE|Juego de piezas que encajan|1
+DADO|Cubo con puntos para jugar|1
+AJEDREZ|Juego de reyes, torres y peones|1
+CUENTO|Historia corta para niños|1
+POEMA|Escrito en verso|1
+PINTURA|Arte de los cuadros|1
+DIBUJO|Imagen hecha a lápiz|1
+COLOR|El rojo o el azul|1
+NARANJO|Árbol que da fruta cítrica|1
+OLIVO|Árbol de las aceitunas|1
+GRANJA|Lugar con animales y huertos|1
+HUERTO|Terreno donde se cultivan verduras|1
+TRACTOR|Máquina para arar el campo|1
+MOLINO|Muele el grano con el viento|1
+CASTILLO|Edificio con torres y murallas|1
+TORRE|Construcción alta y estrecha|1
+PRINCESA|Hija del rey en los cuentos|1
+DRAGÓN|Animal fabuloso que echa fuego|1
+MOCHILA|Bolsa que se lleva a la espalda|2
+TERMÓMETRO|Mide la temperatura|2
+BRÚJULA|Señala siempre el norte|2
+LINTERNA|Luz de bolsillo con pilas|2
+TIJERAS|Sirven para cortar papel o tela|2
+AGUJA|Tiene ojo pero no ve|2
+DEDAL|Protege el dedo al coser|2
+HILO|Se mete por la aguja para coser|2
+OVILLO|Bola de lana para tejer|2
+MARTILLO|Herramienta para clavar|2
+CLAVO|Pieza de metal que se golpea|2
+TORNILLO|Pieza con rosca que se atornilla|2
+SIERRA|Herramienta dentada para cortar madera|2
+PALA|Herramienta para cavar|2
+RASTRILLO|Herramienta para recoger hojas|2
+REGADERA|Sirve para regar las plantas|2
+MANGUERA|Tubo largo para regar|2
+CARRETILLA|Carro de una rueda para la obra|2
+ESCALERILLA|Escalera pequeña y portátil|2
+ALICATES|Herramienta para sujetar y cortar alambre|2
+CERRADURA|Allí se mete la llave|2
+BISAGRA|Pieza que permite abrir la puerta|2
+PERSIANA|Se baja para que no entre luz|2
+CHIMENEA|Allí arde la leña en invierno|2
+LEÑA|Madera para el fuego|2
+ESTUFA|Aparato que da calor|2
+ASCENSOR|Sube y baja entre los pisos|2
+PORTAL|Entrada del edificio|2
+DESVÁN|Parte de la casa bajo el tejado|2
+SÓTANO|Parte de la casa bajo tierra|2
+PASILLO|Une las habitaciones de la casa|2
+AZOTEA|Tejado plano donde se tiende la ropa|2
+JARRÓN|Recipiente para poner flores|2
+BANDEJA|Sirve para llevar platos|2
+CAZUELA|Recipiente de barro para guisar|2
+CUCHARÓN|Cuchara grande para servir sopa|2
+EMBUDO|Ayuda a pasar líquido a una botella|2
+COLADOR|Sirve para separar el té de las hojas|2
+RALLADOR|Sirve para deshacer el queso en tiras|2
+BATIDORA|Aparato para hacer purés|2
+TOSTADORA|Aparato que dora el pan|2
+CAFETERA|Aparato para preparar la bebida negra|2
+TETERA|Recipiente para el té|2
+AZUCARERO|Recipiente del azúcar|2
+SALERO|Recipiente de la sal|2
+GUISO|Comida cocinada a fuego lento|2
+COCIDO|Plato de garbanzos, carne y verduras|2
+PURÉ|Comida triturada y cremosa|2
+CROQUETA|Bocado empanado y frito|2
+EMPANADA|Masa rellena y horneada|2
+GAZPACHO|Sopa fría de tomate|2
+ALBÓNDIGA|Bola de carne picada|2
+FILETE|Loncha de carne|2
+CHORIZO|Embutido rojo con pimentón|2
+LOMO|Carne de la espalda del cerdo|2
+SARDINA|Pez pequeño que se asa en verano|2
+MERLUZA|Pescado blanco muy común|2
+ATÚN|Pez grande que se vende en lata|2
+GAMBA|Marisco pequeño y rosado|2
+MEJILLÓN|Marisco de concha negra|2
+CALAMAR|Se come rebozado en anillas|2
+PULPO|Tiene ocho brazos|2
+LANGOSTA|Marisco grande con antenas|2
+ALCACHOFA|Hortaliza de hojas apretadas|2
+BERENJENA|Hortaliza de piel morada|2
+CALABAZA|Hortaliza naranja de otoño|2
+CALABACÍN|Hortaliza verde y alargada de huerta|2
+ESPINACA|Hoja verde que da fuerza|2
+COLIFLOR|Hortaliza blanca en ramitos|2
+GUISANTE|Bolita verde dentro de una vaina|2
+JUDÍA|Legumbre en vaina verde|2
+MAÍZ|Mazorca de granos amarillos|2
+NUEZ|Fruto seco de cáscara dura|2
+ALMENDRA|Fruto seco del turrón|2
+AVELLANA|Fruto seco pequeño y redondo|2
+CASTAÑA|Se asa en otoño|2
+CIRUELA|Fruta morada que seca es pasa|2
+HIGO|Fruto dulce de la higuera|2
+KIWI|Fruta peluda verde por dentro|2
+MANDARINA|Cítrico pequeño fácil de pelar|2
+POMELO|Cítrico grande y algo amargo|2
+FRAMBUESA|Fruto rojo pequeño del bosque|2
+MORA|Fruto negro de la zarza|2
+ARÁNDANO|Fruto azul y pequeño|2
+COCO|Fruto con agua dentro y cáscara peluda|2
+AGUACATE|Fruto verde y cremoso|2
+MANGO|Fruta tropical anaranjada|2
+TURRÓN|Dulce navideño de almendra|2
+BIZCOCHO|Pastel esponjoso|2
+MAGDALENA|Bollo pequeño en molde de papel|2
+NATILLAS|Crema dulce con canela|2
+CANELA|Especia en rama de olor dulce|2
+PIMIENTA|Especia negra que pica|2
+PEREJIL|Hierba verde para la salsa|2
+ORÉGANO|Hierba aromática de la pizza|2
+ROMERO|Arbusto aromático de flores azules|2
+LAUREL|Hoja aromática del guiso|2
+AZAFRÁN|Especia que da color a la paella|2
+MOSTAZA|Salsa amarilla algo picante|2
+MAYONESA|Salsa de huevo y aceite|2
+SALSA|Acompaña y da sabor al plato|2
