@@ -585,3 +585,140 @@ CHECKERS|Board game with red and black pieces|2
 CROSSWORD|Puzzle of clues and squares|2
 RIDDLE|Puzzle question with a clever answer|2
 JIGSAW|Puzzle of many interlocking pieces|2
+BUS|Big vehicle with many seats for passengers|1
+TAXI|Car you pay to ride in|1
+TRUCK|Large vehicle for carrying goods|1
+BOAT|Floats on water|1
+TRAM|Streetcar on rails in town|2
+SUBWAY|Underground railway|2
+FERRY|Boat that carries cars across water|2
+YACHT|Elegant sailing boat|3
+CANOE|Narrow boat paddled by hand|2
+RAFT|Flat floating platform of logs|2
+HELICOPTER|Aircraft with spinning blades|2
+BALLOON|Filled with air or helium|1
+SCOOTER|Two wheels and a handlebar|2
+WAGON|Cart pulled by a horse|2
+CARRIAGE|Horse-drawn coach|3
+TICKET|You need it to board the train|1
+SUITCASE|Bag packed for a trip|1
+PASSPORT|Document to travel abroad|2
+LUGGAGE|Bags you take on a journey|2
+MAP|Shows the roads and towns|1
+COMPASS|Points to the north|2
+JOURNEY|Long trip|2
+VOYAGE|Long trip by sea|3
+CRUISE|Holiday on a big ship|2
+HOTEL|Place to stay when traveling|1
+AIRPORT|Where planes take off and land|1
+STATION|Where trains stop|1
+PLATFORM|Where you wait for the train|2
+TUNNEL|Passage under a mountain|2
+BRIDGE|Crosses over a river|1
+ROAD|Cars drive on it|1
+STREET|Road in a town with houses|1
+AVENUE|Wide street lined with trees|2
+SIDEWALK|Path for walking beside the road|2
+CORNER|Where two streets meet|1
+SQUARE|Open space in the town center|1
+FOUNTAIN|Water shoots up in the park|2
+STATUE|Carved figure in a square|2
+MUSEUM|Building full of art and history|1
+LIBRARY|Place to borrow books|1
+THEATER|Where plays are performed|2
+CINEMA|Where you watch films|1
+BAKERY|Shop that sells bread|1
+PHARMACY|Shop that sells medicine|2
+BANK|Keeps your money safe|1
+OFFICE|Workplace with desks|1
+FACTORY|Building where goods are made|2
+CASTLE|Home of a king with towers|1
+PALACE|Grand home of a queen|2
+TOWER|Tall narrow building|1
+CATHEDRAL|Large important church|3
+CHAPEL|Small place of worship|3
+LIGHTHOUSE|Tower with a light to guide ships|2
+WINDMILL|Its sails grind grain|2
+VILLAGE|Small country town|1
+CITY|Big town|1
+FARM|Where crops and animals are raised|1
+BARN|Farm building for hay|2
+STABLE|Home for horses|2
+COTTAGE|Small house in the country|2
+CABIN|Small wooden house in the woods|2
+TENT|Shelter for camping|1
+CAMPFIRE|Fire for toasting marshmallows|2
+POSTCARD|Card sent from a holiday|2
+SOUVENIR|Small gift to remember a trip|3
+CAMERA|Takes pictures|1
+TOURIST|Visitor seeing the sights|2
+PENCIL|Writes in gray and can be erased|1
+PEN|Writes in ink|1
+ERASER|Rubs out pencil marks|2
+RULER|Measures in a straight line|1
+PAPER|Sheet you write on|1
+NOTEBOOK|Book of blank pages|1
+CHALK|Writes on a blackboard|2
+DICTIONARY|Book of words and meanings|2
+LESSON|Period of teaching|1
+HOMEWORK|Schoolwork done at home|1
+STUDENT|Person who studies|1
+CLASSROOM|Room where pupils learn|1
+TEXTBOOK|Book used in class|2
+ALPHABET|The letters from A to Z|1
+GRAMMAR|Rules of a language|2
+SPELLING|Writing words correctly|2
+HISTORY|Study of the past|1
+GEOGRAPHY|Study of countries and maps|2
+SCIENCE|Study of nature and the world|1
+ARITHMETIC|Adding and subtracting|3
+DIPLOMA|Certificate given at graduation|3
+SATCHEL|School bag with a strap|3
+GLOBE|Round map of the world|2
+ATLAS|Book of maps|2
+ENVELOPE|Paper cover for a letter|2
+STAMP|Stick it on a letter|1
+CALENDAR|Shows the days of the month|1
+DIARY|Book for daily thoughts|2
+NOVEL|Long story in a book|2
+POEM|Verse written by a poet|1
+STORY|Tale with a beginning and an end|1
+FABLE|Short tale with a moral|3
+LEGEND|Old story passed down|3
+TULIP|Spring flower from Holland|1
+DAISY|White flower with a yellow center|1
+LILY|Tall flower with a sweet scent|2
+ORCHID|Exotic flower|2
+SUNFLOWER|Tall flower that faces the sun|1
+VIOLET|Small purple flower|2
+LAVENDER|Purple plant with a calming scent|2
+POPPY|Red flower of the fields|2
+DAFFODIL|Yellow trumpet flower of spring|3
+CARNATION|Flower often worn on a lapel|3
+MARIGOLD|Bright orange garden flower|3
+JASMINE|White flower with a sweet scent|3
+LILAC|Bush with purple scented blooms|3
+GERANIUM|Red flower in a window box|3
+HYACINTH|Fragrant spring bulb|3
+MAGNOLIA|Tree with big pink blooms|3
+CACTUS|Prickly desert plant|1
+FERN|Leafy plant of the shade|2
+IVY|Climbs up the walls|2
+MOSS|Soft green carpet on stones|2
+BAMBOO|Tall grass that pandas eat|2
+OAK|Tree that grows acorns|1
+PINE|Evergreen with needles|1
+MAPLE|Tree whose sap makes syrup|2
+WILLOW|Tree that weeps by the water|2
+BIRCH|Tree with white bark|3
+CEDAR|Fragrant evergreen tree|3
+LEAF|Green part of a plant|1
+ROOT|Grows under the soil|1
+SEED|A plant grows from it|1
+BRANCH|Arm of a tree|1
+BUSH|Low leafy plant|1
+HEDGE|Row of bushes|2
+PETAL|Colored part of a flower|2
+THORN|Sharp point on a rose stem|2
+BLOSSOM|Flower on a fruit tree|2
+ACORN|Seed of the oak|3
