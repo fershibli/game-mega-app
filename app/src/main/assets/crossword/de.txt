@@ -442,3 +442,154 @@ RING|Wird am Finger getragen, zum Beispiel nach der Hochzeit|1
 KETTE|Schmuck um den Hals|1
 ARMBAND|Schmuck um das Handgelenk|1
 OHRRING|Schmuck am Ohrläppchen|2
+HAHN|Kräht am Morgen auf dem Hof|1
+KÜKEN|Kleines gelbes Huhn, gerade geschlüpft|1
+KALB|Junges Tier der Kuh|1
+FOHLEN|Junges Pferd|2
+LAMM|Junges Schaf|1
+FERKEL|Junges Schwein|2
+STIER|Männliches Rind mit Hörnern|2
+OCHSE|Kräftiges Rind, früher vor dem Pflug|2
+PONY|Kleines Pferd, beliebt bei Kindern|1
+KANINCHEN|Kleines Tier mit langen Ohren, oft im Stall gehalten|1
+TRUTHAHN|Großer Vogel, wird in Amerika zum Fest gebraten|2
+PAPAGEI|Bunter Vogel, der Wörter nachsprechen kann|1
+SPATZ|Kleiner brauner Vogel, auch Sperling genannt|1
+AMSEL|Schwarzer Singvogel mit gelbem Schnabel|2
+MEISE|Kleiner Singvogel, besucht im Winter das Futterhaus|2
+SPECHT|Klopft mit dem Schnabel an Baumstämme|2
+KUCKUCK|Vogel, der seine Eier in fremde Nester legt|2
+LERCHE|Singvogel, der hoch in den Himmel steigt|3
+NACHTIGALL|Singvogel, der besonders schön in der Nacht singt|2
+ADLER|Großer Greifvogel mit scharfen Augen|1
+FALKE|Schneller Greifvogel|2
+MÖWE|Weißer Vogel am Meer, der laut kreischt|1
+PINGUIN|Schwarz-weißer Vogel, der nicht fliegt, aber schwimmt|1
+STRAUSS|Größter Vogel der Welt, kann schnell laufen; auch ein Blumengebinde|2
+FLAMINGO|Rosa Vogel, der auf einem Bein steht|2
+PFAU|Vogel mit prächtigem Rad aus Federn|2
+KRANICH|Großer grauer Zugvogel mit langen Beinen|3
+REIHER|Grauer Vogel, der still am Ufer auf Fische wartet|3
+SCHWALBE|Zugvogel, der Nester unter dem Dach baut|2
+HIRSCH|Großes Waldtier mit Geweih|1
+WILDSCHWEIN|Borstiges Tier im Wald mit Hauern|2
+DACHS|Waldtier mit schwarz-weißem Kopf, lebt im Bau|3
+MARDER|Flinkes Raubtier, das manchmal Autokabel anknabbert|3
+BUSSARD|Greifvogel, der über Feldern kreist|3
+MAULWURF|Gräbt Gänge unter der Erde und wirft Hügel auf|2
+WOLF|Wildes Tier, das im Rudel lebt und heult|1
+LUCHS|Wildkatze mit Pinseln an den Ohren|3
+BIBER|Nagetier, das Dämme aus Ästen baut|2
+OTTER|Flinker Schwimmer am Fluss mit dichtem Fell|3
+FLEDERMAUS|Fliegt nachts und hängt kopfüber beim Schlafen|2
+TIGER|Große gestreifte Raubkatze|1
+GIRAFFE|Tier mit sehr langem Hals|1
+ZEBRA|Schwarz-weiß gestreiftes Tier aus Afrika|1
+KAMEL|Tier der Wüste mit zwei Höckern|1
+NASHORN|Großes Tier mit Horn auf der Nase|2
+NILPFERD|Großes Tier, das gern im Fluss liegt|2
+KROKODIL|Großes Reptil mit vielen Zähnen|2
+KÄNGURU|Springt und trägt sein Junges im Beutel|1
+KOALA|Grauer Bär aus Australien, frisst Eukalyptus|2
+PANDA|Schwarz-weißer Bär, frisst Bambus|1
+GORILLA|Größter Menschenaffe|2
+LEOPARD|Gefleckte Raubkatze, klettert gut|2
+SCHILDKRÖTE|Langsames Tier mit Panzer|1
+EIDECHSE|Kleines Reptil, sonnt sich gern auf Steinen|2
+SCHLANGE|Hat keine Beine und kriecht; auch eine Reihe Wartender|1
+DELFIN|Kluges Meerestier, das gern springt|1
+WAL|Größtes Tier im Meer|1
+ROBBE|Meerestier, liegt gern auf Sandbänken, auch Seehund genannt|2
+HAI|Raubfisch mit scharfen Zähnen|1
+QUALLE|Durchsichtiges Meerestier ohne Knochen|2
+KRABBE|Kleines Meerestier mit Scheren|2
+MUSCHEL|Findet man am Strand, mit zwei Schalen|1
+SEESTERN|Meerestier mit fünf Armen|2
+FORELLE|Fisch aus klaren Bächen|2
+KARPFEN|Fisch, der zu Silvester gegessen wird|2
+HERING|Kleiner Fisch aus der Nordsee, oft eingelegt|2
+LACHS|Rosafarbener Fisch, gern geräuchert|1
+AAL|Langer Fisch, sieht aus wie eine Schlange|2
+HUMMER|Großes Meerestier mit Scheren, gilt als Delikatesse|3
+FALTER|Anderes Wort für Schmetterling|3
+RAUPE|Daraus wird ein Schmetterling|2
+AMEISE|Kleines fleißiges Insekt, lebt im Haufen|1
+WESPE|Gelb-schwarzes Insekt, sticht gern beim Kuchen|1
+HUMMEL|Dicke, pelzige Biene|2
+FLIEGE|Summt um das Essen; auch eine Schleife am Hemdkragen|1
+MÜCKE|Kleines Insekt, dessen Stich juckt|1
+SPINNE|Hat acht Beine und webt ein Netz|1
+MARIENKÄFER|Kleiner roter Käfer mit schwarzen Punkten|1
+LIBELLE|Insekt mit vier glänzenden Flügeln am Teich|2
+GRILLE|Zirpt in Sommernächten|2
+HEUSCHRECKE|Springt hoch durch das Gras|2
+REGENWURM|Kriecht nach dem Regen aus der Erde|1
+NEST|Darin legt der Vogel seine Eier|1
+FEDER|Bedeckt den Vogel; früher schrieb man damit|1
+FELL|Haar eines Tieres|1
+SCHNABEL|Mund des Vogels|1
+PFOTE|Fuß von Hund oder Katze|1
+FLÜGEL|Damit fliegt der Vogel; auch ein großes Klavier|1
+STALL|Hier wohnen Kühe und Pferde|1
+WEIDE|Wiese, auf der Kühe grasen; auch ein Baum|2
+SCHEUNE|Großes Gebäude für Heu und Stroh|2
+HEU|Getrocknetes Gras als Futter|1
+STROH|Trockene Halme vom Getreide|2
+TRAKTOR|Zieht den Pflug auf dem Feld|1
+PFLUG|Gerät, das den Acker umgräbt|2
+ACKER|Feld, auf dem Getreide wächst|2
+ERNTE|Wenn im Herbst Obst und Getreide eingesammelt werden|1
+MÜHLE|Darin wird Getreide zu Mehl gemahlen|2
+BUCHE|Laubbaum mit glatter grauer Rinde|2
+BIRKE|Baum mit weißer Rinde|2
+LINDE|Baum mit duftenden Blüten, oft auf dem Dorfplatz|2
+KASTANIE|Baum mit braunen glänzenden Früchten im Herbst|2
+AHORN|Baum mit gezackten Blättern, deren Samen sich drehen|2
+FICHTE|Nadelbaum mit hängenden Zapfen|2
+KIEFER|Nadelbaum mit langen Nadeln; auch ein Knochen im Gesicht|3
+PAPPEL|Hoher, schlanker Baum an Straßen und Flüssen|3
+ULME|Laubbaum mit schiefen Blättern|3
+ESCHE|Laubbaum, dessen Holz für Stiele genommen wird|3
+EIBE|Nadelbaum mit roten Beeren, sehr langlebig|3
+LÄRCHE|Nadelbaum, der im Herbst seine Nadeln abwirft|3
+WEINREBE|Pflanze, an der Trauben wachsen|2
+EFEU|Immergrüne Pflanze, die an Mauern rankt|2
+MOOS|Weiches Grün auf Steinen und im Wald|2
+FARN|Pflanze mit gefiederten Wedeln im schattigen Wald|2
+DISTEL|Stachelige Pflanze mit lila Blüte|3
+BRENNNESSEL|Pflanze, die auf der Haut brennt|2
+LÖWENZAHN|Gelbe Wiesenblume, wird zur Pusteblume|1
+MARGERITE|Große weiße Blume mit gelber Mitte|2
+SONNENBLUME|Hohe gelbe Blume, die sich zur Sonne dreht|1
+NELKE|Blume mit gezackten Blüten; auch ein Gewürz|2
+LILIE|Edle Blume mit großen Kelchen|2
+VEILCHEN|Kleine lila Blume, die im Frühling duftet|2
+FLIEDER|Strauch mit duftenden lila Blüten im Mai|2
+NARZISSE|Gelbe Frühlingsblume, auch Osterglocke genannt|2
+KROKUS|Zeigt sich im Frühling als eine der ersten Blumen|2
+MOHN|Rote Blume im Kornfeld; die Samen kommen auf Brötchen|2
+KORNBLUME|Blaue Blume am Rand des Getreidefelds|2
+LAVENDEL|Lila Pflanze mit starkem Duft|2
+ORCHIDEE|Edle Zimmerpflanze mit exotischen Blüten|2
+GERANIE|Beliebte Balkonblume, oft rot|2
+DAHLIE|Prächtige Spätsommerblume mit vielen Blütenblättern|3
+ASTER|Blume, die im Herbst blüht|3
+HORTENSIE|Strauch mit großen runden Blütenbällen|3
+PFINGSTROSE|Große Blume, blüht im Mai und Juni|3
+PRIMEL|Bunte Blume im zeitigen Frühjahr|3
+RITTERSPORN|Hohe blaue Gartenblume|3
+KAKTUS|Stachelige Pflanze, braucht wenig Wasser|1
+BLÜTE|Daraus wird später die Frucht|1
+WURZEL|Teil der Pflanze unter der Erde|1
+STAMM|Dicker Teil des Baums; auch eine Volksgruppe|2
+AST|Wächst seitlich aus dem Baumstamm|1
+ZWEIG|Kleiner Ast|2
+DORN|Spitzer Stachel an der Rose|2
+ZAPFEN|Frucht des Nadelbaums|2
+EICHEL|Frucht der Eiche|2
+SAMEN|Daraus wächst eine neue Pflanze|2
+KNOSPE|Daraus öffnet sich die Blüte|2
+STRAUCH|Kleine Pflanze mit vielen Zweigen, auch Busch|2
+HECKE|Reihe von Sträuchern als Zaun|2
+BEET|Fläche im Garten für Blumen oder Gemüse|2
+KOMPOST|Haufen aus Gartenabfällen, wird zu Erde|3
