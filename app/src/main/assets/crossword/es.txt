@@ -547,7 +547,7 @@ SARDINA|Pez pequeño que se asa en verano|2
 MERLUZA|Pescado blanco muy común|2
 ATÚN|Pez grande que se vende en lata|2
 GAMBA|Marisco pequeño y rosado|2
-MEJILLÓN|Marisco de concha negra|2
+MEJILLÓN|Marisco negro que se cría en las rías|2
 CALAMAR|Se come rebozado en anillas|2
 PULPO|Tiene ocho brazos|2
 LANGOSTA|Marisco grande con antenas|2
@@ -975,10 +975,10 @@ RAPE|Pescado de cabeza enorme|3
 LUBINA|Pescado de piel plateada|3
 DORADA|Pescado con una franja amarilla en la cabeza|3
 LENGUADO|Pescado plano|3
-BERBERECHO|Marisco pequeño de concha estriada|3
+BERBERECHO|Marisco pequeño que se vende en lata|3
 PERCEBE|Marisco que crece en las rocas|3
 NÉCORA|Cangrejo de mar muy sabroso|3
-ALMEJA|Marisco de dos conchas|3
+ALMEJA|Marisco pequeño de las paellas|3
 OSTRA|Puede guardar una perla|3
 CENTOLLO|Cangrejo grande de patas largas|3
 NABO|Raíz blanca del caldo|3
@@ -1031,3 +1031,55 @@ CAMELIA|Flor de invierno de pétalos perfectos|3
 GLADIOLO|Flor en espiga alta|3
 DALIA|Flor de muchos pétalos|3
 NENÚFAR|Planta que flota en el estanque|3
+MILANO|Ave rapaz de cola en horquilla|3
+ABUBILLA|Pájaro con cresta en abanico|3
+JILGUERO|Pájaro cantor de cara roja|3
+RUISEÑOR|Pájaro famoso por su canto nocturno|3
+PETIRROJO|Pájaro de pecho anaranjado|3
+MIRLO|Pájaro negro de pico amarillo|3
+URRACA|Ave blanca y negra que se lleva lo que brilla|3
+GARZA|Ave zancuda de cuello largo|3
+LECHUZA|Ave nocturna de cara blanca|3
+COCHINILLA|Bichito que se hace una bola|3
+TEJÓN|Mamífero de franjas en la cara que cava madrigueras|3
+COMADREJA|Pequeño mamífero de cuerpo alargado|3
+LIRÓN|Roedor que duerme todo el invierno|3
+GAMO|Ciervo de pelaje con manchas blancas|3
+CORZO|Ciervo pequeño del bosque|3
+REBECO|Cabra salvaje de los Pirineos|3
+MARMOTA|Roedor que hiberna en la montaña|3
+MULO|Cría de yegua y burro|3
+YEGUA|Hembra del caballo|3
+BUEY|Animal de tiro que tira del arado|3
+ARMIÑO|Animal de piel blanca muy apreciada|3
+ALONDRA|Pájaro que canta al alba en los campos|3
+ESTORNINO|Pájaro oscuro que vuela en grandes bandadas|3
+ZAMBOMBA|Instrumento navideño que se frota|3
+GAITA|Instrumento de fuelle típico de Galicia|3
+LAÚD|Instrumento de cuerda con caja abombada|3
+BANDURRIA|Instrumento de cuerdas pequeño de la tuna|3
+TUNA|Grupo de estudiantes que canta con capa|3
+ZARZUELA|Teatro musical español|3
+JOTA|Baile popular de Aragón|3
+MUÑEIRA|Baile popular gallego|3
+PASODOBLE|Música de las corridas y de las verbenas|3
+VERBENA|Fiesta popular de noche al aire libre|3
+ROMERÍA|Fiesta con excursión a una ermita|3
+ERMITA|Capilla pequeña en el campo|3
+FERIA|Fiesta con casetas y atracciones|3
+TÓMBOLA|Rifa de feria con premios|3
+GUIÑOL|Teatro de títeres|3
+MARIONETA|Muñeco movido con hilos|3
+CARRUSEL|Tiovivo de la feria|3
+TIOVIVO|Atracción que gira con caballitos|3
+PIÑATA|Se rompe para que caigan golosinas|3
+CONFETI|Papelitos de colores de fiesta|3
+SERPENTINA|Tira de papel enrollada que se lanza|3
+FAROLILLO|Adorno de papel de las fiestas|3
+GUIRNALDA|Tira de flores o papel para adornar|3
+ACERTIJO|Enigma para adivinar|3
+JEROGLÍFICO|Pasatiempo de dibujos y letras|3
+SOLITARIO|Juego de cartas para uno solo|3
+NAIPE|Carta de la baraja|3
+TUTE|Juego de naipes de reyes y caballos|3
+CHINCHÓN|Juego de naipes para reunir escaleras|3
