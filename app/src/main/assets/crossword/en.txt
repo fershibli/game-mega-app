@@ -851,3 +851,94 @@ CELEBRATE|Mark a special day with a party|2
 WELCOME|Greeting for a guest|2
 THANK|Say you are grateful|2
 GREET|Say hello|2
+SAUCER|Small plate under a teacup|2
+TEASPOON|Small spoon for stirring|2
+LADLE|Big spoon for serving soup|3
+WHISK|Wire tool for beating eggs|3
+COLANDER|Bowl with holes for draining pasta|3
+GRATER|Shreds cheese|3
+PESTLE|Club for grinding spices in a mortar|3
+SPATULA|Flat tool for flipping pancakes|3
+CASSEROLE|Dish baked slowly in the oven|3
+SKILLET|Frying pan|3
+PITCHER|Jug for pouring water|2
+JUG|Container with a spout and handle|2
+GOBLET|Fancy drinking glass with a stem|3
+TUREEN|Deep dish for serving soup|3
+CORKSCREW|Opens a bottle of wine|3
+CUPBOARD|Cabinet for dishes|2
+PANTRY|Small room for storing food|2
+LARDER|Cool place for keeping food|3
+TABLECLOTH|Covers the dining table|2
+DOILY|Lace mat under a vase|3
+VASE|Holds cut flowers|2
+OMELET|Beaten eggs cooked in a pan|2
+CUSTARD|Sweet yellow sauce of eggs and milk|2
+PUDDING|Soft sweet dessert|2
+MERINGUE|Baked whipped egg whites|3
+SCONE|Small cake served with cream and jam|3
+CRUMPET|Spongy griddle cake for tea|3
+BISCUIT|Small crunchy baked treat|2
+DUMPLING|Ball of dough cooked in broth|3
+PRETZEL|Twisted salty bread|3
+POPCORN|Snack eaten at the movies|1
+MARMALADE|Jam made from oranges|3
+CINNAMON|Sweet spice from tree bark|2
+NUTMEG|Spice grated over eggnog|3
+GINGER|Spicy root for cookies|2
+PARSLEY|Green herb used as garnish|2
+BASIL|Herb used in pesto|2
+MINT|Cool fresh herb|2
+ROSEMARY|Fragrant herb with needles|3
+THYME|Small-leaved herb for stews|3
+OREGANO|Herb sprinkled on pizza|3
+VANILLA|Flavor from a pod used in ice cream|2
+CARAMEL|Melted sugar turned brown|2
+ALMOND|Oval nut|2
+WALNUT|Nut shaped like a brain|2
+HAZELNUT|Nut in chocolate spreads|3
+CHESTNUT|Nut roasted in winter|2
+COCONUT|Big hairy nut from a palm|2
+APRICOT|Small orange fruit like a peach|2
+RAISIN|Dried grape|2
+PRUNE|Dried plum|3
+CRANBERRY|Tart red berry|3
+BLUEBERRY|Small dark berry for muffins|2
+RASPBERRY|Soft red berry|2
+STRAWBERRY|Red berry with seeds outside|1
+PINEAPPLE|Spiky tropical fruit|2
+AVOCADO|Green fruit for guacamole|2
+PAPAYA|Tropical orange fruit with black seeds|3
+TANGERINE|Small easy-peel orange|3
+RHUBARB|Pink stalks for a pie|3
+ASPARAGUS|Green spears cooked in spring|3
+ARTICHOKE|Vegetable with tough leaves and a heart|3
+TURNIP|White root vegetable|3
+PARSNIP|Pale root like a carrot|3
+LEEK|Long vegetable like an onion|3
+BROCCOLI|Green vegetable like little trees|2
+CAULIFLOWER|White vegetable with florets|3
+EGGPLANT|Purple vegetable|2
+ZUCCHINI|Green summer squash|3
+LENTIL|Small seed for soup|3
+PORRIDGE|Hot oats for breakfast|2
+OATMEAL|Breakfast of cooked oats|2
+SPAGHETTI|Long thin pasta|2
+LASAGNA|Pasta in layers with sauce|2
+RISOTTO|Creamy Italian rice dish|3
+TEACUP|Cup for a hot brew|2
+COCOA|Hot chocolate drink|2
+LEMONADE|Drink of lemons and sugar|2
+SMOOTHIE|Blended fruit drink|2
+SHERBET|Fruity frozen dessert|3
+SUNDAE|Ice cream with toppings|2
+TOFFEE|Chewy brown candy|3
+FUDGE|Soft chocolate candy|3
+LICORICE|Black chewy candy|3
+MARZIPAN|Almond paste candy|3
+PICKLE|Cucumber in vinegar|2
+MUSTARD|Yellow sauce for hot dogs|2
+KETCHUP|Red tomato sauce for fries|2
+MAYONNAISE|Creamy white sauce for sandwiches|3
+RELISH|Chopped pickle sauce|3
+CROUTON|Crunchy bread cube in salad|3
