@@ -589,3 +589,151 @@ AZAFRÁN|Especia que da color a la paella|2
 MOSTAZA|Salsa amarilla algo picante|2
 MAYONESA|Salsa de huevo y aceite|2
 SALSA|Acompaña y da sabor al plato|2
+ÁGUILA|Ave rapaz de vista aguda|2
+HALCÓN|Ave rapaz muy veloz|2
+CIGÜEÑA|Ave que anida en los campanarios|2
+GOLONDRINA|Ave que anuncia la primavera|2
+GORRIÓN|Pájaro pequeño y pardo de la ciudad|2
+CANARIO|Pájaro amarillo que canta en su jaula|2
+PERDIZ|Ave de campo de patas rojas|2
+PAVO|Ave grande de la cena de Navidad|2
+CISNE|Ave blanca de cuello largo del estanque|2
+FLAMENCO|Ave rosa que se sostiene en una pata|2
+PINGÜINO|Ave del polo que no vuela|2
+GAVIOTA|Ave blanca del puerto|2
+PELÍCANO|Ave con una gran bolsa en el pico|2
+AVESTRUZ|Ave enorme que corre mucho|2
+ARDILLA|Roedor de cola peluda que come nueces|2
+ERIZO|Pequeño animal cubierto de púas|2
+CIERVO|Animal del bosque con astas|2
+JABALÍ|Cerdo salvaje del monte|2
+LIEBRE|Pariente salvaje y veloz del conejo|2
+CASTOR|Roedor que construye diques|2
+NUTRIA|Mamífero que nada en los ríos|2
+CANGURO|Salta y lleva a su cría en una bolsa|2
+CAMELLO|Animal del desierto con dos jorobas|2
+CEBRA|Caballo de rayas blancas y negras|2
+HIPOPÓTAMO|Animal enorme que vive en el río|2
+RINOCERONTE|Animal grande con cuerno en la nariz|2
+GORILA|Simio grande y fuerte|2
+LEOPARDO|Felino con manchas|2
+PANTERA|Felino de pelo negro|2
+COCODRILO|Reptil de grandes mandíbulas|2
+LAGARTIJA|Reptil pequeño que toma el sol|2
+CAMALEÓN|Reptil que cambia de color|2
+FOCA|Mamífero marino que aplaude|2
+MORSA|Mamífero marino con colmillos|2
+MEDUSA|Animal marino transparente que pica|2
+CANGREJO|Anda de lado en la playa|2
+SALMÓN|Pez rosado que remonta los ríos|2
+TRUCHA|Pez del río de agua fría|2
+GRILLO|Insecto que canta en las noches de verano|2
+CIGARRA|Insecto que canta con el calor|2
+LIBÉLULA|Insecto de alas transparentes del estanque|2
+MARIQUITA|Insecto rojo con puntos negros|2
+SALTAMONTES|Insecto verde que salta en la hierba|2
+LUCIÉRNAGA|Insecto que brilla de noche|2
+ARAÑA|Teje su tela en un rincón|2
+GUSANO|Animal blando que vive en la tierra|2
+OVEJERO|Perro que cuida el rebaño|2
+POTRO|Caballo joven|2
+TERNERO|Cría de la vaca|2
+CORDERO|Cría de la oveja|2
+POLLITO|Cría de la gallina|2
+COLMENA|Casa de las abejas|2
+NIDO|Casa de los pájaros|2
+ESTABLO|Lugar donde duermen las vacas|2
+GALLINERO|Lugar de las gallinas|2
+PRADO|Campo de hierba para el ganado|2
+VALLE|Tierra baja entre montañas|2
+COLINA|Monte pequeño y suave|2
+CUEVA|Hueco grande en la roca|2
+CASCADA|Agua que cae desde lo alto|2
+DESIERTO|Lugar de arena y poca agua|2
+SELVA|Bosque tropical muy espeso|2
+VOLCÁN|Montaña que echa lava|2
+GLACIAR|Río de hielo de las montañas|2
+OCÉANO|El mar más grande|2
+COSTA|Tierra junto al mar|2
+BAHÍA|Entrada del mar en la costa|2
+ACANTILADO|Costa de roca cortada a pico|2
+ARROYO|Río pequeño|2
+CHARCA|Agua estancada donde viven las ranas|2
+ESTANQUE|Lago pequeño del jardín|2
+FUENTE|Mana agua en la plaza|2
+POZO|Agujero profundo para sacar agua|2
+ROCÍO|Gotas de la mañana sobre la hierba|2
+NIEBLA|Nube baja que no deja ver|2
+ESCARCHA|Hielo fino sobre la hierba al amanecer|2
+GRANIZO|Bolitas de hielo que caen del cielo|2
+TRUENO|Ruido fuerte de la tormenta|2
+RELÁMPAGO|Luz brillante de la tormenta|2
+BRISA|Viento suave del mar|2
+HURACÁN|Viento muy fuerte que gira|2
+NEVADA|Caída abundante de copos|2
+CHAPARRÓN|Lluvia fuerte y corta|2
+AMANECER|Cuando sale el sol|2
+ATARDECER|Cuando se pone el sol|2
+HORIZONTE|Línea donde parece juntarse cielo y tierra|2
+PLANETA|La Tierra es uno|2
+COMETA|Juguete que vuela con el viento|2
+ARQUITECTO|Diseña edificios|2
+ABOGADO|Defiende a su cliente en el juicio|2
+JUEZ|Dicta la sentencia|2
+PERIODISTA|Escribe las noticias|2
+FOTÓGRAFO|Hace fotos por oficio|2
+ESCRITOR|Escribe novelas|2
+ACTOR|Trabaja en el teatro o en el cine|2
+CANTANTE|Persona que canta por oficio|2
+MÚSICO|Toca un instrumento|2
+FONTANERO|Arregla grifos y tuberías|2
+ELECTRICISTA|Arregla los enchufes|2
+ALBAÑIL|Levanta paredes de ladrillo|2
+MECÁNICO|Arregla coches|2
+SASTRE|Hace trajes a medida|2
+COSTURERA|Cose y arregla la ropa|2
+ZAPATERO|Arregla el calzado|2
+CARNICERO|Vende carne|2
+FRUTERO|Vende fruta en el mercado|2
+TENDERO|Atiende la tienda|2
+FARMACÉUTICO|Vende medicinas|2
+VETERINARIO|Médico de los animales|2
+PROFESOR|Da clases|2
+BIBLIOTECA|Lugar para leer y pedir libros|2
+LIBRERÍA|Tienda de libros|2
+AYUNTAMIENTO|Edificio del alcalde|2
+CORREOS|Oficina donde se envían cartas|2
+GASOLINERA|Allí se llena el depósito|2
+MERCADILLO|Mercado de puestos al aire libre|2
+QUIOSCO|Puesto de periódicos|2
+CAFETERÍA|Lugar para tomar un café|2
+RESTAURANTE|Lugar donde se come fuera de casa|2
+PASTELERÍA|Tienda de dulces y tartas|2
+FERRETERÍA|Tienda de clavos y herramientas|2
+BARRIO|Parte de una ciudad|2
+AVENIDA|Calle ancha|2
+ROTONDA|Plaza redonda para el tráfico|2
+FAROLA|Luz de la calle|2
+BALNEARIO|Lugar de baños y aguas termales|2
+CAMPANARIO|Torre de la iglesia|2
+CATEDRAL|Iglesia principal de una ciudad|2
+PALACIO|Casa grande y lujosa|2
+MURALLA|Muro que rodeaba la ciudad antigua|2
+FARO|Torre con luz para los barcos|2
+MUELLE|Lugar del puerto para atracar|2
+VELERO|Barco que navega con el viento|2
+CANOA|Barca estrecha de remos|2
+SUBMARINO|Barco que navega bajo el agua|2
+HELICÓPTERO|Aparato que vuela con hélices|2
+TRANVÍA|Vehículo que va sobre raíles por la ciudad|2
+METRO|Tren que va bajo tierra|2
+FURGONETA|Vehículo para repartir|2
+CARAVANA|Casa con ruedas|2
+AMBULANCIA|Lleva a los pacientes al hospital|2
+ANDÉN|Allí se espera el tren|2
+PASAPORTE|Documento para viajar|2
+EQUIPAJE|Maletas del viajero|2
+EXCURSIÓN|Paseo de un día al campo|2
+TURISTA|Visita lugares en vacaciones|2
+POSTAL|Tarjeta con foto que se envía de viaje|2
+RECUERDO|Objeto que se compra en el viaje|2
