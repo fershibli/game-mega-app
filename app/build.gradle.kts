@@ -162,6 +162,7 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.activity.compose)
+    implementation(libs.lifecycle.runtime)
     implementation(libs.kotlinx.serialization.json)
     debugImplementation(libs.compose.ui.tooling)
 
