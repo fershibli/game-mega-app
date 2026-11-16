@@ -85,7 +85,8 @@ class TakeTurnsTest {
         var outcome: GameOutcome? = null
         val host = GameHost(GameId.REVERSI, Difficulty.EASY, null, null, null, PlaySetup(together = true)) { outcome = it }
         rule.setContent { MegaGamesTheme(english) { ReversiGame(host) } }
-        rule.waitForIdle()
+        // The board is made on a background thread: wait for it, not just for the screen to settle.
+        rule.waitUntil(10_000) { rule.onAllNodesWithText("Dark pieces to play", substring = true).fetchSemanticsNodes().isNotEmpty() }
         fun tap(row: Int, col: Int) = rule.onNodeWithTag("reversi-board").performTouchInput {
             val frame = width * 0.04f
             val cell = (width - frame * 2) / 8f

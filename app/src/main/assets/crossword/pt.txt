@@ -16,7 +16,7 @@ INVERNO|Estação mais fria do ano|2
 PRIMAVERA|Estação das flores|2
 OUTONO|Estação em que as folhas caem|2
 DOMINGO|Dia de descanso da semana|1
-CAFÉ|Bebida quente do café da manhã|1
+CAFÉ|Bebida quente e preta, servida na xícara pela manhã|1
 AÇÚCAR|Deixa o café doce|1
 SAL|Tempero branco que vem do mar|1
 QUEIJO|Feito de leite; o rato adora|1
@@ -27,7 +27,7 @@ BANANA|Fruta amarela e comprida|1
 UVA|Fruta pequena usada para fazer vinho|1
 LIMÃO|Fruta azeda da caipirinha|1
 TOMATE|Vermelho, vai na salada e no molho|1
-BATATA|Vira purê ou batata frita|1
+BATATA|Tubérculo que vira purê ou fritas|1
 CENOURA|Legume laranja que o coelho adora|1
 CEBOLA|Faz chorar quando cortamos|1
 ARROZ|Grão que acompanha o feijão|1
@@ -582,3 +582,485 @@ MODINHA|Canção popular de antigamente|3
 ADIVINHA|O que é, o que é?|3
 FAZENDEIRO|Dono da fazenda|3
 BANDEIRINHA|Enfeite colorido pendurado na festa junina|3
+PIA|Lugar da cozinha onde lavamos a louça|1
+LOUÇA|Pratos, xícaras e travessas da casa|2
+TRAVESSA|Prato grande e fundo para servir comida|2
+FORNO|Parte do fogão onde se assa o bolo|1
+CHÃO|Onde pisamos dentro de casa|1
+TETO|Parte de cima de um cômodo|1
+VIDRO|Material transparente da janela|1
+SABÃO|Usado para lavar roupa e louça|1
+ESCOVA|Usada para pentear o cabelo ou limpar os dentes|1
+BACIA|Vasilha larga para lavar roupa ou os pés|2
+CESTA|Leva frutas ou o lanche do piquenique|1
+CAIXA|Embalagem de papelão para guardar coisas|1
+VASO|Recipiente onde se planta uma flor|1
+QUADRO|Pintura pendurada na parede|1
+BANCO|Assento comprido da praça|1
+BERÇO|Caminha do bebê|1
+REDE|Balança na varanda para um cochilo|1
+COLCHÃO|Fica sobre a cama para dormir macio|1
+LENÇOL|Pano que cobre o colchão|1
+FRONHA|Capa do travesseiro|2
+FERRO|Aparelho para passar roupa|1
+TORNEIRA|Abrimos para sair água na pia|1
+TOMADA|Onde ligamos os aparelhos elétricos|1
+MOCHILA|Bolsa que se leva nas costas|1
+CARTEIRA|Guarda o dinheiro e os documentos|1
+LUVA|Agasalho para as mãos|1
+CACHECOL|Enrolado no pescoço nos dias frios|2
+GORRO|Touca de lã para o frio|2
+BLUSA|Peça de roupa da parte de cima do corpo|1
+CALÇA|Peça de roupa que veste as duas pernas|1
+BERMUDA|Calça curta para dias de calor|1
+PIJAMA|Roupa de dormir|1
+CINTO|Segura a calça na cintura|1
+GRAVATA|Usada no pescoço com o terno|1
+TERNO|Roupa social de paletó e calça|2
+BOTA|Calçado de cano alto|1
+SANDÁLIA|Calçado aberto, feito de tiras|1
+TÊNIS|Calçado para caminhar e fazer esporte|1
+FRUTA|Maçã, banana ou uva, por exemplo|1
+SALADA|Prato de alface, tomate e outras folhas|1
+LANCHE|Refeição pequena da tarde|1
+ALMOÇO|Refeição do meio do dia|1
+JANTAR|Refeição da noite|1
+PEPINO|Legume verde e comprido da salada|1
+BETERRABA|Raiz roxa que tinge a salada|2
+BRÓCOLIS|Verdura verde em forma de arvorezinha|2
+ESPINAFRE|Verdura de folhas escuras e macias|2
+LINGUIÇA|Embutido de carne que vai na grelha|2
+PRESUNTO|Frios fatiados do misto-quente|2
+SANDUÍCHE|Pão recheado com queijo e presunto|1
+TORRADA|Pão tostado e crocante|1
+MINGAU|Papa quente de leite com aveia ou maisena|2
+IOGURTE|Leite fermentado, às vezes com frutas|2
+CAMARÃO|Fruto do mar que fica rosado ao cozinhar|1
+SARDINHA|Peixe pequeno vendido em lata|2
+PIMENTA|Tempero que arde na boca|1
+MOLHO|Acompanha o macarrão, como o de tomate|1
+NOZ|Fruto seco de casca dura, comum no Natal|2
+CASTANHA|Fruto seco, como a do Pará|2
+AMENDOIM|Grão torrado usado na paçoca|1
+PANQUECA|Massa fina enrolada com recheio|1
+BOLACHA|Biscoito redondo e seco|1
+TORTA|Massa assada com recheio doce ou salgado|1
+DOCE|Sobremesa feita com açúcar|1
+BALA|Docinho embrulhado que se chupa|1
+REFRIGERANTE|Bebida gelada e doce, com gás|1
+LIMONADA|Suco de limão com açúcar e água|1
+GELO|Água congelada que esfria a bebida|1
+BURRO|Parecido com o cavalo, de orelhas compridas|1
+PERU|Ave grande servida no Natal|1
+ZEBRA|Animal listrado de preto e branco|1
+CAMELO|Animal do deserto com corcovas|1
+CANGURU|Pula e leva o filhote numa bolsa na barriga|1
+HIPOPÓTAMO|Animal enorme que vive nos rios da África|2
+RINOCERONTE|Animal grande com chifre no focinho|2
+FOCA|Animal marinho que bate palmas no circo|2
+TUBARÃO|Peixe grande de dentes afiados|1
+GRILO|Inseto que canta à noite|1
+MOSCA|Inseto que zune em volta da comida|1
+MOSQUITO|Inseto pequeno que pica à noite|1
+PINTINHO|Filhote amarelinho da galinha|1
+BEZERRO|Filhote da vaca|1
+POTRO|Filhote do cavalo|2
+CISNE|Ave branca de pescoço longo dos lagos|2
+GANSO|Ave branca parecida com o pato|2
+PAVÃO|Ave que abre a cauda colorida|1
+BEIJA-FLOR|Passarinho que voa parado diante da flor|1
+ANDORINHA|Ave que anuncia a primavera|2
+GAVIÃO|Ave de rapina de bico curvo|2
+TERRA|Planeta onde vivemos|1
+FOLHA|Parte verde da planta|1
+GALHO|Braço da árvore|1
+RAIZ|Parte da planta que fica embaixo da terra|1
+TRONCO|Parte grossa da árvore|1
+ONDA|Água do mar que quebra na praia|1
+CONCHA|Achada na areia da praia, guarda o som do mar|1
+VALE|Terra baixa entre montanhas|2
+MORRO|Montanha pequena|1
+GRUTA|Caverna na pedra|2
+DESERTO|Lugar de muita areia e pouca chuva|1
+VULCÃO|Montanha que solta lava|2
+BRISA|Vento fraco e fresco|2
+TEMPESTADE|Chuva forte com vento e trovões|2
+GAROA|Chuva fininha|2
+PÉ|Parte do corpo que pisa no chão|1
+CABEÇA|Parte do corpo onde fica o rosto|1
+ROSTO|A face da pessoa|1
+TESTA|Parte do rosto acima dos olhos|1
+QUEIXO|Ponta de baixo do rosto|1
+PESCOÇO|Liga a cabeça ao corpo|1
+COSTAS|Parte de trás do tronco|1
+UNHA|Cresce na ponta do dedo|1
+LÁBIO|Borda da boca|1
+LÍNGUA|Fica dentro da boca e sente o sabor|1
+BIGODE|Pelos acima do lábio|1
+BARBA|Pelos do queixo e do rosto do homem|1
+SOBRANCELHA|Fileira de pelos acima do olho|2
+CÍLIO|Pelinho na borda da pálpebra|2
+CALCANHAR|Parte de trás do pé|2
+TORNOZELO|Liga o pé à perna|2
+COTOVELO|Dobra do meio do braço|2
+PULSO|Onde se usa o relógio|1
+COZINHEIRO|Prepara a comida no restaurante|1
+MOTORISTA|Dirige o ônibus ou o carro|1
+PILOTO|Dirige o avião|1
+GARÇOM|Serve as mesas no restaurante|1
+VENDEDOR|Atende os clientes na loja|1
+ADVOGADO|Defende as pessoas na justiça|2
+AGRICULTOR|Planta e colhe no campo|2
+PINTOR|Pinta paredes ou quadros|1
+ESCRITOR|Escreve livros|1
+CABELEIREIRO|Corta e arruma o cabelo no salão|1
+BARBEIRO|Corta cabelo e faz a barba|1
+SAPATEIRO|Conserta sapatos|2
+ELETRICISTA|Conserta a parte elétrica da casa|2
+ENCANADOR|Conserta canos e vazamentos|2
+VETERINÁRIO|Médico dos animais|1
+GUITARRA|Violão elétrico das bandas de rock|2
+TROMPETE|Instrumento de sopro dourado|2
+GAITA|Pequeno instrumento de sopro|2
+CORAL|Grupo de pessoas que canta junto|2
+CANÇÃO|Música cantada|1
+VÔLEI|Jogo de rede com bola|1
+BASQUETE|Esporte de jogar a bola na cesta|1
+NATAÇÃO|Esporte feito na piscina|1
+PISCINA|Tanque de água para nadar|1
+CORRIDA|Prova de quem chega primeiro|1
+GOL|Bola dentro da rede no futebol|1
+TIME|Grupo de jogadores|1
+JUIZ|Apita a partida de futebol|1
+MEDALHA|Prêmio pendurado no pescoço do vencedor|1
+TROFÉU|Taça dada ao campeão|1
+CANTAR|Soltar a voz numa música|1
+DANÇAR|Mexer o corpo ao som da música|1
+NADAR|Mover-se dentro da água|1
+CORRER|Andar bem depressa|1
+ANDAR|Ir a pé de um lugar a outro|1
+DORMIR|Descansar de olhos fechados à noite|1
+COMER|Pôr o alimento na boca|1
+BEBER|Tomar água ou suco|1
+LER|Passar os olhos pelas páginas do livro|1
+ESCREVER|Pôr palavras no papel|1
+FALAR|Usar a voz para conversar|1
+OUVIR|Escutar com as orelhas|1
+OLHAR|Pôr os olhos em algo|1
+SORRIR|Mostrar alegria com os lábios|1
+ABRIR|Contrário de fechar|1
+FECHAR|Contrário de abrir|1
+LAVAR|Limpar com água e sabão|1
+COZINHAR|Preparar a comida no fogão|1
+PLANTAR|Pôr a semente na terra|1
+VIAJAR|Ir para outro lugar a passeio|1
+PASSEAR|Sair para dar uma volta|1
+BRINCAR|O que as crianças fazem no recreio|1
+ESTUDAR|Aprender com livros e aulas|1
+PINTAR|Colorir com tinta e pincel|1
+COSTURAR|Unir panos com agulha e linha|1
+SENTAR|Acomodar-se na cadeira|1
+ACORDAR|Abrir os olhos depois de dormir|1
+LEMBRAR|Trazer algo de volta à memória|1
+AJUDAR|Dar uma mão a quem precisa|1
+VISITAR|Ir ver alguém na casa dele|1
+GRANDE|Contrário de pequeno|1
+PEQUENO|Contrário de grande|1
+ALTO|Contrário de baixo|1
+BAIXO|Contrário de alto|1
+BONITO|Agradável de ver|1
+NOVO|Contrário de velho|1
+QUENTE|Contrário de frio|1
+AZEDO|Sabor do limão|1
+SALGADO|Que tem muito sal|1
+LIMPO|Contrário de sujo|1
+SUJO|Contrário de limpo|1
+CHEIO|Contrário de vazio|1
+VAZIO|Contrário de cheio|1
+RÁPIDO|Que anda depressa|1
+LENTO|Que anda devagar|1
+MACIO|Gostoso ao toque, como o algodão|1
+CALMO|Tranquilo, sem pressa|1
+CONTENTE|Alegre e satisfeito|1
+GENTIL|Educado e amável|1
+FORTE|Que tem muita força|1
+LEVE|Que pesa pouco|1
+PESADO|Que pesa muito|1
+CLARO|Cheio de luz|1
+ESCURO|Sem nenhuma luz|1
+AULA|Lição dada pelo professor|1
+LOUSA|Quadro onde o professor escreve com giz|1
+GIZ|Bastão branco para escrever no quadro-negro|1
+CADERNO|Folhas em branco presas para anotar|1
+BORRACHA|Apaga o que o lápis escreveu|1
+RÉGUA|Serve para traçar linhas retas|1
+ALUNO|Quem estuda na escola|1
+RECREIO|Intervalo para brincar na escola|1
+LOJA|Lugar onde se compra roupa ou sapato|1
+BAIRRO|Parte da cidade onde moramos|1
+CALÇADA|Caminho dos pedestres ao lado da rua|1
+ESQUINA|Encontro de duas ruas|1
+PARQUE|Área verde para passear|1
+CORREIO|Leva cartas e encomendas|1
+HOTEL|Hospedagem de quem viaja|1
+FÉRIAS|Descanso do trabalho ou da escola|1
+MARTELO|Bate o prego na madeira|1
+PREGO|Peça de metal batida com o martelo|1
+PÁ|Serve para cavar a terra|1
+BALANÇO|Brinquedo do parque que vai e vem|1
+ESCORREGADOR|Brinquedo do parque para descer deslizando|1
+LANTERNA|Ilumina no escuro com pilha|1
+FÓSFORO|Palito que acende o fogo|1
+PILHA|Dá energia ao controle remoto|1
+TIJOLO|Bloco da parede de casa|1
+AMIZADE|Laço entre amigos|1
+VIAGEM|Ida a um lugar distante|1
+FAROFA|Farinha torrada na manteiga|1
+LASANHA|Massa em camadas com molho e queijo|1
+PICA-PAU|Ave que bica o tronco das árvores|1
+MORCEGO|Voa à noite e dorme de cabeça para baixo|1
+SERROTE|Corta a madeira|2
+ALICATE|Ferramenta que aperta e corta arame|2
+PARAFUSO|Preso com a chave de fenda|2
+ENXADA|Ferramenta da roça para capinar|2
+CIMENTO|Pó cinza da construção|2
+CORAGEM|Força para enfrentar o medo|2
+CARIDADE|Ajuda dada a quem precisa|2
+TERNURA|Carinho delicado|2
+ORGULHO|Sentimento de quem se alegra com uma conquista|2
+CALMA|Tranquilidade, sossego|2
+SURPRESA|O que sentimos diante do inesperado|2
+CURIOSIDADE|Vontade de saber mais|2
+BAGAGEM|Malas de quem viaja|2
+CRUZEIRO|Viagem de navio a passeio|2
+PASSAPORTE|Documento para viajar para fora do país|2
+TURISTA|Quem visita outro lugar a passeio|2
+ROTEIRO|Plano dos lugares a visitar|2
+FRONTEIRA|Limite entre dois países|2
+PORTO|Onde os navios atracam|2
+CAIS|Plataforma onde se embarca no barco|2
+CACTO|Planta espinhosa do deserto|2
+SAMAMBAIA|Planta de folhas rendadas que pende do vaso|2
+HERA|Trepadeira que cobre os muros|2
+MUSGO|Plantinha verde que cobre pedras úmidas|2
+LÍRIO|Flor branca e perfumada|2
+TULIPA|Flor em forma de taça, símbolo da Holanda|2
+JASMIM|Flor branca de perfume forte à noite|2
+AZALEIA|Arbusto de flores rosadas|2
+BEGÔNIA|Flor de vaso de folhas carnudas|2
+ALECRIM|Erva cheirosa usada no assado|2
+LOURO|Folha seca que tempera o feijão|2
+COENTRO|Erva de cheiro forte da moqueca|2
+CEBOLINHA|Erva verde e fina picada sobre o prato|2
+GENGIBRE|Raiz picante usada no chá|2
+MOQUECA|Ensopado de peixe com dendê|2
+ACARAJÉ|Bolinho de feijão frito no dendê|2
+PIRÃO|Papa de farinha com caldo de peixe|2
+POLENTA|Angu de milho, mole ou frito|2
+NHOQUE|Massa de batata em bolinhas|2
+ESTROGONOFE|Carne em molho cremoso com batata palha|2
+MAIONESE|Molho de ovo e óleo|2
+BEIJINHO|Docinho de coco com cravo|2
+COCADA|Doce de coco ralado|2
+MARIA-MOLE|Doce fofo coberto de coco|2
+PÉ-DE-MOLEQUE|Doce de amendoim e rapadura|2
+CURAU|Creme de milho verde com canela|2
+PERIQUITO|Passarinho verde que vive em gaiola|2
+MARRECO|Ave parecida com o pato|2
+CORVO|Ave toda preta|2
+LONTRA|Nada nos rios e come peixe|2
+GAMBÁ|Solta mau cheiro para se defender|2
+LAGOSTA|Crustáceo de carne nobre|2
+OSTRA|Molusco que pode guardar uma pérola|2
+PÉROLA|Joia que nasce dentro da ostra|2
+ESTRELA-DO-MAR|Bicho do mar com cinco braços|2
+LULA|Molusco de dez braços, servido em anéis|2
+LIBÉLULA|Inseto de asas transparentes que voa sobre a água|2
+CIGARRA|Inseto que canta no verão|2
+BESOURO|Inseto de casca dura|2
+VESPA|Inseto que pica, parente da abelha|2
+PINHÃO|Semente da araucária, cozida no inverno|2
+NOZ-MOSCADA|Tempero ralado sobre o purê|3
+VATAPÁ|Creme baiano de pão e camarão|3
+ALAÚDE|Antigo instrumento de cordas de corpo arredondado|3
+BANDOLIM|Instrumento de cordas parecido com o cavaquinho|3
+CRAVINA|Flor parecida com o cravo, de pétalas recortadas|3
+ALFAZEMA|Erva de flores roxas e perfumadas|3
+ARRUDA|Erva de cheiro forte usada contra mau-olhado|3
+HIBISCO|Flor grande que vira chá vermelho|3
+ACÁCIA|Árvore de flores amarelas em cachos|3
+CEDRO|Árvore de madeira cheirosa|3
+CARVALHO|Árvore grande que dá bolotas|3
+SALGUEIRO|Árvore de galhos que pendem até a água|3
+ARAUCÁRIA|Pinheiro do Sul que dá pinhão|3
+IMBUIA|Madeira escura e nobre do Sul|3
+JACARANDÁ|Árvore de flores roxas e madeira nobre|3
+BAOBÁ|Árvore enorme de tronco grosso da África|3
+GRAÚNA|Pássaro preto do sertão|3
+CURIÓ|Passarinho cantor de peito vermelho|3
+TICO-TICO|Pardalzinho de topete|3
+JURITI|Pombinha do mato de canto suave|3
+SANHAÇO|Pássaro azulado que come frutas|3
+ANU|Pássaro preto que anda em bando no pasto|3
+COMPRAR|Pagar para levar algo da loja|1
+VENDER|Contrário de comprar|1
+LIMPAR|Tirar a sujeira|1
+VARRER|Limpar o chão com a vassoura|1
+REGAR|Molhar as plantas|1
+ABRAÇAR|Apertar alguém nos braços com carinho|1
+BEIJAR|Encostar os lábios com carinho|1
+RIR|Achar graça e dar risada|1
+PULAR|Saltar do chão|1
+SUBIR|Contrário de descer|1
+DESCER|Contrário de subir|1
+CHEGAR|Contrário de partir|1
+ESPERAR|Aguardar alguém ou algo|1
+CONVERSAR|Bater papo|1
+TRABALHAR|Exercer a profissão|1
+DESCANSAR|Fazer uma pausa para repousar|1
+GOSTAR|Ter carinho ou apreço por algo|1
+ALEGRE|Contente, animado|1
+SABOROSO|Gostoso de comer|1
+CHEIROSO|Que tem bom perfume|1
+FRESCO|Recém-colhido ou feito agora|1
+GELADO|Muito frio|1
+VELHO|Contrário de novo|1
+MOLHADO|Contrário de seco|1
+SECO|Contrário de molhado|1
+LONGE|Contrário de perto|1
+PERTO|Contrário de longe|1
+CEDO|Contrário de tarde|1
+DADO|Cubo com pontinhos dos jogos de tabuleiro|1
+PASSARINHO|Ave pequena que canta na árvore|1
+VIOLA|Instrumento caipira de dez cordas|2
+CAPOEIRA|Luta e dança ao som do berimbau|2
+CURRAL|Cercado onde fica o gado|2
+CHIQUEIRO|Lugar onde vivem os porcos|2
+SELA|Assento de couro do cavaleiro|2
+VAQUEIRO|Cuida do gado no sertão|2
+MOEDOR|Aparelho de moer carne ou café|2
+CÔMODA|Móvel de gavetas para roupas|2
+BAÚ|Caixa grande de tampa curva para guardar coisas|2
+SOMBRINHA|Guarda-chuva pequeno e delicado|2
+LEQUE|Abana o rosto no calor|2
+BOINA|Chapéu redondo e chato de lã|2
+QUENTÃO|Bebida quente da festa junina|2
+RIACHO|Rio pequeno|2
+CHUVISCO|Chuva miúda|2
+TROVOADA|Chuva com muitos trovões|2
+MARÉ|Sobe e desce das águas do mar|2
+ESPUMA|Bolhas brancas da onda|2
+JABUTI|Tartaruga de terra|2
+SIRI|Caranguejo nadador do mangue|2
+MARIMBONDO|Vespa de ferroada doída|2
+JOÃO-DE-BARRO|Pássaro que constrói sua casa de barro|2
+URUBU|Ave preta que plana no céu|2
+GARÇA|Ave branca de pernas longas do brejo|2
+SERENATA|Música cantada sob a janela da amada|2
+ARQUIBANCADA|Degraus onde a torcida assiste ao jogo|2
+TORCIDA|Quem vibra pelo time no estádio|2
+ESTÁDIO|Campo grande de futebol com arquibancadas|2
+TABULEIRO|Base do jogo de damas e do xadrez|2
+QUEBRA-CABEÇA|Jogo de encaixar pecinhas|2
+CRUZADINHA|Passatempo de palavras cruzadas|2
+CAÇA-PALAVRAS|Passatempo de achar termos escondidos numa grade|2
+BINGO|Jogo de cartela em que se sorteiam números|2
+ROMANCE|Livro de história longa|2
+POEMA|Texto escrito em versos|2
+VERSO|Cada linha de um poema|2
+RIMA|Som igual no fim dos versos|2
+TROVA|Pequeno poema popular de quatro versos|2
+LUNETA|Tubo com lentes para ver de longe|2
+CANTIL|Garrafa de quem anda no mato|3
+MORINGA|Pote de barro que mantém a água fresca|3
+TAMBORIM|Pequeno tambor da escola de samba|3
+CUÍCA|Instrumento de samba que ronca|3
+AGOGÔ|Sino duplo de metal tocado com baqueta|3
+BERIMBAU|Arco de uma corda só da capoeira|3
+REBECA|Violino rústico das festas populares|3
+MARACATU|Cortejo de tambores de Pernambuco|3
+FREVO|Dança de sombrinha do carnaval de Recife|3
+CATIRA|Dança caipira de palmas e sapateado|3
+LUNDU|Antiga dança de origem africana|3
+MAXIXE|Dança de salão antiga e também um legume|3
+CHORINHO|Música instrumental de flauta e cavaquinho|3
+SARAU|Reunião noturna com música e poesia|3
+ALPENDRE|Cobertura na entrada da casa|3
+ASSOALHO|Piso de tábuas|3
+CLARABOIA|Janela no teto que deixa entrar luz|3
+SOLEIRA|Pedra ou madeira embaixo da porta|3
+CUMEEIRA|Parte mais alta do telhado|3
+BEIRAL|Ponta do telhado que avança sobre a parede|3
+CARAMANCHÃO|Cobertura de trepadeiras no jardim|3
+TERREIRO|Pátio de chão batido da fazenda|3
+PAIOL|Depósito de milho na fazenda|3
+ESTRIBO|Apoio do pé de quem monta a cavalo|3
+ARREIO|Conjunto de peças para montar o cavalo|3
+CANGALHA|Armação que leva carga no lombo do burro|3
+CABRESTO|Corda presa na cabeça do cavalo|3
+BERRANTE|Chifre tocado pelo boiadeiro|3
+BOIADEIRO|Conduz o gado pela estrada|3
+TROPEIRO|Viajava com tropas de mulas|3
+CARRO-DE-BOI|Carroça puxada por bois que canta na estrada|3
+CAÇAROLA|Panela funda com cabo|3
+ESCUMADEIRA|Colher furada para tirar a fritura do óleo|3
+ALMOFARIZ|Pilãozinho de socar temperos|3
+LATÃO|Metal dourado das maçanetas antigas|3
+PENTEADEIRA|Móvel com espelho para se arrumar|3
+ARCA|Grande baú antigo|3
+ESCRIVANINHA|Mesa de escrever com gavetas|3
+MATA-BORRÃO|Papel que seca a tinta da caneta|3
+MONÓCULO|Lente para um olho só|3
+ESPARTILHO|Peça antiga que apertava a cintura|3
+ANÁGUA|Saia de baixo do vestido|3
+CEROULA|Calça de baixo de antigamente|3
+SUSPENSÓRIO|Alças que seguram a calça pelos ombros|3
+PONCHO|Capa de lã com abertura para a cabeça|3
+ALPARGATA|Sapato de lona com sola de corda|3
+BOMBACHA|Calça larga do gaúcho|3
+CHIMARRÃO|Mate quente tomado na cuia|3
+CUIA|Vasilha do chimarrão|3
+TERERÊ|Mate gelado do Centro-Oeste|3
+GARAPA|Caldo de cana|3
+MELADO|Calda grossa de cana|3
+ESTALACTITE|Pingente de pedra no teto da caverna|3
+PLANÍCIE|Terreno extenso e plano|3
+PENHASCO|Rocha alta e íngreme|3
+DESFILADEIRO|Passagem estreita entre montanhas|3
+CORREDEIRA|Trecho de rio com água rápida|3
+NASCENTE|Lugar onde o rio começa|3
+AFLUENTE|Rio que deságua em outro|3
+CÓRREGO|Riacho estreito|3
+BREJO|Terreno alagado|3
+OÁSIS|Lugar com água no meio do deserto|3
+AURORA|Claridade antes do sol nascer|3
+ARREBOL|Vermelhidão do céu ao nascer ou pôr do sol|3
+GRANIZO|Chuva de pedrinhas de gelo|3
+CALMARIA|Mar sem vento e sem ondas|3
+MARESIA|Cheiro e umidade do mar|3
+QUATI|Animal de focinho longo e cauda listrada|3
+PACA|Roedor grande de pelo pintado|3
+CUTIA|Roedor que enterra sementes na mata|3
+SAGUI|Macaquinho de tufos nas orelhas|3
+BUGIO|Macaco que ronca alto na mata|3
+MICO-LEÃO|Macaquinho dourado da Mata Atlântica|3
+PIRARUCU|Peixe gigante da Amazônia|3
+TAMBAQUI|Peixe redondo dos rios da Amazônia|3
+LAMBARI|Peixinho de rio da pescaria|3
+TRAÍRA|Peixe de rio de muitos dentes|3
+DOURADO|Peixe de rio de escamas cor de ouro|3
+BAGRE|Peixe de bigodes que vive no fundo do rio|3
+LOUVA-A-DEUS|Inseto verde que parece rezar|3
+CORRUÍRA|Passarinho marrom que faz ninho no telhado|3
+CARCARÁ|Gavião do sertão|3
+SOCÓ|Ave pernalta que pesca parada na beira d'água|3
+ALVÍSSARAS|Prêmio dado a quem traz boa notícia|3
+PRENDA|Presente ou habilidade caseira|3
+MEIGUICE|Jeito doce e carinhoso|3
+ALENTO|Ânimo, consolo|3
+BONANÇA|Tempo calmo depois da tempestade|3
+ENLEVO|Encantamento, êxtase|3
+GALANTEIO|Elogio de quem corteja|3
+MACRAMÊ|Trabalho de nós feito com fio|3
+FUXICO|Florzinha de retalho franzido|3
+ESTROFE|Grupo de versos de um poema|3
