@@ -744,3 +744,144 @@ ANDENKEN|Kleines Mitbringsel von einer Reise|3
 PENSION|Kleines Gasthaus zum Übernachten; auch der Ruhestand|3
 GASTHAUS|Hier kann man essen und trinken, oft auf dem Land|2
 AUSFLUG|Kurze Reise für einen Tag|2
+TAFEL|Darauf schreibt der Lehrer mit Kreide|1
+KREIDE|Weißer Stift für die Schultafel|1
+HEFT|Darin schreibt das Schulkind seine Aufgaben|1
+BLEISTIFT|Schreibt grau und lässt sich radieren|1
+RADIERGUMMI|Macht Bleistiftstriche wieder weg|2
+LINEAL|Damit zieht man gerade Striche|2
+FÜLLER|Schreibt mit Tinte|2
+TINTE|Blaue Flüssigkeit im Füller|2
+SCHULRANZEN|Kinder tragen ihn auf dem Rücken zur Schule|2
+ZEUGNIS|Zeigt am Ende des Schuljahres die Noten|2
+PAUSE|Kurze Zeit zum Ausruhen zwischen den Stunden|1
+KLASSE|Gruppe von Schülern im selben Raum|1
+ALPHABET|Alle Buchstaben von A bis Z|2
+BUCHSTABE|Davon hat das Abc sechsundzwanzig|2
+WORT|Mehrere Buchstaben, die etwas bedeuten|1
+SATZ|Mehrere Wörter mit einem Punkt am Ende|1
+GEDICHT|Text mit Reimen, oft auswendig gelernt|2
+MÄRCHEN|Geschichte, die mit „Es war einmal“ beginnt|1
+ROMAN|Langes Buch mit einer erfundenen Geschichte|2
+LEXIKON|Nachschlagewerk von A bis Z|2
+ATLAS|Buch mit vielen Landkarten|2
+GLOBUS|Kugel, die die Erde zeigt|2
+RECHNEN|Plus und minus, mal und geteilt|1
+ZAHL|Eins, zwei oder drei|1
+DREIECK|Form mit drei Ecken|2
+KREIS|Runde Form ohne Ecken|1
+QUADRAT|Viereck mit vier gleichen Seiten|2
+ERDKUNDE|Schulfach über Länder und Landschaften|3
+GESCHICHTE|Schulfach über frühere Zeiten; auch eine Erzählung|2
+BIOLOGIE|Lehre von Pflanzen und Tieren|3
+CHEMIE|Lehre von den Stoffen, mit Versuchen im Labor|3
+PHYSIK|Lehre von Kraft, Licht und Strom|3
+UNIVERSITÄT|Hochschule für Studenten|3
+BÜCHEREI|Hier leiht man Bücher aus|2
+KINDERGARTEN|Hier spielen die Kleinen, bevor sie zur Schule gehen|2
+RENTE|Geld, das man im Alter bekommt|2
+FREUDE|Gefühl, wenn etwas Schönes passiert|1
+GLÜCK|Bringt ein vierblättriges Kleeblatt|1
+LIEBE|Gefühl zwischen zwei Menschen, die sich mögen|1
+LACHEN|Tut man, wenn etwas lustig ist|1
+LÄCHELN|Freundlicher Ausdruck mit dem Mund|1
+HOFFNUNG|Glaube daran, dass alles gut wird|2
+STOLZ|Gefühl nach einer guten Leistung|2
+MUT|Den braucht man, um etwas Schwieriges zu wagen|2
+GEDULD|Die braucht man beim Warten|2
+DANKBARKEIT|Gefühl, wenn einem jemand geholfen hat|3
+SEHNSUCHT|Starkes Verlangen nach etwas Fernem|3
+HEIMWEH|Gefühl, wenn man sein Zuhause vermisst|3
+FERNWEH|Lust, in die weite Welt zu reisen|3
+STAUNEN|Gefühl beim Anblick von etwas Wunderbarem|3
+NEUGIER|Lust, Neues zu erfahren|2
+VERTRAUEN|Glaube daran, dass man sich auf jemanden verlassen kann|3
+FREUND|Mensch, den man gern hat und dem man vertraut|1
+NACHBAR|Wohnt nebenan|1
+GAST|Besucher, den man einlädt|1
+BESUCH|Wenn jemand vorbeikommt|1
+FEST|Feier mit Musik und Kuchen; auch das Gegenteil von locker|1
+FEIER|Fröhliches Zusammensein zu einem Anlass|1
+JUBILÄUM|Feier nach vielen Jahren, zum Beispiel zur Silberhochzeit|3
+WEIHNACHTEN|Fest mit Tannenbaum und Geschenken|1
+SILVESTER|Letzter Tag im Jahr, mit Feuerwerk|2
+KARNEVAL|Zeit mit Kostümen und Umzügen, auch Fasching|2
+ADVENT|Die vier Wochen vor Weihnachten|2
+PFINGSTEN|Fest fünfzig Tage nach Ostern|3
+ERNTEDANK|Fest im Herbst, bei dem man für die Ernte dankt|3
+FEUERWERK|Bunte Lichter am Nachthimmel zu Silvester|1
+GIRLANDE|Bunte Schmuckkette zum Aufhängen bei Festen|3
+LUFTBALLON|Bunte Hülle, mit Luft aufgeblasen|1
+LATERNE|Leuchtet beim Umzug am Martinstag|2
+KRANZ|Ring aus Zweigen, im Advent mit vier Kerzen|2
+SCHLEIFE|Wird aus einem Band gebunden, schmückt Geschenke|2
+DÄMMERUNG|Zeit zwischen Tag und Nacht|3
+MORGENROT|Rötlicher Himmel bei Sonnenaufgang|3
+TAU|Feine Tropfen auf dem Gras am Morgen|2
+RAUREIF|Weißer Eisbelag an Zweigen im Winter|3
+GLATTEIS|Rutschige Eisschicht auf der Straße|2
+SCHAUER|Kurzer Regen|2
+NIESELREGEN|Feiner, leichter Regen|3
+WETTER|Sonne, Regen oder Schnee|1
+KLIMA|Das Wetter über viele Jahre an einem Ort|3
+BRISE|Leichter, angenehmer Wind am Meer|3
+ORKAN|Allerstärkster Sturm|3
+DÜRRE|Lange Zeit ohne Regen|3
+SCHNEEMANN|Figur aus drei Kugeln mit Möhrennase|1
+EISZAPFEN|Hängt im Winter spitz vom Dach|2
+SCHNEEFLOCKE|Kristall aus Eis, der vom Himmel fällt|2
+LAWINE|Schneemassen, die vom Berg rutschen|3
+GLETSCHER|Riesiger Eisstrom in den Bergen|3
+VULKAN|Berg, aus dem Lava strömen kann|2
+QUELLE|Hier kommt das Wasser aus der Erde|2
+BACH|Kleiner Fluss|1
+TEICH|Kleines stehendes Gewässer mit Enten|1
+WASSERFALL|Wasser, das über eine Felskante stürzt|2
+TAL|Liegt zwischen den Bergen|1
+HÜGEL|Kleiner Berg|1
+GIPFEL|Höchster Punkt eines Berges|2
+FELSEN|Großer harter Stein|2
+HÖHLE|Hohlraum im Berg, manchmal mit Tropfsteinen|2
+KÜSTE|Wo das Land ans Meer grenzt|2
+DÜNE|Sandhügel am Strand|2
+WATT|Meeresboden, der bei Ebbe frei liegt|3
+EBBE|Wenn sich das Meer zurückzieht|2
+FLUT|Wenn das Meer wieder steigt|2
+WELLE|Bewegt sich über das Wasser zum Ufer|1
+UFER|Rand eines Flusses oder Sees|2
+MOOR|Nasser, weicher Boden mit Torf|3
+HEIDE|Weite Landschaft mit lila Blüten im Spätsommer|3
+SCHLUCHT|Tiefes, enges Tal|3
+OASE|Grüner Ort mit Wasser in der Wüste|3
+WÜSTE|Heißes, trockenes Land mit viel Sand|2
+DSCHUNGEL|Dichter Regenwald in den Tropen|3
+PLANET|Himmelskörper, der um die Sonne kreist|3
+KOMET|Himmelskörper mit leuchtendem Schweif|3
+GALAXIE|Riesige Ansammlung von Sternen|3
+HORIZONT|Linie, an der Himmel und Erde sich zu treffen scheinen|3
+SCHATTEN|Entsteht, wenn etwas das Licht verdeckt|2
+LICHT|Das Gegenteil von Dunkelheit|1
+FEUER|Brennt heiß und hell|1
+FLAMME|Leuchtet an der Kerze|2
+RAUCH|Steigt aus dem Schornstein|2
+ASCHE|Grauer Rest nach dem Feuer|2
+GLUT|Rot leuchtende Reste im Ofen|3
+FUNKE|Winziges glühendes Teilchen aus dem Feuer|3
+EISEN|Hartes Metall, rostet bei Nässe|2
+KUPFER|Rotbraunes Metall für Kabel|3
+SILBER|Glänzendes Edelmetall, auch für Besteck|2
+GOLD|Gelbes Edelmetall, sehr wertvoll|1
+MESSING|Gelbliches Metall, zum Beispiel für Türklinken|3
+ZINN|Weiches Metall, früher für Becher und Teller|3
+BERNSTEIN|Gelbes versteinertes Harz von der Ostsee|3
+PERLE|Wächst in einer Muschel und wird zu Schmuck|2
+DIAMANT|Härtester Edelstein, funkelt hell|2
+SMARAGD|Grüner Edelstein|3
+RUBIN|Roter Edelstein|3
+SAPHIR|Blauer Edelstein|3
+KRISTALL|Klarer, regelmäßig geformter Stein|3
+MARMOR|Edler Stein, oft weiß, für Statuen|3
+GRANIT|Sehr harter Stein für Treppen und Brunnen|3
+ZIEGEL|Gebrannter roter Stein zum Bauen|2
+BETON|Grauer Baustoff aus Zement, Sand und Wasser|3
+LEHM|Feuchte, klebrige Erde zum Bauen|3
