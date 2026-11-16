@@ -51,7 +51,7 @@ class SolitaireSidewaysUiTest {
             click(Offset(stock.y, height - stock.x))
         }
         // The autosave is written on a background thread: wait for it instead of reading at once.
-        rule.waitUntil(10_000) { load(store)?.waste?.size == 1 }
+        repeat(200) { if (load(store)?.waste?.size != 1) { Thread.sleep(25); rule.waitForIdle() } }
         assertEquals(1, load(store)?.waste?.size)
         store.clear()
     }
