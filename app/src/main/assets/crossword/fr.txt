@@ -297,3 +297,152 @@ SOURCE|Là où naît une rivière|2
 GROTTE|Cavité dans la roche|2
 VOLCAN|Montagne qui crache du feu|2
 DÉSERT|Lieu de sable sans eau|1
+LOUP|Animal sauvage qui hurle à la lune|1
+RENARD|Animal roux et rusé|1
+CERF|Grand animal des bois aux bois sur la tête|2
+BICHE|Femelle du cerf|2
+SANGLIER|Cochon sauvage des forêts|2
+ÉCUREUIL|Petit animal roux qui aime les noisettes|1
+HÉRISSON|Petit animal couvert de piquants|1
+SOURIS|Petit rongeur gris|1
+RAT|Rongeur plus gros que la souris|1
+COCHON|Animal rose de la ferme|1
+CHÈVRE|Animal de ferme qui donne un fromage|1
+ÂNE|Animal aux longues oreilles qui brait|1
+COQ|Chante le matin à la ferme|1
+DINDE|Volaille servie à Noël|1
+OIE|Grand oiseau blanc de la ferme|1
+PIGEON|Oiseau gris des places de la ville|1
+MOINEAU|Petit oiseau brun très commun|2
+MERLE|Oiseau noir au bec jaune|2
+CORBEAU|Grand oiseau noir|2
+AIGLE|Grand oiseau de proie|1
+CYGNE|Oiseau blanc au long cou|2
+HIRONDELLE|Oiseau qui annonce le printemps|2
+PERROQUET|Oiseau coloré qui peut parler|1
+PINGOUIN|Oiseau noir et blanc du froid|1
+MOUETTE|Oiseau blanc du bord de mer|2
+PAON|Oiseau à la queue en éventail|2
+ROUGE-GORGE|Petit oiseau à la poitrine orange|2
+CIGOGNE|Oiseau qui apporte les bébés, dit-on|2
+DAUPHIN|Mammifère marin très joueur|1
+BALEINE|Plus grand animal de la mer|1
+REQUIN|Poisson aux dents pointues|1
+CRABE|Marche de côté sur la plage|1
+HOMARD|Crustacé rouge une fois cuit|2
+CREVETTE|Petit crustacé rose|1
+HUÎTRE|Coquillage qui cache parfois une perle|2
+MOULE|Coquillage noir servi avec des frites|1
+ESCARGOT|Avance lentement avec sa coquille|1
+GRENOUILLE|Petit animal vert qui saute|1
+SERPENT|Reptile sans pattes|1
+LÉZARD|Petit reptile qui aime le soleil|2
+CROCODILE|Grand reptile aux dents pointues|1
+ZÈBRE|Cheval rayé noir et blanc|1
+OURSIN|Boule de piquants au fond de la mer|3
+KANGOUROU|Animal sauteur avec une poche|1
+CHAMEAU|Animal du désert à deux bosses|1
+GORILLE|Le plus grand des singes|2
+PANDA|Ours noir et blanc qui mange du bambou|1
+FOURMI|Petit insecte travailleur|1
+MOUCHE|Insecte qui bourdonne en été|1
+COCCINELLE|Insecte rouge à points noirs|1
+LIBELLULE|Insecte aux ailes fines près de l'eau|2
+GRILLON|Insecte qui chante la nuit|2
+CIGALE|Insecte qui chante en Provence|2
+ARAIGNÉE|Tisse sa toile|1
+VER|Petit animal qui vit dans la terre|1
+CHENILLE|Deviendra papillon|2
+GUÊPE|Insecte jaune et noir qui pique|2
+TRUITE|Poisson de rivière|2
+SAUMON|Poisson rose qui remonte les rivières|1
+THON|Gros poisson en boîte|1
+SARDINE|Petit poisson en boîte|1
+MORUE|Poisson salé de la brandade|2
+BOULANGER|Fait le pain|1
+BOUCHER|Vend la viande|1
+FACTEUR|Apporte le courrier|1
+POMPIER|Éteint les incendies|1
+PAYSAN|Travaille la terre|1
+FERMIER|Élève des animaux|1
+CUISINIER|Prépare les repas|1
+COIFFEUR|Coupe les cheveux|1
+DENTISTE|Soigne les dents|1
+MAÎTRE|Enseigne aux enfants|1
+PROFESSEUR|Enseigne au collège|1
+JARDINIER|Entretient les plantes|1
+PÊCHEUR|Attrape les poissons|1
+MAÇON|Construit les murs|2
+MENUISIER|Travaille le bois|2
+PLOMBIER|Répare les tuyaux|2
+PEINTRE|Fait des tableaux|1
+COUTURIÈRE|Coud les vêtements|2
+PHARMACIEN|Vend les médicaments|2
+NOTAIRE|Rédige les actes officiels|3
+VÉTÉRINAIRE|Soigne les animaux|2
+ÉPICIER|Tient une petite boutique de quartier|2
+FLEURISTE|Vend des bouquets|1
+PÂTISSIER|Fait les gâteaux|2
+CHARCUTIER|Vend le jambon et le saucisson|2
+FROMAGER|Vend le camembert|3
+BERGER|Garde les moutons|2
+MEUNIER|Fait la farine au moulin|3
+FORGERON|Travaille le fer chaud|3
+CORDONNIER|Répare les chaussures|3
+HORLOGER|Répare les montres|3
+VIGNERON|Cultive la vigne|3
+APICULTEUR|Élève des abeilles|3
+LIBRAIRE|Vend des livres|2
+MARTEAU|Outil pour frapper les clous|1
+CLOU|Pointe de métal|1
+VIS|Se tourne avec un tournevis|2
+TOURNEVIS|Outil pour serrer les vis|2
+SCIE|Outil pour couper le bois|1
+PINCE|Outil pour saisir|2
+PELLE|Outil pour creuser|1
+RÂTEAU|Outil pour ramasser les feuilles|2
+ARROSOIR|Pour donner de l'eau aux fleurs|1
+BROUETTE|Petit chariot à une roue|2
+ÉCHELLE|Pour monter sur le toit|1
+CORDE|Pour attacher ou sauter|1
+CISEAUX|Pour couper le papier|1
+AIGUILLE|Pour coudre|1
+FIL|Se passe dans le chas|1
+BOUTON|Ferme la chemise|1
+PINCEAU|Outil du peintre|2
+TENAILLES|Outil pour arracher les clous|3
+ÉTABLI|Table de travail du menuisier|3
+RABOT|Outil pour aplanir le bois|3
+SÉCATEUR|Ciseaux du jardinier|2
+BINETTE|Petit outil pour désherber|3
+PIOCHE|Outil pour casser la terre dure|2
+ENCLUME|Bloc de fer du forgeron|3
+CHEMISE|Vêtement à col et boutons|1
+PANTALON|Vêtement pour les jambes|1
+JUPE|Vêtement de femme sous la taille|1
+PULL|Vêtement chaud en laine|1
+VESTE|Se porte sur la chemise|1
+CHAUSSETTE|Se met dans la chaussure|1
+ÉCHARPE|Tient le cou au chaud|1
+GANT|Habille la main|1
+BONNET|Chapeau de laine|1
+CRAVATE|Se noue au cou des messieurs|1
+CEINTURE|Tient le pantalon|1
+PYJAMA|Se porte pour dormir|1
+PANTOUFLE|Chaussure de maison|1
+BOTTE|Chaussure montante|1
+SANDALE|Chaussure ouverte de l'été|1
+GILET|Vêtement sans manches ou à boutons|2
+CHÂLE|Se pose sur les épaules|2
+TRICOT|Ouvrage fait aux aiguilles|2
+BÉRET|Chapeau plat et rond|2
+PEIGNOIR|Robe légère du matin, après le bain|2
+IMPERMÉABLE|Manteau qui protège de la pluie|2
+MOUCHOIR|Pour se moucher|1
+POCHE|On y met les mains|1
+COL|Haut de la chemise|2
+MANCHE|Couvre le bras|1
+FOULARD|Carré de soie au cou|2
+BRETELLES|Tiennent le pantalon par les épaules|2
+SABOT|Chaussure en bois|2
+CANOTIER|Chapeau de paille plat|3
