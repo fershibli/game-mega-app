@@ -722,3 +722,132 @@ PETAL|Colored part of a flower|2
 THORN|Sharp point on a rose stem|2
 BLOSSOM|Flower on a fruit tree|2
 ACORN|Seed of the oak|3
+JOY|Great happiness|1
+HOPE|Wishing for something good|1
+CALM|Quiet and peaceful|1
+PROUD|Pleased with what you did|2
+BRAVE|Not afraid|1
+KIND|Gentle and caring|1
+GENTLE|Soft and tender|2
+CHEERFUL|Bright and in good spirits|2
+GRATEFUL|Full of thanks|2
+PATIENT|Able to wait calmly|2
+CURIOUS|Eager to know more|2
+EAGER|Keen to do something|3
+CONTENT|Quietly satisfied|3
+DELIGHT|Great pleasure|2
+WONDER|Feeling of amazement|2
+COURAGE|Bravery in hard times|2
+PATIENCE|A virtue of waiting calmly|3
+KINDNESS|Being nice to others|2
+LAUGHTER|Sound of people having fun|2
+NOSTALGIA|Fond longing for the past|3
+SERENE|Calm and untroubled|3
+JOLLY|Merry and cheerful|3
+MERRY|Happy and full of fun|2
+CHARMING|Very pleasant and attractive|3
+GRACEFUL|Moving with elegance|3
+HUMBLE|Modest, not proud|3
+LOYAL|Faithful to a friend|3
+HONEST|Always tells the truth|2
+POLITE|Has good manners|2
+CLEVER|Quick to learn|2
+WISE|Knows a lot from experience|2
+QUIET|Making little noise|1
+BRIGHT|Full of light|1
+WARM|Not cold|1
+SOFT|Not hard|1
+SMOOTH|Not rough|2
+SHINY|Gleams in the light|2
+FRESH|Just picked or made|2
+COZY|Warm and snug|2
+SNUG|Cozy and comfortable|3
+TIDY|Neat and in order|2
+FANCY|Elegant and decorated|2
+ANCIENT|Very very old|3
+TINY|Very small|1
+HUGE|Very big|1
+EMPTY|Nothing inside|2
+HEAVY|Hard to lift|1
+CRISP|Firm and crunchy|3
+FRAGRANT|Smelling sweet|3
+VELVET|Soft fabric with a short pile|3
+SILK|Smooth fabric made by worms|2
+COTTON|Soft fabric from a plant|1
+WOOL|Comes from a sheep|1
+LINEN|Cloth from the flax plant|3
+DENIM|Blue fabric of jeans|3
+LACE|Delicate fabric full of holes|2
+THREAD|Thin strand for sewing|2
+NEEDLE|Has an eye but cannot see|2
+THIMBLE|Protects your finger when sewing|3
+BOBBIN|Spool for thread in a machine|3
+YARN|Thread for knitting|2
+QUILT|Bed cover made of patches|2
+PATTERN|Design that repeats|2
+EMBROIDERY|Decorative stitching|3
+CROCHET|Needlework done with a hook|3
+SCISSORS|Cutting tool with two blades|1
+RIBBON|Strip of fabric for a bow|2
+BROOCH|Pin worn on a coat|3
+NECKLACE|Jewelry worn around the neck|1
+BRACELET|Jewelry worn on the wrist|2
+EARRING|Jewelry for the ear|2
+RING|Worn on a finger|1
+PEARL|Gem found in an oyster|2
+DIAMOND|Hardest and most sparkly gem|2
+EMERALD|Green gem|3
+RUBY|Red gem|3
+SAPPHIRE|Blue gem|3
+LOCKET|Pendant that holds a photo|3
+WATCH|Clock on your wrist|1
+WALLET|Holds your money and cards|2
+PURSE|Small bag for coins|2
+HANDBAG|Bag carried by a lady|2
+CANE|Stick that helps you walk|2
+PARASOL|Umbrella for shade|3
+SHAWL|Wrap for the shoulders|3
+CARDIGAN|Knitted top with buttons|3
+BLOUSE|Woman's shirt|2
+OVERCOAT|Long warm coat|3
+RAINCOAT|Waterproof coat|2
+BONNET|Hat tied under the chin|3
+BERET|Flat round hat|3
+SANDAL|Open shoe for summer|2
+CLOGS|Wooden shoes|3
+MITTEN|Glove without fingers|2
+TROUSERS|Pants with two legs|2
+SHORTS|Short trousers for summer|1
+LAUGH|Ha ha ha|1
+SING|Use your voice for music|1
+READ|Look at words in a book|1
+WRITE|Put words on paper|1
+BAKE|Make bread in the oven|1
+SWIM|Move through water|1
+WALK|Move on foot|1
+JUMP|Leap into the air|1
+CLIMB|Go up a ladder|1
+KNIT|Make a sweater with needles|2
+SEW|Stitch with a needle|2
+PAINT|Color with a brush|1
+DRAW|Make a picture with a pencil|1
+PLANT|Put a seed in the soil|1
+WATERING|Giving plants a drink|2
+GARDENING|Hobby of growing flowers|2
+WHISPER|Speak very softly|2
+WANDER|Walk with no aim|2
+STROLL|Slow, relaxed walk|3
+GIGGLE|Silly little laugh|3
+CHUCKLE|Quiet laugh|3
+SNOOZE|Short nap|3
+NAP|Short sleep in the day|1
+HUG|Embrace with both arms|1
+KISS|Touch with the lips|1
+SHARE|Give part to others|2
+VISIT|Go to see someone|1
+REMEMBER|Keep in mind|2
+IMAGINE|Picture in your mind|2
+CELEBRATE|Mark a special day with a party|2
+WELCOME|Greeting for a guest|2
+THANK|Say you are grateful|2
+GREET|Say hello|2
