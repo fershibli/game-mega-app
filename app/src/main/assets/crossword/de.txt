@@ -593,3 +593,154 @@ STRAUCH|Kleine Pflanze mit vielen Zweigen, auch Busch|2
 HECKE|Reihe von Sträuchern als Zaun|2
 BEET|Fläche im Garten für Blumen oder Gemüse|2
 KOMPOST|Haufen aus Gartenabfällen, wird zu Erde|3
+ZAHNARZT|Kümmert sich um gesunde Zähne|1
+BRIEFTRÄGER|Bringt jeden Tag die Post|1
+FEUERWEHR|Kommt mit Blaulicht und löscht das Feuer|1
+FISCHER|Fährt mit dem Boot hinaus und wirft Netze aus|1
+SCHMIED|Formt glühendes Eisen auf dem Amboss|2
+SCHUSTER|Repariert Schuhe|2
+TÖPFER|Formt Krüge und Schalen aus Ton|2
+MAURER|Baut Wände aus Ziegeln|2
+ZIMMERMANN|Baut den Dachstuhl aus Holz|2
+DACHDECKER|Legt die Ziegel auf das Dach|2
+KLEMPNER|Repariert Rohre und Wasserhähne|2
+ELEKTRIKER|Verlegt Kabel und Steckdosen|2
+GLASER|Setzt neue Scheiben in Fenster ein|3
+KAMINKEHRER|Fegt den Schornstein und soll Glück bringen|3
+UHRMACHER|Repariert Uhren mit feinem Werkzeug|2
+GOLDSCHMIED|Fertigt Ringe und Ketten aus Edelmetall|3
+KONDITOR|Backt feine Torten und Pralinen|2
+WINZER|Baut Wein an|2
+IMKER|Hält Bienen und erntet Honig|2
+SCHÄFER|Hütet die Schafe mit seinem Hund|2
+JÄGER|Geht im Wald auf die Pirsch|2
+MÜLLER|Mahlt das Korn zu Mehl|2
+FAHRER|Lenkt einen Bus oder ein Taxi|1
+KAPITÄN|Führt das Kommando auf dem Schiff|1
+MATROSE|Seemann auf einem Schiff|2
+LOTSE|Führt Schiffe sicher in den Hafen|3
+SCHAFFNER|Kontrolliert im Zug die Fahrkarten|2
+VERKÄUFER|Bedient die Kunden im Laden|1
+KASSIERER|Nimmt an der Kasse das Geld entgegen|2
+BIBLIOTHEKAR|Verleiht in der Bücherei die Bücher|3
+ANWALT|Vertritt Menschen vor Gericht|2
+NOTAR|Beglaubigt wichtige Verträge|3
+APOTHEKER|Gibt in der Apotheke Arznei aus|2
+TIERARZT|Hilft kranken Haustieren|1
+HEBAMME|Hilft bei der Geburt eines Babys|2
+ARCHITEKT|Zeichnet die Pläne für ein Haus|2
+INGENIEUR|Plant Maschinen und Brücken|2
+SEKRETÄRIN|Schreibt Briefe und führt den Kalender im Büro|2
+PFARRER|Hält in der Kirche die Predigt|2
+KÜSTER|Läutet die Glocken und pflegt die Kirche|3
+MUSIKER|Spielt ein Instrument, oft in einer Kapelle|1
+DIRIGENT|Leitet mit dem Taktstock das Orchester|2
+SCHAUSPIELER|Spielt Rollen im Theater und im Film|1
+TÄNZERIN|Bewegt sich anmutig zur Musik auf der Bühne|2
+ZAUBERER|Zieht ein Kaninchen aus dem Hut|1
+CLOWN|Bringt im Zirkus alle zum Lachen|1
+ARTIST|Zeigt im Zirkus Kunststücke am Trapez|3
+JONGLEUR|Wirft im Zirkus viele Bälle zugleich in die Luft|3
+DICHTER|Schreibt Gedichte|2
+AUTOR|Hat ein Buch geschrieben|2
+REPORTER|Berichtet für die Zeitung oder das Fernsehen|2
+FOTOGRAF|Macht Bilder mit der Kamera|1
+BILDHAUER|Meißelt Figuren aus Stein|3
+KÜNSTLER|Malt, formt oder gestaltet Kunstwerke|2
+ORCHESTER|Viele Musiker, die zusammen spielen|1
+KAPELLE|Kleine Kirche; auch eine Musikgruppe mit Blasmusik|2
+POSAUNE|Blasinstrument mit Zug|2
+TUBA|Großes, tiefes Blechblasinstrument|2
+KLARINETTE|Holzblasinstrument mit schwarzem Rohr|2
+OBOE|Holzblasinstrument mit Doppelrohrblatt|3
+FAGOTT|Tiefes Holzblasinstrument, lang und gebogen|3
+SAXOFON|Gebogenes Blasinstrument, beliebt im Jazz|2
+CELLO|Großes Streichinstrument, das man zwischen die Knie stellt|2
+BRATSCHE|Streichinstrument, etwas größer als die Geige|3
+KONTRABASS|Größtes Streichinstrument im Orchester|3
+ZITHER|Saiteninstrument, das man auf den Tisch legt, typisch für die Alpen|3
+AKKORDEON|Instrument mit Balg und Tasten, auch Schifferklavier|2
+BLOCKFLÖTE|Einfaches Blasinstrument, das viele Kinder lernen|2
+XYLOFON|Instrument mit Holzplättchen, die man anschlägt|3
+TAMBURIN|Kleine Handtrommel mit Schellen|3
+BECKEN|Zwei Metallscheiben, die man zusammenschlägt; auch im Schwimmbad|2
+GLOCKE|Läutet im Kirchturm|1
+MELODIE|Die Folge von Tönen in einem Lied|1
+TAKT|Gibt in der Musik den Rhythmus vor|2
+TON|Einzelner Klang; auch Erde zum Töpfern|1
+STIMME|Damit singt und spricht man|1
+GESANG|Musik, die mit der Stimme gemacht wird|2
+ARIE|Sologesang in der Oper|3
+OPERETTE|Heiteres Bühnenstück mit Musik und Tanz|3
+SINFONIE|Großes Werk für ein Orchester|3
+SONATE|Musikstück, zum Beispiel für Klavier|3
+KANON|Lied, bei dem alle nacheinander einsetzen|3
+POLKA|Flotter Tanz im Zweivierteltakt|3
+TANGO|Leidenschaftlicher Tanz aus Argentinien|2
+BALLETT|Tanz auf der Bühne, oft auf Spitzenschuhen|2
+SCHLAGER|Eingängiges Lied, das viele mitsingen|2
+VOLKSLIED|Altes Lied, das jeder kennt|2
+NOTENBLATT|Darauf steht die Musik geschrieben|2
+FUSSBALL|Elf gegen elf, rund ist der Ball|1
+TENNIS|Sport mit Schläger, Netz und gelbem Ball|1
+SCHWIMMEN|Sich im Wasser fortbewegen|1
+WANDERN|Lange zu Fuß durch die Natur gehen|1
+RADFAHREN|Sich auf zwei Rädern fortbewegen|1
+KEGELN|Mit einer Kugel neun Figuren umwerfen|2
+TURNEN|Sport am Barren und am Reck|2
+REITEN|Auf einem Pferd sitzen und es lenken|1
+SEGELN|Mit dem Wind über das Wasser fahren|2
+RUDERN|Ein Boot mit Riemen vorwärtsbewegen|2
+ANGELN|Mit Rute und Haken Fische fangen|1
+GOLF|Sport, bei dem ein kleiner Ball ins Loch muss|2
+SCHACH|Brettspiel mit König, Dame und Springer|1
+SKAT|Kartenspiel zu dritt|2
+DOMINO|Spiel mit Steinen voller Punkte, die man aneinanderlegt|2
+PUZZLE|Bild aus vielen kleinen Teilen zum Zusammensetzen|1
+MURMEL|Kleine bunte Glaskugel zum Spielen|2
+DRACHEN|Fliegt im Herbstwind an einer Schnur|1
+SCHAUKEL|Darauf schwingt man im Garten hin und her|1
+WIPPE|Spielgerät, auf dem zwei Kinder auf und ab gehen|2
+RUTSCHE|Darauf saust man auf dem Spielplatz hinunter|1
+PUPPE|Spielzeug, das wie ein kleiner Mensch aussieht|1
+TEDDYBÄR|Kuscheltier aus Plüsch|1
+KREISEL|Spielzeug, das sich lange dreht|2
+SCHLITTEN|Damit rodelt man im Schnee den Berg hinunter|1
+SKI|Zwei lange Bretter für den Schnee|1
+POKAL|Siegerpreis aus Metall mit zwei Henkeln|2
+MEDAILLE|Gold, Silber oder Bronze für die Besten|2
+SIEGER|Wer das Rennen gewinnt|1
+TRAINER|Bereitet die Mannschaft auf das Spiel vor|2
+MANNSCHAFT|Spieler, die zusammen antreten|2
+STADION|Großer Platz mit Tribünen für Sportfeste|2
+TURNHALLE|Raum für den Sportunterricht|2
+SPRUNG|Hoch oder weit, beim Sport|2
+LAUF|Schnelles Rennen über eine Strecke|2
+MARATHON|Langer Lauf über mehr als vierzig Kilometer|2
+WETTBEWERB|Hier messen sich die Teilnehmer|3
+OLYMPIA|Die großen Spiele mit den fünf Ringen|2
+ZIEL|Hier endet das Rennen|1
+START|Hier beginnt das Rennen|1
+PFIFF|Damit beendet der Schiedsrichter das Spiel|3
+REISE|Fahrt an einen fernen Ort|1
+KOFFER|Darin packt man die Kleider für die Reise|1
+RUCKSACK|Tasche, die man auf dem Rücken trägt|1
+FAHRKARTE|Braucht man für den Zug|1
+FLUGZEUG|Fliegt hoch über den Wolken|1
+FLUGHAFEN|Hier starten und landen die Flugzeuge|1
+BOOT|Kleines Wasserfahrzeug|1
+FÄHRE|Bringt Autos und Menschen über den Fluss|2
+STRASSENBAHN|Fährt auf Schienen durch die Stadt|2
+TAXI|Bringt einen gegen Geld schnell ans Ziel|1
+KUTSCHE|Wagen, der von Pferden gezogen wird|2
+WOHNWAGEN|Kleines Haus auf Rädern für den Urlaub|2
+ZELT|Darin schläft man beim Camping|1
+LANDKARTE|Zeigt Straßen, Städte und Flüsse|1
+KOMPASS|Zeigt immer nach Norden|2
+PASS|Ausweis für Reisen; auch ein Weg über die Berge|2
+GEPÄCK|Koffer und Taschen auf der Reise|2
+POSTKARTE|Gruß aus dem Urlaub mit einem Bild|1
+ANDENKEN|Kleines Mitbringsel von einer Reise|3
+PENSION|Kleines Gasthaus zum Übernachten; auch der Ruhestand|3
+GASTHAUS|Hier kann man essen und trinken, oft auf dem Land|2
+AUSFLUG|Kurze Reise für einen Tag|2
