@@ -903,3 +903,131 @@ AZADA|Herramienta para cavar la huerta|3
 HOZ|Herramienta curva para segar|3
 YUNTA|Pareja de bueyes|3
 REBAÑO|Grupo de ovejas|3
+ALACENA|Hueco en la pared con estantes para la vajilla|3
+APARADOR|Mueble del comedor para la vajilla|3
+CÓMODA|Mueble bajo con cajones|3
+MECEDORA|Silla que se balancea|3
+TABURETE|Asiento sin respaldo|3
+BAÚL|Arca grande con tapa|3
+ARCÓN|Caja grande para guardar mantas|3
+BIOMBO|Mampara plegable para separar|3
+PERCHERO|Mueble para colgar abrigos|3
+VITRINA|Mueble con cristales para lucir objetos|3
+CANDELABRO|Sostiene varias velas|3
+QUINQUÉ|Lámpara de aceite con tubo de cristal|3
+BRASERO|Recipiente con ascuas bajo la mesa camilla|3
+BOTIJO|Vasija de barro que mantiene fresca el agua|3
+CÁNTARO|Vasija grande para llevar agua|3
+TINAJA|Vasija enorme de barro|3
+PUCHERO|Olla de barro para el cocido|3
+ALMIREZ|Mortero de metal para machacar|3
+MORTERO|Recipiente para machacar ajos|3
+ESPUMADERA|Cuchara con agujeros para freír|3
+ESCURRIDOR|Deja gotear los platos lavados|3
+JOFAINA|Palangana para lavarse la cara|3
+PALANGANA|Recipiente ancho para lavar|3
+DEDALERA|Planta de flores con forma de dedal|3
+ZAGUÁN|Entrada cubierta de la casa|3
+BUHARDILLA|Habitación bajo el tejado|3
+ALCOBA|Dormitorio antiguo|3
+DESPENSA|Lugar donde se guardan los alimentos|3
+TRASTERO|Cuarto para guardar trastos|3
+LOGIA|Galería abierta con columnas|3
+CELOSÍA|Enrejado de la ventana para ver sin ser visto|3
+CLARABOYA|Ventana en el techo|3
+POSTIGO|Puertecilla de la ventana|3
+ALDABA|Pieza de metal para llamar a la puerta|3
+VERJA|Reja que cierra el jardín|3
+PÉRGOLA|Armazón con plantas trepadoras|3
+GLORIETA|Rincón del jardín con plantas y bancos|3
+ESCALINATA|Escalera exterior amplia|3
+CORNISA|Saliente en lo alto de la fachada|3
+VELETA|Señala de dónde sopla el viento|3
+MANZANILLA|Infusión amarilla para el estómago|3
+POLEO|Hierba de infusión con sabor a menta|3
+TILA|Infusión que calma los nervios|3
+REGALIZ|Raíz dulce que se chupa|3
+BARQUILLO|Galleta fina enrollada|3
+TORRIJA|Pan mojado en leche y frito de Semana Santa|3
+PESTIÑO|Dulce frito con miel|3
+POLVORÓN|Dulce navideño que se deshace|3
+MAZAPÁN|Dulce de almendra y azúcar|3
+MANTECADO|Dulce navideño de manteca|3
+BUÑUELO|Masa frita e hinchada|3
+ROSCÓN|Bollo de Reyes con sorpresa|3
+ENSAIMADA|Bollo mallorquín en espiral|3
+HOJALDRE|Masa de muchas capas finas|3
+ALMÍBAR|Azúcar disuelto en agua al fuego|3
+MEMBRILLO|Dulce de fruta que acompaña al queso|3
+ESCABECHE|Adobo de vinagre para conservar pescado|3
+PISTO|Fritada de pimiento, tomate y calabacín|3
+MIGAS|Pan frito con ajo de los pastores|3
+FABADA|Guiso asturiano de alubias|3
+SALMOREJO|Crema fría de tomate y pan|3
+CALDERETA|Guiso de cordero o de pescado|3
+LACÓN|Brazuelo de cerdo cocido|3
+MORCILLA|Embutido negro de arroz o cebolla|3
+SOBRASADA|Embutido mallorquín para untar|3
+CECINA|Carne curada de vaca|3
+BOQUERÓN|Pescado pequeño en vinagre|3
+BACALAO|Pescado que se vende en salazón|3
+RAPE|Pescado de cabeza enorme|3
+LUBINA|Pescado de piel plateada|3
+DORADA|Pescado con una franja amarilla en la cabeza|3
+LENGUADO|Pescado plano|3
+BERBERECHO|Marisco pequeño de concha estriada|3
+PERCEBE|Marisco que crece en las rocas|3
+NÉCORA|Cangrejo de mar muy sabroso|3
+ALMEJA|Marisco de dos conchas|3
+OSTRA|Puede guardar una perla|3
+CENTOLLO|Cangrejo grande de patas largas|3
+NABO|Raíz blanca del caldo|3
+PUERRO|Hortaliza larga para la crema|3
+APIO|Tallo verde y crujiente para el caldo|3
+RÁBANO|Raíz roja y picante|3
+REMOLACHA|Raíz morada y dulce|3
+ACELGA|Hortaliza de hojas grandes y penca blanca|3
+ALUBIA|Legumbre de la fabada|3
+CHIRIVÍA|Raíz parecida a la zanahoria, pero blanca|3
+ENDIBIA|Cogollo blanco algo amargo|3
+CANÓNIGO|Hojita verde de la ensalada|3
+BERRO|Planta de agua para la ensalada|3
+NÍSPERO|Fruta naranja de primavera con huesos grandes|3
+CHIRIMOYA|Fruta verde de pulpa blanca y pepitas negras|3
+GRANADA|Fruta llena de granos rojos|3
+MEMBRILLERO|Árbol del dulce para el queso|3
+CAQUI|Fruta naranja muy blanda de otoño|3
+DÁTIL|Fruto dulce de la palmera|3
+PIÑÓN|Semilla del pino|3
+BELLOTA|Fruto de la encina|3
+ENCINA|Árbol de las bellotas|3
+ALCORNOQUE|Árbol del corcho|3
+CASTAÑO|Árbol de las castañas|3
+NOGAL|Árbol de las nueces|3
+ROBLE|Árbol de madera dura|3
+HAYA|Árbol de los bosques del norte|3
+OLMO|Árbol de las plazas antiguas|3
+CHOPO|Árbol alto junto al río|3
+SAUCE|Árbol de ramas que cuelgan|3
+ABEDUL|Árbol de corteza blanca|3
+CIPRÉS|Árbol alto y estrecho de forma de llama|3
+ABETO|Árbol que se adorna en Navidad|3
+ACEBO|Planta de hojas con pinchos y bolitas rojas|3
+MADROÑO|Arbusto de frutos rojos|3
+HIEDRA|Planta que trepa por los muros|3
+MIMBRE|Rama flexible para hacer cestas|3
+JUNCO|Planta de tallo largo de la orilla|3
+HELECHO|Planta de sombra sin flores|3
+MUSGO|Alfombra verde sobre las piedras|3
+JAZMÍN|Flor blanca muy perfumada|3
+LAVANDA|Planta de flores moradas y aroma suave|3
+AMAPOLA|Flor roja del trigal|3
+LIRIO|Flor alta morada o blanca|3
+AZUCENA|Flor blanca muy olorosa|3
+GERANIO|Flor de los balcones|3
+HORTENSIA|Flor en bolas azules o rosas|3
+VIOLETA|Flor pequeña de color morado|3
+CAMELIA|Flor de invierno de pétalos perfectos|3
+GLADIOLO|Flor en espiga alta|3
+DALIA|Flor de muchos pétalos|3
+NENÚFAR|Planta que flota en el estanque|3
