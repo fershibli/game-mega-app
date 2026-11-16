@@ -447,3 +447,141 @@ SUNRISE|When the sun comes up|1
 HORIZON|Where the sky meets the land|3
 GALAXY|Huge group of stars|3
 ORCHARD|Field of fruit trees|3
+HEAD|Top of the body, where the brain is|1
+HAIR|Grows on your head|1
+FACE|Front of your head|1
+CHEEK|Side of the face, often kissed|1
+CHIN|Bottom of your face|1
+LIP|Part of the mouth you pucker|1
+TOOTH|White and used for chewing|1
+TONGUE|Helps you taste food|1
+NECK|Joins your head to your body|1
+SHOULDER|Where your arm meets your body|1
+ARM|Limb with a hand at the end|1
+ELBOW|Joint in the middle of your arm|1
+WRIST|Where you wear a watch|1
+FINGER|One of five on a hand|1
+THUMB|Short, thick finger|1
+KNEE|Joint in the middle of your leg|1
+LEG|Limb you walk on|1
+FOOT|You stand on it|1
+TOE|One of five on a foot|1
+ANKLE|Joint above the foot|2
+HEEL|Back of the foot|2
+EYEBROW|Line of hair above the eye|2
+EYELASH|Tiny hair on the eyelid|2
+FOREHEAD|Part of the face above the eyes|2
+NOSTRIL|Opening in the nose|3
+PALM|Inside of the hand|2
+KNUCKLE|Joint of a finger|3
+SKIN|Covers your whole body|1
+BONE|Hard part of the skeleton|1
+MUSCLE|Makes your body move|2
+LUNG|Organ you breathe with|2
+BRAIN|You think with it|1
+BEARD|Hair on a man's chin|1
+MUSTACHE|Hair above a man's lip|2
+DIMPLE|Little dent in a smiling cheek|3
+FRECKLE|Small brown spot on the skin|3
+BAKER|Makes bread and cakes|1
+FARMER|Grows crops and keeps animals|1
+COOK|Prepares meals|1
+CHEF|Head cook in a restaurant|2
+WAITER|Brings food to your table|1
+PILOT|Flies a plane|1
+SAILOR|Works on a ship|1
+DENTIST|Takes care of your teeth|1
+PAINTER|Artist who uses a brush|1
+SINGER|Performs songs|1
+DANCER|Moves to music on stage|1
+ACTOR|Plays a role in a film|1
+WRITER|Puts stories on paper|1
+POSTMAN|Brings the mail|1
+TAILOR|Makes and mends clothes|2
+BUTCHER|Sells meat|2
+GROCER|Sells food in a shop|3
+FLORIST|Sells flowers|2
+PLUMBER|Fixes pipes and taps|2
+CARPENTER|Works with wood|2
+GARDENER|Takes care of plants|1
+JUDGE|Decides cases in court|2
+LAWYER|Gives legal advice|2
+BANKER|Works with money in a bank|2
+CASHIER|Takes your money at the till|2
+DRIVER|Steers a car or bus|1
+MECHANIC|Repairs cars|2
+ENGINEER|Designs bridges and machines|2
+SCIENTIST|Does experiments in a lab|2
+POET|Writes verses that rhyme|2
+AUTHOR|Person who wrote a book|2
+EDITOR|Checks and corrects a text|3
+LIBRARIAN|Looks after the books on loan|2
+SECRETARY|Answers the phone and types letters|2
+JEWELER|Makes rings and necklaces|3
+COBBLER|Repairs shoes|3
+POTTER|Shapes clay on a wheel|3
+WEAVER|Makes cloth on a loom|3
+SHEPHERD|Looks after a flock|2
+FISHERMAN|Catches fish for a living|2
+BARBER|Cuts men's hair|2
+ARCHITECT|Draws plans for buildings|3
+SCULPTOR|Carves statues|3
+CLERK|Office worker who keeps records|3
+VIOLIN|Instrument played with a bow|1
+DRUM|Instrument you beat|1
+FLUTE|Wind instrument held sideways|2
+TRUMPET|Brass instrument with three valves|2
+HARP|Large instrument with many strings|2
+CELLO|Big string instrument played sitting down|2
+CLARINET|Black wind instrument with a reed|3
+ACCORDION|Squeezebox with keys|3
+SAXOPHONE|Curved brass horn of jazz|3
+TROMBONE|Brass instrument with a slide|3
+BANJO|Round string instrument of country music|3
+ORGAN|Big keyboard instrument in a church|2
+HARMONICA|Mouth organ|3
+TAMBOURINE|Small drum with jingles|3
+XYLOPHONE|Instrument of wooden bars and mallets|3
+CHOIR|Group of singers|2
+BAND|Group that plays music|1
+ORCHESTRA|Large group of musicians|2
+CONCERT|Live musical show|2
+OPERA|Story told in song on a stage|2
+MELODY|Tune of a song|2
+RHYTHM|The beat of music|3
+LULLABY|Gentle song to help a baby sleep|3
+WALTZ|Ballroom dance in three-four time|3
+TANGO|Passionate dance from Argentina|3
+BALLET|Dance on the tips of the toes|2
+SOCCER|Football with a round ball and goals|1
+BASEBALL|Bat and ball game with four bases|1
+BOWLING|Knock down ten pins|2
+SWIMMING|Moving through water with strokes|1
+CYCLING|Riding a bike for sport|2
+RUNNING|Moving fast on foot|1
+SKIING|Gliding down snowy slopes|2
+FISHING|Hobby with a rod and line|1
+HIKING|Long walks in the countryside|2
+CROQUET|Lawn game with mallets and hoops|3
+DARTS|Throwing small arrows at a board|2
+BILLIARDS|Cue game on a green table|3
+BADMINTON|Racket game with a shuttlecock|3
+VOLLEYBALL|Ball game over a high net|2
+BOXING|Sport in a ring with gloves|2
+RUGBY|Game with an oval ball|2
+HOCKEY|Game with sticks and a puck|2
+MARATHON|Very long running race|3
+REFEREE|Makes sure the rules are followed|3
+TROPHY|Cup given to the winner|2
+MEDAL|Gold, silver or bronze prize|2
+TEAM|Group playing together|1
+GOAL|Score in soccer|1
+BALL|Round toy you throw|1
+RACKET|Used to hit a tennis ball|2
+YOGA|Gentle stretches and breathing|2
+DOMINO|Tile with dots, played in a row|2
+BINGO|Number game where you shout when you win|1
+CHECKERS|Board game with red and black pieces|2
+CROSSWORD|Puzzle of clues and squares|2
+RIDDLE|Puzzle question with a clever answer|2
+JIGSAW|Puzzle of many interlocking pieces|2
