@@ -746,3 +746,158 @@ CROUSTILLANT|Qui craque sous la dent|3
 PARFUMÉ|Qui sent bon|2
 SAVOUREUX|Plein de goût|3
 VERMEIL|Rouge vif et doux|3
+VAISSELLE|Assiettes et verres à laver|2
+LOUCHE|Grande cuillère pour servir la soupe|2
+PASSOIRE|Sert à égoutter les pâtes|2
+POÊLE|Pour faire cuire les crêpes|2
+COCOTTE|Marmite en fonte|2
+MARMITE|Grand récipient pour cuire|2
+THÉIÈRE|On y fait infuser le thé|2
+CAFETIÈRE|Prépare le café|2
+GRILLE-PAIN|Dore les tartines|2
+FOUET|Pour monter les blancs en neige|2
+ROULEAU|Sert à étaler la pâte|2
+TIROIR|Partie du meuble qui coulisse|2
+BUFFET|Meuble de la salle à manger|2
+COMMODE|Meuble bas à tiroirs|2
+TABOURET|Siège sans dossier|2
+ÉTAGÈRE|Planche pour poser les livres|2
+VERROU|Ferme la porte de l'intérieur|2
+SONNETTE|On l'actionne pour annoncer sa visite|2
+CHEMINÉE|On y fait du feu|2
+RADIATEUR|Chauffe la pièce|2
+VOLET|Ferme la fenêtre de l'extérieur|2
+PLAFOND|Haut de la pièce|2
+PARQUET|Sol en bois|2
+CARRELAGE|Sol en carreaux|2
+PAILLASSON|Pour s'essuyer les pieds|2
+HAIE|Clôture d'arbustes|2
+POTAGER|Jardin des légumes|2
+VERGER|Jardin d'arbres fruitiers|2
+SERRE|Abri vitré pour les plantes|2
+PELOUSE|Herbe tondue du jardin|2
+TONDEUSE|Coupe l'herbe du jardin|2
+NICHOIR|Petite maison pour les oiseaux|2
+CLÔTURE|Entoure le jardin|2
+PORTAIL|Grande porte du jardin|2
+BANC|Siège pour plusieurs personnes|2
+HAMAC|Lit suspendu entre deux arbres|2
+PARASOL|Protège du soleil sur la plage|2
+CITROUILLE|Grosse courge orange|2
+ARTICHAUT|Légume dont on mange le cœur|2
+ASPERGE|Légume en tige du printemps|2
+BETTERAVE|Légume rouge|2
+CÉLERI|Légume en branches ou en boule|2
+ENDIVE|Légume blanc un peu amer|2
+FENOUIL|Légume au goût d'anis|3
+POTIRON|Grosse courge pour la soupe|2
+CHAMPIGNON|Pousse dans les bois en automne|2
+NOISETTE|Petit fruit de l'écureuil|2
+NOIX|Fruit à coque dur|2
+CHÂTAIGNE|Se grille en automne|2
+FIGUE|Fruit violet du sud|2
+DATTE|Fruit du palmier|2
+MANGUE|Fruit tropical orange|2
+GROSEILLE|Petite baie rouge en grappe|2
+FRAMBOISE|Petit fruit rouge et velouté|2
+MYRTILLE|Petite baie bleue|2
+MÛRE|Fruit noir de la ronce|2
+CASSIS|Petite baie noire|3
+MIRABELLE|Petite prune jaune de Lorraine|3
+CLÉMENTINE|Petit agrume de l'hiver|2
+PAMPLEMOUSSE|Gros agrume amer|2
+RHUBARBE|Tige acide pour les tartes|3
+COING|Fruit jaune pour la gelée|3
+OMELETTE|Œufs battus et cuits|2
+QUICHE|Tarte salée aux lardons|2
+GRATIN|Plat doré au four|2
+RAGOÛT|Plat de viande mijotée|2
+POT-AU-FEU|Bœuf et légumes bouillis|2
+RATATOUILLE|Légumes du sud mijotés|2
+TAPENADE|Purée d'olives de Provence|3
+CASSOULET|Haricots et confit du sud-ouest|3
+CHOUCROUTE|Chou et saucisses d'Alsace|2
+FONDUE|Fromage fondu partagé|2
+RACLETTE|Fromage fondu avec des pommes de terre|2
+TARTINE|Tranche de pain beurrée|2
+SANDWICH|Pain garni|2
+BRIOCHE|Pain doux et beurré|2
+MADELEINE|Petit gâteau en forme de coquille|2
+PROFITEROLE|Petit chou glacé nappé de chocolat|3
+MERINGUE|Blanc d'œuf sucré cuit|2
+MOUSSE|Dessert léger au chocolat|2
+COMPOTE|Fruits cuits écrasés|2
+CARAMEL|Sucre fondu et doré|2
+VANILLE|Gousse parfumée|2
+CANNELLE|Épice en bâton|2
+MUSCADE|Noix râpée en cuisine|3
+SAFRAN|Épice dorée et précieuse|3
+THYM|Herbe de Provence|2
+LAURIER|Feuille de la sauce|2
+ROMARIN|Herbe aromatique en aiguilles|3
+BASILIC|Herbe du pistou|2
+CIBOULETTE|Herbe fine en brins|2
+ESTRAGON|Herbe aromatique de la béarnaise|3
+MOUTARDE|Condiment jaune et piquant|2
+VINAIGRE|Liquide acide de la vinaigrette|2
+CORNICHON|Petit concombre au vinaigre|2
+OLIVE|Fruit de l'huile du sud|2
+SAUCISSON|Charcuterie sèche|2
+PÂTÉ|Charcuterie servie en terrine|2
+CAMEMBERT|Fromage rond de Normandie|2
+ROQUEFORT|Fromage bleu de brebis|3
+GRUYÈRE|Fromage à trous|2
+BREBIS|Femelle du mouton|2
+AGNEAU|Petit du mouton|2
+VEAU|Petit de la vache|2
+POULAIN|Petit du cheval|2
+POUSSIN|Petit de la poule|2
+CHATON|Petit du chat|2
+CHIOT|Petit du chien|2
+FAON|Petit de la biche|3
+TAUREAU|Mâle de la vache|2
+JUMENT|Femelle du cheval|2
+CHEVREAU|Petit de la chèvre|3
+LAPEREAU|Petit du lapin|3
+CANETON|Petit du canard|3
+MARCASSIN|Petit du sanglier|3
+OURSON|Petit de l'ours|2
+LIONCEAU|Petit du lion|3
+ÉTABLE|Abri des vaches|2
+ÉCURIE|Abri des chevaux|2
+POULAILLER|Abri des poules|2
+NICHE|Abri du chien|2
+RUCHE|Maison des abeilles|2
+TERRIER|Abri du lapin sauvage|3
+BERGERIE|Abri des moutons|3
+GRANGE|Bâtiment pour le foin|2
+FOIN|Herbe séchée|2
+PAILLE|Tige sèche du blé|2
+MOULIN|Tourne avec le vent ou l'eau|2
+PUITS|On y tire l'eau|2
+VIGNE|Plante du raisin|2
+VENDANGE|Récolte du raisin|2
+MOISSON|Récolte du blé|2
+CHARRUE|Sert à labourer|3
+SILLON|Trace de la charrue|3
+ÉPI|Tête du blé|2
+MAÏS|Céréale aux grains jaunes|2
+ORGE|Céréale de la bière|3
+AVOINE|Céréale des chevaux|3
+SEIGLE|Céréale d'un pain sombre|3
+IRIS|Fleur bleue aux feuilles en épée|2
+COLZA|Champ jaune au printemps|3
+HOUBLON|Plante qui parfume la bière|3
+LIN|Plante à fleurs bleues pour le tissu|3
+CHANVRE|Plante pour la corde|3
+NÉNUPHAR|Fleur posée sur l'étang|3
+JONQUILLE|Fleur jaune du printemps|2
+PERCE-NEIGE|Fleur blanche de fin d'hiver|3
+PRIMEVÈRE|Fleur des premiers beaux jours|3
+GLYCINE|Grappes mauves sur la façade|3
+HORTENSIA|Fleur en grosses boules|3
+PIVOINE|Grosse fleur rose et parfumée|3
+GÉRANIUM|Fleur rouge des balcons|2
+CAPUCINE|Fleur orange que l'on peut manger|3
+BLEUET|Fleur bleue des champs|3
+PENSÉE|Petite fleur au visage velouté|3
