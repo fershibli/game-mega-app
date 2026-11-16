@@ -724,3 +724,153 @@ GALASSIA|Insieme immenso di stelle|3
 ASTEROIDE|Grosso sasso che vaga nello spazio|3
 ECLISSI|La luna copre il sole|3
 ORIZZONTE|Linea dove il cielo tocca il mare|2
+PIANOFORTE|Strumento a tasti bianchi e neri|1
+FISARMONICA|Strumento a mantice delle feste di paese|2
+FLAUTO|Strumento a fiato sottile|2
+TROMBA|Strumento d’ottone che squilla|2
+ARPA|Strumento a corde che si pizzica, ha forma di triangolo|2
+CLARINETTO|Strumento a fiato di legno nero|3
+SASSOFONO|Strumento a fiato del jazz|3
+VIOLONCELLO|Grande violino che si suona seduti|3
+MANDOLINO|Strumento a corde della canzone napoletana|2
+ORGANO|Strumento a canne della chiesa|2
+TROMBONE|Strumento d’ottone con la coulisse|3
+CONTRABBASSO|Il più grande degli archi|3
+ARMONICA|Si suona soffiando, sta in tasca|3
+CAMPANA|Suona sul campanile|1
+TRIANGOLO|Strumento a percussione in metallo, anche una figura|2
+ARCHETTO|Si passa sulle corde del violino|3
+SPARTITO|Foglio con le note da suonare|2
+MELODIA|Successione piacevole di note|2
+RITMO|Il battito della musica|2
+CANZONE|Si canta con parole e musica|1
+CORO|Gruppo di persone che cantano insieme|1
+ORCHESTRA|Tanti musicisti diretti da un maestro|2
+CONCERTO|Spettacolo di musica dal vivo|1
+DIRETTORE|Guida l’orchestra con la bacchetta|2
+TENORE|Voce maschile acuta della lirica|3
+SOPRANO|Voce femminile più acuta|3
+BARITONO|Voce maschile media|3
+MELODRAMMA|Opera lirica con musica e canto|3
+SERENATA|Si canta sotto la finestra dell’amata|3
+VALZER|Ballo a tre tempi in cui si gira|2
+TANGO|Ballo argentino appassionato|2
+TARANTELLA|Ballo popolare del Sud, veloce e allegro|2
+LISCIO|Musica da ballo delle balere|3
+DANZA|Movimento a ritmo di musica|1
+PALCO|Ci si esibiscono gli artisti|2
+SIPARIO|Si apre all’inizio dello spettacolo|2
+APPLAUSO|Battere di mani alla fine dello spettacolo|1
+TEATRO|Ci si va a vedere le commedie|1
+CINEMA|Ci si guardano i film sul grande schermo|1
+COMMEDIA|Spettacolo divertente|2
+PLATEA|I posti davanti al palco|3
+LOGGIONE|I posti più in alto del teatro|3
+CALCIO|Si gioca con il pallone e due porte|1
+PALLONE|Si prende a calci|1
+TENNIS|Si gioca con la racchetta e la rete|1
+CICLISMO|Sport della bicicletta|2
+NUOTO|Sport della piscina|1
+SCI|Si scende sulla neve con due assi|1
+PALESTRA|Ci si fa ginnastica|1
+GINNASTICA|Esercizi per tenersi in forma|1
+BOCCE|Si giocano al bocciodromo|2
+PALLAVOLO|Si gioca con la rete alta e la palla|2
+PALLAMANO|Sport di squadra in cui si tira la palla con le mani|3
+SCHERMA|Sport con il fioretto|3
+EQUITAZIONE|Sport a cavallo|3
+CANOTTAGGIO|Sport con i remi sulla barca|3
+MARATONA|Lunga corsa di quarantadue chilometri|2
+ARBITRO|Fischia i falli|2
+ATTACCANTE|Giocatore che deve segnare i gol|2
+STADIO|Ci si gioca la partita davanti al pubblico|1
+PARTITA|Incontro tra due squadre|1
+SQUADRA|Gruppo di giocatori|1
+COPPA|Premio per chi vince il torneo|1
+MEDAGLIA|Premio d’oro, d’argento o di bronzo|1
+TORNEO|Gara a più partite|2
+CAMPIONE|Chi vince la gara|1
+TRAGUARDO|La linea d’arrivo|2
+RACCHETTA|Si usa nel tennis|1
+CANESTRO|Ci si tira la palla nel basket|2
+BOCCIA|Palla da lanciare vicino al pallino|3
+PALLINO|La piccola boccia da avvicinare|3
+DAMA|Gioco a scacchiera con le pedine|1
+SCACCHI|Gioco con il re, la regina e i pedoni|1
+CARTE|Si mescolano e si distribuiscono per giocare|1
+BRISCOLA|Gioco di carte con il seme che vince|2
+TOMBOLA|Gioco di Natale con le cartelle e i numeri|1
+DOMINO|Tessere con i puntini da accostare|2
+DADO|Ha sei facce con i puntini|1
+PEDINA|Si muove sulla scacchiera|2
+PUZZLE|Tanti pezzi da incastrare|2
+AQUILONE|Vola nel vento legato a un filo|1
+ALTALENA|Ci si dondola al parco|1
+SCIVOLO|Ci si scende al parco giochi|1
+GIOSTRA|Gira con i cavallini alla fiera|1
+BAMBOLA|Giocattolo delle bambine|1
+TROTTOLA|Giocattolo che gira su se stessa|2
+VIAGGIO|Si parte con la valigia|1
+VALIGIA|Ci si mettono i vestiti per partire|1
+BIGLIETTO|Si compra per salire sul treno|1
+STAZIONE|Ci si prende il treno|1
+BINARIO|Ci passa il treno|2
+AEREO|Vola nel cielo con i passeggeri|1
+AEROPORTO|Ci partono gli aerei|1
+NAVE|Grande imbarcazione|1
+BARCA|Si va per mare con i remi o la vela|1
+TRAGHETTO|Porta le auto sulle isole|2
+PORTO|Ci attraccano le navi|1
+FARO|Fa luce alle navi di notte|2
+VELA|Gonfiata dal vento sull’albero della barca|2
+REMO|Si usa per spingere la barca|2
+ANCORA|Tiene ferma la nave|2
+BUSSOLA|Indica il Nord|2
+MAPPA|Disegno della città con le vie|1
+PASSAPORTO|Documento per andare all’estero|2
+ALBERGO|Ci si dorme in vacanza|1
+VACANZA|Giorni di riposo lontano dal lavoro|1
+CROCIERA|Viaggio in nave per piacere|2
+GITA|Breve viaggio di un giorno|1
+ESCURSIONE|Passeggiata in montagna|2
+TENDA DA CAMPO|Ci si dorme in campeggio|2
+ZAINO|Si porta sulle spalle|1
+CARTOLINA|Si spedisce dalle vacanze|1
+SOUVENIR|Ricordino del viaggio|3
+DOGANA|Controllo alla frontiera|3
+FRONTIERA|Confine tra due paesi|2
+AUTOBUS|Ci si sale alla fermata|1
+FERMATA|Ci si aspetta l’autobus|1
+TRAM|Corre sulle rotaie in città|2
+BICICLETTA|Ha due ruote e i pedali|1
+MOTORINO|Scooter per andare in città|2
+TAXI|Auto gialla o bianca con il tassametro|1
+SEMAFORO|Rosso, giallo e verde all’incrocio|1
+INCROCIO|Dove due strade si incontrano|2
+MARCIAPIEDE|Ci camminano i pedoni|1
+STRISCE|Si attraversa sopra quelle pedonali|2
+ROTONDA|Si gira intorno all’incrocio|2
+GALLERIA|Passa sotto la montagna|2
+AUTOSTRADA|Strada veloce a pagamento|1
+CASELLO|Ci si paga il pedaggio|3
+PEDAGGIO|Si paga al casello|3
+BENZINA|Si mette nel serbatoio|1
+VOLANTE|Si gira per guidare|1
+FRENO|Fa fermare la macchina|1
+CLACSON|Suona per avvisare in strada|2
+TARGA|Numero dell’automobile|2
+PATENTE|Permette di guidare|1
+GARAGE|Ci si parcheggia la macchina|2
+OFFICINA|Ci lavora il meccanico|2
+CARROZZA|Tirata dai cavalli|2
+CALESSE|Carrozzino leggero a due ruote|3
+GONDOLA|Barca nera dei canali di Venezia|2
+FUNIVIA|Cabina appesa che sale in montagna|2
+SEGGIOVIA|Porta gli sciatori in cima seduti|3
+MONGOLFIERA|Pallone ad aria calda che vola|2
+DILIGENZA|Carrozza del vecchio West|3
+LOCOMOTIVA|Tira i vagoni del treno|3
+VAGONE|Carrozza del treno|2
+CONTROLLORE|Controlla i biglietti sul treno|2
+CAPOSTAZIONE|Dà il via al treno con la paletta|3
+FERROVIA|Strada dei treni|2
