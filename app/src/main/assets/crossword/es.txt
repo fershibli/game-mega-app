@@ -737,3 +737,169 @@ EXCURSIÓN|Paseo de un día al campo|2
 TURISTA|Visita lugares en vacaciones|2
 POSTAL|Tarjeta con foto que se envía de viaje|2
 RECUERDO|Objeto que se compra en el viaje|2
+ACORDEÓN|Instrumento de fuelle y teclas|2
+ARPA|Instrumento de muchas cuerdas que se pulsa|2
+SAXOFÓN|Instrumento de metal del jazz|2
+CLARINETE|Instrumento de viento de madera negra|2
+CASTAÑUELAS|Se tocan con los dedos en el flamenco|2
+PANDERETA|Instrumento con cascabeles que se agita|2
+ÓRGANO|Instrumento de tubos de la iglesia|2
+BATERÍA|Conjunto de tambores y platillos|2
+ORQUESTA|Grupo grande de músicos|2
+CORO|Grupo que canta junto|2
+MELODÍA|Sucesión de notas agradable|2
+RITMO|Compás de la música|2
+CONCIERTO|Actuación musical en directo|2
+ÓPERA|Obra de teatro cantada|2
+VALS|Baile de salón en tres tiempos|2
+TANGO|Baile argentino de pareja|2
+BOLERO|Canción romántica lenta|2
+SEVILLANAS|Baile andaluz de feria|2
+GUITARRISTA|Toca las seis cuerdas|2
+BALONCESTO|Deporte de canasta|2
+BALONMANO|Deporte de pelota que se juega con la mano|2
+CICLISMO|Deporte de la bicicleta|2
+ATLETISMO|Deporte de correr, saltar y lanzar|2
+GIMNASIA|Ejercicios para el cuerpo|2
+ESQUÍ|Deporte de deslizarse por la nieve|2
+GOLF|Deporte de palos y hoyos|2
+REMO|Pala para mover la barca|2
+PETANCA|Juego de bolas de metal en el parque|2
+BOLOS|Se derriban con una bola|2
+PARCHÍS|Juego de dado y fichas de cuatro colores|2
+CRUCIGRAMA|Pasatiempo de palabras cruzadas|2
+DAMAS|Juego de fichas en tablero blanco y negro|2
+BINGO|Juego de cartones y números cantados|2
+MUS|Juego de naipes muy popular en España|2
+CANICA|Bolita de cristal para jugar|2
+PEONZA|Juguete que gira sobre su punta|2
+COMBA|Cuerda para saltar|2
+COLUMPIO|Asiento colgado que se balancea|2
+TOBOGÁN|Rampa para deslizarse en el parque|2
+ÁRBITRO|Hace cumplir el reglamento del partido|2
+PORTERO|Defiende la portería|2
+ESTADIO|Campo grande con gradas|2
+MEDALLA|Premio para el ganador|2
+TROFEO|Copa del campeón|2
+RAQUETA|Se usa para golpear la pelota de tenis|2
+BALÓN|Pelota grande de fútbol|2
+DELANTERO|Jugador que marca goles|2
+GABARDINA|Abrigo ligero para la lluvia|2
+CHALECO|Prenda sin mangas|2
+CORBATA|Se anuda al cuello de la camisa|2
+PAJARITA|Lazo que se pone en el cuello|2
+TIRANTES|Sujetan el pantalón por los hombros|2
+CHAQUETÓN|Abrigo corto y grueso|2
+CAMISETA|Prenda de manga corta de algodón|2
+BLUSA|Camisa de mujer|2
+ENAGUA|Prenda que va bajo la falda|2
+MANTÓN|Pañuelo grande de flecos|2
+PAÑUELO|Sirve para sonarse la nariz|2
+BOINA|Gorra redonda sin visera|2
+SANDALIA|Calzado abierto de verano|2
+ALPARGATA|Calzado de esparto|2
+BOTA|Calzado que cubre el tobillo|2
+MEDIAS|Prenda fina para las piernas|2
+BATA|Prenda para estar por casa|2
+BAÑADOR|Prenda para la playa|2
+BOLSILLO|Allí se guardan las llaves del pantalón|2
+CREMALLERA|Cierre con dientes de la chaqueta|2
+PENDIENTE|Joya de la oreja|2
+PULSERA|Joya de la muñeca|2
+BROCHE|Joya que se prende en la ropa|2
+ABANICO|Se agita para dar aire en verano|2
+SOMBRILLA|Da sombra en la playa|2
+BASTÓN|Ayuda a caminar|2
+CARTERA|Guarda el dinero y los documentos|2
+MONEDERO|Bolsita para las monedas|2
+MONEDA|Dinero de metal|2
+PERFUME|Agua de buen olor|2
+LUPA|Lente que hace ver todo más grande|2
+PRISMÁTICOS|Sirven para ver de lejos|2
+CALENDARIO|Muestra los días del año|2
+AGENDA|Libreta para apuntar citas|2
+DICCIONARIO|Libro con el significado de las palabras|2
+ENCICLOPEDIA|Obra con todo el saber en muchos tomos|2
+NOVELA|Libro largo que cuenta una historia|2
+REVISTA|Publicación con fotos que sale cada semana|2
+TEBEO|Revista de historietas|2
+REFRÁN|Dicho popular con enseñanza|2
+ADIVINANZA|Juego de acertar con pistas|2
+TRABALENGUAS|Frase difícil de pronunciar|2
+CHISTE|Historia corta que hace reír|2
+VERSO|Línea de un poema|2
+RIMA|Coincidencia de sonidos al final del verso|2
+ACUARELA|Pintura con agua|2
+PINCEL|Sirve para pintar el lienzo|2
+LIENZO|Tela sobre la que se pinta|2
+ESCULTURA|Figura tallada en piedra|2
+RETRATO|Pintura de una persona|2
+PAISAJE|Vista del campo o la montaña|2
+ÁLBUM|Libro para guardar fotos|2
+COLECCIÓN|Conjunto de sellos o monedas reunidos|2
+SELLO|Se pega en el sobre|2
+GANCHILLO|Labor de punto con aguja de gancho|2
+BORDADO|Dibujo cosido con hilo|2
+PUNTILLA|Encaje del borde del pañuelo|2
+TELAR|Máquina para tejer|2
+LANA|Pelo de la oveja para tejer|2
+ALGODÓN|Fibra blanca para hacer tela|2
+SEDA|Tela fina que hace un gusano|2
+TERCIOPELO|Tela suave de pelo corto|2
+CUERO|Piel curtida del zapato|2
+CRISTAL|Material transparente de la ventana|2
+HIERRO|Metal duro de la reja|2
+ORO|Metal precioso amarillo|2
+PLATA|Metal precioso blanco|2
+COBRE|Metal rojizo de los cables|2
+BARRO|Tierra mojada para la vasija|2
+LADRILLO|Pieza de barro para hacer paredes|2
+AZULEJO|Baldosa brillante de la cocina|2
+BALDOSA|Pieza del suelo|2
+NOSTALGIA|Pena dulce por el pasado|2
+TERNURA|Cariño delicado|2
+ORGULLO|Satisfacción por lo bien hecho|2
+SORPRESA|Lo que se siente ante lo inesperado|2
+ILUSIÓN|Esperanza alegre|2
+CALMA|Tranquilidad y sosiego|2
+PACIENCIA|Saber esperar sin enfadarse|2
+AMISTAD|Cariño entre amigos|2
+BONDAD|Cualidad de quien es bueno|2
+GRATITUD|Agradecimiento|2
+ESPERANZA|Confianza en que algo irá bien|2
+VALENTÍA|Lo que tiene el que no se asusta|2
+ALFARERO|Hace vasijas de barro en el torno|3
+HERRERO|Trabaja el hierro en la fragua|3
+TONELERO|Fabrica barriles de madera|3
+BARQUERO|Lleva la barca de una orilla a otra|3
+LEÑADOR|Corta árboles en el bosque|3
+MOLINERO|Trabaja en el molino|3
+APICULTOR|Cría abejas|3
+RELOJERO|Arregla relojes|3
+EBANISTA|Hace muebles finos|3
+CESTERO|Teje cestas de mimbre|3
+TAPICERO|Forra sillones y sofás|3
+AFILADOR|Pasaba por las calles con su silbato|3
+SERENO|Abría los portales por la noche|3
+LECHERO|Traía la leche a casa|3
+BOTICARIO|Farmacéutico de antes|3
+MAYORDOMO|Criado principal de una casa|3
+CAPATAZ|Manda a los obreros del campo|3
+TIMONEL|Lleva el timón del barco|3
+GRUMETE|Aprendiz de marinero|3
+VENDIMIA|Recogida de la uva|3
+SIEGA|Corte del trigo maduro|3
+ARADO|Herramienta para abrir surcos|3
+SURCO|Raya que deja el arado en la tierra|3
+GAVILLA|Haz de mieses|3
+ALMAZARA|Molino donde se hace el aceite|3
+BODEGA|Lugar donde se guarda el vino|3
+GRANERO|Lugar donde se guarda el grano|3
+PAJAR|Lugar donde se guarda la paja|3
+ABREVADERO|Lugar donde beben los animales|3
+CENCERRO|Campana que lleva la vaca al cuello|3
+HORQUILLA|Sujeta el moño o sirve para la paja|3
+AZADA|Herramienta para cavar la huerta|3
+HOZ|Herramienta curva para segar|3
+YUNTA|Pareja de bueyes|3
+REBAÑO|Grupo de ovejas|3
