@@ -885,3 +885,194 @@ GRANIT|Sehr harter Stein für Treppen und Brunnen|3
 ZIEGEL|Gebrannter roter Stein zum Bauen|2
 BETON|Grauer Baustoff aus Zement, Sand und Wasser|3
 LEHM|Feuchte, klebrige Erde zum Bauen|3
+SINGEN|Ein Lied mit der Stimme vortragen|2
+TANZEN|Sich im Takt zur Musik bewegen|2
+LESEN|Was man mit einem Buch tut|2
+SCHREIBEN|Was man mit Stift und Papier tut|2
+MALEN|Mit Pinsel und Farbe ein Bild machen|2
+KOCHEN|Das Essen auf dem Herd zubereiten|2
+BACKEN|Kuchen im Ofen zubereiten|2
+STRICKEN|Mit zwei Nadeln aus Wolle etwas fertigen|2
+NÄHEN|Mit Nadel und Faden Stoff verbinden|2
+GIESSEN|Den Blumen Wasser geben|2
+SPAZIEREN|Gemütlich draußen umhergehen|2
+SCHLAFEN|Was man nachts im Bett tut|2
+TRÄUMEN|Bilder im Schlaf sehen|2
+ERZÄHLEN|Eine Geschichte vortragen|2
+LERNEN|Neues Wissen aufnehmen|2
+HELFEN|Jemandem beistehen|2
+SPIELEN|Was Kinder am liebsten tun|2
+PFLÜCKEN|Blumen oder Obst abnehmen|2
+SAMMELN|Briefmarken oder Pilze zusammentragen|2
+PLAUDERN|Gemütlich miteinander reden|2
+SCHENKEN|Jemandem etwas als Geschenk geben|2
+WINKEN|Zum Gruß die Hand hin und her bewegen|2
+FRÖHLICH|Gut gelaunt und heiter|2
+FREUNDLICH|Nett und hilfsbereit zu anderen|2
+GEMÜTLICH|Warm, bequem und behaglich|2
+LUSTIG|Bringt einen zum Lachen|2
+RUHIG|Still und ohne Lärm|2
+LEISE|Das Gegenteil von laut|2
+SCHNELL|Das Gegenteil von langsam|2
+LANGSAM|Wie eine Schnecke|2
+GROSS|Das Gegenteil von klein|2
+KLEIN|Das Gegenteil von groß|2
+WARM|Das Gegenteil von kalt|2
+KALT|Wie Eis und Schnee|2
+SÜSS|Wie Zucker und Honig|2
+SAUER|Wie eine Zitrone|2
+BITTER|Wie starker Kaffee ohne Zucker|2
+SCHARF|Wie Pfeffer oder ein gutes Messer|2
+WEICH|Wie ein Kissen|2
+HART|Wie ein Stein|2
+HELL|Das Gegenteil von dunkel|2
+DUNKEL|Wie die Nacht|2
+NEU|Das Gegenteil von alt|2
+SAUBER|Frisch geputzt|2
+FLEISSIG|Wie eine Biene bei der Arbeit|2
+KLUG|Weiß viel und denkt gut nach|2
+TAPFER|Zeigt Mut und hat keine Angst|2
+EHRLICH|Sagt immer die Wahrheit|2
+HÖFLICH|Hat gute Manieren|2
+GESUND|Fühlt sich wohl und munter|2
+MUNTER|Wach und lebhaft|2
+BUNT|Mit vielen Farben|2
+GOLDIG|Niedlich und lieb|3
+BRAUN|Farbe von Schokolade|2
+GRAU|Farbe von Asche und Elefanten|2
+ROSA|Helle Farbe wie ein Ferkel|2
+LILA|Farbe des Lavendels|2
+ORANGEFARBEN|Farbe von Möhren und Kürbissen|3
+TÜRKIS|Blaugrüne Farbe wie das Meer im Süden|3
+BEIGE|Helle, sandfarbene Farbe|3
+MONTAG|Erster Tag der Woche|2
+DIENSTAG|Tag nach dem Montag|2
+MITTWOCH|Tag in der Mitte der Woche|2
+DONNERSTAG|Tag vor dem Freitag|2
+FREITAG|Letzter Arbeitstag der Woche|2
+SAMSTAG|Tag vor dem Sonntag, auch Sonnabend|2
+JANUAR|Erster Monat des Jahres|2
+FEBRUAR|Kürzester Monat des Jahres|2
+MÄRZ|Monat, in dem der Frühling beginnt|2
+APRIL|Monat, der macht, was er will|2
+MAI|Wonnemonat, in dem alles blüht|2
+JUNI|Monat, in dem der Sommer beginnt|2
+JULI|Siebter Monat des Jahres, oft der heißeste|2
+AUGUST|Achter Monat, Zeit der Sommerferien|2
+SEPTEMBER|Monat, in dem der Herbst beginnt|2
+OKTOBER|Zehnter Monat, mit buntem Laub|2
+NOVEMBER|Grauer, nebliger Monat vor dem Dezember|2
+DEZEMBER|Letzter Monat des Jahres|2
+MITTAG|Wenn die Sonne am höchsten steht|2
+STUNDE|Hat sechzig Minuten|2
+MINUTE|Hat sechzig Sekunden|2
+SEKUNDE|Ein ganz kurzer Augenblick|2
+KALENDER|Zeigt alle Tage des Jahres|2
+JAHRHUNDERT|Hundert Jahre|3
+AMBOSS|Eiserner Block, auf dem der Schmied hämmert|3
+HOBEL|Werkzeug des Tischlers, macht Holz glatt|3
+FEILE|Raues Werkzeug zum Glätten von Metall oder Nägeln|3
+MEISSEL|Werkzeug zum Bearbeiten von Stein|3
+SCHRAUBSTOCK|Hält das Werkstück auf der Werkbank fest|3
+WERKBANK|Arbeitstisch in der Werkstatt|3
+ZOLLSTOCK|Klappbarer Meterstab des Handwerkers|3
+WASSERWAAGE|Zeigt mit einer Luftblase, ob etwas gerade ist|3
+SENSE|Langes, gebogenes Messer zum Grasmähen|3
+SICHEL|Kleines, halbrundes Messer für Getreide|3
+HEUGABEL|Langer Stiel mit Zinken für das Heu|3
+SCHUBKARRE|Wagen mit einem Rad für Erde und Steine|3
+SPINNRAD|Daran wurde früher Wolle zu Garn gesponnen|3
+WEBSTUHL|Gerät, auf dem man Stoffe webt|3
+BUTTERFASS|Gefäß, in dem früher Sahne zu Butter geschlagen wurde|3
+WASCHBRETT|Geriffeltes Brett, auf dem früher Wäsche gerubbelt wurde|3
+KOHLEOFEN|Wurde früher mit Briketts geheizt|3
+PETROLEUM|Brennstoff für alte Lampen|3
+DOCHT|Faden in der Kerze, der brennt|3
+LEUCHTER|Ständer für Kerzen|3
+KRONLEUCHTER|Prächtige Lampe mit vielen Lichtern an der Decke|3
+SEKRETÄR|Schreibschrank mit Klappe; auch ein Bürohelfer|3
+VITRINE|Glasschrank für schönes Geschirr|3
+BÜFETT|Großer Geschirrschrank im Esszimmer|3
+OTTOMANE|Niedriges Polstersofa ohne Lehne|3
+CHAISELONGUE|Liegesofa mit einer erhöhten Seite|3
+DIVAN|Niedriges Ruhebett ohne Lehne|3
+STANDUHR|Große Uhr mit Pendel, die auf dem Boden steht|3
+PENDEL|Schwingt in der alten Uhr hin und her|3
+SCHATULLE|Kleines Kästchen für Schmuck|3
+MEDAILLON|Anhänger zum Aufklappen, oft mit einem Foto|3
+BROSCHE|Schmuckstück, das man an die Bluse steckt|3
+DIADEM|Kostbarer Haarreif mit Edelsteinen|3
+MONOKEL|Einzelnes Brillenglas vor einem Auge|3
+ZYLINDER|Hoher, feiner Herrenhut|3
+SCHLEIER|Feiner Stoff, den die Braut trägt|3
+KORSETT|Enges Mieder aus früheren Zeiten|3
+FÄCHER|Damit wedelt man sich Luft zu|3
+SONNENSCHIRM|Schützt am Strand vor der Hitze|3
+GAMASCHE|Knöchelschutz über dem Schuh|3
+KITTEL|Arbeitsmantel, zum Beispiel im Labor|3
+LODEN|Fester Wollstoff für Jacken in den Bergen|3
+DIRNDL|Trachtenkleid mit Schürze aus Bayern|3
+SAMT|Weicher Stoff mit kurzem Flor|3
+SEIDE|Glänzender Stoff von der Raupe|3
+LEINEN|Kühler Stoff aus Flachs|3
+FLANELL|Weicher, angerauter Stoff|3
+TÜLL|Feiner, durchsichtiger Netzstoff|3
+SPITZE|Feines, durchbrochenes Gewebe; auch das obere Ende|3
+KLÖPPELN|Alte Kunst, Spitzen mit Garnrollen herzustellen|3
+HÄKELN|Handarbeit mit einer Nadel mit Haken|3
+STICKEN|Muster mit Nadel und Garn auf Stoff bringen|3
+FLICKEN|Stück Stoff, das ein Loch bedeckt|3
+ZWIRN|Fester Faden zum Nähen|3
+GARN|Gesponnener Faden aus Wolle oder Baumwolle|3
+KNÄUEL|Aufgewickelte Wolle|3
+MARZIPAN|Süße Masse aus Mandeln und Zucker|3
+MANDEL|Längliche Nuss, aus der man Marzipan macht|3
+HASELNUSS|Kleine runde Nuss vom Strauch|3
+WALNUSS|Nuss, deren Kern einem Gehirn ähnelt|3
+PISTAZIE|Grüne Nuss, gern im Eis|3
+ZIMT|Braunes Gewürz aus Rinde, gut im Milchreis|3
+MUSKAT|Gewürz aus einer Nuss, gut im Kartoffelbrei|3
+VANILLE|Gewürz aus einer Schote, duftet süß|3
+INGWER|Scharfe Wurzel für Tee und Gerichte|3
+KÜMMEL|Würzige Samen im Brot und im Kraut|3
+MAJORAN|Würzkraut für die Leberwurst|3
+ROSMARIN|Duftendes Kraut mit nadelförmigen Blättern|3
+THYMIAN|Kleines Kraut, das nach Süden duftet|3
+PETERSILIE|Grünes Kraut zum Garnieren|3
+SCHNITTLAUCH|Feine grüne Halme aufs Butterbrot|3
+DILL|Feines Kraut zu Gurkensalat und Fisch|3
+BASILIKUM|Kraut, das gut zu Tomaten passt|3
+KAMILLE|Kleine Blume für einen beruhigenden Tee|3
+PFEFFERMINZE|Kraut für einen erfrischenden Tee|3
+HOLUNDER|Strauch mit weißen Dolden und schwarzen Beeren|3
+SCHLEHE|Blaue, herbe Frucht am dornigen Strauch|3
+QUITTE|Gelbe, harte Frucht für Gelee|3
+MIRABELLE|Kleine gelbe Pflaume|3
+RHABARBER|Rote Stangen, gut für Kompott und Kuchen|3
+KOHLRABI|Hellgrüne Knolle mit zartem Geschmack|3
+WIRSING|Kohl mit krausen Blättern|3
+ROSENKOHL|Kleine grüne Röschen, ein Wintergemüse|3
+PASTINAKE|Weiße Wurzel, die süßlich schmeckt|3
+KICHERERBSE|Runde, gelbliche Hülsenfrucht aus dem Orient|3
+ARTISCHOCKE|Distelartiges Gemüse, dessen Blätter man zupft|3
+AUBERGINE|Gemüse mit glänzend lila Schale|3
+ZUCCHINI|Grünes Gemüse, sieht aus wie eine Gurke|3
+FENCHEL|Knolle mit Anisgeschmack|3
+SCHALOTTE|Kleine, feine Zwiebel|3
+KAPERN|Kleine eingelegte Knospen, würzig und salzig|3
+OLIVE|Kleine grüne oder schwarze Frucht vom Mittelmeer|3
+FEIGE|Süße Frucht mit vielen kleinen Kernen|3
+DATTEL|Süße Frucht der Palme|3
+GRANATAPFEL|Frucht mit vielen roten Kernen|3
+STRUDEL|Gebäck aus dünnem Teig mit Äpfeln|3
+STREUSEL|Krümel aus Butter, Zucker und Mehl auf dem Kuchen|3
+KRAPFEN|In Fett gebackenes Gebäck mit Marmelade|3
+BAISER|Gebäck aus Eischnee und Zucker|3
+PRALINE|Feines Stück Schokolade mit Füllung|3
+KOMPOTT|Gekochtes Obst als Nachtisch|3
+GELEE|Durchsichtiger Fruchtaufstrich|3
+SPÄTZLE|Schwäbische Nudeln vom Brett geschabt|3
+FRIKADELLE|Gebratenes Fleischbällchen|3
+ROULADE|Gerolltes Fleisch mit Füllung, in Soße geschmort|3
+EISBEIN|Gepökelte Schweinshaxe mit Sauerkraut|3
+LABSKAUS|Seemannsgericht aus dem Norden mit Roter Bete|3
