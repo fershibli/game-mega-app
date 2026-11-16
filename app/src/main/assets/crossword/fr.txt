@@ -1,149 +1,1058 @@
-# Dictionnaire des mots croisés — français. Format : RÉPONSE|définition.
-POMME|Fruit rouge ou vert
-PAIN|La baguette en est un
-CHAISE|Meuble pour s'asseoir
-TABLE|Meuble où l'on mange
-MAISON|Lieu où vit la famille
-JARDIN|Lieu plein de fleurs et de légumes
-FENÊTRE|Ouverture vitrée dans le mur
-MÉDECIN|Soigne les malades
-INFIRMIÈRE|Aide le médecin à soigner
-PIANO|Instrument à touches noires et blanches
-GUITARE|Instrument à six cordes
-ÉTÉ|Saison la plus chaude
-HIVER|Saison la plus froide
-PRINTEMPS|Saison des fleurs
-AUTOMNE|Saison où tombent les feuilles
-DIMANCHE|Jour de repos
-CAFÉ|Boisson chaude du matin
-SUCRE|Rend le café doux
-SEL|Assaisonnement blanc venu de la mer
-FROMAGE|Fait avec du lait ; la France en a des centaines
-BEURRE|Se tartine sur le pain
-MIEL|Produit sucré des abeilles
-ORANGE|Agrume qui est aussi une couleur
-BANANE|Fruit jaune et allongé
-RAISIN|Petit fruit qui donne le vin
-CITRON|Agrume jaune et acide
-TOMATE|Fruit rouge de la salade
-CAROTTE|Légume orange du lapin
-OIGNON|Fait pleurer quand on le coupe
-RIZ|Céréale très mangée en Asie
-SOUPE|Plat chaud mangé à la cuillère
-GÂTEAU|Dessert d'anniversaire
-CHIEN|Meilleur ami de l'homme
-CHAT|Animal qui ronronne
-CHEVAL|Animal que l'on peut monter
-VACHE|Animal de ferme qui donne du lait
-MOUTON|Animal qui donne de la laine
-POULE|Oiseau qui pond des œufs
-CANARD|Oiseau qui fait coin-coin
-LAPIN|Animal aux longues oreilles
-TIGRE|Grand félin rayé
-LION|Roi de la savane
-ÉLÉPHANT|Grand animal avec une trompe
-GIRAFE|Animal au très long cou
-SINGE|Animal qui grimpe aux arbres
-OISEAU|Animal à plumes qui vole
-POISSON|Animal qui nage
-TORTUE|Animal lent avec une carapace
-OURS|Grand animal poilu
-HIBOU|Oiseau de nuit
-ABEILLE|Insecte qui fait le miel
-PAPILLON|Insecte aux ailes colorées
-SOLEIL|Étoile qui éclaire le jour
-LUNE|Brille dans le ciel la nuit
-ÉTOILE|Scintille dans le ciel
-NUAGE|Blanc et cotonneux dans le ciel
-PLUIE|Eau qui tombe des nuages
-NEIGE|Blanche et froide en hiver
-RIVIÈRE|Cours d'eau
-MER|Grande étendue d'eau salée
-PLAGE|Lieu de sable au bord de la mer
-MONTAGNE|Terre très haute
-ÎLE|Terre entourée d'eau
-FORÊT|Lieu plein d'arbres
-FLEUR|Rose ou marguerite, par exemple
-ARBRE|A un tronc, des branches et des feuilles
-ROSE|Fleur symbole de l'amour
-ROUGE|Couleur de la fraise
-BLEU|Couleur du ciel
-VERT|Couleur de l'herbe
-JAUNE|Couleur du soleil
-BLANC|Couleur du lait
-NOIR|Couleur de la nuit
-MÈRE|Femme qui a des enfants
-PÈRE|Homme qui a des enfants
-SŒUR|Fille de vos parents
-FRÈRE|Fils de vos parents
-GRAND-MÈRE|Mère de votre mère ou de votre père
-PETIT-FILS|Fils de votre enfant
-BÉBÉ|Tout petit enfant
-AMI|Personne chère en qui l'on a confiance
-FAMILLE|Parents, enfants, grands-parents...
-CŒUR|Organe qui pompe le sang
-MAIN|Elle a cinq doigts
-YEUX|Servent à voir
-NEZ|Sert à sentir
-OREILLE|Sert à entendre
-BOUCHE|Sert à manger et à parler
-SOURIRE|Expression de joie
-LIVRE|A des pages à lire
-LETTRE|S'écrit et s'envoie par la poste
-JOURNAL|Nouvelles imprimées du jour
-TÉLÉPHONE|Appareil pour appeler
-HORLOGE|Indique l'heure
-CLÉ|Ouvre la serrure
-PORTE|On l'ouvre pour entrer
-LIT|Meuble pour dormir
-CUILLÈRE|Couvert pour la soupe
-FOURCHETTE|Couvert à dents
-COUTEAU|Couvert pour couper
-TASSE|Pour boire le thé
-BOUTEILLE|Contient de l'eau ou du vin
-TRAIN|Roule sur des rails
-AVION|Vole avec des passagers
-BATEAU|Navigue sur l'eau
-VOITURE|Véhicule à quatre roues
-VÉLO|Deux roues et des pédales
-MUSIQUE|Chansons et mélodies
-DANSE|Bouger en rythme
-CHANSON|Musique avec des paroles
-ÉGLISE|Lieu de prière chrétien
-ÉCOLE|Où les enfants apprennent
-MARCHÉ|Où l'on achète fruits et légumes
-HÔPITAL|Où l'on soigne les malades
-ANNIVERSAIRE|Fêté chaque année avec un gâteau
-NOËL|Fête du 25 décembre
-CADEAU|Offert avec amour
-BOUGIE|Bâton de cire qui éclaire
-ŒUF|Pondu par la poule
-LAIT|Boisson blanche de la vache
-EAU|Boisson transparente et essentielle
-JUS|Boisson de fruits
-VIN|Boisson faite de raisin
-CHAPEAU|Se porte sur la tête
-CHAUSSURE|Se porte au pied
-ROBE|Vêtement féminin d'une seule pièce
-MANTEAU|Vêtement chaud pour l'hiver
-PARAPLUIE|Protège de la pluie
-LUNETTES|Aident à mieux voir
-HEUREUX|Plein de joie
-AMOUR|Sentiment de grande tendresse
-PAIX|Le contraire de la guerre
-RÊVE|Ce que l'on voit en dormant
-NUIT|Quand il fait noir
-MATIN|Début de la journée
-CROISSANT|Viennoiserie du petit-déjeuner
-BAGUETTE|Pain long et croustillant
-CUISINE|Pièce où l'on prépare les repas
-RECETTE|Instructions pour préparer un plat
-CASSEROLE|Ustensile pour faire cuire
-CRÊPE|Galette fine de la Chandeleur
-DOMINO|Jeu de pièces à points
-CARTES|On les mélange pour jouer à la belote
-NIÈCE|Fille de votre frère ou de votre sœur
-OREILLER|Coussin pour la tête au lit
-COUVERTURE|Tient chaud au lit
-TABLIER|Se porte en cuisine pour rester propre
-PÉTANQUE|Jeu de boules du sud de la France
+# Dictionnaire des mots croisés — français. Format : RÉPONSE|définition|niveau (1 facile, 2 moyen, 3 difficile).
+POMME|Fruit rouge ou vert|1
+PAIN|La baguette en est un|1
+CHAISE|Meuble pour s'asseoir|1
+TABLE|Meuble où l'on mange|1
+MAISON|Lieu où vit la famille|1
+JARDIN|Lieu plein de fleurs et de légumes|1
+FENÊTRE|Ouverture vitrée dans le mur|1
+MÉDECIN|Soigne les malades|1
+INFIRMIÈRE|Aide le médecin à soigner|2
+PIANO|Instrument à touches noires et blanches|1
+GUITARE|Instrument à six cordes|1
+ÉTÉ|Saison la plus chaude|1
+HIVER|Saison la plus froide|1
+PRINTEMPS|Saison des fleurs|1
+AUTOMNE|Saison où tombent les feuilles|2
+DIMANCHE|Jour de repos|1
+CAFÉ|Boisson chaude du matin|1
+SUCRE|Rend le café doux|1
+SEL|Assaisonnement blanc venu de la mer|2
+FROMAGE|Fait avec du lait ; la France en a des centaines|1
+BEURRE|Se tartine sur le pain|1
+MIEL|Produit sucré des abeilles|1
+ORANGE|Agrume qui est aussi une couleur|1
+BANANE|Fruit jaune et allongé|1
+RAISIN|Petit fruit qui donne le vin|1
+CITRON|Agrume jaune et acide|1
+TOMATE|Fruit rouge de la salade|1
+CAROTTE|Légume orange du lapin|1
+OIGNON|Fait pleurer quand on le coupe|1
+RIZ|Céréale très mangée en Asie|2
+SOUPE|Plat chaud mangé à la cuillère|1
+GÂTEAU|Dessert d'anniversaire|1
+CHIEN|Meilleur ami de l'homme|1
+CHAT|Animal qui ronronne|1
+CHEVAL|Animal que l'on peut monter|1
+VACHE|Animal de ferme qui donne du lait|1
+MOUTON|Animal qui donne de la laine|1
+POULE|Oiseau qui pond des œufs|1
+CANARD|Oiseau qui fait coin-coin|1
+LAPIN|Animal aux longues oreilles|1
+TIGRE|Grand félin rayé|1
+LION|Roi de la savane|1
+ÉLÉPHANT|Grand animal avec une trompe|1
+GIRAFE|Animal au très long cou|1
+SINGE|Animal qui grimpe aux arbres|1
+OISEAU|Animal à plumes qui vole|1
+POISSON|Animal qui nage|1
+TORTUE|Animal lent avec une carapace|2
+OURS|Grand animal poilu|1
+HIBOU|Oiseau de nuit|2
+ABEILLE|Insecte qui fait le miel|1
+PAPILLON|Insecte aux ailes colorées|1
+SOLEIL|Étoile qui éclaire le jour|1
+LUNE|Brille dans le ciel la nuit|1
+ÉTOILE|Scintille dans le ciel|1
+NUAGE|Blanc et cotonneux dans le ciel|1
+PLUIE|Eau qui tombe des nuages|1
+NEIGE|Blanche et froide en hiver|1
+RIVIÈRE|Cours d'eau|1
+MER|Grande étendue d'eau salée|1
+PLAGE|Lieu de sable au bord de la mer|1
+MONTAGNE|Terre très haute|1
+ÎLE|Terre entourée d'eau|1
+FORÊT|Lieu plein d'arbres|1
+FLEUR|Rose ou marguerite, par exemple|1
+ARBRE|A un tronc, des branches et des feuilles|1
+ROSE|Fleur symbole de l'amour|1
+ROUGE|Couleur de la fraise|1
+BLEU|Couleur du ciel|1
+VERT|Couleur de l'herbe|1
+JAUNE|Couleur du soleil|1
+BLANC|Couleur du lait|1
+NOIR|Couleur de la nuit|1
+MÈRE|Femme qui a des enfants|1
+PÈRE|Homme qui a des enfants|1
+SŒUR|Fille de vos parents|1
+FRÈRE|Fils de vos parents|1
+GRAND-MÈRE|Mère de votre mère ou de votre père|1
+PETIT-FILS|Fils de votre enfant|2
+BÉBÉ|Tout petit enfant|1
+AMI|Personne chère en qui l'on a confiance|1
+FAMILLE|Parents, enfants, grands-parents...|1
+CŒUR|Organe qui pompe le sang|1
+MAIN|Elle a cinq doigts|1
+YEUX|Servent à voir|1
+NEZ|Sert à sentir|1
+OREILLE|Sert à entendre|1
+BOUCHE|Sert à manger et à parler|1
+SOURIRE|Expression de joie|1
+LIVRE|A des pages à lire|1
+LETTRE|S'écrit et s'envoie par la poste|1
+JOURNAL|Nouvelles imprimées du jour|2
+TÉLÉPHONE|Appareil pour appeler|1
+HORLOGE|Indique l'heure|2
+CLÉ|Ouvre la serrure|1
+PORTE|On l'ouvre pour entrer|1
+LIT|Meuble pour dormir|1
+CUILLÈRE|Couvert pour la soupe|1
+FOURCHETTE|Couvert à dents|1
+COUTEAU|Couvert pour couper|1
+TASSE|Pour boire le thé|1
+BOUTEILLE|Contient de l'eau ou du vin|1
+TRAIN|Roule sur des rails|1
+AVION|Vole avec des passagers|1
+BATEAU|Navigue sur l'eau|1
+VOITURE|Véhicule à quatre roues|1
+VÉLO|Deux roues et des pédales|1
+MUSIQUE|Chansons et mélodies|1
+DANSE|Bouger en rythme|1
+CHANSON|Musique avec des paroles|1
+ÉGLISE|Lieu de prière chrétien|2
+ÉCOLE|Où les enfants apprennent|1
+MARCHÉ|Où l'on achète fruits et légumes|1
+HÔPITAL|Où l'on soigne les malades|1
+ANNIVERSAIRE|Fêté chaque année avec un gâteau|2
+NOËL|Fête du 25 décembre|1
+CADEAU|Offert avec amour|1
+BOUGIE|Bâton de cire qui éclaire|2
+ŒUF|Pondu par la poule|1
+LAIT|Boisson blanche de la vache|1
+EAU|Boisson transparente et essentielle|1
+JUS|Boisson de fruits|1
+VIN|Boisson faite de raisin|1
+CHAPEAU|Se porte sur la tête|1
+CHAUSSURE|Se porte au pied|1
+ROBE|Vêtement féminin d'une seule pièce|1
+MANTEAU|Vêtement chaud pour l'hiver|1
+PARAPLUIE|Protège de la pluie|1
+LUNETTES|Aident à mieux voir|1
+HEUREUX|Plein de joie|1
+AMOUR|Sentiment de grande tendresse|1
+PAIX|Le contraire de la guerre|1
+RÊVE|Ce que l'on voit en dormant|1
+NUIT|Quand il fait noir|1
+MATIN|Début de la journée|1
+CROISSANT|Viennoiserie du petit-déjeuner|2
+BAGUETTE|Pain long et croustillant|1
+CUISINE|Pièce où l'on prépare les repas|1
+RECETTE|Instructions pour préparer un plat|2
+CASSEROLE|Ustensile pour faire cuire|2
+CRÊPE|Galette fine de la Chandeleur|2
+DOMINO|Jeu de pièces à points|2
+CARTES|On les mélange pour jouer à la belote|2
+NIÈCE|Fille de votre frère ou de votre sœur|2
+OREILLER|Coussin pour la tête au lit|2
+COUVERTURE|Tient chaud au lit|2
+TABLIER|Se porte en cuisine pour rester propre|2
+PÉTANQUE|Jeu de boules du sud de la France|2
+SALON|Pièce où l'on reçoit les invités|1
+CHAMBRE|Pièce où l'on dort|1
+TOIT|Couvre la maison|1
+MUR|Sépare deux pièces|1
+ESCALIER|Permet de monter à l'étage|1
+CAVE|Pièce sous la maison, idéale pour le vin|1
+GRENIER|Pièce sous le toit|1
+BALCON|Petite terrasse devant une fenêtre|1
+CANAPÉ|Siège long et confortable du salon|1
+FAUTEUIL|Siège à bras pour une personne|1
+ARMOIRE|Grand meuble pour ranger le linge|1
+TAPIS|Se pose sur le sol|1
+LAMPE|Éclaire la pièce le soir|1
+MIROIR|On s'y regarde le matin|1
+RIDEAU|Se tire devant la fenêtre|1
+FOUR|Sert à cuire le gâteau|1
+FRIGO|Garde les aliments au frais|1
+ÉVIER|On y lave la vaisselle|1
+ASSIETTE|On y sert le repas|1
+VERRE|On y verse l'eau à table|1
+BOL|Récipient du petit-déjeuner|1
+PLATEAU|Pour porter les tasses|2
+NAPPE|Recouvre la table|1
+SERVIETTE|Pour s'essuyer les mains|1
+SAVON|Sert à se laver les mains|1
+DOUCHE|On s'y lave debout|1
+BAIGNOIRE|On y prend un bain|1
+PEIGNE|Sert à coiffer les cheveux|1
+BROSSE|Pour les cheveux ou les dents|1
+BALAI|Pour nettoyer le sol|1
+SEAU|Récipient avec une anse|1
+ÉPONGE|Absorbe l'eau|1
+POUBELLE|On y jette les déchets|1
+JAMBON|Charcuterie du sandwich|1
+POULET|Rôti le dimanche|1
+STEAK|Tranche de bœuf grillée|1
+SAUCISSE|Se grille au barbecue|1
+POIRE|Fruit en forme de goutte|1
+FRAISE|Petit fruit rouge du printemps|1
+CERISE|Petit fruit rouge à noyau|1
+PÊCHE|Fruit d'été à la peau douce|1
+PRUNE|Fruit violet à noyau|1
+ABRICOT|Fruit orange d'été|1
+MELON|Fruit rond et sucré de l'été|1
+ANANAS|Fruit tropical à la couronne de feuilles|1
+KIWI|Fruit vert et poilu|1
+SALADE|Laitue ou plat de crudités|1
+LENTILLE|Petit légume sec, brun ou vert|2
+HARICOT|Légume vert ou blanc|1
+ÉPINARD|Légume vert en feuilles|1
+CHOU|Légume rond aux grosses feuilles|1
+POIREAU|Légume de la soupe, vert et blanc|1
+NAVET|Légume racine blanc et violet|2
+RADIS|Petit légume rouge et piquant|1
+CONCOMBRE|Légume vert et frais de l'été|1
+COURGETTE|Légume vert de la ratatouille|1
+AUBERGINE|Légume violet|1
+POIVRON|Légume rouge, vert ou jaune|1
+AIL|Gousse au goût fort|1
+PERSIL|Herbe verte de cuisine|2
+YAOURT|Dessert au lait|1
+CRÈME|Partie riche du lait|1
+FARINE|Poudre blanche pour faire le pain|1
+PÂTES|Spaghettis ou coquillettes|1
+HUILE|Pour la vinaigrette|1
+POIVRE|Épice noire moulue|1
+CONFITURE|Fruits cuits avec du sucre|1
+CHOCOLAT|Fait avec du cacao|1
+BONBON|Petite douceur sucrée|1
+TARTE|Dessert à la pâte et aux fruits|1
+BISCUIT|Petit gâteau sec|1
+GLACE|Dessert froid de l'été|1
+THÉ|Boisson chaude en sachet|1
+SOUPER|Repas léger pris tard le soir|2
+DÎNER|Repas du soir|1
+DÉJEUNER|Repas de midi|1
+TANTE|Sœur de votre père ou de votre mère|1
+ONCLE|Frère de votre père ou de votre mère|1
+COUSIN|Fils de votre oncle|1
+NEVEU|Fils de votre frère ou de votre sœur|1
+FILLE|Enfant de sexe féminin|1
+FILS|Enfant de sexe masculin|1
+MARI|Époux|1
+ÉPOUSE|Femme mariée|1
+VOISIN|Habite à côté|1
+ENFANT|Petit garçon ou petite fille|1
+PARRAIN|Il tient l'enfant au baptême|2
+MARRAINE|Elle tient l'enfant au baptême|2
+TÊTE|Partie du corps avec les cheveux|1
+BRAS|Va de l'épaule à la main|1
+JAMBE|Membre pour marcher|1
+PIED|Sert à marcher|1
+DOIGT|La main en a cinq|1
+GENOU|Articulation de la jambe|1
+DOS|Partie arrière du corps|1
+VENTRE|On le remplit en mangeant|1
+CHEVEUX|Poussent sur la tête|1
+DENT|Sert à mâcher|1
+LANGUE|Sert à goûter|1
+ÉPAULE|Relie le bras au corps|1
+COUDE|Articulation du bras|1
+JOUE|Partie du visage qui rougit|1
+MENTON|Bas du visage|1
+FRONT|Haut du visage|1
+LÈVRE|La bouche en a deux|1
+COU|Relie la tête au corps|1
+ONGLE|Bout dur du doigt|1
+CHEVILLE|Relie le pied à la jambe|2
+POIGNET|Porte la montre|2
+SOURCIL|Poils au-dessus de l'œil|2
+NARINE|Le nez en a deux|2
+PAUPIÈRE|Se ferme sur l'œil|2
+POUMON|Sert à respirer|2
+CERVEAU|Organe de la pensée|2
+SQUELETTE|Ensemble des os|2
+CÔTE|Os de la poitrine|2
+TALON|Arrière du pied|2
+CHÊNE|Grand arbre qui donne des glands|2
+SAPIN|Arbre de Noël|1
+PALMIER|Arbre des pays chauds|1
+POMMIER|Arbre qui donne des pommes|1
+SAULE|Arbre pleureur au bord de l'eau|2
+BOULEAU|Arbre à l'écorce blanche|2
+PEUPLIER|Grand arbre droit au bord des routes|2
+TILLEUL|Arbre dont les fleurs font une tisane|2
+TULIPE|Fleur venue de Hollande|1
+MARGUERITE|On l'effeuille : un peu, beaucoup...|1
+LYS|Grande fleur blanche|2
+VIOLETTE|Petite fleur mauve et parfumée|2
+LAVANDE|Fleur violette de Provence|2
+MUGUET|Fleur blanche du premier mai|2
+TOURNESOL|Grande fleur jaune qui suit le soleil|1
+COQUELICOT|Fleur rouge des champs|2
+ORCHIDÉE|Fleur élégante et exotique|3
+HERBE|Pousse verte de la pelouse|1
+FEUILLE|Pousse sur la branche|1
+RACINE|Partie de la plante sous la terre|1
+GRAINE|On la sème|1
+BRANCHE|Partie de l'arbre|1
+CHAMP|Terre où pousse le blé|1
+BLÉ|Céréale de la farine|1
+PRAIRIE|Terrain couvert d'herbe|2
+COLLINE|Petite montagne|1
+VALLÉE|Creux entre deux montagnes|2
+LAC|Étendue d'eau entourée de terre|1
+CASCADE|Chute d'eau|2
+SOURCE|Là où naît une rivière|2
+GROTTE|Cavité dans la roche|2
+VOLCAN|Montagne qui crache du feu|2
+DÉSERT|Lieu de sable sans eau|1
+LOUP|Animal sauvage qui hurle à la lune|1
+RENARD|Animal roux et rusé|1
+CERF|Grand animal des bois aux bois sur la tête|2
+BICHE|Femelle du cerf|2
+SANGLIER|Cochon sauvage des forêts|2
+ÉCUREUIL|Petit animal roux qui aime les noisettes|1
+HÉRISSON|Petit animal couvert de piquants|1
+SOURIS|Petit rongeur gris|1
+RAT|Rongeur plus gros que la souris|1
+COCHON|Animal rose de la ferme|1
+CHÈVRE|Animal de ferme qui donne un fromage|1
+ÂNE|Animal aux longues oreilles qui brait|1
+COQ|Chante le matin à la ferme|1
+DINDE|Volaille servie à Noël|1
+OIE|Grand oiseau blanc de la ferme|1
+PIGEON|Oiseau gris des places de la ville|1
+MOINEAU|Petit oiseau brun très commun|2
+MERLE|Oiseau noir au bec jaune|2
+CORBEAU|Grand oiseau noir|2
+AIGLE|Grand oiseau de proie|1
+CYGNE|Oiseau blanc au long cou|2
+HIRONDELLE|Oiseau qui annonce le printemps|2
+PERROQUET|Oiseau coloré qui peut parler|1
+PINGOUIN|Oiseau noir et blanc du froid|1
+MOUETTE|Oiseau blanc du bord de mer|2
+PAON|Oiseau à la queue en éventail|2
+ROUGE-GORGE|Petit oiseau à la poitrine orange|2
+CIGOGNE|Oiseau qui apporte les bébés, dit-on|3
+DAUPHIN|Mammifère marin très joueur|1
+BALEINE|Plus grand animal de la mer|1
+REQUIN|Poisson aux dents pointues|1
+CRABE|Marche de côté sur la plage|1
+HOMARD|Crustacé rouge une fois cuit|3
+CREVETTE|Petit crustacé rose|1
+HUÎTRE|Coquillage qui cache parfois une perle|2
+MOULE|Coquillage noir servi avec des frites|1
+ESCARGOT|Avance lentement avec sa coquille|1
+GRENOUILLE|Petit animal vert qui saute|1
+SERPENT|Reptile sans pattes|1
+LÉZARD|Petit reptile qui aime le soleil|2
+CROCODILE|Grand reptile aux dents pointues|1
+ZÈBRE|Cheval rayé noir et blanc|1
+OURSIN|Boule de piquants au fond de la mer|3
+KANGOUROU|Animal sauteur avec une poche|1
+CHAMEAU|Animal du désert à deux bosses|1
+GORILLE|Le plus grand des singes|2
+PANDA|Ours noir et blanc qui mange du bambou|1
+FOURMI|Petit insecte travailleur|1
+MOUCHE|Insecte qui bourdonne en été|1
+COCCINELLE|Insecte rouge à points noirs|1
+LIBELLULE|Insecte aux ailes fines près de l'eau|3
+GRILLON|Insecte qui chante la nuit|2
+CIGALE|Insecte qui chante en Provence|2
+ARAIGNÉE|Tisse sa toile|1
+VER|Petit animal qui vit dans la terre|1
+CHENILLE|Deviendra papillon|2
+GUÊPE|Insecte jaune et noir qui pique|2
+TRUITE|Poisson de rivière|2
+SAUMON|Poisson rose qui remonte les rivières|1
+THON|Gros poisson en boîte|1
+SARDINE|Petit poisson en boîte|1
+MORUE|Poisson salé de la brandade|3
+BOULANGER|Fait le pain|1
+BOUCHER|Vend la viande|1
+FACTEUR|Apporte le courrier|1
+POMPIER|Éteint les incendies|1
+PAYSAN|Travaille la terre|1
+FERMIER|Élève des animaux|1
+CUISINIER|Prépare les repas|1
+COIFFEUR|Coupe les cheveux|1
+DENTISTE|Soigne les dents|1
+MAÎTRE|Enseigne aux enfants|1
+PROFESSEUR|Enseigne au collège|1
+JARDINIER|Entretient les plantes|1
+PÊCHEUR|Attrape les poissons|1
+MAÇON|Construit les murs|2
+MENUISIER|Travaille le bois|2
+PLOMBIER|Répare les tuyaux|2
+PEINTRE|Fait des tableaux|1
+COUTURIÈRE|Coud les vêtements|2
+PHARMACIEN|Vend les médicaments|2
+NOTAIRE|Rédige les actes officiels|3
+VÉTÉRINAIRE|Soigne les animaux|2
+ÉPICIER|Tient une petite boutique de quartier|2
+FLEURISTE|Vend des bouquets|1
+PÂTISSIER|Fait les gâteaux|2
+CHARCUTIER|Vend le jambon et le saucisson|2
+FROMAGER|Vend le camembert|3
+BERGER|Garde les moutons|2
+MEUNIER|Fait la farine au moulin|3
+FORGERON|Travaille le fer chaud|3
+CORDONNIER|Répare les chaussures|3
+HORLOGER|Répare les montres|3
+VIGNERON|Cultive la vigne|3
+APICULTEUR|Élève des abeilles|3
+LIBRAIRE|Vend des livres|2
+MARTEAU|Outil pour frapper les clous|1
+CLOU|Pointe de métal|1
+VIS|Se tourne avec un tournevis|2
+TOURNEVIS|Outil pour serrer les vis|2
+SCIE|Outil pour couper le bois|1
+PINCE|Outil pour saisir|2
+PELLE|Outil pour creuser|1
+RÂTEAU|Outil pour ramasser les feuilles|2
+ARROSOIR|Pour donner de l'eau aux fleurs|1
+BROUETTE|Petit chariot à une roue|2
+ÉCHELLE|Pour monter sur le toit|1
+CORDE|Pour attacher ou sauter|1
+CISEAUX|Pour couper le papier|1
+AIGUILLE|Pour coudre|1
+FIL|Se passe dans le chas|1
+BOUTON|Ferme la chemise|1
+PINCEAU|Outil du peintre|2
+TENAILLES|Outil pour arracher les clous|3
+ÉTABLI|Table de travail du menuisier|3
+RABOT|Outil pour aplanir le bois|3
+SÉCATEUR|Ciseaux du jardinier|2
+BINETTE|Petit outil pour désherber|3
+PIOCHE|Outil pour casser la terre dure|2
+ENCLUME|Bloc de fer du forgeron|3
+CHEMISE|Vêtement à col et boutons|1
+PANTALON|Vêtement pour les jambes|1
+JUPE|Vêtement de femme sous la taille|1
+PULL|Vêtement chaud en laine|1
+VESTE|Se porte sur la chemise|1
+CHAUSSETTE|Se met dans la chaussure|1
+ÉCHARPE|Tient le cou au chaud|1
+GANT|Habille la main|1
+BONNET|Chapeau de laine|1
+CRAVATE|Se noue au cou des messieurs|1
+CEINTURE|Tient le pantalon|1
+PYJAMA|Se porte pour dormir|1
+PANTOUFLE|Chaussure de maison|1
+BOTTE|Chaussure montante|1
+SANDALE|Chaussure ouverte de l'été|1
+GILET|Vêtement sans manches ou à boutons|2
+CHÂLE|Se pose sur les épaules|2
+TRICOT|Ouvrage fait aux aiguilles|2
+BÉRET|Chapeau plat et rond|2
+PEIGNOIR|Robe légère du matin, après le bain|2
+IMPERMÉABLE|Manteau qui protège de la pluie|2
+MOUCHOIR|Pour se moucher|1
+POCHE|On y met les mains|1
+COL|Haut de la chemise|2
+MANCHE|Couvre le bras|1
+FOULARD|Carré de soie au cou|2
+BRETELLES|Tiennent le pantalon par les épaules|2
+SABOT|Chaussure en bois|2
+CANOTIER|Chapeau de paille plat|3
+VENT|Fait voler les feuilles|1
+ORAGE|Tonnerre et éclairs|1
+TONNERRE|Gronde pendant l'orage|1
+ÉCLAIR|Lumière vive dans le ciel d'orage|1
+BROUILLARD|Empêche de voir loin le matin|1
+GRÊLE|Petites boules de glace qui tombent|2
+GEL|Transforme l'eau en glace|1
+ROSÉE|Gouttes du matin sur l'herbe|2
+ARC-EN-CIEL|Sept couleurs après la pluie|1
+CHALEUR|Il en fait beaucoup en été|1
+FROID|On le sent en hiver|1
+TEMPÊTE|Vent très fort|1
+AVERSE|Pluie soudaine et courte|2
+BRISE|Petit vent léger|2
+BRUME|Léger brouillard|2
+VERGLAS|Glace fine sur la route|2
+CANICULE|Grosse chaleur d'été|2
+GIBOULÉE|Averse du mois de mars|3
+FLOCON|Petit morceau de neige|1
+NUAGEUX|Ciel couvert|2
+ENSOLEILLÉ|Plein de soleil|2
+CLIMAT|Temps habituel d'une région|2
+SAISON|L'année en a quatre|1
+VIOLON|Instrument à cordes et à archet|1
+FLÛTE|Instrument à vent qu'on souffle|1
+TAMBOUR|Instrument sur lequel on frappe|1
+TROMPETTE|Instrument en cuivre|1
+ACCORDÉON|Instrument du bal musette|1
+HARPE|Grand instrument à cordes pincées|2
+CLARINETTE|Instrument à vent en bois|2
+SAXOPHONE|Instrument du jazz|2
+VIOLONCELLE|Grand violon joué assis|2
+CONTREBASSE|Le plus grand des violons|3
+HAUTBOIS|Instrument à vent à anche double|3
+BASSON|Instrument à vent au son grave|3
+ORGUE|Grand instrument de l'église|2
+CLAVECIN|Ancêtre du piano|3
+TROMBONE|Instrument à coulisse|3
+CYMBALES|Disques de métal que l'on frappe|2
+TRIANGLE|Petit instrument de métal|2
+MÉLODIE|Suite de notes agréable|2
+REFRAIN|Revient entre les couplets|2
+COUPLET|Partie d'une chanson|2
+CHORALE|Groupe de chanteurs|2
+ORCHESTRE|Groupe de musiciens|1
+CONCERT|Spectacle de musique|1
+NOTE|Do, ré ou mi|1
+CHEF|Dirige l'orchestre ou la cuisine|1
+OPÉRA|Théâtre chanté|2
+VALSE|Danse à trois temps|2
+TANGO|Danse venue d'Argentine|2
+JAVA|Danse populaire des guinguettes|3
+SOLFÈGE|Apprentissage de la lecture des notes|3
+PARTITION|Musique écrite|3
+ARCHET|Fait chanter le violon|3
+DISQUE|Rond et noir, on l'écoute|2
+RADIO|On l'écoute pour les nouvelles|1
+FOOTBALL|Sport avec un ballon rond et des buts|1
+TENNIS|Sport avec raquette et filet|1
+RUGBY|Sport au ballon ovale|1
+NATATION|Sport dans la piscine|1
+CYCLISME|Sport du Tour de France|2
+GOLF|Sport aux dix-huit trous|1
+SKI|Glisse sur la neige|1
+JUDO|Art martial du Japon|2
+BOXE|Sport des gants|2
+RANDONNÉE|Longue marche dans la nature|2
+COURSE|On la gagne en arrivant le premier|1
+BALLON|Se lance ou se frappe|1
+RAQUETTE|Sert à frapper la balle|1
+FILET|Sépare les joueurs au tennis|2
+BUT|On le marque au football|1
+ÉQUIPE|Groupe de joueurs|1
+ARBITRE|Siffle les fautes|2
+MÉDAILLE|Récompense en or, argent ou bronze|1
+COUPE|Trophée du vainqueur|1
+STADE|Lieu des matchs|1
+PISCINE|Bassin pour nager|1
+GYMNASTIQUE|Exercices du corps|2
+ESCRIME|Sport à l'épée|3
+AVIRON|Sport de rame|3
+VOILE|Fait avancer le bateau avec le vent|2
+PLONGÉE|Exploration sous l'eau|2
+ÉQUITATION|Sport à cheval|2
+BILLARD|Jeu de boules sur un tapis vert|2
+CROQUET|Jeu de boules et d'arceaux|3
+QUILLES|On les fait tomber avec une boule|2
+ÉCHECS|Jeu du roi et de la reine|1
+DAMES|Jeu de pions sur un damier|1
+LOTO|Jeu des numéros tirés au sort|1
+PUZZLE|Jeu de pièces à assembler|1
+DÉ|Cube à six faces|1
+BELOTE|Jeu de cartes très populaire|2
+TAROT|Jeu de cartes avec l'excuse|2
+SCRABBLE|Jeu de lettres sur un plateau|2
+KERMESSE|Fête de l'école ou du village|3
+VALISE|Se remplit avant le voyage|1
+VOYAGE|Départ vers un autre lieu|1
+VACANCES|Temps libre de l'été|1
+HÔTEL|On y dort en voyage|1
+GARE|On y prend le train|1
+AÉROPORT|On y prend l'avion|1
+PORT|On y amarre les bateaux|1
+BILLET|Ticket pour voyager|1
+PASSEPORT|Papier pour aller à l'étranger|2
+CARTE|Montre les routes et les villes|1
+ROUTE|Relie les villes|1
+AUTOROUTE|Grande route rapide à péage|2
+PÉAGE|On y paie sur l'autoroute|2
+CAMPING|Vacances sous la tente|1
+TENTE|Abri de toile du campeur|1
+CROISIÈRE|Voyage en grand bateau|2
+BUS|Transport en commun|1
+MÉTRO|Train sous la ville|1
+TAXI|Voiture avec chauffeur|1
+TRAMWAY|Train dans les rues de la ville|2
+CAMION|Gros véhicule pour les marchandises|1
+MOTO|Deux roues avec moteur|1
+TRACTEUR|Véhicule de la ferme|1
+HÉLICOPTÈRE|Vole grâce à ses pales|2
+FUSÉE|Va dans l'espace|1
+VOILIER|Bateau à voiles|2
+PAQUEBOT|Très grand bateau de passagers|3
+PÉNICHE|Bateau plat des canaux|3
+BARQUE|Petit bateau à rames|2
+CANOË|Petite embarcation à pagaie|2
+MONTGOLFIÈRE|Ballon qui vole à l'air chaud|3
+CARAVANE|Petite maison roulante|2
+GUIDE|Fait visiter|1
+SOUVENIR|Rapporté de voyage|1
+PHOTO|Image prise avec un appareil|1
+ESCALE|Arrêt pendant un long voyage|2
+VILLAGE|Petite commune à la campagne|1
+VILLE|Grande commune|1
+RUE|Bordée de maisons|1
+PLACE|Espace ouvert au centre du village|1
+MAIRIE|Bâtiment du maire|1
+POSTE|On y envoie les lettres|1
+BANQUE|On y dépose son argent|1
+MAGASIN|On y fait ses achats|1
+BOULANGERIE|On y achète le pain|1
+PHARMACIE|On y achète les médicaments|1
+CINÉMA|On y voit des films|1
+THÉÂTRE|On y voit des pièces|1
+MUSÉE|On y voit des œuvres d'art|1
+BIBLIOTHÈQUE|On y emprunte des livres|2
+PARC|Jardin public|1
+FONTAINE|Jet d'eau sur la place|2
+TROTTOIR|Bord de la rue pour les piétons|2
+CARREFOUR|Croisement de rues|2
+PONT|Passe au-dessus de la rivière|1
+CHÂTEAU|Demeure des rois|1
+CATHÉDRALE|Grande église d'une ville|2
+CRAYON|Sert à dessiner|1
+STYLO|Sert à écrire à l'encre|1
+GOMME|Efface le crayon|1
+CAHIER|On y écrit ses leçons|1
+CARTABLE|Sac de l'écolier|1
+TABLEAU|Le maître y écrit à la craie|1
+CRAIE|Bâton blanc du tableau|1
+RÈGLE|Sert à tracer des traits droits|1
+TROUSSE|Range les crayons|1
+LEÇON|À apprendre pour demain|1
+DICTÉE|Exercice d'orthographe|1
+CLASSE|Salle des élèves|1
+ÉLÈVE|Va à l'école|1
+RÉCRÉATION|Pause dans la cour|1
+DEVOIRS|Travail à faire à la maison|1
+ALPHABET|De A à Z|1
+CALCUL|Additions et soustractions|1
+ENCRE|Remplit le stylo plume|2
+BUVARD|Papier qui sèche l'encre|3
+ENCRIER|Petit pot d'encre sur le pupitre|3
+PUPITRE|Bureau de l'écolier d'autrefois|3
+COMPAS|Trace des cercles|3
+ÉQUERRE|Sert à tracer les angles droits|3
+RAPPORTEUR|Mesure les angles|3
+GÉOGRAPHIE|Étude des pays et des fleuves|2
+HISTOIRE|Récit du passé|1
+GRAMMAIRE|Règles de la langue|2
+ORTHOGRAPHE|Façon correcte d'écrire les mots|2
+CONJUGAISON|On y apprend les temps des verbes|3
+POÉSIE|Se récite par cœur|2
+DICTIONNAIRE|Donne le sens des mots|2
+ATLAS|Livre de cartes|3
+DIPLÔME|Prouve que l'on a réussi|2
+EXAMEN|Épreuve de fin d'année|2
+BULLETIN|Carnet des notes de l'élève|2
+INSTITUTEUR|Ancien nom du maître d'école|2
+JOIE|Grand bonheur|1
+BONHEUR|État de celui qui est heureux|1
+TRISTE|Le contraire de joyeux|1
+PEUR|On l'a devant le danger|1
+COLÈRE|On se fâche|1
+SURPRISE|Ce qui étonne|1
+FIERTÉ|On la ressent après un succès|2
+TENDRESSE|Douceur affectueuse|2
+NOSTALGIE|Regret doux du passé|3
+GAIETÉ|Bonne humeur|2
+CALME|Le contraire de l'agitation|1
+PATIENCE|Savoir attendre|2
+CONFIANCE|On la donne à un ami|2
+ESPOIR|On l'a pour demain|1
+ENNUI|Quand on ne sait que faire|2
+CURIOSITÉ|Envie de savoir|2
+TIMIDITÉ|Gêne devant les autres|2
+GRATITUDE|Reconnaissance d'un bienfait|3
+SÉRÉNITÉ|Calme de l'esprit|3
+ENTHOUSIASME|Grand élan de joie|3
+AMITIÉ|Lien entre deux amis|1
+COURAGE|Force devant la difficulté|1
+HUMOUR|Fait rire|2
+RIRE|Montre que l'on s'amuse|1
+LARME|Coule de l'œil|1
+BISOU|Petit baiser|1
+CÂLIN|Tendre étreinte|1
+MANGER|Prendre son repas|1
+BOIRE|Avaler un liquide|1
+DORMIR|Se reposer la nuit|1
+CHANTER|Faire de la musique avec sa voix|1
+DANSER|Bouger en musique|1
+LIRE|Parcourir un livre|1
+ÉCRIRE|Tracer des lettres|1
+NAGER|Avancer dans l'eau|1
+COURIR|Aller très vite à pied|1
+MARCHER|Avancer à pied|1
+JOUER|S'amuser|1
+PARLER|Dire des mots|1
+ÉCOUTER|Prêter l'oreille|1
+REGARDER|Porter les yeux sur|1
+CUISINER|Préparer les repas|1
+JARDINER|Cultiver son potager|2
+TRICOTER|Faire un pull avec des aiguilles|2
+COUDRE|Assembler avec du fil|2
+PEINDRE|Faire un tableau|2
+DESSINER|Faire un dessin|1
+VOYAGER|Partir loin de chez soi|1
+AIMER|Éprouver de l'amour|1
+RÊVER|Voir des images en dormant|1
+OUVRIR|Le contraire de fermer|1
+FERMER|Le contraire d'ouvrir|1
+RANGER|Mettre de l'ordre|1
+NETTOYER|Rendre propre|1
+REPASSER|Défroisser le linge|2
+BALAYER|Passer le balai|2
+ARROSER|Donner de l'eau aux plantes|2
+CUEILLIR|Ramasser les fleurs ou les fruits|2
+SEMER|Mettre les graines en terre|2
+PLANTER|Mettre en terre|2
+PÉTRIR|Travailler la pâte|3
+MIJOTER|Cuire doucement et longtemps|3
+FLÂNER|Se promener sans but|3
+BAVARDER|Parler de tout et de rien|2
+SIFFLER|Faire un son avec les lèvres|2
+APPLAUDIR|Taper des mains au spectacle|2
+GRAND|Le contraire de petit|1
+PETIT|Le contraire de grand|1
+BEAU|Agréable à regarder|1
+JOLI|Plaisant à voir|1
+CHAUD|Le contraire de froid|1
+DOUX|Agréable au toucher|1
+GENTIL|Aimable avec les autres|1
+SAGE|Se dit d'un enfant obéissant|1
+RAPIDE|Qui va vite|1
+LENT|Le contraire de rapide|1
+FORT|Le contraire de faible|1
+PROPRE|Le contraire de sale|1
+NEUF|Le contraire de vieux|1
+JEUNE|Qui n'a pas beaucoup d'années|1
+DROIT|Le contraire de tordu|2
+LOURD|Pèse beaucoup|1
+LÉGER|Pèse peu|1
+PIQUANT|Goût du piment|2
+SALÉ|Goût de la mer|1
+AMER|Goût du café sans sucre|2
+ACIDE|Goût du citron|2
+TIÈDE|Ni chaud ni froid|2
+PAISIBLE|Calme et tranquille|2
+JOYEUX|Plein de gaieté|1
+POLI|Bien élevé|2
+AIMABLE|Gentil avec tout le monde|2
+GÉNÉREUX|Donne volontiers|2
+SOIGNEUX|Fait attention à ses affaires|3
+MALICIEUX|Qui aime taquiner|3
+ESPIÈGLE|Vif et malicieux|3
+COQUET|Qui soigne son apparence|3
+GOURMAND|Aime les bonnes choses|2
+BAVARD|Parle beaucoup|2
+CURIEUX|Veut tout savoir|2
+TIMIDE|N'ose pas parler|2
+FIDÈLE|Toujours là pour vous|2
+HONNÊTE|Ne ment pas|2
+ÉLÉGANT|Bien habillé et gracieux|2
+SPLENDIDE|Magnifique|2
+DÉLICIEUX|Très bon à manger|2
+MOELLEUX|Doux et tendre, comme un gâteau|3
+CROUSTILLANT|Qui craque sous la dent|3
+PARFUMÉ|Qui sent bon|2
+SAVOUREUX|Plein de goût|3
+VERMEIL|Rouge vif et doux|3
+VAISSELLE|Assiettes et verres à laver|2
+LOUCHE|Grande cuillère pour servir la soupe|2
+PASSOIRE|Sert à égoutter les pâtes|2
+POÊLE|Pour faire cuire les crêpes|2
+COCOTTE|Marmite en fonte|2
+MARMITE|Grand récipient pour cuire|2
+THÉIÈRE|On y fait infuser le thé|2
+CAFETIÈRE|Prépare le café|2
+GRILLE-PAIN|Dore les tartines|2
+FOUET|Pour monter les blancs en neige|2
+ROULEAU|Sert à étaler la pâte|2
+TIROIR|Partie du meuble qui coulisse|2
+BUFFET|Meuble de la salle à manger|2
+COMMODE|Meuble bas à tiroirs|2
+TABOURET|Siège sans dossier|2
+ÉTAGÈRE|Planche pour poser les livres|2
+VERROU|Ferme la porte de l'intérieur|2
+SONNETTE|On l'actionne pour annoncer sa visite|2
+CHEMINÉE|On y fait du feu|2
+RADIATEUR|Chauffe la pièce|2
+VOLET|Ferme la fenêtre de l'extérieur|2
+PLAFOND|Haut de la pièce|2
+PARQUET|Sol en bois|2
+CARRELAGE|Sol en carreaux|2
+PAILLASSON|Pour s'essuyer les pieds|2
+HAIE|Clôture d'arbustes|2
+POTAGER|Jardin des légumes|2
+VERGER|Jardin d'arbres fruitiers|2
+SERRE|Abri vitré pour les plantes|2
+PELOUSE|Herbe tondue du jardin|2
+TONDEUSE|Coupe l'herbe du jardin|2
+NICHOIR|Petite maison pour les oiseaux|2
+CLÔTURE|Entoure le jardin|2
+PORTAIL|Grande porte du jardin|2
+BANC|Siège pour plusieurs personnes|2
+HAMAC|Lit suspendu entre deux arbres|2
+PARASOL|Protège du soleil sur la plage|2
+CITROUILLE|Grosse courge orange|2
+ARTICHAUT|Légume dont on mange le cœur|3
+ASPERGE|Légume en tige du printemps|2
+BETTERAVE|Légume rouge|2
+CÉLERI|Légume en branches ou en boule|2
+ENDIVE|Légume blanc un peu amer|3
+FENOUIL|Légume au goût d'anis|3
+POTIRON|Grosse courge pour la soupe|2
+CHAMPIGNON|Pousse dans les bois en automne|2
+NOISETTE|Petit fruit de l'écureuil|2
+NOIX|Fruit à coque dur|2
+CHÂTAIGNE|Se grille en automne|2
+FIGUE|Fruit violet du sud|2
+DATTE|Fruit du palmier|2
+MANGUE|Fruit tropical orange|2
+GROSEILLE|Petite baie rouge en grappe|2
+FRAMBOISE|Petit fruit rouge et velouté|2
+MYRTILLE|Petite baie bleue|2
+MÛRE|Fruit noir de la ronce|2
+CASSIS|Petite baie noire|3
+MIRABELLE|Petite prune jaune de Lorraine|3
+CLÉMENTINE|Petit agrume de l'hiver|2
+PAMPLEMOUSSE|Gros agrume amer|2
+RHUBARBE|Tige acide pour les tartes|3
+COING|Fruit jaune pour la gelée|3
+OMELETTE|Œufs battus et cuits|2
+QUICHE|Tarte salée aux lardons|2
+GRATIN|Plat doré au four|2
+RAGOÛT|Plat de viande mijotée|2
+POT-AU-FEU|Bœuf et légumes bouillis|2
+RATATOUILLE|Légumes du sud mijotés|2
+TAPENADE|Purée d'olives de Provence|3
+CASSOULET|Haricots et confit du sud-ouest|3
+CHOUCROUTE|Chou et saucisses d'Alsace|2
+FONDUE|Fromage fondu partagé|2
+RACLETTE|Fromage fondu avec des pommes de terre|2
+TARTINE|Tranche de pain beurrée|2
+SANDWICH|Pain garni|2
+BRIOCHE|Pain doux et beurré|2
+MADELEINE|Petit gâteau en forme de coquille|2
+PROFITEROLE|Petit chou glacé nappé de chocolat|3
+MERINGUE|Blanc d'œuf sucré cuit|2
+MOUSSE|Dessert léger au chocolat|2
+COMPOTE|Fruits cuits écrasés|2
+CARAMEL|Sucre fondu et doré|2
+VANILLE|Gousse parfumée|2
+CANNELLE|Épice en bâton|2
+MUSCADE|Noix râpée en cuisine|3
+SAFRAN|Épice dorée et précieuse|3
+THYM|Herbe de Provence|2
+LAURIER|Feuille de la sauce|3
+ROMARIN|Herbe aromatique en aiguilles|3
+BASILIC|Herbe du pistou|2
+CIBOULETTE|Herbe fine en brins|2
+ESTRAGON|Herbe aromatique de la béarnaise|3
+MOUTARDE|Condiment jaune et piquant|2
+VINAIGRE|Liquide acide de la vinaigrette|2
+CORNICHON|Petit concombre au vinaigre|2
+OLIVE|Fruit de l'huile du sud|2
+SAUCISSON|Charcuterie sèche|2
+PÂTÉ|Charcuterie servie en terrine|2
+CAMEMBERT|Fromage rond de Normandie|2
+ROQUEFORT|Fromage bleu de brebis|3
+GRUYÈRE|Fromage à trous|2
+BREBIS|Femelle du mouton|3
+AGNEAU|Petit du mouton|2
+VEAU|Petit de la vache|2
+POULAIN|Petit du cheval|2
+POUSSIN|Petit de la poule|2
+CHATON|Petit du chat|2
+CHIOT|Petit du chien|2
+FAON|Petit de la biche|3
+TAUREAU|Mâle de la vache|2
+JUMENT|Femelle du cheval|2
+CHEVREAU|Petit de la chèvre|3
+LAPEREAU|Petit du lapin|3
+CANETON|Petit du canard|3
+MARCASSIN|Petit du sanglier|3
+OURSON|Petit de l'ours|2
+LIONCEAU|Petit du lion|3
+ÉTABLE|Abri des vaches|3
+ÉCURIE|Abri des chevaux|2
+POULAILLER|Abri des poules|2
+NICHE|Abri du chien|2
+RUCHE|Maison des abeilles|2
+TERRIER|Abri du lapin sauvage|3
+BERGERIE|Abri des moutons|3
+GRANGE|Bâtiment pour le foin|3
+FOIN|Herbe séchée|2
+PAILLE|Tige sèche du blé|2
+MOULIN|Tourne avec le vent ou l'eau|2
+PUITS|On y tire l'eau|2
+VIGNE|Plante du raisin|2
+VENDANGE|Récolte du raisin|2
+MOISSON|Récolte du blé|3
+CHARRUE|Sert à labourer|3
+SILLON|Trace de la charrue|3
+ÉPI|Tête du blé|2
+MAÏS|Céréale aux grains jaunes|2
+ORGE|Céréale de la bière|3
+AVOINE|Céréale des chevaux|3
+SEIGLE|Céréale d'un pain sombre|3
+IRIS|Fleur bleue aux feuilles en épée|2
+COLZA|Champ jaune au printemps|3
+HOUBLON|Plante qui parfume la bière|3
+LIN|Plante à fleurs bleues pour le tissu|3
+CHANVRE|Plante pour la corde|3
+NÉNUPHAR|Fleur posée sur l'étang|3
+JONQUILLE|Fleur jaune du printemps|2
+PERCE-NEIGE|Fleur blanche de fin d'hiver|3
+PRIMEVÈRE|Fleur des premiers beaux jours|3
+GLYCINE|Grappes mauves sur la façade|3
+HORTENSIA|Fleur en grosses boules|3
+PIVOINE|Grosse fleur rose et parfumée|3
+GÉRANIUM|Fleur rouge des balcons|2
+CAPUCINE|Fleur orange que l'on peut manger|3
+BLEUET|Fleur bleue des champs|3
+PENSÉE|Petite fleur au visage velouté|3
+LUTRIN|Pupitre où l'on pose le livre de chants|3
+BAHUT|Grand coffre ou buffet rustique|3
+GUÉRIDON|Petite table ronde à un pied|3
+SECRÉTAIRE|Meuble à écrire avec abattant|3
+BERGÈRE|Fauteuil large et rembourré|3
+CRÉDENCE|Desserte de la salle à manger|3
+ÉDREDON|Couverture garnie de plumes|3
+TRAVERSIN|Long coussin en travers du lit|3
+BOUGEOIR|Support de la chandelle|3
+CHANDELIER|Support à plusieurs bougies|3
+LUSTRE|Lampe suspendue à branches|2
+ABAT-JOUR|Coiffe la lampe|2
+GUIRLANDE|Décore le sapin|2
+LANTERNE|Lampe protégée pour le dehors|2
+CARAFE|Bouteille pour l'eau à table|2
+SOUPIÈRE|Grand plat pour servir le potage|3
+SAUCIÈRE|Petit récipient pour la sauce|3
+SALIÈRE|Petit pot de sel|2
+HUILIER|Porte l'huile et le vinaigre|3
+RAMEQUIN|Petit plat pour le four|3
+TERRINE|Plat en terre pour le pâté|3
+ÉCUMOIRE|Grande cuillère trouée|3
+MOULINETTE|Petit moulin à légumes|3
+BOCAL|Pot en verre pour les conserves|2
+CONSERVE|Aliment en boîte|2
+GARDE-MANGER|Petite armoire aérée pour les aliments|3
+QUENOUILLE|Bâton où l'on enroulait la laine à filer|3
+BOBINE|Le fil s'y enroule|2
+PELOTE|Boule de laine|2
+CANEVAS|Toile pour la broderie|3
+BRODERIE|Dessin cousu au fil|2
+DENTELLE|Tissu ajouré et délicat|2
+OURLET|Bord replié et cousu|3
+BOUTONNIÈRE|Fente pour le bouton|3
+FERMETURE|Éclair ou à boutons|2
+VELOURS|Tissu doux et épais|2
+SOIE|Tissu fin fait par un ver|2
+COTON|Fibre blanche d'une plante|2
+LAINE|Vient du mouton|2
+SATIN|Tissu brillant et lisse|3
+FLANELLE|Tissu de laine doux|3
+TWEED|Tissu de laine chiné|3
+MOHAIR|Laine de chèvre angora|3
+CACHEMIRE|Laine très douce|3
+MOUFLE|Gant sans doigts séparés|2
+GUÊTRE|Couvre le bas de la jambe|3
+REDINGOTE|Manteau long et ajusté|3
+CAPELINE|Chapeau à larges bords|3
+CHAPELIER|Fabrique les chapeaux|3
+MODISTE|Crée des chapeaux de dame|3
+TAILLEUR|Coud les costumes sur mesure|2
+LUTHIER|Fabrique les violons|3
+ÉBÉNISTE|Fabrique de beaux meubles|3
+TONNELIER|Fabrique les tonneaux|3
+VANNIER|Tresse les paniers|3
+POTIER|Façonne l'argile|3
+VERRIER|Souffle le verre|3
+BIJOUTIER|Vend des bagues et colliers|2
+JOAILLIER|Travaille les pierres précieuses|3
+ORFÈVRE|Travaille l'or et l'argent|3
+TISSERAND|Fabrique la toile au métier|3
+FACTRICE|Elle apporte les lettres|2
+MARÉCHAL|Ferre les chevaux|3
+RÉMOULEUR|Aiguise les couteaux|3
+RAMONEUR|Nettoie les cheminées|3
+CHARPENTIER|Construit la charpente|3
+COUVREUR|Pose les tuiles|3
+TUILE|Couvre le toit|2
+ARDOISE|Pierre plate du toit ou de l'écolier|2
+CHARPENTE|Squelette en bois du toit|3
+LUCARNE|Petite fenêtre du toit|3
+GOUTTIÈRE|Recueille l'eau du toit|3
+PERRON|Marches devant la porte|3
+VÉRANDA|Pièce vitrée sur le jardin|2
+TONNELLE|Abri de verdure au jardin|3
+PERGOLA|Treillage pour les plantes grimpantes|3
+GLORIETTE|Petit pavillon de jardin|3
+KIOSQUE|Petit pavillon du square|3
+BELVÉDÈRE|Point de vue en hauteur|3
+PRESBYTÈRE|Maison du curé|3
+CLOCHER|Tour de l'église|2
+CLOCHE|Sonne au clocher|2
+VITRAIL|Fenêtre de verre coloré|3
+ABBAYE|Monastère dirigé par un abbé|3
+CHAPELLE|Petite église|2
+CALVAIRE|Croix au bord du chemin|3
+LAVOIR|Lieu où l'on lavait le linge|3
+GUINGUETTE|Café dansant au bord de l'eau|3
+AUBERGE|Petit hôtel de campagne|2
+ESTAMINET|Petit café du Nord|3
+BISTROT|Petit café du coin|2
+TERRASSE|Tables dehors au café|2
+CANAL|Rivière creusée par l'homme|2
+ÉCLUSE|Fait monter les bateaux sur le canal|3
+ESTUAIRE|Embouchure large du fleuve|3
+FLEUVE|Grand cours d'eau qui va à la mer|2
+RUISSEAU|Petit cours d'eau|2
+ÉTANG|Petite étendue d'eau calme|2
+MARAIS|Terrain gorgé d'eau|3
+FALAISE|Côte rocheuse et abrupte|2
+DUNE|Colline de sable|2
+CRIQUE|Petite baie abritée|3
+LAGUNE|Étendue d'eau salée près de la mer|3
+PÉNINSULE|Terre presque entourée par la mer|3
+GLACIER|Fleuve de glace en montagne|2
+SOMMET|Haut de la montagne|2
+PIC|Sommet pointu|2
+CRÊTE|Ligne des sommets|3
+ALPAGE|Pâturage de montagne en été|3
+GORGE|Vallée étroite et profonde|3
+CAUSSE|Plateau calcaire du Massif central|3
+BOCAGE|Champs entourés de haies|3
+GARRIGUE|Lande sèche du Midi|3
+LANDE|Terre de bruyère|3
+BRUYÈRE|Petite fleur mauve des landes|3
+FOUGÈRE|Plante des sous-bois|2
+LICHEN|Pousse sur les rochers et les troncs|3
+LIERRE|Plante qui grimpe aux murs|2
+GUI|Boule verte des arbres, porte-bonheur|3
+HOUX|Feuilles piquantes et baies rouges|3
+AUBÉPINE|Arbuste à fleurs blanches des haies|3
+GENÊT|Arbuste à fleurs jaunes|3
+NOISETIER|Arbuste qui donne des noisettes|3
+ÉRABLE|Arbre au sirop sucré|2
+PLATANE|Arbre des places du Midi|3
+MARRONNIER|Arbre aux fruits bruns brillants|3
+CYPRÈS|Arbre élancé de Provence|3
+OLIVIER|Arbre de l'huile|2
+ACACIA|Arbre aux grappes blanches parfumées|3
+MÉLÈZE|Conifère qui perd ses aiguilles|3
+ORME|Grand arbre des avenues d'autrefois|3
+HÊTRE|Arbre à l'écorce lisse et grise|3
+FRÊNE|Arbre au bois souple|3
+CHARME|Arbre des haies ou attrait|3
+ÉCORCE|Peau de l'arbre|2
+SÈVE|Circule dans l'arbre|3
+BOURGEON|Deviendra feuille ou fleur|2
+PÉTALE|Partie colorée de la fleur|2
+ÉPINE|Pique sur la tige de la rose|2
+BOUQUET|Fleurs réunies|1
+GLAND|Fruit du chêne|2
+PIGNON|Graine de la pomme de pin|3
+CHOUETTE|Oiseau de nuit au cri doux|2
+ROSSIGNOL|Oiseau au chant mélodieux|3
+MÉSANGE|Petit oiseau à tête bleue ou noire|3
+PINSON|Gai comme lui, dit-on|3
+FAUVETTE|Petit oiseau chanteur des haies|3
+LORIOT|Oiseau jaune et noir|3
+HÉRON|Échassier gris au bord de l'eau|3
+FLAMANT|Échassier rose|3
+PIVERT|Oiseau qui frappe les troncs|3
+COUCOU|Oiseau qui donne son nom à une horloge|3
+FAISAN|Oiseau au plumage doré|3
+PERDRIX|Oiseau des champs|3
+CAILLE|Petit oiseau des blés|3

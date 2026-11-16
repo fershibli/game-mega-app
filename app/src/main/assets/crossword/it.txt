@@ -1,179 +1,1076 @@
-# Dizionario del cruciverba — italiano. Formato: RISPOSTA|definizione. Parole di tutti i giorni, definizioni semplici.
-PANE|Si fa con farina, acqua e lievito
-PASTA|Spaghetti, penne o fusilli
-PIZZA|Margherita o capricciosa, cotta nel forno
-RISO|Chicco bianco del risotto
-MELA|Frutto rosso o verde, una al giorno toglie il medico di torno
-PERA|Frutto dolce a forma di goccia
-ARANCIA|Agrume da cui si fa la spremuta
-LIMONE|Agrume giallo e aspro
-UVA|Frutto in grappoli da cui si fa il vino
-FRAGOLA|Piccolo frutto rosso di primavera
-CILIEGIA|Frutto rosso piccolo, con il nocciolo
-BANANA|Frutto giallo e lungo
-FORMAGGIO|Si fa con il latte, come il parmigiano
-LATTE|Bevanda bianca della colazione
-BURRO|Si spalma sul pane, fatto con la panna
-UOVO|Lo depone la gallina
-SALE|Si mette nell’acqua della pasta
-OLIO|Quello d’oliva condisce l’insalata
-ACETO|Condimento aspro per l’insalata
-ZUCCHERO|Rende dolce il caffè
-CAFFÈ|Si beve in tazzina, ristretto o lungo
-TÈ|Bevanda calda con le foglie in infusione
-VINO|Bevanda fatta con l’uva
-ACQUA|Si beve quando si ha sete
-MIELE|Lo producono le api
-TORTA|Dolce con le candeline per il compleanno
-BISCOTTO|Si inzuppa nel latte a colazione
-GELATO|Dolce freddo in cono o in coppetta
-MINESTRA|Piatto caldo che si mangia con il cucchiaio
-INSALATA|Foglie verdi condite con olio e sale
-POMODORO|Rosso, serve per il sugo
-CAROTA|Ortaggio arancione amato dai conigli
-PATATA|Tubero per fare il purè
-CIPOLLA|Fa piangere quando si taglia
-AGLIO|Ha gli spicchi e un odore forte
-BASILICO|Erba profumata del pesto
-CASA|Edificio dove vive la famiglia
-PORTA|Si apre per entrare in una stanza
-FINESTRA|Si apre per far entrare aria e luce
-TETTO|Copre la casa dall’alto
-SEDIA|Mobile per sedersi
-TAVOLO|Mobile su cui si mangia
-LETTO|Mobile su cui si dorme
-CUSCINO|Ci si appoggia la testa per dormire
-DIVANO|Ci si siede comodi davanti alla televisione
-ARMADIO|Mobile dove si appendono i vestiti
-CUCINA|Stanza dove si preparano i pasti
-BAGNO|Stanza con la doccia e il lavandino
-SCALA|Ha i gradini per salire
-CHIAVE|Serve ad aprire la serratura
-LAMPADA|Fa luce sul comodino
-SPECCHIO|Ci si guarda la mattina per pettinarsi
-TAPPETO|Si stende sul pavimento
-PENTOLA|Ci si cuoce la pasta
-PIATTO|Ci si mette il cibo a tavola
-BICCHIERE|Ci si versa l’acqua per bere
-FORCHETTA|Posata con i rebbi
-COLTELLO|Posata che taglia
-TAZZA|Ci si beve il latte a colazione
-FORNO|Ci si cuociono pane e torte
-MADRE|La mamma
-PADRE|Il papà
-NONNA|La mamma della mamma o del papà
-NONNO|Il papà della mamma o del papà
-FIGLIO|Il bambino di una coppia
-SORELLA|Figlia degli stessi genitori
-FRATELLO|Figlio degli stessi genitori
-ZIA|La sorella della mamma o del papà
-NIPOTE|Figlio del figlio, per i nonni
-SPOSA|Indossa l’abito bianco al matrimonio
-AMICO|Persona a cui si vuole bene
-BAMBINO|Un piccolo che va all’asilo
-SOLE|Stella che ci dà luce e calore
-LUNA|Brilla nel cielo di notte
-STELLA|Brilla nel cielo e forma le costellazioni
-CIELO|Azzurro di giorno, buio di notte
-MARE|Distesa d’acqua salata
-LAGO|Specchio d’acqua circondato da terra
-FIUME|Scorre verso il mare
-MONTE|Si scala per arrivare in cima
-ALBERO|Ha tronco, rami e foglie
-FIORE|La rosa e la margherita
-ROSA|Fiore con le spine
-FOGLIA|Cade dagli alberi in autunno
-ERBA|Verde tappeto del prato
-SASSO|Piccola pietra
-SABBIA|Copre la spiaggia
-ISOLA|Terra circondata dal mare
-BOSCO|Luogo pieno di alberi
-PRATO|Distesa d’erba verde
-NEVE|Bianca e fredda, cade d’inverno
-PIOGGIA|Acqua che cade dalle nuvole
-VENTO|Fa volare gli aquiloni
-NUVOLA|Bianca o grigia, nel cielo
-ESTATE|La stagione più calda
-INVERNO|La stagione più fredda
-AUTUNNO|Stagione in cui cadono le foglie
-CALDO|Il contrario di freddo
-FREDDO|Il contrario di caldo
-GATTO|Animale domestico che fa le fusa
-CANE|Il migliore amico dell’uomo
-CAVALLO|Animale che si cavalca
-MUCCA|Ci dà il latte
-PECORA|Ci dà la lana
-GALLINA|Depone le uova nel pollaio
-ASINO|Animale con le orecchie lunghe che raglia
-TOPO|Piccolo roditore che piace al gatto
-LEONE|Il re della foresta
-TIGRE|Grande felino a strisce
-ORSO|Grande animale che ama il miele
-PESCE|Nuota nel mare e nei fiumi
-UCCELLO|Ha le ali e le piume
-APE|Insetto che fa il miele
-RANA|Salta e gracida nello stagno
-ANATRA|Uccello che nuota e fa qua qua
-CONIGLIO|Ha le orecchie lunghe e mangia carote
-MEDICO|Cura i malati
-MAESTRA|Insegna ai bambini a scuola
-CUOCO|Prepara i piatti al ristorante
-POSTINO|Porta le lettere
-PITTORE|Dipinge i quadri
-SARTO|Cuce i vestiti su misura
-FORNAIO|Fa il pane
-PIANO|Strumento con i tasti bianchi e neri
-CHITARRA|Strumento a sei corde
-VIOLINO|Strumento che si suona con l’archetto
-TAMBURO|Strumento che si suona con le bacchette
-CANTO|Lo si fa con la voce
-NOTA|Do, re, mi, fa, sol, la, si
-OPERA|Spettacolo cantato, come la Traviata
-TESTA|Parte del corpo dove crescono i capelli
-MANO|Ha cinque dita
-PIEDE|Ci si mette la scarpa
-OCCHIO|Serve per vedere
-NASO|Serve per sentire gli odori
-BOCCA|Serve per mangiare e parlare
-ORECCHIO|Serve per sentire i suoni
-CUORE|Batte nel petto
-DENTE|Si lava con lo spazzolino
-BRACCIO|Va dalla spalla alla mano
-GAMBA|Serve per camminare
-CITTÀ|Roma, Milano o Napoli
-STRADA|Ci passano le automobili
-PIAZZA|Spazio aperto al centro del paese
-CHIESA|Ha il campanile
-NEGOZIO|Ci si fa la spesa
-TRENO|Viaggia sui binari
-AUTO|Ha quattro ruote e il volante
-PONTE|Passa sopra il fiume
-PARCO|Giardino pubblico
-MERCATO|Bancarelle di frutta e verdura
-GIOIA|Grande felicità
-AMORE|Sentimento tra innamorati
-PAURA|La si prova davanti a un pericolo
-RISATA|Si fa quando qualcosa è molto divertente
-SORRISO|Si fa con le labbra quando si è contenti
-CALMA|Il contrario di agitazione
-SPERANZA|Si dice che sia l’ultima a morire
-ORA|Un giorno ne ha ventiquattro
-ANNO|Ha dodici mesi
-SERA|Viene dopo il pomeriggio
-NOTTE|Si dorme quando è buio
-ROSSO|Il colore del pomodoro
-VERDE|Il colore dell’erba
-GIALLO|Il colore del limone
-NERO|Il colore del carbone
-BIANCO|Il colore del latte
-LIBRO|Ha pagine da leggere
-LETTERA|Si spedisce nella busta
-OROLOGIO|Segna l’ora
-OMBRELLO|Ripara dalla pioggia
-CAPPELLO|Si mette in testa
-SCARPA|Si mette al piede
-CARTA|Si usa per scrivere o per giocare a scopa
-TRENTA|Dieci più venti
-SETTE|I giorni della settimana
-REGALO|Si riceve a Natale o al compleanno
-NATALE|Festa del venticinque dicembre
+# Dizionario del cruciverba — italiano. Formato: RISPOSTA|definizione|livello (1 facile, 2 medio, 3 difficile). Parole di tutti i giorni, definizioni semplici.
+PANE|Si fa con farina, acqua e lievito|1
+PASTA|Spaghetti, penne o fusilli|1
+PIZZA|Margherita o capricciosa, cotta nel forno|1
+RISO|Chicco bianco del risotto|1
+MELA|Frutto rosso o verde, una al giorno toglie il medico di torno|1
+PERA|Frutto dolce a forma di goccia|1
+ARANCIA|Agrume da cui si fa la spremuta|1
+LIMONE|Agrume giallo e aspro|1
+UVA|Frutto in grappoli da cui si fa il vino|1
+FRAGOLA|Piccolo frutto rosso di primavera|1
+CILIEGIA|Frutto rosso piccolo, con il nocciolo|1
+BANANA|Frutto giallo e lungo|1
+FORMAGGIO|Si fa con il latte, come il parmigiano|1
+LATTE|Bevanda bianca della colazione|1
+BURRO|Si spalma sul pane, fatto con la panna|1
+UOVO|Lo depone la gallina|1
+SALE|Si mette nell’acqua della pasta|1
+OLIO|Quello d’oliva condisce l’insalata|1
+ACETO|Condimento aspro per l’insalata|2
+ZUCCHERO|Rende dolce il caffè|1
+CAFFÈ|Si beve in tazzina, ristretto o lungo|1
+TÈ|Bevanda calda con le foglie in infusione|1
+VINO|Bevanda fatta con l’uva|1
+ACQUA|Si beve quando si ha sete|1
+MIELE|Lo producono le api|1
+TORTA|Dolce con le candeline per il compleanno|1
+BISCOTTO|Si inzuppa nel latte a colazione|1
+GELATO|Dolce freddo in cono o in coppetta|1
+MINESTRA|Piatto caldo che si mangia con il cucchiaio|1
+INSALATA|Foglie verdi condite con olio e sale|1
+POMODORO|Rosso, serve per il sugo|1
+CAROTA|Ortaggio arancione amato dai conigli|1
+PATATA|Tubero per fare il purè|1
+CIPOLLA|Fa piangere quando si taglia|1
+AGLIO|Ha gli spicchi e un odore forte|1
+BASILICO|Erba profumata del pesto|2
+CASA|Edificio dove vive la famiglia|1
+PORTA|Si apre per entrare in una stanza|1
+FINESTRA|Si apre per far entrare aria e luce|1
+TETTO|Copre la casa dall’alto|1
+SEDIA|Mobile per sedersi|1
+TAVOLO|Mobile su cui si mangia|1
+LETTO|Mobile su cui si dorme|1
+CUSCINO|Ci si appoggia la testa per dormire|1
+DIVANO|Ci si siede comodi davanti alla televisione|1
+ARMADIO|Mobile dove si appendono i vestiti|1
+CUCINA|Stanza dove si preparano i pasti|1
+BAGNO|Stanza con la doccia e il lavandino|1
+SCALA|Ha i gradini per salire|1
+CHIAVE|Serve ad aprire la serratura|1
+LAMPADA|Fa luce sul comodino|1
+SPECCHIO|Ci si guarda la mattina per pettinarsi|1
+TAPPETO|Si stende sul pavimento|1
+PENTOLA|Ci si cuoce la pasta|1
+PIATTO|Ci si mette il cibo a tavola|1
+BICCHIERE|Ci si versa l’acqua per bere|1
+FORCHETTA|Posata con i rebbi|1
+COLTELLO|Posata che taglia|1
+TAZZA|Ci si beve il latte a colazione|1
+FORNO|Ci si cuociono pane e torte|1
+MADRE|La mamma|1
+PADRE|Il papà|1
+NONNA|La mamma della mamma o del papà|1
+NONNO|Il papà della mamma o del papà|1
+FIGLIO|Il bambino di una coppia|1
+SORELLA|Figlia degli stessi genitori|1
+FRATELLO|Figlio degli stessi genitori|1
+ZIA|La sorella della mamma o del papà|1
+NIPOTE|Figlio del figlio, per i nonni|1
+SPOSA|Indossa l’abito bianco al matrimonio|1
+AMICO|Persona a cui si vuole bene|1
+BAMBINO|Un piccolo che va all’asilo|1
+SOLE|Stella che ci dà luce e calore|1
+LUNA|Brilla nel cielo di notte|1
+STELLA|Brilla nel cielo e forma le costellazioni|1
+CIELO|Azzurro di giorno, buio di notte|1
+MARE|Distesa d’acqua salata|1
+LAGO|Specchio d’acqua circondato da terra|1
+FIUME|Scorre verso il mare|1
+MONTE|Si scala per arrivare in cima|1
+ALBERO|Ha tronco, rami e foglie|1
+FIORE|La rosa e la margherita|1
+ROSA|Fiore con le spine|1
+FOGLIA|Cade dagli alberi in autunno|1
+ERBA|Verde tappeto del prato|1
+SASSO|Piccola pietra|1
+SABBIA|Copre la spiaggia|1
+ISOLA|Terra circondata dal mare|1
+BOSCO|Luogo pieno di alberi|1
+PRATO|Distesa d’erba verde|1
+NEVE|Bianca e fredda, cade d’inverno|1
+PIOGGIA|Acqua che cade dalle nuvole|1
+VENTO|Fa volare gli aquiloni|1
+NUVOLA|Bianca o grigia, nel cielo|1
+ESTATE|La stagione più calda|1
+INVERNO|La stagione più fredda|1
+AUTUNNO|Stagione in cui cadono le foglie|1
+CALDO|Il contrario di freddo|1
+FREDDO|Il contrario di caldo|1
+GATTO|Animale domestico che fa le fusa|1
+CANE|Il migliore amico dell’uomo|1
+CAVALLO|Animale che si cavalca|1
+MUCCA|Ci dà il latte|1
+PECORA|Ci dà la lana|1
+GALLINA|Depone le uova nel pollaio|1
+ASINO|Animale con le orecchie lunghe che raglia|1
+TOPO|Piccolo roditore che piace al gatto|1
+LEONE|Il re della foresta|1
+TIGRE|Grande felino a strisce|1
+ORSO|Grande animale che ama il miele|1
+PESCE|Nuota nel mare e nei fiumi|1
+UCCELLO|Ha le ali e le piume|1
+APE|Insetto che fa il miele|1
+RANA|Salta e gracida nello stagno|1
+ANATRA|Uccello che nuota e fa qua qua|1
+CONIGLIO|Ha le orecchie lunghe e mangia carote|1
+MEDICO|Cura i malati|1
+MAESTRA|Insegna ai bambini a scuola|1
+CUOCO|Prepara i piatti al ristorante|1
+POSTINO|Porta le lettere|1
+PITTORE|Dipinge i quadri|2
+SARTO|Cuce i vestiti su misura|2
+FORNAIO|Fa il pane|2
+PIANO|Strumento con i tasti bianchi e neri|1
+CHITARRA|Strumento a sei corde|1
+VIOLINO|Strumento che si suona con l’archetto|2
+TAMBURO|Strumento che si suona con le bacchette|2
+CANTO|Lo si fa con la voce|2
+NOTA|Do, re, mi, fa, sol, la, si|2
+OPERA|Spettacolo cantato, come la Traviata|2
+TESTA|Parte del corpo dove crescono i capelli|1
+MANO|Ha cinque dita|1
+PIEDE|Ci si mette la scarpa|1
+OCCHIO|Serve per vedere|1
+NASO|Serve per sentire gli odori|1
+BOCCA|Serve per mangiare e parlare|1
+ORECCHIO|Serve per sentire i suoni|1
+CUORE|Batte nel petto|1
+DENTE|Si lava con lo spazzolino|1
+BRACCIO|Va dalla spalla alla mano|1
+GAMBA|Serve per camminare|1
+CITTÀ|Roma, Milano o Napoli|1
+STRADA|Ci passano le automobili|1
+PIAZZA|Spazio aperto al centro del paese|1
+CHIESA|Ha il campanile|1
+NEGOZIO|Ci si fa la spesa|1
+TRENO|Viaggia sui binari|1
+AUTO|Ha quattro ruote e il volante|1
+PONTE|Passa sopra il fiume|1
+PARCO|Giardino pubblico|1
+MERCATO|Bancarelle di frutta e verdura|1
+GIOIA|Grande felicità|1
+AMORE|Sentimento tra innamorati|1
+PAURA|La si prova davanti a un pericolo|1
+RISATA|Si fa quando qualcosa è molto divertente|1
+SORRISO|Si fa con le labbra quando si è contenti|1
+CALMA|Il contrario di agitazione|2
+SPERANZA|Si dice che sia l’ultima a morire|2
+ORA|Un giorno ne ha ventiquattro|1
+ANNO|Ha dodici mesi|1
+SERA|Viene dopo il pomeriggio|1
+NOTTE|Si dorme quando è buio|1
+ROSSO|Il colore del pomodoro|1
+VERDE|Il colore dell’erba|1
+GIALLO|Il colore del limone|1
+NERO|Il colore del carbone|1
+BIANCO|Il colore del latte|1
+LIBRO|Ha pagine da leggere|1
+LETTERA|Si spedisce nella busta|1
+OROLOGIO|Segna l’ora|1
+OMBRELLO|Ripara dalla pioggia|1
+CAPPELLO|Si mette in testa|1
+SCARPA|Si mette al piede|1
+CARTA|Si usa per scrivere o per giocare a scopa|1
+TRENTA|Dieci più venti|2
+SETTE|I giorni della settimana|1
+REGALO|Si riceve a Natale o al compleanno|1
+NATALE|Festa del venticinque dicembre|1
+FAGIOLO|Legume che si mangia con la pasta|1
+PISELLO|Piccolo legume verde e tondo|1
+LENTICCHIA|Legume che si mangia a Capodanno|2
+CECE|Legume tondo con cui si fa la farinata|2
+ZUCCHINA|Ortaggio verde e lungo dell’estate|1
+MELANZANA|Ortaggio viola della parmigiana|1
+PEPERONE|Ortaggio rosso, giallo o verde|1
+CETRIOLO|Ortaggio verde e fresco dell’insalata|2
+SEDANO|Ortaggio a coste, va nel soffritto|2
+CAVOLO|Ortaggio a foglie, come il cappuccio|1
+SPINACIO|Verdura a foglia scura, ricca di ferro|2
+LATTUGA|Insalata dalle foglie tenere|2
+CARCIOFO|Ortaggio con le spine, buono alla romana|2
+ZUCCA|Ortaggio arancione dell’autunno|1
+FUNGO|Cresce nel bosco dopo la pioggia|1
+PESCA|Frutto vellutato dell’estate|1
+ALBICOCCA|Frutto arancione con il nocciolo|2
+PRUGNA|Frutto viola, buono anche secco|1
+FICO|Frutto dolce di fine estate|1
+COCOMERO|Frutto grande, verde fuori e rosso dentro|1
+MELONE|Frutto estivo, buono con il prosciutto|1
+NOCE|Frutto secco con il guscio duro|1
+NOCCIOLA|Frutto secco della crema spalmabile|2
+CASTAGNA|Si arrostisce in autunno|1
+MANDORLA|Frutto secco dei confetti|2
+KIWI|Frutto verde con la buccia pelosa|1
+ANANAS|Frutto tropicale con un ciuffo di foglie|1
+MANDARINO|Piccolo agrume dell’inverno|2
+LAMPONE|Piccolo frutto rosso del sottobosco|2
+MIRTILLO|Piccola bacca blu del bosco|2
+CARNE|Bistecca, arrosto o polpette|1
+POLLO|Carne bianca, buona arrosto|1
+PROSCIUTTO|Crudo o cotto, nel panino|1
+SALAME|Insaccato da affettare|2
+BISTECCA|Fetta di carne alla griglia|1
+POLPETTA|Pallina di carne macinata|1
+TONNO|Pesce grande, si compra anche in scatola|1
+SALMONE|Pesce dalla carne rosa|1
+ACCIUGA|Piccolo pesce, sotto sale o sott’olio|2
+GAMBERO|Crostaceo che si mangia anche fritto|2
+COZZA|Mollusco dal guscio nero|2
+VONGOLA|Piccolo mollusco degli spaghetti in bianco|2
+SUGO|Condimento rosso per la pasta|1
+BRODO|Ci si cuociono i tortellini|1
+ZUPPA|Minestra densa, con il pane|1
+RISOTTO|Primo piatto di riso, anche allo zafferano|1
+LASAGNA|Pasta al forno a strati|1
+GNOCCO|Si fa con le patate, si mangia al plurale|2
+POLENTA|Si fa con la farina di mais|2
+FRITTATA|Uova sbattute cotte in padella|1
+PANINO|Pane imbottito per la merenda|1
+FOCACCIA|Pane basso e unto, tipico di Genova|2
+GRISSINO|Bastoncino di pane croccante|2
+CORNETTO|Brioche della colazione al bar|1
+CIOCCOLATO|Si fa con il cacao|1
+CARAMELLA|Dolcetto da succhiare|1
+MARMELLATA|Si spalma sulle fette biscottate|1
+PANNA|Montata, sopra le fragole|1
+YOGURT|Latte fermentato, anche alla frutta|1
+FARINA|Polvere bianca per fare pane e dolci|1
+LIEVITO|Fa crescere l’impasto|2
+PEPE|Spezia nera da macinare|1
+CANNELLA|Spezia dolce in stecche|2
+ORIGANO|Erba aromatica della pizza|2
+PREZZEMOLO|Erba aromatica che sta in mezzo a tutto|2
+ROSMARINO|Erba aromatica dell’arrosto|2
+SALVIA|Erba aromatica che si frigge nel burro|2
+MENTA|Foglia fresca e profumata|1
+BIRRA|Bevanda bionda con la schiuma|1
+SUCCO|Si spreme dalla frutta|1
+CAMOMILLA|Tisana che rilassa prima di dormire|2
+TISANA|Infuso caldo di erbe|2
+BUDINO|Dolce al cucchiaio, al cioccolato o alla vaniglia|1
+CROSTATA|Torta con la marmellata e le strisce|2
+CANNOLO|Dolce siciliano con la ricotta|2
+RICOTTA|Formaggio fresco e bianco|2
+MOZZARELLA|Formaggio della pizza|1
+PANETTONE|Dolce di Natale con l’uvetta|1
+COLOMBA|Dolce di Pasqua, anche un uccello bianco|2
+TIRAMISÙ|Dolce al caffè e mascarpone|1
+PADELLA|Ci si frigge l’uovo|1
+CUCCHIAIO|Posata per il brodo|1
+MESTOLO|Grande cucchiaio per servire la minestra|2
+TEGAME|Pentola bassa con due manici|2
+COPERCHIO|Si mette sopra la pentola|2
+TOVAGLIA|Si stende sul tavolo per apparecchiare|1
+TOVAGLIOLO|Ci si pulisce la bocca a tavola|1
+BOTTIGLIA|Contenitore di vetro per l’acqua o il vino|1
+CARAFFA|Brocca per servire l’acqua a tavola|2
+VASSOIO|Ci si portano tazze e piatti|2
+FRIGORIFERO|Tiene al fresco il cibo|1
+LAVATRICE|Lava i panni sporchi|1
+FORNELLO|Ci si mette sopra la pentola sul fuoco|2
+CAFFETTIERA|La moka per il caffè|2
+GRATTUGIA|Serve per il formaggio sulla pasta|2
+SCOLAPASTA|Ci si versa la pasta cotta|2
+SPUGNA|Serve per lavare i piatti|1
+SAPONE|Ci si lavano le mani|1
+SCOPA|Serve per spazzare|1
+SECCHIO|Ci si mette l’acqua per lavare a terra|1
+CAMERA|Stanza, anche da letto|1
+SALOTTO|Stanza per ricevere gli ospiti|2
+CANTINA|Ci si conserva il vino|1
+SOFFITTA|Sotto il tetto, piena di vecchie cose|2
+BALCONE|Si affaccia fuori dalla casa|1
+TERRAZZO|Grande balcone, anche con le piante|1
+GIARDINO|Fiori e prato intorno alla casa|1
+CORTILE|Spazio aperto dentro il palazzo|2
+CANCELLO|Si apre per entrare nel giardino|1
+MURO|Parete di mattoni|1
+PARETE|Muro della stanza|1
+PAVIMENTO|Ci si cammina sopra in casa|1
+SOFFITTO|Sta sopra la testa nella stanza|2
+CAMINO|Ci si accende il fuoco in casa|2
+POLTRONA|Sedia comoda con i braccioli|1
+COMODINO|Mobile accanto al letto|2
+CASSETTO|Si apre tirando, nel comò|1
+MENSOLA|Ripiano attaccato al muro|2
+TENDA|Si tira davanti alla finestra|1
+COPERTA|Tiene caldo nel letto|1
+LENZUOLO|Si stende sul materasso|2
+MATERASSO|Ci si dorme sopra|2
+CAMPANELLO|Si suona alla porta|2
+TELEFONO|Squilla quando qualcuno chiama|1
+RADIO|Si ascolta per le canzoni e le notizie|1
+TELEVISORE|Ci si guardano i programmi|1
+DOCCIA|Ci si lava in piedi|1
+VASCA|Ci si fa il bagno|1
+LAVANDINO|Ha il rubinetto, nel bagno|1
+RUBINETTO|Si apre per far uscire l’acqua|1
+ASCIUGAMANO|Ci si asciuga dopo la doccia|1
+PETTINE|Serve a sistemare i capelli|1
+SPAZZOLINO|Si usa per lavare i denti|1
+DENTIFRICIO|Pasta da mettere sullo spazzolino|2
+CANDELA|Fa luce con la sua fiamma|1
+VASO|Ci si mettono i fiori|1
+QUADRO|Dipinto appeso al muro|1
+FOTOGRAFIA|Ricordo stampato di un momento|1
+ALBUM|Raccolta di foto o di figurine|2
+SVEGLIA|Suona la mattina per alzarsi|2
+FERRO|Metallo; quello da stiro toglie le pieghe|1
+CESTINO|Ci si butta la carta|2
+MAMMA|Così la chiamano i bambini|1
+PAPÀ|Il babbo di casa|1
+ZIO|Il fratello della mamma o del papà|1
+CUGINO|Il figlio dello zio|1
+MARITO|L’uomo sposato|1
+MOGLIE|La donna sposata|1
+SPOSO|Aspetta all’altare con l’anello|1
+FIGLIA|La bambina di mamma e papà|1
+BISNONNO|Il papà del nonno|2
+SUOCERA|La mamma del marito o della moglie|2
+GENERO|Il marito della figlia|2
+NUORA|La moglie del figlio|2
+COGNATO|Il fratello del marito o della moglie|2
+GEMELLO|Nato lo stesso giorno del fratello|2
+FAMIGLIA|Genitori e figli insieme|1
+PARENTE|Fa parte della famiglia|2
+VICINO|Abita nella casa accanto|1
+NEONATO|Bambino appena venuto al mondo|2
+RAGAZZO|Giovane tra bambino e uomo|1
+SIGNORA|Donna a cui si dà del lei|1
+PADRINO|Accompagna il bambino al battesimo|2
+MADRINA|Tiene il bambino al battesimo|2
+CAPELLO|Ne abbiamo tanti in testa|1
+FRONTE|Parte del viso sopra gli occhi|1
+GUANCIA|Parte del viso che arrossisce|2
+MENTO|Parte del viso sotto la bocca|2
+LABBRO|Si muove quando si parla e si dà un bacio|1
+LINGUA|Sta in bocca e sente i sapori|1
+COLLO|Unisce la testa al corpo|1
+SPALLA|Ci si appoggia lo zaino|1
+SCHIENA|Parte dietro del corpo|1
+GOMITO|Piega a metà del braccio|2
+GINOCCHIO|Piega a metà della gamba|1
+DITO|Ce ne sono cinque per mano|1
+UNGHIA|Si taglia con le forbicine|1
+POLSO|Ci si porta l’orologio|2
+CAVIGLIA|Unisce il piede alla gamba|2
+TALLONE|Parte dietro del piede|3
+PANCIA|Si riempie dopo pranzo|1
+CIGLIO|Pelo sul bordo della palpebra|3
+PALPEBRA|Si chiude sull’occhio per dormire|3
+SOPRACCIGLIO|Arco di peli sopra l’occhio|2
+POLMONE|Ci serve per respirare|2
+STOMACO|Ci arriva il cibo mangiato|2
+VOCE|Si usa per parlare e cantare|1
+CAMICIA|Si abbottona sul petto, con il colletto|1
+GONNA|Indumento da donna dalla vita in giù|1
+MAGLIONE|Indumento di lana per l’inverno|1
+GIACCA|Si indossa sopra la camicia|1
+CAPPOTTO|Lungo e caldo, per l’inverno|1
+CALZINO|Si mette nella scarpa|1
+CRAVATTA|Si annoda al collo della camicia|1
+SCIARPA|Avvolge il collo quando fa freddo|1
+GUANTO|Veste la mano|1
+PANTALONI|Hanno due gambe|1
+VESTITO|Abito da indossare|1
+PIGIAMA|Si indossa per andare a letto|1
+CINTURA|Tiene su i pantaloni|1
+BOTTONE|Si infila nell’asola|1
+TASCA|Ci si mettono le mani o le chiavi|1
+STIVALE|Scarpa alta fino al ginocchio|1
+CIABATTA|Pantofola da casa|1
+BERRETTO|Cappello di lana|1
+OCCHIALI|Aiutano a vedere meglio|1
+BORSA|Ci si portano portafoglio e chiavi|1
+ANELLO|Si porta al dito|1
+COLLANA|Si porta al collo come gioiello|1
+ORECCHINO|Gioiello che pende dal lobo|1
+BRACCIALE|Gioiello che si porta al polso|1
+GREMBIULE|Si mette in cucina per non sporcarsi|2
+CANOTTIERA|Maglietta senza maniche, sotto la camicia|2
+VESTAGLIA|Si indossa in casa sopra il pigiama|2
+IMPERMEABILE|Soprabito che non fa passare la pioggia|2
+SCIALLE|Si appoggia sulle spalle per scaldarsi|2
+PANCIOTTO|Gilet sotto la giacca|3
+BRETELLE|Tengono su i pantaloni dalle spalle|2
+COLLETTO|Parte della camicia intorno al collo|2
+MANICA|Parte del vestito che copre il braccio|1
+ORLO|Bordo cucito della gonna|2
+ASOLA|Taglio dove entra il bottone|3
+DITALE|Protegge il dito quando si cuce|3
+AGO|Serve per cucire, ha la cruna|1
+FILO|Si infila nell’ago|1
+FORBICI|Servono per tagliare la carta|1
+GOMITOLO|Palla di lana per lavorare a maglia|2
+UNCINETTO|Ago con la punta ricurva per fare pizzi|3
+STOFFA|Tessuto per fare vestiti|2
+LANA|Viene dalla pecora|1
+SETA|Tessuto prezioso fatto dal baco|2
+COTONE|Fibra bianca delle magliette|1
+VELLUTO|Tessuto morbido e liscio a coste|2
+MERLETTO|Pizzo lavorato a mano|3
+CERNIERA|Si chiude tirando il cursore|3
+INFERMIERA|Aiuta il medico in ospedale|1
+DENTISTA|Cura i denti|1
+FARMACISTA|Vende le medicine|1
+CONTADINO|Lavora la terra|1
+PESCATORE|Va in mare con le reti|1
+MURATORE|Costruisce i muri delle case|1
+FALEGNAME|Lavora il legno|2
+IDRAULICO|Ripara i tubi dell’acqua|2
+ELETTRICISTA|Ripara i fili della corrente|2
+MECCANICO|Ripara le automobili|1
+PARRUCCHIERE|Taglia e piega i capelli|1
+BARBIERE|Fa la barba agli uomini|2
+MACELLAIO|Vende la carne|2
+PASTICCIERE|Prepara torte e pasticcini|2
+GELATAIO|Vende coni e coppette|2
+CAMERIERE|Porta i piatti al ristorante|1
+AUTISTA|Guida l’autobus o il taxi|1
+PILOTA|Guida l’aereo|1
+MARINAIO|Lavora sulla nave|2
+POMPIERE|Spegne gli incendi|1
+VIGILE|Dirige il traffico all’incrocio|2
+GIUDICE|Decide in tribunale|2
+AVVOCATO|Difende in tribunale|2
+NOTAIO|Firma i documenti per la casa|2
+MAESTRO|Insegna ai bambini delle elementari|1
+PROFESSORE|Insegna a scuola o all’università|1
+SCRITTORE|Scrive i libri|1
+POETA|Scrive versi|2
+ATTORE|Recita a teatro o al cinema|1
+CANTANTE|Canta sul palco|1
+MUSICISTA|Suona uno strumento|1
+BALLERINA|Danza sulle punte|1
+FIORAIO|Vende rose e mazzi|2
+GIORNALAIO|Vende i quotidiani all’edicola|2
+CALZOLAIO|Ripara le scarpe|3
+OROLOGIAIO|Ripara gli orologi|3
+VETRAIO|Lavora il vetro|3
+FABBRO|Lavora il ferro sull’incudine|2
+VASAIO|Modella l’argilla al tornio|3
+TAPPEZZIERE|Rifà il rivestimento di divani e poltrone|3
+ARROTINO|Affila coltelli e forbici|3
+CESTAIO|Intreccia il vimini|3
+SAGRESTANO|Si occupa della chiesa e suona le campane|3
+SPAZZACAMINO|Pulisce le canne fumarie|3
+LATTAIO|Portava il latte a casa|3
+CARPENTIERE|Costruisce strutture di legno|3
+GIARDINIERE|Cura il prato e le aiuole|1
+ORTOLANO|Coltiva e vende la verdura|2
+BIDELLO|Lavora a scuola e suona la campanella|2
+PORTIERE|Sorveglia l’ingresso del palazzo|2
+MAIALE|Animale rosa della fattoria che grugnisce|1
+CAPRA|Animale con la barba che bruca in montagna|1
+TORO|Il maschio della mucca|1
+VITELLO|Il piccolo della mucca|1
+AGNELLO|Il piccolo della pecora|2
+PULCINO|Il piccolo della gallina|2
+GALLO|Canta all’alba nel pollaio|1
+OCA|Uccello bianco della fattoria, starnazza|1
+TACCHINO|Grosso uccello che fa la ruota|2
+PAPPAGALLO|Uccello colorato che ripete le parole|2
+PICCIONE|Uccello grigio delle piazze|1
+PASSERO|Piccolo uccello marrone dei tetti|1
+RONDINE|Arriva in primavera e fa il nido sotto i tetti|1
+GABBIANO|Uccello bianco del mare|1
+AQUILA|Uccello rapace delle montagne|1
+GUFO|Uccello notturno con grandi occhi|1
+CIVETTA|Piccolo rapace notturno|2
+MERLO|Uccello nero dal becco giallo|2
+PETTIROSSO|Uccellino dal petto arancione|2
+CORVO|Grande uccello nero che gracchia|2
+CIGNO|Uccello bianco dal collo lungo, nuota nel lago|1
+CICOGNA|Uccello dalle lunghe zampe che porta i bebè|2
+FENICOTTERO|Uccello rosa che sta su una zampa|2
+PAVONE|Uccello con una coda colorata a ventaglio|2
+FAGIANO|Uccello dalla lunga coda dei campi|3
+QUAGLIA|Piccolo uccello dei campi, depone uova piccole|3
+ALLODOLA|Uccello che canta volando alto nei campi|3
+CARDELLINO|Uccellino canterino dalla testa rossa|3
+CANARINO|Uccellino giallo in gabbia|2
+FARFALLA|Insetto con le ali colorate|1
+FORMICA|Piccolo insetto che lavora tutta l’estate|1
+MOSCA|Insetto che ronza in cucina|1
+ZANZARA|Punge di notte d’estate|1
+COCCINELLA|Insetto rosso con i puntini neri|2
+GRILLO|Insetto che canta di notte nel prato|1
+CICALA|Canta forte d’estate sugli alberi|2
+LUCCIOLA|Insetto che brilla di notte|2
+LIBELLULA|Insetto dalle ali trasparenti vicino all’acqua|2
+CALABRONE|Grosso insetto che ronza|2
+LUMACA|Si porta la casa sulle spalle|1
+RAGNO|Tesse la ragnatela|1
+LOMBRICO|Verme che scava nella terra|2
+SCOIATTOLO|Roditore con la coda folta che ama le noci|1
+RICCIO|Piccolo animale coperto di aculei|1
+VOLPE|Animale furbo dalla coda rossa|1
+LUPO|Ulula alla luna|1
+CERVO|Animale del bosco con le corna ramificate|1
+CINGHIALE|Maiale selvatico del bosco|2
+CAMOSCIO|Salta sulle rocce delle Alpi|3
+STAMBECCO|Capra selvatica dalle corna lunghe|3
+MARMOTTA|Dorme tutto l’inverno in montagna|2
+TALPA|Scava gallerie sotto terra|2
+LEPRE|Simile al coniglio, corre veloce|2
+TASSO|Animale del bosco con il muso a strisce|3
+ERMELLINO|Piccolo animale dal pelo bianco d’inverno|3
+CASTORO|Costruisce dighe nei fiumi|2
+ELEFANTE|Ha la proboscide|1
+GIRAFFA|Ha il collo lunghissimo|1
+ZEBRA|Cavallo a strisce bianche e nere|1
+SCIMMIA|Si arrampica sugli alberi e mangia banane|1
+CAMMELLO|Ha due gobbe e attraversa il deserto|1
+CANGURO|Salta e porta il piccolo nel marsupio|2
+PINGUINO|Uccello che non vola e vive al freddo|1
+DELFINO|Mammifero del mare che fa salti|1
+BALENA|Il più grande animale del mare|1
+SQUALO|Pesce grande con tanti denti|2
+POLPO|Ha otto tentacoli|1
+MEDUSA|Animale trasparente del mare|2
+GRANCHIO|Cammina di lato sulla spiaggia|1
+TARTARUGA|Animale lento con il guscio|1
+COCCODRILLO|Rettile con grandi denti, vive nei fiumi|2
+SERPENTE|Striscia per terra|2
+LUCERTOLA|Prende il sole sui muretti|2
+ROSPO|Somiglia alla rana, con la pelle rugosa|2
+TROTA|Pesce dei fiumi di montagna|2
+CARPA|Pesce grosso dello stagno|3
+MERLUZZO|Pesce del mare del Nord, si fa il baccalà|2
+SARDINA|Piccolo pesce che si mangia alla griglia|2
+ORATA|Pesce di mare dalla fronte dorata|3
+STELLA MARINA|Animale del mare a cinque punte|2
+CAVALLUCCIO|Piccolo pesce a forma di cavallo|2
+CRICETO|Piccolo roditore da tenere in gabbia|2
+PONY|Cavallo piccolo|1
+MULO|Figlio dell’asino e della cavalla|2
+BUE|Tirava l’aratro nei campi|2
+PULEDRO|Il piccolo del cavallo|2
+CUCCIOLO|Il piccolo del cane|1
+GATTINO|Il piccolo del gatto|1
+NIDO|Casa degli uccellini|1
+PIUMA|Copre il corpo degli uccelli|1
+BECCO|La bocca degli uccelli|1
+ALA|Serve per volare|1
+CODA|Il cane la muove quando è contento|1
+ZAMPA|Piede degli animali|1
+ARTIGLIO|Unghia affilata del gatto o dell’aquila|3
+CRINIERA|I lunghi peli del collo del leone|3
+PROBOSCIDE|Il naso lungo dell’elefante|2
+GUSCIO|Ricopre l’uovo e la noce|1
+TANA|Casa della volpe|1
+ALVEARE|Casa delle api|2
+FORMICAIO|Casa delle formiche|2
+STALLA|Ci dormono le mucche|1
+POLLAIO|Casa delle galline|2
+CUCCIA|Ci dorme il cane|1
+GABBIA|Ci vive il canarino|1
+ACQUARIO|Vasca di vetro per i pesci rossi|2
+FATTORIA|Casa di campagna con gli animali|1
+PASTORE|Porta al pascolo le pecore|1
+GREGGE|Gruppo di pecore|3
+MANDRIA|Gruppo di mucche al pascolo|3
+STORMO|Gruppo di uccelli in volo|3
+SCIAME|Gruppo di api in volo|3
+BRANCO|Gruppo di lupi|2
+FIENO|Erba secca per le mucche|1
+PAGLIA|Steli secchi del grano|1
+MANGIME|Cibo per gli animali della fattoria|3
+SELLA|Ci si siede per cavalcare|2
+STAFFA|Ci si appoggia il piede a cavallo|3
+BRIGLIA|Redini del cavallo|3
+ZOCCOLO|Piede duro del cavallo|2
+STRIGLIA|Spazzola per il pelo del cavallo|3
+RAGNATELA|La tela del ragno|2
+PUNGIGLIONE|Lo usa l’ape per pungere|3
+MUGGITO|Il verso della mucca|3
+NITRITO|Il verso del cavallo|3
+BELATO|Il verso della pecora|3
+RUGGITO|Il verso del leone|2
+MIAGOLIO|Il verso del gatto|2
+ABBAIARE|Lo fa il cane quando sente un rumore|2
+CINGUETTIO|Il canto degli uccellini|3
+RONZIO|Il rumore delle api|3
+GIGLIO|Fiore bianco e profumato|2
+TULIPANO|Fiore a calice, simbolo dell’Olanda|2
+MARGHERITA|Fiore bianco dal cuore giallo, si sfoglia|1
+GIRASOLE|Fiore giallo che segue il sole|1
+VIOLA|Piccolo fiore di primavera, anche un colore|2
+GAROFANO|Fiore profumato, rosso o bianco|2
+ORCHIDEA|Fiore elegante ed esotico|2
+MIMOSA|Fiore giallo dell’otto marzo|2
+GELSOMINO|Fiore bianco dal profumo intenso|2
+LAVANDA|Pianta viola e profumata da mettere nei cassetti|2
+GERANIO|Fiore rosso dei balconi|2
+CICLAMINO|Fiore d’autunno dai petali all’insù|3
+PAPAVERO|Fiore rosso dei campi di grano|2
+MUGHETTO|Fiorellini bianchi a campanella di maggio|3
+NARCISO|Fiore giallo di primavera con la corona|3
+GLICINE|Pianta rampicante dai grappoli viola|3
+CAMELIA|Fiore elegante d’inverno, rosa o bianco|3
+ORTENSIA|Fiore a palla, azzurro o rosa|3
+BUCANEVE|Fiorellino bianco che spunta tra la neve|3
+CRISANTEMO|Fiore d’autunno dai tanti petali|3
+PETALO|Parte colorata del fiore|1
+STELO|Gambo del fiore|3
+SPINA|Punge sul gambo della rosa|1
+BOCCIOLO|Fiore ancora chiuso|3
+POLLINE|Polvere gialla che le api portano via|3
+RADICE|Parte della pianta sotto terra|1
+RAMO|Braccio dell’albero|1
+TRONCO|Parte grossa dell’albero|1
+CORTECCIA|Pelle dell’albero|3
+SEME|Si pianta per far nascere una pianta|1
+GERMOGLIO|Prima foglia che spunta dal seme|3
+QUERCIA|Albero forte che fa le ghiande|2
+PINO|Albero sempreverde con le pigne|1
+ABETE|Albero di Natale|1
+OLIVO|Albero da cui si fa l’olio|1
+CIPRESSO|Albero alto e stretto dei viali|2
+PALMA|Albero delle spiagge calde|1
+SALICE|Albero dai rami che pendono verso l’acqua|3
+BETULLA|Albero dalla corteccia bianca|3
+CASTAGNO|Albero che dà le caldarroste|2
+FAGGIO|Albero dei boschi di montagna|3
+PIOPPO|Albero alto lungo i fiumi|3
+TIGLIO|Albero dai fiori profumati per la tisana|3
+LARICE|Conifera di montagna che perde gli aghi|3
+ACERO|Albero con la foglia del Canada|3
+EDERA|Pianta rampicante sempreverde|2
+MUSCHIO|Tappeto verde sulle pietre del bosco|2
+FELCE|Pianta del sottobosco con foglie a ventaglio|2
+CACTUS|Pianta grassa con le spine|1
+GHIANDA|Frutto della quercia|2
+PIGNA|Frutto del pino|2
+BACCA|Piccolo frutto rotondo dei cespugli|2
+CESPUGLIO|Pianta bassa e folta|2
+SIEPE|Fila di cespugli che fa da confine|2
+AIUOLA|Spazio con i fiori nel giardino|2
+SERRA|Casa di vetro per le piante|2
+VIGNA|Campo di viti|2
+FRUTTETO|Campo di alberi da frutto|2
+ORTO|Ci si coltiva la verdura|1
+CAMPO|Terreno coltivato a grano|1
+GRANO|Ci si fa la farina|1
+MAIS|Pannocchia gialla|2
+SPIGA|Cima del grano|2
+VENDEMMIA|Raccolta dell’uva|2
+RACCOLTO|Ciò che si raccoglie nei campi|2
+ARATRO|Rompe la terra prima della semina|3
+FALCE|Lama curva per tagliare il grano|3
+RASTRELLO|Raccoglie le foglie secche|2
+ZAPPA|Attrezzo per smuovere la terra|2
+VANGA|Pala per scavare nell’orto|2
+CARRIOLA|Carretto a una ruota del giardiniere|2
+INNAFFIATOIO|Serve per dare l’acqua ai fiori|2
+TRATTORE|Macchina agricola dalle grandi ruote|2
+COLLINA|Piccolo monte dolce|1
+VALLE|Tra due montagne|1
+CIMA|Punta della montagna|1
+GROTTA|Caverna nella roccia|2
+VULCANO|Montagna che erutta fuoco|1
+CASCATA|Acqua che cade dall’alto|2
+SORGENTE|Da qui nasce il fiume|2
+RUSCELLO|Piccolo corso d’acqua|2
+TORRENTE|Corso d’acqua veloce di montagna|2
+STAGNO|Piccolo specchio d’acqua ferma|3
+PALUDE|Terra bagnata con canne e zanzare|3
+SPIAGGIA|Ci si sdraia al sole in estate|1
+SCOGLIO|Roccia in mezzo al mare|2
+ONDA|Si muove sul mare|1
+MAREA|Il mare che sale e scende|3
+BAIA|Piccola insenatura del mare|3
+GOLFO|Grande insenatura del mare|2
+PENISOLA|Terra circondata dal mare su tre lati|2
+DESERTO|Distesa di sabbia senza acqua|1
+OASI|Palme e acqua nel deserto|2
+DUNA|Collina di sabbia|2
+PIANURA|Terra piatta e vasta|2
+GHIACCIAIO|Fiume di ghiaccio in alta montagna|2
+PRATERIA|Grande distesa d’erba|3
+FORESTA|Grande bosco|1
+ROCCIA|Pietra dura e grande|1
+CIOTTOLO|Sasso liscio di fiume|3
+CRISTALLO|Minerale trasparente|3
+ARGILLA|Terra morbida per i vasi|2
+ARCOBALENO|Arco colorato dopo la pioggia|1
+TEMPORALE|Pioggia con tuoni e lampi|1
+TUONO|Rumore forte del temporale|1
+LAMPO|Luce improvvisa nel cielo in temporale|1
+FULMINE|Scarica elettrica che cade dal cielo|1
+GRANDINE|Chicchi di ghiaccio dal cielo|2
+NEBBIA|Non fa vedere lontano in pianura|1
+BRINA|Ghiaccio sottile sull’erba la mattina|3
+RUGIADA|Goccioline sull’erba all’alba|3
+GELO|Freddo che fa ghiacciare|2
+GHIACCIO|Acqua diventata dura|1
+BREZZA|Venticello leggero|2
+TEMPESTA|Vento forte e mare mosso|2
+UMIDITÀ|Acqua nell’aria|3
+TRAMONTO|Il sole cala la sera|1
+ALBA|Il sole sorge la mattina|1
+AURORA|La prima luce del giorno|2
+CREPUSCOLO|Luce fioca dopo il tramonto|3
+STAGIONE|Primavera, estate, autunno o inverno|1
+PRIMAVERA|Stagione dei fiori|1
+CLIMA|Il tempo di un luogo nel corso dell’anno|3
+GOCCIA|Piccola quantità d’acqua che cade|1
+FIOCCO|Quello di neve scende leggero|2
+PIANETA|La Terra lo è, come Marte|2
+COMETA|Stella con la coda, quella di Natale|2
+GALASSIA|Insieme immenso di stelle|3
+ASTEROIDE|Grosso sasso che vaga nello spazio|3
+ECLISSI|La luna copre il sole|3
+ORIZZONTE|Linea dove il cielo tocca il mare|2
+PIANOFORTE|Strumento a tasti bianchi e neri|1
+FISARMONICA|Strumento a mantice delle feste di paese|2
+FLAUTO|Strumento a fiato sottile|2
+TROMBA|Strumento d’ottone che squilla|2
+ARPA|Strumento a corde che si pizzica, ha forma di triangolo|2
+CLARINETTO|Strumento a fiato di legno nero|3
+SASSOFONO|Strumento a fiato del jazz|3
+VIOLONCELLO|Grande violino che si suona seduti|3
+MANDOLINO|Strumento a corde della canzone napoletana|2
+ORGANO|Strumento a canne della chiesa|2
+TROMBONE|Strumento d’ottone con la coulisse|3
+CONTRABBASSO|Il più grande degli archi|3
+ARMONICA|Si suona soffiando, sta in tasca|3
+CAMPANA|Suona sul campanile|1
+TRIANGOLO|Strumento a percussione in metallo, anche una figura|2
+ARCHETTO|Si passa sulle corde del violino|3
+SPARTITO|Foglio con le note da suonare|2
+MELODIA|Successione piacevole di note|2
+RITMO|Il battito della musica|2
+CANZONE|Si canta con parole e musica|1
+CORO|Gruppo di persone che cantano insieme|1
+ORCHESTRA|Tanti musicisti diretti da un maestro|2
+CONCERTO|Spettacolo di musica dal vivo|1
+DIRETTORE|Guida l’orchestra con la bacchetta|2
+TENORE|Voce maschile acuta della lirica|3
+SOPRANO|Voce femminile più acuta|3
+BARITONO|Voce maschile media|3
+MELODRAMMA|Opera lirica con musica e canto|3
+SERENATA|Si canta sotto la finestra dell’amata|3
+VALZER|Ballo a tre tempi in cui si gira|2
+TANGO|Ballo argentino appassionato|2
+TARANTELLA|Ballo popolare del Sud, veloce e allegro|2
+LISCIO|Musica da ballo delle balere|3
+DANZA|Movimento a ritmo di musica|1
+PALCO|Ci si esibiscono gli artisti|2
+SIPARIO|Si apre all’inizio dello spettacolo|2
+APPLAUSO|Battere di mani alla fine dello spettacolo|1
+TEATRO|Ci si va a vedere le commedie|1
+CINEMA|Ci si guardano i film sul grande schermo|1
+COMMEDIA|Spettacolo divertente|2
+PLATEA|I posti davanti al palco|3
+LOGGIONE|I posti più in alto del teatro|3
+CALCIO|Si gioca con il pallone e due porte|1
+PALLONE|Si prende a calci|1
+TENNIS|Si gioca con la racchetta e la rete|1
+CICLISMO|Sport della bicicletta|2
+NUOTO|Sport della piscina|1
+SCI|Si scende sulla neve con due assi|1
+PALESTRA|Ci si fa ginnastica|1
+GINNASTICA|Esercizi per tenersi in forma|1
+BOCCE|Si giocano al bocciodromo|2
+PALLAVOLO|Si gioca con la rete alta e la palla|2
+PALLAMANO|Sport di squadra in cui si tira la palla con le mani|3
+SCHERMA|Sport con il fioretto|3
+EQUITAZIONE|Sport a cavallo|3
+CANOTTAGGIO|Sport con i remi sulla barca|3
+MARATONA|Lunga corsa di quarantadue chilometri|2
+ARBITRO|Fischia i falli|2
+ATTACCANTE|Giocatore che deve segnare i gol|2
+STADIO|Ci si gioca la partita davanti al pubblico|1
+PARTITA|Incontro tra due squadre|1
+SQUADRA|Gruppo di giocatori|1
+COPPA|Premio per chi vince il torneo|1
+MEDAGLIA|Premio d’oro, d’argento o di bronzo|1
+TORNEO|Gara a più partite|2
+CAMPIONE|Chi vince la gara|1
+TRAGUARDO|La linea d’arrivo|2
+RACCHETTA|Si usa nel tennis|1
+CANESTRO|Ci si tira la palla nel basket|2
+BOCCIA|Palla da lanciare vicino al pallino|3
+PALLINO|La piccola boccia da avvicinare|3
+DAMA|Gioco a scacchiera con le pedine|1
+SCACCHI|Gioco con il re, la regina e i pedoni|1
+CARTE|Si mescolano e si distribuiscono per giocare|1
+BRISCOLA|Gioco di carte con il seme che vince|2
+TOMBOLA|Gioco di Natale con le cartelle e i numeri|1
+DOMINO|Tessere con i puntini da accostare|2
+DADO|Ha sei facce con i puntini|1
+PEDINA|Si muove sulla scacchiera|2
+PUZZLE|Tanti pezzi da incastrare|2
+AQUILONE|Vola nel vento legato a un filo|2
+ALTALENA|Ci si dondola al parco|1
+SCIVOLO|Ci si scende al parco giochi|1
+GIOSTRA|Gira con i cavallini alla fiera|1
+BAMBOLA|Giocattolo delle bambine|1
+TROTTOLA|Giocattolo che gira su se stessa|2
+VIAGGIO|Si parte con la valigia|1
+VALIGIA|Ci si mettono i vestiti per partire|1
+BIGLIETTO|Si compra per salire sul treno|1
+STAZIONE|Ci si prende il treno|1
+BINARIO|Ci passa il treno|2
+AEREO|Vola nel cielo con i passeggeri|1
+AEROPORTO|Ci partono gli aerei|1
+NAVE|Grande imbarcazione|1
+BARCA|Si va per mare con i remi o la vela|1
+TRAGHETTO|Porta le auto sulle isole|2
+PORTO|Ci attraccano le navi|1
+FARO|Fa luce alle navi di notte|2
+VELA|Gonfiata dal vento sull’albero della barca|2
+REMO|Si usa per spingere la barca|2
+ANCORA|Tiene ferma la nave|2
+BUSSOLA|Indica il Nord|2
+MAPPA|Disegno della città con le vie|1
+PASSAPORTO|Documento per andare all’estero|2
+ALBERGO|Ci si dorme in vacanza|1
+VACANZA|Giorni di riposo lontano dal lavoro|1
+CROCIERA|Viaggio in nave per piacere|2
+GITA|Breve viaggio di un giorno|1
+ESCURSIONE|Passeggiata in montagna|2
+TENDA DA CAMPO|Ci si dorme in campeggio|2
+ZAINO|Si porta sulle spalle|1
+CARTOLINA|Si spedisce dalle vacanze|2
+SOUVENIR|Ricordino del viaggio|3
+DOGANA|Controllo alla frontiera|3
+FRONTIERA|Confine tra due paesi|2
+AUTOBUS|Ci si sale alla fermata|1
+FERMATA|Ci si aspetta l’autobus|1
+TRAM|Corre sulle rotaie in città|2
+BICICLETTA|Ha due ruote e i pedali|1
+MOTORINO|Scooter per andare in città|2
+TAXI|Auto gialla o bianca con il tassametro|1
+SEMAFORO|Rosso, giallo e verde all’incrocio|1
+INCROCIO|Dove due strade si incontrano|2
+MARCIAPIEDE|Ci camminano i pedoni|1
+STRISCE|Si attraversa sopra quelle pedonali|2
+ROTONDA|Si gira intorno all’incrocio|2
+GALLERIA|Passa sotto la montagna|2
+AUTOSTRADA|Strada veloce a pagamento|1
+CASELLO|Ci si paga il pedaggio|3
+PEDAGGIO|Si paga al casello|3
+BENZINA|Si mette nel serbatoio|1
+VOLANTE|Si gira per guidare|1
+FRENO|Fa fermare la macchina|1
+CLACSON|Suona per avvisare in strada|2
+TARGA|Numero dell’automobile|2
+PATENTE|Permette di guidare|1
+GARAGE|Ci si parcheggia la macchina|2
+OFFICINA|Ci lavora il meccanico|2
+CARROZZA|Tirata dai cavalli|2
+CALESSE|Carrozzino leggero a due ruote|3
+GONDOLA|Barca nera dei canali di Venezia|2
+FUNIVIA|Cabina appesa che sale in montagna|2
+SEGGIOVIA|Porta gli sciatori in cima seduti|3
+MONGOLFIERA|Pallone ad aria calda che vola|2
+DILIGENZA|Carrozza del vecchio West|3
+LOCOMOTIVA|Tira i vagoni del treno|3
+VAGONE|Carrozza del treno|2
+CONTROLLORE|Controlla i biglietti sul treno|2
+CAPOSTAZIONE|Dà il via al treno con la paletta|3
+FERROVIA|Strada dei treni|2
+LAVAGNA|Ci si scrive con il gesso in classe|2
+GESSO|Si scrive sulla lavagna|2
+QUADERNO|Ci si fanno i compiti|2
+MATITA|Si tempera e si cancella con la gomma|2
+PENNA|Si scrive con l’inchiostro|2
+GOMMA|Cancella il segno della matita|2
+RIGHELLO|Serve per tracciare righe dritte|2
+COMPASSO|Serve per disegnare i cerchi|2
+TEMPERINO|Fa la punta alla matita|2
+ASTUCCIO|Contiene penne e matite|2
+CARTELLA|Borsa dello scolaro|2
+PAGELLA|Il voto di fine anno|2
+DIARIO|Ci si segnano i compiti|2
+DETTATO|Esercizio di scrittura sotto voce della maestra|3
+TEMA|Componimento scritto in classe|2
+POESIA|Si impara a memoria e si recita|2
+ALFABETO|Le lettere dalla A alla Zeta|2
+GRAMMATICA|Le regole della lingua|3
+TABELLINA|Quella del sette si impara a memoria|2
+ABACO|Pallottoliere per contare|3
+CALAMAIO|Boccetta d’inchiostro sul banco di una volta|3
+PENNINO|Punta di metallo della penna d’una volta|3
+INCHIOSTRO|Liquido della penna stilografica|3
+VOCABOLARIO|Libro con tutte le parole e il loro significato|2
+ENCICLOPEDIA|Opera in tanti volumi che spiega tutto|3
+MAPPAMONDO|Globo che gira con i continenti|2
+RICREAZIONE|Pausa a metà mattina a scuola|2
+MERENDA|Spuntino del pomeriggio|2
+MUNICIPIO|Sede del sindaco|2
+BIBLIOTECA|Ci si prendono in prestito i libri|2
+OSPEDALE|Ci lavorano medici e infermieri|2
+FARMACIA|Ha la croce verde|2
+UFFICIO|Ci si lavora alla scrivania|2
+EDICOLA|Ci si comprano i giornali|2
+TABACCHERIA|Ha l’insegna con la T|3
+PANETTERIA|Ci si compra il pane fresco|2
+PASTICCERIA|Vende pasticcini e torte|2
+MACELLERIA|Ci si compra la carne|2
+LATTERIA|Negozio di latte e formaggi|3
+FERRAMENTA|Negozio di chiodi e attrezzi|3
+MERCERIA|Negozio di bottoni e nastri|3
+BOTTEGA|Piccolo negozio di artigiano|3
+CAMPANILE|Torre con le campane|2
+FONTANA|Getta acqua in piazza|2
+MONUMENTO|Statua in ricordo di qualcuno|2
+STATUA|Scultura di marmo o di bronzo|2
+CASTELLO|Ha le torri e il fossato|2
+TORRE|Costruzione alta e stretta|2
+PALAZZO|Grande edificio di molti piani|2
+QUARTIERE|Parte della città|2
+PERIFERIA|Zona ai margini della città|3
+VICOLO|Stradina stretta|3
+VIALE|Strada larga con gli alberi|2
+PORTICO|Passaggio coperto con colonne|3
+BALAUSTRA|Parapetto con colonnine|3
+CUPOLA|Tetto tondo della chiesa|3
+CHIOSTRO|Cortile con portico del convento|3
+ABBAZIA|Monastero guidato da un abate|3
+SANTUARIO|Chiesa meta di pellegrinaggio|3
+CAMPANARO|Suona le campane della chiesa|3
+SAGRA|Festa di paese con cose buone da mangiare|2
+FIERA|Mercato grande con le bancarelle|2
+BANCARELLA|Banco del mercato|2
+PROCESSIONE|Corteo religioso per le vie|3
+CARNEVALE|Festa delle maschere|2
+MASCHERA|Si mette sul viso a Carnevale|2
+CORIANDOLI|Pezzetti di carta colorata da lanciare|2
+BEFANA|Porta le calze il sei gennaio|2
+PRESEPE|Statuine della Natività|2
+ADDOBBO|Decorazione per la festa|3
+GHIRLANDA|Corona di rami sulla porta|3
+FESTONE|Decorazione appesa per la festa|3
+MARTELLO|Batte i chiodi|2
+CHIODO|Si pianta con il martello|2
+VITE|Si avvita con il cacciavite|2
+CACCIAVITE|Serve ad avvitare|2
+PINZA|Afferra e stringe|2
+TENAGLIA|Attrezzo che stacca i chiodi|3
+SEGA|Taglia il legno avanti e indietro|2
+TRAPANO|Fa i buchi nel muro|2
+BADILE|Pala larga per spalare la neve|3
+LIMA|Leviga e assottiglia|3
+PIALLA|Rende liscio il legno|3
+SCALPELLO|Attrezzo dello scultore|3
+CAZZUOLA|Attrezzo del muratore per la malta|3
+LIVELLA|Controlla che sia tutto in piano|3
+INCUDINE|Ci si batte il ferro|3
+BULLONE|Vite con il dado|3
+COLLA|Tiene unite due cose|2
+CORDA|Si lega con i nodi|2
+SPAGO|Filo robusto per i pacchi|2
+NASTRO|Si lega intorno al regalo|2
+CATENA|Fatta di anelli di metallo|2
+LUCCHETTO|Chiude con la chiave il cancello|2
+TORCIA|Pila che fa luce al buio|2
+LANTERNA|Lume da portare in giro|3
+ALLEGRIA|Buonumore che fa ridere|2
+FELICITÀ|Si prova quando tutto va bene|2
+NOSTALGIA|Desiderio dei bei tempi passati|3
+TENEREZZA|Si prova guardando un cucciolo|3
+GRATITUDINE|Si prova verso chi ci ha aiutato|3
+PAZIENZA|Virtù di chi sa aspettare|2
+CORAGGIO|Ce l’ha chi non ha paura|2
+SORPRESA|Arriva quando non te l’aspetti|2
+STUPORE|Meraviglia davanti a qualcosa di bello|3
+ENTUSIASMO|Grande voglia di fare|3
+SERENITÀ|Pace dell’animo|3
+FIDUCIA|Si dà a chi è sincero|3
+AMICIZIA|Legame tra amici|2
+NOIA|Si prova quando non si sa cosa fare|2
+VERGOGNA|Fa arrossire le guance|3
+ORGOGLIO|Si prova per i successi dei figli|3
+CURIOSITÀ|Voglia di sapere|3
+CAMMINARE|Andare a piedi|2
+CUCINARE|Preparare il pranzo|2
+DORMIRE|Si fa nel letto la notte|2
+CANTARE|Si fa sotto la doccia o nel coro|2
+BALLARE|Muoversi a ritmo di musica|2
+NUOTARE|Si fa in piscina o al mare|2
+LEGGERE|Si fa con un libro tra le mani|2
+SCRIVERE|Si fa con la penna|2
+RIDERE|Si fa dopo una barzelletta|2
+SORRIDERE|Mostrare un viso contento|2
+ABBRACCIARE|Stringere tra le braccia|2
+PASSEGGIARE|Camminare con calma per svago|2
+RICAMARE|Decorare la stoffa con ago e filo|3
+SFERRUZZARE|Lavorare a maglia con i ferri|3
+IMPASTARE|Lavorare farina e acqua con le mani|3
+INNAFFIARE|Dare l’acqua alle piante|3
+POTARE|Tagliare i rami delle piante|3
+SEMINARE|Mettere i semi nella terra|3
+STIRARE|Togliere le pieghe con il ferro|2
+RAMMENDARE|Riparare un buco nella calza|3
+SBUCCIARE|Togliere la buccia alla frutta|3
+SPARECCHIARE|Togliere i piatti dopo cena|3
+GRANDE|Il contrario di piccolo|1
+PICCOLO|Il contrario di grande|1
+ALTO|Il contrario di basso|1
+FELICE|Molto contento|1
+BELLO|Piacevole da guardare|1
+BUONO|Ha un sapore gradevole|1
+DOLCE|Ha il sapore dello zucchero|1
+VELOCE|Il contrario di lento|2
+LENTO|Il contrario di veloce|2
+PULITO|Il contrario di sporco|2
+GENTILE|Persona cortese e garbata|2
+TRANQUILLO|Calmo, senza pensieri|2
+SAGGIO|Persona che sa dare buoni consigli|3
+GENEROSO|Dà volentieri agli altri|3
+PREMUROSO|Pieno di attenzioni per gli altri|3
+ROBUSTO|Forte e resistente|3
+TIEPIDO|Né caldo né freddo|3
+AFOSO|Caldo e umido d’estate|3
+SPAZIOSO|Ampio, con tanto posto|3
+LUMINOSO|Pieno di luce|3
+PROFUMATO|Ha un buon odore|2
+SALATO|Ha troppo sale|2
+AMARO|Il sapore del caffè senza zucchero|2
+ASPRO|Il sapore del limone|3
+CROCCANTE|Fa rumore sotto i denti|3
+MORBIDO|Il contrario di duro|2
+ANTICO|Molto vecchio, di tanto tempo fa|2
+ARGENTO|Metallo prezioso, medaglia del secondo|2
+BRONZO|Lega di rame, medaglia del terzo|3
+RAME|Metallo rossiccio dei fili elettrici|3
+ORO|Metallo giallo e prezioso|1
+MARMO|Pietra bianca delle statue|3
+PORCELLANA|Ceramica fine dei servizi buoni|3
+CERAMICA|Terra cotta e smaltata|3
+VIMINI|Rami flessibili per i cestini|3
+SUGHERO|Il tappo della bottiglia di vino|3
+CANAPA|Fibra per corde e lenzuola di una volta|3
+LINO|Tessuto fresco per l’estate|3
+FLANELLA|Tessuto morbido e caldo dei pigiami|3
+TOMBOLINO|Cuscino per fare il merletto|3
+CENTRINO|Pizzo da mettere sotto il vaso|3
+SOPRAMMOBILE|Oggetto decorativo sul mobile|3
+CREDENZA|Mobile della cucina per i piatti|3
+CASSAPANCA|Panca con il coperchio dove riporre le cose|3
+COMÒ|Mobile con i cassetti in camera|2
+CAPPELLIERA|Scatola rotonda per il cappello|3
+PENDOLA|Orologio a pendolo da parete|3
+GRAMMOFONO|Suonava i dischi con la tromba|3
+GIRADISCHI|Fa girare i dischi in vinile|3
+MATTARELLO|Si usa per stendere la sfoglia|3
+SFOGLIA|Pasta tirata sottile per le lasagne|3
+FRITTELLA|Dolce fritto di Carnevale|3
+CIAMBELLA|Dolce con il buco in mezzo|3
+CONFETTO|Mandorla zuccherata delle nozze|3
+TORRONE|Dolce di Natale con miele e mandorle|3
+MARZAPANE|Pasta di mandorle a forma di frutta|3
+ZABAIONE|Crema di tuorlo, zucchero e marsala|3
+CALDARROSTA|Castagna cotta sul fuoco|3
+UVETTA|Acini secchi del panettone|3
+CAPPERO|Bocciolo sotto sale, va nel sugo|3
+MAGGIORANA|Erba aromatica simile all’origano|3
+ALLORO|Foglia che profuma l’arrosto|3
+ZAFFERANO|Spezia gialla del risotto alla milanese|3
+NOCE MOSCATA|Spezia che si grattugia nella besciamella|3
+BESCIAMELLA|Salsa bianca delle lasagne|3

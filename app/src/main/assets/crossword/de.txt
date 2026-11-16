@@ -1,288 +1,1078 @@
-# Kreuzworträtsel-Wörterbuch — Deutsch. Format: ANTWORT|Hinweis. Alltagswörter, freundliche Hinweise. Ä/Ö/Ü/ß werden zu AE/OE/UE/SS.
-APFEL|Rotes oder grünes Obst
-BROT|Wird beim Bäcker gebacken und mit Butter bestrichen
-BUTTER|Gelbes Fett, das man aufs Brot streicht
-KÄSE|Wird aus Milch gemacht, zum Beispiel Gouda
-BIRNE|Gelbgrünes Obst; auch etwas, das in der Lampe leuchtet
-TOMATE|Rotes Gemüse für Salat und Soße
-KARTOFFEL|Knolle für Püree, Klöße und Pommes
-SALAT|Grünes Blattgemüse, mit Essig und Öl angemacht
-SUPPE|Warme Speise, die man mit dem Löffel isst
-KUCHEN|Süßes Gebäck zum Kaffee am Nachmittag
-TORTE|Feiner Kuchen mit Sahne oder Creme
-HONIG|Süß und golden, von den Bienen
-ZUCKER|Macht den Kaffee süß
-SALZ|Weiße Würze, auch aus dem Meer
-PFEFFER|Scharfes Gewürz, steht oft neben dem Salz
-MILCH|Weißes Getränk von der Kuh
-KAFFEE|Schwarzes Heißgetränk am Morgen
-TEE|Heißgetränk aus Blättern, zum Beispiel Kamille
-WASSER|Klares Getränk aus der Leitung
-NUDELN|Spaghetti gehören dazu
-REIS|Kleine weiße Körner, eine Beilage aus Asien
-SPIEGELEI|Gebratenes Ei mit gelbem Dotter in der Mitte
-WURST|Vom Metzger, aufs Brot oder vom Grill
-SCHINKEN|Gekochtes oder geräuchertes Fleisch vom Schwein
-ZITRONE|Saure gelbe Frucht
-ORANGE|Süße Zitrusfrucht, auch Apfelsine genannt
-BANANE|Lange gelbe Frucht, die man schält
-KIRSCHE|Kleine rote Frucht mit einem Stein
-ERDBEERE|Rote Frucht im Frühsommer, lecker mit Sahne
-TRAUBE|Aus ihr wird Wein gemacht
-MÖHRE|Orangefarbenes Gemüse, Hasen mögen es
-GURKE|Grünes Gemüse, oft sauer eingelegt
-ZWIEBEL|Beim Schneiden muss man oft weinen
-SENF|Gelbe, scharfe Paste zur Bratwurst
-SAHNE|Wird steif geschlagen und kommt auf den Kuchen
-BREZEL|Gebäck mit einer Schlinge, typisch für Bayern
-MARMELADE|Süßer Aufstrich aus Früchten
-SAFT|Getränk aus gepresstem Obst
-WEIN|Getränk aus Trauben, rot oder weiß
-BIER|Getränk aus Hopfen und Malz
-MEHL|Weißes Pulver zum Backen, aus Getreide
-NUSS|Hartschalige Frucht, die Eichhörnchen sammeln
-SPINAT|Grünes Blattgemüse, das Popeye stark macht
-ROSINE|Getrocknete Weintraube
-PILZ|Wächst nach dem Regen im Wald, zum Beispiel der Champignon
-TISCH|Möbelstück, an dem man isst
-STUHL|Darauf sitzt man am Tisch
-BETT|Darin schläft man
-SOFA|Gemütliches Polstermöbel im Wohnzimmer
-SESSEL|Bequemer Sitz mit Armlehnen für eine Person
-LAMPE|Spendet Licht, wenn es dunkel ist
-FENSTER|Durch es scheint die Sonne ins Zimmer
-TÜR|Man öffnet sie, um ins Zimmer zu kommen
-TREPPE|Führt nach oben ins nächste Stockwerk
-KÜCHE|Raum, in dem gekocht wird
-GARTEN|Hinter dem Haus, mit Blumen und Gemüsebeet
-TELLER|Darauf liegt das Essen
-TASSE|Daraus trinkt man Kaffee oder Tee
-LÖFFEL|Besteck für die Suppe
-GABEL|Besteck mit Zinken
-MESSER|Damit schneidet man das Brot
-TOPF|Darin kocht man Suppe
-PFANNE|Darin brät man Spiegeleier
-SCHRANK|Darin hängt die Kleidung
-SPIEGEL|Darin sieht man sich selbst
-TEPPICH|Liegt weich auf dem Boden
-KISSEN|Weich, für den Kopf im Bett
-DECKE|Wärmt im Bett; auch oben im Zimmer
-VORHANG|Hängt vor dem Fenster
-SCHLÜSSEL|Damit schließt man die Haustür auf
-UHR|Zeigt die Zeit an
-KERZE|Brennt mit kleiner Flamme, zum Beispiel im Advent
-HAUS|Gebäude, in dem man wohnt
-DACH|Oben auf dem Haus, schützt vor Regen
-OFEN|Darin wird Kuchen gebacken
-REGAL|Darauf stehen Bücher
-BESEN|Damit kehrt man den Boden
-SEIFE|Damit wäscht man sich die Hände
-HANDTUCH|Damit trocknet man sich nach dem Waschen ab
-BRILLE|Hilft beim Lesen und sitzt auf der Nase
-ZEITUNG|Wird morgens gelesen, voller Nachrichten
-BRIEF|Kommt mit der Post in einem Umschlag
-TELEFON|Damit ruft man die Familie an
-RADIO|Gerät für Musik und Nachrichten
-NADEL|Zum Nähen, mit einem Öhr
-SCHERE|Damit schneidet man Papier
-KORB|Geflochten, zum Einkaufen oder Pilzesammeln
-MUTTER|Mama
-VATER|Papa
-OMA|Mutter von Mutter oder Vater, liebevoll gesagt
-OPA|Großvater, liebevoll gesagt
-ENKEL|Kind deines Kindes
-TANTE|Schwester von Mutter oder Vater
-ONKEL|Bruder von Mutter oder Vater
-BRUDER|Ein Junge mit denselben Eltern wie du
-SCHWESTER|Ein Mädchen mit denselben Eltern wie du
-TOCHTER|Ein Mädchen ist das für seine Eltern
-SOHN|Ein Junge ist das für seine Eltern
-NICHTE|Tochter von Bruder oder Schwester
-NEFFE|Sohn von Bruder oder Schwester
-HOCHZEIT|Fest, bei dem ein Paar heiratet
-FAMILIE|Eltern, Kinder und Großeltern zusammen
-BABY|Neugeborenes Kind
-SONNE|Scheint am Tag und wärmt
-MOND|Leuchtet nachts am Himmel
-STERN|Funkelt nachts am Himmel
-HIMMEL|Ist blau, wenn das Wetter schön ist
-WOLKE|Weiß und flauschig am Himmel
-REGEN|Wasser, das vom Himmel fällt
-SCHNEE|Weiß und kalt, fällt im Winter
-WIND|Bewegte Luft, lässt Drachen steigen
-NEBEL|Grauer Dunst am Morgen, man sieht wenig
-GEWITTER|Wetter mit Blitz und Donner
-REGENBOGEN|Bunt am Himmel, wenn Sonne und Schauer zusammenkommen
-BLITZ|Heller Strahl bei einem Gewitter
-DONNER|Lautes Grollen nach dem Blitz
-HAGEL|Kleine Eiskörner, die vom Himmel fallen
-FROST|Wenn es unter null Grad kalt ist
-HITZE|Sehr warmes Sommerwetter
-STURM|Sehr starker Wind
-SCHIRM|Schützt vor Regen
-FRÜHLING|Jahreszeit, in der die Blumen erwachen
-SOMMER|Die wärmste Jahreszeit
-HERBST|Jahreszeit, in der die Blätter fallen
-WINTER|Kalte Jahreszeit mit Schnee
-BAUM|Hat Stamm, Äste und Blätter
-BLUME|Wächst im Garten und duftet
-ROSE|Blume mit Dornen, Zeichen der Liebe
-TULPE|Frühlingsblume, bekannt aus Holland
-WALD|Viele Bäume zusammen
-WIESE|Grüne Fläche mit Gras und Blumen
-BERG|Hoch, mit einem Gipfel
-MEER|Großes salziges Wasser
-SEE|Wasser mitten im Land, zum Baden
-FLUSS|Fließt zum Meer, zum Beispiel der Rhein
-STRAND|Sand am Meer
-INSEL|Land, das ganz von Wasser umgeben ist
-STEIN|Hart und grau, liegt am Weg
-SAND|Kleine Körner am Strand
-ERDE|Unser Planet; auch der Boden im Blumentopf
-GRAS|Wächst auf der Wiese, Kühe fressen es
-BLATT|Wächst am Baum und wird im Herbst bunt
-EICHE|Kräftiger Laubbaum, dessen Früchte Wildschweine mögen
-TANNE|Nadelbaum, der zu Weihnachten geschmückt wird
-HUND|Bellt und ist der beste Freund des Menschen
-KATZE|Miaut und schnurrt
-PFERD|Man kann auf ihm reiten
-KUH|Gibt Milch und muht
-SCHWEIN|Grunzt und hat eine rosa Haut
-SCHAF|Gibt Wolle
-ZIEGE|Meckert und hat Hörner
-ESEL|Grauer Verwandter des Pferdes, ruft „I-A“
-HUHN|Legt Eier
-ENTE|Schwimmt auf dem Teich und quakt
-GANS|Wird oft zu Sankt Martin gebraten
-HASE|Hat lange Ohren und bringt zu Ostern die Eier
-MAUS|Kleines Nagetier, das Katzen jagen
-VOGEL|Hat Federn und kann fliegen
-FISCH|Lebt im Wasser und hat Flossen
-BIENE|Macht Honig
-LÖWE|König der Tiere
-BÄR|Großes Tier, das gern Honig nascht
-ELEFANT|Großes graues Tier mit Rüssel
-AFFE|Klettert und isst gern Bananen
-STORCH|Bringt der Sage nach die Babys
-SCHWAN|Weißer Vogel mit langem Hals
-IGEL|Kleines Tier mit Stacheln
-EULE|Vogel, der nachts wach ist
-SCHNECKE|Trägt ihr Haus auf dem Rücken
-TAUBE|Grauer Vogel in der Stadt
-RABE|Großer schwarzer Vogel
-FUCHS|Schlaues rotes Tier im Wald
-REH|Scheues Tier im Wald, Bambi ist eines
-HAMSTER|Kleines Haustier mit dicken Backen
-KÄFER|Krabbeltier mit Panzer, manchmal mit roten Punkten
-FROSCH|Quakt am Teich und springt
-ARZT|Hilft, wenn man krank ist
-BÄCKER|Backt Brot und Brötchen
-LEHRER|Unterrichtet in der Schule
-KOCH|Bereitet im Restaurant das Essen zu
-MALER|Streicht Wände oder malt Bilder
-BAUER|Arbeitet auf dem Feld und im Stall
-FRISEUR|Schneidet die Haare
-POLIZIST|Sorgt für Ordnung und trägt eine Uniform
-GÄRTNER|Kümmert sich um Pflanzen und Blumen
-PILOT|Fliegt ein Flugzeug
-SCHNEIDER|Näht Kleider nach Maß
-METZGER|Verkauft Fleisch und Wurst
-RICHTER|Spricht im Gericht das Urteil
-KELLNER|Bringt im Restaurant das Essen an den Tisch
-FÖRSTER|Kümmert sich um den Wald
-SÄNGER|Singt Lieder auf der Bühne
-TISCHLER|Baut Möbel aus Holz
-LIED|Etwas, das man singt
-KLAVIER|Instrument mit schwarzen und weißen Tasten
-GEIGE|Streichinstrument, das man unter das Kinn hält
-TROMMEL|Instrument, auf das man schlägt
-GITARRE|Instrument mit sechs Saiten
-FLÖTE|Blasinstrument, zum Beispiel aus Holz
-ORGEL|Großes Instrument in der Kirche
-CHOR|Gruppe, die gemeinsam singt
-TANZ|Walzer oder Tango
-WALZER|Tanz im Dreivierteltakt
-NOTE|Zeichen für einen Ton, steht auf fünf Linien
-HARFE|Instrument mit vielen Saiten, die man zupft
-KONZERT|Musik live vor Publikum
-TROMPETE|Glänzendes Blasinstrument aus Blech
-OPER|Bühnenstück mit Gesang, zum Beispiel „Die Zauberflöte“
-HAND|Hat fünf Finger
-FUSS|Steckt im Schuh
-KOPF|Sitzt oben auf dem Hals
-NASE|Damit riecht man
-OHR|Damit hört man
-AUGE|Damit sieht man
-MUND|Damit spricht und isst man
-HERZ|Schlägt in der Brust
-ARM|Verbindet Schulter und Hand
-BEIN|Damit geht man
-KNIE|Gelenk in der Mitte des Beins
-ZAHN|Weiß, im Mund, zum Beißen
-HAAR|Wächst auf dem Kopf
-FINGER|Fünf an jeder Hand
-RÜCKEN|Die hintere Seite des Körpers
-SCHULTER|Darauf trägt man den Rucksack
-BAUCH|Knurrt, wenn man Hunger hat
-STIRN|Liegt über den Augen
-ZEHE|Fünf an jedem Fuß
-HALS|Verbindet Kopf und Körper
-STADT|Größer als ein Dorf
-DORF|Kleiner Ort auf dem Land
-KIRCHE|Hat einen Turm mit Glocken
-SCHULE|Dort lernen Kinder lesen und schreiben
-MARKT|Platz mit Ständen für Obst und Gemüse
-BAHNHOF|Hier fahren die Züge ab
-STRASSE|Darauf fahren die Autos
-BRÜCKE|Führt über einen Fluss
-PARK|Grüne Anlage in der Stadt zum Spazierengehen
-RATHAUS|Dort arbeitet der Bürgermeister
-KINO|Dort sieht man Filme auf großer Leinwand
-THEATER|Dort spielen Schauspieler auf der Bühne
-MUSEUM|Dort werden Kunst und alte Dinge ausgestellt
-APOTHEKE|Dort bekommt man Medikamente
-BANK|Dort hebt man Geld ab; auch ein Sitz im Park
-POST|Dort gibt man Briefe und Pakete auf
-HOTEL|Dort übernachtet man auf Reisen
-BUS|Fährt von Haltestelle zu Haltestelle
-ZUG|Fährt auf Schienen
-AUTO|Hat vier Räder und einen Motor
-FAHRRAD|Hat zwei Räder und Pedale
-AMPEL|Zeigt Rot, Gelb und Grün
-TURM|Hohes, schmales Bauwerk
-HAFEN|Dort legen die Schiffe an
-SCHIFF|Fährt über das Meer
-ROT|Farbe der Tomate
-BLAU|Farbe des Himmels
-GRÜN|Farbe des Grases
-GELB|Farbe der Zitrone
-WEISS|Farbe des Schnees
-SCHWARZ|Farbe der Nacht
-MORGEN|Anfang des Tages
-ABEND|Wenn die Sonne untergeht
-NACHT|Zeit zum Schlafen, wenn es dunkel ist
-WOCHE|Hat sieben Tage
-MONAT|Der Januar ist einer
-JAHR|Hat zwölf Monate
-SONNTAG|Ruhetag nach dem Samstag
-FERIEN|Schulfreie Zeit
-URLAUB|Freie Zeit zum Verreisen
-GEBURTSTAG|Tag, an dem man Kerzen auf dem Kuchen ausbläst
-OSTERN|Fest mit bunten Eiern
-GESCHENK|Bekommt man zum Geburtstag
-BUCH|Hat viele Seiten zum Lesen
-BALL|Rund, zum Spielen und Werfen
-KARTE|Beim Solitär spielt man damit
-WÜRFEL|Hat sechs Seiten mit Punkten
-RÄTSEL|Eine knifflige Aufgabe zum Lösen
-FOTO|Bild aus der Kamera
-MANTEL|Warmes Kleidungsstück für den Winter
-HUT|Kopfbedeckung mit Krempe
-SCHAL|Wärmt im Winter den Hals
-SCHUH|Zieht man an den Fuß
-KLEID|Frauen tragen es, gern im Sommer
-HEMD|Hat Knöpfe und einen Kragen
-STRUMPF|Trägt man im Schuh
-HOSE|Hat zwei Beine
-TASCHE|Darin trägt man seine Sachen mit
-GELD|Damit bezahlt man
+# Kreuzworträtsel-Wörterbuch — Deutsch. Format: ANTWORT|Hinweis|Stufe (1 leicht, 2 mittel, 3 schwer). Alltagswörter, freundliche Hinweise. Ä/Ö/Ü/ß werden zu AE/OE/UE/SS.
+APFEL|Rotes oder grünes Obst|1
+BROT|Wird beim Bäcker gebacken und mit Butter bestrichen|1
+BUTTER|Gelbes Fett, das man aufs Brot streicht|1
+KÄSE|Wird aus Milch gemacht, zum Beispiel Gouda|1
+BIRNE|Gelbgrünes Obst; auch etwas, das in der Lampe leuchtet|1
+TOMATE|Rotes Gemüse für Salat und Soße|1
+KARTOFFEL|Knolle für Püree, Klöße und Pommes|1
+SALAT|Grünes Blattgemüse, mit Essig und Öl angemacht|1
+SUPPE|Warme Speise, die man mit dem Löffel isst|1
+KUCHEN|Süßes Gebäck zum Kaffee am Nachmittag|1
+TORTE|Feiner Kuchen mit Sahne oder Creme|1
+HONIG|Süß und golden, von den Bienen|1
+ZUCKER|Macht den Kaffee süß|1
+SALZ|Weiße Würze, auch aus dem Meer|1
+PFEFFER|Scharfes Gewürz, steht oft neben dem Salz|1
+MILCH|Weißes Getränk von der Kuh|1
+KAFFEE|Schwarzes Heißgetränk am Morgen|1
+TEE|Heißgetränk aus Blättern, zum Beispiel Kamille|1
+WASSER|Klares Getränk aus der Leitung|1
+NUDELN|Spaghetti gehören dazu|1
+REIS|Kleine weiße Körner, eine Beilage aus Asien|1
+SPIEGELEI|Gebratenes Ei mit gelbem Dotter in der Mitte|2
+WURST|Vom Metzger, aufs Brot oder vom Grill|1
+SCHINKEN|Gekochtes oder geräuchertes Fleisch vom Schwein|2
+ZITRONE|Saure gelbe Frucht|1
+ORANGE|Süße Zitrusfrucht, auch Apfelsine genannt|1
+BANANE|Lange gelbe Frucht, die man schält|1
+KIRSCHE|Kleine rote Frucht mit einem Stein|1
+ERDBEERE|Rote Frucht im Frühsommer, lecker mit Sahne|1
+TRAUBE|Aus ihr wird Wein gemacht|1
+MÖHRE|Orangefarbenes Gemüse, Hasen mögen es|1
+GURKE|Grünes Gemüse, oft sauer eingelegt|1
+ZWIEBEL|Beim Schneiden muss man oft weinen|1
+SENF|Gelbe, scharfe Paste zur Bratwurst|2
+SAHNE|Wird steif geschlagen und kommt auf den Kuchen|1
+BREZEL|Gebäck mit einer Schlinge, typisch für Bayern|2
+MARMELADE|Süßer Aufstrich aus Früchten|1
+SAFT|Getränk aus gepresstem Obst|1
+WEIN|Getränk aus Trauben, rot oder weiß|1
+BIER|Getränk aus Hopfen und Malz|1
+MEHL|Weißes Pulver zum Backen, aus Getreide|2
+NUSS|Hartschalige Frucht, die Eichhörnchen sammeln|1
+SPINAT|Grünes Blattgemüse, reich an Eisen|1
+ROSINE|Getrocknete Weintraube|2
+PILZ|Wächst nach dem Regen im Wald, zum Beispiel der Champignon|1
+TISCH|Möbelstück, an dem man isst|1
+STUHL|Darauf sitzt man am Tisch|1
+BETT|Darin schläft man|1
+SOFA|Gemütliches Polstermöbel im Wohnzimmer|1
+SESSEL|Bequemer Sitz mit Armlehnen für eine Person|1
+LAMPE|Spendet Licht, wenn es dunkel ist|1
+FENSTER|Durch es scheint die Sonne ins Zimmer|1
+TÜR|Man öffnet sie, um ins Zimmer zu kommen|1
+TREPPE|Führt nach oben ins nächste Stockwerk|1
+KÜCHE|Raum, in dem gekocht wird|1
+GARTEN|Hinter dem Haus, mit Blumen und Gemüsebeet|1
+TELLER|Darauf liegt das Essen|1
+TASSE|Daraus trinkt man Kaffee oder Tee|1
+LÖFFEL|Besteck für die Suppe|1
+GABEL|Besteck mit Zinken|1
+MESSER|Damit schneidet man das Brot|1
+TOPF|Darin kocht man Suppe|1
+PFANNE|Darin brät man Spiegeleier|1
+SCHRANK|Darin hängt die Kleidung|1
+SPIEGEL|Darin sieht man sich selbst|1
+TEPPICH|Liegt weich auf dem Boden|1
+KISSEN|Weich, für den Kopf im Bett|1
+DECKE|Wärmt im Bett; auch oben im Zimmer|1
+VORHANG|Hängt vor dem Fenster|2
+SCHLÜSSEL|Damit schließt man die Haustür auf|1
+UHR|Zeigt die Zeit an|1
+KERZE|Brennt mit kleiner Flamme, zum Beispiel im Advent|1
+HAUS|Gebäude, in dem man wohnt|1
+DACH|Oben auf dem Haus, schützt vor Regen|1
+OFEN|Darin wird Kuchen gebacken|1
+REGAL|Darauf stehen Bücher|1
+BESEN|Damit kehrt man den Boden|1
+SEIFE|Damit wäscht man sich die Hände|1
+HANDTUCH|Damit trocknet man sich nach dem Waschen ab|1
+BRILLE|Hilft beim Lesen und sitzt auf der Nase|1
+ZEITUNG|Wird morgens gelesen, voller Nachrichten|1
+BRIEF|Kommt mit der Post in einem Umschlag|1
+TELEFON|Damit ruft man die Familie an|1
+RADIO|Gerät für Musik und Nachrichten|1
+NADEL|Zum Nähen, mit einem Öhr|2
+SCHERE|Damit schneidet man Papier|1
+KORB|Geflochten, zum Einkaufen oder Pilzesammeln|1
+MUTTER|Mama|1
+VATER|Papa|1
+OMA|Mutter von Mutter oder Vater, liebevoll gesagt|1
+OPA|Großvater, liebevoll gesagt|1
+ENKEL|Kind deines Kindes|1
+TANTE|Schwester von Mutter oder Vater|1
+ONKEL|Bruder von Mutter oder Vater|1
+BRUDER|Ein Junge mit denselben Eltern wie du|1
+SCHWESTER|Ein Mädchen mit denselben Eltern wie du|1
+TOCHTER|Ein Mädchen ist das für seine Eltern|1
+SOHN|Ein Junge ist das für seine Eltern|1
+NICHTE|Tochter von Bruder oder Schwester|2
+NEFFE|Sohn von Bruder oder Schwester|2
+HOCHZEIT|Fest, bei dem ein Paar heiratet|1
+FAMILIE|Eltern, Kinder und Großeltern zusammen|1
+BABY|Neugeborenes Kind|1
+SONNE|Scheint am Tag und wärmt|1
+MOND|Leuchtet nachts am Himmel|1
+STERN|Funkelt nachts am Himmel|1
+HIMMEL|Ist blau, wenn das Wetter schön ist|1
+WOLKE|Weiß und flauschig am Himmel|1
+REGEN|Wasser, das vom Himmel fällt|1
+SCHNEE|Weiß und kalt, fällt im Winter|1
+WIND|Bewegte Luft, lässt Drachen steigen|1
+NEBEL|Grauer Dunst am Morgen, man sieht wenig|2
+GEWITTER|Wetter mit Blitz und Donner|2
+REGENBOGEN|Bunt am Himmel, wenn Sonne und Schauer zusammenkommen|2
+BLITZ|Heller Strahl bei einem Gewitter|1
+DONNER|Lautes Grollen nach dem Blitz|1
+HAGEL|Kleine Eiskörner, die vom Himmel fallen|2
+FROST|Wenn es unter null Grad kalt ist|1
+HITZE|Sehr warmes Sommerwetter|1
+STURM|Sehr starker Wind|1
+SCHIRM|Schützt vor Regen|1
+FRÜHLING|Jahreszeit, in der die Blumen erwachen|1
+SOMMER|Die wärmste Jahreszeit|1
+HERBST|Jahreszeit, in der die Blätter fallen|1
+WINTER|Kalte Jahreszeit mit Schnee|1
+BAUM|Hat Stamm, Äste und Blätter|1
+BLUME|Wächst im Garten und duftet|1
+ROSE|Blume mit Dornen, Zeichen der Liebe|1
+TULPE|Frühlingsblume, bekannt aus Holland|1
+WALD|Viele Bäume zusammen|1
+WIESE|Grüne Fläche mit Gras und Blumen|1
+BERG|Hoch, mit einem Gipfel|1
+MEER|Großes salziges Wasser|1
+SEE|Wasser mitten im Land, zum Baden|1
+FLUSS|Fließt zum Meer, zum Beispiel der Rhein|1
+STRAND|Sand am Meer|1
+INSEL|Land, das ganz von Wasser umgeben ist|1
+STEIN|Hart und grau, liegt am Weg|1
+SAND|Kleine Körner am Strand|1
+ERDE|Unser Planet; auch der Boden im Blumentopf|1
+GRAS|Wächst auf der Wiese, Kühe fressen es|1
+BLATT|Wächst am Baum und wird im Herbst bunt|1
+EICHE|Kräftiger Laubbaum, dessen Früchte Wildschweine mögen|2
+TANNE|Nadelbaum, der zu Weihnachten geschmückt wird|1
+HUND|Bellt und ist der beste Freund des Menschen|1
+KATZE|Miaut und schnurrt|1
+PFERD|Man kann auf ihm reiten|1
+KUH|Gibt Milch und muht|1
+SCHWEIN|Grunzt und hat eine rosa Haut|1
+SCHAF|Gibt Wolle|1
+ZIEGE|Meckert und hat Hörner|1
+ESEL|Grauer Verwandter des Pferdes, ruft „I-A“|1
+HUHN|Legt Eier|1
+ENTE|Schwimmt auf dem Teich und quakt|1
+GANS|Wird oft zu Sankt Martin gebraten|1
+HASE|Hat lange Ohren und bringt zu Ostern die Eier|1
+MAUS|Kleines Nagetier, das Katzen jagen|1
+VOGEL|Hat Federn und kann fliegen|1
+FISCH|Lebt im Wasser und hat Flossen|1
+BIENE|Macht Honig|1
+LÖWE|König der Tiere|1
+BÄR|Großes Tier, das gern Honig nascht|1
+ELEFANT|Großes graues Tier mit Rüssel|1
+AFFE|Klettert und isst gern Bananen|1
+STORCH|Bringt der Sage nach die Babys|2
+SCHWAN|Weißer Vogel mit langem Hals|1
+IGEL|Kleines Tier mit Stacheln|1
+EULE|Vogel, der nachts wach ist|1
+SCHNECKE|Trägt ihr Haus auf dem Rücken|1
+TAUBE|Grauer Vogel in der Stadt|1
+RABE|Großer schwarzer Vogel|1
+FUCHS|Schlaues rotes Tier im Wald|1
+REH|Scheues Tier im Wald mit braunem Fell|1
+HAMSTER|Kleines Haustier mit dicken Backen|1
+KÄFER|Krabbeltier mit Panzer, manchmal mit roten Punkten|1
+FROSCH|Quakt am Teich und springt|1
+ARZT|Hilft, wenn man krank ist|1
+BÄCKER|Backt Brot und Brötchen|1
+LEHRER|Unterrichtet in der Schule|1
+KOCH|Bereitet im Restaurant das Essen zu|1
+MALER|Streicht Wände oder malt Bilder|1
+BAUER|Arbeitet auf dem Feld und im Stall|1
+FRISEUR|Schneidet die Haare|1
+POLIZIST|Sorgt für Ordnung und trägt eine Uniform|1
+GÄRTNER|Kümmert sich um Pflanzen und Blumen|1
+PILOT|Fliegt ein Flugzeug|1
+SCHNEIDER|Näht Kleider nach Maß|2
+METZGER|Verkauft Fleisch und Wurst|2
+RICHTER|Spricht im Gericht das Urteil|2
+KELLNER|Bringt im Restaurant das Essen an den Tisch|2
+FÖRSTER|Kümmert sich um den Wald|2
+SÄNGER|Singt Lieder auf der Bühne|1
+TISCHLER|Baut Möbel aus Holz|2
+LIED|Etwas, das man singt|1
+KLAVIER|Instrument mit schwarzen und weißen Tasten|1
+GEIGE|Streichinstrument, das man unter das Kinn hält|1
+TROMMEL|Instrument, auf das man schlägt|1
+GITARRE|Instrument mit sechs Saiten|1
+FLÖTE|Blasinstrument, zum Beispiel aus Holz|1
+ORGEL|Großes Instrument in der Kirche|2
+CHOR|Gruppe, die gemeinsam singt|2
+TANZ|Walzer oder Tango|1
+WALZER|Tanz im Dreivierteltakt|2
+NOTE|Zeichen für einen Ton, steht auf fünf Linien|1
+HARFE|Instrument mit vielen Saiten, die man zupft|2
+KONZERT|Musik live vor Publikum|2
+TROMPETE|Glänzendes Blasinstrument aus Blech|2
+OPER|Bühnenstück mit Gesang, zum Beispiel „Die Zauberflöte“|2
+HAND|Hat fünf Finger|1
+FUSS|Steckt im Schuh|1
+KOPF|Sitzt oben auf dem Hals|1
+NASE|Damit riecht man|1
+OHR|Damit hört man|1
+AUGE|Damit sieht man|1
+MUND|Damit spricht und isst man|1
+HERZ|Schlägt in der Brust|1
+ARM|Verbindet Schulter und Hand|1
+BEIN|Damit geht man|1
+KNIE|Gelenk in der Mitte des Beins|1
+ZAHN|Weiß, im Mund, zum Beißen|1
+HAAR|Wächst auf dem Kopf|1
+FINGER|Fünf an jeder Hand|1
+RÜCKEN|Die hintere Seite des Körpers|1
+SCHULTER|Darauf trägt man den Rucksack|1
+BAUCH|Knurrt, wenn man Hunger hat|1
+STIRN|Liegt über den Augen|2
+ZEHE|Fünf an jedem Fuß|1
+HALS|Verbindet Kopf und Körper|1
+STADT|Größer als ein Dorf|1
+DORF|Kleiner Ort auf dem Land|1
+KIRCHE|Hat einen Turm mit Glocken|1
+SCHULE|Dort lernen Kinder lesen und schreiben|1
+MARKT|Platz mit Ständen für Obst und Gemüse|1
+BAHNHOF|Hier fahren die Züge ab|1
+STRASSE|Darauf fahren die Autos|1
+BRÜCKE|Führt über einen Fluss|1
+PARK|Grüne Anlage in der Stadt zum Spazierengehen|1
+RATHAUS|Dort arbeitet der Bürgermeister|2
+KINO|Dort sieht man Filme auf großer Leinwand|1
+THEATER|Dort spielen Schauspieler auf der Bühne|1
+MUSEUM|Dort werden Kunst und alte Dinge ausgestellt|1
+APOTHEKE|Dort bekommt man Medikamente|2
+BANK|Dort hebt man Geld ab; auch ein Sitz im Park|1
+POST|Dort gibt man Briefe und Pakete auf|1
+HOTEL|Dort übernachtet man auf Reisen|1
+BUS|Fährt von Haltestelle zu Haltestelle|1
+ZUG|Fährt auf Schienen|1
+AUTO|Hat vier Räder und einen Motor|1
+FAHRRAD|Hat zwei Räder und Pedale|1
+AMPEL|Zeigt Rot, Gelb und Grün|1
+TURM|Hohes, schmales Bauwerk|2
+HAFEN|Dort legen die Schiffe an|2
+SCHIFF|Fährt über das Meer|1
+ROT|Farbe der Tomate|1
+BLAU|Farbe des Himmels|1
+GRÜN|Farbe des Grases|1
+GELB|Farbe der Zitrone|1
+WEISS|Farbe des Schnees|1
+SCHWARZ|Farbe der Nacht|1
+MORGEN|Anfang des Tages|1
+ABEND|Wenn die Sonne untergeht|1
+NACHT|Zeit zum Schlafen, wenn es dunkel ist|1
+WOCHE|Hat sieben Tage|1
+MONAT|Der Januar ist einer|1
+JAHR|Hat zwölf Monate|1
+SONNTAG|Ruhetag nach dem Samstag|1
+FERIEN|Schulfreie Zeit|1
+URLAUB|Freie Zeit zum Verreisen|1
+GEBURTSTAG|Tag, an dem man Kerzen auf dem Kuchen ausbläst|1
+OSTERN|Fest mit bunten Eiern|1
+GESCHENK|Bekommt man zum Geburtstag|1
+BUCH|Hat viele Seiten zum Lesen|1
+BALL|Rund, zum Spielen und Werfen|1
+KARTE|Beim Solitär spielt man damit|1
+WÜRFEL|Hat sechs Seiten mit Punkten|1
+RÄTSEL|Eine knifflige Aufgabe zum Lösen|1
+FOTO|Bild aus der Kamera|1
+MANTEL|Warmes Kleidungsstück für den Winter|1
+HUT|Kopfbedeckung mit Krempe|1
+SCHAL|Wärmt im Winter den Hals|1
+SCHUH|Zieht man an den Fuß|1
+KLEID|Frauen tragen es, gern im Sommer|1
+HEMD|Hat Knöpfe und einen Kragen|1
+STRUMPF|Trägt man im Schuh|1
+HOSE|Hat zwei Beine|1
+TASCHE|Darin trägt man seine Sachen mit|1
+GELD|Damit bezahlt man|1
+EI|Das Huhn legt es, zum Frühstück gekocht|1
+BRÖTCHEN|Kleines rundes Gebäck zum Frühstück|1
+FLEISCH|Gibt es beim Metzger, zum Beispiel als Braten|1
+GEMÜSE|Möhren, Erbsen und Bohnen gehören dazu|1
+OBST|Äpfel, Birnen und Pflaumen gehören dazu|1
+PFLAUME|Blaue Frucht, gut für den Kuchen im Spätsommer|1
+ERBSE|Kleine grüne Kugel aus der Schote|1
+BOHNE|Grüne Hülsenfrucht, lang und schmal|1
+KOHL|Großes Gemüse mit festen Blättern, auch als Kraut bekannt|1
+PAPRIKA|Rotes, gelbes oder grünes Gemüse, auch ein Gewürz|1
+KNOBLAUCH|Würzige Knolle mit kräftigem Geruch|2
+LAUCH|Langes grünes Gemüse, auch Porree genannt|2
+RETTICH|Weiße, scharfe Wurzel, typisch zum Bier in Bayern|2
+RADIESCHEN|Kleine rote Knolle, scharf und knackig|2
+SELLERIE|Gemüse als Knolle oder Stange, gut für die Suppe|2
+KÜRBIS|Großes orangefarbenes Gemüse im Herbst|1
+MAIS|Gelbe Körner am Kolben|1
+PFIRSICH|Saftige Frucht mit samtiger Haut|1
+APRIKOSE|Kleine orangefarbene Frucht, auch Marille genannt|2
+MELONE|Große, saftige Frucht, im Sommer erfrischend|1
+ANANAS|Tropische Frucht mit grüner Krone|1
+HIMBEERE|Rote Beere, die vom Strauch gepflückt wird|1
+BROMBEERE|Dunkle Beere an dornigen Ranken|2
+HEIDELBEERE|Kleine blaue Beere aus dem Wald|2
+STACHELBEERE|Grüne Beere mit feinen Härchen, etwas sauer|3
+PREISELBEERE|Kleine rote Beere, passt gut zum Wildbraten|3
+QUARK|Weißer, cremiger Milchbrei, gut mit Kräutern|2
+JOGHURT|Säuerliches Milchprodukt, oft mit Früchten|1
+ESSIG|Saure Flüssigkeit für die Salatsoße|1
+ÖL|Damit brät man; aus Oliven oder Sonnenblumen|1
+KEKS|Kleines, knuspriges Gebäck|1
+PLÄTZCHEN|Wird zur Weihnachtszeit gebacken und verziert|1
+STOLLEN|Weihnachtsgebäck mit Rosinen und Puderzucker|2
+LEBKUCHEN|Würziges Gebäck, typisch für Nürnberg|2
+PUDDING|Süße Nachspeise aus Milch, zum Beispiel mit Vanille|1
+EIS|Kalte Süßigkeit im Sommer, in der Waffel|1
+SCHOKOLADE|Süß und braun, aus Kakao|1
+KAKAO|Warmes Getränk aus Milch und braunem Pulver|1
+BONBON|Kleine Süßigkeit zum Lutschen|1
+FRÜHSTÜCK|Die erste Mahlzeit am Morgen|1
+MITTAGESSEN|Warme Mahlzeit um zwölf Uhr|1
+ABENDBROT|Kleine Mahlzeit am Abend, oft mit Brot und Aufschnitt|2
+BRATEN|Großes Stück Fleisch aus dem Ofen, am Sonntag beliebt|1
+KNÖDEL|Runder Kloß, aus Kartoffeln oder Semmeln|2
+SCHNITZEL|Paniertes, flach geklopftes Fleisch|1
+GULASCH|Würziger Fleischeintopf mit Paprika|2
+EINTOPF|Suppe mit Gemüse und Fleisch aus einem Topf|2
+SAUERKRAUT|Eingelegter Weißkohl, passt zur Bratwurst|2
+PFANNKUCHEN|Flach in der Pfanne gebacken, mit Zucker oder Apfelmus|1
+WAFFEL|Gebäck mit Gittermuster aus dem Eisen|1
+SPARGEL|Weißes Stangengemüse im Frühling|2
+GRIESS|Feine Körner für einen süßen Brei|3
+HAFER|Getreide für die Flocken im Müsli|2
+WEIZEN|Getreide, aus dem das meiste Mehl gemacht wird|2
+ROGGEN|Getreide für dunkles, kräftiges Brot|2
+FLASCHE|Darin ist Wasser oder Wein, mit Verschluss|1
+GLAS|Daraus trinkt man; auch das Material im Fenster|1
+SCHÜSSEL|Tiefes Gefäß für Salat oder Teig|1
+KANNE|Gefäß mit Henkel und Ausguss für Kaffee oder Tee|1
+DOSE|Blechbehälter für Erbsen oder Kekse|1
+KESSEL|Darin wird Wasser zum Kochen gebracht|2
+SIEB|Damit gießt man die Nudeln ab|2
+REIBE|Damit macht man aus Käse feine Streifen|2
+NUDELHOLZ|Rolle, mit der man Teig ausrollt|2
+SCHÜRZE|Schützt beim Kochen die Kleidung|1
+HERD|Darauf kocht man, mit Platten oder Flammen|1
+KÜHLSCHRANK|Hält Milch und Butter kalt|1
+SPÜLE|Becken in der Küche zum Abwaschen|2
+TABLETT|Darauf trägt man Tassen und Teller|2
+SERVIETTE|Tuch zum Abwischen des Mundes beim Essen|2
+TISCHDECKE|Tuch, das man über den Tisch legt|1
+ZIMMER|Raum in einer Wohnung|1
+WOHNUNG|Mehrere Zimmer in einem Haus, in denen man lebt|1
+KELLER|Raum unter dem Haus, oft für Vorräte|1
+DACHBODEN|Raum ganz oben unter dem Dach|2
+BALKON|Kleiner Platz draußen vor der Wohnung, mit Geländer|1
+TERRASSE|Platz vor dem Haus zum Draußensitzen|2
+FLUR|Gang in der Wohnung, von dem die Zimmer abgehen|1
+BAD|Raum mit Wanne und Waschbecken|1
+GARAGE|Hier steht das Auto über Nacht|1
+ZAUN|Umgibt den Garten|1
+TOR|Große Tür in einer Mauer; auch beim Fußball|1
+MAUER|Wand aus Steinen|1
+WAND|Daran hängt man Bilder|1
+BODEN|Darauf steht man im Zimmer|1
+KAMIN|Offenes Feuer im Wohnzimmer|2
+HEIZUNG|Macht im Winter die Wohnung warm|1
+BADEWANNE|Darin nimmt man ein warmes Bad|1
+DUSCHE|Wasser von oben zum Waschen|1
+KAMM|Damit ordnet man die Haare|1
+BÜRSTE|Hat viele Borsten, für Haare oder Schuhe|1
+ZAHNBÜRSTE|Damit putzt man morgens und abends|1
+WECKER|Klingelt am Morgen|1
+KOMMODE|Niedriges Möbel mit Schubladen|2
+SCHUBLADE|Fach im Schrank zum Herausziehen|2
+NACHTTISCH|Kleines Möbel neben dem Bett|2
+TRUHE|Große Kiste mit Deckel für Decken und Wäsche|2
+WIEGE|Bettchen für ein Baby, das sanft schaukelt|2
+STAUBSAUGER|Gerät, das den Teppich sauber macht|1
+EIMER|Gefäß mit Henkel für Wasser zum Putzen|1
+LAPPEN|Tuch zum Wischen|2
+WÄSCHE|Kleidung, die gewaschen wird|1
+BÜGELEISEN|Damit glättet man das Hemd|1
+KLAMMER|Hält die Wäsche an der Leine|2
+NÄHMASCHINE|Gerät, mit dem man schnell Stoff zusammennäht|2
+FADEN|Wird durch das Nadelöhr gezogen|1
+KNOPF|Hält das Hemd zusammen|1
+WOLLE|Damit strickt man Pullover|1
+STRICKNADEL|Werkzeug zum Stricken, meist paarweise|2
+FINGERHUT|Schützt beim Nähen den Finger; auch eine Pflanze|2
+SCHLAFZIMMER|Raum, in dem das Bett steht|1
+WOHNZIMMER|Raum mit Sofa und Fernseher|1
+FERNSEHER|Gerät für Filme und Nachrichten|1
+BILD|Hängt eingerahmt an der Wand|1
+RAHMEN|Umgibt ein Bild an der Wand|2
+VASE|Darin stehen die Blumen|1
+TOPFPFLANZE|Grünes Gewächs im Blumentopf am Fenster|2
+GIESSKANNE|Damit gießt man die Blumen|1
+SCHAUFEL|Damit gräbt man im Garten|1
+HARKE|Damit sammelt man Laub, auch Rechen genannt|2
+SPATEN|Werkzeug mit flachem Blatt zum Umgraben|2
+HAMMER|Damit schlägt man Nägel in die Wand|1
+NAGEL|Wird mit dem Hammer eingeschlagen|1
+SÄGE|Damit schneidet man Holz|1
+ZANGE|Werkzeug zum Greifen und Kneifen|2
+SCHRAUBE|Wird mit dem Schraubenzieher eingedreht|1
+BOHRER|Macht Löcher in die Wand|2
+LEITER|Darauf steigt man nach oben|1
+PINSEL|Damit malt man oder streicht man Farbe|1
+FARBE|Rot, Blau oder Gelb, zum Malen|1
+HOLZ|Stammt vom Baum, daraus baut man Möbel|1
+SEIL|Starker Strick zum Ziehen oder Festbinden|1
+KISTE|Kasten aus Holz zum Aufbewahren|1
+SCHLOSS|Wird mit dem Schlüssel geöffnet; auch ein Palast|1
+KLINGEL|Damit meldet man sich an der Haustür|1
+BRIEFKASTEN|Hier wirft der Briefträger die Post ein|1
+ROCK|Kleidungsstück für Frauen, um die Hüfte|1
+BLUSE|Feines Oberteil für Damen, mit Knöpfen|1
+PULLOVER|Warmes Oberteil aus Wolle|1
+JACKE|Kurzer Mantel für draußen|1
+MÜTZE|Wärmt im Winter den Kopf|1
+HANDSCHUH|Wärmt im Winter die Finger|1
+STIEFEL|Hoher Schuh für Regen und Schnee|1
+SOCKE|Kurzer Strumpf|1
+GÜRTEL|Hält die Hose an der Hüfte|1
+KRAWATTE|Wird zum Anzug um den Hals gebunden|1
+ANZUG|Jacke und Hose aus gleichem Stoff, für feine Anlässe|1
+WESTE|Oberteil ohne Ärmel|2
+SCHLAFANZUG|Wird nachts im Bett getragen|1
+PANTOFFEL|Weicher Hausschuh|2
+SANDALE|Luftiger Sommerschuh mit Riemen|2
+SCHMUCK|Ringe, Ketten und Ohrringe|1
+RING|Wird am Finger getragen, zum Beispiel nach der Hochzeit|1
+KETTE|Schmuck um den Hals|1
+ARMBAND|Schmuck um das Handgelenk|1
+OHRRING|Schmuck am Ohrläppchen|2
+HAHN|Kräht am Morgen auf dem Hof|1
+KÜKEN|Kleines gelbes Huhn, gerade geschlüpft|1
+KALB|Junges Tier der Kuh|1
+FOHLEN|Junges Pferd|2
+LAMM|Junges Schaf|1
+FERKEL|Junges Schwein|2
+STIER|Männliches Rind mit Hörnern|2
+OCHSE|Kräftiges Rind, früher vor dem Pflug|2
+PONY|Kleines Pferd, beliebt bei Kindern|1
+KANINCHEN|Kleines Tier mit langen Ohren, oft im Stall gehalten|1
+TRUTHAHN|Großer Vogel, wird in Amerika zum Fest gebraten|2
+PAPAGEI|Bunter Vogel, der Wörter nachsprechen kann|1
+SPATZ|Kleiner brauner Vogel, auch Sperling genannt|1
+AMSEL|Schwarzer Singvogel mit gelbem Schnabel|2
+MEISE|Kleiner Singvogel, besucht im Winter das Futterhaus|2
+SPECHT|Klopft mit dem Schnabel an Baumstämme|2
+KUCKUCK|Vogel, der seine Eier in fremde Nester legt|2
+LERCHE|Singvogel, der hoch in den Himmel steigt|3
+NACHTIGALL|Singvogel, der besonders schön in der Nacht singt|2
+ADLER|Großer Greifvogel mit scharfen Augen|1
+FALKE|Schneller Greifvogel|2
+MÖWE|Weißer Vogel am Meer, der laut kreischt|1
+PINGUIN|Schwarz-weißer Vogel, der nicht fliegt, aber schwimmt|1
+STRAUSS|Größter Vogel der Welt, kann schnell laufen; auch ein Blumengebinde|2
+FLAMINGO|Rosa Vogel, der auf einem Bein steht|2
+PFAU|Vogel mit prächtigem Rad aus Federn|2
+KRANICH|Großer grauer Zugvogel mit langen Beinen|3
+REIHER|Grauer Vogel, der still am Ufer auf Fische wartet|3
+SCHWALBE|Zugvogel, der Nester unter dem Dach baut|2
+HIRSCH|Großes Waldtier mit Geweih|1
+WILDSCHWEIN|Borstiges Tier im Wald mit Hauern|2
+DACHS|Waldtier mit schwarz-weißem Kopf, lebt im Bau|3
+MARDER|Flinkes Raubtier, das manchmal Autokabel anknabbert|3
+BUSSARD|Greifvogel, der über Feldern kreist|3
+MAULWURF|Gräbt Gänge unter der Erde und wirft Hügel auf|2
+WOLF|Wildes Tier, das im Rudel lebt und heult|1
+LUCHS|Wildkatze mit Pinseln an den Ohren|3
+BIBER|Nagetier, das Dämme aus Ästen baut|2
+OTTER|Flinker Schwimmer am Fluss mit dichtem Fell|3
+FLEDERMAUS|Fliegt nachts und hängt kopfüber beim Schlafen|2
+TIGER|Große gestreifte Raubkatze|1
+GIRAFFE|Tier mit sehr langem Hals|1
+ZEBRA|Schwarz-weiß gestreiftes Tier aus Afrika|1
+KAMEL|Tier der Wüste mit zwei Höckern|1
+NASHORN|Großes Tier mit Horn auf der Nase|2
+NILPFERD|Großes Tier, das gern im Fluss liegt|2
+KROKODIL|Großes Reptil mit vielen Zähnen|2
+KÄNGURU|Springt und trägt sein Junges im Beutel|1
+KOALA|Grauer Bär aus Australien, frisst Eukalyptus|2
+PANDA|Schwarz-weißer Bär, frisst Bambus|1
+GORILLA|Größter Menschenaffe|2
+LEOPARD|Gefleckte Raubkatze, klettert gut|2
+SCHILDKRÖTE|Langsames Tier mit Panzer|1
+EIDECHSE|Kleines Reptil, sonnt sich gern auf Steinen|2
+SCHLANGE|Hat keine Beine und kriecht; auch eine Reihe Wartender|1
+DELFIN|Kluges Meerestier, das gern springt|1
+WAL|Größtes Tier im Meer|1
+ROBBE|Meerestier, liegt gern auf Sandbänken, auch Seehund genannt|2
+HAI|Raubfisch mit scharfen Zähnen|1
+QUALLE|Durchsichtiges Meerestier ohne Knochen|2
+KRABBE|Kleines Meerestier mit Scheren|2
+MUSCHEL|Findet man am Strand, mit zwei Schalen|1
+SEESTERN|Meerestier mit fünf Armen|2
+FORELLE|Fisch aus klaren Bächen|2
+KARPFEN|Fisch, der zu Silvester gegessen wird|2
+HERING|Kleiner Fisch aus der Nordsee, oft eingelegt|2
+LACHS|Rosafarbener Fisch, gern geräuchert|1
+AAL|Langer Fisch, sieht aus wie eine Schlange|2
+HUMMER|Großes Meerestier mit Scheren, gilt als Delikatesse|3
+FALTER|Anderes Wort für Schmetterling|3
+RAUPE|Daraus wird ein Schmetterling|2
+AMEISE|Kleines fleißiges Insekt, lebt im Haufen|1
+WESPE|Gelb-schwarzes Insekt, sticht gern beim Kuchen|1
+HUMMEL|Dicke, pelzige Biene|2
+FLIEGE|Summt um das Essen; auch eine Schleife am Hemdkragen|1
+MÜCKE|Kleines Insekt, dessen Stich juckt|1
+SPINNE|Hat acht Beine und webt ein Netz|1
+MARIENKÄFER|Kleiner roter Käfer mit schwarzen Punkten|1
+LIBELLE|Insekt mit vier glänzenden Flügeln am Teich|2
+GRILLE|Zirpt in Sommernächten|2
+HEUSCHRECKE|Springt hoch durch das Gras|2
+REGENWURM|Kriecht nach dem Regen aus der Erde|1
+NEST|Darin legt der Vogel seine Eier|1
+FEDER|Bedeckt den Vogel; früher schrieb man damit|1
+FELL|Haar eines Tieres|1
+SCHNABEL|Mund des Vogels|1
+PFOTE|Fuß von Hund oder Katze|1
+FLÜGEL|Damit fliegt der Vogel; auch ein großes Klavier|1
+STALL|Hier wohnen Kühe und Pferde|1
+WEIDE|Wiese, auf der Kühe grasen; auch ein Baum|2
+SCHEUNE|Großes Gebäude für Heu und Stroh|2
+HEU|Getrocknetes Gras als Futter|1
+STROH|Trockene Halme vom Getreide|2
+TRAKTOR|Zieht den Pflug auf dem Feld|1
+PFLUG|Gerät, das den Acker umgräbt|2
+ACKER|Feld, auf dem Getreide wächst|2
+ERNTE|Wenn im Herbst Obst und Getreide eingesammelt werden|1
+MÜHLE|Darin wird Getreide zu Mehl gemahlen|2
+BUCHE|Laubbaum mit glatter grauer Rinde|2
+BIRKE|Baum mit weißer Rinde|2
+LINDE|Baum mit duftenden Blüten, oft auf dem Dorfplatz|2
+KASTANIE|Baum mit braunen glänzenden Früchten im Herbst|2
+AHORN|Baum mit gezackten Blättern, deren Samen sich drehen|2
+FICHTE|Nadelbaum mit hängenden Zapfen|2
+KIEFER|Nadelbaum mit langen Nadeln; auch ein Knochen im Gesicht|3
+PAPPEL|Hoher, schlanker Baum an Straßen und Flüssen|3
+ULME|Laubbaum mit schiefen Blättern|3
+ESCHE|Laubbaum, dessen Holz für Stiele genommen wird|3
+EIBE|Nadelbaum mit roten Beeren, sehr langlebig|3
+LÄRCHE|Nadelbaum, der im Herbst seine Nadeln abwirft|3
+WEINREBE|Pflanze, an der Trauben wachsen|2
+EFEU|Immergrüne Pflanze, die an Mauern rankt|2
+MOOS|Weiches Grün auf Steinen und im Wald|2
+FARN|Pflanze mit gefiederten Wedeln im schattigen Wald|2
+DISTEL|Stachelige Pflanze mit lila Blüte|3
+BRENNNESSEL|Pflanze, die auf der Haut brennt|2
+LÖWENZAHN|Gelbe Wiesenblume, wird zur Pusteblume|1
+MARGERITE|Große weiße Blume mit gelber Mitte|2
+SONNENBLUME|Hohe gelbe Blume, die sich zur Sonne dreht|1
+NELKE|Blume mit gezackten Blüten; auch ein Gewürz|2
+LILIE|Edle Blume mit großen Kelchen|2
+VEILCHEN|Kleine lila Blume, die im Frühling duftet|2
+FLIEDER|Strauch mit duftenden lila Blüten im Mai|2
+NARZISSE|Gelbe Frühlingsblume, auch Osterglocke genannt|2
+KROKUS|Zeigt sich im Frühling als eine der ersten Blumen|2
+MOHN|Rote Blume im Kornfeld; die Samen kommen auf Brötchen|2
+KORNBLUME|Blaue Blume am Rand des Getreidefelds|2
+LAVENDEL|Lila Pflanze mit starkem Duft|2
+ORCHIDEE|Edle Zimmerpflanze mit exotischen Blüten|2
+GERANIE|Beliebte Balkonblume, oft rot|2
+DAHLIE|Prächtige Spätsommerblume mit vielen Blütenblättern|3
+ASTER|Blume, die im Herbst blüht|3
+HORTENSIE|Strauch mit großen runden Blütenbällen|3
+PFINGSTROSE|Große Blume, blüht im Mai und Juni|3
+PRIMEL|Bunte Blume im zeitigen Frühjahr|3
+RITTERSPORN|Hohe blaue Gartenblume|3
+KAKTUS|Stachelige Pflanze, braucht wenig Wasser|1
+BLÜTE|Daraus wird später die Frucht|1
+WURZEL|Teil der Pflanze unter der Erde|1
+STAMM|Dicker Teil des Baums; auch eine Volksgruppe|2
+AST|Wächst seitlich aus dem Baumstamm|1
+ZWEIG|Kleiner Ast|2
+DORN|Spitzer Stachel an der Rose|2
+ZAPFEN|Frucht des Nadelbaums|2
+EICHEL|Frucht der Eiche|2
+SAMEN|Daraus wächst eine neue Pflanze|2
+KNOSPE|Daraus öffnet sich die Blüte|2
+STRAUCH|Kleine Pflanze mit vielen Zweigen, auch Busch|2
+HECKE|Reihe von Sträuchern als Zaun|2
+BEET|Fläche im Garten für Blumen oder Gemüse|2
+KOMPOST|Haufen aus Gartenabfällen, wird zu Erde|3
+ZAHNARZT|Kümmert sich um gesunde Zähne|1
+BRIEFTRÄGER|Bringt jeden Tag die Post|1
+FEUERWEHR|Kommt mit Blaulicht und löscht das Feuer|1
+FISCHER|Fährt mit dem Boot hinaus und wirft Netze aus|1
+SCHMIED|Formt glühendes Eisen auf dem Amboss|2
+SCHUSTER|Repariert Schuhe|2
+TÖPFER|Formt Krüge und Schalen aus Ton|2
+MAURER|Baut Wände aus Ziegeln|2
+ZIMMERMANN|Baut den Dachstuhl aus Holz|2
+DACHDECKER|Legt die Ziegel auf das Dach|2
+KLEMPNER|Repariert Rohre und Wasserhähne|2
+ELEKTRIKER|Verlegt Kabel und Steckdosen|2
+GLASER|Setzt neue Scheiben in Fenster ein|3
+KAMINKEHRER|Fegt den Schornstein und soll Glück bringen|3
+UHRMACHER|Repariert Uhren mit feinem Werkzeug|2
+GOLDSCHMIED|Fertigt Ringe und Ketten aus Edelmetall|3
+KONDITOR|Backt feine Torten und Pralinen|2
+WINZER|Baut Wein an|2
+IMKER|Hält Bienen und erntet Honig|2
+SCHÄFER|Hütet die Schafe mit seinem Hund|2
+JÄGER|Geht im Wald auf die Pirsch|2
+MÜLLER|Mahlt das Korn zu Mehl|2
+FAHRER|Lenkt einen Bus oder ein Taxi|1
+KAPITÄN|Führt das Kommando auf dem Schiff|1
+MATROSE|Seemann auf einem Schiff|2
+LOTSE|Führt Schiffe sicher in den Hafen|3
+SCHAFFNER|Kontrolliert im Zug die Fahrkarten|2
+VERKÄUFER|Bedient die Kunden im Laden|1
+KASSIERER|Nimmt an der Kasse das Geld entgegen|2
+BIBLIOTHEKAR|Verleiht in der Bücherei die Bücher|3
+ANWALT|Vertritt Menschen vor Gericht|2
+NOTAR|Beglaubigt wichtige Verträge|3
+APOTHEKER|Gibt in der Apotheke Arznei aus|2
+TIERARZT|Hilft kranken Haustieren|1
+HEBAMME|Hilft bei der Geburt eines Babys|2
+ARCHITEKT|Zeichnet die Pläne für ein Haus|2
+INGENIEUR|Plant Maschinen und Brücken|2
+SEKRETÄRIN|Schreibt Briefe und führt den Kalender im Büro|2
+PFARRER|Hält in der Kirche die Predigt|2
+KÜSTER|Läutet die Glocken und pflegt die Kirche|3
+MUSIKER|Spielt ein Instrument, oft in einer Kapelle|1
+DIRIGENT|Leitet mit dem Taktstock das Orchester|2
+SCHAUSPIELER|Spielt Rollen im Theater und im Film|1
+TÄNZERIN|Bewegt sich anmutig zur Musik auf der Bühne|2
+ZAUBERER|Zieht ein Kaninchen aus dem Hut|1
+CLOWN|Bringt im Zirkus alle zum Lachen|1
+ARTIST|Zeigt im Zirkus Kunststücke am Trapez|3
+JONGLEUR|Wirft im Zirkus viele Bälle zugleich in die Luft|3
+DICHTER|Schreibt Gedichte|2
+AUTOR|Hat ein Buch geschrieben|2
+REPORTER|Berichtet für die Zeitung oder das Fernsehen|2
+FOTOGRAF|Macht Bilder mit der Kamera|1
+BILDHAUER|Meißelt Figuren aus Stein|3
+KÜNSTLER|Malt, formt oder gestaltet Kunstwerke|2
+ORCHESTER|Viele Musiker, die zusammen spielen|1
+KAPELLE|Kleine Kirche; auch eine Musikgruppe mit Blasmusik|2
+POSAUNE|Blasinstrument mit Zug|2
+TUBA|Großes, tiefes Blechblasinstrument|2
+KLARINETTE|Holzblasinstrument mit schwarzem Rohr|2
+OBOE|Holzblasinstrument mit Doppelrohrblatt|3
+FAGOTT|Tiefes Holzblasinstrument, lang und gebogen|3
+SAXOFON|Gebogenes Blasinstrument, beliebt im Jazz|2
+CELLO|Großes Streichinstrument, das man zwischen die Knie stellt|2
+BRATSCHE|Streichinstrument, etwas größer als die Geige|3
+KONTRABASS|Größtes Streichinstrument im Orchester|3
+ZITHER|Saiteninstrument, das man auf den Tisch legt, typisch für die Alpen|3
+AKKORDEON|Instrument mit Balg und Tasten, auch Schifferklavier|2
+BLOCKFLÖTE|Einfaches Blasinstrument, das viele Kinder lernen|2
+XYLOFON|Instrument mit Holzplättchen, die man anschlägt|3
+TAMBURIN|Kleine Handtrommel mit Schellen|3
+BECKEN|Zwei Metallscheiben, die man zusammenschlägt; auch im Schwimmbad|2
+GLOCKE|Läutet im Kirchturm|1
+MELODIE|Die Folge von Tönen in einem Lied|1
+TAKT|Gibt in der Musik den Rhythmus vor|2
+TON|Einzelner Klang; auch Erde zum Töpfern|1
+STIMME|Damit singt und spricht man|1
+GESANG|Musik, die mit der Stimme gemacht wird|2
+ARIE|Sologesang in der Oper|3
+OPERETTE|Heiteres Bühnenstück mit Musik und Tanz|3
+SINFONIE|Großes Werk für ein Orchester|3
+SONATE|Musikstück, zum Beispiel für Klavier|3
+KANON|Lied, bei dem alle nacheinander einsetzen|3
+POLKA|Flotter Tanz im Zweivierteltakt|3
+TANGO|Leidenschaftlicher Tanz aus Argentinien|2
+BALLETT|Tanz auf der Bühne, oft auf Spitzenschuhen|2
+SCHLAGER|Eingängiges Lied, das viele mitsingen|2
+VOLKSLIED|Altes Lied, das jeder kennt|2
+NOTENBLATT|Darauf steht die Musik geschrieben|2
+FUSSBALL|Elf gegen elf, rund ist der Ball|1
+TENNIS|Sport mit Schläger, Netz und gelbem Ball|1
+SCHWIMMEN|Sich im Wasser fortbewegen|1
+WANDERN|Lange zu Fuß durch die Natur gehen|1
+RADFAHREN|Sich auf zwei Rädern fortbewegen|1
+KEGELN|Mit einer Kugel neun Figuren umwerfen|2
+TURNEN|Sport am Barren und am Reck|2
+REITEN|Auf einem Pferd sitzen und es lenken|1
+SEGELN|Mit dem Wind über das Wasser fahren|2
+RUDERN|Ein Boot mit Riemen vorwärtsbewegen|2
+ANGELN|Mit Rute und Haken Fische fangen|1
+GOLF|Sport, bei dem ein kleiner Ball ins Loch muss|2
+SCHACH|Brettspiel mit König, Dame und Springer|1
+SKAT|Kartenspiel zu dritt|2
+DOMINO|Spiel mit Steinen voller Punkte, die man aneinanderlegt|2
+PUZZLE|Bild aus vielen kleinen Teilen zum Zusammensetzen|1
+MURMEL|Kleine bunte Glaskugel zum Spielen|2
+DRACHEN|Fliegt im Herbstwind an einer Schnur|1
+SCHAUKEL|Darauf schwingt man im Garten hin und her|1
+WIPPE|Spielgerät, auf dem zwei Kinder auf und ab gehen|2
+RUTSCHE|Darauf saust man auf dem Spielplatz hinunter|1
+PUPPE|Spielzeug, das wie ein kleiner Mensch aussieht|1
+TEDDYBÄR|Kuscheltier aus Plüsch|1
+KREISEL|Spielzeug, das sich lange dreht|2
+SCHLITTEN|Damit rodelt man im Schnee den Berg hinunter|1
+SKI|Zwei lange Bretter für den Schnee|1
+POKAL|Siegerpreis aus Metall mit zwei Henkeln|2
+MEDAILLE|Gold, Silber oder Bronze für die Besten|2
+SIEGER|Wer das Rennen gewinnt|1
+TRAINER|Bereitet die Mannschaft auf das Spiel vor|2
+MANNSCHAFT|Spieler, die zusammen antreten|2
+STADION|Großer Platz mit Tribünen für Sportfeste|2
+TURNHALLE|Raum für den Sportunterricht|2
+SPRUNG|Hoch oder weit, beim Sport|2
+LAUF|Schnelles Rennen über eine Strecke|2
+MARATHON|Langer Lauf über mehr als vierzig Kilometer|2
+WETTBEWERB|Hier messen sich die Teilnehmer|3
+OLYMPIA|Die großen Spiele mit den fünf Ringen|2
+ZIEL|Hier endet das Rennen|1
+START|Hier beginnt das Rennen|1
+PFIFF|Damit beendet der Schiedsrichter das Spiel|3
+REISE|Fahrt an einen fernen Ort|1
+KOFFER|Darin packt man die Kleider für die Reise|1
+RUCKSACK|Tasche, die man auf dem Rücken trägt|1
+FAHRKARTE|Braucht man für den Zug|1
+FLUGZEUG|Fliegt hoch über den Wolken|1
+FLUGHAFEN|Hier starten und landen die Flugzeuge|1
+BOOT|Kleines Wasserfahrzeug|1
+FÄHRE|Bringt Autos und Menschen über den Fluss|2
+STRASSENBAHN|Fährt auf Schienen durch die Stadt|2
+TAXI|Bringt einen gegen Geld schnell ans Ziel|1
+KUTSCHE|Wagen, der von Pferden gezogen wird|2
+WOHNWAGEN|Kleines Haus auf Rädern für den Urlaub|2
+ZELT|Darin schläft man beim Camping|1
+LANDKARTE|Zeigt Straßen, Städte und Flüsse|1
+KOMPASS|Zeigt immer nach Norden|2
+PASS|Ausweis für Reisen; auch ein Weg über die Berge|2
+GEPÄCK|Koffer und Taschen auf der Reise|2
+POSTKARTE|Gruß aus dem Urlaub mit einem Bild|1
+ANDENKEN|Kleines Mitbringsel von einer Reise|3
+PENSION|Kleines Gasthaus zum Übernachten; auch der Ruhestand|3
+GASTHAUS|Hier kann man essen und trinken, oft auf dem Land|2
+AUSFLUG|Kurze Reise für einen Tag|2
+TAFEL|Darauf schreibt der Lehrer mit Kreide|1
+KREIDE|Weißer Stift für die Schultafel|1
+HEFT|Darin schreibt das Schulkind seine Aufgaben|1
+BLEISTIFT|Schreibt grau und lässt sich radieren|1
+RADIERGUMMI|Macht Bleistiftstriche wieder weg|2
+LINEAL|Damit zieht man gerade Striche|2
+FÜLLER|Schreibt mit Tinte|2
+TINTE|Blaue Flüssigkeit im Füller|2
+SCHULRANZEN|Kinder tragen ihn auf dem Rücken zur Schule|2
+ZEUGNIS|Zeigt am Ende des Schuljahres die Noten|2
+PAUSE|Kurze Zeit zum Ausruhen zwischen den Stunden|1
+KLASSE|Gruppe von Schülern im selben Raum|1
+ALPHABET|Alle Buchstaben von A bis Z|2
+BUCHSTABE|Davon hat das Abc sechsundzwanzig|2
+WORT|Mehrere Buchstaben, die etwas bedeuten|1
+SATZ|Mehrere Wörter mit einem Punkt am Ende|1
+GEDICHT|Text mit Reimen, oft auswendig gelernt|2
+MÄRCHEN|Geschichte, die mit „Es war einmal“ beginnt|1
+ROMAN|Langes Buch mit einer erfundenen Geschichte|2
+LEXIKON|Nachschlagewerk von A bis Z|2
+ATLAS|Buch mit vielen Landkarten|2
+GLOBUS|Kugel, die die Erde zeigt|2
+RECHNEN|Plus und minus, mal und geteilt|1
+ZAHL|Eins, zwei oder drei|1
+DREIECK|Form mit drei Ecken|2
+KREIS|Runde Form ohne Ecken|1
+QUADRAT|Viereck mit vier gleichen Seiten|2
+ERDKUNDE|Schulfach über Länder und Landschaften|3
+GESCHICHTE|Schulfach über frühere Zeiten; auch eine Erzählung|2
+BIOLOGIE|Lehre von Pflanzen und Tieren|3
+CHEMIE|Lehre von den Stoffen, mit Versuchen im Labor|3
+PHYSIK|Lehre von Kraft, Licht und Strom|3
+UNIVERSITÄT|Hochschule für Studenten|3
+BÜCHEREI|Hier leiht man Bücher aus|2
+KINDERGARTEN|Hier spielen die Kleinen, bevor sie zur Schule gehen|2
+RENTE|Geld, das man im Alter bekommt|2
+FREUDE|Gefühl, wenn etwas Schönes passiert|1
+GLÜCK|Bringt ein vierblättriges Kleeblatt|1
+LIEBE|Gefühl zwischen zwei Menschen, die sich mögen|1
+LACHEN|Tut man, wenn etwas lustig ist|1
+LÄCHELN|Freundlicher Ausdruck mit dem Mund|1
+HOFFNUNG|Glaube daran, dass alles gut wird|2
+STOLZ|Gefühl nach einer guten Leistung|2
+MUT|Den braucht man, um etwas Schwieriges zu wagen|2
+GEDULD|Die braucht man beim Warten|2
+DANKBARKEIT|Gefühl, wenn einem jemand geholfen hat|3
+SEHNSUCHT|Starkes Verlangen nach etwas Fernem|3
+HEIMWEH|Gefühl, wenn man sein Zuhause vermisst|3
+FERNWEH|Lust, in die weite Welt zu reisen|3
+STAUNEN|Gefühl beim Anblick von etwas Wunderbarem|3
+NEUGIER|Lust, Neues zu erfahren|2
+VERTRAUEN|Glaube daran, dass man sich auf jemanden verlassen kann|3
+FREUND|Mensch, den man gern hat und dem man vertraut|1
+NACHBAR|Wohnt nebenan|1
+GAST|Besucher, den man einlädt|1
+BESUCH|Wenn jemand vorbeikommt|1
+FEST|Feier mit Musik und Kuchen; auch das Gegenteil von locker|1
+FEIER|Fröhliches Zusammensein zu einem Anlass|1
+JUBILÄUM|Feier nach vielen Jahren, zum Beispiel zur Silberhochzeit|3
+WEIHNACHTEN|Fest mit Tannenbaum und Geschenken|1
+SILVESTER|Letzter Tag im Jahr, mit Feuerwerk|2
+KARNEVAL|Zeit mit Kostümen und Umzügen, auch Fasching|2
+ADVENT|Die vier Wochen vor Weihnachten|2
+PFINGSTEN|Fest fünfzig Tage nach Ostern|3
+ERNTEDANK|Fest im Herbst, bei dem man für die Ernte dankt|3
+FEUERWERK|Bunte Lichter am Nachthimmel zu Silvester|1
+GIRLANDE|Bunte Schmuckkette zum Aufhängen bei Festen|3
+LUFTBALLON|Bunte Hülle, mit Luft aufgeblasen|1
+LATERNE|Leuchtet beim Umzug am Martinstag|2
+KRANZ|Ring aus Zweigen, im Advent mit vier Kerzen|2
+SCHLEIFE|Wird aus einem Band gebunden, schmückt Geschenke|2
+DÄMMERUNG|Zeit zwischen Tag und Nacht|3
+MORGENROT|Rötlicher Himmel bei Sonnenaufgang|3
+TAU|Feine Tropfen auf dem Gras am Morgen|2
+RAUREIF|Weißer Eisbelag an Zweigen im Winter|3
+GLATTEIS|Rutschige Eisschicht auf der Straße|2
+SCHAUER|Kurzer Regen|2
+NIESELREGEN|Feiner, leichter Regen|3
+WETTER|Sonne, Regen oder Schnee|1
+KLIMA|Das Wetter über viele Jahre an einem Ort|3
+BRISE|Leichter, angenehmer Wind am Meer|3
+ORKAN|Allerstärkster Sturm|3
+DÜRRE|Lange Zeit ohne Regen|3
+SCHNEEMANN|Figur aus drei Kugeln mit Möhrennase|1
+EISZAPFEN|Hängt im Winter spitz vom Dach|2
+SCHNEEFLOCKE|Kristall aus Eis, der vom Himmel fällt|2
+LAWINE|Schneemassen, die vom Berg rutschen|3
+GLETSCHER|Riesiger Eisstrom in den Bergen|3
+VULKAN|Berg, aus dem Lava strömen kann|2
+QUELLE|Hier kommt das Wasser aus der Erde|2
+BACH|Kleiner Fluss|1
+TEICH|Kleines stehendes Gewässer mit Enten|1
+WASSERFALL|Wasser, das über eine Felskante stürzt|2
+TAL|Liegt zwischen den Bergen|1
+HÜGEL|Kleiner Berg|1
+GIPFEL|Höchster Punkt eines Berges|2
+FELSEN|Großer harter Stein|2
+HÖHLE|Hohlraum im Berg, manchmal mit Tropfsteinen|2
+KÜSTE|Wo das Land ans Meer grenzt|2
+DÜNE|Sandhügel am Strand|2
+WATT|Meeresboden, der bei Ebbe frei liegt|3
+EBBE|Wenn sich das Meer zurückzieht|2
+FLUT|Wenn das Meer wieder steigt|2
+WELLE|Bewegt sich über das Wasser zum Ufer|1
+UFER|Rand eines Flusses oder Sees|2
+MOOR|Nasser, weicher Boden mit Torf|3
+HEIDE|Weite Landschaft mit lila Blüten im Spätsommer|3
+SCHLUCHT|Tiefes, enges Tal|3
+OASE|Grüner Ort mit Wasser in der Wüste|3
+WÜSTE|Heißes, trockenes Land mit viel Sand|2
+DSCHUNGEL|Dichter Regenwald in den Tropen|3
+PLANET|Himmelskörper, der um die Sonne kreist|3
+KOMET|Himmelskörper mit leuchtendem Schweif|3
+GALAXIE|Riesige Ansammlung von Sternen|3
+HORIZONT|Linie, an der Himmel und Erde sich zu treffen scheinen|3
+SCHATTEN|Entsteht, wenn etwas das Licht verdeckt|2
+LICHT|Das Gegenteil von Dunkelheit|1
+FEUER|Brennt heiß und hell|1
+FLAMME|Leuchtet an der Kerze|2
+RAUCH|Steigt aus dem Schornstein|2
+ASCHE|Grauer Rest nach dem Feuer|2
+GLUT|Rot leuchtende Reste im Ofen|3
+FUNKE|Winziges glühendes Teilchen aus dem Feuer|3
+EISEN|Hartes Metall, rostet bei Nässe|2
+KUPFER|Rotbraunes Metall für Kabel|3
+SILBER|Glänzendes Edelmetall, auch für Besteck|2
+GOLD|Gelbes Edelmetall, sehr wertvoll|1
+MESSING|Gelbliches Metall, zum Beispiel für Türklinken|3
+ZINN|Weiches Metall, früher für Becher und Teller|3
+BERNSTEIN|Gelbes versteinertes Harz von der Ostsee|3
+PERLE|Wächst in einer Muschel und wird zu Schmuck|2
+DIAMANT|Härtester Edelstein, funkelt hell|2
+SMARAGD|Grüner Edelstein|3
+RUBIN|Roter Edelstein|3
+SAPHIR|Blauer Edelstein|3
+KRISTALL|Klarer, regelmäßig geformter Stein|3
+MARMOR|Edler Stein, oft weiß, für Statuen|3
+GRANIT|Sehr harter Stein für Treppen und Brunnen|3
+ZIEGEL|Gebrannter roter Stein zum Bauen|2
+BETON|Grauer Baustoff aus Zement, Sand und Wasser|3
+LEHM|Feuchte, klebrige Erde zum Bauen|3
+SINGEN|Ein Lied mit der Stimme vortragen|2
+TANZEN|Sich im Takt zur Musik bewegen|2
+LESEN|Was man mit einem Buch tut|2
+SCHREIBEN|Was man mit Stift und Papier tut|2
+MALEN|Mit Pinsel und Farbe ein Bild machen|2
+KOCHEN|Das Essen auf dem Herd zubereiten|2
+BACKEN|Kuchen im Ofen zubereiten|2
+STRICKEN|Mit zwei Nadeln aus Wolle etwas fertigen|2
+NÄHEN|Mit Nadel und Faden Stoff verbinden|2
+GIESSEN|Den Blumen Wasser geben|2
+SPAZIEREN|Gemütlich draußen umhergehen|2
+SCHLAFEN|Was man nachts im Bett tut|2
+TRÄUMEN|Bilder im Schlaf sehen|2
+ERZÄHLEN|Eine Geschichte vortragen|2
+LERNEN|Neues Wissen aufnehmen|2
+HELFEN|Jemandem beistehen|2
+SPIELEN|Was Kinder am liebsten tun|2
+PFLÜCKEN|Blumen oder Obst abnehmen|2
+SAMMELN|Briefmarken oder Pilze zusammentragen|2
+PLAUDERN|Gemütlich miteinander reden|2
+SCHENKEN|Jemandem etwas als Geschenk geben|2
+WINKEN|Zum Gruß die Hand hin und her bewegen|2
+FRÖHLICH|Gut gelaunt und heiter|2
+FREUNDLICH|Nett und hilfsbereit zu anderen|2
+GEMÜTLICH|Warm, bequem und behaglich|2
+LUSTIG|Bringt einen zum Lachen|2
+RUHIG|Still und ohne Lärm|2
+LEISE|Das Gegenteil von laut|2
+SCHNELL|Das Gegenteil von langsam|2
+LANGSAM|Wie eine Schnecke|2
+GROSS|Das Gegenteil von klein|2
+KLEIN|Das Gegenteil von groß|2
+WARM|Das Gegenteil von kalt|2
+KALT|Wie Eis und Schnee|2
+SÜSS|Wie Zucker und Honig|2
+SAUER|Wie eine Zitrone|2
+BITTER|Wie starker Kaffee ohne Zucker|2
+SCHARF|Wie Pfeffer oder ein gutes Messer|2
+WEICH|Wie ein Kissen|2
+HART|Wie ein Stein|2
+HELL|Das Gegenteil von dunkel|2
+DUNKEL|Wie die Nacht|2
+NEU|Das Gegenteil von alt|2
+SAUBER|Frisch geputzt|2
+FLEISSIG|Wie eine Biene bei der Arbeit|2
+KLUG|Weiß viel und denkt gut nach|2
+TAPFER|Zeigt Mut und hat keine Angst|2
+EHRLICH|Sagt immer die Wahrheit|2
+HÖFLICH|Hat gute Manieren|2
+GESUND|Fühlt sich wohl und munter|2
+MUNTER|Wach und lebhaft|2
+BUNT|Mit vielen Farben|2
+GOLDIG|Niedlich und lieb|3
+BRAUN|Farbe von Schokolade|2
+GRAU|Farbe von Asche und Elefanten|2
+ROSA|Helle Farbe wie ein Ferkel|2
+LILA|Farbe des Lavendels|2
+ORANGEFARBEN|Farbe von Möhren und Kürbissen|3
+TÜRKIS|Blaugrüne Farbe wie das Meer im Süden|3
+BEIGE|Helle, sandfarbene Farbe|3
+MONTAG|Erster Tag der Woche|2
+DIENSTAG|Tag nach dem Montag|2
+MITTWOCH|Tag in der Mitte der Woche|2
+DONNERSTAG|Tag vor dem Freitag|2
+FREITAG|Letzter Arbeitstag der Woche|2
+SAMSTAG|Tag vor dem Sonntag, auch Sonnabend|2
+JANUAR|Erster Monat des Jahres|2
+FEBRUAR|Kürzester Monat des Jahres|2
+MÄRZ|Monat, in dem der Frühling beginnt|2
+APRIL|Monat, der macht, was er will|2
+MAI|Wonnemonat, in dem alles blüht|2
+JUNI|Monat, in dem der Sommer beginnt|2
+JULI|Siebter Monat des Jahres, oft der heißeste|2
+AUGUST|Achter Monat, Zeit der Sommerferien|2
+SEPTEMBER|Monat, in dem der Herbst beginnt|2
+OKTOBER|Zehnter Monat, mit buntem Laub|2
+NOVEMBER|Grauer, nebliger Monat vor dem Dezember|2
+DEZEMBER|Letzter Monat des Jahres|2
+MITTAG|Wenn die Sonne am höchsten steht|2
+STUNDE|Hat sechzig Minuten|2
+MINUTE|Hat sechzig Sekunden|2
+SEKUNDE|Ein ganz kurzer Augenblick|2
+KALENDER|Zeigt alle Tage des Jahres|2
+JAHRHUNDERT|Hundert Jahre|3
+AMBOSS|Eiserner Block, auf dem der Schmied hämmert|3
+HOBEL|Werkzeug des Tischlers, macht Holz glatt|3
+FEILE|Raues Werkzeug zum Glätten von Metall oder Nägeln|3
+MEISSEL|Werkzeug zum Bearbeiten von Stein|3
+SCHRAUBSTOCK|Hält das Werkstück auf der Werkbank fest|3
+WERKBANK|Arbeitstisch in der Werkstatt|3
+ZOLLSTOCK|Klappbarer Meterstab des Handwerkers|3
+WASSERWAAGE|Zeigt mit einer Luftblase, ob etwas gerade ist|3
+SENSE|Langes, gebogenes Messer zum Grasmähen|3
+SICHEL|Kleines, halbrundes Messer für Getreide|3
+HEUGABEL|Langer Stiel mit Zinken für das Heu|3
+SCHUBKARRE|Wagen mit einem Rad für Erde und Steine|3
+SPINNRAD|Daran wurde früher Wolle zu Garn gesponnen|3
+WEBSTUHL|Gerät, auf dem man Stoffe webt|3
+BUTTERFASS|Gefäß, in dem früher Sahne zu Butter geschlagen wurde|3
+WASCHBRETT|Geriffeltes Brett, auf dem früher Wäsche gerubbelt wurde|3
+KOHLEOFEN|Wurde früher mit Briketts geheizt|3
+PETROLEUM|Brennstoff für alte Lampen|3
+DOCHT|Faden in der Kerze, der brennt|3
+LEUCHTER|Ständer für Kerzen|3
+KRONLEUCHTER|Prächtige Lampe mit vielen Lichtern an der Decke|3
+SEKRETÄR|Schreibschrank mit Klappe; auch ein Bürohelfer|3
+VITRINE|Glasschrank für schönes Geschirr|3
+BÜFETT|Großer Geschirrschrank im Esszimmer|3
+OTTOMANE|Niedriges Polstersofa ohne Lehne|3
+CHAISELONGUE|Liegesofa mit einer erhöhten Seite|3
+DIVAN|Niedriges Ruhebett ohne Lehne|3
+STANDUHR|Große Uhr mit Pendel, die auf dem Boden steht|3
+PENDEL|Schwingt in der alten Uhr hin und her|3
+SCHATULLE|Kleines Kästchen für Schmuck|3
+MEDAILLON|Anhänger zum Aufklappen, oft mit einem Foto|3
+BROSCHE|Schmuckstück, das man an die Bluse steckt|3
+DIADEM|Kostbarer Haarreif mit Edelsteinen|3
+MONOKEL|Einzelnes Brillenglas vor einem Auge|3
+ZYLINDER|Hoher, feiner Herrenhut|3
+SCHLEIER|Feiner Stoff, den die Braut trägt|3
+KORSETT|Enges Mieder aus früheren Zeiten|3
+FÄCHER|Damit wedelt man sich Luft zu|3
+SONNENSCHIRM|Schützt am Strand vor der Hitze|3
+GAMASCHE|Knöchelschutz über dem Schuh|3
+KITTEL|Arbeitsmantel, zum Beispiel im Labor|3
+LODEN|Fester Wollstoff für Jacken in den Bergen|3
+DIRNDL|Trachtenkleid mit Schürze aus Bayern|3
+SAMT|Weicher Stoff mit kurzem Flor|3
+SEIDE|Glänzender Stoff von der Raupe|3
+LEINEN|Kühler Stoff aus Flachs|3
+FLANELL|Weicher, angerauter Stoff|3
+TÜLL|Feiner, durchsichtiger Netzstoff|3
+SPITZE|Feines, durchbrochenes Gewebe; auch das obere Ende|3
+KLÖPPELN|Alte Kunst, Spitzen mit Garnrollen herzustellen|3
+HÄKELN|Handarbeit mit einer Nadel mit Haken|3
+STICKEN|Muster mit Nadel und Garn auf Stoff bringen|3
+FLICKEN|Stück Stoff, das ein Loch bedeckt|3
+ZWIRN|Fester Faden zum Nähen|3
+GARN|Gesponnener Faden aus Wolle oder Baumwolle|3
+KNÄUEL|Aufgewickelte Wolle|3
+MARZIPAN|Süße Masse aus Mandeln und Zucker|3
+MANDEL|Längliche Nuss, aus der man Marzipan macht|3
+HASELNUSS|Kleine runde Nuss vom Strauch|3
+WALNUSS|Nuss, deren Kern einem Gehirn ähnelt|3
+PISTAZIE|Grüne Nuss, gern im Eis|3
+ZIMT|Braunes Gewürz aus Rinde, gut im Milchreis|3
+MUSKAT|Gewürz aus einer Nuss, gut im Kartoffelbrei|3
+VANILLE|Gewürz aus einer Schote, duftet süß|3
+INGWER|Scharfe Wurzel für Tee und Gerichte|3
+KÜMMEL|Würzige Samen im Brot und im Kraut|3
+MAJORAN|Würzkraut für die Leberwurst|3
+ROSMARIN|Duftendes Kraut mit nadelförmigen Blättern|3
+THYMIAN|Kleines Kraut, das nach Süden duftet|3
+PETERSILIE|Grünes Kraut zum Garnieren|3
+SCHNITTLAUCH|Feine grüne Halme aufs Butterbrot|3
+DILL|Feines Kraut zu Gurkensalat und Fisch|3
+BASILIKUM|Kraut, das gut zu Tomaten passt|3
+KAMILLE|Kleine Blume für einen beruhigenden Tee|3
+PFEFFERMINZE|Kraut für einen erfrischenden Tee|3
+HOLUNDER|Strauch mit weißen Dolden und schwarzen Beeren|3
+SCHLEHE|Blaue, herbe Frucht am dornigen Strauch|3
+QUITTE|Gelbe, harte Frucht für Gelee|3
+MIRABELLE|Kleine gelbe Pflaume|3
+RHABARBER|Rote Stangen, gut für Kompott und Kuchen|3
+KOHLRABI|Hellgrüne Knolle mit zartem Geschmack|3
+WIRSING|Kohl mit krausen Blättern|3
+ROSENKOHL|Kleine grüne Röschen, ein Wintergemüse|3
+PASTINAKE|Weiße Wurzel, die süßlich schmeckt|3
+KICHERERBSE|Runde, gelbliche Hülsenfrucht aus dem Orient|3
+ARTISCHOCKE|Distelartiges Gemüse, dessen Blätter man zupft|3
+AUBERGINE|Gemüse mit glänzend lila Schale|3
+ZUCCHINI|Grünes Gemüse, sieht aus wie eine Gurke|3
+FENCHEL|Knolle mit Anisgeschmack|3
+SCHALOTTE|Kleine, feine Zwiebel|3
+KAPERN|Kleine eingelegte Knospen, würzig und salzig|3
+OLIVE|Kleine grüne oder schwarze Frucht vom Mittelmeer|3
+FEIGE|Süße Frucht mit vielen kleinen Kernen|3
+DATTEL|Süße Frucht der Palme|3
+GRANATAPFEL|Frucht mit vielen roten Kernen|3
+STRUDEL|Gebäck aus dünnem Teig mit Äpfeln|3
+STREUSEL|Krümel aus Butter, Zucker und Mehl auf dem Kuchen|3
+KRAPFEN|In Fett gebackenes Gebäck mit Marmelade|3
+BAISER|Gebäck aus Eischnee und Zucker|3
+PRALINE|Feines Stück Schokolade mit Füllung|3
+KOMPOTT|Gekochtes Obst als Nachtisch|3
+GELEE|Durchsichtiger Fruchtaufstrich|3
+SPÄTZLE|Schwäbische Nudeln vom Brett geschabt|3
+FRIKADELLE|Gebratenes Fleischbällchen|3
+ROULADE|Gerolltes Fleisch mit Füllung, in Soße geschmort|3
+EISBEIN|Gepökelte Schweinshaxe mit Sauerkraut|3
+LABSKAUS|Seemannsgericht aus dem Norden mit Roter Bete|3

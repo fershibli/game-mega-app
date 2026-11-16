@@ -1,165 +1,1082 @@
-# Crossword dictionary — English. Format: ANSWER|clue. Everyday words, gentle clues.
-APPLE|Red or green fruit that keeps the doctor away
-BREAD|Baked from flour, water and yeast
-CHAIR|You sit on it
-TABLE|Furniture where meals are served
-HOUSE|Building where a family lives
-GARDEN|Where flowers and vegetables grow
-WINDOW|Glass opening in a wall
-DOCTOR|Person who treats the sick
-NURSE|Helps the doctor care for patients
-TEACHER|Works in a school classroom
-PIANO|Instrument with black and white keys
-GUITAR|String instrument played around a campfire
-SUMMER|The hottest season
-WINTER|The coldest season
-SPRING|Season when flowers bloom
-AUTUMN|Season when leaves fall
-MONDAY|First working day of the week
-SUNDAY|Day of rest at the end of the weekend
-COFFEE|Hot morning drink made from roasted beans
-TEA|Drink served at five o'clock in England
-SUGAR|Makes coffee sweet
-SALT|White seasoning from the sea
-CHEESE|Made from milk; mice love it
-BUTTER|Yellow spread for toast
-HONEY|Sweet food made by bees
-ORANGE|Citrus fruit that is also a color
-BANANA|Long yellow fruit
-GRAPE|Small fruit used to make wine
-LEMON|Sour yellow citrus fruit
-CHERRY|Small red fruit on top of a sundae
-TOMATO|Red fruit used in salads and sauces
-POTATO|Vegetable for fries and mash
-CARROT|Orange vegetable that rabbits love
-ONION|Makes you cry when you cut it
-RICE|Grain eaten every day in Asia
-SOUP|Hot meal eaten with a spoon
-CAKE|Sweet dessert for birthdays
-COOKIE|Small sweet baked treat
-DOG|Man's best friend
-CAT|Pet that purrs
-HORSE|Animal you can ride
-COW|Farm animal that gives milk
-SHEEP|Farm animal that gives wool
-CHICKEN|Farm bird that lays eggs
-DUCK|Bird that says quack
-RABBIT|Hopping animal with long ears
-TIGER|Big striped cat
-LION|King of the jungle
-ELEPHANT|Large animal with a trunk
-GIRAFFE|Animal with a very long neck
-MONKEY|Animal that climbs trees and eats bananas
-BIRD|Animal with feathers that flies
-FISH|Animal that swims and has gills
-TURTLE|Slow animal with a shell
-BEAR|Big furry animal that sleeps all winter
-OWL|Night bird that hoots
-BEE|Insect that makes honey
-BUTTERFLY|Insect with colorful wings
-SUN|Star that lights our day
-MOON|Shines in the sky at night
-STAR|Twinkles in the night sky
-CLOUD|White and fluffy in the sky
-RAIN|Water falling from the clouds
-SNOW|White and cold, falls in winter
-RIVER|Water that flows to the sea
-OCEAN|Very large body of salt water
-BEACH|Sandy place by the sea
-MOUNTAIN|Very high land
-ISLAND|Land surrounded by water
-FOREST|Large area full of trees
-FLOWER|A rose or a daisy, for example
-TREE|Has a trunk, branches and leaves
-ROSE|Flower that means love
-GRASS|Green plants on a lawn
-RED|Color of strawberries
-BLUE|Color of the sky
-GREEN|Color of grass
-YELLOW|Color of the sun
-WHITE|Color of milk and snow
-BLACK|Color of the night
-MOTHER|Woman who has children
-FATHER|Man who has children
-SISTER|Your parents' daughter
-BROTHER|Your parents' son
-GRANDMA|Your mother's or father's mother
-GRANDSON|Your son's or daughter's boy
-BABY|Very young child
-FRIEND|Person you like and trust
-FAMILY|Parents, children, grandparents...
-HEART|Organ that pumps blood
-HAND|It has five fingers
-EYES|You see with them
-NOSE|You smell with it
-EAR|You hear with it
-MOUTH|You eat and speak with it
-SMILE|Happy expression on your face
-BOOK|Has pages to read
-LETTER|You write it and send it by mail
-NEWSPAPER|Daily printed news
-PHONE|Device to call people
-CLOCK|Tells you the time
-KEY|Opens a lock
-DOOR|Open it to enter a room
-BED|Furniture for sleeping
-LAMP|Gives light in a room
-SPOON|Cutlery for soup
-FORK|Cutlery with prongs
-KNIFE|Cutlery for cutting
-CUP|You drink tea from it
-BOTTLE|Holds water or wine
-TRAIN|Travels on rails
-PLANE|Carries passengers through the sky
-SHIP|Big boat on the ocean
-CAR|Vehicle with four wheels
-BICYCLE|Two wheels and pedals
-MUSIC|Songs and melodies
-DANCE|Moving to the music
-SONG|Music with words to sing
-CHURCH|Place of Christian worship
-SCHOOL|Where children learn
-MARKET|Where you buy fruit and vegetables
-HOSPITAL|Where sick people are treated
-BIRTHDAY|Celebrated once a year with a cake
-HOLIDAY|Day off for rest or celebration
-CHRISTMAS|Holiday on December 25
-GIFT|Present given with love
-CANDLE|Wax stick that gives light
-PIZZA|Italian dish with cheese and tomato
-PASTA|Spaghetti or macaroni
-EGG|Laid by a hen
-MILK|White drink from cows
-WATER|Clear drink you need every day
-JUICE|Drink made from fruit
-WINE|Drink made from grapes
-HAT|Worn on your head
-SHOE|Worn on your foot
-DRESS|One-piece outfit for a woman
-COAT|Warm jacket for cold weather
-UMBRELLA|Keeps you dry in the rain
-GLASSES|Help you see better
-HAPPY|Full of joy
-LOVE|Strong feeling of affection
-PEACE|The opposite of war
-DREAM|What you see while sleeping
-NIGHT|Time when it is dark
-MORNING|Early part of the day
-GOLF|Sport with clubs and eighteen holes
-TENNIS|Sport with rackets and a net
-KITCHEN|Room where meals are cooked
-RECIPE|Instructions to cook a dish
-OVEN|Hot box for baking
-GARLIC|Strong smelling bulb used in cooking
-PEPPER|Black spice next to the salt
-KNITTING|Making a scarf with two needles and wool
-PUZZLE|Game of fitting pieces together
-CARDS|Deck used for solitaire
-CHESS|Board game with kings and queens
-PHOTO|Picture taken with a camera
-PARK|Public garden for a walk
-SEA|Large salty water by the beach
-SHELL|Found on the beach, home of a snail
-APRON|Worn in the kitchen to stay clean
-PILLOW|Soft rest for your head in bed
-BLANKET|Keeps you warm in bed
+# Crossword dictionary — English. Format: ANSWER|clue|level (1 easy, 2 medium, 3 hard). Everyday words, gentle clues.
+APPLE|Red or green fruit that keeps the doctor away|1
+BREAD|Baked from flour, water and yeast|1
+CHAIR|You sit on it|1
+TABLE|Furniture where meals are served|1
+HOUSE|Building where a family lives|1
+GARDEN|Where flowers and vegetables grow|1
+WINDOW|Glass opening in a wall|1
+DOCTOR|Person who treats the sick|1
+NURSE|Helps the doctor care for patients|1
+TEACHER|Works in a school classroom|1
+PIANO|Instrument with black and white keys|1
+GUITAR|String instrument played around a campfire|1
+SUMMER|The hottest season|1
+WINTER|The coldest season|1
+SPRING|Season when flowers bloom|1
+AUTUMN|Season when leaves fall|1
+MONDAY|First working day of the week|1
+SUNDAY|Day of rest at the end of the weekend|1
+COFFEE|Hot morning drink made from roasted beans|1
+TEA|Drink served at five o'clock in England|1
+SUGAR|Makes coffee sweet|1
+SALT|White seasoning from the sea|1
+CHEESE|Made from milk; mice love it|1
+BUTTER|Yellow spread for toast|1
+HONEY|Sweet food made by bees|1
+ORANGE|Citrus fruit that is also a color|1
+BANANA|Long yellow fruit|1
+GRAPE|Small fruit used to make wine|1
+LEMON|Sour yellow citrus fruit|1
+CHERRY|Small red fruit on top of a sundae|1
+TOMATO|Red fruit used in salads and sauces|1
+POTATO|Vegetable for fries and mash|1
+CARROT|Orange vegetable that rabbits love|1
+ONION|Makes you cry when you cut it|1
+RICE|Grain eaten every day in Asia|1
+SOUP|Hot meal eaten with a spoon|1
+CAKE|Sweet dessert for birthdays|1
+COOKIE|Small sweet baked treat|1
+DOG|Man's best friend|1
+CAT|Pet that purrs|1
+HORSE|Animal you can ride|1
+COW|Farm animal that gives milk|1
+SHEEP|Farm animal that gives wool|1
+CHICKEN|Farm bird that lays eggs|1
+DUCK|Bird that says quack|1
+RABBIT|Hopping animal with long ears|1
+TIGER|Big striped cat|1
+LION|King of the jungle|1
+ELEPHANT|Large animal with a trunk|1
+GIRAFFE|Animal with a very long neck|2
+MONKEY|Animal that climbs trees and eats bananas|1
+BIRD|Animal with feathers that flies|1
+FISH|Animal that swims and has gills|1
+TURTLE|Slow animal with a shell|2
+BEAR|Big furry animal that sleeps all winter|1
+OWL|Night bird that hoots|1
+BEE|Insect that makes honey|1
+BUTTERFLY|Insect with colorful wings|2
+SUN|Star that lights our day|1
+MOON|Shines in the sky at night|1
+STAR|Twinkles in the night sky|1
+CLOUD|White and fluffy in the sky|1
+RAIN|Water falling from the clouds|1
+SNOW|White and cold, falls in winter|1
+RIVER|Water that flows to the sea|1
+OCEAN|Very large body of salt water|1
+BEACH|Sandy place by the sea|1
+MOUNTAIN|Very high land|1
+ISLAND|Land surrounded by water|2
+FOREST|Large area full of trees|1
+FLOWER|A rose or a daisy, for example|1
+TREE|Has a trunk, branches and leaves|1
+ROSE|Flower that means love|1
+GRASS|Green plants on a lawn|1
+RED|Color of strawberries|1
+BLUE|Color of the sky|1
+GREEN|Color of grass|1
+YELLOW|Color of the sun|1
+WHITE|Color of milk and snow|1
+BLACK|Color of the night|1
+MOTHER|Woman who has children|1
+FATHER|Man who has children|1
+SISTER|Your parents' daughter|1
+BROTHER|Your parents' son|1
+GRANDMA|Your mother's or father's mother|1
+GRANDSON|Your son's or daughter's boy|2
+BABY|Very young child|1
+FRIEND|Person you like and trust|1
+FAMILY|Parents, children, grandparents...|1
+HEART|Organ that pumps blood|1
+HAND|It has five fingers|1
+EYES|You see with them|1
+NOSE|You smell with it|1
+EAR|You hear with it|1
+MOUTH|You eat and speak with it|1
+SMILE|Happy expression on your face|1
+BOOK|Has pages to read|1
+LETTER|You write it and send it by mail|1
+NEWSPAPER|Daily printed news|2
+PHONE|Device to call people|1
+CLOCK|Tells you the time|1
+KEY|Opens a lock|1
+DOOR|Open it to enter a room|1
+BED|Furniture for sleeping|1
+LAMP|Gives light in a room|1
+SPOON|Cutlery for soup|1
+FORK|Cutlery with prongs|1
+KNIFE|Cutlery for cutting|1
+CUP|You drink tea from it|1
+BOTTLE|Holds water or wine|1
+TRAIN|Travels on rails|1
+PLANE|Carries passengers through the sky|1
+SHIP|Big boat on the ocean|1
+CAR|Vehicle with four wheels|1
+BICYCLE|Two wheels and pedals|1
+MUSIC|Songs and melodies|1
+DANCE|Moving to the music|1
+SONG|Music with words to sing|1
+CHURCH|Place of Christian worship|2
+SCHOOL|Where children learn|1
+MARKET|Where you buy fruit and vegetables|1
+HOSPITAL|Where sick people are treated|1
+BIRTHDAY|Celebrated once a year with a cake|1
+HOLIDAY|Day off for rest or celebration|1
+CHRISTMAS|Holiday on December 25|1
+GIFT|Present given with love|1
+CANDLE|Wax stick that gives light|2
+PIZZA|Italian dish with cheese and tomato|1
+PASTA|Spaghetti or macaroni|1
+EGG|Laid by a hen|1
+MILK|White drink from cows|1
+WATER|Clear drink you need every day|1
+JUICE|Drink made from fruit|1
+WINE|Drink made from grapes|1
+HAT|Worn on your head|1
+SHOE|Worn on your foot|1
+DRESS|One-piece outfit for a woman|1
+COAT|Warm jacket for cold weather|1
+UMBRELLA|Keeps you dry in the rain|2
+GLASSES|Help you see better|1
+HAPPY|Full of joy|1
+LOVE|Strong feeling of affection|1
+PEACE|The opposite of war|1
+DREAM|What you see while sleeping|1
+NIGHT|Time when it is dark|1
+MORNING|Early part of the day|1
+GOLF|Sport with clubs and eighteen holes|1
+TENNIS|Sport with rackets and a net|1
+KITCHEN|Room where meals are cooked|1
+RECIPE|Instructions to cook a dish|2
+OVEN|Hot box for baking|1
+GARLIC|Strong smelling bulb used in cooking|2
+PEPPER|Black spice next to the salt|1
+KNITTING|Making a scarf with two needles and wool|2
+PUZZLE|Game of fitting pieces together|2
+CARDS|Deck used for solitaire|1
+CHESS|Board game with kings and queens|2
+PHOTO|Picture taken with a camera|1
+PARK|Public garden for a walk|1
+SEA|Large salty water by the beach|1
+SHELL|Found on the beach, home of a snail|2
+APRON|Worn in the kitchen to stay clean|2
+PILLOW|Soft rest for your head in bed|1
+BLANKET|Keeps you warm in bed|1
+PEAR|Sweet fruit shaped like a bell|1
+PLUM|Small purple fruit with a stone|1
+PEACH|Soft fuzzy fruit with a big stone|1
+MELON|Large juicy fruit with many seeds|1
+LIME|Small green citrus fruit|1
+KIWI|Brown fuzzy fruit, green inside|2
+MANGO|Sweet tropical fruit with orange flesh|1
+FIG|Soft sweet fruit, often dried|2
+DATE|Sweet brown fruit of a palm tree|2
+BERRY|Small juicy fruit like a strawberry|1
+LETTUCE|Green leaves for a salad|1
+CABBAGE|Round leafy vegetable for coleslaw|1
+CELERY|Crunchy green stalks|2
+SPINACH|Leafy green that made a sailor strong|2
+PEA|Small round green seed in a pod|1
+BEAN|Seed in a pod, green or baked|1
+CORN|Yellow kernels on a cob|1
+PUMPKIN|Big orange squash for a pie|1
+CUCUMBER|Long green vegetable for pickles|2
+MUSHROOM|Fungus with a cap and a stem|1
+BEET|Dark red root vegetable|2
+RADISH|Small red root with a sharp bite|2
+OLIVE|Small fruit pressed for oil|1
+NUT|Hard shell with a seed inside|1
+PEANUT|Groundnut made into butter|1
+FLOUR|Powder for baking bread|1
+YEAST|Makes the dough rise|2
+JAM|Fruit spread for toast|1
+TOAST|Bread browned in the morning|1
+CEREAL|Breakfast flakes with milk|1
+BACON|Crispy strips at breakfast|1
+HAM|Pink meat in a sandwich|1
+SAUSAGE|Meat in a long skin|1
+STEAK|Thick slice of beef|1
+BEEF|Meat from a cow|1
+PORK|Meat from a pig|1
+SALAD|Mixed green leaves with dressing|1
+SANDWICH|Two slices of bread with a filling|1
+PIE|Baked dish with a crust|1
+TART|Small open pie with fruit|2
+MUFFIN|Small cake baked in a cup|1
+PANCAKE|Flat cake cooked in a pan|1
+WAFFLE|Breakfast treat with a grid pattern|2
+CHOCOLATE|Sweet treat made from cocoa|1
+CANDY|Sweet treat for children|1
+SYRUP|Thick sweet liquid for pancakes|2
+VINEGAR|Sour liquid for salad dressing|2
+SAUCE|Liquid served over food|1
+GRAVY|Brown sauce for the roast|2
+STEW|Slow cooked meat and vegetables|1
+NOODLE|Long thin strip of pasta|1
+DINNER|Evening meal|1
+LUNCH|Midday meal|1
+BREAKFAST|First meal of the day|1
+SUPPER|Light evening meal|2
+PICNIC|Meal eaten outdoors on a blanket|1
+PLATE|Flat dish for food|1
+BOWL|Deep dish for soup or cereal|1
+MUG|Big cup with a handle|1
+KETTLE|Boils water for tea|1
+TEAPOT|Pot for brewing a hot drink|1
+PAN|Used to fry eggs|1
+POT|Deep pan for boiling|1
+LID|Cover for a pot|1
+TRAY|Flat board for carrying dishes|1
+NAPKIN|Cloth to wipe your mouth|1
+SINK|Where you wash the dishes|1
+FRIDGE|Keeps food cold|1
+FREEZER|Keeps ice cream frozen|1
+TOASTER|Browns your bread|1
+STOVE|Where pots are heated|1
+SOFA|Comfortable seat for two or three|1
+COUCH|Long padded seat in the living room|1
+CARPET|Soft floor covering|1
+RUG|Small mat on the floor|1
+CURTAIN|Hangs at the window|1
+MIRROR|Shows your reflection|1
+SHELF|Board on the wall for books|1
+CLOSET|Cupboard for clothes|1
+DRAWER|Box that slides out of a desk|1
+DESK|Table for writing|1
+STOOL|Seat with no back|1
+CUSHION|Soft pad on a chair|1
+TOWEL|Dries you after a bath|1
+SOAP|Makes bubbles when you wash|1
+SHOWER|Water sprays over you|1
+BATH|Tub for washing|1
+TOILET|Seat in the bathroom|1
+ROOF|Top of a house|1
+WALL|Side of a room|1
+FLOOR|You walk on it|1
+STAIRS|Steps to go up and down|1
+ATTIC|Room under the roof|2
+CELLAR|Room under the house|2
+GARAGE|Where the car is parked|1
+FENCE|Line of posts around a yard|1
+GATE|Door in a fence|1
+CHIMNEY|Smoke goes up it|1
+PORCH|Covered entrance to a house|2
+BALCONY|Platform outside an upper window|2
+HALLWAY|Corridor inside a home|2
+BEDROOM|Room where you sleep|1
+BASEMENT|Lowest floor of a house|2
+BROOM|Used to sweep the floor|1
+BUCKET|Pail for carrying water|1
+MOP|Cleans the floor with water|1
+DUSTER|Cloth for wiping shelves|2
+SPONGE|Soaks up water when you wash|1
+IRON|Smooths the wrinkles in clothes|1
+VACUUM|Machine that sucks up dust|2
+HAMMER|Tool for hitting nails|1
+NAIL|Thin metal pin you hammer|1
+SCREW|Twisted metal pin|1
+SAW|Tool with teeth for cutting wood|1
+DRILL|Tool that makes holes|1
+LADDER|Climb it to reach high places|1
+ROPE|Thick strong cord|1
+SHOVEL|Tool for digging|1
+RAKE|Gathers fallen leaves|1
+HOSE|Waters the garden|1
+WRENCH|Tool for turning nuts and bolts|2
+PLIERS|Tool for gripping wire|2
+CHISEL|Tool for carving wood|3
+TROWEL|Small garden spade|3
+SHIRT|Top with buttons and a collar|1
+SKIRT|Clothing that hangs from the waist|1
+JACKET|Short coat|1
+SWEATER|Warm knitted top|1
+SCARF|Wrap it around your neck|1
+GLOVE|Covers your hand|1
+SOCK|Worn inside a shoe|1
+BOOT|Tall shoe for rain or snow|1
+SLIPPER|Soft shoe worn at home|1
+BELT|Holds up your trousers|1
+TIE|Worn around the neck with a suit|1
+SUIT|Jacket and trousers that match|1
+JEANS|Blue denim trousers|1
+PAJAMAS|Clothes for sleeping|1
+BUTTON|Small disc that fastens clothes|1
+ZIPPER|Fastener with metal teeth|2
+POCKET|Small pouch in your trousers|1
+COLLAR|Part of a shirt around the neck|2
+SLEEVE|Part of a shirt covering the arm|2
+CAP|Hat with a visor|1
+VEST|Sleeveless jacket|2
+PIG|Pink farm animal that oinks|1
+GOAT|Farm animal with a beard and horns|1
+DONKEY|Animal that says hee-haw|1
+MOUSE|Small animal that squeaks|1
+FROG|Green animal that croaks and hops|1
+SNAIL|Slow creature that carries its home|1
+FOX|Clever wild animal with a bushy tail|1
+WOLF|Wild animal that howls at the moon|1
+DEER|Graceful animal with antlers|1
+ZEBRA|Horse with black and white stripes|1
+CAMEL|Desert animal with humps|1
+KANGAROO|Hops and carries its baby in a pouch|1
+PANDA|Black and white bear that eats bamboo|1
+KOALA|Tree climber that eats eucalyptus|2
+SQUIRREL|Bushy-tailed animal that hides nuts|1
+HEDGEHOG|Small animal covered in spines|2
+BADGER|Striped digger of the woods|2
+OTTER|Playful swimmer that floats on its back|2
+BEAVER|Animal that builds dams|2
+MOOSE|Very large deer of the north|2
+BISON|Shaggy wild ox of the prairie|3
+LLAMA|Woolly animal of the Andes|2
+WALRUS|Sea animal with long tusks|2
+SEAL|Sea animal that barks and claps|1
+WHALE|Biggest animal in the sea|1
+DOLPHIN|Smart sea animal that jumps waves|1
+SHARK|Fish with sharp teeth and a fin|1
+OCTOPUS|Sea creature with eight arms|1
+CRAB|Walks sideways on the sand|1
+LOBSTER|Red shellfish with big claws|2
+OYSTER|Shellfish that can hold a pearl|2
+JELLYFISH|Floating sea creature that can sting|2
+SALMON|Pink fish that swims upstream|2
+TROUT|Freshwater fish loved by anglers|2
+TUNA|Big ocean fish often canned|1
+SARDINE|Small fish packed tightly in a tin|2
+EAGLE|Large bird of prey|1
+PARROT|Colorful bird that can talk|1
+PIGEON|Bird seen in every town square|1
+SWAN|Graceful white bird on a lake|1
+GOOSE|Bird that honks|1
+TURKEY|Big bird for a holiday feast|1
+ROBIN|Small bird with a red breast|2
+SPARROW|Small brown garden bird|2
+CROW|Black bird that caws|1
+PENGUIN|Bird that swims but cannot fly|1
+FLAMINGO|Pink bird that stands on one leg|2
+PEACOCK|Bird with a fan of colorful feathers|2
+HERON|Tall wading bird with a long neck|3
+STORK|Bird said to bring babies|2
+WOODPECKER|Bird that taps on tree trunks|2
+HAWK|Bird of prey with sharp eyes|2
+PELICAN|Bird with a pouch under its beak|3
+CANARY|Small yellow singing bird|2
+ANT|Tiny insect that lives in a colony|1
+SPIDER|Spins a web|1
+LADYBUG|Red beetle with black spots|2
+BEETLE|Insect with a hard shell|2
+CRICKET|Insect that chirps at night|2
+MOTH|Insect drawn to a lamp|2
+WASP|Striped insect that can sting|2
+DRAGONFLY|Insect with four clear wings near ponds|3
+WORM|Wriggles in the soil|1
+LIZARD|Small reptile that suns itself|2
+PUPPY|Young dog|1
+KITTEN|Young cat|1
+LAMB|Young sheep|1
+CALF|Young cow|1
+FOAL|Young horse|2
+PIGLET|Young pig|2
+DUCKLING|Young duck|2
+TADPOLE|Young frog with a tail|3
+FAWN|Young deer|3
+CUB|Young bear or lion|2
+FEATHER|Covers a bird|1
+NEST|Home a bird builds|1
+WING|A bird flaps it to fly|1
+BEAK|Hard mouth of a bird|1
+TAIL|A dog wags it|1
+PAW|Foot of a cat or dog|1
+HORN|Pointed growth on a goat's head|1
+FUR|Thick soft hair of an animal|1
+HOOF|Hard foot of a horse|2
+MANE|Long hair on a lion's neck|2
+WHISKER|Long hair by a cat's nose|2
+SKY|Blue above us on a clear day|1
+WIND|Moving air|1
+STORM|Wind and heavy rain|1
+THUNDER|Loud rumble after lightning|1
+LIGHTNING|Flash of light in a storm|2
+RAINBOW|Colorful arc after the rain|1
+FOG|Thick mist near the ground|1
+MIST|Light haze of tiny drops|2
+FROST|White ice on the grass in the morning|2
+ICE|Frozen water|1
+HAIL|Little balls of ice from the sky|2
+BREEZE|Gentle wind|2
+DRIZZLE|Very light rain|3
+SUNSHINE|Bright warm light of day|1
+WEATHER|Rain or shine, it changes every day|1
+SEASON|Spring, summer, autumn or winter|1
+LAKE|Large body of fresh water|1
+POND|Small pool of still water|1
+STREAM|Small flowing river|1
+WAVE|Rolls onto the beach|1
+SAND|Tiny grains on the beach|1
+ROCK|Hard piece of stone|1
+STONE|Small hard rock|1
+HILL|Small mountain|1
+VALLEY|Low land between hills|2
+CLIFF|Steep wall of rock|2
+CAVE|Hollow in a rock or hill|1
+DESERT|Dry land with very little rain|1
+JUNGLE|Thick tropical forest|1
+MEADOW|Field of grass and wildflowers|2
+VOLCANO|Mountain that can erupt with lava|2
+GLACIER|Slow river of ice|3
+WATERFALL|Water dropping over a cliff|1
+COAST|Land along the sea|2
+HARBOR|Safe place for ships to dock|2
+BAY|Curve in the coastline|2
+LAGOON|Shallow water behind a reef|3
+CANYON|Deep valley with steep sides|3
+PRAIRIE|Wide flat grassland|3
+MARSH|Wet soggy land with reeds|3
+OASIS|Green spot in the desert|3
+DUNE|Hill of sand|3
+PEBBLE|Small smooth stone|2
+EARTH|Our planet|1
+PLANET|World that circles a star|1
+COMET|Icy body with a glowing tail|3
+ECLIPSE|When the moon hides the sun|3
+DAWN|First light of the morning|2
+DUSK|Fading light of the evening|2
+SUNSET|When the sun goes down|1
+SUNRISE|When the sun comes up|1
+HORIZON|Where the sky meets the land|3
+GALAXY|Huge group of stars|3
+ORCHARD|Field of fruit trees|3
+HEAD|Top of the body, where the brain is|1
+HAIR|Grows on your head|1
+FACE|Front of your head|1
+CHEEK|Side of the face, often kissed|1
+CHIN|Bottom of your face|1
+LIP|Part of the mouth you pucker|1
+TOOTH|White and used for chewing|1
+TONGUE|Helps you taste food|1
+NECK|Joins your head to your body|1
+SHOULDER|Where your arm meets your body|1
+ARM|Limb with a hand at the end|1
+ELBOW|Joint in the middle of your arm|1
+WRIST|Where you wear a watch|1
+FINGER|One of five on a hand|1
+THUMB|Short, thick finger|1
+KNEE|Joint in the middle of your leg|1
+LEG|Limb you walk on|1
+FOOT|You stand on it|1
+TOE|One of five on a foot|1
+ANKLE|Joint above the foot|2
+HEEL|Back of the foot|2
+EYEBROW|Line of hair above the eye|2
+EYELASH|Tiny hair on the eyelid|2
+FOREHEAD|Part of the face above the eyes|2
+NOSTRIL|Opening in the nose|3
+PALM|Inside of the hand|2
+KNUCKLE|Joint of a finger|3
+SKIN|Covers your whole body|1
+BONE|Hard part of the skeleton|1
+MUSCLE|Makes your body move|2
+LUNG|Organ you breathe with|2
+BRAIN|You think with it|1
+BEARD|Hair on a man's chin|1
+MUSTACHE|Hair above a man's lip|2
+DIMPLE|Little dent in a smiling cheek|3
+FRECKLE|Small brown spot on the skin|3
+BAKER|Makes bread and cakes|1
+FARMER|Grows crops and keeps animals|1
+COOK|Prepares meals|1
+CHEF|Head cook in a restaurant|2
+WAITER|Brings food to your table|1
+PILOT|Flies a plane|1
+SAILOR|Works on a ship|1
+DENTIST|Takes care of your teeth|1
+PAINTER|Artist who uses a brush|1
+SINGER|Performs songs|1
+DANCER|Moves to music on stage|1
+ACTOR|Plays a role in a film|1
+WRITER|Puts stories on paper|1
+POSTMAN|Brings the mail|1
+TAILOR|Makes and mends clothes|2
+BUTCHER|Sells meat|2
+GROCER|Sells food in a shop|3
+FLORIST|Sells flowers|2
+PLUMBER|Fixes pipes and taps|2
+CARPENTER|Works with wood|2
+GARDENER|Takes care of plants|1
+JUDGE|Decides cases in court|2
+LAWYER|Gives legal advice|2
+BANKER|Works with money in a bank|2
+CASHIER|Takes your money at the till|2
+DRIVER|Steers a car or bus|1
+MECHANIC|Repairs cars|2
+ENGINEER|Designs bridges and machines|2
+SCIENTIST|Does experiments in a lab|2
+POET|Writes verses that rhyme|2
+AUTHOR|Person who wrote a book|2
+EDITOR|Checks and corrects a text|3
+LIBRARIAN|Looks after the books on loan|2
+SECRETARY|Answers the phone and types letters|2
+JEWELER|Makes rings and necklaces|3
+COBBLER|Repairs shoes|3
+POTTER|Shapes clay on a wheel|3
+WEAVER|Makes cloth on a loom|3
+SHEPHERD|Looks after a flock|2
+FISHERMAN|Catches fish for a living|2
+BARBER|Cuts men's hair|2
+ARCHITECT|Draws plans for buildings|3
+SCULPTOR|Carves statues|3
+CLERK|Office worker who keeps records|3
+VIOLIN|Instrument played with a bow|1
+DRUM|Instrument you beat|1
+FLUTE|Wind instrument held sideways|2
+TRUMPET|Brass instrument with three valves|2
+HARP|Large instrument with many strings|2
+CELLO|Big string instrument played sitting down|2
+CLARINET|Black wind instrument with a reed|3
+ACCORDION|Squeezebox with keys|3
+SAXOPHONE|Curved brass horn of jazz|3
+TROMBONE|Brass instrument with a slide|3
+BANJO|Round string instrument of country music|3
+ORGAN|Big keyboard instrument in a church|2
+HARMONICA|Mouth organ|3
+TAMBOURINE|Small drum with jingles|3
+XYLOPHONE|Instrument of wooden bars and mallets|3
+CHOIR|Group of singers|2
+BAND|Group that plays music|1
+ORCHESTRA|Large group of musicians|2
+CONCERT|Live musical show|2
+OPERA|Story told in song on a stage|2
+MELODY|Tune of a song|2
+RHYTHM|The beat of music|3
+LULLABY|Gentle song to help a baby sleep|3
+WALTZ|Ballroom dance in three-four time|3
+TANGO|Passionate dance from Argentina|3
+BALLET|Dance on the tips of the toes|2
+SOCCER|Football with a round ball and goals|1
+BASEBALL|Bat and ball game with four bases|1
+BOWLING|Knock down ten pins|2
+SWIMMING|Moving through water with strokes|1
+CYCLING|Riding a bike for sport|2
+RUNNING|Moving fast on foot|1
+SKIING|Gliding down snowy slopes|2
+FISHING|Hobby with a rod and line|1
+HIKING|Long walks in the countryside|2
+CROQUET|Lawn game with mallets and hoops|3
+DARTS|Throwing small arrows at a board|2
+BILLIARDS|Cue game on a green table|3
+BADMINTON|Racket game with a shuttlecock|3
+VOLLEYBALL|Ball game over a high net|2
+BOXING|Sport in a ring with gloves|2
+RUGBY|Game with an oval ball|2
+HOCKEY|Game with sticks and a puck|2
+MARATHON|Very long running race|3
+REFEREE|Makes sure the rules are followed|3
+TROPHY|Cup given to the winner|2
+MEDAL|Gold, silver or bronze prize|2
+TEAM|Group playing together|1
+GOAL|Score in soccer|1
+BALL|Round toy you throw|1
+RACKET|Used to hit a tennis ball|2
+YOGA|Gentle stretches and breathing|2
+DOMINO|Tile with dots, played in a row|2
+BINGO|Number game where you shout when you win|1
+CHECKERS|Board game with red and black pieces|2
+CROSSWORD|Puzzle of clues and squares|2
+RIDDLE|Puzzle question with a clever answer|2
+JIGSAW|Puzzle of many interlocking pieces|2
+BUS|Big vehicle with many seats for passengers|1
+TAXI|Car you pay to ride in|1
+TRUCK|Large vehicle for carrying goods|1
+BOAT|Floats on water|1
+TRAM|Streetcar on rails in town|2
+SUBWAY|Underground railway|2
+FERRY|Boat that carries cars across water|2
+YACHT|Elegant sailing boat|3
+CANOE|Narrow boat paddled by hand|2
+RAFT|Flat floating platform of logs|2
+HELICOPTER|Aircraft with spinning blades|2
+BALLOON|Filled with air or helium|1
+SCOOTER|Two wheels and a handlebar|2
+WAGON|Cart pulled by a horse|2
+CARRIAGE|Horse-drawn coach|3
+TICKET|You need it to board the train|1
+SUITCASE|Bag packed for a trip|1
+PASSPORT|Document to travel abroad|2
+LUGGAGE|Bags you take on a journey|2
+MAP|Shows the roads and towns|1
+COMPASS|Points to the north|2
+JOURNEY|Long trip|2
+VOYAGE|Long trip by sea|3
+CRUISE|Holiday on a big ship|2
+HOTEL|Place to stay when traveling|1
+AIRPORT|Where planes take off and land|1
+STATION|Where trains stop|1
+PLATFORM|Where you wait for the train|2
+TUNNEL|Passage under a mountain|2
+BRIDGE|Crosses over a river|1
+ROAD|Cars drive on it|1
+STREET|Road in a town with houses|1
+AVENUE|Wide street lined with trees|2
+SIDEWALK|Path for walking beside the road|2
+CORNER|Where two streets meet|1
+SQUARE|Open space in the town center|1
+FOUNTAIN|Water shoots up in the park|2
+STATUE|Carved figure in a square|2
+MUSEUM|Building full of art and history|1
+LIBRARY|Place to borrow books|1
+THEATER|Where plays are performed|2
+CINEMA|Where you watch films|1
+BAKERY|Shop that sells bread|1
+PHARMACY|Shop that sells medicine|2
+BANK|Keeps your money safe|1
+OFFICE|Workplace with desks|1
+FACTORY|Building where goods are made|2
+CASTLE|Home of a king with towers|1
+PALACE|Grand home of a queen|2
+TOWER|Tall narrow building|1
+CATHEDRAL|Large important church|3
+CHAPEL|Small place of worship|3
+LIGHTHOUSE|Tower with a light to guide ships|2
+WINDMILL|Its sails grind grain|2
+VILLAGE|Small country town|1
+CITY|Big town|1
+FARM|Where crops and animals are raised|1
+BARN|Farm building for hay|2
+STABLE|Home for horses|2
+COTTAGE|Small house in the country|2
+CABIN|Small wooden house in the woods|2
+TENT|Shelter for camping|1
+CAMPFIRE|Fire for toasting marshmallows|2
+POSTCARD|Card sent from a holiday|2
+SOUVENIR|Small gift to remember a trip|3
+CAMERA|Takes pictures|1
+TOURIST|Visitor seeing the sights|2
+PENCIL|Writes in gray and can be erased|1
+PEN|Writes in ink|1
+ERASER|Rubs out pencil marks|2
+RULER|Measures in a straight line|1
+PAPER|Sheet you write on|1
+NOTEBOOK|Book of blank pages|1
+CHALK|Writes on a blackboard|2
+DICTIONARY|Book of words and meanings|2
+LESSON|Period of teaching|1
+HOMEWORK|Schoolwork done at home|1
+STUDENT|Person who studies|1
+CLASSROOM|Room where pupils learn|1
+TEXTBOOK|Book used in class|2
+ALPHABET|The letters from A to Z|1
+GRAMMAR|Rules of a language|2
+SPELLING|Writing words correctly|2
+HISTORY|Study of the past|1
+GEOGRAPHY|Study of countries and maps|2
+SCIENCE|Study of nature and the world|1
+ARITHMETIC|Adding and subtracting|3
+DIPLOMA|Certificate given at graduation|3
+SATCHEL|School bag with a strap|3
+GLOBE|Round map of the world|2
+ATLAS|Book of maps|2
+ENVELOPE|Paper cover for a letter|2
+STAMP|Stick it on a letter|1
+CALENDAR|Shows the days of the month|1
+DIARY|Book for daily thoughts|2
+NOVEL|Long story in a book|2
+POEM|Verse written by a poet|1
+STORY|Tale with a beginning and an end|1
+FABLE|Short tale with a moral|3
+LEGEND|Old story passed down|3
+TULIP|Spring flower from Holland|1
+DAISY|White flower with a yellow center|1
+LILY|Tall flower with a sweet scent|2
+ORCHID|Exotic flower|2
+SUNFLOWER|Tall flower that faces the sun|1
+VIOLET|Small purple flower|2
+LAVENDER|Purple plant with a calming scent|2
+POPPY|Red flower of the fields|2
+DAFFODIL|Yellow trumpet flower of spring|3
+CARNATION|Flower often worn on a lapel|3
+MARIGOLD|Bright orange garden flower|3
+JASMINE|White flower with a sweet scent|3
+LILAC|Bush with purple scented blooms|3
+GERANIUM|Red flower in a window box|3
+HYACINTH|Fragrant spring bulb|3
+MAGNOLIA|Tree with big pink blooms|3
+CACTUS|Prickly desert plant|1
+FERN|Leafy plant of the shade|2
+IVY|Climbs up the walls|2
+MOSS|Soft green carpet on stones|2
+BAMBOO|Tall grass that pandas eat|2
+OAK|Tree that grows acorns|1
+PINE|Evergreen with needles|1
+MAPLE|Tree whose sap makes syrup|2
+WILLOW|Tree that weeps by the water|2
+BIRCH|Tree with white bark|3
+CEDAR|Fragrant evergreen tree|3
+LEAF|Green part of a plant|1
+ROOT|Grows under the soil|1
+SEED|A plant grows from it|1
+BRANCH|Arm of a tree|1
+BUSH|Low leafy plant|1
+HEDGE|Row of bushes|2
+PETAL|Colored part of a flower|2
+THORN|Sharp point on a rose stem|2
+BLOSSOM|Flower on a fruit tree|2
+ACORN|Seed of the oak|3
+JOY|Great happiness|1
+HOPE|Wishing for something good|1
+CALM|Quiet and peaceful|1
+PROUD|Pleased with what you did|2
+BRAVE|Not afraid|1
+KIND|Gentle and caring|1
+GENTLE|Soft and tender|2
+CHEERFUL|Bright and in good spirits|2
+GRATEFUL|Full of thanks|2
+PATIENT|Able to wait calmly|2
+CURIOUS|Eager to know more|2
+EAGER|Keen to do something|3
+CONTENT|Quietly satisfied|3
+DELIGHT|Great pleasure|2
+WONDER|Feeling of amazement|2
+COURAGE|Bravery in hard times|2
+PATIENCE|A virtue of waiting calmly|3
+KINDNESS|Being nice to others|2
+LAUGHTER|Sound of people having fun|2
+NOSTALGIA|Fond longing for the past|3
+SERENE|Calm and untroubled|3
+JOLLY|Merry and cheerful|3
+MERRY|Happy and full of fun|2
+CHARMING|Very pleasant and attractive|3
+GRACEFUL|Moving with elegance|3
+HUMBLE|Modest, not proud|3
+LOYAL|Faithful to a friend|3
+HONEST|Always tells the truth|2
+POLITE|Has good manners|2
+CLEVER|Quick to learn|2
+WISE|Knows a lot from experience|2
+QUIET|Making little noise|1
+BRIGHT|Full of light|1
+WARM|Not cold|1
+SOFT|Not hard|1
+SMOOTH|Not rough|2
+SHINY|Gleams in the light|2
+FRESH|Just picked or made|2
+COZY|Warm and snug|2
+SNUG|Cozy and comfortable|3
+TIDY|Neat and in order|2
+FANCY|Elegant and decorated|2
+ANCIENT|Very very old|3
+TINY|Very small|1
+HUGE|Very big|1
+EMPTY|Nothing inside|2
+HEAVY|Hard to lift|1
+CRISP|Firm and crunchy|3
+FRAGRANT|Smelling sweet|3
+VELVET|Soft fabric with a short pile|3
+SILK|Smooth fabric made by worms|2
+COTTON|Soft fabric from a plant|1
+WOOL|Comes from a sheep|1
+LINEN|Cloth from the flax plant|3
+DENIM|Blue fabric of jeans|3
+LACE|Delicate fabric full of holes|2
+THREAD|Thin strand for sewing|2
+NEEDLE|Has an eye but cannot see|2
+THIMBLE|Protects your finger when sewing|3
+BOBBIN|Spool for thread in a machine|3
+YARN|Thread for knitting|2
+QUILT|Bed cover made of patches|2
+PATTERN|Design that repeats|2
+EMBROIDERY|Decorative stitching|3
+CROCHET|Needlework done with a hook|3
+SCISSORS|Cutting tool with two blades|1
+RIBBON|Strip of fabric for a bow|2
+BROOCH|Pin worn on a coat|3
+NECKLACE|Jewelry worn around the neck|1
+BRACELET|Jewelry worn on the wrist|2
+EARRING|Jewelry for the ear|2
+RING|Worn on a finger|1
+PEARL|Gem found in an oyster|2
+DIAMOND|Hardest and most sparkly gem|2
+EMERALD|Green gem|3
+RUBY|Red gem|3
+SAPPHIRE|Blue gem|3
+LOCKET|Pendant that holds a photo|3
+WATCH|Clock on your wrist|1
+WALLET|Holds your money and cards|2
+PURSE|Small bag for coins|2
+HANDBAG|Bag carried by a lady|2
+CANE|Stick that helps you walk|2
+PARASOL|Umbrella for shade|3
+SHAWL|Wrap for the shoulders|3
+CARDIGAN|Knitted top with buttons|3
+BLOUSE|Woman's shirt|2
+OVERCOAT|Long warm coat|3
+RAINCOAT|Waterproof coat|2
+BONNET|Hat tied under the chin|3
+BERET|Flat round hat|3
+SANDAL|Open shoe for summer|2
+CLOGS|Wooden shoes|3
+MITTEN|Glove without fingers|2
+TROUSERS|Pants with two legs|2
+SHORTS|Short trousers for summer|1
+LAUGH|Ha ha ha|1
+SING|Use your voice for music|1
+READ|Look at words in a book|1
+WRITE|Put words on paper|1
+BAKE|Make bread in the oven|1
+SWIM|Move through water|1
+WALK|Move on foot|1
+JUMP|Leap into the air|1
+CLIMB|Go up a ladder|1
+KNIT|Make a sweater with needles|2
+SEW|Stitch with a needle|2
+PAINT|Color with a brush|1
+DRAW|Make a picture with a pencil|1
+PLANT|Put a seed in the soil|1
+WATERING|Giving plants a drink|2
+GARDENING|Hobby of growing flowers|2
+WHISPER|Speak very softly|2
+WANDER|Walk with no aim|2
+STROLL|Slow, relaxed walk|3
+GIGGLE|Silly little laugh|3
+CHUCKLE|Quiet laugh|3
+SNOOZE|Short nap|3
+NAP|Short sleep in the day|1
+HUG|Embrace with both arms|1
+KISS|Touch with the lips|1
+SHARE|Give part to others|2
+VISIT|Go to see someone|1
+REMEMBER|Keep in mind|2
+IMAGINE|Picture in your mind|2
+CELEBRATE|Mark a special day with a party|2
+WELCOME|Greeting for a guest|2
+THANK|Say you are grateful|2
+GREET|Say hello|2
+SAUCER|Small plate under a teacup|2
+TEASPOON|Small spoon for stirring|2
+LADLE|Big spoon for serving soup|3
+WHISK|Wire tool for beating eggs|3
+COLANDER|Bowl with holes for draining pasta|3
+GRATER|Shreds cheese|3
+PESTLE|Club for grinding spices in a mortar|3
+SPATULA|Flat tool for flipping pancakes|3
+CASSEROLE|Dish baked slowly in the oven|3
+SKILLET|Frying pan|3
+PITCHER|Jug for pouring water|2
+JUG|Container with a spout and handle|2
+GOBLET|Fancy drinking glass with a stem|3
+TUREEN|Deep dish for serving soup|3
+CORKSCREW|Opens a bottle of wine|3
+CUPBOARD|Cabinet for dishes|2
+PANTRY|Small room for storing food|2
+LARDER|Cool place for keeping food|3
+TABLECLOTH|Covers the dining table|2
+DOILY|Lace mat under a vase|3
+VASE|Holds cut flowers|2
+OMELET|Beaten eggs cooked in a pan|2
+CUSTARD|Sweet yellow sauce of eggs and milk|2
+PUDDING|Soft sweet dessert|2
+MERINGUE|Baked whipped egg whites|3
+SCONE|Small cake served with cream and jam|3
+CRUMPET|Spongy griddle cake for tea|3
+BISCUIT|Small crunchy baked treat|2
+DUMPLING|Ball of dough cooked in broth|3
+PRETZEL|Twisted salty bread|3
+POPCORN|Snack eaten at the movies|1
+MARMALADE|Jam made from oranges|3
+CINNAMON|Sweet spice from tree bark|2
+NUTMEG|Spice grated over eggnog|3
+GINGER|Spicy root for cookies|2
+PARSLEY|Green herb used as garnish|2
+BASIL|Herb used in pesto|2
+MINT|Cool fresh herb|2
+ROSEMARY|Fragrant herb with needles|3
+THYME|Small-leaved herb for stews|3
+OREGANO|Herb sprinkled on pizza|3
+VANILLA|Flavor from a pod used in ice cream|2
+CARAMEL|Melted sugar turned brown|2
+ALMOND|Oval nut|2
+WALNUT|Nut shaped like a brain|2
+HAZELNUT|Nut in chocolate spreads|3
+CHESTNUT|Nut roasted in winter|2
+COCONUT|Big hairy nut from a palm|2
+APRICOT|Small orange fruit like a peach|2
+RAISIN|Dried grape|2
+PRUNE|Dried plum|3
+CRANBERRY|Tart red berry|3
+BLUEBERRY|Small dark berry for muffins|2
+RASPBERRY|Soft red berry|2
+STRAWBERRY|Red berry with seeds outside|1
+PINEAPPLE|Spiky tropical fruit|2
+AVOCADO|Green fruit for guacamole|2
+PAPAYA|Tropical orange fruit with black seeds|3
+TANGERINE|Small easy-peel orange|3
+RHUBARB|Pink stalks for a pie|3
+ASPARAGUS|Green spears cooked in spring|3
+ARTICHOKE|Vegetable with tough leaves and a heart|3
+TURNIP|White root vegetable|3
+PARSNIP|Pale root like a carrot|3
+LEEK|Long vegetable like an onion|3
+BROCCOLI|Green vegetable like little trees|2
+CAULIFLOWER|White vegetable with florets|3
+EGGPLANT|Purple vegetable|2
+ZUCCHINI|Green summer squash|3
+LENTIL|Small seed for soup|3
+PORRIDGE|Hot oats for breakfast|2
+OATMEAL|Breakfast of cooked oats|2
+SPAGHETTI|Long thin pasta|2
+LASAGNA|Pasta in layers with sauce|2
+RISOTTO|Creamy Italian rice dish|3
+TEACUP|Cup for a hot brew|2
+COCOA|Hot chocolate drink|2
+LEMONADE|Drink of lemons and sugar|2
+SMOOTHIE|Blended fruit drink|2
+SHERBET|Fruity frozen dessert|3
+SUNDAE|Ice cream with toppings|2
+TOFFEE|Chewy brown candy|3
+FUDGE|Soft chocolate candy|3
+LICORICE|Black chewy candy|3
+MARZIPAN|Almond paste candy|3
+PICKLE|Cucumber in vinegar|2
+MUSTARD|Yellow sauce for hot dogs|2
+KETCHUP|Red tomato sauce for fries|2
+MAYONNAISE|Creamy white sauce for sandwiches|3
+RELISH|Chopped pickle sauce|3
+CROUTON|Crunchy bread cube in salad|3
+SPOOL|Reel that holds thread|3
+EASEL|Stand that holds a painting|3
+PALETTE|Board where a painter mixes colors|3
+CANVAS|Cloth an artist paints on|2
+CRAYON|Wax stick for coloring|2
+SKETCH|Quick rough drawing|2
+PORTRAIT|Painting of a person|2
+LANDSCAPE|Painting of the countryside|3
+MOSAIC|Picture made of small tiles|3
+POTTERY|Pots made from clay|2
+CLAY|Soft earth for making pots|2
+ALBUM|Book for keeping photos|2
+SCRAPBOOK|Book of clippings and keepsakes|3
+HOBBY|Pastime you enjoy|2
+ORIGAMI|Art of folding paper|3
+KITE|Flies on a string in the wind|1
+MARBLE|Small glass ball for a game|2
+PUPPET|Doll moved by strings or a hand|2
+TEDDY|Cuddly toy bear|1
+DOLL|Toy that looks like a person|1
+CRADLE|Rocking bed for a baby|2
+HAMMOCK|Swinging bed between two trees|2
+SWING|Seat on ropes in the playground|1
+SLIDE|Slippery chute in the playground|1
+SEESAW|Plank that goes up and down|2
+CAROUSEL|Merry-go-round|3
+CIRCUS|Show with clowns and acrobats|1
+CLOWN|Funny performer with a red nose|1
+JUGGLER|Keeps balls flying in the air|3
+MAGICIAN|Pulls a rabbit from a hat|2
+PARADE|Procession through the streets|2
+FESTIVAL|Big public celebration|2
+CARNIVAL|Festival with costumes and music|2
+FIREWORKS|Bright bursts in the night sky|2
+PARTY|Celebration with friends|1
+FEAST|Large festive meal|2
+BANQUET|Formal dinner for many guests|3
+WEDDING|Ceremony for a bride and groom|1
+BRIDE|Woman getting married|2
+GROOM|Man getting married|2
+BOUQUET|Bunch of flowers|3
+ANNIVERSARY|Yearly celebration of a wedding day|3
+INVITATION|Card asking you to a party|3
+CONFETTI|Bits of paper thrown at a party|3
+GRANDPA|Your mother's or father's father|1
+GRANDCHILD|Your son's or daughter's child|2
+AUNT|Your mother's sister|1
+UNCLE|Your father's brother|1
+COUSIN|Your aunt's child|1
+NEPHEW|Your brother's son|2
+NIECE|Your sister's daughter|2
+HUSBAND|Married man|1
+WIFE|Married woman|1
+TWIN|One of two born together|2
+NEIGHBOR|Person living next door|2
+GUEST|Visitor in your home|2
+HOST|Person giving the party|2
+GODMOTHER|Woman who sponsors a child at baptism|3
+ANCESTOR|Relative from long ago|3
+HEIRLOOM|Treasure passed down in a family|3
+REUNION|Gathering of old friends or family|3
+HOUSEWARMING|Party in a new home|3
+TELEVISION|Box for watching programs|1
+RADIO|Plays music and news|1
+REMOTE|Changes the channel from the sofa|2
+RECORD|Vinyl disc for music|2
+GRAMOPHONE|Old record player with a horn|3
+TYPEWRITER|Old machine for typing letters|3
+STITCH|One loop of thread in a seam|2
+FAN|Spins to cool the air|1
+HEATER|Warms up a room|2
+RADIATOR|Heats a room with hot water|3
+THERMOMETER|Measures temperature|2
+BAROMETER|Measures air pressure|3
+TELESCOPE|Looks at faraway stars|2
+BINOCULARS|For watching distant birds|2
+MAGNIFIER|Makes small print look bigger|3
+LANTERN|Lamp with a handle|2
+FLASHLIGHT|Light you carry in your hand|2
+HOURGLASS|Sand timer|3
+SUNDIAL|Tells time with a shadow|3
+WEATHERVANE|Shows which way the wind blows|3
+SCARECROW|Stands in the field to scare birds|2
+TRACTOR|Farm vehicle that pulls a plow|2
+PLOW|Turns over the soil|3
+HAYSTACK|Big pile of dried grass|3
+HARVEST|Gathering the crops|2
+WHEAT|Grain made into flour|2
+BARLEY|Grain used in soup|3
+VINEYARD|Field of grapevines|3
+GREENHOUSE|Glass house for plants|2
+WHEELBARROW|One-wheeled garden cart|3
+SPRINKLER|Sprays water on a lawn|3
+COMPOST|Rotted leaves for the garden|3
+FLOWERPOT|Container for a plant|2
+BIRDHOUSE|Little home on a pole for birds|2
+BEEHIVE|Home of the honey makers|2
+PUDDLE|Small pool of rain|2
+ICICLE|Hanging spike of ice|3
+SNOWFLAKE|Each one is unique|2
+SNOWMAN|Figure built in winter with a carrot nose|1
+SLED|Ride it down a snowy hill|2
+SKATE|Glide on ice|2
+GAZEBO|Garden shelter with open sides|3
+FIREPLACE|Where logs burn in the living room|2
+HEARTH|Floor of the fireplace|3
+ARMCHAIR|Comfy chair with sides|2
+BOOKCASE|Furniture full of books|2
+WARDROBE|Tall cupboard for clothes|2
+DRESSER|Chest of drawers|3
+CHANDELIER|Hanging light with crystals|3
+BANISTER|Rail along the stairs|3
+DOORBELL|Rings when a visitor comes|2
+DOORMAT|Wipe your feet on it|2
+MAILBOX|Box for letters|2
+WINDOWSILL|Shelf at the bottom of a window|3
+SHUTTER|Wooden cover for a window|3
+WALLPAPER|Decorates the walls|2
+TRELLIS|Frame that climbing roses grow on|3
+PERGOLA|Garden walkway with a vine roof|3
+CONSERVATORY|Glass room for plants at the house|3
+TEAKETTLE|Whistles when the water boils|3
+PERCOLATOR|Old style coffee maker|3
+BUTTERMILK|Sour milk for pancakes|3
+GOOSEBERRY|Tart green berry|3
+MACAROON|Chewy coconut cookie|3
+SHORTBREAD|Buttery Scottish biscuit|3
+GINGERBREAD|Spiced cake for festive houses|3
+CHAMOMILE|Calming herbal tea|3
+PEPPERMINT|Cool candy flavor|3
+BUTTERCUP|Small yellow wildflower|3
+DANDELION|Yellow weed that turns to fluff|3
+FOXGLOVE|Tall flower with bell shaped blooms|3
+HONEYSUCKLE|Climbing plant with sweet scent|3
+NIGHTINGALE|Bird that sings at night|3
+KINGFISHER|Bright blue bird that dives for fish|3
+HUMMINGBIRD|Tiny bird that hovers|3
+GRASSHOPPER|Green insect that jumps high|3
