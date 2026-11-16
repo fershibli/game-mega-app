@@ -902,3 +902,165 @@ TICO-TICO|Pardalzinho de topete|3
 JURITI|Pombinha do mato de canto suave|3
 SANHAÇO|Pássaro azulado que come frutas|3
 ANU|Pássaro preto que anda em bando no pasto|3
+COMPRAR|Pagar para levar algo da loja|1
+VENDER|Contrário de comprar|1
+LIMPAR|Tirar a sujeira|1
+VARRER|Limpar o chão com a vassoura|1
+REGAR|Molhar as plantas|1
+ABRAÇAR|Apertar alguém nos braços com carinho|1
+BEIJAR|Encostar os lábios com carinho|1
+RIR|Achar graça e dar risada|1
+PULAR|Saltar do chão|1
+SUBIR|Contrário de descer|1
+DESCER|Contrário de subir|1
+CHEGAR|Contrário de partir|1
+ESPERAR|Aguardar alguém ou algo|1
+CONVERSAR|Bater papo|1
+TRABALHAR|Exercer a profissão|1
+DESCANSAR|Fazer uma pausa para repousar|1
+GOSTAR|Ter carinho ou apreço por algo|1
+ALEGRE|Contente, animado|1
+SABOROSO|Gostoso de comer|1
+CHEIROSO|Que tem bom perfume|1
+FRESCO|Recém-colhido ou feito agora|1
+GELADO|Muito frio|1
+VELHO|Contrário de novo|1
+MOLHADO|Contrário de seco|1
+SECO|Contrário de molhado|1
+LONGE|Contrário de perto|1
+PERTO|Contrário de longe|1
+CEDO|Contrário de tarde|1
+DADO|Cubo com pontinhos dos jogos de tabuleiro|1
+PASSARINHO|Ave pequena que canta na árvore|1
+VIOLA|Instrumento caipira de dez cordas|2
+CAPOEIRA|Luta e dança ao som do berimbau|2
+CURRAL|Cercado onde fica o gado|2
+CHIQUEIRO|Lugar onde vivem os porcos|2
+SELA|Assento de couro do cavaleiro|2
+VAQUEIRO|Cuida do gado no sertão|2
+MOEDOR|Aparelho de moer carne ou café|2
+CÔMODA|Móvel de gavetas para roupas|2
+BAÚ|Caixa grande de tampa curva para guardar coisas|2
+SOMBRINHA|Guarda-chuva pequeno e delicado|2
+LEQUE|Abana o rosto no calor|2
+BOINA|Chapéu redondo e chato de lã|2
+QUENTÃO|Bebida quente da festa junina|2
+RIACHO|Rio pequeno|2
+CHUVISCO|Chuva miúda|2
+TROVOADA|Chuva com muitos trovões|2
+MARÉ|Sobe e desce das águas do mar|2
+ESPUMA|Bolhas brancas da onda|2
+JABUTI|Tartaruga de terra|2
+SIRI|Caranguejo nadador do mangue|2
+MARIMBONDO|Vespa de ferroada doída|2
+JOÃO-DE-BARRO|Pássaro que constrói sua casa de barro|2
+URUBU|Ave preta que plana no céu|2
+GARÇA|Ave branca de pernas longas do brejo|2
+SERENATA|Música cantada sob a janela da amada|2
+ARQUIBANCADA|Degraus onde a torcida assiste ao jogo|2
+TORCIDA|Quem vibra pelo time no estádio|2
+ESTÁDIO|Campo grande de futebol com arquibancadas|2
+TABULEIRO|Base do jogo de damas e do xadrez|2
+QUEBRA-CABEÇA|Jogo de encaixar pecinhas|2
+CRUZADINHA|Passatempo de palavras cruzadas|2
+CAÇA-PALAVRAS|Passatempo de achar termos escondidos numa grade|2
+BINGO|Jogo de cartela em que se sorteiam números|2
+ROMANCE|Livro de história longa|2
+POEMA|Texto escrito em versos|2
+VERSO|Cada linha de um poema|2
+RIMA|Som igual no fim dos versos|2
+TROVA|Pequeno poema popular de quatro versos|2
+LUNETA|Tubo com lentes para ver de longe|2
+CANTIL|Garrafa de quem anda no mato|3
+MORINGA|Pote de barro que mantém a água fresca|3
+TAMBORIM|Pequeno tambor da escola de samba|3
+CUÍCA|Instrumento de samba que ronca|3
+AGOGÔ|Sino duplo de metal tocado com baqueta|3
+BERIMBAU|Arco de uma corda só da capoeira|3
+REBECA|Violino rústico das festas populares|3
+MARACATU|Cortejo de tambores de Pernambuco|3
+FREVO|Dança de sombrinha do carnaval de Recife|3
+CATIRA|Dança caipira de palmas e sapateado|3
+LUNDU|Antiga dança de origem africana|3
+MAXIXE|Dança de salão antiga e também um legume|3
+CHORINHO|Música instrumental de flauta e cavaquinho|3
+SARAU|Reunião noturna com música e poesia|3
+ALPENDRE|Cobertura na entrada da casa|3
+ASSOALHO|Piso de tábuas|3
+CLARABOIA|Janela no teto que deixa entrar luz|3
+SOLEIRA|Pedra ou madeira embaixo da porta|3
+CUMEEIRA|Parte mais alta do telhado|3
+BEIRAL|Ponta do telhado que avança sobre a parede|3
+CARAMANCHÃO|Cobertura de trepadeiras no jardim|3
+TERREIRO|Pátio de chão batido da fazenda|3
+PAIOL|Depósito de milho na fazenda|3
+ESTRIBO|Apoio do pé de quem monta a cavalo|3
+ARREIO|Conjunto de peças para montar o cavalo|3
+CANGALHA|Armação que leva carga no lombo do burro|3
+CABRESTO|Corda presa na cabeça do cavalo|3
+BERRANTE|Chifre tocado pelo boiadeiro|3
+BOIADEIRO|Conduz o gado pela estrada|3
+TROPEIRO|Viajava com tropas de mulas|3
+CARRO-DE-BOI|Carroça puxada por bois que canta na estrada|3
+CAÇAROLA|Panela funda com cabo|3
+ESCUMADEIRA|Colher furada para tirar a fritura do óleo|3
+ALMOFARIZ|Pilãozinho de socar temperos|3
+LATÃO|Metal dourado das maçanetas antigas|3
+PENTEADEIRA|Móvel com espelho para se arrumar|3
+ARCA|Grande baú antigo|3
+ESCRIVANINHA|Mesa de escrever com gavetas|3
+MATA-BORRÃO|Papel que seca a tinta da caneta|3
+MONÓCULO|Lente para um olho só|3
+ESPARTILHO|Peça antiga que apertava a cintura|3
+ANÁGUA|Saia de baixo do vestido|3
+CEROULA|Calça de baixo de antigamente|3
+SUSPENSÓRIO|Alças que seguram a calça pelos ombros|3
+PONCHO|Capa de lã com abertura para a cabeça|3
+ALPARGATA|Sapato de lona com sola de corda|3
+BOMBACHA|Calça larga do gaúcho|3
+CHIMARRÃO|Mate quente tomado na cuia|3
+CUIA|Vasilha do chimarrão|3
+TERERÊ|Mate gelado do Centro-Oeste|3
+GARAPA|Caldo de cana|3
+MELADO|Calda grossa de cana|3
+ESTALACTITE|Pingente de pedra no teto da caverna|3
+PLANÍCIE|Terreno extenso e plano|3
+PENHASCO|Rocha alta e íngreme|3
+DESFILADEIRO|Passagem estreita entre montanhas|3
+CORREDEIRA|Trecho de rio com água rápida|3
+NASCENTE|Lugar onde o rio começa|3
+AFLUENTE|Rio que deságua em outro|3
+CÓRREGO|Riacho estreito|3
+BREJO|Terreno alagado|3
+OÁSIS|Lugar com água no meio do deserto|3
+AURORA|Claridade antes do sol nascer|3
+ARREBOL|Vermelhidão do céu ao nascer ou pôr do sol|3
+GRANIZO|Chuva de pedrinhas de gelo|3
+CALMARIA|Mar sem vento e sem ondas|3
+MARESIA|Cheiro e umidade do mar|3
+QUATI|Animal de focinho longo e cauda listrada|3
+PACA|Roedor grande de pelo pintado|3
+CUTIA|Roedor que enterra sementes na mata|3
+SAGUI|Macaquinho de tufos nas orelhas|3
+BUGIO|Macaco que ronca alto na mata|3
+MICO-LEÃO|Macaquinho dourado da Mata Atlântica|3
+PIRARUCU|Peixe gigante da Amazônia|3
+TAMBAQUI|Peixe redondo dos rios da Amazônia|3
+LAMBARI|Peixinho de rio da pescaria|3
+TRAÍRA|Peixe de rio de muitos dentes|3
+DOURADO|Peixe de rio de escamas cor de ouro|3
+BAGRE|Peixe de bigodes que vive no fundo do rio|3
+LOUVA-A-DEUS|Inseto verde que parece rezar|3
+CORRUÍRA|Passarinho marrom que faz ninho no telhado|3
+CARCARÁ|Gavião do sertão|3
+SOCÓ|Ave pernalta que pesca parada na beira d'água|3
+ALVÍSSARAS|Prêmio dado a quem traz boa notícia|3
+PRENDA|Presente ou habilidade caseira|3
+MEIGUICE|Jeito doce e carinhoso|3
+ALENTO|Ânimo, consolo|3
+BONANÇA|Tempo calmo depois da tempestade|3
+ENLEVO|Encantamento, êxtase|3
+GALANTEIO|Elogio de quem corteja|3
+MACRAMÊ|Trabalho de nós feito com fio|3
+FUXICO|Florzinha de retalho franzido|3
+ESTROFE|Grupo de versos de um poema|3
