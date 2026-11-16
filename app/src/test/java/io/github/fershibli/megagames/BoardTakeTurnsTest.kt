@@ -145,6 +145,8 @@ class BoardTakeTurnsTest {
         assertEquals(listOf("e2e4", "e7e5", "g1f3"), settle(ChessState.serializer()).moves)
         rule.onNodeWithText("Undo").performClick()
         rule.waitForIdle()
+        // The autosave is written on a background thread: wait for it rather than reading at once.
+        repeat(200) { if (saved(ChessState.serializer()).moves.size != 2) { Thread.sleep(25); rule.waitForIdle() } }
         assertEquals(listOf("e2e4", "e7e5"), saved(ChessState.serializer()).moves)
         assertNull(outcome)
     }

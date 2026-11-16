@@ -71,8 +71,14 @@ class CrosswordTest {
         val recent = first.map { it.letters }.toSet()
         val next = Crossword.generate(words, 11, 11, Random(6), Difficulty.MEDIUM, recent)
         assertTrue(next.none { it.letters in recent })
-        // Unmarked dictionaries (the other languages, for now) keep every word at every level.
-        val unmarked = dictionary(AppLanguage.ENGLISH)
+        // Every language marks its words, so each level leaves out one of the others.
+        for (lang in AppLanguage.entries.filter { it != AppLanguage.SYSTEM }) {
+            val all = dictionary(lang)
+            assertTrue("$lang easy", Crossword.poolFor(all, Difficulty.EASY).none { it.level == 3 })
+            assertTrue("$lang hard", Crossword.poolFor(all, Difficulty.HARD).none { it.level == 1 })
+        }
+        // A dictionary without levels keeps every word at every level.
+        val unmarked = words.map { it.copy(level = 0) }
         assertEquals(unmarked.size, Crossword.poolFor(unmarked, Difficulty.HARD).size)
     }
 
