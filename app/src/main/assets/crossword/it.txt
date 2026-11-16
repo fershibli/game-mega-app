@@ -319,3 +319,146 @@ ALBUM|Raccolta di foto o di figurine|2
 SVEGLIA|Suona la mattina per alzarsi|1
 FERRO|Metallo; quello da stiro toglie le pieghe|1
 CESTINO|Ci si butta la carta|1
+MAMMA|Così la chiamano i bambini|1
+PAPÀ|Il babbo di casa|1
+ZIO|Il fratello della mamma o del papà|1
+CUGINO|Il figlio dello zio|1
+MARITO|L’uomo sposato|1
+MOGLIE|La donna sposata|1
+SPOSO|Aspetta all’altare con l’anello|1
+FIGLIA|La bambina di mamma e papà|1
+BISNONNO|Il papà del nonno|2
+SUOCERA|La mamma del marito o della moglie|2
+GENERO|Il marito della figlia|2
+NUORA|La moglie del figlio|2
+COGNATO|Il fratello del marito o della moglie|2
+GEMELLO|Nato lo stesso giorno del fratello|1
+FAMIGLIA|Genitori e figli insieme|1
+PARENTE|Fa parte della famiglia|1
+VICINO|Abita nella casa accanto|1
+NEONATO|Bambino appena venuto al mondo|1
+RAGAZZO|Giovane tra bambino e uomo|1
+SIGNORA|Donna a cui si dà del lei|1
+PADRINO|Accompagna il bambino al battesimo|2
+MADRINA|Tiene il bambino al battesimo|2
+CAPELLO|Ne abbiamo tanti in testa|1
+FRONTE|Parte del viso sopra gli occhi|1
+GUANCIA|Parte del viso che arrossisce|1
+MENTO|Parte del viso sotto la bocca|1
+LABBRO|Si muove quando si parla e si dà un bacio|1
+LINGUA|Sta in bocca e sente i sapori|1
+COLLO|Unisce la testa al corpo|1
+SPALLA|Ci si appoggia lo zaino|1
+SCHIENA|Parte dietro del corpo|1
+GOMITO|Piega a metà del braccio|1
+GINOCCHIO|Piega a metà della gamba|1
+DITO|Ce ne sono cinque per mano|1
+UNGHIA|Si taglia con le forbicine|1
+POLSO|Ci si porta l’orologio|1
+CAVIGLIA|Unisce il piede alla gamba|2
+TALLONE|Parte dietro del piede|2
+PANCIA|Si riempie dopo pranzo|1
+CIGLIO|Pelo sul bordo della palpebra|2
+PALPEBRA|Si chiude sull’occhio per dormire|2
+SOPRACCIGLIO|Arco di peli sopra l’occhio|2
+POLMONE|Ci serve per respirare|2
+STOMACO|Ci arriva il cibo mangiato|2
+VOCE|Si usa per parlare e cantare|1
+CAMICIA|Si abbottona sul petto, con il colletto|1
+GONNA|Indumento da donna dalla vita in giù|1
+MAGLIONE|Indumento di lana per l’inverno|1
+GIACCA|Si indossa sopra la camicia|1
+CAPPOTTO|Lungo e caldo, per l’inverno|1
+CALZINO|Si mette nella scarpa|1
+CRAVATTA|Si annoda al collo della camicia|1
+SCIARPA|Avvolge il collo quando fa freddo|1
+GUANTO|Veste la mano|1
+PANTALONI|Hanno due gambe|1
+VESTITO|Abito da indossare|1
+PIGIAMA|Si indossa per andare a letto|1
+CINTURA|Tiene su i pantaloni|1
+BOTTONE|Si infila nell’asola|1
+TASCA|Ci si mettono le mani o le chiavi|1
+STIVALE|Scarpa alta fino al ginocchio|1
+CIABATTA|Pantofola da casa|1
+BERRETTO|Cappello di lana|1
+OCCHIALI|Aiutano a vedere meglio|1
+BORSA|Ci si portano portafoglio e chiavi|1
+ANELLO|Si porta al dito|1
+COLLANA|Si porta al collo come gioiello|1
+ORECCHINO|Gioiello che pende dal lobo|1
+BRACCIALE|Gioiello che si porta al polso|1
+GREMBIULE|Si mette in cucina per non sporcarsi|1
+CANOTTIERA|Maglietta senza maniche, sotto la camicia|2
+VESTAGLIA|Si indossa in casa sopra il pigiama|2
+IMPERMEABILE|Soprabito che non fa passare la pioggia|2
+SCIALLE|Si appoggia sulle spalle per scaldarsi|2
+PANCIOTTO|Gilet sotto la giacca|3
+BRETELLE|Tengono su i pantaloni dalle spalle|2
+COLLETTO|Parte della camicia intorno al collo|2
+MANICA|Parte del vestito che copre il braccio|1
+ORLO|Bordo cucito della gonna|2
+ASOLA|Taglio dove entra il bottone|3
+DITALE|Protegge il dito quando si cuce|2
+AGO|Serve per cucire, ha la cruna|1
+FILO|Si infila nell’ago|1
+FORBICI|Servono per tagliare la carta|1
+GOMITOLO|Palla di lana per lavorare a maglia|1
+UNCINETTO|Ago con la punta ricurva per fare pizzi|2
+STOFFA|Tessuto per fare vestiti|1
+LANA|Viene dalla pecora|1
+SETA|Tessuto prezioso fatto dal baco|2
+COTONE|Fibra bianca delle magliette|1
+VELLUTO|Tessuto morbido e liscio a coste|2
+MERLETTO|Pizzo lavorato a mano|3
+CERNIERA|Si chiude tirando il cursore|2
+INFERMIERA|Aiuta il medico in ospedale|1
+DENTISTA|Cura i denti|1
+FARMACISTA|Vende le medicine|1
+CONTADINO|Lavora la terra|1
+PESCATORE|Va in mare con le reti|1
+MURATORE|Costruisce i muri delle case|1
+FALEGNAME|Lavora il legno|1
+IDRAULICO|Ripara i tubi dell’acqua|1
+ELETTRICISTA|Ripara i fili della corrente|1
+MECCANICO|Ripara le automobili|1
+PARRUCCHIERE|Taglia e piega i capelli|1
+BARBIERE|Fa la barba agli uomini|1
+MACELLAIO|Vende la carne|1
+PASTICCIERE|Prepara torte e pasticcini|2
+GELATAIO|Vende coni e coppette|2
+CAMERIERE|Porta i piatti al ristorante|1
+AUTISTA|Guida l’autobus o il taxi|1
+PILOTA|Guida l’aereo|1
+MARINAIO|Lavora sulla nave|1
+POMPIERE|Spegne gli incendi|1
+VIGILE|Dirige il traffico all’incrocio|1
+GIUDICE|Decide in tribunale|2
+AVVOCATO|Difende in tribunale|2
+NOTAIO|Firma i documenti per la casa|2
+MAESTRO|Insegna ai bambini delle elementari|1
+PROFESSORE|Insegna a scuola o all’università|1
+SCRITTORE|Scrive i libri|1
+POETA|Scrive versi|2
+ATTORE|Recita a teatro o al cinema|1
+CANTANTE|Canta sul palco|1
+MUSICISTA|Suona uno strumento|1
+BALLERINA|Danza sulle punte|1
+FIORAIO|Vende rose e mazzi|2
+GIORNALAIO|Vende i quotidiani all’edicola|2
+CALZOLAIO|Ripara le scarpe|2
+OROLOGIAIO|Ripara gli orologi|2
+VETRAIO|Lavora il vetro|3
+FABBRO|Lavora il ferro sull’incudine|2
+VASAIO|Modella l’argilla al tornio|3
+TAPPEZZIERE|Rifà il rivestimento di divani e poltrone|3
+ARROTINO|Affila coltelli e forbici|3
+CESTAIO|Intreccia il vimini|3
+SAGRESTANO|Si occupa della chiesa e suona le campane|3
+SPAZZACAMINO|Pulisce le canne fumarie|3
+LATTAIO|Portava il latte a casa|3
+CARPENTIERE|Costruisce strutture di legno|3
+GIARDINIERE|Cura il prato e le aiuole|1
+ORTOLANO|Coltiva e vende la verdura|2
+BIDELLO|Lavora a scuola e suona la campanella|2
+PORTIERE|Sorveglia l’ingresso del palazzo|2
