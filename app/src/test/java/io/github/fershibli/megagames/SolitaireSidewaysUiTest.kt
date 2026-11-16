@@ -50,7 +50,8 @@ class SolitaireSidewaysUiTest {
             val stock = Offset(gap + 6 * (cardW + gap) + cardW / 2, gap * 2 + cardW * 1.42f / 2)
             click(Offset(stock.y, height - stock.x))
         }
-        rule.waitForIdle()
+        // The autosave is written on a background thread: wait for it instead of reading at once.
+        repeat(200) { if (load(store)?.waste?.size != 1) { Thread.sleep(25); rule.waitForIdle() } }
         assertEquals(1, load(store)?.waste?.size)
         store.clear()
     }
