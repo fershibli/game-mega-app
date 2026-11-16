@@ -308,3 +308,142 @@ COLLAR|Part of a shirt around the neck|2
 SLEEVE|Part of a shirt covering the arm|2
 CAP|Hat with a visor|1
 VEST|Sleeveless jacket|2
+PIG|Pink farm animal that oinks|1
+GOAT|Farm animal with a beard and horns|1
+DONKEY|Animal that says hee-haw|1
+MOUSE|Small animal that squeaks|1
+FROG|Green animal that croaks and hops|1
+SNAIL|Slow creature that carries its home|1
+FOX|Clever wild animal with a bushy tail|1
+WOLF|Wild animal that howls at the moon|1
+DEER|Graceful animal with antlers|1
+ZEBRA|Horse with black and white stripes|1
+CAMEL|Desert animal with humps|1
+KANGAROO|Hops and carries its baby in a pouch|1
+PANDA|Black and white bear that eats bamboo|1
+KOALA|Tree climber that eats eucalyptus|2
+SQUIRREL|Bushy-tailed animal that hides nuts|1
+HEDGEHOG|Small animal covered in spines|2
+BADGER|Striped digger of the woods|2
+OTTER|Playful swimmer that floats on its back|2
+BEAVER|Animal that builds dams|2
+MOOSE|Very large deer of the north|2
+BISON|Shaggy wild ox of the prairie|3
+LLAMA|Woolly animal of the Andes|2
+WALRUS|Sea animal with long tusks|2
+SEAL|Sea animal that barks and claps|1
+WHALE|Biggest animal in the sea|1
+DOLPHIN|Smart sea animal that jumps waves|1
+SHARK|Fish with sharp teeth and a fin|1
+OCTOPUS|Sea creature with eight arms|1
+CRAB|Walks sideways on the sand|1
+LOBSTER|Red shellfish with big claws|2
+OYSTER|Shellfish that can hold a pearl|2
+JELLYFISH|Floating sea creature that can sting|2
+SALMON|Pink fish that swims upstream|2
+TROUT|Freshwater fish loved by anglers|2
+TUNA|Big ocean fish often canned|1
+SARDINE|Small fish packed tightly in a tin|2
+EAGLE|Large bird of prey|1
+PARROT|Colorful bird that can talk|1
+PIGEON|Bird seen in every town square|1
+SWAN|Graceful white bird on a lake|1
+GOOSE|Bird that honks|1
+TURKEY|Big bird for a holiday feast|1
+ROBIN|Small bird with a red breast|2
+SPARROW|Small brown garden bird|2
+CROW|Black bird that caws|1
+PENGUIN|Bird that swims but cannot fly|1
+FLAMINGO|Pink bird that stands on one leg|2
+PEACOCK|Bird with a fan of colorful feathers|2
+HERON|Tall wading bird with a long neck|3
+STORK|Bird said to bring babies|2
+WOODPECKER|Bird that taps on tree trunks|2
+HAWK|Bird of prey with sharp eyes|2
+PELICAN|Bird with a pouch under its beak|3
+CANARY|Small yellow singing bird|2
+ANT|Tiny insect that lives in a colony|1
+SPIDER|Spins a web|1
+LADYBUG|Red beetle with black spots|2
+BEETLE|Insect with a hard shell|2
+CRICKET|Insect that chirps at night|2
+MOTH|Insect drawn to a lamp|2
+WASP|Striped insect that can sting|2
+DRAGONFLY|Insect with four clear wings near ponds|3
+WORM|Wriggles in the soil|1
+LIZARD|Small reptile that suns itself|2
+PUPPY|Young dog|1
+KITTEN|Young cat|1
+LAMB|Young sheep|1
+CALF|Young cow|1
+FOAL|Young horse|2
+PIGLET|Young pig|2
+DUCKLING|Young duck|2
+TADPOLE|Young frog with a tail|3
+FAWN|Young deer|3
+CUB|Young bear or lion|2
+FEATHER|Covers a bird|1
+NEST|Home a bird builds|1
+WING|A bird flaps it to fly|1
+BEAK|Hard mouth of a bird|1
+TAIL|A dog wags it|1
+PAW|Foot of a cat or dog|1
+HORN|Pointed growth on a goat's head|1
+FUR|Thick soft hair of an animal|1
+HOOF|Hard foot of a horse|2
+MANE|Long hair on a lion's neck|2
+WHISKER|Long hair by a cat's nose|2
+SKY|Blue above us on a clear day|1
+WIND|Moving air|1
+STORM|Wind and heavy rain|1
+THUNDER|Loud rumble after lightning|1
+LIGHTNING|Flash of light in a storm|2
+RAINBOW|Colorful arc after the rain|1
+FOG|Thick mist near the ground|1
+MIST|Light haze of tiny drops|2
+FROST|White ice on the grass in the morning|2
+ICE|Frozen water|1
+HAIL|Little balls of ice from the sky|2
+BREEZE|Gentle wind|2
+DRIZZLE|Very light rain|3
+SUNSHINE|Bright warm light of day|1
+WEATHER|Rain or shine, it changes every day|1
+SEASON|Spring, summer, autumn or winter|1
+LAKE|Large body of fresh water|1
+POND|Small pool of still water|1
+STREAM|Small flowing river|1
+WAVE|Rolls onto the beach|1
+SAND|Tiny grains on the beach|1
+ROCK|Hard piece of stone|1
+STONE|Small hard rock|1
+HILL|Small mountain|1
+VALLEY|Low land between hills|2
+CLIFF|Steep wall of rock|2
+CAVE|Hollow in a rock or hill|1
+DESERT|Dry land with very little rain|1
+JUNGLE|Thick tropical forest|1
+MEADOW|Field of grass and wildflowers|2
+VOLCANO|Mountain that can erupt with lava|2
+GLACIER|Slow river of ice|3
+WATERFALL|Water dropping over a cliff|1
+COAST|Land along the sea|2
+HARBOR|Safe place for ships to dock|2
+BAY|Curve in the coastline|2
+LAGOON|Shallow water behind a reef|3
+CANYON|Deep valley with steep sides|3
+PRAIRIE|Wide flat grassland|3
+MARSH|Wet soggy land with reeds|3
+OASIS|Green spot in the desert|3
+DUNE|Hill of sand|3
+PEBBLE|Small smooth stone|2
+EARTH|Our planet|1
+PLANET|World that circles a star|1
+COMET|Icy body with a glowing tail|3
+ECLIPSE|When the moon hides the sun|3
+DAWN|First light of the morning|2
+DUSK|Fading light of the evening|2
+SUNSET|When the sun goes down|1
+SUNRISE|When the sun comes up|1
+HORIZON|Where the sky meets the land|3
+GALAXY|Huge group of stars|3
+ORCHARD|Field of fruit trees|3
