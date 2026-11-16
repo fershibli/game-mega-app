@@ -462,3 +462,134 @@ GIARDINIERE|Cura il prato e le aiuole|1
 ORTOLANO|Coltiva e vende la verdura|2
 BIDELLO|Lavora a scuola e suona la campanella|2
 PORTIERE|Sorveglia l’ingresso del palazzo|2
+MAIALE|Animale rosa della fattoria che grugnisce|1
+CAPRA|Animale con la barba che bruca in montagna|1
+TORO|Il maschio della mucca|1
+VITELLO|Il piccolo della mucca|1
+AGNELLO|Il piccolo della pecora|1
+PULCINO|Il piccolo della gallina|1
+GALLO|Canta all’alba nel pollaio|1
+OCA|Uccello bianco della fattoria, starnazza|1
+TACCHINO|Grosso uccello che fa la ruota|2
+PAPPAGALLO|Uccello colorato che ripete le parole|1
+PICCIONE|Uccello grigio delle piazze|1
+PASSERO|Piccolo uccello marrone dei tetti|1
+RONDINE|Arriva in primavera e fa il nido sotto i tetti|1
+GABBIANO|Uccello bianco del mare|1
+AQUILA|Uccello rapace delle montagne|1
+GUFO|Uccello notturno con grandi occhi|1
+CIVETTA|Piccolo rapace notturno|2
+MERLO|Uccello nero dal becco giallo|2
+PETTIROSSO|Uccellino dal petto arancione|2
+CORVO|Grande uccello nero che gracchia|2
+CIGNO|Uccello bianco dal collo lungo, nuota nel lago|1
+CICOGNA|Uccello dalle lunghe zampe che porta i bebè|1
+FENICOTTERO|Uccello rosa che sta su una zampa|2
+PAVONE|Uccello con una coda colorata a ventaglio|2
+FAGIANO|Uccello dalla lunga coda dei campi|3
+QUAGLIA|Piccolo uccello dei campi, depone uova piccole|3
+ALLODOLA|Uccello che canta volando alto nei campi|3
+CARDELLINO|Uccellino canterino dalla testa rossa|3
+CANARINO|Uccellino giallo in gabbia|1
+FARFALLA|Insetto con le ali colorate|1
+FORMICA|Piccolo insetto che lavora tutta l’estate|1
+MOSCA|Insetto che ronza in cucina|1
+ZANZARA|Punge di notte d’estate|1
+COCCINELLA|Insetto rosso con i puntini neri|1
+GRILLO|Insetto che canta di notte nel prato|1
+CICALA|Canta forte d’estate sugli alberi|2
+LUCCIOLA|Insetto che brilla di notte|2
+LIBELLULA|Insetto dalle ali trasparenti vicino all’acqua|2
+CALABRONE|Grosso insetto che ronza|2
+LUMACA|Si porta la casa sulle spalle|1
+RAGNO|Tesse la ragnatela|1
+LOMBRICO|Verme che scava nella terra|2
+SCOIATTOLO|Roditore con la coda folta che ama le noci|1
+RICCIO|Piccolo animale coperto di aculei|1
+VOLPE|Animale furbo dalla coda rossa|1
+LUPO|Ulula alla luna|1
+CERVO|Animale del bosco con le corna ramificate|1
+CINGHIALE|Maiale selvatico del bosco|2
+CAMOSCIO|Salta sulle rocce delle Alpi|3
+STAMBECCO|Capra selvatica dalle corna lunghe|3
+MARMOTTA|Dorme tutto l’inverno in montagna|2
+TALPA|Scava gallerie sotto terra|2
+LEPRE|Simile al coniglio, corre veloce|2
+TASSO|Animale del bosco con il muso a strisce|3
+ERMELLINO|Piccolo animale dal pelo bianco d’inverno|3
+CASTORO|Costruisce dighe nei fiumi|2
+ELEFANTE|Ha la proboscide|1
+GIRAFFA|Ha il collo lunghissimo|1
+ZEBRA|Cavallo a strisce bianche e nere|1
+SCIMMIA|Si arrampica sugli alberi e mangia banane|1
+CAMMELLO|Ha due gobbe e attraversa il deserto|1
+CANGURO|Salta e porta il piccolo nel marsupio|1
+PINGUINO|Uccello che non vola e vive al freddo|1
+DELFINO|Mammifero del mare che fa salti|1
+BALENA|Il più grande animale del mare|1
+SQUALO|Pesce grande con tanti denti|2
+POLPO|Ha otto tentacoli|1
+MEDUSA|Animale trasparente del mare|2
+GRANCHIO|Cammina di lato sulla spiaggia|1
+TARTARUGA|Animale lento con il guscio|1
+COCCODRILLO|Rettile con grandi denti, vive nei fiumi|1
+SERPENTE|Striscia per terra|2
+LUCERTOLA|Prende il sole sui muretti|1
+ROSPO|Somiglia alla rana, con la pelle rugosa|2
+TROTA|Pesce dei fiumi di montagna|2
+CARPA|Pesce grosso dello stagno|3
+MERLUZZO|Pesce del mare del Nord, si fa il baccalà|2
+SARDINA|Piccolo pesce che si mangia alla griglia|2
+ORATA|Pesce di mare dalla fronte dorata|3
+STELLA MARINA|Animale del mare a cinque punte|2
+CAVALLUCCIO|Piccolo pesce a forma di cavallo|2
+CRICETO|Piccolo roditore da tenere in gabbia|2
+PONY|Cavallo piccolo|1
+MULO|Figlio dell’asino e della cavalla|2
+BUE|Tirava l’aratro nei campi|2
+PULEDRO|Il piccolo del cavallo|2
+CUCCIOLO|Il piccolo del cane|1
+GATTINO|Il piccolo del gatto|1
+NIDO|Casa degli uccellini|1
+PIUMA|Copre il corpo degli uccelli|1
+BECCO|La bocca degli uccelli|1
+ALA|Serve per volare|1
+CODA|Il cane la muove quando è contento|1
+ZAMPA|Piede degli animali|1
+ARTIGLIO|Unghia affilata del gatto o dell’aquila|2
+CRINIERA|I lunghi peli del collo del leone|2
+PROBOSCIDE|Il naso lungo dell’elefante|2
+GUSCIO|Ricopre l’uovo e la noce|1
+TANA|Casa della volpe|1
+ALVEARE|Casa delle api|2
+FORMICAIO|Casa delle formiche|2
+STALLA|Ci dormono le mucche|1
+POLLAIO|Casa delle galline|1
+CUCCIA|Ci dorme il cane|1
+GABBIA|Ci vive il canarino|1
+ACQUARIO|Vasca di vetro per i pesci rossi|2
+FATTORIA|Casa di campagna con gli animali|1
+PASTORE|Porta al pascolo le pecore|1
+GREGGE|Gruppo di pecore|2
+MANDRIA|Gruppo di mucche al pascolo|2
+STORMO|Gruppo di uccelli in volo|3
+SCIAME|Gruppo di api in volo|3
+BRANCO|Gruppo di lupi|2
+FIENO|Erba secca per le mucche|1
+PAGLIA|Steli secchi del grano|1
+MANGIME|Cibo per gli animali della fattoria|3
+SELLA|Ci si siede per cavalcare|2
+STAFFA|Ci si appoggia il piede a cavallo|3
+BRIGLIA|Redini del cavallo|3
+ZOCCOLO|Piede duro del cavallo|2
+STRIGLIA|Spazzola per il pelo del cavallo|3
+RAGNATELA|La tela del ragno|1
+VELENO|Quello della vipera è pericoloso|2
+MUGGITO|Il verso della mucca|3
+NITRITO|Il verso del cavallo|3
+BELATO|Il verso della pecora|3
+RUGGITO|Il verso del leone|2
+MIAGOLIO|Il verso del gatto|2
+ABBAIARE|Lo fa il cane quando sente un rumore|2
+CINGUETTIO|Il canto degli uccellini|3
+RONZIO|Il rumore delle api|3
