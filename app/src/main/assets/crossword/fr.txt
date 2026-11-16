@@ -599,3 +599,150 @@ CARREFOUR|Croisement de rues|2
 PONT|Passe au-dessus de la rivière|1
 CHÂTEAU|Demeure des rois|1
 CATHÉDRALE|Grande église d'une ville|2
+CRAYON|Sert à dessiner|1
+STYLO|Sert à écrire à l'encre|1
+GOMME|Efface le crayon|1
+CAHIER|On y écrit ses leçons|1
+CARTABLE|Sac de l'écolier|1
+TABLEAU|Le maître y écrit à la craie|1
+CRAIE|Bâton blanc du tableau|1
+RÈGLE|Sert à tracer des traits droits|1
+TROUSSE|Range les crayons|1
+LEÇON|À apprendre pour demain|1
+DICTÉE|Exercice d'orthographe|1
+CLASSE|Salle des élèves|1
+ÉLÈVE|Va à l'école|1
+RÉCRÉATION|Pause dans la cour|1
+DEVOIRS|Travail à faire à la maison|1
+ALPHABET|De A à Z|1
+CALCUL|Additions et soustractions|1
+ENCRE|Remplit le stylo plume|2
+BUVARD|Papier qui sèche l'encre|3
+ENCRIER|Petit pot d'encre sur le pupitre|3
+PUPITRE|Bureau de l'écolier d'autrefois|3
+COMPAS|Trace des cercles|2
+ÉQUERRE|Sert à tracer les angles droits|2
+RAPPORTEUR|Mesure les angles|3
+GÉOGRAPHIE|Étude des pays et des fleuves|2
+HISTOIRE|Récit du passé|1
+GRAMMAIRE|Règles de la langue|2
+ORTHOGRAPHE|Façon correcte d'écrire les mots|2
+CONJUGAISON|On y apprend les temps des verbes|3
+POÉSIE|Se récite par cœur|2
+DICTIONNAIRE|Donne le sens des mots|2
+ATLAS|Livre de cartes|2
+DIPLÔME|Prouve que l'on a réussi|2
+EXAMEN|Épreuve de fin d'année|2
+BULLETIN|Carnet des notes de l'élève|2
+INSTITUTEUR|Ancien nom du maître d'école|2
+JOIE|Grand bonheur|1
+BONHEUR|État de celui qui est heureux|1
+TRISTE|Le contraire de joyeux|1
+PEUR|On l'a devant le danger|1
+COLÈRE|On se fâche|1
+SURPRISE|Ce qui étonne|1
+FIERTÉ|On la ressent après un succès|2
+TENDRESSE|Douceur affectueuse|2
+NOSTALGIE|Regret doux du passé|3
+GAIETÉ|Bonne humeur|2
+CALME|Le contraire de l'agitation|1
+PATIENCE|Savoir attendre|2
+CONFIANCE|On la donne à un ami|2
+ESPOIR|On l'a pour demain|1
+ENNUI|Quand on ne sait que faire|2
+CURIOSITÉ|Envie de savoir|2
+TIMIDITÉ|Gêne devant les autres|2
+GRATITUDE|Reconnaissance d'un bienfait|3
+SÉRÉNITÉ|Calme de l'esprit|3
+ENTHOUSIASME|Grand élan de joie|3
+AMITIÉ|Lien entre deux amis|1
+COURAGE|Force devant la difficulté|1
+HUMOUR|Fait rire|2
+RIRE|Montre que l'on s'amuse|1
+LARME|Coule de l'œil|1
+BISOU|Petit baiser|1
+CÂLIN|Tendre étreinte|1
+MANGER|Prendre son repas|1
+BOIRE|Avaler un liquide|1
+DORMIR|Se reposer la nuit|1
+CHANTER|Faire de la musique avec sa voix|1
+DANSER|Bouger en musique|1
+LIRE|Parcourir un livre|1
+ÉCRIRE|Tracer des lettres|1
+NAGER|Avancer dans l'eau|1
+COURIR|Aller très vite à pied|1
+MARCHER|Avancer à pied|1
+JOUER|S'amuser|1
+PARLER|Dire des mots|1
+ÉCOUTER|Prêter l'oreille|1
+REGARDER|Porter les yeux sur|1
+CUISINER|Préparer les repas|1
+JARDINER|Cultiver son potager|2
+TRICOTER|Faire un pull avec des aiguilles|2
+COUDRE|Assembler avec du fil|2
+PEINDRE|Faire un tableau|2
+DESSINER|Faire un dessin|1
+VOYAGER|Partir loin de chez soi|1
+AIMER|Éprouver de l'amour|1
+RÊVER|Voir des images en dormant|1
+OUVRIR|Le contraire de fermer|1
+FERMER|Le contraire d'ouvrir|1
+RANGER|Mettre de l'ordre|1
+NETTOYER|Rendre propre|1
+REPASSER|Défroisser le linge|2
+BALAYER|Passer le balai|2
+ARROSER|Donner de l'eau aux plantes|2
+CUEILLIR|Ramasser les fleurs ou les fruits|2
+SEMER|Mettre les graines en terre|2
+PLANTER|Mettre en terre|2
+PÉTRIR|Travailler la pâte|3
+MIJOTER|Cuire doucement et longtemps|3
+FLÂNER|Se promener sans but|3
+BAVARDER|Parler de tout et de rien|2
+SIFFLER|Faire un son avec les lèvres|2
+APPLAUDIR|Taper des mains au spectacle|2
+GRAND|Le contraire de petit|1
+PETIT|Le contraire de grand|1
+BEAU|Agréable à regarder|1
+JOLI|Plaisant à voir|1
+CHAUD|Le contraire de froid|1
+DOUX|Agréable au toucher|1
+GENTIL|Aimable avec les autres|1
+SAGE|Se dit d'un enfant obéissant|1
+RAPIDE|Qui va vite|1
+LENT|Le contraire de rapide|1
+FORT|Le contraire de faible|1
+PROPRE|Le contraire de sale|1
+NEUF|Le contraire de vieux|1
+JEUNE|Qui n'a pas beaucoup d'années|1
+DROIT|Le contraire de tordu|2
+LOURD|Pèse beaucoup|1
+LÉGER|Pèse peu|1
+PIQUANT|Goût du piment|2
+SALÉ|Goût de la mer|1
+AMER|Goût du café sans sucre|2
+ACIDE|Goût du citron|2
+TIÈDE|Ni chaud ni froid|2
+PAISIBLE|Calme et tranquille|2
+JOYEUX|Plein de gaieté|1
+POLI|Bien élevé|2
+AIMABLE|Gentil avec tout le monde|2
+GÉNÉREUX|Donne volontiers|2
+SOIGNEUX|Fait attention à ses affaires|3
+MALICIEUX|Qui aime taquiner|3
+ESPIÈGLE|Vif et malicieux|3
+COQUET|Qui soigne son apparence|3
+GOURMAND|Aime les bonnes choses|2
+BAVARD|Parle beaucoup|2
+CURIEUX|Veut tout savoir|2
+TIMIDE|N'ose pas parler|2
+FIDÈLE|Toujours là pour vous|2
+HONNÊTE|Ne ment pas|2
+ÉLÉGANT|Bien habillé et gracieux|2
+SPLENDIDE|Magnifique|2
+DÉLICIEUX|Très bon à manger|2
+MOELLEUX|Doux et tendre, comme un gâteau|3
+CROUSTILLANT|Qui craque sous la dent|3
+PARFUMÉ|Qui sent bon|2
+SAVOUREUX|Plein de goût|3
+VERMEIL|Rouge vif et doux|3
