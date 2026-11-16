@@ -1,154 +1,304 @@
-# Diccionario del crucigrama — español. Formato: RESPUESTA|pista.
-MANZANA|Fruta roja o verde
-PAN|Se hace con harina y se hornea
-SILLA|Mueble para sentarse
-MESA|Mueble donde comemos
-CASA|Lugar donde vive la familia
-JARDÍN|Lugar con flores y plantas
-VENTANA|Abertura en la pared con cristal
-MÉDICO|Cuida a los enfermos
-ENFERMERA|Ayuda al médico con los pacientes
-MAESTRO|Enseña en la escuela
-PIANO|Instrumento de teclas blancas y negras
-GUITARRA|Instrumento de cuerdas muy español
-VERANO|La estación más calurosa
-INVIERNO|La estación más fría
-PRIMAVERA|Estación de las flores
-OTOÑO|Estación en que caen las hojas
-DOMINGO|Día de descanso
-CAFÉ|Bebida caliente de la mañana
-AZÚCAR|Endulza el café
-SAL|Condimento blanco que viene del mar
-QUESO|Se hace con leche; al ratón le encanta
-MANTEQUILLA|Se unta en el pan tostado
-MIEL|Alimento dulce de las abejas
-NARANJA|Fruta cítrica que también es un color
-PLÁTANO|Fruta amarilla y alargada
-UVA|Fruta pequeña para hacer vino
-LIMÓN|Fruta ácida y amarilla
-TOMATE|Fruto rojo de la ensalada
-PATATA|Ingrediente de la tortilla española
-ZANAHORIA|Hortaliza naranja que come el conejo
-CEBOLLA|Hace llorar al cortarla
-ARROZ|Grano de la paella
-SOPA|Comida caliente que se toma con cuchara
-PASTEL|Dulce de cumpleaños
-PERRO|El mejor amigo del hombre
-GATO|Mascota que maúlla
-CABALLO|Animal que se puede montar
-VACA|Animal de granja que da leche
-OVEJA|Animal que da lana
-GALLINA|Ave que pone huevos
-PATO|Ave que hace cua-cua
-CONEJO|Animal de orejas largas que salta
-TIGRE|Felino grande con rayas
-LEÓN|Rey de la selva
-ELEFANTE|Animal grande con trompa
-JIRAFA|Animal de cuello muy largo
-MONO|Animal que trepa a los árboles
-PÁJARO|Animal con plumas que vuela
-PEZ|Animal que nada en el agua
-TORTUGA|Animal lento con caparazón
-OSO|Animal grande y peludo
-BÚHO|Ave de la noche
-ABEJA|Insecto que hace miel
-MARIPOSA|Insecto de alas de colores
-SOL|Estrella que ilumina el día
-LUNA|Brilla en el cielo de noche
-ESTRELLA|Brilla en el cielo nocturno
-NUBE|Blanca y esponjosa en el cielo
-LLUVIA|Agua que cae de las nubes
-NIEVE|Blanca y fría, cae en invierno
-RÍO|Agua que corre hacia el mar
-MAR|Gran extensión de agua salada
-PLAYA|Lugar con arena junto al mar
-MONTAÑA|Tierra muy alta
-ISLA|Tierra rodeada de agua
-BOSQUE|Lugar lleno de árboles
-FLOR|Rosa o margarita, por ejemplo
-ÁRBOL|Tiene tronco, ramas y hojas
-ROSA|Flor símbolo del amor
-ROJO|Color de la fresa
-AZUL|Color del cielo
-VERDE|Color de la hierba
-AMARILLO|Color del sol
-BLANCO|Color de la leche
-NEGRO|Color de la noche
-MADRE|Mujer que tiene hijos
-PADRE|Hombre que tiene hijos
-HERMANA|Hija de tus padres
-HERMANO|Hijo de tus padres
-ABUELA|Madre de tu madre o de tu padre
-NIETO|Hijo de tu hijo
-BEBÉ|Niño muy pequeño
-AMIGO|Persona querida en quien confías
-FAMILIA|Padres, hijos, abuelos...
-CORAZÓN|Órgano que bombea la sangre
-MANO|Tiene cinco dedos
-OJO|Sirve para ver
-NARIZ|Sirve para oler
-OREJA|Sirve para oír
-BOCA|Sirve para comer y hablar
-SONRISA|Gesto de alegría
-LIBRO|Tiene páginas para leer
-CARTA|Se escribe y se envía por correo
-PERIÓDICO|Noticias impresas del día
-TELÉFONO|Aparato para llamar
-RELOJ|Marca la hora
-LLAVE|Abre la cerradura
-PUERTA|Se abre para entrar
-CAMA|Mueble para dormir
-CUCHARA|Cubierto para la sopa
-TENEDOR|Cubierto con dientes
-CUCHILLO|Cubierto para cortar
-TAZA|Donde se toma el café
-BOTELLA|Guarda agua o vino
-TREN|Viaja sobre rieles
-AVIÓN|Vuela con pasajeros
-BARCO|Navega por el mar
-COCHE|Vehículo de cuatro ruedas
-BICICLETA|Dos ruedas y pedales
-MÚSICA|Canciones y melodías
-BAILE|Moverse con la música
-CANCIÓN|Música con letra
-IGLESIA|Lugar de oración cristiano
-ESCUELA|Donde aprenden los niños
-MERCADO|Donde se compra fruta y verdura
-HOSPITAL|Donde atienden a los enfermos
-CUMPLEAÑOS|Se celebra cada año con pastel
-NAVIDAD|Fiesta del 25 de diciembre
-REGALO|Se da con cariño
-VELA|De cera, da luz
-HUEVO|Lo pone la gallina
-LECHE|Bebida blanca de la vaca
-AGUA|Bebida transparente y esencial
-ZUMO|Bebida hecha de fruta
-VINO|Bebida hecha de uvas
-SOMBRERO|Se lleva en la cabeza
-ZAPATO|Se lleva en el pie
-VESTIDO|Prenda femenina de una pieza
-ABRIGO|Prenda para el frío
-PARAGUAS|Protege de la lluvia
-GAFAS|Ayudan a ver mejor
-FELIZ|Lleno de alegría
-AMOR|Sentimiento de gran cariño
-PAZ|Lo contrario de la guerra
-SUEÑO|Lo que vemos al dormir
-NOCHE|Cuando está oscuro
-MAÑANA|Primera parte del día
-FÚTBOL|Deporte del balón y la portería
-TORTILLA|Plato español de huevo y patata
-SIESTA|Descanso después de comer
-COCINA|Parte de la casa donde se cocina
-OLLA|Recipiente para cocinar
-NEVERA|Mantiene fríos los alimentos
-RECETA|Instrucciones para preparar un plato
-PAELLA|Plato valenciano de arroz
-CHURROS|Se mojan en chocolate caliente
-DOMINÓ|Juego de fichas con puntos
-BARAJA|Conjunto de cartas para jugar
-NIETA|Hija de tu hijo
-SOBRINO|Hijo de tu hermano
-ALMOHADA|Donde apoyas la cabeza al dormir
-MANTA|Abriga en la cama
-DELANTAL|Se usa en la cocina para no mancharse
+# Diccionario del crucigrama — español. Formato: RESPUESTA|pista|nivel (1 fácil, 2 medio, 3 difícil).
+MANZANA|Fruta roja o verde|1
+PAN|Se hace con harina y se hornea|1
+SILLA|Mueble para sentarse|1
+MESA|Mueble donde comemos|1
+CASA|Lugar donde vive la familia|1
+JARDÍN|Lugar con flores y plantas|1
+VENTANA|Abertura en la pared con cristal|1
+MÉDICO|Cuida a los enfermos|1
+ENFERMERA|Ayuda al médico con los pacientes|1
+MAESTRO|Enseña en la escuela|1
+PIANO|Instrumento de teclas blancas y negras|1
+GUITARRA|Instrumento de cuerdas muy español|1
+VERANO|La estación más calurosa|1
+INVIERNO|La estación más fría|1
+PRIMAVERA|Estación de las flores|1
+OTOÑO|Estación en que caen las hojas|1
+DOMINGO|Día de descanso|1
+CAFÉ|Bebida caliente de la mañana|1
+AZÚCAR|Endulza el café|1
+SAL|Condimento blanco que viene del mar|1
+QUESO|Se hace con leche; al ratón le encanta|1
+MANTEQUILLA|Se unta en el pan tostado|2
+MIEL|Alimento dulce de las abejas|1
+NARANJA|Fruta cítrica que también es un color|1
+PLÁTANO|Fruta amarilla y alargada|1
+UVA|Fruta pequeña para hacer vino|1
+LIMÓN|Fruta ácida y amarilla|1
+TOMATE|Fruto rojo de la ensalada|1
+PATATA|Ingrediente de la tortilla española|1
+ZANAHORIA|Hortaliza naranja que come el conejo|1
+CEBOLLA|Hace llorar al cortarla|1
+ARROZ|Grano de la paella|1
+SOPA|Comida caliente que se toma con cuchara|1
+PASTEL|Dulce de cumpleaños|1
+PERRO|El mejor amigo del hombre|1
+GATO|Mascota que maúlla|1
+CABALLO|Animal que se puede montar|1
+VACA|Animal de granja que da leche|1
+OVEJA|Animal que da lana|1
+GALLINA|Ave que pone huevos|1
+PATO|Ave que hace cua-cua|1
+CONEJO|Animal de orejas largas que salta|1
+TIGRE|Felino grande con rayas|1
+LEÓN|Rey de la selva|1
+ELEFANTE|Animal grande con trompa|1
+JIRAFA|Animal de cuello muy largo|1
+MONO|Animal que trepa a los árboles|1
+PÁJARO|Animal con plumas que vuela|1
+PEZ|Animal que nada en el agua|1
+TORTUGA|Animal lento con caparazón|2
+OSO|Animal grande y peludo|1
+BÚHO|Ave de la noche|2
+ABEJA|Insecto que hace miel|1
+MARIPOSA|Insecto de alas de colores|1
+SOL|Estrella que ilumina el día|1
+LUNA|Brilla en el cielo de noche|1
+ESTRELLA|Brilla en el cielo nocturno|1
+NUBE|Blanca y esponjosa en el cielo|1
+LLUVIA|Agua que cae de las nubes|1
+NIEVE|Blanca y fría, cae en invierno|1
+RÍO|Agua que corre hacia el mar|1
+MAR|Gran extensión de agua salada|1
+PLAYA|Lugar con arena junto al mar|1
+MONTAÑA|Tierra muy alta|1
+ISLA|Tierra rodeada de agua|1
+BOSQUE|Lugar lleno de árboles|1
+FLOR|Rosa o margarita, por ejemplo|1
+ÁRBOL|Tiene tronco, ramas y hojas|1
+ROSA|Flor símbolo del amor|1
+ROJO|Color de la fresa|1
+AZUL|Color del cielo|1
+VERDE|Color de la hierba|1
+AMARILLO|Color del sol|1
+BLANCO|Color de la leche|1
+NEGRO|Color de la noche|1
+MADRE|Mujer que tiene hijos|1
+PADRE|Hombre que tiene hijos|1
+HERMANA|Hija de tus padres|1
+HERMANO|Hijo de tus padres|1
+ABUELA|Madre de tu madre o de tu padre|1
+NIETO|Hijo de tu hijo|1
+BEBÉ|Niño muy pequeño|1
+AMIGO|Persona querida en quien confías|1
+FAMILIA|Padres, hijos, abuelos...|1
+CORAZÓN|Órgano que bombea la sangre|1
+MANO|Tiene cinco dedos|1
+OJO|Sirve para ver|1
+NARIZ|Sirve para oler|1
+OREJA|Sirve para oír|1
+BOCA|Sirve para comer y hablar|1
+SONRISA|Gesto de alegría|1
+LIBRO|Tiene páginas para leer|1
+CARTA|Se escribe y se envía por correo|1
+PERIÓDICO|Noticias impresas del día|2
+TELÉFONO|Aparato para llamar|1
+RELOJ|Marca la hora|1
+LLAVE|Abre la cerradura|1
+PUERTA|Se abre para entrar|1
+CAMA|Mueble para dormir|1
+CUCHARA|Cubierto para la sopa|1
+TENEDOR|Cubierto con dientes|1
+CUCHILLO|Cubierto para cortar|1
+TAZA|Donde se toma el café|1
+BOTELLA|Guarda agua o vino|1
+TREN|Viaja sobre rieles|1
+AVIÓN|Vuela con pasajeros|1
+BARCO|Navega por el mar|1
+COCHE|Vehículo de cuatro ruedas|1
+BICICLETA|Dos ruedas y pedales|1
+MÚSICA|Canciones y melodías|1
+BAILE|Moverse con la música|1
+CANCIÓN|Música con letra|1
+IGLESIA|Lugar de oración cristiano|1
+ESCUELA|Donde aprenden los niños|1
+MERCADO|Donde se compra fruta y verdura|1
+HOSPITAL|Donde atienden a los enfermos|1
+CUMPLEAÑOS|Se celebra cada año con pastel|1
+NAVIDAD|Fiesta del 25 de diciembre|1
+REGALO|Se da con cariño|1
+VELA|De cera, da luz|1
+HUEVO|Lo pone la gallina|1
+LECHE|Bebida blanca de la vaca|1
+AGUA|Bebida transparente y esencial|1
+ZUMO|Bebida hecha de fruta|1
+VINO|Bebida hecha de uvas|1
+SOMBRERO|Se lleva en la cabeza|1
+ZAPATO|Se lleva en el pie|1
+VESTIDO|Prenda femenina de una pieza|1
+ABRIGO|Prenda para el frío|1
+PARAGUAS|Protege de la lluvia|1
+GAFAS|Ayudan a ver mejor|1
+FELIZ|Lleno de alegría|1
+AMOR|Sentimiento de gran cariño|1
+PAZ|Lo contrario de la guerra|1
+SUEÑO|Lo que vemos al dormir|1
+NOCHE|Cuando está oscuro|1
+MAÑANA|Primera parte del día|1
+FÚTBOL|Deporte del balón y la portería|1
+TORTILLA|Plato español de huevo y patata|1
+SIESTA|Descanso después de comer|1
+COCINA|Parte de la casa donde se preparan las comidas|1
+OLLA|Recipiente para cocinar|1
+NEVERA|Mantiene fríos los alimentos|1
+RECETA|Instrucciones para preparar un plato|2
+PAELLA|Plato valenciano de arroz|2
+CHURROS|Se mojan en chocolate caliente|2
+DOMINÓ|Juego de fichas con puntos|2
+BARAJA|Conjunto de cartas para jugar|2
+NIETA|Hija de tu hijo|1
+SOBRINO|Hijo de tu hermano|2
+ALMOHADA|Donde apoyas la cabeza al dormir|2
+MANTA|Abriga en la cama|1
+DELANTAL|Se usa en la cocina para no mancharse|2
+SOFÁ|Asiento cómodo y largo del salón|1
+SILLÓN|Asiento con brazos para una persona|1
+ARMARIO|Mueble donde se guarda la ropa|1
+ESPEJO|Refleja nuestra imagen|1
+LÁMPARA|Da luz en la mesilla|1
+ALFOMBRA|Cubre el suelo del salón|1
+CORTINA|Tela que tapa la ventana|1
+TECHO|Parte de arriba de una habitación|1
+SUELO|Lo pisamos al andar|1
+PARED|Muro que separa las habitaciones|1
+ESCALERA|Tiene peldaños para subir|1
+BALCÓN|Saliente de la fachada con barandilla|1
+TEJADO|Cubre la casa por arriba|1
+BAÑO|Allí están la ducha y el lavabo|1
+DUCHA|Agua que cae para lavarse de pie|1
+JABÓN|Hace espuma al lavarse las manos|1
+TOALLA|Sirve para secarse|1
+PEINE|Sirve para arreglar el pelo|1
+CEPILLO|Tiene cerdas; los hay de dientes|1
+HORNO|Allí se asa el pollo|1
+PLATO|Recipiente donde se sirve la comida|1
+VASO|Recipiente para beber agua|1
+SARTÉN|Sirve para freír|1
+CAZO|Olla pequeña con mango|1
+SERVILLETA|Para limpiarse la boca en la mesa|1
+MANTEL|Tela que cubre la mesa|1
+SALÓN|Habitación para reunirse y ver la tele|1
+DORMITORIO|Habitación donde se duerme|1
+SÁBANA|Tela que cubre el colchón|1
+COLCHÓN|Parte blanda de la cama|1
+CAJÓN|Se abre tirando del mueble|1
+ESTANTE|Tabla para poner libros|1
+TELEVISOR|Aparato para ver programas|1
+RADIO|Aparato para escuchar noticias y música|1
+TIMBRE|Suena cuando llega una visita|1
+BUZÓN|Allí deja las cartas el cartero|1
+LAVADORA|Máquina que lava la ropa|1
+PLANCHA|Quita las arrugas de la ropa|1
+ESCOBA|Sirve para barrer|1
+CUBO|Recipiente para el agua de fregar|1
+POLLO|Ave que se asa los domingos|1
+CARNE|Alimento del carnicero|1
+PESCADO|Alimento que se compra en la pescadería|1
+JAMÓN|Pata de cerdo curada|1
+ACEITE|Líquido de la aceituna para cocinar|1
+VINAGRE|Aliño ácido de la ensalada|1
+LENTEJAS|Legumbre pequeña y redonda del guiso|1
+GARBANZO|Legumbre del cocido|1
+ENSALADA|Plato frío de lechuga y tomate|1
+LECHUGA|Hoja verde de la ensalada|1
+PEPINO|Hortaliza verde y alargada|1
+PIMIENTO|Hortaliza roja o verde|1
+AJO|Diente de olor fuerte en la cocina|1
+FRESA|Fruta roja pequeña con semillas|1
+PERA|Fruta verde con forma de campana|1
+MELÓN|Fruta grande de verano, dulce|1
+SANDÍA|Fruta verde por fuera y roja por dentro|1
+CEREZA|Fruta roja pequeña con hueso|1
+MELOCOTÓN|Fruta de piel aterciopelada|1
+PIÑA|Fruta tropical con corona de hojas|1
+GALLETA|Dulce crujiente para mojar|1
+CHOCOLATE|Dulce hecho con cacao|1
+HELADO|Postre frío de verano|1
+FLAN|Postre de huevo con caramelo|1
+YOGUR|Leche fermentada en tarrina|1
+HARINA|Polvo blanco para hacer pan|1
+DESAYUNO|Primera comida del día|1
+COMIDA|Lo que se toma a mediodía|1
+CENA|Última comida del día|1
+CABEZA|Parte del cuerpo donde está la cara|1
+PELO|Crece en la cabeza|1
+CARA|Allí están los ojos y la boca|1
+DIENTE|Sirve para morder|1
+LENGUA|Músculo de la boca que saborea|1
+CUELLO|Une la cabeza con el cuerpo|1
+HOMBRO|Une el brazo al cuerpo|1
+BRAZO|Va del hombro a la mano|1
+CODO|Articulación del brazo|1
+DEDO|La mano tiene cinco|1
+UÑA|Crece en la punta del dedo|1
+PIERNA|Sirve para andar|1
+RODILLA|Articulación de la pierna|1
+PIE|Parte del cuerpo donde va el zapato|1
+ESPALDA|Parte trasera del cuerpo|1
+BARRIGA|Vientre, tripa|1
+LABIO|Borde de la boca|1
+CEJA|Pelo encima del ojo|1
+FRENTE|Parte de la cara sobre las cejas|1
+ABUELO|Padre de tu padre o de tu madre|1
+TÍO|Hermano de tu padre o tu madre|1
+TÍA|Hermana de tu padre o tu madre|1
+PRIMO|Hijo de tu tío|1
+HIJO|Varón respecto de sus padres|1
+HIJA|Mujer respecto de sus padres|1
+ESPOSA|Mujer casada respecto de su marido|1
+MARIDO|Hombre casado respecto de su mujer|1
+NOVIA|Lleva vestido blanco en la boda|1
+BODA|Ceremonia en la que se casan dos personas|1
+VECINO|Vive en la casa de al lado|1
+NIÑO|Persona de pocos años|1
+CERDO|Animal rosado de la granja|1
+BURRO|Animal de orejas largas que rebuzna|1
+CABRA|Animal que da leche para queso|1
+GALLO|Canta al amanecer|1
+RATÓN|Animal pequeño que come queso|1
+PALOMA|Ave blanca de la paz|1
+LOBO|Aúlla a la luna|1
+ZORRO|Animal astuto de cola larga|1
+DELFÍN|Mamífero marino muy listo|1
+BALLENA|El animal más grande del mar|1
+TIBURÓN|Pez grande de dientes afilados|1
+RANA|Salta y croa en la charca|1
+SERPIENTE|Reptil sin patas|1
+HORMIGA|Insecto pequeño y trabajador|1
+MOSCA|Insecto que zumba en verano|1
+CARACOL|Lleva su casa a cuestas|1
+LORO|Ave de colores que habla|1
+CIELO|Allí están las nubes|1
+VIENTO|Aire que sopla|1
+TORMENTA|Lluvia con truenos y rayos|1
+CALOR|Lo que sentimos en verano|1
+FRÍO|Lo que sentimos en invierno|1
+ARCOÍRIS|Arco de colores tras la lluvia|1
+PIEDRA|Trozo de roca|1
+ARENA|Hay mucha en la playa|1
+HOJA|Parte verde del árbol|1
+HIERBA|Planta verde del prado|1
+CAMPO|Tierra fuera de la ciudad|1
+LAGO|Agua rodeada de tierra|1
+OLA|Se forma en el mar con el viento|1
+CAMISA|Prenda con botones y cuello|1
+FALDA|Prenda de mujer que cuelga de la cintura|1
+PANTALÓN|Prenda con dos perneras|1
+CHAQUETA|Prenda de abrigo con mangas|1
+JERSEY|Prenda de punto para el frío|1
+CALCETÍN|Se pone en el pie antes del zapato|1
+BUFANDA|Abriga el cuello|1
+GUANTE|Abriga la mano|1
+BOTÓN|Abrocha la camisa|1
+BOLSO|Lo lleva la señora colgado del hombro|1
+PIJAMA|Ropa para dormir|1
+ZAPATILLA|Calzado cómodo de casa|1
+CINTURÓN|Sujeta el pantalón|1
+GORRA|Sombrero con visera|1
+ANILLO|Joya que se pone en el dedo|1
+COLLAR|Joya para el cuello|1
+LUNES|Primer día de la semana|1
+SÁBADO|Día antes del domingo|1
+ENERO|Primer mes del año|1
+AGOSTO|Mes de vacaciones de verano|1
