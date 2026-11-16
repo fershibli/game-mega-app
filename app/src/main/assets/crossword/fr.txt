@@ -280,7 +280,7 @@ LAVANDE|Fleur violette de Provence|2
 MUGUET|Fleur blanche du premier mai|2
 TOURNESOL|Grande fleur jaune qui suit le soleil|1
 COQUELICOT|Fleur rouge des champs|2
-ORCHIDÉE|Fleur élégante et exotique|2
+ORCHIDÉE|Fleur élégante et exotique|3
 HERBE|Pousse verte de la pelouse|1
 FEUILLE|Pousse sur la branche|1
 RACINE|Partie de la plante sous la terre|1
@@ -324,12 +324,12 @@ PINGOUIN|Oiseau noir et blanc du froid|1
 MOUETTE|Oiseau blanc du bord de mer|2
 PAON|Oiseau à la queue en éventail|2
 ROUGE-GORGE|Petit oiseau à la poitrine orange|2
-CIGOGNE|Oiseau qui apporte les bébés, dit-on|2
+CIGOGNE|Oiseau qui apporte les bébés, dit-on|3
 DAUPHIN|Mammifère marin très joueur|1
 BALEINE|Plus grand animal de la mer|1
 REQUIN|Poisson aux dents pointues|1
 CRABE|Marche de côté sur la plage|1
-HOMARD|Crustacé rouge une fois cuit|2
+HOMARD|Crustacé rouge une fois cuit|3
 CREVETTE|Petit crustacé rose|1
 HUÎTRE|Coquillage qui cache parfois une perle|2
 MOULE|Coquillage noir servi avec des frites|1
@@ -347,7 +347,7 @@ PANDA|Ours noir et blanc qui mange du bambou|1
 FOURMI|Petit insecte travailleur|1
 MOUCHE|Insecte qui bourdonne en été|1
 COCCINELLE|Insecte rouge à points noirs|1
-LIBELLULE|Insecte aux ailes fines près de l'eau|2
+LIBELLULE|Insecte aux ailes fines près de l'eau|3
 GRILLON|Insecte qui chante la nuit|2
 CIGALE|Insecte qui chante en Provence|2
 ARAIGNÉE|Tisse sa toile|1
@@ -358,7 +358,7 @@ TRUITE|Poisson de rivière|2
 SAUMON|Poisson rose qui remonte les rivières|1
 THON|Gros poisson en boîte|1
 SARDINE|Petit poisson en boîte|1
-MORUE|Poisson salé de la brandade|2
+MORUE|Poisson salé de la brandade|3
 BOULANGER|Fait le pain|1
 BOUCHER|Vend la viande|1
 FACTEUR|Apporte le courrier|1
@@ -483,7 +483,7 @@ HAUTBOIS|Instrument à vent à anche double|3
 BASSON|Instrument à vent au son grave|3
 ORGUE|Grand instrument de l'église|2
 CLAVECIN|Ancêtre du piano|3
-TROMBONE|Instrument à coulisse|2
+TROMBONE|Instrument à coulisse|3
 CYMBALES|Disques de métal que l'on frappe|2
 TRIANGLE|Petit instrument de métal|2
 MÉLODIE|Suite de notes agréable|2
@@ -499,7 +499,7 @@ VALSE|Danse à trois temps|2
 TANGO|Danse venue d'Argentine|2
 JAVA|Danse populaire des guinguettes|3
 SOLFÈGE|Apprentissage de la lecture des notes|3
-PARTITION|Musique écrite|2
+PARTITION|Musique écrite|3
 ARCHET|Fait chanter le violon|3
 DISQUE|Rond et noir, on l'écoute|2
 RADIO|On l'écoute pour les nouvelles|1
@@ -620,8 +620,8 @@ ENCRE|Remplit le stylo plume|2
 BUVARD|Papier qui sèche l'encre|3
 ENCRIER|Petit pot d'encre sur le pupitre|3
 PUPITRE|Bureau de l'écolier d'autrefois|3
-COMPAS|Trace des cercles|2
-ÉQUERRE|Sert à tracer les angles droits|2
+COMPAS|Trace des cercles|3
+ÉQUERRE|Sert à tracer les angles droits|3
 RAPPORTEUR|Mesure les angles|3
 GÉOGRAPHIE|Étude des pays et des fleuves|2
 HISTOIRE|Récit du passé|1
@@ -630,7 +630,7 @@ ORTHOGRAPHE|Façon correcte d'écrire les mots|2
 CONJUGAISON|On y apprend les temps des verbes|3
 POÉSIE|Se récite par cœur|2
 DICTIONNAIRE|Donne le sens des mots|2
-ATLAS|Livre de cartes|2
+ATLAS|Livre de cartes|3
 DIPLÔME|Prouve que l'on a réussi|2
 EXAMEN|Épreuve de fin d'année|2
 BULLETIN|Carnet des notes de l'élève|2
@@ -784,11 +784,11 @@ BANC|Siège pour plusieurs personnes|2
 HAMAC|Lit suspendu entre deux arbres|2
 PARASOL|Protège du soleil sur la plage|2
 CITROUILLE|Grosse courge orange|2
-ARTICHAUT|Légume dont on mange le cœur|2
+ARTICHAUT|Légume dont on mange le cœur|3
 ASPERGE|Légume en tige du printemps|2
 BETTERAVE|Légume rouge|2
 CÉLERI|Légume en branches ou en boule|2
-ENDIVE|Légume blanc un peu amer|2
+ENDIVE|Légume blanc un peu amer|3
 FENOUIL|Légume au goût d'anis|3
 POTIRON|Grosse courge pour la soupe|2
 CHAMPIGNON|Pousse dans les bois en automne|2
@@ -833,7 +833,7 @@ CANNELLE|Épice en bâton|2
 MUSCADE|Noix râpée en cuisine|3
 SAFRAN|Épice dorée et précieuse|3
 THYM|Herbe de Provence|2
-LAURIER|Feuille de la sauce|2
+LAURIER|Feuille de la sauce|3
 ROMARIN|Herbe aromatique en aiguilles|3
 BASILIC|Herbe du pistou|2
 CIBOULETTE|Herbe fine en brins|2
@@ -847,7 +847,7 @@ PÂTÉ|Charcuterie servie en terrine|2
 CAMEMBERT|Fromage rond de Normandie|2
 ROQUEFORT|Fromage bleu de brebis|3
 GRUYÈRE|Fromage à trous|2
-BREBIS|Femelle du mouton|2
+BREBIS|Femelle du mouton|3
 AGNEAU|Petit du mouton|2
 VEAU|Petit de la vache|2
 POULAIN|Petit du cheval|2
@@ -863,21 +863,21 @@ CANETON|Petit du canard|3
 MARCASSIN|Petit du sanglier|3
 OURSON|Petit de l'ours|2
 LIONCEAU|Petit du lion|3
-ÉTABLE|Abri des vaches|2
+ÉTABLE|Abri des vaches|3
 ÉCURIE|Abri des chevaux|2
 POULAILLER|Abri des poules|2
 NICHE|Abri du chien|2
 RUCHE|Maison des abeilles|2
 TERRIER|Abri du lapin sauvage|3
 BERGERIE|Abri des moutons|3
-GRANGE|Bâtiment pour le foin|2
+GRANGE|Bâtiment pour le foin|3
 FOIN|Herbe séchée|2
 PAILLE|Tige sèche du blé|2
 MOULIN|Tourne avec le vent ou l'eau|2
 PUITS|On y tire l'eau|2
 VIGNE|Plante du raisin|2
 VENDANGE|Récolte du raisin|2
-MOISSON|Récolte du blé|2
+MOISSON|Récolte du blé|3
 CHARRUE|Sert à labourer|3
 SILLON|Trace de la charrue|3
 ÉPI|Tête du blé|2
@@ -901,3 +901,158 @@ GÉRANIUM|Fleur rouge des balcons|2
 CAPUCINE|Fleur orange que l'on peut manger|3
 BLEUET|Fleur bleue des champs|3
 PENSÉE|Petite fleur au visage velouté|3
+LUTRIN|Pupitre où l'on pose le livre de chants|3
+BAHUT|Grand coffre ou buffet rustique|3
+GUÉRIDON|Petite table ronde à un pied|3
+SECRÉTAIRE|Meuble à écrire avec abattant|3
+BERGÈRE|Fauteuil large et rembourré|3
+CRÉDENCE|Desserte de la salle à manger|3
+ÉDREDON|Couverture garnie de plumes|3
+TRAVERSIN|Long coussin en travers du lit|3
+BOUGEOIR|Support de la chandelle|3
+CHANDELIER|Support à plusieurs bougies|3
+LUSTRE|Lampe suspendue à branches|2
+ABAT-JOUR|Coiffe la lampe|2
+GUIRLANDE|Décore le sapin|2
+LANTERNE|Lampe protégée pour le dehors|2
+CARAFE|Bouteille pour l'eau à table|2
+SOUPIÈRE|Grand plat pour servir le potage|3
+SAUCIÈRE|Petit récipient pour la sauce|3
+SALIÈRE|Petit pot de sel|2
+HUILIER|Porte l'huile et le vinaigre|3
+RAMEQUIN|Petit plat pour le four|3
+TERRINE|Plat en terre pour le pâté|3
+ÉCUMOIRE|Grande cuillère trouée|3
+MOULINETTE|Petit moulin à légumes|3
+BOCAL|Pot en verre pour les conserves|2
+CONSERVE|Aliment en boîte|2
+GARDE-MANGER|Petite armoire aérée pour les aliments|3
+QUENOUILLE|Bâton où l'on enroulait la laine à filer|3
+BOBINE|Le fil s'y enroule|2
+PELOTE|Boule de laine|2
+CANEVAS|Toile pour la broderie|3
+BRODERIE|Dessin cousu au fil|2
+DENTELLE|Tissu ajouré et délicat|2
+OURLET|Bord replié et cousu|3
+BOUTONNIÈRE|Fente pour le bouton|3
+FERMETURE|Éclair ou à boutons|2
+VELOURS|Tissu doux et épais|2
+SOIE|Tissu fin fait par un ver|2
+COTON|Fibre blanche d'une plante|2
+LAINE|Vient du mouton|2
+SATIN|Tissu brillant et lisse|3
+FLANELLE|Tissu de laine doux|3
+TWEED|Tissu de laine chiné|3
+MOHAIR|Laine de chèvre angora|3
+CACHEMIRE|Laine très douce|3
+MOUFLE|Gant sans doigts séparés|2
+GUÊTRE|Couvre le bas de la jambe|3
+REDINGOTE|Manteau long et ajusté|3
+CAPELINE|Chapeau à larges bords|3
+CHAPELIER|Fabrique les chapeaux|3
+MODISTE|Crée des chapeaux de dame|3
+TAILLEUR|Coud les costumes sur mesure|2
+LUTHIER|Fabrique les violons|3
+ÉBÉNISTE|Fabrique de beaux meubles|3
+TONNELIER|Fabrique les tonneaux|3
+VANNIER|Tresse les paniers|3
+POTIER|Façonne l'argile|3
+VERRIER|Souffle le verre|3
+BIJOUTIER|Vend des bagues et colliers|2
+JOAILLIER|Travaille les pierres précieuses|3
+ORFÈVRE|Travaille l'or et l'argent|3
+TISSERAND|Fabrique la toile au métier|3
+FACTRICE|Elle apporte les lettres|2
+MARÉCHAL|Ferre les chevaux|3
+RÉMOULEUR|Aiguise les couteaux|3
+RAMONEUR|Nettoie les cheminées|3
+CHARPENTIER|Construit la charpente|3
+COUVREUR|Pose les tuiles|3
+TUILE|Couvre le toit|2
+ARDOISE|Pierre plate du toit ou de l'écolier|2
+CHARPENTE|Squelette en bois du toit|3
+LUCARNE|Petite fenêtre du toit|3
+GOUTTIÈRE|Recueille l'eau du toit|3
+PERRON|Marches devant la porte|3
+VÉRANDA|Pièce vitrée sur le jardin|2
+TONNELLE|Abri de verdure au jardin|3
+PERGOLA|Treillage pour les plantes grimpantes|3
+GLORIETTE|Petit pavillon de jardin|3
+KIOSQUE|Petit pavillon du square|3
+BELVÉDÈRE|Point de vue en hauteur|3
+PRESBYTÈRE|Maison du curé|3
+CLOCHER|Tour de l'église|2
+CLOCHE|Sonne au clocher|2
+VITRAIL|Fenêtre de verre coloré|3
+ABBAYE|Monastère dirigé par un abbé|3
+CHAPELLE|Petite église|2
+CALVAIRE|Croix au bord du chemin|3
+LAVOIR|Lieu où l'on lavait le linge|3
+GUINGUETTE|Café dansant au bord de l'eau|3
+AUBERGE|Petit hôtel de campagne|2
+ESTAMINET|Petit café du Nord|3
+BISTROT|Petit café du coin|2
+TERRASSE|Tables dehors au café|2
+CANAL|Rivière creusée par l'homme|2
+ÉCLUSE|Fait monter les bateaux sur le canal|3
+ESTUAIRE|Embouchure large du fleuve|3
+FLEUVE|Grand cours d'eau qui va à la mer|2
+RUISSEAU|Petit cours d'eau|2
+ÉTANG|Petite étendue d'eau calme|2
+MARAIS|Terrain gorgé d'eau|3
+FALAISE|Côte rocheuse et abrupte|2
+DUNE|Colline de sable|2
+CRIQUE|Petite baie abritée|3
+LAGUNE|Étendue d'eau salée près de la mer|3
+PÉNINSULE|Terre presque entourée par la mer|3
+GLACIER|Fleuve de glace en montagne|2
+SOMMET|Haut de la montagne|2
+PIC|Sommet pointu|2
+CRÊTE|Ligne des sommets|3
+ALPAGE|Pâturage de montagne en été|3
+GORGE|Vallée étroite et profonde|3
+CAUSSE|Plateau calcaire du Massif central|3
+BOCAGE|Champs entourés de haies|3
+GARRIGUE|Lande sèche du Midi|3
+LANDE|Terre de bruyère|3
+BRUYÈRE|Petite fleur mauve des landes|3
+FOUGÈRE|Plante des sous-bois|2
+LICHEN|Pousse sur les rochers et les troncs|3
+LIERRE|Plante qui grimpe aux murs|2
+GUI|Boule verte des arbres, porte-bonheur|3
+HOUX|Feuilles piquantes et baies rouges|3
+AUBÉPINE|Arbuste à fleurs blanches des haies|3
+GENÊT|Arbuste à fleurs jaunes|3
+NOISETIER|Arbuste qui donne des noisettes|3
+ÉRABLE|Arbre au sirop sucré|2
+PLATANE|Arbre des places du Midi|3
+MARRONNIER|Arbre aux fruits bruns brillants|3
+CYPRÈS|Arbre élancé de Provence|3
+OLIVIER|Arbre de l'huile|2
+ACACIA|Arbre aux grappes blanches parfumées|3
+MÉLÈZE|Conifère qui perd ses aiguilles|3
+ORME|Grand arbre des avenues d'autrefois|3
+HÊTRE|Arbre à l'écorce lisse et grise|3
+FRÊNE|Arbre au bois souple|3
+CHARME|Arbre des haies ou attrait|3
+ÉCORCE|Peau de l'arbre|2
+SÈVE|Circule dans l'arbre|3
+BOURGEON|Deviendra feuille ou fleur|2
+PÉTALE|Partie colorée de la fleur|2
+ÉPINE|Pique sur la tige de la rose|2
+BOUQUET|Fleurs réunies|1
+GLAND|Fruit du chêne|2
+PIGNON|Graine de la pomme de pin|3
+CHOUETTE|Oiseau de nuit au cri doux|2
+ROSSIGNOL|Oiseau au chant mélodieux|3
+MÉSANGE|Petit oiseau à tête bleue ou noire|3
+PINSON|Gai comme lui, dit-on|3
+FAUVETTE|Petit oiseau chanteur des haies|3
+LORIOT|Oiseau jaune et noir|3
+HÉRON|Échassier gris au bord de l'eau|3
+FLAMANT|Échassier rose|3
+PIVERT|Oiseau qui frappe les troncs|3
+COUCOU|Oiseau qui donne son nom à une horloge|3
+FAISAN|Oiseau au plumage doré|3
+PERDRIX|Oiseau des champs|3
+CAILLE|Petit oiseau des blés|3
