@@ -302,3 +302,154 @@ LUNES|Primer día de la semana|1
 SÁBADO|Día antes del domingo|1
 ENERO|Primer mes del año|1
 AGOSTO|Mes de vacaciones de verano|1
+PANADERO|Hace el pan cada mañana|1
+CARTERO|Reparte las cartas|1
+POLICÍA|Cuida del orden en la calle|1
+BOMBERO|Apaga los incendios|1
+COCINERO|Prepara la comida en un restaurante|1
+CAMARERO|Sirve en el bar|1
+PELUQUERO|Corta y peina el pelo|1
+DENTISTA|Médico de los dientes|1
+CARPINTERO|Trabaja la madera|1
+PINTOR|Pinta cuadros o paredes|1
+AGRICULTOR|Cultiva la tierra|1
+PESCADOR|Saca peces del mar|1
+PASTOR|Cuida el rebaño de ovejas|1
+CONDUCTOR|Lleva el volante del autobús|1
+PILOTO|Maneja el avión|1
+JARDINERO|Cuida las plantas del parque|1
+CALLE|Vía de la ciudad con aceras|1
+PLAZA|Lugar abierto en el centro del pueblo|1
+PARQUE|Lugar con árboles y bancos para pasear|1
+TIENDA|Lugar donde se compran cosas|1
+BANCO|Asiento del parque o lugar del dinero|1
+FARMACIA|Allí se compran las medicinas|1
+PANADERÍA|Tienda donde se compra el pan|1
+CINE|Lugar para ver películas|1
+TEATRO|Lugar donde actúan los actores|1
+MUSEO|Lugar con cuadros y obras de arte|1
+PUEBLO|Población pequeña|1
+CIUDAD|Población grande con muchas calles|1
+PUENTE|Cruza por encima del río|1
+ACERA|Parte de la calle para los peatones|1
+SEMÁFORO|Luz roja, amarilla y verde|1
+ESTACIÓN|Allí paran los trenes|1
+AEROPUERTO|Allí despegan los aviones|1
+PUERTO|Allí atracan los barcos|1
+AUTOBÚS|Vehículo grande para muchos pasajeros|1
+TAXI|Coche que se paga por trayecto|1
+MOTO|Vehículo de dos ruedas con motor|1
+CAMIÓN|Vehículo grande que lleva mercancías|1
+MALETA|Se llena de ropa para viajar|1
+BILLETE|Se compra para subir al tren|1
+VIAJE|Ir de un lugar a otro lejano|1
+MAPA|Dibujo de un territorio|1
+HOTEL|Lugar donde se duerme de viaje|1
+VACACIONES|Días libres para descansar|1
+LÁPIZ|Sirve para escribir y se borra|1
+GOMA|Borra lo escrito a lápiz|1
+CUADERNO|Hojas para escribir en clase|1
+PIZARRA|Allí escribe el maestro con tiza|1
+CLASE|Aula de la escuela|1
+ALUMNO|Aprende en la escuela|1
+LETRA|La A es la primera|1
+NÚMERO|El dos o el tres, por ejemplo|1
+PALABRA|Conjunto de letras con sentido|1
+PREGUNTA|Se hace para saber algo|1
+PELOTA|Juguete redondo que rebota|1
+JUGUETE|Objeto para que jueguen los niños|1
+MUÑECA|Juguete con forma de persona|1
+JUEGO|Actividad para divertirse|1
+TENIS|Deporte de raqueta y red|1
+NATACIÓN|Deporte en la piscina|1
+PISCINA|Lugar con agua para nadar|1
+CARRERA|Competición de velocidad|1
+EQUIPO|Grupo de jugadores|1
+GOL|Cuando el balón entra en la portería|1
+TAMBOR|Instrumento que se golpea|1
+VIOLÍN|Instrumento de cuerdas con arco|1
+FLAUTA|Instrumento de viento con agujeros|1
+TROMPETA|Instrumento de metal que se sopla|1
+CANTAR|Hacer sonar la voz con música|1
+BAILAR|Mover el cuerpo al ritmo de la música|1
+COMER|Tomar alimentos|1
+BEBER|Tomar agua u otro líquido|1
+DORMIR|Descansar con los ojos cerrados|1
+ANDAR|Moverse paso a paso|1
+CORRER|Andar muy deprisa|1
+SALTAR|Levantarse del suelo con impulso|1
+NADAR|Moverse en el agua|1
+LEER|Mirar y entender lo escrito|1
+ESCRIBIR|Poner letras en el papel|1
+HABLAR|Decir palabras|1
+REÍR|Lo que hacemos con un buen chiste|1
+JUGAR|Divertirse con un juego|1
+COCINAR|Preparar la comida|1
+LAVAR|Limpiar con agua y jabón|1
+ABRIR|Lo contrario de cerrar|1
+CERRAR|Lo contrario de abrir|1
+MIRAR|Fijar la vista|1
+ESCUCHAR|Prestar atención con el oído|1
+PENSAR|Usar la cabeza para razonar|1
+VIVIR|Estar en el mundo|1
+GRANDE|De mucho tamaño|1
+PEQUEÑO|De poco tamaño|1
+ALTO|De mucha estatura|1
+BAJO|De poca estatura|1
+BONITO|Agradable a la vista|1
+NUEVO|Recién hecho o comprado|1
+VIEJO|Que tiene muchos años|1
+CALIENTE|Que quema un poco|1
+DULCE|Sabor del azúcar|1
+SALADO|Con mucha sal|1
+LIMPIO|Sin manchas|1
+SUCIO|Con manchas|1
+RÁPIDO|Que va muy deprisa|1
+LENTO|Que va despacio|1
+ALEGRE|Contento, de buen humor|1
+CONTENTO|Satisfecho y feliz|1
+TRANQUILO|Sin nervios ni prisa|1
+FUERTE|Que tiene mucha fuerza|1
+BUENO|Lo contrario de malo|1
+LLENO|Que no le cabe nada más|1
+VACÍO|Que no tiene nada dentro|1
+MOJADO|Lleno de agua|1
+SECO|Sin agua|1
+DÍA|Tiene veinticuatro horas|1
+SEMANA|Siete días seguidos|1
+MES|Enero o febrero, por ejemplo|1
+AÑO|Tiene doce meses|1
+HORA|Tiene sesenta minutos|1
+MINUTO|Tiene sesenta segundos|1
+TARDE|Después del mediodía|1
+AYER|El día antes de hoy|1
+HOY|Este mismo día|1
+FEBRERO|Segundo mes del año|1
+MARZO|Mes en que empieza la primavera|1
+ABRIL|Cuarto mes del año|1
+MAYO|Mes de las flores|1
+JUNIO|Sexto mes del año|1
+JULIO|Séptimo mes del año|1
+OCTUBRE|Décimo mes del año|1
+DICIEMBRE|Último mes del año|1
+MARTES|Día después del lunes|1
+VIERNES|Último día laborable de la semana|1
+UNO|El primer número|1
+DOS|Uno más uno|1
+TRES|Número de los Reyes Magos|1
+CIEN|Diez veces diez|1
+GIRASOL|Flor amarilla que mira al sol|1
+MARGARITA|Flor blanca de pétalos que se deshojan|1
+CLAVEL|Flor típica de las fiestas españolas|1
+TULIPÁN|Flor de bulbo de muchos colores|1
+CACTUS|Planta del desierto con espinas|1
+PINO|Árbol que da piñas|1
+SEMILLA|De ella nace una planta|1
+FRUTA|Manzana, pera o naranja|1
+PLANTA|Ser vivo verde con raíces|1
+MACETA|Recipiente para una planta|1
+ALEGRÍA|Sentimiento de estar feliz|1
+RISA|Sonido de quien se divierte|1
+BESO|Se da con los labios|1
+ABRAZO|Se da con los brazos|1
+CARIÑO|Afecto y ternura|1
