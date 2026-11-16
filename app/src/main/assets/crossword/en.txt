@@ -942,3 +942,141 @@ KETCHUP|Red tomato sauce for fries|2
 MAYONNAISE|Creamy white sauce for sandwiches|3
 RELISH|Chopped pickle sauce|3
 CROUTON|Crunchy bread cube in salad|3
+SPOOL|Reel that holds thread|3
+EASEL|Stand that holds a painting|3
+PALETTE|Board where a painter mixes colors|3
+CANVAS|Cloth an artist paints on|2
+CRAYON|Wax stick for coloring|2
+SKETCH|Quick rough drawing|2
+PORTRAIT|Painting of a person|2
+LANDSCAPE|Painting of the countryside|3
+MOSAIC|Picture made of small tiles|3
+POTTERY|Pots made from clay|2
+CLAY|Soft earth for making pots|2
+ALBUM|Book for keeping photos|2
+SCRAPBOOK|Book of clippings and keepsakes|3
+HOBBY|Pastime you enjoy|2
+ORIGAMI|Art of folding paper|3
+KITE|Flies on a string in the wind|1
+MARBLE|Small glass ball for a game|2
+PUPPET|Doll moved by strings or a hand|2
+TEDDY|Cuddly toy bear|1
+DOLL|Toy that looks like a person|1
+CRADLE|Rocking bed for a baby|2
+HAMMOCK|Swinging bed between two trees|2
+SWING|Seat on ropes in the playground|1
+SLIDE|Slippery chute in the playground|1
+SEESAW|Plank that goes up and down|2
+CAROUSEL|Merry-go-round|3
+CIRCUS|Show with clowns and acrobats|1
+CLOWN|Funny performer with a red nose|1
+JUGGLER|Keeps balls flying in the air|3
+MAGICIAN|Pulls a rabbit from a hat|2
+PARADE|Procession through the streets|2
+FESTIVAL|Big public celebration|2
+CARNIVAL|Festival with costumes and music|2
+FIREWORKS|Bright bursts in the night sky|2
+PARTY|Celebration with friends|1
+FEAST|Large festive meal|2
+BANQUET|Formal dinner for many guests|3
+WEDDING|Ceremony for a bride and groom|1
+BRIDE|Woman getting married|2
+GROOM|Man getting married|2
+BOUQUET|Bunch of flowers|3
+ANNIVERSARY|Yearly celebration of a wedding day|3
+INVITATION|Card asking you to a party|3
+CONFETTI|Bits of paper thrown at a party|3
+GRANDPA|Your mother's or father's father|1
+GRANDCHILD|Your son's or daughter's child|2
+AUNT|Your mother's sister|1
+UNCLE|Your father's brother|1
+COUSIN|Your aunt's child|1
+NEPHEW|Your brother's son|2
+NIECE|Your sister's daughter|2
+HUSBAND|Married man|1
+WIFE|Married woman|1
+TWIN|One of two born together|2
+NEIGHBOR|Person living next door|2
+GUEST|Visitor in your home|2
+HOST|Person giving the party|2
+GODMOTHER|Woman who sponsors a child at baptism|3
+ANCESTOR|Relative from long ago|3
+HEIRLOOM|Treasure passed down in a family|3
+REUNION|Gathering of old friends or family|3
+HOUSEWARMING|Party in a new home|3
+TELEVISION|Box for watching programs|1
+RADIO|Plays music and news|1
+REMOTE|Changes the channel from the sofa|2
+RECORD|Vinyl disc for music|2
+GRAMOPHONE|Old record player with a horn|3
+TYPEWRITER|Old machine for typing letters|3
+STITCH|One loop of thread in a seam|2
+FAN|Spins to cool the air|1
+HEATER|Warms up a room|2
+RADIATOR|Heats a room with hot water|3
+THERMOMETER|Measures temperature|2
+BAROMETER|Measures air pressure|3
+TELESCOPE|Looks at faraway stars|2
+BINOCULARS|For watching distant birds|2
+MAGNIFIER|Makes small print look bigger|3
+LANTERN|Lamp with a handle|2
+FLASHLIGHT|Light you carry in your hand|2
+HOURGLASS|Sand timer|3
+SUNDIAL|Tells time with a shadow|3
+WEATHERVANE|Shows which way the wind blows|3
+SCARECROW|Stands in the field to scare birds|2
+TRACTOR|Farm vehicle that pulls a plow|2
+PLOW|Turns over the soil|3
+HAYSTACK|Big pile of dried grass|3
+HARVEST|Gathering the crops|2
+WHEAT|Grain made into flour|2
+BARLEY|Grain used in soup|3
+VINEYARD|Field of grapevines|3
+GREENHOUSE|Glass house for plants|2
+WHEELBARROW|One-wheeled garden cart|3
+SPRINKLER|Sprays water on a lawn|3
+COMPOST|Rotted leaves for the garden|3
+FLOWERPOT|Container for a plant|2
+BIRDHOUSE|Little home on a pole for birds|2
+BEEHIVE|Home of the honey makers|2
+PUDDLE|Small pool of rain|2
+ICICLE|Hanging spike of ice|3
+SNOWFLAKE|Each one is unique|2
+SNOWMAN|Figure built in winter with a carrot nose|1
+SLED|Ride it down a snowy hill|2
+SKATE|Glide on ice|2
+GAZEBO|Garden shelter with open sides|3
+FIREPLACE|Where logs burn in the living room|2
+HEARTH|Floor of the fireplace|3
+ARMCHAIR|Comfy chair with sides|2
+BOOKCASE|Furniture full of books|2
+WARDROBE|Tall cupboard for clothes|2
+DRESSER|Chest of drawers|3
+CHANDELIER|Hanging light with crystals|3
+BANISTER|Rail along the stairs|3
+DOORBELL|Rings when a visitor comes|2
+DOORMAT|Wipe your feet on it|2
+MAILBOX|Box for letters|2
+WINDOWSILL|Shelf at the bottom of a window|3
+SHUTTER|Wooden cover for a window|3
+WALLPAPER|Decorates the walls|2
+TRELLIS|Frame that climbing roses grow on|3
+PERGOLA|Garden walkway with a vine roof|3
+CONSERVATORY|Glass room for plants at the house|3
+TEAKETTLE|Whistles when the water boils|3
+PERCOLATOR|Old style coffee maker|3
+BUTTERMILK|Sour milk for pancakes|3
+GOOSEBERRY|Tart green berry|3
+MACAROON|Chewy coconut cookie|3
+SHORTBREAD|Buttery Scottish biscuit|3
+GINGERBREAD|Spiced cake for festive houses|3
+CHAMOMILE|Calming herbal tea|3
+PEPPERMINT|Cool candy flavor|3
+BUTTERCUP|Small yellow wildflower|3
+DANDELION|Yellow weed that turns to fluff|3
+FOXGLOVE|Tall flower with bell shaped blooms|3
+HONEYSUCKLE|Climbing plant with sweet scent|3
+NIGHTINGALE|Bird that sings at night|3
+KINGFISHER|Bright blue bird that dives for fish|3
+HUMMINGBIRD|Tiny bird that hovers|3
+GRASSHOPPER|Green insect that jumps high|3
