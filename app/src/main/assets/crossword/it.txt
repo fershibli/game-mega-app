@@ -593,3 +593,134 @@ MIAGOLIO|Il verso del gatto|2
 ABBAIARE|Lo fa il cane quando sente un rumore|2
 CINGUETTIO|Il canto degli uccellini|3
 RONZIO|Il rumore delle api|3
+GIGLIO|Fiore bianco e profumato|2
+TULIPANO|Fiore a calice, simbolo dell’Olanda|1
+MARGHERITA|Fiore bianco dal cuore giallo, si sfoglia|1
+GIRASOLE|Fiore giallo che segue il sole|1
+VIOLA|Piccolo fiore di primavera, anche un colore|2
+GAROFANO|Fiore profumato, rosso o bianco|2
+ORCHIDEA|Fiore elegante ed esotico|2
+MIMOSA|Fiore giallo dell’otto marzo|1
+GELSOMINO|Fiore bianco dal profumo intenso|2
+LAVANDA|Pianta viola e profumata da mettere nei cassetti|2
+GERANIO|Fiore rosso dei balconi|2
+CICLAMINO|Fiore d’autunno dai petali all’insù|3
+PAPAVERO|Fiore rosso dei campi di grano|2
+MUGHETTO|Fiorellini bianchi a campanella di maggio|3
+NARCISO|Fiore giallo di primavera con la corona|3
+GLICINE|Pianta rampicante dai grappoli viola|3
+CAMELIA|Fiore elegante d’inverno, rosa o bianco|3
+ORTENSIA|Fiore a palla, azzurro o rosa|3
+BUCANEVE|Fiorellino bianco che spunta tra la neve|3
+CRISANTEMO|Fiore d’autunno dai tanti petali|3
+PETALO|Parte colorata del fiore|1
+STELO|Gambo del fiore|2
+SPINA|Punge sul gambo della rosa|1
+BOCCIOLO|Fiore ancora chiuso|2
+POLLINE|Polvere gialla che le api portano via|2
+RADICE|Parte della pianta sotto terra|1
+RAMO|Braccio dell’albero|1
+TRONCO|Parte grossa dell’albero|1
+CORTECCIA|Pelle dell’albero|2
+SEME|Si pianta per far nascere una pianta|1
+GERMOGLIO|Prima foglia che spunta dal seme|2
+QUERCIA|Albero forte che fa le ghiande|2
+PINO|Albero sempreverde con le pigne|1
+ABETE|Albero di Natale|1
+OLIVO|Albero da cui si fa l’olio|1
+CIPRESSO|Albero alto e stretto dei viali|2
+PALMA|Albero delle spiagge calde|1
+SALICE|Albero dai rami che pendono verso l’acqua|2
+BETULLA|Albero dalla corteccia bianca|3
+CASTAGNO|Albero che dà le caldarroste|2
+FAGGIO|Albero dei boschi di montagna|3
+PIOPPO|Albero alto lungo i fiumi|3
+TIGLIO|Albero dai fiori profumati per la tisana|3
+LARICE|Conifera di montagna che perde gli aghi|3
+ACERO|Albero con la foglia del Canada|3
+EDERA|Pianta rampicante sempreverde|2
+MUSCHIO|Tappeto verde sulle pietre del bosco|2
+FELCE|Pianta del sottobosco con foglie a ventaglio|2
+CACTUS|Pianta grassa con le spine|1
+GHIANDA|Frutto della quercia|2
+PIGNA|Frutto del pino|2
+BACCA|Piccolo frutto rotondo dei cespugli|2
+CESPUGLIO|Pianta bassa e folta|2
+SIEPE|Fila di cespugli che fa da confine|2
+AIUOLA|Spazio con i fiori nel giardino|2
+SERRA|Casa di vetro per le piante|2
+VIGNA|Campo di viti|2
+FRUTTETO|Campo di alberi da frutto|2
+ORTO|Ci si coltiva la verdura|1
+CAMPO|Terreno coltivato a grano|1
+GRANO|Ci si fa la farina|1
+MAIS|Pannocchia gialla|2
+SPIGA|Cima del grano|2
+VENDEMMIA|Raccolta dell’uva|2
+RACCOLTO|Ciò che si raccoglie nei campi|2
+ARATRO|Rompe la terra prima della semina|3
+FALCE|Lama curva per tagliare il grano|3
+RASTRELLO|Raccoglie le foglie secche|2
+ZAPPA|Attrezzo per smuovere la terra|2
+VANGA|Pala per scavare nell’orto|2
+CARRIOLA|Carretto a una ruota del giardiniere|2
+INNAFFIATOIO|Serve per dare l’acqua ai fiori|2
+TRATTORE|Macchina agricola dalle grandi ruote|1
+COLLINA|Piccolo monte dolce|1
+VALLE|Tra due montagne|1
+CIMA|Punta della montagna|1
+GROTTA|Caverna nella roccia|1
+VULCANO|Montagna che erutta fuoco|1
+CASCATA|Acqua che cade dall’alto|1
+SORGENTE|Da qui nasce il fiume|2
+RUSCELLO|Piccolo corso d’acqua|2
+TORRENTE|Corso d’acqua veloce di montagna|2
+STAGNO|Piccolo specchio d’acqua ferma|2
+PALUDE|Terra bagnata con canne e zanzare|2
+SPIAGGIA|Ci si sdraia al sole in estate|1
+SCOGLIO|Roccia in mezzo al mare|2
+ONDA|Si muove sul mare|1
+MAREA|Il mare che sale e scende|2
+BAIA|Piccola insenatura del mare|3
+GOLFO|Grande insenatura del mare|2
+PENISOLA|Terra circondata dal mare su tre lati|2
+DESERTO|Distesa di sabbia senza acqua|1
+OASI|Palme e acqua nel deserto|2
+DUNA|Collina di sabbia|2
+PIANURA|Terra piatta e vasta|2
+GHIACCIAIO|Fiume di ghiaccio in alta montagna|2
+PRATERIA|Grande distesa d’erba|3
+FORESTA|Grande bosco|1
+ROCCIA|Pietra dura e grande|1
+CIOTTOLO|Sasso liscio di fiume|3
+CRISTALLO|Minerale trasparente|3
+ARGILLA|Terra morbida per i vasi|2
+ARCOBALENO|Arco colorato dopo la pioggia|1
+TEMPORALE|Pioggia con tuoni e lampi|1
+TUONO|Rumore forte del temporale|1
+LAMPO|Luce improvvisa nel cielo in temporale|1
+FULMINE|Scarica elettrica che cade dal cielo|1
+GRANDINE|Chicchi di ghiaccio dal cielo|2
+NEBBIA|Non fa vedere lontano in pianura|1
+BRINA|Ghiaccio sottile sull’erba la mattina|3
+RUGIADA|Goccioline sull’erba all’alba|3
+GELO|Freddo che fa ghiacciare|2
+GHIACCIO|Acqua diventata dura|1
+BREZZA|Venticello leggero|2
+TEMPESTA|Vento forte e mare mosso|2
+UMIDITÀ|Acqua nell’aria|3
+TRAMONTO|Il sole cala la sera|1
+ALBA|Il sole sorge la mattina|1
+AURORA|La prima luce del giorno|2
+CREPUSCOLO|Luce fioca dopo il tramonto|3
+STAGIONE|Primavera, estate, autunno o inverno|1
+PRIMAVERA|Stagione dei fiori|1
+CLIMA|Il tempo di un luogo nel corso dell’anno|3
+GOCCIA|Piccola quantità d’acqua che cade|1
+FIOCCO|Quello di neve scende leggero|2
+PIANETA|La Terra lo è, come Marte|2
+COMETA|Stella con la coda, quella di Natale|2
+GALASSIA|Insieme immenso di stelle|3
+ASTEROIDE|Grosso sasso che vaga nello spazio|3
+ECLISSI|La luna copre il sole|3
+ORIZZONTE|Linea dove il cielo tocca il mare|2
