@@ -16,7 +16,7 @@ INVERNO|Estação mais fria do ano|2
 PRIMAVERA|Estação das flores|2
 OUTONO|Estação em que as folhas caem|2
 DOMINGO|Dia de descanso da semana|1
-CAFÉ|Bebida quente do café da manhã|1
+CAFÉ|Bebida quente e preta, servida na xícara pela manhã|1
 AÇÚCAR|Deixa o café doce|1
 SAL|Tempero branco que vem do mar|1
 QUEIJO|Feito de leite; o rato adora|1
@@ -27,7 +27,7 @@ BANANA|Fruta amarela e comprida|1
 UVA|Fruta pequena usada para fazer vinho|1
 LIMÃO|Fruta azeda da caipirinha|1
 TOMATE|Vermelho, vai na salada e no molho|1
-BATATA|Vira purê ou batata frita|1
+BATATA|Tubérculo que vira purê ou fritas|1
 CENOURA|Legume laranja que o coelho adora|1
 CEBOLA|Faz chorar quando cortamos|1
 ARROZ|Grão que acompanha o feijão|1
@@ -582,3 +582,155 @@ MODINHA|Canção popular de antigamente|3
 ADIVINHA|O que é, o que é?|3
 FAZENDEIRO|Dono da fazenda|3
 BANDEIRINHA|Enfeite colorido pendurado na festa junina|3
+PIA|Lugar da cozinha onde lavamos a louça|1
+LOUÇA|Pratos, xícaras e travessas da casa|2
+TRAVESSA|Prato grande e fundo para servir comida|2
+FORNO|Parte do fogão onde se assa o bolo|1
+CHÃO|Onde pisamos dentro de casa|1
+TETO|Parte de cima de um cômodo|1
+VIDRO|Material transparente da janela|1
+SABÃO|Usado para lavar roupa e louça|1
+ESCOVA|Usada para pentear o cabelo ou limpar os dentes|1
+BACIA|Vasilha larga para lavar roupa ou os pés|2
+CESTA|Leva frutas ou o lanche do piquenique|1
+CAIXA|Embalagem de papelão para guardar coisas|1
+VASO|Recipiente onde se planta uma flor|1
+QUADRO|Pintura pendurada na parede|1
+BANCO|Assento comprido da praça|1
+BERÇO|Caminha do bebê|1
+REDE|Balança na varanda para um cochilo|1
+COLCHÃO|Fica sobre a cama para dormir macio|1
+LENÇOL|Pano que cobre o colchão|1
+FRONHA|Capa do travesseiro|2
+FERRO|Aparelho para passar roupa|1
+TORNEIRA|Abrimos para sair água na pia|1
+TOMADA|Onde ligamos os aparelhos elétricos|1
+MOCHILA|Bolsa que se leva nas costas|1
+CARTEIRA|Guarda o dinheiro e os documentos|1
+LUVA|Agasalho para as mãos|1
+CACHECOL|Enrolado no pescoço nos dias frios|2
+GORRO|Touca de lã para o frio|2
+BLUSA|Peça de roupa da parte de cima do corpo|1
+CALÇA|Peça de roupa que veste as duas pernas|1
+BERMUDA|Calça curta para dias de calor|1
+PIJAMA|Roupa de dormir|1
+CINTO|Segura a calça na cintura|1
+GRAVATA|Usada no pescoço com o terno|1
+TERNO|Roupa social de paletó e calça|2
+BOTA|Calçado de cano alto|1
+SANDÁLIA|Calçado aberto, feito de tiras|1
+TÊNIS|Calçado para caminhar e fazer esporte|1
+FRUTA|Maçã, banana ou uva, por exemplo|1
+SALADA|Prato de alface, tomate e outras folhas|1
+LANCHE|Refeição pequena da tarde|1
+ALMOÇO|Refeição do meio do dia|1
+JANTAR|Refeição da noite|1
+PEPINO|Legume verde e comprido da salada|1
+BETERRABA|Raiz roxa que tinge a salada|2
+BRÓCOLIS|Verdura verde em forma de arvorezinha|2
+ESPINAFRE|Verdura de folhas escuras e macias|2
+LINGUIÇA|Embutido de carne que vai na grelha|2
+PRESUNTO|Frios fatiados do misto-quente|2
+SANDUÍCHE|Pão recheado com queijo e presunto|1
+TORRADA|Pão tostado e crocante|1
+MINGAU|Papa quente de leite com aveia ou maisena|2
+IOGURTE|Leite fermentado, às vezes com frutas|2
+CAMARÃO|Fruto do mar que fica rosado ao cozinhar|1
+SARDINHA|Peixe pequeno vendido em lata|2
+PIMENTA|Tempero que arde na boca|1
+MOLHO|Acompanha o macarrão, como o de tomate|1
+NOZ|Fruto seco de casca dura, comum no Natal|2
+CASTANHA|Fruto seco, como a do Pará|2
+AMENDOIM|Grão torrado usado na paçoca|1
+PANQUECA|Massa fina enrolada com recheio|1
+BOLACHA|Biscoito redondo e seco|1
+TORTA|Massa assada com recheio doce ou salgado|1
+DOCE|Sobremesa feita com açúcar|1
+BALA|Docinho embrulhado que se chupa|1
+REFRIGERANTE|Bebida gelada e doce, com gás|1
+LIMONADA|Suco de limão com açúcar e água|1
+GELO|Água congelada que esfria a bebida|1
+BURRO|Parecido com o cavalo, de orelhas compridas|1
+PERU|Ave grande servida no Natal|1
+ZEBRA|Animal listrado de preto e branco|1
+CAMELO|Animal do deserto com corcovas|1
+CANGURU|Pula e leva o filhote numa bolsa na barriga|1
+HIPOPÓTAMO|Animal enorme que vive nos rios da África|2
+RINOCERONTE|Animal grande com chifre no focinho|2
+FOCA|Animal marinho que bate palmas no circo|2
+TUBARÃO|Peixe grande de dentes afiados|1
+GRILO|Inseto que canta à noite|1
+MOSCA|Inseto que zune em volta da comida|1
+MOSQUITO|Inseto pequeno que pica à noite|1
+PINTINHO|Filhote amarelinho da galinha|1
+BEZERRO|Filhote da vaca|1
+POTRO|Filhote do cavalo|2
+CISNE|Ave branca de pescoço longo dos lagos|2
+GANSO|Ave branca parecida com o pato|2
+PAVÃO|Ave que abre a cauda colorida|1
+BEIJA-FLOR|Passarinho que voa parado diante da flor|1
+ANDORINHA|Ave que anuncia a primavera|2
+GAVIÃO|Ave de rapina de bico curvo|2
+TERRA|Planeta onde vivemos|1
+FOLHA|Parte verde da planta|1
+GALHO|Braço da árvore|1
+RAIZ|Parte da planta que fica embaixo da terra|1
+TRONCO|Parte grossa da árvore|1
+ONDA|Água do mar que quebra na praia|1
+CONCHA|Achada na areia da praia, guarda o som do mar|1
+VALE|Terra baixa entre montanhas|2
+MORRO|Montanha pequena|1
+GRUTA|Caverna na pedra|2
+DESERTO|Lugar de muita areia e pouca chuva|1
+VULCÃO|Montanha que solta lava|2
+BRISA|Vento fraco e fresco|2
+TEMPESTADE|Chuva forte com vento e trovões|2
+GAROA|Chuva fininha|2
+PÉ|Parte do corpo que pisa no chão|1
+CABEÇA|Parte do corpo onde fica o rosto|1
+ROSTO|A face da pessoa|1
+TESTA|Parte do rosto acima dos olhos|1
+QUEIXO|Ponta de baixo do rosto|1
+PESCOÇO|Liga a cabeça ao corpo|1
+COSTAS|Parte de trás do tronco|1
+UNHA|Cresce na ponta do dedo|1
+LÁBIO|Borda da boca|1
+LÍNGUA|Fica dentro da boca e sente o sabor|1
+BIGODE|Pelos acima do lábio|1
+BARBA|Pelos do queixo e do rosto do homem|1
+SOBRANCELHA|Fileira de pelos acima do olho|2
+CÍLIO|Pelinho na borda da pálpebra|2
+CALCANHAR|Parte de trás do pé|2
+TORNOZELO|Liga o pé à perna|2
+COTOVELO|Dobra do meio do braço|2
+PULSO|Onde se usa o relógio|1
+COZINHEIRO|Prepara a comida no restaurante|1
+MOTORISTA|Dirige o ônibus ou o carro|1
+PILOTO|Dirige o avião|1
+GARÇOM|Serve as mesas no restaurante|1
+VENDEDOR|Atende os clientes na loja|1
+ADVOGADO|Defende as pessoas na justiça|2
+AGRICULTOR|Planta e colhe no campo|2
+PINTOR|Pinta paredes ou quadros|1
+ESCRITOR|Escreve livros|1
+CABELEIREIRO|Corta e arruma o cabelo no salão|1
+BARBEIRO|Corta cabelo e faz a barba|1
+SAPATEIRO|Conserta sapatos|2
+ELETRICISTA|Conserta a parte elétrica da casa|2
+ENCANADOR|Conserta canos e vazamentos|2
+VETERINÁRIO|Médico dos animais|1
+GUITARRA|Violão elétrico das bandas de rock|2
+TROMPETE|Instrumento de sopro dourado|2
+GAITA|Pequeno instrumento de sopro|2
+CORAL|Grupo de pessoas que canta junto|2
+CANÇÃO|Música cantada|1
+VÔLEI|Jogo de rede com bola|1
+BASQUETE|Esporte de jogar a bola na cesta|1
+NATAÇÃO|Esporte feito na piscina|1
+PISCINA|Tanque de água para nadar|1
+CORRIDA|Prova de quem chega primeiro|1
+GOL|Bola dentro da rede no futebol|1
+TIME|Grupo de jogadores|1
+JUIZ|Apita a partida de futebol|1
+MEDALHA|Prêmio pendurado no pescoço do vencedor|1
+TROFÉU|Taça dada ao campeão|1
