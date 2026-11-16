@@ -584,7 +584,7 @@ BRIGLIA|Redini del cavallo|3
 ZOCCOLO|Piede duro del cavallo|2
 STRIGLIA|Spazzola per il pelo del cavallo|3
 RAGNATELA|La tela del ragno|2
-VELENO|Quello della vipera è pericoloso|2
+PUNGIGLIONE|Lo usa l’ape per pungere|3
 MUGGITO|Il verso della mucca|3
 NITRITO|Il verso del cavallo|3
 BELATO|Il verso della pecora|3
@@ -970,3 +970,107 @@ CATENA|Fatta di anelli di metallo|2
 LUCCHETTO|Chiude con la chiave il cancello|2
 TORCIA|Pila che fa luce al buio|2
 LANTERNA|Lume da portare in giro|3
+ALLEGRIA|Buonumore che fa ridere|2
+FELICITÀ|Si prova quando tutto va bene|2
+NOSTALGIA|Desiderio dei bei tempi passati|3
+TENEREZZA|Si prova guardando un cucciolo|3
+GRATITUDINE|Si prova verso chi ci ha aiutato|3
+PAZIENZA|Virtù di chi sa aspettare|2
+CORAGGIO|Ce l’ha chi non ha paura|2
+SORPRESA|Arriva quando non te l’aspetti|2
+STUPORE|Meraviglia davanti a qualcosa di bello|3
+ENTUSIASMO|Grande voglia di fare|3
+SERENITÀ|Pace dell’animo|3
+FIDUCIA|Si dà a chi è sincero|3
+AMICIZIA|Legame tra amici|2
+NOIA|Si prova quando non si sa cosa fare|2
+VERGOGNA|Fa arrossire le guance|3
+ORGOGLIO|Si prova per i successi dei figli|3
+CURIOSITÀ|Voglia di sapere|3
+CAMMINARE|Andare a piedi|2
+CUCINARE|Preparare il pranzo|2
+DORMIRE|Si fa nel letto la notte|2
+CANTARE|Si fa sotto la doccia o nel coro|2
+BALLARE|Muoversi a ritmo di musica|2
+NUOTARE|Si fa in piscina o al mare|2
+LEGGERE|Si fa con un libro tra le mani|2
+SCRIVERE|Si fa con la penna|2
+RIDERE|Si fa dopo una barzelletta|2
+SORRIDERE|Mostrare un viso contento|2
+ABBRACCIARE|Stringere tra le braccia|2
+PASSEGGIARE|Camminare con calma per svago|2
+RICAMARE|Decorare la stoffa con ago e filo|3
+SFERRUZZARE|Lavorare a maglia con i ferri|3
+IMPASTARE|Lavorare farina e acqua con le mani|3
+INNAFFIARE|Dare l’acqua alle piante|3
+POTARE|Tagliare i rami delle piante|3
+SEMINARE|Mettere i semi nella terra|3
+STIRARE|Togliere le pieghe con il ferro|2
+RAMMENDARE|Riparare un buco nella calza|3
+SBUCCIARE|Togliere la buccia alla frutta|3
+SPARECCHIARE|Togliere i piatti dopo cena|3
+GRANDE|Il contrario di piccolo|1
+PICCOLO|Il contrario di grande|1
+ALTO|Il contrario di basso|1
+FELICE|Molto contento|1
+BELLO|Piacevole da guardare|1
+BUONO|Ha un sapore gradevole|1
+DOLCE|Ha il sapore dello zucchero|1
+VELOCE|Il contrario di lento|2
+LENTO|Il contrario di veloce|2
+PULITO|Il contrario di sporco|2
+GENTILE|Persona cortese e garbata|2
+TRANQUILLO|Calmo, senza pensieri|2
+SAGGIO|Persona che sa dare buoni consigli|3
+GENEROSO|Dà volentieri agli altri|3
+PREMUROSO|Pieno di attenzioni per gli altri|3
+ROBUSTO|Forte e resistente|3
+TIEPIDO|Né caldo né freddo|3
+AFOSO|Caldo e umido d’estate|3
+SPAZIOSO|Ampio, con tanto posto|3
+LUMINOSO|Pieno di luce|3
+PROFUMATO|Ha un buon odore|2
+SALATO|Ha troppo sale|2
+AMARO|Il sapore del caffè senza zucchero|2
+ASPRO|Il sapore del limone|3
+CROCCANTE|Fa rumore sotto i denti|3
+MORBIDO|Il contrario di duro|2
+ANTICO|Molto vecchio, di tanto tempo fa|2
+ARGENTO|Metallo prezioso, medaglia del secondo|2
+BRONZO|Lega di rame, medaglia del terzo|3
+RAME|Metallo rossiccio dei fili elettrici|3
+ORO|Metallo giallo e prezioso|1
+MARMO|Pietra bianca delle statue|3
+PORCELLANA|Ceramica fine dei servizi buoni|3
+CERAMICA|Terra cotta e smaltata|3
+VIMINI|Rami flessibili per i cestini|3
+SUGHERO|Il tappo della bottiglia di vino|3
+CANAPA|Fibra per corde e lenzuola di una volta|3
+LINO|Tessuto fresco per l’estate|3
+FLANELLA|Tessuto morbido e caldo dei pigiami|3
+TOMBOLINO|Cuscino per fare il merletto|3
+CENTRINO|Pizzo da mettere sotto il vaso|3
+SOPRAMMOBILE|Oggetto decorativo sul mobile|3
+CREDENZA|Mobile della cucina per i piatti|3
+CASSAPANCA|Panca con il coperchio dove riporre le cose|3
+COMÒ|Mobile con i cassetti in camera|2
+CAPPELLIERA|Scatola rotonda per il cappello|3
+PENDOLA|Orologio a pendolo da parete|3
+GRAMMOFONO|Suonava i dischi con la tromba|3
+GIRADISCHI|Fa girare i dischi in vinile|3
+MATTARELLO|Si usa per stendere la sfoglia|3
+SFOGLIA|Pasta tirata sottile per le lasagne|3
+FRITTELLA|Dolce fritto di Carnevale|3
+CIAMBELLA|Dolce con il buco in mezzo|3
+CONFETTO|Mandorla zuccherata delle nozze|3
+TORRONE|Dolce di Natale con miele e mandorle|3
+MARZAPANE|Pasta di mandorle a forma di frutta|3
+ZABAIONE|Crema di tuorlo, zucchero e marsala|3
+CALDARROSTA|Castagna cotta sul fuoco|3
+UVETTA|Acini secchi del panettone|3
+CAPPERO|Bocciolo sotto sale, va nel sugo|3
+MAGGIORANA|Erba aromatica simile all’origano|3
+ALLORO|Foglia che profuma l’arrosto|3
+ZAFFERANO|Spezia gialla del risotto alla milanese|3
+NOCE MOSCATA|Spezia che si grattugia nella besciamella|3
+BESCIAMELLA|Salsa bianca delle lasagne|3
