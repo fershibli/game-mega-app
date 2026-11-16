@@ -446,3 +446,156 @@ FOULARD|Carré de soie au cou|2
 BRETELLES|Tiennent le pantalon par les épaules|2
 SABOT|Chaussure en bois|2
 CANOTIER|Chapeau de paille plat|3
+VENT|Fait voler les feuilles|1
+ORAGE|Tonnerre et éclairs|1
+TONNERRE|Gronde pendant l'orage|1
+ÉCLAIR|Lumière vive dans le ciel d'orage|1
+BROUILLARD|Empêche de voir loin le matin|1
+GRÊLE|Petites boules de glace qui tombent|2
+GEL|Transforme l'eau en glace|1
+ROSÉE|Gouttes du matin sur l'herbe|2
+ARC-EN-CIEL|Sept couleurs après la pluie|1
+CHALEUR|Il en fait beaucoup en été|1
+FROID|On le sent en hiver|1
+TEMPÊTE|Vent très fort|1
+AVERSE|Pluie soudaine et courte|2
+BRISE|Petit vent léger|2
+BRUME|Léger brouillard|2
+VERGLAS|Glace fine sur la route|2
+CANICULE|Grosse chaleur d'été|2
+GIBOULÉE|Averse du mois de mars|3
+FLOCON|Petit morceau de neige|1
+NUAGEUX|Ciel couvert|2
+ENSOLEILLÉ|Plein de soleil|2
+CLIMAT|Temps habituel d'une région|2
+SAISON|L'année en a quatre|1
+VIOLON|Instrument à cordes et à archet|1
+FLÛTE|Instrument à vent qu'on souffle|1
+TAMBOUR|Instrument sur lequel on frappe|1
+TROMPETTE|Instrument en cuivre|1
+ACCORDÉON|Instrument du bal musette|1
+HARPE|Grand instrument à cordes pincées|2
+CLARINETTE|Instrument à vent en bois|2
+SAXOPHONE|Instrument du jazz|2
+VIOLONCELLE|Grand violon joué assis|2
+CONTREBASSE|Le plus grand des violons|3
+HAUTBOIS|Instrument à vent à anche double|3
+BASSON|Instrument à vent au son grave|3
+ORGUE|Grand instrument de l'église|2
+CLAVECIN|Ancêtre du piano|3
+TROMBONE|Instrument à coulisse|2
+CYMBALES|Disques de métal que l'on frappe|2
+TRIANGLE|Petit instrument de métal|2
+MÉLODIE|Suite de notes agréable|2
+REFRAIN|Revient entre les couplets|2
+COUPLET|Partie d'une chanson|2
+CHORALE|Groupe de chanteurs|2
+ORCHESTRE|Groupe de musiciens|1
+CONCERT|Spectacle de musique|1
+NOTE|Do, ré ou mi|1
+CHEF|Dirige l'orchestre ou la cuisine|1
+OPÉRA|Théâtre chanté|2
+VALSE|Danse à trois temps|2
+TANGO|Danse venue d'Argentine|2
+JAVA|Danse populaire des guinguettes|3
+SOLFÈGE|Apprentissage de la lecture des notes|3
+PARTITION|Musique écrite|2
+ARCHET|Fait chanter le violon|3
+DISQUE|Rond et noir, on l'écoute|2
+RADIO|On l'écoute pour les nouvelles|1
+FOOTBALL|Sport avec un ballon rond et des buts|1
+TENNIS|Sport avec raquette et filet|1
+RUGBY|Sport au ballon ovale|1
+NATATION|Sport dans la piscine|1
+CYCLISME|Sport du Tour de France|2
+GOLF|Sport aux dix-huit trous|1
+SKI|Glisse sur la neige|1
+JUDO|Art martial du Japon|2
+BOXE|Sport des gants|2
+RANDONNÉE|Longue marche dans la nature|2
+COURSE|On la gagne en arrivant le premier|1
+BALLON|Se lance ou se frappe|1
+RAQUETTE|Sert à frapper la balle|1
+FILET|Sépare les joueurs au tennis|2
+BUT|On le marque au football|1
+ÉQUIPE|Groupe de joueurs|1
+ARBITRE|Siffle les fautes|2
+MÉDAILLE|Récompense en or, argent ou bronze|1
+COUPE|Trophée du vainqueur|1
+STADE|Lieu des matchs|1
+PISCINE|Bassin pour nager|1
+GYMNASTIQUE|Exercices du corps|2
+ESCRIME|Sport à l'épée|3
+AVIRON|Sport de rame|3
+VOILE|Fait avancer le bateau avec le vent|2
+PLONGÉE|Exploration sous l'eau|2
+ÉQUITATION|Sport à cheval|2
+BILLARD|Jeu de boules sur un tapis vert|2
+CROQUET|Jeu de boules et d'arceaux|3
+QUILLES|On les fait tomber avec une boule|2
+ÉCHECS|Jeu du roi et de la reine|1
+DAMES|Jeu de pions sur un damier|1
+LOTO|Jeu des numéros tirés au sort|1
+PUZZLE|Jeu de pièces à assembler|1
+DÉ|Cube à six faces|1
+BELOTE|Jeu de cartes très populaire|2
+TAROT|Jeu de cartes avec l'excuse|2
+SCRABBLE|Jeu de lettres sur un plateau|2
+KERMESSE|Fête de l'école ou du village|3
+VALISE|Se remplit avant le voyage|1
+VOYAGE|Départ vers un autre lieu|1
+VACANCES|Temps libre de l'été|1
+HÔTEL|On y dort en voyage|1
+GARE|On y prend le train|1
+AÉROPORT|On y prend l'avion|1
+PORT|On y amarre les bateaux|1
+BILLET|Ticket pour voyager|1
+PASSEPORT|Papier pour aller à l'étranger|2
+CARTE|Montre les routes et les villes|1
+ROUTE|Relie les villes|1
+AUTOROUTE|Grande route rapide à péage|2
+PÉAGE|On y paie sur l'autoroute|2
+CAMPING|Vacances sous la tente|1
+TENTE|Abri de toile du campeur|1
+CROISIÈRE|Voyage en grand bateau|2
+BUS|Transport en commun|1
+MÉTRO|Train sous la ville|1
+TAXI|Voiture avec chauffeur|1
+TRAMWAY|Train dans les rues de la ville|2
+CAMION|Gros véhicule pour les marchandises|1
+MOTO|Deux roues avec moteur|1
+TRACTEUR|Véhicule de la ferme|1
+HÉLICOPTÈRE|Vole grâce à ses pales|2
+FUSÉE|Va dans l'espace|1
+VOILIER|Bateau à voiles|2
+PAQUEBOT|Très grand bateau de passagers|3
+PÉNICHE|Bateau plat des canaux|3
+BARQUE|Petit bateau à rames|2
+CANOË|Petite embarcation à pagaie|2
+MONTGOLFIÈRE|Ballon qui vole à l'air chaud|3
+CARAVANE|Petite maison roulante|2
+GUIDE|Fait visiter|1
+SOUVENIR|Rapporté de voyage|1
+PHOTO|Image prise avec un appareil|1
+ESCALE|Arrêt pendant un long voyage|2
+VILLAGE|Petite commune à la campagne|1
+VILLE|Grande commune|1
+RUE|Bordée de maisons|1
+PLACE|Espace ouvert au centre du village|1
+MAIRIE|Bâtiment du maire|1
+POSTE|On y envoie les lettres|1
+BANQUE|On y dépose son argent|1
+MAGASIN|On y fait ses achats|1
+BOULANGERIE|On y achète le pain|1
+PHARMACIE|On y achète les médicaments|1
+CINÉMA|On y voit des films|1
+THÉÂTRE|On y voit des pièces|1
+MUSÉE|On y voit des œuvres d'art|1
+BIBLIOTHÈQUE|On y emprunte des livres|2
+PARC|Jardin public|1
+FONTAINE|Jet d'eau sur la place|2
+TROTTOIR|Bord de la rue pour les piétons|2
+CARREFOUR|Croisement de rues|2
+PONT|Passe au-dessus de la rivière|1
+CHÂTEAU|Demeure des rois|1
+CATHÉDRALE|Grande église d'une ville|2
