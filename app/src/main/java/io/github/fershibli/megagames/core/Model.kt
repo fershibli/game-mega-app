@@ -146,6 +146,7 @@ enum class GameId(
     BISCA("bisca", R.string.game_bisca, R.string.howto_bisca, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.bisca_table_pairs))),
     HEARTS("hearts", R.string.game_hearts, R.string.howto_hearts, GameCategory.CARDS, takeTurns = true),
     ESCOVA("escova", R.string.game_escova, R.string.howto_escova, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.escova_table_pairs))),
+    TRAIL("trail", R.string.game_trail, R.string.howto_trail, GameCategory.PASTIMES, takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()
