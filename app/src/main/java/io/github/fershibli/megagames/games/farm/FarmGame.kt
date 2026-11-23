@@ -103,6 +103,8 @@ fun FarmGame(host: GameHost) {
             delay(TICK_MS)
         }
     }
+    // Taps read the clock afresh, so a crop that just ripened can be picked at once.
+    val time = { clock.now().also { now = it } }
     var tab by remember { mutableStateOf(Tab.FIELD) }
     var message by remember { mutableStateOf<String?>(null) }
     val p = LocalPalette.current
@@ -124,8 +126,8 @@ fun FarmGame(host: GameHost) {
         }
         Box(Modifier.weight(1f).fillMaxWidth()) {
             when (tab) {
-                Tab.FIELD -> FieldTab(w, now, p, change) { message = it }
-                Tab.ANIMALS -> AnimalsTab(w, now, p, change)
+                Tab.FIELD -> FieldTab(w, now, time, p, change) { message = it }
+                Tab.ANIMALS -> AnimalsTab(w, now, time, p, change)
                 Tab.ORDERS -> OrdersTab(w, p, change) { message = it }
                 Tab.BARN -> BarnTab(w, p, change)
             }
@@ -166,7 +168,7 @@ private fun Grid(count: Int, columns: Int, modifier: Modifier = Modifier, cell: 
 // ---------------------------------------------------------------------------------------------
 
 @Composable
-private fun FieldTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit, say: (String?) -> Unit) {
+private fun FieldTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit, say: (String?) -> Unit) {
     var sowing by remember { mutableStateOf<Int?>(null) }
     val ripe = FarmRules.ripeCount(w, now)
     val thirsty = w.plots.count { FarmRules.canWater(it, now) }
@@ -189,10 +191,11 @@ private fun FieldTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld) -
                 Column(
                     m.clip(RoundedCornerShape(14.dp))
                         .clickable(role = Role.Button) {
+                            val t = time()
                             when {
                                 crop == null -> sowing = i
-                                stage == Stage.RIPE -> { change { FarmRules.harvest(it, i, now) }; say(harvested) }
-                                waterable -> change { FarmRules.water(it, i, now) }
+                                FarmRules.stage(plot, t) == Stage.RIPE -> { change { FarmRules.harvest(it, i, t) }; say(harvested) }
+                                FarmRules.canWater(plot, t) -> change { FarmRules.water(it, i, t) }
                             }
                         }
                         .testTag("farm-plot-$i")
@@ -206,8 +209,8 @@ private fun FieldTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld) -
             }
         }
         Controls {
-            BigButton(stringResource(R.string.farm_harvest_all), { change { FarmRules.harvestAll(it, now) }; say(harvested) }, Modifier.testTag("farm-harvest-all"), enabled = ripe > 0, compact = true)
-            BigButton(stringResource(R.string.farm_water_all), { change { FarmRules.waterAll(it, now) } }, style = ButtonStyle.SECONDARY, enabled = thirsty > 0, compact = true)
+            BigButton(stringResource(R.string.farm_harvest_all), { change { FarmRules.harvestAll(it, time()) }; say(harvested) }, Modifier.testTag("farm-harvest-all"), enabled = ripe > 0, compact = true)
+            BigButton(stringResource(R.string.farm_water_all), { change { FarmRules.waterAll(it, time()) } }, style = ButtonStyle.SECONDARY, enabled = thirsty > 0, compact = true)
             if (w.plots.size < FarmRules.MAX_PLOTS) {
                 val cost = FarmRules.plotCost(w)
                 BigButton(stringResource(R.string.farm_buy_plot, cost), { change { FarmRules.buyPlot(it) } }, style = ButtonStyle.SECONDARY, enabled = w.coins >= cost, compact = true)
@@ -219,7 +222,7 @@ private fun FieldTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld) -
         val choices = FarmRules.unlocked(w).filter { it.seedCost <= w.coins }
         val options = choices.map { crop ->
             stringResource(R.string.farm_seed_option, stringResource(crop.item.label), crop.seedCost, crop.minutes) to {
-                change { FarmRules.plant(it, index, crop, now) }
+                change { FarmRules.plant(it, index, crop, time()) }
                 sowing = null
             }
         }
@@ -237,7 +240,7 @@ private fun FieldTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld) -
 // ---------------------------------------------------------------------------------------------
 
 @Composable
-private fun AnimalsTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit) {
+private fun AnimalsTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit) {
     var buying by remember { mutableStateOf(false) }
     Column(Modifier.fillMaxSize()) {
         Box(Modifier.weight(1f).fillMaxWidth()) {
@@ -253,7 +256,7 @@ private fun AnimalsTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld)
                         m.clip(RoundedCornerShape(16.dp))
                             .background(p.surfaceAlt)
                             .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.dp, p.outline), RoundedCornerShape(16.dp))
-                            .clickable(enabled = ready > 0, role = Role.Button) { change { FarmRules.collect(it, i, now) } }
+                            .clickable(role = Role.Button) { change { FarmRules.collect(it, i, time()) } }
                             .padding(8.dp)
                             .testTag("farm-pen-$i")
                             .clearAndSetSemantics { contentDescription = "$label, $caption" },
@@ -271,7 +274,7 @@ private fun AnimalsTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld)
             }
         }
         Controls {
-            BigButton(stringResource(R.string.farm_collect_all), { change { FarmRules.collectAll(it, now) } }, Modifier.testTag("farm-collect-all"), enabled = FarmRules.waitingCount(w, now) > 0, compact = true)
+            BigButton(stringResource(R.string.farm_collect_all), { change { FarmRules.collectAll(it, time()) } }, Modifier.testTag("farm-collect-all"), enabled = FarmRules.waitingCount(w, now) > 0, compact = true)
             BigButton(stringResource(R.string.farm_buy_animal), { buying = true }, Modifier.testTag("farm-buy-animal"), style = ButtonStyle.SECONDARY, enabled = w.pens.size < FarmRules.MAX_PENS, compact = true)
         }
     }
@@ -279,7 +282,7 @@ private fun AnimalsTab(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld)
         val choices = Animal.entries.filter { it.stars <= w.stars && it.cost <= w.coins }
         val options = choices.map { a ->
             stringResource(R.string.farm_animal_option, stringResource(a.label), a.cost) to {
-                change { FarmRules.buyAnimal(it, a, now) }
+                change { FarmRules.buyAnimal(it, a, time()) }
                 buying = false
             }
         }

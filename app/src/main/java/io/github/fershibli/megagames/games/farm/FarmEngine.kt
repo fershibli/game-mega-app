@@ -123,11 +123,14 @@ object FarmRules {
     /** Price of the next bed: dearer as the field grows. */
     fun plotCost(world: FarmWorld): Int = 25 * (world.plots.size - START_PLOTS + 1)
 
+    /** Milliseconds of growth a bed has had: watered time counts twice. */
+    private fun grown(plot: Plot, now: Long): Long =
+        (now - plot.plantedAt).coerceAtLeast(0L) + (plot.wateredAt?.let { (now - it).coerceAtLeast(0L) } ?: 0L)
+
     /** How grown a bed is, from 0 to 1. After watering it grows twice as fast. */
     fun progress(plot: Plot, now: Long): Float {
         val crop = plot.sown ?: return 0f
-        val grown = (now - plot.plantedAt).coerceAtLeast(0L) + (plot.wateredAt?.let { (now - it).coerceAtLeast(0L) } ?: 0L)
-        return (grown.toDouble() / crop.growMs).coerceIn(0.0, 1.0).toFloat()
+        return (grown(plot, now).toDouble() / crop.growMs).coerceIn(0.0, 1.0).toFloat()
     }
 
     fun stage(plot: Plot, now: Long): Stage {
@@ -143,8 +146,8 @@ object FarmRules {
     /** Milliseconds until a bed is ripe (0 when it already is). */
     fun remainingMs(plot: Plot, now: Long): Long {
         val crop = plot.sown ?: return 0L
-        val left = ((1f - progress(plot, now)) * crop.growMs).toLong()
-        return if (plot.wateredAt != null) left / 2 else left
+        val left = (crop.growMs - grown(plot, now)).coerceAtLeast(0L)
+        return if (plot.wateredAt != null) (left + 1) / 2 else left
     }
 
     fun unlocked(world: FarmWorld): List<Crop> = Crop.entries.filter { it.stars <= world.stars }

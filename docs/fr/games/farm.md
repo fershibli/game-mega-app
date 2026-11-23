@@ -1,0 +1,41 @@
+# Ferme
+
+🌐 [English](../../en/games/farm.md) · [Português](../../pt-BR/games/farm.md) · [Español](../../es/games/farm.md) · **Français** · [Italiano](../../it/games/farm.md) · [Deutsch](../../de/games/farm.md) · [Русский](../../ru/games/farm.md) · [日本語](../../ja/games/farm.md) · [中文](../../zh-CN/games/farm.md) · [العربية](../../ar/games/farm.md)
+
+Une petite ferme qui vit dans votre téléphone. Semez, arrosez et récoltez, occupez-vous des poules, de la vache et des moutons, vendez à la grange et honorez les commandes des voisins. Rien ne presse et rien ne se perd : les cultures ne fanent jamais, les animaux n’ont jamais faim et la ferme continue de pousser quand l’application est fermée.
+
+Quatre boutons en haut ouvrent le **Potager**, les **Animaux**, les **Commandes** et la **Grange**. Vos **pièces** et **étoiles** sont affichées au-dessus.
+
+## Le potager
+- Touchez un **carré vide** (celui avec un grand +) et choisissez quoi semer. Chaque graine coûte quelques pièces.
+- La culture pousse toute seule, en temps réel : d’abord une pousse, puis une jeune plante, puis la récolte mûre sur un cercle jaune, avec **Prêt !** dessous. Le temps restant est écrit sous chaque carré.
+- **Arroser** (touchez un carré avec une goutte bleue, ou **Tout arroser**) fait pousser le reste deux fois plus vite. Une fois par culture suffit.
+- Touchez un carré mûr (ou **Tout récolter**) : chaque carré donne **deux** de sa culture, qui vont directement à la grange.
+- **Nouveau carré** agrandit le potager, jusqu’à douze carrés.
+
+| Culture | Temps | Graines | Vendu (l’unité) | Étoiles |
+|---|---|---|---|---|
+| Salade | 2 min | 2 | 3 | 0 |
+| Carotte | 5 min | 4 | 5 | 0 |
+| Maïs | 10 min | 6 | 8 | 1 |
+| Tomate | 20 min | 9 | 12 | 3 |
+| Fraise | 40 min | 12 | 16 | 5 |
+| Citrouille | 90 min | 20 | 28 | 8 |
+
+## Les animaux
+Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et garde jusqu’à **trois** produits en attente, montrés au-dessus ; touchez l’animal (ou **Tout ramasser**) pour les mettre dans la grange.
+
+| Animal | Donne | Toutes les | Coûte | Vendu | Étoiles |
+|---|---|---|---|---|---|
+| Poule | Œuf | 10 min | 40 | 10 | 0 |
+| Vache | Lait | 30 min | 120 | 22 | 2 |
+| Mouton | Laine | 60 min | 200 | 40 | 4 |
+
+## Commandes et étoiles
+Les voisins demandent quelques produits à la fois et paient **moitié plus** que le marché, avec une **étoile** en prime. **Livrer** s’allume quand la grange a tout. **Autre commande** remplace une commande par une nouvelle, gratuitement. Les étoiles débloquent de nouvelles graines et de nouveaux animaux, comme le montrent les tableaux.
+
+## La grange
+Tout ce que vous récoltez et ramassez attend dans la grange, avec son prix. **Vendre 1** ou **Tout vendre** le change en pièces. Si vous n’avez plus de pièces, il y a toujours quelque chose à vendre, ou une salade à semer pour deux pièces.
+
+## Sauvegarde
+Tout est enregistré sur le téléphone aussitôt. Fermer l’application, jouer à un autre jeu ou **Nouvelle partie** dans les réglages n’efface jamais la ferme. Désinstaller l’application, si.

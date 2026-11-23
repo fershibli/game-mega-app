@@ -1,0 +1,41 @@
+# Fazenda
+
+🌐 [English](../../en/games/farm.md) · **Português** · [Español](../../es/games/farm.md) · [Français](../../fr/games/farm.md) · [Italiano](../../it/games/farm.md) · [Deutsch](../../de/games/farm.md) · [Русский](../../ru/games/farm.md) · [日本語](../../ja/games/farm.md) · [中文](../../zh-CN/games/farm.md) · [العربية](../../ar/games/farm.md)
+
+Uma pequena fazenda que mora no seu celular. Plante, regue e colha, cuide das galinhas, da vaca e das ovelhas, venda no celeiro e atenda as encomendas dos vizinhos. Não há pressa e nada se perde: as plantas nunca murcham, os animais nunca passam fome e a fazenda continua crescendo com o app fechado.
+
+Quatro botões em cima abrem a **Horta**, os **Animais**, as **Encomendas** e o **Celeiro**. Suas **moedas** e **estrelas** aparecem acima deles.
+
+## A horta
+- Toque num **canteiro vazio** (o que tem um + grande) e escolha o que plantar. Cada semente custa algumas moedas.
+- A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova, depois a colheita madura num círculo amarelo, com **Pronto!** embaixo. O tempo que falta aparece debaixo de cada canteiro.
+- **Regar** (toque num canteiro com uma gota azul, ou em **Regar tudo**) faz o resto do crescimento andar duas vezes mais rápido. Uma vez por plantação basta.
+- Toque num canteiro maduro (ou em **Colher tudo**): cada canteiro dá **dois** do que foi plantado, que vão direto para o celeiro.
+- **Novo canteiro** aumenta a horta, até doze canteiros.
+
+| Planta | Tempo | Semente | Vende por (cada) | Estrelas |
+|---|---|---|---|---|
+| Alface | 2 min | 2 | 3 | 0 |
+| Cenoura | 5 min | 4 | 5 | 0 |
+| Milho | 10 min | 6 | 8 | 1 |
+| Tomate | 20 min | 9 | 12 | 3 |
+| Morango | 40 min | 12 | 16 | 5 |
+| Abóbora | 90 min | 20 | 28 | 8 |
+
+## Os animais
+Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **três** produtos esperando, mostrados acima dele; toque no animal (ou em **Recolher tudo**) para levá-los ao celeiro.
+
+| Animal | Dá | A cada | Custa | Vende por | Estrelas |
+|---|---|---|---|---|---|
+| Galinha | Ovo | 10 min | 40 | 10 | 0 |
+| Vaca | Leite | 30 min | 120 | 22 | 2 |
+| Ovelha | Lã | 60 min | 200 | 40 | 4 |
+
+## Encomendas e estrelas
+Os vizinhos pedem algumas coisas de cada vez e pagam **metade a mais** que o mercado, e ainda dão uma **estrela**. **Entregar** acende quando o celeiro tem tudo. **Outra encomenda** troca a encomenda por uma nova, de graça. As estrelas liberam novas sementes e animais, como mostram as tabelas.
+
+## O celeiro
+Tudo o que você colhe e recolhe espera no celeiro, com o preço. **Vender 1** ou **Vender tudo** transforma em moedas. Se as moedas acabarem, sempre há algo para vender, ou uma alface para plantar por duas moedas.
+
+## Salvamento
+Tudo fica salvo no celular na hora. Fechar o app, jogar outro jogo ou tocar em **Novo jogo** nas configurações nunca apaga a fazenda. Desinstalar o app apaga.
