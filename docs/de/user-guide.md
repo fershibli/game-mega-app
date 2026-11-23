@@ -144,7 +144,7 @@ Jedes Rätsel wird neu erzeugt und hat genau **eine** Lösung.
 
 ### Buraco
 
-Brasilianisches Buraco zu zweit (du gegen den Computer) oder zu viert in Paaren (du und ein Computer-Partner gegen zwei Computer), oder abwechselnd an einem Telefon. Alle Regeln, das Spiel zu viert und Tipps: [Buraco](games/buraco.md).
+Brasilianisches Buraco für zwei bis sechs: du gegen den Computer, zu dritt oder viert jeder für sich, zu viert in Paaren oder zu sechst in Teams, oder abwechselnd an einem Telefon. Alle Regeln, das Spiel zu viert und Tipps: [Buraco](games/buraco.md).
 
 **Karten:** zwei Kartenspiele mit je 52 Karten (104 Karten). **Jede Zwei ist ein Joker** („curinga“).
 

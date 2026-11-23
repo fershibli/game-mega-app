@@ -2,7 +2,7 @@
 
 🌐 [English](../../en/games/buraco.md) · [Português](../../pt-BR/games/buraco.md) · **Español** · [Français](../../fr/games/buraco.md) · [Italiano](../../it/games/buraco.md) · [Deutsch](../../de/games/buraco.md) · [Русский](../../ru/games/buraco.md) · [日本語](../../ja/games/buraco.md) · [中文](../../zh-CN/games/buraco.md) · [العربية](../../ar/games/buraco.md)
 
-El buraco es el rummy brasileño de escaleras y canastas, con dos barajas. En Mili Games se juega **entre dos** (tú contra el ordenador) o **entre cuatro, por parejas**: tú y un compañero (ordenador), sentados frente a frente, contra dos jugadores del ordenador. Antes de cada partida la app pregunta **¿Cuántos en la mesa?** y recuerda tu elección. También podéis **jugar por turnos en un solo teléfono**.
+El buraco es el rummy brasileño de escaleras y canastas, con dos barajas. En Mili Games se juega **entre dos** (tú contra el ordenador), **entre tres** (cada uno por su cuenta), **entre cuatro** (por parejas o cada uno por su cuenta) o **entre seis** (en tres parejas o en dos equipos de tres). Antes de cada partida la app pregunta **¿Cuántos en la mesa?** y recuerda tu elección. También podéis **jugar por turnos en un solo teléfono**.
 
 ## Las cartas
 - Dos barajas de 52 cartas (104), sin comodines. **Todos los 2 son comodín** ("curinga").
@@ -38,6 +38,12 @@ El buraco es el rummy brasileño de escaleras y canastas, con dos barajas. En Mi
 - **Una mesa por pareja:** tú y tu compañero bajáis y añadís a las **mismas escaleras** ("Nuestras escaleras"); los rivales comparten las suyas. Cada pareja recoge **un morto**: el primero de los dos que se quede sin cartas.
 - **Puntos por pareja:** la barra de arriba muestra los puntos que cada pareja ya tiene en la mesa. Al final cada pareja suma sus escaleras y canastas, +100 si uno de los dos cerró, menos las cartas de **ambas** manos, y −100 si no recogió su morto.
 - **Tu compañero del ordenador** añade a las escaleras compartidas, mantiene limpias las canastas limpias en Difícil y evita descartar cartas que el siguiente rival pueda usar.
+
+## Tres, cuatro o seis en la mesa
+- **Cada uno por su cuenta** (3 o 4): cada jugador tiene sus propias escaleras y su morto; gana quien hace más puntos.
+- **Seis en tres parejas:** los compañeros se sientan frente a frente (jugadores 1 y 4, 2 y 5, 3 y 6).
+- **Seis en dos equipos de tres:** los compañeros se sientan alternados (jugadores 1, 3 y 5 contra 2, 4 y 6), así que el siguiente siempre es un rival.
+- Con seis, o con cuatro cada uno por su cuenta, se usan **tres barajas** para que el mazo no se acabe pronto. Cada asiento tiene su color y su símbolo (● ▲ ■ ◆ ▼ ⬢).
 
 ## Por turnos en un solo teléfono
 Elige **Por turnos en este teléfono** en la pantalla **¿Cómo quieres jugar?** y luego 2 o 4 en la mesa. Todos son personas (2 personas, o 4 por parejas: jugadores 1 y 3 contra 2 y 4). Tras cada descarte una pantalla tapa las cartas y pide pasar el teléfono al siguiente jugador, con su color y su símbolo; este toca el botón grande (“Listo, es mi turno”) para ver su mano.

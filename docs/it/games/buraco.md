@@ -2,7 +2,7 @@
 
 🌐 [English](../../en/games/buraco.md) · [Português](../../pt-BR/games/buraco.md) · [Español](../../es/games/buraco.md) · [Français](../../fr/games/buraco.md) · **Italiano** · [Deutsch](../../de/games/buraco.md) · [Русский](../../ru/games/buraco.md) · [日本語](../../ja/games/buraco.md) · [中文](../../zh-CN/games/buraco.md) · [العربية](../../ar/games/buraco.md)
 
-Il buraco è il ramino brasiliano di scale e canaste, con due mazzi. In Mili Games si gioca **in due** (tu contro il computer) o **in quattro, a coppie**: tu e un compagno (computer), seduti uno di fronte all’altro, contro due computer. Prima di ogni partita l’app chiede **Quanti al tavolo?** e ricorda la scelta. Potete anche **giocare a turno su un solo telefono**.
+Il buraco è il ramino brasiliano di scale e canaste, con due mazzi. In Mili Games si gioca **in due** (tu contro il computer), **in tre** (ognuno per sé), **in quattro** (a coppie o ognuno per sé) o **in sei** (in tre coppie o in due squadre da tre). Prima di ogni partita l’app chiede **Quanti al tavolo?** e ricorda la scelta. Potete anche **giocare a turno su un solo telefono**.
 
 ## Le carte
 - Due mazzi da 52 carte (104), senza jolly. **Tutti i 2 sono matte** («curinga»).
@@ -38,6 +38,12 @@ Il buraco è il ramino brasiliano di scale e canaste, con due mazzi. In Mili Gam
 - **Un tavolo per coppia:** tu e il compagno calate e attaccate sulle **stesse scale** («Le nostre scale»); gli avversari condividono le loro. Ogni coppia prende **un morto**: il primo dei due che resta senza carte.
 - **Punti per coppia:** la barra in alto mostra i punti che ogni coppia ha già sul tavolo. Alla fine ogni coppia conta scale e canaste, +100 se uno dei due ha chiuso, meno le carte rimaste in **entrambe** le mani, e −100 senza il morto.
 - **Il compagno computer** attacca alle scale comuni, tiene pulite le canaste pulite a Difficile ed evita di scartare carte utili all’avversario successivo.
+
+## In tre, quattro o sei
+- **Ognuno per sé** (3 o 4): ogni giocatore ha le sue scale e il suo morto; vince chi fa più punti.
+- **In sei, tre coppie:** i compagni siedono uno di fronte all’altro (giocatori 1 e 4, 2 e 5, 3 e 6).
+- **In sei, due squadre da tre:** i compagni siedono a posti alterni (giocatori 1, 3 e 5 contro 2, 4 e 6), quindi il prossimo giocatore è sempre un avversario.
+- In sei, o in quattro ognuno per sé, si usano **tre mazzi** perché il tallone non finisca troppo presto. Ogni posto ha il suo colore e il suo simbolo (● ▲ ■ ◆ ▼ ⬢).
 
 ## A turno su un solo telefono
 Scegli **A turno su questo telefono** nella schermata **Come vuoi giocare?**, poi 2 o 4 al tavolo. Tutti sono persone (2 persone, o 4 a coppie: giocatori 1 e 3 contro 2 e 4). Dopo ogni scarto una copertura nasconde le carte e chiede di passare il telefono al giocatore successivo, con il suo colore e simbolo; tocca il pulsante grande («Pronto, tocca a me») per vedere la sua mano.
