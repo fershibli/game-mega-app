@@ -160,7 +160,7 @@ Cada sudoku é gerado na hora e tem exatamente **uma** solução.
 
 ### Buraco
 
-Buraco brasileiro para dois (você contra o computador) ou para quatro em duplas (você e um parceiro computador contra dois computadores), ou revezando o celular. Regras completas, o jogo a quatro e dicas: [Buraco](games/buraco.md).
+Buraco brasileiro de dois a seis: você contra o computador, três ou quatro cada um por si, quatro em duplas ou seis em times, ou revezando o celular. Regras completas, o jogo a quatro e dicas: [Buraco](games/buraco.md).
 
 **Cartas:** dois baralhos de 52 cartas (104 cartas). **Todo 2 é curinga.**
 

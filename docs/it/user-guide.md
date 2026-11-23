@@ -144,7 +144,7 @@ Ogni rompicapo è creato da zero e ha **una sola** soluzione.
 
 ### Buraco
 
-Il burraco brasiliano in due (tu contro il computer) o in quattro a coppie (tu e un compagno computer contro due computer), oppure a turno su un solo telefono. Regole complete, il gioco in quattro e consigli: [Buraco](games/buraco.md).
+Il burraco brasiliano da due a sei: tu contro il computer, in tre o quattro ognuno per sé, in quattro a coppie o in sei a squadre, oppure a turno su un solo telefono. Regole complete, il gioco in quattro e consigli: [Buraco](games/buraco.md).
 
 **Carte:** due mazzi da 52 carte (104 carte). **Ogni 2 è un jolly** (“curinga”).
 

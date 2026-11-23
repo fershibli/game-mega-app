@@ -2,6 +2,10 @@
 
 En cada partida se **genera un crucigrama nuevo** a partir de un diccionario de palabras cotidianas con pistas sencillas, en el idioma de la aplicación.
 
+Las palabras de las últimas partidas quedan fuera de la siguiente, para que no se repitan.
+
+**Niveles:** en **Fácil** la primera letra de cada palabra ya viene escrita (en azul), aparece un banco de letras y se dejan fuera las palabras difíciles; **Medio** tiene una cuadrícula mayor con más palabras; **Difícil** tiene la cuadrícula más grande, no marca los errores en rojo y prefiere las palabras menos comunes, dejando fuera las más fáciles. El diccionario de cada idioma marca cada palabra como fácil, media o difícil.
+
 **Cómo se juega:** toca una casilla para elegir su palabra; vuelve a tocar la misma casilla para cambiar entre horizontal y vertical. La pista aparece abajo, entre ◀ y ▶ (palabra anterior / siguiente). Escribe con las letras de abajo: tras cada letra el cursor avanza. La goma borra una letra. **Pista** rellena la casilla seleccionada.
 
 Las tildes se ignoran, como en los crucigramas impresos (É = E…); el español conserva la Ñ, el alemán escribe Ä Ö Ü ß como AE OE UE SS y el ruso escribe Ё como Е. En chino, cada casilla lleva un carácter; en japonés, un katakana, con los kana pequeños escritos en tamaño normal (ッ → ツ).

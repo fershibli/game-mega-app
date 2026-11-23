@@ -2,6 +2,10 @@
 
 Für jedes Spiel wird ein **neues Kreuzworträtsel erzeugt**, aus einem Wörterbuch mit Alltagswörtern und freundlichen Fragen, in der Sprache der App.
 
+Wörter aus den letzten Spielen kommen im nächsten nicht vor, damit sie sich nicht wiederholen.
+
+**Stufen:** Bei **Leicht** ist der erste Buchstabe jedes Wortes schon eingetragen (in Blau), es gibt eine Buchstabenauswahl und schwere Wörter bleiben weg; **Mittel** hat ein größeres Gitter mit mehr Wörtern; **Schwer** hat das größte Gitter, zeigt Fehler nicht rot an und nimmt bevorzugt seltenere Wörter, die leichtesten bleiben weg. Das Wörterbuch jeder Sprache kennzeichnet jedes Wort als leicht, mittel oder schwer.
+
 **So spielst du:** Tippe auf ein Feld, um sein Wort zu wählen; tippe noch einmal auf dasselbe Feld, um zwischen **Waagerecht** und **Senkrecht** zu wechseln. Die Frage steht unten zwischen ◀ und ▶ (vorheriges / nächstes Wort). Tippe mit den Buchstaben darunter: Nach jedem Buchstaben geht es ein Feld weiter. Der Radiergummi löscht einen Buchstaben. **Tipp** füllt das gewählte Feld aus.
 
 Wie in gedruckten Kreuzworträtseln werden Ä, Ö, Ü und ß als AE, OE, UE und SS geschrieben, und Akzente fallen weg (Ç = C, É = E…); im Spanischen bleibt das Ñ erhalten. Auf Chinesisch steht in jedem Feld ein Schriftzeichen.
