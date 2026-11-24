@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">弹球</string>
+    <string name="howto_pinball">按住“左”“右”按钮（或桌面的左右两边）抬起挡板，别让球掉下去。撞到弹柱得分；四颗星全部点亮有奖励。球滚得很慢，在“简单”难度下，刚开始就掉下的球会回来。</string>
+    <string name="pinball_score">得分：%1$d · 最高：%2$d</string>
+    <string name="pinball_balls">剩余球数：%1$d</string>
+    <string name="pinball_left">◀ 左</string>
+    <string name="pinball_right">右 ▶</string>
+    <string name="pinball_pause">暂停</string>
+    <string name="pinball_continue">继续</string>
+    <string name="pinball_serve">发球</string>
+    <string name="pinball_ready">按住“左”“右”按钮来移动挡板。</string>
+    <string name="pinball_next">准备好下一个球了吗？</string>
+    <string name="pinball_lost">球掉下去了。剩余球数：%1$d。</string>
+    <string name="pinball_saved">救回来了！球回来了。</string>
+    <string name="pinball_all_stars">四颗星全亮！奖励 +500。</string>
+    <string name="pinball_paused">已暂停</string>
+    <string name="pinball_board">弹球台</string>
+    <string name="pinball_new_best">这个难度的新纪录！</string>
+    <string name="pinball_final">得分：%1$d。最高：%2$d。</string>
+</resources>
