@@ -91,6 +91,7 @@ fun GameThumbnail(game: GameId, modifier: Modifier = Modifier) {
             GameId.LIGHTS -> io.github.fershibli.megagames.games.lights.lightsThumbnail(this, p)
             GameId.BOXES -> io.github.fershibli.megagames.games.boxes.boxesThumbnail(this, p)
             GameId.MERGE -> io.github.fershibli.megagames.games.merge.mergeThumbnail(this, p)
+            GameId.FARM -> io.github.fershibli.megagames.games.farm.farmThumbnail(this, p)
             GameId.BATTLESHIP -> io.github.fershibli.megagames.games.battleship.battleshipThumbnail(this, p)
             GameId.TANGRAM -> io.github.fershibli.megagames.games.tangram.tangramThumbnail(this, p)
             GameId.SUECA -> io.github.fershibli.megagames.games.sueca.suecaThumbnail(this, p, m)

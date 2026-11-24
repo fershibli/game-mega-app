@@ -146,6 +146,7 @@ enum class GameId(
     BISCA("bisca", R.string.game_bisca, R.string.howto_bisca, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.bisca_table_pairs))),
     HEARTS("hearts", R.string.game_hearts, R.string.howto_hearts, GameCategory.CARDS, takeTurns = true),
     ESCOVA("escova", R.string.game_escova, R.string.howto_escova, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.escova_table_pairs))),
+    FARM("farm", R.string.game_farm, R.string.howto_farm, GameCategory.PASTIMES, hasDifficulty = false),
     BATTLESHIP("battleship", R.string.game_battleship, R.string.howto_battleship, GameCategory.BOARD, takeTurns = true),
     ;
 
