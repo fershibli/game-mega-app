@@ -62,7 +62,8 @@ import org.robolectric.annotation.Config
 @Config(sdk = [35], qualifiers = "w400dp-h860dp-xhdpi")
 class BoardTakeTurnsTest {
     @get:Rule val rule = createComposeRule()
-    private val store get() = SaveStore(RuntimeEnvironment.getApplication())
+    // One store for the whole test: its background writes can then be waited for before reading.
+    private val store by lazy { SaveStore(RuntimeEnvironment.getApplication()) }
     private var outcome: GameOutcome? = null
 
     private fun <T> open(game: GameId, variant: String?, serializer: KSerializer<T>, start: T? = null, seats: Int = 0) {
@@ -73,7 +74,10 @@ class BoardTakeTurnsTest {
         rule.waitForIdle()
     }
 
-    private fun <T> saved(serializer: KSerializer<T>): T = AppJson.decodeFromJsonElement(serializer, store.load()!!.state)
+    private fun <T> saved(serializer: KSerializer<T>): T {
+        store.flush()
+        return AppJson.decodeFromJsonElement(serializer, store.load()!!.state)
+    }
 
     /** Lets time run (the computer would have answered by now), then reads the save. */
     private fun <T> settle(serializer: KSerializer<T>): T {
@@ -90,7 +94,11 @@ class BoardTakeTurnsTest {
         rule.waitUntil(10_000) { rule.onAllNodesWithTag("handoff").fetchSemanticsNodes().isEmpty() }
     }
 
-    private fun status(text: String) = rule.onNodeWithText(text, substring = true).assertIsDisplayed()
+    /** The status line says [text], once the game (a new one is set up off the main thread) shows it. */
+    private fun status(text: String): androidx.compose.ui.test.SemanticsNodeInteraction {
+        rule.waitUntil(10_000) { rule.onAllNodesWithText(text, substring = true).fetchSemanticsNodes().isNotEmpty() }
+        return rule.onNodeWithText(text, substring = true).assertIsDisplayed()
+    }
 
     @Test
     fun checkersBothSidesArePeople() {

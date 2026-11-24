@@ -274,6 +274,18 @@ class ScreenshotTest {
     }
     @Test fun pinball() = gameShot("game_pinball", GameId.PINBALL)
     @Test fun pinballPt() = gameShot("game_pinball_pt", GameId.PINBALL, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+
+    @Test fun trail() = shot("game_trail") { GameContent(GameId.TRAIL, trailHost()) }
+    @Test fun trailPt() = shot("game_trail_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
+
+    /** Four pawns along the way, with a story (or a crossroads) waiting for you. */
+    private fun trailHost(choice: Boolean = false): GameHost {
+        val s = io.github.fershibli.megagames.games.trail.TrailState(
+            seats = 4, positions = listOf(if (choice) 12 else 10, 7, 13, 4), hearts = listOf(6, 4, 7, 3), die = 3,
+            pending = if (choice) io.github.fershibli.megagames.games.trail.Pending(0, choiceStage = 1) else io.github.fershibli.megagames.games.trail.Pending(0, story = io.github.fershibli.megagames.games.trail.Story.FRIEND.ordinal),
+        )
+        return GameHost(GameId.TRAIL, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.trail.TrailState.serializer(), s), null, null, io.github.fershibli.megagames.core.PlaySetup(seats = 4)) {}
+    }
     @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
     @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
     @Test fun buracoTriosPt() = BuracoUiTest.trioHost().let { host -> shot("game_buraco_trios_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BURACO, host) } }

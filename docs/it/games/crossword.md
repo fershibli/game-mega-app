@@ -2,10 +2,6 @@
 
 A ogni partita viene **creato un cruciverba nuovo**, partendo da un dizionario di parole di tutti i giorni con definizioni semplici, nella lingua dell’app.
 
-Le parole delle ultime partite restano fuori dalla successiva, così non si ripetono.
-
-**Livelli:** in **Facile** la prima lettera di ogni parola è già scritta (in blu), compaiono le lettere suggerite e le parole difficili restano fuori; **Medio** ha una griglia più grande con più parole; **Difficile** ha la griglia più grande, non segna gli errori in rosso e preferisce le parole meno comuni, lasciando fuori le più facili. Il dizionario di ogni lingua indica per ogni parola se è facile, media o difficile.
-
 **Come si gioca:** tocca una casella per scegliere la sua parola; tocca di nuovo la stessa casella per passare da orizzontale a verticale. La definizione compare in basso tra ◀ e ▶ (parola precedente / parola successiva). Scrivi con le lettere qui sotto: dopo ogni lettera il cursore va avanti. La gomma cancella una lettera. **Suggerimento** riempie la casella selezionata.
 
 Gli accenti non contano, come nei cruciverba stampati (È = E, À = A…); lo spagnolo mantiene la Ñ. In cinese ogni casella contiene un carattere.
