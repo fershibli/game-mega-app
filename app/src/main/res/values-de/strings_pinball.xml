@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">Flipper</string>
+    <string name="howto_pinball">Halte die Knöpfe Links und Rechts (oder eine Seite des Tischs) gedrückt, um die Flipperarme zu heben und die Kugel im Spiel zu halten. Bumper geben Punkte; leuchten alle vier Sterne, gibt es einen Bonus. Die Kugel rollt langsam, und auf Leicht kommt eine früh verlorene Kugel zurück.</string>
+    <string name="pinball_score">Punkte: %1$d · Bestwert: %2$d</string>
+    <string name="pinball_balls">Kugeln: %1$d</string>
+    <string name="pinball_left">◀ Links</string>
+    <string name="pinball_right">Rechts ▶</string>
+    <string name="pinball_pause">Pause</string>
+    <string name="pinball_continue">Weiter</string>
+    <string name="pinball_serve">Kugel abschießen</string>
+    <string name="pinball_ready">Halte Links und Rechts gedrückt, um die Flipperarme zu bewegen.</string>
+    <string name="pinball_next">Bereit für die nächste Kugel?</string>
+    <string name="pinball_lost">Die Kugel ist weg. Kugeln: %1$d.</string>
+    <string name="pinball_saved">Gerettet! Die Kugel kommt zurück.</string>
+    <string name="pinball_all_stars">Alle vier Sterne! Bonus +500.</string>
+    <string name="pinball_paused">Pause</string>
+    <string name="pinball_board">Flippertisch</string>
+    <string name="pinball_new_best">Neuer Bestwert auf dieser Stufe!</string>
+    <string name="pinball_final">Punkte: %1$d. Bestwert: %2$d.</string>
+</resources>
