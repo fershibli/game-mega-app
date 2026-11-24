@@ -69,7 +69,7 @@ class FarmUiTest {
     fun sowWaitAndHarvestALettuceThenSellIt() {
         show()
         rule.onNodeWithTag("farm-plot-0").performClick()
-        rule.onNodeWithText("Lettuce · 2 coins · 2 min").performClick()
+        rule.onNodeWithText("Lettuce · coins: 2 · 2 min").performClick()
         rule.waitForIdle()
         assertEquals("lettuce", stored().plots[0].crop)
         assertEquals(FarmRules.START_COINS - 2, stored().coins)
@@ -115,7 +115,7 @@ class FarmUiTest {
     fun aNewFarmShowsSixEmptyBedsAndBuyingABedAddsOne() {
         seed(FarmWorld(coins = 100))
         show()
-        rule.onNodeWithText("New bed (25 coins)").performClick()
+        rule.onNodeWithText("New bed (coins: 25)").performClick()
         rule.waitForIdle()
         assertEquals(7, stored().plots.size)
         assertEquals(75, stored().coins)
