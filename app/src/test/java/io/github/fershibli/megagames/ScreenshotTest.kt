@@ -229,6 +229,8 @@ class ScreenshotTest {
         }
         gameShot("game_pet", GameId.PET)
     }
+    @Test fun pinball() = gameShot("game_pinball", GameId.PINBALL)
+    @Test fun pinballPt() = gameShot("game_pinball_pt", GameId.PINBALL, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
     @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
     @Test fun buracoTriosPt() = BuracoUiTest.trioHost().let { host -> shot("game_buraco_trios_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BURACO, host) } }
