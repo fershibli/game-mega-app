@@ -272,6 +272,8 @@ class ScreenshotTest {
             flush()
         }
     }
+    @Test fun pinball() = gameShot("game_pinball", GameId.PINBALL)
+    @Test fun pinballPt() = gameShot("game_pinball_pt", GameId.PINBALL, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
 
     @Test fun battleship() = shot("game_battleship") { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipPt() = shot("game_battleship_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
