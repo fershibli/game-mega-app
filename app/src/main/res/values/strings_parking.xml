@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">Parking lot</string>
+    <string name="howto_parking">Get the red car out through the gap on the right. Drag a car or truck along its own direction to make room; it cannot turn or pass through others. Hint shows a good move.</string>
+    <string name="parking_moves">Moves: %1$d · Fewest possible: %2$d</string>
+    <string name="parking_goal">Drag the cars to clear the way for the red one.</string>
+    <string name="parking_hint_move">Move the ringed vehicle to the dashed place.</string>
+    <string name="parking_done">The red car is out!</string>
+    <string name="parking_restart">Restart</string>
+    <string name="parking_board">Parking lot with vehicles: %1$d</string>
+    <string name="parking_done_moves">Out with moves: %1$d (fewest possible: %2$d).</string>
+    <string name="parking_hints_used">Hints used: %1$d.</string>
+</resources>
