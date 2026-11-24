@@ -147,6 +147,7 @@ enum class GameId(
     HEARTS("hearts", R.string.game_hearts, R.string.howto_hearts, GameCategory.CARDS, takeTurns = true),
     ESCOVA("escova", R.string.game_escova, R.string.howto_escova, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.escova_table_pairs))),
     FARM("farm", R.string.game_farm, R.string.howto_farm, GameCategory.PASTIMES, hasDifficulty = false),
+    PINBALL("pinball", R.string.game_pinball, R.string.howto_pinball, GameCategory.CALM_ACTION),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()
