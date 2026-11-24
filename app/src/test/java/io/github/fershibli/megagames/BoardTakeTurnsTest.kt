@@ -94,7 +94,11 @@ class BoardTakeTurnsTest {
         rule.waitUntil(10_000) { rule.onAllNodesWithTag("handoff").fetchSemanticsNodes().isEmpty() }
     }
 
-    private fun status(text: String) = rule.onNodeWithText(text, substring = true).assertIsDisplayed()
+    /** The status line says [text], once the game (a new one is set up off the main thread) shows it. */
+    private fun status(text: String): androidx.compose.ui.test.SemanticsNodeInteraction {
+        rule.waitUntil(10_000) { rule.onAllNodesWithText(text, substring = true).fetchSemanticsNodes().isNotEmpty() }
+        return rule.onNodeWithText(text, substring = true).assertIsDisplayed()
+    }
 
     @Test
     fun checkersBothSidesArePeople() {
