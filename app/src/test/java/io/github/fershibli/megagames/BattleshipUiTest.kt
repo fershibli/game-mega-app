@@ -5,6 +5,7 @@ import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.click
+import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.performTouchInput
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
@@ -27,8 +28,8 @@ class BattleshipUiTest {
     @Test
     fun arrangeStartFireAndTheComputerFiresBack() {
         rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.BATTLESHIP, GameHost(GameId.BATTLESHIP, Difficulty.MEDIUM, null, null) {}) } }
-        rule.waitForIdle()
-        rule.onNodeWithText("Here is your fleet", substring = true).assertExists()
+        // The game is set up off the main thread: wait for it.
+        rule.waitUntil(10_000) { rule.onAllNodes(hasText("Here is your fleet", substring = true)).fetchSemanticsNodes().isNotEmpty() }
         rule.onNodeWithTag("battleship-rearrange").performClick()
         rule.onNodeWithTag("battleship-ready").performClick()
         rule.waitForIdle()
@@ -36,8 +37,6 @@ class BattleshipUiTest {
         rule.onNodeWithTag("battleship-target").performTouchInput { click(topLeft + androidx.compose.ui.geometry.Offset(5f, 5f)) }
         rule.waitForIdle()
         rule.onNodeWithText("You:", substring = true).assertExists()
-        rule.mainClock.advanceTimeBy(3_000)
-        rule.waitForIdle()
-        rule.onNodeWithText("The computer:", substring = true).assertExists()
+        rule.waitUntil(10_000) { rule.onAllNodes(hasText("The computer:", substring = true)).fetchSemanticsNodes().isNotEmpty() }
     }
 }
