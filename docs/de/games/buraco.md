@@ -2,7 +2,7 @@
 
 🌐 [English](../../en/games/buraco.md) · [Português](../../pt-BR/games/buraco.md) · [Español](../../es/games/buraco.md) · [Français](../../fr/games/buraco.md) · [Italiano](../../it/games/buraco.md) · **Deutsch** · [Русский](../../ru/games/buraco.md) · [日本語](../../ja/games/buraco.md) · [中文](../../zh-CN/games/buraco.md) · [العربية](../../ar/games/buraco.md)
 
-Buraco ist das brasilianische Rommé mit Folgen und Canastas, gespielt mit zwei Kartenspielen. In Mili Games spielt man **zu zweit** (du gegen den Computer), **zu dritt** (jeder für sich), **zu viert** (in Paaren oder jeder für sich) oder **zu sechst** (in drei Paaren oder in zwei Dreierteams). Vor jedem Spiel fragt die App **Wie viele am Tisch?** und merkt sich die Wahl. Ihr könnt auch **abwechselnd an einem Handy spielen**.
+Buraco ist das brasilianische Rommé mit Folgen und Canastas, gespielt mit zwei Kartenspielen. In Mili Games spielt man **zu zweit** (du gegen den Computer) oder **zu viert in Paaren**: du und ein Computer-Partner, einander gegenüber, gegen zwei Computer. Vor jedem Spiel fragt die App **Wie viele am Tisch?** und merkt sich die Wahl. Ihr könnt auch **abwechselnd an einem Handy spielen**.
 
 ## Die Karten
 - Zwei Spiele zu 52 Karten (104), ohne Joker. **Jede 2 ist ein Joker** („curinga“).
@@ -38,12 +38,6 @@ Buraco ist das brasilianische Rommé mit Folgen und Canastas, gespielt mit zwei 
 - **Ein Tisch pro Paar:** du und dein Partner legt aus und legt an **dieselben Folgen** an („Unsere Folgen“); die Gegner teilen ihre. Jedes Paar nimmt **einen Morto**: wer von beiden zuerst keine Karten mehr hat.
 - **Punkte pro Paar:** Die Leiste oben zeigt die Punkte, die jedes Paar schon ausgelegt hat. Am Ende zählt jedes Paar Folgen und Canastas, +100, wenn einer von beiden ausgemacht hat, minus die Karten in **beiden** Händen, und −100 ohne Morto.
 - **Dein Computer-Partner** legt an eure gemeinsamen Folgen an, hält reine Canastas auf Schwer rein und wirft nichts ab, was der nächste Gegner brauchen könnte.
-
-## Zu dritt, zu viert oder zu sechst
-- **Jeder für sich** (3 oder 4): Jeder hat eigene Folgen und einen eigenen Morto; wer die meisten Punkte hat, gewinnt.
-- **Zu sechst in drei Paaren:** Partner sitzen einander gegenüber (Spieler 1 und 4, 2 und 5, 3 und 6).
-- **Zu sechst in zwei Dreierteams:** Partner sitzen auf jedem zweiten Platz (Spieler 1, 3 und 5 gegen 2, 4 und 6), der nächste Spieler ist also immer ein Gegner.
-- Zu sechst, oder zu viert jeder für sich, spielt man mit **drei Kartenspielen**, damit der Stapel nicht zu früh leer wird. Jeder Platz hat seine Farbe und sein Symbol (● ▲ ■ ◆ ▼ ⬢).
 
 ## Abwechselnd an einem Handy
 Wähle **Abwechselnd an diesem Telefon** auf dem Bildschirm **Wie möchtest du spielen?** und dann 2 oder 4 am Tisch. Alle sind Menschen (2 Personen oder 4 in Paaren: Spieler 1 und 3 gegen 2 und 4). Nach jedem Abwurf verdeckt ein Schirm die Karten und bittet, das Handy an den nächsten Spieler weiterzugeben, mit seiner Farbe und seinem Symbol; er tippt auf den großen Knopf („Fertig, ich bin dran“), um seine eigene Hand zu sehen.
