@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">ピンボール</string>
+    <string name="howto_pinball">「左」「右」のボタン（または台の左右）を押している間、フリッパーが上がります。ボールを落とさないようにしましょう。バンパーに当たると点が入り、4つの星を全部光らせるとボーナスです。ボールはゆっくり動き、「かんたん」では最初のうちに落ちたボールがもどってきます。</string>
+    <string name="pinball_score">点数：%1$d・最高：%2$d</string>
+    <string name="pinball_balls">残りのボール：%1$d</string>
+    <string name="pinball_left">◀ 左</string>
+    <string name="pinball_right">右 ▶</string>
+    <string name="pinball_pause">一時停止</string>
+    <string name="pinball_continue">つづける</string>
+    <string name="pinball_serve">ボールを出す</string>
+    <string name="pinball_ready">「左」「右」のボタンを押している間、フリッパーが動きます。</string>
+    <string name="pinball_next">次のボールの用意はいいですか？</string>
+    <string name="pinball_lost">ボールが落ちました。残りのボール：%1$d。</string>
+    <string name="pinball_saved">セーフ！ボールがもどります。</string>
+    <string name="pinball_all_stars">星が4つそろいました！ボーナス +500。</string>
+    <string name="pinball_paused">一時停止中</string>
+    <string name="pinball_board">ピンボール台</string>
+    <string name="pinball_new_best">このレベルの新記録です！</string>
+    <string name="pinball_final">点数：%1$d。最高：%2$d。</string>
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">Pinball</string>
+    <string name="howto_pinball">Mantén pulsados los botones Izquierda y Derecha (o un lado de la mesa) para subir las paletas y mantener la bola en juego. Los bumpers dan puntos; enciende las cuatro estrellas para un premio. La bola va despacio, y en Fácil una bola perdida al principio vuelve.</string>
+    <string name="pinball_score">Puntos: %1$d · Récord: %2$d</string>
+    <string name="pinball_balls">Bolas: %1$d</string>
+    <string name="pinball_left">◀ Izquierda</string>
+    <string name="pinball_right">Derecha ▶</string>
+    <string name="pinball_pause">Pausa</string>
+    <string name="pinball_continue">Continuar</string>
+    <string name="pinball_serve">Lanzar la bola</string>
+    <string name="pinball_ready">Mantén pulsados Izquierda y Derecha para mover las paletas.</string>
+    <string name="pinball_next">¿Listo para la siguiente bola?</string>
+    <string name="pinball_lost">La bola se cayó. Bolas: %1$d.</string>
+    <string name="pinball_saved">¡Salvada! La bola vuelve.</string>
+    <string name="pinball_all_stars">¡Las cuatro estrellas! Premio +500.</string>
+    <string name="pinball_paused">En pausa</string>
+    <string name="pinball_board">Mesa de pinball</string>
+    <string name="pinball_new_best">¡Nuevo récord en este nivel!</string>
+    <string name="pinball_final">Puntos: %1$d. Récord: %2$d.</string>
+</resources>

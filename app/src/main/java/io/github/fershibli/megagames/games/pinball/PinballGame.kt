@@ -20,6 +20,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
@@ -31,6 +32,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
@@ -38,6 +40,7 @@ import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.GameHost
@@ -140,9 +143,12 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
             StatusPill(line, Modifier.testTag("pinball-status"), emphasized = s.over)
         },
         controls = {
+            // The flipper buttons keep their physical sides in every language.
+            CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Ltr) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 FlipperButton(stringResource(R.string.pinball_left), Modifier.weight(1f).testTag("pinball-left"), !s.over) { table.pressed[0] = it; frame++ }
                 FlipperButton(stringResource(R.string.pinball_right), Modifier.weight(1f).testTag("pinball-right"), !s.over) { table.pressed[1] = it; frame++ }
+            }
             }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
                 BigButton(

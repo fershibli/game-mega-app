@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">Flipper</string>
+    <string name="howto_pinball">Maintenez les boutons Gauche et Droite (ou un côté de la table) pour lever les batteurs et garder la bille en jeu. Les bumpers rapportent des points ; allumez les quatre étoiles pour un bonus. La bille roule lentement, et en Facile une bille perdue tout de suite revient.</string>
+    <string name="pinball_score">Points : %1$d · Record : %2$d</string>
+    <string name="pinball_balls">Billes : %1$d</string>
+    <string name="pinball_left">◀ Gauche</string>
+    <string name="pinball_right">Droite ▶</string>
+    <string name="pinball_pause">Pause</string>
+    <string name="pinball_continue">Continuer</string>
+    <string name="pinball_serve">Lancer la bille</string>
+    <string name="pinball_ready">Maintenez Gauche et Droite pour bouger les batteurs.</string>
+    <string name="pinball_next">Prêt pour la bille suivante ?</string>
+    <string name="pinball_lost">La bille est tombée. Billes : %1$d.</string>
+    <string name="pinball_saved">Sauvée ! La bille revient.</string>
+    <string name="pinball_all_stars">Les quatre étoiles ! Bonus +500.</string>
+    <string name="pinball_paused">En pause</string>
+    <string name="pinball_board">Table de flipper</string>
+    <string name="pinball_new_best">Nouveau record à ce niveau !</string>
+    <string name="pinball_final">Points : %1$d. Record : %2$d.</string>
+</resources>
