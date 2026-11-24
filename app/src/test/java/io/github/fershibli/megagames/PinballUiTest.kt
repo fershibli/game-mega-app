@@ -25,8 +25,8 @@ class PinballUiTest {
     @Test
     fun serveABallAndLoseItWithoutTouchingTheFlippers() {
         rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.PINBALL, GameHost(GameId.PINBALL, Difficulty.HARD, null, null) {}) } }
-        rule.waitForIdle()
-        rule.onNodeWithText("Balls left: 3", substring = true).assertExists()
+        // The game is set up off the main thread: wait for it.
+        rule.waitUntil(10_000) { rule.onAllNodesWithTextCount("Balls left: 3") > 0 }
         rule.onNodeWithTag("pinball-serve").performClick()
         rule.waitForIdle()
         // Without flippers the ball always goes down within two minutes of play.
