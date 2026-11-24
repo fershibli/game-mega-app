@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">Estacionamento</string>
+    <string name="howto_parking">Tire o carro vermelho pela saída da direita. Arraste um carro ou caminhão na sua própria direção para abrir espaço; ele não vira nem passa por cima dos outros. Dica mostra um bom movimento.</string>
+    <string name="parking_moves">Movimentos: %1$d · Mínimo possível: %2$d</string>
+    <string name="parking_goal">Arraste os carros para abrir caminho para o vermelho.</string>
+    <string name="parking_hint_move">Leve o veículo marcado até o lugar tracejado.</string>
+    <string name="parking_done">O carro vermelho saiu!</string>
+    <string name="parking_restart">Recomeçar</string>
+    <string name="parking_board">Estacionamento com veículos: %1$d</string>
+    <string name="parking_done_moves">Saiu com movimentos: %1$d (mínimo possível: %2$d).</string>
+    <string name="parking_hints_used">Dicas usadas: %1$d.</string>
+</resources>

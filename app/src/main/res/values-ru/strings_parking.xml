@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">Парковка</string>
+    <string name="howto_parking">Выведите красную машину через выезд справа. Двигайте машину или грузовик вдоль своего направления, чтобы освободить место: они не поворачивают и не проезжают сквозь другие. «Подсказка» показывает хороший ход.</string>
+    <string name="parking_moves">Ходы: %1$d · Наименьшее возможное: %2$d</string>
+    <string name="parking_goal">Двигайте машины, чтобы освободить путь красной.</string>
+    <string name="parking_hint_move">Переставьте отмеченную машину на пунктирное место.</string>
+    <string name="parking_done">Красная машина выехала!</string>
+    <string name="parking_restart">Сначала</string>
+    <string name="parking_board">Парковка, машин: %1$d</string>
+    <string name="parking_done_moves">Выезд, ходов: %1$d (наименьшее возможное: %2$d).</string>
+    <string name="parking_hints_used">Подсказок: %1$d.</string>
+</resources>

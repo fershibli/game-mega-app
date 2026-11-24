@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">Aparcamiento</string>
+    <string name="howto_parking">Saca el coche rojo por la salida de la derecha. Arrastra un coche o camión en su propia dirección para hacer sitio; no gira ni pasa por encima de los demás. Pista muestra un buen movimiento.</string>
+    <string name="parking_moves">Movimientos: %1$d · Mínimo posible: %2$d</string>
+    <string name="parking_goal">Arrastra los coches para abrir paso al rojo.</string>
+    <string name="parking_hint_move">Lleva el vehículo marcado al sitio punteado.</string>
+    <string name="parking_done">¡El coche rojo ha salido!</string>
+    <string name="parking_restart">Reiniciar</string>
+    <string name="parking_board">Aparcamiento con vehículos: %1$d</string>
+    <string name="parking_done_moves">Salió con movimientos: %1$d (mínimo posible: %2$d).</string>
+    <string name="parking_hints_used">Pistas usadas: %1$d.</string>
+</resources>
