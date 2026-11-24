@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Farm** (pastimes): sow, water and harvest six crops that grow in real time and never wilt, keep hens, a cow and sheep, sell in the barn and fill the neighbours' orders for coins and stars, which bring new seeds and animals. Like the pet, the farm is kept forever and never lost to **New game**.
 - **Pinball** (calm action): a gentle table where the ball rolls slowly, with three bumpers, two kickers and four stars to light for a bonus. Hold the big Left and Right buttons (or a half of the table) to raise the flippers. Easy has 5 balls and gives back a ball lost in its first 12 seconds; the best score of each level is kept.
 - **Bigger dictionaries**: the word games (crossword, word search, anagrams, guess the word, word of the day) now draw from more than a thousand words in each of the ten languages, every word marked easy, medium or hard, so a level keeps several hundred words to choose from and words come back much less often.
 - **Every game keeps its own game in progress**: leaving a game for the menu no longer abandons it, and no longer asks "are you sure?". Each game keeps one game in progress, marked with a small ▶ in the list; opening it asks whether to continue or start a new game. A cold start still offers the game played last. The single saved game of older versions is kept as that game's save. A save is a few kilobytes (all 49 games together about 54 KB), and a test keeps it that way.
