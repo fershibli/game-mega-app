@@ -5,6 +5,7 @@ All notable changes to this project are documented here. The format follows [Kee
 ## [2.0.0] - Unreleased
 
 ### Added
+- **Farm** (pastimes): sow, water and harvest six crops that grow in real time and never wilt, keep hens, a cow and sheep, sell in the barn and fill the neighbours' orders for coins and stars, which bring new seeds and animals. Like the pet, the farm is kept forever and never lost to **New game**.
 - **Parking lot** (puzzles): get the red car out of a full 6 × 6 car park by sliding cars and trucks along their own direction. Every puzzle is new and comes with its fewest possible moves: 3 to 7 on Easy, 8 to 14 on Medium, 15 or more on Hard. Undo, Restart and a Hint that shows the next move of a shortest way out.
 - **Bigger dictionaries**: the word games (crossword, word search, anagrams, guess the word, word of the day) now draw from more than a thousand words in each of the ten languages, every word marked easy, medium or hard, so a level keeps several hundred words to choose from and words come back much less often.
 - **Every game keeps its own game in progress**: leaving a game for the menu no longer abandons it, and no longer asks "are you sure?". Each game keeps one game in progress, marked with a small ▶ in the list; opening it asks whether to continue or start a new game. A cold start still offers the game played last. The single saved game of older versions is kept as that game's save. A save is a few kilobytes (all 49 games together about 54 KB), and a test keeps it that way.

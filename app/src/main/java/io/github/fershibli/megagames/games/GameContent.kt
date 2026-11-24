@@ -76,6 +76,7 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.SUECA -> io.github.fershibli.megagames.games.sueca.SuecaGame(host)
         GameId.BISCA -> io.github.fershibli.megagames.games.bisca.BiscaGame(host)
         GameId.HEARTS -> io.github.fershibli.megagames.games.hearts.HeartsGame(host)
+        GameId.FARM -> io.github.fershibli.megagames.games.farm.FarmGame(host)
         GameId.PARKING -> io.github.fershibli.megagames.games.parking.ParkingGame(host)
         GameId.ESCOVA -> io.github.fershibli.megagames.games.escova.EscovaGame(host)
     }
