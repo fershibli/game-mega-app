@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_battleship">Batalla naval</string>
+    <string name="howto_battleship">Cada lado esconde una flota en su mar. En tu turno, dispara a una casilla del otro mar: la salpicadura blanca es agua y la cruz roja es tocado. Hunde primero toda la flota para ganar. Tus barcos ya vienen colocados; toca Colocar otra vez hasta que te gusten.</string>
+    <string name="battleship_sea_afloat">%1$s · barcos a flote: %2$d</string>
+    <string name="battleship_you">Tú</string>
+    <string name="battleship_computer">El ordenador</string>
+    <string name="battleship_miss">%1$s: agua.</string>
+    <string name="battleship_hit">%1$s: ¡tocado!</string>
+    <string name="battleship_sunk">¡%1$s hundió un barco!</string>
+    <string name="battleship_arrange">Esta es tu flota. Colócala otra vez o empieza.</string>
+    <string name="battleship_your_turn">Tu turno: toca una casilla del otro mar.</string>
+    <string name="battleship_turn_of">Jugador %1$d: toca una casilla del otro mar.</string>
+    <string name="battleship_computer_aiming">El ordenador está apuntando…</string>
+    <string name="battleship_rearrange">Colocar otra vez</string>
+    <string name="battleship_ready">Empezar</string>
+    <string name="battleship_your_sea">Tu mar</string>
+    <string name="battleship_their_sea">Mar del ordenador</string>
+    <string name="battleship_their_sea_player">Mar del jugador %1$d</string>
+    <string name="battleship_target_board">El otro mar. Barcos a flote: %1$d</string>
+    <string name="battleship_you_won">¡Hundiste toda la flota!</string>
+    <string name="battleship_computer_won">El ordenador hundió tu flota.</string>
+    <string name="battleship_player_won">Gana el jugador %1$d: ¡toda la flota hundida!</string>
+</resources>

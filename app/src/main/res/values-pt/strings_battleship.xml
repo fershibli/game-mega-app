@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_battleship">Batalha naval</string>
+    <string name="howto_battleship">Cada lado esconde uma frota no seu mar. Na sua vez, atire num quadradinho do outro mar: o respingo branco é água, o X vermelho é acerto. Afunde a frota inteira primeiro para ganhar. Seus navios já vêm arrumados; toque em Arrumar de novo até gostar.</string>
+    <string name="battleship_sea_afloat">%1$s · navios boiando: %2$d</string>
+    <string name="battleship_you">Você</string>
+    <string name="battleship_computer">O computador</string>
+    <string name="battleship_miss">%1$s: água.</string>
+    <string name="battleship_hit">%1$s: acertou!</string>
+    <string name="battleship_sunk">%1$s afundou um navio!</string>
+    <string name="battleship_arrange">Esta é a sua frota. Arrume de novo ou comece.</string>
+    <string name="battleship_your_turn">Sua vez: toque num quadradinho do outro mar.</string>
+    <string name="battleship_turn_of">Jogador %1$d: toque num quadradinho do outro mar.</string>
+    <string name="battleship_computer_aiming">O computador está mirando…</string>
+    <string name="battleship_rearrange">Arrumar de novo</string>
+    <string name="battleship_ready">Começar</string>
+    <string name="battleship_your_sea">Seu mar</string>
+    <string name="battleship_their_sea">Mar do computador</string>
+    <string name="battleship_their_sea_player">Mar do jogador %1$d</string>
+    <string name="battleship_target_board">O outro mar. Navios ainda boiando: %1$d</string>
+    <string name="battleship_you_won">Você afundou a frota inteira!</string>
+    <string name="battleship_computer_won">O computador afundou a sua frota.</string>
+    <string name="battleship_player_won">Vitória do jogador %1$d: frota inteira afundada!</string>
+</resources>
