@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">Pinball</string>
+    <string name="howto_pinball">Hold the Left and Right buttons (or a side of the table) to raise the flippers and keep the ball in play. Bumpers give points; light all four stars for a bonus. The ball moves slowly, and on Easy a ball lost early comes back.</string>
+    <string name="pinball_score">Points: %1$d · Best: %2$d</string>
+    <string name="pinball_balls">Balls left: %1$d</string>
+    <string name="pinball_left">◀ Left</string>
+    <string name="pinball_right">Right ▶</string>
+    <string name="pinball_pause">Pause</string>
+    <string name="pinball_continue">Continue</string>
+    <string name="pinball_serve">Serve the ball</string>
+    <string name="pinball_ready">Hold the Left and Right buttons to move the flippers.</string>
+    <string name="pinball_next">Ready for the next ball?</string>
+    <string name="pinball_lost">The ball went down. Balls left: %1$d.</string>
+    <string name="pinball_saved">Saved! The ball comes back.</string>
+    <string name="pinball_all_stars">All four stars! Bonus +500.</string>
+    <string name="pinball_paused">Paused</string>
+    <string name="pinball_board">Pinball table</string>
+    <string name="pinball_new_best">A new best for this level!</string>
+    <string name="pinball_final">Points: %1$d. Best: %2$d.</string>
+</resources>

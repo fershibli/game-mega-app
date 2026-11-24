@@ -272,6 +272,8 @@ class ScreenshotTest {
             flush()
         }
     }
+    @Test fun pinball() = gameShot("game_pinball", GameId.PINBALL)
+    @Test fun pinballPt() = gameShot("game_pinball_pt", GameId.PINBALL, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
 
     @Test fun trail() = shot("game_trail") { GameContent(GameId.TRAIL, trailHost()) }
     @Test fun trailPt() = shot("game_trail_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }

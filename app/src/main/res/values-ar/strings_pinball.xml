@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">الكرة والدبابيس</string>
+    <string name="howto_pinball">اضغط مطولًا على زرّي يسار ويمين (أو على جانب الطاولة) لترفع المضارب وتُبقي الكرة في اللعب. الدبابيس تعطي نقاطًا؛ أضئ النجوم الأربع لتنال مكافأة. الكرة تتحرك ببطء، وفي سهل تعود الكرة إذا سقطت في البداية.</string>
+    <string name="pinball_score">النقاط: %1$d · الأفضل: %2$d</string>
+    <string name="pinball_balls">الكرات الباقية: %1$d</string>
+    <string name="pinball_left">◀ يسار</string>
+    <string name="pinball_right">يمين ▶</string>
+    <string name="pinball_pause">إيقاف مؤقت</string>
+    <string name="pinball_continue">متابعة</string>
+    <string name="pinball_serve">أطلق الكرة</string>
+    <string name="pinball_ready">اضغط مطولًا على يسار ويمين لتحريك المضارب.</string>
+    <string name="pinball_next">هل أنت مستعد للكرة التالية؟</string>
+    <string name="pinball_lost">سقطت الكرة. الكرات الباقية: %1$d.</string>
+    <string name="pinball_saved">أُنقذت! الكرة تعود.</string>
+    <string name="pinball_all_stars">النجوم الأربع! مكافأة ‎+500.</string>
+    <string name="pinball_paused">متوقف مؤقتًا</string>
+    <string name="pinball_board">طاولة الكرة والدبابيس</string>
+    <string name="pinball_new_best">رقم قياسي جديد في هذا المستوى!</string>
+    <string name="pinball_final">النقاط: %1$d. الأفضل: %2$d.</string>
+</resources>
