@@ -120,6 +120,11 @@ class SaveStore(context: Context) {
         }
     }
 
+    /** Blocks until every queued write of this store is on disk (tests read the save right after). */
+    fun flush() {
+        writer.submit {}.get()
+    }
+
     /** Forgets the game in progress of [game]: it ended, or a new one is starting. */
     fun clear(game: GameId) {
         synchronized(lock) {

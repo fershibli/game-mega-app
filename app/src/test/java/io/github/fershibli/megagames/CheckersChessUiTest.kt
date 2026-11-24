@@ -3,6 +3,7 @@ package io.github.fershibli.megagames
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.test.click
 import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -47,15 +48,21 @@ class CheckersChessUiTest {
         return saved
     }
 
+    /** The board with [tag], once the game (set up off the main thread) has drawn it. */
+    private fun boardReady(tag: String): androidx.compose.ui.test.SemanticsNodeInteraction {
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag(tag).fetchSemanticsNodes().isNotEmpty() }
+        return rule.onNodeWithTag(tag)
+    }
+
     /** Taps square [sq] of a checkers board with [n] squares per side (3% frame around it). */
-    private fun tapCheckers(sq: Int, n: Int) = rule.onNodeWithTag("checkers-board").performTouchInput {
+    private fun tapCheckers(sq: Int, n: Int) = boardReady("checkers-board").performTouchInput {
         val frame = width * 0.03f
         val cell = (width - frame * 2) / n
         click(Offset(frame + (sq % n + 0.5f) * cell, frame + (sq / n + 0.5f) * cell))
     }
 
     /** Taps a chess square by name ("e2"); White is at the bottom, 5% frame with the coordinates. */
-    private fun tapChess(square: String) = rule.onNodeWithTag("chess-board").performTouchInput {
+    private fun tapChess(square: String) = boardReady("chess-board").performTouchInput {
         val frame = width * 0.05f
         val cell = (width - frame * 2) / 8
         val file = square[0] - 'a'
