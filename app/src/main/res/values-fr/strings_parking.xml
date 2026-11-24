@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">Parking</string>
+    <string name="howto_parking">Faites sortir la voiture rouge par l’ouverture de droite. Faites glisser une voiture ou un camion dans son propre sens pour faire de la place ; il ne tourne pas et ne passe pas sur les autres. Indice montre un bon coup.</string>
+    <string name="parking_moves">Coups : %1$d · Minimum possible : %2$d</string>
+    <string name="parking_goal">Faites glisser les voitures pour libérer la rouge.</string>
+    <string name="parking_hint_move">Amenez le véhicule entouré à l’emplacement en pointillés.</string>
+    <string name="parking_done">La voiture rouge est sortie !</string>
+    <string name="parking_restart">Recommencer</string>
+    <string name="parking_board">Parking avec véhicules : %1$d</string>
+    <string name="parking_done_moves">Sortie avec coups : %1$d (minimum possible : %2$d).</string>
+    <string name="parking_hints_used">Indices utilisés : %1$d.</string>
+</resources>

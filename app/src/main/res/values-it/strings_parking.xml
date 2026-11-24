@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">Parcheggio</string>
+    <string name="howto_parking">Fai uscire l’auto rossa dal varco a destra. Trascina un’auto o un camion nella sua direzione per fare spazio; non gira e non passa sopra le altre. Suggerimento mostra una buona mossa.</string>
+    <string name="parking_moves">Mosse: %1$d · Minimo possibile: %2$d</string>
+    <string name="parking_goal">Trascina le auto per liberare la strada a quella rossa.</string>
+    <string name="parking_hint_move">Porta il veicolo cerchiato al posto tratteggiato.</string>
+    <string name="parking_done">L’auto rossa è uscita!</string>
+    <string name="parking_restart">Ricomincia</string>
+    <string name="parking_board">Parcheggio con veicoli: %1$d</string>
+    <string name="parking_done_moves">Uscita con mosse: %1$d (minimo possibile: %2$d).</string>
+    <string name="parking_hints_used">Suggerimenti usati: %1$d.</string>
+</resources>

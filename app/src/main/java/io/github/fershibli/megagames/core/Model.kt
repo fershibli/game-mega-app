@@ -149,6 +149,7 @@ enum class GameId(
     FARM("farm", R.string.game_farm, R.string.howto_farm, GameCategory.PASTIMES, hasDifficulty = false),
     PINBALL("pinball", R.string.game_pinball, R.string.howto_pinball, GameCategory.CALM_ACTION),
     TRAIL("trail", R.string.game_trail, R.string.howto_trail, GameCategory.PASTIMES, takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
+    PARKING("parking", R.string.game_parking, R.string.howto_parking, GameCategory.PUZZLES),
     ;
 
     fun variant(key: String?): GameVariant? = variants.firstOrNull { it.key == key } ?: variants.firstOrNull()

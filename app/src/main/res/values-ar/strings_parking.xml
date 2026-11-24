@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">موقف السيارات</string>
+    <string name="howto_parking">أخرِج السيارة الحمراء من الفتحة على اليمين. اسحب سيارة أو شاحنة في اتجاهها فقط لتفسح المكان؛ لا تستدير ولا تمر عبر غيرها. زر تلميح يُظهر حركة جيدة.</string>
+    <string name="parking_moves">الحركات: %1$d · أقل عدد ممكن: %2$d</string>
+    <string name="parking_goal">اسحب السيارات لتفتح الطريق للحمراء.</string>
+    <string name="parking_hint_move">انقل المركبة المحاطة إلى المكان المنقّط.</string>
+    <string name="parking_done">خرجت السيارة الحمراء!</string>
+    <string name="parking_restart">من البداية</string>
+    <string name="parking_board">موقف فيه مركبات: %1$d</string>
+    <string name="parking_done_moves">خرجت بعدد حركات: %1$d (أقل عدد ممكن: %2$d).</string>
+    <string name="parking_hints_used">التلميحات المستخدمة: %1$d.</string>
+</resources>

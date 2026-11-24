@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">停车场</string>
+    <string name="howto_parking">把红色小车从右边的出口开出去。拖动小车或卡车沿着它自己的方向移动来腾出空间；车不能转弯，也不能穿过别的车。“提示”会给出一步好棋。</string>
+    <string name="parking_moves">步数：%1$d · 最少可能：%2$d</string>
+    <string name="parking_goal">拖动车辆，给红车让出道路。</string>
+    <string name="parking_hint_move">把带框的车移到虚线的位置。</string>
+    <string name="parking_done">红车开出去了！</string>
+    <string name="parking_restart">重新开始</string>
+    <string name="parking_board">停车场，车辆数：%1$d</string>
+    <string name="parking_done_moves">用了 %1$d 步开出去（最少可能：%2$d）。</string>
+    <string name="parking_hints_used">使用的提示：%1$d。</string>
+</resources>
