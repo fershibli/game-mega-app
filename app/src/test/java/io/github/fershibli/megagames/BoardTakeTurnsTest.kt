@@ -62,7 +62,8 @@ import org.robolectric.annotation.Config
 @Config(sdk = [35], qualifiers = "w400dp-h860dp-xhdpi")
 class BoardTakeTurnsTest {
     @get:Rule val rule = createComposeRule()
-    private val store get() = SaveStore(RuntimeEnvironment.getApplication())
+    // One store for the whole test: its background writes can then be waited for before reading.
+    private val store by lazy { SaveStore(RuntimeEnvironment.getApplication()) }
     private var outcome: GameOutcome? = null
 
     private fun <T> open(game: GameId, variant: String?, serializer: KSerializer<T>, start: T? = null, seats: Int = 0) {
@@ -73,7 +74,10 @@ class BoardTakeTurnsTest {
         rule.waitForIdle()
     }
 
-    private fun <T> saved(serializer: KSerializer<T>): T = AppJson.decodeFromJsonElement(serializer, store.load()!!.state)
+    private fun <T> saved(serializer: KSerializer<T>): T {
+        store.flush()
+        return AppJson.decodeFromJsonElement(serializer, store.load()!!.state)
+    }
 
     /** Lets time run (the computer would have answered by now), then reads the save. */
     private fun <T> settle(serializer: KSerializer<T>): T {
