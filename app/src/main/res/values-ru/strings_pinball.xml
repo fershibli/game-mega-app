@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_pinball">Пинбол</string>
+    <string name="howto_pinball">Удерживайте кнопки «Левый» и «Правый» (или сторону стола), чтобы поднимать флипперы и не упустить шарик. Бамперы приносят очки; зажгите все четыре звезды — будет бонус. Шарик катится медленно, а на уровне «Легко» шарик, потерянный в самом начале, возвращается.</string>
+    <string name="pinball_score">Очки: %1$d · Рекорд: %2$d</string>
+    <string name="pinball_balls">Шарики: %1$d</string>
+    <string name="pinball_left">◀ Левый</string>
+    <string name="pinball_right">Правый ▶</string>
+    <string name="pinball_pause">Пауза</string>
+    <string name="pinball_continue">Продолжить</string>
+    <string name="pinball_serve">Запустить шарик</string>
+    <string name="pinball_ready">Удерживайте «Левый» и «Правый», чтобы двигать флипперы.</string>
+    <string name="pinball_next">Готовы к следующему шарику?</string>
+    <string name="pinball_lost">Шарик упал. Шарики: %1$d.</string>
+    <string name="pinball_saved">Спасён! Шарик возвращается.</string>
+    <string name="pinball_all_stars">Все четыре звезды! Бонус +500.</string>
+    <string name="pinball_paused">Пауза</string>
+    <string name="pinball_board">Стол пинбола</string>
+    <string name="pinball_new_best">Новый рекорд на этом уровне!</string>
+    <string name="pinball_final">Очки: %1$d. Рекорд: %2$d.</string>
+</resources>
