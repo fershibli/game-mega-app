@@ -271,6 +271,8 @@ class ScreenshotTest {
             save(io.github.fershibli.megagames.games.farm.FARM_WORLD_KEY, io.github.fershibli.megagames.games.farm.FarmWorld.serializer(), world)
             flush()
         }
+    }
+
     @Test fun trail() = shot("game_trail") { GameContent(GameId.TRAIL, trailHost()) }
     @Test fun trailPt() = shot("game_trail_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
 
