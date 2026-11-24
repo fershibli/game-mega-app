@@ -29,6 +29,7 @@ import androidx.compose.ui.test.click
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performTouchInput
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.SaveStore
@@ -71,7 +72,7 @@ class ScreenshotTest {
         save(name)
     }
 
-    private fun gameShot(name: String, game: GameId, difficulty: Difficulty = Difficulty.EASY, settings: Settings = Settings(), variant: String? = null) {
+    private fun gameShot(name: String, game: GameId, difficulty: Difficulty = Difficulty.EASY, settings: Settings = Settings(), variant: String? = null, tab: String? = null) {
         rule.setContent {
             MegaGamesTheme(settings) {
                 Column(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
@@ -83,6 +84,10 @@ class ScreenshotTest {
         // Wait until the puzzle is generated (the loading spinner is gone), whatever the language.
         rule.waitUntil(60_000) { rule.onAllNodes(SemanticsMatcher.keyIsDefined(SemanticsProperties.ProgressBarRangeInfo)).fetchSemanticsNodes().isEmpty() }
         rule.waitForIdle()
+        if (tab != null) {
+            rule.onNodeWithTag("farm-tab-$tab").performClick()
+            rule.waitForIdle()
+        }
         save(name)
     }
 
@@ -229,6 +234,43 @@ class ScreenshotTest {
         }
         gameShot("game_pet", GameId.PET)
     }
+    @Test fun farm() {
+        seedFarm()
+        gameShot("game_farm", GameId.FARM)
+    }
+    @Test fun farmAnimals() {
+        seedFarm()
+        gameShot("game_farm_animals", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), tab = "animals")
+    }
+    @Test fun farmOrders() {
+        seedFarm()
+        gameShot("game_farm_orders", GameId.FARM, tab = "orders")
+    }
+
+    /** A farm a few days old: beds at every stage, three animals and some things in the barn. */
+    private fun seedFarm() {
+        val now = System.currentTimeMillis()
+        val m = 60_000L
+        val plots = listOf(
+            io.github.fershibli.megagames.games.farm.Plot("tomato", now - 25 * m),
+            io.github.fershibli.megagames.games.farm.Plot("carrot", now - 3 * m, now - m),
+            io.github.fershibli.megagames.games.farm.Plot("corn", now - 2 * m),
+            io.github.fershibli.megagames.games.farm.Plot("strawberry", now - 45 * m),
+            io.github.fershibli.megagames.games.farm.Plot(),
+            io.github.fershibli.megagames.games.farm.Plot("lettuce", now - 3 * m),
+        )
+        val pens = listOf(
+            io.github.fershibli.megagames.games.farm.Pen("chicken", now - 22 * m),
+            io.github.fershibli.megagames.games.farm.Pen("cow", now - 12 * m),
+            io.github.fershibli.megagames.games.farm.Pen("sheep", now - 70 * m),
+        )
+        val world = io.github.fershibli.megagames.games.farm.FarmRules.fillOrders(
+            io.github.fershibli.megagames.games.farm.FarmWorld(coins = 86, stars = 5, plots = plots, pens = pens, barn = mapOf("egg" to 3, "carrot" to 2, "milk" to 1), orderSerial = 11),
+        )
+        WorldStore(RuntimeEnvironment.getApplication()).run {
+            save(io.github.fershibli.megagames.games.farm.FARM_WORLD_KEY, io.github.fershibli.megagames.games.farm.FarmWorld.serializer(), world)
+            flush()
+        }
     @Test fun trail() = shot("game_trail") { GameContent(GameId.TRAIL, trailHost()) }
     @Test fun trailPt() = shot("game_trail_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
 
