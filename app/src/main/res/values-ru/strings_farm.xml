@@ -4,8 +4,6 @@
     <string name="howto_farm">Сажайте, поливайте и собирайте урожай; собирайте яйца, молоко и шерсть; продавайте в амбаре и выполняйте заказы соседей. Растения растут в реальном времени и никогда не вянут.</string>
     <string name="farm_coins">Монеты: %1$d</string>
     <string name="farm_stars">Звёзды: %1$d</string>
-    <string name="farm_tab_field">Огород</string>
-    <string name="farm_tab_animals">Животные</string>
     <string name="farm_tab_orders">Заказы</string>
     <string name="farm_tab_barn">Амбар</string>
     <string name="farm_item_lettuce">Салат</string>
@@ -38,7 +36,6 @@
     <string name="farm_buy_animal">Купить животное</string>
     <string name="farm_buy_animal_title">Какое животное?</string>
     <string name="farm_animal_option">%1$s · монет: %2$d</string>
-    <string name="farm_no_animals">Животных пока нет. Купите курицу, чтобы были яйца.</string>
     <string name="farm_pen_ready">%1$s: готово %2$d</string>
     <string name="farm_have_need">%1$s: %2$d из %3$d</string>
     <string name="farm_order_reward">Награда: монет %1$d и звезда</string>
@@ -49,4 +46,5 @@
     <string name="farm_barn_row">%1$s: %2$d · по %3$d монет</string>
     <string name="farm_sell_one">Продать 1</string>
     <string name="farm_sell_all">Продать всё</string>
+    <string name="farm_scene">Ферма. Грядки: %1$d. Животные: %2$d.</string>
 </resources>

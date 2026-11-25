@@ -4,8 +4,6 @@
     <string name="howto_farm">ازرع واسقِ واحصد؛ واجمع البيض والحليب والصوف؛ وبِع في الحظيرة ولبِّ طلبات الجيران. تنمو المزروعات في الوقت الحقيقي ولا تذبل أبدًا.</string>
     <string name="farm_coins">العملات: %1$d</string>
     <string name="farm_stars">النجوم: %1$d</string>
-    <string name="farm_tab_field">الحقل</string>
-    <string name="farm_tab_animals">الحيوانات</string>
     <string name="farm_tab_orders">الطلبات</string>
     <string name="farm_tab_barn">الحظيرة</string>
     <string name="farm_item_lettuce">خس</string>
@@ -38,7 +36,6 @@
     <string name="farm_buy_animal">اشترِ حيوانًا</string>
     <string name="farm_buy_animal_title">أي حيوان؟</string>
     <string name="farm_animal_option">%1$s · %2$d عملة</string>
-    <string name="farm_no_animals">لا حيوانات بعد. اشترِ دجاجة ليكون عندك بيض.</string>
     <string name="farm_pen_ready">%1$s جاهز: %2$d</string>
     <string name="farm_have_need">%1$s: %2$d من %3$d</string>
     <string name="farm_order_reward">المكافأة %1$d عملة ونجمة</string>
@@ -49,4 +46,5 @@
     <string name="farm_barn_row">%1$s: %2$d · %3$d عملة للواحد</string>
     <string name="farm_sell_one">بِع 1</string>
     <string name="farm_sell_all">بِع الكل</string>
+    <string name="farm_scene">المزرعة. الأحواض: %1$d. الحيوانات: %2$d.</string>
 </resources>

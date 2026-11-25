@@ -4,11 +4,11 @@
 
 A small farm that lives on your phone. Sow, water and harvest, look after hens, a cow and sheep, sell in the barn and fill the neighbours' orders. There is no hurry and nothing is ever lost: crops never wilt, animals never go hungry and the farm keeps growing while the app is closed.
 
-Four buttons at the top open the **Field**, the **Animals**, the **Orders** and the **Barn**. Your **coins** and **stars** are shown above them.
+Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. Your **coins** and **stars** are shown above them. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back.
 
 ## The field
-- Tap an **empty bed** (the one with a big +) and choose what to sow. Each seed costs a few coins.
-- A crop grows by itself in real time: first a sprout, then a young plant, then the ripe crop on a yellow circle, with **Ready!** below it. The time left is written under each bed.
+- Tap an **empty bed** (bare brown soil) and choose what to sow. Each seed costs a few coins.
+- A crop grows by itself in real time: first a sprout, then a young plant with a small bar that fills up, then the ripe crop, which sparkles. Tap a growing bed to read its name and the time left.
 - **Watering** (tap a bed with a blue drop, or **Water all**) makes the rest of the growing go twice as fast. Once per crop is enough.
 - Tap a ripe bed (or **Harvest all**): every bed gives **two** of its crop, which go straight into the barn.
 - **New bed** adds a bed to the field, up to twelve.
@@ -23,7 +23,7 @@ Four buttons at the top open the **Field**, the **Animals**, the **Orders** and 
 | Pumpkin | 90 min | 20 | 28 | 8 |
 
 ## The animals
-Buy animals with **Buy an animal**. Each one makes its product on its own and keeps up to **three** waiting, shown above it; tap the animal (or **Collect all**) to take them to the barn.
+Buy animals with **Buy an animal**. Each one makes its product on its own and keeps up to **three** waiting, shown in a little bubble above it; tap the animal (or **Collect all**) to take them to the barn.
 
 | Animal | Gives | Every | Costs | Sells for | Stars needed |
 |---|---|---|---|---|---|

@@ -4,11 +4,11 @@
 
 Une petite ferme qui vit dans votre téléphone. Semez, arrosez et récoltez, occupez-vous des poules, de la vache et des moutons, vendez à la grange et honorez les commandes des voisins. Rien ne presse et rien ne se perd : les cultures ne fanent jamais, les animaux n’ont jamais faim et la ferme continue de pousser quand l’application est fermée.
 
-Quatre boutons en haut ouvrent le **Potager**, les **Animaux**, les **Commandes** et la **Grange**. Vos **pièces** et **étoiles** sont affichées au-dessus.
+Trois boutons en haut ouvrent la **Ferme**, les **Commandes** et la **Grange**. Vos **pièces** et **étoiles** sont affichées au-dessus. La ferme est un seul dessin : le potager et ses carrés, l’enclos avec les animaux, la maison et la grange. Pincez pour l’agrandir ; le bouton rond la remet comme avant.
 
 ## Le potager
-- Touchez un **carré vide** (celui avec un grand +) et choisissez quoi semer. Chaque graine coûte quelques pièces.
-- La culture pousse toute seule, en temps réel : d’abord une pousse, puis une jeune plante, puis la récolte mûre sur un cercle jaune, avec **Prêt !** dessous. Le temps restant est écrit sous chaque carré.
+- Touchez un **carré vide** (la terre brune nue) et choisissez quoi semer. Chaque graine coûte quelques pièces.
+- La culture pousse toute seule, en temps réel : d’abord une pousse, puis une jeune plante avec une petite barre qui se remplit, puis la récolte mûre, qui scintille. Touchez un carré qui pousse pour lire son nom et le temps restant.
 - **Arroser** (touchez un carré avec une goutte bleue, ou **Tout arroser**) fait pousser le reste deux fois plus vite. Une fois par culture suffit.
 - Touchez un carré mûr (ou **Tout récolter**) : chaque carré donne **deux** de sa culture, qui vont directement à la grange.
 - **Nouveau carré** agrandit le potager, jusqu’à douze carrés.
@@ -23,7 +23,7 @@ Quatre boutons en haut ouvrent le **Potager**, les **Animaux**, les **Commandes*
 | Citrouille | 90 min | 20 | 28 | 8 |
 
 ## Les animaux
-Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et garde jusqu’à **trois** produits en attente, montrés au-dessus ; touchez l’animal (ou **Tout ramasser**) pour les mettre dans la grange.
+Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et garde jusqu’à **trois** produits en attente, montrés dans une petite bulle au-dessus ; touchez l’animal (ou **Tout ramasser**) pour les mettre dans la grange.
 
 | Animal | Donne | Toutes les | Coûte | Vendu | Étoiles |
 |---|---|---|---|---|---|

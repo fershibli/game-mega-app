@@ -7,6 +7,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
@@ -17,6 +18,7 @@ import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -31,6 +33,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
@@ -39,14 +42,18 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.GameHost
@@ -56,8 +63,11 @@ import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.BigDialog
 import io.github.fershibli.megagames.ui.components.ButtonStyle
 import io.github.fershibli.megagames.ui.components.StatusPill
+import io.github.fershibli.megagames.ui.components.ZoomableBoard
+import io.github.fershibli.megagames.ui.components.rememberZoomState
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
+import kotlin.math.roundToInt
 import kotlinx.coroutines.delay
 
 /** The clock the farm reads. Tests provide their own to move time forward. */
@@ -67,8 +77,7 @@ val LocalFarmClock = staticCompositionLocalOf { SystemFarmClock }
 private const val TICK_MS = 1_000L
 
 private enum class Tab(@StringRes val label: Int) {
-    FIELD(R.string.farm_tab_field),
-    ANIMALS(R.string.farm_tab_animals),
+    FARM(R.string.game_farm),
     ORDERS(R.string.farm_tab_orders),
     BARN(R.string.farm_tab_barn),
 }
@@ -105,7 +114,7 @@ fun FarmGame(host: GameHost) {
     }
     // Taps read the clock afresh, so a crop that just ripened can be picked at once.
     val time = { clock.now().also { now = it } }
-    var tab by remember { mutableStateOf(Tab.FIELD) }
+    var tab by remember { mutableStateOf(Tab.FARM) }
     var message by remember { mutableStateOf<String?>(null) }
     val p = LocalPalette.current
     val w = world
@@ -126,8 +135,7 @@ fun FarmGame(host: GameHost) {
         }
         Box(Modifier.weight(1f).fillMaxWidth()) {
             when (tab) {
-                Tab.FIELD -> FieldTab(w, now, time, p, change) { message = it }
-                Tab.ANIMALS -> AnimalsTab(w, now, time, p, change)
+                Tab.FARM -> SceneTab(w, now, time, p, change) { message = it }
                 Tab.ORDERS -> OrdersTab(w, p, change) { message = it }
                 Tab.BARN -> BarnTab(w, p, change)
             }
@@ -135,93 +143,151 @@ fun FarmGame(host: GameHost) {
     }
 }
 
-/** Minutes left, rounded up, or "under a minute". */
-@Composable
-private fun timeLeft(ms: Long): String {
-    val minutes = (ms + 59_999L) / 60_000L
-    return if (minutes <= 1) stringResource(R.string.farm_less_minute) else stringResource(R.string.farm_minutes_left, minutes.toInt())
-}
+// ---------------------------------------------------------------------------------------------
+// The scene: beds and animals on one isometric farm.
+// ---------------------------------------------------------------------------------------------
 
 @Composable
-private fun Controls(content: @Composable () -> Unit) {
-    val p = LocalPalette.current
-    Column(Modifier.fillMaxWidth().background(p.surface).padding(horizontal = 12.dp, vertical = 10.dp)) { ActionBar { content() } }
-}
+private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit, say: (String?) -> Unit) {
+    var sowing by remember { mutableStateOf<Int?>(null) }
+    var buying by remember { mutableStateOf(false) }
+    val harvested = stringResource(R.string.farm_harvested)
+    val itemNames = Item.entries.associateWith { stringResource(it.label) }
+    val animalNames = Animal.entries.associateWith { stringResource(it.label) }
+    val emptyBed = stringResource(R.string.farm_plot_empty)
+    val tapToSow = stringResource(R.string.farm_tap_to_sow)
+    val ready = stringResource(R.string.farm_ready)
+    val waterMe = stringResource(R.string.farm_water_me)
+    val lessMinute = stringResource(R.string.farm_less_minute)
+    val minutesLeft = stringResource(R.string.farm_minutes_left)
+    val penReady = stringResource(R.string.farm_pen_ready)
+    fun left(ms: Long): String {
+        val minutes = (ms + 59_999L) / 60_000L
+        return if (minutes <= 1) lessMinute else minutesLeft.format(minutes.toInt())
+    }
 
-/** A grid of [count] squares, [columns] to a row, that scrolls when it does not fit. */
-@Composable
-private fun Grid(count: Int, columns: Int, modifier: Modifier = Modifier, cell: @Composable (Int, Modifier) -> Unit) {
-    Column(modifier.verticalScroll(rememberScrollState()).padding(10.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        for (row in 0 until (count + columns - 1) / columns) {
-            Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                for (col in 0 until columns) {
-                    val i = row * columns + col
-                    if (i < count) cell(i, Modifier.weight(1f)) else Spacer(Modifier.weight(1f))
-                }
-            }
+    /** What a bed says: its crop and how it is doing. */
+    fun plotText(i: Int, at: Long): String {
+        val plot = w.plots[i]
+        val crop = plot.sown ?: return "$emptyBed, $tapToSow"
+        val name = itemNames.getValue(crop.item)
+        return when {
+            FarmRules.stage(plot, at) == Stage.RIPE -> "$name, $ready"
+            FarmRules.canWater(plot, at) -> "$name, ${left(FarmRules.remainingMs(plot, at))}, $waterMe"
+            else -> "$name, ${left(FarmRules.remainingMs(plot, at))}"
         }
     }
-}
 
-// ---------------------------------------------------------------------------------------------
-// The field.
-// ---------------------------------------------------------------------------------------------
+    fun penText(i: Int, at: Long): String {
+        val pen = w.pens[i]
+        val name = animalNames.getValue(pen.kind)
+        val n = FarmRules.waiting(pen, at)
+        return if (n > 0) "$name, ${penReady.format(itemNames.getValue(pen.kind.item), n)}"
+        else "$name, ${left(((1f - FarmRules.penProgress(pen, at)) * pen.kind.periodMs).toLong())}"
+    }
 
-@Composable
-private fun FieldTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit, say: (String?) -> Unit) {
-    var sowing by remember { mutableStateOf<Int?>(null) }
+    fun tapPlot(i: Int) {
+        val t = time()
+        val plot = w.plots.getOrNull(i) ?: return
+        when {
+            plot.sown == null -> sowing = i
+            FarmRules.stage(plot, t) == Stage.RIPE -> { change { FarmRules.harvest(it, i, t) }; say(harvested) }
+            FarmRules.canWater(plot, t) -> { change { FarmRules.water(it, i, t) }; say(plotText(i, t)) }
+            else -> say(plotText(i, t))
+        }
+    }
+
+    fun tapPen(i: Int) {
+        val t = time()
+        val pen = w.pens.getOrNull(i) ?: return
+        if (FarmRules.waiting(pen, t) > 0) change { FarmRules.collect(it, i, t) }
+        say(penText(i, time()))
+    }
+
     val ripe = FarmRules.ripeCount(w, now)
     val thirsty = w.plots.count { FarmRules.canWater(it, now) }
-    val harvested = stringResource(R.string.farm_harvested)
+    // The scene's tap handler lives as long as the scene: it must always reach the latest farm.
+    val onPlot by rememberUpdatedState<(Int) -> Unit> { tapPlot(it) }
+    val onPen by rememberUpdatedState<(Int) -> Unit> { tapPen(it) }
     Column(Modifier.fillMaxSize()) {
-        BoxWithConstraints(Modifier.weight(1f).fillMaxWidth()) {
-            val columns = if (maxWidth > 560.dp) 4 else 3
-            Grid(w.plots.size, columns) { i, m ->
-                val plot = w.plots[i]
-                val stage = FarmRules.stage(plot, now)
-                val crop = plot.sown
-                val waterable = FarmRules.canWater(plot, now)
-                val caption = when {
-                    crop == null -> stringResource(R.string.farm_tap_to_sow)
-                    stage == Stage.RIPE -> stringResource(R.string.farm_ready)
-                    else -> timeLeft(FarmRules.remainingMs(plot, now))
-                }
-                val name = crop?.let { stringResource(it.item.label) } ?: stringResource(R.string.farm_plot_empty)
-                val hint = if (waterable) stringResource(R.string.farm_water_me) else null
-                Column(
-                    m.clip(RoundedCornerShape(14.dp))
-                        .clickable(role = Role.Button) {
-                            val t = time()
-                            when {
-                                crop == null -> sowing = i
-                                FarmRules.stage(plot, t) == Stage.RIPE -> { change { FarmRules.harvest(it, i, t) }; say(harvested) }
-                                FarmRules.canWater(plot, t) -> change { FarmRules.water(it, i, t) }
+        ZoomableBoard(Modifier.weight(1f).fillMaxWidth(), rememberZoomState()) {
+            BoxWithConstraints(Modifier.fillMaxSize()) {
+                val density = LocalDensity.current
+                val wPx = with(density) { maxWidth.toPx() }
+                val hPx = with(density) { maxHeight.toPx() }
+                val grid = FarmMap.grid(wPx, hPx, FarmMap.columns(w.plots.size, w.pens.size))
+                val description = stringResource(R.string.farm_scene, w.plots.size, w.pens.size)
+                Canvas(
+                    Modifier
+                        .fillMaxSize()
+                        .testTag("farm-scene")
+                        .semantics { contentDescription = description }
+                        .pointerInput(w.plots.size, w.pens.size, wPx, hPx) {
+                            detectTapGestures { pos ->
+                                val hit = FarmMap.hit(grid, pos, w.plots.size, w.pens.size) ?: return@detectTapGestures
+                                if (hit.first) onPlot(hit.second) else onPen(hit.second)
                             }
-                        }
-                        .testTag("farm-plot-$i")
-                        .clearAndSetSemantics { contentDescription = listOfNotNull(name, caption, hint).joinToString(", ") },
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Canvas(Modifier.fillMaxWidth().aspectRatio(1f)) { drawPlot(plot, stage, waterable, p) }
-                    Text(name, style = MaterialTheme.typography.titleMedium, color = p.text, textAlign = TextAlign.Center, maxLines = 1)
-                    Text(caption, style = MaterialTheme.typography.bodyMedium, color = if (stage == Stage.RIPE) p.success else p.textMuted, textAlign = TextAlign.Center, maxLines = 1)
+                        },
+                ) { drawFarmScene(FarmScene(w, now, (now / 1000L).toInt()), p, grid) }
+                // One node per bed and animal for screen readers and tests. Touches go through
+                // them to the scene, which picks the nearest bed or animal.
+                val spot = 40.dp
+                val spotPx = with(density) { spot.toPx() }
+                w.plots.indices.forEach { i ->
+                    val (col, row) = FarmMap.plots.getOrNull(i) ?: return@forEach
+                    val center = grid.center(col, row)
+                    val label = plotText(i, now)
+                    Box(
+                        Modifier
+                            .offset { IntOffset((center.x - spotPx / 2).roundToInt(), (center.y - spotPx / 2).roundToInt()) }
+                            .size(spot)
+                            .testTag("farm-plot-$i")
+                            .semantics {
+                                contentDescription = label
+                                role = Role.Button
+                                onClick { tapPlot(i); true }
+                            },
+                    )
+                }
+                w.pens.indices.forEach { i ->
+                    val (col, row) = FarmMap.pens.getOrNull(i) ?: return@forEach
+                    val center = grid.center(col, row)
+                    val label = penText(i, now)
+                    Box(
+                        Modifier
+                            .offset { IntOffset((center.x - spotPx / 2).roundToInt(), (center.y - spotPx / 2).roundToInt()) }
+                            .size(spot)
+                            .testTag("farm-pen-$i")
+                            .semantics {
+                                contentDescription = label
+                                role = Role.Button
+                                onClick { tapPen(i); true }
+                            },
+                    )
                 }
             }
         }
-        Controls {
-            BigButton(stringResource(R.string.farm_harvest_all), { change { FarmRules.harvestAll(it, time()) }; say(harvested) }, Modifier.testTag("farm-harvest-all"), enabled = ripe > 0, compact = true)
-            BigButton(stringResource(R.string.farm_water_all), { change { FarmRules.waterAll(it, time()) } }, style = ButtonStyle.SECONDARY, enabled = thirsty > 0, compact = true)
-            if (w.plots.size < FarmRules.MAX_PLOTS) {
-                val cost = FarmRules.plotCost(w)
-                BigButton(stringResource(R.string.farm_buy_plot, cost), { change { FarmRules.buyPlot(it) } }, style = ButtonStyle.SECONDARY, enabled = w.coins >= cost, compact = true)
+        Column(Modifier.fillMaxWidth().background(p.surface).padding(horizontal = 12.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+            ActionBar {
+                BigButton(stringResource(R.string.farm_harvest_all), { change { FarmRules.harvestAll(it, time()) }; say(harvested) }, Modifier.testTag("farm-harvest-all"), enabled = ripe > 0, compact = true)
+                BigButton(stringResource(R.string.farm_water_all), { change { FarmRules.waterAll(it, time()) } }, style = ButtonStyle.SECONDARY, enabled = thirsty > 0, compact = true)
+                BigButton(stringResource(R.string.farm_collect_all), { change { FarmRules.collectAll(it, time()) } }, Modifier.testTag("farm-collect-all"), style = ButtonStyle.SECONDARY, enabled = FarmRules.waitingCount(w, now) > 0, compact = true)
+            }
+            ActionBar {
+                if (w.plots.size < FarmRules.MAX_PLOTS) {
+                    val cost = FarmRules.plotCost(w)
+                    BigButton(stringResource(R.string.farm_buy_plot, cost), { change { FarmRules.buyPlot(it) } }, style = ButtonStyle.SECONDARY, enabled = w.coins >= cost, compact = true)
+                }
+                BigButton(stringResource(R.string.farm_buy_animal), { buying = true }, Modifier.testTag("farm-buy-animal"), style = ButtonStyle.SECONDARY, enabled = w.pens.size < FarmRules.MAX_PENS, compact = true)
             }
         }
     }
+
     val index = sowing
     if (index != null) {
         val choices = FarmRules.unlocked(w).filter { it.seedCost <= w.coins }
         val options = choices.map { crop ->
-            stringResource(R.string.farm_seed_option, stringResource(crop.item.label), crop.seedCost, crop.minutes) to {
+            stringResource(R.string.farm_seed_option, itemNames.getValue(crop.item), crop.seedCost, crop.minutes) to {
                 change { FarmRules.plant(it, index, crop, time()) }
                 sowing = null
             }
@@ -233,55 +299,10 @@ private fun FieldTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         ).joinToString("\n").ifEmpty { null }
         BigDialog(stringResource(R.string.farm_sow_title), note, { sowing = null }, options + (stringResource(R.string.cancel) to { sowing = null }), primaryIndex = -1)
     }
-}
-
-// ---------------------------------------------------------------------------------------------
-// The animals.
-// ---------------------------------------------------------------------------------------------
-
-@Composable
-private fun AnimalsTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit) {
-    var buying by remember { mutableStateOf(false) }
-    Column(Modifier.fillMaxSize()) {
-        Box(Modifier.weight(1f).fillMaxWidth()) {
-            if (w.pens.isEmpty()) {
-                Text(stringResource(R.string.farm_no_animals), Modifier.align(Alignment.Center).padding(24.dp), style = MaterialTheme.typography.titleLarge, color = p.text, textAlign = TextAlign.Center)
-            } else {
-                Grid(w.pens.size, 2) { i, m ->
-                    val pen = w.pens[i]
-                    val ready = FarmRules.waiting(pen, now)
-                    val label = stringResource(pen.kind.label)
-                    val caption = if (ready > 0) stringResource(R.string.farm_pen_ready, stringResource(pen.kind.item.label), ready) else timeLeft(((1f - FarmRules.penProgress(pen, now)) * pen.kind.periodMs).toLong())
-                    Column(
-                        m.clip(RoundedCornerShape(16.dp))
-                            .background(p.surfaceAlt)
-                            .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.dp, p.outline), RoundedCornerShape(16.dp))
-                            .clickable(role = Role.Button) { change { FarmRules.collect(it, i, time()) } }
-                            .padding(8.dp)
-                            .testTag("farm-pen-$i")
-                            .clearAndSetSemantics { contentDescription = "$label, $caption" },
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                    ) {
-                        Canvas(Modifier.fillMaxWidth().aspectRatio(1.3f)) {
-                            drawAnimal(pen.kind, p)
-                            for (k in 0 until ready) drawItem(pen.kind.item, Offset(size.width * (0.15f + k * 0.14f), size.height * 0.15f), size.width * 0.07f, p)
-                        }
-                        Text(label, style = MaterialTheme.typography.titleMedium, color = p.text)
-                        Text(caption, style = MaterialTheme.typography.bodyMedium, color = if (ready > 0) p.success else p.textMuted, textAlign = TextAlign.Center, maxLines = 2)
-                        Progress(FarmRules.penProgress(pen, now), p)
-                    }
-                }
-            }
-        }
-        Controls {
-            BigButton(stringResource(R.string.farm_collect_all), { change { FarmRules.collectAll(it, time()) } }, Modifier.testTag("farm-collect-all"), enabled = FarmRules.waitingCount(w, now) > 0, compact = true)
-            BigButton(stringResource(R.string.farm_buy_animal), { buying = true }, Modifier.testTag("farm-buy-animal"), style = ButtonStyle.SECONDARY, enabled = w.pens.size < FarmRules.MAX_PENS, compact = true)
-        }
-    }
     if (buying) {
         val choices = Animal.entries.filter { it.stars <= w.stars && it.cost <= w.coins }
         val options = choices.map { a ->
-            stringResource(R.string.farm_animal_option, stringResource(a.label), a.cost) to {
+            stringResource(R.string.farm_animal_option, animalNames.getValue(a), a.cost) to {
                 change { FarmRules.buyAnimal(it, a, time()) }
                 buying = false
             }
@@ -292,14 +313,6 @@ private fun AnimalsTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, ch
             if (more) stringResource(R.string.farm_more_with_stars) else null,
         ).joinToString("\n").ifEmpty { null }
         BigDialog(stringResource(R.string.farm_buy_animal_title), note, { buying = false }, options + (stringResource(R.string.cancel) to { buying = false }), primaryIndex = -1)
-    }
-}
-
-@Composable
-private fun Progress(value: Float, p: Palette) {
-    Canvas(Modifier.fillMaxWidth().height(10.dp).padding(horizontal = 6.dp)) {
-        drawRoundRect(p.outline.copy(alpha = 0.3f), Offset.Zero, size, CornerRadius(size.height / 2))
-        drawRoundRect(p.success, Offset.Zero, Size(size.width * value.coerceIn(0f, 1f), size.height), CornerRadius(size.height / 2))
     }
 }
 
@@ -319,7 +332,7 @@ private fun Card(modifier: Modifier = Modifier, content: @Composable () -> Unit)
 
 @Composable
 private fun ItemIcon(item: Item, p: Palette) {
-    Canvas(Modifier.size(40.dp)) { drawItem(item, center, size.width * 0.42f, p) }
+    Canvas(Modifier.size(40.dp)) { drawProduct(item) }
 }
 
 @Composable

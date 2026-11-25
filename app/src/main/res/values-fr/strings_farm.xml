@@ -4,8 +4,6 @@
     <string name="howto_farm">Semez, arrosez et récoltez ; ramassez les œufs, le lait et la laine ; vendez à la grange et honorez les commandes des voisins. Les cultures poussent en temps réel et ne fanent jamais.</string>
     <string name="farm_coins">Pièces : %1$d</string>
     <string name="farm_stars">Étoiles : %1$d</string>
-    <string name="farm_tab_field">Potager</string>
-    <string name="farm_tab_animals">Animaux</string>
     <string name="farm_tab_orders">Commandes</string>
     <string name="farm_tab_barn">Grange</string>
     <string name="farm_item_lettuce">Salade</string>
@@ -38,7 +36,6 @@
     <string name="farm_buy_animal">Acheter un animal</string>
     <string name="farm_buy_animal_title">Quel animal ?</string>
     <string name="farm_animal_option">%1$s · %2$d pièces</string>
-    <string name="farm_no_animals">Pas encore d’animaux. Achetez une poule pour avoir des œufs.</string>
     <string name="farm_pen_ready">%1$s à ramasser : %2$d</string>
     <string name="farm_have_need">%1$s : %2$d sur %3$d</string>
     <string name="farm_order_reward">Rapporte %1$d pièces et une étoile</string>
@@ -49,4 +46,5 @@
     <string name="farm_barn_row">%1$s : %2$d · %3$d pièces l’unité</string>
     <string name="farm_sell_one">Vendre 1</string>
     <string name="farm_sell_all">Tout vendre</string>
+    <string name="farm_scene">Ferme. Carrés : %1$d. Animaux : %2$d.</string>
 </resources>

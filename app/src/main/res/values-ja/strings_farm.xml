@@ -4,8 +4,6 @@
     <string name="howto_farm">種をまき、水をやり、収穫しましょう。たまご・牛乳・羊毛を集め、納屋で売ったり、近所の人の注文に応えたりします。作物は本当の時間で育ち、枯れることはありません。</string>
     <string name="farm_coins">コイン：%1$d</string>
     <string name="farm_stars">星：%1$d</string>
-    <string name="farm_tab_field">畑</string>
-    <string name="farm_tab_animals">動物</string>
     <string name="farm_tab_orders">注文</string>
     <string name="farm_tab_barn">納屋</string>
     <string name="farm_item_lettuce">レタス</string>
@@ -38,7 +36,6 @@
     <string name="farm_buy_animal">動物を買う</string>
     <string name="farm_buy_animal_title">どの動物にしますか？</string>
     <string name="farm_animal_option">%1$s・%2$dコイン</string>
-    <string name="farm_no_animals">まだ動物がいません。ニワトリを買うと、たまごがとれます。</string>
     <string name="farm_pen_ready">%1$s：%2$d個できています</string>
     <string name="farm_have_need">%1$s：%2$d／%3$d</string>
     <string name="farm_order_reward">お礼：%1$dコインと星1つ</string>
@@ -49,4 +46,5 @@
     <string name="farm_barn_row">%1$s：%2$d・1つ%3$dコイン</string>
     <string name="farm_sell_one">1つ売る</string>
     <string name="farm_sell_all">全部売る</string>
+    <string name="farm_scene">農場。畝：%1$d。動物：%2$d。</string>
 </resources>

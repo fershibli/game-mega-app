@@ -4,8 +4,6 @@
     <string name="howto_farm">Siembra, riega y cosecha; recoge huevos, leche y lana; vende en el granero y atiende los pedidos de los vecinos. Las plantas crecen en tiempo real y nunca se marchitan.</string>
     <string name="farm_coins">Monedas: %1$d</string>
     <string name="farm_stars">Estrellas: %1$d</string>
-    <string name="farm_tab_field">Huerto</string>
-    <string name="farm_tab_animals">Animales</string>
     <string name="farm_tab_orders">Pedidos</string>
     <string name="farm_tab_barn">Granero</string>
     <string name="farm_item_lettuce">Lechuga</string>
@@ -38,7 +36,6 @@
     <string name="farm_buy_animal">Comprar un animal</string>
     <string name="farm_buy_animal_title">¿Qué animal?</string>
     <string name="farm_animal_option">%1$s · %2$d monedas</string>
-    <string name="farm_no_animals">Todavía no hay animales. Compra una gallina para tener huevos.</string>
     <string name="farm_pen_ready">%1$s para recoger: %2$d</string>
     <string name="farm_have_need">%1$s: %2$d de %3$d</string>
     <string name="farm_order_reward">Paga %1$d monedas y una estrella</string>
@@ -49,4 +46,5 @@
     <string name="farm_barn_row">%1$s: %2$d · %3$d monedas cada uno</string>
     <string name="farm_sell_one">Vender 1</string>
     <string name="farm_sell_all">Vender todo</string>
+    <string name="farm_scene">Granja. Bancales: %1$d. Animales: %2$d.</string>
 </resources>

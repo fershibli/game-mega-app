@@ -4,8 +4,6 @@
     <string name="howto_farm">Semina, annaffia e raccogli; prendi uova, latte e lana; vendi nel fienile e soddisfa gli ordini dei vicini. Le piante crescono in tempo reale e non appassiscono mai.</string>
     <string name="farm_coins">Monete: %1$d</string>
     <string name="farm_stars">Stelle: %1$d</string>
-    <string name="farm_tab_field">Orto</string>
-    <string name="farm_tab_animals">Animali</string>
     <string name="farm_tab_orders">Ordini</string>
     <string name="farm_tab_barn">Fienile</string>
     <string name="farm_item_lettuce">Lattuga</string>
@@ -38,7 +36,6 @@
     <string name="farm_buy_animal">Compra un animale</string>
     <string name="farm_buy_animal_title">Quale animale?</string>
     <string name="farm_animal_option">%1$s · %2$d monete</string>
-    <string name="farm_no_animals">Ancora nessun animale. Compra una gallina per avere le uova.</string>
     <string name="farm_pen_ready">%1$s da raccogliere: %2$d</string>
     <string name="farm_have_need">%1$s: %2$d di %3$d</string>
     <string name="farm_order_reward">Paga %1$d monete e una stella</string>
@@ -49,4 +46,5 @@
     <string name="farm_barn_row">%1$s: %2$d · %3$d monete l’uno</string>
     <string name="farm_sell_one">Vendi 1</string>
     <string name="farm_sell_all">Vendi tutto</string>
+    <string name="farm_scene">Fattoria. Aiuole: %1$d. Animali: %2$d.</string>
 </resources>

@@ -4,11 +4,11 @@
 
 Uma pequena fazenda que mora no seu celular. Plante, regue e colha, cuide das galinhas, da vaca e das ovelhas, venda no celeiro e atenda os pedidos dos vizinhos. Não há pressa e nada se perde: as plantas nunca murcham, os animais nunca passam fome e a fazenda continua crescendo com o app fechado.
 
-Quatro botões em cima abrem a **Horta**, os **Animais**, os **Pedidos** e o **Celeiro**. Suas **moedas** e **estrelas** aparecem acima deles.
+Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Suas **moedas** e **estrelas** aparecem acima deles. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal.
 
 ## A horta
-- Toque num **canteiro vazio** (o que tem um + grande) e escolha o que plantar. Cada semente custa algumas moedas.
-- A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova, depois a colheita madura num círculo amarelo, com **Pronto!** embaixo. O tempo que falta aparece debaixo de cada canteiro.
+- Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas.
+- A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova com uma barrinha que vai enchendo, depois a colheita madura, que brilha. Toque num canteiro que está crescendo para ver o nome e o tempo que falta.
 - **Regar** (toque num canteiro com uma gota azul, ou em **Regar tudo**) faz o resto do crescimento andar duas vezes mais rápido. Uma vez por plantação basta.
 - Toque num canteiro maduro (ou em **Colher tudo**): cada canteiro dá **dois** do que foi plantado, que vão direto para o celeiro.
 - **Novo canteiro** aumenta a horta, até doze canteiros.
@@ -23,7 +23,7 @@ Quatro botões em cima abrem a **Horta**, os **Animais**, os **Pedidos** e o **C
 | Abóbora | 90 min | 20 | 28 | 8 |
 
 ## Os animais
-Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **três** produtos esperando, mostrados acima dele; toque no animal (ou em **Recolher tudo**) para levá-los ao celeiro.
+Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **três** produtos esperando, mostrados num balãozinho acima dele; toque no animal (ou em **Recolher tudo**) para levá-los ao celeiro.
 
 | Animal | Dá | A cada | Custa | Vende por | Estrelas |
 |---|---|---|---|---|---|

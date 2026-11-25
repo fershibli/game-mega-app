@@ -4,11 +4,11 @@
 
 Una pequeña granja que vive en tu teléfono. Siembra, riega y cosecha, cuida de las gallinas, la vaca y las ovejas, vende en el granero y atiende los pedidos de los vecinos. No hay prisa y nada se pierde: las plantas nunca se marchitan, los animales nunca pasan hambre y la granja sigue creciendo con la app cerrada.
 
-Cuatro botones arriba abren el **Huerto**, los **Animales**, los **Pedidos** y el **Granero**. Tus **monedas** y **estrellas** aparecen encima.
+Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Tus **monedas** y **estrellas** aparecen encima. La granja es un solo dibujo: el huerto con los bancales, el corral con los animales, la casa y el granero. Pellizca para verla más grande; el botón redondo la deja como estaba.
 
 ## El huerto
-- Toca un **bancal vacío** (el que tiene un + grande) y elige qué sembrar. Cada semilla cuesta unas monedas.
-- La planta crece sola, en tiempo real: primero un brote, luego una planta joven, luego la cosecha madura sobre un círculo amarillo, con **¡Listo!** debajo. Bajo cada bancal se ve el tiempo que falta.
+- Toca un **bancal vacío** (solo la tierra marrón) y elige qué sembrar. Cada semilla cuesta unas monedas.
+- La planta crece sola, en tiempo real: primero un brote, luego una planta joven con una barrita que se va llenando, luego la cosecha madura, que brilla. Toca un bancal que está creciendo para ver su nombre y el tiempo que falta.
 - **Regar** (toca un bancal con una gota azul, o **Regar todo**) hace que el resto del crecimiento vaya el doble de rápido. Basta una vez por cultivo.
 - Toca un bancal maduro (o **Cosechar todo**): cada bancal da **dos** de su cultivo, que van directos al granero.
 - **Nuevo bancal** añade un bancal, hasta doce.
@@ -23,7 +23,7 @@ Cuatro botones arriba abren el **Huerto**, los **Animales**, los **Pedidos** y e
 | Calabaza | 90 min | 20 | 28 | 8 |
 
 ## Los animales
-Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta **tres** productos esperando, que se ven encima; toca el animal (o **Recoger todo**) para llevarlos al granero.
+Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta **tres** productos esperando, que se ven en un globito encima; toca el animal (o **Recoger todo**) para llevarlos al granero.
 
 | Animal | Da | Cada | Cuesta | Se vende a | Estrellas |
 |---|---|---|---|---|---|
