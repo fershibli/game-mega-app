@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_pinball">Flipper</string>
-    <string name="howto_pinball">Halte die Knöpfe Links und Rechts (oder eine Seite des Tischs) gedrückt, um die Flipperarme zu heben und die Kugel im Spiel zu halten. Bumper geben Punkte; leuchten alle vier Sterne, gibt es einen Bonus. Die Kugel rollt langsam, und auf Leicht kommt eine früh verlorene Kugel zurück.</string>
+    <string name="howto_pinball">Tippe auf Kugel bereitlegen und dann auf Abschießen (auf Mittel und Schwer länger halten für einen stärkeren Schuss). Halte die Knöpfe Links und Rechts (oder eine Seite des Tischs) gedrückt, um die Flipperarme zu heben und die Kugel im Spiel zu halten. Bumper geben Punkte; lass die vier Sterne oder die drei Bahnen oben leuchten (Punkte ×2), wirf die drei Ziele um und fahr die Rampe links hinauf, um mehr zu bekommen. Die Kugel rollt langsam, und auf Leicht kommt eine früh verlorene Kugel zurück.</string>
     <string name="pinball_score">Punkte: %1$d · Bestwert: %2$d</string>
     <string name="pinball_balls">Kugeln: %1$d</string>
     <string name="pinball_left">◀ Links</string>
     <string name="pinball_right">Rechts ▶</string>
     <string name="pinball_pause">Pause</string>
     <string name="pinball_continue">Weiter</string>
-    <string name="pinball_serve">Kugel abschießen</string>
+    <string name="pinball_serve">Kugel bereitlegen</string>
     <string name="pinball_ready">Halte Links und Rechts gedrückt, um die Flipperarme zu bewegen.</string>
     <string name="pinball_next">Bereit für die nächste Kugel?</string>
     <string name="pinball_lost">Die Kugel ist weg. Kugeln: %1$d.</string>
@@ -18,4 +18,8 @@
     <string name="pinball_board">Flippertisch</string>
     <string name="pinball_new_best">Neuer Bestwert auf dieser Stufe!</string>
     <string name="pinball_final">Punkte: %1$d. Bestwert: %2$d.</string>
+    <string name="pinball_launch">Abschießen</string>
+    <string name="pinball_double">Punkte ×2</string>
+    <string name="pinball_all_lanes">Alle drei Bahnen leuchten! Punkte ×2, bis diese Kugel verloren geht.</string>
+    <string name="pinball_all_targets">Alle drei Ziele umgeworfen! Bonus +400.</string>
 </resources>

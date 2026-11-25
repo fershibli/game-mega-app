@@ -5,7 +5,7 @@
 Ein gemütlicher Flippertisch: Die Kugel rollt langsam, und man sieht sie rechtzeitig kommen.
 
 ## So spielst du
-- Tippe auf **Kugel abschießen**: Sie fällt von oben herein.
+- Tippe auf **Kugel bereitlegen**: Sie wartet unten rechts auf der Feder. Drück dann **▲ Abschießen**, um sie ihre Bahn hinauf auf den Tisch zu schicken. Auf Mittel und Schwer gilt: Je länger du Abschießen hältst, desto kräftiger der Schuss; auf Leicht wird die Stärke für dich gewählt.
 - **Halte** die großen Knöpfe **◀ Links** und **Rechts ▶** gedrückt (oder einfach die linke oder rechte Hälfte des Tischs), um diesen Flipperarm zu heben; loslassen senkt ihn. Fang die Kugel, wenn sie herunterkommt, und schick sie wieder hinauf.
 - Die Kugel ist verloren, wenn sie zwischen den Flipperarmen hindurchfällt. **Pause** hält den Tisch jederzeit an, ebenso das Verlassen der App.
 
@@ -16,6 +16,11 @@ Ein gemütlicher Flippertisch: Die Kugel rollt langsam, und man sieht sie rechtz
 | Oranger Kicker über einem Flipperarm | 25 |
 | Stern oben (leuchtet auf) | 50 |
 | Alle vier Sterne leuchten | +500 Bonus, danach gehen sie wieder aus |
+| Bahn oben (leuchtet auf) | 30 |
+| Alle drei Bahnen leuchten | Punkte ×2, bis diese Kugel verloren ist |
+| Blaues Fallziel | 75 |
+| Alle drei Ziele umgeworfen | +400 Bonus, danach stehen sie wieder auf |
+| Die Rampe links (die Kugel fährt herum und hinunter zu deinem linken Flipperarm) | 300 |
 
 Der Bestwert jeder Stufe wird gespeichert.
 

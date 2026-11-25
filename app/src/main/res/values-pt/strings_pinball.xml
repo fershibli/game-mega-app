@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_pinball">Pinball</string>
-    <string name="howto_pinball">Segure os botões Esquerda e Direita (ou um lado da mesa) para levantar as palhetas e manter a bola em jogo. Os pinos dão pontos; acenda as quatro estrelas para ganhar um bônus. A bola anda devagar, e no Fácil uma bola perdida logo no começo volta.</string>
+    <string name="howto_pinball">Toque em Colocar a bola e depois em Lançar (no Médio e no Difícil, segure mais para um lançamento mais forte). Segure os botões Esquerda e Direita (ou um lado da mesa) para levantar as palhetas e manter a bola em jogo. Os pinos dão pontos; acenda as quatro estrelas ou as três raias do alto (pontos ×2), derrube os três alvos e suba a rampa da esquerda para ganhar mais. A bola anda devagar, e no Fácil uma bola perdida logo no começo volta.</string>
     <string name="pinball_score">Pontos: %1$d · Recorde: %2$d</string>
     <string name="pinball_balls">Bolas: %1$d</string>
     <string name="pinball_left">◀ Esquerda</string>
     <string name="pinball_right">Direita ▶</string>
     <string name="pinball_pause">Pausar</string>
     <string name="pinball_continue">Continuar</string>
-    <string name="pinball_serve">Lançar a bola</string>
+    <string name="pinball_serve">Colocar a bola</string>
     <string name="pinball_ready">Segure os botões Esquerda e Direita para mexer as palhetas.</string>
     <string name="pinball_next">Pronto para a próxima bola?</string>
     <string name="pinball_lost">A bola caiu. Bolas: %1$d.</string>
@@ -18,4 +18,8 @@
     <string name="pinball_board">Mesa de pinball</string>
     <string name="pinball_new_best">Novo recorde neste nível!</string>
     <string name="pinball_final">Pontos: %1$d. Recorde: %2$d.</string>
+    <string name="pinball_launch">Lançar</string>
+    <string name="pinball_double">Pontos ×2</string>
+    <string name="pinball_all_lanes">As três raias acesas! Pontos ×2 até perder esta bola.</string>
+    <string name="pinball_all_targets">Os três alvos derrubados! Bônus +400.</string>
 </resources>

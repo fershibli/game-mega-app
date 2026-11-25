@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_pinball">Flipper</string>
-    <string name="howto_pinball">Tieni premuti i pulsanti Sinistra e Destra (o un lato del tavolo) per alzare le palette e tenere in gioco la pallina. I bumper danno punti; accendi le quattro stelle per un bonus. La pallina va piano, e in Facile una pallina persa subito torna.</string>
+    <string name="howto_pinball">Tocca Metti la pallina e poi Lancia (in Medio e Difficile, tieni premuto di più per un tiro più forte). Tieni premuti i pulsanti Sinistra e Destra (o un lato del tavolo) per alzare le palette e tenere in gioco la pallina. I bumper danno punti; accendi le quattro stelle o le tre corsie in alto (punti ×2), abbatti i tre bersagli e sali sulla rampa a sinistra per averne di più. La pallina va piano, e in Facile una pallina persa subito torna.</string>
     <string name="pinball_score">Punti: %1$d · Record: %2$d</string>
     <string name="pinball_balls">Palline: %1$d</string>
     <string name="pinball_left">◀ Sinistra</string>
     <string name="pinball_right">Destra ▶</string>
     <string name="pinball_pause">Pausa</string>
     <string name="pinball_continue">Continua</string>
-    <string name="pinball_serve">Lancia la pallina</string>
+    <string name="pinball_serve">Metti la pallina</string>
     <string name="pinball_ready">Tieni premuti Sinistra e Destra per muovere le palette.</string>
     <string name="pinball_next">Pronto per la prossima pallina?</string>
     <string name="pinball_lost">La pallina è caduta. Palline: %1$d.</string>
@@ -18,4 +18,8 @@
     <string name="pinball_board">Tavolo del flipper</string>
     <string name="pinball_new_best">Nuovo record per questo livello!</string>
     <string name="pinball_final">Punti: %1$d. Record: %2$d.</string>
+    <string name="pinball_launch">Lancia</string>
+    <string name="pinball_double">Punti ×2</string>
+    <string name="pinball_all_lanes">Tutte e tre le corsie accese! Punti ×2 finché non perdi questa pallina.</string>
+    <string name="pinball_all_targets">Tutti e tre i bersagli abbattuti! Bonus +400.</string>
 </resources>
