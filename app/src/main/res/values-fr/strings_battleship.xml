@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_battleship">Bataille navale</string>
+    <string name="howto_battleship">Chaque camp cache une flotte sur sa mer. À votre tour, tirez sur une case de l’autre mer : une éclaboussure blanche, c’est dans l’eau ; une croix rouge, c’est touché. Coulez toute la flotte en premier pour gagner. Vos navires sont déjà placés ; touchez Replacer jusqu’à ce qu’ils vous plaisent.</string>
+    <string name="battleship_sea_afloat">%1$s · navires à flot : %2$d</string>
+    <string name="battleship_you">Vous</string>
+    <string name="battleship_computer">L’ordinateur</string>
+    <string name="battleship_miss">%1$s : dans l’eau.</string>
+    <string name="battleship_hit">%1$s : touché !</string>
+    <string name="battleship_sunk">%1$s a coulé un navire !</string>
+    <string name="battleship_arrange">Voici votre flotte. Replacez-la ou commencez.</string>
+    <string name="battleship_your_turn">À vous : touchez une case de l’autre mer.</string>
+    <string name="battleship_turn_of">Joueur %1$d : touchez une case de l’autre mer.</string>
+    <string name="battleship_computer_aiming">L’ordinateur vise…</string>
+    <string name="battleship_rearrange">Replacer</string>
+    <string name="battleship_ready">Commencer</string>
+    <string name="battleship_your_sea">Votre mer</string>
+    <string name="battleship_their_sea">Mer de l’ordinateur</string>
+    <string name="battleship_their_sea_player">Mer du joueur %1$d</string>
+    <string name="battleship_target_board">L’autre mer. Navires encore à flot : %1$d</string>
+    <string name="battleship_you_won">Vous avez coulé toute la flotte !</string>
+    <string name="battleship_computer_won">L’ordinateur a coulé votre flotte.</string>
+    <string name="battleship_player_won">Victoire du joueur %1$d : toute la flotte coulée !</string>
+</resources>

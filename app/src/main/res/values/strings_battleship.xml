@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_battleship">Battleship</string>
+    <string name="howto_battleship">Each side hides a fleet on its sea. Take turns firing at a square of the other sea: a splash is water, a red cross is a hit. Sink the whole fleet first to win. Your ships are arranged for you; tap Arrange again until you like them.</string>
+    <string name="battleship_sea_afloat">%1$s · ships afloat: %2$d</string>
+    <string name="battleship_you">You</string>
+    <string name="battleship_computer">The computer</string>
+    <string name="battleship_miss">%1$s: water.</string>
+    <string name="battleship_hit">%1$s: a hit!</string>
+    <string name="battleship_sunk">%1$s sank a ship!</string>
+    <string name="battleship_arrange">Here is your fleet. Arrange it again, or start.</string>
+    <string name="battleship_your_turn">Your turn: tap a square of the other sea.</string>
+    <string name="battleship_turn_of">Player %1$d: tap a square of the other sea.</string>
+    <string name="battleship_computer_aiming">The computer is aiming…</string>
+    <string name="battleship_rearrange">Arrange again</string>
+    <string name="battleship_ready">Start</string>
+    <string name="battleship_your_sea">Your sea</string>
+    <string name="battleship_their_sea">The computer\'s sea</string>
+    <string name="battleship_their_sea_player">Sea of player %1$d</string>
+    <string name="battleship_target_board">The other sea. Ships still afloat: %1$d</string>
+    <string name="battleship_you_won">You sank the whole fleet!</string>
+    <string name="battleship_computer_won">The computer sank your fleet.</string>
+    <string name="battleship_player_won">The winner is player %1$d: the whole fleet sunk!</string>
+</resources>

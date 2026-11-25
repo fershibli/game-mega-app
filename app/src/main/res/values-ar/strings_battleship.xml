@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_battleship">المعركة البحرية</string>
+    <string name="howto_battleship">يخبّئ كل طرف أسطولًا في بحره. في دورك، أطلق على خانة من البحر الآخر: الرذاذ الأبيض يعني ماء، والعلامة الحمراء إصابة. يفوز من يُغرق الأسطول كله أولًا. سفنك مرتّبة لك؛ اضغط أعد الترتيب حتى تعجبك.</string>
+    <string name="battleship_sea_afloat">%1$s · سفن طافية: %2$d</string>
+    <string name="battleship_you">أنت</string>
+    <string name="battleship_computer">الكمبيوتر</string>
+    <string name="battleship_miss">%1$s: ماء.</string>
+    <string name="battleship_hit">%1$s: إصابة!</string>
+    <string name="battleship_sunk">%1$s أغرق سفينة!</string>
+    <string name="battleship_arrange">هذا أسطولك. أعد ترتيبه أو ابدأ.</string>
+    <string name="battleship_your_turn">دورك: اضغط على خانة من البحر الآخر.</string>
+    <string name="battleship_turn_of">اللاعب %1$d: اضغط على خانة من البحر الآخر.</string>
+    <string name="battleship_computer_aiming">الكمبيوتر يصوّب…</string>
+    <string name="battleship_rearrange">أعد الترتيب</string>
+    <string name="battleship_ready">ابدأ</string>
+    <string name="battleship_your_sea">بحرك</string>
+    <string name="battleship_their_sea">بحر الكمبيوتر</string>
+    <string name="battleship_their_sea_player">بحر اللاعب %1$d</string>
+    <string name="battleship_target_board">البحر الآخر. سفن ما زالت طافية: %1$d</string>
+    <string name="battleship_you_won">أغرقت الأسطول كله!</string>
+    <string name="battleship_computer_won">أغرق الكمبيوتر أسطولك.</string>
+    <string name="battleship_player_won">فاز اللاعب %1$d: غرق الأسطول كله!</string>
+</resources>

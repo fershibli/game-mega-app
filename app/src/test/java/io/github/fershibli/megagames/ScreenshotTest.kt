@@ -288,6 +288,20 @@ class ScreenshotTest {
     }
     @Test fun parking() = gameShot("game_parking", GameId.PARKING, Difficulty.MEDIUM)
     @Test fun parkingPt() = gameShot("game_parking_pt", GameId.PARKING, Difficulty.EASY, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun battleship() = shot("game_battleship") { GameContent(GameId.BATTLESHIP, battleshipHost()) }
+    @Test fun battleshipPt() = shot("game_battleship_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
+
+    /** A game well under way: a few splashes, a hit and a sunk ship on each side. */
+    private fun battleshipHost(): GameHost {
+        val r = kotlin.random.Random(4)
+        val mine = io.github.fershibli.megagames.games.battleship.Battleship.arrange(10, io.github.fershibli.megagames.games.battleship.Battleship.fleet(Difficulty.MEDIUM), r)
+        val theirs = io.github.fershibli.megagames.games.battleship.Battleship.arrange(10, io.github.fershibli.megagames.games.battleship.Battleship.fleet(Difficulty.MEDIUM), r)
+        val sunk = theirs.last().cells
+        val myShots = listOf(0, 11, 22, 33, 44, 55, 66, 77, 88, 99, 9, 90) + sunk + theirs[0].cells.take(2)
+        val theirShots = listOf(5, 15, 25, 35, 45, 54, 63) + mine[1].cells.take(1)
+        val s = io.github.fershibli.megagames.games.battleship.BattleshipState(10, listOf(mine, theirs), listOf(myShots.distinct(), theirShots.distinct()), turn = 0, placing = 2, lastSeat = 1, lastCell = theirShots.last(), lastResult = io.github.fershibli.megagames.games.battleship.Shot.HIT)
+        return GameHost(GameId.BATTLESHIP, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.battleship.BattleshipState.serializer(), s), null, null) {}
+    }
     @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
     @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }
     @Test fun buracoTriosPt() = BuracoUiTest.trioHost().let { host -> shot("game_buraco_trios_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BURACO, host) } }

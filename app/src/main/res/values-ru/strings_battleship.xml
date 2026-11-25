@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_battleship">Морской бой</string>
+    <string name="howto_battleship">Каждая сторона прячет флот в своём море. В свой ход стреляйте по клетке чужого моря: белые брызги — мимо, красный крестик — попадание. Кто первым потопит весь флот, тот и победил. Ваши корабли уже расставлены; нажимайте «Расставить заново», пока не понравится.</string>
+    <string name="battleship_sea_afloat">%1$s · кораблей на плаву: %2$d</string>
+    <string name="battleship_you">Вы</string>
+    <string name="battleship_computer">Компьютер</string>
+    <string name="battleship_miss">%1$s: мимо.</string>
+    <string name="battleship_hit">%1$s: попадание!</string>
+    <string name="battleship_sunk">%1$s: корабль потоплен!</string>
+    <string name="battleship_arrange">Вот ваш флот. Расставьте заново или начинайте.</string>
+    <string name="battleship_your_turn">Ваш ход: коснитесь клетки чужого моря.</string>
+    <string name="battleship_turn_of">Игрок %1$d: коснитесь клетки чужого моря.</string>
+    <string name="battleship_computer_aiming">Компьютер прицеливается…</string>
+    <string name="battleship_rearrange">Расставить заново</string>
+    <string name="battleship_ready">Начать</string>
+    <string name="battleship_your_sea">Ваше море</string>
+    <string name="battleship_their_sea">Море компьютера</string>
+    <string name="battleship_their_sea_player">Море игрока %1$d</string>
+    <string name="battleship_target_board">Чужое море. Кораблей на плаву: %1$d</string>
+    <string name="battleship_you_won">Вы потопили весь флот!</string>
+    <string name="battleship_computer_won">Компьютер потопил ваш флот.</string>
+    <string name="battleship_player_won">Победил игрок %1$d: весь флот потоплен!</string>
+</resources>

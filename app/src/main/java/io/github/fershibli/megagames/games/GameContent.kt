@@ -80,6 +80,7 @@ fun GameContent(game: GameId, host: GameHost) {
         GameId.PINBALL -> io.github.fershibli.megagames.games.pinball.PinballGame(host)
         GameId.TRAIL -> io.github.fershibli.megagames.games.trail.TrailGame(host)
         GameId.PARKING -> io.github.fershibli.megagames.games.parking.ParkingGame(host)
+        GameId.BATTLESHIP -> io.github.fershibli.megagames.games.battleship.BattleshipGame(host)
         GameId.ESCOVA -> io.github.fershibli.megagames.games.escova.EscovaGame(host)
     }
 }
