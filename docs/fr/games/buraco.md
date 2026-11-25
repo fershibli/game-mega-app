@@ -2,7 +2,7 @@
 
 🌐 [English](../../en/games/buraco.md) · [Português](../../pt-BR/games/buraco.md) · [Español](../../es/games/buraco.md) · **Français** · [Italiano](../../it/games/buraco.md) · [Deutsch](../../de/games/buraco.md) · [Русский](../../ru/games/buraco.md) · [日本語](../../ja/games/buraco.md) · [中文](../../zh-CN/games/buraco.md) · [العربية](../../ar/games/buraco.md)
 
-Le buraco est le rami brésilien des suites et des canastas, avec deux jeux de cartes. Dans Mili Games, on y joue **à deux** (vous contre l’ordinateur), **à trois** (chacun pour soi), **à quatre** (en équipes ou chacun pour soi) ou **à six** (en trois équipes de deux ou en deux équipes de trois). Avant chaque partie, l’application demande **Combien à table ?** et retient votre choix. Vous pouvez aussi **jouer à tour de rôle sur un seul téléphone**.
+Le buraco est le rami brésilien des suites et des canastas, avec deux jeux de cartes. Dans Mili Games, on y joue **à deux** (vous contre l’ordinateur) ou **à quatre, en équipes** : vous et un partenaire (ordinateur), assis face à face, contre deux ordinateurs. Avant chaque partie, l’application demande **Combien à table ?** et retient votre choix. Vous pouvez aussi **jouer à tour de rôle sur un seul téléphone**.
 
 ## Les cartes
 - Deux jeux de 52 cartes (104), sans jokers. **Tous les 2 sont des jokers** (« curinga »).
@@ -38,12 +38,6 @@ Le buraco est le rami brésilien des suites et des canastas, avec deux jeux de c
 - **Une table par équipe :** vous et votre partenaire posez et complétez les **mêmes suites** (« Nos suites ») ; les adversaires partagent les leurs. Chaque équipe ramasse **un morto** : le premier des deux qui vide sa main.
 - **Points par équipe :** la barre du haut montre les points déjà posés par chaque équipe. À la fin, chaque équipe compte ses suites et canastas, +100 si l’un des deux a fini, moins les cartes restées dans les **deux** mains, et −100 sans son morto.
 - **Votre partenaire ordinateur** complète vos suites communes, garde les canastas propres en Difficile et évite de défausser ce que l’adversaire suivant pourrait utiliser.
-
-## À trois, quatre ou six
-- **Chacun pour soi** (3 ou 4) : chaque joueur a ses propres suites et son morto ; celui qui marque le plus de points gagne.
-- **À six en trois équipes de deux :** les partenaires sont assis face à face (joueurs 1 et 4, 2 et 5, 3 et 6).
-- **À six en deux équipes de trois :** les partenaires sont assis une place sur deux (joueurs 1, 3 et 5 contre 2, 4 et 6), donc le joueur suivant est toujours un adversaire.
-- À six, ou à quatre chacun pour soi, la partie utilise **trois jeux de cartes** pour que la pioche ne s’épuise pas trop tôt. Chaque place a sa couleur et son symbole (● ▲ ■ ◆ ▼ ⬢).
 
 ## À tour de rôle sur un seul téléphone
 Choisissez **Chacun son tour sur ce téléphone** sur l’écran **Comment voulez-vous jouer ?**, puis 2 ou 4 à table. Tout le monde est une personne (2 personnes, ou 4 en équipes : joueurs 1 et 3 contre 2 et 4). Après chaque défausse, un écran cache les cartes et demande de passer le téléphone au joueur suivant, avec sa couleur et son symbole ; il touche le grand bouton (« C’est bon, c’est mon tour ») pour voir sa propre main.

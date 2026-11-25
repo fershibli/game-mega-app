@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">駐車場</string>
+    <string name="howto_parking">赤い車を右の出口から出しましょう。車やトラックは自分の向きにだけ動かせます。曲がったり、ほかの車を通りぬけたりはできません。「ヒント」でよい一手がわかります。</string>
+    <string name="parking_moves">手数：%1$d・最少：%2$d</string>
+    <string name="parking_goal">車を動かして、赤い車の通り道をあけましょう。</string>
+    <string name="parking_hint_move">わくのついた車を、点線の場所へ動かしましょう。</string>
+    <string name="parking_done">赤い車が出られました！</string>
+    <string name="parking_restart">最初から</string>
+    <string name="parking_board">駐車場。車の数：%1$d</string>
+    <string name="parking_done_moves">手数 %1$d で出られました（最少 %2$d）。</string>
+    <string name="parking_hints_used">使ったヒント：%1$d。</string>
+</resources>

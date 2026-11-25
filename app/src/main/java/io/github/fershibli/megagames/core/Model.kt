@@ -148,6 +148,8 @@ enum class GameId(
     ESCOVA("escova", R.string.game_escova, R.string.howto_escova, GameCategory.CARDS, takeTurns = true, tables = listOf(TableSize(2), TableSize(4, R.string.escova_table_pairs))),
     FARM("farm", R.string.game_farm, R.string.howto_farm, GameCategory.PASTIMES, hasDifficulty = false),
     PINBALL("pinball", R.string.game_pinball, R.string.howto_pinball, GameCategory.CALM_ACTION),
+    TRAIL("trail", R.string.game_trail, R.string.howto_trail, GameCategory.PASTIMES, takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
+    PARKING("parking", R.string.game_parking, R.string.howto_parking, GameCategory.PUZZLES),
     BATTLESHIP("battleship", R.string.game_battleship, R.string.howto_battleship, GameCategory.BOARD, takeTurns = true),
     ;
 

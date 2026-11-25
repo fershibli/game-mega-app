@@ -160,7 +160,7 @@ Every puzzle is generated new and has exactly **one** solution.
 
 ### Buraco
 
-Brazilian Buraco for two to six: you against the computer, three or four each for themselves, four in pairs or six in teams, or taken in turns on one phone. Full rules, the four-player game and tips: [Buraco](games/buraco.md).
+Brazilian Buraco for two (you against the computer) or for four in pairs (you and a computer partner against two computers), or taken in turns on one phone. Full rules, the four-player game and tips: [Buraco](games/buraco.md).
 
 **Cards:** two 52-card decks (104 cards). **Every 2 is wild** ("curinga").
 

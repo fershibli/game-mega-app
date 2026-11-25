@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="game_parking">Parkplatz</string>
+    <string name="howto_parking">Bring das rote Auto durch die Lücke rechts hinaus. Zieh ein Auto oder einen Lastwagen in seiner eigenen Richtung, um Platz zu machen; es kann nicht abbiegen und nicht durch andere fahren. Tipp zeigt einen guten Zug.</string>
+    <string name="parking_moves">Züge: %1$d · Kleinstmöglich: %2$d</string>
+    <string name="parking_goal">Schieb die Autos, um dem roten den Weg frei zu machen.</string>
+    <string name="parking_hint_move">Bring das umrandete Fahrzeug an den gestrichelten Platz.</string>
+    <string name="parking_done">Das rote Auto ist draußen!</string>
+    <string name="parking_restart">Neu beginnen</string>
+    <string name="parking_board">Parkplatz mit Fahrzeugen: %1$d</string>
+    <string name="parking_done_moves">Hinaus mit Zügen: %1$d (kleinstmöglich: %2$d).</string>
+    <string name="parking_hints_used">Benutzte Tipps: %1$d.</string>
+</resources>
