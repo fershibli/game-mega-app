@@ -7,7 +7,7 @@ Ein ruhiges Brettspiel für zwei bis vier. Würfle und geh ein ganzes Leben entl
 Spiele gegen den Computer (er zieht die anderen Figuren) oder **abwechselnd an diesem Telefon**. Die App fragt, wie viele am Tisch sitzen.
 
 ## Das Brett
-Sechs Reihen, eine für jeden Lebensabschnitt: **Kindheit**, **Jugend**, **Arbeit**, **Familie**, **Reisen** und **Die ruhigen Jahre**. Der Weg schlängelt sich von der Fahne hinauf bis zum Häuschen.
+Sechs Landschaften, eine für jeden Lebensabschnitt (Spielplatz und Schule, Stadt und Universität, Büros und Werkstatt, Häuser und Gärten, Hafen und Berge, Veranda und Obstgarten): **Kindheit**, **Jugend**, **Arbeit**, **Familie**, **Reisen** und **Die ruhigen Jahre**. Der Weg schlängelt sich von der Fahne hinauf bis zum Häuschen.
 
 | Feld | Was passiert |
 |---|---|

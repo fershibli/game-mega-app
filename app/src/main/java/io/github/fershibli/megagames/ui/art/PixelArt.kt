@@ -195,9 +195,15 @@ class PixelColors(
          * differences in high contrast.
          */
         fun of(p: Palette): PixelColors {
-            var c = Day
-            if (p.isDark) c = c.map { lerp(it, Color(0xFF101828), 0.35f) }
-            if (p.mode == ColorMode.HIGH_CONTRAST) c = c.map { stretch(it) }.copyOutline(Color.Black)
+            val c = Day.map { adapt(it, p) }
+            return if (p.mode == ColorMode.HIGH_CONTRAST) c.copyOutline(Color.Black) else c
+        }
+
+        /** Any scene color as [of] adapts the base ones: dimmed at night, stronger in high contrast. */
+        fun adapt(color: Color, p: Palette): Color {
+            var c = color
+            if (p.isDark) c = lerp(c, Color(0xFF101828), 0.35f)
+            if (p.mode == ColorMode.HIGH_CONTRAST) c = stretch(c)
             return c
         }
 
@@ -216,4 +222,12 @@ class PixelColors(
     private fun copyOutline(c: Color) = PixelColors(
         c, grass, grassDark, soil, soilDark, wood, woodDark, stone, stoneDark, water, waterLight, sky, roof, leaf, sun, cream,
     )
+}
+
+private val adaptedArt = HashMap<Triple<PixelArt, Boolean, ColorMode>, PixelArt>()
+
+/** This picture with its colors adapted to [p] like [PixelColors.of] (the same picture in the normal day mode). */
+fun PixelArt.adaptedTo(p: Palette): PixelArt {
+    if (!p.isDark && p.mode != ColorMode.HIGH_CONTRAST) return this
+    return synchronized(adaptedArt) { adaptedArt.getOrPut(Triple(this, p.isDark, p.mode)) { recolored { PixelColors.adapt(it, p) } } }
 }

@@ -7,7 +7,7 @@ Un jeu de plateau paisible, de deux à quatre joueurs. Lancez le dé et parcoure
 Jouez contre l’ordinateur (il joue les autres pions) ou **à tour de rôle sur ce téléphone**. L’application demande combien vous êtes à table.
 
 ## Le plateau
-Six rangées, une par moment de la vie : **Enfance**, **Jeunesse**, **Travail**, **Famille**, **Voyages** et **Les années paisibles**. Le chemin monte en zigzag du drapeau à la petite maison.
+Six paysages, un par moment de la vie (une aire de jeux et une école, la ville et l'université, des bureaux et un atelier, des maisons et des jardins, un port et des montagnes, une véranda et un verger) : **Enfance**, **Jeunesse**, **Travail**, **Famille**, **Voyages** et **Les années paisibles**. Le chemin monte en zigzag du drapeau à la petite maison.
 
 | Case | Ce qui se passe |
 |---|---|

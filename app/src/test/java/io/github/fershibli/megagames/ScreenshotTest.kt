@@ -293,6 +293,7 @@ class ScreenshotTest {
 
     @Test fun trail() = shot("game_trail") { GameContent(GameId.TRAIL, trailHost()) }
     @Test fun trailPt() = shot("game_trail_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
+    @Test fun trailDark() = shot("game_trail_dark", Settings(darkMode = true)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
 
     /** Four pawns along the way, with a story (or a crossroads) waiting for you. */
     private fun trailHost(choice: Boolean = false): GameHost {
