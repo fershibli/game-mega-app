@@ -26,13 +26,9 @@ Status: `livre` (ninguém pegou), `em andamento` (diga a branch), `aguardando de
 | 16 | [Dívida técnica e CI](items/16-divida-tecnica.md) | engenharia | — | livre |
 | 17 | [Decisões que esperam a dona do produto](items/17-decisoes.md) | produto | — | aguardando decisão |
 
-## Em andamento agora (fora deste backlog)
+## Em andamento agora
 
-| PR | Jogo | Estado |
-|---|---|---|
-| #65 | Batalha naval | esperando o CI; entra na `stag` quando verde |
-
-A Trilha (#63) e o Estacionamento (#66) já estão na `stag`. O item 06 mexe na Batalha naval: só comece depois que o #65 entrar.
+Nada fora do backlog. Os cinco jogos do último lote (Fazenda #62, Pinball #64, Trilha #63, Estacionamento #66 e Batalha naval #65) já estão na `stag`, e os itens visuais 02 a 06 estão liberados.
 
 ## Recusados (não fazer)
 
