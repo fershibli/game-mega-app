@@ -73,6 +73,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - Cacheta and Truco ask how many play on the standard **How many at the table?** screen (Cacheta 2 to 4, Truco 2 or 4) instead of their own question inside the game; games saved before still continue.
 
 ### Changed
+- **Farm in pixel art**: the field and the animals are now one isometric pixel-art farm, with the house, the barn, trees, a lane, the fenced paddock, and a sky with clouds and a sun (a moon and stars in dark mode). Crops show how far they have grown, ripe ones sparkle, a drop marks the beds that can be watered and a bubble shows what each animal has waiting. Tap a bed or an animal as before; pinch to see the farm bigger. Orders and the barn use the same pixel pictures.
 - Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".
 - The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
 

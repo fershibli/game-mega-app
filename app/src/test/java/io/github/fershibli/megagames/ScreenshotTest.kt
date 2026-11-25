@@ -238,9 +238,13 @@ class ScreenshotTest {
         seedFarm()
         gameShot("game_farm", GameId.FARM)
     }
-    @Test fun farmAnimals() {
-        seedFarm()
-        gameShot("game_farm_animals", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), tab = "animals")
+    @Test fun farmPt() {
+        seedFarm(full = true)
+        gameShot("game_farm_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    }
+    @Test fun farmDark() {
+        seedFarm(full = true)
+        gameShot("game_farm_dark", GameId.FARM, settings = Settings(darkMode = true))
     }
     @Test fun farmOrders() {
         seedFarm()
@@ -248,10 +252,10 @@ class ScreenshotTest {
     }
 
     /** A farm a few days old: beds at every stage, three animals and some things in the barn. */
-    private fun seedFarm() {
+    private fun seedFarm(full: Boolean = false) {
         val now = System.currentTimeMillis()
         val m = 60_000L
-        val plots = listOf(
+        val first = listOf(
             io.github.fershibli.megagames.games.farm.Plot("tomato", now - 25 * m),
             io.github.fershibli.megagames.games.farm.Plot("carrot", now - 3 * m, now - m),
             io.github.fershibli.megagames.games.farm.Plot("corn", now - 2 * m),
@@ -259,13 +263,25 @@ class ScreenshotTest {
             io.github.fershibli.megagames.games.farm.Plot(),
             io.github.fershibli.megagames.games.farm.Plot("lettuce", now - 3 * m),
         )
+        val more = listOf(
+            io.github.fershibli.megagames.games.farm.Plot("pumpkin", now - 200 * m),
+            io.github.fershibli.megagames.games.farm.Plot("lettuce", now - m),
+            io.github.fershibli.megagames.games.farm.Plot("tomato", now - 8 * m),
+            io.github.fershibli.megagames.games.farm.Plot(),
+            io.github.fershibli.megagames.games.farm.Plot("carrot", now - 9 * m),
+            io.github.fershibli.megagames.games.farm.Plot("corn", now - 30 * m),
+        )
         val pens = listOf(
             io.github.fershibli.megagames.games.farm.Pen("chicken", now - 22 * m),
             io.github.fershibli.megagames.games.farm.Pen("cow", now - 12 * m),
             io.github.fershibli.megagames.games.farm.Pen("sheep", now - 70 * m),
-        )
+        ) + if (full) listOf(
+            io.github.fershibli.megagames.games.farm.Pen("chicken", now - 3 * m),
+            io.github.fershibli.megagames.games.farm.Pen("sheep", now - 10 * m),
+            io.github.fershibli.megagames.games.farm.Pen("cow", now - 40 * m),
+        ) else emptyList()
         val world = io.github.fershibli.megagames.games.farm.FarmRules.fillOrders(
-            io.github.fershibli.megagames.games.farm.FarmWorld(coins = 86, stars = 5, plots = plots, pens = pens, barn = mapOf("egg" to 3, "carrot" to 2, "milk" to 1), orderSerial = 11),
+            io.github.fershibli.megagames.games.farm.FarmWorld(coins = 86, stars = 8, plots = if (full) first + more else first, pens = pens, barn = mapOf("egg" to 3, "carrot" to 2, "milk" to 1), orderSerial = 11),
         )
         WorldStore(RuntimeEnvironment.getApplication()).run {
             save(io.github.fershibli.megagames.games.farm.FARM_WORLD_KEY, io.github.fershibli.megagames.games.farm.FarmWorld.serializer(), world)

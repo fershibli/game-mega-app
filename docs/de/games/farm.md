@@ -4,11 +4,11 @@
 
 Ein kleiner Bauernhof, der in deinem Handy wohnt. Säe, gieße und ernte, kümmere dich um Hühner, Kuh und Schafe, verkaufe in der Scheune und erfülle die Bestellungen der Nachbarn. Es eilt nie und nichts geht verloren: Pflanzen welken nie, Tiere hungern nie, und der Hof wächst weiter, auch wenn die App geschlossen ist.
 
-Vier Knöpfe oben öffnen das **Beet**, die **Tiere**, die **Bestellungen** und die **Scheune**. Darüber stehen deine **Münzen** und **Sterne**.
+Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Scheune**. Darüber stehen deine **Münzen** und **Sterne**. Der Hof ist ein einziges Bild: das Feld mit den Beeten, die Koppel mit den Tieren, das Haus und die Scheune. Mit zwei Fingern auseinanderziehen vergrößert es; der runde Knopf stellt es zurück.
 
 ## Das Beet
-- Tippe auf ein **leeres Beet** (das mit dem großen +) und wähle, was du säen willst. Jeder Samen kostet ein paar Münzen.
-- Die Pflanze wächst von selbst in echter Zeit: erst ein Keimling, dann eine junge Pflanze, dann die reife Ernte auf einem gelben Kreis, darunter **Fertig!**. Die restliche Zeit steht unter jedem Beet.
+- Tippe auf ein **leeres Beet** (nur braune Erde) und wähle, was du säen willst. Jeder Samen kostet ein paar Münzen.
+- Die Pflanze wächst von selbst in echter Zeit: erst ein Keimling, dann eine junge Pflanze mit einem kleinen Balken, der sich füllt, dann die reife Ernte, die funkelt. Tippe auf ein wachsendes Beet, um den Namen und die restliche Zeit zu sehen.
 - **Gießen** (tippe auf ein Beet mit einem blauen Tropfen oder auf **Alles gießen**) lässt den Rest doppelt so schnell wachsen. Einmal pro Pflanze genügt.
 - Tippe auf ein reifes Beet (oder **Alles ernten**): Jedes Beet gibt **zwei** seiner Ernte, die direkt in die Scheune kommen.
 - **Neues Beet** vergrößert das Feld, bis zu zwölf Beete.
@@ -23,7 +23,7 @@ Vier Knöpfe oben öffnen das **Beet**, die **Tiere**, die **Bestellungen** und 
 | Kürbis | 90 Min. | 20 | 28 | 8 |
 
 ## Die Tiere
-Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält bis zu **drei** bereit, die darüber zu sehen sind; tippe auf das Tier (oder **Alles einsammeln**), um sie in die Scheune zu bringen.
+Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält bis zu **drei** bereit, in einer kleinen Sprechblase darüber; tippe auf das Tier (oder **Alles einsammeln**), um sie in die Scheune zu bringen.
 
 | Tier | Gibt | Alle | Kostet | Verkauf | Sterne |
 |---|---|---|---|---|---|

@@ -4,8 +4,6 @@
     <string name="howto_farm">Säen, gießen und ernten; Eier, Milch und Wolle einsammeln; in der Scheune verkaufen und die Bestellungen der Nachbarn erfüllen. Die Pflanzen wachsen in echter Zeit und welken nie.</string>
     <string name="farm_coins">Münzen: %1$d</string>
     <string name="farm_stars">Sterne: %1$d</string>
-    <string name="farm_tab_field">Beet</string>
-    <string name="farm_tab_animals">Tiere</string>
     <string name="farm_tab_orders">Bestellungen</string>
     <string name="farm_tab_barn">Scheune</string>
     <string name="farm_item_lettuce">Salat</string>
@@ -38,7 +36,6 @@
     <string name="farm_buy_animal">Tier kaufen</string>
     <string name="farm_buy_animal_title">Welches Tier?</string>
     <string name="farm_animal_option">%1$s · %2$d Münzen</string>
-    <string name="farm_no_animals">Noch keine Tiere. Kaufe ein Huhn, dann gibt es Eier.</string>
     <string name="farm_pen_ready">%1$s fertig: %2$d</string>
     <string name="farm_have_need">%1$s: %2$d von %3$d</string>
     <string name="farm_order_reward">Bringt %1$d Münzen und einen Stern</string>
@@ -49,4 +46,5 @@
     <string name="farm_barn_row">%1$s: %2$d · je %3$d Münzen</string>
     <string name="farm_sell_one">1 verkaufen</string>
     <string name="farm_sell_all">Alles verkaufen</string>
+    <string name="farm_scene">Bauernhof. Beete: %1$d. Tiere: %2$d.</string>
 </resources>

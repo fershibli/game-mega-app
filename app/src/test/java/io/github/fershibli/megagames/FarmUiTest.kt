@@ -97,7 +97,7 @@ class FarmUiTest {
         show()
         rule.onNodeWithTag("farm-tab-orders").performClick()
         rule.onNodeWithTag("farm-deliver-0").assertIsNotEnabled()
-        rule.onNodeWithTag("farm-tab-animals").performClick()
+        rule.onNodeWithTag("farm-tab-farm").performClick()
         rule.onNodeWithTag("farm-pen-0").performClick()
         rule.waitForIdle()
         assertEquals(2, stored().count(Item.EGG))
@@ -119,6 +119,6 @@ class FarmUiTest {
         rule.waitForIdle()
         assertEquals(7, stored().plots.size)
         assertEquals(75, stored().coins)
-        rule.onNodeWithTag("farm-plot-6").performScrollTo().assertExists()
+        rule.onNodeWithTag("farm-plot-6").assertExists()
     }
 }
