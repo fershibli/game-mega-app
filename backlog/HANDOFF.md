@@ -1,6 +1,6 @@
 # Hand-off — como trabalhar neste projeto
 
-Para quem for pegar um item do [backlog](specs.md). Leia inteiro antes de começar: as regras abaixo vieram de erros reais.
+Para quem for pegar um item do [backlog](specs.md). Leia inteiro antes de começar. As **regras obrigatórias** ficam em [`rules/`](../rules/README.md); este arquivo explica a estrutura e o dia a dia.
 
 ## O projeto em uma frase
 
