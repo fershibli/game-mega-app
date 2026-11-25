@@ -4,7 +4,7 @@ Cada regra existe porque algo deu errado (ou quase) na história do projeto. O "
 
 | Arquivo | Assunto |
 |---|---|
-| [01-git-e-prs.md](01-git-e-prs.md) | Branches, commits, PRs, merge e autoria |
+| [01-git-e-prs.md](01-git-e-prs.md) | Branches, commits, PRs e merge |
 | [02-produto.md](02-produto.md) | O público (pessoas idosas) e o que o app nunca faz |
 | [03-codigo.md](03-codigo.md) | Arquitetura, salvamento, desempenho, dependências |
 | [04-textos-e-idiomas.md](04-textos-e-idiomas.md) | Os 10 idiomas, "Aprenda a jogar", dicionários |

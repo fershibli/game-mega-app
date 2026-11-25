@@ -1,18 +1,15 @@
-# 01 — Git, PRs e autoria
+# 01 — Git e PRs
 
 ## Branches e PRs
 - **Todo PR aponta para a `stag`.** A `main` só recebe a `stag` quando a dona do produto decide promover uma versão.
 - **Nunca empilhe PRs** (um PR apontando para a branch de outro, ou cadeias como "17 → 18 → 21"). Cada PR sai da `stag` e é independente. Se um item depende de outro, espere o primeiro entrar na `stag`.
 - **Um assunto por PR.** Um jogo novo, uma correção, uma migração. Uma correção encontrada no caminho que afeta outros PRs (por exemplo, um teste instável) pode ir no PR atual se for pequena; diga isso na descrição.
-- **Nome da branch descreve o trabalho:** `feat/<jogo>`, `fix/<assunto>`, `docs/<assunto>`, `test/<assunto>`. Nada de nome de ferramenta nem código de sessão.
+- **Nome da branch descreve o trabalho:** `feat/<jogo>`, `fix/<assunto>`, `docs/<assunto>`, `test/<assunto>`.
 - **Push frequente para `wip/<nome>`** enquanto trabalha, para não perder nada. Elas são apagadas pela dona do produto depois.
 - **O merge é sempre squash**, com o título `tipo(escopo): descrição (#N)`.
 
 ## Commits
 - **Mensagem no padrão Conventional Commits** (`feat`, `fix`, `docs`, `test`, `refactor`, `build`, `ci`), em inglês. O corpo explica o **porquê**.
-- **Todo commit e todo PR terminam com** `Co-authored-by: isabelmaito <maitoisabel@gmail.com>`.
-- **Autoria limpa:** nada de `Co-Authored-By` de ferramenta, de "Generated with…", de links para sessões ou chats. Confira antes de cada push:
-  `git log origin/stag..HEAD --format=%B | grep -iE "generated with|claude|anthropic|noreply@"`
 - Fecha uma issue: `Closes #N` no corpo do commit. O workflow `label-on-stag` marca a issue como "em avaliação (stag)".
 
 ## Histórico

@@ -31,6 +31,4 @@ Copie esta lista na descrição do PR (ou confira item a item).
 
 **Git**
 - [ ] PR para a `stag`, sem empilhar; título `tipo(escopo): …`.
-- [ ] `Co-authored-by: isabelmaito <maitoisabel@gmail.com>` no fim.
-- [ ] Nenhuma marca de ferramenta nos commits e no PR.
 - [ ] Status do item atualizado em `backlog/specs.md`.
