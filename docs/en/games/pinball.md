@@ -5,7 +5,7 @@
 A gentle pinball table: the ball rolls slowly and there is time to see it coming.
 
 ## How to play
-- Tap **Serve the ball**: it drops in from the top.
+- Tap **Serve the ball**: it waits on the spring at the bottom right. Then press **▲ Launch** to send it up its lane and onto the table. On Medium and Hard, the longer you hold Launch, the harder it shoots; on Easy the strength is chosen for you.
 - **Hold** the big **◀ Left** and **Right ▶** buttons (or simply hold the left or right half of the table) to raise that flipper; let go to lower it. Catch the ball as it comes down and send it back up.
 - The ball is lost when it falls between the flippers. **Pause** stops the table at any time, and so does leaving the app.
 
@@ -16,6 +16,11 @@ A gentle pinball table: the ball rolls slowly and there is time to see it coming
 | Orange kicker above a flipper | 25 |
 | Star at the top (lights up) | 50 |
 | All four stars lit | +500 bonus, and they go dark again |
+| Lane at the top (lights up) | 30 |
+| All three lanes lit | points ×2 until that ball is lost |
+| Blue drop target | 75 |
+| All three targets down | +400 bonus, and they stand up again |
+| The ramp on the left (the ball rides it round to your left flipper) | 300 |
 
 The best score of each level is kept.
 
