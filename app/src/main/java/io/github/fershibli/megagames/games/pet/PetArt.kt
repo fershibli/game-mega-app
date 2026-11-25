@@ -4,57 +4,17 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
+import io.github.fershibli.megagames.ui.art.PixelArt
+import io.github.fershibli.megagames.ui.art.drawFitted
+import io.github.fershibli.megagames.ui.art.palette
+import io.github.fershibli.megagames.ui.art.pixelArt
 import io.github.fershibli.megagames.ui.theme.Palette
 import kotlin.math.floor
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sin
 
-/*
- * Pixel art of the pet game. Every picture is a few lines of text where each character is a
- * color; at start it is turned into horizontal runs of one color, so drawing a whole pet is a
- * handful of rectangles and nothing is allocated while animating.
- */
-
-/** A small picture made of colored squares, kept as runs packed in an [IntArray]. */
-class PixelArt internal constructor(val width: Int, val height: Int, private val runs: IntArray, private val colors: Array<Color>) {
-    /** Draws the picture with its top-left corner at ([left], [top]); each square is [px] wide. */
-    fun draw(scope: DrawScope, left: Float, top: Float, px: Float, alpha: Float = 1f) {
-        for (r in runs) {
-            val x = r and 63
-            val y = (r shr 6) and 63
-            val len = (r shr 12) and 63
-            scope.drawRect(colors[r ushr 18], Offset(left + x * px, top + y * px), Size(len * px, px), alpha = alpha)
-        }
-    }
-}
-
-/** Builds a [PixelArt] from rows of characters; '.' is transparent. */
-fun pixelArt(rows: List<String>, palette: Map<Char, Color>): PixelArt {
-    val width = rows.maxOf { it.length }
-    require(width < 64 && rows.size < 64) { "picture too big" }
-    val colors = ArrayList<Color>()
-    val index = HashMap<Char, Int>()
-    val runs = ArrayList<Int>()
-    rows.forEachIndexed { y, row ->
-        var x = 0
-        while (x < row.length) {
-            val ch = row[x]
-            var end = x + 1
-            while (end < row.length && row[end] == ch) end++
-            if (ch != '.' && ch != ' ') {
-                val c = index.getOrPut(ch) { colors.add(palette[ch] ?: error("no color for '$ch'")); colors.size - 1 }
-                runs += x or (y shl 6) or ((end - x) shl 12) or (c shl 18)
-            }
-            x = end
-        }
-    }
-    return PixelArt(width, rows.size, runs.toIntArray(), colors.toTypedArray())
-}
-
-/** "o=4A3426 a=F4A259" → map of characters to colors. */
-internal fun palette(spec: String): Map<Char, Color> =
-    spec.split(' ').filter { it.isNotBlank() }.associate { it[0] to Color(0xFF000000 or it.substring(2).toLong(16)) }
+/* Pixel art of the pet game, drawn with the shared engine in ui/art/PixelArt.kt. */
 
 private fun art(spec: String, vararg rows: String) = pixelArt(rows.toList(), palette(spec))
 
@@ -501,13 +461,6 @@ object PetPics {
     }
 }
 
-/** Draws [art] as large as fits in the drawing area, centered, on whole pixels. */
-fun DrawScope.drawFitted(art: PixelArt, alpha: Float = 1f) {
-    val px = max(1f, floor(min(size.width / art.width, size.height / art.height)))
-    val left = floor((size.width - art.width * px) / 2)
-    val top = floor((size.height - art.height * px) / 2)
-    art.draw(this, left, top, px, alpha)
-}
 
 // ---------------------------------------------------------------------------------------------
 // The scene: a cozy room (or the garden during a walk) with the pet in the middle.
