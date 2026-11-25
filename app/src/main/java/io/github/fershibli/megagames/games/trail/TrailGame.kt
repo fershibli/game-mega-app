@@ -6,7 +6,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,7 +17,14 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.snapshotFlow
+import kotlinx.coroutines.flow.first
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -28,6 +34,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -37,7 +44,6 @@ import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameOutcome
-import io.github.fershibli.megagames.games.ludo.drawLudoDie
 import io.github.fershibli.megagames.games.ludo.ludoColor
 import io.github.fershibli.megagames.ui.components.ActionBar
 import io.github.fershibli.megagames.ui.components.AppIcon
@@ -51,6 +57,8 @@ import io.github.fershibli.megagames.ui.components.Seat
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.LocalSettings
+import io.github.fershibli.megagames.core.Motion
+import io.github.fershibli.megagames.ui.theme.currentMotion
 import io.github.fershibli.megagames.ui.theme.currentPace
 import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
@@ -64,6 +72,11 @@ private const val ROLL_PAUSE = 900L
 private const val TURN_PAUSE = 1300L
 private const val READ_PAUSE = 2600L
 private const val END_PAUSE = 1200L
+
+/** A pawn's hop from one square to the next, and the die's tumbles before it settles. */
+private const val HOP = 300L
+private const val TUMBLE = 90L
+private const val TUMBLES = 7
 
 /** Pawn colors by seat (Ludo's red, blue, green and yellow), each with its own symbol. */
 private val SEAT_COLORS = intArrayOf(0, 3, 1, 2)
@@ -88,6 +101,47 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
     }
     val handoff = remember { Handoff() }
     fun seatOf(seat: Int) = Seat(names[seat], ludoColor(p, SEAT_COLORS[seat]))
+    val motion = currentMotion
+
+    // What the board shows can lag behind the rules for a moment: the die tumbles, then the
+    // pawns walk square by square. The rules wait for the board before going on.
+    val shown = remember { mutableStateListOf<Int>().apply { addAll(s.positions) } }
+    var seenDie by remember { mutableIntStateOf(s.die) }
+    var tumble by remember { mutableIntStateOf(0) }
+    var hopFrom by remember { mutableStateOf<List<Int>?>(null) }
+    val hop = remember { Animatable(0f) }
+    LaunchedEffect(s.die, s.positions) {
+        hopFrom = null
+        if (s.die != 0 && seenDie == 0 && motion != Motion.NONE) {
+            try {
+                repeat(TUMBLES) { k ->
+                    tumble = Random.Default.nextInt(1, 7) * (if (k % 2 == 0) 1 else -1)
+                    pace.wait(TUMBLE)
+                }
+            } finally {
+                tumble = 0
+            }
+        }
+        seenDie = s.die
+        while (shown.toList() != s.positions) {
+            if (motion == Motion.NONE || shown.size != s.positions.size) {
+                shown.clear()
+                shown.addAll(s.positions)
+                break
+            }
+            val from = shown.toList()
+            hopFrom = from
+            hop.snapTo(0f)
+            hop.animateTo(1f, tween((HOP * pace.factor).toInt(), easing = LinearEasing))
+            for (seat in from.indices) {
+                val target = s.positions[seat]
+                if (from[seat] != target) shown[seat] = from[seat] + if (target > from[seat]) 1 else -1
+            }
+            hopFrom = null
+        }
+    }
+    fun settled(t: TrailState) = shown.toList() == t.positions && seenDie == t.die && tumble == 0
+
     var announced by remember { mutableIntStateOf(s.turn) }
     LaunchedEffect(s.turn, s.over) {
         if (together && !s.over && s.turn != announced) handoff.passTo(seatOf(s.turn))
@@ -95,6 +149,7 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
     }
 
     LaunchedEffect(s) {
+        snapshotFlow { settled(s) }.first { it }
         if (s.over) {
             pace.wait(END_PAUSE)
             val leaders = Trail.leaders(s)
@@ -144,7 +199,7 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
                 StatusPill(if (line.isEmpty()) hearts else hearts + "\n" + line, Modifier.testTag("trail-status"), emphasized = myTurn && Trail.canRoll(s))
             },
             controls = {
-                News(s, names, human = s.pending?.let { human(it.seat) } ?: false, state)
+                if (settled(s)) News(s, names, human = s.pending?.let { human(it.seat) } ?: false, state)
                 ActionBar {
                     BigButton(stringResource(R.string.trail_roll), ::roll, Modifier.testTag("trail-roll"), icon = AppIcon.DICE, enabled = myTurn && Trail.canRoll(s))
                 }
@@ -152,30 +207,29 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
         ) {
             val scale = LocalSettings.current.pieceScale
             val where = stringResource(R.string.trail_board, (0 until s.seats).joinToString(", ") { "${names[it]} ${s.positions[it] + 1}" })
-            BoxWithConstraints(Modifier.fillMaxSize().padding(6.dp), contentAlignment = Alignment.Center) {
-                val cell = minOf(maxWidth / Trail.COLUMNS, maxHeight / (Trail.ROWS + 1.2f))
-                Canvas(Modifier.size(cell * Trail.COLUMNS, cell * (Trail.ROWS + 1.2f)).testTag("trail-board").semantics { contentDescription = where }) {
-                    val c = size.width / Trail.COLUMNS
-                    drawTrailBoard(c, p)
-                    // Pawns, grouped by square.
-                    s.positions.withIndex().groupBy({ it.value }, { it.index }).forEach { (square, seats) ->
-                        val center = squareCenter(square, c)
-                        val n = seats.size
-                        val r = c * (if (n == 1) 0.3f else 0.22f) * scale.coerceIn(0.85f, 1.25f)
-                        seats.forEachIndexed { i, seat ->
-                            val off = when (n) {
-                                1 -> Offset.Zero
-                                2 -> Offset((i - 0.5f) * c * 0.42f, 0f)
-                                else -> Offset(((i % 2) - 0.5f) * c * 0.42f, ((i / 2) - 0.5f) * c * 0.42f)
-                            }
-                            val ring = if (seat == s.turn && !s.over) p.highlight else null
-                            drawTrailPawn(center + off, r, p, SEAT_COLORS[seat], ring)
-                        }
-                    }
-                    // The die, under the board, framed in the color of the seat to play.
-                    val die = s.die.takeIf { it > 0 } ?: 0
-                    drawLudoDie(Offset(size.width / 2, size.height - c * 0.6f), c * 0.95f, if (die > 0) die else 1, ludoColor(p, SEAT_COLORS[s.turn]), dimmed = die == 0)
+            Canvas(Modifier.fillMaxSize().padding(6.dp).testTag("trail-board").semantics { contentDescription = where }) {
+                val v = TrailView.fitting(size)
+                drawTrailBoard(v, p)
+                // Pawns, grouped by square; the ones on their way hop between two squares.
+                val from = hopFrom
+                val walking = (0 until s.seats).filter { from != null && from[it] != s.positions[it] }.toSet()
+                val pawnScale = scale.coerceIn(0.85f, 1.25f)
+                val feet = ArrayList<Pair<Int, Offset>>()
+                (0 until s.seats).filter { it !in walking }.groupBy { shown.getOrElse(it) { 0 } }.forEach { (square, seats) ->
+                    seats.forEachIndexed { k, seat -> feet += seat to pawnFoot(v, v.square(square), k, seats.size) }
                 }
+                for (seat in walking) {
+                    val a = from!![seat]
+                    val b = a + if (s.positions[seat] > a) 1 else -1
+                    feet += seat to hopFoot(v, a, b.coerceIn(0, Trail.FINISH), hop.value)
+                }
+                for ((seat, foot) in feet.sortedBy { it.second.y }) {
+                    drawTrailPerson(v, foot, p, SEAT_COLORS[seat], pawnScale, walking = seat in walking && hop.value in 0.25f..0.75f, turn = seat == s.turn && !s.over)
+                }
+                // The die, under the board, on a mat of the color of the seat to play.
+                val face = if (tumble != 0) kotlin.math.abs(tumble) else s.die.takeIf { it > 0 } ?: 1
+                val shake = if (tumble == 0) 0 else if (tumble > 0) 1 else -1
+                drawTrailDie(v, face, ludoColor(p, SEAT_COLORS[s.turn]), dimmed = s.die == 0 && tumble == 0, shake, p)
             }
         }
         HandoffOverlay(handoff) {}
@@ -211,17 +265,33 @@ private fun News(s: TrailState, names: List<String>, human: Boolean, state: Muta
         else -> null
     }
     if (title == null && body == null && effect == null) return
+    // The stage the card speaks about, for its picture.
+    val stage = when {
+        pending?.choiceStage != null && pending.choiceStage >= 0 -> pending.choiceStage
+        story >= 0 -> Story.entries[story].stage.ordinal
+        else -> null
+    }
+    val paper = trailPaper(p)
+    val shape = RoundedCornerShape(6.dp)
     Column(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(16.dp)).background(p.surfaceAlt)
-            .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.dp, p.outline), RoundedCornerShape(16.dp))
+        Modifier.fillMaxWidth().clip(shape).background(paper)
+            .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.5.dp, if (p.strongOutlines) p.outline else Color(0xFFB9824F)), shape)
             .padding(12.dp).heightIn(min = 40.dp).testTag("trail-news"),
         verticalArrangement = Arrangement.spacedBy(6.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Canvas(Modifier.size(22.dp)) { drawTrailPawn(center, size.width * 0.45f, p, SEAT_COLORS[seat], null) }
-            Text(listOfNotNull(who, title).joinToString(" · "), Modifier.padding(start = 8.dp), style = MaterialTheme.typography.titleMedium, color = p.text)
+            Canvas(Modifier.size(24.dp, 30.dp)) {
+                val v = TrailView(0f, 0f, kotlin.math.floor(size.height / 11f).coerceAtLeast(1f))
+                drawTrailPerson(v, Offset(size.width / 2, size.height - v.px), p, SEAT_COLORS[seat])
+            }
+            Text(listOfNotNull(who, title).joinToString(" · "), Modifier.padding(start = 8.dp).weight(1f), style = MaterialTheme.typography.titleMedium, color = p.text)
         }
-        if (body != null) Text(body, style = MaterialTheme.typography.bodyLarge, color = p.text)
+        if (body != null) {
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                if (stage != null) Canvas(Modifier.size(64.dp, 52.dp)) { drawTrailVignette(stage, p) }
+                Text(body, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = p.text)
+            }
+        }
         if (effect != null && pending?.choiceStage?.let { it < 0 } != false) Text(effect, style = MaterialTheme.typography.titleMedium, color = p.success)
         if (human && pending != null) {
             if (pending.story >= 0) {

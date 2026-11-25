@@ -7,7 +7,7 @@ Um jogo de tabuleiro tranquilo, de dois a quatro jogadores. Jogue o dado e perco
 Jogue contra o computador (ele joga com os outros peões) ou **revezando o celular**. O app pergunta quantos estão à mesa.
 
 ## O tabuleiro
-Seis faixas, uma para cada fase da vida: **Infância**, **Juventude**, **Trabalho**, **Família**, **Viagens** e **Anos de sossego**. O caminho sobe em zigue-zague da bandeira até a casinha.
+Seis paisagens, uma para cada fase da vida (parquinho e escola, cidade e universidade, escritórios e oficina, casas e jardins, porto e montanhas, varanda e pomar): **Infância**, **Juventude**, **Trabalho**, **Família**, **Viagens** e **Anos de sossego**. O caminho sobe em zigue-zague da bandeira até a casinha.
 
 | Casa | O que acontece |
 |---|---|

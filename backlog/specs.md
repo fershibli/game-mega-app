@@ -10,7 +10,7 @@ Status: `livre` (ninguém pegou), `em andamento` (diga a branch), `aguardando de
 |---|---|---|---|---|
 | 01 | [Base de pixel art compartilhada](items/01-pixel-art-base.md) | visual | — | feito |
 | 02 | [Fazenda em pixel art isométrico](items/02-fazenda-pixel-art.md) | visual | 01 | feito |
-| 03 | [Trilha da vida com cara de tabuleiro](items/03-trilha-tabuleiro.md) | visual | 01 | livre |
+| 03 | [Trilha da vida com cara de tabuleiro](items/03-trilha-tabuleiro.md) | visual | 01 | feito |
 | 04 | [Pinball: pixel art e mais elementos](items/04-pinball-visual.md) | visual + jogo | 01 | livre |
 | 05 | [Estacionamento em pixel art](items/05-estacionamento-pixel-art.md) | visual | 01 | livre |
 | 06 | [Batalha naval: navios e papel cartográfico](items/06-batalha-naval-carta.md) | visual | — | livre |
@@ -25,10 +25,6 @@ Status: `livre` (ninguém pegou), `em andamento` (diga a branch), `aguardando de
 | 15 | [Revisão dos dicionários](items/15-dicionarios.md) | conteúdo | — | aguardando decisão |
 | 16 | [Dívida técnica e CI](items/16-divida-tecnica.md) | engenharia | — | livre |
 | 17 | [Decisões que esperam a dona do produto](items/17-decisoes.md) | produto | — | aguardando decisão |
-
-## Em andamento agora
-
-Nada fora do backlog. Os cinco jogos do último lote (Fazenda #62, Pinball #64, Trilha #63, Estacionamento #66 e Batalha naval #65) já estão na `stag`, e os itens visuais 02 a 06 estão liberados.
 
 ## Recusados (não fazer)
 

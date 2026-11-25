@@ -7,7 +7,7 @@ Un juego de tablero tranquilo para dos a cuatro. Tira el dado y recorre toda una
 Juega contra el ordenador (mueve los demás peones) o **por turnos en este teléfono**. La app pregunta cuántos hay en la mesa.
 
 ## El tablero
-Seis filas, una por cada etapa de la vida: **Infancia**, **Juventud**, **Trabajo**, **Familia**, **Viajes** y **Los años tranquilos**. El camino sube en zigzag desde la bandera hasta la casita.
+Seis paisajes, uno por cada etapa de la vida (un parque y una escuela, la ciudad y la universidad, oficinas y un taller, casas y jardines, un puerto y montañas, un porche y un huerto): **Infancia**, **Juventud**, **Trabajo**, **Familia**, **Viajes** y **Los años tranquilos**. El camino sube en zigzag desde la bandera hasta la casita.
 
 | Casilla | Qué pasa |
 |---|---|

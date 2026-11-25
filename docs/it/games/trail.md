@@ -7,7 +7,7 @@ Un gioco da tavolo tranquillo, da due a quattro. Tira il dado e percorri tutta u
 Gioca contro il computer (muove le altre pedine) o **a turno su questo telefono**. L’app chiede quanti siete al tavolo.
 
 ## Il tabellone
-Sei file, una per ogni parte della vita: **Infanzia**, **Giovinezza**, **Lavoro**, **Famiglia**, **Viaggi** e **Gli anni tranquilli**. Il sentiero sale a zigzag dalla bandiera alla casetta.
+Sei paesaggi, uno per ogni parte della vita (un parco giochi e una scuola, la città e l'università, uffici e un'officina, case e giardini, un porto e le montagne, un portico e un frutteto): **Infanzia**, **Giovinezza**, **Lavoro**, **Famiglia**, **Viaggi** e **Gli anni tranquilli**. Il sentiero sale a zigzag dalla bandiera alla casetta.
 
 | Casella | Che cosa succede |
 |---|---|
