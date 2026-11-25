@@ -5,7 +5,7 @@
 Una mesa de pinball tranquila: la bola rueda despacio y da tiempo de verla llegar.
 
 ## Cómo se juega
-- Toca **Lanzar la bola**: cae desde arriba.
+- Toca **Poner la bola**: espera sobre el resorte, abajo a la derecha. Luego pulsa **▲ Lanzar** para que suba por su carril y entre en la mesa. En Medio y Difícil, cuanto más tiempo mantienes Lanzar, más fuerte sale; en Fácil la fuerza se elige por ti.
 - **Mantén pulsados** los botones grandes **◀ Izquierda** y **Derecha ▶** (o simplemente la mitad izquierda o derecha de la mesa) para subir esa paleta; suelta para bajarla. Recibe la bola cuando baje y devuélvela arriba.
 - La bola se pierde si cae entre las paletas. **Pausa** detiene la mesa en cualquier momento, y salir de la app también.
 
@@ -16,6 +16,11 @@ Una mesa de pinball tranquila: la bola rueda despacio y da tiempo de verla llega
 | Rebotador naranja sobre una paleta | 25 |
 | Estrella de arriba (se enciende) | 50 |
 | Las cuatro estrellas encendidas | premio de +500, y se apagan otra vez |
+| Carril de arriba (se enciende) | 30 |
+| Los tres carriles encendidos | puntos ×2 hasta perder esa bola |
+| Diana azul que cae | 75 |
+| Las tres dianas derribadas | premio de +400, y se levantan otra vez |
+| La rampa de la izquierda (la bola da la vuelta y baja hasta tu paleta izquierda) | 300 |
 
 Se guarda la mejor puntuación de cada nivel.
 

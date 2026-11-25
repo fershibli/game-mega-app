@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -37,8 +38,13 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
@@ -55,9 +61,10 @@ import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
 import io.github.fershibli.megagames.ui.components.GameLayout
 import io.github.fershibli.megagames.ui.components.LoadGame
-import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.currentHaptics
+import io.github.fershibli.megagames.ui.theme.currentMotion
+import io.github.fershibli.megagames.core.Motion
 import io.github.fershibli.megagames.ui.theme.currentPace
 import io.github.fershibli.megagames.ui.theme.wait
 
@@ -73,7 +80,7 @@ fun PinballGame(host: GameHost) {
 }
 
 /** A short message over the table: a lost ball, a saved one, all the stars lit. */
-private enum class Note { NONE, SAVED, LOST, STARS }
+private enum class Note { NONE, SAVED, LOST, STARS, LANES, TARGETS }
 
 @Composable
 private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, store: WorldStore) {
@@ -83,6 +90,8 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
     val haptics = currentHaptics
     var running by rememberRunning()
     val table = remember { Table(s.difficulty) }
+    val backdrop = remember { PinballBackdrop() }
+    table.effects = currentMotion != Motion.NONE
     var frame by remember { mutableIntStateOf(0) }
     var note by remember { mutableStateOf(Note.NONE) }
 
@@ -94,6 +103,8 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
             Hit.SAVED in hits -> note = Note.SAVED
             Hit.DRAINED in hits -> note = Note.LOST
             Hit.ALL_STARS in hits -> note = Note.STARS
+            Hit.ALL_LANES in hits -> note = Note.LANES
+            Hit.ALL_TARGETS in hits -> note = Note.TARGETS
         }
         frame++
     }
@@ -105,9 +116,10 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
                 table.serve()
                 note = Note.NONE
             }
-            Note.STARS -> {
+            Note.STARS, Note.LANES, Note.TARGETS -> {
+                val shown = note
                 pace.wait(1500)
-                if (note == Note.STARS) note = Note.NONE
+                if (note == shown) note = Note.NONE
             }
             else -> Unit
         }
@@ -137,10 +149,22 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
         frame++
     }
 
+    fun launch() {
+        if (table.launch()) {
+            running = true
+            haptics.button()
+        }
+        frame++
+    }
+
     GameLayout(
         status = {
-            val line = stringResource(R.string.pinball_score, s.score, best) + "\n" + stringResource(R.string.pinball_balls, s.balls)
-            StatusPill(line, Modifier.testTag("pinball-status"), emphasized = s.over)
+            val lines = listOfNotNull(
+                stringResource(R.string.pinball_score, s.score, best),
+                stringResource(R.string.pinball_balls, s.balls),
+                if (s.multiplier > 1) stringResource(R.string.pinball_double) else null,
+            )
+            ScorePanel(lines.joinToString("\n"), Modifier.testTag("pinball-status"))
         },
         controls = {
             // The flipper buttons keep their physical sides in every language.
@@ -151,10 +175,15 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
             }
             }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(12.dp)) {
-                BigButton(
-                    stringResource(if (running) R.string.pinball_pause else R.string.pinball_continue), { running = !running },
-                    Modifier.weight(1f), style = ButtonStyle.SECONDARY, enabled = !s.over && table.inPlay, compact = true,
-                )
+                @Suppress("UNUSED_EXPRESSION") frame
+                if (table.onPlunger) {
+                    LaunchButton(stringResource(R.string.pinball_launch), table.charge, Modifier.weight(1f).testTag("pinball-launch"), { table.pulling = it; frame++ }, ::launch)
+                } else {
+                    BigButton(
+                        stringResource(if (running) R.string.pinball_pause else R.string.pinball_continue), { running = !running },
+                        Modifier.weight(1f), style = ButtonStyle.SECONDARY, enabled = !s.over && table.inPlay, compact = true,
+                    )
+                }
             }
         },
     ) {
@@ -181,12 +210,14 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
                         },
                 ) {
                     @Suppress("UNUSED_EXPRESSION") frame
-                    drawPinball(table, s, p)
+                    drawPinball(table, s, p, backdrop)
                 }
                 val message = when {
                     s.over -> null
                     note == Note.SAVED -> stringResource(R.string.pinball_saved)
                     note == Note.STARS -> stringResource(R.string.pinball_all_stars)
+                    note == Note.LANES -> stringResource(R.string.pinball_all_lanes)
+                    note == Note.TARGETS -> stringResource(R.string.pinball_all_targets)
                     !running && table.inPlay -> stringResource(R.string.pinball_paused)
                     !table.inPlay && note == Note.LOST -> stringResource(R.string.pinball_lost, s.balls)
                     !table.inPlay -> if (s.served == 0) stringResource(R.string.pinball_ready) else stringResource(R.string.pinball_next)
@@ -207,6 +238,59 @@ private fun PinballScreen(state: MutableState<PinballState>, host: GameHost, sto
                 }
             }
         }
+    }
+}
+
+/** The score as a lit panel, like the board over a real table. */
+@Composable
+private fun ScorePanel(text: String, modifier: Modifier) {
+    val shape = RoundedCornerShape(14.dp)
+    Box(
+        modifier.fillMaxWidth().clip(shape).background(Color(0xFF1A1030))
+            .border(3.dp, Color(0xFFFFB300), shape).padding(horizontal = 14.dp, vertical = 8.dp),
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(
+            text, style = MaterialTheme.typography.titleLarge.copy(fontFamily = FontFamily.Monospace, fontWeight = FontWeight.Bold),
+            color = Color(0xFFFFD54F), textAlign = TextAlign.Center,
+        )
+    }
+}
+
+/**
+ * The plunger's button: hold it to pull the spring (the bar fills), let go to launch. A tap is
+ * enough on Easy, where the strength is chosen for you.
+ */
+@Composable
+private fun LaunchButton(label: String, charge: Float, modifier: Modifier, onHold: (Boolean) -> Unit, onLaunch: () -> Unit) {
+    val p = LocalPalette.current
+    val shape = RoundedCornerShape(18.dp)
+    Box(
+        modifier
+            .height(64.dp)
+            .clip(shape)
+            .background(p.success)
+            .border(if (p.strongOutlines) 2.dp else 0.dp, p.outline, shape)
+            .semantics {
+                role = Role.Button
+                onClick { onLaunch(); true }
+            }
+            .pointerInput(Unit) {
+                awaitEachGesture {
+                    awaitFirstDown()
+                    onHold(true)
+                    waitForUpOrCancellation()
+                    onHold(false)
+                    onLaunch()
+                }
+            },
+        contentAlignment = Alignment.Center,
+    ) {
+        Box(Modifier.align(Alignment.CenterStart).fillMaxHeight().fillMaxWidth(charge.coerceIn(0f, 1f)).background(Color.White.copy(alpha = 0.3f)))
+        // Black or white, whichever stands out more on the button.
+        val l = p.success.luminance()
+        val ink = if ((l + 0.05f) / 0.05f > 1.05f / (l + 0.05f)) Color.Black else Color.White
+        Text("▲ $label", style = MaterialTheme.typography.titleLarge, color = ink, textAlign = TextAlign.Center)
     }
 }
 

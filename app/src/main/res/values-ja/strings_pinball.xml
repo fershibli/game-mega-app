@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_pinball">ピンボール</string>
-    <string name="howto_pinball">「左」「右」のボタン（または台の左右）を押している間、フリッパーが上がります。ボールを落とさないようにしましょう。バンパーに当たると点が入り、4つの星を全部光らせるとボーナスです。ボールはゆっくり動き、「かんたん」では最初のうちに落ちたボールがもどってきます。</string>
+    <string name="howto_pinball">「ボールを出す」をタップしてから「発射」を押します（「ふつう」「むずかしい」では長く押すほど強く飛びます）。「左」「右」のボタン（または台の左右）を押している間、フリッパーが上がります。ボールを落とさないようにしましょう。バンパーに当たると点が入ります。4つの星や上の3つのレーンを光らせる（得点 ×2）、3つのターゲットをたおす、左のランプをのぼると、もっと点がもらえます。ボールはゆっくり動き、「かんたん」では最初のうちに落ちたボールがもどってきます。</string>
     <string name="pinball_score">点数：%1$d・最高：%2$d</string>
     <string name="pinball_balls">残りのボール：%1$d</string>
     <string name="pinball_left">◀ 左</string>
@@ -18,4 +18,8 @@
     <string name="pinball_board">ピンボール台</string>
     <string name="pinball_new_best">このレベルの新記録です！</string>
     <string name="pinball_final">点数：%1$d。最高：%2$d。</string>
+    <string name="pinball_launch">発射</string>
+    <string name="pinball_double">得点 ×2</string>
+    <string name="pinball_all_lanes">3つのレーンが光りました！このボールが落ちるまで得点 ×2。</string>
+    <string name="pinball_all_targets">3つのターゲットを全部たおしました！ボーナス +400。</string>
 </resources>

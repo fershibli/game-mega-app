@@ -27,6 +27,7 @@ import androidx.compose.ui.test.captureToImage
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.click
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.onNodeWithTag
@@ -288,8 +289,31 @@ class ScreenshotTest {
             flush()
         }
     }
-    @Test fun pinball() = gameShot("game_pinball", GameId.PINBALL)
-    @Test fun pinballPt() = gameShot("game_pinball_pt", GameId.PINBALL, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun pinball() = pinballShot("game_pinball", Settings())
+    @Test fun pinballPt() = pinballShot("game_pinball_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun pinballDark() = pinballShot("game_pinball_dark", Settings(darkMode = true), launch = false)
+
+    /** The fair table with the ball launched and rolling (or waiting on the plunger). */
+    private fun pinballShot(name: String, settings: Settings, launch: Boolean = true) {
+        rule.setContent {
+            MegaGamesTheme(settings) {
+                Column(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
+                    TopBar(stringResource(GameId.PINBALL.title), {})
+                    Box(Modifier.weight(1f)) { GameContent(GameId.PINBALL, GameHost(GameId.PINBALL, Difficulty.EASY, null, null) {}) }
+                }
+            }
+        }
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag("pinball-serve").fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("pinball-serve").performClick()
+        rule.waitForIdle()
+        if (launch) {
+            rule.onNodeWithTag("pinball-launch").performClick()
+            rule.mainClock.autoAdvance = false
+            rule.mainClock.advanceTimeBy(2_600)
+        }
+        save(name)
+        rule.mainClock.autoAdvance = true
+    }
 
     @Test fun trail() = shot("game_trail") { GameContent(GameId.TRAIL, trailHost()) }
     @Test fun trailPt() = shot("game_trail_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
