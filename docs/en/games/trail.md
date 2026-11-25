@@ -7,7 +7,7 @@ A calm board game for two to four. Roll the die and walk a whole life, from chil
 Play against the computer (it plays the other pawns) or **take turns on this phone**. The app asks how many sit at the table.
 
 ## The board
-Six rows, one for each part of life: **Childhood**, **Youth**, **Work**, **Family**, **Travels** and **The quiet years**. The path snakes up from the flag to the little house.
+Six landscapes, one for each part of life (a playground and a school, the city and the university, offices and a workshop, houses and gardens, a port and mountains, a porch and an orchard): **Childhood**, **Youth**, **Work**, **Family**, **Travels** and **The quiet years**. The path snakes up from the flag to the little house.
 
 | Square | What happens |
 |---|---|
