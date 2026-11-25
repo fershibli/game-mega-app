@@ -13,7 +13,7 @@ import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.GameOutcome
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.games.GameContent
-import io.github.fershibli.megagames.games.parking.LOT_MARGIN
+import io.github.fershibli.megagames.games.parking.ParkingView
 import io.github.fershibli.megagames.games.parking.Parking
 import io.github.fershibli.megagames.games.parking.ParkingState
 import io.github.fershibli.megagames.games.parking.Vehicle
@@ -41,8 +41,7 @@ class ParkingUiTest {
         rule.waitUntil(10_000) { rule.onAllNodes(hasText("Moves: 0", substring = true)).fetchSemanticsNodes().isNotEmpty() }
         val board = rule.onNodeWithTag("parking-board")
         fun center(col: Float, row: Float, w: Float): Offset {
-            val cell = w / (Parking.SIZE + LOT_MARGIN * 2)
-            return Offset((LOT_MARGIN + col + 0.5f) * cell, (LOT_MARGIN + row + 0.5f) * cell)
+            return ParkingView.of(w).center(col, row)
         }
         board.performTouchInput { swipe(center(4f, 2f, width.toFloat()), center(4f, 4.2f, width.toFloat()), 400) }
         rule.waitUntil(5_000) { rule.onAllNodes(hasText("Moves: 1", substring = true)).fetchSemanticsNodes().isNotEmpty() }
