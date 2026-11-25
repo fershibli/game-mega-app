@@ -12,7 +12,7 @@ Status: `livre` (ninguém pegou), `em andamento` (diga a branch), `aguardando de
 | 02 | [Fazenda em pixel art isométrico](items/02-fazenda-pixel-art.md) | visual | 01 | feito |
 | 03 | [Trilha da vida com cara de tabuleiro](items/03-trilha-tabuleiro.md) | visual | 01 | feito |
 | 04 | [Pinball: pixel art e mais elementos](items/04-pinball-visual.md) | visual + jogo | 01 | livre |
-| 05 | [Estacionamento em pixel art](items/05-estacionamento-pixel-art.md) | visual | 01 | livre |
+| 05 | [Estacionamento em pixel art](items/05-estacionamento-pixel-art.md) | visual | 01 | feito |
 | 06 | [Batalha naval: navios e papel cartográfico](items/06-batalha-naval-carta.md) | visual | — | livre |
 | 07 | [RPG "Jornada"](items/07-rpg-jornada.md) | jogo novo (grande) | 01 | livre |
 | 08 | [Lições do tutorial interativo para outros jogos](items/08-tutoriais.md) | tutorial | — | aguardando decisão (quais jogos) |
