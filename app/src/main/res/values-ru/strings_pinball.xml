@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_pinball">Пинбол</string>
-    <string name="howto_pinball">Удерживайте кнопки «Левый» и «Правый» (или сторону стола), чтобы поднимать флипперы и не упустить шарик. Бамперы приносят очки; зажгите все четыре звезды — будет бонус. Шарик катится медленно, а на уровне «Легко» шарик, потерянный в самом начале, возвращается.</string>
+    <string name="howto_pinball">Нажмите «Поставить шарик», а затем «Запустить» (на уровнях «Средне» и «Сложно» держите дольше, чтобы выстрел был сильнее). Удерживайте кнопки «Левый» и «Правый» (или сторону стола), чтобы поднимать флипперы и не упустить шарик. Бамперы приносят очки; зажгите четыре звезды или три дорожки наверху (очки ×2), сбейте три мишени и прокатитесь по рампе слева — будет больше очков. Шарик катится медленно, а на уровне «Легко» шарик, потерянный в самом начале, возвращается.</string>
     <string name="pinball_score">Очки: %1$d · Рекорд: %2$d</string>
     <string name="pinball_balls">Шарики: %1$d</string>
     <string name="pinball_left">◀ Левый</string>
     <string name="pinball_right">Правый ▶</string>
     <string name="pinball_pause">Пауза</string>
     <string name="pinball_continue">Продолжить</string>
-    <string name="pinball_serve">Запустить шарик</string>
+    <string name="pinball_serve">Поставить шарик</string>
     <string name="pinball_ready">Удерживайте «Левый» и «Правый», чтобы двигать флипперы.</string>
     <string name="pinball_next">Готовы к следующему шарику?</string>
     <string name="pinball_lost">Шарик упал. Шарики: %1$d.</string>
@@ -18,4 +18,8 @@
     <string name="pinball_board">Стол пинбола</string>
     <string name="pinball_new_best">Новый рекорд на этом уровне!</string>
     <string name="pinball_final">Очки: %1$d. Рекорд: %2$d.</string>
+    <string name="pinball_launch">Запустить</string>
+    <string name="pinball_double">Очки ×2</string>
+    <string name="pinball_all_lanes">Все три дорожки горят! Очки ×2, пока этот шарик в игре.</string>
+    <string name="pinball_all_targets">Все три мишени сбиты! Бонус +400.</string>
 </resources>

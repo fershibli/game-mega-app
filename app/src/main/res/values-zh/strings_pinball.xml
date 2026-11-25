@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_pinball">弹球</string>
-    <string name="howto_pinball">按住“左”“右”按钮（或桌面的左右两边）抬起挡板，别让球掉下去。撞到弹柱得分；四颗星全部点亮有奖励。球滚得很慢，在“简单”难度下，刚开始就掉下的球会回来。</string>
+    <string name="howto_pinball">点“发球”，再点“发射”（在“中等”和“困难”难度下，按得越久打得越有力）。按住“左”“右”按钮（或桌面的左右两边）抬起挡板，别让球掉下去。撞到弹柱得分；点亮四颗星或上方的三条通道（得分 ×2）、打倒三个靶子、冲上左边的坡道，都能得到更多分。球滚得很慢，在“简单”难度下，刚开始就掉下的球会回来。</string>
     <string name="pinball_score">得分：%1$d · 最高：%2$d</string>
     <string name="pinball_balls">剩余球数：%1$d</string>
     <string name="pinball_left">◀ 左</string>
@@ -18,4 +18,8 @@
     <string name="pinball_board">弹球台</string>
     <string name="pinball_new_best">这个难度的新纪录！</string>
     <string name="pinball_final">得分：%1$d。最高：%2$d。</string>
+    <string name="pinball_launch">发射</string>
+    <string name="pinball_double">得分 ×2</string>
+    <string name="pinball_all_lanes">三条通道全亮！这个球掉下之前得分 ×2。</string>
+    <string name="pinball_all_targets">三个靶子全倒！奖励 +400。</string>
 </resources>

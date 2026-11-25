@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_pinball">Pinball</string>
-    <string name="howto_pinball">Hold the Left and Right buttons (or a side of the table) to raise the flippers and keep the ball in play. Bumpers give points; light all four stars for a bonus. The ball moves slowly, and on Easy a ball lost early comes back.</string>
+    <string name="howto_pinball">Tap Serve the ball, then Launch (on Medium and Hard, hold it longer for a stronger shot). Hold the Left and Right buttons (or a side of the table) to raise the flippers and keep the ball in play. Bumpers give points; light the four stars or the three lanes at the top (points ×2), knock down the three targets and ride the ramp on the left for more. The ball moves slowly, and on Easy a ball lost early comes back.</string>
     <string name="pinball_score">Points: %1$d · Best: %2$d</string>
     <string name="pinball_balls">Balls left: %1$d</string>
     <string name="pinball_left">◀ Left</string>
@@ -18,4 +18,8 @@
     <string name="pinball_board">Pinball table</string>
     <string name="pinball_new_best">A new best for this level!</string>
     <string name="pinball_final">Points: %1$d. Best: %2$d.</string>
+    <string name="pinball_launch">Launch</string>
+    <string name="pinball_double">Points ×2</string>
+    <string name="pinball_all_lanes">Three lanes lit! Points ×2 until this ball is lost.</string>
+    <string name="pinball_all_targets">All three targets down! Bonus +400.</string>
 </resources>

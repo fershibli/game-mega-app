@@ -29,6 +29,9 @@ class PinballUiTest {
         rule.waitUntil(10_000) { rule.onAllNodesWithTextCount("Balls left: 3") > 0 }
         rule.onNodeWithTag("pinball-serve").performClick()
         rule.waitForIdle()
+        // The ball waits on the plunger until it is launched.
+        rule.onNodeWithTag("pinball-launch").performClick()
+        rule.waitForIdle()
         // Without flippers the ball always goes down within two minutes of play.
         rule.mainClock.autoAdvance = false
         var ms = 0L
