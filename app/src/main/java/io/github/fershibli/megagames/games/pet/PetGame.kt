@@ -78,6 +78,8 @@ import androidx.compose.ui.unit.sp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.rememberWorldStore
+import io.github.fershibli.megagames.ui.art.PixelArt
+import io.github.fershibli.megagames.ui.art.drawFitted
 import io.github.fershibli.megagames.ui.components.ActionBar
 import io.github.fershibli.megagames.ui.components.AppIcon
 import io.github.fershibli.megagames.ui.components.BigButton

@@ -8,7 +8,7 @@ Status: `livre` (ninguém pegou), `em andamento` (diga a branch), `aguardando de
 
 | # | Item | Área | Depende de | Status |
 |---|---|---|---|---|
-| 01 | [Base de pixel art compartilhada](items/01-pixel-art-base.md) | visual | — | livre |
+| 01 | [Base de pixel art compartilhada](items/01-pixel-art-base.md) | visual | — | feito |
 | 02 | [Fazenda em pixel art isométrico](items/02-fazenda-pixel-art.md) | visual | 01 | livre |
 | 03 | [Trilha da vida com cara de tabuleiro](items/03-trilha-tabuleiro.md) | visual | 01 | livre |
 | 04 | [Pinball: pixel art e mais elementos](items/04-pinball-visual.md) | visual + jogo | 01 | livre |
@@ -30,11 +30,9 @@ Status: `livre` (ninguém pegou), `em andamento` (diga a branch), `aguardando de
 
 | PR | Jogo | Estado |
 |---|---|---|
-| #63 | Trilha da vida | CI rodando; entra na `stag` quando verde |
-| #65 | Batalha naval | CI rodando; entra na `stag` quando verde |
-| #66 | Estacionamento | CI rodando; entra na `stag` quando verde |
+| #65 | Batalha naval | esperando o CI; entra na `stag` quando verde |
 
-Os itens 03, 05 e 06 mexem nesses jogos: só comece depois que o PR correspondente estiver na `stag`.
+A Trilha (#63) e o Estacionamento (#66) já estão na `stag`. O item 06 mexe na Batalha naval: só comece depois que o #65 entrar.
 
 ## Recusados (não fazer)
 

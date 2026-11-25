@@ -63,12 +63,15 @@ Outras características dos jogos:
 
 ## Pixel art
 
-Já existe um motor simples em `games/pet/PetArt.kt`:
-- `pixelArt(rows, palette)` transforma linhas de texto (um caractere por cor, `.` é transparente) em retângulos.
-- `PixelArt.draw(scope, left, top, px)` desenha.
-- `palette("o=4A3426 a=F4A259")` monta as cores.
-
-O item 01 move isso para um lugar comum. Os itens visuais (02 a 05, 07, 12 e 13) dependem dele.
+O motor fica em `ui/art/PixelArt.kt` (item 01, feito). O Pet usa o mesmo motor.
+- `pixelArt("o=4A3426 a=F4A259", "..oo..", ".oaao.")` monta uma figura: um caractere por cor, e `.` ou espaço são transparentes. Cada figura tem até 127×127.
+- `art.draw(scope, left, top, px, flipX = true)` desenha a figura (espelhada, com `flipX`). `drawFitted(art)` desenha centralizada e do maior tamanho que couber. `art.recolored { ... }` cria uma variante de cor, por exemplo a noite.
+- `TileMap(rows, tiles, tileSize)` monta um cenário em grade a partir de linhas de caracteres, um ladrilho por caractere.
+- `IsoGrid`:
+  - `IsoGrid.fitting(colunas, linhas, largura, altura)` cria a maior grade isométrica 2:1 que cabe, com ladrilhos em pixels inteiros;
+  - `toScreen` / `center` levam do mapa para a tela;
+  - `cellAt(toque)` faz o caminho de volta, da tela para a célula.
+- `PixelColors.of(p)` dá a paleta-base acolhedora (grama, terra, madeira, pedra, água, céu, telhado...). Ela escurece no modo escuro e ganha contorno preto no alto contraste. Use-a para os cenários parecerem da mesma família.
 
 ## Armadilhas já conhecidas
 
