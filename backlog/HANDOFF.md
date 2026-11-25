@@ -1,6 +1,6 @@
 # Hand-off — como trabalhar neste projeto
 
-Para quem for pegar um item do [backlog](specs.md). Leia inteiro antes de começar: as regras abaixo vieram de erros reais.
+Para quem for pegar um item do [backlog](specs.md). Leia inteiro antes de começar. As **regras obrigatórias** ficam em [`rules/`](../rules/README.md); este arquivo explica a estrutura e o dia a dia.
 
 ## O projeto em uma frase
 
@@ -9,13 +9,12 @@ Para quem for pegar um item do [backlog](specs.md). Leia inteiro antes de começ
 ## Regras da casa (obrigatórias)
 
 1. **Uma branch e um PR por item, sempre contra a `stag`.** Nunca empilhe PRs (um PR apontando para a branch de outro). Os PRs são independentes e entram com *squash merge*.
-2. **Todo commit e todo PR terminam com** `Co-authored-by: isabelmaito <maitoisabel@gmail.com>`.
-3. **Autoria limpa:** nada de rodapé "Generated with…", nada de `Co-Authored-By` de ferramenta, nada de links de sessão, nada de prefixo de ferramenta no nome da branch. O nome da branch descreve o trabalho (`feat/…`, `fix/…`, `docs/…`).
-4. **Nunca coloque o número 1000 no app** (em textos, níveis, pontuações etc.).
-5. **Mostre capturas de tela** de toda tela nova ou mudada, no PR e para a dona do produto.
-6. **Faça push com frequência** para branches temporárias `wip/<nome>`, para não perder trabalho.
-7. **Não peça nem guarde segredos** (chaves de assinatura, tokens).
-8. **Nada de reescrever histórico** de branch que já está no remoto: nada de rebase, amend ou force-push. Para atualizar, faça merge da `stag` na branch.
+2. **O nome da branch descreve o trabalho** (`feat/…`, `fix/…`, `docs/…`).
+3. **Nunca coloque o número 1000 no app** (em textos, níveis, pontuações etc.).
+4. **Mostre capturas de tela** de toda tela nova ou mudada, no PR e para a dona do produto.
+5. **Faça push com frequência** para branches temporárias `wip/<nome>`, para não perder trabalho.
+6. **Não peça nem guarde segredos** (chaves de assinatura, tokens).
+7. **Nada de reescrever histórico** de branch que já está no remoto: nada de rebase, amend ou force-push. Para atualizar, faça merge da `stag` na branch.
 
 ## Comandos
 
@@ -90,7 +89,7 @@ O motor fica em `ui/art/PixelArt.kt` (item 01, feito). O Pet usa o mesmo motor.
 2. Implemente e faça push frequente para `wip/<item>`.
 3. Rode o lint e a suíte completa com `EXIT=0`, gere e otimize as capturas.
 4. Faça um commit limpo (um só ou poucos) e `git push -u origin feat/<item>`.
-5. Abra o PR contra a `stag`: o que mudou, tabela de capturas, testes, e a linha `Co-authored-by` no fim.
+5. Abra o PR contra a `stag`: o que mudou, tabela de capturas, testes.
 6. Acompanhe o CI. Quando ficar verde, entra com squash.
 7. Atualize o status do item em `backlog/specs.md`.
 
