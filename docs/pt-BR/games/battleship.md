@@ -7,6 +7,8 @@ O clássico jogo das frotas escondidas, contra o computador ou revezando o celul
 ## Antes do primeiro tiro
 Sua frota já vem arrumada: navios retos que nunca se encostam, nem pela quina. Toque em **Arrumar de novo** quantas vezes quiser e depois em **Começar**. Revezando o celular, o jogador 2 arruma a dele enquanto o jogador 1 não olha.
 
+Para arrumar um navio do seu jeito, **arraste-o** para outro lugar: ele se encaixa nos quadradinhos, e os quadradinhos onde ele vai ficar aparecem marcados. **Toque** num navio para girá-lo (de deitado para em pé, e de volta). Se não houver espaço (na borda ou encostado em outro navio), o navio fica onde estava, com um contorno vermelho por um instante. **Desfazer** volta a última mudança.
+
 ## Como jogar
 - O mar grande, em cima, é o do outro lado: toque num quadradinho para atirar. Um **círculo de tinta** é água; um **X vermelho** com uma chaminha é acerto. Os quadradinhos têm nome como no jogo de papel: letras A–J em cima, números 1–10 do lado. Um navio atingido em todos os quadradinhos afunda e aparece no mar.
 - O mar pequeno, embaixo, é o seu, com os seus navios e os tiros do outro lado.

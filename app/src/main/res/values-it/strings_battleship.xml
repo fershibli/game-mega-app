@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_battleship">Battaglia navale</string>
-    <string name="howto_battleship">Ogni parte nasconde una flotta nel suo mare. Al tuo turno spara su una casella dell’altro mare: lo spruzzo bianco è acqua, la croce rossa è colpito. Affonda per primo tutta la flotta per vincere. Le tue navi sono già sistemate; tocca Risistema finché ti piacciono.</string>
+    <string name="howto_battleship">Ogni parte nasconde una flotta nel suo mare. Al tuo turno spara su una casella dell’altro mare: lo spruzzo bianco è acqua, la croce rossa è colpito. Affonda per primo tutta la flotta per vincere. Le tue navi sono già sistemate: trascina una nave per spostarla, toccala per girarla oppure tocca Risistema.</string>
     <string name="battleship_sea_afloat">%1$s · navi a galla: %2$d</string>
     <string name="battleship_you">Tu</string>
     <string name="battleship_computer">Il computer</string>
     <string name="battleship_miss">%1$s: acqua.</string>
     <string name="battleship_hit">%1$s: colpito!</string>
     <string name="battleship_sunk">%1$s ha affondato una nave!</string>
-    <string name="battleship_arrange">Ecco la tua flotta. Risistemala o comincia.</string>
+    <string name="battleship_arrange">Trascina una nave per spostarla, toccala per girarla. Poi tocca Comincia.</string>
     <string name="battleship_your_turn">Tocca a te: tocca una casella dell’altro mare.</string>
     <string name="battleship_turn_of">Giocatore %1$d: tocca una casella dell’altro mare.</string>
     <string name="battleship_computer_aiming">Il computer sta mirando…</string>
+    <string name="battleship_no_room">Lì non c’è posto: le navi non possono toccarsi. Prova un altro punto.</string>
     <string name="battleship_rearrange">Risistema</string>
     <string name="battleship_ready">Comincia</string>
     <string name="battleship_your_sea">Il tuo mare</string>

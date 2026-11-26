@@ -84,6 +84,9 @@ All notable changes to this project are documented here. The format follows [Kee
 - Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".
 - The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
 
+### Fixed
+- **Battleship: arrange your own fleet**: against the computer, **Arrange again** did nothing to your fleet (it rearranged the computer's hidden one). It now rearranges yours, and before the first shot you can also drag a ship to move it (it snaps to the squares and keeps the space between ships) and tap a ship to turn it; a move without room is refused gently, and **Undo** takes back the last change. Taking turns, each player arranges their own fleet the same way.
+
 ## [1.0.0] - 2026-10-19
 
 ### Added
