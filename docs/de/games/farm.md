@@ -11,7 +11,7 @@ Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Sche
 - Die Pflanze wächst von selbst in echter Zeit: erst ein Keimling, dann eine junge Pflanze mit einem kleinen Balken, der sich füllt, dann die reife Ernte, die funkelt. Tippe auf ein wachsendes Beet, um den Namen und die restliche Zeit zu sehen.
 - **Gießen** (tippe auf ein Beet mit einem blauen Tropfen oder auf **Alles gießen**) lässt den Rest doppelt so schnell wachsen. Einmal pro Pflanze genügt.
 - Tippe auf ein reifes Beet (oder **Alles ernten**): Jedes Beet gibt **zwei** seiner Ernte, die direkt in die Scheune kommen.
-- **Neues Beet** vergrößert das Feld, bis zu zwölf Beete.
+- **Neues Beet** vergrößert das Feld, bis zu zwölf Beete. Vorher fragt es nach, mit einem Bild eines wachsenden Beets, und es geht nur, wenn schon etwas gesät ist: So gibt es immer eine Ernte zum Verkaufen. Das neue Beet blinkt eine Weile, damit du siehst, wo es ist.
 
 | Pflanze | Zeit | Samen | Verkauf (je) | Sterne |
 |---|---|---|---|---|

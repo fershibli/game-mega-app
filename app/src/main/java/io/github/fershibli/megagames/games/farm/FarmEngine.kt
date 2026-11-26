@@ -181,10 +181,30 @@ object FarmRules {
 
     fun ripeCount(world: FarmWorld, now: Long): Int = world.plots.count { stage(it, now) == Stage.RIPE }
 
+    /** Whether a crop is in the ground: its harvest will always bring coins back. */
+    fun somethingGrowing(world: FarmWorld): Boolean = world.plots.any { it.sown != null }
+
+    /**
+     * A new bed can be bought only while something grows: spending the last coins on an empty
+     * field could leave the farm with nothing to sow and nothing to sell.
+     */
+    fun canBuyPlot(world: FarmWorld): Boolean =
+        world.plots.size < MAX_PLOTS && world.coins >= plotCost(world) && somethingGrowing(world)
+
     fun buyPlot(world: FarmWorld): FarmWorld {
-        val cost = plotCost(world)
-        if (world.plots.size >= MAX_PLOTS || world.coins < cost) return world
-        return world.copy(coins = world.coins - cost, plots = world.plots + Plot())
+        if (!canBuyPlot(world)) return world
+        return world.copy(coins = world.coins - plotCost(world), plots = world.plots + Plot())
+    }
+
+    /**
+     * A farm that can't go on (nothing growing, no animals, an empty barn and not even the coins
+     * for the cheapest seed) gets back just enough for it. Farms saved before beds needed a crop
+     * growing could end up like that.
+     */
+    fun rescue(world: FarmWorld): FarmWorld {
+        val seed = Crop.entries.minOf { it.seedCost }
+        val stuck = !somethingGrowing(world) && world.pens.isEmpty() && world.barn.values.all { it <= 0 } && world.coins < seed
+        return if (stuck) world.copy(coins = seed) else world
     }
 
     // Animals.

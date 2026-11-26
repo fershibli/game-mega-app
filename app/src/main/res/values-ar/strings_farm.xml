@@ -47,4 +47,10 @@
     <string name="farm_sell_one">بِع 1</string>
     <string name="farm_sell_all">بِع الكل</string>
     <string name="farm_scene">المزرعة. الأحواض: %1$d. الحيوانات: %2$d.</string>
+    <string name="farm_plot_title">حوض جديد</string>
+    <string name="farm_plot_note">السعر بالعملات: %1$d. يوضع بجانب الأحواض الأخرى وينمو مثلها: برعم، أوراق، ثم الحصاد.</string>
+    <string name="farm_plot_buy">اشترِ الحوض</string>
+    <string name="farm_plot_sow_first">ازرع شيئًا أولًا. ما دام هناك ما ينمو، سيكون هناك دائمًا حصاد للبيع.</string>
+    <string name="farm_plot_here">تم: الحوض الجديد هو الذي يومض في الحقل.</string>
+    <string name="farm_plot_picture">حوض ينمو من التربة العارية حتى الحصاد</string>
 </resources>

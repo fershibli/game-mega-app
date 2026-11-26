@@ -11,7 +11,7 @@ Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. You
 - A crop grows by itself in real time: first a sprout, then a young plant with a small bar that fills up, then the ripe crop, which sparkles. Tap a growing bed to read its name and the time left.
 - **Watering** (tap a bed with a blue drop, or **Water all**) makes the rest of the growing go twice as fast. Once per crop is enough.
 - Tap a ripe bed (or **Harvest all**): every bed gives **two** of its crop, which go straight into the barn.
-- **New bed** adds a bed to the field, up to twelve.
+- **New bed** adds a bed to the field, up to twelve. It asks first, with a picture of a bed growing, and needs something already sown: that way there is always a harvest to sell. The new bed blinks for a moment so you can see where it went.
 
 | Crop | Time | Seeds | Sells for (each) | Stars needed |
 |---|---|---|---|---|

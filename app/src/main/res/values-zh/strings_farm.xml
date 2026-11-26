@@ -47,4 +47,10 @@
     <string name="farm_sell_one">卖 1 个</string>
     <string name="farm_sell_all">全部卖掉</string>
     <string name="farm_scene">农场。菜畦：%1$d。动物：%2$d。</string>
+    <string name="farm_plot_title">新的菜畦</string>
+    <string name="farm_plot_note">价格（金币）：%1$d。它会出现在其他菜畦旁边，长法一样：发芽、长叶，然后收获。</string>
+    <string name="farm_plot_buy">购买菜畦</string>
+    <string name="farm_plot_sow_first">请先种点东西。只要有作物在长，就总会有收成可以卖。</string>
+    <string name="farm_plot_here">好了：田里闪烁的就是新菜畦。</string>
+    <string name="farm_plot_picture">菜畦从光秃秃的土地长到收获</string>
 </resources>
