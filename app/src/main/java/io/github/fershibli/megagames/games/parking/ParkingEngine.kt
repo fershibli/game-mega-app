@@ -90,10 +90,23 @@ object Parking {
 
     private fun key(positions: List<Int>): Long = positions.fold(0L) { acc, p -> acc * 8 + p }
 
+    /**
+     * Every arrangement one move away, in the same order as sliding each vehicle in turn through
+     * its [reach]. The lot is mapped once per arrangement, not once per vehicle: this is the inner
+     * loop of the puzzle search.
+     */
     private fun neighbours(vehicles: List<Vehicle>, positions: List<Int>): List<List<Int>> {
+        val grid = occupancy(vehicles, positions)
         val out = ArrayList<List<Int>>()
         for (i in vehicles.indices) {
-            for (to in reach(vehicles, positions, i)) if (to != positions[i]) out += positions.mapIndexed { k, p -> if (k == i) to else p }
+            val v = vehicles[i]
+            val p = positions[i]
+            fun free(pos: Int) = pos in 0 until SIZE && grid[if (v.horizontal) v.fixed * SIZE + pos else pos * SIZE + v.fixed].let { it == -1 || it == i }
+            var lo = p
+            while (free(lo - 1)) lo--
+            var hi = p
+            while (free(hi + v.length)) hi++
+            for (to in lo..hi) if (to != p) out += positions.mapIndexed { k, q -> if (k == i) to else q }
         }
         return out
     }
@@ -137,45 +150,95 @@ object Parking {
         val want = range(d)
         while (true) {
             val (vehicles, positions) = randomLot(random, if (d == Difficulty.EASY) 5 + random.nextInt(3) else 8 + random.nextInt(5))
-            // Every arrangement reachable from this one.
-            val seen = HashMap<Long, List<Int>>()
-            val queue = ArrayDeque<List<Int>>()
-            seen[key(positions)] = positions
-            queue += positions
+            val search = Search(vehicles)
+            // Every arrangement reachable from this one, each kept as its key (3 bits per vehicle).
+            val seen = HashSet<Long>()
+            val queue = LongQueue()
+            val start = key(positions)
+            seen += start
+            queue.add(start)
             while (queue.isNotEmpty() && seen.size < 60_000) {
-                val cur = queue.removeFirst()
-                for (n in neighbours(vehicles, cur)) {
-                    val k = key(n)
-                    if (k !in seen) {
-                        seen[k] = n
-                        queue += n
-                    }
-                }
+                search.forEachNeighbour(queue.remove()) { k -> if (seen.add(k)) queue.add(k) }
             }
             // Fewest moves out from each arrangement, working back from every way out at once.
             val dist = HashMap<Long, Int>()
-            val back = ArrayDeque<List<Int>>()
-            for ((k, p) in seen) if (isGoal(vehicles, p)) {
+            val back = LongQueue()
+            for (k in seen) if (search.isGoal(k)) {
                 dist[k] = 0
-                back += p
+                back.add(k)
             }
             if (back.isEmpty()) continue
             while (back.isNotEmpty()) {
-                val cur = back.removeFirst()
-                val dc = dist.getValue(key(cur))
-                for (n in neighbours(vehicles, cur)) {
-                    val k = key(n)
+                val cur = back.remove()
+                val dc = dist.getValue(cur)
+                search.forEachNeighbour(cur) { k ->
                     if (k in seen && k !in dist) {
                         dist[k] = dc + 1
-                        back += n
+                        back.add(k)
                     }
                 }
             }
             val fits = dist.entries.filter { it.value in want }
             if (fits.isEmpty()) continue
             val chosen = if (d == Difficulty.HARD) fits.maxBy { it.value } else fits[random.nextInt(fits.size)]
-            return ParkingState(vehicles, seen.getValue(chosen.key), par = chosen.value)
+            return ParkingState(vehicles, search.decode(chosen.key), par = chosen.value)
         }
+    }
+
+    /**
+     * The puzzle search on arrangement keys: no lists per arrangement, one lot map reused.
+     * Neighbours come in the same order as [neighbours], so the puzzles found are the same.
+     */
+    private class Search(val vehicles: List<Vehicle>) {
+        private val n = vehicles.size
+        private val pos = IntArray(n)
+        private val grid = IntArray(SIZE * SIZE)
+        /** The weight of each vehicle's 3 bits in a key: the first vehicle is the highest. */
+        private val weight = LongArray(n) { i -> 1L shl (3 * (n - 1 - i)) }
+        private val redGoal = SIZE - vehicles[0].length
+
+        fun decode(key: Long): List<Int> = List(n) { i -> ((key shr (3 * (n - 1 - i))) and 7L).toInt() }
+
+        fun isGoal(key: Long) = ((key shr (3 * (n - 1))) and 7L).toInt() == redGoal
+
+        inline fun forEachNeighbour(key: Long, action: (Long) -> Unit) {
+            var k = key
+            for (i in n - 1 downTo 0) {
+                pos[i] = (k and 7L).toInt()
+                k = k shr 3
+            }
+            grid.fill(-1)
+            for (i in 0 until n) {
+                val v = vehicles[i]
+                for (s in 0 until v.length) grid[if (v.horizontal) v.fixed * SIZE + pos[i] + s else (pos[i] + s) * SIZE + v.fixed] = i
+            }
+            for (i in 0 until n) {
+                val v = vehicles[i]
+                val p = pos[i]
+                var lo = p
+                while (free(v, i, lo - 1)) lo--
+                var hi = p
+                while (free(v, i, hi + v.length)) hi++
+                for (to in lo..hi) if (to != p) action(key + (to - p) * weight[i])
+            }
+        }
+
+        fun free(v: Vehicle, i: Int, at: Int): Boolean =
+            at in 0 until SIZE && grid[if (v.horizontal) v.fixed * SIZE + at else at * SIZE + v.fixed].let { it == -1 || it == i }
+    }
+
+    /** A first-in first-out queue of longs that grows as needed. */
+    private class LongQueue {
+        private var items = LongArray(1024)
+        private var head = 0
+        private var tail = 0
+        fun isNotEmpty() = head < tail
+        fun isEmpty() = head >= tail
+        fun add(x: Long) {
+            if (tail == items.size) items = items.copyOf(items.size * 2)
+            items[tail++] = x
+        }
+        fun remove(): Long = items[head++]
     }
 
     /** The red car on the exit row and up to [count] other vehicles dropped where they fit. */
