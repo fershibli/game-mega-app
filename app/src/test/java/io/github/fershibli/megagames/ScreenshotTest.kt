@@ -327,6 +327,50 @@ class ScreenshotTest {
         )
         return GameHost(GameId.TRAIL, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.trail.TrailState.serializer(), s), null, null, io.github.fershibli.megagames.core.PlaySetup(seats = 4)) {}
     }
+    @Test fun journeyCreate() {
+        seedJourney(null)
+        gameShot("game_journey_create", GameId.JOURNEY)
+    }
+    @Test fun journeyMap() {
+        seedJourney(io.github.fershibli.megagames.games.journey.Journey.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.HEALER).copy(cleared = setOf(0, 1, 2), gold = 46))
+        gameShot("game_journey_map", GameId.JOURNEY)
+    }
+    @Test fun journey() {
+        seedJourney(journeyBattle())
+        gameShot("game_journey", GameId.JOURNEY)
+    }
+    @Test fun journeyPt() {
+        seedJourney(journeyBattle())
+        gameShot("game_journey_pt", GameId.JOURNEY, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    }
+    @Test fun journeyDark() {
+        seedJourney(journeyBattle())
+        gameShot("game_journey_dark", GameId.JOURNEY, settings = Settings(darkMode = true))
+    }
+
+    /** The knight, Bento and Lia in the thicket, the wolf's weak spot already found, after a hit on it. */
+    private fun journeyBattle(): io.github.fershibli.megagames.games.journey.JourneyWorld {
+        val j = io.github.fershibli.megagames.games.journey.Journey
+        var w = j.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.KNIGHT).copy(cleared = setOf(0, 1, 2, 3, 4), known = setOf(io.github.fershibli.megagames.games.journey.Foe.WOLF))
+        w = j.gainXp(w, 60).copy(levelUps = 0)
+        w = w.copy(party = w.party + io.github.fershibli.megagames.games.journey.Friend.LIA)
+        w = j.visit(w, 5)
+        var b = w.battle!!
+        // Play until it is the hero's turn again after one hit landed.
+        var turns = 0
+        while (turns < 12 && (b.events.none { it.kind == io.github.fershibli.megagames.games.journey.EventKind.DAMAGE && it.weak } || !b.fighters[b.current].ally)) {
+            b = if (b.fighters[b.current].ally) j.act(b, j.bestAction(b, w.known)) else j.enemyTurn(b)
+            turns++
+        }
+        return w.copy(battle = b)
+    }
+
+    private fun seedJourney(world: io.github.fershibli.megagames.games.journey.JourneyWorld?) {
+        WorldStore(RuntimeEnvironment.getApplication()).run {
+            save(io.github.fershibli.megagames.games.journey.JOURNEY_WORLD_KEY, io.github.fershibli.megagames.games.journey.JourneyWorld.serializer(), world ?: io.github.fershibli.megagames.games.journey.JourneyWorld())
+            flush()
+        }
+    }
     @Test fun parking() = gameShot("game_parking", GameId.PARKING, Difficulty.MEDIUM)
     @Test fun parkingPt() = gameShot("game_parking_pt", GameId.PARKING, Difficulty.EASY, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     @Test fun parkingDark() = gameShot("game_parking_dark", GameId.PARKING, Difficulty.HARD, Settings(darkMode = true))
