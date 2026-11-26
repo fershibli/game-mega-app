@@ -16,6 +16,11 @@ Escolha uma **classe** e digite um **nome**:
 
 O ferreiro **Bento** vai junto desde o começo: ele sabe **Proteger** o grupo e levar as pancadas. Na floresta você pode salvar a **Lia**, uma maga do fogo.
 
+## A história
+A Rainha Clara pede ajuda: o Rei das Sombras escondeu as **cinco luzes** do reino, uma em cada região, com o chefe dela. Cada chefe vencido traz uma luz de volta (a conta aparece ao lado do ouro). Ao chegar a uma região, o guia de lá conta quem está esperando; com as cinco luzes de volta, a Rainha conta o final, e o caminho continua aberto. Cada cena é contada uma vez, uma fala por vez, com o rosto de quem fala: toque em **Continuar**.
+
+**Aprenda a jogar** começa com uma lição curta numa primeira batalha: Magia, um feitiço no ponto fraco, Melhor ação e Automático, um passo de cada vez.
+
 ## O mapa e a vila
 Toque num lugar do mapa para ir até lá. Um lugar abre quando o anterior estiver feito; batalhas já vencidas podem ser jogadas de novo para ficar mais forte. Baús e amigos dão poções, éteres e ouro. Na **vila** você pode **descansar na estalagem** (todos voltam com vida e mana cheias), pedir dicas ao **Saci** e mudar a força dos inimigos (Fácil, Médio, Difícil) quando quiser.
 

@@ -48,6 +48,9 @@ import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.rememberWorldStore
+import io.github.fershibli.megagames.ui.components.LocalTutorial
+import io.github.fershibli.megagames.ui.components.TutorialGuide
+import io.github.fershibli.megagames.ui.components.tutorialSpot
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
 import io.github.fershibli.megagames.ui.components.StatusPill
@@ -72,43 +75,52 @@ private sealed interface Picking {
     data object Swap : Picking
 }
 
+/** In a lesson, whether the button for [place] may be touched now; always true in a normal game. */
+private fun TutorialGuide?.lets(place: String): Boolean = this == null || expected == place
+
 /**
  * The journey, a lasting world like the farm: no autosave and no end. It is kept in the
- * [io.github.fershibli.megagames.core.WorldStore] and saved on every change.
+ * [io.github.fershibli.megagames.core.WorldStore] and saved on every change. A lesson plays on a
+ * world of its own and never touches the saved one.
  */
 @Composable
 fun JourneyGame(host: GameHost) {
     val store = rememberWorldStore()
+    val lesson = LocalTutorial.current != null
     var world by remember(host) {
         store.flush()
-        mutableStateOf(store.load(JOURNEY_WORLD_KEY, JourneyWorld.serializer()) ?: JourneyWorld())
+        val start = if (lesson) host.restore(JourneyWorld.serializer()) else store.load(JOURNEY_WORLD_KEY, JourneyWorld.serializer())
+        mutableStateOf(start ?: JourneyWorld())
     }
     val change: ((JourneyWorld) -> JourneyWorld) -> Unit = { f ->
         val next = f(world)
         if (next != world) {
             world = next
-            store.save(JOURNEY_WORLD_KEY, JourneyWorld.serializer(), next)
+            if (!lesson) store.save(JOURNEY_WORLD_KEY, JourneyWorld.serializer(), next)
         }
     }
     var place by remember { mutableStateOf(Place.MAP) }
-    var message by remember { mutableStateOf<String?>(null) }
+    var shown by remember { mutableStateOf<String?>(null) }
+    // Two things to say at once (a new friend and a light back) are read one after the other.
+    val say: (String) -> Unit = { text -> shown = shown?.let { it + "\n\n" + text } ?: text }
     val w = world
     val p = LocalPalette.current
 
     Box(Modifier.fillMaxSize()) {
         when {
             w.hero == null -> CreateScreen { name, cls -> change { Journey.start(name, cls, seed = System.nanoTime() and 0xFFFFFF) } }
-            w.battle != null -> BattleScreen(w, change) { message = it }
-            place == Place.VILLAGE -> VillageScreen(w, change, { place = it }) { message = it }
-            place == Place.SHOP -> ShopScreen(w, change, { place = Place.VILLAGE }) { message = it }
+            w.battle != null -> BattleScreen(w, change, say)
+            place == Place.VILLAGE -> VillageScreen(w, change, { place = it }, say)
+            place == Place.SHOP -> ShopScreen(w, change, { place = Place.VILLAGE }, say)
             place == Place.TAVERN -> TavernScreen(w, change) { place = Place.VILLAGE }
-            else -> MapScreen(w, change, { place = Place.VILLAGE }) { message = it }
+            else -> MapScreen(w, change, { place = Place.VILLAGE }, say)
         }
-        val text = message
-        if (text != null) {
-            MessageCard(text, p) { message = null }
-        } else if (w.hero != null && w.battle == null && w.levelUps > 0) {
-            LevelUpCard(w, change, p)
+        val text = shown
+        val scene = Story.next(w)
+        when {
+            text != null -> MessageCard(text, p) { shown = null }
+            w.hero != null && w.battle == null && w.levelUps > 0 -> LevelUpCard(w, change, p)
+            scene != null -> SceneCard(w, scene, p) { change { Story.told(it, scene) } }
         }
     }
 }
@@ -159,7 +171,8 @@ private fun CreateScreen(onStart: (String, HeroClass) -> Unit) {
 @Composable
 private fun statusLine(w: JourneyWorld): String {
     val h = w.hero!!
-    return h.name + " · " + stringResource(R.string.journey_status, h.level, w.gold) + "\n" + stringResource(R.string.journey_items, w.potions, w.ethers)
+    return h.name + " · " + stringResource(R.string.journey_status, h.level, w.gold) + "\n" + stringResource(R.string.journey_items, w.potions, w.ethers) +
+        " · " + stringResource(R.string.journey_lights, Story.lights(w), Region.entries.size)
 }
 
 @Composable
@@ -397,6 +410,7 @@ private fun BattleScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorl
     val res = LocalResources.current
     var picking by remember(b.current, b.round) { mutableStateOf<Picking>(Picking.Main) }
     var auto by remember { mutableStateOf(false) }
+    val guide = LocalTutorial.current
     val names = b.fighters.map { fighterName(w, it) }
     val current = b.current
     val myTurn = b.outcome == null && current >= 0 && b.fighters[current].ally
@@ -446,10 +460,17 @@ private fun BattleScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorl
                 val boxW = if (boss) maxWidth * 0.46f else maxWidth * 0.4f
                 val boxH = if (boss) maxHeight * 0.8f else maxHeight / (n + 0.4f)
                 val canTarget = target != null && f.up && targetOk(b, target.action, i)
+                // In a lesson, the picture answers only when its button is the one asked for.
+                val tappable = canTarget && guide.lets("target:${f.id}")
                 FighterView(
-                    w, f, names[i], i == current && b.outcome == null, canTarget, f.foe != null && f.foe in w.known,
-                    Modifier.offset(x, if (boss) maxHeight * 0.08f else y).size(boxW, boxH),
-                ) { if (canTarget) play(target!!.action.copy(target = i)) }
+                    w, f, names[i], i == current && b.outcome == null, tappable, f.foe != null && f.foe in w.known,
+                    Modifier.offset(x, if (boss) maxHeight * 0.08f else y).size(boxW, boxH).tutorialSpot("fighter:${f.id}"),
+                ) {
+                    if (tappable) {
+                        play(target!!.action.copy(target = i))
+                        guide?.completed()
+                    }
+                }
             }
             DamageNumbers(b, w)
         }
@@ -465,13 +486,19 @@ private fun BattleScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorl
                     val newFriend = spot.recruit?.takeIf { it !in Journey.friends(w) }
                     change { Journey.finish(it) }
                     if (won && newFriend != null) say(res.getString(R.string.journey_joins, res.getString(newFriend.label), res.getString(newFriend.role)))
-                    if (won && spot.kind == SpotKind.BOSS) say(res.getString(Regions.region(b.spot).chapterDone))
-                }, Modifier.fillMaxWidth().testTag("journey-ok"))
+                    if (won && spot.kind == SpotKind.BOSS) {
+                        val r = Regions.region(b.spot)
+                        say(res.getString(r.chapterDone) + "\n\n" + res.getString(R.string.journey_light_back, res.getString(r.label)))
+                    }
+                }, Modifier.fillMaxWidth().testTag("journey-ok"), enabled = guide == null)
             }
             !myTurn -> Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                BigButton(stringResource(if (auto) R.string.journey_auto_stop else R.string.journey_auto), { auto = !auto }, Modifier.weight(1f).testTag("journey-auto"), style = ButtonStyle.SECONDARY, compact = true)
+                BigButton(
+                    stringResource(if (auto) R.string.journey_auto_stop else R.string.journey_auto), { auto = !auto; guide?.completed() },
+                    Modifier.weight(1f).testTag("journey-auto").tutorialSpot("auto"), style = ButtonStyle.SECONDARY, compact = true, enabled = guide.lets("auto"),
+                )
             }
-            else -> ActionPanel(w, b, picking, auto, { picking = it }, { auto = !auto }, ::play)
+            else -> ActionPanel(w, b, picking, auto, guide, { picking = it }, { auto = !auto }, ::play)
         }
     }
 }
@@ -484,7 +511,7 @@ private fun targetOk(b: Battle, action: Action, i: Int): Boolean = Journey.valid
 private fun TurnStrip(w: JourneyWorld, b: Battle) {
     val p = LocalPalette.current
     Row(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp)).background(p.surfaceAlt).padding(4.dp).testTag("journey-turns"),
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp)).background(p.surfaceAlt).padding(4.dp).testTag("journey-turns").tutorialSpot("turns"),
         horizontalArrangement = Arrangement.spacedBy(4.dp), verticalAlignment = Alignment.CenterVertically,
     ) {
         for ((k, i) in b.queue.take(7).withIndex()) {
@@ -624,7 +651,7 @@ private fun BattleLog(w: JourneyWorld, b: Battle, names: List<String>) {
     }
     if (lines.isNotEmpty()) {
         Text(
-            lines.take(4).joinToString("\n"), Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp)).background(p.surfaceAlt).padding(8.dp).testTag("journey-log"),
+            lines.take(4).joinToString("\n"), Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp)).background(p.surfaceAlt).padding(8.dp).testTag("journey-log").tutorialSpot("log"),
             style = MaterialTheme.typography.bodyLarge, color = p.text,
         )
     }
@@ -632,9 +659,14 @@ private fun BattleLog(w: JourneyWorld, b: Battle, names: List<String>) {
 
 /** The buttons for the turn of a friend: the actions, a list of spells or items, or the choice of whom. */
 @Composable
-private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Boolean, pick: (Picking) -> Unit, toggleAuto: () -> Unit, play: (Action) -> Unit) {
+private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Boolean, guide: TutorialGuide?, pick: (Picking) -> Unit, toggleAuto: () -> Unit, play: (Action) -> Unit) {
     val p = LocalPalette.current
     val a = b.fighters[b.current]
+    // A button of the panel: in a lesson, only the one asked for answers, and the lesson is told.
+    @Composable
+    fun Choice(text: String, place: String, tag: String, onClick: () -> Unit, modifier: Modifier, style: ButtonStyle = ButtonStyle.PRIMARY, enabled: Boolean = true) {
+        BigButton(text, { onClick(); guide?.completed() }, modifier.testTag(tag).tutorialSpot(place), compact = true, style = style, enabled = enabled && guide.lets(place))
+    }
     fun choose(action: Action) {
         val needsTarget = when (action.kind) {
             Action.Kind.ATTACK, Action.Kind.ITEM, Action.Kind.SWAP -> true
@@ -647,35 +679,35 @@ private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Bool
         when (picking) {
             Picking.Main -> {
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    BigButton(stringResource(R.string.journey_attack), { choose(Action(Action.Kind.ATTACK)) }, Modifier.weight(1f).testTag("journey-attack"), compact = true)
-                    BigButton(stringResource(R.string.journey_magic), { pick(Picking.Spells) }, Modifier.weight(1f).testTag("journey-magic"), compact = true, enabled = a.spells.isNotEmpty())
+                    Choice(stringResource(R.string.journey_attack), "attack", "journey-attack", { choose(Action(Action.Kind.ATTACK)) }, Modifier.weight(1f))
+                    Choice(stringResource(R.string.journey_magic), "magic", "journey-magic", { pick(Picking.Spells) }, Modifier.weight(1f), enabled = a.spells.isNotEmpty())
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    BigButton(stringResource(R.string.journey_defend), { play(Action(Action.Kind.DEFEND)) }, Modifier.weight(1f).testTag("journey-defend"), compact = true, style = ButtonStyle.SECONDARY)
-                    BigButton(stringResource(R.string.journey_item), { pick(Picking.Items) }, Modifier.weight(1f).testTag("journey-item"), compact = true, style = ButtonStyle.SECONDARY, enabled = b.potions + b.ethers > 0)
+                    Choice(stringResource(R.string.journey_defend), "defend", "journey-defend", { play(Action(Action.Kind.DEFEND)) }, Modifier.weight(1f), ButtonStyle.SECONDARY)
+                    Choice(stringResource(R.string.journey_item), "item", "journey-item", { pick(Picking.Items) }, Modifier.weight(1f), ButtonStyle.SECONDARY, enabled = b.potions + b.ethers > 0)
                 }
                 if (Journey.swappable(b).isNotEmpty()) {
-                    BigButton(stringResource(R.string.journey_swap), { pick(Picking.Swap) }, Modifier.fillMaxWidth().testTag("journey-swap"), compact = true, style = ButtonStyle.SECONDARY)
+                    Choice(stringResource(R.string.journey_swap), "swap", "journey-swap", { pick(Picking.Swap) }, Modifier.fillMaxWidth(), ButtonStyle.SECONDARY)
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    BigButton(stringResource(R.string.journey_best), { play(Journey.bestAction(b, w.known)) }, Modifier.weight(1f).testTag("journey-best"), compact = true, style = ButtonStyle.SECONDARY)
-                    BigButton(stringResource(if (auto) R.string.journey_auto_stop else R.string.journey_auto), toggleAuto, Modifier.weight(1f).testTag("journey-auto"), compact = true, style = ButtonStyle.SECONDARY)
+                    Choice(stringResource(R.string.journey_best), "best", "journey-best", { play(Journey.bestAction(b, w.known)) }, Modifier.weight(1f), ButtonStyle.SECONDARY)
+                    Choice(stringResource(if (auto) R.string.journey_auto_stop else R.string.journey_auto), "auto", "journey-auto", toggleAuto, Modifier.weight(1f), ButtonStyle.SECONDARY)
                 }
             }
             Picking.Spells -> {
                 for (s in a.spells) {
                     val known = s.school != School.PHYSICAL
-                    BigButton(
+                    Choice(
                         stringResource(R.string.journey_spell_line, stringResource(s.label), s.cost) + if (known) " · " + stringResource(s.school.label) else "",
-                        { choose(Action(Action.Kind.SPELL, s)) }, Modifier.fillMaxWidth().testTag("journey-spell-${s.name.lowercase()}"), compact = true, enabled = s.cost <= a.mp,
+                        "spell:${s.name.lowercase()}", "journey-spell-${s.name.lowercase()}", { choose(Action(Action.Kind.SPELL, s)) }, Modifier.fillMaxWidth(), enabled = s.cost <= a.mp,
                     )
                 }
-                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY)
+                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY, enabled = guide == null)
             }
             Picking.Items -> {
                 BigButton(stringResource(R.string.journey_potion) + " (${b.potions})", { choose(Action(Action.Kind.ITEM, item = Item.POTION)) }, Modifier.fillMaxWidth(), compact = true, enabled = b.potions > 0)
                 BigButton(stringResource(R.string.journey_ether) + " (${b.ethers})", { choose(Action(Action.Kind.ITEM, item = Item.ETHER)) }, Modifier.fillMaxWidth(), compact = true, enabled = b.ethers > 0)
-                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY)
+                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY, enabled = guide == null)
             }
             Picking.Swap -> {
                 // First who comes in; then (as a target) who leaves.
@@ -683,7 +715,7 @@ private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Bool
                 for (f in Journey.swappable(b)) {
                     BigButton(stringResource(f.label) + " · " + stringResource(f.role), { pick(Picking.Target(Action(Action.Kind.SWAP, friend = f))) }, Modifier.fillMaxWidth().testTag("journey-swap-in-${f.name.lowercase()}"), compact = true)
                 }
-                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY)
+                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY, enabled = guide == null)
             }
             is Picking.Target -> {
                 Text(stringResource(if (picking.action.kind == Action.Kind.SWAP) R.string.journey_swap_out else R.string.journey_choose_target), style = MaterialTheme.typography.titleMedium, color = p.text)
@@ -692,11 +724,12 @@ private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Bool
                 for (row in options.chunked(2)) {
                     Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                         for (i in row) {
-                            BigButton(fighterName(w, b.fighters[i]), { play(picking.action.copy(target = i)) }, Modifier.weight(1f).testTag("journey-target-${b.fighters[i].id}"), compact = true)
+                            val id = b.fighters[i].id
+                            Choice(fighterName(w, b.fighters[i]), "target:$id", "journey-target-$id", { play(picking.action.copy(target = i)) }, Modifier.weight(1f))
                         }
                     }
                 }
-                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY)
+                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY, enabled = guide == null)
             }
         }
     }
@@ -715,6 +748,31 @@ private fun MessageCard(text: String, p: Palette, onOk: () -> Unit) {
         ) {
             Text(text, style = MaterialTheme.typography.titleLarge, color = p.text, textAlign = TextAlign.Center)
             BigButton(stringResource(R.string.journey_ok), onOk, Modifier.fillMaxWidth().testTag("journey-message-ok"))
+        }
+    }
+}
+
+/** A scene of the story, a line at a time, with the face of whoever speaks. */
+@Composable
+private fun SceneCard(w: JourneyWorld, scene: Scene, p: Palette, onDone: () -> Unit) {
+    val h = w.hero!!
+    var line by remember(scene.id) { mutableIntStateOf(0) }
+    val l = scene.lines[line.coerceAtMost(scene.lines.lastIndex)]
+    val who = if (l.speaker == Speaker.HERO) h.name else stringResource(l.speaker.label)
+    Box(Modifier.fillMaxSize().background(Color.Black.copy(alpha = 0.45f)).clickable(enabled = false) {}, contentAlignment = Alignment.Center) {
+        Column(
+            Modifier.padding(20.dp).clip(RoundedCornerShape(16.dp)).background(p.surface).border(2.dp, p.highlight, RoundedCornerShape(16.dp)).padding(16.dp).testTag("journey-scene"),
+            verticalArrangement = Arrangement.spacedBy(12.dp), horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(12.dp)) {
+                Canvas(Modifier.size(80.dp).clip(RoundedCornerShape(12.dp)).background(p.surfaceAlt).padding(6.dp)) {
+                    drawSprite(JourneySprites.speaker(l.speaker, h.heroClass), 0f, 0f, size.width, size.height, p)
+                }
+                Text(who, Modifier.weight(1f).testTag("journey-scene-who"), style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold), color = p.text)
+            }
+            Text(stringResource(l.text, h.name), Modifier.fillMaxWidth(), style = MaterialTheme.typography.titleMedium, color = p.text)
+            Text("${line + 1} / ${scene.lines.size}", style = MaterialTheme.typography.labelLarge, color = p.textMuted)
+            BigButton(stringResource(R.string.journey_ok), { if (line < scene.lines.lastIndex) line++ else onDone() }, Modifier.fillMaxWidth().testTag("journey-scene-next"))
         }
     }
 }

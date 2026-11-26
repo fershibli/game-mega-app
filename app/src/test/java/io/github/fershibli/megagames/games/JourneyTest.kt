@@ -19,6 +19,8 @@ import io.github.fershibli.megagames.games.journey.Regions
 import io.github.fershibli.megagames.games.journey.School
 import io.github.fershibli.megagames.games.journey.Spell
 import io.github.fershibli.megagames.games.journey.SpotKind
+import io.github.fershibli.megagames.games.journey.Story
+import io.github.fershibli.megagames.games.journey.journeyLesson
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNotNull
@@ -446,5 +448,47 @@ class JourneyTest {
         // Every friend was met on the way.
         assertEquals(Friend.entries.toSet(), Journey.friends(w).toSet())
         return "battles=$battles level=${w.hero!!.level}"
+    }
+
+    @Test
+    fun theStoryIsToldInOrderAndEachSceneOnce() {
+        var w = world()
+        assertEquals(Story.PROLOGUE, Story.next(w))
+        w = Story.told(w, Story.PROLOGUE)
+        assertEquals("arrive_forest", Story.next(w)!!.id)
+        w = Story.told(w, Story.next(w)!!)
+        assertNull(Story.next(w))
+        // A closed region says nothing; once open, its guide speaks on the first visit.
+        assertNull(Story.next(w.copy(region = Region.RIVER)))
+        val forest = Region.FOREST.spots.indices.map { Regions.id(Region.FOREST, it) }.toSet()
+        w = w.copy(cleared = forest)
+        assertEquals(1, Story.lights(w))
+        assertEquals("arrive_river", Story.next(Journey.showRegion(w, Region.RIVER))!!.id)
+        // Nothing is told over a battle.
+        assertNull(Story.next(w.copy(seen = emptySet(), battle = Journey.newBattle(w, Regions.id(Region.FOREST, 0), listOf(Foe.SLIME)))))
+        // With the five lights back, the end comes before anything else.
+        val all = Region.entries.flatMap { r -> r.spots.indices.map { Regions.id(r, it) } }.toSet()
+        val done = w.copy(cleared = all, region = Region.CASTLE)
+        assertEquals(5, Story.lights(done))
+        assertEquals(Story.EPILOGUE, Story.next(done))
+        assertEquals("arrive_castle", Story.next(Story.told(done, Story.EPILOGUE))!!.id)
+        // The scenes told are kept with the world.
+        val back = AppJson.decodeFromString(JourneyWorld.serializer(), AppJson.encodeToString(JourneyWorld.serializer(), Story.told(done, Story.EPILOGUE)))
+        assertTrue("epilogue" in back.seen)
+        assertEquals(Story.ALL.size, Story.ALL.map { it.id }.toSet().size)
+    }
+
+    @Test
+    fun theLessonStartsOnTheMagesTurnAgainstSlimesThatFearFire() {
+        val b = journeyLesson.battle!!
+        assertEquals("hero", b.fighters[b.current].id)
+        assertEquals(HeroClass.MAGE, journeyLesson.hero!!.heroClass)
+        assertTrue(Spell.SPARK in b.fighters[b.current].spells)
+        assertEquals("foe0", b.fighters.first { !it.ally }.id)
+        assertTrue(School.FIRE in b.fighters.first { !it.ally }.foe!!.weak)
+        // Bento plays right after the mage, so the lesson can show "Best move" on his turn.
+        val next = Journey.act(b, Action(Action.Kind.SPELL, Spell.SPARK, b.fighters.indexOfFirst { it.id == "foe0" }))
+        assertEquals(Friend.BENTO.name.lowercase(), next.fighters[next.current].id.lowercase())
+        assertNull(Story.next(journeyLesson))
     }
 }
