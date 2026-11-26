@@ -87,6 +87,7 @@ All notable changes to this project are documented here. The format follows [Kee
 
 ### Fixed
 - **Farm: a new bed can no longer leave the farm stuck.** Buying one now asks first, with a picture of a bed growing from bare soil to the harvest, and needs something already sown, so there is always a harvest to sell; the new bed blinks for a few seconds to show where it went. A farm already left with nothing to sow, sell or collect gets the coins for one seed.
+- **Farm: the animals have their own ground.** A strip of grass now separates the paddock from the beds, so the animals and their bubbles no longer cover the crops or catch the taps meant for them.
 
 ## [1.0.0] - 2026-10-19
 
