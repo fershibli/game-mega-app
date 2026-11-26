@@ -47,4 +47,10 @@
     <string name="farm_sell_one">1 verkaufen</string>
     <string name="farm_sell_all">Alles verkaufen</string>
     <string name="farm_scene">Bauernhof. Beete: %1$d. Tiere: %2$d.</string>
+    <string name="farm_plot_title">Ein neues Beet</string>
+    <string name="farm_plot_note">Preis in Münzen: %1$d. Es kommt neben die anderen Beete und wächst wie sie: Keim, Blätter, dann die Ernte.</string>
+    <string name="farm_plot_buy">Beet kaufen</string>
+    <string name="farm_plot_sow_first">Säe zuerst etwas. Wenn etwas wächst, gibt es immer eine Ernte zum Verkaufen.</string>
+    <string name="farm_plot_here">Fertig: Das neue Beet ist das, das auf dem Feld blinkt.</string>
+    <string name="farm_plot_picture">Ein Beet, das wächst, von der nackten Erde bis zur Ernte</string>
 </resources>

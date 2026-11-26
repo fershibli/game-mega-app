@@ -11,7 +11,7 @@ Trois boutons en haut ouvrent la **Ferme**, les **Commandes** et la **Grange**. 
 - La culture pousse toute seule, en temps réel : d’abord une pousse, puis une jeune plante avec une petite barre qui se remplit, puis la récolte mûre, qui scintille. Touchez un carré qui pousse pour lire son nom et le temps restant.
 - **Arroser** (touchez un carré avec une goutte bleue, ou **Tout arroser**) fait pousser le reste deux fois plus vite. Une fois par culture suffit.
 - Touchez un carré mûr (ou **Tout récolter**) : chaque carré donne **deux** de sa culture, qui vont directement à la grange.
-- **Nouveau carré** agrandit le potager, jusqu’à douze carrés.
+- **Nouveau carré** agrandit le potager, jusqu’à douze carrés. Il demande d’abord, avec le dessin d’un carré qui pousse, et il faut déjà avoir semé quelque chose : ainsi il y a toujours une récolte à vendre. Le nouveau carré clignote un moment pour que vous voyiez où il est.
 
 | Culture | Temps | Graines | Vendu (l’unité) | Étoiles |
 |---|---|---|---|---|

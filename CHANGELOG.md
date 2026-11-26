@@ -83,6 +83,11 @@ All notable changes to this project are documented here. The format follows [Kee
 - **Farm in pixel art**: the field and the animals are now one isometric pixel-art farm, with the house, the barn, trees, a lane, the fenced paddock, and a sky with clouds and a sun (a moon and stars in dark mode). Crops show how far they have grown, ripe ones sparkle, a drop marks the beds that can be watered and a bubble shows what each animal has waiting. Tap a bed or an animal as before; pinch to see the farm bigger. Orders and the barn use the same pixel pictures.
 - Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".
 - The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
+- **Life trail is easier to read**: the board now has three clear layers. The landscapes are calmer and softer, so they stay in the background; the path and its squares are one pale stone trail with a dark edge, the squares as lighter slabs on it; and the pawns are bright with a white outline that lifts them off the board. The arrow over the pawn whose turn it is is bigger, amber with a dark edge, and gently bobs up and down (it stays still when animations are off).
+
+### Fixed
+- **Farm: a new bed can no longer leave the farm stuck.** Buying one now asks first, with a picture of a bed growing from bare soil to the harvest, and needs something already sown, so there is always a harvest to sell; the new bed blinks for a few seconds to show where it went. A farm already left with nothing to sow, sell or collect gets the coins for one seed.
+- **Battleship: arrange your own fleet**: against the computer, **Arrange again** did nothing to your fleet (it rearranged the computer's hidden one). It now rearranges yours, and before the first shot you can also drag a ship to move it (it snaps to the squares and keeps the space between ships) and tap a ship to turn it; a move without room is refused gently, and **Undo** takes back the last change. Taking turns, each player arranges their own fleet the same way.
 
 ## [1.0.0] - 2026-10-19
 

@@ -250,6 +250,17 @@ class ScreenshotTest {
         seedFarm(full = true)
         gameShot("game_farm_dark", GameId.FARM, settings = Settings(darkMode = true))
     }
+    @Test fun farmNewBedPt() {
+        seedFarm()
+        gameShot("game_farm_new_bed_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-buy-plot").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-plot-picture").assertExists()
+        rule.mainClock.autoAdvance = false
+        // The picture goes through its stages: stop on the harvest.
+        rule.mainClock.advanceTimeBy(2_800)
+        save("game_farm_new_bed_pt")
+    }
     @Test fun farmOrders() {
         seedFarm()
         gameShot("game_farm_orders", GameId.FARM, tab = "orders")
@@ -321,6 +332,7 @@ class ScreenshotTest {
     @Test fun trail() = shot("game_trail") { GameContent(GameId.TRAIL, trailHost()) }
     @Test fun trailPt() = shot("game_trail_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
     @Test fun trailDark() = shot("game_trail_dark", Settings(darkMode = true)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
+    @Test fun trailHighContrast() = shot("game_trail_high_contrast", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST)) { GameContent(GameId.TRAIL, trailHost()) }
 
     /** Four pawns along the way, with a story (or a crossroads) waiting for you. */
     private fun trailHost(choice: Boolean = false): GameHost {
@@ -478,6 +490,14 @@ class ScreenshotTest {
     @Test fun battleship() = shot("game_battleship") { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipPt() = shot("game_battleship_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipDark() = shot("game_battleship_dark", Settings(darkMode = true)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
+    @Test fun battleshipArrange() = shot("game_battleship_arrange") { GameContent(GameId.BATTLESHIP, battleshipArrangeHost()) }
+    @Test fun battleshipArrangePt() = shot("game_battleship_arrange_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipArrangeHost()) }
+
+    /** Before the first shot against the computer: your fleet, ready to be dragged and turned. */
+    private fun battleshipArrangeHost(): GameHost {
+        val s = io.github.fershibli.megagames.games.battleship.Battleship.newGame(Difficulty.MEDIUM, kotlin.random.Random(4), together = false)
+        return GameHost(GameId.BATTLESHIP, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.battleship.BattleshipState.serializer(), s), null, null) {}
+    }
 
     /** A game well under way: a few splashes, a hit and a sunk ship on each side. */
     private fun battleshipHost(): GameHost {

@@ -11,7 +11,7 @@ Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Tus *
 - La planta crece sola, en tiempo real: primero un brote, luego una planta joven con una barrita que se va llenando, luego la cosecha madura, que brilla. Toca un bancal que está creciendo para ver su nombre y el tiempo que falta.
 - **Regar** (toca un bancal con una gota azul, o **Regar todo**) hace que el resto del crecimiento vaya el doble de rápido. Basta una vez por cultivo.
 - Toca un bancal maduro (o **Cosechar todo**): cada bancal da **dos** de su cultivo, que van directos al granero.
-- **Nuevo bancal** añade un bancal, hasta doce.
+- **Nuevo bancal** añade un bancal, hasta doce. Antes pregunta, con el dibujo de un bancal creciendo, y solo se puede si ya hay algo sembrado: así siempre hay una cosecha para vender. El bancal nuevo parpadea un momento para que veas dónde quedó.
 
 | Cultivo | Tiempo | Semillas | Se vende a (cada) | Estrellas |
 |---|---|---|---|---|
