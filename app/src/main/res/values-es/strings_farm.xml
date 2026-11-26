@@ -47,4 +47,10 @@
     <string name="farm_sell_one">Vender 1</string>
     <string name="farm_sell_all">Vender todo</string>
     <string name="farm_scene">Granja. Bancales: %1$d. Animales: %2$d.</string>
+    <string name="farm_plot_title">Un bancal nuevo</string>
+    <string name="farm_plot_note">Precio en monedas: %1$d. Va junto a los otros bancales y crece como ellos: brote, hojas y luego la cosecha.</string>
+    <string name="farm_plot_buy">Comprar el bancal</string>
+    <string name="farm_plot_sow_first">Siembra algo antes. Con algo creciendo, siempre habrá una cosecha para vender.</string>
+    <string name="farm_plot_here">Listo: el bancal nuevo es el que parpadea en el campo.</string>
+    <string name="farm_plot_picture">Un bancal creciendo, de la tierra desnuda a la cosecha</string>
 </resources>

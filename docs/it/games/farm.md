@@ -11,7 +11,7 @@ Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Le
 - La pianta cresce da sola, in tempo reale: prima un germoglio, poi una piantina con una barretta che si riempie, poi il raccolto maturo, che luccica. Tocca un’aiuola che sta crescendo per leggerne il nome e il tempo che manca.
 - **Annaffiare** (tocca un’aiuola con una goccia blu, o **Annaffia tutto**) fa crescere il resto due volte più in fretta. Basta una volta per pianta.
 - Tocca un’aiuola matura (o **Raccogli tutto**): ogni aiuola dà **due** del suo raccolto, che vanno subito nel fienile.
-- **Nuova aiuola** allarga l’orto, fino a dodici aiuole.
+- **Nuova aiuola** allarga l’orto, fino a dodici aiuole. Prima chiede, con il disegno di un’aiuola che cresce, e serve aver già seminato qualcosa: così c’è sempre un raccolto da vendere. L’aiuola nuova lampeggia per un momento, per vedere dove si trova.
 
 | Pianta | Tempo | Semi | Si vende a (l’uno) | Stelle |
 |---|---|---|---|---|

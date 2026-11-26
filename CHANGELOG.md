@@ -84,6 +84,9 @@ All notable changes to this project are documented here. The format follows [Kee
 - Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".
 - The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
 
+### Fixed
+- **Farm: a new bed can no longer leave the farm stuck.** Buying one now asks first, with a picture of a bed growing from bare soil to the harvest, and needs something already sown, so there is always a harvest to sell; the new bed blinks for a few seconds to show where it went. A farm already left with nothing to sow, sell or collect gets the coins for one seed.
+
 ## [1.0.0] - 2026-10-19
 
 ### Added
