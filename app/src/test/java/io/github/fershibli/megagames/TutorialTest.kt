@@ -46,14 +46,19 @@ class TutorialTest {
     private fun enabled(text: String) = rule.onAllNodes(hasText(text) and isEnabled()).fetchSemanticsNodes().isNotEmpty()
 
     @Test
-    fun theSolitaireLessonIsFollowedToTheEndByTouchingTheBoard() {
+    fun theSolitaireLessonIsFollowedToTheEndByTouchingTheBoard() = followToTheEnd(GameId.SOLITAIRE)
+
+    @Test
+    fun theJourneyLessonIsFollowedToTheEndByTouchingTheButtons() = followToTheEnd(GameId.JOURNEY)
+
+    private fun followToTheEnd(game: GameId) {
         rule.mainClock.autoAdvance = false
         val guide = TutorialGuide()
-        val lesson = solitaireTutorial
+        val lesson = tutorialOf(game)!!
         var exited = false
         rule.setContent {
             MegaGamesTheme(Settings(language = AppLanguage.ENGLISH)) {
-                TutorialScreen(GameId.SOLITAIRE, lesson, onExit = { exited = true }, onRules = {}, onSettings = {}, guide = guide)
+                TutorialScreen(game, lesson, onExit = { exited = true }, onRules = {}, onSettings = {}, guide = guide)
             }
         }
         lesson.steps.forEachIndexed { i, step ->
@@ -111,6 +116,7 @@ class TutorialTest {
     @Test
     fun aGameWithoutALessonGoesToItsPageOfRules() {
         assertNotNull(tutorialOf(GameId.SOLITAIRE))
+        assertNotNull(tutorialOf(GameId.JOURNEY))
         assertEquals(null, tutorialOf(GameId.SUDOKU))
     }
 }

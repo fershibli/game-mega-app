@@ -16,6 +16,11 @@ Elige una **clase** y escribe un **nombre**:
 
 El herrero **Bento** te acompaña desde el principio: sabe **Proteger** al grupo y recibir los golpes. En el bosque puedes rescatar a **Lia**, una maga de fuego.
 
+## La historia
+La Reina Clara pide ayuda: el Rey de las Sombras escondió las **cinco luces** del reino, una en cada región, con su jefe. Cada jefe vencido devuelve una luz (la cuenta aparece junto al oro). Al llegar a una región, su guía cuenta quién espera allí; con las cinco luces de vuelta, la Reina cuenta el final, y el camino sigue abierto. Cada escena se cuenta una vez, una frase cada vez, con la cara de quien habla: toca **Seguir**.
+
+**Aprende a jugar** empieza con una lección corta en una primera batalla: Magia, un hechizo en el punto débil, Mejor jugada y Automático, paso a paso.
+
 ## El mapa y la aldea
 Toca un lugar del mapa para ir. Un lugar se abre cuando el anterior está hecho; las batallas ganadas se pueden repetir para hacerte más fuerte. Los cofres y los amigos dan pociones, éteres y oro. En la **aldea** puedes **descansar en la posada** (todos recuperan vida y maná), pedir consejos al **Saci** y cambiar la fuerza de los enemigos (Fácil, Medio, Difícil) cuando quieras.
 

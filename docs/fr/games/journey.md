@@ -16,6 +16,11 @@ Choisissez une **classe** et tapez un **nom** :
 
 **Bento** le forgeron vous accompagne dès le début : il sait **Protéger** le groupe et encaisser les coups. Dans la forêt, vous pouvez sauver **Lia**, une mage de feu.
 
+## L'histoire
+La Reine Clara demande de l'aide : le Roi des Ombres a caché les **cinq lumières** du royaume, une dans chaque région, avec son chef. Chaque chef vaincu rapporte une lumière (le compte s'affiche à côté de l'or). En arrivant dans une région, son guide dit qui y attend ; une fois les cinq lumières revenues, la Reine raconte la fin, et la route reste ouverte. Chaque scène est racontée une fois, une réplique à la fois, avec le visage de qui parle : touchez **Continuer**.
+
+**Apprendre à jouer** commence par une courte leçon sur un premier combat : Magie, un sort sur un point faible, Meilleur coup et Automatique, étape par étape.
+
 ## La carte et le village
 Touchez un endroit de la carte pour y aller. Un endroit s'ouvre quand le précédent est fait ; les combats gagnés peuvent se rejouer pour devenir plus fort. Les coffres et les amis donnent des potions, des éthers et de l'or. Au **village**, vous pouvez **vous reposer à l'auberge** (tout le monde retrouve vie et mana), demander des conseils au **Saci** et changer la force des ennemis (Facile, Moyen, Difficile) à tout moment.
 

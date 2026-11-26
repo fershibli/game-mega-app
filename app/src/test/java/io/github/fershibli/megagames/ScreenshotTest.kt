@@ -374,6 +374,47 @@ class ScreenshotTest {
         rule.waitForIdle()
         save("game_journey_tavern")
     }
+    @Test fun journeyStory() {
+        seedJourney(io.github.fershibli.megagames.games.journey.Journey.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.HEALER), story = true)
+        gameShot("game_journey_story", GameId.JOURNEY)
+    }
+    @Test fun journeyStoryPt() {
+        val all = JourneyRegion.entries.flatMap { reg -> reg.spots.indices.map { io.github.fershibli.megagames.games.journey.Regions.id(reg, it) } }.toSet()
+        seedJourney(io.github.fershibli.megagames.games.journey.Journey.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.HEALER).copy(cleared = all, seen = setOf("prologue")), story = true)
+        gameShot("game_journey_story_pt", GameId.JOURNEY, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    }
+    @Test fun tutorialJourneyPt() {
+        rule.mainClock.autoAdvance = false
+        val guide = io.github.fershibli.megagames.ui.components.TutorialGuide()
+        rule.setContent {
+            MegaGamesTheme(Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) {
+                Box(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
+                    io.github.fershibli.megagames.ui.screens.TutorialScreen(GameId.JOURNEY, io.github.fershibli.megagames.games.journey.journeyTutorial, {}, {}, {}, guide = guide)
+                }
+            }
+        }
+        fun until(condition: () -> Boolean) { repeat(300) { if (!condition()) rule.mainClock.advanceTimeBy(100) } }
+        fun next() {
+            until { rule.onAllNodes(androidx.compose.ui.test.hasText("Próximo") and androidx.compose.ui.test.isEnabled()).fetchSemanticsNodes().isNotEmpty() }
+            rule.onNodeWithText("Próximo").performClick()
+            rule.mainClock.advanceTimeByFrame()
+        }
+        fun touch(place: String) {
+            until { guide.expected == place }
+            val r = guide.rect(place)!!
+            rule.onRoot().performTouchInput { click(r.center) }
+            rule.mainClock.advanceTimeBy(200)
+        }
+        // Read the turns, open Magic and pick Spark: the lesson now asks for the first slime.
+        next()
+        touch("magic")
+        next()
+        touch("spell:spark")
+        next()
+        until { guide.expected == "target:foe0" }
+        rule.mainClock.advanceTimeBy(1600)
+        save("tutorial_journey_pt")
+    }
     @Test fun journeyCastle() {
         seedJourney(journeyCastleBattle())
         gameShot("game_journey_castle", GameId.JOURNEY)
@@ -423,9 +464,11 @@ class ScreenshotTest {
         return w.copy(battle = b)
     }
 
-    private fun seedJourney(world: io.github.fershibli.megagames.games.journey.JourneyWorld?) {
+    /** Saves the world of a shot; the story is already told unless [story] (so no scene covers the screen). */
+    private fun seedJourney(world: io.github.fershibli.megagames.games.journey.JourneyWorld?, story: Boolean = false) {
+        val told = if (story || world == null) world else world.copy(seen = io.github.fershibli.megagames.games.journey.Story.ALL.map { it.id }.toSet())
         WorldStore(RuntimeEnvironment.getApplication()).run {
-            save(io.github.fershibli.megagames.games.journey.JOURNEY_WORLD_KEY, io.github.fershibli.megagames.games.journey.JourneyWorld.serializer(), world ?: io.github.fershibli.megagames.games.journey.JourneyWorld())
+            save(io.github.fershibli.megagames.games.journey.JOURNEY_WORLD_KEY, io.github.fershibli.megagames.games.journey.JourneyWorld.serializer(), told ?: io.github.fershibli.megagames.games.journey.JourneyWorld())
             flush()
         }
     }
