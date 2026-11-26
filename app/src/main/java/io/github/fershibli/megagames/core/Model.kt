@@ -150,6 +150,7 @@ enum class GameId(
     PINBALL("pinball", R.string.game_pinball, R.string.howto_pinball, GameCategory.CALM_ACTION),
     TRAIL("trail", R.string.game_trail, R.string.howto_trail, GameCategory.PASTIMES, takeTurns = true, tables = listOf(TableSize(2), TableSize(3), TableSize(4))),
     PARKING("parking", R.string.game_parking, R.string.howto_parking, GameCategory.PUZZLES),
+    JOURNEY("journey", R.string.game_journey, R.string.howto_journey, GameCategory.PASTIMES, hasDifficulty = false),
     BATTLESHIP("battleship", R.string.game_battleship, R.string.howto_battleship, GameCategory.BOARD, takeTurns = true),
     ;
 

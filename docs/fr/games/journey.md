@@ -1,0 +1,43 @@
+# Périple
+
+🌐 [English](../../en/games/journey.md) · [Português](../../pt-BR/games/journey.md) · [Español](../../es/games/journey.md) · **Français** · [Italiano](../../it/games/journey.md) · [Deutsch](../../de/games/journey.md) · [Русский](../../ru/games/journey.md) · [日本語](../../ja/games/journey.md) · [中文](../../zh-CN/games/journey.md) · [العربية](../../ar/games/journey.md)
+
+Une aventure paisible, au tour par tour, dans un royaume de châteaux et de chevaliers, avec des amis du folklore brésilien. Personne ne vous presse : les ennemis attendent votre coup, et perdre ne coûte rien.
+
+## Pour commencer
+Choisissez une **classe** et tapez un **nom** :
+
+| Classe | Point fort |
+|---|---|
+| Chevalier | Beaucoup de vie et un **Coup puissant**. |
+| Archère | Rapide ; la **Pluie de flèches** touche tous les ennemis. |
+| Mage | Magie de **Feu** et de **Glace**. |
+| Guérisseuse | Soigne le groupe par la **Lumière**. |
+
+**Bento** le forgeron vous accompagne dès le début : il sait **Protéger** le groupe et encaisser les coups. Dans la forêt, vous pouvez sauver **Lia**, une mage de feu.
+
+## La carte et le village
+Touchez un endroit de la carte pour y aller. Un endroit s'ouvre quand le précédent est fait ; les combats gagnés peuvent se rejouer pour devenir plus fort. Les coffres et les amis donnent des potions, des éthers et de l'or. Au **village**, vous pouvez **vous reposer à l'auberge** (tout le monde retrouve vie et mana), demander des conseils au **Saci** et changer la force des ennemis (Facile, Moyen, Difficile) à tout moment.
+
+## Les combats
+La bande en haut montre qui joue ensuite : les plus rapides d'abord. À votre tour, choisissez :
+- **Attaquer**, puis qui.
+- **Magie** : chaque sort coûte du mana.
+- **Se défendre** : moitié des dégâts jusqu'à votre prochain tour, et un peu de mana.
+- **Objet** : la potion rend la moitié de la vie ; l'éther rend du mana.
+- **Meilleur coup** joue une bonne action pour vous, et **Automatique** joue tous les tours du groupe.
+
+Chaque ennemi est **faible** face à une magie (une fois et demie les dégâts) et en **résiste** à une autre (moitié). Après le premier coup, une grande icône montre son point faible. Les ennemis ne meurent jamais : ils s'enfuient ou s'évanouissent.
+
+| Ennemi | Faible face à | Résiste à |
+|---|---|---|
+| Gelée verte | Feu | Glace |
+| Sanglier | Glace | Feu |
+| Champignon somnolent | Feu | Lumière |
+| Loup gris | Lumière | Glace |
+| Sanglier géant (chef) | Glace | Feu |
+
+Si tout le groupe s'évanouit, il se réveille reposé à l'auberge, avec tout ce qu'il avait.
+
+## Niveaux
+Les combats donnent de l'expérience et de l'or. À chaque nouveau niveau, vous choisissez un bonus : plus de vie, d'attaque, de défense, de mana ou de vitesse, ou un nouveau sort.
