@@ -490,6 +490,14 @@ class ScreenshotTest {
     @Test fun battleship() = shot("game_battleship") { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipPt() = shot("game_battleship_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipDark() = shot("game_battleship_dark", Settings(darkMode = true)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
+    @Test fun battleshipArrange() = shot("game_battleship_arrange") { GameContent(GameId.BATTLESHIP, battleshipArrangeHost()) }
+    @Test fun battleshipArrangePt() = shot("game_battleship_arrange_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipArrangeHost()) }
+
+    /** Before the first shot against the computer: your fleet, ready to be dragged and turned. */
+    private fun battleshipArrangeHost(): GameHost {
+        val s = io.github.fershibli.megagames.games.battleship.Battleship.newGame(Difficulty.MEDIUM, kotlin.random.Random(4), together = false)
+        return GameHost(GameId.BATTLESHIP, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.battleship.BattleshipState.serializer(), s), null, null) {}
+    }
 
     /** A game well under way: a few splashes, a hit and a sunk ship on each side. */
     private fun battleshipHost(): GameHost {

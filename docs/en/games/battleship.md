@@ -7,6 +7,8 @@ The classic game of hidden fleets, against the computer or taking turns on one p
 ## Before the first shot
 Your fleet is arranged for you: straight ships that never touch each other, not even at a corner. Tap **Arrange again** as often as you like, then **Start**. Taking turns, player 2 then arranges theirs while player 1 looks away.
 
+To place a ship yourself, **drag** it to another spot: it snaps to the squares, and the squares where it will land are outlined. **Tap** a ship to turn it (across becomes down, and back). If there is no room (at the edge or next to another ship), the ship stays where it was, outlined in red for a moment. **Undo** takes back the last change.
+
 ## Playing
 - The big sea at the top is the other side's: tap a square to fire. An **ink circle** is water; a **red cross** with a little flame is a hit. Squares are named like on the paper game: letters A–J across the top, numbers 1–10 down the side. A ship hit on every square sinks and appears on the sea.
 - The small sea below is yours, with your ships and where the other side has fired.
