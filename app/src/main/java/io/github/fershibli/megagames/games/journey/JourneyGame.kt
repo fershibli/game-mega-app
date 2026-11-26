@@ -61,7 +61,7 @@ private const val ENEMY_PAUSE = 1100L
 private const val AUTO_PAUSE = 800L
 
 /** Where the player is when no battle is going on. */
-private enum class Place { MAP, VILLAGE }
+private enum class Place { MAP, VILLAGE, SHOP, TAVERN }
 
 /** What the battle buttons show: the main actions, or a list to pick from. */
 private sealed interface Picking {
@@ -69,6 +69,7 @@ private sealed interface Picking {
     data object Spells : Picking
     data object Items : Picking
     data class Target(val action: Action) : Picking
+    data object Swap : Picking
 }
 
 /**
@@ -98,7 +99,9 @@ fun JourneyGame(host: GameHost) {
         when {
             w.hero == null -> CreateScreen { name, cls -> change { Journey.start(name, cls, seed = System.nanoTime() and 0xFFFFFF) } }
             w.battle != null -> BattleScreen(w, change) { message = it }
-            place == Place.VILLAGE -> VillageScreen(w, change, { place = Place.MAP }) { message = it }
+            place == Place.VILLAGE -> VillageScreen(w, change, { place = it }) { message = it }
+            place == Place.SHOP -> ShopScreen(w, change, { place = Place.VILLAGE }) { message = it }
+            place == Place.TAVERN -> TavernScreen(w, change) { place = Place.VILLAGE }
             else -> MapScreen(w, change, { place = Place.VILLAGE }) { message = it }
         }
         val text = message
@@ -163,32 +166,47 @@ private fun statusLine(w: JourneyWorld): String {
 private fun MapScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorld) -> Unit, toVillage: () -> Unit, say: (String) -> Unit) {
     val p = LocalPalette.current
     val res = LocalResources.current
+    val region = w.region
     Column(Modifier.fillMaxSize().padding(10.dp), verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally) {
         StatusPill(statusLine(w), Modifier.testTag("journey-status"))
-        Text(stringResource(R.string.journey_forest), style = MaterialTheme.typography.titleMedium, color = p.text)
+        // The regions: the next one opens once the boss of the one before is beaten.
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            val prev = Region.entries.getOrNull(region.ordinal - 1)
+            val next = Region.entries.getOrNull(region.ordinal + 1)
+            BigButton("◀", { prev?.let { r -> change { Journey.showRegion(it, r) } } }, Modifier.size(56.dp).testTag("journey-region-prev"), style = ButtonStyle.SECONDARY, compact = true, enabled = prev != null)
+            Text(stringResource(region.label), Modifier.weight(1f).testTag("journey-region"), style = MaterialTheme.typography.titleLarge, color = p.text, textAlign = TextAlign.Center)
+            BigButton("▶", {
+                if (next != null) {
+                    if (Journey.regionOpen(w, next)) change { Journey.showRegion(it, next) } else say(res.getString(R.string.journey_region_locked))
+                }
+            }, Modifier.size(56.dp).testTag("journey-region-next"), style = ButtonStyle.SECONDARY, compact = true, enabled = next != null)
+        }
         BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().clip(RoundedCornerShape(12.dp))) {
-            val mapDescription = stringResource(R.string.journey_map_board)
+            val mapDescription = stringResource(R.string.journey_map_board, stringResource(region.label))
             Canvas(Modifier.fillMaxSize().semantics { contentDescription = mapDescription }) {
-                drawForestMap(p, w.cleared, { Journey.open(w, it) }, -1)
+                drawRegionMap(p, region, { Regions.id(region, it) in w.cleared }, { Journey.open(w, Regions.id(region, it)) }, -1)
             }
             // A big touch target on each spot, with its name for screen readers.
-            Regions.FOREST.forEachIndexed { i, s ->
+            region.spots.forEachIndexed { i, s ->
+                val id = Regions.id(region, i)
                 val label = stringResource(s.label)
                 Box(
                     Modifier.offset(maxWidth * s.x - 28.dp, maxHeight * s.y - 28.dp).size(56.dp)
                         .clickable {
                             when {
-                                !Journey.open(w, i) -> say(res.getString(R.string.journey_locked))
-                                !Journey.canVisit(w, i) -> say(res.getString(R.string.journey_done_spot))
+                                !Journey.open(w, id) -> say(res.getString(R.string.journey_locked))
+                                !Journey.canVisit(w, id) -> say(res.getString(R.string.journey_done_spot))
                                 else -> {
-                                    val before = w
-                                    change { Journey.visit(it, i) }
+                                    val knew = w.hero!!.spells
+                                    change { Journey.visit(it, id) }
+                                    val lines = ArrayList<String>()
                                     when (s.kind) {
-                                        SpotKind.CHEST -> say(res.getString(R.string.journey_chest_found, s.potions, s.gold))
-                                        SpotKind.FRIEND -> say(res.getString(R.string.journey_curupira_says, s.ethers))
+                                        SpotKind.CHEST -> lines += res.getString(R.string.journey_chest, s.potions, s.ethers, s.gold)
+                                        SpotKind.FRIEND -> lines += res.getString(s.say, s.ethers)
                                         else -> Unit
                                     }
-                                    if (before == w) Unit
+                                    if (s.scroll != null && s.scroll !in knew) lines += res.getString(R.string.journey_scroll, w.hero.name, res.getString(s.scroll.label))
+                                    if (lines.isNotEmpty()) say(lines.joinToString("\n\n"))
                                 }
                             }
                         }
@@ -228,7 +246,7 @@ private fun PartyRow(w: JourneyWorld) {
 }
 
 @Composable
-private fun VillageScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorld) -> Unit, toMap: () -> Unit, say: (String) -> Unit) {
+private fun VillageScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorld) -> Unit, go: (Place) -> Unit, say: (String) -> Unit) {
     val p = LocalPalette.current
     val res = LocalResources.current
     var tip by remember { mutableIntStateOf(0) }
@@ -248,6 +266,10 @@ private fun VillageScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWor
         }
         BigButton(stringResource(R.string.journey_inn), { change { Journey.rest(it) }; say(res.getString(R.string.journey_rested)) }, Modifier.fillMaxWidth().testTag("journey-inn"))
         BigButton(stringResource(R.string.journey_saci), { say(res.getString(tips[tip % tips.size])); tip++ }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+            BigButton(stringResource(R.string.journey_shop), { go(Place.SHOP) }, Modifier.weight(1f).testTag("journey-shop"), style = ButtonStyle.SECONDARY)
+            BigButton(stringResource(R.string.journey_tavern), { go(Place.TAVERN) }, Modifier.weight(1f).testTag("journey-tavern"), style = ButtonStyle.SECONDARY)
+        }
         Text(stringResource(R.string.journey_enemies), style = MaterialTheme.typography.titleMedium, color = p.text)
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
             for (d in Difficulty.entries) {
@@ -261,7 +283,92 @@ private fun VillageScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWor
         PartyRow(w)
         val h = w.hero!!
         Text(stringResource(R.string.journey_xp, h.xp, Journey.xpFor(h.level)), style = MaterialTheme.typography.bodyLarge, color = p.textMuted)
-        BigButton(stringResource(R.string.journey_to_map), toMap, Modifier.fillMaxWidth().testTag("journey-to-map"), style = ButtonStyle.SECONDARY)
+        BigButton(stringResource(R.string.journey_to_map), { go(Place.MAP) }, Modifier.fillMaxWidth().testTag("journey-to-map"), style = ButtonStyle.SECONDARY)
+    }
+}
+
+@Composable
+private fun gearLine(g: Gear): String = listOfNotNull(
+    if (g.atk > 0) stringResource(R.string.journey_gear_atk, g.atk) else null,
+    if (g.def > 0) stringResource(R.string.journey_gear_def, g.def) else null,
+    if (g.mp > 0) stringResource(R.string.journey_gear_mp, g.mp) else null,
+).joinToString(" · ")
+
+/** The shop: potions and ethers, and gear for the hero (one weapon, one armor and one charm worn at a time). */
+@Composable
+private fun ShopScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorld) -> Unit, back: () -> Unit, say: (String) -> Unit) {
+    val p = LocalPalette.current
+    val res = LocalResources.current
+    Column(
+        Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(10.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        StatusPill(statusLine(w), Modifier.testTag("journey-status"))
+        Text(stringResource(R.string.journey_shop), style = MaterialTheme.typography.titleLarge, color = p.text)
+        for (item in Item.entries) {
+            val label = stringResource(if (item == Item.POTION) R.string.journey_buy_potion else R.string.journey_buy_ether, item.price)
+            BigButton(label, {
+                if (w.gold < item.price) say(res.getString(R.string.journey_no_gold)) else change { Journey.buy(it, item) }
+            }, Modifier.fillMaxWidth().testTag("journey-buy-${item.name.lowercase()}"), compact = true)
+        }
+        for (g in Gear.entries) {
+            val owned = g in w.owned
+            val worn = g in w.worn
+            Row(
+                Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(if (worn) p.primary.copy(alpha = 0.15f) else p.surfaceAlt).padding(8.dp),
+                verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Column(Modifier.weight(1f)) {
+                    Text(stringResource(g.label), style = MaterialTheme.typography.titleMedium, color = p.text)
+                    Text(gearLine(g), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
+                }
+                when {
+                    worn -> Text(stringResource(R.string.journey_worn), style = MaterialTheme.typography.titleSmall, color = p.success)
+                    owned -> BigButton(stringResource(R.string.journey_wear), { change { Journey.wear(it, g) } }, Modifier.testTag("journey-wear-${g.name.lowercase()}"), compact = true, style = ButtonStyle.SECONDARY)
+                    else -> BigButton(stringResource(R.string.journey_price, g.price), {
+                        if (w.gold < g.price) {
+                            say(res.getString(R.string.journey_no_gold))
+                        } else {
+                            change { Journey.buy(it, g) }
+                            say(res.getString(R.string.journey_bought, res.getString(g.label)))
+                        }
+                    }, Modifier.testTag("journey-gear-${g.name.lowercase()}"), compact = true)
+                }
+            }
+        }
+        BigButton(stringResource(R.string.journey_back), back, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
+    }
+}
+
+/** The tavern: the friends met so far; up to three travel with the hero, the others wait here. */
+@Composable
+private fun TavernScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorld) -> Unit, back: () -> Unit) {
+    val p = LocalPalette.current
+    Column(
+        Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(10.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp), horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(stringResource(R.string.journey_tavern), style = MaterialTheme.typography.titleLarge, color = p.text)
+        Text(stringResource(R.string.journey_tavern_rule, w.party.size, Journey.MAX_COMPANIONS), style = MaterialTheme.typography.bodyLarge, color = p.textMuted, textAlign = TextAlign.Center)
+        for (f in Journey.friends(w)) {
+            val travelling = f in w.party
+            Row(
+                Modifier.fillMaxWidth().clip(RoundedCornerShape(12.dp)).background(if (travelling) p.primary.copy(alpha = 0.15f) else p.surfaceAlt).padding(8.dp),
+                verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Canvas(Modifier.size(48.dp)) { drawSprite(JourneySprites.friend(f), 0f, 0f, size.width, size.height, p) }
+                Column(Modifier.weight(1f)) {
+                    Text(stringResource(f.label), style = MaterialTheme.typography.titleMedium, color = p.text)
+                    Text(stringResource(f.role), style = MaterialTheme.typography.bodyMedium, color = p.textMuted)
+                }
+                if (travelling) {
+                    BigButton(stringResource(R.string.journey_leave), { change { Journey.setTravelling(it, f, false) } }, Modifier.testTag("journey-leave-${f.name.lowercase()}"), compact = true, style = ButtonStyle.SECONDARY)
+                } else {
+                    BigButton(stringResource(R.string.journey_take), { change { Journey.setTravelling(it, f, true) } }, Modifier.testTag("journey-take-${f.name.lowercase()}"), compact = true, enabled = w.party.size < Journey.MAX_COMPANIONS)
+                }
+            }
+        }
+        BigButton(stringResource(R.string.journey_back), back, Modifier.fillMaxWidth().testTag("journey-tavern-back"), style = ButtonStyle.SECONDARY)
     }
 }
 
@@ -319,7 +426,7 @@ private fun BattleScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorl
         TurnStrip(w, b)
         val description = stringResource(R.string.journey_board, b.fighters.indices.joinToString(", ") { "${names[it]} ${b.fighters[it].hp}/${b.fighters[it].maxHp}" })
         BoxWithConstraints(Modifier.weight(1f).fillMaxWidth().clip(RoundedCornerShape(12.dp)).semantics { contentDescription = description }.testTag("journey-battle")) {
-            Canvas(Modifier.fillMaxSize()) { drawBattleScene(p) }
+            Canvas(Modifier.fillMaxSize()) { drawBattleScene(p, Regions.region(b.spot)) }
             val allies = b.fighters.indices.filter { b.fighters[it].ally }
             val enemies = b.fighters.indices.filter { !b.fighters[it].ally }
             val target = picking as? Picking.Target
@@ -353,12 +460,12 @@ private fun BattleScreen(w: JourneyWorld, change: ((JourneyWorld) -> JourneyWorl
                 val text = if (b.outcome == Outcome.WON) stringResource(R.string.journey_victory, foes.sumOf { it.xp }, foes.sumOf { it.gold }) else stringResource(R.string.journey_defeat)
                 StatusPill(text, Modifier.fillMaxWidth().testTag("journey-outcome"), emphasized = true)
                 BigButton(stringResource(R.string.journey_ok), {
-                    val spot = Regions.FOREST[b.spot]
+                    val spot = Regions.spot(b.spot)
                     val won = b.outcome == Outcome.WON
-                    val hadLia = Friend.LIA in w.party
+                    val newFriend = spot.recruit?.takeIf { it !in Journey.friends(w) }
                     change { Journey.finish(it) }
-                    if (won && spot.kind == SpotKind.RESCUE && !hadLia) say(res.getString(R.string.journey_lia_joins))
-                    if (won && spot.kind == SpotKind.BOSS) say(res.getString(R.string.journey_chapter_done))
+                    if (won && newFriend != null) say(res.getString(R.string.journey_joins, res.getString(newFriend.label), res.getString(newFriend.role)))
+                    if (won && spot.kind == SpotKind.BOSS) say(res.getString(Regions.region(b.spot).chapterDone))
                 }, Modifier.fillMaxWidth().testTag("journey-ok"))
             }
             !myTurn -> Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -421,7 +528,13 @@ private fun FighterView(w: JourneyWorld, f: Fighter, name: String, turn: Boolean
         Box(Modifier.weight(1f).fillMaxWidth()) {
             Canvas(Modifier.fillMaxSize()) {
                 if (turn) drawOval(p.highlight.copy(alpha = 0.45f), androidx.compose.ui.geometry.Offset(size.width * 0.15f, size.height * 0.86f), androidx.compose.ui.geometry.Size(size.width * 0.7f, size.height * 0.14f))
-                drawSprite(fighterArt(w, f), 0f, 0f, size.width, size.height * 0.96f, p, flipX = !f.ally && f.foe != Foe.WOLF && f.foe != Foe.BOAR && f.foe != Foe.GIANT_BOAR, alpha = if (f.up) 1f else 0.3f)
+                drawSprite(fighterArt(w, f), 0f, 0f, size.width, size.height * 0.96f, p, alpha = if (f.up) 1f else 0.3f)
+            }
+            // Lasting states, as little marks along the top.
+            if (f.effects.isNotEmpty()) {
+                Row(Modifier.align(Alignment.TopStart).testTag("journey-marks-${f.id}")) {
+                    for (st in f.effects.keys.sortedBy { it.ordinal }) Canvas(Modifier.size(18.dp)) { drawSprite(JourneySprites.status(st), 0f, 0f, size.width, size.height, p) }
+                }
             }
             // Weak spots, as big icons, once found.
             if (known && f.foe != null) {
@@ -486,11 +599,32 @@ private fun BattleLog(w: JourneyWorld, b: Battle, names: List<String>) {
             EventKind.PROTECT -> stringResource(R.string.journey_log_protect, actor)
             EventKind.SLOW -> stringResource(R.string.journey_log_slow, target)
             EventKind.OUT -> if (b.fighters[e.target].ally) stringResource(R.string.journey_log_faint, target) else stringResource(R.string.journey_log_flee, target)
+            EventKind.STATUS -> when (e.status) {
+                Status.POISON -> stringResource(R.string.journey_log_poisoned, target)
+                Status.SLEEP -> stringResource(R.string.journey_log_sleeps, target)
+                Status.SHIELD -> stringResource(R.string.journey_log_shielded, target)
+                Status.COURAGE -> stringResource(R.string.journey_log_brave, target)
+                Status.WET -> stringResource(R.string.journey_log_wet, target)
+                Status.OIL -> stringResource(R.string.journey_log_oiled, target)
+                null -> null
+            }
+            EventKind.POISON -> stringResource(R.string.journey_log_poison, target, e.amount)
+            EventKind.ASLEEP -> stringResource(R.string.journey_log_asleep, target)
+            EventKind.WAKE -> stringResource(R.string.journey_log_wake, target)
+            EventKind.FROZEN -> stringResource(R.string.journey_log_frozen, target)
+            EventKind.BURN -> stringResource(R.string.journey_log_burn, target)
+            EventKind.STOLE -> when (e.item) {
+                Item.POTION -> stringResource(R.string.journey_log_stole_potion, actor)
+                Item.ETHER -> stringResource(R.string.journey_log_stole_ether, actor)
+                null -> stringResource(R.string.journey_log_stole_gold, actor, e.amount)
+            }
+            EventKind.MISSED -> stringResource(R.string.journey_log_missed, actor)
+            EventKind.SWAP -> stringResource(R.string.journey_log_swap, e.friend?.let { stringResource(it.label) } ?: target)
         }
     }
     if (lines.isNotEmpty()) {
         Text(
-            lines.take(3).joinToString("\n"), Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp)).background(p.surfaceAlt).padding(8.dp).testTag("journey-log"),
+            lines.take(4).joinToString("\n"), Modifier.fillMaxWidth().clip(RoundedCornerShape(10.dp)).background(p.surfaceAlt).padding(8.dp).testTag("journey-log"),
             style = MaterialTheme.typography.bodyLarge, color = p.text,
         )
     }
@@ -503,7 +637,7 @@ private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Bool
     val a = b.fighters[b.current]
     fun choose(action: Action) {
         val needsTarget = when (action.kind) {
-            Action.Kind.ATTACK, Action.Kind.ITEM -> true
+            Action.Kind.ATTACK, Action.Kind.ITEM, Action.Kind.SWAP -> true
             Action.Kind.SPELL -> action.spell!!.reach == Reach.ONE_ENEMY || action.spell.reach == Reach.ONE_ALLY
             Action.Kind.DEFEND -> false
         }
@@ -519,6 +653,9 @@ private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Bool
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     BigButton(stringResource(R.string.journey_defend), { play(Action(Action.Kind.DEFEND)) }, Modifier.weight(1f).testTag("journey-defend"), compact = true, style = ButtonStyle.SECONDARY)
                     BigButton(stringResource(R.string.journey_item), { pick(Picking.Items) }, Modifier.weight(1f).testTag("journey-item"), compact = true, style = ButtonStyle.SECONDARY, enabled = b.potions + b.ethers > 0)
+                }
+                if (Journey.swappable(b).isNotEmpty()) {
+                    BigButton(stringResource(R.string.journey_swap), { pick(Picking.Swap) }, Modifier.fillMaxWidth().testTag("journey-swap"), compact = true, style = ButtonStyle.SECONDARY)
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(6.dp)) {
                     BigButton(stringResource(R.string.journey_best), { play(Journey.bestAction(b, w.known)) }, Modifier.weight(1f).testTag("journey-best"), compact = true, style = ButtonStyle.SECONDARY)
@@ -540,8 +677,16 @@ private fun ActionPanel(w: JourneyWorld, b: Battle, picking: Picking, auto: Bool
                 BigButton(stringResource(R.string.journey_ether) + " (${b.ethers})", { choose(Action(Action.Kind.ITEM, item = Item.ETHER)) }, Modifier.fillMaxWidth(), compact = true, enabled = b.ethers > 0)
                 BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY)
             }
+            Picking.Swap -> {
+                // First who comes in; then (as a target) who leaves.
+                Text(stringResource(R.string.journey_swap_who), style = MaterialTheme.typography.titleMedium, color = p.text)
+                for (f in Journey.swappable(b)) {
+                    BigButton(stringResource(f.label) + " · " + stringResource(f.role), { pick(Picking.Target(Action(Action.Kind.SWAP, friend = f))) }, Modifier.fillMaxWidth().testTag("journey-swap-in-${f.name.lowercase()}"), compact = true)
+                }
+                BigButton(stringResource(R.string.journey_back), { pick(Picking.Main) }, Modifier.fillMaxWidth(), compact = true, style = ButtonStyle.SECONDARY)
+            }
             is Picking.Target -> {
-                Text(stringResource(R.string.journey_choose_target), style = MaterialTheme.typography.titleMedium, color = p.text)
+                Text(stringResource(if (picking.action.kind == Action.Kind.SWAP) R.string.journey_swap_out else R.string.journey_choose_target), style = MaterialTheme.typography.titleMedium, color = p.text)
                 // Besides tapping the picture, a button for each one that can be chosen.
                 val options = b.fighters.indices.filter { targetOk(b, picking.action, it) }
                 for (row in options.chunked(2)) {

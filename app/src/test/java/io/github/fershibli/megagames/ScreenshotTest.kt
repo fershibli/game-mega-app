@@ -30,6 +30,9 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import io.github.fershibli.megagames.games.journey.Friend as JourneyFriend
+import io.github.fershibli.megagames.games.journey.Region as JourneyRegion
+import io.github.fershibli.megagames.games.journey.Status as JourneyStatus
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.performTouchInput
 import io.github.fershibli.megagames.core.Settings
@@ -346,6 +349,61 @@ class ScreenshotTest {
     @Test fun journeyDark() {
         seedJourney(journeyBattle())
         gameShot("game_journey_dark", GameId.JOURNEY, settings = Settings(darkMode = true))
+    }
+
+    @Test fun journeyRiver() {
+        val j = io.github.fershibli.megagames.games.journey.Journey
+        val forest = io.github.fershibli.megagames.games.journey.Region.FOREST.spots.indices.map { io.github.fershibli.megagames.games.journey.Regions.id(io.github.fershibli.megagames.games.journey.Region.FOREST, it) }.toSet()
+        val river = (0..2).map { io.github.fershibli.megagames.games.journey.Regions.id(io.github.fershibli.megagames.games.journey.Region.RIVER, it) }.toSet()
+        seedJourney(j.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.HEALER).copy(cleared = forest + river, region = io.github.fershibli.megagames.games.journey.Region.RIVER, gold = 210, party = listOf(io.github.fershibli.megagames.games.journey.Friend.BENTO, io.github.fershibli.megagames.games.journey.Friend.LIA)))
+        gameShot("game_journey_river", GameId.JOURNEY)
+    }
+    @Test fun journeyShop() {
+        seedJourney(io.github.fershibli.megagames.games.journey.Journey.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.KNIGHT).copy(gold = 260, owned = setOf(io.github.fershibli.megagames.games.journey.Gear.IRON_SWORD, io.github.fershibli.megagames.games.journey.Gear.LEATHER), worn = setOf(io.github.fershibli.megagames.games.journey.Gear.IRON_SWORD, io.github.fershibli.megagames.games.journey.Gear.LEATHER)))
+        gameShot("game_journey_shop", GameId.JOURNEY, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("journey-to-village").performClick()
+        rule.onNodeWithTag("journey-shop").performClick()
+        rule.waitForIdle()
+        save("game_journey_shop")
+    }
+    @Test fun journeyTavern() {
+        seedJourney(io.github.fershibli.megagames.games.journey.Journey.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.KNIGHT).copy(party = listOf(JourneyFriend.BENTO, JourneyFriend.IARA, JourneyFriend.ZECA), reserve = listOf(JourneyFriend.LIA, JourneyFriend.TITO, JourneyFriend.DORA)))
+        gameShot("game_journey_tavern", GameId.JOURNEY)
+        rule.onNodeWithTag("journey-to-village").performClick()
+        rule.onNodeWithTag("journey-tavern").performClick()
+        rule.waitForIdle()
+        save("game_journey_tavern")
+    }
+    @Test fun journeyCastle() {
+        seedJourney(journeyCastleBattle())
+        gameShot("game_journey_castle", GameId.JOURNEY)
+    }
+    @Test fun journeyCastlePt() {
+        seedJourney(journeyCastleBattle())
+        gameShot("game_journey_castle_pt", GameId.JOURNEY, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    }
+
+    /** Late in the journey: the healer, Dora, Tito and Iara at the castle tower, with states on the enemies. */
+    private fun journeyCastleBattle(): io.github.fershibli.megagames.games.journey.JourneyWorld {
+        val j = io.github.fershibli.megagames.games.journey.Journey
+        val all = JourneyRegion.entries.flatMap { reg -> reg.spots.indices.map { io.github.fershibli.megagames.games.journey.Regions.id(reg, it) } }.toSet()
+        val tower = io.github.fershibli.megagames.games.journey.Regions.id(JourneyRegion.CASTLE, 5)
+        var w = j.start("Rosa", io.github.fershibli.megagames.games.journey.HeroClass.HEALER).copy(cleared = all - tower - io.github.fershibli.megagames.games.journey.Regions.id(JourneyRegion.CASTLE, 6), region = JourneyRegion.CASTLE, party = listOf(JourneyFriend.DORA, JourneyFriend.TITO, JourneyFriend.IARA), reserve = listOf(JourneyFriend.BENTO, JourneyFriend.LIA, JourneyFriend.ZECA), known = io.github.fershibli.megagames.games.journey.Foe.entries.toSet())
+        w = j.gainXp(w, 2400).copy(levelUps = 0)
+        w = j.visit(w, tower)
+        var b = w.battle!!
+        // Courage for the group, an enemy asleep and one soaked: then it is the hero's turn.
+        b = b.copy(fighters = b.fighters.mapIndexed { i, x ->
+            when {
+                x.ally -> x.copy(effects = mapOf(JourneyStatus.COURAGE to 2))
+                x.foe == io.github.fershibli.megagames.games.journey.Foe.DARK_KNIGHT -> x.copy(effects = mapOf(JourneyStatus.SLEEP to 1), hp = x.hp * 2 / 3)
+                x.foe == io.github.fershibli.megagames.games.journey.Foe.IMP -> x.copy(effects = mapOf(JourneyStatus.WET to 2))
+                else -> x
+            }
+        })
+        val hero = b.fighters.indexOfFirst { it.id == "hero" }
+        b = b.copy(queue = listOf(hero) + b.queue.filter { it != hero })
+        return w.copy(battle = b)
     }
 
     /** The knight, Bento and Lia in the thicket, the wolf's weak spot already found, after a hit on it. */
