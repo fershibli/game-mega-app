@@ -329,6 +329,7 @@ class ScreenshotTest {
     }
     @Test fun parking() = gameShot("game_parking", GameId.PARKING, Difficulty.MEDIUM)
     @Test fun parkingPt() = gameShot("game_parking_pt", GameId.PARKING, Difficulty.EASY, Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+    @Test fun parkingDark() = gameShot("game_parking_dark", GameId.PARKING, Difficulty.HARD, Settings(darkMode = true))
     @Test fun battleship() = shot("game_battleship") { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipPt() = shot("game_battleship_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipDark() = shot("game_battleship_dark", Settings(darkMode = true)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }

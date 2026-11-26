@@ -66,6 +66,9 @@ private fun ParkingScreen(state: MutableState<ParkingState>, host: GameHost) {
     var pull by remember { mutableFloatStateOf(0f) }
     // The red car driving out at the end, in squares past its last place.
     val away = remember { Animatable(0f) }
+    // The vehicle just let go, gliding the last bit into its squares.
+    var sliding by remember { mutableIntStateOf(-1) }
+    val slide = remember { Animatable(0f) }
 
     LaunchedEffect(s.solved) {
         if (!s.solved) return@LaunchedEffect
@@ -113,9 +116,9 @@ private fun ParkingScreen(state: MutableState<ParkingState>, host: GameHost) {
                     .pointerInput(s) {
                         awaitEachGesture {
                             val down = awaitFirstDown()
-                            val cell = size.width / (Parking.SIZE + LOT_MARGIN * 2)
-                            val c = ((down.position.x / cell) - LOT_MARGIN).toInt()
-                            val r = ((down.position.y / cell) - LOT_MARGIN).toInt()
+                            val view = ParkingView.of(size.width.toFloat(), size.height.toFloat())
+                            val cell = view.cell
+                            val (c, r) = view.cellAt(down.position)
                             if (s.solved || r !in 0 until Parking.SIZE || c !in 0 until Parking.SIZE) return@awaitEachGesture
                             val i = s.vehicles.indices.firstOrNull { r * Parking.SIZE + c in Parking.cells(s.vehicles[it], s.positions[it]) } ?: return@awaitEachGesture
                             val v = s.vehicles[i]
@@ -133,13 +136,23 @@ private fun ParkingScreen(state: MutableState<ParkingState>, host: GameHost) {
                                 change.consume()
                             }
                             val to = s.positions[i] + pull.roundToInt()
+                            // The vehicle glides from where the finger left it into its squares.
+                            val left = s.positions[i] + pull - to
                             dragging = -1
                             pull = 0f
                             state.value = Parking.move(state.value, i, to)
+                            if (left != 0f) {
+                                sliding = i
+                                scope.launch {
+                                    slide.snapTo(left)
+                                    slide.animateTo(0f, motion.spec(220))
+                                    if (sliding == i) sliding = -1
+                                }
+                            }
                         }
                     },
             ) {
-                drawParking(s, p, dragging, pull, away.value)
+                drawParking(s, p, dragging, pull, away.value, sliding, slide.value)
             }
         }
     }
