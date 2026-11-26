@@ -12,7 +12,11 @@ import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.WorldStore
 import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.games.journey.Friend
+import io.github.fershibli.megagames.games.journey.Gear
 import io.github.fershibli.megagames.games.journey.HeroClass
+import io.github.fershibli.megagames.games.journey.Region
+import io.github.fershibli.megagames.games.journey.Regions
 import io.github.fershibli.megagames.games.journey.JOURNEY_WORLD_KEY
 import io.github.fershibli.megagames.games.journey.Journey
 import io.github.fershibli.megagames.games.journey.JourneyWorld
@@ -101,5 +105,55 @@ class JourneyUiTest {
         val w = saved()
         assertEquals(Journey.maxStats(w, "hero").hp, Journey.hp(w, "hero"))
         assertEquals(Difficulty.HARD, w.difficulty)
+    }
+
+    private fun seed(w: JourneyWorld) {
+        store.save(JOURNEY_WORLD_KEY, JourneyWorld.serializer(), w)
+        store.flush()
+    }
+
+    @Test
+    fun theShopSellsASwordAndTheTavernSwapsFriends() {
+        seed(Journey.start("Rosa", HeroClass.KNIGHT).copy(gold = 200, party = listOf(Friend.BENTO, Friend.LIA, Friend.IARA), reserve = listOf(Friend.ZECA)))
+        show()
+        rule.onNodeWithTag("journey-to-village").performClick()
+        rule.onNodeWithTag("journey-shop").performClick()
+        rule.onNodeWithTag("journey-gear-iron_sword").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("journey-message-ok").performClick()
+        var w = saved()
+        assertTrue(Gear.IRON_SWORD in w.worn)
+        assertEquals(200 - Gear.IRON_SWORD.price, w.gold)
+        rule.onNodeWithText("Back").performClick()
+        rule.onNodeWithTag("journey-tavern").performClick()
+        // The group is full: Lia stays behind so Zeca can come.
+        rule.onNodeWithTag("journey-leave-lia").performClick()
+        rule.onNodeWithTag("journey-take-zeca").performClick()
+        rule.waitForIdle()
+        w = saved()
+        assertEquals(listOf(Friend.BENTO, Friend.IARA, Friend.ZECA), w.party)
+        assertEquals(listOf(Friend.LIA), w.reserve)
+    }
+
+    @Test
+    fun theNextRegionStaysClosedBeforeTheForestBoss() {
+        seed(Journey.start("Rosa", HeroClass.ARCHER))
+        show()
+        rule.onNodeWithTag("journey-region-next").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("Not yet", substring = true).assertExists()
+        rule.onNodeWithTag("journey-message-ok").performClick()
+        assertEquals(Region.FOREST, saved().region)
+    }
+
+    @Test
+    fun withTheForestDoneTheRiverOpens() {
+        val forest = Region.FOREST.spots.indices.map { Regions.id(Region.FOREST, it) }.toSet()
+        seed(Journey.start("Rosa", HeroClass.ARCHER).copy(cleared = forest))
+        show()
+        rule.onNodeWithTag("journey-region-next").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("River").assertExists()
+        assertEquals(Region.RIVER, saved().region)
     }
 }

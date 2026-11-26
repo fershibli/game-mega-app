@@ -41,3 +41,25 @@ Wird die ganze Gruppe ohnmächtig, wacht sie ausgeruht im Gasthaus auf, mit alle
 
 ## Stufen
 Kämpfe bringen Erfahrung und Gold. Bei jeder neuen Stufe wählst du ein Extra: mehr Leben, Angriff, Abwehr, Mana oder Tempo, oder einen neuen Zauber.
+
+## Fünf Gebiete
+Die Karte hat Pfeile, um zwischen den Gebieten zu wechseln. Jedes öffnet sich, sobald der Boss des vorigen geflohen ist.
+
+| Gebiet | Freund, den du rettest | Gegner, und was sie fürchten | Boss |
+|---|---|---|---|
+| Wald | Lia (Feuermagierin) | Schleim (Feuer), Wildschwein (Eis), Pilz (Feuer), Wolf (Licht) | Riesenwildschwein (Eis) |
+| Fluss | Iara (heilt, schützt, durchnässt) | Frosch (Eis), Krabbe (Natur), Piranha (Licht) | Riesenkrabbe (Natur) |
+| Hügel | Zeca (Schelm: stiehlt, wirft Öl) | Fledermaus (Licht), Gnom (Feuer), Steinling (Natur) | Hügeltroll (Arkan) |
+| Ruinen | Tito (lässt Gegner einschlafen) | Gespenst (Licht), leere Rüstung (Arkan), Spinne (Feuer) | Alter Golem (Arkan) |
+| Burg | Dora (Bardin: Mut für alle) | Kobold (Eis), Wasserspeier (Natur), dunkler Ritter (Licht) | Schattenkönig (Licht) |
+
+In jedem Gebiet gibt es außerdem eine freundliche Gestalt mit einem Tipp (der Boto, die Caipora, eine weise Eule, ein alter Wächter), und manche Truhen enthalten eine **Schriftrolle**, die dem Helden einen Zauber beibringt.
+
+## Der Laden und die Taverne
+- Im **Laden** des Dorfes: Tränke, Äther, Schwerter (Angriff), Rüstungen (Abwehr) und Amulette (Mana). Gekauftes bleibt deins; tippe auf **Anlegen**, um zu wechseln.
+- Bis zu **drei Freunde** reisen mit dem Helden. Die anderen warten in der **Taverne**, wo du wählst, wer mitkommt. Im Kampf holt **Freund tauschen** jemanden aus der Taverne (das kostet den Zug).
+
+## Mehr Magie
+- **Natur**: Dornen (Gift: jede Runde etwas Leben weniger), Ranken (alle Gegner, langsamer), Welle (macht sie nass).
+- **Arkan**: Arkanblitz, Schlaf (setzt aus, bis ein Treffer kommt; Bosse dösen nur kurz), Schutzwall (eine Weile halber Schaden), Lied des Mutes (stärkere Schläge).
+- **Kombos**: Ein **nasser** Gegner, den **Eis** trifft, friert ein (mehr Schaden, und er setzt einen Zug aus); einer voller **Öl**, den **Feuer** trifft, brennt doppelt.

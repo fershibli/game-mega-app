@@ -41,3 +41,25 @@ Se tutto il gruppo sviene, si risveglia riposato alla locanda, con tutto quello 
 
 ## Livelli
 Le battaglie danno esperienza e oro. A ogni nuovo livello scegli un extra: più vita, attacco, difesa, mana o velocità, oppure un nuovo incantesimo.
+
+## Cinque regioni
+La mappa ha delle frecce per passare da una regione all'altra. Ognuna si apre quando il capo della precedente è scappato.
+
+| Regione | Amico da salvare | Nemici, e cosa temono | Capo |
+|---|---|---|---|
+| Foresta | Lia (maga del fuoco) | gelatina (Fuoco), cinghiale (Ghiaccio), fungo (Fuoco), lupo (Luce) | Cinghiale gigante (Ghiaccio) |
+| Fiume | Iara (cura, protegge, inzuppa) | rana (Ghiaccio), granchio (Natura), piranha (Luce) | Granchio gigante (Natura) |
+| Colline | Zeca (furfante: ruba, lancia olio) | pipistrello (Luce), gnomo (Fuoco), sassolino (Natura) | Troll delle colline (Arcano) |
+| Rovine | Tito (fa addormentare i nemici) | fantasmino (Luce), armatura vuota (Arcano), ragno (Fuoco) | Vecchio golem (Arcano) |
+| Castello | Dora (barda: coraggio per tutti) | diavoletto (Ghiaccio), gargoyle (Natura), cavaliere oscuro (Luce) | Re delle Ombre (Luce) |
+
+Ogni regione ha anche una figura amica con un consiglio (il Boto, la Caipora, un gufo saggio, una vecchia guardia), e alcuni forzieri contengono una **pergamena** che insegna un incantesimo all'eroe.
+
+## Il negozio e la taverna
+- Nel **negozio** del villaggio: pozioni, eteri, spade (attacco), armature (difesa) e amuleti (mana). Quello che hai comprato resta tuo; tocca **Indossa** per cambiare.
+- Fino a **tre amici** viaggiano con l'eroe. Gli altri aspettano alla **taverna**, dove scegli chi parte. In battaglia, **Cambia compagno** fa entrare qualcuno dalla taverna (costa il turno).
+
+## Più magia
+- **Natura**: Spine (veleno: un po' di vita persa a ogni turno), Liane (tutti i nemici, più lenti), Onda (li inzuppa).
+- **Arcano**: Dardo arcano, Sonno (salta i turni finché non viene colpito; i capi sonnecchiano appena), Barriera (metà del danno per un po'), Canto del coraggio (colpi più forti).
+- **Combo**: un nemico **inzuppato** colpito dal **Ghiaccio** si congela (più danno, e perde un turno); uno coperto d'**olio** colpito dal **Fuoco** brucia il doppio.
