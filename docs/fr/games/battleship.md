@@ -8,7 +8,7 @@ Le grand classique des flottes cachées, contre l’ordinateur ou à tour de rô
 Votre flotte est déjà placée : des navires droits qui ne se touchent jamais, pas même par un coin. Touchez **Replacer** autant que vous voulez, puis **Commencer**. À tour de rôle, le joueur 2 place la sienne pendant que le joueur 1 regarde ailleurs.
 
 ## Comment jouer
-- La grande mer en haut est celle de l’autre camp : touchez une case pour tirer. Une **éclaboussure blanche**, c’est dans l’eau ; une **croix rouge**, c’est touché. Un navire touché sur toutes ses cases coule et apparaît sur la mer.
+- La grande mer en haut est celle de l’autre camp : touchez une case pour tirer. Un **cercle d’encre**, c’est dans l’eau ; une **croix rouge** avec une petite flamme, c’est touché. Les cases se nomment comme au jeu sur papier : lettres A–J en haut, chiffres 1–10 sur le côté. Un navire touché sur toutes ses cases coule et apparaît sur la mer.
 - La petite mer en bas est la vôtre, avec vos navires et les tirs de l’autre camp.
 - Un tir chacun, à tour de rôle, comme sur papier. Le dernier tir est encadré.
 - Coulez toute la flotte adverse en premier pour gagner.
