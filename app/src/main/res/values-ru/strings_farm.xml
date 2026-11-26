@@ -47,4 +47,10 @@
     <string name="farm_sell_one">Продать 1</string>
     <string name="farm_sell_all">Продать всё</string>
     <string name="farm_scene">Ферма. Грядки: %1$d. Животные: %2$d.</string>
+    <string name="farm_plot_title">Новая грядка</string>
+    <string name="farm_plot_note">Цена в монетах: %1$d. Она появится рядом с другими грядками и растёт так же: росток, листья, потом урожай.</string>
+    <string name="farm_plot_buy">Купить грядку</string>
+    <string name="farm_plot_sow_first">Сначала посейте что-нибудь. Пока что-то растёт, всегда будет урожай на продажу.</string>
+    <string name="farm_plot_here">Готово: новая грядка мигает на поле.</string>
+    <string name="farm_plot_picture">Грядка растёт: от голой земли до урожая</string>
 </resources>

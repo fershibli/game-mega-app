@@ -11,7 +11,7 @@ Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Suas 
 - A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova com uma barrinha que vai enchendo, depois a colheita madura, que brilha. Toque num canteiro que está crescendo para ver o nome e o tempo que falta.
 - **Regar** (toque num canteiro com uma gota azul, ou em **Regar tudo**) faz o resto do crescimento andar duas vezes mais rápido. Uma vez por plantação basta.
 - Toque num canteiro maduro (ou em **Colher tudo**): cada canteiro dá **dois** do que foi plantado, que vão direto para o celeiro.
-- **Novo canteiro** aumenta a horta, até doze canteiros.
+- **Novo canteiro** aumenta a horta, até doze canteiros. Antes ele pergunta, com o desenho de um canteiro crescendo, e só aparece se já houver algo plantado: assim sempre tem uma colheita para vender. O canteiro novo pisca por um momento, para você ver onde ele ficou.
 
 | Planta | Tempo | Semente | Vende por (cada) | Estrelas |
 |---|---|---|---|---|

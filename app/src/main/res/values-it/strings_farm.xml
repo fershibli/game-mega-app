@@ -47,4 +47,10 @@
     <string name="farm_sell_one">Vendi 1</string>
     <string name="farm_sell_all">Vendi tutto</string>
     <string name="farm_scene">Fattoria. Aiuole: %1$d. Animali: %2$d.</string>
+    <string name="farm_plot_title">Un\'aiuola nuova</string>
+    <string name="farm_plot_note">Prezzo in monete: %1$d. Va accanto alle altre aiuole e cresce come loro: germoglio, foglie e poi il raccolto.</string>
+    <string name="farm_plot_buy">Compra l\'aiuola</string>
+    <string name="farm_plot_sow_first">Prima semina qualcosa. Con qualcosa che cresce, ci sarà sempre un raccolto da vendere.</string>
+    <string name="farm_plot_here">Ecco: l\'aiuola nuova è quella che lampeggia nel campo.</string>
+    <string name="farm_plot_picture">Un\'aiuola che cresce, dalla terra nuda al raccolto</string>
 </resources>

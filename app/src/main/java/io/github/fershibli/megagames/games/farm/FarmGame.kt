@@ -25,11 +25,13 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -67,6 +69,8 @@ import io.github.fershibli.megagames.ui.components.ZoomableBoard
 import io.github.fershibli.megagames.ui.components.rememberZoomState
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
+import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.math.roundToInt
 import kotlinx.coroutines.delay
 
@@ -75,6 +79,10 @@ val LocalFarmClock = staticCompositionLocalOf { SystemFarmClock }
 
 /** How often the beds and animals look at the clock. */
 private const val TICK_MS = 1_000L
+
+/** How long a bed just bought blinks, and each stage of the picture of a bed growing. */
+private const val FRESH_MS = 6_000L
+private const val BED_FRAME_MS = 900L
 
 private enum class Tab(@StringRes val label: Int) {
     FARM(R.string.game_farm),
@@ -93,7 +101,7 @@ fun FarmGame(host: GameHost) {
     val clock = LocalFarmClock.current
     var world by remember(host) {
         store.flush()
-        mutableStateOf(FarmRules.fillOrders(store.load(FARM_WORLD_KEY, FarmWorld.serializer()) ?: FarmRules.newFarm()))
+        mutableStateOf(FarmRules.rescue(FarmRules.fillOrders(store.load(FARM_WORLD_KEY, FarmWorld.serializer()) ?: FarmRules.newFarm())))
     }
     // Every change applies to the latest farm, so quick taps in a row all count.
     val change: ((FarmWorld) -> FarmWorld) -> Unit = { f ->
@@ -151,6 +159,13 @@ fun FarmGame(host: GameHost) {
 private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit, say: (String?) -> Unit) {
     var sowing by remember { mutableStateOf<Int?>(null) }
     var buying by remember { mutableStateOf(false) }
+    var planning by remember { mutableStateOf(false) }
+    // The bed just bought blinks for a while, so it is easy to find on the field.
+    var fresh by remember { mutableStateOf<Int?>(null) }
+    val pace = currentPace
+    LaunchedEffect(fresh) { if (fresh != null) { pace.wait(FRESH_MS); fresh = null } }
+    val sowFirst = stringResource(R.string.farm_plot_sow_first)
+    val newBedHere = stringResource(R.string.farm_plot_here)
     val harvested = stringResource(R.string.farm_harvested)
     val itemNames = Item.entries.associateWith { stringResource(it.label) }
     val animalNames = Animal.entries.associateWith { stringResource(it.label) }
@@ -228,7 +243,7 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                                 if (hit.first) onPlot(hit.second) else onPen(hit.second)
                             }
                         },
-                ) { drawFarmScene(FarmScene(w, now, (now / 1000L).toInt()), p, grid) }
+                ) { drawFarmScene(FarmScene(w, now, (now / 1000L).toInt(), fresh), p, grid) }
                 // One node per bed and animal for screen readers and tests. Touches go through
                 // them to the scene, which picks the nearest bed or animal.
                 val spot = 40.dp
@@ -276,7 +291,11 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
             ActionBar {
                 if (w.plots.size < FarmRules.MAX_PLOTS) {
                     val cost = FarmRules.plotCost(w)
-                    BigButton(stringResource(R.string.farm_buy_plot, cost), { change { FarmRules.buyPlot(it) } }, style = ButtonStyle.SECONDARY, enabled = w.coins >= cost, compact = true)
+                    // With nothing growing, the button says why a bed can't be bought yet.
+                    BigButton(
+                        stringResource(R.string.farm_buy_plot, cost), { if (FarmRules.somethingGrowing(w)) planning = true else say(sowFirst) },
+                        Modifier.testTag("farm-buy-plot"), style = ButtonStyle.SECONDARY, enabled = w.coins >= cost, compact = true,
+                    )
                 }
                 BigButton(stringResource(R.string.farm_buy_animal), { buying = true }, Modifier.testTag("farm-buy-animal"), style = ButtonStyle.SECONDARY, enabled = w.pens.size < FarmRules.MAX_PENS, compact = true)
             }
@@ -299,6 +318,15 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         ).joinToString("\n").ifEmpty { null }
         BigDialog(stringResource(R.string.farm_sow_title), note, { sowing = null }, options + (stringResource(R.string.cancel) to { sowing = null }), primaryIndex = -1)
     }
+    if (planning) {
+        PlotDialog(FarmRules.plotCost(w), p, onBuy = {
+            val index = w.plots.size
+            change { FarmRules.buyPlot(it) }
+            planning = false
+            fresh = index
+            say(newBedHere)
+        }) { planning = false }
+    }
     if (buying) {
         val choices = Animal.entries.filter { it.stars <= w.stars && it.cost <= w.coins }
         val options = choices.map { a ->
@@ -314,6 +342,40 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         ).joinToString("\n").ifEmpty { null }
         BigDialog(stringResource(R.string.farm_buy_animal_title), note, { buying = false }, options + (stringResource(R.string.cancel) to { buying = false }), primaryIndex = -1)
     }
+}
+
+/**
+ * Asks before a new bed is bought, with a picture of a bed growing from bare soil to the harvest,
+ * one stage at a time, slowly enough to follow.
+ */
+@Composable
+private fun PlotDialog(cost: Int, p: Palette, onBuy: () -> Unit, onCancel: () -> Unit) {
+    var frame by remember { mutableIntStateOf(0) }
+    val pace = currentPace
+    LaunchedEffect(Unit) {
+        while (true) {
+            pace.wait(BED_FRAME_MS)
+            frame = (frame + 1) % BED_FRAMES
+        }
+    }
+    val picture = stringResource(R.string.farm_plot_picture)
+    AlertDialog(
+        onDismissRequest = onCancel,
+        containerColor = p.surface,
+        title = { Text(stringResource(R.string.farm_plot_title), style = MaterialTheme.typography.headlineSmall, color = p.text) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+                Canvas(Modifier.fillMaxWidth().height(150.dp).testTag("farm-plot-picture").semantics { contentDescription = picture }) { drawBedPreview(p, frame) }
+                Text(stringResource(R.string.farm_plot_note, cost), style = MaterialTheme.typography.bodyLarge, color = p.text)
+            }
+        },
+        confirmButton = {
+            Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                BigButton(stringResource(R.string.farm_plot_buy), onBuy, Modifier.fillMaxWidth().testTag("farm-plot-confirm"))
+                BigButton(stringResource(R.string.cancel), onCancel, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
+            }
+        },
+    )
 }
 
 // ---------------------------------------------------------------------------------------------
