@@ -41,3 +41,25 @@ Si todo el grupo se desmaya, despierta descansado en la posada, con todo lo que 
 
 ## Niveles
 Las batallas dan experiencia y oro. En cada nivel nuevo eliges un extra: más vida, ataque, defensa, maná o velocidad, o un hechizo nuevo.
+
+## Cinco regiones
+El mapa tiene flechas para pasar de una región a otra. Cada una se abre cuando huye el jefe de la anterior.
+
+| Región | Amigo que rescatas | Enemigos, y a qué temen | Jefe |
+|---|---|---|---|
+| Bosque | Lia (maga de fuego) | babosa (Fuego), jabalí (Hielo), seta (Fuego), lobo (Luz) | Jabalí gigante (Hielo) |
+| Río | Iara (cura, protege, empapa) | rana (Hielo), cangrejo (Naturaleza), piraña (Luz) | Cangrejo gigante (Naturaleza) |
+| Colinas | Zeca (pícaro: roba, lanza aceite) | murciélago (Luz), gnomo (Fuego), piedrecita (Naturaleza) | Trol de las colinas (Arcana) |
+| Ruinas | Tito (duerme a los enemigos) | fantasmita (Luz), armadura vacía (Arcana), araña (Fuego) | Viejo gólem (Arcana) |
+| Castillo | Dora (barda: valor para todos) | diablillo (Hielo), gárgola (Naturaleza), caballero oscuro (Luz) | Rey de las Sombras (Luz) |
+
+Cada región tiene además una figura amiga con un consejo (el Boto, la Caipora, un búho sabio, un viejo guardia), y algunos cofres guardan un **pergamino** que enseña un hechizo al héroe.
+
+## La tienda y la taberna
+- En la **tienda** de la aldea: pociones, éteres, espadas (ataque), armaduras (defensa) y amuletos (maná). Lo que compras sigue siendo tuyo; toca **Usar** para cambiar.
+- Hasta **tres amigos** viajan con el héroe. Los demás esperan en la **taberna**, donde eliges quién va. En una batalla, **Cambiar compañero** trae a alguien de la taberna (gasta el turno).
+
+## Más magia
+- **Naturaleza**: Espinas (veneno: pierde un poco de vida cada turno), Lianas (todos los enemigos, más lentos), Ola (los empapa).
+- **Arcana**: Rayo arcano, Sueño (pierde turnos hasta recibir un golpe; los jefes solo dormitan), Barrera (la mitad del daño un rato), Canción del valor (golpes más fuertes).
+- **Combos**: un enemigo **empapado** que recibe **Hielo** se congela (más daño y pierde un turno); uno cubierto de **aceite** que recibe **Fuego** se quema el doble.

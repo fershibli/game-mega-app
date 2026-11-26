@@ -41,3 +41,25 @@ Se o grupo inteiro desmaiar, ele acorda descansado na estalagem, com tudo o que 
 
 ## Níveis
 Batalhas dão experiência e ouro. A cada nível novo você escolhe um extra: mais vida, ataque, defesa, mana ou velocidade, ou uma magia nova.
+
+## Cinco regiões
+O mapa tem setas para passar de uma região a outra. Cada uma abre quando o chefe da anterior foge.
+
+| Região | Amigo que você salva | Inimigos, e do que têm medo | Chefe |
+|---|---|---|---|
+| Floresta | Lia (maga do fogo) | gosma (Fogo), javali (Gelo), cogumelo (Fogo), lobo (Luz) | Javali gigante (Gelo) |
+| Rio | Iara (cura, protege, molha) | sapo (Gelo), caranguejo (Natureza), piranha (Luz) | Caranguejo gigante (Natureza) |
+| Colinas | Zeca (ladino: rouba, joga óleo) | morcego (Luz), gnomo (Fogo), pedrinha (Natureza) | Troll das colinas (Arcana) |
+| Ruínas | Tito (faz os inimigos dormirem) | fantasminha (Luz), armadura vazia (Arcana), aranha (Fogo) | Velho golem (Arcana) |
+| Castelo | Dora (barda: coragem para todos) | diabrete (Gelo), gárgula (Natureza), cavaleiro sombrio (Luz) | Rei das Sombras (Luz) |
+
+Cada região também tem uma figura amiga com uma dica (o Boto, a Caipora, uma coruja sábia, um velho guarda), e alguns baús guardam um **pergaminho** que ensina uma magia ao herói.
+
+## A loja e a taverna
+- Na **loja** da vila: poções, éteres, espadas (ataque), armaduras (defesa) e amuletos (mana). O que você comprou continua seu; toque em **Usar** para trocar.
+- Até **três amigos** viajam com o herói. Os outros esperam na **taverna**, onde você escolhe quem vai. Na batalha, **Trocar companheiro** traz alguém da taverna (gasta a vez).
+
+## Mais magia
+- **Natureza**: Espinhos (veneno: perde um pouco de vida a cada vez), Cipós (todos os inimigos, mais lentos), Onda (deixa todos molhados).
+- **Arcana**: Raio arcano, Sono (perde as vezes até levar um golpe; chefes só cochilam), Barreira (metade do dano por um tempo), Canção da coragem (golpes mais fortes).
+- **Combos**: inimigo **molhado** que leva **Gelo** congela (mais dano, e perde uma vez); inimigo coberto de **óleo** que leva **Fogo** queima o dobro.

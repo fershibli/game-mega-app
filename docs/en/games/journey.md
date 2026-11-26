@@ -41,3 +41,25 @@ If the whole group faints, it wakes up rested at the inn, with everything it had
 
 ## Levels
 Battles give experience and gold. At each new level you choose an extra: more life, attack, defense, mana or speed, or a new spell.
+
+## Five regions
+The map has arrows to move between regions. Each one opens once the boss of the one before has run away.
+
+| Region | Friend you rescue | Enemies, and what they fear | Boss |
+|---|---|---|---|
+| Forest | Lia (fire mage) | slime (Fire), boar (Ice), mushroom (Fire), wolf (Light) | Giant boar (Ice) |
+| River | Iara (heals, shields, soaks) | frog (Ice), crab (Nature), piranha (Light) | Giant crab (Nature) |
+| Hills | Zeca (rogue: steals, throws oil) | bat (Light), gnome (Fire), rockling (Nature) | Hill troll (Arcane) |
+| Ruins | Tito (puts enemies to sleep) | ghost (Light), empty armor (Arcane), spider (Fire) | Old golem (Arcane) |
+| Castle | Dora (bard: courage for all) | imp (Ice), gargoyle (Nature), dark knight (Light) | Shadow King (Light) |
+
+Each region also has a friendly figure with a tip (the Boto, the Caipora, a wise owl, an old guard), and some chests hold a **scroll** that teaches the hero a spell.
+
+## The shop and the tavern
+- In the village **shop**: potions, ethers, swords (attack), armor (defense) and charms (mana). Gear you bought stays yours; tap **Wear** to change.
+- Up to **three friends** travel with the hero. The others wait at the **tavern**, where you choose who goes. In a battle, **Swap a friend** brings one in from the tavern (it uses the turn).
+
+## More magic
+- **Nature**: Thorns (poison: a little life lost each turn), Vines (all enemies, slower), Wave (soaks them).
+- **Arcane**: Arcane bolt, Sleep (skips turns until hit; bosses only doze), Barrier (half damage for a while), Song of courage (stronger blows).
+- **Combos**: a **soaked** enemy hit by **Ice** freezes (more damage, and it loses a turn); an enemy covered in **oil** hit by **Fire** burns twice as hard.

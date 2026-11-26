@@ -41,3 +41,25 @@ Si tout le groupe s'évanouit, il se réveille reposé à l'auberge, avec tout c
 
 ## Niveaux
 Les combats donnent de l'expérience et de l'or. À chaque nouveau niveau, vous choisissez un bonus : plus de vie, d'attaque, de défense, de mana ou de vitesse, ou un nouveau sort.
+
+## Cinq régions
+La carte a des flèches pour passer d'une région à l'autre. Chacune s'ouvre quand le chef de la précédente s'est enfui.
+
+| Région | Ami à sauver | Ennemis, et ce qu'ils craignent | Chef |
+|---|---|---|---|
+| Forêt | Lia (mage de feu) | gelée (Feu), sanglier (Glace), champignon (Feu), loup (Lumière) | Sanglier géant (Glace) |
+| Rivière | Iara (soigne, protège, trempe) | grenouille (Glace), crabe (Nature), piranha (Lumière) | Crabe géant (Nature) |
+| Collines | Zeca (filou : vole, lance de l'huile) | chauve-souris (Lumière), gnome (Feu), rocailleux (Nature) | Troll des collines (Arcane) |
+| Ruines | Tito (endort les ennemis) | petit fantôme (Lumière), armure vide (Arcane), araignée (Feu) | Vieux golem (Arcane) |
+| Château | Dora (barde : du courage pour tous) | diablotin (Glace), gargouille (Nature), chevalier sombre (Lumière) | Roi des Ombres (Lumière) |
+
+Chaque région a aussi une figure amie avec un conseil (le Boto, la Caipora, une chouette sage, un vieux garde), et certains coffres contiennent un **parchemin** qui apprend un sort au héros.
+
+## La boutique et la taverne
+- À la **boutique** du village : potions, éthers, épées (attaque), armures (défense) et amulettes (mana). Ce que vous avez acheté reste à vous ; touchez **Porter** pour changer.
+- Jusqu'à **trois amis** voyagent avec le héros. Les autres attendent à la **taverne**, où vous choisissez qui part. En combat, **Changer de compagnon** fait venir quelqu'un de la taverne (cela prend le tour).
+
+## Plus de magie
+- **Nature** : Épines (poison : un peu de vie perdue à chaque tour), Lianes (tous les ennemis, plus lents), Vague (les trempe).
+- **Arcane** : Trait arcanique, Sommeil (passe ses tours jusqu'à un coup ; les chefs ne font que somnoler), Barrière (moitié des dégâts un moment), Chant du courage (coups plus forts).
+- **Combos** : un ennemi **trempé** touché par la **Glace** gèle (plus de dégâts, et il perd un tour) ; un ennemi couvert d'**huile** touché par le **Feu** brûle deux fois plus.
