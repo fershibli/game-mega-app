@@ -18,7 +18,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
@@ -60,6 +65,7 @@ import io.github.fershibli.megagames.ui.theme.LocalSettings
 import io.github.fershibli.megagames.core.Motion
 import io.github.fershibli.megagames.ui.theme.currentMotion
 import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.swing
 import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.random.Random
 
@@ -77,6 +83,10 @@ private const val END_PAUSE = 1200L
 private const val HOP = 300L
 private const val TUMBLE = 90L
 private const val TUMBLES = 7
+
+/** The turn arrow's slow up-and-down: one way in this many milliseconds, by this many dots. */
+private const val BOB = 900
+private const val BOB_DOTS = 2f
 
 /** Pawn colors by seat (Ludo's red, blue, green and yellow), each with its own symbol. */
 private val SEAT_COLORS = intArrayOf(0, 3, 1, 2)
@@ -110,6 +120,12 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
     var tumble by remember { mutableIntStateOf(0) }
     var hopFrom by remember { mutableStateOf<List<Int>?>(null) }
     val hop = remember { Animatable(0f) }
+    // The arrow over the pawn to play bobs gently, slower with gentle movement and still when off.
+    val bob = rememberInfiniteTransition(label = "trail-arrow").animateFloat(
+        0f, motion.swing(BOB_DOTS),
+        infiniteRepeatable(tween((BOB * motion.duration).toInt().coerceAtLeast(1), easing = FastOutSlowInEasing), RepeatMode.Reverse),
+        label = "bob",
+    )
     LaunchedEffect(s.die, s.positions) {
         hopFrom = null
         if (s.die != 0 && seenDie == 0 && motion != Motion.NONE) {
@@ -224,7 +240,7 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
                     feet += seat to hopFoot(v, a, b.coerceIn(0, Trail.FINISH), hop.value)
                 }
                 for ((seat, foot) in feet.sortedBy { it.second.y }) {
-                    drawTrailPerson(v, foot, p, SEAT_COLORS[seat], pawnScale, walking = seat in walking && hop.value in 0.25f..0.75f, turn = seat == s.turn && !s.over)
+                    drawTrailPerson(v, foot, p, SEAT_COLORS[seat], pawnScale, walking = seat in walking && hop.value in 0.25f..0.75f, turn = seat == s.turn && !s.over, bob = bob.value)
                 }
                 // The die, under the board, on a mat of the color of the seat to play.
                 val face = if (tumble != 0) kotlin.math.abs(tumble) else s.die.takeIf { it > 0 } ?: 1

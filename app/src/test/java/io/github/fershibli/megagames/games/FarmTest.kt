@@ -3,6 +3,7 @@ package io.github.fershibli.megagames.games
 import io.github.fershibli.megagames.games.farm.Animal
 import io.github.fershibli.megagames.games.farm.Crop
 import io.github.fershibli.megagames.games.farm.FarmRules
+import io.github.fershibli.megagames.games.farm.Pen
 import io.github.fershibli.megagames.games.farm.FarmWorld
 import io.github.fershibli.megagames.games.farm.Item
 import io.github.fershibli.megagames.games.farm.Order
@@ -102,8 +103,34 @@ class FarmTest {
 
     @Test
     fun theFieldGrowsUpToTwelveBeds() {
-        var w = FarmWorld(coins = 10_000)
+        var w = FarmRules.plant(FarmWorld(coins = 9_999), 0, Crop.LETTUCE, 0L)
         while (w.plots.size < FarmRules.MAX_PLOTS) w = FarmRules.buyPlot(w)
         assertEquals(w, FarmRules.buyPlot(w))
+    }
+
+    @Test
+    fun aNewBedNeedsSomethingGrowingSoTheFarmCanNeverGetStuck() {
+        // A bare field: the last coins can't go on a bed nobody can sow afterwards.
+        val bare = FarmWorld(coins = 30)
+        assertFalse(FarmRules.canBuyPlot(bare))
+        assertEquals(bare, FarmRules.buyPlot(bare))
+        // With a crop in the ground the bed is sold, and its harvest brings coins back.
+        val growing = FarmRules.plant(bare, 0, Crop.LETTUCE, 0L)
+        assertTrue(FarmRules.canBuyPlot(growing))
+        val bought = FarmRules.buyPlot(growing)
+        assertEquals(FarmRules.START_PLOTS + 1, bought.plots.size)
+        assertEquals(growing.coins - FarmRules.plotCost(growing), bought.coins)
+        assertFalse(FarmRules.canBuyPlot(FarmRules.plant(FarmWorld(coins = 10), 0, Crop.LETTUCE, 0L)))
+    }
+
+    @Test
+    fun aFarmLeftWithNothingGetsTheCoinsForOneSeed() {
+        val stuck = FarmWorld(coins = 1)
+        assertEquals(Crop.LETTUCE.seedCost, FarmRules.rescue(stuck).coins)
+        // Anything that can still bring coins back means it isn't stuck.
+        assertEquals(1, FarmRules.rescue(FarmRules.plant(FarmWorld(coins = 3), 0, Crop.LETTUCE, 0L).copy(coins = 1)).coins)
+        assertEquals(1, FarmRules.rescue(stuck.copy(barn = mapOf("egg" to 1))).coins)
+        assertEquals(1, FarmRules.rescue(stuck.copy(pens = listOf(Pen("chicken", 0L)))).coins)
+        assertEquals(30, FarmRules.rescue(FarmWorld()).coins)
     }
 }

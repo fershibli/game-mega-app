@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.clipRect
 import androidx.compose.ui.graphics.lerp
 import io.github.fershibli.megagames.ui.art.IsoGrid
 import io.github.fershibli.megagames.ui.art.PixelArt
@@ -475,8 +476,8 @@ private val nightCache = HashMap<PixelArt, PixelArt>()
 private fun PixelArt.forPalette(p: Palette): PixelArt =
     if (!p.isDark) this else nightCache.getOrPut(this) { recolored(night(p)) }
 
-/** What one moment of the farm looks like on the scene. */
-class FarmScene(val world: FarmWorld, val now: Long, val tick: Int)
+/** What one moment of the farm looks like on the scene; [glow] rings a bed just bought. */
+class FarmScene(val world: FarmWorld, val now: Long, val tick: Int, val glow: Int? = null)
 
 /**
  * The whole farm: ground, lane, beds with their crops, the paddock with its fence and animals,
@@ -542,6 +543,21 @@ fun DrawScope.drawFarmScene(
             val u = grid.toScreen(col + 0.75f, r + 0.5f)
             drawLine(c.soilDark, t, u, max(1f, px * 0.6f))
         }
+    }
+    // A bed just bought blinks a bright ring, so it is easy to see where it went.
+    val glow = scene.glow?.let { FarmMap.plots.getOrNull(it) }
+    if (glow != null && scene.tick % 2 == 0) {
+        val (gc, gr) = glow
+        val t = grid.toScreen(gc.toFloat(), gr.toFloat())
+        val ring = Path().apply {
+            moveTo(t.x, t.y - px * 2)
+            lineTo(t.x + grid.tileW / 2 + px * 3, t.y + grid.tileH / 2)
+            lineTo(t.x, t.y + grid.tileH + px * 2)
+            lineTo(t.x - grid.tileW / 2 - px * 3, t.y + grid.tileH / 2)
+            close()
+        }
+        drawPath(ring, c.outline, style = Stroke(px * 2.4f))
+        drawPath(ring, c.sun, style = Stroke(px * 1.4f))
     }
     // The paddock fence along its four sides.
     val fence = c.woodDark
@@ -626,4 +642,36 @@ fun DrawScope.drawFarmScene(
 /** One product as a pixel icon, as large as fits. */
 fun DrawScope.drawProduct(item: Item) {
     drawFitted(FarmSprites.products.getValue(item))
+}
+
+/** The stages a new bed goes through in the picture of the purchase: soil, sprout, growing, ripe. */
+const val BED_FRAMES = 4
+
+/**
+ * One bed on its own, at stage [frame] (0 bare soil, 1 sprout, 2 growing, 3 ripe lettuce with a
+ * sparkle): the picture shown before a new bed is bought.
+ */
+fun DrawScope.drawBedPreview(p: Palette, frame: Int) {
+    val c = PixelColors.of(p)
+    // Whole pixels, sized so a ripe crop with its sparkle fits above the bed.
+    val px = max(1f, floor(minOf(size.height / 32f, size.width / 24f)))
+    val tileW = px * 20
+    val tileH = tileW / 2
+    val grid = IsoGrid(tileW, tileH, Offset(floor(size.width / 2), floor(size.height - tileH - px * 2)))
+    drawRoundRect(lerp(c.grass, c.sky, 0.25f), Offset.Zero, size, CornerRadius(px * 4))
+    clipRect {
+        diamond(grid, 0, 0, c.soil, if (p.strongOutlines) c.outline else c.soilDark)
+        drawLine(c.soilDark, grid.toScreen(0.25f, 0.5f), grid.toScreen(0.75f, 0.5f), max(1f, px * 0.6f))
+        val foot = grid.toScreen(0.5f, 0.5f) + Offset(0f, px)
+        when (frame.mod(BED_FRAMES)) {
+            1 -> stand(FarmSprites.sprout.forPalette(p), foot, px)
+            2 -> stand(FarmSprites.growing.forPalette(p), foot, px)
+            3 -> {
+                stand(FarmSprites.growing.forPalette(p), foot, px)
+                stand(FarmSprites.products.getValue(Item.LETTUCE).forPalette(p), foot - Offset(0f, px * 5), px)
+                stand(FarmSprites.sparkle, foot - Offset(-px * 7, px * 15), px)
+            }
+            else -> Unit
+        }
+    }
 }
