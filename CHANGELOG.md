@@ -83,6 +83,7 @@ All notable changes to this project are documented here. The format follows [Kee
 - **Farm in pixel art**: the field and the animals are now one isometric pixel-art farm, with the house, the barn, trees, a lane, the fenced paddock, and a sky with clouds and a sun (a moon and stars in dark mode). Crops show how far they have grown, ripe ones sparkle, a drop marks the beds that can be watered and a bubble shows what each animal has waiting. Tap a bed or an animal as before; pinch to see the farm bigger. Orders and the barn use the same pixel pictures.
 - Pastimes (the pet, the farm) no longer clear the game in progress, and their settings have no "New game".
 - The app is now called **Mili Games** and its package is `io.github.fershibli.miligames`. Android sees it as a different app: uninstall the previous version (the saved game is lost once) and install this one; later versions update normally. The release key is the same.
+- **Life trail is easier to read**: the board now has three clear layers. The landscapes are calmer and softer, so they stay in the background; the path and its squares are one pale stone trail with a dark edge, the squares as lighter slabs on it; and the pawns are bright with a white outline that lifts them off the board. The arrow over the pawn whose turn it is is bigger, amber with a dark edge, and gently bobs up and down (it stays still when animations are off).
 
 ## [1.0.0] - 2026-10-19
 
