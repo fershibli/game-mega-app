@@ -156,6 +156,25 @@ object JourneySprites {
         "....oKKo.....",
         "....ooo......",
     )
+    val queen = pixelArt(
+        "$INK y=FFD54F Y=F9A825 h=6D4C41 p=8E24AA P=6A1B9A w=ECEFF1 r=E57373",
+        "...y.yy.y...",
+        "...yyyyyy...",
+        "...oYYYYo...",
+        "..ohhhhhho..",
+        "..ohssssho..",
+        "..ohseseho..",
+        "..ohsrrsho..",
+        "..ohhsshho..",
+        "..oPwwwwPo..",
+        ".opppwwpppo.",
+        ".osppppppso.",
+        "..opppyppo..",
+        "..oppppppo..",
+        ".oPPPPPPPPo.",
+        ".oPPPPPPPPo.",
+        ".oooooooooo.",
+    )
     val curupira = pixelArt(
         "$INK h=E64A19 H=FF7043 k=8D6E63 g=388E3C G=1B5E20 l=81C784",
         "...h..h..h..",
@@ -797,6 +816,19 @@ object JourneySprites {
         Foe.GARGOYLE -> gargoyle
         Foe.DARK_KNIGHT -> darkKnight
         Foe.SHADOW_KING -> shadowKing
+    }
+
+    /** The face shown next to a line of the story. */
+    fun speaker(s: Speaker, hero: HeroClass): PixelArt = when (s) {
+        Speaker.QUEEN -> queen
+        Speaker.HERO -> hero(hero)
+        Speaker.BENTO -> bento
+        Speaker.SACI -> saci
+        Speaker.BOTO -> boto
+        Speaker.CAIPORA -> caipora
+        Speaker.OWL -> owl
+        Speaker.GUARD -> guard
+        Speaker.SHADOW_KING -> shadowKing
     }
 
     /** The friend met at the FRIEND spot of [r]. */

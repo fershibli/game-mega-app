@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames
 
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.hasText
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
@@ -49,6 +51,18 @@ class JourneyUiTest {
     private fun show() {
         rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.JOURNEY, GameHost(GameId.JOURNEY, Difficulty.EASY, null, null) {}) } }
         rule.waitForIdle()
+        listen()
+    }
+
+    /** Goes through the scenes of the story on screen, if any; returns who spoke. */
+    private fun listen(): List<String> {
+        val who = ArrayList<String>()
+        while (rule.onAllNodes(hasTestTag("journey-scene-next")).fetchSemanticsNodes().isNotEmpty()) {
+            who += rule.onNodeWithTag("journey-scene-who", useUnmergedTree = true).fetchSemanticsNode().config[SemanticsProperties.Text].joinToString()
+            rule.onNodeWithTag("journey-scene-next").performClick()
+            rule.waitForIdle()
+        }
+        return who
     }
 
     private fun saved(): JourneyWorld {
@@ -63,7 +77,11 @@ class JourneyUiTest {
         rule.onNodeWithTag("journey-name").performTextReplacement("Rosa")
         rule.onNodeWithTag("journey-start").performClick()
         rule.waitForIdle()
+        // The Queen calls for help (Bento answers), then the Saci tells about the forest.
+        assertEquals(listOf("Queen Clara", "Queen Clara", "Bento", "Saci"), listen())
+        assertTrue(saved().seen.containsAll(listOf("prologue", "arrive_forest")))
         rule.onNodeWithTag("journey-status").assertExists()
+        rule.onNodeWithText("Lights: 0/5", substring = true).assertExists()
         assertEquals("Rosa", saved().hero!!.name)
         assertEquals(HeroClass.MAGE, saved().hero!!.heroClass)
         // The first spot: a battle with two slimes. Let the group play by itself.
@@ -155,5 +173,23 @@ class JourneyUiTest {
         rule.waitForIdle()
         rule.onNodeWithText("River").assertExists()
         assertEquals(Region.RIVER, saved().region)
+        // The boto tells about the river the first time only.
+        assertEquals(listOf("Boto"), listen())
+        rule.onNodeWithTag("journey-region-prev").performClick()
+        rule.onNodeWithTag("journey-region-next").performClick()
+        rule.waitForIdle()
+        assertEquals(emptyList<String>(), listen())
+        rule.onNodeWithText("Lights: 1/5", substring = true).assertExists()
+    }
+
+    @Test
+    fun withTheFiveLightsBackTheQueenTellsTheEnd() {
+        val all = Region.entries.flatMap { r -> r.spots.indices.map { Regions.id(r, it) } }.toSet()
+        seed(Journey.start("Rosa", HeroClass.HEALER).copy(cleared = all, seen = setOf("prologue", "arrive_forest")))
+        rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.JOURNEY, GameHost(GameId.JOURNEY, Difficulty.EASY, null, null) {}) } }
+        rule.waitForIdle()
+        assertEquals(listOf("Queen Clara", "Saci", "Rosa"), listen())
+        assertTrue("epilogue" in saved().seen)
+        rule.onNodeWithText("Lights: 5/5", substring = true).assertExists()
     }
 }

@@ -16,6 +16,11 @@ Wähle eine **Klasse** und gib einen **Namen** ein:
 
 Der Schmied **Bento** ist von Anfang an dabei: Er kann die Gruppe **Beschützen** und die Schläge abfangen. Im Wald kannst du **Lia** retten, eine Feuermagierin.
 
+## Die Geschichte
+Königin Clara bittet um Hilfe: Der Schattenkönig hat die **fünf Lichter** des Königreichs versteckt, eines in jedem Gebiet, bei dessen Boss. Jeder besiegte Boss bringt ein Licht zurück (die Zahl steht neben dem Gold). Kommt man in ein Gebiet, erzählt sein Führer, wer dort wartet; sind alle fünf Lichter zurück, erzählt die Königin das Ende, und der Weg bleibt offen. Jede Szene wird einmal erzählt, ein Satz nach dem anderen, mit dem Gesicht dessen, der spricht: Tippe auf **Weiter**.
+
+**Spielen lernen** beginnt mit einer kurzen Lektion in einem ersten Kampf: Magie, ein Zauber auf die Schwachstelle, Bester Zug und Automatisch, Schritt für Schritt.
+
 ## Die Karte und das Dorf
 Tippe auf einen Ort der Karte, um hinzugehen. Ein Ort öffnet sich, wenn der vorige geschafft ist; gewonnene Kämpfe kannst du wiederholen, um stärker zu werden. Truhen und Freunde geben Tränke, Äther und Gold. Im **Dorf** kannst du **im Gasthaus ausruhen** (alle haben wieder volles Leben und Mana), den **Saci** um Tipps bitten und die Stärke der Gegner (Leicht, Mittel, Schwer) jederzeit ändern.
 

@@ -16,6 +16,11 @@ Scegli una **classe** e scrivi un **nome**:
 
 Il fabbro **Bento** viene con te dall'inizio: sa **Proteggere** il gruppo e prendere i colpi. Nella foresta puoi salvare **Lia**, una maga del fuoco.
 
+## La storia
+La Regina Clara chiede aiuto: il Re delle Ombre ha nascosto le **cinque luci** del regno, una in ogni regione, con il suo capo. Ogni capo battuto riporta una luce (il conto appare accanto all'oro). Arrivando in una regione, la sua guida racconta chi aspetta lì; con le cinque luci tornate, la Regina racconta la fine, e la strada resta aperta. Ogni scena è raccontata una volta, una battuta alla volta, con il volto di chi parla: tocca **Continua**.
+
+**Impara a giocare** comincia con una breve lezione su una prima battaglia: Magia, un incantesimo sul punto debole, Mossa migliore e Automatico, un passo alla volta.
+
 ## La mappa e il villaggio
 Tocca un luogo della mappa per andarci. Un luogo si apre quando il precedente è fatto; le battaglie vinte si possono rigiocare per diventare più forte. Forzieri e amici danno pozioni, eteri e oro. Nel **villaggio** puoi **riposare alla locanda** (tutti tornano con vita e mana pieni), chiedere consigli al **Saci** e cambiare la forza dei nemici (Facile, Medio, Difficile) quando vuoi.
 

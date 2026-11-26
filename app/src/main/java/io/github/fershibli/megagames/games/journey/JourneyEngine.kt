@@ -59,6 +59,8 @@ data class JourneyWorld(
     /** Gear bought in the shop, and what the hero wears. */
     val owned: Set<Gear> = emptySet(),
     val worn: Set<Gear> = emptySet(),
+    /** Scenes of the story already told (see [Story]). */
+    val seen: Set<String> = emptySet(),
 )
 
 /** One side of a battle, with its numbers fixed for the fight. */

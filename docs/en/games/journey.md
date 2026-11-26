@@ -16,6 +16,11 @@ Choose a **class** and type a **name**:
 
 **Bento** the blacksmith comes along from the start: he can **Protect** the group and take the blows. In the forest you can rescue **Lia**, a fire mage.
 
+## The story
+Queen Clara asks for help: the Shadow King hid the **five lights** of the kingdom, one in each region, with its boss. Each boss beaten brings back a light (the count shows next to the gold). On arriving in a region, its guide tells you who is waiting there; once the five lights are back, the Queen tells the end, and the road stays open. Each scene is told once, a line at a time, with the face of whoever speaks: tap **Go on**.
+
+**Learn to play** starts with a short lesson on a first battle: Magic, a spell on a weak spot, Best move and Automatic, one step at a time.
+
 ## The map and the village
 Tap a spot on the map to go there. A spot opens when the one before it is done; battles already won can be played again to grow stronger. Chests and friends give potions, ethers and gold. In the **village** you can **rest at the inn** (everyone back to full life and mana), ask **Saci** for tips and change how strong the enemies are (Easy, Medium, Hard) at any time.
 
