@@ -1,4 +1,4 @@
-# Kreuzworträtsel-Wörterbuch — Deutsch. Format: ANTWORT|Hinweis|Stufe (1 leicht, 2 mittel, 3 schwer). Alltagswörter, freundliche Hinweise. Ä/Ö/Ü/ß werden zu AE/OE/UE/SS.
+# Kreuzworträtsel-Wörterbuch — Deutsch. Format: ANTWORT|Hinweis|Stufe (1 leicht, 2 mittel, 3 schwer). Alltagswörter, freundliche Hinweise. Antworten werden richtig geschrieben (KÄSE, STRAßE); im Gitter werden Ä/Ö/Ü/ß zu AE/OE/UE/SS.
 APFEL|Rotes oder grünes Obst|1
 BROT|Wird beim Bäcker gebacken und mit Butter bestrichen|1
 BUTTER|Gelbes Fett, das man aufs Brot streicht|1
@@ -29,7 +29,7 @@ BANANE|Lange gelbe Frucht, die man schält|1
 KIRSCHE|Kleine rote Frucht mit einem Stein|1
 ERDBEERE|Rote Frucht im Frühsommer, lecker mit Sahne|1
 TRAUBE|Aus ihr wird Wein gemacht|1
-MÖHRE|Orangefarbenes Gemüse, Hasen mögen es|1
+MÖHRE|Orangefarbenes Gemüse, Hasen mögen sie|1
 GURKE|Grünes Gemüse, oft sauer eingelegt|1
 ZWIEBEL|Beim Schneiden muss man oft weinen|1
 SENF|Gelbe, scharfe Paste zur Bratwurst|2
@@ -50,7 +50,7 @@ BETT|Darin schläft man|1
 SOFA|Gemütliches Polstermöbel im Wohnzimmer|1
 SESSEL|Bequemer Sitz mit Armlehnen für eine Person|1
 LAMPE|Spendet Licht, wenn es dunkel ist|1
-FENSTER|Durch es scheint die Sonne ins Zimmer|1
+FENSTER|Dadurch scheint die Sonne ins Zimmer|1
 TÜR|Man öffnet sie, um ins Zimmer zu kommen|1
 TREPPE|Führt nach oben ins nächste Stockwerk|1
 KÜCHE|Raum, in dem gekocht wird|1
@@ -116,7 +116,7 @@ REGENBOGEN|Bunt am Himmel, wenn Sonne und Schauer zusammenkommen|2
 BLITZ|Heller Strahl bei einem Gewitter|1
 DONNER|Lautes Grollen nach dem Blitz|1
 HAGEL|Kleine Eiskörner, die vom Himmel fallen|2
-FROST|Wenn es unter null Grad kalt ist|1
+FROST|Kälte unter null Grad|1
 HITZE|Sehr warmes Sommerwetter|1
 STURM|Sehr starker Wind|1
 SCHIRM|Schützt vor Regen|1
@@ -208,7 +208,7 @@ KONZERT|Musik live vor Publikum|2
 TROMPETE|Glänzendes Blasinstrument aus Blech|2
 OPER|Bühnenstück mit Gesang, zum Beispiel „Die Zauberflöte“|2
 HAND|Hat fünf Finger|1
-FUSS|Steckt im Schuh|1
+FUß|Steckt im Schuh|1
 KOPF|Sitzt oben auf dem Hals|1
 NASE|Damit riecht man|1
 OHR|Damit hört man|1
@@ -233,7 +233,7 @@ KIRCHE|Hat einen Turm mit Glocken|1
 SCHULE|Dort lernen Kinder lesen und schreiben|1
 MARKT|Platz mit Ständen für Obst und Gemüse|1
 BAHNHOF|Hier fahren die Züge ab|1
-STRASSE|Darauf fahren die Autos|1
+STRAßE|Darauf fahren die Autos|1
 BRÜCKE|Führt über einen Fluss|1
 PARK|Grüne Anlage in der Stadt zum Spazierengehen|1
 RATHAUS|Dort arbeitet der Bürgermeister|2
@@ -256,10 +256,10 @@ ROT|Farbe der Tomate|1
 BLAU|Farbe des Himmels|1
 GRÜN|Farbe des Grases|1
 GELB|Farbe der Zitrone|1
-WEISS|Farbe des Schnees|1
+WEIß|Farbe des Schnees|1
 SCHWARZ|Farbe der Nacht|1
 MORGEN|Anfang des Tages|1
-ABEND|Wenn die Sonne untergeht|1
+ABEND|Tageszeit, wenn die Sonne untergeht|1
 NACHT|Zeit zum Schlafen, wenn es dunkel ist|1
 WOCHE|Hat sieben Tage|1
 MONAT|Der Januar ist einer|1
@@ -312,7 +312,7 @@ BROMBEERE|Dunkle Beere an dornigen Ranken|2
 HEIDELBEERE|Kleine blaue Beere aus dem Wald|2
 STACHELBEERE|Grüne Beere mit feinen Härchen, etwas sauer|3
 PREISELBEERE|Kleine rote Beere, passt gut zum Wildbraten|3
-QUARK|Weißer, cremiger Milchbrei, gut mit Kräutern|2
+QUARK|Weißer, cremiger Frischkäse, gut mit Kräutern|2
 JOGHURT|Säuerliches Milchprodukt, oft mit Früchten|1
 ESSIG|Saure Flüssigkeit für die Salatsoße|1
 ÖL|Damit brät man; aus Oliven oder Sonnenblumen|1
@@ -332,12 +332,12 @@ BRATEN|Großes Stück Fleisch aus dem Ofen, am Sonntag beliebt|1
 KNÖDEL|Runder Kloß, aus Kartoffeln oder Semmeln|2
 SCHNITZEL|Paniertes, flach geklopftes Fleisch|1
 GULASCH|Würziger Fleischeintopf mit Paprika|2
-EINTOPF|Suppe mit Gemüse und Fleisch aus einem Topf|2
+EINTOPF|Dicke Suppe mit Gemüse und Fleisch|2
 SAUERKRAUT|Eingelegter Weißkohl, passt zur Bratwurst|2
-PFANNKUCHEN|Flach in der Pfanne gebacken, mit Zucker oder Apfelmus|1
+PFANNKUCHEN|Flach gebacken, mit Zucker oder Apfelmus|1
 WAFFEL|Gebäck mit Gittermuster aus dem Eisen|1
 SPARGEL|Weißes Stangengemüse im Frühling|2
-GRIESS|Feine Körner für einen süßen Brei|3
+GRIEß|Feine Körner für einen süßen Brei|3
 HAFER|Getreide für die Flocken im Müsli|2
 WEIZEN|Getreide, aus dem das meiste Mehl gemacht wird|2
 ROGGEN|Getreide für dunkles, kräftiges Brot|2
@@ -356,7 +356,7 @@ KÜHLSCHRANK|Hält Milch und Butter kalt|1
 SPÜLE|Becken in der Küche zum Abwaschen|2
 TABLETT|Darauf trägt man Tassen und Teller|2
 SERVIETTE|Tuch zum Abwischen des Mundes beim Essen|2
-TISCHDECKE|Tuch, das man über den Tisch legt|1
+TISCHDECKE|Tuch, das man zum Essen auflegt|1
 ZIMMER|Raum in einer Wohnung|1
 WOHNUNG|Mehrere Zimmer in einem Haus, in denen man lebt|1
 KELLER|Raum unter dem Haus, oft für Vorräte|1
@@ -402,8 +402,8 @@ FERNSEHER|Gerät für Filme und Nachrichten|1
 BILD|Hängt eingerahmt an der Wand|1
 RAHMEN|Umgibt ein Bild an der Wand|2
 VASE|Darin stehen die Blumen|1
-TOPFPFLANZE|Grünes Gewächs im Blumentopf am Fenster|2
-GIESSKANNE|Damit gießt man die Blumen|1
+TOPFPFLANZE|Grünes Gewächs auf der Fensterbank|2
+GIEßKANNE|Damit bekommen die Blumen Wasser|1
 SCHAUFEL|Damit gräbt man im Garten|1
 HARKE|Damit sammelt man Laub, auch Rechen genannt|2
 SPATEN|Werkzeug mit flachem Blatt zum Umgraben|2
@@ -411,7 +411,7 @@ HAMMER|Damit schlägt man Nägel in die Wand|1
 NAGEL|Wird mit dem Hammer eingeschlagen|1
 SÄGE|Damit schneidet man Holz|1
 ZANGE|Werkzeug zum Greifen und Kneifen|2
-SCHRAUBE|Wird mit dem Schraubenzieher eingedreht|1
+SCHRAUBE|Hat ein Gewinde und wird ins Holz gedreht|1
 BOHRER|Macht Löcher in die Wand|2
 LEITER|Darauf steigt man nach oben|1
 PINSEL|Damit malt man oder streicht man Farbe|1
@@ -465,7 +465,7 @@ ADLER|Großer Greifvogel mit scharfen Augen|1
 FALKE|Schneller Greifvogel|2
 MÖWE|Weißer Vogel am Meer, der laut kreischt|1
 PINGUIN|Schwarz-weißer Vogel, der nicht fliegt, aber schwimmt|1
-STRAUSS|Größter Vogel der Welt, kann schnell laufen; auch ein Blumengebinde|2
+STRAUß|Größter Vogel der Welt, kann schnell laufen; auch ein Blumengebinde|2
 FLAMINGO|Rosa Vogel, der auf einem Bein steht|2
 PFAU|Vogel mit prächtigem Rad aus Federn|2
 KRANICH|Großer grauer Zugvogel mit langen Beinen|3
@@ -490,7 +490,7 @@ NASHORN|Großes Tier mit Horn auf der Nase|2
 NILPFERD|Großes Tier, das gern im Fluss liegt|2
 KROKODIL|Großes Reptil mit vielen Zähnen|2
 KÄNGURU|Springt und trägt sein Junges im Beutel|1
-KOALA|Grauer Bär aus Australien, frisst Eukalyptus|2
+KOALA|Graues Beuteltier aus Australien, frisst Eukalyptus|2
 PANDA|Schwarz-weißer Bär, frisst Bambus|1
 GORILLA|Größter Menschenaffe|2
 LEOPARD|Gefleckte Raubkatze, klettert gut|2
@@ -538,7 +538,7 @@ STROH|Trockene Halme vom Getreide|2
 TRAKTOR|Zieht den Pflug auf dem Feld|1
 PFLUG|Gerät, das den Acker umgräbt|2
 ACKER|Feld, auf dem Getreide wächst|2
-ERNTE|Wenn im Herbst Obst und Getreide eingesammelt werden|1
+ERNTE|Das Einbringen von Obst und Getreide im Herbst|1
 MÜHLE|Darin wird Getreide zu Mehl gemahlen|2
 BUCHE|Laubbaum mit glatter grauer Rinde|2
 BIRKE|Baum mit weißer Rinde|2
@@ -557,7 +557,7 @@ EFEU|Immergrüne Pflanze, die an Mauern rankt|2
 MOOS|Weiches Grün auf Steinen und im Wald|2
 FARN|Pflanze mit gefiederten Wedeln im schattigen Wald|2
 DISTEL|Stachelige Pflanze mit lila Blüte|3
-BRENNNESSEL|Pflanze, die auf der Haut brennt|2
+BRENNNESSEL|Pflanze, deren Berührung auf der Haut juckt|2
 LÖWENZAHN|Gelbe Wiesenblume, wird zur Pusteblume|1
 MARGERITE|Große weiße Blume mit gelber Mitte|2
 SONNENBLUME|Hohe gelbe Blume, die sich zur Sonne dreht|1
@@ -586,7 +586,7 @@ AST|Wächst seitlich aus dem Baumstamm|1
 ZWEIG|Kleiner Ast|2
 DORN|Spitzer Stachel an der Rose|2
 ZAPFEN|Frucht des Nadelbaums|2
-EICHEL|Frucht der Eiche|2
+EICHEL|Frucht mit Hütchen, Wildschweine fressen sie gern|2
 SAMEN|Daraus wächst eine neue Pflanze|2
 KNOSPE|Daraus öffnet sich die Blüte|2
 STRAUCH|Kleine Pflanze mit vielen Zweigen, auch Busch|2
@@ -595,7 +595,7 @@ BEET|Fläche im Garten für Blumen oder Gemüse|2
 KOMPOST|Haufen aus Gartenabfällen, wird zu Erde|3
 ZAHNARZT|Kümmert sich um gesunde Zähne|1
 BRIEFTRÄGER|Bringt jeden Tag die Post|1
-FEUERWEHR|Kommt mit Blaulicht und löscht das Feuer|1
+FEUERWEHR|Kommt mit Blaulicht und löscht den Brand|1
 FISCHER|Fährt mit dem Boot hinaus und wirft Netze aus|1
 SCHMIED|Formt glühendes Eisen auf dem Amboss|2
 SCHUSTER|Repariert Schuhe|2
@@ -607,7 +607,7 @@ KLEMPNER|Repariert Rohre und Wasserhähne|2
 ELEKTRIKER|Verlegt Kabel und Steckdosen|2
 GLASER|Setzt neue Scheiben in Fenster ein|3
 KAMINKEHRER|Fegt den Schornstein und soll Glück bringen|3
-UHRMACHER|Repariert Uhren mit feinem Werkzeug|2
+UHRMACHER|Repariert Wecker und Pendeluhren mit feinem Werkzeug|2
 GOLDSCHMIED|Fertigt Ringe und Ketten aus Edelmetall|3
 KONDITOR|Backt feine Torten und Pralinen|2
 WINZER|Baut Wein an|2
@@ -625,7 +625,7 @@ KASSIERER|Nimmt an der Kasse das Geld entgegen|2
 BIBLIOTHEKAR|Verleiht in der Bücherei die Bücher|3
 ANWALT|Vertritt Menschen vor Gericht|2
 NOTAR|Beglaubigt wichtige Verträge|3
-APOTHEKER|Gibt in der Apotheke Arznei aus|2
+APOTHEKER|Gibt Arznei aus und berät dazu|2
 TIERARZT|Hilft kranken Haustieren|1
 HEBAMME|Hilft bei der Geburt eines Babys|2
 ARCHITEKT|Zeichnet die Pläne für ein Haus|2
@@ -681,7 +681,7 @@ BALLETT|Tanz auf der Bühne, oft auf Spitzenschuhen|2
 SCHLAGER|Eingängiges Lied, das viele mitsingen|2
 VOLKSLIED|Altes Lied, das jeder kennt|2
 NOTENBLATT|Darauf steht die Musik geschrieben|2
-FUSSBALL|Elf gegen elf, rund ist der Ball|1
+FUßBALL|Elf gegen elf, mit zwei Toren auf dem Rasen|1
 TENNIS|Sport mit Schläger, Netz und gelbem Ball|1
 SCHWIMMEN|Sich im Wasser fortbewegen|1
 WANDERN|Lange zu Fuß durch die Natur gehen|1
@@ -730,7 +730,7 @@ FLUGZEUG|Fliegt hoch über den Wolken|1
 FLUGHAFEN|Hier starten und landen die Flugzeuge|1
 BOOT|Kleines Wasserfahrzeug|1
 FÄHRE|Bringt Autos und Menschen über den Fluss|2
-STRASSENBAHN|Fährt auf Schienen durch die Stadt|2
+STRAßENBAHN|Fährt auf Schienen durch die Stadt|2
 TAXI|Bringt einen gegen Geld schnell ans Ziel|1
 KUTSCHE|Wagen, der von Pferden gezogen wird|2
 WOHNWAGEN|Kleines Haus auf Rädern für den Urlaub|2
@@ -752,7 +752,7 @@ RADIERGUMMI|Macht Bleistiftstriche wieder weg|2
 LINEAL|Damit zieht man gerade Striche|2
 FÜLLER|Schreibt mit Tinte|2
 TINTE|Blaue Flüssigkeit im Füller|2
-SCHULRANZEN|Kinder tragen ihn auf dem Rücken zur Schule|2
+SCHULRANZEN|Kinder tragen ihn auf dem Rücken zum Unterricht|2
 ZEUGNIS|Zeigt am Ende des Schuljahres die Noten|2
 PAUSE|Kurze Zeit zum Ausruhen zwischen den Stunden|1
 KLASSE|Gruppe von Schülern im selben Raum|1
@@ -781,7 +781,7 @@ BÜCHEREI|Hier leiht man Bücher aus|2
 KINDERGARTEN|Hier spielen die Kleinen, bevor sie zur Schule gehen|2
 RENTE|Geld, das man im Alter bekommt|2
 FREUDE|Gefühl, wenn etwas Schönes passiert|1
-GLÜCK|Bringt ein vierblättriges Kleeblatt|1
+GLÜCK|Das bringt ein vierblättriges Kleeblatt|1
 LIEBE|Gefühl zwischen zwei Menschen, die sich mögen|1
 LACHEN|Tut man, wenn etwas lustig ist|1
 LÄCHELN|Freundlicher Ausdruck mit dem Mund|1
@@ -845,8 +845,8 @@ HÖHLE|Hohlraum im Berg, manchmal mit Tropfsteinen|2
 KÜSTE|Wo das Land ans Meer grenzt|2
 DÜNE|Sandhügel am Strand|2
 WATT|Meeresboden, der bei Ebbe frei liegt|3
-EBBE|Wenn sich das Meer zurückzieht|2
-FLUT|Wenn das Meer wieder steigt|2
+EBBE|Niedrigwasser, wenn sich das Meer zurückzieht|2
+FLUT|Hochwasser, wenn das Meer wieder steigt|2
 WELLE|Bewegt sich über das Wasser zum Ufer|1
 UFER|Rand eines Flusses oder Sees|2
 MOOR|Nasser, weicher Boden mit Torf|3
@@ -894,7 +894,7 @@ KOCHEN|Das Essen auf dem Herd zubereiten|2
 BACKEN|Kuchen im Ofen zubereiten|2
 STRICKEN|Mit zwei Nadeln aus Wolle etwas fertigen|2
 NÄHEN|Mit Nadel und Faden Stoff verbinden|2
-GIESSEN|Den Blumen Wasser geben|2
+GIEßEN|Den Blumen Wasser geben|2
 SPAZIEREN|Gemütlich draußen umhergehen|2
 SCHLAFEN|Was man nachts im Bett tut|2
 TRÄUMEN|Bilder im Schlaf sehen|2
@@ -905,7 +905,7 @@ SPIELEN|Was Kinder am liebsten tun|2
 PFLÜCKEN|Blumen oder Obst abnehmen|2
 SAMMELN|Briefmarken oder Pilze zusammentragen|2
 PLAUDERN|Gemütlich miteinander reden|2
-SCHENKEN|Jemandem etwas als Geschenk geben|2
+SCHENKEN|Jemandem etwas zum Geburtstag geben|2
 WINKEN|Zum Gruß die Hand hin und her bewegen|2
 FRÖHLICH|Gut gelaunt und heiter|2
 FREUNDLICH|Nett und hilfsbereit zu anderen|2
@@ -915,11 +915,11 @@ RUHIG|Still und ohne Lärm|2
 LEISE|Das Gegenteil von laut|2
 SCHNELL|Das Gegenteil von langsam|2
 LANGSAM|Wie eine Schnecke|2
-GROSS|Das Gegenteil von klein|2
+GROß|Das Gegenteil von klein|2
 KLEIN|Das Gegenteil von groß|2
 WARM|Das Gegenteil von kalt|2
 KALT|Wie Eis und Schnee|2
-SÜSS|Wie Zucker und Honig|2
+SÜß|Wie Zucker und Honig|2
 SAUER|Wie eine Zitrone|2
 BITTER|Wie starker Kaffee ohne Zucker|2
 SCHARF|Wie Pfeffer oder ein gutes Messer|2
@@ -929,7 +929,7 @@ HELL|Das Gegenteil von dunkel|2
 DUNKEL|Wie die Nacht|2
 NEU|Das Gegenteil von alt|2
 SAUBER|Frisch geputzt|2
-FLEISSIG|Wie eine Biene bei der Arbeit|2
+FLEIßIG|Wie eine Biene bei der Arbeit|2
 KLUG|Weiß viel und denkt gut nach|2
 TAPFER|Zeigt Mut und hat keine Angst|2
 EHRLICH|Sagt immer die Wahrheit|2
@@ -966,13 +966,13 @@ DEZEMBER|Letzter Monat des Jahres|2
 MITTAG|Wenn die Sonne am höchsten steht|2
 STUNDE|Hat sechzig Minuten|2
 MINUTE|Hat sechzig Sekunden|2
-SEKUNDE|Ein ganz kurzer Augenblick|2
+SEKUNDE|Der sechzigste Teil einer Minute|2
 KALENDER|Zeigt alle Tage des Jahres|2
 JAHRHUNDERT|Hundert Jahre|3
 AMBOSS|Eiserner Block, auf dem der Schmied hämmert|3
 HOBEL|Werkzeug des Tischlers, macht Holz glatt|3
 FEILE|Raues Werkzeug zum Glätten von Metall oder Nägeln|3
-MEISSEL|Werkzeug zum Bearbeiten von Stein|3
+MEIßEL|Werkzeug zum Bearbeiten von Stein|3
 SCHRAUBSTOCK|Hält das Werkstück auf der Werkbank fest|3
 WERKBANK|Arbeitstisch in der Werkstatt|3
 ZOLLSTOCK|Klappbarer Meterstab des Handwerkers|3
@@ -995,7 +995,7 @@ VITRINE|Glasschrank für schönes Geschirr|3
 BÜFETT|Großer Geschirrschrank im Esszimmer|3
 OTTOMANE|Niedriges Polstersofa ohne Lehne|3
 CHAISELONGUE|Liegesofa mit einer erhöhten Seite|3
-DIVAN|Niedriges Ruhebett ohne Lehne|3
+DIVAN|Gepolsterte Liege mit Kissen, aus dem Orient|3
 STANDUHR|Große Uhr mit Pendel, die auf dem Boden steht|3
 PENDEL|Schwingt in der alten Uhr hin und her|3
 SCHATULLE|Kleines Kästchen für Schmuck|3
@@ -1071,7 +1071,7 @@ BAISER|Gebäck aus Eischnee und Zucker|3
 PRALINE|Feines Stück Schokolade mit Füllung|3
 KOMPOTT|Gekochtes Obst als Nachtisch|3
 GELEE|Durchsichtiger Fruchtaufstrich|3
-SPÄTZLE|Schwäbische Nudeln vom Brett geschabt|3
+SPÄTZLE|Schwäbische Nudeln, vom Brett geschabt|3
 FRIKADELLE|Gebratenes Fleischbällchen|3
 ROULADE|Gerolltes Fleisch mit Füllung, in Soße geschmort|3
 EISBEIN|Gepökelte Schweinshaxe mit Sauerkraut|3
