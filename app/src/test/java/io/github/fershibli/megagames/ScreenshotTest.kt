@@ -332,6 +332,7 @@ class ScreenshotTest {
     @Test fun parkingDark() = gameShot("game_parking_dark", GameId.PARKING, Difficulty.HARD, Settings(darkMode = true))
     @Test fun battleship() = shot("game_battleship") { GameContent(GameId.BATTLESHIP, battleshipHost()) }
     @Test fun battleshipPt() = shot("game_battleship_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
+    @Test fun battleshipDark() = shot("game_battleship_dark", Settings(darkMode = true)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
 
     /** A game well under way: a few splashes, a hit and a sunk ship on each side. */
     private fun battleshipHost(): GameHost {
