@@ -250,6 +250,17 @@ class ScreenshotTest {
         seedFarm(full = true)
         gameShot("game_farm_dark", GameId.FARM, settings = Settings(darkMode = true))
     }
+    @Test fun farmNewBedPt() {
+        seedFarm()
+        gameShot("game_farm_new_bed_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-buy-plot").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-plot-picture").assertExists()
+        rule.mainClock.autoAdvance = false
+        // The picture goes through its stages: stop on the harvest.
+        rule.mainClock.advanceTimeBy(2_800)
+        save("game_farm_new_bed_pt")
+    }
     @Test fun farmOrders() {
         seedFarm()
         gameShot("game_farm_orders", GameId.FARM, tab = "orders")

@@ -47,4 +47,10 @@
     <string name="farm_sell_one">Vender 1</string>
     <string name="farm_sell_all">Vender tudo</string>
     <string name="farm_scene">Fazenda. Canteiros: %1$d. Animais: %2$d.</string>
+    <string name="farm_plot_title">Um canteiro novo</string>
+    <string name="farm_plot_note">Preço em moedas: %1$d. Ele fica ao lado dos outros canteiros e cresce como eles: broto, folhas e então a colheita.</string>
+    <string name="farm_plot_buy">Comprar o canteiro</string>
+    <string name="farm_plot_sow_first">Plante algo antes. Com algo crescendo, sempre vai ter uma colheita para vender.</string>
+    <string name="farm_plot_here">Pronto: o canteiro novo é o que está piscando na plantação.</string>
+    <string name="farm_plot_picture">Um canteiro crescendo, da terra nua até a colheita</string>
 </resources>
