@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_battleship">Schiffe versenken</string>
-    <string name="howto_battleship">Jede Seite versteckt eine Flotte in ihrem Meer. Wenn du dran bist, schieß auf ein Feld des anderen Meers: ein weißer Spritzer ist Wasser, ein rotes Kreuz ein Treffer. Wer zuerst die ganze Flotte versenkt, gewinnt. Deine Schiffe sind schon aufgestellt; tippe auf Neu aufstellen, bis sie dir gefallen.</string>
+    <string name="howto_battleship">Jede Seite versteckt eine Flotte in ihrem Meer. Wenn du dran bist, schieß auf ein Feld des anderen Meers: ein weißer Spritzer ist Wasser, ein rotes Kreuz ein Treffer. Wer zuerst die ganze Flotte versenkt, gewinnt. Deine Schiffe sind schon aufgestellt: Zieh ein Schiff, um es zu verschieben, tippe darauf, um es zu drehen, oder tippe auf Neu aufstellen.</string>
     <string name="battleship_sea_afloat">%1$s · Schiffe über Wasser: %2$d</string>
     <string name="battleship_you">Du</string>
     <string name="battleship_computer">Der Computer</string>
     <string name="battleship_miss">%1$s: Wasser.</string>
     <string name="battleship_hit">%1$s: Treffer!</string>
     <string name="battleship_sunk">%1$s hat ein Schiff versenkt!</string>
-    <string name="battleship_arrange">Das ist deine Flotte. Stell sie neu auf oder fang an.</string>
+    <string name="battleship_arrange">Zieh ein Schiff, um es zu verschieben, und tippe darauf, um es zu drehen. Dann tippe auf Anfangen.</string>
     <string name="battleship_your_turn">Du bist dran: tippe auf ein Feld des anderen Meers.</string>
     <string name="battleship_turn_of">Spieler %1$d: tippe auf ein Feld des anderen Meers.</string>
     <string name="battleship_computer_aiming">Der Computer zielt…</string>
+    <string name="battleship_no_room">Dort ist kein Platz: Schiffe dürfen sich nicht berühren. Versuch eine andere Stelle.</string>
     <string name="battleship_rearrange">Neu aufstellen</string>
     <string name="battleship_ready">Anfangen</string>
     <string name="battleship_your_sea">Dein Meer</string>

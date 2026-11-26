@@ -7,6 +7,8 @@ Das klassische Spiel der versteckten Flotten, gegen den Computer oder abwechseln
 ## Vor dem ersten Schuss
 Deine Flotte ist schon aufgestellt: gerade Schiffe, die sich nie berühren, nicht einmal an einer Ecke. Tippe auf **Neu aufstellen**, so oft du willst, dann auf **Anfangen**. Beim Abwechseln stellt danach Spieler 2 seine auf, während Spieler 1 wegschaut.
 
+Um ein Schiff selbst zu platzieren, **zieh** es an eine andere Stelle: Es rastet in den Feldern ein, und die Felder, auf denen es landen wird, sind umrandet. **Tippe** auf ein Schiff, um es zu drehen (von waagerecht zu senkrecht und zurück). Ist kein Platz (am Rand oder neben einem anderen Schiff), bleibt das Schiff, wo es war, und ist kurz rot umrandet. **Rückgängig** nimmt die letzte Änderung zurück.
+
 ## So spielst du
 - Das große Meer oben gehört der anderen Seite: Tippe auf ein Feld, um zu schießen. Ein **Tintenkreis** ist Wasser, ein **rotes Kreuz** mit einer kleinen Flamme ein Treffer. Die Felder heißen wie beim Spiel auf Papier: Buchstaben A–J oben, Zahlen 1–10 an der Seite. Ein Schiff, das auf allen Feldern getroffen ist, sinkt und erscheint auf dem Meer.
 - Das kleine Meer unten ist deins, mit deinen Schiffen und den Schüssen der anderen Seite.

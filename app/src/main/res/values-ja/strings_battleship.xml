@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_battleship">海戦ゲーム</string>
-    <string name="howto_battleship">おたがいに自分の海に艦隊をかくします。自分の番に、相手の海のマスを1つねらって撃ちます。白いしぶきははずれ、赤い×は命中です。先に相手の艦隊を全部しずめた方の勝ちです。自分の船は自動で並びます。気に入るまで「並べなおす」をタップしましょう。</string>
+    <string name="howto_battleship">おたがいに自分の海に艦隊をかくします。自分の番に、相手の海のマスを1つねらって撃ちます。白いしぶきははずれ、赤い×は命中です。先に相手の艦隊を全部しずめた方の勝ちです。自分の船は自動で並びます。船をドラッグすると動かせて、タップすると向きが変わります。「並べなおす」でもう一度並べることもできます。</string>
     <string name="battleship_sea_afloat">%1$s・浮いている船：%2$d</string>
     <string name="battleship_you">あなた</string>
     <string name="battleship_computer">コンピューター</string>
     <string name="battleship_miss">%1$s：はずれ。</string>
     <string name="battleship_hit">%1$s：命中！</string>
     <string name="battleship_sunk">%1$sが船を1せきしずめました！</string>
-    <string name="battleship_arrange">これがあなたの艦隊です。並べなおすか、始めましょう。</string>
+    <string name="battleship_arrange">船をドラッグして動かし、タップして向きを変えましょう。それから「始める」をタップします。</string>
     <string name="battleship_your_turn">あなたの番：相手の海のマスをタップしましょう。</string>
     <string name="battleship_turn_of">プレイヤー%1$d：相手の海のマスをタップしましょう。</string>
     <string name="battleship_computer_aiming">コンピューターがねらっています…</string>
+    <string name="battleship_no_room">そこには置けません。船どうしはくっつけられません。ほかの場所をためしてください。</string>
     <string name="battleship_rearrange">並べなおす</string>
     <string name="battleship_ready">始める</string>
     <string name="battleship_your_sea">あなたの海</string>
