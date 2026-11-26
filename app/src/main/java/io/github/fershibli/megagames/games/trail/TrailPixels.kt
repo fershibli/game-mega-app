@@ -4,6 +4,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.graphics.lerp
 import io.github.fershibli.megagames.core.ColorMode
 import io.github.fershibli.megagames.games.ludo.ludoColor
 import io.github.fershibli.megagames.ui.art.PixelArt
@@ -101,20 +102,38 @@ object TrailMap {
 
 private const val INK = "o=3B2A20"
 
-/** The ground of each landscape, from childhood to the quiet years. */
+/**
+ * The ground of each landscape, from childhood to the quiet years. Soft, muted middle tones, so
+ * the light path and the bright pawns stand out on them.
+ */
 private val GROUND = listOf(
-    Color(0xFF9CCC65), // playground grass
-    Color(0xFFB7C4CC), // city pavement
-    Color(0xFFD9C08E), // sandy yard of the workshop
-    Color(0xFF7FBF55), // garden lawn
-    Color(0xFFE6D3A0), // beach sand
-    Color(0xFFC9CF73), // orchard meadow
+    Color(0xFFA3BD86), // playground grass
+    Color(0xFFAAB4BA), // city pavement
+    Color(0xFFC2AE88), // sandy yard of the workshop
+    Color(0xFF93B27E), // garden lawn
+    Color(0xFFCBBE98), // beach sand
+    Color(0xFFB4B883), // orchard meadow
 )
 
-/** The color of the squares of each stage. */
-private val SQUARE_FILL = listOf(
-    Color(0xFFE6F4D2), Color(0xFFD7F0FC), Color(0xFFFFE9C9), Color(0xFFFBD3E1), Color(0xFFE3DAF2), Color(0xFFFFF7B8),
-)
+/**
+ * The path and its squares are one trail of the same pale stone: a walkway with a dark edge, and
+ * the squares as slightly lighter slabs laid on it.
+ */
+private val SLAB_EDGE = Color(0xFF3B2A20)
+private val PATH_EDGE = Color(0xFF8A6A4A)
+private val PATH = Color(0xFFDCC8A2)
+private val SLAB = Color(0xFFFBF4E4)
+private val SLAB_SPECIAL = Color(0xFFFFE7A3)
+
+/** How far the scenery fades into its ground: the pictures stay readable but calm, behind the path. */
+private const val RECEDE = 0.42f
+
+/** [color] made calmer and closer to [ground]: less saturated, less contrast. */
+private fun recede(color: Color, ground: Color): Color {
+    val grey = color.red * 0.3f + color.green * 0.59f + color.blue * 0.11f
+    val calm = lerp(color, Color(grey, grey, grey, color.alpha), 0.35f)
+    return lerp(calm, ground, RECEDE).copy(alpha = color.alpha)
+}
 
 object TrailSprites {
     val heart = pixelArt(
@@ -126,7 +145,7 @@ object TrailSprites {
         "..r..",
     )
     val book = pixelArt(
-        "w=FFFFFF l=9E9E9E s=5D4037",
+        "w=FFFFFF l=1E88E5 s=5D4037",
         "wwsww",
         "llsll",
         "wwsww",
@@ -408,10 +427,11 @@ object TrailSprites {
         "od..do.",
         "oo...oo",
     )
-    private val people = HashMap<Pair<Color, Boolean>, PixelArt>()
+    private val people = HashMap<Triple<Color, Boolean, Color>, PixelArt>()
+    private val halos = HashMap<Pair<PixelArt, Color>, PixelArt>()
 
     fun person(color: Color, walking: Boolean, outline: Color): PixelArt = synchronized(people) {
-        people.getOrPut(color to walking) {
+        people.getOrPut(Triple(color, walking, outline)) {
             val palette = mapOf(
                 'o' to outline, 'h' to Color(0xFF6D4C41), 's' to Color(0xFFF2C29B),
                 'c' to color, 'd' to color.darker(0.45f),
@@ -420,32 +440,51 @@ object TrailSprites {
         }
     }
 
+    /** The outline of [art] in one [color]: drawn a dot around a pawn, it lifts it off the board. */
+    fun halo(art: PixelArt, color: Color): PixelArt = synchronized(halos) {
+        halos.getOrPut(art to color) { art.recolored { color } }
+    }
+
+    /** The arrow over the pawn whose turn it is: bold, with a dark edge, pointing down. */
+    private val ARROW = listOf(
+        "...ooo...",
+        "...oyo...",
+        "...o#o...",
+        "oooo#oooo",
+        "oyyyyyyyo",
+        ".oyy#yyo.",
+        "..oy#yo..",
+        "...oyo...",
+        "....o....",
+    )
+    private val arrows = HashMap<Pair<Color, Color>, PixelArt>()
+
+    fun arrow(fill: Color, edge: Color): PixelArt = synchronized(arrows) {
+        arrows.getOrPut(fill to edge) { pixelArt(ARROW, mapOf('o' to edge, 'y' to fill, '#' to fill.darker(0.18f))) }
+    }
+
+    const val ARROW_W = 9
+    const val ARROW_H = 9
+
     const val PERSON_W = 7
     const val PERSON_H = 9
 }
 
-/** An oval square of the path, built once per size and color. */
-private val ovals = HashMap<String, PixelArt>()
+/** A square of the path: a stone slab with rounded corners, built once per size and color. */
+private val slabs = HashMap<String, PixelArt>()
 
-private fun oval(w: Int, h: Int, fill: Color, rim: Color, shade: Color, shine: Color): PixelArt {
+private fun slab(w: Int, h: Int, fill: Color, rim: Color, shade: Color, shine: Color): PixelArt {
     val key = "$w $h ${fill.value} ${rim.value}"
-    return synchronized(ovals) {
-        ovals.getOrPut(key) {
-            val inside = Array(h) { y ->
-                BooleanArray(w) { x ->
-                    val dx = (x + 0.5f - w / 2f) / (w / 2f)
-                    val dy = (y + 0.5f - h / 2f) / (h / 2f)
-                    dx * dx + dy * dy <= 1.08f
-                }
-            }
-            fun at(x: Int, y: Int) = x in 0 until w && y in 0 until h && inside[y][x]
+    return synchronized(slabs) {
+        slabs.getOrPut(key) {
+            fun corner(x: Int, y: Int) = (x == 0 || x == w - 1) && (y == 0 || y == h - 1)
             val rows = List(h) { y ->
                 String(CharArray(w) { x ->
                     when {
-                        !at(x, y) -> '.'
-                        !at(x - 1, y) || !at(x + 1, y) || !at(x, y - 1) || !at(x, y + 1) -> 'o'
-                        !at(x, y + 2) -> 'd'
-                        !at(x, y - 2) && x < w / 2 -> 'l'
+                        corner(x, y) -> '.'
+                        x == 0 || x == w - 1 || y == 0 || y == h - 1 -> 'o'
+                        y == h - 2 -> 'd'
+                        y == 1 && x in 2..w / 2 -> 'l'
                         else -> 'f'
                     }
                 })
@@ -453,6 +492,13 @@ private fun oval(w: Int, h: Int, fill: Color, rim: Color, shade: Color, shine: C
             pixelArt(rows, mapOf('o' to rim, 'f' to fill, 'd' to shade, 'l' to shine))
         }
     }
+}
+
+/** Scenery pictures faded into the ground of their landscape (see [recede]), built once each. */
+private val receded = HashMap<Pair<PixelArt, Int>, PixelArt>()
+
+private fun recededArt(art: PixelArt, stage: Int): PixelArt = synchronized(receded) {
+    receded.getOrPut(art to stage) { art.recolored { recede(it, GROUND[stage]) } }
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -509,12 +555,13 @@ fun DrawScope.drawTrailBoard(v: TrailView, p: Palette) {
     val w = TrailMap.WIDTH
     val h = TrailMap.HEIGHT
     val f = TrailMap.FRAME
-    // Landscapes, from the bottom up, each with a ragged edge into the next one.
+    // Three layers, from the back: the landscapes (muted, low contrast), the path with its
+    // squares (pale stone with a dark edge) and, drawn later, the pawns (bright, with a light halo).
     for (stage in Stage.entries.indices) {
         val top = TrailMap.bandTop(stage)
         val ground = groundOf(stage, p)
         dots(v, f, top, w - 2 * f, TrailMap.BAND, ground)
-        val speck = ground.darker(0.12f)
+        val speck = ground.darker(0.07f)
         for (n in 0 until 16) {
             val x = f + 1 + (n * 37 + stage * 11) % (w - 2 * f - 2)
             val y = top + 1 + (n * 7 + stage * 5) % (TrailMap.BAND - 2)
@@ -522,12 +569,12 @@ fun DrawScope.drawTrailBoard(v: TrailView, p: Palette) {
         }
         if (stage == 4) {
             // The sea along the bottom of the travel band, with little waves.
-            dots(v, f, top + 14, w - 2 * f, 4, c.water)
-            for (x in f + 1 until w - f step 6) dots(v, x, top + 14, 2, 1, c.waterLight)
+            dots(v, f, top + 14, w - 2 * f, 4, recede(c.water, ground))
+            for (x in f + 1 until w - f step 6) dots(v, x, top + 14, 2, 1, recede(c.waterLight, ground))
         }
         if (stage == 1) {
             // The pavement of the city, in slabs.
-            val line = ground.lighter(0.25f)
+            val line = ground.lighter(0.12f)
             for (x in f + 5 until w - f step 9) dots(v, x, top + 1, 1, TrailMap.BAND - 2, line)
         }
         if (stage < Stage.entries.size - 1) {
@@ -535,32 +582,34 @@ fun DrawScope.drawTrailBoard(v: TrailView, p: Palette) {
             for (x in f until w - f step 2) dots(v, x, top, 1, 1, above)
         }
     }
-    // The pictures of each landscape, in the corners the path leaves free.
+    // The pictures of each landscape, in the corners the path leaves free, faded into the ground.
     for (stage in Stage.entries.indices) for (col in 0 until TrailMap.PER_BAND) {
         val (x, bottom) = TrailMap.pocket(stage, col) ?: continue
         val art = TrailSprites.scenery[stage][col]
         if (art != null) {
-            standing(v, art, x, bottom, p)
+            standing(v, recededArt(art, stage), x, bottom, p)
         } else {
-            val tuft = groundOf(stage, p).darker(0.3f)
+            val tuft = groundOf(stage, p).darker(0.15f)
             dots(v, x - 2, bottom - 2, 1, 2, tuft)
             dots(v, x, bottom - 3, 1, 3, tuft)
             dots(v, x + 2, bottom - 2, 1, 2, tuft)
         }
     }
-    // The path: a dirt road under the squares.
+    // The path: a pale stone walkway with a dark edge, the same stone as the squares.
     val points = TrailMap.POINTS
-    for (i in 0 until Trail.FINISH) road(v, points[i], points[i + 1], 5, c.soilDark)
-    for (i in 0 until Trail.FINISH) road(v, points[i], points[i + 1], 3, c.soil)
-    // The squares, each with its mark.
-    val rim = if (p.strongOutlines) Color.Black else c.outline
+    val rim = if (p.strongOutlines) Color.Black else PixelColors.adapt(SLAB_EDGE, p)
+    val edge = if (p.strongOutlines) Color.Black else PixelColors.adapt(PATH_EDGE, p)
+    val path = PixelColors.adapt(PATH, p)
+    for (i in 0 until Trail.FINISH) road(v, points[i], points[i + 1], 6, edge)
+    for (i in 0 until Trail.FINISH) road(v, points[i], points[i + 1], 4, path)
+    // The squares: lighter slabs laid on the walkway, each with its mark.
     for (i in 0 until Trail.SQUARES) {
         val (x, y) = points[i]
         val (sw, sh) = TrailMap.squareSize(i)
         val special = i == 0 || i == Trail.FINISH
-        val fill = PixelColors.adapt(if (special) Color(0xFFFFF8E1) else SQUARE_FILL[Trail.stage(i).ordinal], p)
+        val fill = PixelColors.adapt(if (special) SLAB_SPECIAL else SLAB, p)
         // Already in the palette's colors: drawn as they are.
-        oval(sw, sh, fill, rim, fill.darker(0.18f), fill.lighter(0.5f)).draw(this, v.left + (x - sw / 2) * v.px, v.top + (y - sh / 2) * v.px, v.px)
+        slab(sw, sh, fill, rim, path.darker(0.08f), fill.lighter(0.6f)).draw(this, v.left + (x - sw / 2) * v.px, v.top + (y - sh / 2) * v.px, v.px)
         val mark = when (Trail.square(i)) {
             Square.HEART -> TrailSprites.heart
             Square.STORY -> TrailSprites.book
@@ -572,7 +621,7 @@ fun DrawScope.drawTrailBoard(v: TrailView, p: Palette) {
         if (mark != null) {
             sprite(v, mark, (x - mark.width / 2).toFloat(), (y - mark.height / 2).toFloat(), p)
         } else {
-            dots(v, x, y, 1, 1, fill.darker(0.35f))
+            dots(v, x, y, 1, 1, rim)
         }
     }
     drawFrame(v, p, c)
@@ -615,12 +664,15 @@ private fun DrawScope.drawFrame(v: TrailView, p: Palette, c: PixelColors) {
 /** The symbol of each pawn color (Ludo's), so color is never the only cue. */
 private val SYMBOLS = intArrayOf(0, 2, 1, 3)
 
+/** The arrow's own color: a warm amber that reads on light and dark landscapes alike. */
+private val ARROW_FILL = Color(0xFFFFB300)
+
 /**
  * A pawn: a little person of color [color] (a Ludo color index) standing with its feet at
- * [foot], [scale] times the board's dots. [hop] lifts it while it walks; [turn] puts an arrow
- * over its head.
+ * [foot], [scale] times the board's dots. [hop] lifts it while it walks; [turn] puts a bold arrow
+ * over its head, raised by [bob] dots (the arrow's gentle up-and-down, 0 when movement is off).
  */
-fun DrawScope.drawTrailPerson(v: TrailView, foot: Offset, p: Palette, color: Int, scale: Float = 1f, walking: Boolean = false, turn: Boolean = false) {
+fun DrawScope.drawTrailPerson(v: TrailView, foot: Offset, p: Palette, color: Int, scale: Float = 1f, walking: Boolean = false, turn: Boolean = false, bob: Float = 0f) {
     val px = v.px * scale
     val outline = if (p.strongOutlines) Color.Black else Color(0xFF3B2A20)
     val fill = ludoColor(p, color)
@@ -628,16 +680,28 @@ fun DrawScope.drawTrailPerson(v: TrailView, foot: Offset, p: Palette, color: Int
     val left = foot.x - TrailSprites.PERSON_W * px / 2
     val top = foot.y - TrailSprites.PERSON_H * px
     // A soft shadow on the ground.
-    drawOval(Color.Black.copy(alpha = 0.22f), Offset(foot.x - 3 * px, foot.y - px * 0.6f), Size(6 * px, px * 1.4f))
+    drawOval(Color.Black.copy(alpha = 0.3f), Offset(foot.x - 3.5f * px, foot.y - px * 0.7f), Size(7 * px, px * 1.6f))
+    // A light halo a dot around the figure, so the pawn stands out from the board behind it.
+    val haloColor = if (p.isDark && !p.strongOutlines) Color(0xFFF2EEE6) else Color.White
+    val halo = TrailSprites.halo(art, haloColor)
+    halo.draw(this, left - px, top, px)
+    halo.draw(this, left + px, top, px)
+    halo.draw(this, left, top - px, px)
+    halo.draw(this, left, top + px, px)
     art.draw(this, left, top, px)
     val mark = if (fill.red * 0.3f + fill.green * 0.59f + fill.blue * 0.11f > 0.5f) Color.Black.copy(alpha = 0.75f) else Color.White
     drawSymbol(SYMBOLS[color], Offset(foot.x, top + 4.5f * px), px * 2.6f, mark)
     if (turn) {
-        val arrow = p.highlight
-        val y = top - 3.5f * px
-        drawRect(arrow, Offset(foot.x - 2.5f * px, y), Size(5 * px, px))
-        drawRect(arrow, Offset(foot.x - 1.5f * px, y + px), Size(3 * px, px))
-        drawRect(arrow, Offset(foot.x - 0.5f * px, y + 2 * px), Size(px, px))
+        val fillColor = if (p.mode == ColorMode.HIGH_CONTRAST) p.highlight else ARROW_FILL
+        val arrow = TrailSprites.arrow(fillColor, if (p.strongOutlines) Color.Black else Color(0xFF2B1D14))
+        val arrowTop = top - (TrailSprites.ARROW_H + 2f) * px - kotlin.math.round(bob * px)
+        val arrowLeft = foot.x - TrailSprites.ARROW_W * px / 2
+        val ring = TrailSprites.halo(arrow, haloColor)
+        ring.draw(this, arrowLeft - px, arrowTop, px)
+        ring.draw(this, arrowLeft + px, arrowTop, px)
+        ring.draw(this, arrowLeft, arrowTop - px, px)
+        ring.draw(this, arrowLeft, arrowTop + px, px)
+        arrow.draw(this, arrowLeft, arrowTop, px)
     }
 }
 

@@ -47,4 +47,10 @@
     <string name="farm_sell_one">Sell 1</string>
     <string name="farm_sell_all">Sell all</string>
     <string name="farm_scene">Farm. Beds: %1$d. Animals: %2$d.</string>
+    <string name="farm_plot_title">A new bed</string>
+    <string name="farm_plot_note">Price in coins: %1$d. It goes next to the other beds and grows like them: sprout, leaves, then the harvest.</string>
+    <string name="farm_plot_buy">Buy the bed</string>
+    <string name="farm_plot_sow_first">Sow a bed first. With something growing there will always be a harvest to sell.</string>
+    <string name="farm_plot_here">Here it is: the new bed is the one blinking on the field.</string>
+    <string name="farm_plot_picture">A bed growing, from bare soil to the harvest</string>
 </resources>

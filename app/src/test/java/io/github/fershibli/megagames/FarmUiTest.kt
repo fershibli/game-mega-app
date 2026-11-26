@@ -91,6 +91,32 @@ class FarmUiTest {
     }
 
     @Test
+    fun aNewFarmHasSixBedsAndANewOneAsksFirstAndNeedsSomethingSown() {
+        show()
+        // Nothing sown yet: the button says why instead of spending the coins.
+        rule.onNodeWithTag("farm-buy-plot").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("Sow a bed first", substring = true).assertExists()
+        rule.onNodeWithTag("farm-plot-${FarmRules.START_PLOTS}").assertDoesNotExist()
+        rule.onNodeWithTag("farm-plot-0").performClick()
+        rule.onNodeWithText("Lettuce · coins: 2 · 2 min").performClick()
+        rule.waitForIdle()
+        // Now it asks, with the picture of a bed growing; Cancel changes nothing.
+        rule.onNodeWithTag("farm-buy-plot").performClick()
+        rule.onNodeWithTag("farm-plot-picture").assertExists()
+        rule.onNodeWithText("Cancel").performClick()
+        rule.waitForIdle()
+        assertEquals(FarmRules.START_PLOTS, stored().plots.size)
+        rule.onNodeWithTag("farm-buy-plot").performClick()
+        rule.onNodeWithTag("farm-plot-confirm").performClick()
+        rule.waitForIdle()
+        assertEquals(FarmRules.START_PLOTS + 1, stored().plots.size)
+        assertEquals(FarmRules.START_COINS - 2 - 25, stored().coins)
+        rule.onNodeWithText("the one blinking", substring = true).assertExists()
+        rule.onNodeWithTag("farm-plot-${FarmRules.START_PLOTS}").assertExists()
+    }
+
+    @Test
     fun collectEggsAndDeliverAnOrderForAStar() {
         val t = clock.time
         seed(FarmWorld(coins = 0, pens = listOf(Pen("chicken", t - 25 * minute)), orders = listOf(Order(mapOf("egg" to 2), 40), Order(mapOf("milk" to 9), 999), Order(mapOf("wool" to 9), 999))))
@@ -109,16 +135,5 @@ class FarmUiTest {
         assertEquals(1, after.stars)
         assertEquals(0, after.count(Item.EGG))
         assertEquals(FarmRules.ORDERS, after.orders.size)
-    }
-
-    @Test
-    fun aNewFarmShowsSixEmptyBedsAndBuyingABedAddsOne() {
-        seed(FarmWorld(coins = 100))
-        show()
-        rule.onNodeWithText("New bed (coins: 25)").performClick()
-        rule.waitForIdle()
-        assertEquals(7, stored().plots.size)
-        assertEquals(75, stored().coins)
-        rule.onNodeWithTag("farm-plot-6").assertExists()
     }
 }

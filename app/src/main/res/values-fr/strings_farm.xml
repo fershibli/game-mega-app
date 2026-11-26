@@ -47,4 +47,10 @@
     <string name="farm_sell_one">Vendre 1</string>
     <string name="farm_sell_all">Tout vendre</string>
     <string name="farm_scene">Ferme. Carrés : %1$d. Animaux : %2$d.</string>
+    <string name="farm_plot_title">Un nouveau carré</string>
+    <string name="farm_plot_note">Prix en pièces : %1$d. Il se place à côté des autres carrés et pousse comme eux : pousse, feuilles, puis la récolte.</string>
+    <string name="farm_plot_buy">Acheter le carré</string>
+    <string name="farm_plot_sow_first">Semez d\'abord quelque chose. Avec une culture qui pousse, il y aura toujours une récolte à vendre.</string>
+    <string name="farm_plot_here">Voilà : le nouveau carré est celui qui clignote dans le champ.</string>
+    <string name="farm_plot_picture">Un carré qui pousse, de la terre nue à la récolte</string>
 </resources>
