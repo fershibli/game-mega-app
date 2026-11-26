@@ -161,10 +161,7 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
                                 .pointerInput(s, myTurn) {
                                     detectTapGestures { pos ->
                                         if (!myTurn || !handoff.showsPrivate) return@detectTapGestures
-                                        val cell = size.width / n.toFloat()
-                                        val c = (pos.x / cell).toInt().coerceIn(0, n - 1)
-                                        val r = (pos.y / cell).toInt().coerceIn(0, n - 1)
-                                        state.value = Battleship.shoot(state.value, r * n + c)
+                                        state.value = Battleship.shoot(state.value, SeaGrid(size.width.toFloat(), n).cellAt(pos))
                                     }
                                 },
                         ) {

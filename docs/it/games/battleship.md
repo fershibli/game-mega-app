@@ -8,7 +8,7 @@ Il classico gioco delle flotte nascoste, contro il computer o a turno su un solo
 La tua flotta è già sistemata: navi dritte che non si toccano mai, nemmeno di spigolo. Tocca **Risistema** tutte le volte che vuoi e poi **Comincia**. A turno, il giocatore 2 sistema la sua mentre il giocatore 1 non guarda.
 
 ## Come si gioca
-- Il mare grande in alto è quello dell’altra parte: tocca una casella per sparare. Lo **spruzzo bianco** è acqua; la **croce rossa** è colpito. Una nave colpita in tutte le caselle affonda e compare sul mare.
+- Il mare grande in alto è quello dell’altra parte: tocca una casella per sparare. Un **cerchio d’inchiostro** è acqua; una **croce rossa** con una fiammella è colpito. Le caselle si chiamano come nel gioco su carta: lettere A–J in alto, numeri 1–10 sul lato. Una nave colpita in tutte le caselle affonda e compare sul mare.
 - Il mare piccolo sotto è il tuo, con le tue navi e i colpi dell’altra parte.
 - Un colpo a testa, a turno, come sulla carta. L’ultimo colpo ha una cornice.
 - Affonda per primo tutta la flotta avversaria per vincere.
