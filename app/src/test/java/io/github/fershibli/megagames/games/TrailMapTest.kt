@@ -4,6 +4,9 @@ import io.github.fershibli.megagames.games.trail.Stage
 import io.github.fershibli.megagames.games.trail.Trail
 import io.github.fershibli.megagames.games.trail.TrailMap
 import io.github.fershibli.megagames.games.trail.TrailSprites
+import io.github.fershibli.megagames.games.trail.cardOnTop
+import io.github.fershibli.megagames.games.trail.pastelOutline
+import androidx.compose.ui.graphics.Color
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -61,5 +64,26 @@ class TrailMapTest {
             assertTrue("picture of stage $stage col $col inside", box.left >= TrailMap.FRAME && box.right <= TrailMap.WIDTH - TrailMap.FRAME)
             for (i in 0 until Trail.SQUARES) assertTrue("picture of stage $stage col $col on square $i", !box.overlaps(squareBox(i)))
         }
+    }
+
+    @Test
+    fun theCardGoesToTheTopOnlyWhenItWouldCoverThePawnAtTheBottom() {
+        // A 800 tall game, a 300 tall card, 28 above the bottom edge: it spans 472..772 at the bottom.
+        assertTrue(cardOnTop(800f, 300f, 28f, 600f, 650f))
+        assertTrue(!cardOnTop(800f, 300f, 28f, 200f, 250f))
+        // Just clear of the card at the bottom.
+        assertTrue(!cardOnTop(800f, 300f, 28f, 400f, 470f))
+        // A pawn the card would cover at both ends: it stays where it is (no better at the top).
+        assertTrue(!cardOnTop(800f, 780f, 28f, 400f, 450f))
+    }
+
+    @Test
+    fun aPawnsOutlineIsAPastelOfItsOwnColor() {
+        val red = Color(0xFFD32F2F)
+        val day = pastelOutline(red, darkMode = false)
+        val night = pastelOutline(red, darkMode = true)
+        assertTrue(day.red > day.green && day.green > red.green)
+        assertTrue(night.red + night.green + night.blue < day.red + day.green + day.blue)
+        assertTrue(day != Color.White)
     }
 }

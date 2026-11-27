@@ -16,6 +16,8 @@ Sei paesaggi, uno per ogni parte della vita (un parco giochi e una scuola, la ci
 | Cartello | Un bivio: **Restare** dà 2 cuori, **Andare avanti** fa 3 caselle. |
 | Semplice | Niente; goditi il panorama. |
 
+Quando una pedina si ferma su un cuore, un libro, un cartello o la casetta, la sua carta si apre sopra il tabellone, un po' più in alto del fondo. Leggila con calma: niente prosegue finché non tocchi **Continua** (a un bivio, **Restare** o **Andare avanti**). Anche le carte del computer aspettano **Continua** e, a un bivio, mostrano la sua scelta. Le pedine avanzano una casella alla volta; le impostazioni **Tempo di attesa** e **Animazioni** le rendono più lente o più veloci.
+
 ## L’arrivo
 Il primo ad arrivare alla casetta prende **5** cuori, il secondo **3**, il terzo **2** e il quarto **1**. Non serve il numero esatto. La partita finisce quando tutte le pedine sono arrivate; alla fine compare il conto dei cuori.
 

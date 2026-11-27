@@ -1,5 +1,6 @@
 package io.github.fershibli.megagames.games
 
+import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.games.trail.Square
 import io.github.fershibli.megagames.games.trail.Story
@@ -62,6 +63,42 @@ class TrailTest {
         val go = Trail.choose(at, false)
         assertEquals(0, go.hearts[0])
         assertEquals(4 + Trail.GO_SQUARES, go.positions[0])
+    }
+
+    @Test
+    fun aHeartIsNewsUntilItsCardIsRead() {
+        val s = Trail.roll(Trail.newGame(2), 1, random)
+        assertTrue(Trail.hasNews(s))
+        assertFalse(Trail.hasNews(Trail.see(s)))
+        // A plain square has nothing to read; a story or a crossroads is read once answered.
+        assertFalse(Trail.hasNews(Trail.roll(Trail.newGame(2), 3, random)))
+        assertFalse(Trail.hasNews(Trail.readStory(Trail.roll(Trail.newGame(2), 2, random))))
+        assertFalse(Trail.hasNews(Trail.choose(Trail.roll(Trail.newGame(2), 4, random), true)))
+        // The next roll brings a new card.
+        val again = Trail.roll(Trail.next(Trail.see(s)), 1, random)
+        assertEquals(1, again.lastSeat)
+        assertTrue(Trail.hasNews(again))
+    }
+
+    @Test
+    fun theComputersAnswerWaitsOnTheCardUntilItIsMade() {
+        val at = Trail.roll(Trail.newGame(2), 4, random)
+        val decided = Trail.decide(at, false)
+        assertEquals(false, decided.pending!!.stays)
+        assertEquals(at.positions, decided.positions)
+        assertEquals(4 + Trail.GO_SQUARES, Trail.choose(decided, decided.pending!!.stays!!).positions[0])
+        // Only a crossroads takes an answer.
+        val story = Trail.roll(Trail.newGame(2), 2, random)
+        assertEquals(story, Trail.decide(story, true))
+    }
+
+    @Test
+    fun aGameSavedBeforeTheCardsStillLoads() {
+        val old = """{"seats":2,"positions":[4,0],"hearts":[1,0],"die":4,"pending":{"seat":0,"choiceStage":0}}"""
+        val s = AppJson.decodeFromString(TrailState.serializer(), old)
+        assertEquals(null, s.pending!!.stays)
+        assertFalse(s.seen)
+        assertEquals(Trail.STAY_HEARTS + 1, Trail.choose(s, true).hearts[0])
     }
 
     @Test

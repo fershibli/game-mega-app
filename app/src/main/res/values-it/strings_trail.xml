@@ -44,6 +44,7 @@
     <string name="trail_stay">Restare (cuori +%1$d)</string>
     <string name="trail_go">Andare avanti (%1$d caselle)</string>
     <string name="trail_ok">Continua</string>
+    <string name="trail_chose">%1$s ha scelto: %2$s</string>
     <string name="trail_roll">Tira il dado</string>
     <string name="trail_you">Tu</string>
     <string name="trail_your_turn">Tocca a te: tira il dado.</string>

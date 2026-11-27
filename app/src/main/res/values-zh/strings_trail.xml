@@ -44,6 +44,7 @@
     <string name="trail_stay">停下（爱心 +%1$d）</string>
     <string name="trail_go">往前走（%1$d 格）</string>
     <string name="trail_ok">继续</string>
+    <string name="trail_chose">%1$s选择了：%2$s</string>
     <string name="trail_roll">掷骰子</string>
     <string name="trail_you">你</string>
     <string name="trail_your_turn">轮到你：掷骰子吧。</string>
