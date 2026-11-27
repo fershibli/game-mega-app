@@ -16,6 +16,8 @@ Seis paisajes, uno por cada etapa de la vida (un parque y una escuela, la ciudad
 | Señal | Un cruce: **Quedarse** da 2 corazones; **Seguir** avanza 3 casillas. |
 | Normal | Nada; disfruta del paisaje. |
 
+Cuando un peón se detiene en un corazón, un libro, un letrero o la casita, su tarjeta se abre sobre el tablero, un poco por encima de la parte de abajo. Léela con calma: nada sigue hasta que tocas **Continuar** (en un cruce, hasta que tocas **Quedarse** o **Seguir**). Las tarjetas de la computadora también esperan a **Continuar** y, en un cruce, muestran qué eligió. Los peones avanzan casilla por casilla; los ajustes de **Tiempo de espera** y **Animaciones** los hacen más lentos o más rápidos.
+
 ## La llegada
 El primero en llegar a la casita gana **5** corazones, el segundo **3**, el tercero **2** y el cuarto **1**. No hace falta sacar el número exacto. La partida termina cuando llegan todos los peones; al final se ve el recuento de corazones.
 

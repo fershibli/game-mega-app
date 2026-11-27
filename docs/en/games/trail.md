@@ -16,6 +16,8 @@ Six landscapes, one for each part of life (a playground and a school, the city a
 | Signpost | A crossroads: **Stay** for 2 hearts, or **Move on** 3 squares. |
 | Plain | Nothing; enjoy the view. |
 
+When a pawn stops on a heart, a book, a signpost or the house, its card opens over the board, a little above the bottom. Read it calmly: nothing goes on until you tap **Go on** (at a crossroads, until you tap **Stay** or **Move on**). The computer's cards wait for **Go on** too, and at a crossroads they show which way it chose. Pawns walk one square at a time; the **Waiting time** and **Animations** settings make them slower or quicker.
+
 ## Arriving
 The first to reach the house gets **5** hearts, the second **3**, the third **2** and the fourth **1**. You don't need an exact roll. The game ends when every pawn has arrived; the score of hearts is shown at the end.
 

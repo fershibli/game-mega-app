@@ -334,11 +334,24 @@ class ScreenshotTest {
     @Test fun trailDark() = shot("game_trail_dark", Settings(darkMode = true)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
     @Test fun trailHighContrast() = shot("game_trail_high_contrast", Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST)) { GameContent(GameId.TRAIL, trailHost()) }
 
-    /** Four pawns along the way, with a story (or a crossroads) waiting for you. */
-    private fun trailHost(choice: Boolean = false): GameHost {
+    @Test fun trailComputer() = shot("game_trail_computer") { GameContent(GameId.TRAIL, trailHost(computer = true)) }
+    @Test fun trailComputerPt() = shot("game_trail_computer_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(computer = true)) }
+    @Test fun trailBigTextPt() = shot("game_trail_big_text_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = Settings.SCALE_MAX)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
+    @Test fun trailComputerBigText() = shot("game_trail_computer_big_text", Settings(fontScale = Settings.SCALE_MAX)) { GameContent(GameId.TRAIL, trailHost(computer = true)) }
+
+    /**
+     * Four pawns along the way, with a story (or a crossroads) waiting for you, or the card of the
+     * computer's crossroads with the way it chose.
+     */
+    private fun trailHost(choice: Boolean = false, computer: Boolean = false): GameHost {
         val s = io.github.fershibli.megagames.games.trail.TrailState(
-            seats = 4, positions = listOf(if (choice) 12 else 10, 7, 13, 4), hearts = listOf(6, 4, 7, 3), die = 3,
-            pending = if (choice) io.github.fershibli.megagames.games.trail.Pending(0, choiceStage = 1) else io.github.fershibli.megagames.games.trail.Pending(0, story = io.github.fershibli.megagames.games.trail.Story.FRIEND.ordinal),
+            seats = 4, positions = listOf(if (choice) 12 else 10, if (computer) 12 else 7, 13, 4), hearts = listOf(6, 4, 7, 3), die = 3,
+            turn = if (computer) 1 else 0, lastSeat = if (computer) 1 else 0,
+            pending = when {
+                computer -> io.github.fershibli.megagames.games.trail.Pending(1, choiceStage = 1, stays = false)
+                choice -> io.github.fershibli.megagames.games.trail.Pending(0, choiceStage = 1)
+                else -> io.github.fershibli.megagames.games.trail.Pending(0, story = io.github.fershibli.megagames.games.trail.Story.FRIEND.ordinal)
+            },
         )
         return GameHost(GameId.TRAIL, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.trail.TrailState.serializer(), s), null, null, io.github.fershibli.megagames.core.PlaySetup(seats = 4)) {}
     }

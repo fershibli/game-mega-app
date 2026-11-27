@@ -1,8 +1,11 @@
 package io.github.fershibli.megagames
 
 import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.test.assertIsDisplayed
 import androidx.compose.ui.test.assertIsEnabled
-import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.hasText
+import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -27,7 +30,10 @@ import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.annotation.Config
 
-/** The life trail like a person plays it: roll, read a story, decide at a crossroads. */
+/**
+ * The life trail like a person plays it: roll, read a story, decide at a crossroads. Every card
+ * opens over the board and waits for a tap, the computer's too.
+ */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35], qualifiers = "w400dp-h860dp-xhdpi")
 class TrailUiTest {
@@ -39,6 +45,7 @@ class TrailUiTest {
     private fun show(state: TrailState?, setup: PlaySetup = PlaySetup(seats = 2)) {
         val host = GameHost(GameId.TRAIL, Difficulty.EASY, state?.let { AppJson.encodeToJsonElement(TrailState.serializer(), it) }, null, null, setup) { outcome = it }
         rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.TRAIL, host) } }
+        rule.waitUntil(10_000) { rule.onAllNodesWithTag("trail-board").fetchSemanticsNodes().isNotEmpty() }
         rule.waitForIdle()
     }
 
@@ -71,9 +78,68 @@ class TrailUiTest {
         val s = TrailState(2, listOf(4, 0), listOf(1, 0), die = 4, pending = Pending(0, choiceStage = 0))
         show(s)
         rule.onNodeWithText("The friends call you to play outside a little longer.").assertExists()
+        // The two choices are the answer: no Go on.
+        rule.onNodeWithTag("trail-ok").assertDoesNotExist()
+        rule.onNodeWithTag("trail-go").assertIsDisplayed()
         rule.onNodeWithTag("trail-stay").performClick()
         rule.waitForIdle()
         rule.onNodeWithText("You ♥ ${1 + Trail.STAY_HEARTS}", substring = true).assertExists()
+    }
+
+    @Test
+    fun aHeartCardWaitsForGoOn() {
+        val s = TrailState(2, listOf(1, 0), listOf(1, 0), die = 1, lastSeat = 0, lastHearts = 1)
+        show(s)
+        rule.onNodeWithTag("trail-card").assertIsDisplayed()
+        rule.onNodeWithText("Hearts +1").assertExists()
+        rule.mainClock.advanceTimeBy(20_000)
+        rule.waitForIdle()
+        // Nothing goes on by itself: the card is still there and the turn has not passed.
+        rule.onNodeWithText("You rolled 1.", substring = true).assertExists()
+        rule.onNodeWithTag("trail-ok").assertIsDisplayed().performClick()
+        rule.mainClock.advanceTimeBy(5_000)
+        rule.waitForIdle()
+        rule.onNodeWithText("You rolled 1.", substring = true).assertDoesNotExist()
+    }
+
+    @Test
+    fun theComputersCrossroadsShowsItsChoiceAndWaitsForGoOn() {
+        val s = TrailState(2, listOf(0, 4), listOf(0, 0), turn = 1, die = 4, lastSeat = 1, pending = Pending(1, choiceStage = 0))
+        show(s)
+        rule.onNodeWithText("The friends call you to play outside a little longer.").assertExists()
+        // You cannot choose for the computer; you see what it chose.
+        rule.onNodeWithTag("trail-stay").assertDoesNotExist()
+        rule.onNodeWithTag("trail-chose", useUnmergedTree = true).assertIsDisplayed()
+        val chose = rule.onNode(hasText("Blue chose: ", substring = true), useUnmergedTree = true)
+            .fetchSemanticsNode().config[SemanticsProperties.Text].single().text
+        val stayed = chose.contains("Stay")
+        rule.mainClock.advanceTimeBy(20_000)
+        rule.waitForIdle()
+        rule.onNodeWithTag("trail-chose", useUnmergedTree = true).assertExists()
+        rule.onNodeWithText("Blue ♥ 0", substring = true).assertExists()
+        rule.onNodeWithTag("trail-ok").assertIsDisplayed().performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("trail-chose", useUnmergedTree = true).assertDoesNotExist()
+        if (stayed) {
+            rule.onNodeWithText("Blue ♥ ${Trail.STAY_HEARTS}", substring = true).assertExists()
+        } else {
+            val board = rule.onNodeWithTag("trail-board").fetchSemanticsNode().config[SemanticsProperties.ContentDescription].single()
+            assertTrue(board, board.contains("Blue ${4 + Trail.GO_SQUARES + 1}"))
+        }
+    }
+
+    @Test
+    fun theComputersStoryWaitsForGoOn() {
+        val story = Story.FRIEND
+        val s = TrailState(2, listOf(0, 10), listOf(0, 0), turn = 1, die = 3, lastSeat = 1, pending = Pending(1, story = story.ordinal))
+        show(s)
+        rule.onNodeWithText("You made a friend for life.").assertExists()
+        rule.mainClock.advanceTimeBy(20_000)
+        rule.waitForIdle()
+        rule.onNodeWithText("Blue ♥ 0", substring = true).assertExists()
+        rule.onNodeWithTag("trail-ok").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("Blue ♥ ${story.hearts}", substring = true).assertExists()
     }
 
     @Test

@@ -5,7 +5,20 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.gestures.detectTapGestures
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.widthIn
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.liveRegion
+import androidx.compose.ui.semantics.paneTitle
+import io.github.fershibli.megagames.ui.components.IconView
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -73,14 +86,20 @@ import kotlin.random.Random
 private const val HUMAN_SEAT = 0
 private const val DEFAULT_SEATS = 2
 
-/** Pauses (milliseconds) so a person can follow every pawn. */
-private const val ROLL_PAUSE = 900L
-private const val TURN_PAUSE = 1300L
-private const val READ_PAUSE = 2600L
+/**
+ * Pauses (milliseconds, scaled by the chosen pace) so a person can follow every pawn. Nothing
+ * waits to be read: every card stays on the screen until someone taps it.
+ */
+private const val ROLL_PAUSE = 1200L
+private const val TURN_PAUSE = 1500L
 private const val END_PAUSE = 1200L
 
-/** A pawn's hop from one square to the next, and the die's tumbles before it settles. */
-private const val HOP = 300L
+/**
+ * A pawn's hop from one square to the next (slower with gentle movement), the rest on each square
+ * before the next hop, and the die's tumbles before it settles.
+ */
+private const val HOP = 650L
+private const val STEP_REST = 200L
 private const val TUMBLE = 90L
 private const val TUMBLES = 7
 
@@ -90,6 +109,11 @@ private const val BOB_DOTS = 2f
 
 /** Pawn colors by seat (Ludo's red, blue, green and yellow), each with its own symbol. */
 private val SEAT_COLORS = intArrayOf(0, 3, 1, 2)
+/** The card: how far above the bottom of the game it sits, how wide it grows on a tablet, and the veil over the game behind it. */
+private val CARD_LIFT = 28.dp
+private val CARD_WIDTH = 560.dp
+private const val SCRIM = 0.35f
+
 private val COLOR_NAMES = intArrayOf(R.string.ludo_red, R.string.ludo_blue, R.string.ludo_green, R.string.ludo_yellow)
 
 @Composable
@@ -148,12 +172,13 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
             val from = shown.toList()
             hopFrom = from
             hop.snapTo(0f)
-            hop.animateTo(1f, tween((HOP * pace.factor).toInt(), easing = LinearEasing))
+            hop.animateTo(1f, tween((HOP * pace.factor * motion.duration).toInt(), easing = LinearEasing))
             for (seat in from.indices) {
                 val target = s.positions[seat]
                 if (from[seat] != target) shown[seat] = from[seat] + if (target > from[seat]) 1 else -1
             }
             hopFrom = null
+            if (shown.toList() != s.positions) pace.wait(STEP_REST)
         }
     }
     fun settled(t: TrailState) = shown.toList() == t.positions && seenDie == t.die && tumble == 0
@@ -177,13 +202,12 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
         }
         val pending = s.pending
         when {
-            pending != null && !human(pending.seat) -> {
-                pace.wait(READ_PAUSE)
-                state.value = if (pending.story >= 0) Trail.readStory(s) else Trail.choose(s, Trail.computerStays(s, host.difficulty, Random.Default))
-            }
-            pending != null -> Unit // waits for the person to read or choose
+            // The computer answers a crossroads at once; its answer waits on the card until it is read.
+            pending != null && pending.choiceStage >= 0 && pending.stays == null && !human(pending.seat) ->
+                state.value = Trail.decide(s, Trail.computerStays(s, host.difficulty, Random.Default))
+            pending != null || Trail.hasNews(s) -> Unit // the card waits for a tap
             s.die != 0 -> {
-                pace.wait(if (s.lastStory >= 0 || s.lastHearts != 0 || s.lastMove != 0) READ_PAUSE else TURN_PAUSE)
+                pace.wait(TURN_PAUSE)
                 state.value = Trail.next(s)
             }
             !human(s.turn) -> {
@@ -215,7 +239,6 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
                 StatusPill(if (line.isEmpty()) hearts else hearts + "\n" + line, Modifier.testTag("trail-status"), emphasized = myTurn && Trail.canRoll(s))
             },
             controls = {
-                if (settled(s)) News(s, names, human = s.pending?.let { human(it.seat) } ?: false, state)
                 ActionBar {
                     BigButton(stringResource(R.string.trail_roll), ::roll, Modifier.testTag("trail-roll"), icon = AppIcon.DICE, enabled = myTurn && Trail.canRoll(s))
                 }
@@ -248,75 +271,131 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
                 drawTrailDie(v, face, ludoColor(p, SEAT_COLORS[s.turn]), dimmed = s.die == 0 && tumble == 0, shake, p)
             }
         }
+        if (settled(s)) TrailCard(s, names, ::human, state)
         HandoffOverlay(handoff) {}
     }
 }
 
 /**
- * The card under the board: the story being read, the crossroads to decide, or the last thing
- * that happened. A person reads and taps; the computer's cards go on by themselves.
+ * The card of the square a pawn stopped on, over the game a little above the bottom: a story, a
+ * crossroads, a heart or the arrival. Nothing goes on until it is answered: a crossroads by its
+ * two choices, anything else by Go on. The computer's cards wait for Go on too, and at a
+ * crossroads they show which way it chose.
  */
 @Composable
-private fun News(s: TrailState, names: List<String>, human: Boolean, state: MutableState<TrailState>) {
+private fun TrailCard(s: TrailState, names: List<String>, human: (Int) -> Boolean, state: MutableState<TrailState>) {
     val p = LocalPalette.current
     val pending = s.pending
-    val seat = pending?.seat ?: s.lastSeat
-    if (seat < 0) return
+    val seat = when {
+        pending != null -> pending.seat
+        Trail.hasNews(s) -> s.lastSeat
+        else -> return
+    }
+    if (seat !in names.indices) return
+    val choice = pending?.choiceStage?.takeIf { it >= 0 }
+    val person = human(seat)
+    // The computer's answer is on the table a moment after its pawn stops.
+    if (choice != null && !person && pending.stays == null) return
     val who = names[seat]
     val story = pending?.story?.takeIf { it >= 0 } ?: if (pending == null) s.lastStory else -1
     val effect = when {
+        choice != null -> null
         story >= 0 -> Story.entries[story].let { st -> effectText(st.hearts, st.move) }
-        pending == null -> effectText(s.lastHearts, s.lastMove)
-        else -> null
+        else -> effectText(s.lastHearts, s.lastMove)
     }
+    val arrived = choice == null && story < 0 && pending == null && s.positions[seat] == Trail.FINISH
     val title = when {
-        pending?.choiceStage != null && pending.choiceStage >= 0 -> stringResource(Stage.entries[pending.choiceStage].label)
+        choice != null -> stringResource(Stage.entries[choice].label)
         story >= 0 -> stringResource(Story.entries[story].stage.label)
-        s.lastSeat >= 0 && s.positions[s.lastSeat] == Trail.FINISH -> stringResource(R.string.trail_arrived, who)
+        arrived -> stringResource(R.string.trail_arrived, who)
         else -> null
     }
     val body = when {
-        pending?.choiceStage != null && pending.choiceStage >= 0 -> stringResource(Stage.entries[pending.choiceStage].choice)
+        choice != null -> stringResource(Stage.entries[choice].choice)
         story >= 0 -> stringResource(Story.entries[story].text)
         else -> null
     }
-    if (title == null && body == null && effect == null) return
     // The stage the card speaks about, for its picture.
-    val stage = when {
-        pending?.choiceStage != null && pending.choiceStage >= 0 -> pending.choiceStage
-        story >= 0 -> Story.entries[story].stage.ordinal
-        else -> null
-    }
+    val stage = choice ?: story.takeIf { it >= 0 }?.let { Story.entries[it].stage.ordinal }
+    val stay = stringResource(R.string.trail_stay, Trail.STAY_HEARTS)
+    val go = stringResource(R.string.trail_go, Trail.GO_SQUARES)
+    // "You reached the end!" already names who; otherwise the name comes first.
+    val heading = if (arrived) title!! else listOfNotNull(who, title).joinToString(" · ")
     val paper = trailPaper(p)
-    val shape = RoundedCornerShape(6.dp)
-    Column(
-        Modifier.fillMaxWidth().clip(shape).background(paper)
-            .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.5.dp, if (p.strongOutlines) p.outline else Color(0xFFB9824F)), shape)
-            .padding(12.dp).heightIn(min = 40.dp).testTag("trail-news"),
-        verticalArrangement = Arrangement.spacedBy(6.dp),
+    val shape = RoundedCornerShape(16.dp)
+    BoxWithConstraints(
+        Modifier.fillMaxSize()
+            .background(p.background.copy(alpha = SCRIM))
+            // Swallows touches so nothing underneath is played while the card is open.
+            .pointerInput(Unit) { detectTapGestures {} }
+            .padding(start = 12.dp, end = 12.dp, top = 12.dp, bottom = CARD_LIFT),
+        contentAlignment = Alignment.BottomCenter,
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Canvas(Modifier.size(24.dp, 30.dp)) {
-                val v = TrailView(0f, 0f, kotlin.math.floor(size.height / 11f).coerceAtLeast(1f))
-                drawTrailPerson(v, Offset(size.width / 2, size.height - v.px), p, SEAT_COLORS[seat])
-            }
-            Text(listOfNotNull(who, title).joinToString(" · "), Modifier.padding(start = 8.dp).weight(1f), style = MaterialTheme.typography.titleMedium, color = p.text)
-        }
-        if (body != null) {
-            Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                if (stage != null) Canvas(Modifier.size(64.dp, 52.dp)) { drawTrailVignette(stage, p) }
-                Text(body, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = p.text)
-            }
-        }
-        if (effect != null && pending?.choiceStage?.let { it < 0 } != false) Text(effect, style = MaterialTheme.typography.titleMedium, color = p.success)
-        if (human && pending != null) {
-            if (pending.story >= 0) {
-                BigButton(stringResource(R.string.trail_ok), { state.value = Trail.readStory(state.value) }, Modifier.fillMaxWidth().testTag("trail-ok"), compact = true)
-            } else {
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    BigButton(stringResource(R.string.trail_stay, Trail.STAY_HEARTS), { state.value = Trail.choose(state.value, true) }, Modifier.weight(1f).testTag("trail-stay"), compact = true)
-                    BigButton(stringResource(R.string.trail_go, Trail.GO_SQUARES), { state.value = Trail.choose(state.value, false) }, Modifier.weight(1f).testTag("trail-go"), style = ButtonStyle.SECONDARY, compact = true)
+        Column(
+            Modifier.widthIn(max = CARD_WIDTH).fillMaxWidth().heightIn(max = maxHeight)
+                .shadow(10.dp, shape).clip(shape).background(paper)
+                .border(BorderStroke(if (p.strongOutlines) 3.dp else 2.dp, if (p.strongOutlines) p.outline else Color(0xFFB9824F)), shape)
+                .semantics { paneTitle = heading }
+                .testTag("trail-card")
+                .padding(14.dp),
+        ) {
+            // The words scroll when the text is very large; the buttons always stay in sight.
+            Column(
+                Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState())
+                    .semantics(mergeDescendants = true) { liveRegion = LiveRegionMode.Polite },
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Canvas(Modifier.size(28.dp, 34.dp)) {
+                        val v = TrailView(0f, 0f, kotlin.math.floor(size.height / 11f).coerceAtLeast(1f))
+                        drawTrailPerson(v, Offset(size.width / 2, size.height - v.px), p, SEAT_COLORS[seat])
+                    }
+                    Text(heading, Modifier.padding(start = 8.dp).weight(1f), style = MaterialTheme.typography.titleLarge, color = p.text)
                 }
+                if (body != null) {
+                    Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                        if (stage != null) Canvas(Modifier.size(72.dp, 58.dp)) { drawTrailVignette(stage, p) }
+                        Text(body, Modifier.weight(1f), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                    }
+                }
+                if (effect != null) Text(effect, style = MaterialTheme.typography.titleMedium, color = p.success)
+                val picked = pending?.stays
+                if (choice != null && !person && picked != null) {
+                    val mark = RoundedCornerShape(12.dp)
+                    Row(
+                        Modifier.fillMaxWidth().clip(mark).background(p.highlight.copy(alpha = 0.55f))
+                            .border(3.dp, p.primary, mark).padding(10.dp).testTag("trail-chose"),
+                        verticalAlignment = Alignment.CenterVertically,
+                    ) {
+                        IconView(AppIcon.CHECK, p.primary, size = 28.dp)
+                        Text(
+                            stringResource(R.string.trail_chose, who, if (picked) stay else go),
+                            Modifier.padding(start = 10.dp).weight(1f), style = MaterialTheme.typography.titleMedium, color = p.text,
+                        )
+                    }
+                }
+            }
+            Spacer(Modifier.height(12.dp))
+            if (choice != null && person) {
+                // The two choices are the answer, one above the other so long words keep their size.
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    BigButton(stay, { state.value = Trail.choose(state.value, true) }, Modifier.fillMaxWidth().testTag("trail-stay"))
+                    BigButton(go, { state.value = Trail.choose(state.value, false) }, Modifier.fillMaxWidth().testTag("trail-go"), style = ButtonStyle.SECONDARY)
+                }
+            } else {
+                BigButton(
+                    stringResource(R.string.trail_ok),
+                    {
+                        val now = state.value
+                        val answer = now.pending?.stays
+                        state.value = when {
+                            now.pending?.story?.let { it >= 0 } == true -> Trail.readStory(now)
+                            answer != null -> Trail.choose(now, answer)
+                            else -> Trail.see(now)
+                        }
+                    },
+                    Modifier.fillMaxWidth().testTag("trail-ok"), icon = AppIcon.CHECK,
+                )
             }
         }
     }
