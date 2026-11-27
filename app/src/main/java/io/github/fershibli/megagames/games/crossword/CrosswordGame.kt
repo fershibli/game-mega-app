@@ -172,8 +172,11 @@ private fun CrosswordScreen(state: MutableState<CrosswordState>, host: GameHost)
                 RoundIconButton(AppIcon.PREV, stringResource(R.string.crossword_prev), { moveToWord(-1) }, size = 52.dp)
                 Surface(Modifier.weight(1f), shape = RoundedCornerShape(16.dp), color = p.highlight.copy(alpha = 0.45f)) {
                     val dir = if (word?.across == true) stringResource(R.string.crossword_across) else stringResource(R.string.crossword_down)
+                    // Once a word is right (on the levels that show right and wrong), it is shown as
+                    // written, with its accents and hyphens: the grid itself has letters only.
+                    val found = word != null && (showErrors || solved) && word.cells(s.size).all { s.entries[it] == solution[it] }
                     Text(
-                        if (word == null) "" else "${word.number} $dir · ${word.clue} (${word.letters.size})",
+                        if (word == null) "" else "${word.number} $dir · ${word.clue} (${word.letters.size})" + if (found) " · ${word.shown}" else "",
                         Modifier.padding(horizontal = 12.dp, vertical = 8.dp),
                         style = MaterialTheme.typography.titleMedium, color = p.text, textAlign = TextAlign.Center,
                     )
