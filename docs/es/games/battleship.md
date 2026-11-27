@@ -7,6 +7,8 @@ El clásico juego de las flotas escondidas, contra el ordenador o por turnos en 
 ## Antes del primer disparo
 Tu flota ya viene colocada: barcos rectos que nunca se tocan, ni siquiera por una esquina. Toca **Colocar otra vez** las veces que quieras y luego **Empezar**. Por turnos, el jugador 2 coloca la suya mientras el jugador 1 no mira.
 
+Para colocar un barco a tu gusto, **arrástralo** a otro sitio: encaja en las casillas, y las casillas donde quedará aparecen marcadas. **Toca** un barco para girarlo (de horizontal a vertical, y al revés). Si no hay sitio (en el borde o junto a otro barco), el barco se queda donde estaba, con un borde rojo por un momento. **Deshacer** devuelve el último cambio.
+
 ## Cómo se juega
 - El mar grande de arriba es el del otro lado: toca una casilla para disparar. Un **círculo de tinta** es agua; una **cruz roja** con una llamita es tocado. Las casillas se nombran como en el juego de papel: letras A–J arriba, números 1–10 al costado. Un barco tocado en todas sus casillas se hunde y aparece en el mar.
 - El mar pequeño de abajo es el tuyo, con tus barcos y los disparos del otro lado.
