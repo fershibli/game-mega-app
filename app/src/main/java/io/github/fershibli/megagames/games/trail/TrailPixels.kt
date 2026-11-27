@@ -103,30 +103,36 @@ object TrailMap {
 private const val INK = "o=3B2A20"
 
 /**
- * The ground of each landscape, from childhood to the quiet years. Soft, muted middle tones, so
- * the light path and the bright pawns stand out on them.
+ * The ground of each landscape, from childhood to the quiet years. Calm, cool middle tones (not
+ * pale), so the warm trail and the bright pawns stand out on them.
  */
 private val GROUND = listOf(
-    Color(0xFFA3BD86), // playground grass
-    Color(0xFFAAB4BA), // city pavement
-    Color(0xFFC2AE88), // sandy yard of the workshop
-    Color(0xFF93B27E), // garden lawn
-    Color(0xFFCBBE98), // beach sand
-    Color(0xFFB4B883), // orchard meadow
+    Color(0xFF6E9760), // playground grass
+    Color(0xFF6F86A3), // city pavement
+    Color(0xFF8C8F96), // workshop yard
+    Color(0xFF5F9170), // garden lawn
+    Color(0xFF8F9C8A), // beach and mountains
+    Color(0xFF7C9A5E), // orchard meadow
 )
 
 /**
- * The path and its squares are one trail of the same pale stone: a walkway with a dark edge, and
- * the squares as slightly lighter slabs laid on it.
+ * The path and its squares are one warm trail without any outline: a deeper sandy-stone walkway,
+ * and the squares as lighter, creamier slabs laid on it (the special ones golden).
  */
-private val SLAB_EDGE = Color(0xFF3B2A20)
-private val PATH_EDGE = Color(0xFF8A6A4A)
-private val PATH = Color(0xFFDCC8A2)
-private val SLAB = Color(0xFFFBF4E4)
-private val SLAB_SPECIAL = Color(0xFFFFE7A3)
+private val PATH = Color(0xFFC58F4F)
+private val SLAB = Color(0xFFF7E6BE)
+private val SLAB_SPECIAL = Color(0xFFFFD25E)
 
 /** How far the scenery fades into its ground: the pictures stay readable but calm, behind the path. */
-private const val RECEDE = 0.42f
+private const val RECEDE = 0.32f
+
+/** How much of white goes into a pawn's pastel outline (a little less at night). */
+private const val PASTEL_DAY = 0.68f
+private const val PASTEL_NIGHT = 0.5f
+
+/** The light pastel version of a pawn's [color], for its outline: [darkMode] makes it a little deeper. */
+fun pastelOutline(color: Color, darkMode: Boolean): Color =
+    lerp(color, Color.White, if (darkMode) PASTEL_NIGHT else PASTEL_DAY).copy(alpha = 1f)
 
 /** [color] made calmer and closer to [ground]: less saturated, less contrast. */
 private fun recede(color: Color, ground: Color): Color {
@@ -470,26 +476,16 @@ object TrailSprites {
     const val PERSON_H = 9
 }
 
-/** A square of the path: a stone slab with rounded corners, built once per size and color. */
+/** A square of the path: a flat stone slab with rounded corners and no edge, built once per size and color. */
 private val slabs = HashMap<String, PixelArt>()
 
-private fun slab(w: Int, h: Int, fill: Color, rim: Color, shade: Color, shine: Color): PixelArt {
-    val key = "$w $h ${fill.value} ${rim.value}"
+private fun slab(w: Int, h: Int, fill: Color): PixelArt {
+    val key = "$w $h ${fill.value}"
     return synchronized(slabs) {
         slabs.getOrPut(key) {
             fun corner(x: Int, y: Int) = (x == 0 || x == w - 1) && (y == 0 || y == h - 1)
-            val rows = List(h) { y ->
-                String(CharArray(w) { x ->
-                    when {
-                        corner(x, y) -> '.'
-                        x == 0 || x == w - 1 || y == 0 || y == h - 1 -> 'o'
-                        y == h - 2 -> 'd'
-                        y == 1 && x in 2..w / 2 -> 'l'
-                        else -> 'f'
-                    }
-                })
-            }
-            pixelArt(rows, mapOf('o' to rim, 'f' to fill, 'd' to shade, 'l' to shine))
+            val rows = List(h) { y -> String(CharArray(w) { x -> if (corner(x, y)) '.' else 'f' }) }
+            pixelArt(rows, mapOf('f' to fill))
         }
     }
 }
@@ -555,8 +551,8 @@ fun DrawScope.drawTrailBoard(v: TrailView, p: Palette) {
     val w = TrailMap.WIDTH
     val h = TrailMap.HEIGHT
     val f = TrailMap.FRAME
-    // Three layers, from the back: the landscapes (muted, low contrast), the path with its
-    // squares (pale stone with a dark edge) and, drawn later, the pawns (bright, with a light halo).
+    // Three layers, from the back: the landscapes (calm, cool tones), the path with its squares
+    // (warm stone, lighter slabs, no outlines) and, drawn later, the pawns (bright, pastel halo).
     for (stage in Stage.entries.indices) {
         val top = TrailMap.bandTop(stage)
         val ground = groundOf(stage, p)
@@ -595,21 +591,18 @@ fun DrawScope.drawTrailBoard(v: TrailView, p: Palette) {
             dots(v, x + 2, bottom - 2, 1, 2, tuft)
         }
     }
-    // The path: a pale stone walkway with a dark edge, the same stone as the squares.
+    // The path: a warm stone walkway, without an outline.
     val points = TrailMap.POINTS
-    val rim = if (p.strongOutlines) Color.Black else PixelColors.adapt(SLAB_EDGE, p)
-    val edge = if (p.strongOutlines) Color.Black else PixelColors.adapt(PATH_EDGE, p)
     val path = PixelColors.adapt(PATH, p)
-    for (i in 0 until Trail.FINISH) road(v, points[i], points[i + 1], 6, edge)
-    for (i in 0 until Trail.FINISH) road(v, points[i], points[i + 1], 4, path)
-    // The squares: lighter slabs laid on the walkway, each with its mark.
+    for (i in 0 until Trail.FINISH) road(v, points[i], points[i + 1], 5, path)
+    // The squares: lighter slabs laid on the walkway, each with its mark (the plain ones empty).
     for (i in 0 until Trail.SQUARES) {
         val (x, y) = points[i]
         val (sw, sh) = TrailMap.squareSize(i)
         val special = i == 0 || i == Trail.FINISH
         val fill = PixelColors.adapt(if (special) SLAB_SPECIAL else SLAB, p)
         // Already in the palette's colors: drawn as they are.
-        slab(sw, sh, fill, rim, path.darker(0.08f), fill.lighter(0.6f)).draw(this, v.left + (x - sw / 2) * v.px, v.top + (y - sh / 2) * v.px, v.px)
+        slab(sw, sh, fill).draw(this, v.left + (x - sw / 2) * v.px, v.top + (y - sh / 2) * v.px, v.px)
         val mark = when (Trail.square(i)) {
             Square.HEART -> TrailSprites.heart
             Square.STORY -> TrailSprites.book
@@ -618,11 +611,7 @@ fun DrawScope.drawTrailBoard(v: TrailView, p: Palette) {
             Square.FINISH -> TrailSprites.home
             Square.PLAIN -> null
         }
-        if (mark != null) {
-            sprite(v, mark, (x - mark.width / 2).toFloat(), (y - mark.height / 2).toFloat(), p)
-        } else {
-            dots(v, x, y, 1, 1, rim)
-        }
+        if (mark != null) sprite(v, mark, (x - mark.width / 2).toFloat(), (y - mark.height / 2).toFloat(), p)
     }
     drawFrame(v, p, c)
 }
@@ -681,9 +670,8 @@ fun DrawScope.drawTrailPerson(v: TrailView, foot: Offset, p: Palette, color: Int
     val top = foot.y - TrailSprites.PERSON_H * px
     // A soft shadow on the ground.
     drawOval(Color.Black.copy(alpha = 0.3f), Offset(foot.x - 3.5f * px, foot.y - px * 0.7f), Size(7 * px, px * 1.6f))
-    // A light halo a dot around the figure, so the pawn stands out from the board behind it.
-    val haloColor = if (p.isDark && !p.strongOutlines) Color(0xFFF2EEE6) else Color.White
-    val halo = TrailSprites.halo(art, haloColor)
+    // A pastel halo a dot around the figure, of the pawn's own color, so it stands out from the board.
+    val halo = TrailSprites.halo(art, pastelOutline(fill, p.isDark))
     halo.draw(this, left - px, top, px)
     halo.draw(this, left + px, top, px)
     halo.draw(this, left, top - px, px)
@@ -696,7 +684,7 @@ fun DrawScope.drawTrailPerson(v: TrailView, foot: Offset, p: Palette, color: Int
         val arrow = TrailSprites.arrow(fillColor, if (p.strongOutlines) Color.Black else Color(0xFF2B1D14))
         val arrowTop = top - (TrailSprites.ARROW_H + 2f) * px - kotlin.math.round(bob * px)
         val arrowLeft = foot.x - TrailSprites.ARROW_W * px / 2
-        val ring = TrailSprites.halo(arrow, haloColor)
+        val ring = TrailSprites.halo(arrow, if (p.isDark && !p.strongOutlines) Color(0xFFF2EEE6) else Color.White)
         ring.draw(this, arrowLeft - px, arrowTop, px)
         ring.draw(this, arrowLeft + px, arrowTop, px)
         ring.draw(this, arrowLeft, arrowTop - px, px)

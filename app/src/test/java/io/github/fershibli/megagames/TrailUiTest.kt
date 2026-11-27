@@ -8,6 +8,7 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
+import androidx.compose.ui.test.getBoundsInRoot
 import androidx.compose.ui.test.performClick
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.Difficulty
@@ -42,9 +43,9 @@ class TrailUiTest {
     private var outcome: GameOutcome? = null
     private var saved: TrailState? = null
 
-    private fun show(state: TrailState?, setup: PlaySetup = PlaySetup(seats = 2)) {
+    private fun show(state: TrailState?, setup: PlaySetup = PlaySetup(seats = 2), settings: Settings = Settings()) {
         val host = GameHost(GameId.TRAIL, Difficulty.EASY, state?.let { AppJson.encodeToJsonElement(TrailState.serializer(), it) }, null, null, setup) { outcome = it }
-        rule.setContent { MegaGamesTheme(Settings()) { GameContent(GameId.TRAIL, host) } }
+        rule.setContent { MegaGamesTheme(settings) { GameContent(GameId.TRAIL, host) } }
         rule.waitUntil(10_000) { rule.onAllNodesWithTag("trail-board").fetchSemanticsNodes().isNotEmpty() }
         rule.waitForIdle()
     }
@@ -151,5 +152,48 @@ class TrailUiTest {
         assertTrue(outcome!!.won)
         assertTrue(outcome!!.detail!!.contains("Most hearts: You."))
         assertEquals(null, saved)
+    }
+
+    private fun cardIsInTopHalf(): Boolean {
+        val card = rule.onNodeWithTag("trail-card").getBoundsInRoot()
+        val board = rule.onNodeWithTag("trail-board").getBoundsInRoot()
+        return card.top.value < (board.top.value + board.bottom.value) / 2
+    }
+
+    @Test
+    fun theCardMovesToTheTopWhenItWouldCoverAPawnInTheLowerBoard() {
+        // Square 2 is in the lowest landscape: the crossroads card at the bottom would hide the pawn.
+        val s = TrailState(2, listOf(2, 0), listOf(1, 0), die = 2, lastSeat = 0, pending = Pending(0, choiceStage = 0))
+        show(s)
+        rule.onNodeWithTag("trail-card").assertIsDisplayed()
+        assertTrue(cardIsInTopHalf())
+    }
+
+    @Test
+    fun theCardStaysAtTheBottomWhenThePawnIsHigherUp() {
+        val s = TrailState(2, listOf(40, 0), listOf(1, 0), die = 3, lastSeat = 0, pending = Pending(0, choiceStage = 0))
+        show(s)
+        rule.onNodeWithTag("trail-card").assertIsDisplayed()
+        assertTrue(!cardIsInTopHalf())
+    }
+
+    @Test
+    fun noScrollbarShowsWhenTheCardsTextFits() {
+        val s = TrailState(2, listOf(40, 0), listOf(1, 0), die = 3, lastSeat = 0, pending = Pending(0, story = Story.SONG.ordinal))
+        show(s)
+        rule.onNodeWithTag("trail-card").assertIsDisplayed()
+        rule.onNodeWithTag("trail-scrollbar").assertDoesNotExist()
+    }
+
+    @Test
+    @Config(sdk = [35], qualifiers = "w400dp-h300dp-xhdpi")
+    fun aPixelScrollbarShowsWhenTheCardsTextScrolls() {
+        val s = TrailState(2, listOf(2, 0), listOf(1, 0), die = 2, lastSeat = 0, pending = Pending(0, choiceStage = 0))
+        show(s, settings = Settings(fontScale = Settings.SCALE_MAX))
+        rule.onNodeWithTag("trail-card").assertIsDisplayed()
+        rule.waitUntil(5_000) { rule.onAllNodesWithTag("trail-scrollbar").fetchSemanticsNodes().isNotEmpty() }
+        rule.onNodeWithTag("trail-scrollbar").assertIsDisplayed()
+        // The buttons stay in sight while the words scroll.
+        rule.onNodeWithTag("trail-stay").assertIsDisplayed()
     }
 }
