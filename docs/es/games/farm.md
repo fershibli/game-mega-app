@@ -4,7 +4,7 @@
 
 Una pequeña granja que vive en tu teléfono. Siembra, riega y cosecha, cuida de las gallinas, la vaca y las ovejas, vende en el granero y atiende los pedidos de los vecinos. No hay prisa y nada se pierde: las plantas nunca se marchitan, los animales nunca pasan hambre y la granja sigue creciendo con la app cerrada.
 
-Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Tus **monedas** y **estrellas** aparecen encima. La granja es un solo dibujo: el huerto con los bancales, el corral con los animales, la casa y el granero. Pellizca para verla más grande; el botón redondo la deja como estaba.
+Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Tus **monedas** y **estrellas** aparecen encima. La granja es un solo dibujo: el huerto con los bancales, el corral con los animales, la casa y el granero. Pellizca para verla más grande; el botón redondo la deja como estaba. Con la granja ampliada, arrastra con un dedo para moverte.
 
 ## El huerto
 - Toca un **bancal vacío** (solo la tierra marrón) y elige qué sembrar. Cada semilla cuesta unas monedas.
