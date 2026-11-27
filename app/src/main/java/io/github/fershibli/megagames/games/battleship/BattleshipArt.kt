@@ -216,9 +216,14 @@ private fun DrawScope.flame(base: Offset, s: Float) {
 /**
  * One sea of [n] × [n] squares on chart paper. [ships] are drawn (only the ones that may be
  * seen); [shots] are the squares fired at: an ink circle for water and a red ink cross for a hit.
- * [last] rings the last shot.
+ * [last] rings the last shot. While arranging, ship number [lifted] follows the finger, moved by
+ * [lift] pixels and drawn on top, with the squares where it would land ([landing]) outlined; ship
+ * number [refused] is outlined in red, for a move or a turn it could not make.
  */
-fun DrawScope.drawSea(n: Int, ships: List<Ship>, shots: Set<Int>, p: Palette, last: Int = -1, sunk: Set<Int> = emptySet(), side: Float = size.width) {
+fun DrawScope.drawSea(
+    n: Int, ships: List<Ship>, shots: Set<Int>, p: Palette, last: Int = -1, sunk: Set<Int> = emptySet(), side: Float = size.width,
+    lifted: Int = -1, lift: Offset = Offset.Zero, refused: Int = -1, landing: List<Int> = emptyList(),
+) {
     val g = SeaGrid(side, n)
     val chart = Chart.of(p)
     val cell = g.cell
@@ -236,7 +241,16 @@ fun DrawScope.drawSea(n: Int, ships: List<Ship>, shots: Set<Int>, p: Palette, la
     }
     // Ships.
     val outline = if (p.strongOutlines) Color.Black else chart.hull.darker(0.5f)
-    for ((ship, kind) in ships.zip(kinds(ships))) {
+    val shipKinds = kinds(ships)
+    // Where the dragged ship would land: a soft wash with a strong outline on each square.
+    for (id in landing) {
+        val tl = Offset(g.origin + id % n * cell, g.origin + id / n * cell)
+        drawRect(p.primary.copy(alpha = 0.22f), tl, Size(cell, cell))
+        drawRect(p.primary, tl + Offset(cell * 0.05f, cell * 0.05f), Size(cell * 0.9f, cell * 0.9f), style = Stroke(cell * 0.08f))
+    }
+    fun drawShip(index: Int) {
+        val ship = ships[index]
+        val kind = shipKinds[index]
         val rows = ship.cells.map { it / n }
         val cols = ship.cells.map { it % n }
         val horizontal = rows.distinct().size == 1
@@ -247,7 +261,12 @@ fun DrawScope.drawSea(n: Int, ships: List<Ship>, shots: Set<Int>, p: Palette, la
         val start = Offset(g.origin + cols.min() * cell + cell * 0.08f, g.origin + rows.min() * cell + cell * 0.08f)
         // Lay the ship along its squares: across from the left, or down from the top.
         val pivot = if (horizontal) Offset(start.x, start.y + cell * 0.42f) else Offset(start.x + cell * 0.42f, start.y)
-        translate(pivot.x, pivot.y) {
+        val moved = if (index == lifted) lift else Offset.Zero
+        if (index == refused) {
+            val tl = Offset(g.origin + cols.min() * cell, g.origin + rows.min() * cell) + moved
+            drawRoundRect(p.danger, tl, Size((cols.max() - cols.min() + 1) * cell, (rows.max() - rows.min() + 1) * cell), CornerRadius(cell * 0.2f), style = Stroke(cell * 0.1f))
+        }
+        translate(pivot.x + moved.x, pivot.y + moved.y) {
             rotate(if (horizontal) 0f else 90f, Offset.Zero) {
                 rotate(if (gone) 4f else 0f, Offset(len / 2, 0f)) {
                     ship(kind, len, w, hull, outline, gone)
@@ -260,6 +279,7 @@ fun DrawScope.drawSea(n: Int, ships: List<Ship>, shots: Set<Int>, p: Palette, la
             for (k in 0 until 3) drawCircle(Color(0xFF9E9E9E).copy(alpha = 0.45f - k * 0.1f), cell * (0.14f + k * 0.05f), mid + Offset(cell * 0.12f * k, -cell * (0.2f + 0.18f * k)))
         }
     }
+    for (index in ships.indices) if (index != lifted) drawShip(index)
     // Shots: an ink circle in the water, a red ink cross with a flame on a ship.
     val shipCells = ships.flatMap { it.cells }.toSet()
     for (id in shots) {
@@ -279,6 +299,7 @@ fun DrawScope.drawSea(n: Int, ships: List<Ship>, shots: Set<Int>, p: Palette, la
         drawRect(p.highlight, tl + Offset(cell * 0.04f, cell * 0.04f), Size(cell * 0.92f, cell * 0.92f), style = Stroke(cell * 0.1f))
     }
     drawRoundRect(if (p.strongOutlines) chart.ink else chart.paper.darker(0.35f), Offset.Zero, Size(side, side), CornerRadius(cell * 0.15f), style = Stroke(cell * 0.05f))
+    if (lifted in ships.indices) drawShip(lifted)
 }
 
 /** Home-screen picture: a small chart with two ships, a hit and two misses. */

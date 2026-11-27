@@ -2,6 +2,7 @@ package io.github.fershibli.megagames.games
 
 import io.github.fershibli.megagames.games.farm.Animal
 import io.github.fershibli.megagames.games.farm.Crop
+import io.github.fershibli.megagames.games.farm.FarmMap
 import io.github.fershibli.megagames.games.farm.FarmRules
 import io.github.fershibli.megagames.games.farm.Pen
 import io.github.fershibli.megagames.games.farm.FarmWorld
@@ -132,5 +133,18 @@ class FarmTest {
         assertEquals(1, FarmRules.rescue(stuck.copy(barn = mapOf("egg" to 1))).coins)
         assertEquals(1, FarmRules.rescue(stuck.copy(pens = listOf(Pen("chicken", 0L)))).coins)
         assertEquals(30, FarmRules.rescue(FarmWorld()).coins)
+    }
+
+    @Test
+    fun theAnimalsStandOnTheirOwnGroundAwayFromTheBeds() {
+        val lastBedRow = FarmMap.plots.maxOf { it.second }
+        // A strip of grass lies between the field and the paddock, which holds every animal.
+        assertTrue(FarmMap.paddockRows.first > lastBedRow + 1)
+        FarmMap.pens.forEach { assertTrue(it.second in FarmMap.paddockRows) }
+        assertTrue(FarmMap.plots.none { it.second in FarmMap.paddockRows })
+        // A tap on a bed or an animal always finds that one, never a neighbour of the other kind.
+        val grid = FarmMap.grid(800f, 1200f, FarmMap.columns(FarmMap.plots.size, FarmMap.pens.size))
+        FarmMap.plots.forEachIndexed { i, (c, r) -> assertEquals(true to i, FarmMap.hit(grid, grid.center(c, r), FarmMap.plots.size, FarmMap.pens.size)) }
+        FarmMap.pens.forEachIndexed { i, (c, r) -> assertEquals(false to i, FarmMap.hit(grid, grid.center(c, r), FarmMap.plots.size, FarmMap.pens.size)) }
     }
 }
