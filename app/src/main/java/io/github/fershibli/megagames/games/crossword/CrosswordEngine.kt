@@ -6,9 +6,12 @@ import kotlinx.serialization.Serializable
 import java.text.Normalizer
 import kotlin.random.Random
 
-/** A dictionary entry: the answer as a list of "letters" (a Chinese character is one letter). */
-/** A dictionary word; [level] is how hard it is (1 easy, 2 medium, 3 hard; 0 = not marked). */
-data class WordEntry(val letters: List<String>, val clue: String, val level: Int = 0)
+/**
+ * A dictionary word: the answer as a list of grid "letters" (a Chinese character is one letter),
+ * its [clue] and its [level] (1 easy, 2 medium, 3 hard; 0 = not marked). [word] is the answer as
+ * the dictionary writes it, with its accents and hyphens, to show the player once it is found.
+ */
+data class WordEntry(val letters: List<String>, val clue: String, val level: Int = 0, val word: String = "")
 
 @Serializable
 data class PlacedWord(
@@ -18,7 +21,12 @@ data class PlacedWord(
     val col: Int,
     val across: Boolean,
     val number: Int = 0,
+    /** The answer as the dictionary writes it (accents, hyphens); empty in games saved before it was kept. */
+    val word: String = "",
 ) {
+    /** The answer to show the player: the written word, or the grid letters for older saves. */
+    val shown: String get() = word.ifBlank { letters.joinToString("") }
+
     fun cell(k: Int, size: Int) = if (across) row * size + col + k else (row + k) * size + col
     fun cells(size: Int) = letters.indices.map { cell(it, size) }
 }
@@ -95,7 +103,8 @@ object Crossword {
         .map { line ->
             // RESPOSTA|dica, optionally followed by |1, |2 or |3 for the word's level.
             val parts = line.split('|', limit = 3)
-            WordEntry(normalize(parts[0], language), parts[1].trim(), parts.getOrNull(2)?.trim()?.toIntOrNull()?.takeIf { it in 1..3 } ?: 0)
+            val answer = parts[0].trim()
+            WordEntry(normalize(answer, language), parts[1].trim(), parts.getOrNull(2)?.trim()?.toIntOrNull()?.takeIf { it in 1..3 } ?: 0, answer)
         }
         .filter { it.letters.size >= 2 }
         .distinctBy { it.letters }
@@ -149,7 +158,7 @@ object Crossword {
         }
 
         fun place(e: WordEntry, r: Int, c: Int, across: Boolean) {
-            val p = PlacedWord(e.letters, e.clue, r, c, across)
+            val p = PlacedWord(e.letters, e.clue, r, c, across, word = e.word)
             p.cells(size).forEachIndexed { k, i ->
                 letters[i] = e.letters[k]
                 if (across) acrossUsed[i] = true else downUsed[i] = true

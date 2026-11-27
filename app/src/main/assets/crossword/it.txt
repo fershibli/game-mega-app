@@ -1,4 +1,4 @@
-# Dizionario del cruciverba — italiano. Formato: RISPOSTA|definizione|livello (1 facile, 2 medio, 3 difficile). Parole di tutti i giorni, definizioni semplici.
+# Dizionario del cruciverba — italiano. Formato: RISPOSTA|definizione|livello (1 facile, 2 medio, 3 difficile). Parole di tutti i giorni, definizioni semplici. Le risposte si scrivono con gli accenti (CAFFÈ, CITTÀ); nelle caselle le vocali accentate valgono come semplici e gli spazi non contano.
 PANE|Si fa con farina, acqua e lievito|1
 PASTA|Spaghetti, penne o fusilli|1
 PIZZA|Margherita o capricciosa, cotta nel forno|1
@@ -80,7 +80,7 @@ LAGO|Specchio d’acqua circondato da terra|1
 FIUME|Scorre verso il mare|1
 MONTE|Si scala per arrivare in cima|1
 ALBERO|Ha tronco, rami e foglie|1
-FIORE|La rosa e la margherita|1
+FIORE|La rosa o la margherita, per esempio|1
 ROSA|Fiore con le spine|1
 FOGLIA|Cade dagli alberi in autunno|1
 ERBA|Verde tappeto del prato|1
@@ -122,12 +122,12 @@ POSTINO|Porta le lettere|1
 PITTORE|Dipinge i quadri|2
 SARTO|Cuce i vestiti su misura|2
 FORNAIO|Fa il pane|2
-PIANO|Strumento con i tasti bianchi e neri|1
+PIANO|Ogni livello di un palazzo|1
 CHITARRA|Strumento a sei corde|1
 VIOLINO|Strumento che si suona con l’archetto|2
 TAMBURO|Strumento che si suona con le bacchette|2
 CANTO|Lo si fa con la voce|2
-NOTA|Do, re, mi, fa, sol, la, si|2
+NOTA|Il do, il re o il mi, nella musica|2
 OPERA|Spettacolo cantato, come la Traviata|2
 TESTA|Parte del corpo dove crescono i capelli|1
 MANO|Ha cinque dita|1
@@ -160,7 +160,7 @@ SPERANZA|Si dice che sia l’ultima a morire|2
 ORA|Un giorno ne ha ventiquattro|1
 ANNO|Ha dodici mesi|1
 SERA|Viene dopo il pomeriggio|1
-NOTTE|Si dorme quando è buio|1
+NOTTE|Quando è buio e si dorme|1
 ROSSO|Il colore del pomodoro|1
 VERDE|Il colore dell’erba|1
 GIALLO|Il colore del limone|1
@@ -174,7 +174,7 @@ CAPPELLO|Si mette in testa|1
 SCARPA|Si mette al piede|1
 CARTA|Si usa per scrivere o per giocare a scopa|1
 TRENTA|Dieci più venti|2
-SETTE|I giorni della settimana|1
+SETTE|Quanti sono i giorni della settimana|1
 REGALO|Si riceve a Natale o al compleanno|1
 NATALE|Festa del venticinque dicembre|1
 FAGIOLO|Legume che si mangia con la pasta|1
@@ -356,7 +356,7 @@ DITO|Ce ne sono cinque per mano|1
 UNGHIA|Si taglia con le forbicine|1
 POLSO|Ci si porta l’orologio|2
 CAVIGLIA|Unisce il piede alla gamba|2
-TALLONE|Parte dietro del piede|3
+TALLONE|Parte dietro del piede|2
 PANCIA|Si riempie dopo pranzo|1
 CIGLIO|Pelo sul bordo della palpebra|3
 PALPEBRA|Si chiude sull’occhio per dormire|3
@@ -409,7 +409,7 @@ STOFFA|Tessuto per fare vestiti|2
 LANA|Viene dalla pecora|1
 SETA|Tessuto prezioso fatto dal baco|2
 COTONE|Fibra bianca delle magliette|1
-VELLUTO|Tessuto morbido e liscio a coste|2
+VELLUTO|Tessuto morbido al tatto, anche a coste|2
 MERLETTO|Pizzo lavorato a mano|3
 CERNIERA|Si chiude tirando il cursore|3
 INFERMIERA|Aiuta il medico in ospedale|1
@@ -580,7 +580,7 @@ PAGLIA|Steli secchi del grano|1
 MANGIME|Cibo per gli animali della fattoria|3
 SELLA|Ci si siede per cavalcare|2
 STAFFA|Ci si appoggia il piede a cavallo|3
-BRIGLIA|Redini del cavallo|3
+BRIGLIA|Finimento con cui si guida il cavallo|3
 ZOCCOLO|Piede duro del cavallo|2
 STRIGLIA|Spazzola per il pelo del cavallo|3
 RAGNATELA|La tela del ragno|2
@@ -606,7 +606,7 @@ LAVANDA|Pianta viola e profumata da mettere nei cassetti|2
 GERANIO|Fiore rosso dei balconi|2
 CICLAMINO|Fiore d’autunno dai petali all’insù|3
 PAPAVERO|Fiore rosso dei campi di grano|2
-MUGHETTO|Fiorellini bianchi a campanella di maggio|3
+MUGHETTO|Fiore di maggio con piccole campanelle bianche|3
 NARCISO|Fiore giallo di primavera con la corona|3
 GLICINE|Pianta rampicante dai grappoli viola|3
 CAMELIA|Fiore elegante d’inverno, rosa o bianco|3
@@ -654,7 +654,7 @@ FRUTTETO|Campo di alberi da frutto|2
 ORTO|Ci si coltiva la verdura|1
 CAMPO|Terreno coltivato a grano|1
 GRANO|Ci si fa la farina|1
-MAIS|Pannocchia gialla|2
+MAIS|Cereale delle pannocchie gialle|2
 SPIGA|Cima del grano|2
 VENDEMMIA|Raccolta dell’uva|2
 RACCOLTO|Ciò che si raccoglie nei campi|2
@@ -698,7 +698,7 @@ ARGILLA|Terra morbida per i vasi|2
 ARCOBALENO|Arco colorato dopo la pioggia|1
 TEMPORALE|Pioggia con tuoni e lampi|1
 TUONO|Rumore forte del temporale|1
-LAMPO|Luce improvvisa nel cielo in temporale|1
+LAMPO|Luce improvvisa nel cielo durante il temporale|1
 FULMINE|Scarica elettrica che cade dal cielo|1
 GRANDINE|Chicchi di ghiaccio dal cielo|2
 NEBBIA|Non fa vedere lontano in pianura|1
@@ -709,8 +709,8 @@ GHIACCIO|Acqua diventata dura|1
 BREZZA|Venticello leggero|2
 TEMPESTA|Vento forte e mare mosso|2
 UMIDITÀ|Acqua nell’aria|3
-TRAMONTO|Il sole cala la sera|1
-ALBA|Il sole sorge la mattina|1
+TRAMONTO|Quando il sole cala, la sera|1
+ALBA|Quando il sole sorge, la mattina|1
 AURORA|La prima luce del giorno|2
 CREPUSCOLO|Luce fioca dopo il tramonto|3
 STAGIONE|Primavera, estate, autunno o inverno|1
@@ -722,7 +722,7 @@ PIANETA|La Terra lo è, come Marte|2
 COMETA|Stella con la coda, quella di Natale|2
 GALASSIA|Insieme immenso di stelle|3
 ASTEROIDE|Grosso sasso che vaga nello spazio|3
-ECLISSI|La luna copre il sole|3
+ECLISSI|Quando la luna copre il sole|3
 ORIZZONTE|Linea dove il cielo tocca il mare|2
 PIANOFORTE|Strumento a tasti bianchi e neri|1
 FISARMONICA|Strumento a mantice delle feste di paese|2
@@ -803,7 +803,7 @@ TOMBOLA|Gioco di Natale con le cartelle e i numeri|1
 DOMINO|Tessere con i puntini da accostare|2
 DADO|Ha sei facce con i puntini|1
 PEDINA|Si muove sulla scacchiera|2
-PUZZLE|Tanti pezzi da incastrare|2
+PUZZLE|Gioco di tanti pezzi da incastrare|2
 AQUILONE|Vola nel vento legato a un filo|2
 ALTALENA|Ci si dondola al parco|1
 SCIVOLO|Ci si scende al parco giochi|1
@@ -849,7 +849,7 @@ SEMAFORO|Rosso, giallo e verde all’incrocio|1
 INCROCIO|Dove due strade si incontrano|2
 MARCIAPIEDE|Ci camminano i pedoni|1
 STRISCE|Si attraversa sopra quelle pedonali|2
-ROTONDA|Si gira intorno all’incrocio|2
+ROTONDA|Incrocio dove le auto girano in tondo|2
 GALLERIA|Passa sotto la montagna|2
 AUTOSTRADA|Strada veloce a pagamento|1
 CASELLO|Ci si paga il pedaggio|3
@@ -858,7 +858,7 @@ BENZINA|Si mette nel serbatoio|1
 VOLANTE|Si gira per guidare|1
 FRENO|Fa fermare la macchina|1
 CLACSON|Suona per avvisare in strada|2
-TARGA|Numero dell’automobile|2
+TARGA|Placca con il numero dell’automobile|2
 PATENTE|Permette di guidare|1
 GARAGE|Ci si parcheggia la macchina|2
 OFFICINA|Ci lavora il meccanico|2
@@ -875,7 +875,7 @@ CONTROLLORE|Controlla i biglietti sul treno|2
 CAPOSTAZIONE|Dà il via al treno con la paletta|3
 FERROVIA|Strada dei treni|2
 LAVAGNA|Ci si scrive con il gesso in classe|2
-GESSO|Si scrive sulla lavagna|2
+GESSO|Bastoncino bianco per scrivere sulla lavagna|2
 QUADERNO|Ci si fanno i compiti|2
 MATITA|Si tempera e si cancella con la gomma|2
 PENNA|Si scrive con l’inchiostro|2
@@ -885,9 +885,9 @@ COMPASSO|Serve per disegnare i cerchi|2
 TEMPERINO|Fa la punta alla matita|2
 ASTUCCIO|Contiene penne e matite|2
 CARTELLA|Borsa dello scolaro|2
-PAGELLA|Il voto di fine anno|2
+PAGELLA|Riporta i voti di fine anno|2
 DIARIO|Ci si segnano i compiti|2
-DETTATO|Esercizio di scrittura sotto voce della maestra|3
+DETTATO|Si scrive ciò che legge ad alta voce la maestra|3
 TEMA|Componimento scritto in classe|2
 POESIA|Si impara a memoria e si recita|2
 ALFABETO|Le lettere dalla A alla Zeta|2
@@ -942,7 +942,7 @@ CARNEVALE|Festa delle maschere|2
 MASCHERA|Si mette sul viso a Carnevale|2
 CORIANDOLI|Pezzetti di carta colorata da lanciare|2
 BEFANA|Porta le calze il sei gennaio|2
-PRESEPE|Statuine della Natività|2
+PRESEPE|Rappresenta la Natività con le statuine|2
 ADDOBBO|Decorazione per la festa|3
 GHIRLANDA|Corona di rami sulla porta|3
 FESTONE|Decorazione appesa per la festa|3
@@ -1030,7 +1030,7 @@ AFOSO|Caldo e umido d’estate|3
 SPAZIOSO|Ampio, con tanto posto|3
 LUMINOSO|Pieno di luce|3
 PROFUMATO|Ha un buon odore|2
-SALATO|Ha troppo sale|2
+SALATO|Ha il sapore del sale|2
 AMARO|Il sapore del caffè senza zucchero|2
 ASPRO|Il sapore del limone|3
 CROCCANTE|Fa rumore sotto i denti|3
@@ -1044,7 +1044,7 @@ MARMO|Pietra bianca delle statue|3
 PORCELLANA|Ceramica fine dei servizi buoni|3
 CERAMICA|Terra cotta e smaltata|3
 VIMINI|Rami flessibili per i cestini|3
-SUGHERO|Il tappo della bottiglia di vino|3
+SUGHERO|Materiale del tappo del vino|3
 CANAPA|Fibra per corde e lenzuola di una volta|3
 LINO|Tessuto fresco per l’estate|3
 FLANELLA|Tessuto morbido e caldo dei pigiami|3
@@ -1067,7 +1067,7 @@ TORRONE|Dolce di Natale con miele e mandorle|3
 MARZAPANE|Pasta di mandorle a forma di frutta|3
 ZABAIONE|Crema di tuorlo, zucchero e marsala|3
 CALDARROSTA|Castagna cotta sul fuoco|3
-UVETTA|Acini secchi del panettone|3
+UVETTA|Uva secca del panettone|3
 CAPPERO|Bocciolo sotto sale, va nel sugo|3
 MAGGIORANA|Erba aromatica simile all’origano|3
 ALLORO|Foglia che profuma l’arrosto|3

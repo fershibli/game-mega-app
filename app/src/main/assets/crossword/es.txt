@@ -55,7 +55,7 @@ ABEJA|Insecto que hace miel|1
 MARIPOSA|Insecto de alas de colores|1
 SOL|Estrella que ilumina el día|1
 LUNA|Brilla en el cielo de noche|1
-ESTRELLA|Brilla en el cielo nocturno|1
+ESTRELLA|Punto de luz que titila en el cielo nocturno|1
 NUBE|Blanca y esponjosa en el cielo|1
 LLUVIA|Agua que cae de las nubes|1
 NIEVE|Blanca y fría, cae en invierno|1
@@ -76,10 +76,10 @@ BLANCO|Color de la leche|1
 NEGRO|Color de la noche|1
 MADRE|Mujer que tiene hijos|1
 PADRE|Hombre que tiene hijos|1
-HERMANA|Hija de tus padres|1
-HERMANO|Hijo de tus padres|1
+HERMANA|Otra hija de tus padres|1
+HERMANO|Otro hijo de tus padres|1
 ABUELA|Madre de tu madre o de tu padre|1
-NIETO|Hijo de tu hijo|1
+NIETO|Hijo de tu hijo o de tu hija|1
 BEBÉ|Niño muy pequeño|1
 AMIGO|Persona querida en quien confías|1
 FAMILIA|Padres, hijos, abuelos...|1
@@ -101,7 +101,7 @@ CAMA|Mueble para dormir|1
 CUCHARA|Cubierto para la sopa|1
 TENEDOR|Cubierto con dientes|1
 CUCHILLO|Cubierto para cortar|1
-TAZA|Donde se toma el café|1
+TAZA|Recipiente con asa para el café|1
 BOTELLA|Guarda agua o vino|1
 TREN|Viaja sobre rieles|1
 AVIÓN|Vuela con pasajeros|1
@@ -109,7 +109,7 @@ BARCO|Navega por el mar|1
 COCHE|Vehículo de cuatro ruedas|1
 BICICLETA|Dos ruedas y pedales|1
 MÚSICA|Canciones y melodías|1
-BAILE|Moverse con la música|1
+BAILE|Movimientos del cuerpo al son de la música|1
 CANCIÓN|Música con letra|1
 IGLESIA|Lugar de oración cristiano|1
 ESCUELA|Donde aprenden los niños|1
@@ -147,8 +147,8 @@ PAELLA|Plato valenciano de arroz|2
 CHURROS|Se mojan en chocolate caliente|2
 DOMINÓ|Juego de fichas con puntos|2
 BARAJA|Conjunto de cartas para jugar|2
-NIETA|Hija de tu hijo|1
-SOBRINO|Hijo de tu hermano|2
+NIETA|Hija de tu hijo o de tu hija|1
+SOBRINO|Hijo de tu hermano o de tu hermana|2
 ALMOHADA|Donde apoyas la cabeza al dormir|2
 MANTA|Abriga en la cama|1
 DELANTAL|Se usa en la cocina para no mancharse|2
@@ -198,13 +198,13 @@ PESCADO|Alimento que se compra en la pescadería|1
 JAMÓN|Pata de cerdo curada|1
 ACEITE|Líquido de la aceituna para cocinar|1
 VINAGRE|Aliño ácido de la ensalada|1
-LENTEJAS|Legumbre pequeña y redonda del guiso|1
+LENTEJAS|Legumbres pequeñas y redondas del guiso|1
 GARBANZO|Legumbre del cocido|1
 ENSALADA|Plato frío de lechuga y tomate|1
 LECHUGA|Hoja verde de la ensalada|1
 PEPINO|Hortaliza verde y alargada|1
 PIMIENTO|Hortaliza roja o verde|1
-AJO|Diente de olor fuerte en la cocina|1
+AJO|Bulbo de olor fuerte que se usa en la cocina|1
 FRESA|Fruta roja pequeña con semillas|1
 PERA|Fruta verde con forma de campana|1
 MELÓN|Fruta grande de verano, dulce|1
@@ -243,7 +243,7 @@ FRENTE|Parte de la cara sobre las cejas|1
 ABUELO|Padre de tu padre o de tu madre|1
 TÍO|Hermano de tu padre o tu madre|1
 TÍA|Hermana de tu padre o tu madre|1
-PRIMO|Hijo de tu tío|1
+PRIMO|Hijo de tu tío o de tu tía|1
 HIJO|Varón respecto de sus padres|1
 HIJA|Mujer respecto de sus padres|1
 ESPOSA|Mujer casada respecto de su marido|1
@@ -342,7 +342,7 @@ MOTO|Vehículo de dos ruedas con motor|1
 CAMIÓN|Vehículo grande que lleva mercancías|1
 MALETA|Se llena de ropa para viajar|1
 BILLETE|Se compra para subir al tren|1
-VIAJE|Ir de un lugar a otro lejano|1
+VIAJE|Desplazamiento a un lugar lejano|1
 MAPA|Dibujo de un territorio|1
 HOTEL|Lugar donde se duerme de viaje|1
 VACACIONES|Días libres para descansar|1
@@ -386,8 +386,8 @@ REÍR|Lo que hacemos con un buen chiste|1
 JUGAR|Divertirse con un juego|1
 COCINAR|Preparar la comida|1
 LAVAR|Limpiar con agua y jabón|1
-ABRIR|Lo contrario de cerrar|1
-CERRAR|Lo contrario de abrir|1
+ABRIR|Lo que se hace con la puerta para entrar|1
+CERRAR|Echar la llave a la puerta|1
 MIRAR|Fijar la vista|1
 ESCUCHAR|Prestar atención con el oído|1
 PENSAR|Usar la cabeza para razonar|1
@@ -406,14 +406,14 @@ LIMPIO|Sin manchas|1
 SUCIO|Con manchas|1
 RÁPIDO|Que va muy deprisa|1
 LENTO|Que va despacio|1
-ALEGRE|Contento, de buen humor|1
+ALEGRE|De buen humor y con ganas de reír|1
 CONTENTO|Satisfecho y feliz|1
 TRANQUILO|Sin nervios ni prisa|1
 FUERTE|Que tiene mucha fuerza|1
 BUENO|Lo contrario de malo|1
-LLENO|Que no le cabe nada más|1
+LLENO|Que ya no admite nada más|1
 VACÍO|Que no tiene nada dentro|1
-MOJADO|Lleno de agua|1
+MOJADO|Empapado de agua|1
 SECO|Sin agua|1
 DÍA|Tiene veinticuatro horas|1
 SEMANA|Siete días seguidos|1
@@ -461,7 +461,7 @@ SALCHICHA|Embutido alargado del perrito caliente|1
 TARTA|Dulce grande para celebrar|1
 MERMELADA|Dulce de fruta para untar|1
 GATITO|Cría pequeña del felino de casa|1
-CABALLITO|Atracción de feria que da vueltas|1
+CAMPANA|Suena en lo alto del campanario|1
 VERDURA|Hortaliza que se come cocida|1
 MADERA|Material que sale de los árboles|1
 PAPEL|Hoja donde se escribe|1
@@ -507,7 +507,7 @@ REGADERA|Sirve para regar las plantas|2
 MANGUERA|Tubo largo para regar|2
 CARRETILLA|Carro de una rueda para la obra|2
 ESCALERILLA|Escalera pequeña y portátil|2
-ALICATES|Herramienta para sujetar y cortar alambre|2
+ALICATES|Sirven para sujetar y cortar alambre|2
 CERRADURA|Allí se mete la llave|2
 BISAGRA|Pieza que permite abrir la puerta|2
 PERSIANA|Se baja para que no entre luz|2
@@ -525,11 +525,11 @@ BANDEJA|Sirve para llevar platos|2
 CAZUELA|Recipiente de barro para guisar|2
 CUCHARÓN|Cuchara grande para servir sopa|2
 EMBUDO|Ayuda a pasar líquido a una botella|2
-COLADOR|Sirve para separar el té de las hojas|2
+COLADOR|Separa el té de sus hojas al servirlo|2
 RALLADOR|Sirve para deshacer el queso en tiras|2
 BATIDORA|Aparato para hacer purés|2
 TOSTADORA|Aparato que dora el pan|2
-CAFETERA|Aparato para preparar la bebida negra|2
+CAFETERA|Aparato para preparar el café|2
 TETERA|Recipiente para el té|2
 AZUCARERO|Recipiente del azúcar|2
 SALERO|Recipiente de la sal|2
@@ -564,7 +564,7 @@ NUEZ|Fruto seco de cáscara dura|2
 ALMENDRA|Fruto seco del turrón|2
 AVELLANA|Fruto seco pequeño y redondo|2
 CASTAÑA|Se asa en otoño|2
-CIRUELA|Fruta morada que seca es pasa|2
+CIRUELA|Fruta morada que, seca, se llama pasa|2
 HIGO|Fruto dulce de la higuera|2
 KIWI|Fruta peluda verde por dentro|2
 MANDARINA|Cítrico pequeño fácil de pelar|2
@@ -578,7 +578,7 @@ MANGO|Fruta tropical anaranjada|2
 TURRÓN|Dulce navideño de almendra|2
 BIZCOCHO|Pastel esponjoso|2
 MAGDALENA|Bollo pequeño en molde de papel|2
-NATILLAS|Crema dulce con canela|2
+NATILLAS|Se hacen con leche, huevo y canela|2
 CANELA|Especia en rama de olor dulce|2
 PIMIENTA|Especia negra que pica|2
 PEREJIL|Hierba verde para la salsa|2
@@ -612,7 +612,7 @@ CASTOR|Roedor que construye diques|2
 NUTRIA|Mamífero que nada en los ríos|2
 CANGURO|Salta y lleva a su cría en una bolsa|2
 CAMELLO|Animal del desierto con dos jorobas|2
-CEBRA|Caballo de rayas blancas y negras|2
+CEBRA|Animal como un caballo, de rayas blancas y negras|2
 HIPOPÓTAMO|Animal enorme que vive en el río|2
 RINOCERONTE|Animal grande con cuerno en la nariz|2
 GORILA|Simio grande y fuerte|2
@@ -653,7 +653,7 @@ DESIERTO|Lugar de arena y poca agua|2
 SELVA|Bosque tropical muy espeso|2
 VOLCÁN|Montaña que echa lava|2
 GLACIAR|Río de hielo de las montañas|2
-OCÉANO|El mar más grande|2
+OCÉANO|Mar inmenso, como el Atlántico|2
 COSTA|Tierra junto al mar|2
 BAHÍA|Entrada del mar en la costa|2
 ACANTILADO|Costa de roca cortada a pico|2
@@ -674,7 +674,7 @@ NEVADA|Caída abundante de copos|2
 CHAPARRÓN|Lluvia fuerte y corta|2
 AMANECER|Cuando sale el sol|2
 ATARDECER|Cuando se pone el sol|2
-HORIZONTE|Línea donde parece juntarse cielo y tierra|2
+HORIZONTE|Línea donde parecen juntarse el cielo y la tierra|2
 PLANETA|La Tierra es uno|2
 COMETA|Juguete que vuela con el viento|2
 ARQUITECTO|Diseña edificios|2
@@ -732,7 +732,7 @@ CARAVANA|Casa con ruedas|2
 AMBULANCIA|Lleva a los pacientes al hospital|2
 ANDÉN|Allí se espera el tren|2
 PASAPORTE|Documento para viajar|2
-EQUIPAJE|Maletas del viajero|2
+EQUIPAJE|Conjunto de maletas del viajero|2
 EXCURSIÓN|Paseo de un día al campo|2
 TURISTA|Visita lugares en vacaciones|2
 POSTAL|Tarjeta con foto que se envía de viaje|2
@@ -746,7 +746,7 @@ PANDERETA|Instrumento con cascabeles que se agita|2
 ÓRGANO|Instrumento de tubos de la iglesia|2
 BATERÍA|Conjunto de tambores y platillos|2
 ORQUESTA|Grupo grande de músicos|2
-CORO|Grupo que canta junto|2
+CORO|Grupo de personas que cantan juntas|2
 MELODÍA|Sucesión de notas agradable|2
 RITMO|Compás de la música|2
 CONCIERTO|Actuación musical en directo|2
@@ -754,7 +754,7 @@ CONCIERTO|Actuación musical en directo|2
 VALS|Baile de salón en tres tiempos|2
 TANGO|Baile argentino de pareja|2
 BOLERO|Canción romántica lenta|2
-SEVILLANAS|Baile andaluz de feria|2
+SEVILLANAS|Se bailan por parejas en la feria andaluza|2
 GUITARRISTA|Toca las seis cuerdas|2
 BALONCESTO|Deporte de canasta|2
 BALONMANO|Deporte de pelota que se juega con la mano|2
@@ -799,10 +799,10 @@ BOINA|Gorra redonda sin visera|2
 SANDALIA|Calzado abierto de verano|2
 ALPARGATA|Calzado de esparto|2
 BOTA|Calzado que cubre el tobillo|2
-MEDIAS|Prenda fina para las piernas|2
+MEDIAS|Prendas finas para las piernas|2
 BATA|Prenda para estar por casa|2
 BAÑADOR|Prenda para la playa|2
-BOLSILLO|Allí se guardan las llaves del pantalón|2
+BOLSILLO|Bolsita cosida al pantalón para guardar las llaves|2
 CREMALLERA|Cierre con dientes de la chaqueta|2
 PENDIENTE|Joya de la oreja|2
 PULSERA|Joya de la muñeca|2
@@ -961,7 +961,7 @@ ALMÍBAR|Azúcar disuelto en agua al fuego|3
 MEMBRILLO|Dulce de fruta que acompaña al queso|3
 ESCABECHE|Adobo de vinagre para conservar pescado|3
 PISTO|Fritada de pimiento, tomate y calabacín|3
-MIGAS|Pan frito con ajo de los pastores|3
+MIGAS|Trocitos de pan frito con ajo, plato de pastores|3
 FABADA|Guiso asturiano de alubias|3
 SALMOREJO|Crema fría de tomate y pan|3
 CALDERETA|Guiso de cordero o de pescado|3
@@ -1010,7 +1010,7 @@ OLMO|Árbol de las plazas antiguas|3
 CHOPO|Árbol alto junto al río|3
 SAUCE|Árbol de ramas que cuelgan|3
 ABEDUL|Árbol de corteza blanca|3
-CIPRÉS|Árbol alto y estrecho de forma de llama|3
+CIPRÉS|Árbol alto y estrecho con forma de llama|3
 ABETO|Árbol que se adorna en Navidad|3
 ACEBO|Planta de hojas con pinchos y bolitas rojas|3
 MADROÑO|Arbusto de frutos rojos|3
@@ -1050,7 +1050,7 @@ REBECO|Cabra salvaje de los Pirineos|3
 MARMOTA|Roedor que hiberna en la montaña|3
 MULO|Cría de yegua y burro|3
 YEGUA|Hembra del caballo|3
-BUEY|Animal de tiro que tira del arado|3
+BUEY|Toro manso que tira del arado|3
 ARMIÑO|Animal de piel blanca muy apreciada|3
 ALONDRA|Pájaro que canta al alba en los campos|3
 ESTORNINO|Pájaro oscuro que vuela en grandes bandadas|3
@@ -1070,10 +1070,10 @@ FERIA|Fiesta con casetas y atracciones|3
 TÓMBOLA|Rifa de feria con premios|3
 GUIÑOL|Teatro de títeres|3
 MARIONETA|Muñeco movido con hilos|3
-CARRUSEL|Tiovivo de la feria|3
-TIOVIVO|Atracción que gira con caballitos|3
+CARRUSEL|Plataforma giratoria de feria con figuras|3
+TIOVIVO|Atracción de feria que gira con música|3
 PIÑATA|Se rompe para que caigan golosinas|3
-CONFETI|Papelitos de colores de fiesta|3
+CONFETI|Lluvia de papelitos de colores en las fiestas|3
 SERPENTINA|Tira de papel enrollada que se lanza|3
 FAROLILLO|Adorno de papel de las fiestas|3
 GUIRNALDA|Tira de flores o papel para adornar|3

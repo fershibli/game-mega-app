@@ -2,9 +2,12 @@ package io.github.fershibli.megagames.games
 
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.games.crossword.Crossword
+import io.github.fershibli.megagames.games.crossword.PlacedWord
 import io.github.fershibli.megagames.games.crossword.dictionaryFile
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import java.io.File
@@ -108,5 +111,51 @@ class CrosswordTest {
             assertEquals(words.size, words.map { Triple(it.row, it.col, it.across) }.toSet().size)
             assertEquals(1, words.minOf { it.number })
         }
+    }
+
+    @Test
+    fun theWrittenWordKeepsItsAccentsAndHyphens() {
+        val words = Crossword.parse("MAÇÃ|Fruta|1\nGUARDA-CHUVA|Protege|1\nPÉ DE MOLEQUE|Doce|2", AppLanguage.PORTUGUESE)
+        assertEquals(listOf("MAÇÃ", "GUARDA-CHUVA", "PÉ DE MOLEQUE"), words.map { it.word })
+        assertEquals(listOf("MACA", "GUARDACHUVA", "PEDEMOLEQUE"), words.map { it.letters.joinToString("") })
+        // Every placed word of every language carries its written form, which spells its squares.
+        for (lang in AppLanguage.entries.filter { it != AppLanguage.SYSTEM }) {
+            val placed = Crossword.generate(dictionary(lang), 11, 11, Random(3), Difficulty.MEDIUM)
+            assertTrue(lang.name, placed.isNotEmpty() && placed.all { it.word.isNotBlank() && Crossword.normalize(it.word, lang) == it.letters })
+        }
+    }
+
+    @Test
+    fun gamesSavedBeforeTheWrittenWordStillLoad() {
+        val json = """{"letters":["M","A","C","A"],"clue":"Fruta","row":0,"col":0,"across":true,"number":1}"""
+        val old = AppJson.decodeFromString(PlacedWord.serializer(), json)
+        assertEquals("", old.word)
+        assertEquals("MACA", old.shown)
+        val now = old.copy(word = "MAÇÃ")
+        assertEquals("MAÇÃ", AppJson.decodeFromString(PlacedWord.serializer(), AppJson.encodeToString(PlacedWord.serializer(), now)).shown)
+    }
+
+    /** The Portuguese dictionary follows the 2009 spelling agreement and the conventions in its header. */
+    @Test
+    fun portugueseDictionaryFollowsItsRules() {
+        val lines = File("src/main/assets/" + dictionaryFile(AppLanguage.PORTUGUESE)).readLines().filter { it.isNotBlank() && !it.startsWith("#") }
+        val answer = Regex("^[A-ZÁÂÃÀÉÊÍÓÔÕÚÇ]+([ -][A-ZÁÂÃÀÉÊÍÓÔÕÚÇ]+)*$")
+        val seen = HashSet<String>()
+        for (line in lines) {
+            val parts = line.split('|')
+            assertEquals("ANSWER|clue|level: $line", 3, parts.size)
+            val (word, clue, level) = parts
+            assertTrue("level: $line", level in setOf("1", "2", "3"))
+            assertTrue("answer in capitals, with accents, hyphens or spaces only: $line", answer.matches(word))
+            // Accents and the trema that the 2009 agreement removed (geleia, ideia, joia, voo, leem, linguiça).
+            for (old in listOf("ÉIA", "ÉIO", "ÓIA", "ÓIO", "ÔO", "ÊEM", "Ü")) assertFalse("old spelling $old: $line", old in word)
+            val letters = Crossword.normalize(word, AppLanguage.PORTUGUESE)
+            assertTrue("2 to 12 squares, A to Z: $line", letters.size in 2..12 && letters.all { it.single() in 'A'..'Z' })
+            assertTrue("repeated answer: $line", seen.add(letters.joinToString("")))
+            assertTrue("clue: $line", clue.isNotBlank() && clue == clue.trim() && clue.length <= 90)
+            val clueWords = clue.split(' ', '-', ',', ';', '.', '?', '!').map { Crossword.normalize(it, AppLanguage.PORTUGUESE).joinToString("") }
+            assertFalse("clue gives the answer away: $line", letters.joinToString("") in clueWords)
+        }
+        assertEquals("every line becomes a word", lines.size, dictionary(AppLanguage.PORTUGUESE).size)
     }
 }
