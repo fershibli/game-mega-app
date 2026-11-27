@@ -2,7 +2,6 @@ package io.github.fershibli.megagames.games.nonogram
 
 import io.github.fershibli.megagames.ui.theme.currentPace
 import io.github.fershibli.megagames.ui.theme.wait
-import android.os.SystemClock
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.awaitEachGesture
@@ -254,12 +253,16 @@ private fun NonogramBoard(
                 val first = cellAt(down.position) ?: return@awaitEachGesture
                 val longPressAt = down.uptimeMillis + viewConfiguration.longPressTimeoutMillis
                 var dragging = false
+                // Measured on the touch events' own clock (the time of the latest one), like the
+                // long press itself: another clock may run ahead or behind it.
+                var lastEvent = down.uptimeMillis
                 while (true) {
                     val event = if (dragging) {
                         awaitPointerEvent()
                     } else {
-                        withTimeoutOrNull((longPressAt - SystemClock.uptimeMillis()).coerceAtLeast(1L)) { awaitPointerEvent() }
+                        withTimeoutOrNull((longPressAt - lastEvent).coerceAtLeast(1L)) { awaitPointerEvent() }
                     }
+                    event?.changes?.firstOrNull()?.let { lastEvent = it.uptimeMillis }
                     if (event == null) {
                         actions.longPress(first)
                         // Wait for the finger to lift.

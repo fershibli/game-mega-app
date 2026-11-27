@@ -13,6 +13,7 @@ Pour placer un navire vous-même, **faites-le glisser** ailleurs : il se cale su
 - La grande mer en haut est celle de l’autre camp : touchez une case pour tirer. Un **cercle d’encre**, c’est dans l’eau ; une **croix rouge** avec une petite flamme, c’est touché. Les cases se nomment comme au jeu sur papier : lettres A–J en haut, chiffres 1–10 sur le côté. Un navire touché sur toutes ses cases coule et apparaît sur la mer.
 - La petite mer en bas est la vôtre, avec vos navires et les tirs de l’autre camp.
 - Un tir chacun, à tour de rôle, comme sur papier. Le dernier tir est encadré.
+- Chaque tir tombe en douceur : une goutte et des ronds dans l’eau, une petite flamme sur un navire. Le jeu attend ensuite un moment pour que vous voyiez le résultat ; l’ordinateur montre sur votre mer la case qu’il vise avant de tirer, et votre tour revient une fois son tir vu. Les pauses suivent le **Temps d’attente** des réglages et, sans **Animations**, la marque apparaît aussitôt.
 - Coulez toute la flotte adverse en premier pour gagner.
 
 | Niveau | Mer | Flotte | Ordinateur |
@@ -24,4 +25,4 @@ Pour placer un navire vous-même, **faites-le glisser** ailleurs : il se cale su
 L’ordinateur ne regarde jamais votre flotte.
 
 ## À tour de rôle
-Après chaque tir, un écran cache tout et demande de passer le téléphone ; le joueur suivant touche le grand bouton pour voir sa mer.
+Après chaque tir, une fois son résultat vu, un écran cache tout et demande de passer le téléphone ; le joueur suivant touche le grand bouton pour voir sa mer.

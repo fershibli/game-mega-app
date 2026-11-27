@@ -27,7 +27,8 @@ import kotlin.math.sin
  * The seas drawn like a sea chart on old paper: a fine blue-grey grid, the letters A–J along the
  * top and the numbers 1–10 down the side (Latin letters in every language, as on the paper
  * game), light watercolour washes and a compass rose. Ships are seen from above, one silhouette
- * per kind; a miss is an ink circle and a hit a red ink cross with a little flame.
+ * per kind; a miss is an ink circle and a hit a red ink cross with a little flame. A shot lands
+ * gently: a drop and ripples in the water, a small flame on a ship (never an explosion).
  */
 
 /** The width of the coordinate band along the top and the left, in squares. */
@@ -48,14 +49,20 @@ class SeaGrid(val side: Float, val n: Int) {
     fun center(id: Int) = Offset(origin + (id % n + 0.5f) * cell, origin + (id / n + 0.5f) * cell)
 }
 
-/** The inks and paper of the chart in each color mode. */
-private class Chart(val paper: Color, val grid: Color, val ink: Color, val wash: Color, val red: Color, val hull: Color) {
+/** The inks and paper of the chart in each color mode; [water] is the blue of a splash. */
+private class Chart(val paper: Color, val grid: Color, val ink: Color, val wash: Color, val red: Color, val hull: Color, val water: Color) {
     companion object {
+        // Made once: a shot landing is drawn on every frame.
+        private val highContrastDark = Chart(Color(0xFF111111), Color.White.copy(alpha = 0.7f), Color.White, Color(0xFF4FC3F7).copy(alpha = 0.25f), Color(0xFFFF5252), Color(0xFFB0BEC5), Color(0xFF81D4FA))
+        private val highContrastLight = Chart(Color.White, Color.Black.copy(alpha = 0.7f), Color.Black, Color(0xFF4FC3F7).copy(alpha = 0.25f), Color(0xFFB71C1C), Color(0xFF546E7A), Color(0xFF0D47A1))
+        private val dark = Chart(Color(0xFF2E2A22), Color(0xFF8FA9BE).copy(alpha = 0.45f), Color(0xFFE8DFC8), Color(0xFF4F7FA0).copy(alpha = 0.35f), Color(0xFFEF5350), Color(0xFF90A4AE), Color(0xFF9CCBEA))
+        private val light = Chart(Color(0xFFF2E6CC), Color(0xFF6F8BA3).copy(alpha = 0.55f), Color(0xFF3E3A36), Color(0xFF8EC5E6).copy(alpha = 0.4f), Color(0xFFC62828), Color(0xFF78909C), Color(0xFF2E6E9E))
+
         fun of(p: Palette) = when {
-            p.mode == ColorMode.HIGH_CONTRAST && p.isDark -> Chart(Color(0xFF111111), Color.White.copy(alpha = 0.7f), Color.White, Color(0xFF4FC3F7).copy(alpha = 0.25f), Color(0xFFFF5252), Color(0xFFB0BEC5))
-            p.mode == ColorMode.HIGH_CONTRAST -> Chart(Color.White, Color.Black.copy(alpha = 0.7f), Color.Black, Color(0xFF4FC3F7).copy(alpha = 0.25f), Color(0xFFB71C1C), Color(0xFF546E7A))
-            p.isDark -> Chart(Color(0xFF2E2A22), Color(0xFF8FA9BE).copy(alpha = 0.45f), Color(0xFFE8DFC8), Color(0xFF4F7FA0).copy(alpha = 0.35f), Color(0xFFEF5350), Color(0xFF90A4AE))
-            else -> Chart(Color(0xFFF2E6CC), Color(0xFF6F8BA3).copy(alpha = 0.55f), Color(0xFF3E3A36), Color(0xFF8EC5E6).copy(alpha = 0.4f), Color(0xFFC62828), Color(0xFF78909C))
+            p.mode == ColorMode.HIGH_CONTRAST && p.isDark -> highContrastDark
+            p.mode == ColorMode.HIGH_CONTRAST -> highContrastLight
+            p.isDark -> dark
+            else -> light
         }
     }
 }
@@ -195,22 +202,149 @@ private fun DrawScope.ship(kind: Kind, len: Float, w: Float, hull: Color, outlin
     if (sunk) drawPath(body, Color.Black.copy(alpha = 0.12f))
 }
 
-/** A little flame for a hit: a red-orange drop with a yellow heart. */
-private fun DrawScope.flame(base: Offset, s: Float) {
-    val outer = Path().apply {
-        moveTo(base.x, base.y - s * 1.3f)
-        quadraticTo(base.x + s * 0.9f, base.y - s * 0.2f, base.x, base.y)
-        quadraticTo(base.x - s * 0.9f, base.y - s * 0.2f, base.x, base.y - s * 1.3f)
-        close()
+/** A stroke of a given width, made again only when the width changes (not on every frame). */
+private class StrokeOf {
+    private var width = -1f
+    private var stroke = Stroke(1f)
+    fun of(w: Float): Stroke {
+        if (w != width) {
+            width = w
+            stroke = Stroke(w)
+        }
+        return stroke
     }
-    drawPath(outer, Color(0xFFFF7043))
-    val inner = Path().apply {
-        moveTo(base.x, base.y - s * 0.75f)
-        quadraticTo(base.x + s * 0.45f, base.y - s * 0.1f, base.x, base.y)
-        quadraticTo(base.x - s * 0.45f, base.y - s * 0.1f, base.x, base.y - s * 0.75f)
-        close()
+}
+
+private val missStroke = StrokeOf()
+private val rippleStroke = StrokeOf()
+private val aimStroke = StrokeOf()
+private val aimEdgeStroke = StrokeOf()
+
+// The shapes of a flame and of a drop, reused for every one drawn.
+private val dropPath = Path()
+private val heartPath = Path()
+
+/**
+ * A drop shape in [path]: round at [base], pointed at the top; [s] sets its size (the round part
+ * is 0.9 × [s] each side, the tip 1.3 × [s] above), and the tip leans [lean] sideways.
+ */
+private fun drop(path: Path, base: Offset, s: Float, lean: Float = 0f) = path.apply {
+    reset()
+    moveTo(base.x + lean, base.y - s * 1.3f)
+    quadraticTo(base.x + s * 0.9f, base.y - s * 0.2f, base.x, base.y)
+    quadraticTo(base.x - s * 0.9f, base.y - s * 0.2f, base.x + lean, base.y - s * 1.3f)
+    close()
+}
+
+private val FLAME = Color(0xFFFF7043)
+private val FLAME_HEART = Color(0xFFFFD54F)
+private val GLOW = Color(0xFFFFB74D)
+
+/** A little flame for a hit: a red-orange drop with a yellow heart, its tip swaying by [lean]. */
+private fun DrawScope.flame(base: Offset, s: Float, lean: Float = 0f) {
+    drawPath(drop(dropPath, base, s, lean), FLAME)
+    drawPath(drop(heartPath, base, s * 0.58f, lean * 0.6f), FLAME_HEART)
+}
+
+/** The mark of a shot in the water: an ink circle with a dot. */
+private fun DrawScope.missMark(c: Offset, cell: Float, chart: Chart, alpha: Float = 1f) {
+    drawCircle(chart.ink, cell * 0.22f, c, alpha = alpha, style = missStroke.of(cell * 0.07f))
+    drawCircle(chart.ink, cell * 0.05f, c, alpha = alpha)
+}
+
+/** The red ink cross of a hit, without its flame. */
+private fun DrawScope.hitCross(c: Offset, cell: Float, chart: Chart, alpha: Float = 1f) {
+    val r = cell * 0.27f
+    drawLine(chart.red, Offset(c.x - r, c.y - r), Offset(c.x + r, c.y + r), cell * 0.12f, StrokeCap.Round, alpha = alpha)
+    drawLine(chart.red, Offset(c.x - r, c.y + r), Offset(c.x + r, c.y - r), cell * 0.12f, StrokeCap.Round, alpha = alpha)
+}
+
+/** Where the little flame of a hit stands: at the top right of its cross. */
+private fun flameBase(c: Offset, cell: Float) = Offset(c.x + cell * 0.26f, c.y - cell * 0.14f)
+
+/** The size of the little flame of a hit, in squares. */
+private const val FLAME_SIZE = 0.16f
+
+/** How far [t] is between [from] and [to], from 0 to 1. */
+private fun phase(t: Float, from: Float, to: Float) = ((t - from) / (to - from)).coerceIn(0f, 1f)
+
+/** Slow at both ends. */
+private fun ease(u: Float) = u * u * (3 - 2 * u)
+
+/**
+ * A shot landing on square [cell] of a sea of [n] × [n], [t] of the way (0 to 1), drawn over the
+ * sea (which leaves that square's mark out meanwhile, see [drawSea]'s hidden). In the water
+ * ([hit] false) a drop falls in, the water ripples in two rings with a few droplets, and the ink
+ * circle appears. On a ship a warm glow and a small flame rise, the flame flickers a little
+ * ([sway]: 0 keeps it still) and settles at the corner of the red cross as it is inked: gentle on
+ * purpose, no explosion. At [t] = 1 it is exactly the mark [drawSea] draws.
+ */
+fun DrawScope.drawShotLanding(n: Int, cell: Int, hit: Boolean, t: Float, p: Palette, sway: Float = 1f, side: Float = size.width) {
+    val g = SeaGrid(side, n)
+    val chart = Chart.of(p)
+    val k = g.cell
+    val c = g.center(cell)
+    if (!hit) {
+        // The drop falls into the square.
+        val fall = phase(t, 0f, 0.3f)
+        if (fall < 1f) drawPath(drop(dropPath, Offset(c.x, c.y + k * 0.08f - k * 0.5f * (1 - fall * fall)), k * 0.18f), chart.water)
+        // Two rings and four droplets spread over the water.
+        for (ring in 0..1) {
+            val u = phase(t, 0.3f + ring * 0.15f, 0.85f + ring * 0.15f)
+            if (u <= 0f || u >= 1f) continue
+            drawCircle(chart.water, k * (0.1f + 0.36f * ease(u)), c, alpha = 1 - u, style = rippleStroke.of(k * 0.08f))
+        }
+        val u = phase(t, 0.3f, 0.8f)
+        if (u > 0f && u < 1f) for (d in 0 until 5) {
+            // Fanned out upwards, from left to right, and falling back a little at the end.
+            val angle = Math.PI * (1.1 + 0.2 * d)
+            val reach = k * (0.16f + 0.26f * ease(u))
+            val x = c.x + (cos(angle) * reach).toFloat()
+            val y = c.y + (sin(angle) * reach).toFloat() * (1 - 0.5f * u * u)
+            drawCircle(chart.water, k * 0.06f * (1 - 0.4f * u), Offset(x, y), alpha = 1 - u * u)
+        }
+        missMark(c, k, chart, alpha = phase(t, 0.55f, 1f))
+        return
     }
-    drawPath(inner, Color(0xFFFFD54F))
+    // A warm glow comes up and fades away.
+    if (t < 1f) drawCircle(GLOW, k * 0.42f * ease(phase(t, 0f, 0.35f)), c, alpha = 0.55f * (1 - t))
+    hitCross(c, k, chart, alpha = phase(t, 0.6f, 1f))
+    // The flame grows in the middle, flickers a little, then settles at the corner of the cross.
+    val grow = ease(phase(t, 0f, 0.35f))
+    val settle = ease(phase(t, 0.65f, 1f))
+    val middleX = c.x
+    val middleY = c.y + k * 0.3f
+    val corner = flameBase(c, k)
+    val base = Offset(middleX + (corner.x - middleX) * settle, middleY + (corner.y - middleY) * settle)
+    val s = k * (0.4f * grow + (FLAME_SIZE - 0.4f) * settle)
+    val lean = s * 0.25f * sway * sin(t * 5 * Math.PI).toFloat() * (1 - settle)
+    if (s > 0f) flame(base, s, lean)
+}
+
+/**
+ * The computer aiming at square [cell] of a sea of [n] × [n]: a sight in the highlight colour
+ * closes in on the square as [t] goes from 0 to 1, then stays on it.
+ */
+fun DrawScope.drawAim(n: Int, cell: Int, t: Float, p: Palette, side: Float = size.width) {
+    val g = SeaGrid(side, n)
+    val k = g.cell
+    val c = g.center(cell)
+    val r = k * (0.46f + 1.2f * (1 - ease(t)))
+    // The square itself, washed in the highlight colour as the sight arrives.
+    drawRect(p.highlight, Offset(c.x - k / 2, c.y - k / 2), Size(k, k), alpha = 0.35f * ease(t))
+    // The sight: a dark edge under the highlight, so it reads on light paper too.
+    val edge = Chart.of(p).ink
+    for (pass in 0..1) {
+        val color = if (pass == 0) edge else p.highlight
+        val w = k * if (pass == 0) 0.17f else 0.1f
+        val alpha = if (pass == 0) 0.5f else 1f
+        drawCircle(color, r, c, alpha = alpha, style = (if (pass == 0) aimEdgeStroke else aimStroke).of(w))
+        for (d in 0 until 4) {
+            val dx = when (d) { 0 -> 1f; 1 -> -1f; else -> 0f }
+            val dy = when (d) { 2 -> 1f; 3 -> -1f; else -> 0f }
+            drawLine(color, Offset(c.x + dx * r * 0.6f, c.y + dy * r * 0.6f), Offset(c.x + dx * r * 1.25f, c.y + dy * r * 1.25f), w, StrokeCap.Round, alpha = alpha)
+        }
+    }
 }
 
 /**
@@ -218,11 +352,12 @@ private fun DrawScope.flame(base: Offset, s: Float) {
  * seen); [shots] are the squares fired at: an ink circle for water and a red ink cross for a hit.
  * [last] rings the last shot. While arranging, ship number [lifted] follows the finger, moved by
  * [lift] pixels and drawn on top, with the squares where it would land ([landing]) outlined; ship
- * number [refused] is outlined in red, for a move or a turn it could not make.
+ * number [refused] is outlined in red, for a move or a turn it could not make. The mark of square
+ * [hidden] is left out while [drawShotLanding] draws that shot landing.
  */
 fun DrawScope.drawSea(
     n: Int, ships: List<Ship>, shots: Set<Int>, p: Palette, last: Int = -1, sunk: Set<Int> = emptySet(), side: Float = size.width,
-    lifted: Int = -1, lift: Offset = Offset.Zero, refused: Int = -1, landing: List<Int> = emptyList(),
+    lifted: Int = -1, lift: Offset = Offset.Zero, refused: Int = -1, landing: List<Int> = emptyList(), hidden: Int = -1,
 ) {
     val g = SeaGrid(side, n)
     val chart = Chart.of(p)
@@ -283,15 +418,13 @@ fun DrawScope.drawSea(
     // Shots: an ink circle in the water, a red ink cross with a flame on a ship.
     val shipCells = ships.flatMap { it.cells }.toSet()
     for (id in shots) {
+        if (id == hidden) continue
         val c = g.center(id)
         if (id in shipCells || id in sunk) {
-            val r = cell * 0.27f
-            drawLine(chart.red, c - Offset(r, r), c + Offset(r, r), cell * 0.12f, StrokeCap.Round)
-            drawLine(chart.red, c - Offset(r, -r), c + Offset(r, -r), cell * 0.12f, StrokeCap.Round)
-            flame(c + Offset(cell * 0.26f, -cell * 0.14f), cell * 0.16f)
+            hitCross(c, cell, chart)
+            flame(flameBase(c, cell), cell * FLAME_SIZE)
         } else {
-            drawCircle(chart.ink, cell * 0.22f, c, style = Stroke(cell * 0.07f))
-            drawCircle(chart.ink, cell * 0.05f, c)
+            missMark(c, cell, chart)
         }
     }
     if (last >= 0) {

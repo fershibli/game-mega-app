@@ -13,6 +13,7 @@ To place a ship yourself, **drag** it to another spot: it snaps to the squares, 
 - The big sea at the top is the other side's: tap a square to fire. An **ink circle** is water; a **red cross** with a little flame is a hit. Squares are named like on the paper game: letters A–J across the top, numbers 1–10 down the side. A ship hit on every square sinks and appears on the sea.
 - The small sea below is yours, with your ships and where the other side has fired.
 - One shot each, in turn, as on paper. The last shot is framed.
+- Each shot lands calmly: a drop and ripples in the water, a little flame on a ship. The game then waits a moment so you can see the result; the computer shows the square it aims at on your sea before firing, and your turn comes back once its shot has been seen. The pauses follow **Waiting time** in the settings, and with **Animations** off the mark appears at once.
 - Sink the whole other fleet first to win.
 
 | Level | Sea | Fleet | Computer |
@@ -24,4 +25,4 @@ To place a ship yourself, **drag** it to another spot: it snaps to the squares, 
 The computer never looks at your fleet.
 
 ## Taking turns
-After each shot a cover hides the screen and asks to pass the phone; the next player taps the big button to see their own sea.
+After each shot, once its result has been seen, a cover hides the screen and asks to pass the phone; the next player taps the big button to see their own sea.

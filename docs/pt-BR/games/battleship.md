@@ -13,6 +13,7 @@ Para arrumar um navio do seu jeito, **arraste-o** para outro lugar: ele se encai
 - O mar grande, em cima, é o do outro lado: toque num quadradinho para atirar. Um **círculo de tinta** é água; um **X vermelho** com uma chaminha é acerto. Os quadradinhos têm nome como no jogo de papel: letras A–J em cima, números 1–10 do lado. Um navio atingido em todos os quadradinhos afunda e aparece no mar.
 - O mar pequeno, embaixo, é o seu, com os seus navios e os tiros do outro lado.
 - Um tiro para cada um, alternando, como no papel. O último tiro fica marcado com uma moldura.
+- Cada tiro cai com calma: uma gota e ondinhas na água, um foguinho no navio. Depois o jogo espera um pouco para você ver o resultado; o computador mostra no seu mar a casa em que vai mirar antes de atirar, e a sua vez volta depois que o tiro dele foi visto. As pausas seguem o **Tempo de espera** das configurações e, com as **Animações** desligadas, a marca aparece na hora.
 - Afunde a frota inteira do outro lado primeiro para ganhar.
 
 | Nível | Mar | Frota | Computador |
@@ -24,4 +25,4 @@ Para arrumar um navio do seu jeito, **arraste-o** para outro lugar: ele se encai
 O computador nunca olha a sua frota.
 
 ## Revezando o celular
-Depois de cada tiro, uma cortina cobre a tela e pede para passar o celular; o próximo jogador toca no botão grande para ver o seu mar.
+Depois de cada tiro, quando o resultado já foi visto, uma cortina cobre a tela e pede para passar o celular; o próximo jogador toca no botão grande para ver o seu mar.
