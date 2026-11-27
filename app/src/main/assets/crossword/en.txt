@@ -81,8 +81,8 @@ WHITE|Color of milk and snow|1
 BLACK|Color of the night|1
 MOTHER|Woman who has children|1
 FATHER|Man who has children|1
-SISTER|Your parents' daughter|1
-BROTHER|Your parents' son|1
+SISTER|Girl or woman with the same parents as you|1
+BROTHER|Boy or man with the same parents as you|1
 GRANDMA|Your mother's or father's mother|1
 GRANDSON|Your son's or daughter's boy|2
 BABY|Very young child|1
@@ -154,7 +154,7 @@ GARLIC|Strong smelling bulb used in cooking|2
 PEPPER|Black spice next to the salt|1
 KNITTING|Making a scarf with two needles and wool|2
 PUZZLE|Game of fitting pieces together|2
-CARDS|Deck used for solitaire|1
+CARDS|Fifty-two of them make a deck for solitaire|1
 CHESS|Board game with kings and queens|2
 PHOTO|Picture taken with a camera|1
 PARK|Public garden for a walk|1
@@ -317,7 +317,7 @@ SNAIL|Slow creature that carries its home|1
 FOX|Clever wild animal with a bushy tail|1
 WOLF|Wild animal that howls at the moon|1
 DEER|Graceful animal with antlers|1
-ZEBRA|Horse with black and white stripes|1
+ZEBRA|Wild animal like a horse, with black and white stripes|1
 CAMEL|Desert animal with humps|1
 KANGAROO|Hops and carries its baby in a pouch|1
 PANDA|Black and white bear that eats bamboo|1
@@ -434,7 +434,7 @@ CANYON|Deep valley with steep sides|3
 PRAIRIE|Wide flat grassland|3
 MARSH|Wet soggy land with reeds|3
 OASIS|Green spot in the desert|3
-DUNE|Hill of sand|3
+DUNE|Hill of sand|2
 PEBBLE|Small smooth stone|2
 EARTH|Our planet|1
 PLANET|World that circles a star|1
@@ -743,7 +743,7 @@ KINDNESS|Being nice to others|2
 LAUGHTER|Sound of people having fun|2
 NOSTALGIA|Fond longing for the past|3
 SERENE|Calm and untroubled|3
-JOLLY|Merry and cheerful|3
+JOLLY|Cheerful and full of good humor|3
 MERRY|Happy and full of fun|2
 CHARMING|Very pleasant and attractive|3
 GRACEFUL|Moving with elegance|3
@@ -760,11 +760,11 @@ SOFT|Not hard|1
 SMOOTH|Not rough|2
 SHINY|Gleams in the light|2
 FRESH|Just picked or made|2
-COZY|Warm and snug|2
-SNUG|Cozy and comfortable|3
+COZY|Warm and comfortable, like a seat by the fire|2
+SNUG|Pleasantly warm and sheltered|3
 TIDY|Neat and in order|2
 FANCY|Elegant and decorated|2
-ANCIENT|Very very old|3
+ANCIENT|Very, very old|3
 TINY|Very small|1
 HUGE|Very big|1
 EMPTY|Nothing inside|2
@@ -815,8 +815,8 @@ BONNET|Hat tied under the chin|3
 BERET|Flat round hat|3
 SANDAL|Open shoe for summer|2
 CLOGS|Wooden shoes|3
-MITTEN|Glove without fingers|2
-TROUSERS|Pants with two legs|2
+MITTEN|Glove with a thumb but no separate fingers|2
+TROUSERS|Long pants, as the British call them|2
 SHORTS|Short trousers for summer|1
 LAUGH|Ha ha ha|1
 SING|Use your voice for music|1
@@ -988,11 +988,11 @@ INVITATION|Card asking you to a party|3
 CONFETTI|Bits of paper thrown at a party|3
 GRANDPA|Your mother's or father's father|1
 GRANDCHILD|Your son's or daughter's child|2
-AUNT|Your mother's sister|1
-UNCLE|Your father's brother|1
-COUSIN|Your aunt's child|1
-NEPHEW|Your brother's son|2
-NIECE|Your sister's daughter|2
+AUNT|Your mother's or father's sister|1
+UNCLE|Your mother's or father's brother|1
+COUSIN|Child of your aunt or uncle|1
+NEPHEW|Your brother's or sister's son|2
+NIECE|Your brother's or sister's daughter|2
 HUSBAND|Married man|1
 WIFE|Married woman|1
 TWIN|One of two born together|2
@@ -1041,7 +1041,7 @@ BIRDHOUSE|Little home on a pole for birds|2
 BEEHIVE|Home of the honey makers|2
 PUDDLE|Small pool of rain|2
 ICICLE|Hanging spike of ice|3
-SNOWFLAKE|Each one is unique|2
+SNOWFLAKE|Tiny ice crystal; no two are alike|2
 SNOWMAN|Figure built in winter with a carrot nose|1
 SLED|Ride it down a snowy hill|2
 SKATE|Glide on ice|2
@@ -1062,7 +1062,7 @@ SHUTTER|Wooden cover for a window|3
 WALLPAPER|Decorates the walls|2
 TRELLIS|Frame that climbing roses grow on|3
 PERGOLA|Garden walkway with a vine roof|3
-CONSERVATORY|Glass room for plants at the house|3
+CONSERVATORY|Glass room added to a house for plants|3
 TEAKETTLE|Whistles when the water boils|3
 PERCOLATOR|Old style coffee maker|3
 BUTTERMILK|Sour milk for pancakes|3
@@ -1074,7 +1074,7 @@ CHAMOMILE|Calming herbal tea|3
 PEPPERMINT|Cool candy flavor|3
 BUTTERCUP|Small yellow wildflower|3
 DANDELION|Yellow weed that turns to fluff|3
-FOXGLOVE|Tall flower with bell shaped blooms|3
+FOXGLOVE|Tall flower with bell-shaped blooms|3
 HONEYSUCKLE|Climbing plant with sweet scent|3
 NIGHTINGALE|Bird that sings at night|3
 KINGFISHER|Bright blue bird that dives for fish|3
