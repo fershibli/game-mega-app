@@ -44,6 +44,7 @@
     <string name="trail_stay">Остаться (сердечки +%1$d)</string>
     <string name="trail_go">Идти дальше (клеток: %1$d)</string>
     <string name="trail_ok">Дальше</string>
+    <string name="trail_chose">%1$s выбирает: %2$s</string>
     <string name="trail_roll">Бросить кубик</string>
     <string name="trail_you">Вы</string>
     <string name="trail_your_turn">Ваш ход: бросьте кубик.</string>

@@ -44,6 +44,7 @@
     <string name="trail_stay">Rester (cœurs +%1$d)</string>
     <string name="trail_go">Avancer (%1$d cases)</string>
     <string name="trail_ok">Continuer</string>
+    <string name="trail_chose">%1$s a choisi : %2$s</string>
     <string name="trail_roll">Lancer le dé</string>
     <string name="trail_you">Vous</string>
     <string name="trail_your_turn">À vous : lancez le dé.</string>

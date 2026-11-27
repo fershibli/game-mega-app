@@ -16,6 +16,8 @@ Sechs Landschaften, eine für jeden Lebensabschnitt (Spielplatz und Schule, Stad
 | Wegweiser | Eine Kreuzung: **Bleiben** gibt 2 Herzen, **Weitergehen** 3 Felder. |
 | Einfach | Nichts; genieße die Aussicht. |
 
+Bleibt eine Figur auf einem Herz, einem Buch, einem Wegweiser oder am Haus stehen, öffnet sich ihre Karte über dem Spielbrett, etwas oberhalb des unteren Rands. Lesen Sie in Ruhe: Es geht erst weiter, wenn Sie **Weiter** tippen (an einer Kreuzung **Bleiben** oder **Weitergehen**). Auch die Karten des Computers warten auf **Weiter** und zeigen an einer Kreuzung seine Wahl. Die Figuren gehen Feld für Feld; die Einstellungen **Wartezeit** und **Animationen** machen sie langsamer oder schneller.
+
 ## Ankommen
 Wer zuerst am Häuschen ist, bekommt **5** Herzen, der Zweite **3**, der Dritte **2** und der Vierte **1**. Die genaue Zahl ist nicht nötig. Das Spiel endet, wenn alle Figuren angekommen sind; am Ende steht der Herzenstand.
 

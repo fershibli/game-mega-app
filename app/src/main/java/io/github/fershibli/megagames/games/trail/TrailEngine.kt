@@ -50,9 +50,12 @@ enum class Story(val stage: Stage, @StringRes val text: Int, val hearts: Int = 0
     HAMMOCK(Stage.REST, R.string.trail_story_hammock, hearts = 1),
 }
 
-/** Something on the table waiting to be read or decided before the next roll. */
+/**
+ * Something on the table waiting to be read or decided before the next roll. At a crossroads of
+ * the computer, [stays] is its answer, decided and shown on the card before it is made.
+ */
 @Serializable
-data class Pending(val seat: Int, val story: Int = -1, val choiceStage: Int = -1)
+data class Pending(val seat: Int, val story: Int = -1, val choiceStage: Int = -1, val stays: Boolean? = null)
 
 /**
  * A game of the life trail. [positions] and [hearts] are per seat; [arrived] lists the seats that
@@ -74,6 +77,8 @@ data class TrailState(
     val lastMove: Int = 0,
     /** Stories already told, so the same one does not come back too soon. */
     val told: List<Int> = emptyList(),
+    /** The card of this turn (a heart, an arrival) was read; stories and crossroads count as read once answered. */
+    val seen: Boolean = false,
 ) {
     val over: Boolean get() = arrived.size == seats
 }
@@ -119,7 +124,7 @@ object Trail {
         if (!canRoll(s)) return s
         val seat = s.turn
         val to = (s.positions[seat] + die).coerceAtMost(FINISH)
-        val moved = s.copy(die = die, positions = s.positions.replace(seat, to), lastSeat = seat, lastStory = -1, lastHearts = 0, lastMove = 0)
+        val moved = s.copy(die = die, positions = s.positions.replace(seat, to), lastSeat = seat, lastStory = -1, lastHearts = 0, lastMove = 0, seen = false)
         return land(moved, seat, random)
     }
 
@@ -153,7 +158,7 @@ object Trail {
         if (p.story < 0) return s
         val story = Story.entries[p.story]
         val seat = p.seat
-        var next = s.copy(pending = null, told = (s.told + p.story).takeLast(8), lastSeat = seat, lastStory = p.story, lastHearts = story.hearts, lastMove = story.move)
+        var next = s.copy(pending = null, seen = true, told = (s.told + p.story).takeLast(8), lastSeat = seat, lastStory = p.story, lastHearts = story.hearts, lastMove = story.move)
         if (story.hearts != 0) next = next.copy(hearts = next.hearts.replace(seat, next.hearts[seat] + story.hearts))
         if (story.move != 0) {
             val to = (next.positions[seat] + story.move).coerceIn(0, FINISH)
@@ -168,12 +173,29 @@ object Trail {
         val p = s.pending ?: return s
         if (p.choiceStage < 0) return s
         val seat = p.seat
-        val base = s.copy(pending = null, lastSeat = seat, lastStory = -1)
+        val base = s.copy(pending = null, seen = true, lastSeat = seat, lastStory = -1)
         if (stay) return base.copy(hearts = base.hearts.replace(seat, base.hearts[seat] + STAY_HEARTS), lastHearts = STAY_HEARTS, lastMove = 0)
         val to = (base.positions[seat] + GO_SQUARES).coerceAtMost(FINISH)
         val moved = base.copy(positions = base.positions.replace(seat, to), lastHearts = 0, lastMove = GO_SQUARES)
         return if (to == FINISH) arrive(moved, seat) else moved
     }
+
+    /** The computer's answer at a crossroads, kept on the card until someone has read it. */
+    fun decide(s: TrailState, stay: Boolean): TrailState {
+        val p = s.pending ?: return s
+        if (p.choiceStage < 0) return s
+        return s.copy(pending = p.copy(stays = stay))
+    }
+
+    /**
+     * Something happened this turn that nobody has confirmed yet: a heart, or reaching the end
+     * (stories and crossroads wait in [TrailState.pending] instead). The turn goes on after [see].
+     */
+    fun hasNews(s: TrailState): Boolean =
+        !s.over && s.pending == null && s.die != 0 && !s.seen && (s.lastHearts != 0 || s.lastMove != 0 || s.lastStory >= 0)
+
+    /** The card of this turn was read. */
+    fun see(s: TrailState): TrailState = s.copy(seen = true)
 
     /** Ends the turn: the next seat still on the way plays. */
     fun next(s: TrailState): TrailState {
