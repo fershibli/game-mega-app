@@ -13,6 +13,7 @@ Um ein Schiff selbst zu platzieren, **zieh** es an eine andere Stelle: Es rastet
 - Das große Meer oben gehört der anderen Seite: Tippe auf ein Feld, um zu schießen. Ein **Tintenkreis** ist Wasser, ein **rotes Kreuz** mit einer kleinen Flamme ein Treffer. Die Felder heißen wie beim Spiel auf Papier: Buchstaben A–J oben, Zahlen 1–10 an der Seite. Ein Schiff, das auf allen Feldern getroffen ist, sinkt und erscheint auf dem Meer.
 - Das kleine Meer unten ist deins, mit deinen Schiffen und den Schüssen der anderen Seite.
 - Jeder schießt einmal, abwechselnd, wie auf Papier. Der letzte Schuss ist umrahmt.
+- Jeder Schuss landet ruhig: ein Tropfen und Wellenringe im Wasser, eine kleine Flamme auf einem Schiff. Danach wartet das Spiel einen Moment, damit du das Ergebnis siehst; der Computer zeigt auf deinem Meer das Feld, auf das er zielt, bevor er schießt, und du bist wieder dran, sobald sein Schuss zu sehen war. Die Pausen folgen der **Wartezeit** in den Einstellungen, und ohne **Animationen** erscheint das Zeichen sofort.
 - Wer zuerst die ganze andere Flotte versenkt, gewinnt.
 
 | Stufe | Meer | Flotte | Computer |
@@ -24,4 +25,4 @@ Um ein Schiff selbst zu platzieren, **zieh** es an eine andere Stelle: Es rastet
 Der Computer schaut nie auf deine Flotte.
 
 ## Abwechselnd spielen
-Nach jedem Schuss verdeckt ein Schirm alles und bittet, das Handy weiterzugeben; der nächste Spieler tippt auf den großen Knopf, um sein Meer zu sehen.
+Nach jedem Schuss, sobald das Ergebnis zu sehen war, verdeckt ein Schirm alles und bittet, das Handy weiterzugeben; der nächste Spieler tippt auf den großen Knopf, um sein Meer zu sehen.

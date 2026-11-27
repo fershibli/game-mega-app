@@ -499,16 +499,56 @@ class ScreenshotTest {
         return GameHost(GameId.BATTLESHIP, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.battleship.BattleshipState.serializer(), s), null, null) {}
     }
 
+    @Test fun battleshipLandingHit() = battleshipLanding("game_battleship_landing_hit", hit = true)
+    @Test fun battleshipLandingMiss() = battleshipLanding("game_battleship_landing_miss", hit = false, millis = 480)
+    @Test fun battleshipLandingHitDark() = battleshipLanding("game_battleship_landing_hit_dark", hit = true, Settings(darkMode = true))
+    @Test fun battleshipLandingMissHighContrast() = battleshipLanding("game_battleship_landing_miss_high_contrast", hit = false, Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST), millis = 480)
+    /** After your shot has been seen: the computer's sight closing in on a square of your sea. */
+    @Test fun battleshipAim() = battleshipLanding("game_battleship_aim", hit = false, millis = 2_200)
+
+    /**
+     * The game of [battleshipHost] a moment ([millis]) after you fire at a square of the other sea:
+     * a ship's square ([hit]) for the little flame, or water for the splash.
+     */
+    private fun battleshipLanding(name: String, hit: Boolean, settings: Settings = Settings(), millis: Long = 380) {
+        val s = battleshipState()
+        val shipCells = s.fleets[1].flatMap { it.cells }.toSet()
+        // A square near the middle of the sea, where the picture is easy to see.
+        val cell = (0 until 100).filter { it !in s.shots[0] && (it in shipCells) == hit }.minBy { kotlin.math.abs(it / 10 - 4.5f) + kotlin.math.abs(it % 10 - 4.5f) }
+        rule.setContent {
+            MegaGamesTheme(settings) {
+                Box(Modifier.fillMaxSize().background(LocalPalette.current.background)) { GameContent(GameId.BATTLESHIP, battleshipHost()) }
+            }
+        }
+        rule.waitForIdle()
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("battleship-target").performTouchInput { click(io.github.fershibli.megagames.games.battleship.SeaGrid(width.toFloat(), 10).center(cell)) }
+        // Frame by frame until the shot is taken, then on to the moment wanted.
+        repeat(30) {
+            if (rule.onAllNodes(androidx.compose.ui.test.hasText("You:", substring = true)).fetchSemanticsNodes().isEmpty()) {
+                rule.waitForIdle()
+                rule.mainClock.advanceTimeByFrame()
+            }
+        }
+        repeat((millis / 16).toInt()) {
+            rule.waitForIdle()
+            rule.mainClock.advanceTimeByFrame()
+        }
+        save(name)
+    }
+
     /** A game well under way: a few splashes, a hit and a sunk ship on each side. */
-    private fun battleshipHost(): GameHost {
+    private fun battleshipHost(): GameHost =
+        GameHost(GameId.BATTLESHIP, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.battleship.BattleshipState.serializer(), battleshipState()), null, null) {}
+
+    private fun battleshipState(): io.github.fershibli.megagames.games.battleship.BattleshipState {
         val r = kotlin.random.Random(4)
         val mine = io.github.fershibli.megagames.games.battleship.Battleship.arrange(10, io.github.fershibli.megagames.games.battleship.Battleship.fleet(Difficulty.MEDIUM), r)
         val theirs = io.github.fershibli.megagames.games.battleship.Battleship.arrange(10, io.github.fershibli.megagames.games.battleship.Battleship.fleet(Difficulty.MEDIUM), r)
         val sunk = theirs.last().cells
         val myShots = listOf(0, 11, 22, 33, 44, 55, 66, 77, 88, 99, 9, 90) + sunk + theirs[0].cells.take(2)
         val theirShots = listOf(5, 15, 25, 35, 45, 54, 63) + mine[1].cells.take(1)
-        val s = io.github.fershibli.megagames.games.battleship.BattleshipState(10, listOf(mine, theirs), listOf(myShots.distinct(), theirShots.distinct()), turn = 0, placing = 2, lastSeat = 1, lastCell = theirShots.last(), lastResult = io.github.fershibli.megagames.games.battleship.Shot.HIT)
-        return GameHost(GameId.BATTLESHIP, Difficulty.MEDIUM, io.github.fershibli.megagames.core.AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.battleship.BattleshipState.serializer(), s), null, null) {}
+        return io.github.fershibli.megagames.games.battleship.BattleshipState(10, listOf(mine, theirs), listOf(myShots.distinct(), theirShots.distinct()), turn = 0, placing = 2, lastSeat = 1, lastCell = theirShots.last(), lastResult = io.github.fershibli.megagames.games.battleship.Shot.HIT)
     }
     @Test fun cacheta() = CachetaUiTest.screenshotHost().let { host -> shot("game_cacheta") { GameContent(GameId.CACHETA, host) } }
     @Test fun trucoPt() = TrucoUiTest.screenshotHost().let { host -> shot("game_truco_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRUCO, host) } }

@@ -13,6 +13,7 @@ Para colocar un barco a tu gusto, **arrástralo** a otro sitio: encaja en las ca
 - El mar grande de arriba es el del otro lado: toca una casilla para disparar. Un **círculo de tinta** es agua; una **cruz roja** con una llamita es tocado. Las casillas se nombran como en el juego de papel: letras A–J arriba, números 1–10 al costado. Un barco tocado en todas sus casillas se hunde y aparece en el mar.
 - El mar pequeño de abajo es el tuyo, con tus barcos y los disparos del otro lado.
 - Un disparo cada uno, por turnos, como en papel. El último disparo lleva un marco.
+- Cada disparo cae con calma: una gota y ondas en el agua, una llamita en un barco. Luego el juego espera un momento para que veas el resultado; el ordenador muestra en tu mar la casilla a la que apunta antes de disparar, y tu turno vuelve cuando se ha visto su disparo. Las pausas siguen el **Tiempo de espera** de los ajustes y, con las **Animaciones** apagadas, la marca aparece enseguida.
 - Hunde primero toda la flota del otro lado para ganar.
 
 | Nivel | Mar | Flota | Ordenador |
@@ -24,4 +25,4 @@ Para colocar un barco a tu gusto, **arrástralo** a otro sitio: encaja en las ca
 El ordenador nunca mira tu flota.
 
 ## Por turnos
-Tras cada disparo, una pantalla tapa todo y pide pasar el teléfono; el siguiente jugador toca el botón grande para ver su mar.
+Tras cada disparo, una vez visto su resultado, una pantalla tapa todo y pide pasar el teléfono; el siguiente jugador toca el botón grande para ver su mar.

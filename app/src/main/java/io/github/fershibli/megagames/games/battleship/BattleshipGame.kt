@@ -1,5 +1,7 @@
 package io.github.fershibli.megagames.games.battleship
 
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.awaitEachGesture
 import androidx.compose.foundation.gestures.awaitFirstDown
@@ -30,7 +32,9 @@ import androidx.compose.ui.input.pointer.positionChange
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
@@ -48,13 +52,25 @@ import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.components.numberedSeat
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.currentHaptics
+import io.github.fershibli.megagames.ui.theme.currentMotion
 import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.spec
+import io.github.fershibli.megagames.ui.theme.swing
 import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.math.roundToInt
 import kotlin.random.Random
 
-/** Pauses (milliseconds) so a person sees where each shot fell. */
-private const val COMPUTER_PAUSE = 1200L
+/**
+ * The pace of a turn, in milliseconds (the pauses follow the chosen pace, the movements the chosen
+ * animations). A shot first lands ([LANDING_MS]: a splash or a little flame on its square), then
+ * the result stays to be read ([SEE_SHOT], or [SEE_RESULT] before passing the phone). The
+ * computer then shows the square it aims at on your sea ([AIM_MS], then [AIM_PAUSE]) before
+ * firing, and its shot lands and is read the same way before your turn comes back.
+ */
+private const val LANDING_MS = 900
+private const val SEE_SHOT = 900L
+private const val AIM_MS = 600
+private const val AIM_PAUSE = 900L
 private const val SEE_RESULT = 1400L
 private const val END_PAUSE = 1500L
 /** How long a ship that cannot go where it was asked stays outlined in red. */
@@ -88,28 +104,52 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
     val p = LocalPalette.current
     val res = LocalResources.current
     val pace = currentPace
+    val motion = currentMotion
     val handoff = remember { Handoff() }
     val haptics = currentHaptics
     fun human(seat: Int) = together || seat == 0
     val seats = listOf(numberedSeat(1), numberedSeat(2))
-    // Whose sea is shown as "yours": the person holding the phone.
+
+    // A shot made on this screen is being shown (landing, then read): no other shot is taken
+    // meanwhile. [landing] runs from 0 to 1 while the shot lands on its square; [aim] is the
+    // square the computer is aiming at on your sea (-1: none), with the sight closing in.
+    var busy by remember { mutableStateOf(false) }
+    var landingNow by remember { mutableStateOf(false) }
+    val landing = remember { Animatable(0f) }
+    var aim by remember { mutableIntStateOf(-1) }
+    val aimIn = remember { Animatable(0f) }
+    fun fire(cell: Int) {
+        val now = state.value
+        if (busy || !Battleship.canShoot(now, cell)) return
+        busy = true
+        landingNow = true
+        state.value = Battleship.shoot(now, cell)
+    }
+
+    // Whose sea is shown as "yours": the person holding the phone (taking turns, the one who just
+    // fired, until their shot has been seen).
     val viewer = when {
         !together -> 0
         !s.playing -> s.placing.coerceAtMost(1)
+        busy && s.lastSeat >= 0 -> s.lastSeat
         else -> s.turn
     }
     var announced by remember { mutableIntStateOf(if (s.playing) s.turn else s.placing) }
-    LaunchedEffect(s.turn, s.placing) {
-        if (!together || Battleship.over(s)) return@LaunchedEffect
+    LaunchedEffect(s.turn, s.placing, busy) {
+        if (!together || busy || Battleship.over(s)) return@LaunchedEffect
         val next = if (s.playing) s.turn else s.placing
-        if (next != announced && next <= 1) {
-            // Let the shot be seen before covering the screen.
-            if (s.playing) pace.wait(SEE_RESULT)
-            handoff.passTo(seats[next])
-        }
+        if (next != announced && next <= 1) handoff.passTo(seats[next])
         announced = next
     }
     LaunchedEffect(s) {
+        if (s.playing && busy) {
+            // The shot lands on its square, then its result stays a moment to be read.
+            landing.snapTo(0f)
+            landing.animateTo(1f, motion.spec(LANDING_MS, LinearEasing))
+            landingNow = false
+            pace.wait(if (together && !Battleship.over(s)) SEE_RESULT else SEE_SHOT)
+            busy = false
+        }
         if (Battleship.over(s)) {
             pace.wait(END_PAUSE)
             val w = Battleship.winner(s)
@@ -119,12 +159,20 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
             return@LaunchedEffect
         }
         if (s.playing && !human(s.turn)) {
-            pace.wait(COMPUTER_PAUSE)
+            // The computer shows where it aims on your sea, waits a moment, then fires.
             val cell = Battleship.choose(s, host.difficulty, Random.Default)
-            if (cell >= 0) state.value = Battleship.shoot(s, cell)
+            if (cell < 0) return@LaunchedEffect
+            aimIn.snapTo(0f)
+            aim = cell
+            aimIn.animateTo(1f, motion.spec(AIM_MS))
+            pace.wait(AIM_PAUSE)
+            aim = -1
+            busy = true
+            landingNow = true
+            state.value = Battleship.shoot(s, cell)
         }
     }
-    val myTurn = s.playing && !Battleship.over(s) && human(s.turn)
+    val myTurn = s.playing && !busy && !Battleship.over(s) && human(s.turn)
 
     // Arranging by hand: the ship being dragged and how far (in pixels), the ship that could not
     // go where it was asked (outlined in red for a moment), and the fleets before each change.
@@ -172,12 +220,14 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
                 val line = when {
                     !s.playing && noRoom -> stringResource(R.string.battleship_no_room)
                     !s.playing -> stringResource(R.string.battleship_arrange)
-                    Battleship.over(s) -> last
+                    // A shot is being shown: just what it found, until it has been seen.
+                    Battleship.over(s) || busy -> last
                     myTurn && together -> listOfNotNull(last, stringResource(R.string.battleship_turn_of, s.turn + 1)).joinToString("\n")
                     myTurn -> listOfNotNull(last, stringResource(R.string.battleship_your_turn)).joinToString("\n")
                     else -> listOfNotNull(last, stringResource(R.string.battleship_computer_aiming)).joinToString("\n")
                 }
-                StatusPill(line ?: "", Modifier.testTag("battleship-status"), emphasized = myTurn || !s.playing && noRoom)
+                // Read out by screen readers whenever it changes: each shot's result, then whose turn it is.
+                StatusPill(line ?: "", Modifier.testTag("battleship-status").semantics { liveRegion = LiveRegionMode.Polite }, emphasized = myTurn || !s.playing && noRoom)
             },
             controls = if (!s.playing) ({
                 ActionBar {
@@ -251,29 +301,46 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
                     val big = minOf(maxWidth, (maxHeight - 64.dp) * 0.66f)
                     val small = minOf(maxWidth * 0.5f, maxHeight - big - 64.dp)
                     val target = 1 - viewer
-                    val enemyShots = s.shots[viewer].toSet()
-                    val sunkShips = s.fleets[target].filter { Battleship.sunk(s, target, it) }
+                    val enemyShots = remember(s, viewer) { s.shots[viewer].toSet() }
+                    val sunkShips = remember(s, viewer) { s.fleets[target].filter { Battleship.sunk(s, target, it) } }
+                    val hitCells = remember(s, viewer) { sunkShips.flatMap { it.cells }.toSet() + enemyShots.filter { Battleship.result(s, viewer, it, s.shots[viewer]) != Shot.MISS } }
+                    val theirShots = remember(s, viewer) { s.shots[target].toSet() }
+                    val mySunk = remember(s, viewer) { s.fleets[viewer].filter { Battleship.sunk(s, viewer, it) }.flatMap { it.cells }.toSet() }
+                    // The shot landing right now, on whichever sea it fell.
+                    val lands = if (landingNow && s.lastSeat >= 0) s.lastCell else -1
+                    val hit = s.lastResult != Shot.MISS
+                    val sway = motion.swing(1f)
                     val description = stringResource(R.string.battleship_target_board, Battleship.afloat(s, target))
                     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(4.dp)) {
                         val theirName = stringResource(if (together) R.string.battleship_their_sea_player else R.string.battleship_their_sea, target + 1)
                         Text(stringResource(R.string.battleship_sea_afloat, theirName, Battleship.afloat(s, target)), style = MaterialTheme.typography.titleMedium, color = p.text)
-                        Canvas(
-                            Modifier.size(big).testTag("battleship-target").semantics { contentDescription = description }
-                                .pointerInput(s, myTurn) {
-                                    detectTapGestures { pos ->
-                                        if (!myTurn || !handoff.showsPrivate) return@detectTapGestures
-                                        state.value = Battleship.shoot(state.value, SeaGrid(size.width.toFloat(), n).cellAt(pos))
-                                    }
-                                },
-                        ) {
-                            // Only the ships already sunk are shown on the other side's sea.
-                            drawSea(n, sunkShips, enemyShots, p, last = if (s.lastSeat == viewer) s.lastCell else -1, sunk = sunkShips.flatMap { it.cells }.toSet() + enemyShots.filter { Battleship.result(s, viewer, it, s.shots[viewer]) != Shot.MISS })
+                        val onTarget = if (s.lastSeat == viewer) lands else -1
+                        Box(Modifier.size(big)) {
+                            Canvas(
+                                Modifier.fillMaxSize().testTag("battleship-target").semantics { contentDescription = description }
+                                    .pointerInput(n) {
+                                        detectTapGestures { pos ->
+                                            val now = state.value
+                                            if (!now.playing || !human(now.turn) || !handoff.showsPrivate) return@detectTapGestures
+                                            fire(SeaGrid(size.width.toFloat(), n).cellAt(pos))
+                                        }
+                                    },
+                            ) {
+                                // Only the ships already sunk are shown on the other side's sea.
+                                drawSea(n, sunkShips, enemyShots, p, last = if (s.lastSeat == viewer) s.lastCell else -1, sunk = hitCells, hidden = onTarget)
+                            }
+                            // Drawn on its own, so only the landing shot is redrawn on each frame.
+                            if (onTarget >= 0) Canvas(Modifier.fillMaxSize()) { drawShotLanding(n, onTarget, hit, landing.value, p, sway) }
                         }
                         Text(stringResource(R.string.battleship_sea_afloat, stringResource(R.string.battleship_your_sea), Battleship.afloat(s, viewer)), style = MaterialTheme.typography.titleSmall, color = p.textMuted)
-                        Canvas(Modifier.size(small).testTag("battleship-own")) {
-                            if (private) {
-                                val theirShots = s.shots[target].toSet()
-                                drawSea(n, s.fleets[viewer], theirShots, p, last = if (s.lastSeat == target) s.lastCell else -1, sunk = s.fleets[viewer].filter { Battleship.sunk(s, viewer, it) }.flatMap { it.cells }.toSet())
+                        val onOwn = if (s.lastSeat == target) lands else -1
+                        Box(Modifier.size(small)) {
+                            Canvas(Modifier.fillMaxSize().testTag("battleship-own")) {
+                                if (private) drawSea(n, s.fleets[viewer], theirShots, p, last = if (s.lastSeat == target && aim < 0) s.lastCell else -1, sunk = mySunk, hidden = onOwn)
+                            }
+                            if (private && (onOwn >= 0 || aim >= 0)) Canvas(Modifier.fillMaxSize()) {
+                                if (aim >= 0) drawAim(n, aim, aimIn.value, p)
+                                if (onOwn >= 0) drawShotLanding(n, onOwn, hit, landing.value, p, sway)
                             }
                         }
                     }
