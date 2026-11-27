@@ -4,7 +4,7 @@
 
 Una piccola fattoria che vive nel tuo telefono. Semina, annaffia e raccogli, accudisci le galline, la mucca e le pecore, vendi nel fienile e soddisfa gli ordini dei vicini. Non c’è fretta e non si perde mai nulla: le piante non appassiscono, gli animali non hanno mai fame e la fattoria continua a crescere anche con l’app chiusa.
 
-Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Le tue **monete** e **stelle** sono indicate sopra. La fattoria è un solo disegno: l’orto con le aiuole, il recinto con gli animali, la casa e il fienile. Allarga con due dita per vederla più grande; il pulsante tondo la rimette com’era.
+Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Le tue **monete** e **stelle** sono indicate sopra. La fattoria è un solo disegno: l’orto con le aiuole, il recinto con gli animali, la casa e il fienile. Allarga con due dita per vederla più grande; il pulsante tondo la rimette com’era. Quando è ingrandita, trascina con un dito per spostarti.
 
 ## L’orto
 - Tocca un’**aiuola vuota** (solo terra marrone) e scegli cosa seminare. Ogni seme costa qualche moneta.

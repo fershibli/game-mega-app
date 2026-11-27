@@ -4,7 +4,7 @@
 
 Une petite ferme qui vit dans votre téléphone. Semez, arrosez et récoltez, occupez-vous des poules, de la vache et des moutons, vendez à la grange et honorez les commandes des voisins. Rien ne presse et rien ne se perd : les cultures ne fanent jamais, les animaux n’ont jamais faim et la ferme continue de pousser quand l’application est fermée.
 
-Trois boutons en haut ouvrent la **Ferme**, les **Commandes** et la **Grange**. Vos **pièces** et **étoiles** sont affichées au-dessus. La ferme est un seul dessin : le potager et ses carrés, l’enclos avec les animaux, la maison et la grange. Pincez pour l’agrandir ; le bouton rond la remet comme avant.
+Trois boutons en haut ouvrent la **Ferme**, les **Commandes** et la **Grange**. Vos **pièces** et **étoiles** sont affichées au-dessus. La ferme est un seul dessin : le potager et ses carrés, l’enclos avec les animaux, la maison et la grange. Pincez pour l’agrandir ; le bouton rond la remet comme avant. Quand elle est agrandie, faites glisser un doigt pour vous déplacer.
 
 ## Le potager
 - Touchez un **carré vide** (la terre brune nue) et choisissez quoi semer. Chaque graine coûte quelques pièces.

@@ -117,11 +117,18 @@ fun rememberZoomState(initial: Float = 1f): ZoomState = remember { ZoomState(ini
  *
  * Single-finger taps and drags always reach the game underneath, so the games themselves never
  * need to know about zoom. Coordinates inside [content] are already transformed.
+ *
+ * With [panWithOneFinger] (off by default, because most games drag pieces or cards with one
+ * finger), a zoomed-in board is also moved by dragging one finger: once the finger travels more
+ * than the touch slop the drag belongs to the board and the game never sees it, so it can't
+ * also count as a tap. A touch that stays within the slop is still a tap, and at normal size
+ * nothing changes.
  */
 @Composable
 fun ZoomableBoard(
     modifier: Modifier = Modifier,
     state: ZoomState = rememberZoomState(),
+    panWithOneFinger: Boolean = false,
     content: @Composable BoxScope.() -> Unit,
 ) {
     val settings = LocalSettings.current
@@ -134,8 +141,8 @@ fun ZoomableBoard(
         modifier
             .clipToBounds()
             .onSizeChanged { state.viewport = it }
-            .pointerInput(twoFinger, oneHand, oneHandMode) {
-                zoomGestures(state, twoFinger, oneHand, oneHandMode, haptics)
+            .pointerInput(twoFinger, oneHand, oneHandMode, panWithOneFinger) {
+                zoomGestures(state, twoFinger, oneHand, oneHandMode, panWithOneFinger, haptics)
             },
     ) {
         // Boards are drawn and touched in left-to-right coordinates, even when the screens read
@@ -184,6 +191,7 @@ private suspend fun PointerInputScope.zoomGestures(
     twoFinger: Boolean,
     oneHand: Boolean,
     oneHandMode: OneHandZoom,
+    panWithOneFinger: Boolean,
     haptics: HapticFeedback,
 ) {
     var lastTapUp = 0L
@@ -227,6 +235,7 @@ private suspend fun PointerInputScope.zoomGestures(
 
         var mode = Mode.NONE
         var moved = false
+        var panning = false
         // Pointers that can't be half of a pinch: at the edge, or down too late (see below).
         val ignored = HashSet<PointerId>()
         fun atEdge(p: Offset) = p.x < edge || p.x > size.width - edge
@@ -263,7 +272,7 @@ private suspend fun PointerInputScope.zoomGestures(
                     lastTapUp = event.changes.first().uptimeMillis
                     lastTapPos = event.changes.first().position
                 }
-                if (mode != Mode.NONE) event.changes.forEach { it.consume() }
+                if (mode != Mode.NONE || panning) event.changes.forEach { it.consume() }
                 break
             }
             val fingers = pressed.filter { it.id !in ignored }
@@ -310,7 +319,24 @@ private suspend fun PointerInputScope.zoomGestures(
                 event.changes.forEach { it.consume() }
                 continue
             }
-            if ((pressed.first().position - down.position).getDistance() > slop) moved = true
+            val first = pressed.first()
+            val own = pressed.firstOrNull { it.id == down.id }
+            if (panWithOneFinger && own != null && state.isZoomed && down.id !in ignored && fingers.size == 1) {
+                // One finger on a zoomed-in board: past the slop, the drag moves the view and the
+                // game underneath never sees it (so it can't end as a tap).
+                if (!panning && (own.position - down.position).getDistance() > slop) {
+                    panning = true
+                    state.panBy(own.position - down.position)
+                } else if (panning) {
+                    state.panBy(own.position - own.previousPosition)
+                }
+                if (panning) {
+                    own.consume()
+                    moved = true
+                    continue
+                }
+            }
+            if ((first.position - down.position).getDistance() > slop) moved = true
             anchor = down.position
         }
     }

@@ -43,7 +43,7 @@ fun GameLayout(
         if (status != null) {
             Box(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp), contentAlignment = Alignment.Center) { status() }
         }
-        ZoomableBoard(Modifier.weight(1f).fillMaxWidth(), zoom, board)
+        ZoomableBoard(Modifier.weight(1f).fillMaxWidth(), zoom, content = board)
         if (controls != null) {
             Column(
                 Modifier.fillMaxWidth().background(p.surface).padding(horizontal = 12.dp, vertical = 10.dp),

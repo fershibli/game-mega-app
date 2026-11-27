@@ -225,7 +225,7 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     val onPlot by rememberUpdatedState<(Int) -> Unit> { tapPlot(it) }
     val onPen by rememberUpdatedState<(Int) -> Unit> { tapPen(it) }
     Column(Modifier.fillMaxSize()) {
-        ZoomableBoard(Modifier.weight(1f).fillMaxWidth(), rememberZoomState()) {
+        ZoomableBoard(Modifier.weight(1f).fillMaxWidth(), rememberZoomState(), panWithOneFinger = true) {
             BoxWithConstraints(Modifier.fillMaxSize()) {
                 val density = LocalDensity.current
                 val wPx = with(density) { maxWidth.toPx() }
