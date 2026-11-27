@@ -4,7 +4,7 @@
 
 Uma pequena fazenda que mora no seu celular. Plante, regue e colha, cuide das galinhas, da vaca e das ovelhas, venda no celeiro e atenda os pedidos dos vizinhos. Não há pressa e nada se perde: as plantas nunca murcham, os animais nunca passam fome e a fazenda continua crescendo com o app fechado.
 
-Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Suas **moedas** e **estrelas** aparecem acima deles. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal.
+Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Suas **moedas** e **estrelas** aparecem acima deles. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal. Com a fazenda ampliada, arraste com um dedo para se mover.
 
 ## A horta
 - Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas.
