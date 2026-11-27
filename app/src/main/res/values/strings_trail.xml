@@ -44,6 +44,7 @@
     <string name="trail_stay">Stay (hearts +%1$d)</string>
     <string name="trail_go">Move on (squares ahead: %1$d)</string>
     <string name="trail_ok">Go on</string>
+    <string name="trail_chose">%1$s chose: %2$s</string>
     <string name="trail_roll">Roll the die</string>
     <string name="trail_you">You</string>
     <string name="trail_your_turn">Your turn: roll the die.</string>

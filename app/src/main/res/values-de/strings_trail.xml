@@ -44,6 +44,7 @@
     <string name="trail_stay">Bleiben (Herzen +%1$d)</string>
     <string name="trail_go">Weitergehen (%1$d Felder)</string>
     <string name="trail_ok">Weiter</string>
+    <string name="trail_chose">%1$s hat gewählt: %2$s</string>
     <string name="trail_roll">Würfeln</string>
     <string name="trail_you">Du</string>
     <string name="trail_your_turn">Du bist dran: würfle.</string>

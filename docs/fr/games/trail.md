@@ -16,6 +16,8 @@ Six paysages, un par moment de la vie (une aire de jeux et une école, la ville 
 | Panneau | Un carrefour : **Rester** donne 2 cœurs, **Avancer** fait 3 cases. |
 | Simple | Rien ; profitez du paysage. |
 
+Quand un pion s'arrête sur un cœur, un livre, un panneau ou la maison, sa carte s'ouvre par-dessus le plateau, un peu au-dessus du bas. Lisez-la tranquillement : rien ne continue tant que vous ne touchez pas **Continuer** (à un carrefour, **Rester** ou **Avancer**). Les cartes de l'ordinateur attendent aussi **Continuer** et, à un carrefour, montrent son choix. Les pions avancent case par case ; les réglages **Temps d’attente** et **Animations** les rendent plus lents ou plus rapides.
+
 ## L’arrivée
 Le premier à la maison gagne **5** cœurs, le deuxième **3**, le troisième **2** et le quatrième **1**. Pas besoin du nombre exact. La partie se termine quand tous les pions sont arrivés ; le décompte des cœurs s’affiche à la fin.
 

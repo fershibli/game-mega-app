@@ -44,6 +44,7 @@
     <string name="trail_stay">立ち止まる（ハート +%1$d）</string>
     <string name="trail_go">先へ進む（%1$dマス）</string>
     <string name="trail_ok">つづける</string>
+    <string name="trail_chose">%1$sの選択: %2$s</string>
     <string name="trail_roll">さいころをふる</string>
     <string name="trail_you">あなた</string>
     <string name="trail_your_turn">あなたの番です。さいころをふりましょう。</string>

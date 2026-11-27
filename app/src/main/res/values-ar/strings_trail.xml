@@ -44,6 +44,7 @@
     <string name="trail_stay">ابقَ (القلوب ‎+%1$d)</string>
     <string name="trail_go">تقدّم (%1$d خانات)</string>
     <string name="trail_ok">متابعة</string>
+    <string name="trail_chose">اختار %1$s: %2$s</string>
     <string name="trail_roll">ارمِ النرد</string>
     <string name="trail_you">أنت</string>
     <string name="trail_your_turn">دورك: ارمِ النرد.</string>

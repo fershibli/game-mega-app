@@ -16,6 +16,8 @@ Seis paisagens, uma para cada fase da vida (parquinho e escola, cidade e univers
 | Placa | Uma encruzilhada: **Ficar** ganha 2 corações, **Seguir** anda 3 casas. |
 | Simples | Nada; aproveite a vista. |
 
+Quando um peão para num coração, num livro, numa placa ou na casinha, o cartão da casa abre por cima do tabuleiro, um pouco acima da parte de baixo. Leia com calma: nada continua até você tocar em **Continuar** (numa encruzilhada, até tocar em **Ficar** ou **Seguir**). Os cartões do computador também esperam o **Continuar** e, numa encruzilhada, mostram o que ele escolheu. Os peões andam uma casa de cada vez; as configurações de **Tempo de espera** e **Animações** deixam o andar mais lento ou mais rápido.
+
 ## A chegada
 Quem chega primeiro à casinha ganha **5** corações, o segundo **3**, o terceiro **2** e o quarto **1**. Não precisa tirar o número exato. O jogo acaba quando todos os peões chegam; no fim aparece o placar de corações.
 
