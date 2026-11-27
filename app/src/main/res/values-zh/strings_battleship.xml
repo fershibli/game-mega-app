@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_battleship">海战棋</string>
-    <string name="howto_battleship">双方各自把舰队藏在自己的海里。轮到你时，向对方海里的一个格子开炮：白色水花是没打中，红色叉是打中了。先击沉对方整支舰队的人获胜。你的船已经摆好；不满意就点“重新摆放”。</string>
+    <string name="howto_battleship">双方各自把舰队藏在自己的海里。轮到你时，向对方海里的一个格子开炮：白色水花是没打中，红色叉是打中了。先击沉对方整支舰队的人获胜。你的船已经摆好：拖动一条船可以移动它，点一下可以转向，也可以点“重新摆放”。</string>
     <string name="battleship_sea_afloat">%1$s · 未沉的船：%2$d</string>
     <string name="battleship_you">你</string>
     <string name="battleship_computer">电脑</string>
     <string name="battleship_miss">%1$s：没打中。</string>
     <string name="battleship_hit">%1$s：打中了！</string>
     <string name="battleship_sunk">%1$s击沉了一艘船！</string>
-    <string name="battleship_arrange">这是你的舰队。可以重新摆放，或者开始。</string>
+    <string name="battleship_arrange">拖动船来移动，点一下船来转向。然后点“开始”。</string>
     <string name="battleship_your_turn">轮到你：点对方海里的一个格子。</string>
     <string name="battleship_turn_of">玩家 %1$d：点对方海里的一个格子。</string>
     <string name="battleship_computer_aiming">电脑正在瞄准…</string>
+    <string name="battleship_no_room">那里放不下：船和船不能挨在一起。换个地方试试。</string>
     <string name="battleship_rearrange">重新摆放</string>
     <string name="battleship_ready">开始</string>
     <string name="battleship_your_sea">你的海</string>

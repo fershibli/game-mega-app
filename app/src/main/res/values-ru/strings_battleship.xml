@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_battleship">Морской бой</string>
-    <string name="howto_battleship">Каждая сторона прячет флот в своём море. В свой ход стреляйте по клетке чужого моря: белые брызги — мимо, красный крестик — попадание. Кто первым потопит весь флот, тот и победил. Ваши корабли уже расставлены; нажимайте «Расставить заново», пока не понравится.</string>
+    <string name="howto_battleship">Каждая сторона прячет флот в своём море. В свой ход стреляйте по клетке чужого моря: белые брызги — мимо, красный крестик — попадание. Кто первым потопит весь флот, тот и победил. Ваши корабли уже расставлены: перетащите корабль, чтобы передвинуть его, нажмите на него, чтобы повернуть, или нажмите «Расставить заново».</string>
     <string name="battleship_sea_afloat">%1$s · кораблей на плаву: %2$d</string>
     <string name="battleship_you">Вы</string>
     <string name="battleship_computer">Компьютер</string>
     <string name="battleship_miss">%1$s: мимо.</string>
     <string name="battleship_hit">%1$s: попадание!</string>
     <string name="battleship_sunk">%1$s: корабль потоплен!</string>
-    <string name="battleship_arrange">Вот ваш флот. Расставьте заново или начинайте.</string>
+    <string name="battleship_arrange">Перетащите корабль, чтобы передвинуть его, нажмите на него, чтобы повернуть. Потом нажмите «Начать».</string>
     <string name="battleship_your_turn">Ваш ход: коснитесь клетки чужого моря.</string>
     <string name="battleship_turn_of">Игрок %1$d: коснитесь клетки чужого моря.</string>
     <string name="battleship_computer_aiming">Компьютер прицеливается…</string>
+    <string name="battleship_no_room">Здесь нет места: корабли не должны касаться друг друга. Попробуйте другое место.</string>
     <string name="battleship_rearrange">Расставить заново</string>
     <string name="battleship_ready">Начать</string>
     <string name="battleship_your_sea">Ваше море</string>
