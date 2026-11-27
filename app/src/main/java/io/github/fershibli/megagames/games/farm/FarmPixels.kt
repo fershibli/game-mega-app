@@ -30,8 +30,11 @@ import kotlin.math.max
 
 /** Layout of the farm in map cells (col runs down to the right, row down to the left). */
 object FarmMap {
-    /** Rows of the map: the lane and buildings at the back, the field, then the paddock in front. */
-    const val ROWS = 9
+    /**
+     * Rows of the map: the lane and buildings at the back, the field, a strip of grass, then the
+     * paddock in front. The grass keeps the animals (and their bubbles) clear of the beds.
+     */
+    const val ROWS = 11
 
     /**
      * Cells of the beds, in the order they are bought: the first six make a 3 × 2 field, and the
@@ -43,10 +46,10 @@ object FarmMap {
     )
 
     /** Cells of the animals, in a row inside the paddock in front of the field. */
-    val pens: List<Pair<Int, Int>> = listOf(0 to 7, 2 to 7, 4 to 7, 6 to 7, 8 to 7, 10 to 7)
+    val pens: List<Pair<Int, Int>> = listOf(0 to 9, 2 to 9, 4 to 9, 6 to 9, 8 to 9, 10 to 9)
 
     /** The paddock (fenced) covers these rows. */
-    val paddockRows = 6..8
+    val paddockRows = 8..10
 
     /** The lane at the back of the farm. */
     fun isLane(c: Int, r: Int) = r == 1
