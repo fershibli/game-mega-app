@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="game_battleship">المعركة البحرية</string>
-    <string name="howto_battleship">يخبّئ كل طرف أسطولًا في بحره. في دورك، أطلق على خانة من البحر الآخر: الرذاذ الأبيض يعني ماء، والعلامة الحمراء إصابة. يفوز من يُغرق الأسطول كله أولًا. سفنك مرتّبة لك؛ اضغط أعد الترتيب حتى تعجبك.</string>
+    <string name="howto_battleship">يخبّئ كل طرف أسطولًا في بحره. في دورك، أطلق على خانة من البحر الآخر: الرذاذ الأبيض يعني ماء، والعلامة الحمراء إصابة. يفوز من يُغرق الأسطول كله أولًا. سفنك مرتّبة لك: اسحب سفينة لتنقلها، واضغط عليها لتديرها، أو اضغط أعد الترتيب.</string>
     <string name="battleship_sea_afloat">%1$s · سفن طافية: %2$d</string>
     <string name="battleship_you">أنت</string>
     <string name="battleship_computer">الكمبيوتر</string>
     <string name="battleship_miss">%1$s: ماء.</string>
     <string name="battleship_hit">%1$s: إصابة!</string>
     <string name="battleship_sunk">%1$s أغرق سفينة!</string>
-    <string name="battleship_arrange">هذا أسطولك. أعد ترتيبه أو ابدأ.</string>
+    <string name="battleship_arrange">اسحب سفينة لتنقلها، واضغط عليها لتديرها. ثم اضغط ابدأ.</string>
     <string name="battleship_your_turn">دورك: اضغط على خانة من البحر الآخر.</string>
     <string name="battleship_turn_of">اللاعب %1$d: اضغط على خانة من البحر الآخر.</string>
     <string name="battleship_computer_aiming">الكمبيوتر يصوّب…</string>
+    <string name="battleship_no_room">لا مكان هناك: لا يجوز أن تتلامس السفن. جرّب مكانًا آخر.</string>
     <string name="battleship_rearrange">أعد الترتيب</string>
     <string name="battleship_ready">ابدأ</string>
     <string name="battleship_your_sea">بحرك</string>

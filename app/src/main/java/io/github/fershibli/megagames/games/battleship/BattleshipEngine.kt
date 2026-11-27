@@ -14,7 +14,9 @@ enum class Shot { MISS, HIT, SUNK }
 /**
  * A game of battleship between seat 0 and seat 1. [fleets] are the ships of each seat; [shots]
  * are the squares each seat has fired at on the other's sea. While [placing], seat 0 (and, taking
- * turns, seat 1 after it) can ask for another arrangement before the first shot.
+ * turns, seat 1 after it) can move, turn or rearrange its ships before the first shot. Against the
+ * computer [placing] starts at 1, but the fleet being arranged is still seat 0's: see
+ * [Battleship.arranging].
  */
 @Serializable
 data class BattleshipState(
@@ -52,30 +54,126 @@ object Battleship {
             for (len in lengths) {
                 val options = ArrayList<List<Int>>()
                 for (r in 0 until n) for (c in 0 until n) for (vertical in listOf(false, true)) {
-                    val cells = (0 until len).map { k -> if (vertical) (r + k) to c else r to (c + k) }
-                    if (cells.any { (rr, cc) -> rr >= n || cc >= n }) continue
-                    val ids = cells.map { (rr, cc) -> rr * n + cc }
+                    val ids = line(n, r, c, len, vertical) ?: continue
                     if (ids.any { it in blocked }) continue
                     options += ids
                 }
                 if (options.isEmpty()) { ok = false; break }
                 val pick = options[random.nextInt(options.size)]
                 ships += Ship(pick)
-                for (id in pick) for (dr in -1..1) for (dc in -1..1) {
-                    val rr = id / n + dr
-                    val cc = id % n + dc
-                    if (rr in 0 until n && cc in 0 until n) blocked += rr * n + cc
-                }
+                blocked += around(n, pick)
             }
             if (ok) return ships
         }
     }
 
-    /** Another arrangement for the seat arranging its fleet. */
-    fun rearrange(s: BattleshipState, d: Difficulty, random: Random): BattleshipState {
+    /** The squares of a straight ship of [len] starting at row [r], column [c], or null when it leaves the sea. */
+    private fun line(n: Int, r: Int, c: Int, len: Int, vertical: Boolean): List<Int>? {
+        if (r < 0 || c < 0 || len <= 0) return null
+        if (vertical && r + len > n || !vertical && c + len > n) return null
+        return (0 until len).map { k -> if (vertical) (r + k) * n + c else r * n + c + k }
+    }
+
+    /** [cells] and every square touching them, corners included. */
+    private fun around(n: Int, cells: List<Int>): Set<Int> {
+        val out = HashSet<Int>()
+        for (id in cells) for (dr in -1..1) for (dc in -1..1) {
+            val rr = id / n + dr
+            val cc = id % n + dc
+            if (rr in 0 until n && cc in 0 until n) out += rr * n + cc
+        }
+        return out
+    }
+
+    /**
+     * The seat whose fleet is being arranged. Taking turns, seat 0 and then seat 1; against the
+     * computer, whose fleet is ready at once ([BattleshipState.placing] starts at 1), always you.
+     */
+    fun arranging(s: BattleshipState, together: Boolean): Int = if (together) s.placing.coerceIn(0, 1) else 0
+
+    /** Another arrangement for [seat]'s fleet (the one being arranged, see [arranging]). */
+    fun rearrange(s: BattleshipState, seat: Int, d: Difficulty, random: Random): BattleshipState {
         if (s.playing) return s
-        val seat = s.placing
-        return s.copy(fleets = s.fleets.mapIndexed { i, f -> if (i == seat) arrange(s.size, fleet(d), random) else f })
+        return s.withFleet(seat, arrange(s.size, fleet(d), random))
+    }
+
+    private fun BattleshipState.withFleet(seat: Int, ships: List<Ship>) = copy(fleets = fleets.mapIndexed { i, f -> if (i == seat) ships else f })
+
+    /** True when [ships] all lie straight inside the sea, without overlapping or touching (not even at a corner). */
+    fun fits(n: Int, ships: List<Ship>): Boolean {
+        val taken = HashSet<Int>()
+        for (ship in ships) {
+            val cells = ship.cells
+            if (cells.isEmpty() || cells.any { it !in 0 until n * n }) return false
+            val first = cells.min()
+            val vertical = cells.size > 1 && cells.map { it % n }.distinct().size == 1
+            if (cells.sorted() != line(n, first / n, first % n, cells.size, vertical)) return false
+            if (cells.any { it in taken }) return false
+            taken += around(n, cells)
+        }
+        return true
+    }
+
+    /** The index of [seat]'s ship covering [cell], or -1. */
+    fun shipAt(s: BattleshipState, seat: Int, cell: Int): Int = s.fleets[seat].indexOfFirst { cell in it.cells }
+
+    fun vertical(n: Int, ship: Ship) = ship.cells.size > 1 && ship.cells[0] % n == ship.cells[1] % n
+
+    /**
+     * [seat]'s ship number [index] slid by [rows] and [cols] squares, or null when it would leave
+     * the sea, cover another ship or touch one (the spacing the random arrangement keeps).
+     */
+    fun moveShip(s: BattleshipState, seat: Int, index: Int, rows: Int, cols: Int): BattleshipState? {
+        if (s.playing || index !in s.fleets[seat].indices) return null
+        val n = s.size
+        val ship = s.fleets[seat][index]
+        val first = ship.cells.min()
+        val cells = line(n, first / n + rows, first % n + cols, ship.cells.size, vertical(n, ship)) ?: return null
+        return placed(s, seat, index, Ship(cells))
+    }
+
+    /**
+     * Like [moveShip], but forgiving: when the squares asked for are not free, the ship goes to the
+     * nearest free place at most one square away from them, or stays where it was (null).
+     */
+    fun dropShip(s: BattleshipState, seat: Int, index: Int, rows: Int, cols: Int): BattleshipState? {
+        moveShip(s, seat, index, rows, cols)?.let { return it }
+        val near = listOf(0 to 1, 0 to -1, 1 to 0, -1 to 0, 1 to 1, 1 to -1, -1 to 1, -1 to -1)
+        for ((dr, dc) in near) {
+            if (rows + dr == 0 && cols + dc == 0) continue
+            moveShip(s, seat, index, rows + dr, cols + dc)?.let { return it }
+        }
+        return null
+    }
+
+    /**
+     * [seat]'s ship number [index] turned a quarter (across becomes down and back) around its
+     * square [pivot] (its first square when [pivot] is not one of its own), which stays where it
+     * is. When that does not fit (at an edge, or next to another ship), the turned ship slides
+     * along its new line, the least it can, while still covering [pivot]: so it stays under the
+     * finger. Null when it fits no way.
+     */
+    fun rotateShip(s: BattleshipState, seat: Int, index: Int, pivot: Int = -1): BattleshipState? {
+        if (s.playing || index !in s.fleets[seat].indices) return null
+        val n = s.size
+        val ship = s.fleets[seat][index]
+        val len = ship.cells.size
+        if (len < 2) return null
+        val sorted = ship.cells.sorted()
+        val k = sorted.indexOf(pivot).coerceAtLeast(0)
+        val at = sorted[k]
+        val down = !vertical(n, ship)
+        // j: where the pivot falls along the turned ship; the same place as before comes first.
+        for (j in sorted.indices.sortedBy { kotlin.math.abs(it - k) }) {
+            val cells = if (down) line(n, at / n - j, at % n, len, true) else line(n, at / n, at % n - j, len, false)
+            if (cells != null) placed(s, seat, index, Ship(cells))?.let { return it }
+        }
+        return null
+    }
+
+    private fun placed(s: BattleshipState, seat: Int, index: Int, ship: Ship): BattleshipState? {
+        val ships = s.fleets[seat].mapIndexed { i, old -> if (i == index) ship else old }
+        return if (fits(s.size, ships)) s.withFleet(seat, ships) else null
     }
 
     /** The seat arranging is happy with its fleet. */

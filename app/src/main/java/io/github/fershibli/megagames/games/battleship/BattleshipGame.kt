@@ -1,6 +1,8 @@
 package io.github.fershibli.megagames.games.battleship
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,11 +18,15 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.input.pointer.positionChange
 import androidx.compose.ui.platform.LocalResources
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
@@ -41,14 +47,32 @@ import io.github.fershibli.megagames.ui.components.LoadGame
 import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.components.numberedSeat
 import io.github.fershibli.megagames.ui.theme.LocalPalette
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 import io.github.fershibli.megagames.ui.theme.currentPace
 import io.github.fershibli.megagames.ui.theme.wait
+import kotlin.math.roundToInt
 import kotlin.random.Random
 
 /** Pauses (milliseconds) so a person sees where each shot fell. */
 private const val COMPUTER_PAUSE = 1200L
 private const val SEE_RESULT = 1400L
 private const val END_PAUSE = 1500L
+/** How long a ship that cannot go where it was asked stays outlined in red. */
+private const val REFUSED_PAUSE = 900L
+
+/**
+ * The ship of [fleet] under [at] on the sea [g], or the one with a square nearest to it within
+ * about a square (a finger is wider than a square): its index and the square touched, or null.
+ */
+private fun shipNear(fleet: List<Ship>, g: SeaGrid, at: Offset): Pair<Int, Int>? {
+    var best: Pair<Int, Int>? = null
+    var bestDistance = g.cell * 0.9f
+    for ((i, ship) in fleet.withIndex()) for (cell in ship.cells) {
+        val d = (g.center(cell) - at).getDistance()
+        if (d < bestDistance) { bestDistance = d; best = i to cell }
+    }
+    return best
+}
 
 @Composable
 fun BattleshipGame(host: GameHost) {
@@ -65,6 +89,7 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
     val res = LocalResources.current
     val pace = currentPace
     val handoff = remember { Handoff() }
+    val haptics = currentHaptics
     fun human(seat: Int) = together || seat == 0
     val seats = listOf(numberedSeat(1), numberedSeat(2))
     // Whose sea is shown as "yours": the person holding the phone.
@@ -101,6 +126,32 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
     }
     val myTurn = s.playing && !Battleship.over(s) && human(s.turn)
 
+    // Arranging by hand: the ship being dragged and how far (in pixels), the ship that could not
+    // go where it was asked (outlined in red for a moment), and the fleets before each change.
+    val seat = Battleship.arranging(s, together)
+    var lifted by remember { mutableIntStateOf(-1) }
+    var lift by remember { mutableStateOf(Offset.Zero) }
+    var refused by remember { mutableIntStateOf(-1) }
+    var refusals by remember { mutableIntStateOf(0) }
+    var noRoom by remember(seat) { mutableStateOf(false) }
+    val history = remember(seat) { mutableStateListOf<List<Ship>>() }
+    LaunchedEffect(refusals) {
+        if (refused < 0) return@LaunchedEffect
+        pace.wait(REFUSED_PAUSE)
+        refused = -1
+    }
+    fun arranged(next: BattleshipState) {
+        history += state.value.fleets[seat]
+        state.value = next
+        noRoom = false
+        haptics.move()
+    }
+    fun refuse(index: Int) {
+        refused = index
+        refusals++
+        noRoom = true
+    }
+
     Box(Modifier.fillMaxSize()) {
         GameLayout(
             status = {
@@ -119,17 +170,18 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
                     }
                 }
                 val line = when {
+                    !s.playing && noRoom -> stringResource(R.string.battleship_no_room)
                     !s.playing -> stringResource(R.string.battleship_arrange)
                     Battleship.over(s) -> last
                     myTurn && together -> listOfNotNull(last, stringResource(R.string.battleship_turn_of, s.turn + 1)).joinToString("\n")
                     myTurn -> listOfNotNull(last, stringResource(R.string.battleship_your_turn)).joinToString("\n")
                     else -> listOfNotNull(last, stringResource(R.string.battleship_computer_aiming)).joinToString("\n")
                 }
-                StatusPill(line ?: "", Modifier.testTag("battleship-status"), emphasized = myTurn)
+                StatusPill(line ?: "", Modifier.testTag("battleship-status"), emphasized = myTurn || !s.playing && noRoom)
             },
             controls = if (!s.playing) ({
                 ActionBar {
-                    BigButton(stringResource(R.string.battleship_rearrange), { state.value = Battleship.rearrange(state.value, host.difficulty, Random.Default) }, Modifier.testTag("battleship-rearrange"), icon = AppIcon.SHUFFLE, style = ButtonStyle.SECONDARY, compact = true)
+                    BigButton(stringResource(R.string.battleship_rearrange), { arranged(Battleship.rearrange(state.value, seat, host.difficulty, Random.Default)) }, Modifier.testTag("battleship-rearrange"), icon = AppIcon.SHUFFLE, style = ButtonStyle.SECONDARY, compact = true)
                     BigButton(stringResource(R.string.battleship_ready), { state.value = Battleship.ready(state.value) }, Modifier.testTag("battleship-ready"), icon = AppIcon.CHECK, compact = true)
                 }
             }) else null,
@@ -138,13 +190,62 @@ private fun BattleshipScreen(state: MutableState<BattleshipState>, host: GameHos
             BoxWithConstraints(Modifier.fillMaxSize().padding(8.dp), contentAlignment = Alignment.TopCenter) {
                 val n = s.size
                 if (!s.playing) {
-                    // Arranging: your own sea, big.
-                    val side = minOf(maxWidth, maxHeight - 40.dp)
+                    // Arranging: your own sea, big. Drag a ship to move it, tap it to turn it.
+                    val side = minOf(maxWidth, maxHeight - 110.dp)
+                    val description = stringResource(R.string.battleship_arrange)
                     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(6.dp)) {
                         Text(stringResource(R.string.battleship_your_sea), style = MaterialTheme.typography.titleMedium, color = p.text)
-                        Canvas(Modifier.size(side).testTag("battleship-own")) {
-                            if (private) drawSea(n, s.fleets[viewer], emptySet(), p)
+                        Canvas(
+                            Modifier.size(side).testTag("battleship-own").semantics { contentDescription = description }
+                                .pointerInput(seat, n) {
+                                    awaitEachGesture {
+                                        val down = awaitFirstDown()
+                                        val now = state.value
+                                        if (now.playing || !handoff.showsPrivate) return@awaitEachGesture
+                                        val g = SeaGrid(size.width.toFloat(), n)
+                                        val (index, touched) = shipNear(now.fleets[seat], g, down.position) ?: return@awaitEachGesture
+                                        var total = Offset.Zero
+                                        var dragged = false
+                                        while (true) {
+                                            val change = awaitPointerEvent().changes.firstOrNull { it.id == down.id } ?: break
+                                            if (!change.pressed) break
+                                            total += change.positionChange()
+                                            if (!dragged && total.getDistance() > viewConfiguration.touchSlop) {
+                                                dragged = true
+                                                lifted = index
+                                            }
+                                            if (dragged) {
+                                                lift = total
+                                                change.consume()
+                                            }
+                                        }
+                                        lifted = -1
+                                        lift = Offset.Zero
+                                        val next = if (dragged) {
+                                            Battleship.dropShip(now, seat, index, (total.y / g.cell).roundToInt(), (total.x / g.cell).roundToInt())
+                                        } else Battleship.rotateShip(now, seat, index, touched)
+                                        when {
+                                            next == null -> refuse(index)
+                                            // Let go where it was: nothing changes.
+                                            next.fleets[seat] != now.fleets[seat] -> arranged(next)
+                                        }
+                                    }
+                                },
+                        ) {
+                            if (!private) return@Canvas
+                            // Where a dragged ship would land, if it can.
+                            val landing = if (lifted >= 0) {
+                                val cell = SeaGrid(size.width, n).cell
+                                Battleship.dropShip(s, seat, lifted, (lift.y / cell).roundToInt(), (lift.x / cell).roundToInt())?.fleets?.get(seat)?.get(lifted)?.cells
+                            } else null
+                            drawSea(n, s.fleets[viewer], emptySet(), p, lifted = lifted, lift = lift, refused = refused, landing = landing.orEmpty())
                         }
+                        // Undo the last move, turn or new arrangement (under the sea, where there is room).
+                        BigButton(stringResource(R.string.undo), {
+                            val before = history.removeLastOrNull() ?: return@BigButton
+                            state.value = state.value.copy(fleets = state.value.fleets.mapIndexed { i, f -> if (i == seat) before else f })
+                            noRoom = false
+                        }, Modifier.testTag("battleship-undo"), icon = AppIcon.UNDO, style = ButtonStyle.SECONDARY, enabled = history.isNotEmpty())
                     }
                 } else {
                     val big = minOf(maxWidth, (maxHeight - 64.dp) * 0.66f)
