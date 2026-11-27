@@ -15,6 +15,18 @@ import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.geometry.Rect
+import androidx.compose.ui.layout.boundsInRoot
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.graphics.drawscope.DrawScope
+import androidx.compose.ui.geometry.Size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.ScrollState
+import androidx.compose.ui.graphics.lerp
+import io.github.fershibli.megagames.ui.theme.Palette
 import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.paneTitle
@@ -111,8 +123,12 @@ private const val BOB_DOTS = 2f
 private val SEAT_COLORS = intArrayOf(0, 3, 1, 2)
 /** The card: how far above the bottom of the game it sits, how wide it grows on a tablet, and the veil over the game behind it. */
 private val CARD_LIFT = 28.dp
+private val CARD_EDGE_GAP = 12.dp
+/** The pixel scrollbar beside a card's text: its width and the space between it and the text. */
+private val BAR_WIDTH = 16.dp
+private val BAR_GAP = 8.dp
 private val CARD_WIDTH = 560.dp
-private const val SCRIM = 0.35f
+private const val SCRIM = 0.2f
 
 private val COLOR_NAMES = intArrayOf(R.string.ludo_red, R.string.ludo_blue, R.string.ludo_green, R.string.ludo_yellow)
 
@@ -222,7 +238,10 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
         if (myTurn && Trail.canRoll(s)) state.value = Trail.roll(s, Random.Default.nextInt(1, 7), Random.Default)
     }
 
-    Box(Modifier.fillMaxSize()) {
+    // Where the board is on the screen, to know whether the card would cover the pawn that moved.
+    var gameBounds by remember { mutableStateOf<Rect?>(null) }
+    var boardBounds by remember { mutableStateOf<Rect?>(null) }
+    Box(Modifier.fillMaxSize().onGloballyPositioned { gameBounds = it.boundsInRoot() }) {
         GameLayout(
             status = {
                 val entry = stringResource(R.string.trail_score_entry)
@@ -246,7 +265,7 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
         ) {
             val scale = LocalSettings.current.pieceScale
             val where = stringResource(R.string.trail_board, (0 until s.seats).joinToString(", ") { "${names[it]} ${s.positions[it] + 1}" })
-            Canvas(Modifier.fillMaxSize().padding(6.dp).testTag("trail-board").semantics { contentDescription = where }) {
+            Canvas(Modifier.fillMaxSize().padding(6.dp).onGloballyPositioned { boardBounds = it.boundsInRoot() }.testTag("trail-board").semantics { contentDescription = where }) {
                 val v = TrailView.fitting(size)
                 drawTrailBoard(v, p)
                 // Pawns, grouped by square; the ones on their way hop between two squares.
@@ -271,7 +290,20 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
                 drawTrailDie(v, face, ludoColor(p, SEAT_COLORS[s.turn]), dimmed = s.die == 0 && tumble == 0, shake, p)
             }
         }
-        if (settled(s)) TrailCard(s, names, ::human, state)
+        if (settled(s)) {
+            // The band of the game (in its own coordinates) where the pawn of the card stands.
+            val game = gameBounds
+            val board = boardBounds
+            val seat = s.pending?.seat ?: s.lastSeat
+            val pieceScale = LocalSettings.current.pieceScale.coerceIn(0.85f, 1.25f)
+            val pawn = if (game == null || board == null || seat !in s.positions.indices) null else {
+                val v = TrailView.fitting(Size(board.width, board.height))
+                val foot = v.square(s.positions[seat]) + Offset(board.left - game.left, board.top - game.top)
+                // From above the head (and its outline) down to the feet (and the shadow).
+                (foot.y - (TrailSprites.PERSON_H + 1) * v.px * pieceScale) to (foot.y + 2f * v.px + 2 * v.px * pieceScale)
+            }
+            TrailCard(s, names, ::human, state, pawn, game?.height ?: 0f)
+        }
         HandoffOverlay(handoff) {}
     }
 }
@@ -280,10 +312,11 @@ private fun TrailScreen(state: MutableState<TrailState>, host: GameHost) {
  * The card of the square a pawn stopped on, over the game a little above the bottom: a story, a
  * crossroads, a heart or the arrival. Nothing goes on until it is answered: a crossroads by its
  * two choices, anything else by Go on. The computer's cards wait for Go on too, and at a
- * crossroads they show which way it chose.
+ * crossroads they show which way it chose. It moves to the top of the game when, at the bottom,
+ * it would cover the pawn that just moved ([cardOnTop]), and stays where it is until answered.
  */
 @Composable
-private fun TrailCard(s: TrailState, names: List<String>, human: (Int) -> Boolean, state: MutableState<TrailState>) {
+private fun TrailCard(s: TrailState, names: List<String>, human: (Int) -> Boolean, state: MutableState<TrailState>, pawn: Pair<Float, Float>?, areaHeight: Float) {
     val p = LocalPalette.current
     val pending = s.pending
     val seat = when {
@@ -323,16 +356,29 @@ private fun TrailCard(s: TrailState, names: List<String>, human: (Int) -> Boolea
     val heading = if (arrived) title!! else listOfNotNull(who, title).joinToString(" · ")
     val paper = trailPaper(p)
     val shape = RoundedCornerShape(16.dp)
+    // Top or bottom is decided once, when the card is first measured, and kept for this card.
+    val cardKey = listOf(seat, choice, story, arrived)
+    var top by remember(cardKey) { mutableStateOf<Boolean?>(null) }
+    val density = LocalDensity.current
+    var cardHeight by remember(cardKey) { mutableIntStateOf(0) }
+    // Decided as soon as both the card's height and the pawn's place are known, then kept.
+    LaunchedEffect(cardKey, cardHeight, pawn != null) {
+        if (top == null && cardHeight > 0 && pawn != null) {
+            top = cardOnTop(areaHeight, cardHeight.toFloat(), with(density) { CARD_LIFT.toPx() }, pawn.first, pawn.second)
+        }
+    }
+    val scroll = rememberScrollState()
     BoxWithConstraints(
         Modifier.fillMaxSize()
             .background(p.background.copy(alpha = SCRIM))
             // Swallows touches so nothing underneath is played while the card is open.
             .pointerInput(Unit) { detectTapGestures {} }
-            .padding(start = 12.dp, end = 12.dp, top = 12.dp, bottom = CARD_LIFT),
-        contentAlignment = Alignment.BottomCenter,
+            .padding(start = 12.dp, end = 12.dp, top = if (top == true) CARD_LIFT else CARD_EDGE_GAP, bottom = if (top == true) CARD_EDGE_GAP else CARD_LIFT),
+        contentAlignment = if (top == true) Alignment.TopCenter else Alignment.BottomCenter,
     ) {
         Column(
             Modifier.widthIn(max = CARD_WIDTH).fillMaxWidth().heightIn(max = maxHeight)
+                .onSizeChanged { cardHeight = it.height }
                 .shadow(10.dp, shape).clip(shape).background(paper)
                 .border(BorderStroke(if (p.strongOutlines) 3.dp else 2.dp, if (p.strongOutlines) p.outline else Color(0xFFB9824F)), shape)
                 .semantics { paneTitle = heading }
@@ -340,8 +386,10 @@ private fun TrailCard(s: TrailState, names: List<String>, human: (Int) -> Boolea
                 .padding(14.dp),
         ) {
             // The words scroll when the text is very large; the buttons always stay in sight.
+            Box(Modifier.weight(1f, fill = false)) {
+            val scrolls = scroll.maxValue > 0
             Column(
-                Modifier.weight(1f, fill = false).verticalScroll(rememberScrollState())
+                Modifier.verticalScroll(scroll).padding(end = if (scrolls) BAR_WIDTH + BAR_GAP else 0.dp)
                     .semantics(mergeDescendants = true) { liveRegion = LiveRegionMode.Polite },
                 verticalArrangement = Arrangement.spacedBy(8.dp),
             ) {
@@ -374,6 +422,12 @@ private fun TrailCard(s: TrailState, names: List<String>, human: (Int) -> Boolea
                         )
                     }
                 }
+            }
+            if (scrolls) {
+                Box(Modifier.matchParentSize(), contentAlignment = Alignment.CenterEnd) {
+                    Canvas(Modifier.width(BAR_WIDTH).fillMaxHeight().testTag("trail-scrollbar")) { drawPixelScrollbar(scroll, p, paper) }
+                }
+            }
             }
             Spacer(Modifier.height(12.dp))
             if (choice != null && person) {
@@ -409,3 +463,47 @@ private fun effectText(hearts: Int, move: Int): String? = when {
     else -> null
 }
 
+
+/**
+ * Whether a card [cardHeight] tall, in a game area [areaHeight] tall, should sit at the top
+ * instead of the bottom: when, at the bottom (a [gap] above the edge), it would cover the pawn
+ * standing between [pawnTop] and [pawnBottom] (same coordinates), and at the top (the same [gap]
+ * below the edge) it would cover it less.
+ */
+fun cardOnTop(areaHeight: Float, cardHeight: Float, gap: Float, pawnTop: Float, pawnBottom: Float): Boolean {
+    fun covered(from: Float) = (minOf(pawnBottom, from + cardHeight) - maxOf(pawnTop, from)).coerceAtLeast(0f)
+    val atBottom = covered(areaHeight - gap - cardHeight)
+    val atTop = covered(gap)
+    return atBottom > 0f && atTop < atBottom
+}
+
+/** The scrollbar of the card's text in chunky pixels: a track with a thumb that moves with [scroll]. */
+private fun DrawScope.drawPixelScrollbar(scroll: ScrollState, p: Palette, paper: Color) {
+    val edge = when {
+        p.strongOutlines -> p.outline
+        p.isDark -> p.textMuted
+        else -> Color(0xFF6E4A30)
+    }
+    val track = lerp(paper, edge, if (p.strongOutlines) 0.18f else 0.3f)
+    val thumb = p.primary
+    val shine = lerp(thumb, Color.White, 0.45f)
+    // Four dots across: edge, fill, fill, edge; a dot is a whole number of pixels.
+    val u = kotlin.math.floor(size.width / 4f).coerceAtLeast(1f)
+    val x0 = (size.width - 4 * u) / 2f
+    val rows = kotlin.math.floor(size.height / u).toInt().coerceAtLeast(6)
+    val top = (size.height - rows * u) / 2f
+    fun dot(cx: Int, cy: Int, w: Int, h: Int, c: Color) = drawRect(c, Offset(x0 + cx * u, top + cy * u), Size(w * u, h * u))
+    // The track: rounded ends, an edge down both sides.
+    dot(1, 0, 2, rows, edge)
+    dot(0, 1, 4, rows - 2, edge)
+    dot(1, 1, 2, rows - 2, track)
+    // The thumb: a whole number of dots tall (at least four), in proportion to what shows.
+    val view = scroll.viewportSize.toFloat().coerceAtLeast(1f)
+    val room = rows - 2
+    val thumbRows = (room * view / (scroll.maxValue + view)).toInt().coerceIn(4, room)
+    val at = if (scroll.maxValue == 0) 0 else kotlin.math.round((room - thumbRows) * scroll.value.toFloat() / scroll.maxValue).toInt()
+    dot(1, 1 + at, 2, thumbRows, edge)
+    dot(0, 2 + at, 4, thumbRows - 2, edge)
+    dot(1, 2 + at, 2, thumbRows - 2, thumb)
+    dot(1, 2 + at, 1, thumbRows - 2, shine)
+}

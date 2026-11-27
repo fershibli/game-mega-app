@@ -337,6 +337,9 @@ class ScreenshotTest {
     @Test fun trailComputer() = shot("game_trail_computer") { GameContent(GameId.TRAIL, trailHost(computer = true)) }
     @Test fun trailComputerPt() = shot("game_trail_computer_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)) { GameContent(GameId.TRAIL, trailHost(computer = true)) }
     @Test fun trailBigTextPt() = shot("game_trail_big_text_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = Settings.SCALE_MAX)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
+    /** A short screen with the largest text: the card's words scroll and its pixel scrollbar shows. */
+    @org.robolectric.annotation.Config(sdk = [35], qualifiers = "w400dp-h560dp-xhdpi")
+    @Test fun trailScrollBigTextPt() = shot("game_trail_scroll_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = Settings.SCALE_MAX)) { GameContent(GameId.TRAIL, trailHost(choice = true)) }
     @Test fun trailComputerBigText() = shot("game_trail_computer_big_text", Settings(fontScale = Settings.SCALE_MAX)) { GameContent(GameId.TRAIL, trailHost(computer = true)) }
 
     /**
