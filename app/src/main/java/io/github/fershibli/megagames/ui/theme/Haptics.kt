@@ -26,6 +26,11 @@ class Haptics(private val view: View?, private val settings: Settings) {
         if (settings.vibrateAlerts) perform(if (Build.VERSION.SDK_INT >= 30) HapticFeedbackConstants.CONFIRM else HapticFeedbackConstants.LONG_PRESS)
     }
 
+    /** Something in a game asks for attention, like a fish biting the line: in the alerts group. */
+    fun nudge() {
+        if (settings.vibrateAlerts) perform(if (Build.VERSION.SDK_INT >= 30) HapticFeedbackConstants.CONFIRM else HapticFeedbackConstants.LONG_PRESS)
+    }
+
     fun lost() {
         if (settings.vibrateAlerts) perform(if (Build.VERSION.SDK_INT >= 30) HapticFeedbackConstants.REJECT else HapticFeedbackConstants.LONG_PRESS)
     }

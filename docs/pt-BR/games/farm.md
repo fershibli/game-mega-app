@@ -49,6 +49,21 @@ Toque no moinho para abrir o cartão: cada receita mostra os ingredientes e quan
 ## Pedidos e estrelas
 Os vizinhos pedem algumas coisas de cada vez e pagam **metade a mais** que o mercado, e ainda dão uma **estrela**. **Entregar** acende quando o celeiro tem tudo. **Outro pedido** troca o pedido por um novo, de graça. As estrelas liberam novas sementes e animais, como mostram as tabelas.
 
+## O lago e a pescaria
+O **lago** precisa de **10 estrelas** e custa **200** moedas (pelo **Construir**). Ele fica no canto de grama à direita do cercado dos animais. A água brilha de leve e às vezes passa um peixinho (tudo parado se as animações estiverem desligadas).
+
+Toque no lago para abrir o cartão de pesca e toque no botão grande **Lançar a vara**. A boia fica na água por alguns segundos. Quando um peixe morde, a boia afunda, aparece um círculo brilhante em volta dela, o celular vibra de leve, o cartão avisa (o leitor de tela lê em voz alta) e o botão vira **Puxar!**. Há bastante tempo para puxar: cerca de 4 segundos, mais com o tempo de espera calmo. Se o peixe fugir, nada se perde: é só lançar de novo. O peixe pescado aparece com o desenho e o nome e vai para o celeiro.
+
+O lago tem **5 iscas** ("Iscas: 3/5"). Cada lançada usa uma, e uma volta a cada **10 minutos**. Sem iscas, o botão diz quando volta a próxima. Fechar o cartão antes de pescar devolve a isca. Com o lago construído, os vizinhos também pedem peixes.
+
+| Peixe | Frequência | Vende por |
+|---|---|---|
+| Lambari | o mais comum | 6 |
+| Tilápia | comum | 14 |
+| Tucunaré | mais raro | 30 |
+
+A **Rede do lago** é uma conquista: com **15 estrelas** e o lago construído ela aparece pronta no **Construir**, sem custo (antes disso fica apagada na lista). Depois de colocada, pega um peixe sozinha a cada **20 minutos** e guarda até **3**, mostrados num balãozinho sobre o lago. Toque no lago ou em **Coletar tudo** para levá-los ao celeiro. A vara continua funcionando como antes.
+
 ## O celeiro
 Tudo o que você colhe e recolhe espera no celeiro, com o preço. **Vender 1** ou **Vender tudo** transforma em moedas. Se as moedas acabarem, sempre há algo para vender, ou uma alface para plantar por duas moedas.
 

@@ -248,7 +248,7 @@ class ScreenshotTest {
         gameShot("game_farm_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     }
     @Test fun farmDark() {
-        seedFarm(full = true, mill = workingMill())
+        seedFarm(full = true, stars = 16, mill = workingMill(), lake = lakeWithNet())
         gameShot("game_farm_dark", GameId.FARM, settings = Settings(darkMode = true))
     }
     @Test fun farmBigText() {
@@ -256,7 +256,7 @@ class ScreenshotTest {
         gameShot("game_farm_big_text", GameId.FARM, settings = Settings(fontScale = Settings.SCALE_MAX))
     }
     @Test fun farmHighContrast() {
-        seedFarm(full = true, mill = workingMill())
+        seedFarm(full = true, stars = 16, mill = workingMill(), lake = lakeWithNet())
         gameShot("game_farm_high_contrast", GameId.FARM, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST))
     }
     @Test fun farmNewBedPt() {
@@ -343,6 +343,92 @@ class ScreenshotTest {
         gameShot("game_farm_orders", GameId.FARM, tab = "orders")
     }
 
+    @Test fun farmLakePt() {
+        // The lake beside the paddock with its net and two fish waiting, and the mill at work.
+        seedFarm(stars = 16, mill = workingMill(), lake = lakeWithNet())
+        gameShot("game_farm_lake_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.mainClock.autoAdvance = false
+        rule.mainClock.advanceTimeBy(1_700)
+        save("game_farm_lake_pt")
+    }
+    @Test fun farmBuildLakePt() {
+        // Twelve stars and the mill built: the lake can be built, the net is still faded.
+        seedFarm(stars = 12, coins = 260, mill = io.github.fershibli.megagames.games.farm.Mill())
+        gameShot("game_farm_build_lake_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-build-net").assertExists()
+        save("game_farm_build_lake_pt")
+    }
+    @Test fun farmFishingPt() {
+        // The line in the water, waiting for a bite.
+        fishingShot("game_farm_fishing_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-fishing-button").performClick()
+        rule.waitForIdle()
+        save("game_farm_fishing_pt")
+    }
+    @Test fun farmFishingBitePt() {
+        // A fish bites: the float dips with a ring round it, and the button says Puxar!.
+        fishingShot("game_farm_fishing_bite_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-fishing-button").performClick()
+        waitForTheBite()
+        save("game_farm_fishing_bite_pt")
+    }
+    @Test fun farmFishCaughtPt() {
+        fishingShot("game_farm_fish_caught_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-fishing-button").performClick()
+        waitForTheBite()
+        rule.onNodeWithTag("farm-fishing-button").performClick()
+        rule.waitForIdle()
+        save("game_farm_fish_caught_pt")
+    }
+    @Test fun farmFishingBigTextPt() {
+        // The fishing card at the largest text, in the dark, with the net fishing too.
+        fishingShot("game_farm_fishing_big_text_pt", Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = Settings.SCALE_MAX, darkMode = true))
+        save("game_farm_fishing_big_text_pt")
+    }
+
+    private val farmClock = object : io.github.fershibli.megagames.games.farm.FarmClock {
+        var time = System.currentTimeMillis()
+        override fun now() = time
+    }
+
+    /** The farm with a lake, on the test clock and a fixed luck, with the fishing card open. */
+    private fun fishingShot(name: String, settings: Settings) {
+        seedFarm(stars = 16, mill = workingMill(), lake = lakeWithNet().copy(baits = 3, net = farmClock.time - 12 * 60_000L))
+        rule.setContent {
+            androidx.compose.runtime.CompositionLocalProvider(
+                io.github.fershibli.megagames.games.farm.LocalFarmClock provides farmClock,
+                io.github.fershibli.megagames.games.farm.LocalFarmRandom provides kotlin.random.Random(4),
+            ) {
+                MegaGamesTheme(settings) {
+                    Column(Modifier.fillMaxSize().background(LocalPalette.current.background)) {
+                        TopBar(stringResource(GameId.FARM.title), {})
+                        Box(Modifier.weight(1f)) { GameContent(GameId.FARM, GameHost(GameId.FARM, Difficulty.EASY, null, null) {}) }
+                    }
+                }
+            }
+        }
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-lake").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-card").assertExists()
+    }
+
+    /** Moves the farm's clock until a fish bites. */
+    private fun waitForTheBite() {
+        repeat(40) {
+            if (rule.onAllNodes(androidx.compose.ui.test.hasText("Puxar!")).fetchSemanticsNodes().isNotEmpty()) return
+            farmClock.time += 500
+            rule.mainClock.advanceTimeBy(300)
+            rule.waitForIdle()
+        }
+        rule.onNodeWithText("Puxar!").assertExists()
+    }
+
+    /** A lake with three baits and a net with two fish waiting. */
+    private fun lakeWithNet() = io.github.fershibli.megagames.games.farm.Lake(3, System.currentTimeMillis() - 4 * 60_000L, net = System.currentTimeMillis() - 45 * 60_000L)
+
     /** A mill grinding one thing, with a sack ready and another job waiting. */
     private fun workingMill(): io.github.fershibli.megagames.games.farm.Mill {
         val now = System.currentTimeMillis()
@@ -363,6 +449,7 @@ class ScreenshotTest {
         barn: Map<String, Int> = mapOf("egg" to 3, "carrot" to 2, "milk" to 1),
         mill: io.github.fershibli.megagames.games.farm.Mill? = null,
         wheat: Boolean = false,
+        lake: io.github.fershibli.megagames.games.farm.Lake? = null,
     ) {
         val now = System.currentTimeMillis()
         val m = 60_000L
@@ -392,7 +479,7 @@ class ScreenshotTest {
             io.github.fershibli.megagames.games.farm.Pen("cow", now - 40 * m),
         ) else emptyList()
         val world = io.github.fershibli.megagames.games.farm.FarmRules.fillOrders(
-            io.github.fershibli.megagames.games.farm.FarmWorld(coins = coins, stars = stars, plots = if (full) first + more else first, pens = pens, barn = barn, orderSerial = 11, mill = mill),
+            io.github.fershibli.megagames.games.farm.FarmWorld(coins = coins, stars = stars, plots = if (full) first + more else first, pens = pens, barn = barn, orderSerial = 11, mill = mill, lake = lake),
         )
         WorldStore(RuntimeEnvironment.getApplication()).run {
             save(io.github.fershibli.megagames.games.farm.FARM_WORLD_KEY, io.github.fershibli.megagames.games.farm.FarmWorld.serializer(), world)

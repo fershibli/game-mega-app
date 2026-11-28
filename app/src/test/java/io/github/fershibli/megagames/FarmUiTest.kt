@@ -28,6 +28,12 @@ import io.github.fershibli.megagames.games.farm.FarmClock
 import io.github.fershibli.megagames.games.farm.FarmRules
 import io.github.fershibli.megagames.games.farm.FarmWorld
 import io.github.fershibli.megagames.games.farm.Item
+import io.github.fershibli.megagames.games.farm.Fish
+import io.github.fershibli.megagames.games.farm.Lake
+import androidx.compose.ui.semantics.LiveRegionMode
+import androidx.compose.ui.semantics.SemanticsProperties
+import androidx.compose.ui.test.SemanticsMatcher
+import androidx.compose.ui.test.assert
 import io.github.fershibli.megagames.games.farm.Mill
 import io.github.fershibli.megagames.games.farm.MillJob
 import io.github.fershibli.megagames.games.farm.LocalFarmClock
@@ -255,8 +261,181 @@ class FarmUiTest {
         assertEquals(true, stored().mill != null)
         rule.onNodeWithText("The mill is built!", substring = true).assertExists()
         rule.onNodeWithTag("farm-mill").assertExists()
-        // Everything is built: the button goes away.
+        // The lake and its net are still to come, so the button stays.
+        rule.onNodeWithTag("farm-build").assertExists()
+    }
+
+    @Test
+    fun theBuildButtonGoesAwayOnceTheMillTheLakeAndTheNetAreBuilt() {
+        seed(FarmWorld(coins = 0, stars = 20, mill = Mill(), lake = Lake(FarmRules.BAITS, clock.time, net = clock.time)))
+        show()
+        rule.onNodeWithTag("farm-lake").assertExists()
         rule.onNodeWithTag("farm-build").assertDoesNotExist()
+    }
+
+    // The lake.
+
+    private fun lakeFarm(baits: Int = FarmRules.BAITS, since: Long = clock.time, stars: Int = 10) =
+        FarmWorld(coins = 7, stars = stars, barn = mapOf("egg" to 2), lake = Lake(baits, since))
+
+    /** Moves the farm's clock half a second at a time until the button says Pull!. */
+    private fun waitForTheBite() {
+        repeat(40) {
+            if (rule.onAllNodesWithText("Pull!").fetchSemanticsNodes().isNotEmpty()) return
+            clock.time += 500
+            rule.mainClock.advanceTimeBy(300)
+            rule.waitForIdle()
+        }
+        rule.onNodeWithText("Pull!").assertExists()
+    }
+
+    @Test
+    fun castWaitForTheBiteAndPullCatchesAFishForTheBarn() {
+        seed(lakeFarm())
+        show()
+        rule.onNodeWithTag("farm-lake").assertContentDescriptionEquals("Lake, tap to fish").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-card").assertExists()
+        rule.onNodeWithTag("farm-fishing-baits").assertTextEquals("Bait: 5/5")
+        rule.onNodeWithTag("farm-fishing-button").assertTextEquals("Cast the rod").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-baits").assertTextEquals("Bait: 4/5")
+        rule.onNodeWithTag("farm-fishing-status").assertTextEquals("The float rests on the water. Wait for a bite.")
+        rule.onNodeWithTag("farm-fishing-button").assertIsNotEnabled()
+        assertEquals(4, FarmRules.baits(stored(), clock.time))
+        waitForTheBite()
+        // The bite is written and read out politely, not only felt.
+        rule.onNodeWithTag("farm-fishing-status").assertTextEquals("A fish is biting! Tap Pull!")
+            .assert(SemanticsMatcher.expectValue(SemanticsProperties.LiveRegion, LiveRegionMode.Polite))
+        rule.onNodeWithTag("farm-fishing-button").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        val after = stored()
+        val fish = Fish.entries.single { after.count(it.item) == 1 }
+        rule.onNodeWithText("Caught: ${app.getString(fish.item.label)}! It is in the barn.").assertExists()
+        assertEquals(2, after.count(Item.EGG))
+        assertEquals(7, after.coins)
+        // Ready to cast again.
+        rule.onNodeWithTag("farm-fishing-button").assertTextEquals("Cast the rod").assertIsEnabled()
+    }
+
+    @Test
+    fun aLatePullLetsTheFishGoAndNothingIsLost() {
+        seed(lakeFarm())
+        show()
+        rule.onNodeWithTag("farm-lake").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-button").performClick()
+        rule.waitForIdle()
+        waitForTheBite()
+        // Long past the time to pull.
+        clock.time += 20_000
+        rule.mainClock.advanceTimeBy(600)
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-status").assertTextEquals("The fish swam away. Cast again whenever you like.")
+        rule.onNodeWithTag("farm-fishing-button").assertTextEquals("Cast the rod").assertIsEnabled()
+        val after = stored()
+        assertEquals(7, after.coins)
+        assertEquals(mapOf("egg" to 2), after.barn)
+        assertEquals(4, FarmRules.baits(after, clock.time))
+    }
+
+    @Test
+    fun closingTheCardBeforeACatchGivesTheBaitBack() {
+        seed(lakeFarm())
+        show()
+        rule.onNodeWithTag("farm-lake").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-button").performClick()
+        rule.waitForIdle()
+        assertEquals(4, FarmRules.baits(stored(), clock.time))
+        rule.onNodeWithTag("farm-fishing-close").performClick()
+        rule.waitForIdle()
+        assertEquals(FarmRules.BAITS, FarmRules.baits(stored(), clock.time))
+        rule.onNodeWithTag("farm-fishing-card").assertDoesNotExist()
+    }
+
+    @Test
+    fun withNoBaitTheButtonSaysWhenTheNextOneComesBack() {
+        seed(lakeFarm(baits = 0, since = clock.time - 3 * minute))
+        show()
+        rule.onNodeWithTag("farm-lake").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-baits").assertTextEquals("Bait: 0/5")
+        rule.onNodeWithTag("farm-fishing-button").assertTextEquals("Next bait: 7 min").assertIsNotEnabled()
+        rule.onNodeWithTag("farm-fishing-status").assertTextEquals("No bait for now. One comes back every 10 min.")
+        // Seven minutes later it is back.
+        clock.time += 7 * minute
+        rule.mainClock.advanceTimeBy(1_500)
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-fishing-baits").assertTextEquals("Bait: 1/5")
+        rule.onNodeWithTag("farm-fishing-button").assertTextEquals("Cast the rod").assertIsEnabled()
+    }
+
+    @Test
+    fun theLakeIsBuiltFromTheListAndTheNetShowsFadedUntilFifteenStars() {
+        seed(FarmWorld(coins = 210, stars = 12, mill = Mill()))
+        show()
+        rule.onNodeWithTag("farm-lake").assertDoesNotExist()
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithContentDescription("Lake net · Free · Stars missing: 3").assertExists()
+        rule.onNodeWithTag("farm-build-net").assertIsNotEnabled()
+        rule.onNodeWithContentDescription("Lake · Price in coins: 200 · Tap to build").assertExists()
+        rule.onNodeWithTag("farm-build-lake").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        assertEquals(10, stored().coins)
+        assertEquals(FarmRules.BAITS, FarmRules.baits(stored(), clock.time))
+        rule.onNodeWithText("The lake is ready!", substring = true).assertExists()
+        rule.onNodeWithTag("farm-lake").assertExists()
+        // Still twelve stars: the net stays faded.
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-build-net").assertIsNotEnabled()
+        rule.onNodeWithTag("farm-build-net").performClick()
+        rule.waitForIdle()
+        assertEquals(null, stored().lake!!.net)
+    }
+
+    @Test
+    fun theNetNeedsTheLakeEvenWithFifteenStars() {
+        seed(FarmWorld(coins = 0, stars = 15))
+        show()
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithContentDescription("Lake net · Free · Build the lake first").assertExists()
+        rule.onNodeWithTag("farm-build-net").assertIsNotEnabled()
+    }
+
+    @Test
+    fun withFifteenStarsAndTheLakeTheNetIsPlacedForFree() {
+        seed(lakeFarm(stars = 15).copy(mill = Mill()))
+        show()
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithContentDescription("Lake net · Free · Tap to build").assertExists()
+        rule.onNodeWithTag("farm-build-net").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        assertEquals(clock.time, stored().lake!!.net)
+        assertEquals(7, stored().coins)
+        rule.onNodeWithText("The net is in the lake!", substring = true).assertExists()
+        rule.onNodeWithTag("farm-build").assertDoesNotExist()
+    }
+
+    @Test
+    fun collectAllAndATapOnTheLakeBringTheNetsFish() {
+        // Two catches waiting in the net, and the lake shows them.
+        seed(lakeFarm(stars = 15).copy(lake = Lake(FarmRules.BAITS, clock.time, net = clock.time - 45 * minute)))
+        show()
+        rule.onNodeWithTag("farm-collect-all").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        assertEquals(2, Fish.entries.sumOf { stored().count(it.item) })
+        // Two more, then a tap on the lake takes them instead of opening the card.
+        clock.time += 40 * minute
+        rule.onNodeWithTag("farm-lake").performClick()
+        rule.waitForIdle()
+        assertEquals(4, Fish.entries.sumOf { stored().count(it.item) })
+        rule.onNodeWithTag("farm-fishing-card").assertDoesNotExist()
+        rule.onNodeWithText("In the barn:", substring = true).assertExists()
     }
 
     @Test

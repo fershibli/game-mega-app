@@ -49,6 +49,21 @@ Toca el molino para abrir su tarjeta: cada receta muestra sus ingredientes y cu�
 ## Pedidos y estrellas
 Los vecinos piden unas cuantas cosas cada vez y pagan **la mitad más** que el mercado, y además una **estrella**. **Entregar** se activa cuando el granero lo tiene todo. **Otro pedido** cambia el pedido por uno nuevo, gratis. Las estrellas traen nuevas semillas y animales, como muestran las tablas.
 
+## El lago y la pesca
+El **lago** necesita **10 estrellas** y cuesta **200** monedas (desde **Construir**). Está en el rincón de hierba a la derecha del corral. El agua brilla suavemente y de vez en cuando pasa un pececito (todo quieto si las animaciones están apagadas).
+
+Toca el lago para abrir la tarjeta de pesca y toca el botón grande **Lanzar la caña**. El flotador descansa en el agua unos segundos. Cuando un pez pica, el flotador se hunde, aparece un círculo brillante a su alrededor, el teléfono vibra suavemente, la tarjeta lo dice (el lector de pantalla lo lee en voz alta) y el botón pasa a ser **¡Tirar!**. Hay tiempo de sobra para tirar: unos 4 segundos, más con un tiempo de espera tranquilo. Si el pez se va, no se pierde nada: basta con lanzar otra vez. El pez pescado aparece con su dibujo y su nombre y va al granero.
+
+El lago tiene **5 cebos** ("Cebos: 3/5"). Cada lanzamiento usa uno, y vuelve uno cada **10 minutos**. Sin cebos, el botón dice cuándo vuelve el siguiente. Cerrar la tarjeta antes de pescar devuelve el cebo. Con el lago construido, los vecinos también piden peces.
+
+| Pez | Frecuencia | Se vende a |
+|---|---|---|
+| Lambari | el más común | 6 |
+| Tilapia | común | 14 |
+| Tucunaré | más raro | 30 |
+
+La **Red del lago** es un logro: con **15 estrellas** y el lago construido aparece lista en **Construir**, gratis (antes se ve apagada en la lista). Una vez puesta, atrapa sola un pez cada **20 minutos** y guarda hasta **3**, que se ven en un globito sobre el lago. Toca el lago o **Recoger todo** para llevarlos al granero. La caña sigue funcionando como antes.
+
 ## El granero
 Todo lo que cosechas y recoges espera en el granero, con su precio. **Vender 1** o **Vender todo** lo convierte en monedas. Si te quedas sin monedas, siempre hay algo que vender, o una lechuga que sembrar por dos monedas.
 
