@@ -63,6 +63,7 @@ import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.text.style.TextAlign
 import io.github.fershibli.megagames.core.ColorMode
 import io.github.fershibli.megagames.ui.art.adaptedTo
@@ -121,8 +122,10 @@ val LocalFarmRandom = staticCompositionLocalOf<Random> { Random.Default }
 private const val NOTE_MS = 5_000L
 private val NOTE_TOP = 5.dp
 
-/** Up to this text scale the four tabs share one row; above it they wrap into two. */
-private const val TABS_ONE_ROW_MAX_SCALE = 1.15f
+/** Space around the tab row, between the tabs and inside a button (see BigButton's compact padding). */
+private val TABS_SIDE = 8.dp
+private val TABS_GAP = 6.dp
+private val TAB_PADDING = 10.dp
 
 private enum class Tab(@StringRes val label: Int) {
     FARM(R.string.game_farm),
@@ -176,22 +179,7 @@ fun FarmGame(host: GameHost) {
         Box(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp), contentAlignment = Alignment.Center) {
             FarmPurse(w.coins, w.stars)
         }
-        // Four tabs fit on one row at the normal text size; with larger text they take two rows of two,
-        // so the words keep their size and every tab stays a big target.
-        val rows = if (LocalDensity.current.fontScale > TABS_ONE_ROW_MAX_SCALE) Tab.entries.chunked(2) else listOf(Tab.entries)
-        Column(Modifier.fillMaxWidth().padding(horizontal = 8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-            rows.forEach { row ->
-                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-                    row.forEach { t ->
-                        BigButton(
-                            stringResource(t.label), { tab = t; say(null) },
-                            Modifier.weight(1f).testTag("farm-tab-${t.name.lowercase()}").semantics { role = Role.Tab },
-                            style = if (t == tab) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, compact = true,
-                        )
-                    }
-                }
-            }
-        }
+        FarmTabs(tab) { tab = it; say(null) }
         Box(Modifier.weight(1f).fillMaxWidth()) {
             when (tab) {
                 Tab.FARM -> SceneTab(w, now, time, p, change, say)
@@ -1023,8 +1011,6 @@ private fun AchievementRow(a: Achievement, w: FarmWorld, p: Palette) {
     Row(
         Modifier
             .fillMaxWidth()
-            // Like the Build list: what is still locked is shown faded.
-            .alpha(if (open) 1f else 0.45f)
             .testTag("farm-achievement-${a.key}")
             .clip(shape).background(p.surfaceAlt)
             .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.dp, p.outline), shape)
@@ -1032,7 +1018,9 @@ private fun AchievementRow(a: Achievement, w: FarmWorld, p: Palette) {
             .padding(12.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Canvas(Modifier.size(72.dp)) { drawAchievement(a, p) }
+        // What is still locked is shown faded, like in the Build list; only the pictures fade, so the words keep their full contrast.
+        val fade = if (open) 1f else 0.45f
+        Canvas(Modifier.size(72.dp).alpha(fade)) { drawAchievement(a, p) }
         Spacer(Modifier.width(12.dp))
         Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
             Text(name, style = MaterialTheme.typography.titleLarge, color = p.text, maxLines = 2)
@@ -1040,7 +1028,7 @@ private fun AchievementRow(a: Achievement, w: FarmWorld, p: Palette) {
         }
         Spacer(Modifier.width(8.dp))
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Canvas(Modifier.size(32.dp)) { drawFitted(star) }
+            Canvas(Modifier.size(32.dp).alpha(fade)) { drawFitted(star) }
             Text(a.stars.toString(), style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold), color = p.text, maxLines = 1)
         }
     }
@@ -1052,5 +1040,38 @@ private fun DrawScope.drawAchievement(a: Achievement, p: Palette) {
         is Achievement.ForCrop -> drawFitted(FarmSprites.products.getValue(a.crop.item).adaptedTo(p))
         is Achievement.ForAnimal -> drawFitted(FarmSprites.animals.getValue(a.animal)[0].adaptedTo(p))
         is Achievement.ForBuilding -> drawBuilding(a.building)
+    }
+}
+
+/**
+ * The tabs. They share one row when every label fits in its button at the real text size; if one
+ * would not, they take two rows of two, so a label is never shrunk and every tab stays a big target.
+ */
+@Composable
+private fun FarmTabs(selected: Tab, onSelect: (Tab) -> Unit) {
+    val measurer = rememberTextMeasurer()
+    val style = MaterialTheme.typography.labelLarge
+    val labels = Tab.entries.map { stringResource(it.label) }
+    BoxWithConstraints(Modifier.fillMaxWidth().padding(horizontal = TABS_SIDE)) {
+        val room = (maxWidth - TABS_GAP * (Tab.entries.size - 1)) / Tab.entries.size - TAB_PADDING * 2
+        val roomPx = with(LocalDensity.current) { room.toPx() }
+        // The longest word of each label (a label with a space may take two lines).
+        val fits = labels.all { label ->
+            label.trim().split(' ').all { word -> measurer.measure(word, style, maxLines = 1, softWrap = false).size.width <= roomPx }
+        }
+        val rows = if (fits) listOf(Tab.entries) else Tab.entries.chunked(2)
+        Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(TABS_GAP)) {
+            rows.forEach { row ->
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(TABS_GAP)) {
+                    row.forEach { t ->
+                        BigButton(
+                            stringResource(t.label), { onSelect(t) },
+                            Modifier.weight(1f).testTag("farm-tab-${t.name.lowercase()}").semantics { role = Role.Tab },
+                            style = if (t == selected) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, compact = true,
+                        )
+                    }
+                }
+            }
+        }
     }
 }
