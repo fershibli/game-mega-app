@@ -49,6 +49,21 @@ Tippen Sie auf die Mühle, um ihre Karte zu öffnen: Jedes Rezept zeigt die Zuta
 ## Bestellungen und Sterne
 Die Nachbarn bestellen ein paar Dinge auf einmal und zahlen **anderthalbmal so viel** wie der Markt, dazu einen **Stern**. **Liefern** leuchtet auf, wenn die Scheune alles hat. **Andere Bestellung** tauscht eine Bestellung kostenlos gegen eine neue. Sterne bringen neue Samen und Tiere, wie die Tabellen zeigen.
 
+## Der Teich und das Angeln
+Der **Teich** braucht **10 Sterne** und kostet **200** Münzen (über **Bauen**). Er liegt in der Grasecke rechts von der Koppel. Das Wasser glitzert sanft, und ab und zu schwimmt ein kleiner Fisch vorbei (alles steht still, wenn die Animationen aus sind).
+
+Tippen Sie auf den Teich, um die Angelkarte zu öffnen, und dann auf die große Taste **Angel auswerfen**. Der Schwimmer ruht ein paar Sekunden auf dem Wasser. Beißt ein Fisch an, taucht der Schwimmer ab, ein heller Kreis erscheint um ihn, das Handy vibriert leicht, die Karte sagt es an (der Bildschirmleser liest es vor) und die Taste wird zu **Ziehen!**. Zum Ziehen bleibt viel Zeit: etwa 4 Sekunden, mit ruhiger Wartezeit länger. Schwimmt der Fisch weg, geht nichts verloren: einfach wieder auswerfen. Der gefangene Fisch erscheint mit Bild und Namen und kommt in die Scheune.
+
+Der Teich hat **5 Köder** („Köder: 3/5“). Jeder Wurf braucht einen, und alle **10 Minuten** kommt einer zurück. Ohne Köder sagt die Taste, wann der nächste zurückkommt. Wird die Karte vor einem Fang geschlossen, kommt der Köder zurück. Mit dem Teich bestellen die Nachbarn auch Fische.
+
+| Fisch | Wie oft | Verkauf |
+|---|---|---|
+| Lambari | am häufigsten | 6 |
+| Tilapia | häufig | 14 |
+| Tucunaré | seltener | 30 |
+
+Das **Teichnetz** ist eine Belohnung: mit **15 Sternen** und gebautem Teich erscheint es bereit unter **Bauen**, kostenlos (vorher ist es in der Liste blass). Einmal aufgestellt, fängt es von selbst alle **20 Minuten** einen Fisch und hält bis zu **3** bereit, gezeigt in einer Blase über dem Teich. Tippen Sie auf den Teich oder auf **Alles einsammeln**, um sie in die Scheune zu bringen. Die Angel funktioniert weiter wie bisher.
+
 ## Die Scheune
 Alles, was du erntest und einsammelst, wartet mit seinem Preis in der Scheune. **1 verkaufen** oder **Alles verkaufen** macht Münzen daraus. Wenn die Münzen ausgehen, gibt es immer etwas zu verkaufen, oder einen Salat, den man für zwei Münzen säen kann.
 

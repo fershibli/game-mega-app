@@ -49,6 +49,21 @@ Tocca il mulino per aprire la sua scheda: ogni ricetta mostra gli ingredienti e 
 ## Ordini e stelle
 I vicini chiedono poche cose alla volta e pagano **la metà in più** del mercato, più una **stella**. **Consegna** si accende quando il fienile ha tutto. **Altro ordine** cambia l’ordine con uno nuovo, gratis. Le stelle portano nuovi semi e animali, come mostrano le tabelle.
 
+## Il lago e la pesca
+Il **lago** richiede **10 stelle** e costa **200** monete (da **Costruisci**). Si trova nell’angolo d’erba a destra del recinto. L’acqua luccica piano e ogni tanto passa un pesciolino (tutto fermo se le animazioni sono spente).
+
+Tocca il lago per aprire la scheda della pesca e tocca il grande pulsante **Lancia la lenza**. Il galleggiante resta sull’acqua per qualche secondo. Quando un pesce abbocca, il galleggiante affonda, gli compare intorno un cerchio luminoso, il telefono vibra leggermente, la scheda lo dice (il lettore dello schermo lo legge) e il pulsante diventa **Tira!**. C’è tutto il tempo per tirare: circa 4 secondi, di più con un tempo di attesa calmo. Se il pesce scappa non si perde niente: basta lanciare di nuovo. Il pesce pescato compare con il disegno e il nome e va nel fienile.
+
+Il lago ha **5 esche** ("Esche: 3/5"). Ogni lancio ne usa una, e ne torna una ogni **10 minuti**. Senza esche, il pulsante dice quando torna la prossima. Chiudere la scheda prima di pescare restituisce l’esca. Con il lago costruito, i vicini chiedono anche pesci.
+
+| Pesce | Frequenza | Si vende a |
+|---|---|---|
+| Lambari | il più comune | 6 |
+| Tilapia | comune | 14 |
+| Tucunaré | più raro | 30 |
+
+La **Rete del lago** è una conquista: con **15 stelle** e il lago costruito compare pronta in **Costruisci**, gratis (prima è sbiadita nella lista). Una volta messa, prende da sola un pesce ogni **20 minuti** e ne tiene fino a **3**, mostrati in un fumetto sopra il lago. Tocca il lago o **Prendi tutto** per portarli nel fienile. La lenza continua a funzionare come prima.
+
 ## Il fienile
 Tutto ciò che raccogli aspetta nel fienile, con il suo prezzo. **Vendi 1** o **Vendi tutto** lo trasforma in monete. Se resti senza monete, c’è sempre qualcosa da vendere, o una lattuga da seminare per due monete.
 

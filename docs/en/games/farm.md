@@ -49,6 +49,21 @@ Tap the mill to open its card: each recipe shows its ingredients and how many th
 ## Orders and stars
 Neighbours ask for a few things at a time and pay **half as much again** as the market, plus a **star**. **Deliver** lights up when the barn has everything. **Another order** swaps an order for a new one, free. Stars bring new seeds and animals, as the tables show.
 
+## The lake and fishing
+The **lake** needs **10 stars** and costs **200** coins (from **Build**). It lies in the grass corner to the right of the paddock. The water glints softly and now and then a small fish passes (all still if animations are off).
+
+Tap the lake to open the fishing card and touch the big **Cast the rod** button. The float rests on the water for a few seconds. When a fish bites, the float dips, a bright circle appears around it, the phone vibrates gently, the card says so (screen readers read it out) and the button becomes **Pull!**. There is plenty of time to pull: about 4 seconds, longer with a calmer waiting time. If the fish swims away, nothing is lost: just cast again. The fish caught appears with its picture and name and goes to the barn.
+
+The lake has **5 baits** ("Bait: 3/5"). Each cast uses one, and one comes back every **10 minutes**. With no bait, the button says when the next one comes back. Closing the card before a catch gives the bait back. Once the lake is built, the neighbours also ask for fish.
+
+| Fish | How often | Sells for |
+|---|---|---|
+| Lambari | most common | 6 |
+| Tilapia | common | 14 |
+| Tucunaré | rarer | 30 |
+
+The **Lake net** is an achievement: with **15 stars** and the lake built it shows up ready in **Build**, and costs nothing (before that it is faded in the list). Once placed, it catches a fish by itself every **20 minutes** and keeps up to **3**, shown in a bubble over the lake. Tap the lake or **Collect all** to take them to the barn. The rod keeps working as before.
+
 ## The barn
 Everything you harvest and collect waits in the barn, with its price. **Sell 1** or **Sell all** turns it into coins. If you ever run out of coins, there is always something to sell, or a lettuce to sow for two coins.
 

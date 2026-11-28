@@ -49,6 +49,21 @@ Touchez le moulin pour ouvrir sa carte : chaque recette montre ses ingrédients 
 ## Commandes et étoiles
 Les voisins demandent quelques produits à la fois et paient **moitié plus** que le marché, avec une **étoile** en prime. **Livrer** s’allume quand la grange a tout. **Autre commande** remplace une commande par une nouvelle, gratuitement. Les étoiles débloquent de nouvelles graines et de nouveaux animaux, comme le montrent les tableaux.
 
+## Le lac et la pêche
+Le **lac** demande **10 étoiles** et coûte **200** pièces (depuis **Construire**). Il se trouve dans le coin d’herbe à droite de l’enclos. L’eau scintille doucement et de temps en temps un petit poisson passe (tout reste immobile si les animations sont coupées).
+
+Touchez le lac pour ouvrir la carte de pêche, puis le grand bouton **Lancer la ligne**. Le flotteur repose sur l’eau quelques secondes. Quand un poisson mord, le flotteur s’enfonce, un cercle lumineux l’entoure, le téléphone vibre doucement, la carte l’annonce (le lecteur d’écran le lit) et le bouton devient **Tirer !**. Vous avez largement le temps de tirer : environ 4 secondes, davantage avec un temps d’attente calme. Si le poisson s’éloigne, rien n’est perdu : relancez simplement. Le poisson pêché apparaît avec son dessin et son nom et va dans la grange.
+
+Le lac a **5 appâts** (« Appâts : 3/5 »). Chaque lancer en utilise un, et il en revient un toutes les **10 minutes**. Sans appât, le bouton indique quand revient le suivant. Fermer la carte avant une prise rend l’appât. Une fois le lac construit, les voisins demandent aussi du poisson.
+
+| Poisson | Fréquence | Vendu |
+|---|---|---|
+| Lambari | le plus courant | 6 |
+| Tilapia | courant | 14 |
+| Tucunaré | plus rare | 30 |
+
+Le **Filet du lac** est une récompense : avec **15 étoiles** et le lac construit, il apparaît prêt dans **Construire**, gratuitement (avant, il est pâli dans la liste). Une fois posé, il attrape seul un poisson toutes les **20 minutes** et en garde jusqu’à **3**, montrés dans une bulle au-dessus du lac. Touchez le lac ou **Tout ramasser** pour les mettre dans la grange. La ligne fonctionne toujours comme avant.
+
 ## La grange
 Tout ce que vous récoltez et ramassez attend dans la grange, avec son prix. **Vendre 1** ou **Tout vendre** le change en pièces. Si vous n’avez plus de pièces, il y a toujours quelque chose à vendre, ou une salade à semer pour deux pièces.
 
