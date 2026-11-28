@@ -45,7 +45,8 @@ class LanguageFallbackTest {
 
     /** Opens the app in [language] with the crossword first on the home screen. */
     private fun openApp(language: AppLanguage, saves: SaveStore = SaveStore(app).apply { clear() }, offerResume: Boolean = false) {
-        SettingsStore(app).save(Settings(language = language))
+        // A cold start only reopens the last game when the option is on.
+        SettingsStore(app).save(Settings(language = language, openLastGame = offerResume))
         ChoiceStore(app).recordPlayed(GameId.CROSSWORD)
         rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = offerResume, languagesOf = limited) }
     }

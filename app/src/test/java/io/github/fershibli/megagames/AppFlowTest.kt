@@ -391,6 +391,8 @@ class AppFlowTest {
         val state = io.github.fershibli.megagames.games.reversi.ReversiState(io.github.fershibli.megagames.games.reversi.Reversi.initial().toList())
         saves.save(SavedGame(GameId.REVERSI.key, Difficulty.EASY, AppJson.encodeToJsonElement(io.github.fershibli.megagames.games.reversi.ReversiState.serializer(), state)))
         repeat(50) { if (saves.load() == null) Thread.sleep(20) }
+        // Reopening the last game is an option, off unless asked for.
+        SettingsStore(app).save(Settings(openLastGame = true))
         rule.setContent { MegaGamesApp(SettingsStore(app), saves, offerResume = true) }
         rule.onNodeWithText("Welcome back!").assertIsDisplayed()
         rule.onNodeWithText("Continue playing").performClick()
