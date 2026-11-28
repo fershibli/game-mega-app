@@ -34,6 +34,7 @@ import io.github.fershibli.megagames.games.journey.Friend as JourneyFriend
 import io.github.fershibli.megagames.games.journey.Region as JourneyRegion
 import io.github.fershibli.megagames.games.journey.Status as JourneyStatus
 import androidx.compose.ui.test.onNodeWithTag
+
 import androidx.compose.ui.test.performTouchInput
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.SaveStore
@@ -247,7 +248,7 @@ class ScreenshotTest {
         gameShot("game_farm_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
     }
     @Test fun farmDark() {
-        seedFarm(full = true)
+        seedFarm(full = true, mill = workingMill())
         gameShot("game_farm_dark", GameId.FARM, settings = Settings(darkMode = true))
     }
     @Test fun farmBigText() {
@@ -255,7 +256,7 @@ class ScreenshotTest {
         gameShot("game_farm_big_text", GameId.FARM, settings = Settings(fontScale = Settings.SCALE_MAX))
     }
     @Test fun farmHighContrast() {
-        seedFarm(full = true)
+        seedFarm(full = true, mill = workingMill())
         gameShot("game_farm_high_contrast", GameId.FARM, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST))
     }
     @Test fun farmNewBedPt() {
@@ -297,13 +298,72 @@ class ScreenshotTest {
         rule.onNodeWithText("What shall we sow?").assertExists()
         save("game_farm_sow_big_text")
     }
+    @Test fun farmBuildPt() {
+        // Four stars: the mill is on the list, faded, with the stars still missing.
+        seedFarm(stars = 4, coins = 200)
+        gameShot("game_farm_build_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-build-mill").assertExists()
+        save("game_farm_build_pt")
+    }
+    @Test fun farmBuildBigTextPt() {
+        // Three buttons in the second row at the largest text size: the labels must still fit.
+        seedFarm(stars = 4, coins = 200)
+        gameShot("game_farm_build_big_text_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = Settings.SCALE_MAX))
+    }
+    @Test fun farmMillPt() {
+        // The mill at work with its sails turning, and a sack ready to collect in its bubble.
+        val m = 60_000L
+        val now = System.currentTimeMillis()
+        val jobs = listOf(
+            io.github.fershibli.megagames.games.farm.MillJob("cornmeal", now - 14 * m),
+            io.github.fershibli.megagames.games.farm.MillJob("flour", now - 4 * m),
+            io.github.fershibli.megagames.games.farm.MillJob("cornmeal", now + 8 * m),
+        )
+        seedFarm(mill = io.github.fershibli.megagames.games.farm.Mill(jobs), barn = mapOf("egg" to 3, "wheat" to 4, "corn" to 5), wheat = true)
+        gameShot("game_farm_mill_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.mainClock.autoAdvance = false
+        rule.mainClock.advanceTimeBy(1_700)
+        save("game_farm_mill_pt")
+    }
+    @Test fun farmMillCardPt() {
+        val m = 60_000L
+        val now = System.currentTimeMillis()
+        val jobs = listOf(io.github.fershibli.megagames.games.farm.MillJob("cornmeal", now - 4 * m))
+        seedFarm(mill = io.github.fershibli.megagames.games.farm.Mill(jobs), barn = mapOf("egg" to 3, "wheat" to 1, "corn" to 5))
+        gameShot("game_farm_mill_card_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.onNodeWithTag("farm-mill").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-mill-card").assertExists()
+        save("game_farm_mill_card_pt")
+    }
     @Test fun farmOrders() {
         seedFarm()
         gameShot("game_farm_orders", GameId.FARM, tab = "orders")
     }
 
+    /** A mill grinding one thing, with a sack ready and another job waiting. */
+    private fun workingMill(): io.github.fershibli.megagames.games.farm.Mill {
+        val now = System.currentTimeMillis()
+        val m = 60_000L
+        return io.github.fershibli.megagames.games.farm.Mill(
+            listOf(
+                io.github.fershibli.megagames.games.farm.MillJob("cornmeal", now - 14 * m),
+                io.github.fershibli.megagames.games.farm.MillJob("flour", now - 4 * m),
+            ),
+        )
+    }
+
     /** A farm a few days old: beds at every stage, three animals and some things in the barn. */
-    private fun seedFarm(full: Boolean = false) {
+    private fun seedFarm(
+        full: Boolean = false,
+        stars: Int = 8,
+        coins: Int = 86,
+        barn: Map<String, Int> = mapOf("egg" to 3, "carrot" to 2, "milk" to 1),
+        mill: io.github.fershibli.megagames.games.farm.Mill? = null,
+        wheat: Boolean = false,
+    ) {
         val now = System.currentTimeMillis()
         val m = 60_000L
         val first = listOf(
@@ -311,8 +371,8 @@ class ScreenshotTest {
             io.github.fershibli.megagames.games.farm.Plot("carrot", now - 3 * m, now - m),
             io.github.fershibli.megagames.games.farm.Plot("corn", now - 2 * m),
             io.github.fershibli.megagames.games.farm.Plot("strawberry", now - 45 * m),
-            io.github.fershibli.megagames.games.farm.Plot(),
-            io.github.fershibli.megagames.games.farm.Plot("lettuce", now - 3 * m),
+            if (wheat) io.github.fershibli.megagames.games.farm.Plot("wheat", now - 8 * m) else io.github.fershibli.megagames.games.farm.Plot(),
+            if (wheat) io.github.fershibli.megagames.games.farm.Plot("wheat", now - 20 * m) else io.github.fershibli.megagames.games.farm.Plot("lettuce", now - 3 * m),
         )
         val more = listOf(
             io.github.fershibli.megagames.games.farm.Plot("pumpkin", now - 200 * m),
@@ -332,7 +392,7 @@ class ScreenshotTest {
             io.github.fershibli.megagames.games.farm.Pen("cow", now - 40 * m),
         ) else emptyList()
         val world = io.github.fershibli.megagames.games.farm.FarmRules.fillOrders(
-            io.github.fershibli.megagames.games.farm.FarmWorld(coins = 86, stars = 8, plots = if (full) first + more else first, pens = pens, barn = mapOf("egg" to 3, "carrot" to 2, "milk" to 1), orderSerial = 11),
+            io.github.fershibli.megagames.games.farm.FarmWorld(coins = coins, stars = stars, plots = if (full) first + more else first, pens = pens, barn = barn, orderSerial = 11, mill = mill),
         )
         WorldStore(RuntimeEnvironment.getApplication()).run {
             save(io.github.fershibli.megagames.games.farm.FARM_WORLD_KEY, io.github.fershibli.megagames.games.farm.FarmWorld.serializer(), world)

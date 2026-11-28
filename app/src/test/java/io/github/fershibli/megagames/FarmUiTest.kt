@@ -10,6 +10,7 @@ import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.hasAnyAncestor
 import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onAllNodesWithText
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -27,6 +28,8 @@ import io.github.fershibli.megagames.games.farm.FarmClock
 import io.github.fershibli.megagames.games.farm.FarmRules
 import io.github.fershibli.megagames.games.farm.FarmWorld
 import io.github.fershibli.megagames.games.farm.Item
+import io.github.fershibli.megagames.games.farm.Mill
+import io.github.fershibli.megagames.games.farm.MillJob
 import io.github.fershibli.megagames.games.farm.LocalFarmClock
 import io.github.fershibli.megagames.games.farm.Order
 import io.github.fershibli.megagames.games.farm.Pen
@@ -217,5 +220,136 @@ class FarmUiTest {
         rule.onNodeWithTag("farm-tab-barn").performClick()
         rule.onNodeWithContentDescription("Egg: 3 · price: ${Item.EGG.price}").assertExists()
         rule.onNode(hasTestTag("farm-price-coin") and hasAnyAncestor(hasTestTag("farm-barn-egg")), useUnmergedTree = true).assertExists()
+    }
+
+    @Test
+    fun theBuildListShowsTheMillFadedBelowSixStarsAndDoesNotBuildIt() {
+        seed(FarmWorld(coins = 500, stars = 4))
+        show()
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        // Picture, price with the coin and what is missing; it can't be chosen yet.
+        rule.onNodeWithContentDescription("Mill · Price in coins: 120 · Stars missing: 2").assertExists()
+        rule.onNodeWithTag("farm-build-mill").assertIsNotEnabled()
+        rule.onNode(hasTestTag("farm-price-coin") and hasAnyAncestor(hasTestTag("farm-build-mill")), useUnmergedTree = true).assertExists()
+        rule.onNodeWithTag("farm-build-mill").performClick()
+        rule.waitForIdle()
+        assertEquals(null, stored().mill)
+        assertEquals(500, stored().coins)
+        rule.onNodeWithText("Close").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-mill").assertDoesNotExist()
+    }
+
+    @Test
+    fun buildingTheMillCostsCoinsPutsItOnTheFarmAndHidesTheBuildButton() {
+        seed(FarmWorld(coins = 130, stars = 6))
+        show()
+        rule.onNodeWithTag("farm-mill").assertDoesNotExist()
+        rule.onNodeWithTag("farm-build").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithContentDescription("Mill · Price in coins: 120 · Tap to build").assertExists()
+        rule.onNodeWithTag("farm-build-mill").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        assertEquals(10, stored().coins)
+        assertEquals(true, stored().mill != null)
+        rule.onNodeWithText("The mill is built!", substring = true).assertExists()
+        rule.onNodeWithTag("farm-mill").assertExists()
+        // Everything is built: the button goes away.
+        rule.onNodeWithTag("farm-build").assertDoesNotExist()
+    }
+
+    @Test
+    fun grindingFromTheMillCardTakesTheBarnsIngredientsAndTappingTheMillCollects() {
+        seed(FarmWorld(coins = 0, stars = 6, barn = mapOf("corn" to 3, "wheat" to 1), mill = Mill()))
+        show()
+        rule.onNodeWithTag("farm-mill").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-mill-card").assertExists()
+        rule.onNodeWithText("The mill is resting. Choose what to grind.").assertExists()
+        rule.onNodeWithText("Queue: 0 of 3").assertExists()
+        // Both recipes show what they need and how many the barn has; a missing one says so on its button.
+        rule.onNodeWithTag("farm-recipe-cornmeal-have").assertTextEquals("In the barn: 3")
+        rule.onNodeWithTag("farm-recipe-flour-have").assertTextEquals("In the barn: 1")
+        rule.onNodeWithTag("farm-grind-flour").assertIsNotEnabled()
+        rule.onNodeWithText("Missing: Wheat ×1").assertExists()
+        rule.onNodeWithTag("farm-grind-cornmeal").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        val ground = stored()
+        assertEquals(1, ground.count(Item.CORN))
+        assertEquals(1, ground.mill!!.jobs.size)
+        rule.onNodeWithText("Queue: 1 of 3").assertExists()
+        rule.onNodeWithText("Grinding: Corn meal · 10 min").assertExists()
+        rule.onNodeWithTag("farm-mill-bar").assertExists()
+        // One corn is left and the recipe needs two.
+        rule.onNodeWithTag("farm-grind-cornmeal").assertIsNotEnabled()
+        rule.onNodeWithText("Missing: Corn ×1").assertExists()
+        rule.onNodeWithTag("farm-mill-close").performClick()
+        rule.waitForIdle()
+        // Not ready yet: a tap on the mill shows its card again. When it is ready, the tap collects.
+        clock.time += 10 * minute
+        rule.onNodeWithTag("farm-mill").performClick()
+        rule.waitForIdle()
+        assertEquals(1, stored().count(Item.CORN_MEAL))
+        assertEquals(0, stored().mill!!.jobs.size)
+        rule.onNodeWithText("In the barn: Corn meal ×1", substring = true).assertExists()
+    }
+
+    @Test
+    fun theMillQueuesThreeAndThenSaysItIsFull() {
+        seed(FarmWorld(coins = 0, stars = 6, barn = mapOf("corn" to 20), mill = Mill()))
+        show()
+        rule.onNodeWithTag("farm-mill").performClick()
+        rule.waitForIdle()
+        repeat(3) {
+            rule.onNodeWithTag("farm-grind-cornmeal").assertIsEnabled().performClick()
+            rule.waitForIdle()
+        }
+        assertEquals(3, stored().mill!!.jobs.size)
+        assertEquals(14, stored().count(Item.CORN))
+        rule.onNodeWithText("Queue: 3 of 3").assertExists()
+        rule.onNodeWithTag("farm-grind-cornmeal").assertIsNotEnabled()
+        // Both recipes say so on their own buttons.
+        rule.onAllNodesWithText("Queue full").assertCountEquals(2)
+        rule.onNodeWithTag("farm-grind-flour").assertIsNotEnabled()
+    }
+
+    @Test
+    fun collectAllBringsWhatTheMillFinishedAndTheMillShowsItsSack() {
+        val t = clock.time
+        seed(FarmWorld(coins = 0, stars = 6, mill = Mill(listOf(MillJob("cornmeal", t - 11 * minute), MillJob("flour", t - minute)))))
+        show()
+        rule.onNodeWithContentDescription("Mill, Corn meal ready: 1").assertExists()
+        rule.onNodeWithTag("farm-collect-all").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        assertEquals(1, stored().count(Item.CORN_MEAL))
+        assertEquals(1, stored().mill!!.jobs.size)
+        rule.onNodeWithText("In the barn: Corn meal ×1", substring = true).assertExists()
+        // The flour is still grinding, so the button rests until it is done.
+        rule.onNodeWithTag("farm-collect-all").assertIsNotEnabled()
+        clock.time += 12 * minute
+        rule.onNodeWithTag("farm-mill").performClick()
+        rule.waitForIdle()
+        assertEquals(1, stored().count(Item.FLOUR))
+    }
+
+    @Test
+    fun wheatIsNotOnTheSeedListBeforeTheMill() {
+        seed(FarmWorld(coins = 100, stars = 6))
+        show()
+        rule.onNodeWithTag("farm-plot-0").performClick()
+        rule.onNodeWithContentDescription("Carrot · coins: 4 · 5 min").assertExists()
+        rule.onNodeWithContentDescription("Wheat · coins: 7 · 15 min").assertDoesNotExist()
+    }
+
+    @Test
+    fun wheatIsOnTheSeedListOnceTheMillIsBuilt() {
+        seed(FarmWorld(coins = 100, stars = 6, mill = Mill()))
+        show()
+        rule.onNodeWithTag("farm-plot-0").performClick()
+        rule.onNodeWithContentDescription("Wheat · coins: 7 · 15 min").performClick()
+        rule.waitForIdle()
+        assertEquals("wheat", stored().plots[0].crop)
+        assertEquals(93, stored().coins)
     }
 }
