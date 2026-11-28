@@ -34,6 +34,8 @@ Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **tr�
 | Vaca | Leite | 30 min | 120 | 22 | 2 |
 | Ovelha | Lã | 60 min | 200 | 40 | 4 |
 
+**Afeto.** Toque num canteiro plantado ou num animal e ele responde com um pulinho ou uma balançada, e um coraçãozinho sobe flutuando acima dele. Cada animal tem de **1 a 5 corações** de afeto ("Afeto: 3/5" na descrição, para leitores de tela), e o toque mostra juntos tantos corações quantos ele tem. O afeto cresce quando você faz carinho (um carinho conta uma vez a cada **3 minutos** por animal, então tocar sem parar não enche tudo de uma vez) e com o passar dos dias. Ele nunca diminui, e nada se perde nem falta de nenhum jeito: é só para dar carinho. O toque continua fazendo o que fazia (recolher, colher, ler o cartão). Com as animações desligadas nada se mexe e o coração só fica parado um instante.
+
 ## Construir e o moinho
 O botão **Construir** (ao lado de **Novo canteiro** e **Comprar animal**) abre a lista do que dá para construir, cada item com o desenho, o preço ao lado da moeda e quantas estrelas ainda faltam. O que ainda não está liberado aparece apagado; toque num que esteja pronto para construí-lo. O botão some quando tudo já estiver construído.
 

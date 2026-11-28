@@ -34,6 +34,8 @@ Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta 
 | Vaca | Leche | 30 min | 120 | 22 | 2 |
 | Oveja | Lana | 60 min | 200 | 40 | 4 |
 
+**Cariño.** Toca un bancal sembrado o un animal y responde con un saltito o un meneo, y un corazoncito sube flotando sobre él. Cada animal tiene de **1 a 5 corazones** de cariño ("Cariño: 3/5" en su descripción, para lectores de pantalla), y al tocarlo se ven juntos tantos corazones como tenga. Crece cuando lo acaricias (una caricia cuenta una vez cada **3 minutos** por animal, así que tocar sin parar no lo llena de golpe) y con el paso de los días. Nunca baja, y no se pierde ni falta nada de ningún modo: es solo para mimar. El toque sigue haciendo lo de siempre (recoger, cosechar, leer la tarjeta). Con las animaciones desactivadas nada se mueve y el corazón se queda quieto un momento.
+
 ## Construir y el molino
 El botón **Construir** (junto a **Nuevo bancal** y **Comprar un animal**) abre una lista de lo que se puede construir, cada cosa con su dibujo, su precio junto a la moneda y cuántas estrellas faltan todavía. Lo que aún no está disponible se ve apagado; toca lo que esté listo para construirlo. El botón desaparece cuando todo está construido.
 

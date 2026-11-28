@@ -34,6 +34,8 @@ Buy animals with **Buy an animal**. Each one makes its product on its own and ke
 | Cow | Milk | 30 min | 120 | 22 | 2 |
 | Sheep | Wool | 60 min | 200 | 40 | 4 |
 
+**Affection.** Tap a planted bed or an animal and it answers with a little hop or wiggle, and a small heart floats up above it. Every animal has **1 to 5 hearts** of affection ("Affection: 3/5" in its description for screen readers), and a tap shows as many hearts together as it has. It grows when you pet it (a pat counts once every **3 minutes** per animal, so tapping again and again does not fill it at once) and as the days go by. It never goes down, and nothing is lost or lacking either way: it is only for cuddles. The tap still does what it did before (collect, harvest, read the card). With animations off nothing moves and the heart just stays still for a moment.
+
 ## Building and the mill
 The **Build** button (next to **New bed** and **Buy an animal**) opens a list of what can be built, each with its picture, its price next to the coin and how many stars are still missing. What is not available yet shows faded; tap one that is ready to build it. The button disappears once everything is built.
 

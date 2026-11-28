@@ -19,6 +19,7 @@ import androidx.compose.ui.test.performScrollTo
 import io.github.fershibli.megagames.core.Difficulty
 import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
+import io.github.fershibli.megagames.core.Motion
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.WorldStore
 import io.github.fershibli.megagames.games.GameContent
@@ -63,10 +64,10 @@ class FarmUiTest {
 
     private val clock = FakeClock(1_800_000_000_000L)
 
-    private fun show() {
+    private fun show(settings: Settings = Settings()) {
         rule.setContent {
             CompositionLocalProvider(LocalFarmClock provides clock) {
-                MegaGamesTheme(Settings()) { GameContent(GameId.FARM, GameHost(GameId.FARM, Difficulty.EASY, null, null) {}) }
+                MegaGamesTheme(settings) { GameContent(GameId.FARM, GameHost(GameId.FARM, Difficulty.EASY, null, null) {}) }
             }
         }
         rule.waitForIdle()
@@ -530,5 +531,95 @@ class FarmUiTest {
         rule.waitForIdle()
         assertEquals("wheat", stored().plots[0].crop)
         assertEquals(93, stored().coins)
+    }
+
+    @Test
+    fun tappingAnAnimalShowsHeartsAndStillCollectsItsProduct() {
+        val t = clock.time
+        seed(FarmWorld(coins = 0, pens = listOf(Pen("chicken", t - 25 * minute, adopted = t - minute))))
+        show()
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("farm-hearts").assertDoesNotExist()
+        rule.onNodeWithTag("farm-pen-0").performClick()
+        rule.waitForIdle()
+        rule.mainClock.advanceTimeBy(100)
+        rule.onNodeWithTag("farm-hearts").assertContentDescriptionEquals("Affection: 1/5")
+        rule.mainClock.autoAdvance = true
+        rule.waitForIdle()
+        // The tap collected the eggs as before, and the pat was kept.
+        assertEquals(2, stored().count(Item.EGG))
+        assertEquals(1, stored().pens[0].pats)
+        // The hearts float away on their own.
+        rule.onNodeWithTag("farm-hearts").assertDoesNotExist()
+        // A second tap right away shows the hearts again but does not count as another pat.
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("farm-pen-0").performClick()
+        rule.waitForIdle()
+        rule.mainClock.advanceTimeBy(100)
+        rule.onNodeWithTag("farm-hearts").assertExists()
+        rule.mainClock.autoAdvance = true
+        rule.waitForIdle()
+        assertEquals(1, stored().pens[0].pats)
+        // Later, with the cooldown over, it counts again.
+        clock.time += 4 * minute
+        rule.onNodeWithTag("farm-pen-0").performClick()
+        rule.waitForIdle()
+        assertEquals(2, stored().pens[0].pats)
+    }
+
+    @Test
+    fun manyPatsGrowTheHeartsShownOnTheAnimal() {
+        val t = clock.time
+        seed(FarmWorld(coins = 0, pens = listOf(Pen("cow", t, adopted = t, pats = 8, lastPat = t - 10 * minute))))
+        show()
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("farm-pen-0").performClick()
+        rule.waitForIdle()
+        rule.mainClock.advanceTimeBy(100)
+        rule.onNodeWithTag("farm-hearts").assertContentDescriptionEquals("Affection: 4/5")
+    }
+
+    @Test
+    fun theAnimalIsDescribedWithItsHearts() {
+        val t = clock.time
+        seed(FarmWorld(coins = 0, pens = listOf(Pen("cow", t, adopted = t, pats = 3))))
+        show()
+        rule.onNodeWithTag("farm-pen-0").assertContentDescriptionEquals("Cow, 30 min, Affection: 2/5")
+    }
+
+    @Test
+    fun tappingAPlantShowsAHeartAndStillHarvests() {
+        val t = clock.time
+        seed(FarmWorld(coins = 0, plots = listOf(Plot("lettuce", t - 10 * minute), Plot())))
+        show()
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("farm-plot-0").performClick()
+        rule.waitForIdle()
+        rule.mainClock.advanceTimeBy(100)
+        rule.onNodeWithTag("farm-hearts").assertContentDescriptionEquals("Heart")
+        rule.mainClock.autoAdvance = true
+        rule.waitForIdle()
+        assertEquals(2, stored().count(Item.LETTUCE))
+        // An empty bed has nothing to pet: it just opens the sowing card.
+        rule.onNodeWithTag("farm-plot-1").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-hearts").assertDoesNotExist()
+    }
+
+    @Test
+    fun withMovementOffTheHeartStaysAMomentWithoutMoving() {
+        val t = clock.time
+        seed(FarmWorld(coins = 0, pens = listOf(Pen("sheep", t, adopted = t))))
+        show(Settings(motion = Motion.NONE))
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("farm-pen-0").performClick()
+        rule.waitForIdle()
+        rule.mainClock.advanceTimeBy(100)
+        rule.onNodeWithTag("farm-hearts").assertExists()
+        // Well before the stay is over it is still there; well past it, it is gone.
+        rule.mainClock.advanceTimeBy(500)
+        rule.onNodeWithTag("farm-hearts").assertExists()
+        rule.mainClock.advanceTimeBy(3_000)
+        rule.onNodeWithTag("farm-hearts").assertDoesNotExist()
     }
 }

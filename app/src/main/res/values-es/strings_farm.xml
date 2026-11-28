@@ -47,6 +47,8 @@
     <string name="farm_sell_one">Vender 1</string>
     <string name="farm_sell_all">Vender todo</string>
     <string name="farm_scene">Granja. Bancales: %1$d. Animales: %2$d.</string>
+    <string name="farm_affection">Cariño: %1$d/%2$d</string>
+    <string name="farm_heart">Corazón</string>
     <string name="farm_plot_title">Un bancal nuevo</string>
     <string name="farm_plot_note">Precio en monedas: %1$d. Va junto a los otros bancales y crece como ellos: brote, hojas y luego la cosecha.</string>
     <string name="farm_plot_buy">Comprar el bancal</string>

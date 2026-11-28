@@ -131,9 +131,13 @@ data class Plot(val crop: String? = null, val plantedAt: Long = 0, val wateredAt
     val sown: Crop? get() = Crop.fromKey(crop)
 }
 
-/** One animal and the moment its next product started being made. */
+/**
+ * One animal and the moment its next product started being made. [adopted] is when it came to the
+ * farm (null in old saves until the farm first meets it), [pats] how many pats counted so far and
+ * [lastPat] when the last one did. They feed its affection, which never goes down.
+ */
 @Serializable
-data class Pen(val animal: String, val since: Long) {
+data class Pen(val animal: String, val since: Long, val adopted: Long? = null, val pats: Int = 0, val lastPat: Long = 0) {
     val kind: Animal get() = Animal.fromKey(animal) ?: Animal.CHICKEN
 }
 
@@ -200,6 +204,16 @@ object FarmRules {
     const val MAX_WAITING = 3
     const val YIELD = 2
     const val ORDERS = 3
+
+    /** Affection of an animal runs from 1 to this many hearts. */
+    const val MAX_HEARTS = 5
+
+    /** A pat counts at most once in this long per animal, so tapping again and again does not max it at once. */
+    const val PAT_COOLDOWN_MINUTES = 3
+
+    /** Every this many points of affection (one per pat that counted, two per day owned) give one more heart. */
+    const val POINTS_PER_HEART = 3
+    private const val DAY_MS = 24 * 60 * MINUTE
 
     /** The mill grinds one thing at a time and holds up to this many jobs, finished or not. */
     const val MILL_QUEUE = 3
@@ -324,8 +338,34 @@ object FarmRules {
 
     fun buyAnimal(world: FarmWorld, animal: Animal, now: Long): FarmWorld {
         if (world.pens.size >= MAX_PENS || world.coins < animal.cost || animal.stars > world.stars) return world
-        return world.copy(coins = world.coins - animal.cost, pens = world.pens + Pen(animal.key, now))
+        return world.copy(coins = world.coins - animal.cost, pens = world.pens + Pen(animal.key, now, adopted = now))
     }
+
+    // Affection.
+
+    /**
+     * How fond of the farm an animal is, from 1 to [MAX_HEARTS] hearts. Each pat that counted is
+     * one point and each day owned is two; every [POINTS_PER_HEART] points give a heart. It only grows.
+     */
+    fun affection(pen: Pen, now: Long): Int {
+        val days = pen.adopted?.let { ((now - it).coerceAtLeast(0L) / DAY_MS).toInt() } ?: 0
+        return (1 + (pen.pats + days * 2) / POINTS_PER_HEART).coerceIn(1, MAX_HEARTS)
+    }
+
+    /** Whether a pat on [pen] at [now] counts: the first one, or one after the cooldown. */
+    fun canPat(pen: Pen, now: Long): Boolean =
+        pen.pats == 0 || pen.pats < MAX_HEARTS * POINTS_PER_HEART && now - pen.lastPat >= PAT_COOLDOWN_MINUTES * MINUTE
+
+    /** A pat on the animal in [index]: it counts only once per cooldown. Nothing else changes, and nothing is ever lost. */
+    fun pat(world: FarmWorld, index: Int, now: Long): FarmWorld {
+        val pen = world.pens.getOrNull(index) ?: return world
+        if (!canPat(pen, now)) return world
+        return world.copy(pens = world.pens.replace(index, pen.copy(adopted = pen.adopted ?: now, pats = pen.pats + 1, lastPat = now)))
+    }
+
+    /** Old saves do not know when their animals came: from now on they count from [now]. */
+    fun adoptUnknown(world: FarmWorld, now: Long): FarmWorld =
+        if (world.pens.all { it.adopted != null }) world else world.copy(pens = world.pens.map { if (it.adopted == null) it.copy(adopted = now) else it })
 
     fun collect(world: FarmWorld, index: Int, now: Long): FarmWorld {
         val pen = world.pens.getOrNull(index) ?: return world

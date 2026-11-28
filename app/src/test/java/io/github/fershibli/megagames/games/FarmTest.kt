@@ -672,4 +672,89 @@ class FarmTest {
         Fish.entries.forEach { assertNotNull(FarmSprites.products[it.item]) }
         assertTrue(FarmSprites.shimmer.size >= 2 && FarmSprites.ripples.size >= 2)
     }
+
+    // Affection.
+
+    private fun pet(world: FarmWorld, at: Long) = FarmRules.pat(world, 0, at)
+
+    @Test
+    fun aNewAnimalStartsWithOneHeartAndPatsGrowItUpToTheCap() {
+        var w = FarmRules.buyAnimal(FarmWorld(coins = 500, stars = 9), Animal.COW, t0)
+        assertEquals(t0, w.pens[0].adopted)
+        assertEquals(1, FarmRules.affection(w.pens[0], t0))
+        var seen = 1
+        var at = t0
+        repeat(40) {
+            at += FarmRules.PAT_COOLDOWN_MINUTES * min
+            w = pet(w, at)
+            val now = FarmRules.affection(w.pens[0], at)
+            assertTrue("never goes down", now >= seen)
+            assertTrue(now <= FarmRules.MAX_HEARTS)
+            seen = now
+        }
+        assertEquals(FarmRules.MAX_HEARTS, seen)
+        // The saved count stays small however long one keeps petting.
+        assertTrue(w.pens[0].pats <= FarmRules.MAX_HEARTS * FarmRules.POINTS_PER_HEART)
+    }
+
+    @Test
+    fun aPatCountsOnlyOncePerCooldownSoSpammingDoesNotMaxItAtOnce() {
+        var w = FarmWorld(pens = listOf(Pen("chicken", t0, adopted = t0)))
+        repeat(50) { w = pet(w, t0 + it * 1_000L) }
+        assertEquals(1, w.pens[0].pats)
+        assertEquals(1, FarmRules.affection(w.pens[0], t0 + 60_000L))
+        // Just before the cooldown ends nothing counts; at the end the next one does.
+        val cooldown = FarmRules.PAT_COOLDOWN_MINUTES * min
+        val first = w.pens[0].lastPat
+        assertEquals(w, pet(w, first + cooldown - 1))
+        assertEquals(2, pet(w, first + cooldown).pens[0].pats)
+        assertFalse(FarmRules.canPat(w.pens[0], first + cooldown - 1))
+        assertTrue(FarmRules.canPat(w.pens[0], first + cooldown))
+    }
+
+    @Test
+    fun timeOwnedAlsoGrowsAffectionWithoutAnyPats() {
+        val pen = Pen("sheep", t0, adopted = t0)
+        assertEquals(1, FarmRules.affection(pen, t0 + 24 * 60 * min))
+        assertEquals(2, FarmRules.affection(pen, t0 + 48 * 60 * min))
+        assertEquals(FarmRules.MAX_HEARTS, FarmRules.affection(pen, t0 + 30 * 24 * 60 * min))
+        // A clock set back never takes hearts away below one.
+        assertEquals(1, FarmRules.affection(pen, t0 - 5 * 24 * 60 * min))
+    }
+
+    @Test
+    fun patsDoNotChangeWhatTheAnimalMakesAndOnlyTouchTheirOwnPen() {
+        val w = FarmWorld(pens = listOf(Pen("chicken", t0, adopted = t0), Pen("cow", t0, adopted = t0)))
+        val after = FarmRules.pat(w, 1, t0 + 5 * min)
+        assertEquals(w.pens[0], after.pens[0])
+        assertEquals(1, after.pens[1].pats)
+        assertEquals(w.pens[1].since, after.pens[1].since)
+        assertEquals(w.coins, after.coins)
+        assertEquals(w, FarmRules.pat(w, 7, t0))
+    }
+
+    @Test
+    fun anOldFarmLoadsWithDefaultAffectionAndItsAnimalsCountFromTheFirstLook() {
+        val old = """{"coins":42,"stars":3,"plots":[],"pens":[{"animal":"cow","since":7},{"animal":"chicken","since":9}],"barn":{},"orders":[],"orderSerial":9}"""
+        val w = AppJson.decodeFromString(FarmWorld.serializer(), old)
+        assertEquals(2, w.pens.size)
+        assertEquals(1, FarmRules.affection(w.pens[0], t0))
+        assertEquals(0, w.pens[0].pats)
+        assertEquals(null, w.pens[0].adopted)
+        val met = FarmRules.adoptUnknown(w, t0)
+        assertEquals(t0, met.pens[0].adopted)
+        assertEquals(1, FarmRules.affection(met.pens[0], t0))
+        assertEquals(2, FarmRules.affection(met.pens[0], t0 + 48 * 60 * min))
+        // Animals that already know their day are left alone.
+        assertEquals(met, FarmRules.adoptUnknown(met, t0 + 5 * min))
+        // And the new fields round-trip through the save.
+        val back = AppJson.decodeFromString(FarmWorld.serializer(), AppJson.encodeToString(FarmWorld.serializer(), pet(met, t0)))
+        assertEquals(1, back.pens[0].pats)
+        assertEquals(t0, back.pens[0].lastPat)
+    }
+
+    @Test
+    fun theHeartPictureExists() {
+        assertTrue(FarmSprites.heart.width > 0)
+    }
 }

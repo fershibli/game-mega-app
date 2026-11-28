@@ -34,6 +34,8 @@ Compra gli animali con **Compra un animale**. Ognuno produce da solo e tiene fin
 | Mucca | Latte | 30 min | 120 | 22 | 2 |
 | Pecora | Lana | 60 min | 200 | 40 | 4 |
 
+**Affetto.** Tocca un’aiuola seminata o un animale: risponde con un saltello o una dondolata, e un cuoricino sale fluttuando sopra di lui. Ogni animale ha da **1 a 5 cuori** di affetto («Affetto: 3/5» nella descrizione, per i lettori di schermo), e un tocco mostra insieme tanti cuori quanti ne ha. Cresce quando lo accarezzi (una carezza conta una volta ogni **3 minuti** per animale, quindi toccare di continuo non lo riempie in un colpo) e con il passare dei giorni. Non cala mai, e non si perde né manca nulla in nessun caso: è solo per le coccole. Il tocco fa sempre ciò che faceva (raccogliere, mietere, leggere la scheda). Con le animazioni spente nulla si muove e il cuore resta fermo un momento.
+
 ## Costruire e il mulino
 Il pulsante **Costruisci** (accanto a **Nuova aiuola** e **Compra un animale**) apre l’elenco di ciò che si può costruire, ognuno con il suo disegno, il prezzo accanto alla moneta e quante stelle mancano ancora. Ciò che non è ancora disponibile appare sbiadito; tocca ciò che è pronto per costruirlo. Il pulsante sparisce quando è tutto costruito.
 

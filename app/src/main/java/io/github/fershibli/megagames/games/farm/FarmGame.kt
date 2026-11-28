@@ -1,6 +1,8 @@
 package io.github.fershibli.megagames.games.farm
 
 import androidx.annotation.StringRes
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.withInfiniteAnimationFrameMillis
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
@@ -79,6 +81,7 @@ import io.github.fershibli.megagames.ui.theme.Palette
 import io.github.fershibli.megagames.ui.art.drawFitted
 import io.github.fershibli.megagames.ui.theme.currentMotion
 import io.github.fershibli.megagames.ui.theme.currentPace
+import io.github.fershibli.megagames.ui.theme.spec
 import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.math.roundToInt
 import io.github.fershibli.megagames.ui.theme.currentHaptics
@@ -97,6 +100,10 @@ private const val BED_FRAME_MS = 900L
 
 /** How long the mill's sails stay on each of their turns (slower with a calm pace or gentle motion). */
 private const val SAIL_STEP_MS = 800L
+
+/** How long the hop and the floating hearts of a touch last (longer with gentle motion), and how long the hearts stay when movement is off. */
+private const val HEART_MS = 1_300
+private const val HEART_STILL_MS = 1_500L
 
 /** How long the lake's glints stay on each turn, and the float on each bob (slower with gentle motion). */
 private const val RIPPLE_STEP_MS = 700L
@@ -128,7 +135,7 @@ fun FarmGame(host: GameHost) {
     val clock = LocalFarmClock.current
     var world by remember(host) {
         store.flush()
-        mutableStateOf(FarmRules.rescue(FarmRules.fillOrders(store.load(FARM_WORLD_KEY, FarmWorld.serializer()) ?: FarmRules.newFarm())))
+        mutableStateOf(FarmRules.adoptUnknown(FarmRules.rescue(FarmRules.fillOrders(store.load(FARM_WORLD_KEY, FarmWorld.serializer()) ?: FarmRules.newFarm())), clock.now()))
     }
     // Every change applies to the latest farm, so quick taps in a row all count.
     val change: ((FarmWorld) -> FarmWorld) -> Unit = { f ->
@@ -182,6 +189,12 @@ fun FarmGame(host: GameHost) {
         }
     }
 }
+
+/** What was just touched on the scene: a bed or an animal, and how many hearts it shows. */
+private class Touched(val isPlot: Boolean, val index: Int, val hearts: Int)
+
+/** Where the hearts stand while they are kept still (movement off). */
+private const val STILL_PROGRESS = 0.3f
 
 /** One message on the card; a new object each time, so the same words again start a new timer. */
 private class FarmNote(val text: String)
@@ -237,6 +250,22 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
             }
         }
     }
+    // A touched bed or animal hops or wiggles and its hearts float up; with movement off they just stay a moment.
+    var touched by remember { mutableStateOf<Touched?>(null) }
+    val touchAnim = remember { Animatable(0f) }
+    LaunchedEffect(touched) {
+        if (touched == null) return@LaunchedEffect
+        if (motion == Motion.NONE) {
+            touchAnim.snapTo(STILL_PROGRESS)
+            pace.wait(HEART_STILL_MS)
+        } else {
+            touchAnim.snapTo(0f)
+            touchAnim.animateTo(1f, motion.spec(HEART_MS, LinearEasing))
+        }
+        touched = null
+    }
+    val affectionLabel = stringResource(R.string.farm_affection)
+    val heartLabel = stringResource(R.string.farm_heart)
     // The bed just bought blinks for a while, so it is easy to find on the field.
     var fresh by remember { mutableStateOf<Int?>(null) }
     LaunchedEffect(fresh) { if (fresh != null) { pace.wait(FRESH_MS); fresh = null } }
@@ -278,12 +307,13 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         }
     }
 
-    fun penText(i: Int, at: Long): String {
+    fun penText(i: Int, at: Long, hearts: Int = FarmRules.affection(w.pens[i], at)): String {
         val pen = w.pens[i]
         val name = animalNames.getValue(pen.kind)
         val n = FarmRules.waiting(pen, at)
-        return if (n > 0) "$name, ${penReady.format(itemNames.getValue(pen.kind.item), n)}"
-        else "$name, ${left(((1f - FarmRules.penProgress(pen, at)) * pen.kind.periodMs).toLong())}"
+        val love = affectionLabel.format(hearts, FarmRules.MAX_HEARTS)
+        return if (n > 0) "$name, ${penReady.format(itemNames.getValue(pen.kind.item), n)}, $love"
+        else "$name, ${left(((1f - FarmRules.penProgress(pen, at)) * pen.kind.periodMs).toLong())}, $love"
     }
 
     /** What the mill says: ready sacks, the job being ground and the time left, or that it waits for work. */
@@ -324,6 +354,8 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     fun tapPlot(i: Int) {
         val t = time()
         val plot = w.plots.getOrNull(i) ?: return
+        // A planted bed answers a touch with a wiggle and a heart; the rest of the tap goes on as before.
+        if (plot.sown != null) touched = Touched(true, i, 1)
         when {
             plot.sown == null -> sowing = i
             FarmRules.stage(plot, t) == Stage.RIPE -> { change { FarmRules.harvest(it, i, t) }; say(harvested) }
@@ -336,7 +368,11 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         val t = time()
         val pen = w.pens.getOrNull(i) ?: return
         if (FarmRules.waiting(pen, t) > 0) change { FarmRules.collect(it, i, t) }
-        say(penText(i, time()))
+        // The pat counts once in a while; the hearts show every time, as many as the animal's affection.
+        change { FarmRules.pat(it, i, t) }
+        val hearts = FarmRules.affection(FarmRules.pat(w, i, t).pens[i], t)
+        touched = Touched(false, i, hearts)
+        say(penText(i, time(), hearts))
     }
 
     val gatherable = FarmRules.readyCount(w, now)
@@ -368,11 +404,16 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                                 if (hit.first) onPlot(hit.second) else onPen(hit.second)
                             }
                         },
-                ) { drawFarmScene(FarmScene(w, now, (now / TICK_MS).toInt(), fresh, if (working && motion != Motion.NONE) sail else 0, ripple, motion != Motion.NONE), p, grid) }
+                ) { drawFarmScene(FarmScene(w, now, (now / TICK_MS).toInt(), fresh, if (working && motion != Motion.NONE) sail else 0, ripple, motion != Motion.NONE, touched?.let { FarmTouch(it.isPlot, it.index, touchAnim.value, it.hearts, motion.amplitude) }), p, grid) }
                 // One node per bed and animal for screen readers and tests. Touches go through
                 // them to the scene, which picks the nearest bed or animal.
                 val spot = 40.dp
                 val spotPx = with(density) { spot.toPx() }
+                // Says what the touch shows, for screen readers and tests, for as long as the hearts are there.
+                touched?.let {
+                    val said = if (it.isPlot) heartLabel else affectionLabel.format(it.hearts, FarmRules.MAX_HEARTS)
+                    Box(Modifier.size(1.dp).testTag("farm-hearts").semantics { contentDescription = said; liveRegion = LiveRegionMode.Polite })
+                }
                 w.plots.indices.forEach { i ->
                     val (col, row) = FarmMap.plots.getOrNull(i) ?: return@forEach
                     val center = grid.center(col, row)

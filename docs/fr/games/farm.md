@@ -34,6 +34,8 @@ Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et gard
 | Vache | Lait | 30 min | 120 | 22 | 2 |
 | Mouton | Laine | 60 min | 200 | 40 | 4 |
 
+**Affection.** Touchez un carré planté ou un animal : il répond par un petit saut ou un petit balancement, et un petit cœur monte en flottant au-dessus de lui. Chaque animal a de **1 à 5 cœurs** d’affection (« Affection : 3/5 » dans sa description, pour les lecteurs d’écran), et un toucher montre ensemble autant de cœurs qu’il en a. Elle grandit quand vous le caressez (une caresse compte une fois toutes les **3 minutes** par animal, donc toucher sans arrêt ne la remplit pas d’un coup) et avec les jours qui passent. Elle ne baisse jamais, et rien ne se perd ni ne manque : c’est seulement pour les câlins. Le toucher fait toujours ce qu’il faisait (ramasser, récolter, lire la carte). Sans animations, rien ne bouge et le cœur reste immobile un instant.
+
 ## Construire et le moulin
 Le bouton **Construire** (à côté de **Nouveau carré** et **Acheter un animal**) ouvre la liste de ce que l’on peut construire, avec pour chaque chose son dessin, son prix à côté de la pièce et le nombre d’étoiles qui manquent encore. Ce qui n’est pas encore disponible apparaît estompé ; touchez ce qui est prêt pour le construire. Le bouton disparaît quand tout est construit.
 
