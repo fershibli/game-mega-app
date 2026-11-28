@@ -233,6 +233,8 @@ fun BigDialog(
     buttons: List<Pair<String, () -> Unit>>,
     dismissible: Boolean = true,
     primaryIndex: Int = 0,
+    /** A button that does something that cannot be undone, drawn in the danger color. */
+    dangerIndex: Int = -1,
 ) {
     val p = LocalPalette.current
     AlertDialog(
@@ -249,7 +251,12 @@ fun BigDialog(
                 verticalArrangement = Arrangement.spacedBy(10.dp),
             ) {
                 buttons.forEachIndexed { i, (label, action) ->
-                    BigButton(label, action, Modifier.fillMaxWidth(), style = if (i == primaryIndex) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY)
+                    val style = when (i) {
+                        dangerIndex -> ButtonStyle.DANGER
+                        primaryIndex -> ButtonStyle.PRIMARY
+                        else -> ButtonStyle.SECONDARY
+                    }
+                    BigButton(label, action, Modifier.fillMaxWidth(), icon = if (i == dangerIndex) AppIcon.TRASH else null, style = style)
                 }
             }
         },

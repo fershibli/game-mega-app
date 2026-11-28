@@ -34,7 +34,18 @@ import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberUpdatedState
+import androidx.compose.runtime.withFrameMillis
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.ProgressBarRangeInfo
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.progressBarRangeInfo
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.AbsoluteAlignment
@@ -80,8 +91,17 @@ class InGameActions(
     val onNewGame: (() -> Unit)?,
     val onNewOptions: (() -> Unit)? = null,
     val onLearn: (() -> Unit)? = null,
+    /**
+     * Forgets the game in progress of this game for good (null: nothing saved to forget). Named
+     * [deleteSaveOf] in the button; asked about in three steps before it runs.
+     */
+    val onDeleteSave: (() -> Unit)? = null,
+    val deleteSaveOf: String = "",
     val onMainMenu: () -> Unit,
 )
+
+/** How long the "deleting" bar takes to fill. Until it is full, the person can still interrupt. */
+const val DELETE_SAVE_MILLIS = 4_000L
 
 const val PROJECT_URL = "https://github.com/fershibli/game-mega-app"
 
@@ -134,6 +154,8 @@ fun SettingsScreen(
     var confirmOptions by remember { mutableStateOf(false) }
     var pickLanguage by remember { mutableStateOf(false) }
     var showMission by remember { mutableStateOf(false) }
+    // The steps of "delete the saved game": 0 none, 1 warning, 2 confirmation, 3 the bar filling up.
+    var deleteStep by remember { mutableIntStateOf(0) }
 
     Column(Modifier.fillMaxSize().background(p.background)) {
         Box(Modifier.fillMaxWidth().height(68.dp).background(p.surface).padding(horizontal = 8.dp)) {
@@ -260,6 +282,13 @@ fun SettingsScreen(
                     BigButton(stringResource(R.string.reset_settings), { onChange(Settings()) }, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
                     BigButton(stringResource(R.string.mission_button), { showMission = true }, Modifier.fillMaxWidth(), icon = AppIcon.INFO, style = ButtonStyle.SECONDARY)
                 }
+                // Last of all, and only with a game open that has something saved.
+                if (inGame?.onDeleteSave != null) {
+                    BigButton(
+                        stringResource(R.string.delete_save_button, inGame.deleteSaveOf), { deleteStep = 1 },
+                        Modifier.fillMaxWidth().testTag("delete-save"), icon = AppIcon.TRASH, style = ButtonStyle.DANGER,
+                    )
+                }
                 Spacer(Modifier.height(24.dp))
             }
         }
@@ -310,6 +339,38 @@ fun SettingsScreen(
             ),
         )
     }
+    if (deleteStep == 1 && inGame != null) {
+        BigDialog(
+            title = stringResource(R.string.delete_save_warn_title),
+            message = stringResource(R.string.delete_save_warn_message, inGame.deleteSaveOf),
+            onDismiss = { deleteStep = 0 },
+            buttons = listOf(
+                stringResource(R.string.delete_save_understood) to { deleteStep = 2 },
+                stringResource(R.string.cancel) to { deleteStep = 0 },
+            ),
+        )
+    }
+    if (deleteStep == 2 && inGame != null) {
+        // The safe answer is the highlighted one; the one that deletes is red.
+        BigDialog(
+            title = stringResource(R.string.delete_save_confirm_title),
+            message = stringResource(R.string.delete_save_confirm_message, inGame.deleteSaveOf),
+            onDismiss = { deleteStep = 0 },
+            buttons = listOf(
+                stringResource(R.string.delete_save_yes) to { deleteStep = 3 },
+                stringResource(R.string.delete_save_no) to { deleteStep = 0 },
+            ),
+            primaryIndex = 1,
+            dangerIndex = 0,
+        )
+    }
+    if (deleteStep == 3 && inGame != null) {
+        DeleteSaveProgress(
+            gameName = inGame.deleteSaveOf,
+            onInterrupt = { deleteStep = 0 },
+            onDone = { deleteStep = 0; inGame.onDeleteSave?.invoke() },
+        )
+    }
     if (confirmNew && inGame != null) {
         BigDialog(
             title = stringResource(R.string.new_game_title),
@@ -321,6 +382,56 @@ fun SettingsScreen(
             ),
         )
     }
+}
+
+/**
+ * The last step of deleting a saved game: a bar that fills over [DELETE_SAVE_MILLIS] (a pause to
+ * think again, not real work) and a big "Interrupt". Only when it is full does [onDone] run.
+ * Leaving the dialog any other way is the same as interrupting.
+ */
+@Composable
+private fun DeleteSaveProgress(gameName: String, onInterrupt: () -> Unit, onDone: () -> Unit) {
+    val p = LocalPalette.current
+    var progress by remember { mutableFloatStateOf(0f) }
+    val done by rememberUpdatedState(onDone)
+    LaunchedEffect(Unit) {
+        val start = withFrameMillis { it }
+        while (progress < 1f) {
+            val now = withFrameMillis { it }
+            progress = ((now - start).toFloat() / DELETE_SAVE_MILLIS).coerceIn(0f, 1f)
+        }
+        done()
+    }
+    val title = stringResource(R.string.delete_save_progress_title)
+    AlertDialog(
+        onDismissRequest = onInterrupt,
+        containerColor = p.surface,
+        title = { Text(title, style = MaterialTheme.typography.headlineSmall, color = p.text) },
+        text = {
+            Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+                Text(stringResource(R.string.delete_save_progress_message, gameName), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                val shape = RoundedCornerShape(14.dp)
+                Box(
+                    Modifier
+                        .fillMaxWidth()
+                        .height(28.dp)
+                        .testTag("delete-save-bar")
+                        .clip(shape)
+                        .background(p.surfaceAlt)
+                        .border(2.dp, p.outline, shape)
+                        .semantics {
+                            contentDescription = title
+                            progressBarRangeInfo = ProgressBarRangeInfo(progress, 0f..1f)
+                        },
+                ) {
+                    Box(Modifier.fillMaxHeight().fillMaxWidth(progress).background(p.danger))
+                }
+            }
+        },
+        confirmButton = {
+            BigButton(stringResource(R.string.delete_save_interrupt), onInterrupt, Modifier.fillMaxWidth(), icon = AppIcon.CLOSE)
+        },
+    )
 }
 
 /** A title, one big button per option (the chosen one highlighted) and what the chosen option does. */

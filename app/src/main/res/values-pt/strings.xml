@@ -198,4 +198,15 @@
     <string name="vibrate_alerts">Fim de jogo</string>
     <string name="vibrate_alerts_desc">Uma vibração diferente quando você ganha ou perde.</string>
     <string name="learn_to_play">Aprenda a jogar</string>
+    <string name="delete_save_button">Apagar o jogo salvo de %1$s</string>
+    <string name="delete_save_warn_title">Apagar o jogo salvo?</string>
+    <string name="delete_save_warn_message">O jogo salvo de %1$s e todo o progresso dele serão perdidos. Não há como desfazer.</string>
+    <string name="delete_save_understood">Entendi</string>
+    <string name="delete_save_confirm_title">Tem certeza?</string>
+    <string name="delete_save_confirm_message">Você quer mesmo apagar de vez o jogo salvo de %1$s?</string>
+    <string name="delete_save_yes">Sim, apagar</string>
+    <string name="delete_save_no">Não, cancelar</string>
+    <string name="delete_save_progress_title">Apagando…</string>
+    <string name="delete_save_progress_message">Apagando o jogo salvo de %1$s. Você ainda pode interromper até a barra encher.</string>
+    <string name="delete_save_interrupt">Interromper</string>
 </resources>

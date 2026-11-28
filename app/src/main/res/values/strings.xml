@@ -213,4 +213,15 @@
     <string name="vibrate_alerts">End of a game</string>
     <string name="vibrate_alerts_desc">A different buzz when you win or lose.</string>
     <string name="learn_to_play">Learn to play</string>
+    <string name="delete_save_button">Delete the saved game of %1$s</string>
+    <string name="delete_save_warn_title">Delete the saved game?</string>
+    <string name="delete_save_warn_message">The saved game of %1$s and all its progress will be lost. This cannot be undone.</string>
+    <string name="delete_save_understood">I understand</string>
+    <string name="delete_save_confirm_title">Are you sure?</string>
+    <string name="delete_save_confirm_message">Do you really want to delete the saved game of %1$s for good?</string>
+    <string name="delete_save_yes">Yes, delete it</string>
+    <string name="delete_save_no">No, cancel</string>
+    <string name="delete_save_progress_title">Deleting…</string>
+    <string name="delete_save_progress_message">Deleting the saved game of %1$s. You can still stop it until the bar is full.</string>
+    <string name="delete_save_interrupt">Stop</string>
 </resources>

@@ -198,4 +198,15 @@
     <string name="vibrate_alerts">Fin de partie</string>
     <string name="vibrate_alerts_desc">Une vibration différente quand vous gagnez ou perdez.</string>
     <string name="learn_to_play">Apprendre à jouer</string>
+    <string name="delete_save_button">Supprimer la partie enregistrée de %1$s</string>
+    <string name="delete_save_warn_title">Supprimer la partie enregistrée ?</string>
+    <string name="delete_save_warn_message">La partie enregistrée de %1$s et toute sa progression seront perdues. C’est irréversible.</string>
+    <string name="delete_save_understood">J’ai compris</string>
+    <string name="delete_save_confirm_title">Êtes-vous sûr ?</string>
+    <string name="delete_save_confirm_message">Voulez-vous vraiment supprimer définitivement la partie enregistrée de %1$s ?</string>
+    <string name="delete_save_yes">Oui, supprimer</string>
+    <string name="delete_save_no">Non, annuler</string>
+    <string name="delete_save_progress_title">Suppression…</string>
+    <string name="delete_save_progress_message">Suppression de la partie enregistrée de %1$s. Vous pouvez encore l’arrêter tant que la barre n’est pas pleine.</string>
+    <string name="delete_save_interrupt">Interrompre</string>
 </resources>
