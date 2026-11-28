@@ -215,4 +215,15 @@
     <string name="vibrate_alerts">نهاية اللعبة</string>
     <string name="vibrate_alerts_desc">اهتزاز مختلف عند الفوز أو الخسارة.</string>
     <string name="learn_to_play">تعلّم اللعب</string>
+    <string name="delete_save_button">حذف اللعبة المحفوظة: %1$s</string>
+    <string name="delete_save_warn_title">حذف اللعبة المحفوظة؟</string>
+    <string name="delete_save_warn_message">ستضيع اللعبة المحفوظة %1$s وكل تقدمها. لا يمكن التراجع عن ذلك.</string>
+    <string name="delete_save_understood">فهمت</string>
+    <string name="delete_save_confirm_title">هل أنت متأكد؟</string>
+    <string name="delete_save_confirm_message">هل تريد حقًا حذف اللعبة المحفوظة %1$s نهائيًا؟</string>
+    <string name="delete_save_yes">نعم، احذف</string>
+    <string name="delete_save_no">لا، إلغاء</string>
+    <string name="delete_save_progress_title">جارٍ الحذف…</string>
+    <string name="delete_save_progress_message">جارٍ حذف اللعبة المحفوظة %1$s. يمكنك الإيقاف حتى يمتلئ الشريط.</string>
+    <string name="delete_save_interrupt">إيقاف</string>
 </resources>

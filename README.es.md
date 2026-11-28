@@ -41,7 +41,7 @@ Sudoku · Solitario · Buraco · Backgammon · Mahjong · Reversi · Crucigrama 
 - **Los retos se generan al momento** (Sudoku, Mahjong, Tuberías, Une los colores, Crucigrama…), así que nunca se repiten, y todos **tienen solución garantizada**.
 - **Rivales de verdad**: el ordenador juega con estrategias escritas especialmente para Backgammon, Buraco y Reversi.
 - **Zoom con dos dedos en todos los juegos**, y zoom con un dedo en el modo una mano.
-- **Guardado automático**: si la aplicación se cierra sin querer, ofrece seguir justo donde lo dejaste.
+- **Guardado automático**: si la aplicación se cierra sin querer, ofrece seguir justo donde lo dejaste (activa **Abrir en el último juego** en Ajustes para verlo en cuanto se abra la aplicación).
 - **10 idiomas**: inglés, portugués de Brasil, español, francés, italiano, alemán, ruso, japonés, chino simplificado y árabe, tanto la interfaz *como* los diccionarios del crucigrama.
 - **Pequeña y ligera**: unos **1,3 MB**, Kotlin nativo + Jetpack Compose, sin motor de juego y sin imágenes: todo el arte se dibuja con código.
 

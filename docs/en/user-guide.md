@@ -72,7 +72,7 @@ Games played alone (sudoku, solitaire, crossword...) show **Time: No limit / 5 /
 
 ## Automatic save and "continue?"
 
-Every move is saved immediately on the phone. If the app is closed — by accident, by a phone call, by the battery running out — the next time it opens it goes straight to that game and asks:
+Every move is saved immediately on the phone. If the app is closed — by accident, by a phone call, by the battery running out — the next time it opens it goes to the main menu, where the game waits marked with ▶. If **Open the last game on start** is turned on in Settings (it starts off), it goes straight to that game instead and asks:
 
 > **Welcome back!** You have a game of *Sudoku* in progress. Do you want to continue where you left off or go back to the main menu?
 
@@ -108,7 +108,9 @@ Every game board can be enlarged.
 | **Animations** | Off (pieces and cards go straight to their place), Gentle (slow, small movements) or Full. |
 | **Group by category** | On: games appear under headings (cards, board games, puzzles…). Off: one single list. |
 | **Recently played first** | On: the game you open moves to the top of its group, and its group to the top of the list; the rest keeps its order, so favorites stay near the top. Both layouts keep their own order, so switching never loses it. Off: the usual order. |
+| **Open the last game on start** | Off at first. On: when the app is opened, it goes back to the game you left and asks whether to continue. Off: it opens on the main menu. Your games are saved either way and can be continued from the list. |
 | **About** | Version, privacy statement, a link to this project, **Restore default settings** and, at the very end, **Why Mili Games exists**: why the app is free and ad-free forever, how it was made (with the help of Claude, with no AI inside the app) and a link to the source code. |
+| **Delete the saved game of …** | The last item of the settings, red, shown only when Settings is opened from inside a game that has a saved game. It asks three times: a warning that there is no way back (**I understand** / **Cancel**), a confirmation (**Yes, delete it** / **No, cancel**) and a 4-second bar with **Stop**. Stopping, or leaving any of the three, deletes nothing; when the bar is full, only that game's saved game is erased and you go to the main menu. |
 
 The settings list starts low on the screen, and you can scroll any option down towards your thumb.
 

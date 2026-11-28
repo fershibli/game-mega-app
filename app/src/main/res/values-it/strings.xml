@@ -212,4 +212,15 @@
     <string name="vibrate_alerts">Fine della partita</string>
     <string name="vibrate_alerts_desc">Una vibrazione diversa quando vinci o perdi.</string>
     <string name="learn_to_play">Impara a giocare</string>
+    <string name="delete_save_button">Elimina la partita salvata di %1$s</string>
+    <string name="delete_save_warn_title">Eliminare la partita salvata?</string>
+    <string name="delete_save_warn_message">La partita salvata di %1$s e tutti i suoi progressi andranno persi. Non si può annullare.</string>
+    <string name="delete_save_understood">Ho capito</string>
+    <string name="delete_save_confirm_title">Sei sicuro?</string>
+    <string name="delete_save_confirm_message">Vuoi davvero eliminare per sempre la partita salvata di %1$s?</string>
+    <string name="delete_save_yes">Sì, elimina</string>
+    <string name="delete_save_no">No, annulla</string>
+    <string name="delete_save_progress_title">Eliminazione…</string>
+    <string name="delete_save_progress_message">Elimino la partita salvata di %1$s. Puoi ancora fermarti finché la barra non è piena.</string>
+    <string name="delete_save_interrupt">Interrompi</string>
 </resources>

@@ -60,7 +60,7 @@ Manche Spiele können Menschen, die zusammensitzen, abwechselnd am selben Telefo
 
 ## Automatisches Speichern und „Weiterspielen?“
 
-Jeder Zug wird sofort auf dem Telefon gespeichert. Wird die App geschlossen — aus Versehen, durch einen Anruf oder weil der Akku leer ist —, geht sie beim nächsten Öffnen direkt zu diesem Spiel und fragt:
+Jeder Zug wird sofort auf dem Telefon gespeichert. Wird die App geschlossen — aus Versehen, durch einen Anruf oder weil der Akku leer ist —, geht sie beim nächsten Öffnen ins Hauptmenü, wo die Partie mit ▶ markiert wartet. Ist in den Einstellungen **Mit dem letzten Spiel starten** eingeschaltet (anfangs aus), geht sie stattdessen direkt zu diesem Spiel und fragt:
 
 > **Willkommen zurück!** Eine Partie *Sudoku* ist noch nicht beendet. Möchtest du dort weiterspielen, wo du aufgehört hast, oder zum Hauptmenü zurückkehren?
 
@@ -92,7 +92,9 @@ Jedes Spielfeld lässt sich vergrößern.
 | ↳ *Doppeltippen* | Zweimal tippen zum Vergrößern: 2×, dann 3×, dann zurück zur normalen Größe. Zweimal tippen **und ziehen**, um das Bild zu verschieben. |
 | ↳ *Drücken und kreisen* | Berühren und halten, bis das Telefon vibriert, dann Kreise zeichnen: im Uhrzeigersinn vergrößern, gegen den Uhrzeigersinn verkleinern. Zweimal tippen und ziehen zum Verschieben; zweimal tippen zum Zurücksetzen. |
 | **Standard-Schwierigkeit** | Die Stufe, die auf dem Drehrad schon ausgewählt ist. |
+| **Mit dem letzten Spiel starten** | Anfangs aus. Ein: Beim Öffnen springt die App zum Spiel, das du verlassen hast, und fragt, ob du weiterspielen möchtest. Aus: Sie startet im Hauptmenü. Deine Partien bleiben in beiden Fällen gespeichert und lassen sich aus der Liste fortsetzen. |
 | **Über** | Version, Hinweis zum Datenschutz, ein Link zu diesem Projekt, **Standardeinstellungen wiederherstellen** und ganz am Ende **Warum es Mili Games gibt**: warum die App für immer kostenlos und werbefrei ist, wie sie entstanden ist (mit Hilfe von Claude, ohne KI in der App) und ein Link zum Quellcode. |
+| **Gespeicherte Partie von … löschen** | Der letzte Punkt der Einstellungen, rot; er erscheint nur, wenn die Einstellungen in einem Spiel mit gespeicherter Partie geöffnet werden. Er fragt dreimal: ein Hinweis, dass es kein Zurück gibt (**Verstanden** / **Abbrechen**), eine Bestätigung (**Ja, löschen** / **Nein, abbrechen**) und ein 4-Sekunden-Balken mit **Anhalten**. Anhalten oder das Verlassen eines der drei Schritte löscht nichts; ist der Balken voll, wird nur die gespeicherte Partie dieses Spiels gelöscht und du kommst ins Hauptmenü. |
 
 Die Liste der Einstellungen beginnt weit unten auf dem Bildschirm, und du kannst jede Option nach unten zu deinem Daumen scrollen.
 

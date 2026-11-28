@@ -210,4 +210,15 @@
     <string name="vibrate_alerts">ゲームの終わり</string>
     <string name="vibrate_alerts_desc">勝ったときと負けたときに違う振動をします。</string>
     <string name="learn_to_play">遊び方</string>
+    <string name="delete_save_button">「%1$s」の保存データを削除</string>
+    <string name="delete_save_warn_title">保存データを削除しますか？</string>
+    <string name="delete_save_warn_message">「%1$s」の保存データと、これまでの進み具合がすべて失われます。元に戻すことはできません。</string>
+    <string name="delete_save_understood">わかりました</string>
+    <string name="delete_save_confirm_title">本当によろしいですか？</string>
+    <string name="delete_save_confirm_message">「%1$s」の保存データを完全に削除してもよろしいですか？</string>
+    <string name="delete_save_yes">はい、削除する</string>
+    <string name="delete_save_no">いいえ、やめる</string>
+    <string name="delete_save_progress_title">削除しています…</string>
+    <string name="delete_save_progress_message">「%1$s」の保存データを削除しています。バーがいっぱいになるまでは中止できます。</string>
+    <string name="delete_save_interrupt">中止する</string>
 </resources>

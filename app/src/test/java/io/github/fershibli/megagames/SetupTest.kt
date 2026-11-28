@@ -113,7 +113,7 @@ class SetupTest {
     @Test
     fun aGameWaitingToBeContinuedComesBeforeTheQuestions() {
         val saves = SaveStore(app)
-        val store = SettingsStore(app).apply { save(Settings(language = AppLanguage.ENGLISH)); setupDone = false }
+        val store = SettingsStore(app).apply { save(Settings(language = AppLanguage.ENGLISH, openLastGame = true)); setupDone = false }
         saves.save(SavedGame(GameId.REVERSI.key, Difficulty.EASY, AppJson.encodeToJsonElement(ReversiState.serializer(), ReversiState(Reversi.initial().toList()))))
         repeat(50) { if (saves.load() == null) Thread.sleep(20) }
         rule.setContent { MegaGamesApp(store, saves, offerResume = true, firstRun = true) }

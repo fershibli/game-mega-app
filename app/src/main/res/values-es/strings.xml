@@ -198,4 +198,15 @@
     <string name="vibrate_alerts">Fin del juego</string>
     <string name="vibrate_alerts_desc">Una vibración distinta cuando ganas o pierdes.</string>
     <string name="learn_to_play">Aprende a jugar</string>
+    <string name="delete_save_button">Borrar la partida guardada de %1$s</string>
+    <string name="delete_save_warn_title">¿Borrar la partida guardada?</string>
+    <string name="delete_save_warn_message">La partida guardada de %1$s y todo su progreso se perderán. No se puede deshacer.</string>
+    <string name="delete_save_understood">Entendido</string>
+    <string name="delete_save_confirm_title">¿Seguro?</string>
+    <string name="delete_save_confirm_message">¿De verdad quieres borrar para siempre la partida guardada de %1$s?</string>
+    <string name="delete_save_yes">Sí, borrar</string>
+    <string name="delete_save_no">No, cancelar</string>
+    <string name="delete_save_progress_title">Borrando…</string>
+    <string name="delete_save_progress_message">Borrando la partida guardada de %1$s. Aún puedes detenerlo hasta que la barra se llene.</string>
+    <string name="delete_save_interrupt">Interrumpir</string>
 </resources>

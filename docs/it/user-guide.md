@@ -60,7 +60,7 @@ Alcuni giochi si possono fare tra persone sedute insieme, a turno sullo stesso t
 
 ## Salvataggio automatico e “Continuare?”
 
-Ogni mossa viene salvata subito sul telefono. Se l’app si chiude (per sbaglio, per una telefonata, perché la batteria si è scaricata), la volta successiva che la apri va direttamente a quella partita e chiede:
+Ogni mossa viene salvata subito sul telefono. Se l’app si chiude (per sbaglio, per una telefonata, perché la batteria si è scaricata), la volta successiva che la apri va al menu principale, dove la partita aspetta con il segno ▶. Se **Apri sull’ultimo gioco** è attivo in Impostazioni (all’inizio è disattivato), va direttamente a quella partita e chiede:
 
 > **Che bello rivederti!** Hai una partita in corso: *Sudoku*. Vuoi continuare da dove avevi interrotto o tornare al menu principale?
 
@@ -92,7 +92,9 @@ Ogni tabellone si può ingrandire.
 | ↳ *Doppio tocco* | Tocca due volte per ingrandire: 2×, poi 3×, poi di nuovo normale. Tocca due volte **e trascina** per spostarti. |
 | ↳ *Premi e gira* | Tieni premuto finché il telefono vibra, poi disegna dei cerchi: in senso orario ingrandisci, in senso antiorario rimpicciolisci. Tocca due volte e trascina per spostarti; tocca due volte per tornare normale. |
 | **Difficoltà predefinita** | Il livello già selezionato sulla rotella della difficoltà. |
+| **Apri sull’ultimo gioco** | All’inizio disattivato. Attivo: all’apertura l’app torna al gioco che avevi lasciato e chiede se vuoi continuare. Disattivato: si apre sul menu principale. Le partite restano salvate in ogni caso e si continuano dall’elenco. |
 | **Informazioni** | Versione, informativa sulla privacy, **Apri la pagina del progetto**, **Ripristina le impostazioni predefinite** e, in fondo, **Perché esiste Mili Games**: perché l’app è gratuita e senza pubblicità per sempre, come è stata creata (con l’aiuto di Claude, senza nessuna IA dentro l’app) e un collegamento al codice sorgente. |
+| **Elimina la partita salvata di …** | L’ultima voce delle impostazioni, in rosso, compare solo quando le impostazioni si aprono dentro un gioco che ha una partita salvata. Chiede tre volte: un avviso che non si torna indietro (**Ho capito** / **Annulla**), una conferma (**Sì, elimina** / **No, annulla**) e una barra di 4 secondi con **Interrompi**. Interrompere, o uscire da uno dei tre passaggi, non elimina nulla; quando la barra è piena, viene eliminata solo la partita salvata di quel gioco e si torna al menu principale. |
 
 L’elenco delle impostazioni comincia nella parte bassa dello schermo, e puoi far scorrere ogni opzione verso il pollice.
 

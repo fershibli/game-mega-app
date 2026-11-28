@@ -211,4 +211,15 @@
     <string name="vibrate_alerts">Spielende</string>
     <string name="vibrate_alerts_desc">Ein anderes Vibrieren, wenn du gewinnst oder verlierst.</string>
     <string name="learn_to_play">So wird gespielt</string>
+    <string name="delete_save_button">Gespeicherte Partie von %1$s löschen</string>
+    <string name="delete_save_warn_title">Gespeicherte Partie löschen?</string>
+    <string name="delete_save_warn_message">Die gespeicherte Partie von %1$s und ihr gesamter Fortschritt gehen verloren. Das lässt sich nicht rückgängig machen.</string>
+    <string name="delete_save_understood">Verstanden</string>
+    <string name="delete_save_confirm_title">Bist du sicher?</string>
+    <string name="delete_save_confirm_message">Möchtest du die gespeicherte Partie von %1$s wirklich endgültig löschen?</string>
+    <string name="delete_save_yes">Ja, löschen</string>
+    <string name="delete_save_no">Nein, abbrechen</string>
+    <string name="delete_save_progress_title">Wird gelöscht…</string>
+    <string name="delete_save_progress_message">Die gespeicherte Partie von %1$s wird gelöscht. Du kannst noch abbrechen, bis der Balken voll ist.</string>
+    <string name="delete_save_interrupt">Anhalten</string>
 </resources>

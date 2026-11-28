@@ -13,4 +13,6 @@
     <string name="show_categories_desc">Les jeux sont rangés en groupes : cartes, jeux de plateau, casse-tête… Désactivez pour une seule liste.</string>
     <string name="recent_first">Derniers joués en premier</string>
     <string name="recent_first_desc">Le jeu que vous ouvrez remonte en tête de son groupe, et son groupe remonte en tête de la liste. Le reste garde son ordre : vos jeux préférés restent en haut.</string>
+    <string name="open_last_game">Ouvrir sur le dernier jeu</string>
+    <string name="open_last_game_desc">À l’ouverture, l’appli revient au dernier jeu et demande si vous voulez continuer. Désactivé : elle s’ouvre sur le menu principal. Vos parties restent enregistrées dans les deux cas.</string>
 </resources>

@@ -13,4 +13,6 @@
     <string name="show_categories_desc">Die Spiele erscheinen in Gruppen: Karten, Brettspiele, Rätsel… Ausschalten für eine einzige Liste.</string>
     <string name="recent_first">Zuletzt gespielte zuerst</string>
     <string name="recent_first_desc">Das Spiel, das du öffnest, rückt an den Anfang seiner Gruppe, und die Gruppe an den Anfang der Liste. Der Rest behält seine Reihenfolge, so bleiben deine Lieblingsspiele oben.</string>
+    <string name="open_last_game">Mit dem letzten Spiel starten</string>
+    <string name="open_last_game_desc">Beim Öffnen springt die App zum letzten Spiel und fragt, ob du weiterspielen möchtest. Aus: Sie startet im Hauptmenü. Deine Partien bleiben in beiden Fällen gespeichert.</string>
 </resources>

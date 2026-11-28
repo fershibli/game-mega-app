@@ -213,4 +213,15 @@
     <string name="vibrate_alerts">Конец игры</string>
     <string name="vibrate_alerts_desc">Другая вибрация при победе или поражении.</string>
     <string name="learn_to_play">Как играть</string>
+    <string name="delete_save_button">Удалить сохранённую игру: %1$s</string>
+    <string name="delete_save_warn_title">Удалить сохранённую игру?</string>
+    <string name="delete_save_warn_message">Сохранённая игра «%1$s» и весь её прогресс будут потеряны. Это нельзя отменить.</string>
+    <string name="delete_save_understood">Понятно</string>
+    <string name="delete_save_confirm_title">Вы уверены?</string>
+    <string name="delete_save_confirm_message">Вы действительно хотите навсегда удалить сохранённую игру «%1$s»?</string>
+    <string name="delete_save_yes">Да, удалить</string>
+    <string name="delete_save_no">Нет, отмена</string>
+    <string name="delete_save_progress_title">Удаление…</string>
+    <string name="delete_save_progress_message">Удаляется сохранённая игра «%1$s». Пока полоса не заполнилась, это можно остановить.</string>
+    <string name="delete_save_interrupt">Остановить</string>
 </resources>

@@ -41,7 +41,7 @@ Sudoku · Solitaire · Buraco · Backgammon · Mahjong · Reversi · Crossword �
 - **Puzzles are generated on the fly** (Sudoku, Mahjong, Pipes, Connect, Crossword…), so they never repeat — and every generated puzzle is **guaranteed to be solvable**.
 - **Real computer opponents** written specifically for Backgammon, Buraco and Reversi.
 - **Pinch to zoom on every game**, plus one-finger zoom for one-hand mode.
-- **Automatic save**: close the app by accident and it offers to pick up exactly where you left off.
+- **Automatic save**: close the app by accident and it offers to pick up exactly where you left off (turn on **Open the last game on start** in Settings to see it as soon as the app opens).
 - **10 languages**: English, Portuguese (Brazil), Spanish, French, Italian, German, Russian, Japanese, Simplified Chinese and Arabic — the interface *and* the crossword dictionaries.
 - **Tiny and light**: about **1.3 MB**, native Kotlin + Jetpack Compose, no game engine, no images — all art is vector-drawn in code.
 

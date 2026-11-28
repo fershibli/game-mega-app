@@ -82,7 +82,7 @@ app/src/test/                     unit, UI-flow, translation, screenshot and ben
 - **Navigation** is a `sealed interface Screen`. The phone's Back button goes Settings → Home, Difficulty → Home, and inside a game toggles the in-game settings (so a game is never left by accident).
 - **Settings** are an immutable `data class` saved to `SharedPreferences` on every change and provided to the whole UI through `CompositionLocal`s.
 - **Autosave**: `LoadGame` wraps a game's state in a `MutableState` and observes it with `snapshotFlow`; every new state is serialized to JSON and handed to `SaveStore`, which writes on a single background thread, *newest write wins*, through a temporary file + rename (a crash never leaves half a file). `GameHost.finish()` deletes the save so finished games are not offered again.
-- **"Continue?"**: on a cold start (`savedInstanceState == null`) `MegaGamesApp` loads the save and opens the game directly with the prompt. A save that cannot be decoded (corrupted, or from an incompatible version) is ignored and a new game is generated.
+- **"Continue?"**: on a cold start (`savedInstanceState == null`), only when the `openLastGame` setting is on (off by default; absent in older settings), `MegaGamesApp` loads the save and opens the game directly with the prompt; otherwise it opens on the home screen and the save stays in the list. A save that cannot be decoded (corrupted, or from an incompatible version) is ignored and a new game is generated.
 - The activity handles configuration changes itself (`android:configChanges`), so rotating, folding or switching dark mode never recreates the screen or loses state.
 
 ## Zoom and one-hand gestures

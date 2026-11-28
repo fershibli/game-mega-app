@@ -82,7 +82,7 @@ app/src/test/                     单元测试、界面流程、翻译、截图�
 - **导航** 是一个 `sealed interface Screen`。手机的返回键：设置 → 主界面，选择难度 → 主界面；在游戏中则打开/关闭游戏内设置（不会误离开一局游戏）。
 - **设置** 是一个不可变的 `data class`，每次修改都写入 `SharedPreferences`，并通过 `CompositionLocal` 提供给整个界面。
 - **自动保存**：`LoadGame` 把游戏状态放进 `MutableState`，并用 `snapshotFlow` 观察；每个新状态都会序列化成 JSON 交给 `SaveStore`。`SaveStore` 在一个后台线程上写入，*以最新的一次为准*，先写临时文件再重命名（崩溃也不会留下写了一半的文件）。`GameHost.finish()` 会删除存档，因此已结束的游戏不会再被提示继续。
-- **“继续吗？”**：冷启动时（`savedInstanceState == null`），`MegaGamesApp` 读取存档并直接打开那局游戏，同时弹出询问。无法解析的存档（损坏或版本不兼容）会被忽略，并生成新游戏。
+- **“继续吗？”**：冷启动时（`savedInstanceState == null`），仅当设置 `openLastGame` 打开时（默认关闭；旧设置中没有这一项），`MegaGamesApp` 才读取存档并直接打开那局游戏，同时弹出询问；否则打开主页，存档仍留在列表中。无法解析的存档（损坏或版本不兼容）会被忽略，并生成新游戏。
 - Activity 自行处理配置变化（`android:configChanges`），所以旋转、折叠或切换深色模式都不会重建界面或丢失状态。
 
 ## 缩放与单手手势

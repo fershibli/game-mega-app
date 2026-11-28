@@ -72,7 +72,7 @@ Os jogos de jogar sozinho (sudoku, paciência, palavras cruzadas...) mostram **T
 
 ## Salvamento automático e "continuar?"
 
-Cada jogada é salva na hora, no próprio celular. Se o app fechar — sem querer, por uma ligação, porque a bateria acabou — da próxima vez que abrir ele vai direto para aquele jogo e pergunta:
+Cada jogada é salva na hora, no próprio celular. Se o app fechar — sem querer, por uma ligação, porque a bateria acabou — da próxima vez que abrir ele vai para o menu principal, onde o jogo espera marcado com ▶. Se **Abrir no último jogo** estiver ligado em Configurações (ele começa desligado), ele vai direto para aquele jogo e pergunta:
 
 > **Que bom te ver de novo!** Você tem uma partida de *Sudoku* em andamento. Quer continuar de onde parou ou voltar para o menu principal?
 
@@ -108,7 +108,9 @@ Todo tabuleiro pode ser ampliado.
 | **Animações** | Desligadas (peças e cartas vão direto para o lugar), Suaves (movimentos lentos e pequenos) ou Completas. |
 | **Separar por categoria** | Ligado: os jogos aparecem em grupos (cartas, tabuleiro, quebra-cabeças…). Desligado: uma lista única. |
 | **Últimos jogados primeiro** | Ligado: o jogo que você abre sobe para o começo do grupo dele, e o grupo sobe para o começo da lista; o resto mantém a ordem, então os preferidos ficam lá em cima. Os dois jeitos de ver guardam a própria ordem, então trocar não perde nada. Desligado: a ordem de sempre. |
+| **Abrir no último jogo** | Começa desligado. Ligado: ao abrir o app, ele volta ao jogo em que você parou e pergunta se quer continuar. Desligado: abre no menu principal. Seus jogos ficam salvos de qualquer jeito e podem ser continuados pela lista. |
 | **Sobre** | Versão, aviso de privacidade, link para este projeto, **Restaurar configurações padrão** e, no finalzinho, **Por que o Mili Games existe**: por que o app é e sempre será gratuito e sem propaganda, como ele foi feito (com a ajuda do Claude, sem nenhuma IA dentro do app) e um link para o código-fonte. |
+| **Apagar o jogo salvo de …** | O último item das configurações, em vermelho, só aparece quando as configurações são abertas de dentro de um jogo que tem jogo salvo. Pergunta três vezes: um aviso de que não tem volta (**Entendi** / **Cancelar**), uma confirmação (**Sim, apagar** / **Não, cancelar**) e uma barra de 4 segundos com **Interromper**. Interromper, ou sair de qualquer uma das três, não apaga nada; quando a barra enche, só o jogo salvo daquele jogo é apagado e você vai para o menu principal. |
 
 A lista de configurações começa mais para baixo na tela, e qualquer opção pode ser rolada para perto do polegar.
 

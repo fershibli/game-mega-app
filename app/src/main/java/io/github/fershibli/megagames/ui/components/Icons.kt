@@ -31,7 +31,7 @@ import kotlin.math.min
 import kotlin.math.sin
 
 /** Icons are drawn in code (no icon font, no image files) to keep the app tiny. */
-enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO, TAKE_TURNS, TAKE_TURNS_TABLET, COMPUTER }
+enum class AppIcon { GEAR, BACK, UNDO, HINT, CLOSE, CHECK, HOME, NEW_GAME, ZOOM_RESET, PENCIL, ERASE, SHUFFLE, DICE, PLUS, MINUS, NEXT, PREV, ROTATE, INFO, TAKE_TURNS, TAKE_TURNS_TABLET, COMPUTER, TRASH }
 
 private val DIRECTIONAL = setOf(AppIcon.BACK, AppIcon.NEXT, AppIcon.PREV, AppIcon.ERASE)
 
@@ -89,6 +89,17 @@ fun DrawScope.drawAppIcon(icon: AppIcon, tint: Color) {
         }
         AppIcon.TAKE_TURNS -> takeTurns(tint, tablet = false)
         AppIcon.TAKE_TURNS_TABLET -> takeTurns(tint, tablet = true)
+        // A bin: lid with a handle, and a body that narrows towards the bottom.
+        AppIcon.TRASH -> {
+            drawLine(tint, Offset(s * 0.14f, s * 0.26f), Offset(s * 0.86f, s * 0.26f), s * 0.09f, StrokeCap.Round)
+            drawLine(tint, Offset(s * 0.38f, s * 0.12f), Offset(s * 0.62f, s * 0.12f), s * 0.08f, StrokeCap.Round)
+            val body = Path().apply {
+                moveTo(s * 0.22f, s * 0.36f); lineTo(s * 0.28f, s * 0.88f); lineTo(s * 0.72f, s * 0.88f); lineTo(s * 0.78f, s * 0.36f)
+            }
+            drawPath(body, tint, style = Stroke(s * 0.08f, cap = StrokeCap.Round, join = StrokeJoin.Round))
+            drawLine(tint, Offset(s * 0.4f, s * 0.5f), Offset(s * 0.41f, s * 0.74f), s * 0.07f, StrokeCap.Round)
+            drawLine(tint, Offset(s * 0.6f, s * 0.5f), Offset(s * 0.59f, s * 0.74f), s * 0.07f, StrokeCap.Round)
+        }
         AppIcon.INFO -> {
             drawCircle(tint, s * 0.42f, c, style = Stroke(s * 0.08f))
             drawCircle(tint, s * 0.07f, Offset(c.x, s * 0.3f))

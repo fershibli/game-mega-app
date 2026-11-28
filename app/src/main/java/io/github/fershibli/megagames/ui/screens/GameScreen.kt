@@ -138,11 +138,16 @@ fun GameScreen(
         if (setup.minutes > 0) TimeLeft(secondsLeft, Modifier.align(Alignment.TopStart).padding(start = 12.dp, top = 6.dp))
         FloatingGear { showSettings = true }
         if (showSettings) {
+            // Looked up each time the settings open, so a game just started already counts.
+            val hasSave = remember { game in saveStore.inProgress() }
             SettingsScreen(
                 settings, onSettingsChange, onClose = { showSettings = false },
                 inGame = InGameActions(onResume = { showSettings = false }, onNewGame = newGame.takeUnless { lasting }, onMainMenu = onExit,
                     onNewOptions = onNewOptions.takeUnless { lasting },
                     onLearn = { showHowTo = true },
+                    // Only this game's save, and only when there is one (pastimes keep a lasting world instead).
+                    onDeleteSave = if (!lasting && hasSave) ({ host.discard(); onExit() }) else null,
+                    deleteSaveOf = stringResource(game.title),
                 ),
             )
         }

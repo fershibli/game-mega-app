@@ -13,4 +13,6 @@
     <string name="show_categories_desc">Os jogos aparecem em grupos: cartas, tabuleiro, quebra-cabeças… Desligue para ver uma lista única.</string>
     <string name="recent_first">Últimos jogados primeiro</string>
     <string name="recent_first_desc">O jogo que você abre sobe para o começo do grupo dele, e o grupo sobe para o começo da lista. O resto mantém a ordem, então os seus preferidos ficam lá em cima.</string>
+    <string name="open_last_game">Abrir no último jogo</string>
+    <string name="open_last_game_desc">Ao abrir o app, ele volta ao último jogo e pergunta se você quer continuar. Desligado: abre no menu principal. Suas partidas ficam salvas de qualquer jeito.</string>
 </resources>

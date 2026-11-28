@@ -41,7 +41,7 @@ Sudoku · Solitär · Buraco · Backgammon · Mahjong · Reversi · Kreuzworträ
 - **Rätsel werden jedes Mal neu erzeugt** (Sudoku, Mahjong, Rohre, Farben verbinden, Kreuzworträtsel…), sie wiederholen sich also nie — und jedes erzeugte Rätsel ist **garantiert lösbar**.
 - **Echte Computergegner**, eigens für Backgammon, Buraco und Reversi geschrieben.
 - **Zoomen mit zwei Fingern in jedem Spiel**, dazu Zoom mit einem Finger im Einhand-Modus.
-- **Automatisches Speichern**: Wird die App aus Versehen geschlossen, bietet sie an, genau dort weiterzuspielen, wo du aufgehört hast.
+- **Automatisches Speichern**: Wird die App aus Versehen geschlossen, bietet sie an, genau dort weiterzuspielen, wo du aufgehört hast (schalte in den Einstellungen **Mit dem letzten Spiel starten** ein, um das gleich beim Öffnen zu sehen).
 - **10 Sprachen**: Englisch, Portugiesisch, Spanisch, Französisch, Italienisch, Deutsch, Russisch, Japanisch, Chinesisch und Arabisch — die Oberfläche *und* die Wörter im Kreuzworträtsel.
 - **Klein und leicht**: etwa **1,3 MB**, natives Kotlin + Jetpack Compose, keine Spiele-Engine, keine Bilddateien — alle Grafiken werden im Code gezeichnet.
 

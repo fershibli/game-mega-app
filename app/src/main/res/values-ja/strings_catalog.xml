@@ -13,4 +13,6 @@
     <string name="show_categories_desc">ゲームを種類ごと（トランプ、ボードゲーム、パズル…）に分けて表示します。オフにすると一つの一覧になります。</string>
     <string name="recent_first">最近遊んだ順</string>
     <string name="recent_first_desc">開いたゲームはそのグループの先頭に、グループは一覧の先頭に移ります。ほかの並びは変わらないので、よく遊ぶゲームが上のほうに残ります。</string>
+    <string name="open_last_game">最後のゲームから始める</string>
+    <string name="open_last_game_desc">アプリを開くと、最後に遊んだゲームに戻り、続けるかどうかをたずねます。オフのときはメインメニューが開きます。どちらの場合もゲームは保存されます。</string>
 </resources>

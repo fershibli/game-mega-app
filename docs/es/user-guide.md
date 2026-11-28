@@ -60,7 +60,7 @@ Algunos juegos se pueden jugar entre personas sentadas juntas, por turnos en el 
 
 ## Guardado automático y "¿continuar?"
 
-Cada jugada se guarda al instante en el teléfono. Si la aplicación se cierra —sin querer, por una llamada, porque se acabó la batería— la próxima vez que se abra irá directamente a esa partida y preguntará:
+Cada jugada se guarda al instante en el teléfono. Si la aplicación se cierra —sin querer, por una llamada, porque se acabó la batería— la próxima vez que se abra irá al menú principal, donde la partida espera marcada con ▶. Si **Abrir en el último juego** está activado en Ajustes (empieza desactivado), irá directamente a esa partida y preguntará:
 
 > **¡Qué bueno verte de nuevo!** Tienes una partida de *Sudoku* sin terminar. ¿Quieres seguir donde lo dejaste o volver al menú principal?
 
@@ -92,7 +92,9 @@ Todos los tableros se pueden ampliar.
 | ↳ *Doble toque* | Toca dos veces para acercar: 2×, luego 3×, luego vuelve a lo normal. Toca dos veces **y arrastra** para moverte. |
 | ↳ *Mantener y girar* | Mantén el dedo hasta que el teléfono vibre y dibuja círculos: en sentido horario acerca, en sentido antihorario aleja. Toca dos veces y arrastra para moverte; toca dos veces para volver a lo normal. |
 | **Dificultad predeterminada** | El nivel que aparece ya marcado en la rueda de dificultad. |
+| **Abrir en el último juego** | Desactivado al principio. Activado: al abrir la aplicación vuelve al juego que dejaste y pregunta si quieres seguir. Desactivado: se abre en el menú principal. Tus partidas se guardan de todas formas y se pueden seguir desde la lista. |
 | **Acerca de** | Versión, aviso de privacidad, enlace a este proyecto, **Restablecer ajustes predeterminados** y, al final del todo, **Por qué existe Mili Games**: por qué la app es y será siempre gratis y sin anuncios, cómo se hizo (con la ayuda de Claude, sin ninguna IA dentro de la app) y un enlace al código fuente. |
+| **Borrar la partida guardada de …** | Último elemento de los ajustes, en rojo; solo aparece al abrir los ajustes dentro de un juego que tiene una partida guardada. Pregunta tres veces: un aviso de que no hay vuelta atrás (**Entendido** / **Cancelar**), una confirmación (**Sí, borrar** / **No, cancelar**) y una barra de 4 segundos con **Interrumpir**. Interrumpir, o salir de cualquiera de las tres, no borra nada; cuando la barra se llena, solo se borra la partida guardada de ese juego y vas al menú principal. |
 
 La lista de ajustes empieza bastante abajo en la pantalla, y cualquier opción se puede desplazar hacia el pulgar.
 

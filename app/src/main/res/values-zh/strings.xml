@@ -196,4 +196,15 @@
     <string name="vibrate_alerts">游戏结束</string>
     <string name="vibrate_alerts_desc">赢了或输了时有不同的振动。</string>
     <string name="learn_to_play">玩法说明</string>
+    <string name="delete_save_button">删除“%1$s”的存档</string>
+    <string name="delete_save_warn_title">删除存档？</string>
+    <string name="delete_save_warn_message">“%1$s”的存档和全部进度都会丢失，而且无法恢复。</string>
+    <string name="delete_save_understood">我明白了</string>
+    <string name="delete_save_confirm_title">确定吗？</string>
+    <string name="delete_save_confirm_message">你真的要永久删除“%1$s”的存档吗？</string>
+    <string name="delete_save_yes">是，删除</string>
+    <string name="delete_save_no">不，取消</string>
+    <string name="delete_save_progress_title">正在删除…</string>
+    <string name="delete_save_progress_message">正在删除“%1$s”的存档。进度条填满之前，你还可以中止。</string>
+    <string name="delete_save_interrupt">中止</string>
 </resources>
