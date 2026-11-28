@@ -4,7 +4,7 @@
 
 Ein kleiner Bauernhof, der in deinem Handy wohnt. Säe, gieße und ernte, kümmere dich um Hühner, Kuh und Schafe, verkaufe in der Scheune und erfülle die Bestellungen der Nachbarn. Es eilt nie und nichts geht verloren: Pflanzen welken nie, Tiere hungern nie, und der Hof wächst weiter, auch wenn die App geschlossen ist.
 
-Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Scheune**. Darüber zeigen eine goldene **Münze** und ein **Stern**, wie viele Münzen und Sterne du hast. Der Hof ist ein einziges Bild: das Feld mit den Beeten, die Koppel mit den Tieren, das Haus und die Scheune. Mit zwei Fingern auseinanderziehen vergrößert es; der runde Knopf stellt es zurück. Ist der Hof vergrößert, ziehe mit einem Finger, um dich zu bewegen.
+Vier Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen**, die **Scheune** und die **Erfolge**. Bei größerer Schrift stehen sie in zwei Reihen zu zwei, damit die Wörter groß bleiben. Darüber zeigen eine goldene **Münze** und ein **Stern**, wie viele Münzen und Sterne du hast. Der Hof ist ein einziges Bild: das Feld mit den Beeten, die Koppel mit den Tieren, das Haus und die Scheune. Mit zwei Fingern auseinanderziehen vergrößert es; der runde Knopf stellt es zurück. Ist der Hof vergrößert, ziehe mit einem Finger, um dich zu bewegen.
 
 Wenn du ein Beet oder ein Tier antippst, erscheint das, was es sagt (sein Name, die verbleibende Zeit, „Geerntet!“), auf einer kleinen Karte über dem oberen Teil des Bauernhofs. Sie verschwindet nach ein paar Sekunden von selbst oder wenn du sie antippst und verschiebt nie die Knöpfe.
 
@@ -68,6 +68,9 @@ Das **Teichnetz** ist eine Belohnung: mit **15 Sternen** und gebautem Teich ersc
 
 ## Die Scheune
 Alles, was du erntest und einsammelst, wartet mit seinem Preis in der Scheune. **1 verkaufen** oder **Alles verkaufen** macht Münzen daraus. Wenn die Münzen ausgehen, gibt es immer etwas zu verkaufen, oder einen Salat, den man für zwei Münzen säen kann.
+
+## Erfolge
+Der Knopf **Erfolge** listet alles auf, was die Sterne öffnen, von den wenigsten zu den meisten Sternen: jede Pflanze, jedes Tier, die Mühle, den Teich und das Teichnetz. Jede Zeile zeigt das Bild, den Namen und die nötigen Sterne (ein Stern mit einer Zahl). Was der Hof schon hat, erscheint in normalen Farben und sagt **Freigeschaltet**; was noch wartet, ist blass und nennt die fehlenden Sterne („Fehlende Sterne: 3“). Weizen kommt mit der Mühle und das Teichnetz braucht den Teich; diese Zeilen sagen **Bauen Sie zuerst die Mühle** oder **Bauen Sie zuerst den Teich**, bis das Gebäude steht. Es ist nur ein Wegweiser für das, was kommt: Nichts hier kostet etwas oder geht verloren.
 
 ## Speichern
 Alles wird sofort auf dem Handy gespeichert. App schließen, ein anderes Spiel spielen oder **Neues Spiel** in den Einstellungen löscht den Hof nie. Die App zu deinstallieren schon.

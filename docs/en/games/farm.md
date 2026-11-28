@@ -4,7 +4,7 @@
 
 A small farm that lives on your phone. Sow, water and harvest, look after hens, a cow and sheep, sell in the barn and fill the neighbours' orders. There is no hurry and nothing is ever lost: crops never wilt, animals never go hungry and the farm keeps growing while the app is closed.
 
-Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. Above them, a gold **coin** and a **star** show how many coins and stars you have. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back. When zoomed in, drag with one finger to move around.
+Four buttons at the top open the **Farm**, the **Orders**, the **Barn** and the **Awards**. With a larger text size they sit in two rows of two, so the words stay big. Above them, a gold **coin** and a **star** show how many coins and stars you have. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back. When zoomed in, drag with one finger to move around.
 
 When you tap a bed or an animal, what it says (its name, the time left, "Harvested!") appears on a small card over the top of the farm. It goes away by itself after a few seconds, or when you tap it, and it never moves the buttons.
 
@@ -68,6 +68,9 @@ The **Lake net** is an achievement: with **15 stars** and the lake built it show
 
 ## The barn
 Everything you harvest and collect waits in the barn, with its price. **Sell 1** or **Sell all** turns it into coins. If you ever run out of coins, there is always something to sell, or a lettuce to sow for two coins.
+
+## Awards
+The **Awards** button lists everything the stars open, from the fewest stars to the most: every crop, every animal, the mill, the lake and the lake net. Each row shows its picture, its name and the stars it needs (a star with a number). What the farm already has shows in its normal colours and says **Unlocked**; what is still waiting is faded and says how many stars are missing ("Stars missing: 3"). Wheat comes with the mill and the lake net needs the lake, so those rows say **Build the mill first** or **Build the lake first** until the building stands. It is only a guide to what comes next: nothing here costs anything or can be lost.
 
 ## Saving
 Everything is saved on the phone straight away. Closing the app, playing another game or **New game** in the settings never erases the farm. Uninstalling the app does.

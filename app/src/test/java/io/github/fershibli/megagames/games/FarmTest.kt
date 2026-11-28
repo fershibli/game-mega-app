@@ -1,6 +1,7 @@
 package io.github.fershibli.megagames.games
 
 import io.github.fershibli.megagames.core.AppJson
+import io.github.fershibli.megagames.games.farm.Achievement
 import io.github.fershibli.megagames.games.farm.Animal
 import io.github.fershibli.megagames.games.farm.Building
 import io.github.fershibli.megagames.games.farm.Crop
@@ -756,5 +757,56 @@ class FarmTest {
     @Test
     fun theHeartPictureExists() {
         assertTrue(FarmSprites.heart.width > 0)
+    }
+
+    @Test
+    fun theAchievementsListEverythingTheStarsOpenInOrderOfStars() {
+        val list = FarmRules.achievements()
+        assertEquals(Crop.entries.size + Animal.entries.size + Building.entries.size, list.size)
+        assertEquals(list.map { it.stars }, list.map { it.stars }.sorted())
+        assertEquals(list.size, list.map { it.key }.toSet().size)
+        // The numbers come from the rules, not from a copy.
+        val byKey = list.associateBy { it.key }
+        assertEquals(Crop.PUMPKIN.stars, byKey.getValue("crop-pumpkin").stars)
+        assertEquals(Animal.SHEEP.stars, byKey.getValue("animal-sheep").stars)
+        assertEquals(Building.LAKE.stars, byKey.getValue("building-lake").stars)
+        // Wheat comes with the mill, so it sits at the mill's stars.
+        assertEquals(Building.MILL.stars, byKey.getValue("crop-wheat").stars)
+        assertEquals(listOf("crop-lettuce", "crop-carrot", "animal-chicken"), list.take(3).map { it.key })
+        assertEquals("building-net", list.last().key)
+    }
+
+    @Test
+    fun anAchievementIsUnlockedOnceTheFarmHasItsStars() {
+        val cow = FarmRules.achievements().first { it.key == "animal-cow" }
+        val one = FarmWorld(stars = 1)
+        assertFalse(FarmRules.isUnlocked(one, cow))
+        assertEquals(1, FarmRules.starsMissing(one, cow))
+        val two = FarmWorld(stars = 2)
+        assertTrue(FarmRules.isUnlocked(two, cow))
+        assertEquals(0, FarmRules.starsMissing(two, cow))
+        // Crops agree with what the farm really offers to sow.
+        for (stars in 0..16) {
+            val w = FarmWorld(stars = stars, mill = Mill())
+            for (a in FarmRules.achievements()) {
+                if (a is Achievement.ForCrop && !a.crop.needsMill) assertEquals("${a.key} at $stars stars", a.crop in FarmRules.unlocked(w), FarmRules.isUnlocked(w, a))
+                if (a is Achievement.ForAnimal) assertEquals("${a.key} at $stars stars", a.animal.stars <= stars, FarmRules.isUnlocked(w, a))
+            }
+        }
+    }
+
+    @Test
+    fun theNetAchievementNeedsTheLakeAndWheatNeedsTheMill() {
+        val net = FarmRules.achievements().first { it.key == "building-net" }
+        val wheat = FarmRules.achievements().first { it.key == "crop-wheat" }
+        val noLake = FarmWorld(stars = 15)
+        assertFalse(FarmRules.isUnlocked(noLake, net))
+        assertEquals(Building.LAKE, FarmRules.buildingMissing(noLake, net))
+        assertEquals(0, FarmRules.starsMissing(noLake, net))
+        assertTrue(FarmRules.isUnlocked(FarmWorld(stars = 15, lake = Lake()), net))
+        assertFalse(FarmRules.isUnlocked(FarmWorld(stars = 14, lake = Lake()), net))
+        assertFalse(FarmRules.isUnlocked(FarmWorld(stars = 6), wheat))
+        assertEquals(Building.MILL, FarmRules.buildingMissing(FarmWorld(stars = 6), wheat))
+        assertTrue(FarmRules.isUnlocked(FarmWorld(stars = 6, mill = Mill()), wheat))
     }
 }

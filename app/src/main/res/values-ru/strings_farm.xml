@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">Рыба уплыла. Закиньте снова, когда захотите.</string>
     <string name="farm_net_waiting">Рыб в сети: %1$d</string>
     <string name="farm_net_next">Сеть ловит. Следующая рыба: %1$s</string>
+    <string name="farm_tab_achievements">Награды</string>
+    <string name="farm_achievement_stars">Нужно звёзд: %1$d</string>
+    <string name="farm_achievement_unlocked">Открыто</string>
+    <string name="farm_achievement_needs_mill">Сначала постройте мельницу</string>
 </resources>

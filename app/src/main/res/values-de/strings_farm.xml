@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">Der Fisch ist weggeschwommen. Werfen Sie wieder aus, wann Sie möchten.</string>
     <string name="farm_net_waiting">Fische im Netz: %1$d</string>
     <string name="farm_net_next">Das Netz fischt. Nächster Fisch: %1$s</string>
+    <string name="farm_tab_achievements">Erfolge</string>
+    <string name="farm_achievement_stars">Nötige Sterne: %1$d</string>
+    <string name="farm_achievement_unlocked">Freigeschaltet</string>
+    <string name="farm_achievement_needs_mill">Bauen Sie zuerst die Mühle</string>
 </resources>

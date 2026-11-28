@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">鱼游走了。随时可以再抛竿。</string>
     <string name="farm_net_waiting">网里的鱼：%1$d</string>
     <string name="farm_net_next">渔网正在捕鱼。下一条鱼：%1$s</string>
+    <string name="farm_tab_achievements">成就</string>
+    <string name="farm_achievement_stars">所需星星：%1$d</string>
+    <string name="farm_achievement_unlocked">已解锁</string>
+    <string name="farm_achievement_needs_mill">请先建造磨坊</string>
 </resources>

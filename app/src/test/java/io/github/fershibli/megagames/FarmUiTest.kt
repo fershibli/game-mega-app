@@ -622,4 +622,28 @@ class FarmUiTest {
         rule.mainClock.advanceTimeBy(3_000)
         rule.onNodeWithTag("farm-hearts").assertDoesNotExist()
     }
+
+    @Test
+    fun theAchievementsTabShowsWhatIsUnlockedAndWhatIsStillLocked() {
+        seed(FarmWorld(coins = 0, stars = 3))
+        show()
+        rule.onNodeWithTag("farm-tab-achievements").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithTag("farm-achievements").assertExists()
+        // Tomato needs three stars: open. The mill needs six: locked, and it says how many are missing.
+        rule.onNodeWithContentDescription("Tomato · Stars needed: 3 · Unlocked").assertExists()
+        rule.onNodeWithContentDescription("Mill · Stars needed: 6 · Stars missing: 3").performScrollTo().assertExists()
+        rule.onNodeWithContentDescription("Lake net · Stars needed: 15 · Stars missing: 12").performScrollTo().assertExists()
+    }
+
+    @Test
+    fun withTheStarsButNoLakeTheNetSaysToBuildTheLakeFirst() {
+        seed(FarmWorld(coins = 0, stars = 15))
+        show()
+        rule.onNodeWithTag("farm-tab-achievements").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithContentDescription("Lake net · Stars needed: 15 · Build the lake first").performScrollTo().assertExists()
+        rule.onNodeWithContentDescription("Wheat · Stars needed: 6 · Build the mill first").performScrollTo().assertExists()
+        rule.onNodeWithContentDescription("Mill · Stars needed: 6 · Unlocked").performScrollTo().assertExists()
+    }
 }

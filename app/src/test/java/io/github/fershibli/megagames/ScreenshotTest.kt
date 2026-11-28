@@ -364,6 +364,23 @@ class ScreenshotTest {
         gameShot("game_farm_orders", GameId.FARM, tab = "orders")
     }
 
+    /** Mid-game farm (8 stars, no mill yet): the animals and crops are open, the buildings still faded. */
+    @Test fun farmAchievementsPt() {
+        seedFarm(full = true, stars = 2)
+        gameShot("game_farm_achievements_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), tab = "achievements")
+    }
+    @Test fun farmAchievementsDark() {
+        seedFarm(full = true, stars = 2)
+        gameShot("game_farm_achievements_dark", GameId.FARM, settings = Settings(darkMode = true), tab = "achievements")
+    }
+    @Test fun farmAchievementsHighContrast() {
+        seedFarm(full = true, stars = 2)
+        gameShot("game_farm_achievements_high_contrast", GameId.FARM, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST), tab = "achievements")
+    }
+    @Test fun farmAchievementsBigTextPt() {
+        seedFarm(full = true, stars = 1)
+        gameShot("game_farm_achievements_big_text_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = Settings.SCALE_MAX), tab = "achievements")
+    }
     @Test fun farmLakePt() {
         // The lake beside the paddock with its net and two fish waiting, and the mill at work.
         seedFarm(stars = 16, mill = workingMill(), lake = lakeWithNet())
