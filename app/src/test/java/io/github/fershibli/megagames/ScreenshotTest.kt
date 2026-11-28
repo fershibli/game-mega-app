@@ -261,6 +261,17 @@ class ScreenshotTest {
         rule.mainClock.advanceTimeBy(2_800)
         save("game_farm_new_bed_pt")
     }
+    @Test fun farmInfoCardPt() {
+        seedFarm(full = true)
+        gameShot("game_farm_card_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        // A bed still growing says so on a card over the map, which stays where it was.
+        rule.onNodeWithTag("farm-plot-2").performClick()
+        rule.waitForIdle()
+        rule.mainClock.autoAdvance = false
+        rule.mainClock.advanceTimeBy(200)
+        rule.onNodeWithTag("farm-note").assertExists()
+        save("game_farm_card_pt")
+    }
     @Test fun farmOrders() {
         seedFarm()
         gameShot("game_farm_orders", GameId.FARM, tab = "orders")

@@ -6,6 +6,8 @@ Uma pequena fazenda que mora no seu celular. Plante, regue e colha, cuide das ga
 
 Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Suas **moedas** e **estrelas** aparecem acima deles. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal. Com a fazenda ampliada, arraste com um dedo para se mover.
 
+Quando você toca num canteiro ou num animal, o que ele diz (o nome, o tempo que falta, "Colhido!") aparece num cartãozinho sobre o alto da fazenda. Ele some sozinho depois de alguns segundos, ou quando você toca nele, e nunca empurra os botões.
+
 ## A horta
 - Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas.
 - A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova com uma barrinha que vai enchendo, depois a colheita madura, que brilha. Toque num canteiro que está crescendo para ver o nome e o tempo que falta.

@@ -6,6 +6,8 @@ Una piccola fattoria che vive nel tuo telefono. Semina, annaffia e raccogli, acc
 
 Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Le tue **monete** e **stelle** sono indicate sopra. La fattoria è un solo disegno: l’orto con le aiuole, il recinto con gli animali, la casa e il fienile. Allarga con due dita per vederla più grande; il pulsante tondo la rimette com’era. Quando è ingrandita, trascina con un dito per spostarti.
 
+Quando tocchi un'aiuola o un animale, ciò che dice (il nome, il tempo che manca, «Raccolto!») compare su una piccola scheda sopra la parte alta della fattoria. Sparisce da sola dopo qualche secondo, oppure quando la tocchi, e non sposta mai i pulsanti.
+
 ## L’orto
 - Tocca un’**aiuola vuota** (solo terra marrone) e scegli cosa seminare. Ogni seme costa qualche moneta.
 - La pianta cresce da sola, in tempo reale: prima un germoglio, poi una piantina con una barretta che si riempie, poi il raccolto maturo, che luccica. Tocca un’aiuola che sta crescendo per leggerne il nome e il tempo che manca.
