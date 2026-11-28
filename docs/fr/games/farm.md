@@ -6,6 +6,8 @@ Une petite ferme qui vit dans votre téléphone. Semez, arrosez et récoltez, oc
 
 Trois boutons en haut ouvrent la **Ferme**, les **Commandes** et la **Grange**. Vos **pièces** et **étoiles** sont affichées au-dessus. La ferme est un seul dessin : le potager et ses carrés, l’enclos avec les animaux, la maison et la grange. Pincez pour l’agrandir ; le bouton rond la remet comme avant. Quand elle est agrandie, faites glisser un doigt pour vous déplacer.
 
+Quand vous touchez une planche ou un animal, ce qu'il dit (son nom, le temps restant, « Récolté ! ») apparaît sur une petite carte au-dessus du haut de la ferme. Elle disparaît toute seule au bout de quelques secondes, ou quand vous la touchez, et ne déplace jamais les boutons.
+
 ## Le potager
 - Touchez un **carré vide** (la terre brune nue) et choisissez quoi semer. Chaque graine coûte quelques pièces.
 - La culture pousse toute seule, en temps réel : d’abord une pousse, puis une jeune plante avec une petite barre qui se remplit, puis la récolte mûre, qui scintille. Touchez un carré qui pousse pour lire son nom et le temps restant.

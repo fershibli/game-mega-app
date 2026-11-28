@@ -6,6 +6,8 @@ A small farm that lives on your phone. Sow, water and harvest, look after hens, 
 
 Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. Your **coins** and **stars** are shown above them. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back. When zoomed in, drag with one finger to move around.
 
+When you tap a bed or an animal, what it says (its name, the time left, "Harvested!") appears on a small card over the top of the farm. It goes away by itself after a few seconds, or when you tap it, and it never moves the buttons.
+
 ## The field
 - Tap an **empty bed** (bare brown soil) and choose what to sow. Each seed costs a few coins.
 - A crop grows by itself in real time: first a sprout, then a young plant with a small bar that fills up, then the ripe crop, which sparkles. Tap a growing bed to read its name and the time left.

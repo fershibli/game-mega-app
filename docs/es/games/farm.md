@@ -6,6 +6,8 @@ Una pequeña granja que vive en tu teléfono. Siembra, riega y cosecha, cuida de
 
 Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Tus **monedas** y **estrellas** aparecen encima. La granja es un solo dibujo: el huerto con los bancales, el corral con los animales, la casa y el granero. Pellizca para verla más grande; el botón redondo la deja como estaba. Con la granja ampliada, arrastra con un dedo para moverte.
 
+Cuando tocas un bancal o un animal, lo que dice (su nombre, el tiempo que falta, «¡Cosechado!») aparece en una tarjeta pequeña sobre la parte de arriba de la granja. Desaparece sola tras unos segundos, o cuando la tocas, y nunca mueve los botones.
+
 ## El huerto
 - Toca un **bancal vacío** (solo la tierra marrón) y elige qué sembrar. Cada semilla cuesta unas monedas.
 - La planta crece sola, en tiempo real: primero un brote, luego una planta joven con una barrita que se va llenando, luego la cosecha madura, que brilla. Toca un bancal que está creciendo para ver su nombre y el tiempo que falta.

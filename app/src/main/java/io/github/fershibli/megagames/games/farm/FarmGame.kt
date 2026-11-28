@@ -22,11 +22,13 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -48,9 +50,11 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
@@ -83,6 +87,10 @@ private const val TICK_MS = 1_000L
 /** How long a bed just bought blinks, and each stage of the picture of a bed growing. */
 private const val FRESH_MS = 6_000L
 private const val BED_FRAME_MS = 900L
+
+/** How long a message stays on its card (scaled by the pace) and the gap above it. */
+private const val NOTE_MS = 5_000L
+private val NOTE_TOP = 5.dp
 
 private enum class Tab(@StringRes val label: Int) {
     FARM(R.string.game_farm),
@@ -123,19 +131,23 @@ fun FarmGame(host: GameHost) {
     // Taps read the clock afresh, so a crop that just ripened can be picked at once.
     val time = { clock.now().also { now = it } }
     var tab by remember { mutableStateOf(Tab.FARM) }
-    var message by remember { mutableStateOf<String?>(null) }
+    // Each message is a new object, so saying the same thing twice restarts the timer.
+    var message by remember { mutableStateOf<FarmNote?>(null) }
+    val say: (String?) -> Unit = { message = it?.let(::FarmNote) }
+    val pace = currentPace
+    LaunchedEffect(message) { if (message != null) { pace.wait(NOTE_MS); message = null } }
     val p = LocalPalette.current
     val w = world
 
     Column(Modifier.fillMaxSize()) {
         Box(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp), contentAlignment = Alignment.Center) {
             val purse = stringResource(R.string.farm_coins, w.coins) + " · " + stringResource(R.string.farm_stars, w.stars)
-            StatusPill(if (message != null) purse + "\n" + message else purse, Modifier.testTag("farm-status"))
+            StatusPill(purse, Modifier.testTag("farm-status"))
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
             Tab.entries.forEach { t ->
                 BigButton(
-                    stringResource(t.label), { tab = t; message = null },
+                    stringResource(t.label), { tab = t; say(null) },
                     Modifier.weight(1f).testTag("farm-tab-${t.name.lowercase()}").semantics { role = Role.Tab },
                     style = if (t == tab) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, compact = true,
                 )
@@ -143,11 +155,31 @@ fun FarmGame(host: GameHost) {
         }
         Box(Modifier.weight(1f).fillMaxWidth()) {
             when (tab) {
-                Tab.FARM -> SceneTab(w, now, time, p, change) { message = it }
-                Tab.ORDERS -> OrdersTab(w, p, change) { message = it }
+                Tab.FARM -> SceneTab(w, now, time, p, change, say)
+                Tab.ORDERS -> OrdersTab(w, p, change, say)
                 Tab.BARN -> BarnTab(w, p, change)
             }
+            // Over the content, not in the layout: nothing below it moves, and taps outside it pass through.
+            message?.let { InfoCard(it.text, p, Modifier.align(Alignment.TopCenter).padding(top = NOTE_TOP, start = 12.dp, end = 12.dp)) { message = null } }
         }
+    }
+}
+
+/** One message on the card; a new object each time, so the same words again start a new timer. */
+private class FarmNote(val text: String)
+
+/** A card with what the farm says. It reads out politely, wraps at any text size and goes away when tapped. */
+@Composable
+private fun InfoCard(text: String, p: Palette, modifier: Modifier = Modifier, onDismiss: () -> Unit) {
+    Surface(
+        modifier.widthIn(max = 360.dp).testTag("farm-note").semantics { liveRegion = LiveRegionMode.Polite },
+        shape = RoundedCornerShape(16.dp), color = p.surface, shadowElevation = 6.dp,
+        border = BorderStroke(if (p.strongOutlines) 3.dp else 1.dp, p.outline),
+    ) {
+        Text(
+            text, Modifier.clickable(onClick = onDismiss).padding(horizontal = 16.dp, vertical = 10.dp),
+            color = p.text, style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center,
+        )
     }
 }
 
