@@ -53,4 +53,11 @@
     <string name="farm_plot_sow_first">Siembra algo antes. Con algo creciendo, siempre habrá una cosecha para vender.</string>
     <string name="farm_plot_here">Listo: el bancal nuevo es el que parpadea en el campo.</string>
     <string name="farm_plot_picture">Un bancal creciendo, de la tierra desnuda a la cosecha</string>
+    <!-- Shown on screen: the price comes with the coin picture (see FarmPrice.kt); the strings above are what screen readers hear. -->
+    <string name="farm_seed_shown">%1$s · %2$s · %3$d min</string>
+    <string name="farm_buy_plot_shown">Nuevo bancal (%1$s)</string>
+    <string name="farm_animal_shown">%1$s · %2$s</string>
+    <string name="farm_order_reward_shown">Paga %1$s y una estrella</string>
+    <string name="farm_barn_row_shown">%1$s: %2$d · %3$s cada uno</string>
+    <string name="farm_plot_note_shown">Precio: %1$s. Va junto a los otros bancales y crece como ellos: brote, hojas y luego la cosecha.</string>
 </resources>

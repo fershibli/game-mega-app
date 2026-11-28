@@ -9,7 +9,7 @@ Trois boutons en haut ouvrent la **Ferme**, les **Commandes** et la **Grange**. 
 Quand vous touchez une planche ou un animal, ce qu'il dit (son nom, le temps restant, « Récolté ! ») apparaît sur une petite carte au-dessus du haut de la ferme. Elle disparaît toute seule au bout de quelques secondes, ou quand vous la touchez, et ne déplace jamais les boutons.
 
 ## Le potager
-- Touchez un **carré vide** (la terre brune nue) et choisissez quoi semer. Chaque graine coûte quelques pièces.
+- Touchez un **carré vide** (la terre brune nue) et choisissez quoi semer. Chaque graine coûte quelques pièces. Le prix s’affiche à côté d’une petite pièce dessinée, comme tous les prix de la ferme.
 - La culture pousse toute seule, en temps réel : d’abord une pousse, puis une jeune plante avec une petite barre qui se remplit, puis la récolte mûre, qui scintille. Touchez un carré qui pousse pour lire son nom et le temps restant.
 - **Arroser** (touchez un carré avec une goutte bleue, ou **Tout arroser**) fait pousser le reste deux fois plus vite. Une fois par culture suffit.
 - Touchez un carré mûr : il donne **deux** de sa culture, qui vont directement à la grange. **Tout ramasser** le fait pour tous les carrés mûrs à la fois et prend aussi ce que les animaux ont produit. Le bouton s’allume quand quelque chose est prêt et dit ce qui est allé à la grange, par exemple « Dans la grange : Salade ×4, Œuf ×2 ».

@@ -9,7 +9,7 @@ Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Sche
 Wenn du ein Beet oder ein Tier antippst, erscheint das, was es sagt (sein Name, die verbleibende Zeit, „Geerntet!“), auf einer kleinen Karte über dem oberen Teil des Bauernhofs. Sie verschwindet nach ein paar Sekunden von selbst oder wenn du sie antippst und verschiebt nie die Knöpfe.
 
 ## Das Beet
-- Tippe auf ein **leeres Beet** (nur braune Erde) und wähle, was du säen willst. Jeder Samen kostet ein paar Münzen.
+- Tippe auf ein **leeres Beet** (nur braune Erde) und wähle, was du säen willst. Jeder Samen kostet ein paar Münzen. Der Preis steht neben einem kleinen Münzbild, wie jeder Preis auf dem Hof.
 - Die Pflanze wächst von selbst in echter Zeit: erst ein Keimling, dann eine junge Pflanze mit einem kleinen Balken, der sich füllt, dann die reife Ernte, die funkelt. Tippe auf ein wachsendes Beet, um den Namen und die restliche Zeit zu sehen.
 - **Gießen** (tippe auf ein Beet mit einem blauen Tropfen oder auf **Alles gießen**) lässt den Rest doppelt so schnell wachsen. Einmal pro Pflanze genügt.
 - Tippe auf ein reifes Beet: Es gibt **zwei** seiner Ernte, die direkt in die Scheune kommen. **Alles einsammeln** macht das mit allen reifen Beeten auf einmal und nimmt auch mit, was die Tiere erzeugt haben. Die Taste leuchtet, wenn etwas bereit ist, und sagt, was in die Scheune kam, zum Beispiel „In der Scheune: Salat ×4, Ei ×2“.

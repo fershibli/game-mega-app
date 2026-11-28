@@ -392,19 +392,25 @@ object FarmSprites {
         ".oooooo.",
     )
 
-    /** The coin of the purse: gold with a darker rim and a shine. */
+    /**
+     * The coin of the purse and of every price: a round disc, 12 squares across, with a stepped
+     * outline, a lighter rim on the upper left, a darker one on the lower right, a face with a
+     * shine and a mark in the middle.
+     */
     val coin = pixelArt(
-        "$OUTLINE y=FFD54F d=E0A100 w=FFF59D",
-        "..oooooo..",
-        ".oyyyyyyo.",
-        "oywwyyyydo",
-        "oywyyddydo",
-        "oyyydyyydo",
-        "oyyydyyydo",
-        "oyydyyyydo",
-        "oyyyyyyydo",
-        ".oddddddo.",
-        "..oooooo..",
+        "$OUTLINE f=FFD54F e=F2B705 d=C98A00 w=FFF59D s=FFFDE7 m=E0A100",
+        "....oooo....",
+        "..oowweeoo..",
+        ".oweeeeeedo.",
+        ".oweffffedo.",
+        "owesfffffedo",
+        "owesfmmffedo",
+        "oweffmmffedo",
+        "oweffmmffedo",
+        ".odeffffedo.",
+        ".oddeeeeddo.",
+        "..ooddddoo..",
+        "....oooo....",
     )
 
     /** The star of the purse: yellow with an outline, so it still reads on any background. */

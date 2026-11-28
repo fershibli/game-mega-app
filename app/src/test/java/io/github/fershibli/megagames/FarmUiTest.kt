@@ -2,10 +2,15 @@ package io.github.fershibli.megagames
 
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.test.assertContentDescriptionEquals
+import androidx.compose.ui.test.assertCountEquals
 import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotEnabled
 import androidx.compose.ui.test.assertTextEquals
-import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.junit4.v2.createComposeRule
+import androidx.compose.ui.test.hasAnyAncestor
+import androidx.compose.ui.test.hasTestTag
+import androidx.compose.ui.test.onAllNodesWithTag
+import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
@@ -16,6 +21,7 @@ import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.Settings
 import io.github.fershibli.megagames.core.WorldStore
 import io.github.fershibli.megagames.games.GameContent
+import io.github.fershibli.megagames.games.farm.Animal
 import io.github.fershibli.megagames.games.farm.FARM_WORLD_KEY
 import io.github.fershibli.megagames.games.farm.FarmClock
 import io.github.fershibli.megagames.games.farm.FarmRules
@@ -72,7 +78,7 @@ class FarmUiTest {
     fun sowWaitAndHarvestALettuceThenSellIt() {
         show()
         rule.onNodeWithTag("farm-plot-0").performClick()
-        rule.onNodeWithText("Lettuce · coins: 2 · 2 min").performClick()
+        rule.onNodeWithContentDescription("Lettuce · coins: 2 · 2 min").performClick()
         rule.waitForIdle()
         assertEquals("lettuce", stored().plots[0].crop)
         assertEquals(FarmRules.START_COINS - 2, stored().coins)
@@ -102,7 +108,7 @@ class FarmUiTest {
         rule.onNodeWithText("Sow a bed first", substring = true).assertExists()
         rule.onNodeWithTag("farm-plot-${FarmRules.START_PLOTS}").assertDoesNotExist()
         rule.onNodeWithTag("farm-plot-0").performClick()
-        rule.onNodeWithText("Lettuce · coins: 2 · 2 min").performClick()
+        rule.onNodeWithContentDescription("Lettuce · coins: 2 · 2 min").performClick()
         rule.waitForIdle()
         // Now it asks, with the picture of a bed growing; Cancel changes nothing.
         rule.onNodeWithTag("farm-buy-plot").performClick()
@@ -172,5 +178,44 @@ class FarmUiTest {
         rule.onNodeWithTag("farm-stars-value", useUnmergedTree = true).assertTextEquals("8")
         // The words are gone from the screen.
         rule.onNodeWithText("Coins:", substring = true).assertDoesNotExist()
+    }
+
+    @Test
+    fun pricesShowTheCoinPictureAndStillReadTheWords() {
+        val t = clock.time
+        val world = FarmWorld(coins = 80, stars = 3, plots = listOf(Plot("lettuce", t - minute), Plot()), orders = listOf(Order(mapOf("egg" to 2), 40)), barn = mapOf("egg" to 3))
+        val bed = FarmRules.plotCost(world)
+        seed(world)
+        show()
+        // The new-bed button: the coin picture and the number, the words for screen readers.
+        rule.onNodeWithContentDescription("New bed (coins: $bed)").assertExists()
+        rule.onNodeWithText("coins", substring = true).assertDoesNotExist()
+        rule.onAllNodesWithTag("farm-price-coin", useUnmergedTree = true).assertCountEquals(1)
+        // The seed options of the sow dialog.
+        rule.onNodeWithTag("farm-plot-1").performClick()
+        rule.onNodeWithContentDescription("Lettuce · coins: 2 · 2 min").assertExists()
+        rule.onNodeWithContentDescription("Carrot · coins: 4 · 5 min").assertExists()
+        rule.onNodeWithText("coins:", substring = true).assertDoesNotExist()
+        assertEquals(true, rule.onAllNodesWithTag("farm-price-coin", useUnmergedTree = true).fetchSemanticsNodes().size > 2)
+        rule.onNodeWithText("Cancel").performClick()
+        rule.waitForIdle()
+        // The new-bed question.
+        rule.onNodeWithTag("farm-buy-plot").performClick()
+        rule.onNodeWithContentDescription("Price in coins: $bed", substring = true).assertExists()
+        rule.onNode(hasTestTag("farm-price-coin") and hasAnyAncestor(hasTestTag("farm-plot-note")), useUnmergedTree = true).assertExists()
+        rule.onNodeWithText("Cancel").performClick()
+        rule.waitForIdle()
+        // The animals.
+        rule.onNodeWithTag("farm-buy-animal").performClick()
+        rule.onNodeWithContentDescription("Chicken · coins: ${Animal.CHICKEN.cost}").assertExists()
+        rule.onNodeWithText("Cancel").performClick()
+        rule.waitForIdle()
+        // The order reward and the barn.
+        rule.onNodeWithTag("farm-tab-orders").performClick()
+        rule.onNodeWithContentDescription("Reward: a star, coins +40").assertExists()
+        rule.onNode(hasTestTag("farm-price-coin") and hasAnyAncestor(hasTestTag("farm-order-0")), useUnmergedTree = true).assertExists()
+        rule.onNodeWithTag("farm-tab-barn").performClick()
+        rule.onNodeWithContentDescription("Egg: 3 · price: ${Item.EGG.price}").assertExists()
+        rule.onNode(hasTestTag("farm-price-coin") and hasAnyAncestor(hasTestTag("farm-barn-egg")), useUnmergedTree = true).assertExists()
     }
 }

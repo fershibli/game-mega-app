@@ -41,6 +41,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
@@ -68,6 +69,55 @@ fun BigButton(
     compact: Boolean = false,
     bigText: Boolean = false,
 ) {
+    ButtonShell(onClick, modifier, style, enabled, compact) { fg, alpha ->
+        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
+            if (icon != null) {
+                IconView(icon, fg.copy(alpha = alpha), size = 26.dp)
+                if (text.isNotEmpty()) Spacer(Modifier.width(10.dp))
+            }
+            if (text.isNotEmpty()) {
+                val style = if (bigText) MaterialTheme.typography.headlineMedium else MaterialTheme.typography.labelLarge
+                // Text shrinks to fit narrow buttons instead of breaking a word in the middle.
+                BasicText(
+                    text,
+                    style = style.copy(color = fg.copy(alpha = alpha), textAlign = TextAlign.Center),
+                    maxLines = if (' ' in text.trim()) 2 else 1,
+                    autoSize = TextAutoSize.StepBased(minFontSize = 11.sp, maxFontSize = style.fontSize, stepSize = 1.sp),
+                )
+            }
+        }
+    }
+}
+
+/**
+ * The same button around any [content], for a label that is not plain text (a price with a coin
+ * picture, say). [content] gets the label style and color; it should also describe itself to
+ * screen readers, since the picture is decoration.
+ */
+@Composable
+fun BigButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    style: ButtonStyle = ButtonStyle.PRIMARY,
+    enabled: Boolean = true,
+    compact: Boolean = false,
+    content: @Composable (TextStyle, Color) -> Unit,
+) {
+    ButtonShell(onClick, modifier, style, enabled, compact) { fg, alpha ->
+        content(MaterialTheme.typography.labelLarge, fg.copy(alpha = alpha))
+    }
+}
+
+/** The look and touch of every large button; [content] draws the label. */
+@Composable
+private fun ButtonShell(
+    onClick: () -> Unit,
+    modifier: Modifier,
+    style: ButtonStyle,
+    enabled: Boolean,
+    compact: Boolean,
+    content: @Composable (fg: Color, alpha: Float) -> Unit,
+) {
     val haptics = currentHaptics
     val p = LocalPalette.current
     val (bg, fg) = when (style) {
@@ -89,22 +139,7 @@ fun BigButton(
             .padding(horizontal = if (compact) 10.dp else 18.dp, vertical = 8.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Center) {
-            if (icon != null) {
-                IconView(icon, fg.copy(alpha = alpha), size = 26.dp)
-                if (text.isNotEmpty()) Spacer(Modifier.width(10.dp))
-            }
-            if (text.isNotEmpty()) {
-                val style = if (bigText) MaterialTheme.typography.headlineMedium else MaterialTheme.typography.labelLarge
-                // Text shrinks to fit narrow buttons instead of breaking a word in the middle.
-                BasicText(
-                    text,
-                    style = style.copy(color = fg.copy(alpha = alpha), textAlign = TextAlign.Center),
-                    maxLines = if (' ' in text.trim()) 2 else 1,
-                    autoSize = TextAutoSize.StepBased(minFontSize = 11.sp, maxFontSize = style.fontSize, stepSize = 1.sp),
-                )
-            }
-        }
+        content(fg, alpha)
     }
 }
 
@@ -216,6 +251,39 @@ fun BigDialog(
                 buttons.forEachIndexed { i, (label, action) ->
                     BigButton(label, action, Modifier.fillMaxWidth(), style = if (i == primaryIndex) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY)
                 }
+            }
+        },
+    )
+}
+
+/** A dialog button whose label is [content] (a price with a coin picture) instead of plain text. */
+class DialogButton(val onClick: () -> Unit, val content: @Composable (TextStyle, Color) -> Unit)
+
+/** [BigDialog] with some buttons drawn by [DialogButton.content]; [labels] is placed after them (Cancel). */
+@Composable
+fun BigDialog(
+    title: String,
+    message: String?,
+    onDismiss: () -> Unit,
+    buttons: List<DialogButton>,
+    labels: List<Pair<String, () -> Unit>>,
+    dismissible: Boolean = true,
+) {
+    val p = LocalPalette.current
+    AlertDialog(
+        onDismissRequest = { if (dismissible) onDismiss() },
+        containerColor = p.surface,
+        title = { Text(title, style = MaterialTheme.typography.headlineSmall, color = p.text) },
+        text = if (message == null) null else ({ Text(message, style = MaterialTheme.typography.bodyLarge, color = p.text) }),
+        confirmButton = {
+            val windowHeight = LocalWindowInfo.current.containerSize.height
+            val maxHeight = if (windowHeight > 0) with(LocalDensity.current) { (windowHeight * 0.6f).toDp() } else Dp.Unspecified
+            Column(
+                Modifier.fillMaxWidth().heightIn(max = maxHeight).verticalScroll(rememberScrollState()),
+                verticalArrangement = Arrangement.spacedBy(10.dp),
+            ) {
+                buttons.forEach { BigButton(it.onClick, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY, content = it.content) }
+                labels.forEach { (label, action) -> BigButton(label, action, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY) }
             }
         },
     )

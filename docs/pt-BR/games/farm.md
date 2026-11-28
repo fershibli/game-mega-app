@@ -9,7 +9,7 @@ Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Acima
 Quando você toca num canteiro ou num animal, o que ele diz (o nome, o tempo que falta, "Colhido!") aparece num cartãozinho sobre o alto da fazenda. Ele some sozinho depois de alguns segundos, ou quando você toca nele, e nunca empurra os botões.
 
 ## A horta
-- Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas.
+- Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas. O preço aparece ao lado de uma moedinha desenhada, como todos os preços da fazenda.
 - A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova com uma barrinha que vai enchendo, depois a colheita madura, que brilha. Toque num canteiro que está crescendo para ver o nome e o tempo que falta.
 - **Regar** (toque num canteiro com uma gota azul, ou em **Regar tudo**) faz o resto do crescimento andar duas vezes mais rápido. Uma vez por plantação basta.
 - Toque num canteiro maduro: ele dá **dois** do que foi plantado, que vão direto para o celeiro. **Coletar tudo** faz isso com todos os canteiros maduros de uma vez e também leva o que os animais produziram. O botão acende quando há algo pronto e diz o que foi para o celeiro, como "No celeiro: Alface ×4, Ovo ×2".

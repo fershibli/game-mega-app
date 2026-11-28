@@ -9,7 +9,7 @@ Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. So
 Quando tocchi un'aiuola o un animale, ciò che dice (il nome, il tempo che manca, «Raccolto!») compare su una piccola scheda sopra la parte alta della fattoria. Sparisce da sola dopo qualche secondo, oppure quando la tocchi, e non sposta mai i pulsanti.
 
 ## L’orto
-- Tocca un’**aiuola vuota** (solo terra marrone) e scegli cosa seminare. Ogni seme costa qualche moneta.
+- Tocca un’**aiuola vuota** (solo terra marrone) e scegli cosa seminare. Ogni seme costa qualche moneta. Il prezzo appare accanto a una piccola moneta disegnata, come tutti i prezzi della fattoria.
 - La pianta cresce da sola, in tempo reale: prima un germoglio, poi una piantina con una barretta che si riempie, poi il raccolto maturo, che luccica. Tocca un’aiuola che sta crescendo per leggerne il nome e il tempo che manca.
 - **Annaffiare** (tocca un’aiuola con una goccia blu, o **Annaffia tutto**) fa crescere il resto due volte più in fretta. Basta una volta per pianta.
 - Tocca un’aiuola matura: dà **due** del suo raccolto, che vanno subito nel fienile. **Prendi tutto** lo fa con tutte le aiuole mature insieme e porta anche ciò che hanno prodotto gli animali. Il pulsante si accende quando c’è qualcosa di pronto e dice cosa è andato nel fienile, per esempio «Nel fienile: Lattuga ×4, Uovo ×2».

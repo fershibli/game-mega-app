@@ -280,6 +280,23 @@ class ScreenshotTest {
         rule.onNodeWithTag("farm-note").assertExists()
         save("game_farm_card_pt")
     }
+    @Test fun farmSowPrices() {
+        seedFarm()
+        gameShot("game_farm_sow_prices", GameId.FARM)
+        // Every seed shows its price with the coin picture.
+        rule.onNodeWithTag("farm-plot-4").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("What shall we sow?").assertExists()
+        save("game_farm_sow_prices")
+    }
+    @Test fun farmSowPricesBigText() {
+        seedFarm()
+        gameShot("game_farm_sow_big_text", GameId.FARM, settings = Settings(fontScale = Settings.SCALE_MAX, darkMode = true))
+        rule.onNodeWithTag("farm-plot-4").performClick()
+        rule.waitForIdle()
+        rule.onNodeWithText("What shall we sow?").assertExists()
+        save("game_farm_sow_big_text")
+    }
     @Test fun farmOrders() {
         seedFarm()
         gameShot("game_farm_orders", GameId.FARM, tab = "orders")

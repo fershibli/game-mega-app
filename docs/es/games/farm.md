@@ -9,7 +9,7 @@ Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Encim
 Cuando tocas un bancal o un animal, lo que dice (su nombre, el tiempo que falta, «¡Cosechado!») aparece en una tarjeta pequeña sobre la parte de arriba de la granja. Desaparece sola tras unos segundos, o cuando la tocas, y nunca mueve los botones.
 
 ## El huerto
-- Toca un **bancal vacío** (solo la tierra marrón) y elige qué sembrar. Cada semilla cuesta unas monedas.
+- Toca un **bancal vacío** (solo la tierra marrón) y elige qué sembrar. Cada semilla cuesta unas monedas. El precio aparece junto a una pequeña moneda dibujada, como todos los precios de la granja.
 - La planta crece sola, en tiempo real: primero un brote, luego una planta joven con una barrita que se va llenando, luego la cosecha madura, que brilla. Toca un bancal que está creciendo para ver su nombre y el tiempo que falta.
 - **Regar** (toca un bancal con una gota azul, o **Regar todo**) hace que el resto del crecimiento vaya el doble de rápido. Basta una vez por cultivo.
 - Toca un bancal maduro: da **dos** de su cultivo, que van directos al granero. **Recoger todo** lo hace con todos los bancales maduros a la vez y además lleva lo que han producido los animales. El botón se ilumina cuando hay algo listo y dice qué fue al granero, por ejemplo "En el granero: Lechuga ×4, Huevo ×2".
