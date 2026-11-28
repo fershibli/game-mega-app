@@ -13,4 +13,6 @@
     <string name="show_categories_desc">Los juegos se muestran en grupos: cartas, juegos de mesa, rompecabezas… Desactívalo para ver una sola lista.</string>
     <string name="recent_first">Últimos jugados primero</string>
     <string name="recent_first_desc">El juego que abres sube al principio de su grupo, y su grupo sube al principio de la lista. El resto mantiene su orden, así tus favoritos quedan arriba.</string>
+    <string name="open_last_game">Abrir en el último juego</string>
+    <string name="open_last_game_desc">Al abrir la app, vuelve al último juego y pregunta si quieres seguir. Desactivado: abre en el menú principal. Tus partidas se guardan de todas formas.</string>
 </resources>

@@ -90,10 +90,11 @@ fun MegaGamesApp(
         settings = it
         settingsStore.save(it)
     }
-    // A saved game found at cold start goes straight to the game screen, which asks
-    // "continue or go back to the menu?".
+    // With "open the last game" on (off by default), a saved game found at cold start goes straight
+    // to the game screen, which asks "continue or go back to the menu?". Off, the app opens on the
+    // menu; the game stays saved and can be continued from the list.
     val initial = remember {
-        val saved = if (offerResume) saveStore.load() else null
+        val saved = if (offerResume && settings.openLastGame) saveStore.load() else null
         val game = saved?.let { GameId.fromKey(it.game) }
         if (saved != null && game != null) {
             // A game keeps the language it was started in.

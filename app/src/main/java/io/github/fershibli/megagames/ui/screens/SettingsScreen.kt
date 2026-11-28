@@ -244,6 +244,9 @@ fun SettingsScreen(
                     ToggleRow(stringResource(R.string.recent_first), stringResource(R.string.recent_first_desc), settings.recentFirst) {
                         onChange(settings.copy(recentFirst = it))
                     }
+                    ToggleRow(stringResource(R.string.open_last_game), stringResource(R.string.open_last_game_desc), settings.openLastGame) {
+                        onChange(settings.copy(openLastGame = it))
+                    }
                 }
 
                 Section(stringResource(R.string.section_about)) {
