@@ -19,6 +19,7 @@ import androidx.compose.ui.test.onAllNodesWithTag
 import io.github.fershibli.megagames.core.AppJson
 import io.github.fershibli.megagames.core.AppLanguage
 import io.github.fershibli.megagames.core.Difficulty
+import io.github.fershibli.megagames.core.GameHost
 import io.github.fershibli.megagames.core.GameId
 import io.github.fershibli.megagames.core.SaveStore
 import io.github.fershibli.megagames.core.SavedGame
@@ -216,5 +217,20 @@ class DeleteSaveTest {
         assertEquals(before, SettingsStore(app).load())
         saves.clear()
         assertNull(saves.load())
+    }
+
+    @Test fun aDiscardedGameIsNeverSavedAgain() {
+        val saves = SaveStore(app).apply { clear() }
+        val puzzle = newSudoku(Difficulty.EASY, Random(7))
+        val host = GameHost(GameId.SUDOKU, Difficulty.EASY, null, saves) {}
+        host.save(SudokuState.serializer(), puzzle)
+        saves.flush()
+        assertNotNull(saves.load(GameId.SUDOKU))
+        host.discard()
+        // A move or a clock tick that lands after the delete must not bring the save back.
+        host.save(SudokuState.serializer(), puzzle)
+        saves.flush()
+        assertNull(saves.load(GameId.SUDOKU))
+        assertEquals(false, GameId.SUDOKU in saves.inProgress())
     }
 }

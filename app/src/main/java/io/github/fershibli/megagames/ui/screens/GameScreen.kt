@@ -146,7 +146,7 @@ fun GameScreen(
                     onNewOptions = onNewOptions.takeUnless { lasting },
                     onLearn = { showHowTo = true },
                     // Only this game's save, and only when there is one (pastimes keep a lasting world instead).
-                    onDeleteSave = if (!lasting && hasSave) ({ saveStore.clear(game); onExit() }) else null,
+                    onDeleteSave = if (!lasting && hasSave) ({ host.discard(); onExit() }) else null,
                     deleteSaveOf = stringResource(game.title),
                 ),
             )

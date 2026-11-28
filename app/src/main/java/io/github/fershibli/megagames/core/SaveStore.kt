@@ -174,6 +174,15 @@ class GameHost(
         store?.save(SavedGame(game.key, difficulty, element, variant = variant?.key, setup = setup, language = language?.name))
     }
 
+    /**
+     * Deletes this game's save for good and stops saving it again, so a move, a clock tick or the
+     * computer's turn landing after it can't bring the deleted save back.
+     */
+    fun discard() {
+        finished = true
+        store?.clear(game)
+    }
+
     fun finish(outcome: GameOutcome) {
         if (finished) return
         finished = true
