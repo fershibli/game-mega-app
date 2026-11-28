@@ -25,14 +25,14 @@
     <string name="farm_less_minute">Menos de 1 min</string>
     <string name="farm_water_me">toque para regar</string>
     <string name="farm_harvested">Colhido! Já está no celeiro.</string>
+    <string name="farm_in_barn">No celeiro: %1$s</string>
     <string name="farm_sow_title">O que vamos plantar?</string>
     <string name="farm_seed_option">%1$s · %2$d moedas · %3$d min</string>
     <string name="farm_no_coins">Faltam moedas. Venda alguma coisa no celeiro antes.</string>
     <string name="farm_more_with_stars">Mais sementes e animais aparecem conforme você ganha estrelas com os pedidos.</string>
-    <string name="farm_harvest_all">Colher tudo</string>
     <string name="farm_water_all">Regar tudo</string>
     <string name="farm_buy_plot">Novo canteiro (%1$d moedas)</string>
-    <string name="farm_collect_all">Recolher tudo</string>
+    <string name="farm_collect_all">Coletar tudo</string>
     <string name="farm_buy_animal">Comprar animal</string>
     <string name="farm_buy_animal_title">Qual animal?</string>
     <string name="farm_animal_option">%1$s · %2$d moedas</string>

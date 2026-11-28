@@ -25,11 +25,11 @@
     <string name="farm_less_minute">不到 1 分钟</string>
     <string name="farm_water_me">点一下浇水</string>
     <string name="farm_harvested">收好了！已放进谷仓。</string>
+    <string name="farm_in_barn">放进谷仓：%1$s</string>
     <string name="farm_sow_title">种点什么？</string>
     <string name="farm_seed_option">%1$s · %2$d 金币 · %3$d 分钟</string>
     <string name="farm_no_coins">金币不够。先去谷仓卖点东西吧。</string>
     <string name="farm_more_with_stars">完成订单得到星星后，会有更多种子和动物。</string>
-    <string name="farm_harvest_all">全部收获</string>
     <string name="farm_water_all">全部浇水</string>
     <string name="farm_buy_plot">新菜畦（%1$d 金币）</string>
     <string name="farm_collect_all">全部收集</string>

@@ -10,7 +10,7 @@ Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Tus *
 - Toca un **bancal vacío** (solo la tierra marrón) y elige qué sembrar. Cada semilla cuesta unas monedas.
 - La planta crece sola, en tiempo real: primero un brote, luego una planta joven con una barrita que se va llenando, luego la cosecha madura, que brilla. Toca un bancal que está creciendo para ver su nombre y el tiempo que falta.
 - **Regar** (toca un bancal con una gota azul, o **Regar todo**) hace que el resto del crecimiento vaya el doble de rápido. Basta una vez por cultivo.
-- Toca un bancal maduro (o **Cosechar todo**): cada bancal da **dos** de su cultivo, que van directos al granero.
+- Toca un bancal maduro: da **dos** de su cultivo, que van directos al granero. **Recoger todo** lo hace con todos los bancales maduros a la vez y además lleva lo que han producido los animales. El botón se ilumina cuando hay algo listo y dice qué fue al granero, por ejemplo "En el granero: Lechuga ×4, Huevo ×2".
 - **Nuevo bancal** añade un bancal, hasta doce. Antes pregunta, con el dibujo de un bancal creciendo, y solo se puede si ya hay algo sembrado: así siempre hay una cosecha para vender. El bancal nuevo parpadea un momento para que veas dónde quedó.
 
 | Cultivo | Tiempo | Semillas | Se vende a (cada) | Estrellas |
@@ -23,7 +23,7 @@ Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Tus *
 | Calabaza | 90 min | 20 | 28 | 8 |
 
 ## Los animales
-Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta **tres** productos esperando, que se ven en un globito encima; toca el animal (o **Recoger todo**) para llevarlos al granero.
+Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta **tres** productos esperando, que se ven en un globito encima; toca el animal (o **Recoger todo**, que también cosecha los bancales maduros) para llevarlos al granero.
 
 | Animal | Da | Cada | Cuesta | Se vende a | Estrellas |
 |---|---|---|---|---|---|

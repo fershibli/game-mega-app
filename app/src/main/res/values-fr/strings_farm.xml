@@ -25,11 +25,11 @@
     <string name="farm_less_minute">Moins d’1 min</string>
     <string name="farm_water_me">touchez pour arroser</string>
     <string name="farm_harvested">Récolté ! C’est dans la grange.</string>
+    <string name="farm_in_barn">Dans la grange : %1$s</string>
     <string name="farm_sow_title">Que semer ?</string>
     <string name="farm_seed_option">%1$s · %2$d pièces · %3$d min</string>
     <string name="farm_no_coins">Pas assez de pièces. Vendez d’abord quelque chose à la grange.</string>
     <string name="farm_more_with_stars">D’autres graines et animaux arrivent à mesure que vous gagnez des étoiles avec les commandes.</string>
-    <string name="farm_harvest_all">Tout récolter</string>
     <string name="farm_water_all">Tout arroser</string>
     <string name="farm_buy_plot">Nouveau carré (%1$d pièces)</string>
     <string name="farm_collect_all">Tout ramasser</string>

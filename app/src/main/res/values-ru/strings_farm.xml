@@ -25,11 +25,11 @@
     <string name="farm_less_minute">Меньше 1 мин</string>
     <string name="farm_water_me">коснитесь, чтобы полить</string>
     <string name="farm_harvested">Собрано! Урожай в амбаре.</string>
+    <string name="farm_in_barn">В амбаре: %1$s</string>
     <string name="farm_sow_title">Что посадим?</string>
     <string name="farm_seed_option">%1$s · монет: %2$d · %3$d мин</string>
     <string name="farm_no_coins">Не хватает монет. Сначала продайте что-нибудь в амбаре.</string>
     <string name="farm_more_with_stars">Новые семена и животные появляются, когда вы получаете звёзды за заказы.</string>
-    <string name="farm_harvest_all">Собрать всё</string>
     <string name="farm_water_all">Полить всё</string>
     <string name="farm_buy_plot">Новая грядка (монет: %1$d)</string>
     <string name="farm_collect_all">Забрать всё</string>

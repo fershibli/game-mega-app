@@ -25,11 +25,11 @@
     <string name="farm_less_minute">あと1分未満</string>
     <string name="farm_water_me">タップして水やり</string>
     <string name="farm_harvested">収穫しました！納屋に入れました。</string>
+    <string name="farm_in_barn">納屋に入りました：%1$s</string>
     <string name="farm_sow_title">何をまきますか？</string>
     <string name="farm_seed_option">%1$s・%2$dコイン・%3$d分</string>
     <string name="farm_no_coins">コインが足りません。先に納屋で何か売りましょう。</string>
     <string name="farm_more_with_stars">注文で星を集めると、種や動物が増えます。</string>
-    <string name="farm_harvest_all">全部収穫</string>
     <string name="farm_water_all">全部に水やり</string>
     <string name="farm_buy_plot">畝を増やす（%1$dコイン）</string>
     <string name="farm_collect_all">全部集める</string>

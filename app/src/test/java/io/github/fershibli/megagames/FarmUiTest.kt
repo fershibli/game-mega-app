@@ -22,6 +22,7 @@ import io.github.fershibli.megagames.games.farm.Item
 import io.github.fershibli.megagames.games.farm.LocalFarmClock
 import io.github.fershibli.megagames.games.farm.Order
 import io.github.fershibli.megagames.games.farm.Pen
+import io.github.fershibli.megagames.games.farm.Plot
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
 import org.junit.Assert.assertEquals
 import org.junit.Rule
@@ -114,6 +115,27 @@ class FarmUiTest {
         assertEquals(FarmRules.START_COINS - 2 - 25, stored().coins)
         rule.onNodeWithText("the one blinking", substring = true).assertExists()
         rule.onNodeWithTag("farm-plot-${FarmRules.START_PLOTS}").assertExists()
+    }
+
+    @Test
+    fun oneCollectAllButtonGathersCropsAndAnimalProductsAndSaysWhat() {
+        val t = clock.time
+        seed(FarmWorld(coins = 0, plots = listOf(Plot("lettuce", t - 10 * minute), Plot()), pens = listOf(Pen("chicken", t - 25 * minute))))
+        show()
+        rule.onNodeWithTag("farm-harvest-all").assertDoesNotExist()
+        rule.onNodeWithTag("farm-collect-all").assertIsEnabled().performClick()
+        rule.waitForIdle()
+        assertEquals(2, stored().count(Item.LETTUCE))
+        assertEquals(2, stored().count(Item.EGG))
+        rule.onNodeWithText("In the barn: Lettuce ×2, Egg ×2", substring = true).assertExists()
+        // Nothing is ready any more, so the button rests.
+        rule.onNodeWithTag("farm-collect-all").assertIsNotEnabled()
+    }
+
+    @Test
+    fun collectAllIsDisabledWithNothingReady() {
+        show()
+        rule.onNodeWithTag("farm-collect-all").assertIsNotEnabled()
     }
 
     @Test

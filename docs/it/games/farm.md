@@ -10,7 +10,7 @@ Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Le
 - Tocca un’**aiuola vuota** (solo terra marrone) e scegli cosa seminare. Ogni seme costa qualche moneta.
 - La pianta cresce da sola, in tempo reale: prima un germoglio, poi una piantina con una barretta che si riempie, poi il raccolto maturo, che luccica. Tocca un’aiuola che sta crescendo per leggerne il nome e il tempo che manca.
 - **Annaffiare** (tocca un’aiuola con una goccia blu, o **Annaffia tutto**) fa crescere il resto due volte più in fretta. Basta una volta per pianta.
-- Tocca un’aiuola matura (o **Raccogli tutto**): ogni aiuola dà **due** del suo raccolto, che vanno subito nel fienile.
+- Tocca un’aiuola matura: dà **due** del suo raccolto, che vanno subito nel fienile. **Prendi tutto** lo fa con tutte le aiuole mature insieme e porta anche ciò che hanno prodotto gli animali. Il pulsante si accende quando c’è qualcosa di pronto e dice cosa è andato nel fienile, per esempio «Nel fienile: Lattuga ×4, Uovo ×2».
 - **Nuova aiuola** allarga l’orto, fino a dodici aiuole. Prima chiede, con il disegno di un’aiuola che cresce, e serve aver già seminato qualcosa: così c’è sempre un raccolto da vendere. L’aiuola nuova lampeggia per un momento, per vedere dove si trova.
 
 | Pianta | Tempo | Semi | Si vende a (l’uno) | Stelle |
@@ -23,7 +23,7 @@ Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Le
 | Zucca | 90 min | 20 | 28 | 8 |
 
 ## Gli animali
-Compra gli animali con **Compra un animale**. Ognuno produce da solo e tiene fino a **tre** prodotti in attesa, mostrati in un fumetto sopra di lui; tocca l’animale (o **Prendi tutto**) per portarli nel fienile.
+Compra gli animali con **Compra un animale**. Ognuno produce da solo e tiene fino a **tre** prodotti in attesa, mostrati in un fumetto sopra di lui; tocca l’animale (o **Prendi tutto**, che raccoglie anche le aiuole mature) per portarli nel fienile.
 
 | Animale | Dà | Ogni | Costa | Si vende a | Stelle |
 |---|---|---|---|---|---|

@@ -25,11 +25,11 @@
     <string name="farm_less_minute">Unter 1 Min.</string>
     <string name="farm_water_me">zum Gießen tippen</string>
     <string name="farm_harvested">Geerntet! Es liegt in der Scheune.</string>
+    <string name="farm_in_barn">In der Scheune: %1$s</string>
     <string name="farm_sow_title">Was säen wir?</string>
     <string name="farm_seed_option">%1$s · %2$d Münzen · %3$d Min.</string>
     <string name="farm_no_coins">Nicht genug Münzen. Verkaufe zuerst etwas in der Scheune.</string>
     <string name="farm_more_with_stars">Weitere Samen und Tiere kommen hinzu, wenn du mit Bestellungen Sterne verdienst.</string>
-    <string name="farm_harvest_all">Alles ernten</string>
     <string name="farm_water_all">Alles gießen</string>
     <string name="farm_buy_plot">Neues Beet (%1$d Münzen)</string>
     <string name="farm_collect_all">Alles einsammeln</string>
