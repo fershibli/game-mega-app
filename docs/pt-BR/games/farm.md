@@ -12,7 +12,7 @@ Quando você toca num canteiro ou num animal, o que ele diz (o nome, o tempo que
 - Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas.
 - A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova com uma barrinha que vai enchendo, depois a colheita madura, que brilha. Toque num canteiro que está crescendo para ver o nome e o tempo que falta.
 - **Regar** (toque num canteiro com uma gota azul, ou em **Regar tudo**) faz o resto do crescimento andar duas vezes mais rápido. Uma vez por plantação basta.
-- Toque num canteiro maduro (ou em **Colher tudo**): cada canteiro dá **dois** do que foi plantado, que vão direto para o celeiro.
+- Toque num canteiro maduro: ele dá **dois** do que foi plantado, que vão direto para o celeiro. **Coletar tudo** faz isso com todos os canteiros maduros de uma vez e também leva o que os animais produziram. O botão acende quando há algo pronto e diz o que foi para o celeiro, como "No celeiro: Alface ×4, Ovo ×2".
 - **Novo canteiro** aumenta a horta, até doze canteiros. Antes ele pergunta, com o desenho de um canteiro crescendo, e só aparece se já houver algo plantado: assim sempre tem uma colheita para vender. O canteiro novo pisca por um momento, para você ver onde ele ficou.
 
 | Planta | Tempo | Semente | Vende por (cada) | Estrelas |
@@ -25,7 +25,7 @@ Quando você toca num canteiro ou num animal, o que ele diz (o nome, o tempo que
 | Abóbora | 90 min | 20 | 28 | 8 |
 
 ## Os animais
-Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **três** produtos esperando, mostrados num balãozinho acima dele; toque no animal (ou em **Recolher tudo**) para levá-los ao celeiro.
+Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **três** produtos esperando, mostrados num balãozinho acima dele; toque no animal (ou em **Coletar tudo**, que também colhe os canteiros maduros) para levá-los ao celeiro.
 
 | Animal | Dá | A cada | Custa | Vende por | Estrelas |
 |---|---|---|---|---|---|

@@ -12,7 +12,7 @@ Quand vous touchez une planche ou un animal, ce qu'il dit (son nom, le temps res
 - Touchez un **carré vide** (la terre brune nue) et choisissez quoi semer. Chaque graine coûte quelques pièces.
 - La culture pousse toute seule, en temps réel : d’abord une pousse, puis une jeune plante avec une petite barre qui se remplit, puis la récolte mûre, qui scintille. Touchez un carré qui pousse pour lire son nom et le temps restant.
 - **Arroser** (touchez un carré avec une goutte bleue, ou **Tout arroser**) fait pousser le reste deux fois plus vite. Une fois par culture suffit.
-- Touchez un carré mûr (ou **Tout récolter**) : chaque carré donne **deux** de sa culture, qui vont directement à la grange.
+- Touchez un carré mûr : il donne **deux** de sa culture, qui vont directement à la grange. **Tout ramasser** le fait pour tous les carrés mûrs à la fois et prend aussi ce que les animaux ont produit. Le bouton s’allume quand quelque chose est prêt et dit ce qui est allé à la grange, par exemple « Dans la grange : Salade ×4, Œuf ×2 ».
 - **Nouveau carré** agrandit le potager, jusqu’à douze carrés. Il demande d’abord, avec le dessin d’un carré qui pousse, et il faut déjà avoir semé quelque chose : ainsi il y a toujours une récolte à vendre. Le nouveau carré clignote un moment pour que vous voyiez où il est.
 
 | Culture | Temps | Graines | Vendu (l’unité) | Étoiles |
@@ -25,7 +25,7 @@ Quand vous touchez une planche ou un animal, ce qu'il dit (son nom, le temps res
 | Citrouille | 90 min | 20 | 28 | 8 |
 
 ## Les animaux
-Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et garde jusqu’à **trois** produits en attente, montrés dans une petite bulle au-dessus ; touchez l’animal (ou **Tout ramasser**) pour les mettre dans la grange.
+Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et garde jusqu’à **trois** produits en attente, montrés dans une petite bulle au-dessus ; touchez l’animal (ou **Tout ramasser**, qui récolte aussi les carrés mûrs) pour les mettre dans la grange.
 
 | Animal | Donne | Toutes les | Coûte | Vendu | Étoiles |
 |---|---|---|---|---|---|

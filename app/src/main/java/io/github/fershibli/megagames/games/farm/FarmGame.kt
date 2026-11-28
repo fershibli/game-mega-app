@@ -199,6 +199,7 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     val sowFirst = stringResource(R.string.farm_plot_sow_first)
     val newBedHere = stringResource(R.string.farm_plot_here)
     val harvested = stringResource(R.string.farm_harvested)
+    val inBarn = stringResource(R.string.farm_in_barn)
     val itemNames = Item.entries.associateWith { stringResource(it.label) }
     val animalNames = Animal.entries.associateWith { stringResource(it.label) }
     val emptyBed = stringResource(R.string.farm_plot_empty)
@@ -251,7 +252,7 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         say(penText(i, time()))
     }
 
-    val ripe = FarmRules.ripeCount(w, now)
+    val gatherable = FarmRules.readyCount(w, now)
     val thirsty = w.plots.count { FarmRules.canWater(it, now) }
     // The scene's tap handler lives as long as the scene: it must always reach the latest farm.
     val onPlot by rememberUpdatedState<(Int) -> Unit> { tapPlot(it) }
@@ -316,9 +317,16 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         }
         Column(Modifier.fillMaxWidth().background(p.surface).padding(horizontal = 12.dp, vertical = 8.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             ActionBar {
-                BigButton(stringResource(R.string.farm_harvest_all), { change { FarmRules.harvestAll(it, time()) }; say(harvested) }, Modifier.testTag("farm-harvest-all"), enabled = ripe > 0, compact = true)
+                BigButton(
+                    stringResource(R.string.farm_collect_all),
+                    {
+                        val brought = FarmRules.gatherAll(w, time()).second
+                        change { FarmRules.gatherAll(it, time()).first }
+                        if (brought.isNotEmpty()) say(inBarn.format(brought.entries.joinToString(", ") { "${itemNames.getValue(it.key)} ×${it.value}" }))
+                    },
+                    Modifier.testTag("farm-collect-all"), style = if (gatherable > 0) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, enabled = gatherable > 0, compact = true,
+                )
                 BigButton(stringResource(R.string.farm_water_all), { change { FarmRules.waterAll(it, time()) } }, style = ButtonStyle.SECONDARY, enabled = thirsty > 0, compact = true)
-                BigButton(stringResource(R.string.farm_collect_all), { change { FarmRules.collectAll(it, time()) } }, Modifier.testTag("farm-collect-all"), style = ButtonStyle.SECONDARY, enabled = FarmRules.waitingCount(w, now) > 0, compact = true)
             }
             ActionBar {
                 if (w.plots.size < FarmRules.MAX_PLOTS) {

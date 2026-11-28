@@ -25,11 +25,11 @@
     <string name="farm_less_minute">Meno di 1 min</string>
     <string name="farm_water_me">tocca per annaffiare</string>
     <string name="farm_harvested">Raccolto! È nel fienile.</string>
+    <string name="farm_in_barn">Nel fienile: %1$s</string>
     <string name="farm_sow_title">Che cosa seminiamo?</string>
     <string name="farm_seed_option">%1$s · %2$d monete · %3$d min</string>
     <string name="farm_no_coins">Monete insufficienti. Prima vendi qualcosa nel fienile.</string>
     <string name="farm_more_with_stars">Arrivano altri semi e animali man mano che guadagni stelle con gli ordini.</string>
-    <string name="farm_harvest_all">Raccogli tutto</string>
     <string name="farm_water_all">Annaffia tutto</string>
     <string name="farm_buy_plot">Nuova aiuola (%1$d monete)</string>
     <string name="farm_collect_all">Prendi tutto</string>

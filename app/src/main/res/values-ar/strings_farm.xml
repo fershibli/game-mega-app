@@ -25,11 +25,11 @@
     <string name="farm_less_minute">أقل من دقيقة</string>
     <string name="farm_water_me">اضغط لتسقي</string>
     <string name="farm_harvested">تم الحصاد! صار في الحظيرة.</string>
+    <string name="farm_in_barn">في الحظيرة: %1$s</string>
     <string name="farm_sow_title">ماذا نزرع؟</string>
     <string name="farm_seed_option">%1$s · %2$d عملة · %3$d دقيقة</string>
     <string name="farm_no_coins">العملات لا تكفي. بِع شيئًا في الحظيرة أولًا.</string>
     <string name="farm_more_with_stars">تظهر بذور وحيوانات أخرى كلما ربحت نجومًا من الطلبات.</string>
-    <string name="farm_harvest_all">احصد الكل</string>
     <string name="farm_water_all">اسقِ الكل</string>
     <string name="farm_buy_plot">حوض جديد (%1$d عملة)</string>
     <string name="farm_collect_all">اجمع الكل</string>

@@ -12,7 +12,7 @@ When you tap a bed or an animal, what it says (its name, the time left, "Harvest
 - Tap an **empty bed** (bare brown soil) and choose what to sow. Each seed costs a few coins.
 - A crop grows by itself in real time: first a sprout, then a young plant with a small bar that fills up, then the ripe crop, which sparkles. Tap a growing bed to read its name and the time left.
 - **Watering** (tap a bed with a blue drop, or **Water all**) makes the rest of the growing go twice as fast. Once per crop is enough.
-- Tap a ripe bed (or **Harvest all**): every bed gives **two** of its crop, which go straight into the barn.
+- Tap a ripe bed: it gives **two** of its crop, which go straight into the barn. **Collect all** does it for every ripe bed at once, and also takes what the animals have made. It lights up when something is ready, and says what went into the barn, such as "In the barn: Lettuce ×4, Egg ×2".
 - **New bed** adds a bed to the field, up to twelve. It asks first, with a picture of a bed growing, and needs something already sown: that way there is always a harvest to sell. The new bed blinks for a moment so you can see where it went.
 
 | Crop | Time | Seeds | Sells for (each) | Stars needed |
@@ -25,7 +25,7 @@ When you tap a bed or an animal, what it says (its name, the time left, "Harvest
 | Pumpkin | 90 min | 20 | 28 | 8 |
 
 ## The animals
-Buy animals with **Buy an animal**. Each one makes its product on its own and keeps up to **three** waiting, shown in a little bubble above it; tap the animal (or **Collect all**) to take them to the barn.
+Buy animals with **Buy an animal**. Each one makes its product on its own and keeps up to **three** waiting, shown in a little bubble above it; tap the animal (or **Collect all**, which also harvests the ripe beds) to take them to the barn.
 
 | Animal | Gives | Every | Costs | Sells for | Stars needed |
 |---|---|---|---|---|---|
