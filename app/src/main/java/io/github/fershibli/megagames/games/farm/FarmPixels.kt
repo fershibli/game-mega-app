@@ -2,6 +2,7 @@ package io.github.fershibli.megagames.games.farm
 
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
@@ -50,6 +51,25 @@ object FarmMap {
 
     /** The paddock (fenced) covers these rows. */
     val paddockRows = 8..10
+
+    /**
+     * Where the mill stands: on the back lane, to the right of the barn, on the spot where a tree
+     * stood (the tree is left out once the mill is built), so the farm does not grow.
+     */
+    const val MILL_COL = 5.6f
+    const val MILL_ROW = 0f
+
+    /** Foot of the mill (the middle of its base) on the screen. */
+    fun millFoot(grid: IsoGrid): Offset = grid.toScreen(MILL_COL + 0.5f, MILL_ROW + 0.5f)
+
+    /** The mill's picture on the screen, as a rectangle: where a tap counts as a tap on the mill. */
+    fun millBounds(grid: IsoGrid): Rect {
+        val px = farmPixel(grid)
+        val art = FarmSprites.mill[0]
+        val foot = millFoot(grid)
+        val half = art.width * px / 2
+        return Rect(foot.x - half, foot.y - art.height * px, foot.x + half, foot.y)
+    }
 
     /** The lane at the back of the farm. */
     fun isLane(c: Int, r: Int) = r == 1
@@ -220,6 +240,82 @@ object FarmSprites {
             "..owwoowwo..",
             "...oo..oo...",
         ),
+        Item.WHEAT to pixelArt(
+            "$OUTLINE y=E8B931 w=FFE08A t=A9792B d=8E3A2A",
+            "..o...o...o.",
+            ".oyo.oyo.oyo",
+            ".owo.owo.owo",
+            ".oyo.oyo.oyo",
+            ".owo.owo.owo",
+            "..ot.ot.ot..",
+            "...ottotto..",
+            "...odddddo..",
+            "...ottotto..",
+            "....oo.oo...",
+        ),
+        Item.CORN_MEAL to pixelArt(
+            "$OUTLINE b=D9A45B d=B27D34 y=FBC02D",
+            "...oo..oo...",
+            "....oooo....",
+            "...obbbbo...",
+            "..obbbbbbo..",
+            ".obbbyybbbdo",
+            ".obbyyyybbdo",
+            ".obbyyyybbdo",
+            ".obbbyybbbdo",
+            ".obbbbbbbddo",
+            "..oddddddo..",
+            "...oooooo...",
+        ),
+        Item.FLOUR to pixelArt(
+            "$OUTLINE w=F7F2E4 s=D6CDB4 n=3F6EA8",
+            "...oo..oo...",
+            "....oooo....",
+            "...owwwwo...",
+            "..owwwwwwo..",
+            ".owwwnnwwwso",
+            ".owwnnnnwwso",
+            ".owwnnnnwwso",
+            ".owwwnnwwwso",
+            ".owwwwwwwsso",
+            "..osssssso..",
+            "...oooooo...",
+        ),
+    )
+
+    /** Wheat, which grows in its own way: thin blades, taller blades, then golden stalks. */
+    val wheatSprout = pixelArt(
+        "g=6BBF4A d=3E7D2C",
+        ".g..g..g",
+        ".g..g.g.",
+        ".dg.dg.d",
+        "..d.dd..",
+        "...dd...",
+    )
+
+    val wheatGrowing = pixelArt(
+        "g=6BBF4A d=3E7D2C l=A5D66B",
+        "..l...l..l..",
+        "..g...g..g..",
+        ".lg..lg.lg..",
+        ".gg..gg.gg.l",
+        ".gd.lgd.gd.g",
+        ".gdl.gd.gdg.",
+        "..dgg.dggd..",
+        "...dgddgd...",
+        "....dddd....",
+    )
+
+    val wheatRipe = pixelArt(
+        "y=E8B931 w=FFE08A t=A9792B d=8A6A2A",
+        "..w...w..w..",
+        ".wy..wy.wy..",
+        ".yy..yy.yy.w",
+        ".yd.wyd.yd.y",
+        ".td.ytd.tdy.",
+        "..tt.dttdt..",
+        "...dtdddt...",
+        "....dddd....",
     )
 
     val sprout = pixelArt(
@@ -365,6 +461,106 @@ object FarmSprites {
         "...orRrowdwwwwdworRro...",
         "...orrrowwwwwwwworrro...",
         "...oooooooooooooooooo...",
+    )
+
+    /**
+     * The mill: a round tower with a red cap and four sails, drawn in [MILL_FRAMES] turns of a
+     * quarter of a circle (the sails look the same every quarter turn). The first frame is the
+     * mill at rest; the others follow it while the mill works.
+     */
+    val mill: List<PixelArt> = listOf(
+        pixelArt(
+            "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
+            "...................",
+            ".........tcc.......",
+            ".........tcc.......",
+            ".........tcc.......",
+            "........otcc.......",
+            "...ccccortro.......",
+            "...ccccrrtrRo......",
+            "...ttttttktttttt...",
+            ".....orrrtrRcccc...",
+            "......owwtwscccc...",
+            "......occtwso......",
+            "......occtbso......",
+            ".....owcctwwso.....",
+            ".....owcctwwso.....",
+            ".....obbbbbbso.....",
+            ".....owwwwwwso.....",
+            ".....owwdddwso.....",
+            "....owwwdddwwso....",
+            "....owwwdddwwso....",
+            "....ooooooooooo....",
+        ),
+        pixelArt(
+            "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
+            "...................",
+            ".......tcc.........",
+            ".......tcc.........",
+            ".......tcc.........",
+            "........tcc........",
+            ".......otrro.ttt...",
+            "......crrtrttccc...",
+            "...ccccrtktRcccc...",
+            "...cccttrtrRco.....",
+            "...tttowwwtso......",
+            "......owcctso......",
+            "......obbccto......",
+            ".....owwgcctso.....",
+            ".....owwgcctso.....",
+            ".....obbbbbbso.....",
+            ".....owwwwwwso.....",
+            ".....owwdddwso.....",
+            "....owwwdddwwso....",
+            "....owwwdddwwso....",
+            "....ooooooooooo....",
+        ),
+        pixelArt(
+            "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
+            "...................",
+            "...................",
+            "...................",
+            ".....tcc.....t.....",
+            "......tccoo.tc.....",
+            ".......tccrtcc.....",
+            "......ortrtcc......",
+            ".....orcrkrcRo.....",
+            ".....occtrtRRo.....",
+            ".....cctwccto......",
+            ".....ctwwwcct......",
+            ".....tobbbbcct.....",
+            ".....owwggwwso.....",
+            ".....owwggwwso.....",
+            ".....obbbbbbso.....",
+            ".....owwwwwwso.....",
+            ".....owwdddwso.....",
+            "....owwwdddwwso....",
+            "....owwwdddwwso....",
+            "....ooooooooooo....",
+        ),
+        pixelArt(
+            "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
+            "...................",
+            "...........tcc.....",
+            "...........tcc.....",
+            "...ccc.....tcc.....",
+            "...cccc.ootcc......",
+            "...tttcorrto.......",
+            "......ttrtrRo......",
+            ".....orrtktRRo.....",
+            ".....orrrtrtto.....",
+            "......owtwwscttt...",
+            "......cctwwscccc...",
+            ".....cctbbbsoccc...",
+            ".....cctggwwso.....",
+            ".....cctggwwso.....",
+            ".....obbbbbbso.....",
+            ".....owwwwwwso.....",
+            ".....owwdddwso.....",
+            "....owwwdddwwso....",
+            "....owwwdddwwso....",
+            "....ooooooooooo....",
+        ),
     )
 
     val tree = pixelArt(
@@ -518,7 +714,10 @@ private fun PixelArt.forPalette(p: Palette): PixelArt =
     if (!p.isDark) this else nightCache.getOrPut(this) { recolored(night(p)) }
 
 /** What one moment of the farm looks like on the scene; [glow] rings a bed just bought. */
-class FarmScene(val world: FarmWorld, val now: Long, val tick: Int, val glow: Int? = null)
+class FarmScene(val world: FarmWorld, val now: Long, val tick: Int, val glow: Int? = null, val sail: Int = 0)
+
+/** The turns the mill's sails go through. */
+val MILL_FRAMES: Int get() = FarmSprites.mill.size
 
 /**
  * The whole farm: ground, lane, beds with their crops, the paddock with its fence and animals,
@@ -619,11 +818,14 @@ fun DrawScope.drawFarmScene(
     val things = ArrayList<Thing>()
     fun foot(col: Float, row: Float) = grid.toScreen(col + 0.5f, row + 0.5f)
     things += Thing(1f) { stand(FarmSprites.house.forPalette(p), foot(1.2f, -0.3f), px) }
-    things += Thing(4f) { stand(FarmSprites.barn.forPalette(p), foot(4.6f, -0.6f), px) }
-    val trees = listOf(0 to 0, 3 to 0, 6 to 0, 0 to 2, 9 to 0, 12 to 0).filter { it.first < columns }
+    things += Thing(4f) { stand(FarmSprites.barn.forPalette(p), foot(4.1f, -0.6f), px) }
+    val trees = listOf(0 to 0, 3 to 0, 6 to 0, 0 to 2, 9 to 0, 12 to 0)
+        .filter { it.first < columns && !(w.mill != null && it == 6 to 0) }
     for ((tc, tr) in trees) things += Thing(tc + tr + 0.1f) { stand(FarmSprites.tree.forPalette(p), foot(tc.toFloat(), tr.toFloat()), px) }
     val bushes = listOf(6 to 2, 3 to 2, 8 to 2, 11 to 2).filter { it.first < columns }
     for ((bc, br) in bushes) things += Thing(bc + br + 0.1f) { stand(FarmSprites.bush.forPalette(p), foot(bc.toFloat(), br.toFloat()), px) }
+
+    if (w.mill != null) things += Thing(FarmMap.MILL_COL + FarmMap.MILL_ROW + 0.2f) { drawMill(scene, p, grid, px, c.outline, c.sun) }
 
     w.plots.forEachIndexed { i, plot ->
         val (col, r) = FarmMap.plots.getOrNull(i) ?: return@forEachIndexed
@@ -632,10 +834,10 @@ fun DrawScope.drawFarmScene(
             val crop = plot.sown
             if (crop != null) {
                 when (FarmRules.stage(plot, scene.now)) {
-                    Stage.SPROUT -> stand(FarmSprites.sprout.forPalette(p), f + Offset(0f, px), px)
-                    Stage.GROWING -> stand(FarmSprites.growing.forPalette(p), f + Offset(0f, px), px)
+                    Stage.SPROUT -> stand((if (crop == Crop.WHEAT) FarmSprites.wheatSprout else FarmSprites.sprout).forPalette(p), f + Offset(0f, px), px)
+                    Stage.GROWING -> stand((if (crop == Crop.WHEAT) FarmSprites.wheatGrowing else FarmSprites.growing).forPalette(p), f + Offset(0f, px), px)
                     Stage.RIPE -> {
-                        stand(FarmSprites.growing.forPalette(p), f + Offset(0f, px), px)
+                        stand((if (crop == Crop.WHEAT) FarmSprites.wheatRipe else FarmSprites.growing).forPalette(p), f + Offset(0f, px), px)
                         stand(FarmSprites.products.getValue(crop.item).forPalette(p), f - Offset(0f, px * 5), px)
                         if (scene.tick % 2 == 0) stand(FarmSprites.sparkle, f - Offset(-px * 7, px * 15), px)
                     }
@@ -678,6 +880,40 @@ fun DrawScope.drawFarmScene(
     }
     things.sortBy { it.depth }
     things.forEach { it.draw() }
+}
+
+/**
+ * The mill at its place: the tower with its sails (the frame [FarmScene.sail]), a bar under it
+ * for the job being ground, and a bubble with the sack when something is ready.
+ */
+private fun DrawScope.drawMill(scene: FarmScene, p: Palette, grid: IsoGrid, px: Float, outline: Color, fill: Color) {
+    val w = scene.world
+    val foot = FarmMap.millFoot(grid)
+    val frames = FarmSprites.mill
+    val art = frames[scene.sail.mod(frames.size)].forPalette(p)
+    stand(art, foot + Offset(0f, px), px)
+    val job = FarmRules.millCurrent(w, scene.now)
+    if (job != null) {
+        // A small bar shows how far the job being ground has come, like the one on the beds.
+        val bw = px * 10
+        val top = foot + Offset(-bw / 2, px * 2.5f)
+        drawRect(outline.copy(alpha = 0.5f), top, Size(bw, px * 1.5f))
+        drawRect(fill, top, Size(bw * FarmRules.millProgress(w, scene.now), px * 1.5f))
+    }
+    val ready = FarmRules.millDone(w, scene.now)
+    if (ready > 0) {
+        val sack = FarmSprites.products.getValue(w.mill!!.jobs.first { it.end <= scene.now }.kind.output)
+        // The bubble sits beside the sails, over the right of the roof, clear of the animals' own.
+        val top = foot - Offset(0f, px * (art.height + 3f))
+        val bw = px * (sack.width + 4)
+        val bh = px * (sack.height + 4)
+        drawRoundRect(Color.White, Offset(top.x - bw / 2, top.y - bh), Size(bw, bh), CornerRadius(px * 2))
+        drawRoundRect(outline, Offset(top.x - bw / 2, top.y - bh), Size(bw, bh), CornerRadius(px * 2), style = Stroke(max(1f, px * 0.6f)))
+        stand(sack, Offset(top.x, top.y - px * 2), px)
+        if (ready > 1) {
+            for (k in 0 until ready) drawCircle(outline, px * 0.8f, Offset(top.x - px * 2 + k * px * 2, top.y + px))
+        }
+    }
 }
 
 /** One product as a pixel icon, as large as fits. */

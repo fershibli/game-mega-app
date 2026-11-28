@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">お礼：%1$sと星1つ</string>
     <string name="farm_barn_row_shown">%1$s：%2$d・1つ%3$s</string>
     <string name="farm_plot_note_shown">値段：%1$s。ほかの畝のとなりにでき、同じように育ちます。芽、葉、そして収穫。</string>
+    <string name="farm_item_wheat">小麦</string>
+    <string name="farm_item_cornmeal">コーンミール</string>
+    <string name="farm_item_flour">小麦粉</string>
+    <string name="farm_building_mill">風車小屋</string>
+    <string name="farm_build">建てる</string>
+    <string name="farm_build_title">何を建てますか？</string>
+    <string name="farm_build_stars">足りない星：%1$d</string>
+    <string name="farm_build_coins">足りないコイン：%1$d</string>
+    <string name="farm_build_tap">タップして建てる</string>
+    <string name="farm_build_price">コインでの値段：%1$d</string>
+    <string name="farm_built_mill">風車小屋ができました！タップして粉をひきましょう。</string>
+    <string name="farm_mill_tap">タップして粉をひく</string>
+    <string name="farm_mill_working">粉ひき中：%1$s・%2$s</string>
+    <string name="farm_mill_queue">順番待ち：%1$d／%2$d</string>
+    <string name="farm_mill_idle">風車小屋は休んでいます。ひくものを選んでください。</string>
+    <string name="farm_mill_full">順番待ちがいっぱい</string>
+    <string name="farm_mill_grind">ひく</string>
+    <string name="farm_mill_missing">足りません：%1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

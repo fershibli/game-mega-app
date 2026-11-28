@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">Reward: a star, %1$s</string>
     <string name="farm_barn_row_shown">%1$s: %2$d · %3$s</string>
     <string name="farm_plot_note_shown">Price: %1$s. It goes next to the other beds and grows like them: sprout, leaves, then the harvest.</string>
+    <string name="farm_item_wheat">Wheat</string>
+    <string name="farm_item_cornmeal">Corn meal</string>
+    <string name="farm_item_flour">Flour</string>
+    <string name="farm_building_mill">Mill</string>
+    <string name="farm_build">Build</string>
+    <string name="farm_build_title">What shall we build?</string>
+    <string name="farm_build_stars">Stars missing: %1$d</string>
+    <string name="farm_build_coins">Coins missing: %1$d</string>
+    <string name="farm_build_tap">Tap to build</string>
+    <string name="farm_build_price">Price in coins: %1$d</string>
+    <string name="farm_built_mill">The mill is built! Tap it to grind.</string>
+    <string name="farm_mill_tap">tap to grind</string>
+    <string name="farm_mill_working">Grinding: %1$s · %2$s</string>
+    <string name="farm_mill_queue">Queue: %1$d of %2$d</string>
+    <string name="farm_mill_idle">The mill is resting. Choose what to grind.</string>
+    <string name="farm_mill_full">Queue full</string>
+    <string name="farm_mill_grind">Grind</string>
+    <string name="farm_mill_missing">Missing: %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

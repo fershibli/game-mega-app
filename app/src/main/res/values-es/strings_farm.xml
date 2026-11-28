@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">Paga %1$s y una estrella</string>
     <string name="farm_barn_row_shown">%1$s: %2$d · %3$s cada uno</string>
     <string name="farm_plot_note_shown">Precio: %1$s. Va junto a los otros bancales y crece como ellos: brote, hojas y luego la cosecha.</string>
+    <string name="farm_item_wheat">Trigo</string>
+    <string name="farm_item_cornmeal">Harina de maíz</string>
+    <string name="farm_item_flour">Harina de trigo</string>
+    <string name="farm_building_mill">Molino</string>
+    <string name="farm_build">Construir</string>
+    <string name="farm_build_title">¿Qué construimos?</string>
+    <string name="farm_build_stars">Estrellas que faltan: %1$d</string>
+    <string name="farm_build_coins">Monedas que faltan: %1$d</string>
+    <string name="farm_build_tap">Toca para construir</string>
+    <string name="farm_build_price">Precio en monedas: %1$d</string>
+    <string name="farm_built_mill">¡El molino está listo! Tócalo para moler.</string>
+    <string name="farm_mill_tap">toca para moler</string>
+    <string name="farm_mill_working">Moliendo: %1$s · %2$s</string>
+    <string name="farm_mill_queue">Cola: %1$d de %2$d</string>
+    <string name="farm_mill_idle">El molino descansa. Elige qué moler.</string>
+    <string name="farm_mill_full">Cola llena</string>
+    <string name="farm_mill_grind">Moler</string>
+    <string name="farm_mill_missing">Faltan: %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

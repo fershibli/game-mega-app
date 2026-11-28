@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">Bringt %1$s und einen Stern</string>
     <string name="farm_barn_row_shown">%1$s: %2$d · je %3$s</string>
     <string name="farm_plot_note_shown">Preis: %1$s. Es kommt neben die anderen Beete und wächst wie sie: Keim, Blätter, dann die Ernte.</string>
+    <string name="farm_item_wheat">Weizen</string>
+    <string name="farm_item_cornmeal">Maismehl</string>
+    <string name="farm_item_flour">Weizenmehl</string>
+    <string name="farm_building_mill">Mühle</string>
+    <string name="farm_build">Bauen</string>
+    <string name="farm_build_title">Was bauen wir?</string>
+    <string name="farm_build_stars">Fehlende Sterne: %1$d</string>
+    <string name="farm_build_coins">Fehlende Münzen: %1$d</string>
+    <string name="farm_build_tap">Zum Bauen tippen</string>
+    <string name="farm_build_price">Preis in Münzen: %1$d</string>
+    <string name="farm_built_mill">Die Mühle steht! Tippen Sie darauf, um zu mahlen.</string>
+    <string name="farm_mill_tap">zum Mahlen tippen</string>
+    <string name="farm_mill_working">Mahlen: %1$s · %2$s</string>
+    <string name="farm_mill_queue">Warteschlange: %1$d von %2$d</string>
+    <string name="farm_mill_idle">Die Mühle ruht. Wählen Sie, was gemahlen wird.</string>
+    <string name="farm_mill_full">Warteschlange voll</string>
+    <string name="farm_mill_grind">Mahlen</string>
+    <string name="farm_mill_missing">Es fehlt: %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>
