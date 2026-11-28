@@ -4,7 +4,7 @@
 
 Una pequeña granja que vive en tu teléfono. Siembra, riega y cosecha, cuida de las gallinas, la vaca y las ovejas, vende en el granero y atiende los pedidos de los vecinos. No hay prisa y nada se pierde: las plantas nunca se marchitan, los animales nunca pasan hambre y la granja sigue creciendo con la app cerrada.
 
-Tres botones arriba abren la **Granja**, los **Pedidos** y el **Granero**. Encima, una **moneda** dorada y una **estrella** muestran cuántas monedas y estrellas tienes. La granja es un solo dibujo: el huerto con los bancales, el corral con los animales, la casa y el granero. Pellizca para verla más grande; el botón redondo la deja como estaba. Con la granja ampliada, arrastra con un dedo para moverte.
+Cuatro botones arriba abren la **Granja**, los **Pedidos**, el **Granero** y los **Logros**. Con un texto más grande quedan en dos filas de dos, para que las palabras sigan grandes. Encima, una **moneda** dorada y una **estrella** muestran cuántas monedas y estrellas tienes. La granja es un solo dibujo: el huerto con los bancales, el corral con los animales, la casa y el granero. Pellizca para verla más grande; el botón redondo la deja como estaba. Con la granja ampliada, arrastra con un dedo para moverte.
 
 Cuando tocas un bancal o un animal, lo que dice (su nombre, el tiempo que falta, «¡Cosechado!») aparece en una tarjeta pequeña sobre la parte de arriba de la granja. Desaparece sola tras unos segundos, o cuando la tocas, y nunca mueve los botones.
 
@@ -68,6 +68,9 @@ La **Red del lago** es un logro: con **15 estrellas** y el lago construido apare
 
 ## El granero
 Todo lo que cosechas y recoges espera en el granero, con su precio. **Vender 1** o **Vender todo** lo convierte en monedas. Si te quedas sin monedas, siempre hay algo que vender, o una lechuga que sembrar por dos monedas.
+
+## Logros
+El botón **Logros** lista todo lo que abren las estrellas, de menos a más estrellas: cada cultivo, cada animal, el molino, el lago y la red del lago. Cada fila muestra el dibujo, el nombre y las estrellas que necesita (una estrella con un número). Lo que la granja ya tiene se ve con sus colores normales y dice **Desbloqueado**; lo que aún espera se ve apagado y dice cuántas estrellas faltan ("Estrellas que faltan: 3"). El trigo llega con el molino y la red del lago necesita el lago, así que esas filas dicen **Construye primero el molino** o **Construye primero el lago** hasta que el edificio esté levantado. Es solo una guía de lo que viene: nada de esto cuesta ni se pierde.
 
 ## Guardado
 Todo se guarda en el teléfono al momento. Cerrar la app, jugar a otro juego o **Nuevo juego** en los ajustes nunca borra la granja. Desinstalar la app, sí.

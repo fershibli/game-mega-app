@@ -4,7 +4,7 @@
 
 Une petite ferme qui vit dans votre téléphone. Semez, arrosez et récoltez, occupez-vous des poules, de la vache et des moutons, vendez à la grange et honorez les commandes des voisins. Rien ne presse et rien ne se perd : les cultures ne fanent jamais, les animaux n’ont jamais faim et la ferme continue de pousser quand l’application est fermée.
 
-Trois boutons en haut ouvrent la **Ferme**, les **Commandes** et la **Grange**. Au-dessus, une **pièce** dorée et une **étoile** montrent combien de pièces et d’étoiles vous avez. La ferme est un seul dessin : le potager et ses carrés, l’enclos avec les animaux, la maison et la grange. Pincez pour l’agrandir ; le bouton rond la remet comme avant. Quand elle est agrandie, faites glisser un doigt pour vous déplacer.
+Quatre boutons en haut ouvrent la **Ferme**, les **Commandes**, la **Grange** et les **Succès**. Avec un texte plus grand, ils se placent sur deux lignes de deux, pour que les mots restent grands. Au-dessus, une **pièce** dorée et une **étoile** montrent combien de pièces et d’étoiles vous avez. La ferme est un seul dessin : le potager et ses carrés, l’enclos avec les animaux, la maison et la grange. Pincez pour l’agrandir ; le bouton rond la remet comme avant. Quand elle est agrandie, faites glisser un doigt pour vous déplacer.
 
 Quand vous touchez une planche ou un animal, ce qu'il dit (son nom, le temps restant, « Récolté ! ») apparaît sur une petite carte au-dessus du haut de la ferme. Elle disparaît toute seule au bout de quelques secondes, ou quand vous la touchez, et ne déplace jamais les boutons.
 
@@ -68,6 +68,9 @@ Le **Filet du lac** est une récompense : avec **15 étoiles** et le lac constru
 
 ## La grange
 Tout ce que vous récoltez et ramassez attend dans la grange, avec son prix. **Vendre 1** ou **Tout vendre** le change en pièces. Si vous n’avez plus de pièces, il y a toujours quelque chose à vendre, ou une salade à semer pour deux pièces.
+
+## Succès
+Le bouton **Succès** liste tout ce que les étoiles ouvrent, de la plus petite à la plus grande quantité : chaque culture, chaque animal, le moulin, le lac et le filet du lac. Chaque ligne montre le dessin, le nom et les étoiles nécessaires (une étoile avec un nombre). Ce que la ferme a déjà s’affiche en couleurs normales et indique **Débloqué** ; ce qui attend encore est estompé et dit combien d’étoiles manquent (« Étoiles manquantes : 3 »). Le blé arrive avec le moulin et le filet a besoin du lac : ces lignes disent **Construisez d’abord le moulin** ou **Construisez d’abord le lac** tant que le bâtiment n’est pas là. Ce n’est qu’un guide de la suite : rien ici ne coûte ni ne se perd.
 
 ## Sauvegarde
 Tout est enregistré sur le téléphone aussitôt. Fermer l’application, jouer à un autre jeu ou **Nouvelle partie** dans les réglages n’efface jamais la ferme. Désinstaller l’application, si.

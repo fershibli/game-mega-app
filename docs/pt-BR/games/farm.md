@@ -4,7 +4,7 @@
 
 Uma pequena fazenda que mora no seu celular. Plante, regue e colha, cuide das galinhas, da vaca e das ovelhas, venda no celeiro e atenda os pedidos dos vizinhos. Não há pressa e nada se perde: as plantas nunca murcham, os animais nunca passam fome e a fazenda continua crescendo com o app fechado.
 
-Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Acima deles, uma **moeda** dourada e uma **estrela** mostram quantas moedas e estrelas você tem. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal. Com a fazenda ampliada, arraste com um dedo para se mover.
+Quatro botões em cima abrem a **Fazenda**, os **Pedidos**, o **Celeiro** e as **Conquistas**. Com letras maiores, eles ficam em duas linhas de dois, para as palavras continuarem grandes. Acima deles, uma **moeda** dourada e uma **estrela** mostram quantas moedas e estrelas você tem. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal. Com a fazenda ampliada, arraste com um dedo para se mover.
 
 Quando você toca num canteiro ou num animal, o que ele diz (o nome, o tempo que falta, "Colhido!") aparece num cartãozinho sobre o alto da fazenda. Ele some sozinho depois de alguns segundos, ou quando você toca nele, e nunca empurra os botões.
 
@@ -68,6 +68,9 @@ A **Rede do lago** é uma conquista: com **15 estrelas** e o lago construído el
 
 ## O celeiro
 Tudo o que você colhe e recolhe espera no celeiro, com o preço. **Vender 1** ou **Vender tudo** transforma em moedas. Se as moedas acabarem, sempre há algo para vender, ou uma alface para plantar por duas moedas.
+
+## Conquistas
+O botão **Conquistas** lista tudo o que as estrelas liberam, das menos estrelas para as mais: cada planta, cada animal, o moinho, o lago e a rede do lago. Cada linha mostra o desenho, o nome e as estrelas necessárias (uma estrela com um número). O que a fazenda já tem aparece com as cores normais e diz **Liberado**; o que ainda espera aparece apagado e diz quantas estrelas faltam ("Faltam estrelas: 3"). O trigo vem com o moinho e a rede do lago precisa do lago; por isso essas linhas dizem **Construa o moinho primeiro** ou **Construa o lago primeiro** até a construção ficar pronta. É só um guia do que vem a seguir: nada aqui custa nada nem se perde.
 
 ## Salvamento
 Tudo fica salvo no celular na hora. Fechar o app, jogar outro jogo ou tocar em **Novo jogo** nas configurações nunca apaga a fazenda. Desinstalar o app apaga.

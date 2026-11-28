@@ -4,7 +4,7 @@
 
 Una piccola fattoria che vive nel tuo telefono. Semina, annaffia e raccogli, accudisci le galline, la mucca e le pecore, vendi nel fienile e soddisfa gli ordini dei vicini. Non c’è fretta e non si perde mai nulla: le piante non appassiscono, gli animali non hanno mai fame e la fattoria continua a crescere anche con l’app chiusa.
 
-Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Sopra, una **moneta** dorata e una **stella** mostrano quante monete e stelle hai. La fattoria è un solo disegno: l’orto con le aiuole, il recinto con gli animali, la casa e il fienile. Allarga con due dita per vederla più grande; il pulsante tondo la rimette com’era. Quando è ingrandita, trascina con un dito per spostarti.
+Quattro pulsanti in alto aprono la **Fattoria**, gli **Ordini**, il **Fienile** e i **Traguardi**. Con un testo più grande stanno su due righe da due, così le parole restano grandi. Sopra, una **moneta** dorata e una **stella** mostrano quante monete e stelle hai. La fattoria è un solo disegno: l’orto con le aiuole, il recinto con gli animali, la casa e il fienile. Allarga con due dita per vederla più grande; il pulsante tondo la rimette com’era. Quando è ingrandita, trascina con un dito per spostarti.
 
 Quando tocchi un'aiuola o un animale, ciò che dice (il nome, il tempo che manca, «Raccolto!») compare su una piccola scheda sopra la parte alta della fattoria. Sparisce da sola dopo qualche secondo, oppure quando la tocchi, e non sposta mai i pulsanti.
 
@@ -68,6 +68,9 @@ La **Rete del lago** è una conquista: con **15 stelle** e il lago costruito com
 
 ## Il fienile
 Tutto ciò che raccogli aspetta nel fienile, con il suo prezzo. **Vendi 1** o **Vendi tutto** lo trasforma in monete. Se resti senza monete, c’è sempre qualcosa da vendere, o una lattuga da seminare per due monete.
+
+## Traguardi
+Il pulsante **Traguardi** elenca tutto ciò che le stelle aprono, dalle meno alle più stelle: ogni coltura, ogni animale, il mulino, il lago e la rete del lago. Ogni riga mostra il disegno, il nome e le stelle necessarie (una stella con un numero). Ciò che la fattoria ha già appare con i colori normali e dice **Sbloccato**; ciò che aspetta ancora appare sbiadito e dice quante stelle mancano ("Stelle mancanti: 3"). Il grano arriva con il mulino e la rete del lago richiede il lago, quindi quelle righe dicono **Costruisci prima il mulino** o **Costruisci prima il lago** finché l’edificio non c’è. È solo una guida a ciò che viene dopo: qui nulla costa e nulla si perde.
 
 ## Salvataggio
 Tutto viene salvato subito sul telefono. Chiudere l’app, giocare a un altro gioco o **Nuova partita** nelle impostazioni non cancella mai la fattoria. Disinstallare l’app sì.
