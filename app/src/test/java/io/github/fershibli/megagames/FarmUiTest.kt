@@ -361,7 +361,7 @@ class FarmUiTest {
         rule.onNodeWithTag("farm-lake").performClick()
         rule.waitForIdle()
         rule.onNodeWithTag("farm-fishing-baits").assertTextEquals("Bait: 0/5")
-        rule.onNodeWithTag("farm-fishing-button").assertTextEquals("Next bait: 7 min").assertIsNotEnabled()
+        rule.onNodeWithTag("farm-fishing-button").assertTextEquals("Next bait: 7 min").assertIsNotEnabled()
         rule.onNodeWithTag("farm-fishing-status").assertTextEquals("No bait for now. One comes back every 10 min.")
         // Seven minutes later it is back.
         clock.time += 7 * minute

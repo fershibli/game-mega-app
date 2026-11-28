@@ -405,7 +405,7 @@ object FarmSprites {
 
     /** The lake's net: two posts with a rope mesh between them and red floats on top. */
     val net = pixelArt(
-        "t=7A5230 r=E53935 n=E8DCC8",
+        "t=6E4A2B r=E53935 n=B59B74",
         "t..........t",
         "tr.r.r.r.r.t",
         "tnnnnnnnnnnt",
@@ -1193,7 +1193,7 @@ fun DrawScope.drawFishing(p: Palette, view: FishingView, bob: Int, fish: Item?) 
         rod.draw(this, rodLeft, rodTop, px)
         val tip = Offset(rodLeft + rod.width * px - px, rodTop + px)
         val floatX = floor(size.width * 0.62f)
-        val water = shore + (size.height - shore) * 0.45f
+        val water = shore + (size.height - shore) * 0.4f
         when (view) {
             FishingView.IDLE -> {
                 // The float hangs from the tip, ready to be cast.
@@ -1214,28 +1214,41 @@ fun DrawScope.drawFishing(p: Palette, view: FishingView, bob: Int, fish: Item?) 
                 }
             }
             FishingView.BITE -> {
-                // The float dips: only its top shows, with rings round it and a bright circle.
-                val y = water + px * 4
+                // The float dips: only its red top shows above the rings, inside a bright circle.
                 val f = FarmSprites.float
-                drawLine(c.outline, tip, Offset(floatX, y - f.height * px + px * 3), max(1f, px * 0.5f))
-                clipRect(bottom = y - px) { stand(f.forPalette(p), Offset(floatX, y + px * 3), px) }
+                val y = water + px * 2
                 val ring = FarmSprites.ripples[(bob % (FarmSprites.ripples.size - 1)) + 1]
                 stand(ring, Offset(floatX, y + px * 2), px)
-                drawCircle(c.outline, px * 11, Offset(floatX, y - px * 2), style = Stroke(px * 2.4f))
-                drawCircle(c.sun, px * 11, Offset(floatX, y - px * 2), style = Stroke(px * 1.4f))
+                drawLine(c.outline, tip, Offset(floatX, y - px * 4), max(1f, px * 0.5f))
+                clipRect(bottom = y) { stand(f.forPalette(p), Offset(floatX, y + px * 3), px) }
+                val middle = Offset(floatX, y - px)
+                drawCircle(c.outline, px * 8, middle, style = Stroke(px * 2.4f))
+                drawCircle(c.sun, px * 8, middle, style = Stroke(px * 1.4f))
             }
             FishingView.CAUGHT -> {
+                // The fish leaps out of the water on the line, twice its size, with a sparkle.
                 val art = fish?.let { FarmSprites.products[it] }
-                val y = water - px * 6
-                if (art != null) {
-                    drawLine(c.outline, tip, Offset(floatX, y - art.height * px * 2), max(1f, px * 0.5f))
-                    stand(art.forPalette(p), Offset(floatX, y), px * 2)
-                    stand(FarmSprites.sparkle, Offset(floatX + art.width * px + px * 2, y - art.height * px * 2), px)
-                }
                 stand(FarmSprites.ripples[2], Offset(floatX, water + px * 4), px, alpha = 0.7f)
+                if (art != null) {
+                    val y = water + px * 2
+                    val mouth = Offset(floatX + art.width * px - px, y - art.height * px)
+                    drawLine(c.outline, tip, mouth, max(1f, px * 0.5f))
+                    stand(art.forPalette(p), Offset(floatX, y), px * 2)
+                    stand(FarmSprites.sparkle, Offset(floatX + art.width * px + px * 4, y - art.height * px * 2 + px * 4), px)
+                }
             }
         }
     }
+}
+
+/** The lake with its net standing in the water, as large as fits: the net's picture in the Build list. */
+fun DrawScope.drawLakeWithNet() {
+    val pond = FarmSprites.pond
+    val px = max(1f, floor(minOf(size.width / pond.width, size.height / pond.height)))
+    val left = floor((size.width - pond.width * px) / 2)
+    val top = floor((size.height - pond.height * px) / 2)
+    pond.draw(this, left, top, px)
+    stand(FarmSprites.net, Offset(left + pond.width * px / 2, top + px * 11), px)
 }
 
 /** One product as a pixel icon, as large as fits. */

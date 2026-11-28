@@ -636,7 +636,7 @@ private fun DrawScope.drawBuilding(b: Building) {
     when (b) {
         Building.MILL -> drawFitted(FarmSprites.mill[0])
         Building.LAKE -> drawFitted(FarmSprites.pond)
-        Building.NET -> drawFitted(FarmSprites.net)
+        Building.NET -> drawLakeWithNet()
     }
 }
 
@@ -763,7 +763,9 @@ private fun LakeDialog(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld)
     }
     val lessMinute = stringResource(R.string.farm_less_minute)
     val minutesLeft = stringResource(R.string.farm_minutes_left)
-    fun left(ms: Long): String = ((ms + 59_999L) / 60_000L).toInt().let { if (it <= 1) lessMinute else minutesLeft.format(it) }
+    // The number keeps its unit on the same line, even at the largest text.
+    fun left(ms: Long): String =
+        ((ms + 59_999L) / 60_000L).toInt().let { if (it <= 1) lessMinute else minutesLeft.format(it) }.replace(' ', ' ')
     val view = when {
         phase == Bobber.WAITING -> FishingView.WAITING
         phase == Bobber.BITE -> FishingView.BITE
