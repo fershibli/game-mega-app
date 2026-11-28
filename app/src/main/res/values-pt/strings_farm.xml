@@ -32,7 +32,7 @@
     <string name="farm_more_with_stars">Mais sementes e animais aparecem conforme você ganha estrelas com os pedidos.</string>
     <string name="farm_water_all">Regar tudo</string>
     <string name="farm_buy_plot">Novo canteiro (%1$d moedas)</string>
-    <string name="farm_collect_all">Recolher tudo</string>
+    <string name="farm_collect_all">Coletar tudo</string>
     <string name="farm_buy_animal">Comprar animal</string>
     <string name="farm_buy_animal_title">Qual animal?</string>
     <string name="farm_animal_option">%1$s · %2$d moedas</string>
