@@ -23,6 +23,7 @@ Cuando tocas un bancal o un animal, lo que dice (su nombre, el tiempo que falta,
 | Tomate | 20 min | 9 | 12 | 3 |
 | Fresa | 40 min | 12 | 16 | 5 |
 | Calabaza | 90 min | 20 | 28 | 8 |
+| Trigo | 15 min | 7 | 9 | molino |
 
 ## Los animales
 Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta **tres** productos esperando, que se ven en un globito encima; toca el animal (o **Recoger todo**, que también cosecha los bancales maduros) para llevarlos al granero.
@@ -32,6 +33,18 @@ Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta 
 | Gallina | Huevo | 10 min | 40 | 10 | 0 |
 | Vaca | Leche | 30 min | 120 | 22 | 2 |
 | Oveja | Lana | 60 min | 200 | 40 | 4 |
+
+## Construir y el molino
+El botón **Construir** (junto a **Nuevo bancal** y **Comprar un animal**) abre una lista de lo que se puede construir, cada cosa con su dibujo, su precio junto a la moneda y cuántas estrellas faltan todavía. Lo que aún no está disponible se ve apagado; toca lo que esté listo para construirlo. El botón desaparece cuando todo está construido.
+
+El **molino** necesita **6 estrellas** y cuesta **120** monedas. Está en el caminito del fondo, a la derecha del granero. Sus aspas giran despacio mientras trabaja y se paran cuando descansa (quedan quietas si las animaciones están desactivadas). Una vez construido, el trigo se suma a las semillas y los vecinos también empiezan a pedir harina de maíz y harina de trigo.
+
+Toca el molino para abrir su tarjeta: cada receta muestra sus ingredientes y cuántos hay en el granero. **Moler** saca los ingredientes del granero y empieza, y una barrita muestra el tiempo. El molino muele una receta cada vez y guarda hasta **3** en la cola. Si falta algo, el botón sigue a la vista y dice qué ("Faltan: Maíz ×2"). Cuando un saco está listo, aparece un globito sobre el molino; toca el molino o **Recoger todo** para llevarlo al granero.
+
+| Producto | Ingredientes | Tiempo | Se vende a |
+|---|---|---|---|
+| Harina de maíz | 2 Maíz | 10 min | 22 |
+| Harina de trigo | 2 Trigo | 12 min | 26 |
 
 ## Pedidos y estrellas
 Los vecinos piden unas cuantas cosas cada vez y pagan **la mitad más** que el mercado, y además una **estrella**. **Entregar** se activa cuando el granero lo tiene todo. **Otro pedido** cambia el pedido por uno nuevo, gratis. Las estrellas traen nuevas semillas y animales, como muestran las tablas.

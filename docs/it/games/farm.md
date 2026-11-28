@@ -23,6 +23,7 @@ Quando tocchi un'aiuola o un animale, ciò che dice (il nome, il tempo che manca
 | Pomodoro | 20 min | 9 | 12 | 3 |
 | Fragola | 40 min | 12 | 16 | 5 |
 | Zucca | 90 min | 20 | 28 | 8 |
+| Grano | 15 min | 7 | 9 | il mulino |
 
 ## Gli animali
 Compra gli animali con **Compra un animale**. Ognuno produce da solo e tiene fino a **tre** prodotti in attesa, mostrati in un fumetto sopra di lui; tocca l’animale (o **Prendi tutto**, che raccoglie anche le aiuole mature) per portarli nel fienile.
@@ -32,6 +33,18 @@ Compra gli animali con **Compra un animale**. Ognuno produce da solo e tiene fin
 | Gallina | Uovo | 10 min | 40 | 10 | 0 |
 | Mucca | Latte | 30 min | 120 | 22 | 2 |
 | Pecora | Lana | 60 min | 200 | 40 | 4 |
+
+## Costruire e il mulino
+Il pulsante **Costruisci** (accanto a **Nuova aiuola** e **Compra un animale**) apre l’elenco di ciò che si può costruire, ognuno con il suo disegno, il prezzo accanto alla moneta e quante stelle mancano ancora. Ciò che non è ancora disponibile appare sbiadito; tocca ciò che è pronto per costruirlo. Il pulsante sparisce quando è tutto costruito.
+
+Il **mulino** richiede **6 stelle** e costa **120** monete. Sorge sul sentiero in fondo, a destra del fienile. Le pale girano piano mentre lavora e si fermano quando riposa (restano ferme se le animazioni sono disattivate). Una volta costruito, il grano entra tra i semi e i vicini cominciano a chiedere anche farina di mais e farina di grano.
+
+Tocca il mulino per aprire la sua scheda: ogni ricetta mostra gli ingredienti e quanti ne ha il fienile. **Macina** prende gli ingredienti dal fienile e comincia, e una barretta mostra il tempo. Il mulino fa una ricetta alla volta e tiene fino a **3** in coda. Se manca qualcosa, il pulsante resta in vista e dice cosa ("Mancano: Mais ×2"). Quando un sacco è pronto, compare un fumetto sopra il mulino; tocca il mulino o **Prendi tutto** per portarlo nel fienile.
+
+| Prodotto | Ingredienti | Tempo | Si vende a |
+|---|---|---|---|
+| Farina di mais | 2 Mais | 10 min | 22 |
+| Farina di grano | 2 Grano | 12 min | 26 |
 
 ## Ordini e stelle
 I vicini chiedono poche cose alla volta e pagano **la metà in più** del mercato, più una **stella**. **Consegna** si accende quando il fienile ha tutto. **Altro ordine** cambia l’ordine con uno nuovo, gratis. Le stelle portano nuovi semi e animali, come mostrano le tabelle.
