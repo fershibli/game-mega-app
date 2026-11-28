@@ -47,6 +47,8 @@
     <string name="farm_sell_one">1つ売る</string>
     <string name="farm_sell_all">全部売る</string>
     <string name="farm_scene">農場。畝：%1$d。動物：%2$d。</string>
+    <string name="farm_affection">なつき度：%1$d/%2$d</string>
+    <string name="farm_heart">ハート</string>
     <string name="farm_plot_title">新しい畝</string>
     <string name="farm_plot_note">値段（コイン）：%1$d。ほかの畝のとなりにでき、同じように育ちます。芽、葉、そして収穫。</string>
     <string name="farm_plot_buy">畝を買う</string>

@@ -47,6 +47,8 @@
     <string name="farm_sell_one">1 verkaufen</string>
     <string name="farm_sell_all">Alles verkaufen</string>
     <string name="farm_scene">Bauernhof. Beete: %1$d. Tiere: %2$d.</string>
+    <string name="farm_affection">Zuneigung: %1$d/%2$d</string>
+    <string name="farm_heart">Herz</string>
     <string name="farm_plot_title">Ein neues Beet</string>
     <string name="farm_plot_note">Preis in Münzen: %1$d. Es kommt neben die anderen Beete und wächst wie sie: Keim, Blätter, dann die Ernte.</string>
     <string name="farm_plot_buy">Beet kaufen</string>

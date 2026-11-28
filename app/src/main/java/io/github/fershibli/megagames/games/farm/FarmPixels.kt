@@ -17,8 +17,13 @@ import io.github.fershibli.megagames.ui.art.drawFitted
 import io.github.fershibli.megagames.ui.art.palette
 import io.github.fershibli.megagames.ui.art.pixelArt
 import io.github.fershibli.megagames.ui.theme.Palette
+import androidx.compose.ui.graphics.drawscope.translate
+import kotlin.math.PI
+import kotlin.math.abs
 import kotlin.math.floor
 import kotlin.math.max
+import kotlin.math.roundToInt
+import kotlin.math.sin
 
 /*
  * The farm as one isometric pixel-art scene: a lane at the back with the house, the barn and
@@ -842,6 +847,18 @@ object FarmSprites {
         "..y..",
         "..y..",
     )
+
+    /** A small heart that floats above what was petted. */
+    val heart = pixelArt(
+        "o=7A1F2B r=E8505B h=FFB3B9",
+        ".oo.oo.",
+        "ohhorro",
+        "ohrrrro",
+        "orrrrro",
+        ".orrro.",
+        "..oro..",
+        "...o...",
+    )
 }
 
 /**
@@ -914,7 +931,72 @@ private fun PixelArt.forPalette(p: Palette): PixelArt =
  * What one moment of the farm looks like on the scene; [glow] rings a bed just bought, [sail] is
  * the mill's turn, [ripple] the lake's glints and [swim] whether a fish may pass in the lake.
  */
-class FarmScene(val world: FarmWorld, val now: Long, val tick: Int, val glow: Int? = null, val sail: Int = 0, val ripple: Int = 0, val swim: Boolean = false)
+class FarmScene(
+    val world: FarmWorld,
+    val now: Long,
+    val tick: Int,
+    val glow: Int? = null,
+    val sail: Int = 0,
+    val ripple: Int = 0,
+    val swim: Boolean = false,
+    val touch: FarmTouch? = null,
+)
+
+/**
+ * A bed or an animal that was just touched: it hops (animals) or wiggles (plants) and [hearts]
+ * float up above it. [progress] runs from 0 to 1; [swing] is how much it moves (0 with movement
+ * switched off: the hearts then just stay where they are, without rising).
+ */
+class FarmTouch(val isPlot: Boolean, val index: Int, val progress: Float, val hearts: Int, val swing: Float) {
+    /** Whole pixels an animal is lifted: two small hops. */
+    fun hop(): Int = (abs(sin(progress * PI * 2)) * HOP_PIXELS * swing).roundToInt()
+
+    /** Whole pixels a plant leans sideways: a wiggle that settles. */
+    fun wiggle(): Int = (sin(progress * PI * 6) * (1f - progress) * WIGGLE_PIXELS * swing).roundToInt()
+
+    /** How visible the hearts are: fully, then fading out in the last stretch. */
+    fun alpha(): Float = if (progress < FADE_FROM) 1f else (1f - (progress - FADE_FROM) / (1f - FADE_FROM)).coerceIn(0f, 1f)
+
+    /** Pixels the hearts have floated up. */
+    fun rise(): Int = (progress * RISE_PIXELS * swing).roundToInt()
+
+    private companion object {
+        const val HOP_PIXELS = 3f
+        const val WIGGLE_PIXELS = 1.6f
+        const val RISE_PIXELS = 9f
+        const val FADE_FROM = 0.6f
+    }
+}
+
+/** The heart for a palette (dimmed at night, stronger in high contrast), made once per palette. */
+private val heartCache = HashMap<Int, PixelArt>()
+
+private fun heartFor(p: Palette): PixelArt =
+    heartCache.getOrPut((if (p.isDark) 1 else 0) + 2 * p.mode.ordinal) { FarmSprites.heart.recolored { PixelColors.adapt(it, p) } }
+
+/**
+ * [n] hearts in a tight group (up to three in a row, more in a second row below), floating above
+ * [anchor], the point over the middle of what was touched.
+ */
+private fun DrawScope.drawHearts(touch: FarmTouch, anchor: Offset, p: Palette, px: Float) {
+    val art = heartFor(p)
+    val n = touch.hearts.coerceIn(1, FarmRules.MAX_HEARTS)
+    val bottom = if (n <= 3) n else 3
+    val top = n - bottom
+    val step = (art.width - 2) * px
+    val lift = touch.rise() * px
+    val alpha = touch.alpha()
+    fun row(count: Int, y: Float) {
+        for (k in 0 until count) {
+            val x = anchor.x + (k - (count - 1) / 2f) * step - art.width * px / 2
+            // Every other heart sits a little higher, so the group looks cuddled together.
+            val bob = if (k % 2 == 1) px * 2 else 0f
+            art.draw(this, floor(x), floor(y - bob - lift), px, alpha)
+        }
+    }
+    row(bottom, anchor.y - art.height * px)
+    if (top > 0) row(top, anchor.y - art.height * px - (art.height - 2) * px)
+}
 
 /** A fish passes in the lake once every this many turns of its glints, crossing it in [FISH_STEPS] turns. */
 const val FISH_EVERY = 36
@@ -1020,6 +1102,7 @@ fun DrawScope.drawFarmScene(
     // Everything standing on the ground, back to front.
     data class Thing(val depth: Float, val draw: () -> Unit)
     val things = ArrayList<Thing>()
+    var heartAnchor: Offset? = null
     fun foot(col: Float, row: Float) = grid.toScreen(col + 0.5f, row + 0.5f)
     things += Thing(1f) { stand(FarmSprites.house.forPalette(p), foot(1.2f, -0.3f), px) }
     things += Thing(4f) { stand(FarmSprites.barn.forPalette(p), foot(4.6f, -0.6f), px) }
@@ -1036,7 +1119,9 @@ fun DrawScope.drawFarmScene(
         val f = foot(col.toFloat(), r.toFloat())
         things += Thing(col + r + 0.5f) {
             val crop = plot.sown
-            if (crop != null) {
+            val touched = scene.touch?.takeIf { it.isPlot && it.index == i }
+            if (touched != null) heartAnchor = f - Offset(0f, px * 18)
+            if (crop != null) translate(touched?.wiggle()?.times(px) ?: 0f, 0f) {
                 when (FarmRules.stage(plot, scene.now)) {
                     Stage.SPROUT -> stand((if (crop == Crop.WHEAT) FarmSprites.wheatSprout else FarmSprites.sprout).forPalette(p), f + Offset(0f, px), px)
                     Stage.GROWING -> stand((if (crop == Crop.WHEAT) FarmSprites.wheatGrowing else FarmSprites.growing).forPalette(p), f + Offset(0f, px), px)
@@ -1065,8 +1150,14 @@ fun DrawScope.drawFarmScene(
             val frames = FarmSprites.animals.getValue(pen.kind)
             // Each animal moves on its own beat, slowly.
             val frame = frames[((scene.tick + i) / 2) % frames.size]
-            stand(frame.forPalette(p), f + Offset(0f, px * 2), px, flip = i % 2 == 1)
             val ready = FarmRules.waiting(pen, scene.now)
+            val touched = scene.touch?.takeIf { !it.isPlot && it.index == i }
+            stand(frame.forPalette(p), f + Offset(0f, px * 2 - (touched?.hop() ?: 0) * px), px, flip = i % 2 == 1)
+            // The hearts float above the animal, and above its bubble when it has one.
+            if (touched != null) {
+                val bubble = if (ready > 0) px * (FarmSprites.products.getValue(pen.kind.item).height + 7) else 0f
+                heartAnchor = f - Offset(0f, px * (frame.height + 2) + bubble)
+            }
             if (ready > 0) {
                 // A little speech bubble with the product waiting.
                 val icon = FarmSprites.products.getValue(pen.kind.item)
@@ -1084,6 +1175,9 @@ fun DrawScope.drawFarmScene(
     }
     things.sortBy { it.depth }
     things.forEach { it.draw() }
+    // The hearts go over everything else.
+    val touch = scene.touch
+    if (touch != null) heartAnchor?.let { drawHearts(touch, it, p, px) }
 }
 
 /**

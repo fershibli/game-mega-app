@@ -47,6 +47,8 @@
     <string name="farm_sell_one">Vender 1</string>
     <string name="farm_sell_all">Vender tudo</string>
     <string name="farm_scene">Fazenda. Canteiros: %1$d. Animais: %2$d.</string>
+    <string name="farm_affection">Afeto: %1$d/%2$d</string>
+    <string name="farm_heart">Coração</string>
     <string name="farm_plot_title">Um canteiro novo</string>
     <string name="farm_plot_note">Preço em moedas: %1$d. Ele fica ao lado dos outros canteiros e cresce como eles: broto, folhas e então a colheita.</string>
     <string name="farm_plot_buy">Comprar o canteiro</string>

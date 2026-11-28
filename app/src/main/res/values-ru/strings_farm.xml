@@ -47,6 +47,8 @@
     <string name="farm_sell_one">Продать 1</string>
     <string name="farm_sell_all">Продать всё</string>
     <string name="farm_scene">Ферма. Грядки: %1$d. Животные: %2$d.</string>
+    <string name="farm_affection">Привязанность: %1$d/%2$d</string>
+    <string name="farm_heart">Сердечко</string>
     <string name="farm_plot_title">Новая грядка</string>
     <string name="farm_plot_note">Цена в монетах: %1$d. Она появится рядом с другими грядками и растёт так же: росток, листья, потом урожай.</string>
     <string name="farm_plot_buy">Купить грядку</string>

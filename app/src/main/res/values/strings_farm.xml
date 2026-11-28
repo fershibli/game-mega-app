@@ -47,6 +47,8 @@
     <string name="farm_sell_one">Sell 1</string>
     <string name="farm_sell_all">Sell all</string>
     <string name="farm_scene">Farm. Beds: %1$d. Animals: %2$d.</string>
+    <string name="farm_affection">Affection: %1$d/%2$d</string>
+    <string name="farm_heart">Heart</string>
     <string name="farm_plot_title">A new bed</string>
     <string name="farm_plot_note">Price in coins: %1$d. It goes next to the other beds and grows like them: sprout, leaves, then the harvest.</string>
     <string name="farm_plot_buy">Buy the bed</string>
