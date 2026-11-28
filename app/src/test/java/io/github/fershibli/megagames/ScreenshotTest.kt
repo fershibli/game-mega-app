@@ -30,6 +30,7 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onAllNodesWithTag
 import androidx.compose.ui.test.onRoot
 import androidx.compose.ui.test.performClick
+import androidx.compose.ui.test.performScrollTo
 import io.github.fershibli.megagames.games.journey.Friend as JourneyFriend
 import io.github.fershibli.megagames.games.journey.Region as JourneyRegion
 import io.github.fershibli.megagames.games.journey.Status as JourneyStatus
@@ -110,6 +111,16 @@ class ScreenshotTest {
     @Test fun homeChinese() = shot("home_zh", Settings(language = io.github.fershibli.megagames.core.AppLanguage.CHINESE)) { HomeScreen({}, {}) }
     @Test fun homeArabic() = shot("home_ar", Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC)) { HomeScreen({}, {}) }
     @Test fun settingsArabic() = shot("settings_ar", Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC)) { SettingsScreen(Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC), {}, {}, null) }
+    /** The new "open the last game" switch, off as it comes, at the end of the game list options. */
+    @Test fun settingsOpenLastGamePt() {
+        val pt = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE)
+        rule.setContent {
+            MegaGamesTheme(pt) { Box(Modifier.fillMaxSize().background(LocalPalette.current.background)) { SettingsScreen(pt, {}, {}, null) } }
+        }
+        rule.onNodeWithText("Abrir no último jogo").performScrollTo()
+        rule.waitForIdle()
+        save("settings_resume_pt")
+    }
     @Test fun sudokuArabic() = gameShot("game_sudoku_ar", GameId.SUDOKU, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
     @Test fun crosswordArabic() = gameShot("game_crossword_ar", GameId.CROSSWORD, Difficulty.MEDIUM, Settings(language = io.github.fershibli.megagames.core.AppLanguage.ARABIC))
     @Test fun homeJapanese() = shot("home_ja", Settings(language = io.github.fershibli.megagames.core.AppLanguage.JAPANESE)) { HomeScreen({}, {}) }
