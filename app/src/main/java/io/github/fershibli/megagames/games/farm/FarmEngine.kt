@@ -125,6 +125,16 @@ enum class Building(val key: String, @StringRes val label: Int, val cost: Int, v
     }
 }
 
+/**
+ * One thing the stars open, for the achievements list: it needs [stars] and, when [needs] is set,
+ * that building standing too. [key] is only for tags (it is never saved).
+ */
+sealed class Achievement(val key: String, @StringRes val label: Int, val stars: Int, val needs: Building?) {
+    class ForCrop(val crop: Crop, stars: Int, needs: Building?) : Achievement("crop-${crop.key}", crop.item.label, stars, needs)
+    class ForAnimal(val animal: Animal) : Achievement("animal-${animal.key}", animal.label, animal.stars, null)
+    class ForBuilding(val building: Building, needs: Building?) : Achievement("building-${building.key}", building.label, building.stars, needs)
+}
+
 /** One bed of the field: empty, or sown with [crop] at [plantedAt] (and maybe watered at [wateredAt]). */
 @Serializable
 data class Plot(val crop: String? = null, val plantedAt: Long = 0, val wateredAt: Long? = null) {
@@ -394,6 +404,28 @@ object FarmRules {
 
     /** The buildings not built yet: the Build button lists them and goes away when none is left. */
     fun toBuild(world: FarmWorld): List<Building> = Building.entries.filter { !isBuilt(world, it) }
+
+    /**
+     * Everything the stars open, from the fewest stars to the most (at the same number: crops, then
+     * animals, then buildings). Built from [Crop], [Animal] and [Building], so the numbers live in
+     * one place. Wheat comes with the mill, so it is listed at the mill's stars.
+     */
+    fun achievements(): List<Achievement> = (
+        Crop.entries.map { c ->
+            if (c.needsMill) Achievement.ForCrop(c, maxOf(c.stars, Building.MILL.stars), Building.MILL) else Achievement.ForCrop(c, c.stars, null)
+        } +
+            Animal.entries.map { Achievement.ForAnimal(it) } +
+            Building.entries.map { b -> Achievement.ForBuilding(b, if (b.needsLake) Building.LAKE else null) }
+        ).sortedBy { it.stars }
+
+    /** Stars still missing for [a] (0 when the farm has enough). */
+    fun starsMissing(world: FarmWorld, a: Achievement): Int = (a.stars - world.stars).coerceAtLeast(0)
+
+    /** The building [a] still waits for (the mill for wheat, the lake for the net), or null when there is none or it stands. */
+    fun buildingMissing(world: FarmWorld, a: Achievement): Building? = a.needs?.takeIf { !isBuilt(world, it) }
+
+    /** Whether [a] is open to the farm now: enough stars, and the building it comes with (if any) built. */
+    fun isUnlocked(world: FarmWorld, a: Achievement): Boolean = starsMissing(world, a) == 0 && buildingMissing(world, a) == null
 
     /** Stars still missing for [building] (0 when the farm has enough). */
     fun starsMissing(world: FarmWorld, building: Building): Int = (building.stars - world.stars).coerceAtLeast(0)

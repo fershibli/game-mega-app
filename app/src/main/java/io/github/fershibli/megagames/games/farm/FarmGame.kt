@@ -62,7 +62,10 @@ import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.onClick
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import io.github.fershibli.megagames.core.ColorMode
+import io.github.fershibli.megagames.ui.art.adaptedTo
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
@@ -118,10 +121,14 @@ val LocalFarmRandom = staticCompositionLocalOf<Random> { Random.Default }
 private const val NOTE_MS = 5_000L
 private val NOTE_TOP = 5.dp
 
+/** Up to this text scale the four tabs share one row; above it they wrap into two. */
+private const val TABS_ONE_ROW_MAX_SCALE = 1.15f
+
 private enum class Tab(@StringRes val label: Int) {
     FARM(R.string.game_farm),
     ORDERS(R.string.farm_tab_orders),
     BARN(R.string.farm_tab_barn),
+    ACHIEVEMENTS(R.string.farm_tab_achievements),
 }
 
 /**
@@ -169,13 +176,20 @@ fun FarmGame(host: GameHost) {
         Box(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp), contentAlignment = Alignment.Center) {
             FarmPurse(w.coins, w.stars)
         }
-        Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
-            Tab.entries.forEach { t ->
-                BigButton(
-                    stringResource(t.label), { tab = t; say(null) },
-                    Modifier.weight(1f).testTag("farm-tab-${t.name.lowercase()}").semantics { role = Role.Tab },
-                    style = if (t == tab) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, compact = true,
-                )
+        // Four tabs fit on one row at the normal text size; with larger text they take two rows of two,
+        // so the words keep their size and every tab stays a big target.
+        val rows = if (LocalDensity.current.fontScale > TABS_ONE_ROW_MAX_SCALE) Tab.entries.chunked(2) else listOf(Tab.entries)
+        Column(Modifier.fillMaxWidth().padding(horizontal = 8.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
+            rows.forEach { row ->
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
+                    row.forEach { t ->
+                        BigButton(
+                            stringResource(t.label), { tab = t; say(null) },
+                            Modifier.weight(1f).testTag("farm-tab-${t.name.lowercase()}").semantics { role = Role.Tab },
+                            style = if (t == tab) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, compact = true,
+                        )
+                    }
+                }
             }
         }
         Box(Modifier.weight(1f).fillMaxWidth()) {
@@ -183,6 +197,7 @@ fun FarmGame(host: GameHost) {
                 Tab.FARM -> SceneTab(w, now, time, p, change, say)
                 Tab.ORDERS -> OrdersTab(w, p, change, say)
                 Tab.BARN -> BarnTab(w, p, change)
+                Tab.ACHIEVEMENTS -> AchievementsTab(w, p)
             }
             // Over the content, not in the layout: nothing below it moves, and taps outside it pass through.
             message?.let { InfoCard(it.text, p, Modifier.align(Alignment.TopCenter).padding(top = NOTE_TOP, start = 12.dp, end = 12.dp)) { message = null } }
@@ -975,5 +990,67 @@ private fun BarnTab(w: FarmWorld, p: Palette, change: ((FarmWorld) -> FarmWorld)
                 }
             }
         }
+    }
+}
+
+// ---------------------------------------------------------------------------------------------
+// Achievements: what the stars open.
+// ---------------------------------------------------------------------------------------------
+
+@Composable
+private fun AchievementsTab(w: FarmWorld, p: Palette) {
+    val list = remember { FarmRules.achievements() }
+    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).testTag("farm-achievements").padding(10.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+        list.forEach { a -> AchievementRow(a, w, p) }
+    }
+}
+
+@Composable
+private fun AchievementRow(a: Achievement, w: FarmWorld, p: Palette) {
+    val open = FarmRules.isUnlocked(w, a)
+    val name = stringResource(a.label)
+    val needed = stringResource(R.string.farm_achievement_stars, a.stars)
+    val missingBuilding = FarmRules.buildingMissing(w, a)
+    // Never only a colour: the state is also said in words.
+    val status = when {
+        open -> stringResource(R.string.farm_achievement_unlocked)
+        FarmRules.starsMissing(w, a) > 0 -> stringResource(R.string.farm_build_stars, FarmRules.starsMissing(w, a))
+        missingBuilding == Building.MILL -> stringResource(R.string.farm_achievement_needs_mill)
+        else -> stringResource(R.string.farm_build_needs_lake)
+    }
+    val star = if (p.mode == ColorMode.HIGH_CONTRAST && !p.isDark) FarmSprites.star.adaptedTo(p) else FarmSprites.star
+    val shape = RoundedCornerShape(16.dp)
+    Row(
+        Modifier
+            .fillMaxWidth()
+            // Like the Build list: what is still locked is shown faded.
+            .alpha(if (open) 1f else 0.45f)
+            .testTag("farm-achievement-${a.key}")
+            .clip(shape).background(p.surfaceAlt)
+            .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.dp, p.outline), shape)
+            .clearAndSetSemantics { contentDescription = "$name · $needed · $status" }
+            .padding(12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Canvas(Modifier.size(72.dp)) { drawAchievement(a, p) }
+        Spacer(Modifier.width(12.dp))
+        Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            Text(name, style = MaterialTheme.typography.titleLarge, color = p.text, maxLines = 2)
+            Text(status, style = MaterialTheme.typography.bodyLarge.copy(fontWeight = if (open) FontWeight.Bold else FontWeight.Normal), color = if (open) p.success else p.text)
+        }
+        Spacer(Modifier.width(8.dp))
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Canvas(Modifier.size(32.dp)) { drawFitted(star) }
+            Text(a.stars.toString(), style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold), color = p.text, maxLines = 1)
+        }
+    }
+}
+
+/** The picture of what is unlocked: the crop's product, the animal, or the building as in the Build list. */
+private fun DrawScope.drawAchievement(a: Achievement, p: Palette) {
+    when (a) {
+        is Achievement.ForCrop -> drawFitted(FarmSprites.products.getValue(a.crop.item).adaptedTo(p))
+        is Achievement.ForAnimal -> drawFitted(FarmSprites.animals.getValue(a.animal)[0].adaptedTo(p))
+        is Achievement.ForBuilding -> drawBuilding(a.building)
     }
 }

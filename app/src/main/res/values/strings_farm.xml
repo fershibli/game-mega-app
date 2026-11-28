@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">The fish swam away. Cast again whenever you like.</string>
     <string name="farm_net_waiting">Fish in the net: %1$d</string>
     <string name="farm_net_next">The net is fishing. Next fish: %1$s</string>
+    <string name="farm_tab_achievements">Awards</string>
+    <string name="farm_achievement_stars">Stars needed: %1$d</string>
+    <string name="farm_achievement_unlocked">Unlocked</string>
+    <string name="farm_achievement_needs_mill">Build the mill first</string>
 </resources>

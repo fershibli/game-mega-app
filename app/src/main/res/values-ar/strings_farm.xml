@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">ابتعدت السمكة. ارمِ الصنارة مجددًا متى شئت.</string>
     <string name="farm_net_waiting">سمك في الشبكة: %1$d</string>
     <string name="farm_net_next">الشبكة تصطاد. السمكة التالية: %1$s</string>
+    <string name="farm_tab_achievements">الإنجازات</string>
+    <string name="farm_achievement_stars">النجوم المطلوبة: %1$d</string>
+    <string name="farm_achievement_unlocked">مفتوح</string>
+    <string name="farm_achievement_needs_mill">ابنِ الطاحونة أولًا</string>
 </resources>

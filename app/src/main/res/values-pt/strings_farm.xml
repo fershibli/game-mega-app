@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">O peixe fugiu. Lance de novo quando quiser.</string>
     <string name="farm_net_waiting">Peixes na rede: %1$d</string>
     <string name="farm_net_next">A rede está pescando. Próximo peixe: %1$s</string>
+    <string name="farm_tab_achievements">Conquistas</string>
+    <string name="farm_achievement_stars">Estrelas necessárias: %1$d</string>
+    <string name="farm_achievement_unlocked">Liberado</string>
+    <string name="farm_achievement_needs_mill">Construa o moinho primeiro</string>
 </resources>

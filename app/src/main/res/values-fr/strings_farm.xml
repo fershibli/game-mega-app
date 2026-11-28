@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">Le poisson est reparti. Relancez quand vous voulez.</string>
     <string name="farm_net_waiting">Poissons dans le filet : %1$d</string>
     <string name="farm_net_next">Le filet pêche. Prochain poisson : %1$s</string>
+    <string name="farm_tab_achievements">Succès</string>
+    <string name="farm_achievement_stars">Étoiles requises : %1$d</string>
+    <string name="farm_achievement_unlocked">Débloqué</string>
+    <string name="farm_achievement_needs_mill">Construisez d\'abord le moulin</string>
 </resources>

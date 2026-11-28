@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">Il pesce è scappato. Lancia di nuovo quando vuoi.</string>
     <string name="farm_net_waiting">Pesci nella rete: %1$d</string>
     <string name="farm_net_next">La rete sta pescando. Prossimo pesce: %1$s</string>
+    <string name="farm_tab_achievements">Traguardi</string>
+    <string name="farm_achievement_stars">Stelle necessarie: %1$d</string>
+    <string name="farm_achievement_unlocked">Sbloccato</string>
+    <string name="farm_achievement_needs_mill">Costruisci prima il mulino</string>
 </resources>

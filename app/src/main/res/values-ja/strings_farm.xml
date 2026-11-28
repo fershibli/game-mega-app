@@ -105,4 +105,8 @@
     <string name="farm_fishing_gone">魚はにげました。いつでもまた投げられます。</string>
     <string name="farm_net_waiting">あみの魚：%1$d</string>
     <string name="farm_net_next">あみで漁をしています。次の魚：%1$s</string>
+    <string name="farm_tab_achievements">実績</string>
+    <string name="farm_achievement_stars">必要な星：%1$d</string>
+    <string name="farm_achievement_unlocked">解放済み</string>
+    <string name="farm_achievement_needs_mill">先に風車小屋をつくってください</string>
 </resources>
