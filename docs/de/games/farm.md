@@ -34,6 +34,8 @@ Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält
 | Kuh | Milch | 30 Min. | 120 | 22 | 2 |
 | Schaf | Wolle | 60 Min. | 200 | 40 | 4 |
 
+**Zuneigung.** Tippe auf ein bepflanztes Beet oder ein Tier: Es antwortet mit einem kleinen Hüpfer oder Wackeln, und ein Herzchen schwebt darüber nach oben. Jedes Tier hat **1 bis 5 Herzen** Zuneigung („Zuneigung: 3/5“ in der Beschreibung, für Screenreader), und beim Antippen erscheinen so viele Herzen zusammen, wie es hat. Sie wächst, wenn du das Tier streichelst (ein Streicheln zählt pro Tier einmal alle **3 Minuten**, mit ständigem Tippen ist sie also nicht sofort voll) und mit den Tagen. Sie sinkt nie, und nichts geht verloren oder fehlt, egal wie: Es ist nur zum Kuscheln. Das Tippen tut weiterhin, was es vorher tat (einsammeln, ernten, die Karte lesen). Bei ausgeschalteten Animationen bewegt sich nichts, und das Herz bleibt nur einen Moment still stehen.
+
 ## Bauen und die Mühle
 Der Knopf **Bauen** (neben **Neues Beet** und **Tier kaufen**) öffnet eine Liste dessen, was gebaut werden kann, jeweils mit Bild, dem Preis neben der Münze und den Sternen, die noch fehlen. Was noch nicht möglich ist, erscheint blass; tippen Sie auf etwas Fertiges, um es zu bauen. Der Knopf verschwindet, sobald alles gebaut ist.
 
