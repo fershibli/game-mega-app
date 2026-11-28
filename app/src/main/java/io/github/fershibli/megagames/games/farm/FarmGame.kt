@@ -42,10 +42,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
@@ -63,6 +65,7 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import io.github.fershibli.megagames.R
 import io.github.fershibli.megagames.core.GameHost
+import io.github.fershibli.megagames.core.Motion
 import io.github.fershibli.megagames.core.rememberWorldStore
 import io.github.fershibli.megagames.ui.components.ActionBar
 import io.github.fershibli.megagames.ui.components.BigButton
@@ -73,6 +76,8 @@ import io.github.fershibli.megagames.ui.components.ZoomableBoard
 import io.github.fershibli.megagames.ui.components.rememberZoomState
 import io.github.fershibli.megagames.ui.theme.LocalPalette
 import io.github.fershibli.megagames.ui.theme.Palette
+import io.github.fershibli.megagames.ui.art.drawFitted
+import io.github.fershibli.megagames.ui.theme.currentMotion
 import io.github.fershibli.megagames.ui.theme.currentPace
 import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.math.roundToInt
@@ -87,6 +92,9 @@ private const val TICK_MS = 1_000L
 /** How long a bed just bought blinks, and each stage of the picture of a bed growing. */
 private const val FRESH_MS = 6_000L
 private const val BED_FRAME_MS = 900L
+
+/** How long the mill's sails stay on each of their turns (slower with a calm pace or gentle motion). */
+private const val SAIL_STEP_MS = 800L
 
 /** How long a message stays on its card (scaled by the pace) and the gap above it. */
 private const val NOTE_MS = 5_000L
@@ -190,10 +198,24 @@ private fun InfoCard(text: String, p: Palette, modifier: Modifier = Modifier, on
 private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit, say: (String?) -> Unit) {
     var sowing by remember { mutableStateOf<Int?>(null) }
     var buying by remember { mutableStateOf(false) }
+    val pace = currentPace
     var planning by remember { mutableStateOf(false) }
+    var building by remember { mutableStateOf(false) }
+    var milling by remember { mutableStateOf(false) }
+    // The sails turn only while the mill works, and stand still when movement is switched off.
+    var sail by remember { mutableIntStateOf(0) }
+    val motion = currentMotion
+    val working = FarmRules.millWorking(w, now)
+    LaunchedEffect(working, motion) {
+        if (working && motion != Motion.NONE) {
+            while (true) {
+                pace.wait((SAIL_STEP_MS * motion.duration).toLong())
+                sail = (sail + 1) % MILL_FRAMES
+            }
+        }
+    }
     // The bed just bought blinks for a while, so it is easy to find on the field.
     var fresh by remember { mutableStateOf<Int?>(null) }
-    val pace = currentPace
     LaunchedEffect(fresh) { if (fresh != null) { pace.wait(FRESH_MS); fresh = null } }
     val sowFirst = stringResource(R.string.farm_plot_sow_first)
     val newBedHere = stringResource(R.string.farm_plot_here)
@@ -208,6 +230,10 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     val lessMinute = stringResource(R.string.farm_less_minute)
     val minutesLeft = stringResource(R.string.farm_minutes_left)
     val penReady = stringResource(R.string.farm_pen_ready)
+    val millName = stringResource(R.string.farm_building_mill)
+    val millTap = stringResource(R.string.farm_mill_tap)
+    val millWorking = stringResource(R.string.farm_mill_working)
+    val builtMill = stringResource(R.string.farm_built_mill)
     fun left(ms: Long): String {
         val minutes = (ms + 59_999L) / 60_000L
         return if (minutes <= 1) lessMinute else minutesLeft.format(minutes.toInt())
@@ -233,6 +259,26 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         else "$name, ${left(((1f - FarmRules.penProgress(pen, at)) * pen.kind.periodMs).toLong())}"
     }
 
+    /** What the mill says: ready sacks, the job being ground and the time left, or that it waits for work. */
+    fun millText(at: Long): String {
+        val ready = FarmRules.millReady(w, at).entries.firstOrNull()
+        val job = FarmRules.millCurrent(w, at)
+        return when {
+            ready != null -> "$millName, ${penReady.format(itemNames.getValue(ready.key), ready.value)}"
+            job != null -> "$millName, ${millWorking.format(itemNames.getValue(job.kind.output), left(FarmRules.millRemainingMs(w, at)))}"
+            else -> "$millName, $millTap"
+        }
+    }
+
+    /** A tap on the mill takes what is ready to the barn, and otherwise opens its card. */
+    fun tapMill() {
+        val t = time()
+        val ready = FarmRules.millReady(w, t)
+        if (ready.isEmpty()) { milling = true; return }
+        change { FarmRules.collectMill(it, t) }
+        say(inBarn.format(ready.entries.joinToString(", ") { "${itemNames.getValue(it.key)} ×${it.value}" }))
+    }
+
     fun tapPlot(i: Int) {
         val t = time()
         val plot = w.plots.getOrNull(i) ?: return
@@ -256,6 +302,7 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     // The scene's tap handler lives as long as the scene: it must always reach the latest farm.
     val onPlot by rememberUpdatedState<(Int) -> Unit> { tapPlot(it) }
     val onPen by rememberUpdatedState<(Int) -> Unit> { tapPen(it) }
+    val onMill by rememberUpdatedState<() -> Unit> { tapMill() }
     Column(Modifier.fillMaxSize()) {
         ZoomableBoard(Modifier.weight(1f).fillMaxWidth(), rememberZoomState(), panWithOneFinger = true) {
             BoxWithConstraints(Modifier.fillMaxSize()) {
@@ -269,13 +316,14 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                         .fillMaxSize()
                         .testTag("farm-scene")
                         .semantics { contentDescription = description }
-                        .pointerInput(w.plots.size, w.pens.size, wPx, hPx) {
+                        .pointerInput(w.plots.size, w.pens.size, w.mill != null, wPx, hPx) {
                             detectTapGestures { pos ->
+                                if (w.mill != null && FarmMap.millBounds(grid).contains(pos)) return@detectTapGestures onMill()
                                 val hit = FarmMap.hit(grid, pos, w.plots.size, w.pens.size) ?: return@detectTapGestures
                                 if (hit.first) onPlot(hit.second) else onPen(hit.second)
                             }
                         },
-                ) { drawFarmScene(FarmScene(w, now, (now / 1000L).toInt(), fresh), p, grid) }
+                ) { drawFarmScene(FarmScene(w, now, (now / TICK_MS).toInt(), fresh, if (working && motion != Motion.NONE) sail else 0), p, grid) }
                 // One node per bed and animal for screen readers and tests. Touches go through
                 // them to the scene, which picks the nearest bed or animal.
                 val spot = 40.dp
@@ -293,6 +341,21 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                                 contentDescription = label
                                 role = Role.Button
                                 onClick { tapPlot(i); true }
+                            },
+                    )
+                }
+                if (w.mill != null) {
+                    val bounds = FarmMap.millBounds(grid)
+                    val label = millText(now)
+                    Box(
+                        Modifier
+                            .offset { IntOffset(bounds.left.roundToInt(), bounds.top.roundToInt()) }
+                            .size(with(density) { bounds.width.toDp() }, with(density) { bounds.height.toDp() })
+                            .testTag("farm-mill")
+                            .semantics {
+                                contentDescription = label
+                                role = Role.Button
+                                onClick { tapMill(); true }
                             },
                     )
                 }
@@ -326,6 +389,11 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                     Modifier.testTag("farm-collect-all"), style = if (gatherable > 0) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, enabled = gatherable > 0, compact = true,
                 )
                 BigButton(stringResource(R.string.farm_water_all), { change { FarmRules.waterAll(it, time()) } }, style = ButtonStyle.SECONDARY, enabled = thirsty > 0, compact = true)
+                // Third in the first row: with three buttons in the second one, the labels did not fit at the largest text.
+                // It goes away once everything is built; the list says what is still missing for each building.
+                if (FarmRules.toBuild(w).isNotEmpty()) {
+                    BigButton(stringResource(R.string.farm_build), { building = true }, Modifier.testTag("farm-build"), style = ButtonStyle.SECONDARY, compact = true)
+                }
             }
             ActionBar {
                 if (w.plots.size < FarmRules.MAX_PLOTS) {
@@ -369,6 +437,26 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
             fresh = index
             say(newBedHere)
         }) { planning = false }
+    }
+    if (building) {
+        BuildDialog(w, p, onBuild = { b ->
+            change { FarmRules.build(it, b) }
+            building = false
+            say(when (b) { Building.MILL -> builtMill })
+        }) { building = false }
+    }
+    if (milling && w.mill != null) {
+        MillDialog(
+            w, now, p,
+            onGrind = { r -> change { FarmRules.grind(it, r, time()) } },
+            onCollect = {
+                val t = time()
+                val ready = FarmRules.millReady(w, t)
+                change { FarmRules.collectMill(it, t) }
+                milling = false
+                if (ready.isNotEmpty()) say(inBarn.format(ready.entries.joinToString(", ") { "${itemNames.getValue(it.key)} ×${it.value}" }))
+            },
+        ) { milling = false }
     }
     if (buying) {
         val choices = Animal.entries.filter { it.stars <= w.stars && it.cost <= w.coins }
@@ -420,6 +508,144 @@ private fun PlotDialog(cost: Int, p: Palette, onBuy: () -> Unit, onCancel: () ->
                 BigButton(stringResource(R.string.cancel), onCancel, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY)
             }
         },
+    )
+}
+
+/**
+ * The list of what can be built: each building with its picture, price and what is missing.
+ * One that needs more stars is shown faded and can't be chosen yet.
+ */
+@Composable
+private fun BuildDialog(w: FarmWorld, p: Palette, onBuild: (Building) -> Unit, onClose: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onClose,
+        containerColor = p.surface,
+        title = { Text(stringResource(R.string.farm_build_title), style = MaterialTheme.typography.headlineSmall, color = p.text) },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()).testTag("farm-build-list"), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                FarmRules.toBuild(w).forEach { b -> BuildRow(b, w, p) { onBuild(b) } }
+            }
+        },
+        confirmButton = { BigButton(stringResource(R.string.close), onClose, Modifier.fillMaxWidth(), style = ButtonStyle.SECONDARY) },
+    )
+}
+
+@Composable
+private fun BuildRow(b: Building, w: FarmWorld, p: Palette, onClick: () -> Unit) {
+    val locked = w.stars < b.stars
+    val can = FarmRules.canBuild(w, b)
+    val status = when {
+        locked -> stringResource(R.string.farm_build_stars, FarmRules.starsMissing(w, b))
+        w.coins < b.cost -> stringResource(R.string.farm_build_coins, b.cost - w.coins)
+        else -> stringResource(R.string.farm_build_tap)
+    }
+    val name = stringResource(b.label)
+    val priceSpoken = stringResource(R.string.farm_build_price, b.cost)
+    val shape = RoundedCornerShape(16.dp)
+    Row(
+        Modifier
+            .fillMaxWidth()
+            // A building that still needs stars is shown faded.
+            .alpha(if (locked) 0.45f else 1f)
+            .testTag("farm-build-${b.key}")
+            .clip(shape).background(p.surfaceAlt)
+            .border(BorderStroke(if (p.strongOutlines) 2.dp else 1.dp, p.outline), shape)
+            .clickable(enabled = can, role = Role.Button, onClick = onClick)
+            .clearAndSetSemantics { contentDescription = "$name · $priceSpoken · $status" }
+            .padding(12.dp),
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Canvas(Modifier.size(72.dp)) { drawBuilding(b) }
+        Spacer(Modifier.width(12.dp))
+        Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
+            Text(name, style = MaterialTheme.typography.titleLarge, color = p.text, maxLines = 2)
+            PricedText(price(b.cost), priceSpoken, MaterialTheme.typography.titleMedium, p.text)
+            Text(status, style = MaterialTheme.typography.bodyLarge, color = if (can) p.success else p.text)
+        }
+    }
+}
+
+/** The picture of a building in the list. */
+private fun DrawScope.drawBuilding(b: Building) {
+    when (b) {
+        Building.MILL -> drawFitted(FarmSprites.mill[0])
+    }
+}
+
+/**
+ * The mill's card: what it is doing and its queue, and each recipe with the ingredients and how
+ * many the barn has. A recipe that can't be ground says what is missing on its own button.
+ */
+@Composable
+private fun MillDialog(w: FarmWorld, now: Long, p: Palette, onGrind: (Recipe) -> Unit, onCollect: () -> Unit, onClose: () -> Unit) {
+    val itemNames = Item.entries.associateWith { stringResource(it.label) }
+    val job = FarmRules.millCurrent(w, now)
+    val done = FarmRules.millReady(w, now)
+    val readyText = stringResource(R.string.farm_pen_ready)
+    val lessMinute = stringResource(R.string.farm_less_minute)
+    val minutesLeft = stringResource(R.string.farm_minutes_left)
+    val left = FarmRules.millRemainingMs(w, now).let { ms -> ((ms + 59_999L) / 60_000L).toInt().let { if (it <= 1) lessMinute else minutesLeft.format(it) } }
+    val status = when {
+        done.isNotEmpty() -> done.entries.joinToString(", ") { readyText.format(itemNames.getValue(it.key), it.value) }
+        job != null -> stringResource(R.string.farm_mill_working, itemNames.getValue(job.kind.output), left)
+        else -> stringResource(R.string.farm_mill_idle)
+    }
+    val full = FarmRules.millJobs(w) >= FarmRules.MILL_QUEUE
+    AlertDialog(
+        onDismissRequest = onClose,
+        containerColor = p.surface,
+        title = { Text(stringResource(R.string.farm_building_mill), style = MaterialTheme.typography.headlineSmall, color = p.text) },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()).testTag("farm-mill-card"), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Text(status, Modifier.testTag("farm-mill-status"), style = MaterialTheme.typography.titleMedium, color = p.text)
+                if (job != null) {
+                    val progress = FarmRules.millProgress(w, now)
+                    Canvas(Modifier.fillMaxWidth().height(12.dp).testTag("farm-mill-bar")) {
+                        drawRoundRect(p.outline.copy(alpha = 0.35f), Offset.Zero, size, CornerRadius(size.height / 2))
+                        drawRoundRect(p.primary, Offset.Zero, Size(size.width * progress, size.height), CornerRadius(size.height / 2))
+                    }
+                }
+                if (done.isNotEmpty()) BigButton(stringResource(R.string.farm_collect_all), onCollect, Modifier.fillMaxWidth().testTag("farm-mill-collect"), compact = true)
+                Text(
+                    stringResource(R.string.farm_mill_queue, FarmRules.millJobs(w), FarmRules.MILL_QUEUE),
+                    Modifier.testTag("farm-mill-queue"), style = MaterialTheme.typography.bodyLarge, color = p.text,
+                )
+                Recipe.entries.forEach { r ->
+                    val have = w.count(r.input)
+                    val missing = FarmRules.missing(w, r)
+                    val can = FarmRules.canGrind(w, r)
+                    Card(Modifier.testTag("farm-recipe-${r.key}")) {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            ItemIcon(r.output, p)
+                            Spacer(Modifier.width(10.dp))
+                            Column {
+                                Text(itemNames.getValue(r.output), style = MaterialTheme.typography.titleMedium, color = p.text)
+                                Text(stringResource(R.string.farm_minutes_left, r.minutes), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                            }
+                        }
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            ItemIcon(r.input, p)
+                            Spacer(Modifier.width(10.dp))
+                            Column {
+                                Text(stringResource(R.string.farm_mill_need, itemNames.getValue(r.input), r.amount), style = MaterialTheme.typography.titleMedium, color = p.text)
+                                Text(
+                                    stringResource(R.string.farm_in_barn, have.toString()),
+                                    Modifier.testTag("farm-recipe-${r.key}-have"), style = MaterialTheme.typography.bodyLarge, color = if (missing == 0) p.success else p.text,
+                                )
+                            }
+                        }
+                        // The button stays in view and says what is missing, instead of just fading.
+                        val label = when {
+                            full -> stringResource(R.string.farm_mill_full)
+                            missing > 0 -> stringResource(R.string.farm_mill_missing, itemNames.getValue(r.input), missing)
+                            else -> stringResource(R.string.farm_mill_grind)
+                        }
+                        BigButton(label, { onGrind(r) }, Modifier.fillMaxWidth().testTag("farm-grind-${r.key}"), style = if (can) ButtonStyle.PRIMARY else ButtonStyle.SECONDARY, enabled = can, compact = true)
+                    }
+                }
+            }
+        },
+        confirmButton = { BigButton(stringResource(R.string.close), onClose, Modifier.fillMaxWidth().testTag("farm-mill-close"), style = ButtonStyle.SECONDARY) },
     )
 }
 

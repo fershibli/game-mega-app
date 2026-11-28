@@ -23,6 +23,7 @@ Quand vous touchez une planche ou un animal, ce qu'il dit (son nom, le temps res
 | Tomate | 20 min | 9 | 12 | 3 |
 | Fraise | 40 min | 12 | 16 | 5 |
 | Citrouille | 90 min | 20 | 28 | 8 |
+| Blé | 15 min | 7 | 9 | le moulin |
 
 ## Les animaux
 Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et garde jusqu’à **trois** produits en attente, montrés dans une petite bulle au-dessus ; touchez l’animal (ou **Tout ramasser**, qui récolte aussi les carrés mûrs) pour les mettre dans la grange.
@@ -32,6 +33,18 @@ Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et gard
 | Poule | Œuf | 10 min | 40 | 10 | 0 |
 | Vache | Lait | 30 min | 120 | 22 | 2 |
 | Mouton | Laine | 60 min | 200 | 40 | 4 |
+
+## Construire et le moulin
+Le bouton **Construire** (à côté de **Nouveau carré** et **Acheter un animal**) ouvre la liste de ce que l’on peut construire, avec pour chaque chose son dessin, son prix à côté de la pièce et le nombre d’étoiles qui manquent encore. Ce qui n’est pas encore disponible apparaît estompé ; touchez ce qui est prêt pour le construire. Le bouton disparaît quand tout est construit.
+
+Le **moulin** demande **6 étoiles** et coûte **120** pièces. Il se dresse dans le pré du fond, à gauche de la ferme, près du potager. Ses ailes tournent lentement quand il travaille et s’arrêtent quand il se repose (elles restent immobiles si les animations sont coupées). Une fois construit, le blé rejoint les graines et les voisins demandent aussi de la farine de maïs et de la farine de blé.
+
+Touchez le moulin pour ouvrir sa carte : chaque recette montre ses ingrédients et combien la grange en a. **Moudre** prend les ingrédients dans la grange et commence, et une petite barre montre le temps. Le moulin fait une recette à la fois et garde jusqu’à **3** dans sa file. S’il manque quelque chose, le bouton reste visible et dit quoi (« Il manque : Maïs ×2 »). Quand un sac est prêt, une bulle apparaît au-dessus du moulin ; touchez le moulin ou **Tout ramasser** pour le mettre dans la grange.
+
+| Produit | Ingrédients | Temps | Vendu |
+|---|---|---|---|
+| Farine de maïs | 2 Maïs | 10 min | 22 |
+| Farine de blé | 2 Blé | 12 min | 26 |
 
 ## Commandes et étoiles
 Les voisins demandent quelques produits à la fois et paient **moitié plus** que le marché, avec une **étoile** en prime. **Livrer** s’allume quand la grange a tout. **Autre commande** remplace une commande par une nouvelle, gratuitement. Les étoiles débloquent de nouvelles graines et de nouveaux animaux, comme le montrent les tableaux.

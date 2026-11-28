@@ -23,6 +23,7 @@ Wenn du ein Beet oder ein Tier antippst, erscheint das, was es sagt (sein Name, 
 | Tomate | 20 Min. | 9 | 12 | 3 |
 | Erdbeere | 40 Min. | 12 | 16 | 5 |
 | Kürbis | 90 Min. | 20 | 28 | 8 |
+| Weizen | 15 Min. | 7 | 9 | die Mühle |
 
 ## Die Tiere
 Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält bis zu **drei** bereit, in einer kleinen Sprechblase darüber; tippe auf das Tier (oder **Alles einsammeln**, das auch die reifen Beete erntet), um sie in die Scheune zu bringen.
@@ -32,6 +33,18 @@ Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält
 | Huhn | Ei | 10 Min. | 40 | 10 | 0 |
 | Kuh | Milch | 30 Min. | 120 | 22 | 2 |
 | Schaf | Wolle | 60 Min. | 200 | 40 | 4 |
+
+## Bauen und die Mühle
+Der Knopf **Bauen** (neben **Neues Beet** und **Tier kaufen**) öffnet eine Liste dessen, was gebaut werden kann, jeweils mit Bild, dem Preis neben der Münze und den Sternen, die noch fehlen. Was noch nicht möglich ist, erscheint blass; tippen Sie auf etwas Fertiges, um es zu bauen. Der Knopf verschwindet, sobald alles gebaut ist.
+
+Die **Mühle** braucht **6 Sterne** und kostet **120** Münzen. Sie steht auf der hinteren Wiese, links von der Farm, neben dem Beet. Ihre Flügel drehen sich langsam, solange sie arbeitet, und stehen still, wenn sie ruht (sie bleiben stehen, wenn die Animationen aus sind). Nach dem Bau kommt der Weizen zu den Samen, und die Nachbarn bestellen auch Maismehl und Weizenmehl.
+
+Tippen Sie auf die Mühle, um ihre Karte zu öffnen: Jedes Rezept zeigt die Zutaten und wie viele die Scheune hat. **Mahlen** nimmt die Zutaten aus der Scheune und beginnt, ein Balken zeigt die Zeit. Die Mühle mahlt ein Rezept nach dem anderen und hält bis zu **3** in der Warteschlange. Fehlt etwas, bleibt der Knopf sichtbar und sagt, was ("Es fehlt: Mais ×2"). Ist ein Sack fertig, erscheint eine Blase über der Mühle; tippen Sie auf die Mühle oder auf **Alles einsammeln**, um ihn in die Scheune zu bringen.
+
+| Produkt | Zutaten | Zeit | Verkauf |
+|---|---|---|---|
+| Maismehl | 2 Mais | 10 Min. | 22 |
+| Weizenmehl | 2 Weizen | 12 Min. | 26 |
 
 ## Bestellungen und Sterne
 Die Nachbarn bestellen ein paar Dinge auf einmal und zahlen **anderthalbmal so viel** wie der Markt, dazu einen **Stern**. **Liefern** leuchtet auf, wenn die Scheune alles hat. **Andere Bestellung** tauscht eine Bestellung kostenlos gegen eine neue. Sterne bringen neue Samen und Tiere, wie die Tabellen zeigen.

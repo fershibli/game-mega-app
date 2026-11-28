@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">报酬：%1$s 和一颗星</string>
     <string name="farm_barn_row_shown">%1$s：%2$d · 每个 %3$s</string>
     <string name="farm_plot_note_shown">价格：%1$s。它会出现在其他菜畦旁边，长法一样：发芽、长叶，然后收获。</string>
+    <string name="farm_item_wheat">小麦</string>
+    <string name="farm_item_cornmeal">玉米粉</string>
+    <string name="farm_item_flour">面粉</string>
+    <string name="farm_building_mill">磨坊</string>
+    <string name="farm_build">建造</string>
+    <string name="farm_build_title">要建什么？</string>
+    <string name="farm_build_stars">还差星星：%1$d</string>
+    <string name="farm_build_coins">还差金币：%1$d</string>
+    <string name="farm_build_tap">点一下建造</string>
+    <string name="farm_build_price">金币价格：%1$d</string>
+    <string name="farm_built_mill">磨坊建好了！点一下它就能磨粉。</string>
+    <string name="farm_mill_tap">点一下磨粉</string>
+    <string name="farm_mill_working">正在磨：%1$s · %2$s</string>
+    <string name="farm_mill_queue">排队：%1$d／%2$d</string>
+    <string name="farm_mill_idle">磨坊在休息。选择要磨的东西。</string>
+    <string name="farm_mill_full">队伍已满</string>
+    <string name="farm_mill_grind">磨粉</string>
+    <string name="farm_mill_missing">还缺：%1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">Rapporte %1$s et une étoile</string>
     <string name="farm_barn_row_shown">%1$s : %2$d · %3$s l’unité</string>
     <string name="farm_plot_note_shown">Prix : %1$s. Il se place à côté des autres carrés et pousse comme eux : pousse, feuilles, puis la récolte.</string>
+    <string name="farm_item_wheat">Blé</string>
+    <string name="farm_item_cornmeal">Farine de maïs</string>
+    <string name="farm_item_flour">Farine de blé</string>
+    <string name="farm_building_mill">Moulin</string>
+    <string name="farm_build">Construire</string>
+    <string name="farm_build_title">Que construire ?</string>
+    <string name="farm_build_stars">Étoiles manquantes : %1$d</string>
+    <string name="farm_build_coins">Pièces manquantes : %1$d</string>
+    <string name="farm_build_tap">Touchez pour construire</string>
+    <string name="farm_build_price">Prix en pièces : %1$d</string>
+    <string name="farm_built_mill">Le moulin est construit ! Touchez-le pour moudre.</string>
+    <string name="farm_mill_tap">touchez pour moudre</string>
+    <string name="farm_mill_working">Mouture : %1$s · %2$s</string>
+    <string name="farm_mill_queue">File : %1$d sur %2$d</string>
+    <string name="farm_mill_idle">Le moulin se repose. Choisissez quoi moudre.</string>
+    <string name="farm_mill_full">File pleine</string>
+    <string name="farm_mill_grind">Moudre</string>
+    <string name="farm_mill_missing">Il manque : %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

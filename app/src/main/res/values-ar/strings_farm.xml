@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">المكافأة %1$s ونجمة</string>
     <string name="farm_barn_row_shown">%1$s: %2$d · %3$s للواحد</string>
     <string name="farm_plot_note_shown">السعر: %1$s. يوضع بجانب الأحواض الأخرى وينمو مثلها: برعم، أوراق، ثم الحصاد.</string>
+    <string name="farm_item_wheat">قمح</string>
+    <string name="farm_item_cornmeal">دقيق الذرة</string>
+    <string name="farm_item_flour">دقيق القمح</string>
+    <string name="farm_building_mill">طاحونة</string>
+    <string name="farm_build">ابنِ</string>
+    <string name="farm_build_title">ماذا نبني؟</string>
+    <string name="farm_build_stars">النجوم الناقصة: %1$d</string>
+    <string name="farm_build_coins">العملات الناقصة: %1$d</string>
+    <string name="farm_build_tap">اضغط لتبني</string>
+    <string name="farm_build_price">السعر بالعملات: %1$d</string>
+    <string name="farm_built_mill">اكتملت الطاحونة! اضغط عليها لتطحن.</string>
+    <string name="farm_mill_tap">اضغط لتطحن</string>
+    <string name="farm_mill_working">جارٍ الطحن: %1$s · %2$s</string>
+    <string name="farm_mill_queue">الدور: %1$d من %2$d</string>
+    <string name="farm_mill_idle">الطاحونة تستريح. اختر ما تطحنه.</string>
+    <string name="farm_mill_full">الدور ممتلئ</string>
+    <string name="farm_mill_grind">اطحن</string>
+    <string name="farm_mill_missing">ينقص: %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">Paga %1$s e una stella</string>
     <string name="farm_barn_row_shown">%1$s: %2$d · %3$s l’uno</string>
     <string name="farm_plot_note_shown">Prezzo: %1$s. Va accanto alle altre aiuole e cresce come loro: germoglio, foglie e poi il raccolto.</string>
+    <string name="farm_item_wheat">Grano</string>
+    <string name="farm_item_cornmeal">Farina di mais</string>
+    <string name="farm_item_flour">Farina di grano</string>
+    <string name="farm_building_mill">Mulino</string>
+    <string name="farm_build">Costruisci</string>
+    <string name="farm_build_title">Cosa costruiamo?</string>
+    <string name="farm_build_stars">Stelle mancanti: %1$d</string>
+    <string name="farm_build_coins">Monete mancanti: %1$d</string>
+    <string name="farm_build_tap">Tocca per costruire</string>
+    <string name="farm_build_price">Prezzo in monete: %1$d</string>
+    <string name="farm_built_mill">Il mulino è costruito! Toccalo per macinare.</string>
+    <string name="farm_mill_tap">tocca per macinare</string>
+    <string name="farm_mill_working">Macinazione: %1$s · %2$s</string>
+    <string name="farm_mill_queue">Coda: %1$d di %2$d</string>
+    <string name="farm_mill_idle">Il mulino riposa. Scegli cosa macinare.</string>
+    <string name="farm_mill_full">Coda piena</string>
+    <string name="farm_mill_grind">Macina</string>
+    <string name="farm_mill_missing">Mancano: %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

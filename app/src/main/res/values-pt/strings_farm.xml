@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">Paga %1$s e uma estrela</string>
     <string name="farm_barn_row_shown">%1$s: %2$d · %3$s cada</string>
     <string name="farm_plot_note_shown">Preço: %1$s. Ele fica ao lado dos outros canteiros e cresce como eles: broto, folhas e então a colheita.</string>
+    <string name="farm_item_wheat">Trigo</string>
+    <string name="farm_item_cornmeal">Fubá</string>
+    <string name="farm_item_flour">Farinha</string>
+    <string name="farm_building_mill">Moinho</string>
+    <string name="farm_build">Construir</string>
+    <string name="farm_build_title">O que vamos construir?</string>
+    <string name="farm_build_stars">Faltam estrelas: %1$d</string>
+    <string name="farm_build_coins">Faltam moedas: %1$d</string>
+    <string name="farm_build_tap">Toque para construir</string>
+    <string name="farm_build_price">Preço em moedas: %1$d</string>
+    <string name="farm_built_mill">O moinho está pronto! Toque nele para moer.</string>
+    <string name="farm_mill_tap">toque para moer</string>
+    <string name="farm_mill_working">Moendo: %1$s · %2$s</string>
+    <string name="farm_mill_queue">Fila: %1$d de %2$d</string>
+    <string name="farm_mill_idle">O moinho está descansando. Escolha o que moer.</string>
+    <string name="farm_mill_full">Fila cheia</string>
+    <string name="farm_mill_grind">Moer</string>
+    <string name="farm_mill_missing">Faltam: %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>

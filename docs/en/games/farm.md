@@ -23,6 +23,7 @@ When you tap a bed or an animal, what it says (its name, the time left, "Harvest
 | Tomato | 20 min | 9 | 12 | 3 |
 | Strawberry | 40 min | 12 | 16 | 5 |
 | Pumpkin | 90 min | 20 | 28 | 8 |
+| Wheat | 15 min | 7 | 9 | the mill |
 
 ## The animals
 Buy animals with **Buy an animal**. Each one makes its product on its own and keeps up to **three** waiting, shown in a little bubble above it; tap the animal (or **Collect all**, which also harvests the ripe beds) to take them to the barn.
@@ -32,6 +33,18 @@ Buy animals with **Buy an animal**. Each one makes its product on its own and ke
 | Chicken | Egg | 10 min | 40 | 10 | 0 |
 | Cow | Milk | 30 min | 120 | 22 | 2 |
 | Sheep | Wool | 60 min | 200 | 40 | 4 |
+
+## Building and the mill
+The **Build** button (next to **New bed** and **Buy an animal**) opens a list of what can be built, each with its picture, its price next to the coin and how many stars are still missing. What is not available yet shows faded; tap one that is ready to build it. The button disappears once everything is built.
+
+The **mill** needs **6 stars** and costs **120** coins. It stands in the meadow at the back left of the farm, beside the field. Its sails turn slowly while it works and stop when it rests (they stay still if animations are off). Once it is built, wheat joins the seeds and the neighbours also start asking for corn meal and flour.
+
+Tap the mill to open its card: each recipe shows its ingredients and how many the barn has. **Grind** takes the ingredients from the barn and starts, and a bar shows the time. The mill grinds one recipe at a time and keeps up to **3** in its queue. If something is missing, the button stays in view and says what ("Missing: Corn ×2"). When a sack is ready, a bubble appears over the mill; tap the mill or **Collect all** to take it to the barn.
+
+| Product | Ingredients | Time | Sells for |
+|---|---|---|---|
+| Corn meal | 2 Corn | 10 min | 22 |
+| Flour | 2 Wheat | 12 min | 26 |
 
 ## Orders and stars
 Neighbours ask for a few things at a time and pay **half as much again** as the market, plus a **star**. **Deliver** lights up when the barn has everything. **Another order** swaps an order for a new one, free. Stars bring new seeds and animals, as the tables show.

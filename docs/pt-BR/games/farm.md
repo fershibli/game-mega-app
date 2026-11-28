@@ -23,6 +23,7 @@ Quando você toca num canteiro ou num animal, o que ele diz (o nome, o tempo que
 | Tomate | 20 min | 9 | 12 | 3 |
 | Morango | 40 min | 12 | 16 | 5 |
 | Abóbora | 90 min | 20 | 28 | 8 |
+| Trigo | 15 min | 7 | 9 | moinho |
 
 ## Os animais
 Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **três** produtos esperando, mostrados num balãozinho acima dele; toque no animal (ou em **Coletar tudo**, que também colhe os canteiros maduros) para levá-los ao celeiro.
@@ -32,6 +33,18 @@ Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **tr�
 | Galinha | Ovo | 10 min | 40 | 10 | 0 |
 | Vaca | Leite | 30 min | 120 | 22 | 2 |
 | Ovelha | Lã | 60 min | 200 | 40 | 4 |
+
+## Construir e o moinho
+O botão **Construir** (ao lado de **Novo canteiro** e **Comprar animal**) abre a lista do que dá para construir, cada item com o desenho, o preço ao lado da moeda e quantas estrelas ainda faltam. O que ainda não está liberado aparece apagado; toque num que esteja pronto para construí-lo. O botão some quando tudo já estiver construído.
+
+O **moinho** precisa de **6 estrelas** e custa **120** moedas. Fica no pasto do fundo, à esquerda da fazenda, ao lado da horta. As pás giram devagar enquanto ele trabalha e param quando ele descansa (ficam paradas se as animações estiverem desligadas). Depois de construído, o trigo entra na lista de sementes e os vizinhos passam a pedir também fubá e farinha.
+
+Toque no moinho para abrir o cartão: cada receita mostra os ingredientes e quantos há no celeiro. **Moer** tira os ingredientes do celeiro e começa, e uma barrinha mostra o tempo. O moinho faz uma receita de cada vez e guarda até **3** na fila. Se faltar algo, o botão continua à vista e diz o quê ("Faltam: Milho ×2"). Quando um saquinho fica pronto, aparece um balãozinho sobre o moinho; toque no moinho ou em **Coletar tudo** para levá-lo ao celeiro.
+
+| Produto | Ingredientes | Tempo | Vende por |
+|---|---|---|---|
+| Fubá | 2 Milho | 10 min | 22 |
+| Farinha | 2 Trigo | 12 min | 26 |
 
 ## Pedidos e estrelas
 Os vizinhos pedem algumas coisas de cada vez e pagam **metade a mais** que o mercado, e ainda dão uma **estrela**. **Entregar** acende quando o celeiro tem tudo. **Outro pedido** troca o pedido por um novo, de graça. As estrelas liberam novas sementes e animais, como mostram as tabelas.

@@ -31,6 +31,9 @@ enum class Item(val key: String, @StringRes val label: Int, val price: Int) {
     EGG("egg", R.string.farm_item_egg, 10),
     MILK("milk", R.string.farm_item_milk, 22),
     WOOL("wool", R.string.farm_item_wool, 40),
+    WHEAT("wheat", R.string.farm_item_wheat, 9),
+    CORN_MEAL("cornmeal", R.string.farm_item_cornmeal, 22),
+    FLOUR("flour", R.string.farm_item_flour, 26),
     ;
 
     companion object {
@@ -41,15 +44,17 @@ enum class Item(val key: String, @StringRes val label: Int, val price: Int) {
 /**
  * What can be sown. A crop grows in [minutes] of real time (half as long once watered) and gives
  * [YIELD] of its [item]. It never wilts: a ripe crop waits for as long as it takes. A crop is
- * offered once the farm has [stars] (earned by delivering orders).
+ * offered once the farm has [stars] (earned by delivering orders) and, for [needsMill], once the
+ * mill is built.
  */
-enum class Crop(val key: String, val item: Item, val minutes: Int, val seedCost: Int, val stars: Int) {
+enum class Crop(val key: String, val item: Item, val minutes: Int, val seedCost: Int, val stars: Int, val needsMill: Boolean = false) {
     LETTUCE("lettuce", Item.LETTUCE, 2, 2, 0),
     CARROT("carrot", Item.CARROT, 5, 4, 0),
     CORN("corn", Item.CORN, 10, 6, 1),
     TOMATO("tomato", Item.TOMATO, 20, 9, 3),
     STRAWBERRY("strawberry", Item.STRAWBERRY, 40, 12, 5),
     PUMPKIN("pumpkin", Item.PUMPKIN, 90, 20, 8),
+    WHEAT("wheat", Item.WHEAT, 15, 7, 0, needsMill = true),
     ;
 
     val growMs: Long get() = minutes * MINUTE
@@ -76,6 +81,35 @@ enum class Animal(val key: String, @StringRes val label: Int, val item: Item, va
     }
 }
 
+/**
+ * What the mill grinds: [amount] of [input] from the barn become one [output] after [minutes].
+ * The [key] is saved in the queue, so it must never change.
+ */
+enum class Recipe(val key: String, val input: Item, val amount: Int, val output: Item, val minutes: Int) {
+    CORN_MEAL("cornmeal", Item.CORN, 2, Item.CORN_MEAL, 10),
+    FLOUR("flour", Item.WHEAT, 2, Item.FLOUR, 12),
+    ;
+
+    val durationMs: Long get() = minutes * MINUTE
+
+    companion object {
+        fun fromKey(key: String?): Recipe? = entries.firstOrNull { it.key == key }
+    }
+}
+
+/**
+ * Things the farm can build. Each costs [cost] coins and needs [stars]. The [key] never changes.
+ * The lake joins this list later.
+ */
+enum class Building(val key: String, @StringRes val label: Int, val cost: Int, val stars: Int) {
+    MILL("mill", R.string.farm_building_mill, 120, 6),
+    ;
+
+    companion object {
+        fun fromKey(key: String?): Building? = entries.firstOrNull { it.key == key }
+    }
+}
+
 /** One bed of the field: empty, or sown with [crop] at [plantedAt] (and maybe watered at [wateredAt]). */
 @Serializable
 data class Plot(val crop: String? = null, val plantedAt: Long = 0, val wateredAt: Long? = null) {
@@ -87,6 +121,17 @@ data class Plot(val crop: String? = null, val plantedAt: Long = 0, val wateredAt
 data class Pen(val animal: String, val since: Long) {
     val kind: Animal get() = Animal.fromKey(animal) ?: Animal.CHICKEN
 }
+
+/** One grinding job in the mill's queue: what it makes and the moment it starts (or started). */
+@Serializable
+data class MillJob(val recipe: String, val start: Long) {
+    val kind: Recipe get() = Recipe.fromKey(recipe) ?: Recipe.CORN_MEAL
+    val end: Long get() = start + kind.durationMs
+}
+
+/** The mill once built: its jobs in order; the finished ones wait there until they are collected. */
+@Serializable
+data class Mill(val jobs: List<MillJob> = emptyList())
 
 /** A neighbour's order: these items, for [coins] and one star. */
 @Serializable
@@ -103,6 +148,8 @@ data class FarmWorld(
     val orders: List<Order> = emptyList(),
     /** How many orders were made so far: the seed of the next one, so orders never repeat in a row. */
     val orderSerial: Int = 0,
+    /** The mill, once built; null before. */
+    val mill: Mill? = null,
 ) {
     fun count(item: Item): Int = barn[item.key] ?: 0
 }
@@ -119,6 +166,9 @@ object FarmRules {
     const val MAX_WAITING = 3
     const val YIELD = 2
     const val ORDERS = 3
+
+    /** The mill grinds one thing at a time and holds up to this many jobs, finished or not. */
+    const val MILL_QUEUE = 3
 
     /** Price of the next bed: dearer as the field grows. */
     fun plotCost(world: FarmWorld): Int = 25 * (world.plots.size - START_PLOTS + 1)
@@ -150,13 +200,14 @@ object FarmRules {
         return if (plot.wateredAt != null) (left + 1) / 2 else left
     }
 
-    fun unlocked(world: FarmWorld): List<Crop> = Crop.entries.filter { it.stars <= world.stars }
+    fun unlocked(world: FarmWorld): List<Crop> =
+        Crop.entries.filter { it.stars <= world.stars && (!it.needsMill || world.mill != null) }
 
     fun canWater(plot: Plot, now: Long): Boolean = plot.sown != null && plot.wateredAt == null && stage(plot, now) != Stage.RIPE
 
     fun plant(world: FarmWorld, index: Int, crop: Crop, now: Long): FarmWorld {
         val plot = world.plots.getOrNull(index) ?: return world
-        if (plot.sown != null || world.coins < crop.seedCost || crop.stars > world.stars) return world
+        if (plot.sown != null || world.coins < crop.seedCost || crop !in unlocked(world)) return world
         return world.copy(coins = world.coins - crop.seedCost, plots = world.plots.replace(index, Plot(crop.key, now)))
     }
 
@@ -203,7 +254,7 @@ object FarmRules {
      */
     fun rescue(world: FarmWorld): FarmWorld {
         val seed = Crop.entries.minOf { it.seedCost }
-        val stuck = !somethingGrowing(world) && world.pens.isEmpty() && world.barn.values.all { it <= 0 } && world.coins < seed
+        val stuck = !somethingGrowing(world) && world.pens.isEmpty() && world.mill?.jobs.isNullOrEmpty() && world.barn.values.all { it <= 0 } && world.coins < seed
         return if (stuck) world.copy(coins = seed) else world
     }
 
@@ -236,15 +287,93 @@ object FarmRules {
 
     fun waitingCount(world: FarmWorld, now: Long): Int = world.pens.sumOf { waiting(it, now) }
 
+    // Buildings.
+
+    fun isBuilt(world: FarmWorld, building: Building): Boolean = when (building) {
+        Building.MILL -> world.mill != null
+    }
+
+    /** The buildings not built yet: the Build button lists them and goes away when none is left. */
+    fun toBuild(world: FarmWorld): List<Building> = Building.entries.filter { !isBuilt(world, it) }
+
+    /** Stars still missing for [building] (0 when the farm has enough). */
+    fun starsMissing(world: FarmWorld, building: Building): Int = (building.stars - world.stars).coerceAtLeast(0)
+
+    fun canBuild(world: FarmWorld, building: Building): Boolean =
+        !isBuilt(world, building) && world.stars >= building.stars && world.coins >= building.cost
+
+    fun build(world: FarmWorld, building: Building): FarmWorld {
+        if (!canBuild(world, building)) return world
+        val paid = world.copy(coins = world.coins - building.cost)
+        return when (building) {
+            Building.MILL -> paid.copy(mill = Mill())
+        }
+    }
+
+    // The mill.
+
+    /** Jobs the mill has finished by [now], waiting to be collected. */
+    fun millDone(world: FarmWorld, now: Long): Int = world.mill?.jobs?.count { it.end <= now } ?: 0
+
+    /** What the mill has finished by [now], by item: what a tap on it brings to the barn. */
+    fun millReady(world: FarmWorld, now: Long): Map<Item, Int> =
+        world.mill?.jobs?.filter { it.end <= now }?.groupingBy { it.kind.output }?.eachCount() ?: emptyMap()
+
+    /** Jobs in the queue, finished or not. */
+    fun millJobs(world: FarmWorld): Int = world.mill?.jobs?.size ?: 0
+
+    /** The job being ground at [now] (the first one not finished), or null when the mill is idle. */
+    fun millCurrent(world: FarmWorld, now: Long): MillJob? = world.mill?.jobs?.firstOrNull { it.end > now }
+
+    /** Whether the sails turn: a job is not finished yet. */
+    fun millWorking(world: FarmWorld, now: Long): Boolean = millCurrent(world, now) != null
+
+    /** Share of the job being ground now, from 0 to 1 (0 when the mill is idle). */
+    fun millProgress(world: FarmWorld, now: Long): Float {
+        val job = millCurrent(world, now) ?: return 0f
+        return ((now - job.start).coerceAtLeast(0L).toDouble() / job.kind.durationMs).coerceIn(0.0, 1.0).toFloat()
+    }
+
+    /** Milliseconds until the job being ground now is finished (0 when the mill is idle). */
+    fun millRemainingMs(world: FarmWorld, now: Long): Long = millCurrent(world, now)?.let { (it.end - now).coerceAtLeast(0L) } ?: 0L
+
+    /** How many of the recipe's ingredient the barn lacks (0 when it has enough). */
+    fun missing(world: FarmWorld, recipe: Recipe): Int = (recipe.amount - world.count(recipe.input)).coerceAtLeast(0)
+
+    fun canGrind(world: FarmWorld, recipe: Recipe): Boolean =
+        world.mill != null && millJobs(world) < MILL_QUEUE && missing(world, recipe) == 0
+
+    /**
+     * Takes the ingredients from the barn and puts the recipe at the end of the queue. It starts
+     * now, or when the job before it ends.
+     */
+    fun grind(world: FarmWorld, recipe: Recipe, now: Long): FarmWorld {
+        val mill = world.mill ?: return world
+        if (!canGrind(world, recipe)) return world
+        val start = maxOf(now, mill.jobs.maxOfOrNull { it.end } ?: now)
+        return world.copy(
+            barn = world.barn.add(recipe.input, -recipe.amount),
+            mill = mill.copy(jobs = mill.jobs + MillJob(recipe.key, start)),
+        )
+    }
+
+    /** Moves everything the mill has finished into the barn; what is still grinding goes on. */
+    fun collectMill(world: FarmWorld, now: Long): FarmWorld {
+        val mill = world.mill ?: return world
+        val (done, rest) = mill.jobs.partition { it.end <= now }
+        if (done.isEmpty()) return world
+        return world.copy(barn = done.fold(world.barn) { barn, job -> barn.add(job.kind.output, 1) }, mill = mill.copy(jobs = rest))
+    }
+
     // Gathering everything at once.
 
     /**
-     * Brings into the barn everything that is ready: every ripe bed and every animal's products.
-     * Returns the new farm and what entered the barn, by item. Later sources (the mill, the lake)
-     * join here, so the one button keeps gathering everything.
+     * Brings into the barn everything that is ready: every ripe bed, every animal's products and
+     * what the mill has ground. Returns the new farm and what entered the barn, by item. Later
+     * sources (the lake) join here, so the one button keeps gathering everything.
      */
     fun gatherAll(world: FarmWorld, now: Long): Pair<FarmWorld, Map<Item, Int>> {
-        val gathered = collectAll(harvestAll(world, now), now)
+        val gathered = collectMill(collectAll(harvestAll(world, now), now), now)
         val brought = Item.entries.mapNotNull { item ->
             val n = gathered.count(item) - world.count(item)
             if (n > 0) item to n else null
@@ -252,8 +381,8 @@ object FarmRules {
         return gathered to brought
     }
 
-    /** How many things are ready to gather: ripe beds plus products waiting. */
-    fun readyCount(world: FarmWorld, now: Long): Int = ripeCount(world, now) + waitingCount(world, now)
+    /** How many things are ready to gather: ripe beds, products waiting and jobs the mill finished. */
+    fun readyCount(world: FarmWorld, now: Long): Int = ripeCount(world, now) + waitingCount(world, now) + millDone(world, now)
 
     // The market.
 
@@ -265,9 +394,10 @@ object FarmRules {
 
     // Orders.
 
-    /** Items the farm can make now (unlocked crops and the animals it has). */
+    /** Items the farm can make now: unlocked crops, its animals' products and what its mill grinds. */
     fun available(world: FarmWorld): List<Item> =
-        unlocked(world).map { it.item } + world.pens.map { it.kind.item }.distinct()
+        unlocked(world).map { it.item } + world.pens.map { it.kind.item }.distinct() +
+            if (world.mill != null) Recipe.entries.map { it.output } else emptyList()
 
     /** Tops the board up to [ORDERS] orders. */
     fun fillOrders(world: FarmWorld): FarmWorld {

@@ -60,4 +60,23 @@
     <string name="farm_order_reward_shown">Награда: %1$s и звезда</string>
     <string name="farm_barn_row_shown">%1$s: %2$d · по %3$s</string>
     <string name="farm_plot_note_shown">Цена: %1$s. Она появится рядом с другими грядками и растёт так же: росток, листья, потом урожай.</string>
+    <string name="farm_item_wheat">Пшеница</string>
+    <string name="farm_item_cornmeal">Кукурузная мука</string>
+    <string name="farm_item_flour">Пшеничная мука</string>
+    <string name="farm_building_mill">Мельница</string>
+    <string name="farm_build">Построить</string>
+    <string name="farm_build_title">Что построим?</string>
+    <string name="farm_build_stars">Не хватает звёзд: %1$d</string>
+    <string name="farm_build_coins">Не хватает монет: %1$d</string>
+    <string name="farm_build_tap">Коснитесь, чтобы построить</string>
+    <string name="farm_build_price">Цена в монетах: %1$d</string>
+    <string name="farm_built_mill">Мельница построена! Коснитесь её, чтобы молоть.</string>
+    <string name="farm_mill_tap">коснитесь, чтобы молоть</string>
+    <string name="farm_mill_working">Мелется: %1$s · %2$s</string>
+    <string name="farm_mill_queue">Очередь: %1$d из %2$d</string>
+    <string name="farm_mill_idle">Мельница отдыхает. Выберите, что молоть.</string>
+    <string name="farm_mill_full">Очередь заполнена</string>
+    <string name="farm_mill_grind">Молоть</string>
+    <string name="farm_mill_missing">Не хватает: %1$s ×%2$d</string>
+    <string name="farm_mill_need">%1$s ×%2$d</string>
 </resources>
