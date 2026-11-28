@@ -6,6 +6,8 @@ import androidx.compose.ui.semantics.getOrNull
 import androidx.compose.ui.test.SemanticsMatcher
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onAllNodesWithText
+import androidx.compose.ui.test.onAllNodesWithContentDescription
+import androidx.compose.ui.test.onFirst
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -28,6 +30,7 @@ import io.github.fershibli.megagames.games.sudoku.SudokuState
 import io.github.fershibli.megagames.games.sudoku.newSudoku
 import io.github.fershibli.megagames.ui.MegaGamesApp
 import io.github.fershibli.megagames.ui.screens.DELETE_SAVE_MILLIS
+import io.github.fershibli.megagames.ui.screens.GameScreen
 import io.github.fershibli.megagames.ui.screens.InGameActions
 import io.github.fershibli.megagames.ui.screens.SettingsScreen
 import io.github.fershibli.megagames.ui.theme.MegaGamesTheme
@@ -144,6 +147,38 @@ class DeleteSaveTest {
         rule.waitForIdle()
         assertEquals(1, deleted)
         rule.onAllNodesWithText("Deleting…").assertCountEquals(0)
+    }
+
+    private fun gameScreen(game: GameId, saves: SaveStore) {
+        rule.setContent {
+            MegaGamesTheme(english) {
+                GameScreen(
+                    game = game, difficulty = Difficulty.EASY, saved = null, saveStore = saves, settings = english,
+                    onSettingsChange = {}, askResume = false, onResumeAnswered = {}, onExit = {},
+                )
+            }
+        }
+        rule.waitForIdle()
+        rule.onAllNodesWithContentDescription("Settings").onFirst().performClick()
+        rule.waitForIdle()
+    }
+
+    @Test
+    fun insideAGameTheButtonFollowsWhetherSomethingIsSaved() {
+        // A game with a save shows it, named after the game...
+        val saves = SaveStore(app).apply { clear() }
+        val sudoku = newSudoku(Difficulty.EASY, Random(5))
+        saves.save(SavedGame(GameId.SUDOKU.key, Difficulty.EASY, AppJson.encodeToJsonElement(SudokuState.serializer(), sudoku)))
+        saves.flush()
+        gameScreen(GameId.SUDOKU, saves)
+        rule.onNodeWithTag("delete-save").performScrollTo().assertIsDisplayed()
+        saves.clear()
+    }
+
+    @Test
+    fun aPastimeKeepsItsWorldAndHasNoButton() {
+        gameScreen(GameId.PET, SaveStore(app).apply { clear() })
+        rule.onAllNodesWithTag("delete-save").assertCountEquals(0)
     }
 
     @Test
