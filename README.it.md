@@ -41,7 +41,7 @@ Sudoku · Solitario · Buraco · Backgammon · Mahjong · Reversi · Cruciverba 
 - **I rompicapi vengono creati sul momento** (Sudoku, Mahjong, Tubi, Unisci i colori, Cruciverba…), quindi non si ripetono mai, e ognuno di essi **si può sempre risolvere**.
 - **Veri avversari al computer**, scritti apposta per Backgammon, Buraco e Reversi.
 - **Zoom con due dita in ogni gioco**, più lo zoom con un dito solo nella modalità una mano.
-- **Salvataggio automatico**: se chiudi l’app per sbaglio, ti propone di riprendere esattamente da dove avevi lasciato.
+- **Salvataggio automatico**: se chiudi l’app per sbaglio, ti propone di riprendere esattamente da dove avevi lasciato (attiva **Apri sull’ultimo gioco** in Impostazioni per vederlo appena apri l’app).
 - **10 lingue**: inglese, portoghese (Brasile), spagnolo, francese, italiano, tedesco, russo, giapponese, cinese semplificato e arabo. Sono tradotti sia l’app *sia* i dizionari dei cruciverba.
 - **Piccola e leggera**: circa **1,3 MB**, scritta in Kotlin nativo con Jetpack Compose, senza motore di gioco e senza immagini: tutta la grafica è disegnata dal codice.
 

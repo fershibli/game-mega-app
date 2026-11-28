@@ -41,7 +41,7 @@ Sudoku · Solitaire · Buraco · Backgammon · Mahjong · Reversi · Mots crois�
 - **Les grilles sont générées à la volée** (Sudoku, Mahjong, Tuyaux, Relie les couleurs, Mots croisés…) : elles ne se répètent jamais, et chacune **a une solution garantie**.
 - **De vrais adversaires** : l’ordinateur joue avec des stratégies écrites spécialement pour le Backgammon, le Buraco et le Reversi.
 - **Zoom à deux doigts dans tous les jeux**, et zoom à un doigt en mode une main.
-- **Sauvegarde automatique** : si l’application se ferme par accident, elle propose de reprendre exactement là où vous en étiez.
+- **Sauvegarde automatique** : si l’application se ferme par accident, elle propose de reprendre exactement là où vous en étiez (activez **Ouvrir sur le dernier jeu** dans Réglages pour le voir dès l’ouverture).
 - **10 langues** : anglais, portugais du Brésil, espagnol, français, italien, allemand, russe, japonais, chinois simplifié et arabe — l’interface *et* les dictionnaires des mots croisés.
 - **Petite et légère** : environ **1,3 Mo**, Kotlin natif + Jetpack Compose, sans moteur de jeu ni images — tous les dessins sont réalisés par le code.
 

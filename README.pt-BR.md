@@ -41,7 +41,7 @@ Sudoku · Paciência · Buraco · Gamão · Mahjong · Reversi · Palavras cruza
 - **Os desafios são gerados na hora** (Sudoku, Mahjong, Encanamento, Ligue as cores, Palavras cruzadas…), então nunca se repetem — e todo desafio gerado **tem solução garantida**.
 - **Adversários de verdade no computador**, escritos especialmente para Gamão, Buraco e Reversi.
 - **Zoom com pinça em todos os jogos**, e zoom com um dedo no modo uma mão.
-- **Salvamento automático**: se o app fechar sem querer, ele oferece continuar exatamente de onde parou.
+- **Salvamento automático**: se o app fechar sem querer, ele oferece continuar exatamente de onde parou (ligue **Abrir no último jogo** em Configurações para isso aparecer assim que o app abrir).
 - **10 idiomas**: inglês, português do Brasil, espanhol, francês, italiano, alemão, russo, japonês, chinês simplificado e árabe — a interface *e* os dicionários das palavras cruzadas.
 - **Pequeno e leve**: cerca de **1,3 MB**, Kotlin nativo + Jetpack Compose, sem motor de jogo e sem imagens — toda a arte é desenhada em código.
 
