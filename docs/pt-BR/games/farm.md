@@ -37,7 +37,7 @@ Compre animais em **Comprar animal**. Cada um produz sozinho e guarda até **tr�
 ## Construir e o moinho
 O botão **Construir** (ao lado de **Novo canteiro** e **Comprar animal**) abre a lista do que dá para construir, cada item com o desenho, o preço ao lado da moeda e quantas estrelas ainda faltam. O que ainda não está liberado aparece apagado; toque num que esteja pronto para construí-lo. O botão some quando tudo já estiver construído.
 
-O **moinho** precisa de **6 estrelas** e custa **120** moedas. Fica na estradinha do fundo, à direita do celeiro. As pás giram devagar enquanto ele trabalha e param quando ele descansa (ficam paradas se as animações estiverem desligadas). Depois de construído, o trigo entra na lista de sementes e os vizinhos passam a pedir também fubá e farinha.
+O **moinho** precisa de **6 estrelas** e custa **120** moedas. Fica no pasto do fundo, à esquerda da fazenda, ao lado da horta. As pás giram devagar enquanto ele trabalha e param quando ele descansa (ficam paradas se as animações estiverem desligadas). Depois de construído, o trigo entra na lista de sementes e os vizinhos passam a pedir também fubá e farinha.
 
 Toque no moinho para abrir o cartão: cada receita mostra os ingredientes e quantos há no celeiro. **Moer** tira os ingredientes do celeiro e começa, e uma barrinha mostra o tempo. O moinho faz uma receita de cada vez e guarda até **3** na fila. Se faltar algo, o botão continua à vista e diz o quê ("Faltam: Milho ×2"). Quando um saquinho fica pronto, aparece um balãozinho sobre o moinho; toque no moinho ou em **Coletar tudo** para levá-lo ao celeiro.
 

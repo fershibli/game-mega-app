@@ -37,7 +37,7 @@ Buy animals with **Buy an animal**. Each one makes its product on its own and ke
 ## Building and the mill
 The **Build** button (next to **New bed** and **Buy an animal**) opens a list of what can be built, each with its picture, its price next to the coin and how many stars are still missing. What is not available yet shows faded; tap one that is ready to build it. The button disappears once everything is built.
 
-The **mill** needs **6 stars** and costs **120** coins. It stands on the back lane, to the right of the barn. Its sails turn slowly while it works and stop when it rests (they stay still if animations are off). Once it is built, wheat joins the seeds and the neighbours also start asking for corn meal and flour.
+The **mill** needs **6 stars** and costs **120** coins. It stands in the meadow at the back left of the farm, beside the field. Its sails turn slowly while it works and stop when it rests (they stay still if animations are off). Once it is built, wheat joins the seeds and the neighbours also start asking for corn meal and flour.
 
 Tap the mill to open its card: each recipe shows its ingredients and how many the barn has. **Grind** takes the ingredients from the barn and starts, and a bar shows the time. The mill grinds one recipe at a time and keeps up to **3** in its queue. If something is missing, the button stays in view and says what ("Missing: Corn ×2"). When a sack is ready, a bubble appears over the mill; tap the mill or **Collect all** to take it to the barn.
 

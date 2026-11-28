@@ -419,8 +419,9 @@ class FarmTest {
         assertTrue("$bounds", bounds.left >= 0f)
         assertTrue("$bounds", bounds.right <= 800f)
         assertTrue("$bounds", bounds.top >= 0f)
-        // It stands on the back row, behind every bed.
-        assertTrue(FarmMap.plots.all { it.second > FarmMap.MILL_ROW + 1 })
+        // It stands clear of every bed and animal (a bed's picture is about one tile wide).
+        val cells = FarmMap.plots + FarmMap.pens
+        assertTrue(cells.all { (c, r) -> grid.center(c, r).x - grid.tileW / 2 >= bounds.right || grid.center(c, r).y - grid.tileW > bounds.bottom })
         // At least two sail frames, all the same size.
         val frames = FarmSprites.mill
         assertTrue(frames.size >= 2)

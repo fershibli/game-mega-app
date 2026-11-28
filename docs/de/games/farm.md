@@ -37,7 +37,7 @@ Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält
 ## Bauen und die Mühle
 Der Knopf **Bauen** (neben **Neues Beet** und **Tier kaufen**) öffnet eine Liste dessen, was gebaut werden kann, jeweils mit Bild, dem Preis neben der Münze und den Sternen, die noch fehlen. Was noch nicht möglich ist, erscheint blass; tippen Sie auf etwas Fertiges, um es zu bauen. Der Knopf verschwindet, sobald alles gebaut ist.
 
-Die **Mühle** braucht **6 Sterne** und kostet **120** Münzen. Sie steht am hinteren Weg, rechts von der Scheune. Ihre Flügel drehen sich langsam, solange sie arbeitet, und stehen still, wenn sie ruht (sie bleiben stehen, wenn die Animationen aus sind). Nach dem Bau kommt der Weizen zu den Samen, und die Nachbarn bestellen auch Maismehl und Weizenmehl.
+Die **Mühle** braucht **6 Sterne** und kostet **120** Münzen. Sie steht auf der hinteren Wiese, links von der Farm, neben dem Beet. Ihre Flügel drehen sich langsam, solange sie arbeitet, und stehen still, wenn sie ruht (sie bleiben stehen, wenn die Animationen aus sind). Nach dem Bau kommt der Weizen zu den Samen, und die Nachbarn bestellen auch Maismehl und Weizenmehl.
 
 Tippen Sie auf die Mühle, um ihre Karte zu öffnen: Jedes Rezept zeigt die Zutaten und wie viele die Scheune hat. **Mahlen** nimmt die Zutaten aus der Scheune und beginnt, ein Balken zeigt die Zeit. Die Mühle mahlt ein Rezept nach dem anderen und hält bis zu **3** in der Warteschlange. Fehlt etwas, bleibt der Knopf sichtbar und sagt, was ("Es fehlt: Mais ×2"). Ist ein Sack fertig, erscheint eine Blase über der Mühle; tippen Sie auf die Mühle oder auf **Alles einsammeln**, um ihn in die Scheune zu bringen.
 

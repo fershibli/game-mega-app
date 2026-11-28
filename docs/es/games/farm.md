@@ -37,7 +37,7 @@ Compra animales con **Comprar un animal**. Cada uno produce solo y guarda hasta 
 ## Construir y el molino
 El botón **Construir** (junto a **Nuevo bancal** y **Comprar un animal**) abre una lista de lo que se puede construir, cada cosa con su dibujo, su precio junto a la moneda y cuántas estrellas faltan todavía. Lo que aún no está disponible se ve apagado; toca lo que esté listo para construirlo. El botón desaparece cuando todo está construido.
 
-El **molino** necesita **6 estrellas** y cuesta **120** monedas. Está en el caminito del fondo, a la derecha del granero. Sus aspas giran despacio mientras trabaja y se paran cuando descansa (quedan quietas si las animaciones están desactivadas). Una vez construido, el trigo se suma a las semillas y los vecinos también empiezan a pedir harina de maíz y harina de trigo.
+El **molino** necesita **6 estrellas** y cuesta **120** monedas. Está en el prado del fondo, a la izquierda de la granja, junto al huerto. Sus aspas giran despacio mientras trabaja y se paran cuando descansa (quedan quietas si las animaciones están desactivadas). Una vez construido, el trigo se suma a las semillas y los vecinos también empiezan a pedir harina de maíz y harina de trigo.
 
 Toca el molino para abrir su tarjeta: cada receta muestra sus ingredientes y cuántos hay en el granero. **Moler** saca los ingredientes del granero y empieza, y una barrita muestra el tiempo. El molino muele una receta cada vez y guarda hasta **3** en la cola. Si falta algo, el botón sigue a la vista y dice qué ("Faltan: Maíz ×2"). Cuando un saco está listo, aparece un globito sobre el molino; toca el molino o **Recoger todo** para llevarlo al granero.
 

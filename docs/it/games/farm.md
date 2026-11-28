@@ -37,7 +37,7 @@ Compra gli animali con **Compra un animale**. Ognuno produce da solo e tiene fin
 ## Costruire e il mulino
 Il pulsante **Costruisci** (accanto a **Nuova aiuola** e **Compra un animale**) apre l’elenco di ciò che si può costruire, ognuno con il suo disegno, il prezzo accanto alla moneta e quante stelle mancano ancora. Ciò che non è ancora disponibile appare sbiadito; tocca ciò che è pronto per costruirlo. Il pulsante sparisce quando è tutto costruito.
 
-Il **mulino** richiede **6 stelle** e costa **120** monete. Sorge sul sentiero in fondo, a destra del fienile. Le pale girano piano mentre lavora e si fermano quando riposa (restano ferme se le animazioni sono disattivate). Una volta costruito, il grano entra tra i semi e i vicini cominciano a chiedere anche farina di mais e farina di grano.
+Il **mulino** richiede **6 stelle** e costa **120** monete. Sorge nel prato in fondo, a sinistra della fattoria, accanto all’orto. Le pale girano piano mentre lavora e si fermano quando riposa (restano ferme se le animazioni sono disattivate). Una volta costruito, il grano entra tra i semi e i vicini cominciano a chiedere anche farina di mais e farina di grano.
 
 Tocca il mulino per aprire la sua scheda: ogni ricetta mostra gli ingredienti e quanti ne ha il fienile. **Macina** prende gli ingredienti dal fienile e comincia, e una barretta mostra il tempo. Il mulino fa una ricetta alla volta e tiene fino a **3** in coda. Se manca qualcosa, il pulsante resta in vista e dice cosa ("Mancano: Mais ×2"). Quando un sacco è pronto, compare un fumetto sopra il mulino; tocca il mulino o **Prendi tutto** per portarlo nel fienile.
 

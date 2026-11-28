@@ -53,11 +53,12 @@ object FarmMap {
     val paddockRows = 8..10
 
     /**
-     * Where the mill stands: on the back lane, to the right of the barn, on the spot where a tree
-     * stood (the tree is left out once the mill is built), so the farm does not grow.
+     * Where the mill stands: in the meadow at the back left of the farm, beside the field and away
+     * from the house, the barn and the beds, so nothing covers it and the farm does not grow. The
+     * cell lies off the map (on the meadow behind it), which is why it is a fraction.
      */
-    const val MILL_COL = 5.6f
-    const val MILL_ROW = 0f
+    const val MILL_COL = -3.5f
+    const val MILL_ROW = 2.9f
 
     /** Foot of the mill (the middle of its base) on the screen. */
     fun millFoot(grid: IsoGrid): Offset = grid.toScreen(MILL_COL + 0.5f, MILL_ROW + 0.5f)
@@ -471,95 +472,115 @@ object FarmSprites {
     val mill: List<PixelArt> = listOf(
         pixelArt(
             "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
-            "...................",
-            ".........tcc.......",
-            ".........tcc.......",
-            ".........tcc.......",
-            "........otcc.......",
-            "...ccccortro.......",
-            "...ccccrrtrRo......",
-            "...ttttttktttttt...",
-            ".....orrrtrRcccc...",
-            "......owwtwscccc...",
-            "......occtwso......",
-            "......occtbso......",
-            ".....owcctwwso.....",
-            ".....owcctwwso.....",
-            ".....obbbbbbso.....",
-            ".....owwwwwwso.....",
-            ".....owwdddwso.....",
-            "....owwwdddwwso....",
-            "....owwwdddwwso....",
-            "....ooooooooooo....",
+            "...........tccc........",
+            "...........tccc........",
+            "...........tccc........",
+            "...........tccc........",
+            "...........tcc.........",
+            "...cccc...otcc.........",
+            "...ccccccortro.........",
+            "...ccccccrrtrRo........",
+            "...ttttttttktttttttt...",
+            "......orrrrtrRcccccc...",
+            ".......owwwtwwcccccc...",
+            ".......owcctwwsocccc...",
+            ".......obcctbbso.......",
+            ".......occctwwso.......",
+            "......owccctgwwso......",
+            "......owccctgwwso......",
+            "......owccctwwwso......",
+            "......owwwwwwwwso......",
+            "......obbbbbbbbso......",
+            "......owwwwwwwwso......",
+            "......owwwdddwwso......",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....ooooooooooooo.....",
         ),
         pixelArt(
             "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
-            "...................",
-            ".......tcc.........",
-            ".......tcc.........",
-            ".......tcc.........",
-            "........tcc........",
-            ".......otrro.ttt...",
-            "......crrtrttccc...",
-            "...ccccrtktRcccc...",
-            "...cccttrtrRco.....",
-            "...tttowwwtso......",
-            "......owcctso......",
-            "......obbccto......",
-            ".....owwgcctso.....",
-            ".....owwgcctso.....",
-            ".....obbbbbbso.....",
-            ".....owwwwwwso.....",
-            ".....owwdddwso.....",
-            "....owwwdddwwso....",
-            "....owwwdddwwso....",
-            "....ooooooooooo....",
+            ".......................",
+            "........tccc...........",
+            "........ttccc..........",
+            ".........tccc..........",
+            ".........tcc...........",
+            "..........tcc....tt....",
+            ".........otrro.tttc....",
+            ".....cc.crrtrttcccc....",
+            "....cccccrtktRccccc....",
+            "....ccccttrtrRcRcc.....",
+            "....ctttwwwwtwso.......",
+            "....tt.owwcctwso.......",
+            ".......obbbcctso.......",
+            ".......owwccctso.......",
+            "......owwwcccttso......",
+            "......owwwgccctso......",
+            "......owwwwwwwwso......",
+            "......owwwwwwwwso......",
+            "......obbbbbbbbso......",
+            "......owwwwwwwwso......",
+            "......owwwdddwwso......",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....ooooooooooooo.....",
         ),
         pixelArt(
             "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
-            "...................",
-            "...................",
-            "...................",
-            ".....tcc.....t.....",
-            "......tccoo.tc.....",
-            ".......tccrtcc.....",
-            "......ortrtcc......",
-            ".....orcrkrcRo.....",
-            ".....occtrtRRo.....",
-            ".....cctwccto......",
-            ".....ctwwwcct......",
-            ".....tobbbbcct.....",
-            ".....owwggwwso.....",
-            ".....owwggwwso.....",
-            ".....obbbbbbso.....",
-            ".....owwwwwwso.....",
-            ".....owwdddwso.....",
-            "....owwwdddwwso....",
-            "....owwwdddwwso....",
-            "....ooooooooooo....",
+            ".......................",
+            ".......................",
+            ".....tccc........t.....",
+            "......tccc......tc.....",
+            ".......tccc....tcc.....",
+            "........tccoo.tccc.....",
+            ".........tccrtccc......",
+            "........ortrtccc.......",
+            ".......orcrkrcRo.......",
+            "......occctrtRRRo......",
+            "......ccctwcctso.......",
+            ".....ccctwwwccto.......",
+            ".....cctbbbbccct.......",
+            ".....ctowwwwwccct......",
+            ".....towwwgggwccct.....",
+            "......owwwgggwwso......",
+            "......owwwwwwwwso......",
+            "......owwwwwwwwso......",
+            "......obbbbbbbbso......",
+            "......owwwwwwwwso......",
+            "......owwwdddwwso......",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....ooooooooooooo.....",
         ),
         pixelArt(
             "$OUTLINE w=EAD9B5 s=C9B58A b=B79C6A r=5B7FA6 R=466385 g=A8D8F5 d=6E3A26 t=7A5230 c=E8CF8A k=3B2A20",
-            "...................",
-            "...........tcc.....",
-            "...........tcc.....",
-            "...ccc.....tcc.....",
-            "...cccc.ootcc......",
-            "...tttcorrto.......",
-            "......ttrtrRo......",
-            ".....orrtktRRo.....",
-            ".....orrrtrtto.....",
-            "......owtwwscttt...",
-            "......cctwwscccc...",
-            ".....cctbbbsoccc...",
-            ".....cctggwwso.....",
-            ".....cctggwwso.....",
-            ".....obbbbbbso.....",
-            ".....owwwwwwso.....",
-            ".....owwdddwso.....",
-            "....owwwdddwwso....",
-            "....owwwdddwwso....",
-            "....ooooooooooo....",
+            ".......................",
+            "..............tccc.....",
+            "....cc.......ttccc.....",
+            "....ccc......tccc......",
+            "....cccc.....tcc.......",
+            "....ttccc.ootcc........",
+            ".....tttcorrto.........",
+            "........ttrtrRo........",
+            ".......orrtktRRo.......",
+            "......orrrrtrttRo......",
+            ".......owwtwwwcttt.....",
+            ".......occtwwwccctt....",
+            ".......cctbbbbscccc....",
+            "......ccctwwwwsoccc....",
+            ".....cccttgggwwsocc....",
+            ".....ccctwgggwwso......",
+            "......owwwwwwwwso......",
+            "......owwwwwwwwso......",
+            "......obbbbbbbbso......",
+            "......owwwwwwwwso......",
+            "......owwwdddwwso......",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....owwwwdddwwwso.....",
+            ".....ooooooooooooo.....",
         ),
     )
 
@@ -818,9 +839,8 @@ fun DrawScope.drawFarmScene(
     val things = ArrayList<Thing>()
     fun foot(col: Float, row: Float) = grid.toScreen(col + 0.5f, row + 0.5f)
     things += Thing(1f) { stand(FarmSprites.house.forPalette(p), foot(1.2f, -0.3f), px) }
-    things += Thing(4f) { stand(FarmSprites.barn.forPalette(p), foot(4.1f, -0.6f), px) }
-    val trees = listOf(0 to 0, 3 to 0, 6 to 0, 0 to 2, 9 to 0, 12 to 0)
-        .filter { it.first < columns && !(w.mill != null && it == 6 to 0) }
+    things += Thing(4f) { stand(FarmSprites.barn.forPalette(p), foot(4.6f, -0.6f), px) }
+    val trees = listOf(0 to 0, 3 to 0, 6 to 0, 0 to 2, 9 to 0, 12 to 0).filter { it.first < columns }
     for ((tc, tr) in trees) things += Thing(tc + tr + 0.1f) { stand(FarmSprites.tree.forPalette(p), foot(tc.toFloat(), tr.toFloat()), px) }
     val bushes = listOf(6 to 2, 3 to 2, 8 to 2, 11 to 2).filter { it.first < columns }
     for ((bc, br) in bushes) things += Thing(bc + br + 0.1f) { stand(FarmSprites.bush.forPalette(p), foot(bc.toFloat(), br.toFloat()), px) }
@@ -903,8 +923,8 @@ private fun DrawScope.drawMill(scene: FarmScene, p: Palette, grid: IsoGrid, px: 
     val ready = FarmRules.millDone(w, scene.now)
     if (ready > 0) {
         val sack = FarmSprites.products.getValue(w.mill!!.jobs.first { it.end <= scene.now }.kind.output)
-        // The bubble sits beside the sails, over the right of the roof, clear of the animals' own.
-        val top = foot - Offset(0f, px * (art.height + 3f))
+        // Right above the sails, like the animals' bubbles above their heads.
+        val top = foot - Offset(0f, px * (art.height + 1f))
         val bw = px * (sack.width + 4)
         val bh = px * (sack.height + 4)
         drawRoundRect(Color.White, Offset(top.x - bw / 2, top.y - bh), Size(bw, bh), CornerRadius(px * 2))

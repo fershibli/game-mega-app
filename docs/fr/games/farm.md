@@ -37,7 +37,7 @@ Achetez des animaux avec **Acheter un animal**. Chacun produit tout seul et gard
 ## Construire et le moulin
 Le bouton **Construire** (à côté de **Nouveau carré** et **Acheter un animal**) ouvre la liste de ce que l’on peut construire, avec pour chaque chose son dessin, son prix à côté de la pièce et le nombre d’étoiles qui manquent encore. Ce qui n’est pas encore disponible apparaît estompé ; touchez ce qui est prêt pour le construire. Le bouton disparaît quand tout est construit.
 
-Le **moulin** demande **6 étoiles** et coûte **120** pièces. Il se dresse sur le chemin du fond, à droite de la grange. Ses ailes tournent lentement quand il travaille et s’arrêtent quand il se repose (elles restent immobiles si les animations sont coupées). Une fois construit, le blé rejoint les graines et les voisins demandent aussi de la farine de maïs et de la farine de blé.
+Le **moulin** demande **6 étoiles** et coûte **120** pièces. Il se dresse dans le pré du fond, à gauche de la ferme, près du potager. Ses ailes tournent lentement quand il travaille et s’arrêtent quand il se repose (elles restent immobiles si les animations sont coupées). Une fois construit, le blé rejoint les graines et les voisins demandent aussi de la farine de maïs et de la farine de blé.
 
 Touchez le moulin pour ouvrir sa carte : chaque recette montre ses ingrédients et combien la grange en a. **Moudre** prend les ingrédients dans la grange et commence, et une petite barre montre le temps. Le moulin fait une recette à la fois et garde jusqu’à **3** dans sa file. S’il manque quelque chose, le bouton reste visible et dit quoi (« Il manque : Maïs ×2 »). Quand un sac est prêt, une bulle apparaît au-dessus du moulin ; touchez le moulin ou **Tout ramasser** pour le mettre dans la grange.
 
