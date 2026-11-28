@@ -14,6 +14,7 @@ import io.github.fershibli.megagames.ui.art.IsoGrid
 import io.github.fershibli.megagames.ui.art.PixelArt
 import io.github.fershibli.megagames.ui.art.PixelColors
 import io.github.fershibli.megagames.ui.art.drawFitted
+import io.github.fershibli.megagames.ui.art.palette
 import io.github.fershibli.megagames.ui.art.pixelArt
 import io.github.fershibli.megagames.ui.theme.Palette
 import kotlin.math.floor
@@ -70,6 +71,27 @@ object FarmMap {
         val foot = millFoot(grid)
         val half = art.width * px / 2
         return Rect(foot.x - half, foot.y - art.height * px, foot.x + half, foot.y)
+    }
+
+    /**
+     * Where the lake lies: in the corner of grass to the right of the paddock, beyond the farm's
+     * last column (so it follows the farm as it grows) and clear of the fence. Like the mill, it
+     * is off the map, on the meadow around it, so the farm does not grow.
+     */
+    const val LAKE_BEYOND = 2.1f
+    const val LAKE_ROW = 6.5f
+
+    /** Middle of the lake on the screen, for a farm of [columns] columns. */
+    fun lakeCenter(grid: IsoGrid, columns: Int): Offset = grid.toScreen(columns + LAKE_BEYOND, LAKE_ROW)
+
+    /** The lake's picture on the screen: where a tap counts as a tap on the lake. */
+    fun lakeBounds(grid: IsoGrid, columns: Int): Rect {
+        val px = farmPixel(grid)
+        val art = FarmSprites.pond
+        val c = lakeCenter(grid, columns)
+        val halfW = art.width * px / 2
+        val halfH = art.height * px / 2
+        return Rect(c.x - halfW, c.y - halfH, c.x + halfW, c.y + halfH)
     }
 
     /** The lane at the back of the farm. */
@@ -282,6 +304,126 @@ object FarmSprites {
             "..osssssso..",
             "...oooooo...",
         ),
+        // The lake's fish, head to the right: a slim silver lambari with a yellow tail, a grey
+        // tilápia with dark stripes and a red-edged tail, and a golden tucunaré with three bars.
+        Item.LAMBARI to pixelArt(
+            "$OUTLINE b=8FA9B8 s=CFD8DC w=F5F7F8 y=F9A825 d=37474F k=000000",
+            "......oooo...",
+            "...oobbbbboo.",
+            "o.obbdbbbbbwo",
+            "oyobsssssswko",
+            "oyyosssssssso",
+            "oyobwwwwwwwo.",
+            "o..oowwwwoo..",
+            "......oooo...",
+        ),
+        Item.TILAPIA to pixelArt(
+            "$OUTLINE b=8A9BA6 s=55697A w=ECEFF1 t=C0604A k=000000",
+            ".....ooooo...",
+            "...oobsbsbbo.",
+            "t.obbsbsbsbbo",
+            "ttobsbsbsbwko",
+            "ttobsbsbsbbbo",
+            "ttobsbsbsbbo.",
+            "t.owbwbwbwoo.",
+            "...ooooooo...",
+        ),
+        Item.TUCUNARE to pixelArt(
+            "$OUTLINE g=7CB342 y=FDD835 d=37474F q=E65100 w=FFF59D r=E53935 k=000000",
+            "....oooooo....",
+            "..oogggggggo..",
+            "o.ogydyydyyyro",
+            "ooqyydyydyyyko",
+            "oqqoydyydyyyyo",
+            "ooqoyyyyyyyyo.",
+            "o..owwwwwwwo..",
+            "....ooooooo...",
+        ),
+    )
+
+    /**
+     * The lake: an oval of water seen from the side, with a sandy bank, lighter water near the
+     * edge and deeper water in the middle. Made from the shape of an ellipse, pixel by pixel.
+     */
+    val pond: PixelArt = pixelArt(pondRows(34, 17), palette("$OUTLINE s=D9C58F l=7EC8E3 d=4FA3E0 D=3F8FC9 g=5E9B3A p=8BC34A"))
+
+    /** Glints on the water, in turns: each spot grows, shines and fades. */
+    val shimmer: List<PixelArt> = listOf(
+        pixelArt("w=FFFFFF", ".w."),
+        pixelArt("w=FFFFFF", "www"),
+        pixelArt("w=FFFFFF", "w.w"),
+    )
+
+    /** Rings spreading round the float when a fish bites, smallest first. */
+    val ripples: List<PixelArt> = listOf(
+        pixelArt("w=FFFFFF", ".www.", "w...w", ".www."),
+        pixelArt("w=FFFFFF", "..wwwww..", ".w.....w.", "w.......w", ".w.....w.", "..wwwww.."),
+        pixelArt("w=FFFFFF", "...wwwwwww...", ".ww.......ww.", "w...........w", ".ww.......ww.", "...wwwwwww..."),
+    )
+
+    /** A fish passing under the water now and then: only its dark shape, heading left. */
+    val fishShadow = pixelArt(
+        "d=2E6A8E",
+        ".ddd..d",
+        "ddddddd",
+        ".ddd..d",
+    )
+
+    /** The float: red on top, white below, with a little stick. */
+    val float = pixelArt(
+        "$OUTLINE r=E53935 h=FF8A80 w=FFFFFF",
+        "..o..",
+        ".oro.",
+        "orhro",
+        "orrro",
+        "owwwo",
+        ".owo.",
+        "..o..",
+    )
+
+    /** The fishing rod: a bamboo pole from the handle at the bottom left to the tip at the top right. */
+    val rod = pixelArt(
+        "$OUTLINE t=C8A165 h=5D4037 g=B0BEC5",
+        "...............tt",
+        "..............tt.",
+        ".............tt..",
+        "............tt...",
+        "...........tt....",
+        "..........tt.....",
+        ".........tt......",
+        "........tt.......",
+        ".......tt........",
+        "......tt.........",
+        ".....hh..........",
+        "..oohh...........",
+        ".ogoh............",
+        ".oohh............",
+        "..hh.............",
+        ".hh..............",
+        "hh...............",
+    )
+
+    /** The lake's net: two posts with a rope mesh between them and red floats on top. */
+    val net = pixelArt(
+        "t=7A5230 r=E53935 n=E8DCC8",
+        "t..........t",
+        "tr.r.r.r.r.t",
+        "tnnnnnnnnnnt",
+        "t.n.n.n.n.nt",
+        "tnnnnnnnnnnt",
+        "tn.n.n.n.n.t",
+        "t..........t",
+    )
+
+    /** Reeds at the edge of the lake. */
+    val reeds = pixelArt(
+        "g=4E9A3E d=2E6B2A b=8D6E63",
+        ".b...b.",
+        ".g.b.g.",
+        ".g.g.gb",
+        "dg.g.dg",
+        "dgdgdg.",
+        ".ddgd..",
     )
 
     /** Wheat, which grows in its own way: thin blades, taller blades, then golden stalks. */
@@ -702,6 +844,40 @@ object FarmSprites {
     )
 }
 
+/**
+ * The rows of the lake's picture, [w] × [h]: an ellipse with an outline, a sandy bank, light
+ * water near the bank, deep water in the middle with a darker streak, and two lily pads.
+ */
+private fun pondRows(w: Int, h: Int): List<String> {
+    val cx = w / 2f
+    val cy = h / 2f
+    fun d(x: Int, y: Int): Float {
+        val dx = (x + 0.5f - cx) / cx
+        val dy = (y + 0.5f - cy) / cy
+        return dx * dx + dy * dy
+    }
+    fun inside(x: Int, y: Int) = x in 0 until w && y in 0 until h && d(x, y) <= 1f
+    val pads = setOf(9 to 7, 10 to 7, 9 to 8, 23 to 10, 24 to 10, 24 to 9)
+    return List(h) { y ->
+        buildString {
+            for (x in 0 until w) {
+                val v = d(x, y)
+                append(
+                    when {
+                        !inside(x, y) -> '.'
+                        !inside(x - 1, y) || !inside(x + 1, y) || !inside(x, y - 1) || !inside(x, y + 1) -> 'o'
+                        v > 0.72f -> 's'
+                        (x to y) in pads -> if (x % 2 == 0) 'g' else 'p'
+                        v > 0.42f -> 'l'
+                        y == h / 2 && x in w / 3 until w * 2 / 3 -> 'D'
+                        else -> 'd'
+                    },
+                )
+            }
+        }
+    }
+}
+
 // ---------------------------------------------------------------------------------------------
 // Drawing.
 // ---------------------------------------------------------------------------------------------
@@ -734,8 +910,15 @@ private val nightCache = HashMap<PixelArt, PixelArt>()
 private fun PixelArt.forPalette(p: Palette): PixelArt =
     if (!p.isDark) this else nightCache.getOrPut(this) { recolored(night(p)) }
 
-/** What one moment of the farm looks like on the scene; [glow] rings a bed just bought. */
-class FarmScene(val world: FarmWorld, val now: Long, val tick: Int, val glow: Int? = null, val sail: Int = 0)
+/**
+ * What one moment of the farm looks like on the scene; [glow] rings a bed just bought, [sail] is
+ * the mill's turn, [ripple] the lake's glints and [swim] whether a fish may pass in the lake.
+ */
+class FarmScene(val world: FarmWorld, val now: Long, val tick: Int, val glow: Int? = null, val sail: Int = 0, val ripple: Int = 0, val swim: Boolean = false)
+
+/** A fish passes in the lake once every this many turns of its glints, crossing it in [FISH_STEPS] turns. */
+const val FISH_EVERY = 36
+const val FISH_STEPS = 9
 
 /** The turns the mill's sails go through. */
 val MILL_FRAMES: Int get() = FarmSprites.mill.size
@@ -846,6 +1029,7 @@ fun DrawScope.drawFarmScene(
     for ((bc, br) in bushes) things += Thing(bc + br + 0.1f) { stand(FarmSprites.bush.forPalette(p), foot(bc.toFloat(), br.toFloat()), px) }
 
     if (w.mill != null) things += Thing(FarmMap.MILL_COL + FarmMap.MILL_ROW + 0.2f) { drawMill(scene, p, grid, px, c.outline, c.sun) }
+    if (w.lake != null) things += Thing(columns + FarmMap.LAKE_BEYOND + FarmMap.LAKE_ROW) { drawLake(scene, p, grid, px, columns, c.outline) }
 
     w.plots.forEachIndexed { i, plot ->
         val (col, r) = FarmMap.plots.getOrNull(i) ?: return@forEachIndexed
@@ -932,6 +1116,124 @@ private fun DrawScope.drawMill(scene: FarmScene, p: Palette, grid: IsoGrid, px: 
         stand(sack, Offset(top.x, top.y - px * 2), px)
         if (ready > 1) {
             for (k in 0 until ready) drawCircle(outline, px * 0.8f, Offset(top.x - px * 2 + k * px * 2, top.y + px))
+        }
+    }
+}
+
+/** Spots of the lake's glints, in squares of its picture. */
+private val GLINTS = listOf(11 to 5, 21 to 8, 14 to 11)
+
+/**
+ * The lake at its place: the water with reeds, glints that come and go, now and then a fish
+ * passing under the surface, the net once placed, and a bubble with a fish when the net has some.
+ */
+private fun DrawScope.drawLake(scene: FarmScene, p: Palette, grid: IsoGrid, px: Float, columns: Int, outline: Color) {
+    val w = scene.world
+    val pond = FarmSprites.pond
+    val center = FarmMap.lakeCenter(grid, columns)
+    val left = floor(center.x - pond.width * px / 2)
+    val top = floor(center.y - pond.height * px / 2)
+    pond.forPalette(p).draw(this, left, top, px)
+    stand(FarmSprites.reeds.forPalette(p), Offset(left + px * 3, top + px * 9), px)
+    stand(FarmSprites.reeds.forPalette(p), Offset(left + px * 30, top + px * 12), px, flip = true)
+    GLINTS.forEachIndexed { k, (gx, gy) ->
+        val glint = FarmSprites.shimmer[(scene.ripple + k) % FarmSprites.shimmer.size]
+        glint.draw(this, left + gx * px, top + gy * px, px, alpha = if (p.isDark) 0.5f else 0.85f)
+    }
+    val turn = scene.ripple % FISH_EVERY
+    if (scene.swim && turn < FISH_STEPS) {
+        // From the right bank to the left one, slowly.
+        val shadow = FarmSprites.fishShadow
+        val x = (pond.width - shadow.width - 6) - (pond.width - shadow.width - 12) * turn / (FISH_STEPS - 1f)
+        shadow.draw(this, floor(left + x * px), top + px * 9, px, alpha = 0.55f)
+    }
+    if (w.lake?.net != null) stand(FarmSprites.net.forPalette(p), Offset(left + px * 24, top + px * 8), px)
+    val ready = FarmRules.netWaiting(w, scene.now)
+    if (ready > 0) {
+        val fish = FarmSprites.products.getValue(FarmRules.netReady(w, scene.now).keys.first())
+        // Above the net, like the animals' bubbles above their heads.
+        val tip = Offset(left + px * 24, top - px)
+        val bw = px * (fish.width + 4)
+        val bh = px * (fish.height + 4)
+        drawRoundRect(Color.White, Offset(tip.x - bw / 2, tip.y - bh), Size(bw, bh), CornerRadius(px * 2))
+        drawRoundRect(outline, Offset(tip.x - bw / 2, tip.y - bh), Size(bw, bh), CornerRadius(px * 2), style = Stroke(max(1f, px * 0.6f)))
+        stand(fish, Offset(tip.x, tip.y - px * 2), px)
+        if (ready > 1) {
+            for (k in 0 until ready) drawCircle(outline, px * 0.8f, Offset(tip.x - px * 2 + k * px * 2, tip.y + px))
+        }
+    }
+}
+
+/** What the fishing card's picture shows. */
+enum class FishingView { IDLE, WAITING, BITE, CAUGHT, GONE }
+
+/**
+ * The picture of the fishing card: water, the rod from the bank and its line to the float. While
+ * waiting the float bobs ([bob]); on a bite it dips with rings and a bright circle around it; a
+ * caught [fish] leaps over the water.
+ */
+fun DrawScope.drawFishing(p: Palette, view: FishingView, bob: Int, fish: Item?) {
+    val c = PixelColors.of(p)
+    val px = max(1f, floor(minOf(size.height / 34f, size.width / 48f)))
+    val shore = size.height * 0.34f
+    drawRoundRect(lerp(c.sky, c.grass, 0.15f), Offset.Zero, size, CornerRadius(px * 4))
+    clipRect {
+        drawRect(c.water, Offset(0f, shore), Size(size.width, size.height - shore))
+        drawRect(c.waterLight, Offset(0f, shore), Size(size.width, px * 2))
+        for ((x, y) in listOf(0.15f to 0.55f, 0.6f to 0.48f, 0.8f to 0.8f, 0.35f to 0.85f)) {
+            val glint = FarmSprites.shimmer[(bob + (x * 10).toInt()) % FarmSprites.shimmer.size]
+            glint.draw(this, floor(size.width * x), floor(size.height * y), px, alpha = 0.7f)
+        }
+        // The bank on the left with the rod resting on it.
+        drawRect(c.grass, Offset(0f, shore - px * 3), Size(size.width * 0.22f, size.height - shore + px * 3))
+        drawRect(lerp(c.grass, c.grassDark, 0.4f), Offset(size.width * 0.22f - px * 2, shore - px * 3), Size(px * 2, size.height - shore + px * 3))
+        val rod = FarmSprites.rod.forPalette(p)
+        val rodLeft = floor(size.width * 0.06f)
+        val rodTop = floor(size.height - rod.height * px - px * 2)
+        rod.draw(this, rodLeft, rodTop, px)
+        val tip = Offset(rodLeft + rod.width * px - px, rodTop + px)
+        val floatX = floor(size.width * 0.62f)
+        val water = shore + (size.height - shore) * 0.45f
+        when (view) {
+            FishingView.IDLE -> {
+                // The float hangs from the tip, ready to be cast.
+                val hang = tip + Offset(px * 2, px * 12)
+                drawLine(c.outline, tip, hang - Offset(0f, FarmSprites.float.height * px), max(1f, px * 0.5f))
+                stand(FarmSprites.float.forPalette(p), hang, px)
+            }
+            FishingView.WAITING, FishingView.GONE -> {
+                val y = water + if (view == FishingView.WAITING && bob % 2 == 1) px else 0f
+                val f = FarmSprites.float
+                drawLine(c.outline, tip, Offset(floatX, y - f.height * px), max(1f, px * 0.5f))
+                stand(f.forPalette(p), Offset(floatX, y + px * 2), px)
+                val ring = FarmSprites.ripples[0]
+                stand(ring, Offset(floatX, y + px * 4), px, alpha = 0.6f)
+                if (view == FishingView.GONE) {
+                    // The fish swims off to the right.
+                    FarmSprites.fishShadow.draw(this, floatX + px * 14, y + px * 6, px, alpha = 0.55f, flipX = true)
+                }
+            }
+            FishingView.BITE -> {
+                // The float dips: only its top shows, with rings round it and a bright circle.
+                val y = water + px * 4
+                val f = FarmSprites.float
+                drawLine(c.outline, tip, Offset(floatX, y - f.height * px + px * 3), max(1f, px * 0.5f))
+                clipRect(bottom = y - px) { stand(f.forPalette(p), Offset(floatX, y + px * 3), px) }
+                val ring = FarmSprites.ripples[(bob % (FarmSprites.ripples.size - 1)) + 1]
+                stand(ring, Offset(floatX, y + px * 2), px)
+                drawCircle(c.outline, px * 11, Offset(floatX, y - px * 2), style = Stroke(px * 2.4f))
+                drawCircle(c.sun, px * 11, Offset(floatX, y - px * 2), style = Stroke(px * 1.4f))
+            }
+            FishingView.CAUGHT -> {
+                val art = fish?.let { FarmSprites.products[it] }
+                val y = water - px * 6
+                if (art != null) {
+                    drawLine(c.outline, tip, Offset(floatX, y - art.height * px * 2), max(1f, px * 0.5f))
+                    stand(art.forPalette(p), Offset(floatX, y), px * 2)
+                    stand(FarmSprites.sparkle, Offset(floatX + art.width * px + px * 2, y - art.height * px * 2), px)
+                }
+                stand(FarmSprites.ripples[2], Offset(floatX, water + px * 4), px, alpha = 0.7f)
+            }
         }
     }
 }

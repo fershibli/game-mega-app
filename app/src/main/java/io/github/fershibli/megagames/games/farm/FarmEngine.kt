@@ -34,6 +34,9 @@ enum class Item(val key: String, @StringRes val label: Int, val price: Int) {
     WHEAT("wheat", R.string.farm_item_wheat, 9),
     CORN_MEAL("cornmeal", R.string.farm_item_cornmeal, 22),
     FLOUR("flour", R.string.farm_item_flour, 26),
+    LAMBARI("lambari", R.string.farm_item_lambari, 6),
+    TILAPIA("tilapia", R.string.farm_item_tilapia, 14),
+    TUCUNARE("tucunare", R.string.farm_item_tucunare, 30),
     ;
 
     companion object {
@@ -98,11 +101,23 @@ enum class Recipe(val key: String, val input: Item, val amount: Int, val output:
 }
 
 /**
- * Things the farm can build. Each costs [cost] coins and needs [stars]. The [key] never changes.
- * The lake joins this list later.
+ * River fish of the lake, all Brazilian. [weight] is how often each one bites, out of the sum of
+ * all weights: the lambari is the most common, the tucunaré the rarest.
  */
-enum class Building(val key: String, @StringRes val label: Int, val cost: Int, val stars: Int) {
+enum class Fish(val item: Item, val weight: Int) {
+    LAMBARI(Item.LAMBARI, 55),
+    TILAPIA(Item.TILAPIA, 33),
+    TUCUNARE(Item.TUCUNARE, 12),
+}
+
+/**
+ * Things the farm can build. Each costs [cost] coins and needs [stars] (and, for [needsLake], the
+ * lake already built). The [key] never changes. The net is an achievement: it costs nothing.
+ */
+enum class Building(val key: String, @StringRes val label: Int, val cost: Int, val stars: Int, val needsLake: Boolean = false) {
     MILL("mill", R.string.farm_building_mill, 120, 6),
+    LAKE("lake", R.string.farm_building_lake, 200, 10),
+    NET("net", R.string.farm_building_net, 0, 15, needsLake = true),
     ;
 
     companion object {
@@ -133,6 +148,23 @@ data class MillJob(val recipe: String, val start: Long) {
 @Serializable
 data class Mill(val jobs: List<MillJob> = emptyList())
 
+/**
+ * The lake once built. [baits] were in the tin at [baitSince]; one more comes back every
+ * [FarmRules.BAIT_MINUTES] up to [FarmRules.BAITS]. [net] is when the fish the net is catching
+ * started (null while the lake has no net).
+ */
+@Serializable
+data class Lake(val baits: Int = FarmRules.BAITS, val baitSince: Long = 0, val net: Long? = null)
+
+/**
+ * One cast of the rod, kept only while the fishing card is open: the moment of the cast, the
+ * moment a fish bites and which fish it is.
+ */
+data class Cast(val at: Long, val biteAt: Long, val fish: Fish)
+
+/** The float on the water: waiting for a bite, a fish biting (pull now), or the fish swam away. */
+enum class Bobber { WAITING, BITE, GONE }
+
 /** A neighbour's order: these items, for [coins] and one star. */
 @Serializable
 data class Order(val items: Map<String, Int>, val coins: Int)
@@ -150,6 +182,8 @@ data class FarmWorld(
     val orderSerial: Int = 0,
     /** The mill, once built; null before. */
     val mill: Mill? = null,
+    /** The lake, once built; null before. */
+    val lake: Lake? = null,
 ) {
     fun count(item: Item): Int = barn[item.key] ?: 0
 }
@@ -169,6 +203,23 @@ object FarmRules {
 
     /** The mill grinds one thing at a time and holds up to this many jobs, finished or not. */
     const val MILL_QUEUE = 3
+
+    /** The lake's bait tin holds this many; one comes back every [BAIT_MINUTES]. */
+    const val BAITS = 5
+    const val BAIT_MINUTES = 10
+
+    /** The net catches one fish every [NET_MINUTES] and keeps up to [MAX_WAITING] of them. */
+    const val NET_MINUTES = 20
+
+    /** A fish bites between these many milliseconds after the cast (scaled by the pace). */
+    const val BITE_MIN_MS = 3_000L
+    const val BITE_MAX_MS = 8_000L
+
+    /** Time to pull once a fish bites, at the normal pace (longer with a calmer one). */
+    const val PULL_MS = 4_000L
+
+    private const val BAIT_MS = BAIT_MINUTES * MINUTE
+    private const val NET_MS = NET_MINUTES * MINUTE
 
     /** Price of the next bed: dearer as the field grows. */
     fun plotCost(world: FarmWorld): Int = 25 * (world.plots.size - START_PLOTS + 1)
@@ -254,7 +305,9 @@ object FarmRules {
      */
     fun rescue(world: FarmWorld): FarmWorld {
         val seed = Crop.entries.minOf { it.seedCost }
-        val stuck = !somethingGrowing(world) && world.pens.isEmpty() && world.mill?.jobs.isNullOrEmpty() && world.barn.values.all { it <= 0 } && world.coins < seed
+        // A lake always gives fish again, so a farm with one is never stuck.
+        val stuck = !somethingGrowing(world) && world.pens.isEmpty() && world.mill?.jobs.isNullOrEmpty() && world.lake == null &&
+            world.barn.values.all { it <= 0 } && world.coins < seed
         return if (stuck) world.copy(coins = seed) else world
     }
 
@@ -291,7 +344,13 @@ object FarmRules {
 
     fun isBuilt(world: FarmWorld, building: Building): Boolean = when (building) {
         Building.MILL -> world.mill != null
+        Building.LAKE -> world.lake != null
+        Building.NET -> world.lake?.net != null
     }
+
+    /** Whether the farm has what [building] needs besides coins: its stars and, for the net, the lake. */
+    fun isUnlocked(world: FarmWorld, building: Building): Boolean =
+        world.stars >= building.stars && (!building.needsLake || world.lake != null)
 
     /** The buildings not built yet: the Build button lists them and goes away when none is left. */
     fun toBuild(world: FarmWorld): List<Building> = Building.entries.filter { !isBuilt(world, it) }
@@ -300,13 +359,16 @@ object FarmRules {
     fun starsMissing(world: FarmWorld, building: Building): Int = (building.stars - world.stars).coerceAtLeast(0)
 
     fun canBuild(world: FarmWorld, building: Building): Boolean =
-        !isBuilt(world, building) && world.stars >= building.stars && world.coins >= building.cost
+        !isBuilt(world, building) && isUnlocked(world, building) && world.coins >= building.cost
 
-    fun build(world: FarmWorld, building: Building): FarmWorld {
+    /** Builds [building] at [now]: the lake starts with a full bait tin, the net starts fishing. */
+    fun build(world: FarmWorld, building: Building, now: Long): FarmWorld {
         if (!canBuild(world, building)) return world
         val paid = world.copy(coins = world.coins - building.cost)
         return when (building) {
             Building.MILL -> paid.copy(mill = Mill())
+            Building.LAKE -> paid.copy(lake = Lake(BAITS, now))
+            Building.NET -> paid.copy(lake = paid.lake?.copy(net = now))
         }
     }
 
@@ -365,15 +427,129 @@ object FarmRules {
         return world.copy(barn = done.fold(world.barn) { barn, job -> barn.add(job.kind.output, 1) }, mill = mill.copy(jobs = rest))
     }
 
+    // The lake: fishing with the rod.
+
+    /** Baits in the tin of [lake] at [now], counting the ones that came back. */
+    private fun baitsAt(lake: Lake, now: Long): Int =
+        if (lake.baits >= BAITS) BAITS else (lake.baits + (now - lake.baitSince).coerceAtLeast(0L) / BAIT_MS).toInt().coerceAtMost(BAITS)
+
+    /** Baits ready at [now] (0 without a lake). */
+    fun baits(world: FarmWorld, now: Long): Int = world.lake?.let { baitsAt(it, now) } ?: 0
+
+    /** Milliseconds until the next bait comes back (0 with a full tin or no lake). */
+    fun nextBaitMs(world: FarmWorld, now: Long): Long {
+        val lake = world.lake ?: return 0L
+        if (baitsAt(lake, now) >= BAITS) return 0L
+        return BAIT_MS - (now - lake.baitSince).coerceAtLeast(0L) % BAIT_MS
+    }
+
+    /**
+     * The tin with [n] baits at [now]. A full tin starts its clock afresh; otherwise the bait on
+     * its way keeps its progress.
+     */
+    private fun withBaits(lake: Lake, n: Int, now: Long): Lake {
+        val have = baitsAt(lake, now)
+        if (n >= BAITS || have >= BAITS) return lake.copy(baits = n.coerceAtMost(BAITS), baitSince = now)
+        val since = lake.baitSince + (have - lake.baits).coerceAtLeast(0) * BAIT_MS
+        return lake.copy(baits = n, baitSince = since)
+    }
+
+    fun canCast(world: FarmWorld, now: Long): Boolean = baits(world, now) > 0
+
+    /** Picks a fish by its [Fish.weight]. */
+    fun pickFish(random: Random): Fish {
+        var r = random.nextInt(Fish.entries.sumOf { it.weight })
+        for (fish in Fish.entries) {
+            if (r < fish.weight) return fish
+            r -= fish.weight
+        }
+        return Fish.LAMBARI
+    }
+
+    /**
+     * Casts the rod at [now]: one bait goes, and a fish bites a few seconds later (between
+     * [BITE_MIN_MS] and [BITE_MAX_MS], times [pace]). Null without a lake or without bait.
+     */
+    fun cast(world: FarmWorld, now: Long, random: Random, pace: Float = 1f): Pair<FarmWorld, Cast>? {
+        val lake = world.lake ?: return null
+        val n = baitsAt(lake, now)
+        if (n <= 0) return null
+        val wait = BITE_MIN_MS + random.nextLong(BITE_MAX_MS - BITE_MIN_MS + 1)
+        val cast = Cast(now, now + (wait * pace).toLong(), pickFish(random))
+        return world.copy(lake = withBaits(lake, n - 1, now)) to cast
+    }
+
+    /** Gives a bait back, when the card is closed before anything was caught. */
+    fun returnBait(world: FarmWorld, now: Long): FarmWorld {
+        val lake = world.lake ?: return world
+        val n = baitsAt(lake, now)
+        if (n >= BAITS) return world
+        return world.copy(lake = withBaits(lake, n + 1, now))
+    }
+
+    /** Milliseconds to pull once a fish bites, with the time [window] times longer. */
+    fun pullWindowMs(window: Float = 1f): Long = (PULL_MS * window).toLong()
+
+    /** Where the float is at [now]. */
+    fun bobber(cast: Cast, now: Long, window: Float = 1f): Bobber = when {
+        now < cast.biteAt -> Bobber.WAITING
+        now <= cast.biteAt + pullWindowMs(window) -> Bobber.BITE
+        else -> Bobber.GONE
+    }
+
+    /**
+     * Pulls the line at [now]. While the fish bites, it goes to the barn and is returned; too
+     * early or too late nothing changes and nothing is lost.
+     */
+    fun pull(world: FarmWorld, cast: Cast, now: Long, window: Float = 1f): Pair<FarmWorld, Fish?> {
+        if (world.lake == null || bobber(cast, now, window) != Bobber.BITE) return world to null
+        return world.copy(barn = world.barn.add(cast.fish.item, 1)) to cast.fish
+    }
+
+    // The lake: the net.
+
+    /** Fish waiting in the net at [now], from 0 to [MAX_WAITING]. */
+    fun netWaiting(world: FarmWorld, now: Long): Int {
+        val since = world.lake?.net ?: return 0
+        return ((now - since).coerceAtLeast(0L) / NET_MS).toInt().coerceIn(0, MAX_WAITING)
+    }
+
+    /** Milliseconds until the net catches its next fish (0 when it is full or there is none). */
+    fun netRemainingMs(world: FarmWorld, now: Long): Long {
+        val since = world.lake?.net ?: return 0L
+        if (netWaiting(world, now) >= MAX_WAITING) return 0L
+        return NET_MS - (now - since).coerceAtLeast(0L) % NET_MS
+    }
+
+    /** Which fish the net caught at the moment [at]: chosen from the moment itself, so it never changes. */
+    private fun netFish(at: Long): Fish = pickFish(Random(at))
+
+    /** What the net holds at [now], by item. */
+    fun netReady(world: FarmWorld, now: Long): Map<Item, Int> {
+        val since = world.lake?.net ?: return emptyMap()
+        return (1..netWaiting(world, now)).map { netFish(since + it * NET_MS).item }.groupingBy { it }.eachCount()
+    }
+
+    /** Takes the net's fish to the barn; a full net starts afresh, otherwise the next fish keeps its progress. */
+    fun collectNet(world: FarmWorld, now: Long): FarmWorld {
+        val lake = world.lake ?: return world
+        val since = lake.net ?: return world
+        val n = netWaiting(world, now)
+        if (n == 0) return world
+        val barn = netReady(world, now).entries.fold(world.barn) { b, (item, k) -> b.add(item, k) }
+        val next = if (n >= MAX_WAITING) now else since + n * NET_MS
+        return world.copy(barn = barn, lake = lake.copy(net = next))
+    }
+
     // Gathering everything at once.
 
     /**
-     * Brings into the barn everything that is ready: every ripe bed, every animal's products and
-     * what the mill has ground. Returns the new farm and what entered the barn, by item. Later
-     * sources (the lake) join here, so the one button keeps gathering everything.
+     * Brings into the barn everything that is ready: every ripe bed, every animal's products,
+     * what the mill has ground and the fish in the lake's net. Returns the new farm and what
+     * entered the barn, by item.
      */
     fun gatherAll(world: FarmWorld, now: Long): Pair<FarmWorld, Map<Item, Int>> {
-        val gathered = collectMill(collectAll(harvestAll(world, now), now), now)
+        val gathered = collectNet(collectMill(collectAll(harvestAll(world, now), now), now), now)
         val brought = Item.entries.mapNotNull { item ->
             val n = gathered.count(item) - world.count(item)
             if (n > 0) item to n else null
@@ -381,8 +557,9 @@ object FarmRules {
         return gathered to brought
     }
 
-    /** How many things are ready to gather: ripe beds, products waiting and jobs the mill finished. */
-    fun readyCount(world: FarmWorld, now: Long): Int = ripeCount(world, now) + waitingCount(world, now) + millDone(world, now)
+    /** How many things are ready to gather: ripe beds, products waiting, jobs the mill finished and fish in the net. */
+    fun readyCount(world: FarmWorld, now: Long): Int =
+        ripeCount(world, now) + waitingCount(world, now) + millDone(world, now) + netWaiting(world, now)
 
     // The market.
 
@@ -394,10 +571,11 @@ object FarmRules {
 
     // Orders.
 
-    /** Items the farm can make now: unlocked crops, its animals' products and what its mill grinds. */
+    /** Items the farm can make now: unlocked crops, its animals' products, what its mill grinds and the lake's fish. */
     fun available(world: FarmWorld): List<Item> =
         unlocked(world).map { it.item } + world.pens.map { it.kind.item }.distinct() +
-            if (world.mill != null) Recipe.entries.map { it.output } else emptyList()
+            (if (world.mill != null) Recipe.entries.map { it.output } else emptyList()) +
+            if (world.lake != null) Fish.entries.map { it.item } else emptyList()
 
     /** Tops the board up to [ORDERS] orders. */
     fun fillOrders(world: FarmWorld): FarmWorld {

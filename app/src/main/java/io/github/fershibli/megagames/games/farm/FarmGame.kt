@@ -81,7 +81,9 @@ import io.github.fershibli.megagames.ui.theme.currentMotion
 import io.github.fershibli.megagames.ui.theme.currentPace
 import io.github.fershibli.megagames.ui.theme.wait
 import kotlin.math.roundToInt
+import io.github.fershibli.megagames.ui.theme.currentHaptics
 import kotlinx.coroutines.delay
+import kotlin.random.Random
 
 /** The clock the farm reads. Tests provide their own to move time forward. */
 val LocalFarmClock = staticCompositionLocalOf { SystemFarmClock }
@@ -95,6 +97,15 @@ private const val BED_FRAME_MS = 900L
 
 /** How long the mill's sails stay on each of their turns (slower with a calm pace or gentle motion). */
 private const val SAIL_STEP_MS = 800L
+
+/** How long the lake's glints stay on each turn, and the float on each bob (slower with gentle motion). */
+private const val RIPPLE_STEP_MS = 700L
+
+/** How often the fishing card looks at the clock while a line is in the water. */
+private const val LOOK_MS = 250L
+
+/** Where the fishing's luck comes from. Tests may provide a seeded one. */
+val LocalFarmRandom = staticCompositionLocalOf<Random> { Random.Default }
 
 /** How long a message stays on its card (scaled by the pace) and the gap above it. */
 private const val NOTE_MS = 5_000L
@@ -202,6 +213,7 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     var planning by remember { mutableStateOf(false) }
     var building by remember { mutableStateOf(false) }
     var milling by remember { mutableStateOf(false) }
+    var fishing by remember { mutableStateOf(false) }
     // The sails turn only while the mill works, and stand still when movement is switched off.
     var sail by remember { mutableIntStateOf(0) }
     val motion = currentMotion
@@ -211,6 +223,17 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
             while (true) {
                 pace.wait((SAIL_STEP_MS * motion.duration).toLong())
                 sail = (sail + 1) % MILL_FRAMES
+            }
+        }
+    }
+    // The lake's glints come and go, and now and then a fish passes; all still when movement is off.
+    var ripple by remember { mutableIntStateOf(0) }
+    val hasLake = w.lake != null
+    LaunchedEffect(hasLake, motion) {
+        if (hasLake && motion != Motion.NONE) {
+            while (true) {
+                pace.wait((RIPPLE_STEP_MS * motion.duration).toLong())
+                ripple++
             }
         }
     }
@@ -234,6 +257,10 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     val millTap = stringResource(R.string.farm_mill_tap)
     val millWorking = stringResource(R.string.farm_mill_working)
     val builtMill = stringResource(R.string.farm_built_mill)
+    val builtLake = stringResource(R.string.farm_built_lake)
+    val builtNet = stringResource(R.string.farm_built_net, FarmRules.NET_MINUTES)
+    val lakeName = stringResource(R.string.farm_building_lake)
+    val lakeTap = stringResource(R.string.farm_lake_tap)
     fun left(ms: Long): String {
         val minutes = (ms + 59_999L) / 60_000L
         return if (minutes <= 1) lessMinute else minutesLeft.format(minutes.toInt())
@@ -279,6 +306,21 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
         say(inBarn.format(ready.entries.joinToString(", ") { "${itemNames.getValue(it.key)} ×${it.value}" }))
     }
 
+    /** What the lake says: the fish waiting in the net, or that it is there to fish. */
+    fun lakeText(at: Long): String {
+        val ready = FarmRules.netReady(w, at).entries.firstOrNull()
+        return if (ready != null) "$lakeName, ${penReady.format(itemNames.getValue(ready.key), FarmRules.netWaiting(w, at))}" else "$lakeName, $lakeTap"
+    }
+
+    /** A tap on the lake takes the net's fish to the barn, and otherwise opens the fishing card. */
+    fun tapLake() {
+        val t = time()
+        val ready = FarmRules.netReady(w, t)
+        if (ready.isEmpty()) { fishing = true; return }
+        change { FarmRules.collectNet(it, t) }
+        say(inBarn.format(ready.entries.joinToString(", ") { "${itemNames.getValue(it.key)} ×${it.value}" }))
+    }
+
     fun tapPlot(i: Int) {
         val t = time()
         val plot = w.plots.getOrNull(i) ?: return
@@ -303,27 +345,30 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     val onPlot by rememberUpdatedState<(Int) -> Unit> { tapPlot(it) }
     val onPen by rememberUpdatedState<(Int) -> Unit> { tapPen(it) }
     val onMill by rememberUpdatedState<() -> Unit> { tapMill() }
+    val onLake by rememberUpdatedState<() -> Unit> { tapLake() }
     Column(Modifier.fillMaxSize()) {
         ZoomableBoard(Modifier.weight(1f).fillMaxWidth(), rememberZoomState(), panWithOneFinger = true) {
             BoxWithConstraints(Modifier.fillMaxSize()) {
                 val density = LocalDensity.current
                 val wPx = with(density) { maxWidth.toPx() }
                 val hPx = with(density) { maxHeight.toPx() }
-                val grid = FarmMap.grid(wPx, hPx, FarmMap.columns(w.plots.size, w.pens.size))
+                val columns = FarmMap.columns(w.plots.size, w.pens.size)
+                val grid = FarmMap.grid(wPx, hPx, columns)
                 val description = stringResource(R.string.farm_scene, w.plots.size, w.pens.size)
                 Canvas(
                     Modifier
                         .fillMaxSize()
                         .testTag("farm-scene")
                         .semantics { contentDescription = description }
-                        .pointerInput(w.plots.size, w.pens.size, w.mill != null, wPx, hPx) {
+                        .pointerInput(w.plots.size, w.pens.size, w.mill != null, w.lake != null, wPx, hPx) {
                             detectTapGestures { pos ->
                                 if (w.mill != null && FarmMap.millBounds(grid).contains(pos)) return@detectTapGestures onMill()
+                                if (w.lake != null && FarmMap.lakeBounds(grid, columns).contains(pos)) return@detectTapGestures onLake()
                                 val hit = FarmMap.hit(grid, pos, w.plots.size, w.pens.size) ?: return@detectTapGestures
                                 if (hit.first) onPlot(hit.second) else onPen(hit.second)
                             }
                         },
-                ) { drawFarmScene(FarmScene(w, now, (now / TICK_MS).toInt(), fresh, if (working && motion != Motion.NONE) sail else 0), p, grid) }
+                ) { drawFarmScene(FarmScene(w, now, (now / TICK_MS).toInt(), fresh, if (working && motion != Motion.NONE) sail else 0, ripple, motion != Motion.NONE), p, grid) }
                 // One node per bed and animal for screen readers and tests. Touches go through
                 // them to the scene, which picks the nearest bed or animal.
                 val spot = 40.dp
@@ -356,6 +401,21 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                                 contentDescription = label
                                 role = Role.Button
                                 onClick { tapMill(); true }
+                            },
+                    )
+                }
+                if (w.lake != null) {
+                    val bounds = FarmMap.lakeBounds(grid, columns)
+                    val label = lakeText(now)
+                    Box(
+                        Modifier
+                            .offset { IntOffset(bounds.left.roundToInt(), bounds.top.roundToInt()) }
+                            .size(with(density) { bounds.width.toDp() }, with(density) { bounds.height.toDp() })
+                            .testTag("farm-lake")
+                            .semantics {
+                                contentDescription = label
+                                role = Role.Button
+                                onClick { tapLake(); true }
                             },
                     )
                 }
@@ -440,9 +500,9 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     }
     if (building) {
         BuildDialog(w, p, onBuild = { b ->
-            change { FarmRules.build(it, b) }
+            change { FarmRules.build(it, b, time()) }
             building = false
-            say(when (b) { Building.MILL -> builtMill })
+            say(when (b) { Building.MILL -> builtMill; Building.LAKE -> builtLake; Building.NET -> builtNet })
         }) { building = false }
     }
     if (milling && w.mill != null) {
@@ -457,6 +517,9 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                 if (ready.isNotEmpty()) say(inBarn.format(ready.entries.joinToString(", ") { "${itemNames.getValue(it.key)} ×${it.value}" }))
             },
         ) { milling = false }
+    }
+    if (fishing && w.lake != null) {
+        LakeDialog(w, now, p, change) { fishing = false }
     }
     if (buying) {
         val choices = Animal.entries.filter { it.stars <= w.stars && it.cost <= w.coins }
@@ -532,20 +595,22 @@ private fun BuildDialog(w: FarmWorld, p: Palette, onBuild: (Building) -> Unit, o
 
 @Composable
 private fun BuildRow(b: Building, w: FarmWorld, p: Palette, onClick: () -> Unit) {
-    val locked = w.stars < b.stars
+    val locked = !FarmRules.isUnlocked(w, b)
     val can = FarmRules.canBuild(w, b)
     val status = when {
-        locked -> stringResource(R.string.farm_build_stars, FarmRules.starsMissing(w, b))
+        w.stars < b.stars -> stringResource(R.string.farm_build_stars, FarmRules.starsMissing(w, b))
+        b.needsLake && w.lake == null -> stringResource(R.string.farm_build_needs_lake)
         w.coins < b.cost -> stringResource(R.string.farm_build_coins, b.cost - w.coins)
         else -> stringResource(R.string.farm_build_tap)
     }
     val name = stringResource(b.label)
-    val priceSpoken = stringResource(R.string.farm_build_price, b.cost)
+    val free = b.cost == 0
+    val priceSpoken = if (free) stringResource(R.string.farm_build_free) else stringResource(R.string.farm_build_price, b.cost)
     val shape = RoundedCornerShape(16.dp)
     Row(
         Modifier
             .fillMaxWidth()
-            // A building that still needs stars is shown faded.
+            // A building that still needs stars (or, for the net, the lake) is shown faded.
             .alpha(if (locked) 0.45f else 1f)
             .testTag("farm-build-${b.key}")
             .clip(shape).background(p.surfaceAlt)
@@ -559,7 +624,8 @@ private fun BuildRow(b: Building, w: FarmWorld, p: Palette, onClick: () -> Unit)
         Spacer(Modifier.width(12.dp))
         Column(verticalArrangement = Arrangement.spacedBy(2.dp)) {
             Text(name, style = MaterialTheme.typography.titleLarge, color = p.text, maxLines = 2)
-            PricedText(price(b.cost), priceSpoken, MaterialTheme.typography.titleMedium, p.text)
+            if (free) Text(priceSpoken, style = MaterialTheme.typography.titleMedium, color = p.text)
+            else PricedText(price(b.cost), priceSpoken, MaterialTheme.typography.titleMedium, p.text)
             Text(status, style = MaterialTheme.typography.bodyLarge, color = if (can) p.success else p.text)
         }
     }
@@ -569,6 +635,8 @@ private fun BuildRow(b: Building, w: FarmWorld, p: Palette, onClick: () -> Unit)
 private fun DrawScope.drawBuilding(b: Building) {
     when (b) {
         Building.MILL -> drawFitted(FarmSprites.mill[0])
+        Building.LAKE -> drawFitted(FarmSprites.pond)
+        Building.NET -> drawFitted(FarmSprites.net)
     }
 }
 
@@ -646,6 +714,145 @@ private fun MillDialog(w: FarmWorld, now: Long, p: Palette, onGrind: (Recipe) ->
             }
         },
         confirmButton = { BigButton(stringResource(R.string.close), onClose, Modifier.fillMaxWidth().testTag("farm-mill-close"), style = ButtonStyle.SECONDARY) },
+    )
+}
+
+/**
+ * The fishing card: a picture of the rod and the float, what is happening (read out politely to
+ * screen readers), the bait tin, the net, and one big button: Cast the rod, then Pull! when a
+ * fish bites. A fish that is not pulled in time just swims away; nothing is ever lost, and
+ * closing the card before a catch gives the bait back.
+ */
+@Composable
+private fun LakeDialog(w: FarmWorld, now: Long, p: Palette, change: ((FarmWorld) -> FarmWorld) -> Unit, onClose: () -> Unit) {
+    val clock = LocalFarmClock.current
+    val random = LocalFarmRandom.current
+    val haptics = currentHaptics
+    val pace = currentPace
+    val motion = currentMotion
+    // A calmer pace or gentler motion gives more time to pull, never less than the normal time.
+    val window = maxOf(1f, pace.factor, motion.duration)
+    var cast by remember { mutableStateOf<Cast?>(null) }
+    var caught by remember { mutableStateOf<Fish?>(null) }
+    var escaped by remember { mutableStateOf(false) }
+    var at by remember { mutableLongStateOf(clock.now()) }
+    LaunchedEffect(cast) {
+        while (true) {
+            at = clock.now()
+            delay(if (cast != null) LOOK_MS else TICK_MS)
+        }
+    }
+    val t = maxOf(at, now)
+    val phase = cast?.let { FarmRules.bobber(it, t, window) }
+    LaunchedEffect(phase) {
+        when (phase) {
+            // The bite is shown, read out and felt: never by sound alone.
+            Bobber.BITE -> haptics.nudge()
+            Bobber.GONE -> { escaped = true; cast = null }
+            else -> Unit
+        }
+    }
+    var bob by remember { mutableIntStateOf(0) }
+    LaunchedEffect(motion) {
+        if (motion != Motion.NONE) {
+            while (true) {
+                pace.wait((RIPPLE_STEP_MS * motion.duration).toLong())
+                bob++
+            }
+        }
+    }
+    val lessMinute = stringResource(R.string.farm_less_minute)
+    val minutesLeft = stringResource(R.string.farm_minutes_left)
+    fun left(ms: Long): String = ((ms + 59_999L) / 60_000L).toInt().let { if (it <= 1) lessMinute else minutesLeft.format(it) }
+    val view = when {
+        phase == Bobber.WAITING -> FishingView.WAITING
+        phase == Bobber.BITE -> FishingView.BITE
+        caught != null -> FishingView.CAUGHT
+        escaped -> FishingView.GONE
+        else -> FishingView.IDLE
+    }
+    val baits = FarmRules.baits(w, t)
+    val status = when (view) {
+        FishingView.IDLE -> if (baits > 0) stringResource(R.string.farm_fishing_idle) else stringResource(R.string.farm_fishing_no_bait, FarmRules.BAIT_MINUTES)
+        FishingView.WAITING -> stringResource(R.string.farm_fishing_waiting)
+        FishingView.BITE -> stringResource(R.string.farm_fishing_bite)
+        FishingView.CAUGHT -> stringResource(R.string.farm_fishing_caught, stringResource(caught!!.item.label))
+        FishingView.GONE -> stringResource(R.string.farm_fishing_gone)
+    }
+    val close = {
+        // Closed before anything was caught: the bait goes back to the tin.
+        if (cast != null) change { FarmRules.returnBait(it, clock.now()) }
+        cast = null
+        onClose()
+    }
+    AlertDialog(
+        onDismissRequest = close,
+        containerColor = p.surface,
+        title = { Text(stringResource(R.string.farm_fishing_title), style = MaterialTheme.typography.headlineSmall, color = p.text) },
+        text = {
+            Column(Modifier.verticalScroll(rememberScrollState()).testTag("farm-fishing-card"), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                Canvas(Modifier.fillMaxWidth().height(150.dp).testTag("farm-fishing-picture").clearAndSetSemantics { }) {
+                    drawFishing(p, view, if (motion == Motion.NONE) 0 else bob, caught?.item)
+                }
+                Text(
+                    status, Modifier.fillMaxWidth().testTag("farm-fishing-status").semantics { liveRegion = LiveRegionMode.Polite },
+                    style = MaterialTheme.typography.titleMedium, color = p.text,
+                )
+                Text(
+                    stringResource(R.string.farm_fishing_baits, baits, FarmRules.BAITS),
+                    Modifier.testTag("farm-fishing-baits"), style = MaterialTheme.typography.titleMedium, color = p.text,
+                )
+                if (w.lake?.net != null) {
+                    val inNet = FarmRules.netWaiting(w, t)
+                    if (inNet > 0) {
+                        Text(stringResource(R.string.farm_net_waiting, inNet), Modifier.testTag("farm-net-status"), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                        BigButton(
+                            stringResource(R.string.farm_collect_all), { val now2 = clock.now(); change { FarmRules.collectNet(it, now2) } },
+                            Modifier.fillMaxWidth().testTag("farm-net-collect"), style = ButtonStyle.SECONDARY, compact = true,
+                        )
+                    } else {
+                        Text(stringResource(R.string.farm_net_next, left(FarmRules.netRemainingMs(w, t))), Modifier.testTag("farm-net-status"), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            Column(Modifier.fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                val tag = Modifier.fillMaxWidth().testTag("farm-fishing-button")
+                when {
+                    phase == Bobber.BITE -> BigButton(stringResource(R.string.farm_fishing_pull), {
+                        val c = cast
+                        if (c != null) {
+                            val tt = clock.now()
+                            val fish = FarmRules.pull(w, c, tt, window).second
+                            if (fish != null) {
+                                change { FarmRules.pull(it, c, tt, window).first }
+                                caught = fish
+                            } else {
+                                escaped = true
+                            }
+                            cast = null
+                            at = tt
+                        }
+                    }, tag)
+                    phase == Bobber.WAITING -> BigButton(stringResource(R.string.farm_fishing_wait), {}, tag, style = ButtonStyle.SECONDARY, enabled = false)
+                    baits > 0 -> BigButton(stringResource(R.string.farm_fishing_cast), {
+                        val tt = clock.now()
+                        val next = FarmRules.cast(w, tt, random, pace.factor)
+                        if (next != null) {
+                            change { next.first }
+                            cast = next.second
+                            caught = null
+                            escaped = false
+                            at = tt
+                        }
+                    }, tag)
+                    // No bait: the button stays in view and says when the next one comes back.
+                    else -> BigButton(stringResource(R.string.farm_fishing_next_bait, left(FarmRules.nextBaitMs(w, t))), {}, tag, style = ButtonStyle.SECONDARY, enabled = false)
+                }
+                BigButton(stringResource(R.string.close), close, Modifier.fillMaxWidth().testTag("farm-fishing-close"), style = ButtonStyle.SECONDARY)
+            }
+        },
     )
 }
 
