@@ -978,19 +978,21 @@ private fun heartFor(p: Palette): PixelArt =
  * [n] hearts in a tight group (up to three in a row, more in a second row below), floating above
  * [anchor], the point over the middle of what was touched.
  */
-private fun DrawScope.drawHearts(touch: FarmTouch, anchor: Offset, p: Palette, px: Float) {
+private fun DrawScope.drawHearts(touch: FarmTouch, anchor: Offset, p: Palette, farmPx: Float) {
     val art = heartFor(p)
+    // A little larger than the rest of the picture, in whole pixels, so the group is easy to see.
+    val px = max(1f, floor(farmPx * 1.5f))
     val n = touch.hearts.coerceIn(1, FarmRules.MAX_HEARTS)
     val bottom = if (n <= 3) n else 3
     val top = n - bottom
-    val step = (art.width - 2) * px
-    val lift = touch.rise() * px
+    val step = (art.width - 1) * px
+    val lift = touch.rise() * farmPx
     val alpha = touch.alpha()
     fun row(count: Int, y: Float) {
         for (k in 0 until count) {
             val x = anchor.x + (k - (count - 1) / 2f) * step - art.width * px / 2
             // Every other heart sits a little higher, so the group looks cuddled together.
-            val bob = if (k % 2 == 1) px * 2 else 0f
+            val bob = if (k % 2 == 1) px * 1.5f else 0f
             art.draw(this, floor(x), floor(y - bob - lift), px, alpha)
         }
     }

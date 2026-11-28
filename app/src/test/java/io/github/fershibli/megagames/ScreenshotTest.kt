@@ -281,6 +281,27 @@ class ScreenshotTest {
         rule.onNodeWithTag("farm-note").assertExists()
         save("game_farm_card_pt")
     }
+    /** A tap on an animal that is very fond of the farm: five hearts float up above it as it hops. */
+    @Test fun farmHeartsPt() {
+        seedFarm(full = true, pats = 11)
+        gameShot("game_farm_hearts_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("farm-pen-1").performClick()
+        rule.waitForIdle()
+        rule.mainClock.advanceTimeBy(350)
+        rule.onNodeWithTag("farm-hearts").assertExists()
+        save("game_farm_hearts_pt")
+    }
+    @Test fun farmHeartsDark() {
+        seedFarm(full = true, pats = 5)
+        gameShot("game_farm_hearts_dark", GameId.FARM, settings = Settings(darkMode = true))
+        rule.mainClock.autoAdvance = false
+        rule.onNodeWithTag("farm-pen-2").performClick()
+        rule.waitForIdle()
+        rule.mainClock.advanceTimeBy(350)
+        rule.onNodeWithTag("farm-hearts").assertExists()
+        save("game_farm_hearts_dark")
+    }
     @Test fun farmSowPrices() {
         seedFarm()
         gameShot("game_farm_sow_prices", GameId.FARM)
@@ -450,6 +471,7 @@ class ScreenshotTest {
         mill: io.github.fershibli.megagames.games.farm.Mill? = null,
         wheat: Boolean = false,
         lake: io.github.fershibli.megagames.games.farm.Lake? = null,
+        pats: Int = 0,
     ) {
         val now = System.currentTimeMillis()
         val m = 60_000L
@@ -478,8 +500,9 @@ class ScreenshotTest {
             io.github.fershibli.megagames.games.farm.Pen("sheep", now - 10 * m),
             io.github.fershibli.megagames.games.farm.Pen("cow", now - 40 * m),
         ) else emptyList()
+        val fond = pens.map { it.copy(adopted = now - 5 * m, pats = pats, lastPat = now - 10 * m) }
         val world = io.github.fershibli.megagames.games.farm.FarmRules.fillOrders(
-            io.github.fershibli.megagames.games.farm.FarmWorld(coins = coins, stars = stars, plots = if (full) first + more else first, pens = pens, barn = barn, orderSerial = 11, mill = mill, lake = lake),
+            io.github.fershibli.megagames.games.farm.FarmWorld(coins = coins, stars = stars, plots = if (full) first + more else first, pens = fond, barn = barn, orderSerial = 11, mill = mill, lake = lake),
         )
         WorldStore(RuntimeEnvironment.getApplication()).run {
             save(io.github.fershibli.megagames.games.farm.FARM_WORLD_KEY, io.github.fershibli.megagames.games.farm.FarmWorld.serializer(), world)
