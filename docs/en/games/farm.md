@@ -4,7 +4,7 @@
 
 A small farm that lives on your phone. Sow, water and harvest, look after hens, a cow and sheep, sell in the barn and fill the neighbours' orders. There is no hurry and nothing is ever lost: crops never wilt, animals never go hungry and the farm keeps growing while the app is closed.
 
-Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. Your **coins** and **stars** are shown above them. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back. When zoomed in, drag with one finger to move around.
+Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. Above them, a gold **coin** and a **star** show how many coins and stars you have. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back. When zoomed in, drag with one finger to move around.
 
 When you tap a bed or an animal, what it says (its name, the time left, "Harvested!") appears on a small card over the top of the farm. It goes away by itself after a few seconds, or when you tap it, and it never moves the buttons.
 

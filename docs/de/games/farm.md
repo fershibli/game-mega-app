@@ -4,7 +4,7 @@
 
 Ein kleiner Bauernhof, der in deinem Handy wohnt. Säe, gieße und ernte, kümmere dich um Hühner, Kuh und Schafe, verkaufe in der Scheune und erfülle die Bestellungen der Nachbarn. Es eilt nie und nichts geht verloren: Pflanzen welken nie, Tiere hungern nie, und der Hof wächst weiter, auch wenn die App geschlossen ist.
 
-Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Scheune**. Darüber stehen deine **Münzen** und **Sterne**. Der Hof ist ein einziges Bild: das Feld mit den Beeten, die Koppel mit den Tieren, das Haus und die Scheune. Mit zwei Fingern auseinanderziehen vergrößert es; der runde Knopf stellt es zurück. Ist der Hof vergrößert, ziehe mit einem Finger, um dich zu bewegen.
+Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Scheune**. Darüber zeigen eine goldene **Münze** und ein **Stern**, wie viele Münzen und Sterne du hast. Der Hof ist ein einziges Bild: das Feld mit den Beeten, die Koppel mit den Tieren, das Haus und die Scheune. Mit zwei Fingern auseinanderziehen vergrößert es; der runde Knopf stellt es zurück. Ist der Hof vergrößert, ziehe mit einem Finger, um dich zu bewegen.
 
 Wenn du ein Beet oder ein Tier antippst, erscheint das, was es sagt (sein Name, die verbleibende Zeit, „Geerntet!“), auf einer kleinen Karte über dem oberen Teil des Bauernhofs. Sie verschwindet nach ein paar Sekunden von selbst oder wenn du sie antippst und verschiebt nie die Knöpfe.
 

@@ -250,6 +250,14 @@ class ScreenshotTest {
         seedFarm(full = true)
         gameShot("game_farm_dark", GameId.FARM, settings = Settings(darkMode = true))
     }
+    @Test fun farmBigText() {
+        seedFarm(full = true)
+        gameShot("game_farm_big_text", GameId.FARM, settings = Settings(fontScale = Settings.SCALE_MAX))
+    }
+    @Test fun farmHighContrast() {
+        seedFarm(full = true)
+        gameShot("game_farm_high_contrast", GameId.FARM, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST))
+    }
     @Test fun farmNewBedPt() {
         seedFarm()
         gameShot("game_farm_new_bed_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE))

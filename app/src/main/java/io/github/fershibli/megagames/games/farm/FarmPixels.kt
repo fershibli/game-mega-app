@@ -392,6 +392,38 @@ object FarmSprites {
         ".oooooo.",
     )
 
+    /** The coin of the purse: gold with a darker rim and a shine. */
+    val coin = pixelArt(
+        "$OUTLINE y=FFD54F d=E0A100 w=FFF59D",
+        "..oooooo..",
+        ".oyyyyyyo.",
+        "oywwyyyydo",
+        "oywyyddydo",
+        "oyyydyyydo",
+        "oyyydyyydo",
+        "oyydyyyydo",
+        "oyyyyyyydo",
+        ".oddddddo.",
+        "..oooooo..",
+    )
+
+    /** The star of the purse: yellow with an outline, so it still reads on any background. */
+    val star = pixelArt(
+        "$OUTLINE y=FFD54F d=E0A100 w=FFF59D",
+        ".....oo.....",
+        ".....oo.....",
+        "....oyyo....",
+        "....oywo....",
+        "ooooyywyoooo",
+        "oyyywyyyyydo",
+        ".oyyyyyyydo.",
+        "..oyyyyydo..",
+        "..oyyyyydo..",
+        ".oyyydoyydo.",
+        ".oyydo.oydo.",
+        "..oo....oo..",
+    )
+
     val sun = pixelArt(
         "y=FFD54F o=FFB300 w=FFF59D",
         ".....o.....",

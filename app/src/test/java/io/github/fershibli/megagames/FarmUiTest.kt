@@ -1,8 +1,10 @@
 package io.github.fershibli.megagames
 
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.test.assertContentDescriptionEquals
 import androidx.compose.ui.test.assertIsEnabled
 import androidx.compose.ui.test.assertIsNotEnabled
+import androidx.compose.ui.test.assertTextEquals
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithTag
 import androidx.compose.ui.test.onNodeWithText
@@ -157,5 +159,18 @@ class FarmUiTest {
         assertEquals(1, after.stars)
         assertEquals(0, after.count(Item.EGG))
         assertEquals(FarmRules.ORDERS, after.orders.size)
+    }
+
+    @Test
+    fun theTopBarShowsCoinAndStarIconsWithTheAmountsAndStillReadsTheWords() {
+        seed(FarmWorld(coins = 86, stars = 8))
+        show()
+        rule.onNodeWithTag("farm-status").assertContentDescriptionEquals("Coins: 86, Stars: 8")
+        rule.onNodeWithTag("farm-coins-icon", useUnmergedTree = true).assertExists()
+        rule.onNodeWithTag("farm-stars-icon", useUnmergedTree = true).assertExists()
+        rule.onNodeWithTag("farm-coins-value", useUnmergedTree = true).assertTextEquals("86")
+        rule.onNodeWithTag("farm-stars-value", useUnmergedTree = true).assertTextEquals("8")
+        // The words are gone from the screen.
+        rule.onNodeWithText("Coins:", substring = true).assertDoesNotExist()
     }
 }

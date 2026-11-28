@@ -225,12 +225,7 @@ fun BigDialog(
 @Composable
 fun StatusPill(text: String, modifier: Modifier = Modifier, emphasized: Boolean = false) {
     val p = LocalPalette.current
-    Surface(
-        modifier = modifier,
-        shape = RoundedCornerShape(50),
-        color = if (emphasized) p.primary else p.surfaceAlt,
-        border = if (p.strongOutlines) BorderStroke(2.dp, p.outline) else null,
-    ) {
+    StatusPill(modifier, emphasized) {
         Text(
             text, Modifier.padding(horizontal = 16.dp, vertical = 6.dp),
             color = if (emphasized) p.onPrimary else p.text, style = MaterialTheme.typography.titleMedium,
@@ -238,4 +233,17 @@ fun StatusPill(text: String, modifier: Modifier = Modifier, emphasized: Boolean 
             textAlign = TextAlign.Center, maxLines = 3, overflow = TextOverflow.Ellipsis,
         )
     }
+}
+
+/** The same pill around any [content] (icons next to numbers, say); the content brings its own padding. */
+@Composable
+fun StatusPill(modifier: Modifier = Modifier, emphasized: Boolean = false, content: @Composable () -> Unit) {
+    val p = LocalPalette.current
+    Surface(
+        modifier = modifier,
+        shape = RoundedCornerShape(50),
+        color = if (emphasized) p.primary else p.surfaceAlt,
+        border = if (p.strongOutlines) BorderStroke(2.dp, p.outline) else null,
+        content = content,
+    )
 }

@@ -68,7 +68,6 @@ import io.github.fershibli.megagames.ui.components.ActionBar
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.BigDialog
 import io.github.fershibli.megagames.ui.components.ButtonStyle
-import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.components.ZoomableBoard
 import io.github.fershibli.megagames.ui.components.rememberZoomState
 import io.github.fershibli.megagames.ui.theme.LocalPalette
@@ -141,8 +140,7 @@ fun FarmGame(host: GameHost) {
 
     Column(Modifier.fillMaxSize()) {
         Box(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp), contentAlignment = Alignment.Center) {
-            val purse = stringResource(R.string.farm_coins, w.coins) + " · " + stringResource(R.string.farm_stars, w.stars)
-            StatusPill(purse, Modifier.testTag("farm-status"))
+            FarmPurse(w.coins, w.stars)
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
             Tab.entries.forEach { t ->
