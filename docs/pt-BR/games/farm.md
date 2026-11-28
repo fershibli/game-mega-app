@@ -4,12 +4,12 @@
 
 Uma pequena fazenda que mora no seu celular. Plante, regue e colha, cuide das galinhas, da vaca e das ovelhas, venda no celeiro e atenda os pedidos dos vizinhos. Não há pressa e nada se perde: as plantas nunca murcham, os animais nunca passam fome e a fazenda continua crescendo com o app fechado.
 
-Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Suas **moedas** e **estrelas** aparecem acima deles. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal. Com a fazenda ampliada, arraste com um dedo para se mover.
+Três botões em cima abrem a **Fazenda**, os **Pedidos** e o **Celeiro**. Acima deles, uma **moeda** dourada e uma **estrela** mostram quantas moedas e estrelas você tem. A fazenda é um desenho só: a horta com os canteiros, o cercado com os animais, a casa e o celeiro. Faça o gesto de pinça para ver maior; o botão redondo volta ao tamanho normal. Com a fazenda ampliada, arraste com um dedo para se mover.
 
 Quando você toca num canteiro ou num animal, o que ele diz (o nome, o tempo que falta, "Colhido!") aparece num cartãozinho sobre o alto da fazenda. Ele some sozinho depois de alguns segundos, ou quando você toca nele, e nunca empurra os botões.
 
 ## A horta
-- Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas.
+- Toque num **canteiro vazio** (só a terra marrom) e escolha o que plantar. Cada semente custa algumas moedas. O preço aparece ao lado de uma moedinha desenhada, como todos os preços da fazenda.
 - A planta cresce sozinha, no tempo de verdade: primeiro um brotinho, depois uma planta nova com uma barrinha que vai enchendo, depois a colheita madura, que brilha. Toque num canteiro que está crescendo para ver o nome e o tempo que falta.
 - **Regar** (toque num canteiro com uma gota azul, ou em **Regar tudo**) faz o resto do crescimento andar duas vezes mais rápido. Uma vez por plantação basta.
 - Toque num canteiro maduro: ele dá **dois** do que foi plantado, que vão direto para o celeiro. **Coletar tudo** faz isso com todos os canteiros maduros de uma vez e também leva o que os animais produziram. O botão acende quando há algo pronto e diz o que foi para o celeiro, como "No celeiro: Alface ×4, Ovo ×2".

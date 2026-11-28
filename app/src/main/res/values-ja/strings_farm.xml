@@ -53,4 +53,11 @@
     <string name="farm_plot_sow_first">先に何か植えましょう。育っているものがあれば、いつでも売れる収穫があります。</string>
     <string name="farm_plot_here">できました。点滅している畝が新しい畝です。</string>
     <string name="farm_plot_picture">何もない土から収穫まで育つ畝</string>
+    <!-- Shown on screen: the price comes with the coin picture (see FarmPrice.kt); the strings above are what screen readers hear. -->
+    <string name="farm_seed_shown">%1$s・%2$s・%3$d分</string>
+    <string name="farm_buy_plot_shown">畝を増やす（%1$s）</string>
+    <string name="farm_animal_shown">%1$s・%2$s</string>
+    <string name="farm_order_reward_shown">お礼：%1$sと星1つ</string>
+    <string name="farm_barn_row_shown">%1$s：%2$d・1つ%3$s</string>
+    <string name="farm_plot_note_shown">値段：%1$s。ほかの畝のとなりにでき、同じように育ちます。芽、葉、そして収穫。</string>
 </resources>

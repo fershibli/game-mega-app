@@ -4,12 +4,12 @@
 
 Ein kleiner Bauernhof, der in deinem Handy wohnt. Säe, gieße und ernte, kümmere dich um Hühner, Kuh und Schafe, verkaufe in der Scheune und erfülle die Bestellungen der Nachbarn. Es eilt nie und nichts geht verloren: Pflanzen welken nie, Tiere hungern nie, und der Hof wächst weiter, auch wenn die App geschlossen ist.
 
-Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Scheune**. Darüber stehen deine **Münzen** und **Sterne**. Der Hof ist ein einziges Bild: das Feld mit den Beeten, die Koppel mit den Tieren, das Haus und die Scheune. Mit zwei Fingern auseinanderziehen vergrößert es; der runde Knopf stellt es zurück. Ist der Hof vergrößert, ziehe mit einem Finger, um dich zu bewegen.
+Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Scheune**. Darüber zeigen eine goldene **Münze** und ein **Stern**, wie viele Münzen und Sterne du hast. Der Hof ist ein einziges Bild: das Feld mit den Beeten, die Koppel mit den Tieren, das Haus und die Scheune. Mit zwei Fingern auseinanderziehen vergrößert es; der runde Knopf stellt es zurück. Ist der Hof vergrößert, ziehe mit einem Finger, um dich zu bewegen.
 
 Wenn du ein Beet oder ein Tier antippst, erscheint das, was es sagt (sein Name, die verbleibende Zeit, „Geerntet!“), auf einer kleinen Karte über dem oberen Teil des Bauernhofs. Sie verschwindet nach ein paar Sekunden von selbst oder wenn du sie antippst und verschiebt nie die Knöpfe.
 
 ## Das Beet
-- Tippe auf ein **leeres Beet** (nur braune Erde) und wähle, was du säen willst. Jeder Samen kostet ein paar Münzen.
+- Tippe auf ein **leeres Beet** (nur braune Erde) und wähle, was du säen willst. Jeder Samen kostet ein paar Münzen. Der Preis steht neben einem kleinen Münzbild, wie jeder Preis auf dem Hof.
 - Die Pflanze wächst von selbst in echter Zeit: erst ein Keimling, dann eine junge Pflanze mit einem kleinen Balken, der sich füllt, dann die reife Ernte, die funkelt. Tippe auf ein wachsendes Beet, um den Namen und die restliche Zeit zu sehen.
 - **Gießen** (tippe auf ein Beet mit einem blauen Tropfen oder auf **Alles gießen**) lässt den Rest doppelt so schnell wachsen. Einmal pro Pflanze genügt.
 - Tippe auf ein reifes Beet: Es gibt **zwei** seiner Ernte, die direkt in die Scheune kommen. **Alles einsammeln** macht das mit allen reifen Beeten auf einmal und nimmt auch mit, was die Tiere erzeugt haben. Die Taste leuchtet, wenn etwas bereit ist, und sagt, was in die Scheune kam, zum Beispiel „In der Scheune: Salat ×4, Ei ×2“.

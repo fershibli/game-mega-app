@@ -4,12 +4,12 @@
 
 Una piccola fattoria che vive nel tuo telefono. Semina, annaffia e raccogli, accudisci le galline, la mucca e le pecore, vendi nel fienile e soddisfa gli ordini dei vicini. Non c’è fretta e non si perde mai nulla: le piante non appassiscono, gli animali non hanno mai fame e la fattoria continua a crescere anche con l’app chiusa.
 
-Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Le tue **monete** e **stelle** sono indicate sopra. La fattoria è un solo disegno: l’orto con le aiuole, il recinto con gli animali, la casa e il fienile. Allarga con due dita per vederla più grande; il pulsante tondo la rimette com’era. Quando è ingrandita, trascina con un dito per spostarti.
+Tre pulsanti in alto aprono la **Fattoria**, gli **Ordini** e il **Fienile**. Sopra, una **moneta** dorata e una **stella** mostrano quante monete e stelle hai. La fattoria è un solo disegno: l’orto con le aiuole, il recinto con gli animali, la casa e il fienile. Allarga con due dita per vederla più grande; il pulsante tondo la rimette com’era. Quando è ingrandita, trascina con un dito per spostarti.
 
 Quando tocchi un'aiuola o un animale, ciò che dice (il nome, il tempo che manca, «Raccolto!») compare su una piccola scheda sopra la parte alta della fattoria. Sparisce da sola dopo qualche secondo, oppure quando la tocchi, e non sposta mai i pulsanti.
 
 ## L’orto
-- Tocca un’**aiuola vuota** (solo terra marrone) e scegli cosa seminare. Ogni seme costa qualche moneta.
+- Tocca un’**aiuola vuota** (solo terra marrone) e scegli cosa seminare. Ogni seme costa qualche moneta. Il prezzo appare accanto a una piccola moneta disegnata, come tutti i prezzi della fattoria.
 - La pianta cresce da sola, in tempo reale: prima un germoglio, poi una piantina con una barretta che si riempie, poi il raccolto maturo, che luccica. Tocca un’aiuola che sta crescendo per leggerne il nome e il tempo che manca.
 - **Annaffiare** (tocca un’aiuola con una goccia blu, o **Annaffia tutto**) fa crescere il resto due volte più in fretta. Basta una volta per pianta.
 - Tocca un’aiuola matura: dà **due** del suo raccolto, che vanno subito nel fienile. **Prendi tutto** lo fa con tutte le aiuole mature insieme e porta anche ciò che hanno prodotto gli animali. Il pulsante si accende quando c’è qualcosa di pronto e dice cosa è andato nel fienile, per esempio «Nel fienile: Lattuga ×4, Uovo ×2».

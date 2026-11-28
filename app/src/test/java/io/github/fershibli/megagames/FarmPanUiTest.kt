@@ -4,7 +4,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.test.hasTestTag
-import androidx.compose.ui.test.hasText
+import androidx.compose.ui.test.hasContentDescription
 import androidx.compose.ui.test.junit4.v2.createComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
 import androidx.compose.ui.test.onNodeWithTag
@@ -60,7 +60,7 @@ class FarmPanUiTest {
         rule.waitForIdle()
     }
 
-    private fun sowMenuShown() = rule.onAllNodes(hasText(sowMenu)).fetchSemanticsNodes().isNotEmpty()
+    private fun sowMenuShown() = rule.onAllNodes(hasContentDescription(sowMenu)).fetchSemanticsNodes().isNotEmpty()
 
     /** Drags one finger from [from] (scene coordinates) by [by] in small steps. */
     private fun drag(from: Offset, by: Offset) {

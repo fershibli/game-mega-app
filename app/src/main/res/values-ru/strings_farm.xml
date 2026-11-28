@@ -53,4 +53,11 @@
     <string name="farm_plot_sow_first">Сначала посейте что-нибудь. Пока что-то растёт, всегда будет урожай на продажу.</string>
     <string name="farm_plot_here">Готово: новая грядка мигает на поле.</string>
     <string name="farm_plot_picture">Грядка растёт: от голой земли до урожая</string>
+    <!-- Shown on screen: the price comes with the coin picture (see FarmPrice.kt); the strings above are what screen readers hear. -->
+    <string name="farm_seed_shown">%1$s · %2$s · %3$d мин</string>
+    <string name="farm_buy_plot_shown">Новая грядка (%1$s)</string>
+    <string name="farm_animal_shown">%1$s · %2$s</string>
+    <string name="farm_order_reward_shown">Награда: %1$s и звезда</string>
+    <string name="farm_barn_row_shown">%1$s: %2$d · по %3$s</string>
+    <string name="farm_plot_note_shown">Цена: %1$s. Она появится рядом с другими грядками и растёт так же: росток, листья, потом урожай.</string>
 </resources>

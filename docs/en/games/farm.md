@@ -4,12 +4,12 @@
 
 A small farm that lives on your phone. Sow, water and harvest, look after hens, a cow and sheep, sell in the barn and fill the neighbours' orders. There is no hurry and nothing is ever lost: crops never wilt, animals never go hungry and the farm keeps growing while the app is closed.
 
-Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. Your **coins** and **stars** are shown above them. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back. When zoomed in, drag with one finger to move around.
+Three buttons at the top open the **Farm**, the **Orders** and the **Barn**. Above them, a gold **coin** and a **star** show how many coins and stars you have. The farm is one picture: the field of beds, the paddock with the animals, the house and the barn. Pinch to see it bigger, and the round button brings it back. When zoomed in, drag with one finger to move around.
 
 When you tap a bed or an animal, what it says (its name, the time left, "Harvested!") appears on a small card over the top of the farm. It goes away by itself after a few seconds, or when you tap it, and it never moves the buttons.
 
 ## The field
-- Tap an **empty bed** (bare brown soil) and choose what to sow. Each seed costs a few coins.
+- Tap an **empty bed** (bare brown soil) and choose what to sow. Each seed costs a few coins. The price shows next to a small coin picture, like every price on the farm.
 - A crop grows by itself in real time: first a sprout, then a young plant with a small bar that fills up, then the ripe crop, which sparkles. Tap a growing bed to read its name and the time left.
 - **Watering** (tap a bed with a blue drop, or **Water all**) makes the rest of the growing go twice as fast. Once per crop is enough.
 - Tap a ripe bed: it gives **two** of its crop, which go straight into the barn. **Collect all** does it for every ripe bed at once, and also takes what the animals have made. It lights up when something is ready, and says what went into the barn, such as "In the barn: Lettuce ×4, Egg ×2".

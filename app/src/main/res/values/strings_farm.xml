@@ -53,4 +53,11 @@
     <string name="farm_plot_sow_first">Sow a bed first. With something growing there will always be a harvest to sell.</string>
     <string name="farm_plot_here">Here it is: the new bed is the one blinking on the field.</string>
     <string name="farm_plot_picture">A bed growing, from bare soil to the harvest</string>
+    <!-- Shown on screen: the price comes with the coin picture (see FarmPrice.kt); the strings above are what screen readers hear. -->
+    <string name="farm_seed_shown">%1$s · %2$s · %3$d min</string>
+    <string name="farm_buy_plot_shown">New bed (%1$s)</string>
+    <string name="farm_animal_shown">%1$s · %2$s</string>
+    <string name="farm_order_reward_shown">Reward: a star, %1$s</string>
+    <string name="farm_barn_row_shown">%1$s: %2$d · %3$s</string>
+    <string name="farm_plot_note_shown">Price: %1$s. It goes next to the other beds and grows like them: sprout, leaves, then the harvest.</string>
 </resources>

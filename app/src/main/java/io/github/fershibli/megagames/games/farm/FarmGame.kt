@@ -67,8 +67,8 @@ import io.github.fershibli.megagames.core.rememberWorldStore
 import io.github.fershibli.megagames.ui.components.ActionBar
 import io.github.fershibli.megagames.ui.components.BigButton
 import io.github.fershibli.megagames.ui.components.BigDialog
+import io.github.fershibli.megagames.ui.components.DialogButton
 import io.github.fershibli.megagames.ui.components.ButtonStyle
-import io.github.fershibli.megagames.ui.components.StatusPill
 import io.github.fershibli.megagames.ui.components.ZoomableBoard
 import io.github.fershibli.megagames.ui.components.rememberZoomState
 import io.github.fershibli.megagames.ui.theme.LocalPalette
@@ -141,8 +141,7 @@ fun FarmGame(host: GameHost) {
 
     Column(Modifier.fillMaxSize()) {
         Box(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 6.dp), contentAlignment = Alignment.Center) {
-            val purse = stringResource(R.string.farm_coins, w.coins) + " · " + stringResource(R.string.farm_stars, w.stars)
-            StatusPill(purse, Modifier.testTag("farm-status"))
+            FarmPurse(w.coins, w.stars)
         }
         Row(Modifier.fillMaxWidth().padding(horizontal = 8.dp), horizontalArrangement = Arrangement.spacedBy(6.dp)) {
             Tab.entries.forEach { t ->
@@ -332,10 +331,12 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
                 if (w.plots.size < FarmRules.MAX_PLOTS) {
                     val cost = FarmRules.plotCost(w)
                     // With nothing growing, the button says why a bed can't be bought yet.
+                    val shown = stringResource(R.string.farm_buy_plot_shown, price(cost))
+                    val spoken = stringResource(R.string.farm_buy_plot, cost)
                     BigButton(
-                        stringResource(R.string.farm_buy_plot, cost), { if (FarmRules.somethingGrowing(w)) planning = true else say(sowFirst) },
+                        { if (FarmRules.somethingGrowing(w)) planning = true else say(sowFirst) },
                         Modifier.testTag("farm-buy-plot"), style = ButtonStyle.SECONDARY, enabled = w.coins >= cost, compact = true,
-                    )
+                    ) { st, fg -> PricedText(shown, spoken, st, fg, maxLines = 2, shrink = true, textAlign = TextAlign.Center) }
                 }
                 BigButton(stringResource(R.string.farm_buy_animal), { buying = true }, Modifier.testTag("farm-buy-animal"), style = ButtonStyle.SECONDARY, enabled = w.pens.size < FarmRules.MAX_PENS, compact = true)
             }
@@ -346,17 +347,19 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     if (index != null) {
         val choices = FarmRules.unlocked(w).filter { it.seedCost <= w.coins }
         val options = choices.map { crop ->
-            stringResource(R.string.farm_seed_option, itemNames.getValue(crop.item), crop.seedCost, crop.minutes) to {
+            val shown = stringResource(R.string.farm_seed_shown, itemNames.getValue(crop.item), price(crop.seedCost), crop.minutes)
+            val spoken = stringResource(R.string.farm_seed_option, itemNames.getValue(crop.item), crop.seedCost, crop.minutes)
+            DialogButton({
                 change { FarmRules.plant(it, index, crop, time()) }
                 sowing = null
-            }
+            }) { st, fg -> PricedText(shown, spoken, st, fg, maxLines = 2, shrink = true, textAlign = TextAlign.Center) }
         }
         val more = FarmRules.unlocked(w).size < Crop.entries.size
         val note = listOfNotNull(
             if (choices.isEmpty()) stringResource(R.string.farm_no_coins) else null,
             if (more) stringResource(R.string.farm_more_with_stars) else null,
         ).joinToString("\n").ifEmpty { null }
-        BigDialog(stringResource(R.string.farm_sow_title), note, { sowing = null }, options + (stringResource(R.string.cancel) to { sowing = null }), primaryIndex = -1)
+        BigDialog(stringResource(R.string.farm_sow_title), note, { sowing = null }, options, listOf(stringResource(R.string.cancel) to { sowing = null }))
     }
     if (planning) {
         PlotDialog(FarmRules.plotCost(w), p, onBuy = {
@@ -370,17 +373,19 @@ private fun SceneTab(w: FarmWorld, now: Long, time: () -> Long, p: Palette, chan
     if (buying) {
         val choices = Animal.entries.filter { it.stars <= w.stars && it.cost <= w.coins }
         val options = choices.map { a ->
-            stringResource(R.string.farm_animal_option, animalNames.getValue(a), a.cost) to {
+            val shown = stringResource(R.string.farm_animal_shown, animalNames.getValue(a), price(a.cost))
+            val spoken = stringResource(R.string.farm_animal_option, animalNames.getValue(a), a.cost)
+            DialogButton({
                 change { FarmRules.buyAnimal(it, a, time()) }
                 buying = false
-            }
+            }) { st, fg -> PricedText(shown, spoken, st, fg, maxLines = 2, shrink = true, textAlign = TextAlign.Center) }
         }
         val more = Animal.entries.any { it.stars > w.stars }
         val note = listOfNotNull(
             if (choices.isEmpty()) stringResource(R.string.farm_no_coins) else null,
             if (more) stringResource(R.string.farm_more_with_stars) else null,
         ).joinToString("\n").ifEmpty { null }
-        BigDialog(stringResource(R.string.farm_buy_animal_title), note, { buying = false }, options + (stringResource(R.string.cancel) to { buying = false }), primaryIndex = -1)
+        BigDialog(stringResource(R.string.farm_buy_animal_title), note, { buying = false }, options, listOf(stringResource(R.string.cancel) to { buying = false }))
     }
 }
 
@@ -406,7 +411,7 @@ private fun PlotDialog(cost: Int, p: Palette, onBuy: () -> Unit, onCancel: () ->
         text = {
             Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
                 Canvas(Modifier.fillMaxWidth().height(150.dp).testTag("farm-plot-picture").semantics { contentDescription = picture }) { drawBedPreview(p, frame) }
-                Text(stringResource(R.string.farm_plot_note, cost), style = MaterialTheme.typography.bodyLarge, color = p.text)
+                PricedText(stringResource(R.string.farm_plot_note_shown, price(cost)), stringResource(R.string.farm_plot_note, cost), MaterialTheme.typography.bodyLarge, p.text, Modifier.testTag("farm-plot-note"))
             }
         },
         confirmButton = {
@@ -457,7 +462,7 @@ private fun OrdersTab(w: FarmWorld, p: Palette, change: ((FarmWorld) -> FarmWorl
                         )
                     }
                 }
-                Text(stringResource(R.string.farm_order_reward, order.coins), style = MaterialTheme.typography.titleMedium, color = p.text)
+                PricedText(stringResource(R.string.farm_order_reward_shown, price("+${order.coins}")), stringResource(R.string.farm_order_reward, order.coins), MaterialTheme.typography.titleMedium, p.text)
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     BigButton(stringResource(R.string.farm_deliver), { change { FarmRules.deliver(it, i) }; say(delivered) }, Modifier.weight(1f).testTag("farm-deliver-$i"), enabled = ok, compact = true)
                     BigButton(stringResource(R.string.farm_skip), { change { FarmRules.skip(it, i) } }, Modifier.weight(1f), style = ButtonStyle.SECONDARY, compact = true)
@@ -482,7 +487,11 @@ private fun BarnTab(w: FarmWorld, p: Palette, change: ((FarmWorld) -> FarmWorld)
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     ItemIcon(item, p)
                     Spacer(Modifier.width(10.dp))
-                    Text(stringResource(R.string.farm_barn_row, stringResource(item.label), w.count(item), item.price), style = MaterialTheme.typography.titleMedium, color = p.text)
+                    PricedText(
+                        stringResource(R.string.farm_barn_row_shown, stringResource(item.label), w.count(item), price(item.price)),
+                        stringResource(R.string.farm_barn_row, stringResource(item.label), w.count(item), item.price),
+                        MaterialTheme.typography.titleMedium, p.text,
+                    )
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     BigButton(stringResource(R.string.farm_sell_one), { change { FarmRules.sell(it, item, 1) } }, Modifier.weight(1f), style = ButtonStyle.SECONDARY, compact = true)

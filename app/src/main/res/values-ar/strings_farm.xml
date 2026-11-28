@@ -53,4 +53,11 @@
     <string name="farm_plot_sow_first">ازرع شيئًا أولًا. ما دام هناك ما ينمو، سيكون هناك دائمًا حصاد للبيع.</string>
     <string name="farm_plot_here">تم: الحوض الجديد هو الذي يومض في الحقل.</string>
     <string name="farm_plot_picture">حوض ينمو من التربة العارية حتى الحصاد</string>
+    <!-- Shown on screen: the price comes with the coin picture (see FarmPrice.kt); the strings above are what screen readers hear. -->
+    <string name="farm_seed_shown">%1$s · %2$s · %3$d دقيقة</string>
+    <string name="farm_buy_plot_shown">حوض جديد (%1$s)</string>
+    <string name="farm_animal_shown">%1$s · %2$s</string>
+    <string name="farm_order_reward_shown">المكافأة %1$s ونجمة</string>
+    <string name="farm_barn_row_shown">%1$s: %2$d · %3$s للواحد</string>
+    <string name="farm_plot_note_shown">السعر: %1$s. يوضع بجانب الأحواض الأخرى وينمو مثلها: برعم، أوراق، ثم الحصاد.</string>
 </resources>
