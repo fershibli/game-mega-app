@@ -369,6 +369,14 @@ class ScreenshotTest {
         seedFarm(full = true, stars = 2)
         gameShot("game_farm_achievements_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE), tab = "achievements")
     }
+    @Test fun farmAchievementsDark() {
+        seedFarm(full = true, stars = 2)
+        gameShot("game_farm_achievements_dark", GameId.FARM, settings = Settings(darkMode = true), tab = "achievements")
+    }
+    @Test fun farmAchievementsHighContrast() {
+        seedFarm(full = true, stars = 2)
+        gameShot("game_farm_achievements_high_contrast", GameId.FARM, settings = Settings(colorMode = io.github.fershibli.megagames.core.ColorMode.HIGH_CONTRAST), tab = "achievements")
+    }
     @Test fun farmAchievementsBigTextPt() {
         seedFarm(full = true, stars = 1)
         gameShot("game_farm_achievements_big_text_pt", GameId.FARM, settings = Settings(language = io.github.fershibli.megagames.core.AppLanguage.PORTUGUESE, fontScale = Settings.SCALE_MAX), tab = "achievements")
