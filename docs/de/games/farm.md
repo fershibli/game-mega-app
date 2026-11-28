@@ -10,7 +10,7 @@ Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Sche
 - Tippe auf ein **leeres Beet** (nur braune Erde) und wähle, was du säen willst. Jeder Samen kostet ein paar Münzen.
 - Die Pflanze wächst von selbst in echter Zeit: erst ein Keimling, dann eine junge Pflanze mit einem kleinen Balken, der sich füllt, dann die reife Ernte, die funkelt. Tippe auf ein wachsendes Beet, um den Namen und die restliche Zeit zu sehen.
 - **Gießen** (tippe auf ein Beet mit einem blauen Tropfen oder auf **Alles gießen**) lässt den Rest doppelt so schnell wachsen. Einmal pro Pflanze genügt.
-- Tippe auf ein reifes Beet (oder **Alles ernten**): Jedes Beet gibt **zwei** seiner Ernte, die direkt in die Scheune kommen.
+- Tippe auf ein reifes Beet: Es gibt **zwei** seiner Ernte, die direkt in die Scheune kommen. **Alles einsammeln** macht das mit allen reifen Beeten auf einmal und nimmt auch mit, was die Tiere erzeugt haben. Die Taste leuchtet, wenn etwas bereit ist, und sagt, was in die Scheune kam, zum Beispiel „In der Scheune: Salat ×4, Ei ×2“.
 - **Neues Beet** vergrößert das Feld, bis zu zwölf Beete. Vorher fragt es nach, mit einem Bild eines wachsenden Beets, und es geht nur, wenn schon etwas gesät ist: So gibt es immer eine Ernte zum Verkaufen. Das neue Beet blinkt eine Weile, damit du siehst, wo es ist.
 
 | Pflanze | Zeit | Samen | Verkauf (je) | Sterne |
@@ -23,7 +23,7 @@ Drei Knöpfe oben öffnen den **Bauernhof**, die **Bestellungen** und die **Sche
 | Kürbis | 90 Min. | 20 | 28 | 8 |
 
 ## Die Tiere
-Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält bis zu **drei** bereit, in einer kleinen Sprechblase darüber; tippe auf das Tier (oder **Alles einsammeln**), um sie in die Scheune zu bringen.
+Kaufe Tiere mit **Tier kaufen**. Jedes erzeugt von selbst sein Produkt und hält bis zu **drei** bereit, in einer kleinen Sprechblase darüber; tippe auf das Tier (oder **Alles einsammeln**, das auch die reifen Beete erntet), um sie in die Scheune zu bringen.
 
 | Tier | Gibt | Alle | Kostet | Verkauf | Sterne |
 |---|---|---|---|---|---|

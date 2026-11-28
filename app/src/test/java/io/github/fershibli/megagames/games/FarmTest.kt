@@ -8,6 +8,7 @@ import io.github.fershibli.megagames.games.farm.Pen
 import io.github.fershibli.megagames.games.farm.FarmWorld
 import io.github.fershibli.megagames.games.farm.Item
 import io.github.fershibli.megagames.games.farm.Order
+import io.github.fershibli.megagames.games.farm.Plot
 import io.github.fershibli.megagames.games.farm.Stage
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -73,6 +74,38 @@ class FarmTest {
         assertEquals(2, w.count(Item.EGG))
         // The egg in the making is half done: five more minutes give the next one.
         assertEquals(1, FarmRules.waiting(w.pens[0], t0 + 30 * min))
+    }
+
+    @Test
+    fun gatherAllTakesRipeCropsAndAnimalProductsTogether() {
+        val w = FarmWorld(
+            coins = 5,
+            plots = listOf(Plot("lettuce", t0), Plot("carrot", t0), Plot("corn", t0 + 30 * min), Plot()),
+            pens = listOf(Pen("chicken", t0), Pen("cow", t0)),
+        )
+        val now = t0 + 35 * min
+        assertEquals(2, FarmRules.ripeCount(w, now))
+        assertEquals(4, FarmRules.waitingCount(w, now))
+        assertEquals(6, FarmRules.readyCount(w, now))
+        val (after, brought) = FarmRules.gatherAll(w, now)
+        assertEquals(mapOf(Item.LETTUCE to 2, Item.CARROT to 2, Item.EGG to 3, Item.MILK to 1), brought)
+        assertEquals(2, after.count(Item.LETTUCE))
+        assertEquals(3, after.count(Item.EGG))
+        assertEquals(0, FarmRules.ripeCount(after, now))
+        assertEquals(0, FarmRules.waitingCount(after, now))
+        assertEquals(0, FarmRules.readyCount(after, now))
+        // The corn is still growing and stays in its bed.
+        assertEquals("corn", after.plots[2].crop)
+    }
+
+    @Test
+    fun gatherAllWithNothingReadyChangesNothing() {
+        val w = FarmWorld(coins = 5, plots = listOf(Plot("corn", t0), Plot()), pens = listOf(Pen("chicken", t0)))
+        val now = t0 + 2 * min
+        assertEquals(0, FarmRules.readyCount(w, now))
+        val (after, brought) = FarmRules.gatherAll(w, now)
+        assertEquals(w, after)
+        assertTrue(brought.isEmpty())
     }
 
     @Test

@@ -25,11 +25,11 @@
     <string name="farm_less_minute">Menos de 1 min</string>
     <string name="farm_water_me">toca para regar</string>
     <string name="farm_harvested">¡Cosechado! Ya está en el granero.</string>
+    <string name="farm_in_barn">En el granero: %1$s</string>
     <string name="farm_sow_title">¿Qué sembramos?</string>
     <string name="farm_seed_option">%1$s · %2$d monedas · %3$d min</string>
     <string name="farm_no_coins">Faltan monedas. Vende algo en el granero primero.</string>
     <string name="farm_more_with_stars">Llegan más semillas y animales a medida que ganas estrellas con los pedidos.</string>
-    <string name="farm_harvest_all">Cosechar todo</string>
     <string name="farm_water_all">Regar todo</string>
     <string name="farm_buy_plot">Nuevo bancal (%1$d monedas)</string>
     <string name="farm_collect_all">Recoger todo</string>

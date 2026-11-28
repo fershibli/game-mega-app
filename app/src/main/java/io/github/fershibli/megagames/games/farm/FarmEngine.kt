@@ -236,6 +236,25 @@ object FarmRules {
 
     fun waitingCount(world: FarmWorld, now: Long): Int = world.pens.sumOf { waiting(it, now) }
 
+    // Gathering everything at once.
+
+    /**
+     * Brings into the barn everything that is ready: every ripe bed and every animal's products.
+     * Returns the new farm and what entered the barn, by item. Later sources (the mill, the lake)
+     * join here, so the one button keeps gathering everything.
+     */
+    fun gatherAll(world: FarmWorld, now: Long): Pair<FarmWorld, Map<Item, Int>> {
+        val gathered = collectAll(harvestAll(world, now), now)
+        val brought = Item.entries.mapNotNull { item ->
+            val n = gathered.count(item) - world.count(item)
+            if (n > 0) item to n else null
+        }.toMap()
+        return gathered to brought
+    }
+
+    /** How many things are ready to gather: ripe beds plus products waiting. */
+    fun readyCount(world: FarmWorld, now: Long): Int = ripeCount(world, now) + waitingCount(world, now)
+
     // The market.
 
     fun sell(world: FarmWorld, item: Item, count: Int): FarmWorld {

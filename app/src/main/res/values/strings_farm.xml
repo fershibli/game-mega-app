@@ -25,11 +25,11 @@
     <string name="farm_less_minute">Under 1 min</string>
     <string name="farm_water_me">tap to water</string>
     <string name="farm_harvested">Harvested! It is in the barn.</string>
+    <string name="farm_in_barn">In the barn: %1$s</string>
     <string name="farm_sow_title">What shall we sow?</string>
     <string name="farm_seed_option">%1$s · coins: %2$d · %3$d min</string>
     <string name="farm_no_coins">Not enough coins. Sell something in the barn first.</string>
     <string name="farm_more_with_stars">More seeds and animals arrive as you earn stars with orders.</string>
-    <string name="farm_harvest_all">Harvest all</string>
     <string name="farm_water_all">Water all</string>
     <string name="farm_buy_plot">New bed (coins: %1$d)</string>
     <string name="farm_collect_all">Collect all</string>
